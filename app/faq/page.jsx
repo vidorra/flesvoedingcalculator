@@ -1,0 +1,165 @@
+'use client'
+import { useState } from 'react'
+import Layout from '../../components/Layout'
+import { Info, Search, Calculator, Baby, AlertCircle, ChevronDown, ChevronUp } from 'lucide-react'
+
+export default function FAQPage() {
+  const [selectedCategory, setSelectedCategory] = useState('calculator')
+  const [searchQuery, setSearchQuery] = useState('')
+  const [openFAQ, setOpenFAQ] = useState(null)
+
+  const categories = [
+    { id: 'calculator', name: 'Calculator gebruik', icon: Calculator },
+    { id: 'feeding', name: 'Algemene voedingsvragen', icon: Baby },
+    { id: 'medical', name: 'Medische vragen', icon: AlertCircle },
+    { id: 'practical', name: 'Praktische tips', icon: Info }
+  ]
+
+  const faqs = {
+    calculator: [
+      {
+        id: 1,
+        question: 'Hoe nauwkeurig is deze calculator?',
+        answer: 'Onze calculator is gebaseerd op de officiële Nederlandse richtlijnen van het Voedingscentrum. De berekening gebruikt 150ml per kg lichaamsgewicht als uitgangspunt, aangepast voor leeftijd. Dit geeft een goede richtlijn, maar elke baby is uniek.'
+      },
+      {
+        id: 2,
+        question: 'Waarom wijkt het resultaat af van wat mijn dokter zei?',
+        answer: 'Artsen kunnen specifieke aanbevelingen geven op basis van de individuele ontwikkeling van uw baby. Onze calculator geeft algemene richtlijnen. Volg altijd het advies van uw kinderarts.'
+      }
+    ],
+    feeding: [
+      {
+        id: 3,
+        question: 'Hoeveel flesvoeding heeft mijn baby per dag nodig?',
+        answer: 'Dit hangt af van het gewicht en de leeftijd van uw baby. Als vuistregel geldt 150ml per kg lichaamsgewicht per dag, verdeeld over meerdere voedingen. Gebruik onze calculator voor een persoonlijke berekening.'
+      },
+      {
+        id: 4,
+        question: 'Kan mijn baby teveel flesvoeding krijgen?',
+        answer: 'Ja, overvoeding kan voorkomen. Baby\'s hebben een natuurlijk verzadigingsgevoel. Stop met voeden als uw baby de fles wegduwt, zijn hoofd wegdraait of niet meer zuigt.'
+      }
+    ],
+    medical: [
+      {
+        id: 5,
+        question: 'Wanneer moet ik contact opnemen met de dokter?',
+        answer: 'Neem contact op bij: ongewone gewichtstoename of -afname, braken na elke voeding, tekenen van uitdroging, of als u zich zorgen maakt over de voeding van uw baby.'
+      }
+    ],
+    practical: [
+      {
+        id: 6,
+        question: 'Hoe warm moet flesvoeding zijn?',
+        answer: 'Flesvoeding moet lichaamstemperatuur hebben (37°C). Test de temperatuur door een druppel op uw pols te doen - het moet lauw aanvoelen, niet heet of koud.'
+      }
+    ]
+  }
+
+  const currentFAQs = faqs[selectedCategory] || []
+
+  return (
+    <Layout>
+      <div className="space-y-6">
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+          <h1 className="text-2xl font-bold text-gray-800 mb-3 flex items-center">
+            <Info className="w-6 h-6 mr-3 text-blue-500" />
+            Veelgestelde Vragen
+          </h1>
+          <p className="text-gray-600">
+            Vind snel antwoorden op de meest gestelde vragen over flesvoeding en onze calculator.
+          </p>
+        </div>
+
+        {/* Search */}
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-4">
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Zoek in veelgestelde vragen..."
+              className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all outline-none"
+            />
+          </div>
+        </div>
+
+        {/* Categories */}
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+          <h2 className="font-semibold text-gray-800 mb-4">Categorieën</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+            {categories.map((category) => {
+              const Icon = category.icon
+              return (
+                <button
+                  key={category.id}
+                  onClick={() => setSelectedCategory(category.id)}
+                  className={`p-4 rounded-xl border transition-all text-left ${
+                    selectedCategory === category.id
+                      ? 'bg-blue-50 border-blue-200 text-blue-700'
+                      : 'bg-white border-gray-200 hover:border-blue-200 text-gray-700'
+                  }`}
+                >
+                  <Icon className="w-5 h-5 mb-2" />
+                  <div className="font-medium">{category.name}</div>
+                </button>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* FAQ Items */}
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+          <h2 className="font-semibold text-gray-800 mb-4">
+            {categories.find(c => c.id === selectedCategory)?.name}
+          </h2>
+          
+          <div className="space-y-4">
+            {currentFAQs.map((faq) => (
+              <div key={faq.id} className="border border-gray-100 rounded-xl overflow-hidden">
+                <button
+                  onClick={() => setOpenFAQ(openFAQ === faq.id ? null : faq.id)}
+                  className="w-full p-4 text-left hover:bg-gray-50 transition-colors flex items-center justify-between"
+                >
+                  <span className="font-medium text-gray-800">{faq.question}</span>
+                  {openFAQ === faq.id ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
+                </button>
+                {openFAQ === faq.id && (
+                  <div className="px-4 pb-4 text-gray-600 border-t border-gray-100 bg-gray-50/50">
+                    <p className="pt-3">{faq.answer}</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Contact CTA */}
+        <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl shadow-lg p-6 text-white">
+          <h2 className="font-semibold mb-2">Vraag niet gevonden?</h2>
+          <p className="text-blue-100 mb-4">
+            Neem contact met ons op voor persoonlijke ondersteuning bij uw vragen over flesvoeding.
+          </p>
+          <button className="bg-white text-blue-600 hover:bg-blue-50 font-medium py-2 px-4 rounded-lg transition-colors">
+            Contact opnemen
+          </button>
+        </div>
+
+        {/* Medical Disclaimer */}
+        <div className="bg-amber-50 rounded-2xl border border-amber-200 p-6">
+          <div className="flex items-start space-x-3">
+            <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+            <div>
+              <h3 className="font-semibold text-amber-800 mb-1">Medische Disclaimer</h3>
+              <p className="text-sm text-amber-700">
+                De informatie op deze pagina is alleen voor informatieve doeleinden en vervangt geen professioneel medisch advies. 
+                Raadpleeg altijd uw kinderarts of een gekwalificeerde zorgverlener voor specifieke medische vragen.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Layout>
+  )
+}
