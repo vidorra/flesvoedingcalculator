@@ -4,21 +4,21 @@ import { Users, Heart, Star, Calculator, BookOpen } from 'lucide-react'
 export default function OverOnsPage() {
   const team = [
     {
-      name: 'Dr. Sarah van der Berg',
+      name: 'Medisch Expert',
       role: 'Kinderarts & Voedingsspecialist',
-      bio: 'Dr. van der Berg heeft meer dan 15 jaar ervaring in de kindergeneeskunde en specialiseert zich in voeding voor zuigelingen.',
+      bio: 'Ons medisch team heeft uitgebreide ervaring in de kindergeneeskunde en specialiseert zich in voeding voor zuigelingen.',
       avatar: '👩‍⚕️'
     },
     {
-      name: 'Lisa Hendriksen',
+      name: 'Voedingsspecialist',
       role: 'Verloskundige & Lactatie Expert',
-      bio: 'Lisa begeleidt ouders al 10 jaar bij voedingsvragen en heeft uitgebreide kennis van zowel borst- als flesvoeding.',
+      bio: 'Onze voedingsexperts begeleiden ouders bij voedingsvragen en hebben uitgebreide kennis van zowel borst- als flesvoeding.',
       avatar: '👩‍💼'
     },
     {
-      name: 'Mark Jansen',
-      role: 'Ontwikkelaar & Vader',
-      bio: 'Mark ontwikkelde deze tool vanuit eigen ervaring als vader en zijn passie voor het helpen van andere ouders.',
+      name: 'Ontwikkelingsteam',
+      role: 'Ontwikkelaars & Ouders',
+      bio: 'Ons team ontwikkelde deze tool vanuit eigen ervaring als ouders en passie voor het helpen van andere ouders.',
       avatar: '👨‍💻'
     }
   ]

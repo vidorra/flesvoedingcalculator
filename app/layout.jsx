@@ -4,11 +4,30 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'FlesvoedingCalculator.nl - Bereken de juiste hoeveelheid flesvoeding',
-  description: 'Bereken de juiste hoeveelheid flesvoeding voor je baby met onze Nederlandse calculator. Gebaseerd op officiële richtlijnen van het Voedingscentrum.',
-  keywords: 'flesvoeding, calculator, baby, voeding, nederland, hoeveelheid, voedingsschema',
+  title: 'FlesvoedingCalculator.nl - Bereken de juiste hoeveelheid',
+  description: 'Gratis Nederlandse flesvoeding calculator voor ouders. Bereken hoeveel flesvoeding jouw baby nodig heeft volgens officiële richtlijnen.',
+  keywords: 'flesvoeding, calculator, baby, nederland',
+  robots: 'index, follow',
   authors: [{ name: 'FlesvoedingCalculator.nl' }],
   viewport: 'width=device-width, initial-scale=1',
+  openGraph: {
+    title: 'FlesvoedingCalculator.nl',
+    description: 'Bereken hoeveel flesvoeding jouw baby nodig heeft',
+    url: 'https://flesvoedingcalculator.nl',
+    siteName: 'FlesvoedingCalculator.nl',
+    images: ['/og-image.png'],
+    locale: 'nl_NL',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'FlesvoedingCalculator.nl',
+    description: 'Bereken hoeveel flesvoeding jouw baby nodig heeft',
+    images: ['/twitter-image.png'],
+  },
+  alternates: {
+    canonical: 'https://flesvoedingcalculator.nl',
+  },
 }
 
 export default function RootLayout({ children }) {

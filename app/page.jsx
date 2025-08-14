@@ -33,6 +33,17 @@ export default function HomePage() {
     }
 
     const weightKg = parseFloat(weight)
+    
+    if (weightKg > 15) {
+      alert('Voor baby\'s zwaarder dan 15kg, raadpleeg uw arts')
+      return
+    }
+
+    if (weightKg < 2.5) {
+      alert('Voor baby\'s lichter dan 2.5kg, raadpleeg uw arts')
+      return
+    }
+
     const age = parseInt(ageMonths)
     const feedings = parseInt(feedingsPerDay)
     

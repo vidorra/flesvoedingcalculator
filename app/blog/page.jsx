@@ -30,10 +30,11 @@ export default function BlogPage() {
       category: 'nutrition',
       readTime: '8 min',
       publishDate: '2025-01-10',
-      author: 'Dr. Sarah van der Berg',
+      author: 'Voedingsexpert',
       image: '📚',
       popular: true,
-      featured: true
+      featured: true,
+      upcoming: true
     },
     {
       id: 2,
@@ -42,10 +43,11 @@ export default function BlogPage() {
       category: 'tips',
       readTime: '6 min',
       publishDate: '2025-01-08',
-      author: 'Lisa Hendriksen',
+      author: 'Medisch Expert',
       image: '⚠️',
       popular: true,
-      featured: false
+      featured: false,
+      upcoming: true
     },
     {
       id: 3,
@@ -54,10 +56,11 @@ export default function BlogPage() {
       category: 'infant',
       readTime: '5 min',
       publishDate: '2025-01-05',
-      author: 'Mark Jansen',
+      author: 'Ontwikkelingsteam',
       image: '🍼',
       popular: false,
-      featured: false
+      featured: false,
+      upcoming: true
     },
     {
       id: 4,
@@ -66,10 +69,11 @@ export default function BlogPage() {
       category: 'newborn',
       readTime: '7 min',
       publishDate: '2025-01-03',
-      author: 'Dr. Sarah van der Berg',
+      author: 'Voedingsspecialist',
       image: '🌙',
       popular: true,
-      featured: false
+      featured: false,
+      upcoming: true
     },
     {
       id: 5,
@@ -78,10 +82,11 @@ export default function BlogPage() {
       category: 'tips',
       readTime: '4 min',
       publishDate: '2025-01-01',
-      author: 'Lisa Hendriksen',
+      author: 'Medisch Expert',
       image: '🧼',
       popular: false,
-      featured: false
+      featured: false,
+      upcoming: true
     },
     {
       id: 6,
@@ -90,10 +95,11 @@ export default function BlogPage() {
       category: 'nutrition',
       readTime: '9 min',
       publishDate: '2024-12-28',
-      author: 'Dr. Tom Peters',
+      author: 'Kinderarts',
       image: '📈',
       popular: false,
-      featured: false
+      featured: false,
+      upcoming: true
     }
   ]
 
@@ -202,6 +208,7 @@ export default function BlogPage() {
                   <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">
                     {filters.find(f => f.id === article.category)?.name}
                   </span>
+                  {article.upcoming && <span className="text-xs bg-gray-100 px-2 py-1 rounded">Binnenkort</span>}
                   {article.popular && <Star className="w-4 h-4 text-yellow-500 fill-current" />}
                 </div>
                 
