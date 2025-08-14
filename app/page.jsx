@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Image from 'next/image'
 import Layout from '../components/Layout'
 import { Baby, Calculator, Info, Clock, ChevronDown, ChevronUp } from 'lucide-react'
 
@@ -69,186 +70,227 @@ export default function HomePage() {
 
   return (
     <Layout>
-      {/* Introduction Card */}
-      <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6 mb-6">
-        <h2 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
-          <Baby className="w-5 h-5 mr-2 text-blue-500" />
-          Bereken de juiste hoeveelheid flesvoeding
-        </h2>
-        <p className="text-gray-600 text-sm leading-relaxed">
-          Gebruik deze calculator om te bepalen hoeveel flesvoeding uw baby nodig heeft. 
-          Gebaseerd op de officiële Nederlandse richtlijnen van het Voedingscentrum (150ml per kg lichaamsgewicht).
-        </p>
-      </div>
+      <div className="grid grid-cols-12 gap-6">
+        {/* Main Calculator Content - 8 columns on desktop, full width on mobile */}
+        <div className="col-span-12 lg:col-span-8">
+          {/* Introduction Card */}
+          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6 mb-6">
+            <h2 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+              <Baby className="w-5 h-5 mr-2 text-blue-500" />
+              Bereken de juiste hoeveelheid flesvoeding
+            </h2>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Gebruik deze calculator om te bepalen hoeveel flesvoeding uw baby nodig heeft. 
+              Gebaseerd op de officiële Nederlandse richtlijnen van het Voedingscentrum (150ml per kg lichaamsgewicht).
+            </p>
+          </div>
 
-      {/* Calculator Card */}
-      <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6 mb-6">
-        <div className="space-y-5">
-          {/* Weight Input */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Gewicht van uw baby (kg)
-            </label>
-            <div className="relative">
-              <input
-                type="number"
-                value={weight}
-                onChange={(e) => setWeight(e.target.value)}
-                placeholder="Bijv. 4.5"
-                step="0.1"
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all outline-none"
-              />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm">kg</span>
+          {/* Calculator Card */}
+          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6 mb-6">
+            <div className="space-y-5">
+              {/* Weight Input */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Gewicht van uw baby (kg)
+                </label>
+                <div className="relative">
+                  <input
+                    type="number"
+                    value={weight}
+                    onChange={(e) => setWeight(e.target.value)}
+                    placeholder="Bijv. 4.5"
+                    step="0.1"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all outline-none"
+                  />
+                  <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm">kg</span>
+                </div>
+              </div>
+
+              {/* Number of Feedings */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Aantal voedingen per dag
+                </label>
+                <select
+                  value={feedingsPerDay}
+                  onChange={(e) => setFeedingsPerDay(e.target.value)}
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all outline-none appearance-none bg-white"
+                >
+                  <option value="4">4 voedingen (om de 6 uur)</option>
+                  <option value="5">5 voedingen (om de 4-5 uur)</option>
+                  <option value="6">6 voedingen (om de 4 uur)</option>
+                  <option value="7">7 voedingen (om de 3-4 uur)</option>
+                  <option value="8">8 voedingen (om de 3 uur)</option>
+                  <option value="9">9 voedingen (om de 2-3 uur)</option>
+                  <option value="10">10 voedingen (om de 2 uur)</option>
+                </select>
+              </div>
+
+              {/* Age Input */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Leeftijd van uw baby
+                </label>
+                <select
+                  value={ageMonths}
+                  onChange={(e) => setAgeMonths(e.target.value)}
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all outline-none appearance-none bg-white"
+                >
+                  <option value="0">0-1 maand</option>
+                  <option value="1">1-2 maanden</option>
+                  <option value="2">2-3 maanden</option>
+                  <option value="3">3-4 maanden</option>
+                  <option value="4">4-5 maanden</option>
+                  <option value="5">5-6 maanden</option>
+                  <option value="6">6+ maanden</option>
+                </select>
+              </div>
+
+              {/* Calculate Button */}
+              <button
+                onClick={calculateFeeding}
+                className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-xl transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-sm flex items-center justify-center space-x-2"
+              >
+                <Calculator className="w-5 h-5" />
+                <span>Bereken Voeding</span>
+              </button>
             </div>
           </div>
 
-          {/* Number of Feedings */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Aantal voedingen per dag
-            </label>
-            <select
-              value={feedingsPerDay}
-              onChange={(e) => setFeedingsPerDay(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all outline-none appearance-none bg-white"
-            >
-              <option value="4">4 voedingen (om de 6 uur)</option>
-              <option value="5">5 voedingen (om de 4-5 uur)</option>
-              <option value="6">6 voedingen (om de 4 uur)</option>
-              <option value="7">7 voedingen (om de 3-4 uur)</option>
-              <option value="8">8 voedingen (om de 3 uur)</option>
-              <option value="9">9 voedingen (om de 2-3 uur)</option>
-              <option value="10">10 voedingen (om de 2 uur)</option>
-            </select>
-          </div>
-
-          {/* Age Input */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Leeftijd van uw baby
-            </label>
-            <select
-              value={ageMonths}
-              onChange={(e) => setAgeMonths(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all outline-none appearance-none bg-white"
-            >
-              <option value="0">0-1 maand</option>
-              <option value="1">1-2 maanden</option>
-              <option value="2">2-3 maanden</option>
-              <option value="3">3-4 maanden</option>
-              <option value="4">4-5 maanden</option>
-              <option value="5">5-6 maanden</option>
-              <option value="6">6+ maanden</option>
-            </select>
-          </div>
-
-          {/* Calculate Button */}
-          <button
-            onClick={calculateFeeding}
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-xl transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-sm flex items-center justify-center space-x-2"
-          >
-            <Calculator className="w-5 h-5" />
-            <span>Bereken Voeding</span>
-          </button>
-        </div>
-      </div>
-
-      {/* Results */}
-      {results && (
-        <div className="space-y-4 animate-in slide-in-from-bottom duration-300">
-          {/* Main Results */}
-          <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl shadow-lg p-6 text-white">
-            <h3 className="text-lg font-semibold mb-4 flex items-center">
-              <Baby className="w-5 h-5 mr-2" />
-              Aanbevolen Hoeveelheden
-            </h3>
-            
-            <div className="grid grid-cols-1 gap-4">
-              <div className="bg-white/20 backdrop-blur rounded-xl p-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-blue-100">Totaal per dag</span>
-                  <span className="text-2xl font-bold">{results.dailyAmount} ml</span>
-                </div>
-              </div>
-              
-              <div className="grid grid-cols-2 gap-3">
-                <div className="bg-white/20 backdrop-blur rounded-xl p-4">
-                  <div className="text-blue-100 text-sm mb-1">Aantal voedingen</div>
-                  <div className="text-xl font-bold">{results.feedingsPerDay}x</div>
-                </div>
+          {/* Results */}
+          {results && (
+            <div className="space-y-4 animate-in slide-in-from-bottom duration-300">
+              {/* Main Results */}
+              <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl shadow-lg p-6 text-white">
+                <h3 className="text-lg font-semibold mb-4 flex items-center">
+                  <Baby className="w-5 h-5 mr-2" />
+                  Aanbevolen Hoeveelheden
+                </h3>
                 
-                <div className="bg-white/20 backdrop-blur rounded-xl p-4">
-                  <div className="text-blue-100 text-sm mb-1">Per voeding</div>
-                  <div className="text-xl font-bold">±{results.amountPerFeeding} ml</div>
+                <div className="grid grid-cols-1 gap-4">
+                  <div className="bg-white/20 backdrop-blur rounded-xl p-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-blue-100">Totaal per dag</span>
+                      <span className="text-2xl font-bold">{results.dailyAmount} ml</span>
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="bg-white/20 backdrop-blur rounded-xl p-4">
+                      <div className="text-blue-100 text-sm mb-1">Aantal voedingen</div>
+                      <div className="text-xl font-bold">{results.feedingsPerDay}x</div>
+                    </div>
+                    
+                    <div className="bg-white/20 backdrop-blur rounded-xl p-4">
+                      <div className="text-blue-100 text-sm mb-1">Per voeding</div>
+                      <div className="text-xl font-bold">±{results.amountPerFeeding} ml</div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
 
-          {/* Details Toggle */}
-          <button
-            onClick={() => setShowDetails(!showDetails)}
-            className="w-full bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-4 flex items-center justify-between text-gray-700 hover:bg-white transition-colors"
-          >
-            <span className="font-medium">Bekijk details & voedingsschema</span>
-            {showDetails ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
-          </button>
+              {/* Details Toggle */}
+              <button
+                onClick={() => setShowDetails(!showDetails)}
+                className="w-full bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-4 flex items-center justify-between text-gray-700 hover:bg-white transition-colors"
+              >
+                <span className="font-medium">Bekijk details & voedingsschema</span>
+                {showDetails ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+              </button>
 
-          {/* Detailed Schedule */}
-          {showDetails && (
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6 animate-in slide-in-from-top duration-300">
-              <h4 className="font-semibold text-gray-800 mb-4 flex items-center">
-                <Clock className="w-5 h-5 mr-2 text-blue-500" />
-                Voorbeeldschema (flexibel aan te passen)
-              </h4>
-              
-              <div className="space-y-2 mb-4">
-                {generateFeedingSchedule(results.feedingsPerDay, results.amountPerFeeding).map((time, index) => (
-                  <div key={index} className="flex items-center justify-between py-2 px-3 bg-blue-50/50 rounded-lg">
-                    <span className="text-sm text-gray-600">{time.time}</span>
-                    <span className="font-medium text-gray-800">{time.amount} ml</span>
+              {/* Detailed Schedule */}
+              {showDetails && (
+                <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6 animate-in slide-in-from-top duration-300">
+                  <h4 className="font-semibold text-gray-800 mb-4 flex items-center">
+                    <Clock className="w-5 h-5 mr-2 text-blue-500" />
+                    Voorbeeldschema (flexibel aan te passen)
+                  </h4>
+                  
+                  <div className="space-y-2 mb-4">
+                    {generateFeedingSchedule(results.feedingsPerDay, results.amountPerFeeding).map((time, index) => (
+                      <div key={index} className="flex items-center justify-between py-2 px-3 bg-blue-50/50 rounded-lg">
+                        <span className="text-sm text-gray-600">{time.time}</span>
+                        <span className="font-medium text-gray-800">{time.amount} ml</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
 
-              <div className="bg-amber-50 rounded-xl p-4">
-                <p className="text-sm text-amber-800">
-                  <strong>Let op:</strong> Dit is een richtlijn gebaseerd op {results.mlPerKg}ml per kg lichaamsgewicht. 
-                  Uw baby kan meer of minder nodig hebben. Volg altijd de signalen van uw baby.
-                </p>
-              </div>
+                  <div className="bg-amber-50 rounded-xl p-4">
+                    <p className="text-sm text-amber-800">
+                      <strong>Let op:</strong> Dit is een richtlijn gebaseerd op {results.mlPerKg}ml per kg lichaamsgewicht. 
+                      Uw baby kan meer of minder nodig hebben. Volg altijd de signalen van uw baby.
+                    </p>
+                  </div>
+                </div>
+              )}
             </div>
           )}
-        </div>
-      )}
 
-      {/* Information Cards */}
-      <div className="mt-8 space-y-4">
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
-          <h3 className="font-semibold text-gray-800 mb-3 flex items-center">
-            <Info className="w-5 h-5 mr-2 text-blue-500" />
-            Soorten Flesvoeding
-          </h3>
-          <div className="space-y-3 text-sm text-gray-600">
-            <div className="flex items-start space-x-3">
-              <span className="font-semibold text-blue-500 mt-0.5">1</span>
-              <div>
-                <p className="font-medium text-gray-700">Startvoeding (0-6 maanden)</p>
-                <p>Volledige zuigelingenvoeding, geschikt vanaf geboorte</p>
+          {/* Information Cards */}
+          <div className="mt-8 space-y-4">
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+              <h3 className="font-semibold text-gray-800 mb-3 flex items-center">
+                <Info className="w-5 h-5 mr-2 text-blue-500" />
+                Soorten Flesvoeding
+              </h3>
+              <div className="space-y-3 text-sm text-gray-600">
+                <div className="flex items-start space-x-3">
+                  <span className="font-semibold text-blue-500 mt-0.5">1</span>
+                  <div>
+                    <p className="font-medium text-gray-700">Startvoeding (0-6 maanden)</p>
+                    <p>Volledige zuigelingenvoeding, geschikt vanaf geboorte</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <span className="font-semibold text-blue-500 mt-0.5">2</span>
+                  <div>
+                    <p className="font-medium text-gray-700">Opvolgmelk (6-12 maanden)</p>
+                    <p>Vanaf 6 maanden, naast vaste voeding</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <span className="font-semibold text-blue-500 mt-0.5">3</span>
+                  <div>
+                    <p className="font-medium text-gray-700">Peutermelk (12+ maanden)</p>
+                    <p>Optioneel vanaf 1 jaar, gewone melk kan ook</p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="flex items-start space-x-3">
-              <span className="font-semibold text-blue-500 mt-0.5">2</span>
-              <div>
-                <p className="font-medium text-gray-700">Opvolgmelk (6-12 maanden)</p>
-                <p>Vanaf 6 maanden, naast vaste voeding</p>
-              </div>
-            </div>
-            <div className="flex items-start space-x-3">
-              <span className="font-semibold text-blue-500 mt-0.5">3</span>
-              <div>
-                <p className="font-medium text-gray-700">Peutermelk (12+ maanden)</p>
-                <p>Optioneel vanaf 1 jaar, gewone melk kan ook</p>
+          </div>
+        </div>
+        
+        {/* Image Sidebar - 4 columns, visible on desktop */}
+        <div className="col-span-12 lg:col-span-4 hidden lg:block space-y-6">
+          {/* Mother and Baby Image */}
+          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-4">
+            <Image
+              src="/mother_and_baby.png"
+              alt="Moeder en baby"
+              width={300}
+              height={200}
+              className="w-full h-auto rounded-xl"
+            />
+          </div>
+          
+          {/* Baby Image */}
+          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-4">
+            <Image
+              src="/baby.png"
+              alt="Baby"
+              width={300}
+              height={200}
+              className="w-full h-auto rounded-xl"
+            />
+          </div>
+          
+          {/* Advertisement Space */}
+          <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="text-center space-y-3">
+              <div className="text-gray-500 text-sm font-medium">Advertentie</div>
+              <div className="bg-white rounded-xl p-8 border-2 border-dashed border-gray-300">
+                <div className="text-gray-400 text-xs">300x250</div>
+                <div className="text-gray-500 text-sm mt-1">Advertentie ruimte</div>
               </div>
             </div>
           </div>
