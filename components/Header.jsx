@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Baby, Calculator, Info, Menu, X, BookOpen, Calendar, FileText, Users } from 'lucide-react'
+import { Baby, Calculator, Info, Menu, X, BookOpen, Calendar, Users } from 'lucide-react'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -13,7 +13,6 @@ export default function Header() {
     { id: '/kennisbank', name: 'Kennisbank', icon: BookOpen, href: '/kennisbank' },
     { id: '/voedingsschemas', name: "Voedingsschema's", icon: Calendar, href: '/voedingsschemas' },
     { id: '/faq', name: 'FAQ', icon: Info, href: '/faq' },
-    { id: '/blog', name: 'Blog', icon: FileText, href: '/blog' },
     { id: '/over-ons', name: 'Over Ons', icon: Users, href: '/over-ons' }
   ]
 

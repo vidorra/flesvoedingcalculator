@@ -22,9 +22,9 @@ export default function SoortenFlesvoedingPage() {
         </div>
 
         {/* Header */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h1 className="text-2xl font-bold text-gray-800 mb-3 flex items-center">
-            <Package className="w-6 h-6 mr-3 text-blue-500" />
+            <Package className="w-6 h-6 mr-3 text-primary" />
             Soorten Flesvoeding (1, 2, 3)
           </h1>
           <p className="text-gray-600">
@@ -35,9 +35,9 @@ export default function SoortenFlesvoedingPage() {
         {/* Formula Types */}
         <div className="space-y-6">
           {/* Startvoeding (1) */}
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">1</div>
+              <div className="w-10 h-10 bg-default0 rounded-full flex items-center justify-center text-white font-bold">1</div>
               <div>
                 <h2 className="text-lg font-semibold text-gray-800">Startvoeding (Nummer 1)</h2>
                 <p className="text-sm text-gray-600">0 tot 6 maanden</p>
@@ -60,7 +60,7 @@ export default function SoortenFlesvoedingPage() {
                 <h3 className="font-medium text-gray-800 mb-3">Populaire merken in Nederland:</h3>
                 <div className="grid grid-cols-2 gap-2">
                   {formula1Brands.map((brand, index) => (
-                    <div key={index} className="bg-blue-50 px-3 py-2 rounded-lg text-sm text-blue-800">
+                    <div key={index} className="bg-default px-3 py-2 rounded-lg text-sm text-blue-800">
                       {brand}
                     </div>
                   ))}
@@ -87,7 +87,7 @@ export default function SoortenFlesvoedingPage() {
                   <li>• Hoger ijzergehalte: ongeveer 6mg per 100ml</li>
                   <li>• Meer vitamine D voor groei</li>
                   <li>• Aangepaste eiwitsamenstelling</li>
-                  <li className="text-red-600 font-medium">• NIET geschikt voor baby's jonger dan 6 maanden</li>
+                  <li className="text-red-600 font-medium">• NIET geschikt voor baby&apos;s jonger dan 6 maanden</li>
                 </ul>
               </div>
               
@@ -164,19 +164,19 @@ export default function SoortenFlesvoedingPage() {
         </div>
 
         {/* Navigation */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Meer informatie</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 
               href="/kennisbank/voedingstechnieken"
-              className="p-3 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
+              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
               <div className="font-medium text-gray-800">Voedingstechnieken →</div>
               <div className="text-sm text-gray-600">Hoe bereid je flesvoeding?</div>
             </Link>
             <Link 
               href="/kennisbank/problemen-oplossen"
-              className="p-3 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
+              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
               <div className="font-medium text-gray-800">Problemen Oplossen →</div>
               <div className="text-sm text-gray-600">Hulp bij veelvoorkomende problemen</div>

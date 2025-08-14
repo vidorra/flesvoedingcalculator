@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
-import { Calendar, Clock, Star, ArrowRight, Download, Calculator } from 'lucide-react'
+import { Calendar, Clock, Target, ArrowRight, Download, Calculator } from 'lucide-react'
 
 export default function VoedingsschemasPage() {
   const [selectedAge, setSelectedAge] = useState('0-3m')
@@ -259,9 +259,9 @@ FlesvoedingCalculator.nl - Betrouwbare informatie voor flesvoeding
   return (
     <Layout>
       <div className="space-y-6">
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="mb-6">
           <h1 className="text-2xl font-bold text-gray-800 mb-3 flex items-center">
-            <Calendar className="w-6 h-6 mr-3 text-blue-500" />
+            <Calendar className="w-6 h-6 mr-3 text-primary" />
             Voedingsschema&apos;s
           </h1>
           <p className="text-gray-600">
@@ -270,7 +270,7 @@ FlesvoedingCalculator.nl - Betrouwbare informatie voor flesvoeding
         </div>
 
         {/* Age Tabs */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-4">
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
             {ageGroups.map((group) => (
               <button
@@ -278,8 +278,8 @@ FlesvoedingCalculator.nl - Betrouwbare informatie voor flesvoeding
                 onClick={() => setSelectedAge(group.id)}
                 className={`p-3 rounded-xl transition-all text-center ${
                   selectedAge === group.id
-                    ? 'bg-blue-500 text-white shadow-lg'
-                    : 'bg-gray-50 text-gray-700 hover:bg-blue-50'
+                    ? 'bg-default0 text-white shadow-lg'
+                    : 'bg-gray-50 text-gray-700 hover:bg-default'
                 }`}
               >
                 <div className="text-2xl mb-1">{group.icon}</div>
@@ -290,14 +290,14 @@ FlesvoedingCalculator.nl - Betrouwbare informatie voor flesvoeding
         </div>
 
         {/* Feeding Frequency Dropdown */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-4">
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Aantal voedingen per dag
           </label>
           <select
             value={feedingFrequency}
             onChange={(e) => setFeedingFrequency(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all outline-none appearance-none bg-white"
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-blue-100 transition-all outline-none appearance-none bg-white"
           >
             {feedingOptions.map((option) => (
               <option key={option.id} value={option.id}>
@@ -311,14 +311,14 @@ FlesvoedingCalculator.nl - Betrouwbare informatie voor flesvoeding
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Schema Overview */}
           <div className="lg:col-span-2 space-y-6">
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="font-semibold text-gray-800 mb-4 flex items-center">
-                <Clock className="w-5 h-5 mr-2 text-blue-500" />
+                <Clock className="w-5 h-5 mr-2 text-primary" />
                 Schema Overzicht
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                <div className="bg-blue-50 rounded-xl p-4">
+                <div className="bg-default rounded-xl p-4">
                   <div className="font-medium text-blue-800">Aantal voedingen</div>
                   <div className="text-blue-600">{currentSchema.feeds}</div>
                 </div>
@@ -344,15 +344,15 @@ FlesvoedingCalculator.nl - Betrouwbare informatie voor flesvoeding
             </div>
 
             {/* Development Milestones */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="font-semibold text-gray-800 mb-4 flex items-center">
-                <Star className="w-5 h-5 mr-2 text-blue-500" />
+                <Target className="w-5 h-5 mr-2 text-primary" />
                 Ontwikkelingsmijlpalen
               </h2>
               <div className="space-y-2">
                 {currentAgeSchema.milestones.map((milestone, index) => (
                   <div key={index} className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <div className="w-2 h-2 bg-default0 rounded-full"></div>
                     <span className="text-gray-700">{milestone}</span>
                   </div>
                 ))}
@@ -363,24 +363,24 @@ FlesvoedingCalculator.nl - Betrouwbare informatie voor flesvoeding
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Next Phase */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h3 className="font-semibold text-gray-800 mb-3 flex items-center">
-                <ArrowRight className="w-5 h-5 mr-2 text-blue-500" />
+                <ArrowRight className="w-5 h-5 mr-2 text-primary" />
                 Volgende Fase
               </h3>
               <p className="text-sm text-gray-600">{currentAgeSchema.nextPhase}</p>
             </div>
 
             {/* Download Options */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h3 className="font-semibold text-gray-800 mb-3 flex items-center">
-                <Download className="w-5 h-5 mr-2 text-blue-500" />
+                <Download className="w-5 h-5 mr-2 text-primary" />
                 Downloads
               </h3>
               <div className="space-y-3">
                 <button 
                   onClick={downloadPDF}
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2"
+                  className="w-full bg-default0 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2"
                 >
                   <Download className="w-4 h-4" />
                   <span>PDF Schema</span>
@@ -396,9 +396,9 @@ FlesvoedingCalculator.nl - Betrouwbare informatie voor flesvoeding
             </div>
 
             {/* Quick Calculator */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h3 className="font-semibold text-gray-800 mb-3 flex items-center">
-                <Calculator className="w-5 h-5 mr-2 text-blue-500" />
+                <Calculator className="w-5 h-5 mr-2 text-primary" />
                 Snelle Berekening
               </h3>
               <p className="text-sm text-gray-600 mb-3">

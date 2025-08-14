@@ -26,9 +26,9 @@ export default function OverOnsPage() {
   return (
     <Layout>
       <div className="space-y-6">
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="mb-6">
           <h1 className="text-2xl font-bold text-gray-800 mb-3 flex items-center">
-            <Users className="w-6 h-6 mr-3 text-blue-500" />
+            <Users className="w-6 h-6 mr-3 text-primary" />
             Over Ons
           </h1>
           <p className="text-gray-600">
@@ -51,9 +51,9 @@ export default function OverOnsPage() {
         </div>
 
         {/* Why Trust Us */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="font-semibold text-gray-800 mb-4 flex items-center">
-            <Star className="w-5 h-5 mr-2 text-blue-500" />
+            <Star className="w-5 h-5 mr-2 text-primary" />
             Waarom FlesvoedingCalculator.nl vertrouwen?
           </h2>
           
@@ -125,14 +125,14 @@ export default function OverOnsPage() {
         </div>
 
         {/* Our Method */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="font-semibold text-gray-800 mb-4 flex items-center">
-            <Calculator className="w-5 h-5 mr-2 text-blue-500" />
+            <Calculator className="w-5 h-5 mr-2 text-primary" />
             Onze Methode
           </h2>
           
           <div className="space-y-4">
-            <div className="bg-blue-50 rounded-xl p-4">
+            <div className="bg-default rounded-xl p-4">
               <h3 className="font-medium text-blue-800 mb-2">Nederlandse Richtlijnen</h3>
               <p className="text-sm text-blue-700">
                 Onze calculator gebruikt de officiële Nederlandse norm van 150ml flesvoeding per kg lichaamsgewicht per dag, 
@@ -159,9 +159,9 @@ export default function OverOnsPage() {
         </div>
 
         {/* Team */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="font-semibold text-gray-800 mb-6 flex items-center">
-            <Users className="w-5 h-5 mr-2 text-blue-500" />
+            <Users className="w-5 h-5 mr-2 text-primary" />
             Ons Team
           </h2>
           
@@ -178,31 +178,31 @@ export default function OverOnsPage() {
         </div>
 
         {/* Sources */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="font-semibold text-gray-800 mb-4 flex items-center">
-            <BookOpen className="w-5 h-5 mr-2 text-blue-500" />
+            <BookOpen className="w-5 h-5 mr-2 text-primary" />
             Bronnen & Expertise
           </h2>
           
           <div className="space-y-3 text-sm text-gray-600">
             <div className="flex items-start space-x-2">
-              <span className="text-blue-500 mt-1">•</span>
+              <span className="text-primary mt-1">•</span>
               <span><strong>Voedingscentrum Nederland</strong> - Officiële voedingsrichtlijnen voor zuigelingen</span>
             </div>
             <div className="flex items-start space-x-2">
-              <span className="text-blue-500 mt-1">•</span>
+              <span className="text-primary mt-1">•</span>
               <span><strong>Nederlands Centrum Jeugdgezondheid (NCJ)</strong> - Groei- en ontwikkelingsrichtlijnen</span>
             </div>
             <div className="flex items-start space-x-2">
-              <span className="text-blue-500 mt-1">•</span>
+              <span className="text-primary mt-1">•</span>
               <span><strong>Nederlandse Vereniging voor Kindergeneeskunde</strong> - Medische standaarden</span>
             </div>
             <div className="flex items-start space-x-2">
-              <span className="text-blue-500 mt-1">•</span>
+              <span className="text-primary mt-1">•</span>
               <span><strong>Koninklijke Nederlandse Organisatie van Verloskundigen (KNOV)</strong> - Voedingsadvies</span>
             </div>
             <div className="flex items-start space-x-2">
-              <span className="text-blue-500 mt-1">•</span>
+              <span className="text-primary mt-1">•</span>
               <span><strong>Wetenschappelijke literatuur</strong> - Peer-reviewed onderzoek naar zuigelingenvoeding</span>
             </div>
           </div>
@@ -215,7 +215,7 @@ export default function OverOnsPage() {
             We horen graag van je! Neem contact met ons op voor vragen, suggesties of als je meer wilt weten over onze aanpak.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
-            <button className="bg-white text-blue-600 hover:bg-blue-50 font-medium py-2 px-4 rounded-lg transition-colors">
+            <button className="bg-white text-blue-600 hover:bg-default font-medium py-2 px-4 rounded-lg transition-colors">
               Contact opnemen
             </button>
             <button className="bg-blue-400 hover:bg-blue-300 text-white font-medium py-2 px-4 rounded-lg transition-colors">

@@ -60,9 +60,9 @@ export default function FAQPage() {
   return (
     <Layout>
       <div className="space-y-6">
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="mb-6">
           <h1 className="text-2xl font-bold text-gray-800 mb-3 flex items-center">
-            <Info className="w-6 h-6 mr-3 text-blue-500" />
+            <Info className="w-6 h-6 mr-3 text-primary" />
             Veelgestelde Vragen
           </h1>
           <p className="text-gray-600">
@@ -72,7 +72,7 @@ export default function FAQPage() {
 
 
         {/* Categories */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="font-semibold text-gray-800 mb-4">Categorieën</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
             {categories.map((category) => {
@@ -83,8 +83,8 @@ export default function FAQPage() {
                   onClick={() => setSelectedCategory(category.id)}
                   className={`p-4 rounded-xl border transition-all text-left ${
                     selectedCategory === category.id
-                      ? 'bg-blue-50 border-blue-200 text-blue-700'
-                      : 'bg-white border-gray-200 hover:border-blue-200 text-gray-700'
+                      ? 'bg-default border-blue-200 text-blue-700'
+                      : 'bg-white border-gray-200 hover:border-primary text-gray-700'
                   }`}
                 >
                   <Icon className="w-5 h-5 mb-2" />
@@ -96,7 +96,7 @@ export default function FAQPage() {
         </div>
 
         {/* FAQ Items */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="font-semibold text-gray-800 mb-4">
             {categories.find(c => c.id === selectedCategory)?.name}
           </h2>
@@ -127,7 +127,7 @@ export default function FAQPage() {
           <p className="text-blue-100 mb-4">
             Neem contact met ons op voor persoonlijke ondersteuning bij uw vragen over flesvoeding.
           </p>
-          <button className="bg-white text-blue-600 hover:bg-blue-50 font-medium py-2 px-4 rounded-lg transition-colors">
+          <button className="bg-white text-blue-600 hover:bg-default font-medium py-2 px-4 rounded-lg transition-colors">
             Contact opnemen
           </button>
         </div>

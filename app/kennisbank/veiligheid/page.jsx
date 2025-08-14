@@ -53,9 +53,9 @@ export default function VeiligheidPage() {
         </div>
 
         {/* Header */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="mb-6">
           <h1 className="text-2xl font-bold text-gray-800 mb-3 flex items-center">
-            <AlertTriangle className="w-6 h-6 mr-3 text-red-500" />
+            <AlertTriangle className="w-6 h-6 mr-3 text-primary" />
             Belangrijke Veiligheidsrichtlijnen
           </h1>
           <p className="text-gray-600">
@@ -123,12 +123,12 @@ export default function VeiligheidPage() {
             </div>
           </div>
 
-          <div className="bg-blue-50 rounded-2xl border border-blue-200 p-6">
+          <div className="bg-default rounded-2xl border border-blue-200 p-6">
             <h2 className="text-lg font-semibold text-blue-800 mb-4">Bij vermoeden allergie:</h2>
             <div className="space-y-3">
               {allergyActions.map((action, index) => (
                 <div key={index} className="flex items-start space-x-2">
-                  <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">
+                  <div className="w-6 h-6 bg-default0 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">
                     {index + 1}
                   </div>
                   <span className="text-blue-800 text-sm">{action}</span>
@@ -139,7 +139,7 @@ export default function VeiligheidPage() {
         </div>
 
         {/* Important phone numbers */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Belangrijke telefoonnummers</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -149,7 +149,7 @@ export default function VeiligheidPage() {
               <p className="text-xs text-red-700">Bij levensbedreigende situaties</p>
             </div>
             
-            <div className="p-4 bg-blue-50 rounded-lg text-center">
+            <div className="p-4 bg-default rounded-lg text-center">
               <h3 className="font-bold text-blue-800 mb-2">Huisartsenpraktijk</h3>
               <p className="text-lg font-bold text-blue-600">Uw eigen nummer</p>
               <p className="text-xs text-blue-700">Voor advies en afspraken</p>
@@ -187,19 +187,19 @@ export default function VeiligheidPage() {
         </div>
 
         {/* Navigation */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Meer hulp nodig?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 
               href="/kennisbank/problemen-oplossen"
-              className="p-3 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
+              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
               <div className="font-medium text-gray-800">Problemen Oplossen →</div>
               <div className="text-sm text-gray-600">Hulp bij veelvoorkomende problemen</div>
             </Link>
             <Link 
               href="/faq"
-              className="p-3 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
+              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
               <div className="font-medium text-gray-800">Veelgestelde Vragen →</div>
               <div className="text-sm text-gray-600">Antwoorden op veel gestelde vragen</div>
