@@ -9,7 +9,7 @@ export default function Footer() {
   const navigation = [
     { href: '/', name: 'Calculator' },
     { href: '/kennisbank', name: 'Kennisbank' },
-    { href: '/voedingsschemas', name: 'Voedingsschema&apos;s' },
+    { href: '/voedingsschemas', name: 'Voedingsschema\'s' },
     { href: '/faq', name: 'FAQ' },
     { href: '/blog', name: 'Blog' },
     { href: '/over-ons', name: 'Over Ons' }
