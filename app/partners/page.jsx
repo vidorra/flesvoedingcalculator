@@ -5,7 +5,7 @@ export default function PartnersPage() {
     <Layout>
       <div className="space-y-6">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-gray-800 mb-3 flex items-center">
+          <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
             <span className="w-6 h-6 mr-3 text-2xl">🤝</span>
             Partners
           </h1>

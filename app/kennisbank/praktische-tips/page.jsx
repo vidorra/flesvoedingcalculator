@@ -64,19 +64,19 @@ export default function PraktischeTipsPage() {
       <div className="space-y-6">
         {/* Breadcrumb */}
         <div className="flex items-center space-x-2 text-sm text-gray-600">
-          <Link href="/" className="hover:text-blue-600 flex items-center">
+          <Link href="/" className="hover:text-primary flex items-center">
             <Home className="w-4 h-4 mr-1" />
             Home
           </Link>
           <ArrowRight className="w-4 h-4" />
-          <Link href="/kennisbank" className="hover:text-blue-600">Kennisbank</Link>
+          <Link href="/kennisbank" className="hover:text-primary">Kennisbank</Link>
           <ArrowRight className="w-4 h-4" />
-          <span className="text-blue-600">Praktische Tips</span>
+          <span className="text-primary">Praktische Tips</span>
         </div>
 
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-gray-800 mb-3 flex items-center">
+          <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
             <Lightbulb className="w-6 h-6 mr-3 text-primary" />
             Praktische Tips
           </h1>
@@ -109,24 +109,24 @@ export default function PraktischeTipsPage() {
         </div>
 
         {/* Night feeding tips */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-200 p-6">
-          <h2 className="text-lg font-semibold text-blue-800 mb-4 flex items-center">
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
             <Moon className="w-5 h-5 mr-2" />
             Nachtvoedingtips
           </h2>
           <div className="space-y-3">
             {nightFeedingTips.map((tip, index) => (
               <div key={index} className="flex items-start space-x-2">
-                <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">
+                <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">
                   {index + 1}
                 </div>
-                <span className="text-blue-800 text-sm">{tip}</span>
+                <span className="text-gray-700 text-sm">{tip}</span>
               </div>
             ))}
           </div>
           
-          <div className="mt-4 p-4 bg-blue-50 rounded-lg">
-            <p className="text-blue-800 text-sm">
+          <div className="mt-4 p-4 bg-default rounded-lg">
+            <p className="text-gray-700 text-sm">
               <strong>Gouden regel:</strong> Hoe minder je wakker wordt, hoe beter voor iedereen. 
               Bereid alles voor zodat nachtvoedingtijd zo kort mogelijk is.
             </p>
@@ -163,7 +163,7 @@ export default function PraktischeTipsPage() {
                 <div className="space-y-2">
                   {section.tips.map((tip, tipIndex) => (
                     <div key={tipIndex} className="flex items-start space-x-2">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-gray-700 text-sm">{tip}</span>
                     </div>
                   ))}
@@ -179,8 +179,8 @@ export default function PraktischeTipsPage() {
           
           <div className="space-y-4">
             {developmentTips.map((ageGroup, index) => (
-              <div key={index} className="border-l-4 border-blue-500 pl-4 py-2">
-                <h3 className="font-medium text-blue-800 mb-2">{ageGroup.age}:</h3>
+              <div key={index} className="border-l-4 border-primary pl-4 py-2">
+                <h3 className="font-medium text-primary mb-2">{ageGroup.age}:</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                   {ageGroup.tips.map((tip, tipIndex) => (
                     <div key={tipIndex} className="text-sm text-gray-700 bg-gray-50 px-3 py-2 rounded">

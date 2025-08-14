@@ -27,7 +27,7 @@ export default function OverOnsPage() {
     <Layout>
       <div className="space-y-6">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-gray-800 mb-3 flex items-center">
+          <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
             <Users className="w-6 h-6 mr-3 text-primary" />
             Over Ons
           </h1>
@@ -37,12 +37,12 @@ export default function OverOnsPage() {
         </div>
 
         {/* Mission */}
-        <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl shadow-lg p-6 text-white">
+        <div className="bg-gradient-to-br from-primary to-gray-700 rounded-2xl shadow-lg p-6 text-white">
           <h2 className="text-xl font-semibold mb-4 flex items-center">
             <Heart className="w-6 h-6 mr-2 text-red-300" />
             Onze Missie
           </h2>
-          <p className="text-blue-100 leading-relaxed">
+          <p className="text-gray-100 leading-relaxed">
             Wij geloven dat elke ouder toegang moet hebben tot betrouwbare, evidence-based informatie over flesvoeding. 
             Onze missie is om ouders te ondersteunen met praktische tools en kennis, zodat ze zelfverzekerde beslissingen 
             kunnen nemen over de voeding van hun baby. We maken complexe voedingsrichtlijnen toegankelijk en begrijpelijk 
@@ -70,8 +70,8 @@ export default function OverOnsPage() {
               </div>
               
               <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <span className="text-blue-600 font-bold">✓</span>
+                <div className="w-8 h-8 bg-default rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-primary font-bold">✓</span>
                 </div>
                 <div>
                   <h3 className="font-medium text-gray-800">Expert Team</h3>
@@ -133,8 +133,8 @@ export default function OverOnsPage() {
           
           <div className="space-y-4">
             <div className="bg-default rounded-xl p-4">
-              <h3 className="font-medium text-blue-800 mb-2">Nederlandse Richtlijnen</h3>
-              <p className="text-sm text-blue-700">
+              <h3 className="font-medium text-primary mb-2">Nederlandse Richtlijnen</h3>
+              <p className="text-sm text-gray-700">
                 Onze calculator gebruikt de officiële Nederlandse norm van 150ml flesvoeding per kg lichaamsgewicht per dag, 
                 aangepast voor leeftijd volgens de richtlijnen van het Voedingscentrum.
               </p>
@@ -170,7 +170,7 @@ export default function OverOnsPage() {
               <div key={index} className="text-center">
                 <div className="text-6xl mb-3">{member.avatar}</div>
                 <h3 className="font-semibold text-gray-800 mb-1">{member.name}</h3>
-                <p className="text-blue-600 text-sm font-medium mb-3">{member.role}</p>
+                <p className="text-primary text-sm font-medium mb-3">{member.role}</p>
                 <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
               </div>
             ))}
@@ -209,16 +209,16 @@ export default function OverOnsPage() {
         </div>
 
         {/* Contact CTA */}
-        <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl shadow-lg p-6 text-white">
+        <div className="bg-gradient-to-br from-primary to-gray-700 rounded-2xl shadow-lg p-6 text-white">
           <h2 className="font-semibold mb-2">Vragen of feedback?</h2>
-          <p className="text-blue-100 mb-4">
+          <p className="text-gray-100 mb-4">
             We horen graag van je! Neem contact met ons op voor vragen, suggesties of als je meer wilt weten over onze aanpak.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
-            <button className="bg-white text-blue-600 hover:bg-default font-medium py-2 px-4 rounded-lg transition-colors">
+            <button className="bg-white text-primary hover:bg-default font-medium py-2 px-4 rounded-lg transition-colors">
               Contact opnemen
             </button>
-            <button className="bg-blue-400 hover:bg-blue-300 text-white font-medium py-2 px-4 rounded-lg transition-colors">
+            <button className="bg-gray-500 hover:bg-gray-400 text-white font-medium py-2 px-4 rounded-lg transition-colors">
               Feedback versturen
             </button>
           </div>

@@ -61,7 +61,7 @@ export default function FAQPage() {
     <Layout>
       <div className="space-y-6">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-gray-800 mb-3 flex items-center">
+          <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
             <Info className="w-6 h-6 mr-3 text-primary" />
             Veelgestelde Vragen
           </h1>
@@ -83,7 +83,7 @@ export default function FAQPage() {
                   onClick={() => setSelectedCategory(category.id)}
                   className={`p-4 rounded-xl border transition-all text-left ${
                     selectedCategory === category.id
-                      ? 'bg-default border-blue-200 text-blue-700'
+                      ? 'bg-default border-gray-200 text-primary'
                       : 'bg-white border-gray-200 hover:border-primary text-gray-700'
                   }`}
                 >
@@ -122,12 +122,12 @@ export default function FAQPage() {
         </div>
 
         {/* Contact CTA */}
-        <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl shadow-lg p-6 text-white">
+        <div className="bg-gradient-to-br from-primary to-gray-700 rounded-2xl shadow-lg p-6 text-white">
           <h2 className="font-semibold mb-2">Vraag niet gevonden?</h2>
-          <p className="text-blue-100 mb-4">
+          <p className="text-gray-100 mb-4">
             Neem contact met ons op voor persoonlijke ondersteuning bij uw vragen over flesvoeding.
           </p>
-          <button className="bg-white text-blue-600 hover:bg-default font-medium py-2 px-4 rounded-lg transition-colors">
+          <button className="bg-white text-primary hover:bg-default font-medium py-2 px-4 rounded-lg transition-colors">
             Contact opnemen
           </button>
         </div>

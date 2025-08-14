@@ -260,7 +260,7 @@ FlesvoedingCalculator.nl - Betrouwbare informatie voor flesvoeding
     <Layout>
       <div className="space-y-6">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-gray-800 mb-3 flex items-center">
+          <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
             <Calendar className="w-6 h-6 mr-3 text-primary" />
             Voedingsschema&apos;s
           </h1>
@@ -297,7 +297,7 @@ FlesvoedingCalculator.nl - Betrouwbare informatie voor flesvoeding
           <select
             value={feedingFrequency}
             onChange={(e) => setFeedingFrequency(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-blue-100 transition-all outline-none appearance-none bg-white"
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none appearance-none bg-white"
           >
             {feedingOptions.map((option) => (
               <option key={option.id} value={option.id}>
@@ -319,8 +319,8 @@ FlesvoedingCalculator.nl - Betrouwbare informatie voor flesvoeding
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                 <div className="bg-default rounded-xl p-4">
-                  <div className="font-medium text-blue-800">Aantal voedingen</div>
-                  <div className="text-blue-600">{currentSchema.feeds}</div>
+                  <div className="font-medium text-primary">Aantal voedingen</div>
+                  <div className="text-gray-700">{currentSchema.feeds}</div>
                 </div>
                 <div className="bg-green-50 rounded-xl p-4">
                   <div className="font-medium text-green-800">Hoeveelheid</div>
@@ -380,7 +380,7 @@ FlesvoedingCalculator.nl - Betrouwbare informatie voor flesvoeding
               <div className="space-y-3">
                 <button 
                   onClick={downloadPDF}
-                  className="w-full bg-default0 hover:bg-blue-600 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2"
+                  className="w-full bg-primary hover:bg-gray-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2"
                 >
                   <Download className="w-4 h-4" />
                   <span>PDF Schema</span>
@@ -406,7 +406,7 @@ FlesvoedingCalculator.nl - Betrouwbare informatie voor flesvoeding
               </p>
               <Link 
                 href="/"
-                className="block w-full bg-blue-100 hover:bg-blue-200 text-blue-700 font-medium py-2 px-4 rounded-lg transition-colors text-center"
+                className="block w-full bg-default hover:bg-gray-200 text-primary font-medium py-2 px-4 rounded-lg transition-colors text-center"
               >
                 Naar Calculator
               </Link>

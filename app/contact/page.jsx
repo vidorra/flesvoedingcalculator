@@ -6,7 +6,7 @@ export default function ContactPage() {
     <Layout>
       <div className="space-y-6">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-gray-800 mb-3 flex items-center">
+          <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
             <Mail className="w-6 h-6 mr-3 text-primary" />
             Contact
           </h1>

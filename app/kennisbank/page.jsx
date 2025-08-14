@@ -170,7 +170,7 @@ export default function KennisbankPage() {
     <Layout>
       <div className="space-y-6">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-gray-800 mb-3 flex items-center">
+          <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
             <BookOpen className="w-6 h-6 mr-3 text-primary" />
             Kennisbank
           </h1>
@@ -188,7 +188,7 @@ export default function KennisbankPage() {
               value={filteredContent}
               onChange={(e) => setFilteredContent(e.target.value)}
               placeholder="Zoek op leeftijd, onderwerp of vraag..."
-              className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-blue-100 transition-all outline-none"
+              className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none"
             />
           </div>
         </div>
@@ -271,7 +271,7 @@ export default function KennisbankPage() {
             {knowledgeCategories.map((category) => {
               const Icon = category.icon
               const colorClasses = {
-                blue: 'bg-blue-50 border-blue-200 text-blue-800 hover:bg-blue-100',
+                blue: 'bg-gray-50 border-gray-200 text-primary hover:bg-gray-100',
                 purple: 'bg-purple-50 border-purple-200 text-purple-800 hover:bg-purple-100',
                 green: 'bg-green-50 border-green-200 text-green-800 hover:bg-green-100',
                 orange: 'bg-orange-50 border-orange-200 text-orange-800 hover:bg-orange-100',
@@ -360,10 +360,10 @@ export default function KennisbankPage() {
             Visuele Guides
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="p-4 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200">
-              <h3 className="font-medium text-blue-800 mb-2">Flesvoeding bereiden in 6 stappen</h3>
-              <p className="text-sm text-blue-600 mb-3">Visuele stap-voor-stap handleiding</p>
-              <button className="text-blue-600 hover:text-blue-700 font-medium text-sm flex items-center">
+            <div className="p-4 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200">
+              <h3 className="font-medium text-primary mb-2">Flesvoeding bereiden in 6 stappen</h3>
+              <p className="text-sm text-gray-600 mb-3">Visuele stap-voor-stap handleiding</p>
+              <button className="text-primary hover:text-gray-700 font-medium text-sm flex items-center">
                 Bekijk infographic <ArrowRight className="w-4 h-4 ml-1" />
               </button>
             </div>

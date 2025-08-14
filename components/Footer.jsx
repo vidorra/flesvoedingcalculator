@@ -41,7 +41,7 @@ export default function Footer() {
             {/* Brand */}
             <div className="md:col-span-1">
               <div className="flex items-center space-x-2 mb-4">
-                <Baby className="w-5 h-5 text-blue-500" />
+                <Baby className="w-5 h-5 text-primary" />
                 <span className="font-bold text-gray-800">FlesvoedingCalculator.nl</span>
               </div>
               <p className="text-sm text-gray-600 leading-relaxed">
@@ -57,7 +57,7 @@ export default function Footer() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                    className="block text-sm text-gray-600 hover:text-primary transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -71,13 +71,13 @@ export default function Footer() {
               <div className="space-y-2 text-sm text-gray-600">
                 <button 
                   onClick={() => setShowDisclaimer(true)}
-                  className="block hover:text-blue-600 transition-colors"
+                  className="block hover:text-primary transition-colors"
                 >
                   Medische disclaimer
                 </button>
-                <a href="#" className="block hover:text-blue-600 transition-colors">Privacy beleid</a>
-                <a href="#" className="block hover:text-blue-600 transition-colors">Gebruiksvoorwaarden</a>
-                <a href="#" className="block hover:text-blue-600 transition-colors">Contact</a>
+                <a href="#" className="block hover:text-primary transition-colors">Privacy beleid</a>
+                <a href="#" className="block hover:text-primary transition-colors">Gebruiksvoorwaarden</a>
+                <a href="#" className="block hover:text-primary transition-colors">Contact</a>
               </div>
             </div>
 
@@ -85,16 +85,16 @@ export default function Footer() {
             <div>
               <h3 className="font-semibold text-gray-800 mb-3">Bronnen</h3>
               <div className="space-y-2 text-sm text-gray-600">
-                <a href="https://www.voedingscentrum.nl" target="_blank" rel="noopener noreferrer" className="block hover:text-blue-600 transition-colors">
+                <a href="https://www.voedingscentrum.nl" target="_blank" rel="noopener noreferrer" className="block hover:text-primary transition-colors">
                   Voedingscentrum
                 </a>
-                <a href="https://www.ncj.nl" target="_blank" rel="noopener noreferrer" className="block hover:text-blue-600 transition-colors">
+                <a href="https://www.ncj.nl" target="_blank" rel="noopener noreferrer" className="block hover:text-primary transition-colors">
                   NCJ
                 </a>
-                <a href="https://www.nvk.nl" target="_blank" rel="noopener noreferrer" className="block hover:text-blue-600 transition-colors">
+                <a href="https://www.nvk.nl" target="_blank" rel="noopener noreferrer" className="block hover:text-primary transition-colors">
                   NVK
                 </a>
-                <a href="https://www.knov.nl" target="_blank" rel="noopener noreferrer" className="block hover:text-blue-600 transition-colors">
+                <a href="https://www.knov.nl" target="_blank" rel="noopener noreferrer" className="block hover:text-primary transition-colors">
                   KNOV
                 </a>
               </div>

@@ -63,19 +63,19 @@ export default function ProblemenOplossenPage() {
       <div className="space-y-6">
         {/* Breadcrumb */}
         <div className="flex items-center space-x-2 text-sm text-gray-600">
-          <Link href="/" className="hover:text-blue-600 flex items-center">
+          <Link href="/" className="hover:text-primary flex items-center">
             <Home className="w-4 h-4 mr-1" />
             Home
           </Link>
           <ArrowRight className="w-4 h-4" />
-          <Link href="/kennisbank" className="hover:text-blue-600">Kennisbank</Link>
+          <Link href="/kennisbank" className="hover:text-primary">Kennisbank</Link>
           <ArrowRight className="w-4 h-4" />
-          <span className="text-blue-600">Problemen Oplossen</span>
+          <span className="text-primary">Problemen Oplossen</span>
         </div>
 
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-gray-800 mb-3 flex items-center">
+          <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
             <AlertCircle className="w-6 h-6 mr-3 text-primary" />
             Problemen Oplossen
           </h1>
@@ -149,13 +149,13 @@ export default function ProblemenOplossenPage() {
             </div>
           </div>
 
-          <div className="bg-default rounded-2xl border border-blue-200 p-6">
-            <h3 className="font-medium text-blue-800 mb-3">Tips bij spugen:</h3>
+          <div className="bg-default rounded-2xl border border-gray-200 p-6">
+            <h3 className="font-medium text-primary mb-3">Tips bij spugen:</h3>
             <div className="space-y-2">
               {refluxTips.map((tip, index) => (
                 <div key={index} className="flex items-start space-x-2">
                   <div className="w-2 h-2 bg-default0 rounded-full mt-2 flex-shrink-0"></div>
-                  <span className="text-blue-700 text-sm">{tip}</span>
+                  <span className="text-gray-700 text-sm">{tip}</span>
                 </div>
               ))}
             </div>
@@ -214,12 +214,12 @@ export default function ProblemenOplossenPage() {
             </div>
             
             <div>
-              <h3 className="font-medium text-blue-800 mb-3">Eerste hulp:</h3>
+              <h3 className="font-medium text-primary mb-3">Eerste hulp:</h3>
               <div className="space-y-2">
                 {diarrheaFirstAid.map((aid, index) => (
                   <div key={index} className="flex items-start space-x-2">
                     <div className="w-2 h-2 bg-default0 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-blue-700 text-sm">{aid}</span>
+                    <span className="text-gray-700 text-sm">{aid}</span>
                   </div>
                 ))}
               </div>
