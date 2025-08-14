@@ -19,4 +19,7 @@ RUN npm run build
 # run
 EXPOSE 3000
 
+ENV HOSTNAME=0.0.0.0
+ENV PORT=3000
+
 CMD [ "npm", "start" ]
