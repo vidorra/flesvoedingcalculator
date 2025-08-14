@@ -1,11 +1,10 @@
 'use client'
 import { useState } from 'react'
 import Layout from '../../components/Layout'
-import { Info, Search, Calculator, Baby, AlertCircle, ChevronDown, ChevronUp } from 'lucide-react'
+import { Info, Calculator, Baby, AlertCircle, ChevronDown, ChevronUp } from 'lucide-react'
 
 export default function FAQPage() {
   const [selectedCategory, setSelectedCategory] = useState('calculator')
-  const [searchQuery, setSearchQuery] = useState('')
   const [openFAQ, setOpenFAQ] = useState(null)
 
   const categories = [
@@ -71,19 +70,6 @@ export default function FAQPage() {
           </p>
         </div>
 
-        {/* Search */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-4">
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Zoek in veelgestelde vragen..."
-              className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all outline-none"
-            />
-          </div>
-        </div>
 
         {/* Categories */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
