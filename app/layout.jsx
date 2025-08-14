@@ -3,13 +3,18 @@ import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}
+
 export const metadata = {
+  metadataBase: new URL('https://flesvoedingcalculator.nl'),
   title: 'FlesvoedingCalculator.nl - Bereken de juiste hoeveelheid',
   description: 'Gratis Nederlandse flesvoeding calculator voor ouders. Bereken hoeveel flesvoeding jouw baby nodig heeft volgens officiële richtlijnen.',
   keywords: 'flesvoeding, calculator, baby, nederland',
   robots: 'index, follow',
   authors: [{ name: 'FlesvoedingCalculator.nl' }],
-  viewport: 'width=device-width, initial-scale=1',
   openGraph: {
     title: 'FlesvoedingCalculator.nl',
     description: 'Bereken hoeveel flesvoeding jouw baby nodig heeft',
