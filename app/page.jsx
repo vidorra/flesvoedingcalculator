@@ -96,7 +96,7 @@ export default function HomePage() {
                 <select
                   value={ageMonths}
                   onChange={(e) => setAgeMonths(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none appearance-none bg-white"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none appearance-none bg-white"
                 >
                   <option value="0">0-1 maand</option>
                   <option value="1">1-2 maanden</option>
@@ -121,7 +121,7 @@ export default function HomePage() {
                     onChange={(e) => setWeight(e.target.value)}
                     placeholder="Bijv. 4.5"
                     step="0.1"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none"
                   />
                   <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm">kg</span>
                 </div>
@@ -135,7 +135,7 @@ export default function HomePage() {
                 <select
                   value={feedingsPerDay}
                   onChange={(e) => setFeedingsPerDay(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none appearance-none bg-white"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none appearance-none bg-white"
                 >
                   <option value="4">4 voedingen (om de 6 uur)</option>
                   <option value="5">5 voedingen (om de 4-5 uur)</option>
