@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
-import { Calendar, Clock, Target, ArrowRight, Download, Calculator, Baby, Package, Utensils, Milk } from 'lucide-react'
+import { Calendar, Clock, Target, ArrowRight, Download, Calculator, Baby, Moon, Utensils, Milk } from 'lucide-react'
 
 export default function VoedingsschemasPage() {
   const [selectedAge, setSelectedAge] = useState('0-3m')
@@ -10,7 +10,7 @@ export default function VoedingsschemasPage() {
 
   const ageGroups = [
     { id: '0-3m', name: '0-3 maanden', icon: Baby },
-    { id: '3-6m', name: '3-6 maanden', icon: Package },
+    { id: '3-6m', name: '3-6 maanden', icon: Moon },
     { id: '6-12m', name: '6-12 maanden', icon: Utensils },
     { id: '12m+', name: '12+ maanden', icon: Milk }
   ]
