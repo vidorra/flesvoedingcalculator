@@ -11,7 +11,7 @@ export default function Header() {
   const navigation = [
     { id: '/', name: 'Calculator', icon: Calculator, href: '/' },
     { id: '/kennisbank', name: 'Kennisbank', icon: BookOpen, href: '/kennisbank' },
-    { id: '/voedingsschemas', name: 'Voedingsschema&apos;s', icon: Calendar, href: '/voedingsschemas' },
+    { id: '/voedingsschemas', name: "Voedingsschema's", icon: Calendar, href: '/voedingsschemas' },
     { id: '/faq', name: 'FAQ', icon: Info, href: '/faq' },
     { id: '/blog', name: 'Blog', icon: FileText, href: '/blog' },
     { id: '/over-ons', name: 'Over Ons', icon: Users, href: '/over-ons' }
