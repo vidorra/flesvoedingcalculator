@@ -50,19 +50,19 @@ export default function VoedingstechniekenPage() {
       <div className="space-y-6">
         {/* Breadcrumb */}
         <div className="flex items-center space-x-2 text-sm text-gray-600">
-          <Link href="/" className="hover:text-blue-600 flex items-center">
+          <Link href="/" className="hover:text-primary flex items-center">
             <Home className="w-4 h-4 mr-1" />
             Home
           </Link>
           <ArrowRight className="w-4 h-4" />
-          <Link href="/kennisbank" className="hover:text-blue-600">Kennisbank</Link>
+          <Link href="/kennisbank" className="hover:text-primary">Kennisbank</Link>
           <ArrowRight className="w-4 h-4" />
-          <span className="text-blue-600">Voedingstechnieken</span>
+          <span className="text-primary">Voedingstechnieken</span>
         </div>
 
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-gray-800 mb-3 flex items-center">
+          <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
             <Wrench className="w-6 h-6 mr-3 text-primary" />
             Voedingstechnieken
           </h1>

@@ -12,7 +12,13 @@
   /* Custom color variables */
   --primary: 16, 148, 174;
   --primary-hover: 17, 122, 143;
+  --primary-dark: 12, 118, 142;
+  --primary-light: 20, 184, 218;
   --bg-default: 244, 250, 252;
+  --bg-primary: 16, 148, 174;
+  --bg-primary-hover: 17, 122, 143;
+  --text-primary: 16, 148, 174;
+  --border-primary: 16, 148, 174;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -43,6 +49,14 @@ body {
   background-color: rgb(var(--primary-hover));
 }
 
+.bg-primary-dark {
+  background-color: rgb(var(--primary-dark));
+}
+
+.bg-primary-light {
+  background-color: rgb(var(--primary-light));
+}
+
 .bg-default {
   background-color: rgb(var(--bg-default));
 }
@@ -51,7 +65,31 @@ body {
   color: rgb(var(--primary));
 }
 
+.text-primary-dark {
+  color: rgb(var(--primary-dark));
+}
+
+.text-primary-light {
+  color: rgb(var(--primary-light));
+}
+
 .border-primary {
+  border-color: rgb(var(--primary));
+}
+
+.border-primary-light {
+  border-color: rgb(var(--primary-light));
+}
+
+.hover\:text-primary:hover {
+  color: rgb(var(--primary));
+}
+
+.hover\:bg-primary:hover {
+  background-color: rgb(var(--primary));
+}
+
+.hover\:border-primary:hover {
   border-color: rgb(var(--primary));
 }
 

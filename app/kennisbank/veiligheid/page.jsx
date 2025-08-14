@@ -42,19 +42,19 @@ export default function VeiligheidPage() {
       <div className="space-y-6">
         {/* Breadcrumb */}
         <div className="flex items-center space-x-2 text-sm text-gray-600">
-          <Link href="/" className="hover:text-blue-600 flex items-center">
+          <Link href="/" className="hover:text-primary flex items-center">
             <Home className="w-4 h-4 mr-1" />
             Home
           </Link>
           <ArrowRight className="w-4 h-4" />
-          <Link href="/kennisbank" className="hover:text-blue-600">Kennisbank</Link>
+          <Link href="/kennisbank" className="hover:text-primary">Kennisbank</Link>
           <ArrowRight className="w-4 h-4" />
-          <span className="text-blue-600">Veiligheidsrichtlijnen</span>
+          <span className="text-primary">Veiligheidsrichtlijnen</span>
         </div>
 
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-gray-800 mb-3 flex items-center">
+          <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
             <AlertTriangle className="w-6 h-6 mr-3 text-primary" />
             Belangrijke Veiligheidsrichtlijnen
           </h1>
@@ -123,15 +123,15 @@ export default function VeiligheidPage() {
             </div>
           </div>
 
-          <div className="bg-default rounded-2xl border border-blue-200 p-6">
-            <h2 className="text-lg font-semibold text-blue-800 mb-4">Bij vermoeden allergie:</h2>
+          <div className="bg-default rounded-2xl border border-gray-200 p-6">
+            <h2 className="text-lg font-semibold text-primary mb-4">Bij vermoeden allergie:</h2>
             <div className="space-y-3">
               {allergyActions.map((action, index) => (
                 <div key={index} className="flex items-start space-x-2">
                   <div className="w-6 h-6 bg-default0 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">
                     {index + 1}
                   </div>
-                  <span className="text-blue-800 text-sm">{action}</span>
+                  <span className="text-gray-700 text-sm">{action}</span>
                 </div>
               ))}
             </div>
@@ -150,9 +150,9 @@ export default function VeiligheidPage() {
             </div>
             
             <div className="p-4 bg-default rounded-lg text-center">
-              <h3 className="font-bold text-blue-800 mb-2">Huisartsenpraktijk</h3>
-              <p className="text-lg font-bold text-blue-600">Uw eigen nummer</p>
-              <p className="text-xs text-blue-700">Voor advies en afspraken</p>
+              <h3 className="font-bold text-primary mb-2">Huisartsenpraktijk</h3>
+              <p className="text-lg font-bold text-primary">Uw eigen nummer</p>
+              <p className="text-xs text-gray-600">Voor advies en afspraken</p>
             </div>
             
             <div className="p-4 bg-green-50 rounded-lg text-center">

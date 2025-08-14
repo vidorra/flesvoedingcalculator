@@ -75,7 +75,7 @@ export default function HomePage() {
         <div className="col-span-12 lg:col-span-7">
           {/* Page Title - No card container */}
           <div className="mb-6">
-            <h1 className="text-2xl font-bold text-gray-800 mb-3 flex items-center">
+            <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
               <Baby className="w-6 h-6 mr-3 text-primary" />
               Bereken de juiste hoeveelheid flesvoeding
             </h1>
@@ -162,7 +162,7 @@ export default function HomePage() {
           {results && (
             <div className="space-y-4">
               {/* Main Results */}
-              <div className="bg-gradient-to-br from-primary to-primary-dark rounded-2xl shadow-lg p-6 text-white">
+              <div className="rounded-2xl shadow-lg p-6 text-white" style={{background: 'linear-gradient(135deg, rgb(16, 148, 174), rgb(12, 118, 142))'}}>
                 <h3 className="text-lg font-semibold mb-4 flex items-center">
                   <Baby className="w-5 h-5 mr-2" />
                   Aanbevolen Hoeveelheden
