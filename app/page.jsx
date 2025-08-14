@@ -70,7 +70,7 @@ export default function HomePage() {
 
   return (
     <Layout>
-      <div className="grid grid-cols-12 gap-6">
+      <div className="grid grid-cols-12 gap-6 min-h-screen">
         {/* Main Calculator Content - 8 columns on desktop, full width on mobile */}
         <div className="col-span-12 lg:col-span-8">
           {/* Introduction Card */}
@@ -159,7 +159,7 @@ export default function HomePage() {
 
           {/* Results */}
           {results && (
-            <div className="space-y-4 animate-in slide-in-from-bottom duration-300">
+            <div className="space-y-4">
               {/* Main Results */}
               <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl shadow-lg p-6 text-white">
                 <h3 className="text-lg font-semibold mb-4 flex items-center">
@@ -200,7 +200,7 @@ export default function HomePage() {
 
               {/* Detailed Schedule */}
               {showDetails && (
-                <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6 animate-in slide-in-from-top duration-300">
+                <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
                   <h4 className="font-semibold text-gray-800 mb-4 flex items-center">
                     <Clock className="w-5 h-5 mr-2 text-blue-500" />
                     Voorbeeldschema (flexibel aan te passen)
