@@ -1,33 +1,65 @@
 'use client'
 import { useState } from 'react'
 import Layout from '../../components/Layout'
-import { BookOpen, Search, Info, ArrowRight, Star, Clock } from 'lucide-react'
+import Link from 'next/link'
+import { BookOpen, Search, Info, ArrowRight, Star, Clock, Baby, Shield, Wrench, AlertCircle, Refrigerator, Lightbulb, AlertTriangle } from 'lucide-react'
 
 export default function KennisbankPage() {
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [filteredContent, setFilteredContent] = useState('')
 
-  const categories = [
-    { id: 'all', name: 'Alle categorieën', count: 45 },
-    { id: 'basis', name: 'Basis flesvoeding informatie', count: 12 },
-    { id: 'soorten', name: 'Soorten flesvoeding (1, 2, 3)', count: 8 },
-    { id: 'technieken', name: 'Voedingstechnieken', count: 10 },
-    { id: 'problemen', name: 'Problemen oplossen', count: 9 },
-    { id: 'hygiene', name: 'Hygiëne en bereiding', count: 6 }
+  const knowledgeCategories = [
+    {
+      id: 'basis-flesvoeding',
+      title: 'Basis Flesvoeding',
+      description: 'Fundamentele informatie voor beginnende ouders',
+      icon: Baby,
+      color: 'blue'
+    },
+    {
+      id: 'soorten-flesvoeding',
+      title: 'Soorten Flesvoeding',
+      description: 'Startmelk, opvolgmelk en peutermelk uitgelegd',
+      icon: Star,
+      color: 'purple'
+    },
+    {
+      id: 'voedingstechnieken',
+      title: 'Voedingstechnieken',
+      description: 'Juiste houding en technieken voor flesvoeding',
+      icon: Wrench,
+      color: 'green'
+    },
+    {
+      id: 'problemen-oplossen',
+      title: 'Problemen Oplossen',
+      description: 'Hulp bij veelvoorkomende problemen',
+      icon: AlertCircle,
+      color: 'orange'
+    },
+    {
+      id: 'hygiene-bereiding',
+      title: 'Hygiëne & Bereiding',
+      description: 'Veilig bereiden en bewaren van flesvoeding',
+      icon: Shield,
+      color: 'teal'
+    },
+    {
+      id: 'veiligheid',
+      title: 'Veiligheidsrichtlijnen',
+      description: 'Belangrijke veiligheidsinformatie',
+      icon: AlertTriangle,
+      color: 'red'
+    },
+    {
+      id: 'praktische-tips',
+      title: 'Praktische Tips',
+      description: 'Handige tips voor het dagelijks leven',
+      icon: Lightbulb,
+      color: 'yellow'
+    }
   ]
 
-  const articles = [
-    { id: 1, title: 'Hoe bereid je flesvoeding veilig?', category: 'hygiene', readTime: '5 min', popular: true },
-    { id: 2, title: 'Verschil tussen startvoeding en opvolgmelk', category: 'soorten', readTime: '3 min', popular: true },
-    { id: 3, title: 'Hoeveel flesvoeding heeft mijn baby nodig?', category: 'basis', readTime: '4 min', popular: true },
-    { id: 4, title: 'Baby weigert de fles - wat nu?', category: 'problemen', readTime: '6 min', popular: false },
-    { id: 5, title: 'Temperatuur van flesvoeding controleren', category: 'technieken', readTime: '2 min', popular: false },
-    { id: 6, title: 'Wanneer overstappen naar opvolgmelk?', category: 'soorten', readTime: '4 min', popular: true }
-  ]
-
-  const filteredArticles = selectedCategory === 'all' 
-    ? articles 
-    : articles.filter(article => article.category === selectedCategory)
 
   return (
     <Layout>
@@ -56,57 +88,92 @@ export default function KennisbankPage() {
           </div>
         </div>
 
-        {/* Categories */}
+        {/* Knowledge Base Categories */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
-          <h2 className="font-semibold text-gray-800 mb-4">Categorieën</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-            {categories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setSelectedCategory(category.id)}
-                className={`p-4 rounded-xl border transition-all text-left ${
-                  selectedCategory === category.id
-                    ? 'bg-blue-50 border-blue-200 text-blue-700'
-                    : 'bg-white border-gray-200 hover:border-blue-200 text-gray-700'
-                }`}
-              >
-                <div className="font-medium">{category.name}</div>
-                <div className="text-sm text-gray-500 mt-1">{category.count} artikelen</div>
-              </button>
-            ))}
+          <h2 className="font-semibold text-gray-800 mb-4">Kennisbank Onderwerpen</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {knowledgeCategories.map((category) => {
+              const Icon = category.icon
+              const colorClasses = {
+                blue: 'bg-blue-50 border-blue-200 text-blue-800 hover:bg-blue-100',
+                purple: 'bg-purple-50 border-purple-200 text-purple-800 hover:bg-purple-100',
+                green: 'bg-green-50 border-green-200 text-green-800 hover:bg-green-100',
+                orange: 'bg-orange-50 border-orange-200 text-orange-800 hover:bg-orange-100',
+                teal: 'bg-teal-50 border-teal-200 text-teal-800 hover:bg-teal-100',
+                red: 'bg-red-50 border-red-200 text-red-800 hover:bg-red-100',
+                yellow: 'bg-yellow-50 border-yellow-200 text-yellow-800 hover:bg-yellow-100'
+              }
+              return (
+                <Link
+                  key={category.id}
+                  href={`/kennisbank/${category.id}`}
+                  className={`p-4 rounded-xl border transition-all block ${colorClasses[category.color]}`}
+                >
+                  <div className="flex items-start space-x-3">
+                    <Icon className="w-6 h-6 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h3 className="font-medium mb-1">{category.title}</h3>
+                      <p className="text-sm opacity-80">{category.description}</p>
+                    </div>
+                  </div>
+                </Link>
+              )
+            })}
           </div>
         </div>
 
-        {/* Articles */}
+        {/* Quick Access */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="font-semibold text-gray-800">
-              {selectedCategory === 'all' ? 'Alle artikelen' : categories.find(c => c.id === selectedCategory)?.name}
-            </h2>
-            <span className="text-sm text-gray-500">{filteredArticles.length} artikelen</span>
-          </div>
-          
-          <div className="space-y-4">
-            {filteredArticles.map((article) => (
-              <div key={article.id} className="p-4 rounded-xl border border-gray-100 hover:border-blue-200 transition-colors cursor-pointer">
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center space-x-2 mb-2">
-                      <h3 className="font-medium text-gray-800">{article.title}</h3>
-                      {article.popular && <Star className="w-4 h-4 text-yellow-500 fill-current" />}
-                    </div>
-                    <div className="flex items-center space-x-4 text-sm text-gray-500">
-                      <span className="flex items-center">
-                        <Clock className="w-4 h-4 mr-1" />
-                        {article.readTime}
-                      </span>
-                      <span className="capitalize">{categories.find(c => c.id === article.category)?.name}</span>
-                    </div>
-                  </div>
-                  <ArrowRight className="w-5 h-5 text-gray-400" />
+          <h2 className="font-semibold text-gray-800 mb-4">Snelle toegang</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Link 
+              href="/voedingsschemas"
+              className="p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-colors"
+            >
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="font-medium text-gray-800">Voedingsschema's</h3>
+                  <p className="text-sm text-gray-600 mt-1">Interactieve schema's per leeftijd</p>
                 </div>
+                <ArrowRight className="w-5 h-5 text-gray-400" />
               </div>
-            ))}
+            </Link>
+            <Link 
+              href="/"
+              className="p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-colors"
+            >
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="font-medium text-gray-800">Flesvoeding Calculator</h3>
+                  <p className="text-sm text-gray-600 mt-1">Bereken persoonlijke hoeveelheden</p>
+                </div>
+                <ArrowRight className="w-5 h-5 text-gray-400" />
+              </div>
+            </Link>
+            <Link 
+              href="/faq"
+              className="p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-colors"
+            >
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="font-medium text-gray-800">Veelgestelde Vragen</h3>
+                  <p className="text-sm text-gray-600 mt-1">Antwoorden op veel gestelde vragen</p>
+                </div>
+                <ArrowRight className="w-5 h-5 text-gray-400" />
+              </div>
+            </Link>
+            <Link 
+              href="/partners"
+              className="p-4 rounded-xl border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-colors"
+            >
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="font-medium text-gray-800">Partners & Merken</h3>
+                  <p className="text-sm text-gray-600 mt-1">Informatie over verschillende merken</p>
+                </div>
+                <ArrowRight className="w-5 h-5 text-gray-400" />
+              </div>
+            </Link>
           </div>
         </div>
 
