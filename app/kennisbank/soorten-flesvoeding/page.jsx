@@ -37,7 +37,7 @@ export default function SoortenFlesvoedingPage() {
           {/* Startvoeding (1) */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-default0 rounded-full flex items-center justify-center text-white font-bold">1</div>
+              <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold">1</div>
               <div>
                 <h2 className="text-lg font-semibold text-gray-800">Startvoeding (Nummer 1)</h2>
                 <p className="text-sm text-gray-600">0 tot 6 maanden</p>

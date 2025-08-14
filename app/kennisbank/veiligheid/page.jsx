@@ -128,7 +128,7 @@ export default function VeiligheidPage() {
             <div className="space-y-3">
               {allergyActions.map((action, index) => (
                 <div key={index} className="flex items-start space-x-2">
-                  <div className="w-6 h-6 bg-default0 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">
+                  <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">
                     {index + 1}
                   </div>
                   <span className="text-gray-700 text-sm">{action}</span>

@@ -154,7 +154,7 @@ export default function ProblemenOplossenPage() {
             <div className="space-y-2">
               {refluxTips.map((tip, index) => (
                 <div key={index} className="flex items-start space-x-2">
-                  <div className="w-2 h-2 bg-default0 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <span className="text-gray-700 text-sm">{tip}</span>
                 </div>
               ))}
@@ -218,7 +218,7 @@ export default function ProblemenOplossenPage() {
               <div className="space-y-2">
                 {diarrheaFirstAid.map((aid, index) => (
                   <div key={index} className="flex items-start space-x-2">
-                    <div className="w-2 h-2 bg-default0 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span className="text-gray-700 text-sm">{aid}</span>
                   </div>
                 ))}
