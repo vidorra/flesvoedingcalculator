@@ -2,17 +2,17 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
-import { Calendar, Clock, Target, ArrowRight, Download, Calculator } from 'lucide-react'
+import { Calendar, Clock, Target, ArrowRight, Download, Calculator, Baby, Package, Utensils, Milk } from 'lucide-react'
 
 export default function VoedingsschemasPage() {
   const [selectedAge, setSelectedAge] = useState('0-3m')
   const [feedingFrequency, setFeedingFrequency] = useState('default')
 
   const ageGroups = [
-    { id: '0-3m', name: '0-3 maanden', icon: '👶' },
-    { id: '3-6m', name: '3-6 maanden', icon: '🍼' },
-    { id: '6-12m', name: '6-12 maanden', icon: '🥄' },
-    { id: '12m+', name: '12+ maanden', icon: '🥛' }
+    { id: '0-3m', name: '0-3 maanden', icon: Baby },
+    { id: '3-6m', name: '3-6 maanden', icon: Package },
+    { id: '6-12m', name: '6-12 maanden', icon: Utensils },
+    { id: '12m+', name: '12+ maanden', icon: Milk }
   ]
 
   const feedingOptions = [
@@ -272,20 +272,25 @@ FlesvoedingCalculator.nl - Betrouwbare informatie voor flesvoeding
         {/* Age Tabs */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-            {ageGroups.map((group) => (
-              <button
-                key={group.id}
-                onClick={() => setSelectedAge(group.id)}
-                className={`p-3 rounded-xl transition-all text-center ${
-                  selectedAge === group.id
-                    ? 'bg-default0 text-white shadow-lg'
-                    : 'bg-gray-50 text-gray-700 hover:bg-default'
-                }`}
-              >
-                <div className="text-2xl mb-1">{group.icon}</div>
-                <div className="text-sm font-medium">{group.name}</div>
-              </button>
-            ))}
+            {ageGroups.map((group) => {
+              const Icon = group.icon
+              return (
+                <button
+                  key={group.id}
+                  onClick={() => setSelectedAge(group.id)}
+                  className={`p-3 rounded-xl transition-all text-center ${
+                    selectedAge === group.id
+                      ? 'bg-primary text-white shadow-lg'
+                      : 'bg-gray-50 text-gray-700 hover:bg-default'
+                  }`}
+                >
+                  <div className="mb-2">
+                    <Icon className="w-6 h-6 mx-auto" />
+                  </div>
+                  <div className="text-sm font-medium">{group.name}</div>
+                </button>
+              )
+            })}
           </div>
         </div>
 
@@ -322,13 +327,13 @@ FlesvoedingCalculator.nl - Betrouwbare informatie voor flesvoeding
                   <div className="font-medium text-primary">Aantal voedingen</div>
                   <div className="text-gray-700">{currentSchema.feeds}</div>
                 </div>
-                <div className="bg-green-50 rounded-xl p-4">
-                  <div className="font-medium text-green-800">Hoeveelheid</div>
-                  <div className="text-green-600">{currentSchema.amount}</div>
+                <div className="bg-gray-50 rounded-xl p-4">
+                  <div className="font-medium text-gray-800">Hoeveelheid</div>
+                  <div className="text-gray-700">{currentSchema.amount}</div>
                 </div>
-                <div className="bg-purple-50 rounded-xl p-4">
-                  <div className="font-medium text-purple-800">Interval</div>
-                  <div className="text-purple-600">{currentSchema.interval}</div>
+                <div className="bg-gray-100 rounded-xl p-4">
+                  <div className="font-medium text-gray-800">Interval</div>
+                  <div className="text-gray-700">{currentSchema.interval}</div>
                 </div>
               </div>
 
@@ -352,7 +357,7 @@ FlesvoedingCalculator.nl - Betrouwbare informatie voor flesvoeding
               <div className="space-y-2">
                 {currentAgeSchema.milestones.map((milestone, index) => (
                   <div key={index} className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-default0 rounded-full"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
                     <span className="text-gray-700">{milestone}</span>
                   </div>
                 ))}

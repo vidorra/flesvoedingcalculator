@@ -196,35 +196,41 @@ export default function KennisbankPage() {
         {/* Categories Filter */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="font-semibold text-gray-800 mb-4">Categorieën</h2>
-          <div className="space-y-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
             {/* All Categories */}
             <button
               onClick={() => setSelectedCategory('all')}
-              className={`w-full text-left p-3 rounded-lg transition-colors flex items-center justify-between ${
+              className={`text-left p-4 rounded-xl transition-colors ${
                 selectedCategory === 'all'
                   ? 'bg-primary/10 border border-primary text-primary'
-                  : 'hover:bg-gray-50 text-gray-700'
+                  : 'bg-gray-50 hover:bg-gray-100 text-gray-700 border border-gray-200'
               }`}
             >
-              <span className="font-medium">Alle categorieën</span>
-              <span className="text-sm opacity-70">{getArticleCount('all')} artikelen</span>
+              <div className="font-medium mb-1">Alle categorieën</div>
+              <div className="text-sm opacity-70">{getArticleCount('all')} artikelen</div>
             </button>
             
             {/* Individual Categories */}
-            {knowledgeCategories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setSelectedCategory(category.id)}
-                className={`w-full text-left p-3 rounded-lg transition-colors flex items-center justify-between ${
-                  selectedCategory === category.id
-                    ? 'bg-primary/10 border border-primary text-primary'
-                    : 'hover:bg-gray-50 text-gray-700'
-                }`}
-              >
-                <span className="font-medium">{category.title}</span>
-                <span className="text-sm opacity-70">{getArticleCount(category.id)} artikel{getArticleCount(category.id) !== 1 ? 'en' : ''}</span>
-              </button>
-            ))}
+            {knowledgeCategories.map((category) => {
+              const Icon = category.icon
+              return (
+                <button
+                  key={category.id}
+                  onClick={() => setSelectedCategory(category.id)}
+                  className={`text-left p-4 rounded-xl transition-colors ${
+                    selectedCategory === category.id
+                      ? 'bg-primary/10 border border-primary text-primary'
+                      : 'bg-gray-50 hover:bg-gray-100 text-gray-700 border border-gray-200'
+                  }`}
+                >
+                  <div className="flex items-center mb-2">
+                    <Icon className="w-5 h-5 mr-2" />
+                    <span className="font-medium">{category.title}</span>
+                  </div>
+                  <div className="text-sm opacity-70">{getArticleCount(category.id)} artikel{getArticleCount(category.id) !== 1 ? 'en' : ''}</div>
+                </button>
+              )
+            })}
           </div>
         </div>
 
