@@ -92,9 +92,9 @@ export default function HygieneBereidingPage() {
         </div>
 
         {/* Header */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="mb-6">
           <h1 className="text-2xl font-bold text-gray-800 mb-3 flex items-center">
-            <Shield className="w-6 h-6 mr-3 text-blue-500" />
+            <Shield className="w-6 h-6 mr-3 text-primary" />
             Hygiëne en Bereiding
           </h1>
           <p className="text-gray-600">
@@ -136,7 +136,7 @@ export default function HygieneBereidingPage() {
         </div>
 
         {/* Water for formula */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Water voor flesvoeding</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -168,7 +168,7 @@ export default function HygieneBereidingPage() {
 
         {/* Storage */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-semibold text-gray-800 mb-4">Poeder bewaren:</h2>
             <div className="space-y-2">
               {powderStorage.map((tip, index) => (
@@ -180,7 +180,7 @@ export default function HygieneBereidingPage() {
             </div>
           </div>
 
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
               <Refrigerator className="w-5 h-5 mr-2" />
               Bereide flesvoeding:
@@ -197,7 +197,7 @@ export default function HygieneBereidingPage() {
         </div>
 
         {/* Travel feeding */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Onderweg flesvoeding</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -228,7 +228,7 @@ export default function HygieneBereidingPage() {
         </div>
 
         {/* Bottle warmer vs microwave */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
             <Thermometer className="w-5 h-5 mr-2" />
             Flessenwarmer vs Magnetron
@@ -274,19 +274,19 @@ export default function HygieneBereidingPage() {
         </div>
 
         {/* Navigation */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Meer informatie</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 
               href="/kennisbank/veiligheid"
-              className="p-3 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
+              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
               <div className="font-medium text-gray-800">Veiligheidsrichtlijnen →</div>
               <div className="text-sm text-gray-600">Belangrijke veiligheidstips</div>
             </Link>
             <Link 
               href="/kennisbank/praktische-tips"
-              className="p-3 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
+              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
               <div className="font-medium text-gray-800">Praktische Tips →</div>
               <div className="text-sm text-gray-600">Handige tips voor ouders</div>

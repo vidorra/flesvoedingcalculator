@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,6 +8,11 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  
+  /* Custom color variables */
+  --primary: 16, 148, 174;
+  --primary-hover: 17, 122, 143;
+  --bg-default: 244, 250, 252;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,6 +24,7 @@
 }
 
 body {
+  font-family: 'Lexend Deca', sans-serif;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,6 +32,27 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+/* Custom color utilities */
+.bg-primary {
+  background-color: rgb(var(--primary));
+}
+
+.bg-primary-hover:hover {
+  background-color: rgb(var(--primary-hover));
+}
+
+.bg-default {
+  background-color: rgb(var(--bg-default));
+}
+
+.text-primary {
+  color: rgb(var(--primary));
+}
+
+.border-primary {
+  border-color: rgb(var(--primary));
 }
 
 /* Removed conflicting animations that were causing content to disappear */

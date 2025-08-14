@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
-import { Baby, Calculator, Info, BookOpen, Calendar, FileText, Users, X, AlertCircle } from 'lucide-react'
+import { Baby, Calculator, Info, BookOpen, Calendar, Users, X, AlertCircle } from 'lucide-react'
 
 export default function Footer() {
   const [showDisclaimer, setShowDisclaimer] = useState(false)
@@ -11,7 +11,6 @@ export default function Footer() {
     { href: '/kennisbank', name: 'Kennisbank' },
     { href: '/voedingsschemas', name: 'Voedingsschema\'s' },
     { href: '/faq', name: 'FAQ' },
-    { href: '/blog', name: 'Blog' },
     { href: '/over-ons', name: 'Over Ons' }
   ]
 

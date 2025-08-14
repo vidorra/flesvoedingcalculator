@@ -75,9 +75,9 @@ export default function PraktischeTipsPage() {
         </div>
 
         {/* Header */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="mb-6">
           <h1 className="text-2xl font-bold text-gray-800 mb-3 flex items-center">
-            <Lightbulb className="w-6 h-6 mr-3 text-yellow-500" />
+            <Lightbulb className="w-6 h-6 mr-3 text-primary" />
             Praktische Tips
           </h1>
           <p className="text-gray-600">
@@ -153,7 +153,7 @@ export default function PraktischeTipsPage() {
         </div>
 
         {/* Organization tips */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Organisatie & Efficiëntie</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -174,7 +174,7 @@ export default function PraktischeTipsPage() {
         </div>
 
         {/* Age-specific tips */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Tips per Leeftijd</h2>
           
           <div className="space-y-4">
@@ -221,19 +221,19 @@ export default function PraktischeTipsPage() {
         </div>
 
         {/* Navigation */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Meer informatie</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 
               href="/voedingsschemas"
-              className="p-3 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
+              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-gray-800">Voedingsschema's →</div>
-              <div className="text-sm text-gray-600">Interactieve schema's per leeftijd</div>
+              <div className="font-medium text-gray-800">Voedingsschema&apos;s →</div>
+              <div className="text-sm text-gray-600">Interactieve schema&apos;s per leeftijd</div>
             </Link>
             <Link 
               href="/"
-              className="p-3 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
+              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
               <div className="font-medium text-gray-800">Calculator →</div>
               <div className="text-sm text-gray-600">Bereken persoonlijke hoeveelheden</div>

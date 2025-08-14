@@ -74,9 +74,9 @@ export default function ProblemenOplossenPage() {
         </div>
 
         {/* Header */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="mb-6">
           <h1 className="text-2xl font-bold text-gray-800 mb-3 flex items-center">
-            <AlertCircle className="w-6 h-6 mr-3 text-blue-500" />
+            <AlertCircle className="w-6 h-6 mr-3 text-primary" />
             Problemen Oplossen
           </h1>
           <p className="text-gray-600">
@@ -85,7 +85,7 @@ export default function ProblemenOplossenPage() {
         </div>
 
         {/* Baby refuses bottle */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Baby weigert de fles</h2>
           <p className="text-gray-600 mb-4">Mogelijke oorzaken & oplossingen:</p>
           
@@ -95,7 +95,7 @@ export default function ProblemenOplossenPage() {
               return (
                 <div key={index} className="border border-gray-200 rounded-lg p-4">
                   <div className="flex items-center space-x-2 mb-2">
-                    <Icon className="w-5 h-5 text-blue-500" />
+                    <Icon className="w-5 h-5 text-primary" />
                     <h3 className="font-medium text-gray-800">{item.cause}:</h3>
                   </div>
                   <ul className="space-y-1 ml-7">
@@ -120,9 +120,9 @@ export default function ProblemenOplossenPage() {
 
         {/* Reflux */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
-              <Droplets className="w-5 h-5 mr-2 text-blue-500" />
+              <Droplets className="w-5 h-5 mr-2 text-primary" />
               Spugen en reflux
             </h2>
             
@@ -149,12 +149,12 @@ export default function ProblemenOplossenPage() {
             </div>
           </div>
 
-          <div className="bg-blue-50 rounded-2xl border border-blue-200 p-6">
+          <div className="bg-default rounded-2xl border border-blue-200 p-6">
             <h3 className="font-medium text-blue-800 mb-3">Tips bij spugen:</h3>
             <div className="space-y-2">
               {refluxTips.map((tip, index) => (
                 <div key={index} className="flex items-start space-x-2">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-default0 rounded-full mt-2 flex-shrink-0"></div>
                   <span className="text-blue-700 text-sm">{tip}</span>
                 </div>
               ))}
@@ -163,7 +163,7 @@ export default function ProblemenOplossenPage() {
         </div>
 
         {/* Constipation */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Constipatie bij flesvoeding</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -218,7 +218,7 @@ export default function ProblemenOplossenPage() {
               <div className="space-y-2">
                 {diarrheaFirstAid.map((aid, index) => (
                   <div key={index} className="flex items-start space-x-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-2 h-2 bg-default0 rounded-full mt-2 flex-shrink-0"></div>
                     <span className="text-blue-700 text-sm">{aid}</span>
                   </div>
                 ))}
@@ -228,19 +228,19 @@ export default function ProblemenOplossenPage() {
         </div>
 
         {/* Navigation */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Meer informatie</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 
               href="/kennisbank/veiligheid"
-              className="p-3 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
+              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
               <div className="font-medium text-gray-800">Veiligheidsrichtlijnen →</div>
               <div className="text-sm text-gray-600">Wanneer direct hulp zoeken</div>
             </Link>
             <Link 
               href="/faq"
-              className="p-3 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
+              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
               <div className="font-medium text-gray-800">Veelgestelde Vragen →</div>
               <div className="text-sm text-gray-600">Nog meer antwoorden</div>
