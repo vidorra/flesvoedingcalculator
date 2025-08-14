@@ -260,37 +260,65 @@ export default function HomePage() {
           </div>
         </div>
         
-        {/* Image Sidebar - 4 columns, visible on desktop */}
-        <div className="col-span-12 lg:col-span-4 hidden lg:block space-y-6">
-          {/* Mother and Baby Image */}
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-4">
-            <Image
-              src="/mother_and_baby.png"
-              alt="Moeder en baby"
-              width={300}
-              height={200}
-              className="w-full h-auto rounded-xl"
-            />
+        {/* Sidebar - 4 columns on desktop, 12 on mobile, always visible */}
+        <div className="col-span-12 lg:col-span-4 space-y-6">
+          {/* Images - Hidden on mobile, visible on desktop */}
+          <div className="hidden lg:block space-y-6">
+            {/* Mother and Baby Image */}
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-4">
+              <Image
+                src="/mother_and_baby.png"
+                alt="Moeder en baby"
+                width={300}
+                height={200}
+                className="w-full h-auto rounded-xl"
+              />
+            </div>
+            
+            {/* Baby Image */}
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-4">
+              <Image
+                src="/baby.png"
+                alt="Baby"
+                width={300}
+                height={200}
+                className="w-full h-auto rounded-xl"
+              />
+            </div>
           </div>
           
-          {/* Baby Image */}
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-4">
-            <Image
-              src="/baby.png"
-              alt="Baby"
-              width={300}
-              height={200}
-              className="w-full h-auto rounded-xl"
-            />
-          </div>
-          
-          {/* Advertisement Space */}
-          <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl shadow-sm border border-gray-200 p-6">
-            <div className="text-center space-y-3">
-              <div className="text-gray-500 text-sm font-medium">Advertentie</div>
-              <div className="bg-white rounded-xl p-8 border-2 border-dashed border-gray-300">
-                <div className="text-gray-400 text-xs">300x250</div>
-                <div className="text-gray-500 text-sm mt-1">Advertentie ruimte</div>
+          {/* Google Ads - Always visible on mobile and desktop */}
+          <div className="space-y-4">
+            {/* Google Ad 1 */}
+            <div className="bg-white/90 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-4">
+              <div className="text-center space-y-2">
+                <div className="text-gray-500 text-xs font-medium">Google Advertentie</div>
+                <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                  <div className="text-gray-400 text-sm">Google Ads</div>
+                  <div className="text-gray-300 text-xs mt-1">320x100</div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Google Ad 2 */}
+            <div className="bg-white/90 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-4">
+              <div className="text-center space-y-2">
+                <div className="text-gray-500 text-xs font-medium">Google Advertentie</div>
+                <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
+                  <div className="text-gray-400 text-sm">Google Ads</div>
+                  <div className="text-gray-300 text-xs mt-1">300x250</div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Google Ad 3 */}
+            <div className="bg-white/90 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-4">
+              <div className="text-center space-y-2">
+                <div className="text-gray-500 text-xs font-medium">Google Advertentie</div>
+                <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                  <div className="text-gray-400 text-sm">Google Ads</div>
+                  <div className="text-gray-300 text-xs mt-1">320x100</div>
+                </div>
               </div>
             </div>
           </div>
