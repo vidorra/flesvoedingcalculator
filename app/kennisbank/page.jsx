@@ -188,7 +188,7 @@ export default function KennisbankPage() {
               value={filteredContent}
               onChange={(e) => setFilteredContent(e.target.value)}
               placeholder="Zoek op leeftijd, onderwerp of vraag..."
-              className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none"
+              className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none"
             />
           </div>
         </div>
