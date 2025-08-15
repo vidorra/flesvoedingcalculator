@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import { Baby, Calculator, Info, Clock, ChevronDown, ChevronUp } from 'lucide-react'
 
 // Helper function to generate feeding schedule
-const generateFeedingSchedule = (feedingsPerDay, amountPerFeeding) => {
+const generateFeedingSchedule = (feedingsPerDay, minAmount, maxAmount) => {
   const schedules = {
     4: ['07:00', '12:00', '17:00', '22:00'],
     5: ['07:00', '11:00', '15:00', '19:00', '23:00'],
@@ -17,7 +17,10 @@ const generateFeedingSchedule = (feedingsPerDay, amountPerFeeding) => {
   }
   
   const times = schedules[feedingsPerDay] || schedules[5]
-  return times.map(time => ({ time, amount: amountPerFeeding }))
+  return times.map(time => ({ 
+    time, 
+    amount: `${minAmount}-${maxAmount} ml` 
+  }))
 }
 
 export default function HomePage() {
@@ -34,17 +37,6 @@ export default function HomePage() {
     }
 
     const weightKg = parseFloat(weight)
-    
-    if (weightKg > 15) {
-      alert('Voor baby\'s zwaarder dan 15kg, raadpleeg uw arts')
-      return
-    }
-
-    if (weightKg < 2.5) {
-      alert('Voor baby\'s lichter dan 2.5kg, raadpleeg uw arts')
-      return
-    }
-
     const age = parseInt(ageMonths)
     const feedings = parseInt(feedingsPerDay)
     
@@ -57,12 +49,22 @@ export default function HomePage() {
     if (age >= 6) mlPerKg = 100
 
     const dailyAmount = Math.min(weightKg * mlPerKg, 1000) // Max 1000ml per day
-    const amountPerFeeding = Math.round(dailyAmount / feedings)
+    const baseAmountPerFeeding = dailyAmount / feedings
+    
+    // Round to nearest 5ml
+    const roundToFive = (num) => Math.round(num / 5) * 5
+    
+    // Calculate range: -10% to +20%
+    const minAmount = roundToFive(baseAmountPerFeeding * 0.9)
+    const maxAmount = roundToFive(baseAmountPerFeeding * 1.2)
+    const recommendedAmount = roundToFive(baseAmountPerFeeding)
 
     setResults({
       dailyAmount: Math.round(dailyAmount),
       feedingsPerDay: feedings,
-      amountPerFeeding,
+      recommendedAmount,
+      minAmount,
+      maxAmount,
       mlPerKg,
       weightKg
     })
@@ -184,7 +186,8 @@ export default function HomePage() {
                     
                     <div className="bg-white/20 backdrop-blur rounded-xl p-4">
                       <div className="text-white/70 text-sm mb-1">Per voeding</div>
-                      <div className="text-xl font-bold">±{results.amountPerFeeding} ml</div>
+                      <div className="text-xl font-bold">{results.minAmount}-{results.maxAmount} ml</div>
+                      <div className="text-xs text-white/60 mt-1">Richtlijn: {results.recommendedAmount} ml</div>
                     </div>
                   </div>
                 </div>
@@ -208,18 +211,53 @@ export default function HomePage() {
                   </h4>
                   
                   <div className="space-y-2 mb-4">
-                    {generateFeedingSchedule(results.feedingsPerDay, results.amountPerFeeding).map((time, index) => (
+                    {generateFeedingSchedule(results.feedingsPerDay, results.minAmount, results.maxAmount).map((time, index) => (
                       <div key={index} className="flex items-center justify-between py-2 px-3 bg-default/50 rounded-lg">
                         <span className="text-sm text-gray-600">{time.time}</span>
-                        <span className="font-medium text-gray-800">{time.amount} ml</span>
+                        <span className="font-medium text-gray-800">{time.amount}</span>
                       </div>
                     ))}
                   </div>
 
-                  <div className="bg-amber-50 rounded-xl p-4">
+                  <div className="bg-amber-50 rounded-xl p-4 mb-4">
                     <p className="text-sm text-amber-800">
                       <strong>Let op:</strong> Dit is een richtlijn gebaseerd op {results.mlPerKg}ml per kg lichaamsgewicht. 
-                      Uw baby kan meer of minder nodig hebben. Volg altijd de signalen van uw baby.
+                      De aangegeven range ({results.minAmount}-{results.maxAmount}ml) houdt rekening met normale variaties.
+                    </p>
+                  </div>
+
+                  <div className="bg-default rounded-xl p-4">
+                    <h5 className="font-medium text-gray-900 mb-2">Waarom variatie in hoeveelheid?</h5>
+                    <div className="space-y-2 text-sm text-gray-800">
+                      <div className="flex items-start space-x-2">
+                        <span className="text-primary mt-0.5">•</span>
+                        <div>
+                          <strong>Groeispurts:</strong> Rond 7-10 dagen, 3 weken, 6 weken, 3 maanden en 6 maanden. 
+                          Baby kan dan tijdelijk 20-30% meer drinken.
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-2">
+                        <span className="text-primary mt-0.5">•</span>
+                        <div>
+                          <strong>Wonderweken/Regeldagen:</strong> Mentale ontwikkelingssprongen waarbij baby onrustig is 
+                          en vaker kleine beetjes wil drinken.
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-2">
+                        <span className="text-primary mt-0.5">•</span>
+                        <div>
+                          <strong>Dagritme:</strong> 's Ochtends vaak meer honger, 's avonds kleinere porties.
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-2">
+                        <span className="text-primary mt-0.5">•</span>
+                        <div>
+                          <strong>Temperatuur:</strong> Bij warm weer minder per keer, maar vaker dorst.
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-xs text-gray-700 mt-3 italic">
+                      Volg altijd de signalen van je baby. Een tevreden baby die goed groeit, krijgt genoeg binnen.
                     </p>
                   </div>
                 </div>
