@@ -170,7 +170,7 @@ export default function HomePage() {
           {results && (
             <div className="space-y-4">
               {/* Main Results */}
-              <div className="rounded-2xl shadow-lg p-6 text-white" style={{background: 'linear-gradient(135deg, rgb(16, 148, 174), rgb(12, 118, 142))'}}>
+              <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
                 <h3 className="text-lg font-semibold mb-4 flex items-center">
                   <Baby className="w-5 h-5 mr-2" />
                   Aanbevolen Hoeveelheden

@@ -111,3 +111,7 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+.bg-primary-gradient {
+  background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--primary-dark)));
+}

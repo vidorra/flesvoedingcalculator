@@ -385,7 +385,7 @@ FlesvoedingCalculator.nl - Betrouwbare informatie voor flesvoeding
               <div className="space-y-3">
                 <button 
                   onClick={downloadPDF}
-                  className="w-full bg-primary hover:bg-gray-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2"
+                  className="w-full bg-primary hover:bg-primary/90 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2"
                 >
                   <Download className="w-4 h-4" />
                   <span>PDF Schema</span>
