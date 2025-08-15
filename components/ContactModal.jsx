@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { X, Mail, User, MessageSquare, Send, CheckCircle, AlertCircle } from 'lucide-react'
+import { X, Mail, User, MessageSquare, Send, CheckCircle, AlertCircle, MessageCircle, Phone } from 'lucide-react'
 import { sendContactEmail, initEmailJS, validateEmailJSConfig } from '../services/emailService.js'
 
 // Contact modal component for feedback and contact forms
@@ -113,24 +113,26 @@ const ContactModal = ({ isOpen, onClose }) => {
               <button
                 type="button"
                 onClick={() => setFormData(prev => ({ ...prev, type: 'feedback' }))}
-                className={`p-3 rounded-xl border transition-all text-sm font-medium ${
+                className={`p-3 rounded-xl border transition-all text-sm font-medium flex items-center justify-center space-x-2 ${
                   formData.type === 'feedback'
                     ? 'bg-primary text-white border-primary'
                     : 'bg-white border-gray-200 text-gray-700 hover:border-primary'
                 }`}
               >
-                📝 Feedback
+                <MessageCircle className="w-4 h-4" />
+                <span>Feedback</span>
               </button>
               <button
                 type="button"
                 onClick={() => setFormData(prev => ({ ...prev, type: 'contact' }))}
-                className={`p-3 rounded-xl border transition-all text-sm font-medium ${
+                className={`p-3 rounded-xl border transition-all text-sm font-medium flex items-center justify-center space-x-2 ${
                   formData.type === 'contact'
                     ? 'bg-primary text-white border-primary'
                     : 'bg-white border-gray-200 text-gray-700 hover:border-primary'
                 }`}
               >
-                ❓ Vraag
+                <Phone className="w-4 h-4" />
+                <span>Contact</span>
               </button>
             </div>
           </div>
@@ -183,7 +185,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               name="subject"
               value={formData.subject}
               onChange={handleInputChange}
-              placeholder={formData.type === 'feedback' ? 'Feedback over...' : 'Vraag over...'}
+              placeholder={formData.type === 'feedback' ? 'Feedback over...' : 'Contact over...'}
               className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none"
             />
           </div>
@@ -200,7 +202,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                 onChange={handleInputChange}
                 placeholder={formData.type === 'feedback' 
                   ? 'Deel uw feedback, suggesties of ervaringen met ons...' 
-                  : 'Beschrijf uw vraag zo duidelijk mogelijk...'
+                  : 'Beschrijf uw bericht zo duidelijk mogelijk...'
                 }
                 required
                 rows={4}
