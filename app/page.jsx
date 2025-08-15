@@ -95,11 +95,12 @@ export default function HomePage() {
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Leeftijd van uw baby
                 </label>
-                <select
-                  value={ageMonths}
-                  onChange={(e) => setAgeMonths(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none appearance-none bg-white"
-                >
+                <div className="relative">
+                  <select
+                    value={ageMonths}
+                    onChange={(e) => setAgeMonths(e.target.value)}
+                    className="w-full px-4 py-3 pr-10 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none appearance-none bg-white"
+                  >
                   <option value="0">0-1 maand</option>
                   <option value="1">1-2 maanden</option>
                   <option value="2">2-3 maanden</option>
@@ -107,7 +108,9 @@ export default function HomePage() {
                   <option value="4">4-5 maanden</option>
                   <option value="5">5-6 maanden</option>
                   <option value="6">6+ maanden</option>
-                </select>
+                  </select>
+                  <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-primary pointer-events-none" />
+                </div>
               </div>
 
 
@@ -134,11 +137,12 @@ export default function HomePage() {
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Aantal voedingen per dag
                 </label>
-                <select
-                  value={feedingsPerDay}
-                  onChange={(e) => setFeedingsPerDay(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none appearance-none bg-white"
-                >
+                <div className="relative">
+                  <select
+                    value={feedingsPerDay}
+                    onChange={(e) => setFeedingsPerDay(e.target.value)}
+                    className="w-full px-4 py-3 pr-10 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none appearance-none bg-white"
+                  >
                   <option value="4">4 voedingen (om de 6 uur)</option>
                   <option value="5">5 voedingen (om de 4-5 uur)</option>
                   <option value="6">6 voedingen (om de 4 uur)</option>
@@ -146,7 +150,9 @@ export default function HomePage() {
                   <option value="8">8 voedingen (om de 3 uur)</option>
                   <option value="9">9 voedingen (om de 2-3 uur)</option>
                   <option value="10">10 voedingen (om de 2 uur)</option>
-                </select>
+                  </select>
+                  <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-primary pointer-events-none" />
+                </div>
               </div>
 
               {/* Calculate Button */}
