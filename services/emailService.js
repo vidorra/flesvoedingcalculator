@@ -25,7 +25,7 @@ export const sendContactEmail = async (formData) => {
     const templateParams = {
       from_name: formData.name,
       from_email: formData.email,
-      subject: formData.subject || `${formData.type === 'feedback' ? 'Feedback' : 'Vraag'} van ${formData.name}`,
+      subject: formData.subject || `${formData.type === 'feedback' ? 'Feedback' : 'Contact'} van ${formData.name}`,
       message: formData.message,
       message_type: formData.type,
       to_email: 'info@vidorra.nl',
