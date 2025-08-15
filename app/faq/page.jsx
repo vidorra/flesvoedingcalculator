@@ -108,13 +108,13 @@ export default function FAQPage() {
               <div key={faq.id} className="border border-gray-100 rounded-xl overflow-hidden">
                 <button
                   onClick={() => setOpenFAQ(openFAQ === faq.id ? null : faq.id)}
-                  className="w-full p-4 text-left hover:bg-gray-50 transition-colors flex items-center justify-between"
+                  className="w-full p-4 text-left hover:bg-default transition-colors flex items-center justify-between"
                 >
                   <span className="font-medium text-gray-800">{faq.question}</span>
                   {openFAQ === faq.id ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
                 </button>
                 {openFAQ === faq.id && (
-                  <div className="px-4 pb-4 text-gray-600 border-t border-gray-100 bg-gray-50/50">
+                  <div className="px-4 pb-4 text-gray-600 border-t border-gray-100 bg-default/50">
                     <p className="pt-3">{faq.answer}</p>
                   </div>
                 )}
