@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { X, Mail, User, MessageSquare, Send, CheckCircle, AlertCircle } from 'lucide-react'
 import { sendContactEmail, initEmailJS, validateEmailJSConfig } from '../services/emailService.js'
 
+// Contact modal component for feedback and contact forms
 const ContactModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     name: '',
