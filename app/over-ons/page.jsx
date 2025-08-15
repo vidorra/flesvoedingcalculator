@@ -1,7 +1,12 @@
+'use client'
+import { useState } from 'react'
 import Layout from '../../components/Layout'
+import ContactModal from '../../components/ContactModal'
 import { Users, Heart, Star, Calculator, BookOpen } from 'lucide-react'
 
 export default function OverOnsPage() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
+  
   const team = [
     {
       name: 'Medisch Expert',
@@ -36,19 +41,6 @@ export default function OverOnsPage() {
           </p>
         </div>
 
-        {/* Mission */}
-        <div className="bg-gradient-to-br from-primary to-gray-700 rounded-2xl shadow-lg p-6 text-white">
-          <h2 className="text-xl font-semibold mb-4 flex items-center">
-            <Heart className="w-6 h-6 mr-2 text-red-300" />
-            Onze Missie
-          </h2>
-          <p className="text-gray-100 leading-relaxed">
-            Wij geloven dat elke ouder toegang moet hebben tot betrouwbare, evidence-based informatie over flesvoeding. 
-            Onze missie is om ouders te ondersteunen met praktische tools en kennis, zodat ze zelfverzekerde beslissingen 
-            kunnen nemen over de voeding van hun baby. We maken complexe voedingsrichtlijnen toegankelijk en begrijpelijk 
-            voor iedereen.
-          </p>
-        </div>
 
         {/* Why Trust Us */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
@@ -158,24 +150,6 @@ export default function OverOnsPage() {
           </div>
         </div>
 
-        {/* Team */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-semibold text-gray-800 mb-6 flex items-center">
-            <Users className="w-5 h-5 mr-2 text-primary" />
-            Ons Team
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {team.map((member, index) => (
-              <div key={index} className="text-center">
-                <div className="text-6xl mb-3">{member.avatar}</div>
-                <h3 className="font-semibold text-gray-800 mb-1">{member.name}</h3>
-                <p className="text-primary text-sm font-medium mb-3">{member.role}</p>
-                <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* Sources */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
@@ -209,21 +183,33 @@ export default function OverOnsPage() {
         </div>
 
         {/* Contact CTA */}
-        <div className="bg-gradient-to-br from-primary to-gray-700 rounded-2xl shadow-lg p-6 text-white">
+        <div className="bg-primary rounded-2xl shadow-lg p-6 text-white">
           <h2 className="font-semibold mb-2">Vragen of feedback?</h2>
           <p className="text-gray-100 mb-4">
             We horen graag van je! Neem contact met ons op voor vragen, suggesties of als je meer wilt weten over onze aanpak.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
-            <button className="bg-white text-primary hover:bg-default font-medium py-2 px-4 rounded-lg transition-colors">
+            <button 
+              onClick={() => setIsContactModalOpen(true)}
+              className="bg-white text-primary hover:bg-default font-medium py-2 px-4 rounded-lg transition-colors"
+            >
               Contact opnemen
             </button>
-            <button className="bg-gray-500 hover:bg-gray-400 text-white font-medium py-2 px-4 rounded-lg transition-colors">
+            <button 
+              onClick={() => setIsContactModalOpen(true)}
+              className="bg-gray-500 hover:bg-gray-400 text-white font-medium py-2 px-4 rounded-lg transition-colors"
+            >
               Feedback versturen
             </button>
           </div>
         </div>
       </div>
+
+      {/* Contact Modal */}
+      <ContactModal 
+        isOpen={isContactModalOpen} 
+        onClose={() => setIsContactModalOpen(false)} 
+      />
     </Layout>
   )
 }

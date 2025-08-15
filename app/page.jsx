@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import { Baby, Calculator, Info, Clock, ChevronDown, ChevronUp } from 'lucide-react'
 
 // Helper function to generate feeding schedule
-const generateFeedingSchedule = (feedingsPerDay, minAmount, maxAmount) => {
+const generateFeedingSchedule = (feedingsPerDay, recommendedAmount, maxAmount) => {
   const schedules = {
     4: ['07:00', '12:00', '17:00', '22:00'],
     5: ['07:00', '11:00', '15:00', '19:00', '23:00'],
@@ -19,7 +19,7 @@ const generateFeedingSchedule = (feedingsPerDay, minAmount, maxAmount) => {
   const times = schedules[feedingsPerDay] || schedules[5]
   return times.map(time => ({ 
     time, 
-    amount: `${minAmount}-${maxAmount} ml` 
+    amount: `${recommendedAmount} ml` 
   }))
 }
 
@@ -54,10 +54,10 @@ export default function HomePage() {
     // Round to nearest 5ml
     const roundToFive = (num) => Math.round(num / 5) * 5
     
-    // Calculate range: -10% to +20%
-    const minAmount = roundToFive(baseAmountPerFeeding * 0.9)
-    const maxAmount = roundToFive(baseAmountPerFeeding * 1.2)
+    // Calculate range: base to +30% for growth spurts
     const recommendedAmount = roundToFive(baseAmountPerFeeding)
+    const minAmount = recommendedAmount // Start at recommended
+    const maxAmount = roundToFive(baseAmountPerFeeding * 1.3) // Up to 30% more during growth spurts
 
     setResults({
       dailyAmount: Math.round(dailyAmount),
@@ -185,9 +185,9 @@ export default function HomePage() {
                     </div>
                     
                     <div className="bg-white/20 backdrop-blur rounded-xl p-4">
-                      <div className="text-white/70 text-sm mb-1">Per voeding</div>
-                      <div className="text-xl font-bold">{results.minAmount}-{results.maxAmount} ml</div>
-                      <div className="text-xs text-white/60 mt-1">Richtlijn: {results.recommendedAmount} ml</div>
+                      <div className="text-white/70 text-sm mb-1">Aanbevolen per voeding</div>
+                      <div className="text-xl font-bold">{results.recommendedAmount} ml</div>
+                      <div className="text-xs text-white/60 mt-1">Bij groeispurt: tot {results.maxAmount} ml</div>
                     </div>
                   </div>
                 </div>
@@ -211,7 +211,7 @@ export default function HomePage() {
                   </h4>
                   
                   <div className="space-y-2 mb-4">
-                    {generateFeedingSchedule(results.feedingsPerDay, results.minAmount, results.maxAmount).map((time, index) => (
+                    {generateFeedingSchedule(results.feedingsPerDay, results.recommendedAmount, results.maxAmount).map((time, index) => (
                       <div key={index} className="flex items-center justify-between py-2 px-3 bg-default/50 rounded-lg">
                         <span className="text-sm text-gray-600">{time.time}</span>
                         <span className="font-medium text-gray-800">{time.amount}</span>
@@ -221,8 +221,8 @@ export default function HomePage() {
 
                   <div className="bg-amber-50 rounded-xl p-4 mb-4">
                     <p className="text-sm text-amber-800">
-                      <strong>Let op:</strong> Dit is een richtlijn gebaseerd op {results.mlPerKg}ml per kg lichaamsgewicht. 
-                      De aangegeven range ({results.minAmount}-{results.maxAmount}ml) houdt rekening met normale variaties.
+                      <strong>Aanbeveling:</strong> Start met {results.recommendedAmount}ml per voeding (gebaseerd op {results.mlPerKg}ml per kg lichaamsgewicht). 
+                      Bij groeispurts kan dit oplopen tot {results.maxAmount}ml per voeding.
                     </p>
                   </div>
 

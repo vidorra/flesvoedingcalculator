@@ -1,11 +1,13 @@
 'use client'
 import { useState } from 'react'
 import Layout from '../../components/Layout'
+import ContactModal from '../../components/ContactModal'
 import { Info, Calculator, Baby, AlertCircle, ChevronDown, ChevronUp } from 'lucide-react'
 
 export default function FAQPage() {
   const [selectedCategory, setSelectedCategory] = useState('calculator')
   const [openFAQ, setOpenFAQ] = useState(null)
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
 
   const categories = [
     { id: 'calculator', name: 'Calculator gebruik', icon: Calculator },
@@ -122,12 +124,15 @@ export default function FAQPage() {
         </div>
 
         {/* Contact CTA */}
-        <div className="bg-gradient-to-br from-primary to-gray-700 rounded-2xl shadow-lg p-6 text-white">
+        <div className="bg-primary rounded-2xl shadow-lg p-6 text-white">
           <h2 className="font-semibold mb-2">Vraag niet gevonden?</h2>
           <p className="text-gray-100 mb-4">
             Neem contact met ons op voor persoonlijke ondersteuning bij uw vragen over flesvoeding.
           </p>
-          <button className="bg-white text-primary hover:bg-default font-medium py-2 px-4 rounded-lg transition-colors">
+          <button 
+            onClick={() => setIsContactModalOpen(true)}
+            className="bg-white text-primary hover:bg-default font-medium py-2 px-4 rounded-lg transition-colors"
+          >
             Contact opnemen
           </button>
         </div>
@@ -146,6 +151,12 @@ export default function FAQPage() {
           </div>
         </div>
       </div>
+
+      {/* Contact Modal */}
+      <ContactModal 
+        isOpen={isContactModalOpen} 
+        onClose={() => setIsContactModalOpen(false)} 
+      />
     </Layout>
   )
 }
