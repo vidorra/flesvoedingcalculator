@@ -22,14 +22,14 @@ export default function HygieneBereidingPage() {
     'Veilig vanaf geboorte',
     'Eerst 3 minuten laten lopen (\'s ochtends)',
     'Koud water gebruiken (warm water kan lood bevatten)',
-    'Koken tot baby 6 maanden'
+    'Koken tot 3 maanden verplicht, 3-6 maanden geadviseerd'
   ]
 
   const bottleWaterTips = [
     'Alleen met label "geschikt voor babyvoeding"',
     'Natrium < 20mg/L',
     'Nitraat < 10mg/L',
-    'Ook koken tot 6 maanden'
+    'Ook koken tot 3 maanden verplicht, 3-6 maanden geadviseerd'
   ]
 
   const powderStorage = [

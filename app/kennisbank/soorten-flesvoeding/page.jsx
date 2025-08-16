@@ -3,11 +3,16 @@ import Layout from '../../../components/Layout'
 import Link from 'next/link'
 import { Package, ArrowRight, Home, Info, AlertCircle } from 'lucide-react'
 
+export const metadata = {
+  title: 'Flesvoeding 1, 2, 3: Verschil Startvoeding, Opvolgmelk & Peutermelk',
+  description: 'Ontdek het verschil tussen startvoeding (1), opvolgmelk (2) en peutermelk (3). Wanneer overstappen? Welke merken? Complete vergelijking 2025.',
+}
+
 export default function SoortenFlesvoedingPage() {
   const formula1Brands = ['Nutrilon 1', 'Hero Baby 1', 'Kruidvat Zuigelingenmelk 1', 'HIPP Bio 1']
   
   const formulaComparison = [
-    { type: 'Nummer 1 (0-6m)', protein: '1.2-1.8g/100ml', iron: '0.3-1.3mg/100ml', usage: 'Hoofdvoeding', required: 'Ja, als geen borstvoeding' },
+    { type: 'Nummer 1 (0-6m)', protein: '1.2-1.8g/100ml', iron: '0.5-1.0mg/100ml', usage: 'Hoofdvoeding', required: 'Ja, als geen borstvoeding' },
     { type: 'Nummer 2 (6-12m)', protein: '1.6-2.2g/100ml', iron: '4-6mg/100ml', usage: 'Met vaste voeding', required: 'Optioneel' },
     { type: 'Nummer 3 (12m+)', protein: '2.0-2.5g/100ml', iron: '6-8mg/100ml', usage: 'Aanvulling op dieet', required: 'Optioneel' }
   ]
@@ -284,6 +289,16 @@ export default function SoortenFlesvoedingPage() {
               <p className="text-sm text-gray-600">
                 Nummer 1: 0-6 maanden (startvoeding), Nummer 2: 6-12 maanden (opvolgmelk), 
                 Nummer 3: 12+ maanden (peutermelk, optioneel).
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="font-medium text-gray-800 mb-2">Hoeveel ml van elk type per voeding?</h3>
+              <p className="text-sm text-gray-600">
+                De hoeveelheid hangt af van gewicht en leeftijd van je baby. 
+                <Link href="/" className="text-primary hover:underline font-medium">
+                  Gebruik onze gratis calculator
+                </Link> om de exacte hoeveelheid voor jouw baby te berekenen.
               </p>
             </div>
           </div>

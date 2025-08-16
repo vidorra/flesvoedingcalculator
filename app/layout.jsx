@@ -7,9 +7,9 @@ export const viewport = {
 
 export const metadata = {
   metadataBase: new URL('https://flesvoedingcalculator.nl'),
-  title: 'FlesvoedingCalculator.nl - Bereken de juiste hoeveelheid',
-  description: 'Gratis Nederlandse flesvoeding calculator voor ouders. Bereken hoeveel flesvoeding jouw baby nodig heeft volgens officiële richtlijnen.',
-  keywords: 'flesvoeding, calculator, baby, nederland',
+  title: 'Flesvoeding Calculator 2025 | Bereken Hoeveel ML Baby Nodig Heeft',
+  description: 'Gratis flesvoeding calculator op basis van Nederlandse richtlijnen. Bereken direct hoeveel ml jouw baby per voeding nodig heeft. ✓ 150ml/kg formule ✓ Per leeftijd',
+  keywords: 'flesvoeding calculator, hoeveel ml flesvoeding, baby voeding berekenen, flesvoeding schema, Nederlandse richtlijnen, 150ml per kg',
   robots: 'index, follow',
   authors: [{ name: 'FlesvoedingCalculator.nl' }],
   openGraph: {
