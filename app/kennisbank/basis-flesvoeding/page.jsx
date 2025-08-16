@@ -3,6 +3,11 @@ import Layout from '../../../components/Layout'
 import Link from 'next/link'
 import { BookOpen, CheckCircle, ArrowRight, Home } from 'lucide-react'
 
+export const metadata = {
+  title: 'Flesvoeding Basis: Alles wat Nederlandse Ouders Moeten Weten | 2025 Guide',
+  description: 'Complete gids over flesvoeding in Nederland. Wanneer kiezen voor flesvoeding? Voordelen, nadelen en officiële richtlijnen van het Voedingscentrum.',
+}
+
 export default function BasisFlesvoedingPage() {
   const benefits = [
     'Flexibiliteit: Partner kan ook voeden',
@@ -220,6 +225,16 @@ export default function BasisFlesvoedingPage() {
               <p className="text-sm text-gray-600">
                 Flesvoeding is veilig vanaf de geboorte. Startvoeding (nummer 1) is geschikt 
                 voor baby's van 0-12 maanden als volledig alternatief voor borstvoeding.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="font-medium text-gray-800 mb-2">Hoeveel ml heeft mijn baby precies nodig?</h3>
+              <p className="text-sm text-gray-600">
+                Elke baby is anders. De Nederlandse richtlijn is 150ml per kg lichaamsgewicht per dag. 
+                <Link href="/" className="text-primary hover:underline font-medium">
+                  Bereken met onze calculator
+                </Link> de exacte hoeveelheid voor jouw baby op basis van gewicht en leeftijd.
               </p>
             </div>
             
