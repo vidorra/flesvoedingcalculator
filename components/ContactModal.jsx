@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { X, Mail, User, MessageSquare, Send, CheckCircle, AlertCircle, MessageCircle, Phone } from 'lucide-react'
-import { sendContactEmail, initEmailJS, validateEmailJSConfig } from '../services/emailService.js'
+import { useRecaptcha } from '../hooks/useRecaptcha.js'
 
 // Contact modal component for feedback and contact forms
 const ContactModal = ({ isOpen, onClose }) => {
@@ -13,14 +13,17 @@ const ContactModal = ({ isOpen, onClose }) => {
     type: 'feedback' // feedback or contact
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState(null) // 'success', 'error', null
-  const [emailJSReady, setEmailJSReady] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null) // 'success', 'error', 'ratelimit'
+  const [errorMessage, setErrorMessage] = useState('')
+  const { isReady: recaptchaReady, executeRecaptcha } = useRecaptcha()
 
-  // Initialize EmailJS when component mounts
+  // Reset error when modal opens
   useEffect(() => {
-    initEmailJS()
-    setEmailJSReady(validateEmailJSConfig())
-  }, [])
+    if (isOpen) {
+      setSubmitStatus(null)
+      setErrorMessage('')
+    }
+  }, [isOpen])
 
   const handleInputChange = (e) => {
     const { name, value } = e.target
@@ -34,13 +37,41 @@ const ContactModal = ({ isOpen, onClose }) => {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitStatus(null)
+    setErrorMessage('')
 
     try {
-      if (!emailJSReady) {
-        throw new Error('Email service is not properly configured')
+      // Get reCAPTCHA token
+      let recaptchaToken = null
+      if (recaptchaReady) {
+        recaptchaToken = await executeRecaptcha('contact_form')
+        if (!recaptchaToken) {
+          throw new Error('reCAPTCHA verification failed')
+        }
       }
 
-      const result = await sendContactEmail(formData)
+      // Submit to server-side API
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken
+        })
+      })
+
+      const result = await response.json()
+      
+      if (!response.ok) {
+        if (response.status === 429) {
+          setSubmitStatus('ratelimit')
+          setErrorMessage('Te veel aanvragen. Probeer over 15 minuten opnieuw.')
+        } else {
+          throw new Error(result.error || 'Submission failed')
+        }
+        return
+      }
       
       if (result.success) {
         setSubmitStatus('success')
@@ -55,6 +86,7 @@ const ContactModal = ({ isOpen, onClose }) => {
             type: 'feedback'
           })
           setSubmitStatus(null)
+          setErrorMessage('')
           onClose()
         }, 2500)
       } else {
@@ -64,12 +96,13 @@ const ContactModal = ({ isOpen, onClose }) => {
     } catch (error) {
       console.error('Error sending message:', error)
       setSubmitStatus('error')
+      setErrorMessage(error.message || 'Er ging iets mis. Probeer het later opnieuw.')
     } finally {
       setIsSubmitting(false)
     }
   }
 
-  const isFormValid = formData.name && formData.email && formData.message
+  const isFormValid = formData.name && formData.email && formData.message && formData.message.length >= 10
 
   if (!isOpen) return null
 
@@ -190,6 +223,7 @@ const ContactModal = ({ isOpen, onClose }) => {
             />
           </div>
 
+
           {/* Message */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -205,6 +239,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                   : 'Beschrijf uw bericht zo duidelijk mogelijk...'
                 }
                 required
+                minLength={10}
                 rows={4}
                 className="w-full px-4 py-3 pl-11 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none resize-none text-gray-800 placeholder:text-gray-500"
               />
@@ -222,11 +257,11 @@ const ContactModal = ({ isOpen, onClose }) => {
             </div>
           )}
 
-          {submitStatus === 'error' && (
+          {(submitStatus === 'error' || submitStatus === 'ratelimit') && (
             <div className="flex items-center space-x-2 text-red-600 bg-red-50 p-3 rounded-xl">
               <AlertCircle className="w-5 h-5" />
               <span className="text-sm font-medium">
-                Er ging iets mis. Probeer het opnieuw of mail naar info@vidorra.nl
+                {errorMessage || 'Er ging iets mis. Probeer het opnieuw of mail naar info@vidorra.nl'}
               </span>
             </div>
           )}
@@ -264,6 +299,18 @@ const ContactModal = ({ isOpen, onClose }) => {
         <div className="bg-gray-50 rounded-b-2xl px-6 py-4">
           <p className="text-xs text-gray-500 text-center">
             Uw gegevens worden alleen gebruikt om contact met u op te nemen en worden niet gedeeld met derden.
+            <br />
+            <span className="text-xs text-gray-400 mt-1 block">
+              Dit formulier wordt beschermd door reCAPTCHA en Google&apos;s{' '}
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">
+                Privacybeleid
+              </a>{' '}
+              en{' '}
+              <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">
+                Servicevoorwaarden
+              </a>{' '}
+              zijn van toepassing.
+            </span>
           </p>
         </div>
       </div>

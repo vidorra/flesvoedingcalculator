@@ -77,11 +77,10 @@ export default function ProblemenOplossenPage() {
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
             <AlertCircle className="w-6 h-6 mr-3 text-primary" />
-            Flesvoeding Problemen Oplossen
+            Problemen Oplossen
           </h1>
           <p className="text-gray-600">
-            Praktische oplossingen voor veelvoorkomende problemen bij flesvoeding. 
-            <strong>Bij twijfel altijd contact opnemen met consultatiebureau of huisarts.</strong>
+            Praktische oplossingen voor veelvoorkomende problemen bij flesvoeding.
           </p>
         </div>
 

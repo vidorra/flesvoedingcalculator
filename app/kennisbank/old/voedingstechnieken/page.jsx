@@ -177,97 +177,10 @@ export default function VoedingstechniekenPage() {
           </div>
         </div>
 
-        {/* Temperature Control */}
-        <div className="bg-red-50 rounded-2xl border border-red-200 p-6">
-          <h2 className="text-lg font-semibold text-red-800 mb-4 flex items-center">
-            <AlertTriangle className="w-5 h-5 mr-2" />
-            Temperatuur Controle - Belangrijk!
-          </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div>
-              <h3 className="font-medium text-red-800 mb-3">Juiste temperatuur (37°C):</h3>
-              <div className="space-y-2 text-sm text-red-700">
-                <div className="flex items-start space-x-2">
-                  <CheckCircle className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
-                  <span>Test op pols: moet lauw aanvoelen</span>
-                </div>
-                <div className="flex items-start space-x-2">
-                  <CheckCircle className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
-                  <span>Te heet: wacht tot afgekoeld</span>
-                </div>
-                <div className="flex items-start space-x-2">
-                  <CheckCircle className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
-                  <span>Te koud: warm op in flessenwarmer</span>
-                </div>
-                <div className="flex items-start space-x-2">
-                  <CheckCircle className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
-                  <span>Nooit in magnetron: ongelijke verhitting</span>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <h3 className="font-medium text-red-800 mb-3">Waarom juiste temperatuur?</h3>
-              <div className="space-y-2 text-sm text-red-700">
-                <div>• Te heet: brandwonden in mond/keel</div>
-                <div>• Te koud: baby weigert fles</div>
-                <div>• Schommelingen: stress voor baby</div>
-                <div>• Lichaamstemperatuur: meest comfortabel</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* FAQ Section */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Veelgestelde Vragen over Voedingstechnieken</h2>
-          <div className="space-y-4">
-            <div>
-              <h3 className="font-medium text-gray-800 mb-2">Hoelang duurt een voeding normaal?</h3>
-              <p className="text-sm text-gray-600">
-                Gemiddeld 15-20 minuten. Korter dan 10 minuten kan te snel zijn (risico overslikken), 
-                langer dan 30 minuten kan wijzen op verkeerde speenmaat.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="font-medium text-gray-800 mb-2">Mijn baby valt in slaap tijdens voeding, wat nu?</h3>
-              <p className="text-sm text-gray-600">
-                Dit is normaal, vooral 's nachts. Laat baby rustig drinken. 
-                Zorg wel dat baby genoeg binnen krijgt over de hele dag.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="font-medium text-gray-800 mb-2">Hoeveel moet mijn baby boeren?</h3>
-              <p className="text-sm text-gray-600">
-                Niet elke baby hoeft te boeren. Laat baby halverwege even pauzeren. 
-                Als baby geen boertje laat na 5 minuten, ga gewoon door met voeden.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="font-medium text-gray-800 mb-2">Kan ik de fles warm houden?</h3>
-              <p className="text-sm text-gray-600">
-                Nee, bereide flesvoeding maximaal 1 uur bewaren op kamertemperatuur. 
-                Bacteriën groeien snel in warme melk. Maak altijd vers als dat kan.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="font-medium text-gray-800 mb-2">Welke speenmaat voor welke leeftijd?</h3>
-              <p className="text-sm text-gray-600">
-                0-3 maanden: Small/Slow flow. 3-6 maanden: Medium flow. 
-                6+ maanden: Large/Fast flow. Let op signalen van je baby - sommigen hebben voorkeur voor andere flow.
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* Navigation */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Gerelateerde informatie</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <h2 className="text-lg font-semibold text-gray-800 mb-4">Meer informatie</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 
               href="/kennisbank/hygiene-bereiding"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
@@ -281,13 +194,6 @@ export default function VoedingstechniekenPage() {
             >
               <div className="font-medium text-gray-800">Problemen Oplossen →</div>
               <div className="text-sm text-gray-600">Hulp bij veelvoorkomende problemen</div>
-            </Link>
-            <Link 
-              href="/kennisbank/soorten-flesvoeding"
-              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
-            >
-              <div className="font-medium text-gray-800">Soorten Flesvoeding →</div>
-              <div className="text-sm text-gray-600">Welk type voor welke leeftijd</div>
             </Link>
           </div>
         </div>

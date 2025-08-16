@@ -5,20 +5,11 @@ import { Lightbulb, ArrowRight, Home, DollarSign, Moon, Heart, ShoppingCart } fr
 
 export default function PraktischeTipsPage() {
   const moneySavingTips = [
-    'Huismerken zijn even goed (zelfde EU-standaarden)',
-    'Bulk kopen bij aanbieding (let op houdbaarheidsdatum)',
-    'Prijzen vergelijken online vs winkel',
-    'Kruidvat/Etos eigen merk overwegen (vaak 40% goedkoper)',
-    'Let op gramprijs, niet pakprijs',
-    'Winkelen met kortingscodes en cashback apps',
-    'Albert Heijn/Jumbo bonus spaaracties benutten'
-  ]
-  
-  const budgetComparison = [
-    { category: 'Budget (Kruidvat)', monthlyPrice: '€35-50', yearPrice: '€420-600', note: 'Zelfde kwaliteit als A-merken' },
-    { category: 'Middenklasse (Hero Baby)', monthlyPrice: '€50-70', yearPrice: '€600-840', note: 'Goede prijs-kwaliteit verhouding' },
-    { category: 'Premium (Nutrilon)', monthlyPrice: '€70-90', yearPrice: '€840-1080', note: 'Nederlandse ontwikkeling' },
-    { category: 'Biologisch (HIPP)', monthlyPrice: '€80-100', yearPrice: '€960-1200', note: '100% biologische ingrediënten' }
+    'Huismerken zijn even goed',
+    'Bulk kopen bij aanbieding',
+    'Prijzen vergelijken online',
+    'Kruidvat/Etos eigen merk overwegen',
+    'Let op gramprijs, niet pakprijs'
   ]
 
   const nightFeedingTips = [

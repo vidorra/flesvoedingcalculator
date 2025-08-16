@@ -359,27 +359,101 @@ export default function KennisbankPage() {
           </div>
         </div>
 
-        {/* Infographics Section */}
+        {/* Nederlandse Context */}
+        <div className="bg-blue-50 rounded-2xl border border-blue-200 p-6">
+          <h2 className="font-semibold text-blue-800 mb-4">Flesvoeding in Nederland</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-medium text-blue-800 mb-3">Regelgeving & Veiligheid:</h3>
+              <ul className="space-y-2 text-sm text-blue-700">
+                <li>• Alle merken voldoen aan EU-verordening 2016/127</li>
+                <li>• NVWA controleert regelmatig kwaliteit</li>
+                <li>• DHA verplicht in alle flesvoeding sinds 2020</li>
+                <li>• Nederlandse kraanwater is veilig voor bereiding</li>
+                <li>• Gratis advies via consultatiebureau</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-medium text-blue-800 mb-3">Beschikbaarheid & Kosten:</h3>
+              <ul className="space-y-2 text-sm text-blue-700">
+                <li>• Breed assortiment in alle supermarkten</li>
+                <li>• Budget opties vanaf €35/maand (Kruidvat)</li>
+                <li>• Premium merken tot €90/maand (Nutrilon)</li>
+                <li>• Biologische opties verkrijgbaar (HIPP, Holle)</li>
+                <li>• Online bestelling met korting mogelijk</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <h2 className="font-semibold text-gray-800 mb-4">Meest Gestelde Vragen</h2>
+          <div className="space-y-4">
+            <div className="border-l-4 border-primary pl-4">
+              <h3 className="font-medium text-gray-800 mb-2">Welk merk flesvoeding is het beste?</h3>
+              <p className="text-sm text-gray-600">
+                Alle Nederlandse merken voldoen aan dezelfde strenge EU-eisen. Kruidvat huismerk is even veilig als Nutrilon of Hero Baby, maar wel goedkoper. Kies op basis van budget en beschikbaarheid.
+              </p>
+            </div>
+            
+            <div className="border-l-4 border-primary pl-4">
+              <h3 className="font-medium text-gray-800 mb-2">Hoeveel kost flesvoeding per maand?</h3>
+              <p className="text-sm text-gray-600">
+                Budget variant (Kruidvat): €35-50/maand. Middenklasse (Hero Baby): €50-70/maand. Premium (Nutrilon): €70-90/maand. Eerste jaar totaal: €400-1000 afhankelijk van merkkeuze.
+              </p>
+            </div>
+            
+            <div className="border-l-4 border-primary pl-4">
+              <h3 className="font-medium text-gray-800 mb-2">Wanneer overstappen van nummer 1 naar 2?</h3>
+              <p className="text-sm text-gray-600">
+                Pas vanaf 6 maanden én wanneer baby vaste voeding krijgt. Nummer 1 mag tot 12 maanden gebruikt worden. Overstappen is dus optioneel, niet verplicht.
+              </p>
+            </div>
+            
+            <div className="border-l-4 border-primary pl-4">
+              <h3 className="font-medium text-gray-800 mb-2">Kan ik van borstvoeding overstappen naar flesvoeding?</h3>
+              <p className="text-sm text-gray-600">
+                Ja, dit kan op elke leeftijd. Geleidelijke overgang over 1-2 weken voorkomt borstontsteking. Combivoeiding (borstvoeding + flesvoeding) is ook mogelijk.
+              </p>
+            </div>
+            
+            <div className="border-l-4 border-primary pl-4">
+              <h3 className="font-medium text-gray-800 mb-2">Mijn baby weigert de fles, wat nu?</h3>
+              <p className="text-sm text-gray-600">
+                Check temperatuur (37°C), probeer andere speen, laat partner proberen, gebruik afgekolfde melk eerst. Geduld is belangrijk - sommige baby's hebben tijd nodig.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Quick Tools */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="font-semibold text-gray-800 mb-4 flex items-center">
             <Info className="w-5 h-5 mr-2 text-primary" />
-            Visuele Guides
+            Handige Tools
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="p-4 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200">
-              <h3 className="font-medium text-primary mb-2">Flesvoeding bereiden in 6 stappen</h3>
-              <p className="text-sm text-gray-600 mb-3">Visuele stap-voor-stap handleiding</p>
-              <button className="text-primary hover:text-gray-700 font-medium text-sm flex items-center">
-                Bekijk infographic <ArrowRight className="w-4 h-4 ml-1" />
-              </button>
-            </div>
-            <div className="p-4 rounded-xl bg-gradient-to-br from-green-50 to-green-100 border border-green-200">
-              <h3 className="font-medium text-green-800 mb-2">Voedingsschema per leeftijd</h3>
-              <p className="text-sm text-green-600 mb-3">Overzichtelijke tijdlijn</p>
-              <button className="text-green-600 hover:text-green-700 font-medium text-sm flex items-center">
-                Bekijk infographic <ArrowRight className="w-4 h-4 ml-1" />
-              </button>
-            </div>
+            <Link 
+              href="/"
+              className="p-4 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 hover:border-primary transition-colors"
+            >
+              <h3 className="font-medium text-primary mb-2">Flesvoeding Calculator</h3>
+              <p className="text-sm text-gray-600 mb-3">Bereken persoonlijke hoeveelheden per voeding</p>
+              <div className="text-primary hover:text-gray-700 font-medium text-sm flex items-center">
+                Bereken nu <ArrowRight className="w-4 h-4 ml-1" />
+              </div>
+            </Link>
+            <Link 
+              href="/voedingsschemas"
+              className="p-4 rounded-xl bg-gradient-to-br from-green-50 to-green-100 border border-green-200 hover:border-primary transition-colors"
+            >
+              <h3 className="font-medium text-green-800 mb-2">Voedingsschema's</h3>
+              <p className="text-sm text-green-600 mb-3">Interactieve schema's per leeftijdsgroep</p>
+              <div className="text-green-600 hover:text-green-700 font-medium text-sm flex items-center">
+                Bekijk schema's <ArrowRight className="w-4 h-4 ml-1" />
+              </div>
+            </Link>
           </div>
         </div>
       </div>
