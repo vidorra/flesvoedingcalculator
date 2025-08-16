@@ -269,6 +269,21 @@ export default function VoedingstechniekenPage() {
           </div>
         </div>
 
+        {/* Visual Guide Highlight */}
+        <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
+          <h2 className="text-lg font-semibold mb-4">Visuele Stap-voor-Stap Guide</h2>
+          <p className="text-white/90 mb-4">
+            Wil je een visuele guide met alle bereidingsstappen? Bekijk onze handige infographic!
+          </p>
+          <Link 
+            href="/infographics"
+            className="bg-white/20 hover:bg-white/30 backdrop-blur text-white font-medium py-3 px-6 rounded-xl transition-all inline-flex items-center"
+          >
+            <ArrowRight className="w-5 h-5 mr-2" />
+            Bekijk Visuele Guides
+          </Link>
+        </div>
+
         {/* Navigation */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Gerelateerde informatie</h2>

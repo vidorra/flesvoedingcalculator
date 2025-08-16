@@ -95,7 +95,7 @@ export default function HomePage() {
           </div>
 
           {/* Calculator Card */}
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border-gray-200 p-6 mb-6">
+          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6 mb-6">
             <div className="space-y-5">
 
               {/* Age Input */}
