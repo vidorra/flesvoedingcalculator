@@ -3,6 +3,11 @@ import Layout from '../../../components/Layout'
 import Link from 'next/link'
 import { AlertCircle, ArrowRight, Home, Thermometer, Baby, Droplets, Phone } from 'lucide-react'
 
+export const metadata = {
+  title: 'Baby Weigert Fles? Spugen? Reflux? → Oplossingen & Tips',
+  description: 'Praktische oplossingen voor flesvoeding problemen. Baby weigert fles, overmatig spugen, reflux of constipatie? Directe hulp van experts.',
+}
+
 export default function ProblemenOplossenPage() {
   const bottleRefusalCauses = [
     {

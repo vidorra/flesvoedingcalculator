@@ -3,6 +3,11 @@ import Layout from '../../../components/Layout'
 import Link from 'next/link'
 import { Wrench, ArrowRight, Home, CheckCircle, AlertTriangle, Heart } from 'lucide-react'
 
+export const metadata = {
+  title: 'Fles Klaarmaken & Geven: Stap-voor-Stap Guide + Video Tips',
+  description: 'Leer hoe je veilig flesvoeding klaarmaakt en geeft. ✓ Juiste temperatuur ✓ Houding ✓ Steriliseren ✓ Responsive feeding technieken.',
+}
+
 export default function VoedingstechniekenPage() {
   const preparationSteps = [
     'Was je handen grondig met zeep',
