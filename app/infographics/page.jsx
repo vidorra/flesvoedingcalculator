@@ -29,7 +29,8 @@ export default function InfographicsPage() {
 
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-primary mb-3">
+          <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+            <CheckCircle className="w-6 h-6 mr-3 text-primary" />
             Visuele Guides
           </h1>
           <p className="text-gray-600">
@@ -165,7 +166,7 @@ const BereidingInfographic = () => {
 
             {/* Warning */}
             {step.warning && (
-              <div className="bg-amber-50 rounded-xl p-3 flex items-start">
+              <div className="bg-amber-50 rounded-xl p-3 border border-amber-200 flex items-start">
                 <div className="w-5 h-5 text-amber-600 mr-2 flex-shrink-0 mt-0.5">⚠️</div>
                 <p className="text-sm text-amber-800">{step.warning}</p>
               </div>
@@ -294,7 +295,7 @@ const VoedingsschemaInfographic = () => {
       {/* Timeline */}
       <div className="relative">
         {/* Vertical Line - Hidden on mobile */}
-        <div className="hidden lg:block absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-pink-300 via-primary to-orange-300"></div>
+        <div className="hidden lg:block absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-pink-400 via-primary to-orange-400"></div>
 
         {/* Age Groups */}
         <div className="space-y-6">
@@ -392,7 +393,7 @@ const VoedingsschemaInfographic = () => {
       <div className="text-center">
         <Link 
           href="/"
-          className="bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-8 rounded-xl transition-all inline-flex items-center"
+          className="bg-primary hover:bg-primary-hover text-white font-semibold py-3 px-8 rounded-xl transition-all inline-flex items-center shadow-lg"
         >
           <ArrowRight className="w-5 h-5 mr-2" />
           Bereken Persoonlijke Hoeveelheden
