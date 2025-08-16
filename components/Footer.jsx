@@ -75,9 +75,9 @@ export default function Footer() {
                 >
                   Medische disclaimer
                 </button>
-                <a href="#" className="block hover:text-primary transition-colors">Privacy beleid</a>
-                <a href="#" className="block hover:text-primary transition-colors">Gebruiksvoorwaarden</a>
-                <a href="#" className="block hover:text-primary transition-colors">Contact</a>
+                <Link href="/privacy-beleid" className="block hover:text-primary transition-colors">Privacy beleid</Link>
+                <Link href="/gebruiksvoorwaarden" className="block hover:text-primary transition-colors">Gebruiksvoorwaarden</Link>
+                <Link href="/contact" className="block hover:text-primary transition-colors">Contact</Link>
               </div>
             </div>
 
