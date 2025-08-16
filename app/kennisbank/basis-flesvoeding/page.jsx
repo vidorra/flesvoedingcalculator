@@ -46,10 +46,10 @@ export default function BasisFlesvoedingPage() {
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
             <BookOpen className="w-6 h-6 mr-3 text-primary" />
-            Basis Flesvoeding Informatie
+            Complete Gids Flesvoeding voor Nederlandse Ouders
           </h1>
           <p className="text-gray-600">
-            Alles wat je moet weten over flesvoeding: van de basis tot praktische tips voor Nederlandse ouders.
+            Alles over flesvoeding: van eerste keuze tot dagelijkse praktijk. Betrouwbare informatie gebaseerd op Nederlandse richtlijnen van het Voedingscentrum en JGZ.
           </p>
         </div>
 
@@ -107,23 +107,156 @@ export default function BasisFlesvoedingPage() {
           </div>
         </div>
 
+        {/* EU Regulations & Safety */}
+        <div className="bg-green-50 rounded-2xl border border-green-200 p-6">
+          <h2 className="text-lg font-semibold text-green-800 mb-4">Veiligheid & Regelgeving in Nederland</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-medium text-green-800 mb-3">EU-verordening 2016/127:</h3>
+              <div className="space-y-2 text-sm text-green-700">
+                <div className="flex items-start space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <span>Alle Nederlandse flesvoeding voldoet aan strenge EU-eisen</span>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <span>Verplichte toevoeging van DHA vanaf 2020</span>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <span>Regelmatige kwaliteitscontroles door NVWA</span>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <span>Alle merken zijn even veilig qua voedingsstoffen</span>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <h3 className="font-medium text-green-800 mb-3">Nederlandse context:</h3>
+              <div className="space-y-2 text-sm text-green-700">
+                <div className="flex items-start space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <span>Kraanwater is veilig voor bereiding flesvoeding</span>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <span>Consultatiebureau biedt gratis advies</span>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <span>Breed assortiment merken verkrijgbaar</span>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <span>Goede prijs-kwaliteit verhouding</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Myth Busting */}
+        <div className="bg-blue-50 rounded-2xl border border-blue-200 p-6">
+          <h2 className="text-lg font-semibold text-blue-800 mb-4">Veelgehoorde Mythes over Flesvoeding</h2>
+          <div className="space-y-4">
+            <div className="bg-white p-4 rounded-lg">
+              <h3 className="font-medium text-red-600 mb-2">❌ Mythe: "Flesvoeding is minder gezond dan borstvoeding"</h3>
+              <p className="text-sm text-blue-700">
+                ✅ Feit: Moderne flesvoeding bevat alle essentiële voedingsstoffen. 
+                Elk kind dat goed groeit en gezond is, krijgt de juiste voeding.
+              </p>
+            </div>
+            
+            <div className="bg-white p-4 rounded-lg">
+              <h3 className="font-medium text-red-600 mb-2">❌ Mythe: "Dure merken zijn beter"</h3>
+              <p className="text-sm text-blue-700">
+                ✅ Feit: Alle merken voldoen aan dezelfde EU-richtlijnen. 
+                Kruidvat huismerk is even veilig als premium merken.
+              </p>
+            </div>
+            
+            <div className="bg-white p-4 rounded-lg">
+              <h3 className="font-medium text-red-600 mb-2">❌ Mythe: "Baby's worden minder slim van flesvoeding"</h3>
+              <p className="text-sm text-blue-700">
+                ✅ Feit: DHA (voor hersenontwikkeling) is verplicht in alle flesvoeding sinds 2020. 
+                Liefde en aandacht zijn belangrijker dan voedingstype.
+              </p>
+            </div>
+            
+            <div className="bg-white p-4 rounded-lg">
+              <h3 className="font-medium text-red-600 mb-2">❌ Mythe: "Flesvoeding baby's worden vaker ziek"</h3>
+              <p className="text-sm text-blue-700">
+                ✅ Feit: Goede hygiëne bij bereiding is belangrijker dan voedingstype. 
+                Veel factoren beïnvloeden weerstand (slaap, stress, genetica).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <h2 className="text-lg font-semibold text-gray-800 mb-4">Veelgestelde Vragen</h2>
+          <div className="space-y-4">
+            <div>
+              <h3 className="font-medium text-gray-800 mb-2">Kan ik van borstvoeding overstappen naar flesvoeding?</h3>
+              <p className="text-sm text-gray-600">
+                Ja, dit kan altijd en op elke leeftijd. Een geleidelijke overgang over 1-2 weken 
+                wordt aangeraden om borstontsteking te voorkomen. Raadpleeg het consultatiebureau voor persoonlijk advies.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="font-medium text-gray-800 mb-2">Welk merk flesvoeding is het beste?</h3>
+              <p className="text-sm text-gray-600">
+                Alle Nederlandse merken voldoen aan dezelfde strenge EU-eisen en zijn even veilig. 
+                Kies op basis van prijs, beschikbaarheid en voorkeur van je baby.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="font-medium text-gray-800 mb-2">Vanaf welke leeftijd kan mijn baby flesvoeding krijgen?</h3>
+              <p className="text-sm text-gray-600">
+                Flesvoeding is veilig vanaf de geboorte. Startvoeding (nummer 1) is geschikt 
+                voor baby's van 0-12 maanden als volledig alternatief voor borstvoeding.
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="font-medium text-gray-800 mb-2">Kan ik borstvoeding en flesvoeding combineren?</h3>
+              <p className="text-sm text-gray-600">
+                Ja, combivoeiding is mogelijk. Start met flesvoeding als aanvulling en bouw 
+                geleidelijk op. Let wel op dat melkproductie kan afnemen.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Navigation to other pages */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Meer weten?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <h2 className="text-lg font-semibold text-gray-800 mb-4">Verder lezen</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <Link 
               href="/kennisbank/soorten-flesvoeding"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
               <div className="font-medium text-gray-800">Soorten Flesvoeding →</div>
-              <div className="text-sm text-gray-600">Leer over nummer 1, 2 en 3</div>
+              <div className="text-sm text-gray-600">Nummer 1, 2, 3 uitgelegd</div>
             </Link>
             <Link 
               href="/kennisbank/voedingstechnieken"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
               <div className="font-medium text-gray-800">Voedingstechnieken →</div>
-              <div className="text-sm text-gray-600">Hoe geef je de fles goed?</div>
+              <div className="text-sm text-gray-600">Bereiden en geven van fles</div>
+            </Link>
+            <Link 
+              href="/"
+              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+            >
+              <div className="font-medium text-gray-800">Flesvoeding Calculator →</div>
+              <div className="text-sm text-gray-600">Bereken hoeveelheden</div>
             </Link>
           </div>
         </div>
