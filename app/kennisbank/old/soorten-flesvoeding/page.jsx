@@ -5,12 +5,6 @@ import { Package, ArrowRight, Home, Info, AlertCircle } from 'lucide-react'
 
 export default function SoortenFlesvoedingPage() {
   const formula1Brands = ['Nutrilon 1', 'Hero Baby 1', 'Kruidvat Zuigelingenmelk 1', 'HIPP Bio 1']
-  
-  const formulaComparison = [
-    { type: 'Nummer 1 (0-6m)', protein: '1.2-1.8g/100ml', iron: '0.3-1.3mg/100ml', usage: 'Hoofdvoeding', required: 'Ja, als geen borstvoeding' },
-    { type: 'Nummer 2 (6-12m)', protein: '1.6-2.2g/100ml', iron: '4-6mg/100ml', usage: 'Met vaste voeding', required: 'Optioneel' },
-    { type: 'Nummer 3 (12m+)', protein: '2.0-2.5g/100ml', iron: '6-8mg/100ml', usage: 'Aanvulling op dieet', required: 'Optioneel' }
-  ]
 
   return (
     <Layout>
@@ -31,10 +25,10 @@ export default function SoortenFlesvoedingPage() {
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
             <Package className="w-6 h-6 mr-3 text-primary" />
-            Flesvoeding Nummer 1, 2, 3: Complete Gids voor Nederlandse Ouders
+            Soorten Flesvoeding (1, 2, 3)
           </h1>
           <p className="text-gray-600">
-            Ontdek het verschil tussen startvoeding, opvolgmelk en peutermelk. Inclusief vergelijking van Nederlandse merken en overstap-advies volgens officiële richtlijnen.
+            Ontdek de verschillen tussen startvoeding, opvolgmelk en peutermelk, en wanneer je welke kiest.
           </p>
         </div>
 
@@ -141,91 +135,20 @@ export default function SoortenFlesvoedingPage() {
           </div>
         </div>
 
-        {/* Comparison Table */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Flesvoeding Typen Vergelijking</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-gray-200">
-                  <th className="text-left py-2 font-medium text-gray-800">Type</th>
-                  <th className="text-left py-2 font-medium text-gray-800">Eiwitgehalte</th>
-                  <th className="text-left py-2 font-medium text-gray-800">IJzergehalte</th>
-                  <th className="text-left py-2 font-medium text-gray-800">Gebruik</th>
-                  <th className="text-left py-2 font-medium text-gray-800">Noodzakelijk</th>
-                </tr>
-              </thead>
-              <tbody>
-                {formulaComparison.map((item, index) => (
-                  <tr key={index} className="border-b border-gray-100">
-                    <td className="py-2 font-medium text-primary">{item.type}</td>
-                    <td className="py-2 text-gray-700">{item.protein}</td>
-                    <td className="py-2 text-gray-700">{item.iron}</td>
-                    <td className="py-2 text-gray-700">{item.usage}</td>
-                    <td className="py-2 text-gray-700">{item.required}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        {/* Nederlandse Merken */}
-        <div className="bg-default rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Populaire Nederlandse Merken</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div>
-              <h3 className="font-medium text-gray-800 mb-3">Breed verkrijgbaar:</h3>
-              <div className="space-y-2">
-                <div className="bg-white p-3 rounded-lg">
-                  <div className="font-medium text-gray-800">Nutrilon</div>
-                  <div className="text-sm text-gray-600">Nederlandse ontwikkeling, marktleider</div>
-                </div>
-                <div className="bg-white p-3 rounded-lg">
-                  <div className="font-medium text-gray-800">Hero Baby</div>
-                  <div className="text-sm text-gray-600">Swiss kwaliteit, goede prijs-kwaliteit</div>
-                </div>
-                <div className="bg-white p-3 rounded-lg">
-                  <div className="font-medium text-gray-800">Kruidvat</div>
-                  <div className="text-sm text-gray-600">Budget optie, zelfde EU-standaarden</div>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <h3 className="font-medium text-gray-800 mb-3">Biologisch:</h3>
-              <div className="space-y-2">
-                <div className="bg-white p-3 rounded-lg">
-                  <div className="font-medium text-gray-800">HIPP Bio</div>
-                  <div className="text-sm text-gray-600">100% biologisch, Europese kwaliteit</div>
-                </div>
-                <div className="bg-white p-3 rounded-lg">
-                  <div className="font-medium text-gray-800">Aptamil</div>
-                  <div className="text-sm text-gray-600">Focus op hersensontwikkeling</div>
-                </div>
-              </div>
-              <p className="text-xs text-gray-500 mt-3">
-                Alle merken voldoen aan dezelfde EU-verordening 2016/127
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* Special Formula */}
         <div className="bg-amber-50 rounded-2xl border border-amber-200 p-6">
           <h2 className="text-lg font-semibold text-amber-800 mb-4 flex items-center">
             <AlertCircle className="w-5 h-5 mr-2" />
-            Speciale voeding (op medisch advies)
+            Speciale voeding
           </h2>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
               <h3 className="font-medium text-amber-800 mb-2">Hypoallergene (HA) voeding:</h3>
               <ul className="space-y-1 text-sm text-amber-700">
-                <li>• Bij hoog allergie-risico in familie</li>
+                <li>• Bij allergie-risico in familie</li>
                 <li>• Gedeeltelijk afgebroken eiwitten</li>
-                <li>• Alleen op advies kinderarts</li>
-                <li>• Beschikbaar in type 1 en 2</li>
+                <li>• Op advies kinderarts</li>
               </ul>
             </div>
             
@@ -233,58 +156,9 @@ export default function SoortenFlesvoedingPage() {
               <h3 className="font-medium text-amber-800 mb-2">Anti-reflux (AR) voeding:</h3>
               <ul className="space-y-1 text-sm text-amber-700">
                 <li>• Bij overmatig spugen</li>
-                <li>• Verdikt automatisch in maag</li>
+                <li>• Verdikt in de maag</li>
                 <li>• Alleen op medisch advies</li>
-                <li>• Johannesbroodpitmeel als verdikker</li>
               </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-medium text-amber-800 mb-2">Lactosevrije voeding:</h3>
-              <ul className="space-y-1 text-sm text-amber-700">
-                <li>• Bij lactose-intolerantie</li>
-                <li>• Zeer zeldzaam bij baby's</li>
-                <li>• Diagnose door kinderarts</li>
-                <li>• Soja of lactase-behandeld</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* FAQ Section */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Veelgestelde Vragen</h2>
-          <div className="space-y-4">
-            <div>
-              <h3 className="font-medium text-gray-800 mb-2">Wanneer overstappen van nummer 1 naar 2?</h3>
-              <p className="text-sm text-gray-600">
-                Pas vanaf 6 maanden en alleen wanneer je baby ook vaste voeding krijgt. 
-                Nummer 1 mag je tot 12 maanden blijven gebruiken.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="font-medium text-gray-800 mb-2">Is peutermelk (nummer 3) nodig?</h3>
-              <p className="text-sm text-gray-600">
-                Nee, vanaf 12 maanden kan je baby gewone volle melk drinken. 
-                Peutermelk is alleen nuttig bij zeer selectieve eters.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="font-medium text-gray-800 mb-2">Kan ik tussen merken wisselen?</h3>
-              <p className="text-sm text-gray-600">
-                Ja, alle merken voldoen aan dezelfde EU-richtlijnen. 
-                Wissel geleidelijk over 3-5 dagen om maagklachten te voorkomen.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="font-medium text-gray-800 mb-2">Wat betekenen de cijfers precies?</h3>
-              <p className="text-sm text-gray-600">
-                Nummer 1: 0-6 maanden (startvoeding), Nummer 2: 6-12 maanden (opvolgmelk), 
-                Nummer 3: 12+ maanden (peutermelk, optioneel).
-              </p>
             </div>
           </div>
         </div>
@@ -292,14 +166,7 @@ export default function SoortenFlesvoedingPage() {
         {/* Navigation */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Meer informatie</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            <Link 
-              href="/kennisbank/basis-flesvoeding"
-              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
-            >
-              <div className="font-medium text-gray-800">Basis Flesvoeding →</div>
-              <div className="text-sm text-gray-600">Beginnen met flesvoeding</div>
-            </Link>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 
               href="/kennisbank/voedingstechnieken"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
