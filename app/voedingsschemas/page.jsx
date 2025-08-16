@@ -302,7 +302,7 @@ FlesvoedingCalculator.nl - Betrouwbare informatie voor flesvoeding
           <select
             value={feedingFrequency}
             onChange={(e) => setFeedingFrequency(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none appearance-none bg-white"
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none appearance-none bg-white text-gray-800"
           >
             {feedingOptions.map((option) => (
               <option key={option.id} value={option.id}>

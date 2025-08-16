@@ -115,3 +115,30 @@ body {
 .bg-primary-gradient {
   background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--primary-dark)));
 }
+
+/* Enhanced mobile input support */
+input, select, textarea {
+  color: rgb(31, 41, 55); /* text-gray-800 */
+}
+
+input::placeholder, textarea::placeholder {
+  color: rgb(107, 114, 128); /* text-gray-500 */
+  opacity: 1; /* Firefox placeholder opacity fix */
+}
+
+/* Android webkit input styling */
+input[type="text"], input[type="number"], input[type="email"], select, textarea {
+  -webkit-appearance: none;
+  -webkit-text-fill-color: rgb(31, 41, 55);
+}
+
+/* Select option styling for better mobile support */
+select option {
+  color: rgb(31, 41, 55);
+  background-color: white;
+}
+
+/* Ensure consistent dropdown styling on mobile */
+select {
+  background-image: none;
+}

@@ -150,7 +150,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                 onChange={handleInputChange}
                 placeholder="Uw naam"
                 required
-                className="w-full px-4 py-3 pl-11 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none"
+                className="w-full px-4 py-3 pl-11 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-gray-800 placeholder:text-gray-500"
               />
               <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
             </div>
@@ -169,7 +169,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                 onChange={handleInputChange}
                 placeholder="uw.email@voorbeeld.nl"
                 required
-                className="w-full px-4 py-3 pl-11 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none"
+                className="w-full px-4 py-3 pl-11 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-gray-800 placeholder:text-gray-500"
               />
               <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
             </div>
@@ -186,7 +186,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               value={formData.subject}
               onChange={handleInputChange}
               placeholder={formData.type === 'feedback' ? 'Feedback over...' : 'Contact over...'}
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-gray-800 placeholder:text-gray-500"
             />
           </div>
 
@@ -206,7 +206,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                 }
                 required
                 rows={4}
-                className="w-full px-4 py-3 pl-11 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none resize-none"
+                className="w-full px-4 py-3 pl-11 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none resize-none text-gray-800 placeholder:text-gray-500"
               />
               <MessageSquare className="absolute left-3 top-4 w-5 h-5 text-gray-400" />
             </div>
