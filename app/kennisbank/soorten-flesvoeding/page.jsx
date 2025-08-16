@@ -62,7 +62,7 @@ export default function SoortenFlesvoedingPage() {
                   <li>• Volledige zuigelingenvoeding vanaf geboorte</li>
                   <li>• Bevat alle essentiële voedingsstoffen</li>
                   <li>• Eiwitgehalte: 1.2-1.8g per 100ml</li>
-                  <li>• IJzergehalte: 0.3-1.3mg per 100ml</li>
+                  <li>• IJzergehalte: 0.5-1.0mg per 100ml</li>
                   <li>• Mag tot 12 maanden gebruikt worden</li>
                 </ul>
               </div>
@@ -302,6 +302,21 @@ export default function SoortenFlesvoedingPage() {
               </p>
             </div>
           </div>
+        </div>
+
+        {/* Schema Infographic Highlight */}
+        <div className="bg-green-50 rounded-2xl border border-green-200 p-6">
+          <h2 className="text-lg font-semibold text-green-800 mb-4">Voedingsschema Overzicht</h2>
+          <p className="text-green-700 mb-4">
+            Bekijk onze visuele tijdlijn met alle voedingsschema's per leeftijd en flesvoeding type.
+          </p>
+          <Link 
+            href="/infographics"
+            className="bg-green-100 hover:bg-green-200 text-green-800 font-medium py-3 px-6 rounded-xl transition-all inline-flex items-center"
+          >
+            <ArrowRight className="w-5 h-5 mr-2" />
+            Bekijk Schema Tijdlijn
+          </Link>
         </div>
 
         {/* Navigation */}
