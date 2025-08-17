@@ -1,5 +1,5 @@
 'use client'
-import Layout from '../../../components/Layout'
+import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import { BookOpen, CheckCircle, ArrowRight, Home } from 'lucide-react'
 

@@ -5,15 +5,6 @@ import ContactModal from '../../components/ContactModal'
 import { generateFAQSchema } from '../../lib/structured-data'
 import { Info, Calculator, Baby, AlertCircle, ChevronDown, ChevronUp } from 'lucide-react'
 
-export const metadata = {
-  title: 'Veelgestelde Vragen | FlesvoedingCalculator.nl',
-  description: 'Antwoorden op veelgestelde vragen over flesvoeding, onze calculator en algemene voedingsvragen voor baby\'s.',
-  openGraph: {
-    title: 'Veelgestelde Vragen - FlesvoedingCalculator.nl',
-    description: 'Vind antwoorden op alle vragen over flesvoeding en onze calculator',
-    url: 'https://flesvoedingcalculator.nl/faq',
-  },
-}
 
 export default function FAQPage() {
   const [selectedCategory, setSelectedCategory] = useState('calculator')
@@ -185,5 +176,6 @@ export default function FAQPage() {
         onClose={() => setIsContactModalOpen(false)} 
       />
     </Layout>
+    </>
   )
 }

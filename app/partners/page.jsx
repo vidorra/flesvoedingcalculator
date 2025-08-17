@@ -1,4 +1,3 @@
-'use client'
 import Layout from '../../components/Layout'
 import Link from 'next/link'
 import { Users, ArrowRight, Home, ExternalLink, Shield, Award } from 'lucide-react'
