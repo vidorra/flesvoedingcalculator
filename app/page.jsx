@@ -248,13 +248,6 @@ export default function HomePage() {
 
               {/* Feeding Information */}
               <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-                <div className="bg-amber-50 rounded-xl p-4 mb-4">
-                  <p className="text-sm text-amber-800">
-                    <strong>Aanbeveling:</strong> Start met 60ml per voeding (gebaseerd op 150ml per kg lichaamsgewicht). 
-                    Bij groeispurts kan dit oplopen tot 80ml per voeding.
-                  </p>
-                </div>
-
                 <div className="bg-default rounded-xl p-4">
                   <h5 className="font-medium text-gray-900 mb-3">Waarom variatie in hoeveelheid?</h5>
                   <div className="space-y-2 text-sm text-gray-800">
