@@ -1,5 +1,5 @@
 'use client'
-import Layout from '../../../components/Layout'
+import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import { Shield, ArrowRight, Home, CheckCircle, X, Thermometer, Refrigerator } from 'lucide-react'
 

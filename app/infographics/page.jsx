@@ -4,10 +4,6 @@ import Layout from '../../components/Layout'
 import Link from 'next/link'
 import { ArrowRight, Home, CheckCircle, Clock } from 'lucide-react'
 
-export const metadata = {
-  title: 'Flesvoeding Infographics: Visuele Guides en Schema\'s',
-  description: 'Handige visuele guides voor flesvoeding bereiding en voedingsschema\'s per leeftijd. Stap-voor-stap instructies en overzichtelijke tijdlijnen.',
-}
 
 export default function InfographicsPage() {
   const [activeInfographic, setActiveInfographic] = useState('bereiding')

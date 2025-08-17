@@ -1,4 +1,3 @@
-'use client'
 import Layout from '../../components/Layout'
 import Link from 'next/link'
 import { AlertTriangle, ArrowRight, Home, Shield, Heart, Phone } from 'lucide-react'
