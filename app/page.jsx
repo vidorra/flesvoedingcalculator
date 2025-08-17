@@ -215,7 +215,7 @@ export default function HomePage() {
 
           {/* Results */}
           {results && (
-            <div className="space-y-4">
+            <div className="space-y-6">
               {/* Main Results */}
               <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
                 <h3 className="text-lg font-semibold mb-4 flex items-center">
@@ -294,7 +294,7 @@ export default function HomePage() {
           )}
 
           {results && (
-            <div>
+            <div className="space-y-6">
               {/* Details Toggle */}
               <button
                 onClick={() => setShowDetails(!showDetails)}
@@ -334,7 +334,7 @@ export default function HomePage() {
           )}
 
           {/* Information Cards */}
-          <div className="mt-8 space-y-4">
+          <div className="space-y-6">
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h3 className="font-semibold text-gray-800 mb-3 flex items-center">
                 <Info className="w-5 h-5 mr-2 text-primary" />
@@ -366,8 +366,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* FAQ Section - Schema optimized */}
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            {/* FAQ Section - Schema optimized */}
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde Vragen</h2>
             <div className="space-y-4">
               <div>
@@ -402,6 +402,7 @@ export default function HomePage() {
                   Deel dit door aantal voedingen per dag. Onze calculator doet dit automatisch en houdt rekening met leeftijdsaanpassingen.
                 </p>
               </div>
+            </div>
             </div>
           </div>
         </div>
