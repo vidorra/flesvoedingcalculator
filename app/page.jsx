@@ -287,11 +287,11 @@ export default function HomePage() {
           )}
 
           {results && (
-            <div className="space-y-6">
+            <div className="mt-8">
               {/* Details Toggle */}
               <button
                 onClick={() => setShowDetails(!showDetails)}
-                className="w-full bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4 flex items-center justify-between text-gray-700 hover:bg-white transition-colors"
+                className="w-full bg-white/80 backdrop-blur rounded-t-2xl shadow-sm border border-gray-200 border-b-0 p-4 flex items-center justify-between text-gray-700 hover:bg-white transition-colors"
               >
                 <span className="font-medium">Bekijk details & voedingsschema</span>
                 {showDetails ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
@@ -328,7 +328,7 @@ export default function HomePage() {
 
           {/* Information Cards */}
           <div className="space-y-6">
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white/80 backdrop-blur rounded-b-2xl shadow-sm border border-gray-200 border-t-0 p-6">
               <h3 className="font-semibold text-gray-800 mb-3 flex items-center">
                 <Info className="w-5 h-5 mr-2 text-primary" />
                 Soorten Flesvoeding
@@ -417,10 +417,12 @@ export default function HomePage() {
             {/* Google Ad 1 */}
             <div className="text-center space-y-2">
               <div className="text-gray-500 text-xs font-medium">Google Advertentie</div>
-              <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                <div className="text-gray-400 text-sm">Google Ads</div>
-                <div className="text-gray-300 text-xs mt-1">320x100</div>
-              </div>
+              <ins className="adsbygoogle"
+                   style={{display: 'block'}}
+                   data-ad-client="ca-pub-5215838917916938"
+                   data-ad-slot="1234567890"
+                   data-ad-format="auto"
+                   data-full-width-responsive="true"></ins>
             </div>
     
             
@@ -440,13 +442,14 @@ export default function HomePage() {
           <div className="space-y-4">
             
             {/* Google Ad 2 */}
-            
             <div className="text-center space-y-2">
               <div className="text-gray-500 text-xs font-medium">Google Advertentie</div>
-              <div className="bg-gray-50 rounded-xl p-8 border border-gray-200">
-                <div className="text-gray-400 text-sm">Google Ads</div>
-                <div className="text-gray-300 text-xs mt-1">300x250</div>
-              </div>
+              <ins className="adsbygoogle"
+                   style={{display: 'block'}}
+                   data-ad-client="ca-pub-5215838917916938"
+                   data-ad-slot="0987654321"
+                   data-ad-format="auto"
+                   data-full-width-responsive="true"></ins>
             </div>
          
           </div>
