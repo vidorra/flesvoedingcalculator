@@ -132,6 +132,14 @@ input[type="text"], input[type="number"], input[type="email"], select, textarea 
   -webkit-text-fill-color: rgb(31, 41, 55);
 }
 
+/* Fix webkit placeholder color override */
+input[type="text"]::-webkit-input-placeholder, 
+input[type="number"]::-webkit-input-placeholder, 
+input[type="email"]::-webkit-input-placeholder, 
+textarea::-webkit-input-placeholder {
+  -webkit-text-fill-color: rgb(107, 114, 128); /* text-gray-500 */
+}
+
 /* Select option styling for better mobile support */
 select option {
   color: rgb(31, 41, 55);
