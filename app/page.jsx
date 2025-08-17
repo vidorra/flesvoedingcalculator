@@ -275,7 +275,7 @@ export default function HomePage() {
                     <div className="flex items-start space-x-2">
                       <span className="text-primary mt-0.5">•</span>
                       <div>
-                        <strong>Dagritme:</strong> 's Ochtends vaak meer honger, 's avonds kleinere porties.
+                        <strong>Dagritme:</strong> &apos;s Ochtends vaak meer honger, &apos;s avonds kleinere porties.
                       </div>
                     </div>
                     <div className="flex items-start space-x-2">
