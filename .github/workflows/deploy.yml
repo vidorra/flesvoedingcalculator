@@ -45,7 +45,8 @@ jobs:
             next.config.js
             app
             components
-            services
+            lib
+            hooks
             public
             tailwind.config.js
             postcss.config.js
