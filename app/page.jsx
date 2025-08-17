@@ -290,8 +290,12 @@ export default function HomePage() {
                   </p>
                 </div>
               </div>
+            </div>
+          )}
 
-              {/* Details Toggle */
+          {results && (
+            <div>
+              {/* Details Toggle */}
               <button
                 onClick={() => setShowDetails(!showDetails)}
                 className="w-full bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4 flex items-center justify-between text-gray-700 hover:bg-white transition-colors"
