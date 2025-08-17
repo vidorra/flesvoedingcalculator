@@ -43,6 +43,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="nl">
       <head>
+        {/* Google AdSense */}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938" crossOrigin="anonymous"></script>
+        
         {/* Google Analytics - Head version for verification */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-3NZ90KFHQ6"></script>
         <script
@@ -113,6 +116,13 @@ export default function RootLayout({ children }) {
                 console.error('Failed to load analytics:', error);
               }
             })();
+          `}
+        </Script>
+        
+        {/* Google AdSense Initialization */}
+        <Script id="adsense-init" strategy="afterInteractive">
+          {`
+            (adsbygoogle = window.adsbygoogle || []).push({});
           `}
         </Script>
         
