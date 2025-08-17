@@ -43,6 +43,19 @@ export default function RootLayout({ children }) {
   return (
     <html lang="nl">
       <head>
+        {/* Google Analytics - Head version for verification */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3NZ90KFHQ6"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-3NZ90KFHQ6');
+            `,
+          }}
+        />
+        
         {/* Structured Data */}
         <script
           type="application/ld+json"
