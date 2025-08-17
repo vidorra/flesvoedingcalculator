@@ -1,9 +1,10 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../components/Layout'
-import { WebApplicationSchema, OrganizationSchema, FAQPageSchema } from '../components/SchemaMarkup'
+import { generateCalculatorSchema, generateOrganizationSchema, generateFAQSchema } from '../lib/structured-data'
+import { trackCalculatorUsage } from '../lib/analytics'
 import { Baby, Calculator, Info, Clock, ChevronDown, ChevronUp } from 'lucide-react'
 
 // Helper function to generate feeding schedule
@@ -42,6 +43,13 @@ export default function HomePage() {
     const age = parseInt(ageMonths)
     const feedings = parseInt(feedingsPerDay)
     
+    // Track calculator usage
+    trackCalculatorUsage('feeding_calculator', {
+      weight: weightKg,
+      age_months: age,
+      feedings_per_day: feedings
+    })
+    
     // Dutch standard: 150ml per kg, adjusted by age
     let mlPerKg = 150
     if (age >= 2) mlPerKg = 140
@@ -72,12 +80,43 @@ export default function HomePage() {
     })
   }
 
+  // FAQ data for structured data
+  const faqData = [
+    {
+      question: "Hoeveel flesvoeding heeft mijn baby nodig?",
+      answer: "De Nederlandse richtlijn is 150ml per kilogram lichaamsgewicht per dag, verdeeld over meerdere voedingen. Dit kan variëren per baby en leeftijd."
+    },
+    {
+      question: "Hoe vaak moet ik mijn baby voeden?",
+      answer: "Pasgeboren baby's hebben meestal 6-8 voedingen per dag nodig. Naarmate ze groeien, neemt dit af tot 4-6 voedingen per dag."
+    },
+    {
+      question: "Is deze calculator betrouwbaar?",
+      answer: "Ja, onze calculator is gebaseerd op Nederlandse voedingsrichtlijnen en het Voedingscentrum. Raadpleeg altijd uw arts of consultatiebureau voor persoonlijk advies."
+    }
+  ]
+
   return (
     <>
-      {/* Schema Markup for SEO */}
-      <WebApplicationSchema />
-      <OrganizationSchema />
-      <FAQPageSchema />
+      {/* Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateCalculatorSchema())
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateOrganizationSchema())
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateFAQSchema(faqData))
+        }}
+      />
       
     <Layout>
       <div className="grid grid-cols-12 gap-6 min-h-screen">
@@ -134,7 +173,7 @@ export default function HomePage() {
                     onChange={(e) => setWeight(e.target.value)}
                     placeholder="Bijv. 4.5"
                     step="0.1"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none text-gray-800 placeholder:text-gray-500"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none text-gray-800 placeholder:text-gray-400"
                   />
                   <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm">kg</span>
                 </div>
