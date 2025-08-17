@@ -246,7 +246,52 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Details Toggle */}
+              {/* Feeding Information */}
+              <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+                <div className="bg-amber-50 rounded-xl p-4 mb-4">
+                  <p className="text-sm text-amber-800">
+                    <strong>Aanbeveling:</strong> Start met 60ml per voeding (gebaseerd op 150ml per kg lichaamsgewicht). 
+                    Bij groeispurts kan dit oplopen tot 80ml per voeding.
+                  </p>
+                </div>
+
+                <div className="bg-default rounded-xl p-4">
+                  <h5 className="font-medium text-gray-900 mb-3">Waarom variatie in hoeveelheid?</h5>
+                  <div className="space-y-2 text-sm text-gray-800">
+                    <div className="flex items-start space-x-2">
+                      <span className="text-primary mt-0.5">•</span>
+                      <div>
+                        <strong>Groeispurts:</strong> Rond 7-10 dagen, 3 weken, 6 weken, 3 maanden en 6 maanden. 
+                        Baby kan dan tijdelijk 20-30% meer drinken.
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <span className="text-primary mt-0.5">•</span>
+                      <div>
+                        <strong>Wonderweken/Regeldagen:</strong> Mentale ontwikkelingssprongen waarbij baby onrustig is 
+                        en vaker kleine beetjes wil drinken.
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <span className="text-primary mt-0.5">•</span>
+                      <div>
+                        <strong>Dagritme:</strong> 's Ochtends vaak meer honger, 's avonds kleinere porties.
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <span className="text-primary mt-0.5">•</span>
+                      <div>
+                        <strong>Temperatuur:</strong> Bij warm weer minder per keer, maar vaker dorst.
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-xs text-gray-700 mt-3 italic">
+                    Volg altijd de signalen van je baby. Een tevreden baby die goed groeit, krijgt genoeg binnen.
+                  </p>
+                </div>
+              </div>
+
+              {/* Details Toggle */
               <button
                 onClick={() => setShowDetails(!showDetails)}
                 className="w-full bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4 flex items-center justify-between text-gray-700 hover:bg-white transition-colors"
@@ -279,40 +324,6 @@ export default function HomePage() {
                     </p>
                   </div>
 
-                  <div className="bg-default rounded-xl p-4">
-                    <h5 className="font-medium text-gray-900 mb-2">Waarom variatie in hoeveelheid?</h5>
-                    <div className="space-y-2 text-sm text-gray-800">
-                      <div className="flex items-start space-x-2">
-                        <span className="text-primary mt-0.5">•</span>
-                        <div>
-                          <strong>Groeispurts:</strong> Rond 7-10 dagen, 3 weken, 6 weken, 3 maanden en 6 maanden. 
-                          Baby kan dan tijdelijk 20-30% meer drinken.
-                        </div>
-                      </div>
-                      <div className="flex items-start space-x-2">
-                        <span className="text-primary mt-0.5">•</span>
-                        <div>
-                          <strong>Wonderweken/Regeldagen:</strong> Mentale ontwikkelingssprongen waarbij baby onrustig is 
-                          en vaker kleine beetjes wil drinken.
-                        </div>
-                      </div>
-                      <div className="flex items-start space-x-2">
-                        <span className="text-primary mt-0.5">•</span>
-                        <div>
-                          <strong>Dagritme:</strong> &apos;s Ochtends vaak meer honger, &apos;s avonds kleinere porties.
-                        </div>
-                      </div>
-                      <div className="flex items-start space-x-2">
-                        <span className="text-primary mt-0.5">•</span>
-                        <div>
-                          <strong>Temperatuur:</strong> Bij warm weer minder per keer, maar vaker dorst.
-                        </div>
-                      </div>
-                    </div>
-                    <p className="text-xs text-gray-700 mt-3 italic">
-                      Volg altijd de signalen van je baby. Een tevreden baby die goed groeit, krijgt genoeg binnen.
-                    </p>
-                  </div>
                 </div>
               )}
             </div>
