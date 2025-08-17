@@ -4,10 +4,6 @@ import Layout from '../../components/Layout'
 import Link from 'next/link'
 import { Mail, ArrowRight, Home, Phone, Clock, MapPin, MessageCircle, Send, AlertCircle } from 'lucide-react'
 
-export const metadata = {
-  title: 'Contact | FlesvoedingCalculator.nl',
-  description: 'Neem contact op met FlesvoedingCalculator.nl voor vragen over flesvoeding, de calculator of onze website.',
-}
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
