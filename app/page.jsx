@@ -173,7 +173,7 @@ export default function HomePage() {
                     onChange={(e) => setWeight(e.target.value)}
                     placeholder="Bijv. 4.5"
                     step="0.1"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none text-gray-800 placeholder:text-gray-400"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none text-gray-800 placeholder:text-gray-500"
                   />
                   <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm">kg</span>
                 </div>
@@ -367,7 +367,7 @@ export default function HomePage() {
           </div>
 
             {/* FAQ Section - Schema optimized */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6 mt-8">
             <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde Vragen</h2>
             <div className="space-y-4">
               <div>
@@ -402,7 +402,6 @@ export default function HomePage() {
                   Deel dit door aantal voedingen per dag. Onze calculator doet dit automatisch en houdt rekening met leeftijdsaanpassingen.
                 </p>
               </div>
-            </div>
             </div>
           </div>
         </div>
