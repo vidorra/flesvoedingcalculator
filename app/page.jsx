@@ -299,7 +299,7 @@ export default function HomePage() {
 
               {/* Detailed Schedule */}
               {showDetails && (
-                <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+                <div className="bg-white/80 backdrop-blur rounded-bottom-2xl shadow-sm border border-gray-200 p-6 border-t-0 schedule-content">
                   <h4 className="font-semibold text-gray-800 mb-4 flex items-center">
                     <Clock className="w-5 h-5 mr-2 text-primary" />
                     Voorbeeldschema (flexibel aan te passen)
