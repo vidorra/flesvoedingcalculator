@@ -1,10 +1,12 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
+import ContactModal from './ContactModal'
 import { Baby, Calculator, Info, BookOpen, Calendar, Users, X, AlertCircle } from 'lucide-react'
 
 export default function Footer() {
   const [showDisclaimer, setShowDisclaimer] = useState(false)
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
 
   const navigation = [
     { href: '/', name: 'Calculator' },
@@ -73,7 +75,12 @@ export default function Footer() {
                 <Link href="/medische-disclaimer" className="block hover:text-primary transition-colors">Medische disclaimer</Link>
                 <Link href="/privacy-beleid" className="block hover:text-primary transition-colors">Privacy beleid</Link>
                 <Link href="/gebruiksvoorwaarden" className="block hover:text-primary transition-colors">Gebruiksvoorwaarden</Link>
-                <Link href="/contact" className="block hover:text-primary transition-colors">Contact</Link>
+                <button 
+                  onClick={() => setIsContactModalOpen(true)}
+                  className="block hover:text-primary transition-colors text-left"
+                >
+                  Contact
+                </button>
               </div>
             </div>
 
@@ -107,6 +114,12 @@ export default function Footer() {
           </div>
         </div>
       </footer>
+
+      {/* Contact Modal */}
+      <ContactModal 
+        isOpen={isContactModalOpen} 
+        onClose={() => setIsContactModalOpen(false)} 
+      />
     </>
   )
 }

@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import Layout from '../../components/Layout'
 import ContactModal from '../../components/ContactModal'
-import { AlertTriangle, Shield, UserCheck, Phone, Clock } from 'lucide-react'
+import { AlertTriangle, Shield, UserCheck, Phone, Clock, AlertCircle } from 'lucide-react'
 
 export default function MedischeDisclaimerPage() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
@@ -12,7 +12,7 @@ export default function MedischeDisclaimerPage() {
       icon: AlertTriangle,
       title: 'Geen Vervanging voor Medisch Advies',
       content: 'De informatie op deze website is bedoeld als algemene educatieve informatie en vervangt geen professioneel medisch advies, diagnose of behandeling.',
-      color: 'red'
+      color: 'amber'
     },
     {
       icon: UserCheck,
@@ -24,7 +24,7 @@ export default function MedischeDisclaimerPage() {
       icon: Clock,
       title: 'Bij Spoedeisende Situaties',
       content: 'Bij acute zorgen over de gezondheid van uw baby, neem onmiddellijk contact op met uw huisarts, kinderarts of bel 112.',
-      color: 'red'
+      color: 'amber'
     }
   ]
 
@@ -50,17 +50,17 @@ export default function MedischeDisclaimerPage() {
         </div>
 
         {/* Main Disclaimer */}
-        <div className="bg-red-50 rounded-2xl shadow-sm border border-red-200 p-6">
+        <div className="bg-amber-50 rounded-2xl shadow-sm border border-amber-200 p-6">
           <div className="flex items-start space-x-3">
-            <AlertTriangle className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
+            <AlertTriangle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
             <div>
-              <h2 className="font-semibold text-red-800 mb-3">Belangrijke Medische Disclaimer</h2>
-              <p className="text-red-700 leading-relaxed mb-4">
+              <h2 className="font-semibold text-amber-800 mb-3">Belangrijke Medische Disclaimer</h2>
+              <p className="text-amber-700 leading-relaxed mb-4">
                 <strong>Deze website en calculator zijn uitsluitend bedoeld voor educatieve en informatieve doeleinden.</strong> 
                 De informatie die wordt verstrekt, is gebaseerd op algemene Nederlandse richtlijnen en vervangt onder geen 
                 enkele omstandigheid professioneel medisch advies, diagnose of behandeling door een gekwalificeerde zorgverlener.
               </p>
-              <p className="text-red-700 leading-relaxed">
+              <p className="text-amber-700 leading-relaxed">
                 Elke baby is uniek en kan verschillende voedingsbehoeften hebben. Raadpleeg altijd uw kinderarts, 
                 consultatiebureau of andere bevoegde zorgverlener voor specifiek advies over de voeding en 
                 gezondheid van uw baby.
@@ -172,6 +172,20 @@ export default function MedischeDisclaimerPage() {
           >
             Contact opnemen
           </button>
+        </div>
+
+        {/* Medical Disclaimer - FAQ Style */}
+        <div className="bg-amber-50 rounded-2xl border border-amber-200 p-6">
+          <div className="flex items-start space-x-3">
+            <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+            <div>
+              <h3 className="font-semibold text-amber-800 mb-1">Medische Disclaimer</h3>
+              <p className="text-sm text-amber-700">
+                De informatie op deze pagina is alleen voor informatieve doeleinden en vervangt geen professioneel medisch advies. 
+                Raadpleeg altijd uw kinderarts of een gekwalificeerde zorgverlener voor specifieke medische vragen.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
