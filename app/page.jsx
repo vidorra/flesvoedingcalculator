@@ -328,7 +328,7 @@ export default function HomePage() {
 
           {/* Information Cards */}
           <div className="space-y-6">
-            <div className="bg-white/80 backdrop-blur rounded-b-2xl shadow-sm border border-gray-200 border-t-0 p-6">
+            <div className="bg-white/80 backdrop-blur rounded-b-2xl shadow-sm border border-gray-200 p-6">
               <h3 className="font-semibold text-gray-800 mb-3 flex items-center">
                 <Info className="w-5 h-5 mr-2 text-primary" />
                 Soorten Flesvoeding
