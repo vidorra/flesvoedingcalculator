@@ -69,12 +69,8 @@ export default function Footer() {
             <div>
               <h3 className="font-semibold text-gray-800 mb-3">Informatie</h3>
               <div className="space-y-2 text-sm text-gray-600">
-                <button 
-                  onClick={() => setShowDisclaimer(true)}
-                  className="block hover:text-primary transition-colors"
-                >
-                  Medische disclaimer
-                </button>
+                <Link href="/informatie" className="block hover:text-primary transition-colors">Informatie</Link>
+                <Link href="/medische-disclaimer" className="block hover:text-primary transition-colors">Medische disclaimer</Link>
                 <Link href="/privacy-beleid" className="block hover:text-primary transition-colors">Privacy beleid</Link>
                 <Link href="/gebruiksvoorwaarden" className="block hover:text-primary transition-colors">Gebruiksvoorwaarden</Link>
                 <Link href="/contact" className="block hover:text-primary transition-colors">Contact</Link>
