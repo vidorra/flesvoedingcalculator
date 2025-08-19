@@ -217,10 +217,11 @@ const VoedingsschemaInfographic = () => {
       age: "0-1 maand",
       color: "bg-pink-500",
       mlPerKg: 150,
-      feedings: "7-12x per dag",
-      amount: "50-90 ml",
+      avgWeight: "3.5-4.5 kg",
+      feedings: "8-12x per dag",
+      amount: "60-90 ml",
       interval: "2-3 uur",
-      total: "400-600 ml/dag",
+      total: "500-650 ml/dag",
       milkType: "Startvoeding (1)",
       development: "Zoekreflex, veel slapen",
       tips: "Voeden op verzoek, nachtvoedingen normaal"
@@ -229,10 +230,11 @@ const VoedingsschemaInfographic = () => {
       age: "1-2 maanden",
       color: "bg-purple-500",
       mlPerKg: 150,
-      feedings: "6-8x per dag",
+      avgWeight: "4.5-5.5 kg",
+      feedings: "7-9x per dag",
       amount: "90-120 ml",
       interval: "3-4 uur",
-      total: "600-750 ml/dag",
+      total: "650-800 ml/dag",
       milkType: "Startvoeding (1)",
       development: "Eerste lachjes, alerter",
       tips: "Ritme begint te ontstaan"
@@ -240,11 +242,12 @@ const VoedingsschemaInfographic = () => {
     {
       age: "2-4 maanden",
       color: "bg-primary",
-      mlPerKg: 140,
-      feedings: "5-6x per dag",
+      mlPerKg: 150,
+      avgWeight: "5.5-7.0 kg",
+      feedings: "6-8x per dag",
       amount: "120-180 ml",
-      interval: "4 uur",
-      total: "700-900 ml/dag",
+      interval: "3-4 uur",
+      total: "800-1000 ml/dag",
       milkType: "Startvoeding (1)",
       development: "Hoofdje optillen, grabbelend",
       tips: "Mogelijk doorslapen 's nachts"
@@ -252,11 +255,12 @@ const VoedingsschemaInfographic = () => {
     {
       age: "4-6 maanden",
       color: "bg-green-500",
-      mlPerKg: 120,
-      feedings: "4-5x per dag",
+      mlPerKg: 150,
+      avgWeight: "6.5-8.0 kg",
+      feedings: "5-6x per dag",
       amount: "180-240 ml",
       interval: "4-5 uur",
-      total: "800-1000 ml/dag",
+      total: "900-1000 ml/dag",
       milkType: "Startvoeding (1)",
       development: "Klaar voor eerste hapjes",
       tips: "Start oefenhapjes rond 4-6 maanden"
@@ -264,11 +268,12 @@ const VoedingsschemaInfographic = () => {
     {
       age: "6-9 maanden",
       color: "bg-yellow-500",
-      mlPerKg: 100,
-      feedings: "3-4x per dag",
-      amount: "200-240 ml",
+      mlPerKg: 120,
+      avgWeight: "7.5-9.0 kg",
+      feedings: "4-5x per dag",
+      amount: "200-250 ml",
       interval: "Rond maaltijden",
-      total: "600-800 ml/dag",
+      total: "800-1000 ml/dag",
       milkType: "Opvolgmelk (2)",
       development: "Zit zelfstandig, eet hapjes",
       tips: "2-3 vaste maaltijden erbij"
@@ -277,10 +282,11 @@ const VoedingsschemaInfographic = () => {
       age: "9-12 maanden",
       color: "bg-orange-500",
       mlPerKg: 100,
-      feedings: "2-3x per dag",
-      amount: "200-240 ml",
+      avgWeight: "8.5-10.0 kg",
+      feedings: "3-4x per dag",
+      amount: "200-250 ml",
       interval: "Ochtend & avond",
-      total: "400-600 ml/dag",
+      total: "600-800 ml/dag",
       milkType: "Opvolgmelk (2)",
       development: "Kruipen, staan, eerste woordjes",
       tips: "3 maaltijden + 2 tussendoortjes"
@@ -318,7 +324,8 @@ const VoedingsschemaInfographic = () => {
                   <div className="flex items-center justify-between">
                     <div>
                       <h3 className="font-bold text-xl">{group.age}</h3>
-                      <p className="text-white/90 text-sm">{group.mlPerKg} ml per kg</p>
+                      <p className="text-white/90 text-sm">Gem. gewicht: {group.avgWeight}</p>
+                      <p className="text-white/90 text-xs">{group.mlPerKg} ml per kg</p>
                     </div>
                     <div className="text-right">
                       <p className="font-bold text-lg">{group.total}</p>
@@ -389,8 +396,9 @@ const VoedingsschemaInfographic = () => {
           <p className="font-medium mb-3">Nederlandse standaard richtlijn:</p>
           <div className="space-y-2 text-sm">
             <p>• <strong>Basis:</strong> Gewicht (kg) × ml per kg = Dagelijkse hoeveelheid</p>
+            <p>• <strong>Voorbeeld:</strong> 6kg baby × 150ml/kg = 900ml per dag</p>
+            <p>• <strong>Verdeling:</strong> 900ml ÷ 6 voedingen = 150ml per voeding</p>
             <p>• <strong>Maximum:</strong> 1000 ml per dag (tot 12 maanden)</p>
-            <p>• <strong>Verdeling:</strong> Dagelijkse hoeveelheid ÷ Aantal voedingen = Per voeding</p>
             <p className="mt-3 text-white/80 italic">
               Let op: Dit zijn richtlijnen. Elk kind is anders!
             </p>
