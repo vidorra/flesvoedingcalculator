@@ -268,6 +268,104 @@ export default function VoedingstechniekenPage() {
           </div>
         </div>
 
+        {/* First Time Feeding Guide */}
+        <div className="bg-purple-50 rounded-2xl border border-purple-200 p-6">
+          <h2 className="text-lg font-semibold text-purple-800 mb-4">Je Eerste Fles: Stap-voor-Stap voor Beginners</h2>
+          
+          <div className="space-y-6">
+            {/* Mental preparation */}
+            <div>
+              <h3 className="font-medium text-purple-800 mb-3">Mentale voorbereiding (belangrijker dan je denkt!)</h3>
+              <div className="bg-white p-4 rounded-lg">
+                <div className="space-y-2 text-sm text-purple-700">
+                  <div>• Geen perfectie verwachten - eerste keer is oefenen</div>
+                  <div>• Baby bepaalt het tempo, niet jij</div>
+                  <div>• Stress vermijden (baby voelt jouw spanning)</div>
+                  <div>• Tijd nemen - geen haast hebben</div>
+                  <div>• Focus op positieve momenten</div>
+                </div>
+              </div>
+            </div>
+
+            {/* First feeding signals */}
+            <div>
+              <h3 className="font-medium text-purple-800 mb-3">Herken eerste keer signalen</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-white p-4 rounded-lg">
+                  <h4 className="font-medium text-green-700 mb-2">✅ Positieve signalen:</h4>
+                  <div className="space-y-1 text-sm text-green-600">
+                    <div>• Baby zuigt actief</div>
+                    <div>• Ontspannen lichaampje</div>
+                    <div>• Mogelijk oogcontact</div>
+                    <div>• Tevreden na afloop</div>
+                  </div>
+                </div>
+                <div className="bg-white p-4 rounded-lg">
+                  <h4 className="font-medium text-amber-700 mb-2">⚠️ Normale "problemen":</h4>
+                  <div className="space-y-1 text-sm text-amber-600">
+                    <div>• Weinig gedronken (normaal!)</div>
+                    <div>• Veel gespuugd (komt voor)</div>
+                    <div>• Fles geweigerd (niet persoonlijk nemen)</div>
+                    <div>• Langer duren dan verwacht</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* After feeding */}
+            <div>
+              <h3 className="font-medium text-purple-800 mb-3">Na de eerste voeding</h3>
+              <div className="bg-white p-4 rounded-lg">
+                <div className="space-y-3">
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-medium text-gray-800">Boertje proberen (geduld hebben)</div>
+                      <div className="text-sm text-gray-600">Soms komt pas na 5-10 minuten</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-medium text-gray-800">Baby rechtop houden (20 minuten)</div>
+                      <div className="text-sm text-gray-600">Voorkomt spugen en reflux</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-medium text-gray-800">Positief afsluiten met knuffel</div>
+                      <div className="text-sm text-gray-600">Reinforcement van de ervaring</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="font-medium text-gray-800">Fles direct opruimen</div>
+                      <div className="text-sm text-gray-600">Voorkomt bacteriegroei</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Evaluation without judgment */}
+            <div>
+              <h3 className="font-medium text-purple-800 mb-3">Evalueren zonder oordeel</h3>
+              <div className="bg-white p-4 rounded-lg">
+                <div className="text-sm text-purple-700 space-y-1">
+                  <div>• Focus op wat WEL goed ging</div>
+                  <div>• Wat leerde je voor volgende keer?</div>
+                  <div>• Hoe reageerde baby (zonder oordeel)?</div>
+                  <div>• Remember: eerste keer is nooit perfect</div>
+                  <div>• Elke voeding wordt beter</div>
+                  <div>• Baby en jij leren samen</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Visual Guide Highlight */}
         <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
           <h2 className="text-lg font-semibold mb-4">Visuele Stap-voor-Stap Guide</h2>

@@ -303,6 +303,68 @@ export default function SoortenFlesvoedingPage() {
           </div>
         </div>
 
+        {/* Complete switching guide */}
+        <div className="bg-blue-50 rounded-2xl border border-blue-200 p-6">
+          <h2 className="text-lg font-semibold text-blue-800 mb-4">Complete Overstap Gids</h2>
+          
+          <div className="space-y-6">
+            {/* Why switch */}
+            <div>
+              <h3 className="font-medium text-blue-800 mb-3">Waarom overstappen tussen types?</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-white p-4 rounded-lg">
+                  <h4 className="font-medium text-blue-800 mb-2">Van 1 naar 2 (6+ maanden):</h4>
+                  <div className="space-y-1 text-sm text-blue-700">
+                    <div>• Hoger ijzergehalte voor groei</div>
+                    <div>• Aangepast aan groeiende behoefte</div>
+                    <div>• Meer vitaminen voor ontwikkeling</div>
+                    <div>• Maar: type 1 kan ook tot 12 maanden</div>
+                  </div>
+                </div>
+                <div className="bg-white p-4 rounded-lg">
+                  <h4 className="font-medium text-blue-800 mb-2">Van 2 naar gewone melk (12+ maanden):</h4>
+                  <div className="space-y-1 text-sm text-blue-700">
+                    <div>• Volle koemelk is vanaf 12 maanden prima</div>
+                    <div>• Peutermelk alleen bij slecht eten</div>
+                    <div>• Goedkoper dan peutermelk</div>
+                    <div>• Deel van gevarieerd dieet</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Switching timeline */}
+            <div>
+              <h3 className="font-medium text-blue-800 mb-3">Praktische overstap strategie</h3>
+              <div className="bg-white p-4 rounded-lg">
+                <div className="space-y-3">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-sm">1</div>
+                    <div>
+                      <div className="font-medium text-gray-800">Week 1: Geleidelijk introduceren</div>
+                      <div className="text-sm text-gray-600">Mix 75% oude voeding + 25% nieuwe voeding</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-sm">2</div>
+                    <div>
+                      <div className="font-medium text-gray-800">Week 2: Verhogen naar 50/50</div>
+                      <div className="text-sm text-gray-600">Baby went aan nieuwe smaak en samenstelling</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-sm">3</div>
+                    <div>
+                      <div className="font-medium text-gray-800">Week 3: Volledig overstappen</div>
+                      <div className="text-sm text-gray-600">100% nieuwe voeding, oude pot bewaren als backup</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Schema Infographic Highlight */}
         <div className="bg-green-50 rounded-2xl border border-green-200 p-6">
           <h2 className="text-lg font-semibold text-green-800 mb-4">Voedingsschema Overzicht</h2>

@@ -247,6 +247,89 @@ export default function BasisFlesvoedingPage() {
           </div>
         </div>
 
+        {/* Comprehensive Guide Section */}
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <h2 className="text-lg font-semibold text-gray-800 mb-4">Complete Flesvoeding Gids</h2>
+          
+          <div className="space-y-6">
+            {/* What is bottle feeding - expanded */}
+            <div>
+              <h3 className="font-medium text-gray-800 mb-3">Wat is flesvoeding precies?</h3>
+              <p className="text-gray-600 leading-relaxed mb-3">
+                Flesvoeding is kunstmatige babyvoeding die alle voedingsstoffen bevat die je baby nodig heeft voor een gezonde groei en ontwikkeling. 
+                In Nederland volgen we de richtlijnen van het Voedingscentrum voor optimale babyvoedering.
+              </p>
+              <div className="bg-default p-4 rounded-lg">
+                <p className="text-primary font-medium text-sm">
+                  <strong>Nederlandse standaard:</strong> 150ml per kg lichaamsgewicht per 24 uur als uitgangspunt, 
+                  met maximum 1000ml per dag voor baby's tot 1 jaar.
+                </p>
+              </div>
+            </div>
+
+            {/* Cost Information */}
+            <div>
+              <h3 className="font-medium text-gray-800 mb-3">Kosten van flesvoeding in Nederland</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <h4 className="font-medium text-green-800 mb-2">Gemiddelde kosten per maand:</h4>
+                  <div className="space-y-1 text-sm text-green-700">
+                    <div>• Startvoeding (0-6 mnd): €15-25</div>
+                    <div>• Opvolgmelk (6+ mnd): €20-30</div>
+                    <div>• Totaal eerste jaar: circa €250-350</div>
+                  </div>
+                </div>
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <h4 className="font-medium text-blue-800 mb-2">Geld besparen tips:</h4>
+                  <div className="space-y-1 text-sm text-blue-700">
+                    <div>• Huismerken even goed als A-merken</div>
+                    <div>• Grotere verpakkingen goedkoper</div>
+                    <div>• Let op aanbiedingen</div>
+                    <div>• Vergelijk prijzen online</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Work and bottle feeding */}
+            <div>
+              <h3 className="font-medium text-gray-800 mb-3">Flesvoeding en werk combineren</h3>
+              <p className="text-gray-600 leading-relaxed mb-3">
+                Flesvoeding biedt flexibiliteit bij werkhervatting. Partners kunnen overnemen, oppas kan voeden, 
+                en je hoeft niet te kolven. Plan geleidelijke overgang minimaal 2 weken voor werkhervatting.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-amber-50 p-3 rounded-lg">
+                  <div className="font-medium text-amber-800 mb-1">Voorbereiding:</div>
+                  <div className="text-sm text-amber-700">Start vroeg met wennen aan fles, laat partner oefenen, stock voorraad op</div>
+                </div>
+                <div className="bg-purple-50 p-3 rounded-lg">
+                  <div className="font-medium text-purple-800 mb-1">Praktisch:</div>
+                  <div className="text-sm text-purple-700">Instructies voor oppas, noodvoorraad, backup plan maken</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Partner involvement */}
+            <div>
+              <h3 className="font-medium text-gray-800 mb-3">Partner betrekken bij flesvoeding</h3>
+              <p className="text-gray-600 leading-relaxed mb-3">
+                Flesvoeding biedt unieke kans voor partner om volledig betrokken te zijn bij voeding. 
+                Dit versterkt de band en geeft mama rust.
+              </p>
+              <div className="bg-pink-50 p-4 rounded-lg">
+                <h4 className="font-medium text-pink-800 mb-2">Praktische tips:</h4>
+                <div className="space-y-1 text-sm text-pink-700">
+                  <div>• Verdeel voedingen: bijvoorbeeld mama overdag, papa 's avonds</div>
+                  <div>• Laat partner nachtvoeding overnemen voor mama's rust</div>
+                  <div>• Creëer eigen rituelen: papa's liedjes, mama's verhalen</div>
+                  <div>• Beide ouders leren alle handgrepen (bereiding, temperatuur)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Navigation to other pages */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Verder lezen</h2>
