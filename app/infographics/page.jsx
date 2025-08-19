@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import Layout from '../../components/Layout'
 import Link from 'next/link'
-import { ArrowRight, Home, CheckCircle, Clock } from 'lucide-react'
+import { ArrowRight, Home, CheckCircle, Clock, BookOpen, Wrench, Shield, Baby, Thermometer, AlertTriangle, Info, Package } from 'lucide-react'
 
 
 export default function InfographicsPage() {
@@ -26,7 +26,7 @@ export default function InfographicsPage() {
         {/* Header */}
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
-            <CheckCircle className="w-6 h-6 mr-3 text-primary" />
+            <BookOpen className="w-6 h-6 mr-3 text-primary" />
             Visuele Guides
           </h1>
           <p className="text-gray-600">
@@ -39,22 +39,24 @@ export default function InfographicsPage() {
           <div className="flex space-x-2 overflow-x-auto">
             <button
               onClick={() => setActiveInfographic('bereiding')}
-              className={`px-6 py-3 rounded-xl font-medium transition-all whitespace-nowrap ${
+              className={`px-6 py-3 rounded-xl font-medium transition-all whitespace-nowrap flex items-center ${
                 activeInfographic === 'bereiding'
                   ? 'bg-primary text-white shadow-lg'
                   : 'bg-gray-50 text-gray-600 hover:bg-default'
               }`}
             >
+              <Wrench className="w-4 h-4 mr-2" />
               Flesvoeding Bereiden
             </button>
             <button
               onClick={() => setActiveInfographic('schema')}
-              className={`px-6 py-3 rounded-xl font-medium transition-all whitespace-nowrap ${
+              className={`px-6 py-3 rounded-xl font-medium transition-all whitespace-nowrap flex items-center ${
                 activeInfographic === 'schema'
                   ? 'bg-primary text-white shadow-lg'
                   : 'bg-gray-50 text-gray-600 hover:bg-default'
               }`}
             >
+              <Clock className="w-4 h-4 mr-2" />
               Voedingsschema per Leeftijd
             </button>
           </div>
@@ -73,6 +75,7 @@ const BereidingInfographic = () => {
   const steps = [
     {
       number: 1,
+      icon: Shield,
       title: "Handen wassen",
       description: "Was je handen grondig met zeep en warm water",
       tips: ["Minimaal 20 seconden wassen", "Ook onder de nagels"],
@@ -80,6 +83,7 @@ const BereidingInfographic = () => {
     },
     {
       number: 2,
+      icon: Thermometer,
       title: "Water koken",
       description: "Kook vers kraanwater en laat afkoelen tot 40°C",
       tips: ["Gebruik koud kraanwater", "Nooit water opnieuw koken"],
@@ -87,6 +91,7 @@ const BereidingInfographic = () => {
     },
     {
       number: 3,
+      icon: Package,
       title: "Water afmeten",
       description: "Meet de exacte hoeveelheid water af in de fles",
       tips: ["Zet fles op vlakke ondergrond", "Kijk op ooghoogte"],
@@ -94,6 +99,7 @@ const BereidingInfographic = () => {
     },
     {
       number: 4,
+      icon: Package,
       title: "Poeder toevoegen",
       description: "Voeg het juiste aantal afgestreken schepjes toe",
       tips: ["Gebruik bijgeleverde maatschep", "Niet aandrukken!"],
@@ -101,6 +107,7 @@ const BereidingInfographic = () => {
     },
     {
       number: 5,
+      icon: Wrench,
       title: "Schudden",
       description: "Sluit de fles en schud krachtig tot alles opgelost is",
       tips: ["Horizontaal + verticaal schudden", "Check op klontjes"],
@@ -108,6 +115,7 @@ const BereidingInfographic = () => {
     },
     {
       number: 6,
+      icon: Thermometer,
       title: "Temperatuur checken",
       description: "Test een druppel op je pols - moet lauw aanvoelen",
       tips: ["37°C is ideaal", "Te heet? Afkoelen onder kraan"],
@@ -140,7 +148,10 @@ const BereidingInfographic = () => {
                 {step.number}
               </div>
               <div className="ml-4 flex-1">
-                <h3 className="font-semibold text-gray-800 text-lg">{step.title}</h3>
+                <h3 className="font-semibold text-gray-800 text-lg flex items-center">
+                  <step.icon className="w-5 h-5 mr-2 text-primary" />
+                  {step.title}
+                </h3>
               </div>
             </div>
 
@@ -163,7 +174,7 @@ const BereidingInfographic = () => {
             {/* Warning */}
             {step.warning && (
               <div className="bg-amber-50 rounded-xl p-3 border border-amber-200 flex items-start">
-                <div className="w-5 h-5 text-amber-600 mr-2 flex-shrink-0 mt-0.5">⚠️</div>
+                <AlertTriangle className="w-5 h-5 text-amber-600 mr-2 flex-shrink-0 mt-0.5" />
                 <p className="text-sm text-amber-800">{step.warning}</p>
               </div>
             )}
@@ -322,7 +333,7 @@ const VoedingsschemaInfographic = () => {
                     {/* Left Column - Feeding Details */}
                     <div>
                       <h4 className="font-semibold text-gray-800 mb-3 flex items-center">
-                        <Clock className="w-4 h-4 mr-2 text-gray-600" />
+                        <Package className="w-4 h-4 mr-2 text-gray-600" />
                         Voedingsdetails
                       </h4>
                       <div className="space-y-2">
@@ -347,7 +358,8 @@ const VoedingsschemaInfographic = () => {
 
                     {/* Right Column - Development & Tips */}
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-3">
+                      <h4 className="font-semibold text-gray-800 mb-3 flex items-center">
+                        <Baby className="w-4 h-4 mr-2 text-gray-600" />
                         Ontwikkeling & Tips
                       </h4>
                       <div className="bg-default rounded-xl p-4">
@@ -369,7 +381,8 @@ const VoedingsschemaInfographic = () => {
 
       {/* Formula Reference Card */}
       <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
-        <h3 className="font-bold text-lg mb-4">
+        <h3 className="font-bold text-lg mb-4 flex items-center">
+          <Info className="w-5 h-5 mr-2" />
           Berekeningsformule
         </h3>
         <div className="bg-white/20 backdrop-blur rounded-xl p-4">
