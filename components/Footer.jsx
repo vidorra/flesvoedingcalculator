@@ -104,12 +104,23 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="border-t border-gray-200 mt-8 pt-6 flex flex-col md:flex-row md:items-center md:justify-between">
-            <div className="text-sm text-gray-500 mb-4 md:mb-0">
-              <p>© 2025 FlesvoedingCalculator.nl - Alle rechten voorbehouden</p>
+          <div className="border-t border-gray-200 mt-8 pt-6">
+            {/* Privacy Notice */}
+            <div className="text-xs text-gray-500 mb-4 p-3 bg-gray-50 rounded-lg">
+              <p>
+                Wij verbeteren onze website door Microsoft Clarity te gebruiken om te zien hoe u onze website gebruikt. 
+                Door onze site te gebruiken, gaat u ermee akkoord dat wij en Microsoft deze gegevens kunnen verzamelen en gebruiken. 
+                <Link href="/privacy-beleid" className="text-primary hover:underline ml-1">Meer informatie</Link>
+              </p>
             </div>
-            <div className="text-xs text-gray-400">
-              <p>Gebaseerd op richtlijnen van het Voedingscentrum en NCJ</p>
+            
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+              <div className="text-sm text-gray-500 mb-4 md:mb-0">
+                <p>© 2025 FlesvoedingCalculator.nl - Alle rechten voorbehouden</p>
+              </div>
+              <div className="text-xs text-gray-400">
+                <p>Gebaseerd op richtlijnen van het Voedingscentrum en NCJ</p>
+              </div>
             </div>
           </div>
         </div>
