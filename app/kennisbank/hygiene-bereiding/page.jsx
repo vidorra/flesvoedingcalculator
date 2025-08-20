@@ -382,7 +382,7 @@ export default function HygieneBereidingPage() {
               <h4 className="text-green-900 font-medium mb-2">🍼 Flessenwater</h4>
               <ul className="text-green-800 text-sm space-y-1">
                 <li>• Label: "geschikt voor baby's"</li>
-                <li>• Natrium < 20mg/L</li>
+                <li>• Natrium &lt; 20mg/L</li>
                 <li>• Ook koken tot 6 maanden</li>
                 <li>• Nederlandse supermarkten: breed aanbod</li>
                 <li>• Duurder dan kraanwater</li>
