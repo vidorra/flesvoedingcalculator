@@ -113,6 +113,11 @@ export default function KennisbankPage() {
     return filtered
   }
 
+  // Generate article URLs - link to category pages with comprehensive content
+  const getArticleUrl = (article) => {
+    return `/kennisbank/${article.category}`
+  }
+
   const knowledgeCategories = [
     {
       id: 'basis-flesvoeding',
@@ -248,7 +253,7 @@ export default function KennisbankPage() {
                 return (
                   <Link
                     key={article.id}
-                    href={`/kennisbank/${article.category}`}
+                    href={getArticleUrl(article)}
                     className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors"
                   >
                     <div className="flex items-start space-x-3">

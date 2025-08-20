@@ -105,13 +105,14 @@ export default function RootLayout({ children }) {
           </>
         )}
         
-        {/* Web Vitals Monitoring */}
-        <Script id="web-vitals" strategy="afterInteractive">
+        {/* Web Vitals Monitoring and Clarity */}
+        <Script id="analytics-init" strategy="afterInteractive">
           {`
             (async () => {
               try {
-                const { initWebVitals } = await import('../lib/analytics.js');
+                const { initWebVitals, initClarity } = await import('../lib/analytics.js');
                 initWebVitals();
+                initClarity();
               } catch (error) {
                 console.error('Failed to load analytics:', error);
               }
@@ -123,17 +124,6 @@ export default function RootLayout({ children }) {
         <Script id="adsense-init" strategy="afterInteractive">
           {`
             (adsbygoogle = window.adsbygoogle || []).push({});
-          `}
-        </Script>
-        
-        {/* Microsoft Clarity */}
-        <Script id="clarity" strategy="afterInteractive">
-          {`
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "swtgjl0ozf");
           `}
         </Script>
         
