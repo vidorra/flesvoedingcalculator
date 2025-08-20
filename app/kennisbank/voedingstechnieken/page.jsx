@@ -366,6 +366,134 @@ export default function VoedingstechniekenPage() {
           </div>
         </div>
 
+        {/* Fles Bereiden Section */}
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <h2 className="text-lg font-semibold text-gray-800 mb-4">Fles Bereiden Stap voor Stap: Van Poeder tot Klare Fles</h2>
+          
+          <p className="text-gray-600 leading-relaxed mb-4">
+            Perfect voeding keer op keer maken. Met de juiste techniek voor veilige fles bereiding volgens 
+            Nederlandse richtlijnen wordt elke fles consistent en veilig.
+          </p>
+
+          <div className="bg-blue-50 rounded-xl p-4 border border-blue-200 mb-6">
+            <h3 className="text-blue-900 font-semibold mb-3">🔄 Snelle stappen overzicht:</h3>
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="bg-white rounded-lg p-3">
+                <h4 className="font-medium text-blue-900 mb-1">1. Water voorbereiden</h4>
+                <p className="text-blue-800 text-sm">Kook water, laat afkoelen tot 70°C</p>
+              </div>
+              <div className="bg-white rounded-lg p-3">
+                <h4 className="font-medium text-blue-900 mb-1">2. Meten & mengen</h4>
+                <p className="text-blue-800 text-sm">Juiste ratio: 1 maatlepel per 30ml</p>
+              </div>
+              <div className="bg-white rounded-lg p-3">
+                <h4 className="font-medium text-blue-900 mb-1">3. Temperatuur testen</h4>
+                <p className="text-blue-800 text-sm">37°C - lauwwarm op pols</p>
+              </div>
+            </div>
+          </div>
+
+          <h3 className="font-medium text-gray-800 mb-4">Gedetailleerd Bereidingsproces</h3>
+          
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <div className="space-y-4">
+              <h4 className="font-medium text-green-800">Stap 1-4: Voorbereiding</h4>
+              <div className="bg-green-50 rounded-xl p-4 border border-green-200 space-y-2">
+                <p className="text-green-800"><strong>1. Was je handen</strong> grondig met warme zeep</p>
+                <p className="text-green-800"><strong>2. Steriliseer fles en speen</strong> (eerste 6 maanden)</p>
+                <p className="text-green-800"><strong>3. Kook water</strong> en laat afkoelen tot 70°C</p>
+                <p className="text-green-800"><strong>4. Meet water eerst</strong> in de fles</p>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <h4 className="font-medium text-purple-800">Stap 5-8: Mengen & Serveren</h4>
+              <div className="bg-purple-50 rounded-xl p-4 border border-purple-200 space-y-2">
+                <p className="text-purple-800"><strong>5. Voeg poeder toe</strong> (1 lepel per 30ml)</p>
+                <p className="text-purple-800"><strong>6. Roer en schud</strong> tot volledig opgelost</p>
+                <p className="text-purple-800"><strong>7. Koel af</strong> tot 37°C (lichaamstemperatuur)</p>
+                <p className="text-purple-800"><strong>8. Test en serveer</strong> direct aan baby</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-amber-50 rounded-xl p-4 border border-amber-200 mb-6">
+            <h3 className="text-amber-900 font-semibold mb-3">⚠️ Belangrijke Nederlandse Context</h3>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div>
+                <h4 className="font-medium text-amber-800 mb-2">💧 Nederlands Kraanwater:</h4>
+                <ul className="text-amber-700 text-sm space-y-1">
+                  <li>• Wereldklasse kwaliteit, EU-standaarden</li>
+                  <li>• Oudere huizen (voor 1960): laat 2-3 min lopen</li>
+                  <li>• Koken verplicht voor baby's onder 6 maanden</li>
+                  <li>• Winter: kouder, langer opwarmen</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-medium text-amber-800 mb-2">🌡️ Temperatuur Tips:</h4>
+                <ul className="text-amber-700 text-sm space-y-1">
+                  <li>• 70°C voor poeder (bacteriën doden)</li>
+                  <li>• 37°C voor serveren (lichaamstemperatuur)</li>
+                  <li>• Polstest betrouwbaarder dan thermometer</li>
+                  <li>• Nederlandse klimaat: snellere afkoeling</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <h3 className="font-medium text-gray-800 mb-4">Juiste Meng Verhoudingen</h3>
+          
+          <div className="overflow-x-auto mb-6">
+            <table className="w-full text-sm border border-gray-200 rounded-lg">
+              <thead>
+                <tr className="bg-gray-50">
+                  <th className="text-left p-3 font-medium">Merk</th>
+                  <th className="text-left p-3 font-medium">Ratio</th>
+                  <th className="text-left p-3 font-medium">Water</th>
+                  <th className="text-left p-3 font-medium">Poeder</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t">
+                  <td className="p-3">Standaard (alle merken)</td>
+                  <td className="p-3">1:30</td>
+                  <td className="p-3">30ml</td>
+                  <td className="p-3">1 gestreepte maatlepel</td>
+                </tr>
+                <tr className="border-t bg-blue-50">
+                  <td className="p-3">Nutrilon, Hero Baby, Kruidvat</td>
+                  <td className="p-3">1:30</td>
+                  <td className="p-3">30ml</td>
+                  <td className="p-3">1 bijgeleverde maatlepel</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-red-50 rounded-xl p-4 border border-red-200">
+              <h3 className="text-red-900 font-medium mb-2">❌ Veelgemaakte fouten:</h3>
+              <ul className="text-red-800 text-sm space-y-1">
+                <li>• Te veel poeder (nierbelasting, gevaarlijk)</li>
+                <li>• Magnetron gebruik (hete plekken)</li>
+                <li>• Hergebruik restjes (bacteriegroei)</li>
+                <li>• Verkeerde maatlepel tussen merken</li>
+                <li>• Bolle lepels i.p.v. gestreept</li>
+              </ul>
+            </div>
+            
+            <div className="bg-green-50 rounded-xl p-4 border border-green-200">
+              <h3 className="text-green-900 font-medium mb-2">✅ Tips voor success:</h3>
+              <ul className="text-green-800 text-sm space-y-1">
+                <li>• Heb alles klaar voordat je begint</li>
+                <li>• Thermosfles met gekookt water voor nacht</li>
+                <li>• Controleer vervaldatum poeder</li>
+                <li>• Bewaar poeder droog en koel</li>
+                <li>• Gebruik binnen 4 weken na openen</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         {/* Visual Guide Highlight */}
         <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
           <h2 className="text-lg font-semibold mb-4">Visuele Stap-voor-Stap Guide</h2>
