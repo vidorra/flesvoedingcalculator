@@ -273,6 +273,144 @@ export default function HygieneBereidingPage() {
           </div>
         </div>
 
+        {/* Flessen Steriliseren Section */}
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <h2 className="text-lg font-semibold text-gray-800 mb-4">Flessen Steriliseren: Complete Gids</h2>
+          
+          <div className="bg-blue-50 rounded-xl p-4 border border-blue-200 mb-6">
+            <h3 className="text-blue-900 font-semibold mb-2">⏰ Tot wanneer steriliseren?</h3>
+            <p className="text-blue-800 text-sm mb-2">
+              <strong>Tot 6 maanden verplicht</strong> - Baby's immuunsysteem is dan voldoende ontwikkeld
+            </p>
+            <ul className="text-blue-800 text-sm space-y-1">
+              <li>• <strong>0-3 maanden:</strong> Altijd steriliseren (ook water koken)</li>
+              <li>• <strong>3-6 maanden:</strong> Steriliseren aanbevolen</li>
+              <li>• <strong>6+ maanden:</strong> Grondig schoonmaken met warm zeepsop voldoet</li>
+            </ul>
+          </div>
+
+          <h3 className="font-medium text-gray-800 mb-4">Sterilisatiemethoden: Voor- en Nadelen</h3>
+          
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <div className="bg-green-50 rounded-xl p-4 border border-green-200">
+              <h4 className="text-green-900 font-medium mb-3">🔥 Uitkoken (Gratis)</h4>
+              <div className="text-green-800 text-sm space-y-1 mb-3">
+                <p><strong>Methode:</strong> 10 minuten in kokend water</p>
+                <p><strong>Kosten:</strong> Alleen gas/elektra</p>
+                <p><strong>Tijd:</strong> 15-20 minuten totaal</p>
+              </div>
+              <div className="text-green-700 text-xs">
+                <p><strong>✓ Voordelen:</strong> 100% effectief, grote hoeveelheden, geen aanschaf</p>
+                <p><strong>✗ Nadelen:</strong> Tijdrovend, brandgevaar, veel energie</p>
+              </div>
+            </div>
+
+            <div className="bg-purple-50 rounded-xl p-4 border border-purple-200">
+              <h4 className="text-purple-900 font-medium mb-3">⚡ Stoomsterilisator (€30-150)</h4>
+              <div className="text-purple-800 text-sm space-y-1 mb-3">
+                <p><strong>Methode:</strong> Hete stoom, automatisch</p>
+                <p><strong>Tijd:</strong> 6-15 minuten</p>
+                <p><strong>Merken:</strong> Philips Avent, Tommee Tippee</p>
+              </div>
+              <div className="text-purple-700 text-xs">
+                <p><strong>✓ Voordelen:</strong> Snel, consistent, veilig, weinig toezicht</p>
+                <p><strong>✗ Nadelen:</strong> Aanschafkosten, beperkte capaciteit</p>
+              </div>
+            </div>
+
+            <div className="bg-orange-50 rounded-xl p-4 border border-orange-200">
+              <h4 className="text-orange-900 font-medium mb-3">📱 Magnetron (€15-30)</h4>
+              <div className="text-orange-800 text-sm space-y-1 mb-3">
+                <p><strong>Methode:</strong> Speciale zakken/containers</p>
+                <p><strong>Tijd:</strong> 2-6 minuten</p>
+                <p><strong>Zakken:</strong> €0.25 per gebruik</p>
+              </div>
+              <div className="text-orange-700 text-xs">
+                <p><strong>✓ Voordelen:</strong> Supersnel, praktisch onderweg</p>
+                <p><strong>✗ Nadelen:</strong> Ongelijke verhitting, beperkte capaciteit</p>
+              </div>
+            </div>
+
+            <div className="bg-cyan-50 rounded-xl p-4 border border-cyan-200">
+              <h4 className="text-cyan-900 font-medium mb-3">🧪 Koude Sterilisatie (€10-20)</h4>
+              <div className="text-cyan-800 text-sm space-y-1 mb-3">
+                <p><strong>Methode:</strong> Milton tabletten in water</p>
+                <p><strong>Tijd:</strong> 30 minuten inweken</p>
+                <p><strong>Geldig:</strong> 24 uur effectief</p>
+              </div>
+              <div className="text-cyan-700 text-xs">
+                <p><strong>✓ Voordelen:</strong> Geen verhitting, grote hoeveelheden</p>
+                <p><strong>✗ Nadelen:</strong> Chemische geur, goed spoelen nodig</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-amber-50 rounded-xl p-4 border border-amber-200 mb-6">
+            <h3 className="text-amber-900 font-semibold mb-3">🚿 Vaatwasser Sterilisatie</h3>
+            <p className="text-amber-800 text-sm mb-2">
+              Nederlandse vaatwassers kunnen effectieve sterilisatie bieden op 65°C+ programma's
+            </p>
+            <div className="grid md:grid-cols-2 gap-4">
+              <ul className="text-amber-700 text-sm space-y-1">
+                <li>• Plaats flessen in bovenste rek</li>
+                <li>• Gebruik baby-veilige tabletten</li>
+                <li>• Controleer dat vaatwasser 65°C+ haalt</li>
+              </ul>
+              <ul className="text-amber-700 text-sm space-y-1">
+                <li>• Efficiënt met normale vaaswas</li>
+                <li>• Ideaal voor grote huishoudens</li>
+                <li>• Oudere vaatwassers mogelijk te koud</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 className="font-medium text-gray-800 mb-4">Nederlandse Context & Water</h3>
+          
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
+              <h4 className="text-blue-900 font-medium mb-2">💧 Nederlands Kraanwater</h4>
+              <ul className="text-blue-800 text-sm space-y-1">
+                <li>• ✅ Wereldklasse kwaliteit, EU-standaarden</li>
+                <li>• ⚠️ Oudere huizen (voor 1960): loodleidingen</li>
+                <li>• 🚿 Laat water 2-3 min lopen 's ochtends</li>
+                <li>• 🔥 Koken voor baby's onder 6 maanden</li>
+                <li>• ❄️ Winter: kouder water, langer opwarmen</li>
+              </ul>
+            </div>
+            
+            <div className="bg-green-50 rounded-xl p-4 border border-green-200">
+              <h4 className="text-green-900 font-medium mb-2">🍼 Flessenwater</h4>
+              <ul className="text-green-800 text-sm space-y-1">
+                <li>• Label: "geschikt voor baby's"</li>
+                <li>• Natrium < 20mg/L</li>
+                <li>• Ook koken tot 6 maanden</li>
+                <li>• Nederlandse supermarkten: breed aanbod</li>
+                <li>• Duurder dan kraanwater</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="bg-red-50 rounded-xl p-4 border border-red-200">
+            <h3 className="text-red-900 font-semibold mb-2">⚠️ Nederlandse Klimaat Impact</h3>
+            <p className="text-red-800 text-sm mb-2">
+              Nederland's hoge luchtvochtigheid en gematigde temperaturen creëren ideale omstandigheden 
+              voor bacteriegroei. Extra voorzichtigheid is daarom essentieel.
+            </p>
+            <div className="grid md:grid-cols-2 gap-4">
+              <ul className="text-red-700 text-sm space-y-1">
+                <li>• Zomer: snellere bacteriegroei</li>
+                <li>• Winter: droge verwarmingslucht</li>
+                <li>• Flessen binnen 2-4 uur besmet</li>
+              </ul>
+              <ul className="text-red-700 text-sm space-y-1">
+                <li>• Emma Kinderziekenhuis onderzoek</li>
+                <li>• Maag-darm, oorinfecties risico</li>
+                <li>• Tot 6 mnd extra gevoelig</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         {/* Navigation */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Meer informatie</h2>

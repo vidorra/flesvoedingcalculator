@@ -330,6 +330,130 @@ export default function BasisFlesvoedingPage() {
           </div>
         </div>
 
+        {/* Baby Weigert de Fles Section */}
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <h2 className="text-lg font-semibold text-gray-800 mb-4">Baby Weigert de Fles: Praktische Oplossingen</h2>
+          
+          <p className="text-gray-600 leading-relaxed mb-4">
+            Ongeveer 30% van alle baby's weigert op enig moment de fles. Dit is één van de meest frustrerende 
+            uitdagingen voor ouders, maar bijna altijd oplosbaar met de juiste aanpak.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <div className="bg-red-50 rounded-xl p-4 border border-red-200">
+              <h3 className="text-red-900 font-medium mb-3">Meest voorkomende oorzaken:</h3>
+              <ul className="text-red-800 text-sm space-y-1">
+                <li>• <strong>Temperatuur verkeerd</strong> - Te warm of koud</li>
+                <li>• <strong>Verkeerde speen</strong> - Vorm, flow, materiaal</li>
+                <li>• <strong>Timing probleem</strong> - Te hongerig of verzadigd</li>
+                <li>• <strong>Verkeerde persoon</strong> - Baby verwacht borstvoeding van mama</li>
+                <li>• <strong>Stress/omgeving</strong> - Onrustige sfeer</li>
+              </ul>
+            </div>
+            
+            <div className="bg-green-50 rounded-xl p-4 border border-green-200">
+              <h3 className="text-green-900 font-medium mb-3">Snelle oplossingen:</h3>
+              <ul className="text-green-800 text-sm space-y-1">
+                <li>• <strong>Test temperatuur</strong> op pols (37°C)</li>
+                <li>• <strong>Probeer andere spenen</strong> verschillende vormen</li>
+                <li>• <strong>Laat partner proberen</strong> Papa vaak meer succes</li>
+                <li>• <strong>Rustige omgeving</strong> dimmen licht, geen afleiding</li>
+                <li>• <strong>Juiste timing</strong> vroege hongersignalen</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="bg-blue-50 rounded-xl p-4 border border-blue-200 mb-6">
+            <h3 className="text-blue-900 font-semibold mb-3">7-Dagen Actieplan bij Flesweigering:</h3>
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="bg-white rounded-lg p-3">
+                <h4 className="font-medium text-blue-900 mb-2">Dag 1-2: Diagnostiek</h4>
+                <ul className="text-blue-800 text-xs space-y-1">
+                  <li>• Controleer temperatuur systematisch</li>
+                  <li>• Test verschillende spenen (5 min per stuk)</li>
+                  <li>• Varieer timing aanbiedingen</li>
+                  <li>• Laat anderen proberen</li>
+                </ul>
+              </div>
+              <div className="bg-white rounded-lg p-3">
+                <h4 className="font-medium text-blue-900 mb-2">Dag 3-4: Optimaliseren</h4>
+                <ul className="text-blue-800 text-xs space-y-1">
+                  <li>• Creëer speciale flesvoeding-plek</li>
+                  <li>• Zachte muziek/white noise</li>
+                  <li>• Experimenteer met houdingen</li>
+                  <li>• Rustige routine opbouwen</li>
+                </ul>
+              </div>
+              <div className="bg-white rounded-lg p-3">
+                <h4 className="font-medium text-blue-900 mb-2">Dag 5-7: Geduld</h4>
+                <ul className="text-blue-800 text-xs space-y-1">
+                  <li>• Laat baby speen verkennen</li>
+                  <li>• Positieve associaties opbouwen</li>
+                  <li>• Bevochtig speen met moedermelk</li>
+                  <li>• Blijf aanbieden zonder dwang</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-amber-50 rounded-xl p-4 border border-amber-200">
+            <h3 className="text-amber-900 font-semibold mb-2">⚠️ Wanneer hulp zoeken:</h3>
+            <p className="text-amber-800 text-sm mb-2">
+              Als baby 48 uur geen significante hoeveelheden drinkt, of tekenen van uitdroging toont 
+              (minder natte luiers, droge mond, verminderde energie), neem direct contact op met het consultatiebureau.
+            </p>
+          </div>
+        </div>
+
+        {/* Eerste Keer Flesvoeding Section */}
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <h2 className="text-lg font-semibold text-gray-800 mb-4">Eerste Keer Flesvoeding Geven</h2>
+          
+          <p className="text-gray-600 leading-relaxed mb-4">
+            De eerste keer flesvoeding geven kan spannend zijn. Met de juiste voorbereiding en aanpak 
+            wordt het een succesvolle ervaring voor zowel ouder als baby.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <h3 className="font-medium text-gray-800 mb-3">Stap 1-4: Voorbereiding</h3>
+              <div className="bg-gray-50 rounded-xl p-4 space-y-2">
+                <p><strong>1. Handen wassen</strong> grondig met warme zeep</p>
+                <p><strong>2. Materiaal checken</strong> fles, speen, geen scheurtjes</p>
+                <p><strong>3. Water klaarmaken</strong> afgekoeld gekookt water</p>
+                <p><strong>4. Temperatuur testen</strong> 37°C op pols</p>
+              </div>
+            </div>
+            <div>
+              <h3 className="font-medium text-gray-800 mb-3">Stap 5-8: Fles geven</h3>
+              <div className="bg-gray-50 rounded-xl p-4 space-y-2">
+                <p><strong>5. Juiste houding</strong> baby iets omhoog (45°)</p>
+                <p><strong>6. Stimuleer reflexen</strong> wang aanraken</p>
+                <p><strong>7. Speen plaatsen</strong> vol met melk, geen lucht</p>
+                <p><strong>8. Baby's tempo</strong> niet forceren, boertjes tussendoor</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-green-50 rounded-xl p-4 border border-green-200">
+            <h3 className="text-green-900 font-medium mb-2">💡 Tips voor succes eerste keer:</h3>
+            <div className="grid md:grid-cols-2 gap-4">
+              <ul className="text-green-800 text-sm space-y-1">
+                <li>• Begin niet als baby al heel boos van honger</li>
+                <li>• Herkent vroege hongersignalen (lipjes likken)</li>
+                <li>• Blijf kalm en geduldig</li>
+                <li>• Maak oogcontact en praat zacht</li>
+              </ul>
+              <ul className="text-green-800 text-sm space-y-1">
+                <li>• Eerste keren kunnen lastig zijn - normaal!</li>
+                <li>• Na paar dagen krijg je een ritme</li>
+                <li>• Elke baby is anders</li>
+                <li>• Vind jullie eigen manier</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         {/* Navigation to other pages */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Verder lezen</h2>

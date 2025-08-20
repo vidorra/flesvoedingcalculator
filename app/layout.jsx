@@ -105,16 +105,49 @@ export default function RootLayout({ children }) {
           </>
         )}
         
-        {/* Web Vitals Monitoring and Clarity */}
-        <Script id="analytics-init" strategy="afterInteractive">
+        {/* Microsoft Clarity */}
+        <Script id="clarity-init" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "swtgjl0ozf");
+          `}
+        </Script>
+
+        {/* Web Vitals Monitoring */}
+        <Script id="web-vitals-init" strategy="afterInteractive">
           {`
             (async () => {
               try {
-                const { initWebVitals, initClarity } = await import('../lib/analytics.js');
-                initWebVitals();
-                initClarity();
+                const { getCLS, getFCP, getLCP, getTTFB } = await import('web-vitals');
+                
+                function sendToAnalytics(metric) {
+                  if (typeof window !== 'undefined' && window.gtag) {
+                    window.gtag('event', metric.name, {
+                      event_category: 'Web Vitals',
+                      event_label: metric.id,
+                      value: Math.round(metric.name === 'CLS' ? metric.delta * 1000 : metric.delta),
+                      non_interaction: true,
+                    });
+                  }
+                  
+                  if (typeof console !== 'undefined' && console.log) {
+                    console.log('[Web Vitals]', metric.name, ':', {
+                      value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+                      delta: Math.round(metric.name === 'CLS' ? metric.delta * 1000 : metric.delta),
+                      id: metric.id,
+                    });
+                  }
+                }
+                
+                getCLS(sendToAnalytics);
+                getFCP(sendToAnalytics);
+                getLCP(sendToAnalytics);
+                getTTFB(sendToAnalytics);
               } catch (error) {
-                console.error('Failed to load analytics:', error);
+                console.error('Failed to load web vitals:', error);
               }
             })();
           `}
