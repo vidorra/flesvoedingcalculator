@@ -121,10 +121,37 @@ export default function PrivacyBeleidPage() {
               <h3 className="font-medium text-gray-800 mb-3">Analytische cookies:</h3>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li>• Google Analytics (geanonimiseerd)</li>
+                <li>• Microsoft Clarity voor gebruikersgedrag</li>
                 <li>• Gebruiksstatistieken verzamelen</li>
                 <li>• Website prestaties monitoren</li>
               </ul>
             </div>
+          </div>
+        </div>
+
+        {/* Microsoft Clarity */}
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <h2 className="text-lg font-semibold text-gray-800 mb-4">
+            Microsoft Clarity
+          </h2>
+          
+          <p className="text-gray-700 mb-4">
+            Wij gebruiken Microsoft Clarity om inzicht te krijgen in hoe bezoekers onze website gebruiken. 
+            Clarity verzamelt informatie over gebruikersgedrag zoals klikken, scrollen en muis bewegingen 
+            om ons te helpen de website te verbeteren.
+          </p>
+          
+          <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
+            <h3 className="font-medium text-blue-900 mb-2">Wat verzamelt Clarity?</h3>
+            <ul className="text-sm text-blue-800 space-y-1">
+              <li>• Algemene gebruikspatronen en navigatie</li>
+              <li>• Klik- en scroll gedrag (geanonimiseerd)</li>
+              <li>• Technische informatie over uw browser en apparaat</li>
+              <li>• Prestatie gegevens van de website</li>
+            </ul>
+            <p className="text-xs text-blue-700 mt-3">
+              Voor meer informatie zie het <a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener noreferrer" className="underline">Microsoft Privacy Statement</a>.
+            </p>
           </div>
         </div>
 
