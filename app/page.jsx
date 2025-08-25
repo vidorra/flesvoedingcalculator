@@ -313,8 +313,8 @@ export default function HomePage() {
 
               {/* Premature Baby Input Fields */}
               {isPremature && (
-                <div className="space-y-5 mt-5 p-4 bg-blue-50 rounded-xl border border-blue-200">
-                  <div className="flex items-start space-x-2 mb-3">
+                <div className="space-y-5">
+                  <div className="flex items-start space-x-2">
                     <Info className="w-5 h-5 text-blue-600 mt-0.5" />
                     <div className="flex-1">
                       <div className="flex items-center space-x-2">
@@ -435,14 +435,15 @@ export default function HomePage() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Zwangerschapsduur bij geboorte (weken)
                     </label>
-                    <select
-                      value={gestationalAge}
-                      onChange={(e) => {
-                        setGestationalAge(e.target.value);
-                        calculatePrematureCategory(e.target.value, setPrematureCategory);
-                      }}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary"
-                    >
+                    <div className="relative">
+                      <select
+                        value={gestationalAge}
+                        onChange={(e) => {
+                          setGestationalAge(e.target.value);
+                          calculatePrematureCategory(e.target.value, setPrematureCategory);
+                        }}
+                        className="w-full px-4 py-3 pr-10 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none appearance-none bg-white text-gray-800"
+                      >
                       <option value="">Selecteer weken</option>
                       <option value="24">24 weken</option>
                       <option value="25">25 weken</option>
@@ -459,6 +460,8 @@ export default function HomePage() {
                       <option value="36">36 weken</option>
                       <option value="37">37 weken</option>
                     </select>
+                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-primary pointer-events-none" />
+                    </div>
                   </div>
                   
                   {/* Birth Date */}
@@ -471,7 +474,7 @@ export default function HomePage() {
                       value={birthDate}
                       onChange={(e) => setBirthDate(e.target.value)}
                       max={new Date().toISOString().split('T')[0]}
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none text-gray-800"
                     />
                   </div>
                   
