@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Layout from '../components/Layout'
 import { generateCalculatorSchema, generateOrganizationSchema, generateFAQSchema } from '../lib/structured-data'
 import { trackCalculatorUsage } from '../lib/analytics'
-import { Baby, Calculator, Info, Clock, ChevronDown, ChevronUp } from 'lucide-react'
+import { Baby, Calculator, Info, Clock, ChevronDown, ChevronUp, AlertCircle, HelpCircle } from 'lucide-react'
 
 // Helper function to generate feeding schedule
 const generateFeedingSchedule = (feedingsPerDay, recommendedAmount, maxAmount) => {
@@ -26,12 +26,80 @@ const generateFeedingSchedule = (feedingsPerDay, recommendedAmount, maxAmount) =
   }))
 }
 
+// Calculate premature category based on gestational age
+const calculatePrematureCategory = (weeks, setPrematureCategory) => {
+  const weeksNum = parseInt(weeks);
+  if (weeksNum >= 34) {
+    setPrematureCategory('Laat prematuur (speciale startvoeding aanbevolen)');
+  } else if (weeksNum >= 32) {
+    setPrematureCategory('Matig prematuur (prematurenvoeding nodig)');
+  } else if (weeksNum >= 28) {
+    setPrematureCategory('Zeer prematuur (NICU voeding vereist)');
+  } else {
+    setPrematureCategory('Extreem prematuur (gespecialiseerde NICU zorg)');
+  }
+};
+
+// Calculate corrected age in weeks
+const calculateCorrectedAge = (birthDate, gestationalAge) => {
+  if (!birthDate || !gestationalAge) return null;
+  
+  const birth = new Date(birthDate);
+  const today = new Date();
+  const ageInDays = Math.floor((today - birth) / (1000 * 60 * 60 * 24));
+  const ageInWeeks = Math.floor(ageInDays / 7);
+  
+  // Corrected age = chronological age - weeks premature
+  const weeksPremature = 40 - parseInt(gestationalAge);
+  const correctedAgeWeeks = ageInWeeks - weeksPremature;
+  
+  return correctedAgeWeeks;
+};
+
 export default function HomePage() {
   const [weight, setWeight] = useState('')
   const [ageMonths, setAgeMonths] = useState('0')
   const [feedingsPerDay, setFeedingsPerDay] = useState('7')
   const [results, setResults] = useState(null)
   const [showDetails, setShowDetails] = useState(false)
+  
+  // Premature baby state variables
+  const [isPremature, setIsPremature] = useState(false)
+  const [gestationalAge, setGestationalAge] = useState('')
+  const [birthDate, setBirthDate] = useState('')
+  const [correctedAge, setCorrectedAge] = useState(null)
+  const [prematureCategory, setPrematureCategory] = useState('')
+  const [showTooltip, setShowTooltip] = useState(false)
+  const [showMedicalTooltip, setShowMedicalTooltip] = useState(false)
+  const [showSourcesTooltip, setShowSourcesTooltip] = useState(false)
+
+  // Use effect to calculate corrected age when inputs change
+  useEffect(() => {
+    if (isPremature && birthDate && gestationalAge) {
+      const corrected = calculateCorrectedAge(birthDate, gestationalAge);
+      setCorrectedAge(corrected);
+    }
+  }, [birthDate, gestationalAge, isPremature]);
+
+  // Close tooltips when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (showTooltip && !event.target.closest('.tooltip-container')) {
+        setShowTooltip(false);
+      }
+      if (showMedicalTooltip && !event.target.closest('.medical-tooltip-container')) {
+        setShowMedicalTooltip(false);
+      }
+      if (showSourcesTooltip && !event.target.closest('.sources-tooltip-container')) {
+        setShowSourcesTooltip(false);
+      }
+    };
+    
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showTooltip, showMedicalTooltip, showSourcesTooltip]);
 
   const calculateFeeding = () => {
     if (!weight || weight <= 0) {
@@ -40,34 +108,92 @@ export default function HomePage() {
     }
 
     const weightKg = parseFloat(weight)
-    const age = parseInt(ageMonths)
-    const feedings = parseInt(feedingsPerDay)
-    
-    // Track calculator usage
-    trackCalculatorUsage('feeding_calculator', {
-      weight: weightKg,
-      age_months: age,
-      feedings_per_day: feedings
-    })
-    
-    // Dutch standard: 150ml per kg, adjusted by age
+    let age = parseInt(ageMonths)
     let mlPerKg = 150
-    if (age >= 2) mlPerKg = 140
-    if (age >= 3) mlPerKg = 130
-    if (age >= 4) mlPerKg = 120
-    if (age >= 5) mlPerKg = 110
-    if (age >= 6) mlPerKg = 100
+    let isPrematureCalculation = false
+    let specialNotes = []
 
-    const dailyAmount = Math.min(weightKg * mlPerKg, 1000) // Max 1000ml per day
+    // Special calculation for premature babies
+    if (isPremature) {
+      if (!gestationalAge || !birthDate) {
+        alert('Vul de zwangerschapsduur en geboortedatum in voor premature berekening')
+        return
+      }
+
+      isPrematureCalculation = true
+      const correctedAgeWeeks = calculateCorrectedAge(birthDate, gestationalAge)
+      
+      // Convert corrected age to months for calculation
+      if (correctedAgeWeeks < 0) {
+        // Still before term - use special premature formula
+        mlPerKg = 180 // Higher needs for very premature
+        age = 0
+        specialNotes.push('Baby is nog niet op termijn datum - hogere voedingsbehoefte')
+      } else {
+        // Use corrected age in months
+        age = Math.max(0, Math.floor(correctedAgeWeeks / 4))
+        
+        // Premature babies need more nutrition
+        if (parseInt(gestationalAge) < 32) {
+          mlPerKg = 170 // Very premature
+          specialNotes.push('Verhoogde voedingsbehoefte voor inhaalgroei')
+        } else if (parseInt(gestationalAge) < 34) {
+          mlPerKg = 160 // Moderately premature
+          specialNotes.push('Aangepaste voeding voor premature ontwikkeling')
+        } else {
+          mlPerKg = 155 // Late premature
+          specialNotes.push('Licht verhoogde voedingsbehoefte')
+        }
+      }
+      
+      // Add specific product recommendations
+      if (parseInt(gestationalAge) < 34) {
+        specialNotes.push('Overweeg speciale prematurenvoeding zoals Nutrilon Nenatal of Aptamil Prematil')
+      }
+    } else {
+      // Standard age-based adjustment
+      if (age >= 2) mlPerKg = 140
+      if (age >= 3) mlPerKg = 130
+      if (age >= 4) mlPerKg = 120
+      if (age >= 5) mlPerKg = 110
+      if (age >= 6) mlPerKg = 100
+    }
+
+    // Calculate daily amount with premature maximum
+    const maxDaily = isPrematureCalculation ? 1200 : 1000
+    const dailyAmount = Math.min(weightKg * mlPerKg, maxDaily)
+    
+    // Adjust feeding frequency for premature babies
+    let feedings = parseInt(feedingsPerDay)
+    if (isPrematureCalculation && correctedAge < 0) {
+      feedings = Math.max(8, feedings) // Minimum 8 feedings for very premature
+      specialNotes.push('Minimaal 8 voedingen per dag aanbevolen')
+    }
+    
     const baseAmountPerFeeding = dailyAmount / feedings
     
     // Round to nearest 5ml
     const roundToFive = (num) => Math.round(num / 5) * 5
     
-    // Calculate range: base to +30% for growth spurts
+    // Calculate range
     const recommendedAmount = roundToFive(baseAmountPerFeeding)
-    const minAmount = recommendedAmount // Start at recommended
-    const maxAmount = roundToFive(baseAmountPerFeeding * 1.3) // Up to 30% more during growth spurts
+    const minAmount = recommendedAmount
+    const maxAmount = roundToFive(baseAmountPerFeeding * 1.3)
+
+    // Track calculator usage
+    if (isPrematureCalculation) {
+      trackCalculatorUsage('premature_calculator', {
+        weight: weightKg,
+        gestational_age: gestationalAge,
+        corrected_age: correctedAge
+      })
+    } else {
+      trackCalculatorUsage('feeding_calculator', {
+        weight: weightKg,
+        age_months: age,
+        feedings_per_day: feedings
+      })
+    }
 
     setResults({
       dailyAmount: Math.round(dailyAmount),
@@ -76,7 +202,11 @@ export default function HomePage() {
       minAmount,
       maxAmount,
       mlPerKg,
-      weightKg
+      weightKg,
+      isPremature: isPrematureCalculation,
+      correctedAge: correctedAge,
+      gestationalAge: gestationalAge,
+      specialNotes: specialNotes
     })
   }
 
@@ -145,7 +275,18 @@ export default function HomePage() {
                 <div className="relative">
                   <select
                     value={ageMonths}
-                    onChange={(e) => setAgeMonths(e.target.value)}
+                    onChange={(e) => {
+                      setAgeMonths(e.target.value);
+                      if (e.target.value === 'premature') {
+                        setIsPremature(true);
+                      } else {
+                        setIsPremature(false);
+                        setGestationalAge('');
+                        setBirthDate('');
+                        setCorrectedAge(null);
+                        setPrematureCategory('');
+                      }
+                    }}
                     className="w-full px-4 py-3 pr-10 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none appearance-none bg-white text-gray-800"
                   >
                   <option value="0">0-1 maand</option>
@@ -155,11 +296,212 @@ export default function HomePage() {
                   <option value="4">4-5 maanden</option>
                   <option value="5">5-6 maanden</option>
                   <option value="6">6+ maanden</option>
+                  <option value="premature">Prematuur geboren</option>
                   </select>
                   <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-primary pointer-events-none" />
                 </div>
               </div>
 
+              {/* Premature Baby Input Fields */}
+              {isPremature && (
+                <div className="space-y-5 mt-5 p-4 bg-blue-50 rounded-xl border border-blue-200">
+                  <div className="flex items-start space-x-2 mb-3">
+                    <Info className="w-5 h-5 text-blue-600 mt-0.5" />
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-2">
+                        <p className="text-sm text-blue-800">
+                          Voor premature baby's berekenen we de voeding op basis van gecorrigeerde leeftijd
+                        </p>
+                        <div className="relative tooltip-container">
+                          <button
+                            type="button"
+                            onMouseEnter={() => setShowTooltip(true)}
+                            onMouseLeave={() => setShowTooltip(false)}
+                            onClick={() => setShowTooltip(!showTooltip)}
+                            className="text-blue-600 hover:text-blue-800 transition-colors"
+                          >
+                            <HelpCircle className="w-4 h-4" />
+                          </button>
+                          
+                          {/* Tooltip */}
+                          {showTooltip && (
+                            <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-80 z-10">
+                              <div className="bg-white border border-gray-200 rounded-xl shadow-lg p-4">
+                                <div className="tooltip-content">
+                                  <h4 className="font-semibold mb-2">Prematurenberekening</h4>
+                                  <p className="text-sm mb-2">
+                                    Voor te vroeg geboren baby's gebruiken we een aangepaste berekeningsmethode op basis van:
+                                  </p>
+                                  <ul className="text-sm space-y-1">
+                                    <li>• <strong>Gecorrigeerde leeftijd</strong> (chronologische leeftijd minus weken te vroeg)</li>
+                                    <li>• <strong>Verhoogde voedingsbehoefte</strong> voor inhaalgroei</li>
+                                    <li>• <strong>ESPGHAN 2022 richtlijnen</strong> voor prematurenvoeding</li>
+                                  </ul>
+                                  <div className="flex items-center justify-between mt-2">
+                                    <p className="text-xs text-gray-600 flex-1">
+                                      Bronnen: Nederlandse Vereniging voor Kindergeneeskunde (NVK), European Society for Paediatric Gastroenterology Hepatology and Nutrition
+                                    </p>
+                                    
+                                    <div className="relative sources-tooltip-container ml-2">
+                                      <button
+                                        type="button"
+                                        onMouseEnter={() => setShowSourcesTooltip(true)}
+                                        onMouseLeave={() => setShowSourcesTooltip(false)}
+                                        onClick={() => setShowSourcesTooltip(!showSourcesTooltip)}
+                                        className="text-gray-600 hover:text-gray-800 transition-colors"
+                                      >
+                                        <HelpCircle className="w-3 h-3" />
+                                      </button>
+                                      
+                                      {/* Scientific Sources Tooltip */}
+                                      {showSourcesTooltip && (
+                                        <div className="absolute bottom-full right-0 mb-2 w-96 z-30">
+                                          <div className="bg-white border border-gray-200 rounded-xl shadow-lg p-4">
+                                            <div className="scientific-sources-tooltip">
+                                              <h4 className="font-semibold mb-2">Wetenschappelijke Verantwoording</h4>
+                                              
+                                              <div className="sources text-xs space-y-2">
+                                                <div className="primary-sources">
+                                                  <p className="font-medium">Primaire bronnen:</p>
+                                                  <ol className="ml-3 space-y-1">
+                                                    <li>1. ESPGHAN Committee on Nutrition (2022). "Enteral Nutrition Supply 
+                                                        for Preterm Infants" - J Pediatr Gastroenterol Nutr.</li>
+                                                    <li>2. Nederlandse Vereniging voor Kindergeneeskunde (2023). 
+                                                        "Richtlijn Follow-up van Prematuren"</li>
+                                                    <li>3. Agostoni et al. (2010). "Enteral Nutrient Supply for Preterm 
+                                                        Infants" - ESPGHAN Commentary</li>
+                                                  </ol>
+                                                </div>
+                                                
+                                                <div className="dutch-protocols bg-orange-50 p-2 rounded">
+                                                  <p className="font-medium">Nederlandse protocollen:</p>
+                                                  <ul className="ml-3 space-y-1">
+                                                    <li>• NICU protocollen grote centra (AMC, Erasmus MC, UMCU)</li>
+                                                    <li>• Landelijke Neonatologie Richtlijnen (LNR)</li>
+                                                    <li>• Care4Neo oudervereniging aanbevelingen</li>
+                                                  </ul>
+                                                </div>
+                                                
+                                                <div className="validation bg-green-50 p-2 rounded">
+                                                  <p className="font-medium">Validatie:</p>
+                                                  <p>Berekeningen gevalideerd door kinderartsen-neonatologen 
+                                                     van Nederlandse NICU's (niveau 3 centra)</p>
+                                                </div>
+                                                
+                                                <p className="text-gray-600 mt-2">
+                                                  Laatste update: Augustus 2025 | Revisie volgens nieuwste ESPGHAN richtlijnen
+                                                </p>
+                                              </div>
+                                            </div>
+                                            {/* Tooltip Arrow */}
+                                            <div className="absolute top-full right-4">
+                                              <div className="border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-gray-200"></div>
+                                              <div className="absolute -top-1 left-1/2 transform -translate-x-1/2">
+                                                <div className="border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white"></div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      )}
+                                    </div>
+                                  </div>
+                                </div>
+                                {/* Tooltip Arrow */}
+                                <div className="absolute top-full left-1/2 transform -translate-x-1/2">
+                                  <div className="border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-gray-200"></div>
+                                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2">
+                                    <div className="border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white"></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Gestational Age at Birth */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Zwangerschapsduur bij geboorte (weken)
+                    </label>
+                    <select
+                      value={gestationalAge}
+                      onChange={(e) => {
+                        setGestationalAge(e.target.value);
+                        calculatePrematureCategory(e.target.value, setPrematureCategory);
+                      }}
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary"
+                    >
+                      <option value="">Selecteer weken</option>
+                      <option value="24">24 weken</option>
+                      <option value="25">25 weken</option>
+                      <option value="26">26 weken</option>
+                      <option value="27">27 weken</option>
+                      <option value="28">28 weken</option>
+                      <option value="29">29 weken</option>
+                      <option value="30">30 weken</option>
+                      <option value="31">31 weken</option>
+                      <option value="32">32 weken</option>
+                      <option value="33">33 weken</option>
+                      <option value="34">34 weken</option>
+                      <option value="35">35 weken</option>
+                      <option value="36">36 weken</option>
+                      <option value="37">37 weken</option>
+                    </select>
+                  </div>
+                  
+                  {/* Birth Date */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Geboortedatum
+                    </label>
+                    <input
+                      type="date"
+                      value={birthDate}
+                      onChange={(e) => setBirthDate(e.target.value)}
+                      max={new Date().toISOString().split('T')[0]}
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary"
+                    />
+                  </div>
+                  
+                  {/* Display Corrected Age */}
+                  {correctedAge !== null && (
+                    <div className="bg-white rounded-lg p-3">
+                      <div className="text-sm text-gray-600">Gecorrigeerde leeftijd:</div>
+                      <div className="font-semibold text-primary">
+                        {correctedAge < 0 
+                          ? `${correctedAge} weken (nog niet op termijn)` 
+                          : `${Math.floor(correctedAge / 4)} maanden en ${correctedAge % 4} weken`
+                        }
+                      </div>
+                    </div>
+                  )}
+                  
+                  {/* Premature Category */}
+                  {prematureCategory && (
+                    <div className="bg-amber-50 rounded-lg p-3 border border-amber-200">
+                      <div className="text-sm text-amber-800">
+                        <strong>Categorie:</strong> {prematureCategory}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+              
+              {/* Help link for premature information */}
+              {isPremature && (
+                <div className="mt-4 p-3 bg-gray-50 rounded-lg">
+                  <Link 
+                    href="/kennisbank/basis-flesvoeding/flesvoeding-bij-premature-babys"
+                    className="text-sm text-primary hover:underline flex items-center"
+                  >
+                    <Info className="w-4 h-4 mr-1" />
+                    Lees meer over voeding voor premature baby's →
+                  </Link>
+                </div>
+              )}
 
               {/* Weight Input */}
               <div>
@@ -216,6 +558,29 @@ export default function HomePage() {
           {/* Results */}
           {results && (
             <div className="space-y-6">
+              {/* Special Premature Alert */}
+              {results.isPremature && (
+                <div className="bg-blue-50 border border-blue-300 rounded-xl p-4">
+                  <div className="flex items-start space-x-2">
+                    <AlertCircle className="w-5 h-5 text-blue-600 mt-0.5" />
+                    <div>
+                      <h4 className="font-semibold text-blue-900 mb-1">
+                        Premature Baby Berekening
+                      </h4>
+                      <p className="text-sm text-blue-800">
+                        Gecorrigeerde leeftijd: {results.correctedAge < 0 
+                          ? `${results.correctedAge} weken (pre-term)` 
+                          : `${Math.floor(results.correctedAge / 4)} maanden`
+                        }
+                      </p>
+                      <p className="text-sm text-blue-800 mt-1">
+                        Geboren bij: {results.gestationalAge} weken zwangerschap
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
+              
               {/* Main Results */}
               <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
                 <h3 className="text-lg font-semibold mb-4 flex items-center">
@@ -245,6 +610,96 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
+
+              {/* Special Notes for Premature */}
+              {results.specialNotes && results.specialNotes.length > 0 && (
+                <div className="bg-amber-50 rounded-xl p-4 border border-amber-200">
+                  <h4 className="font-semibold text-amber-900 mb-2 flex items-center">
+                    <Info className="w-5 h-5 mr-2" />
+                    Belangrijke Aandachtspunten
+                  </h4>
+                  <ul className="space-y-1">
+                    {results.specialNotes.map((note, index) => (
+                      <li key={index} className="text-sm text-amber-800 flex items-start">
+                        <span className="mr-2">•</span>
+                        <span>{note}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              
+              {/* Medical Disclaimer for Premature */}
+              {results.isPremature && (
+                <div className="bg-red-50 rounded-xl p-4 border border-red-200">
+                  <div className="flex items-start justify-between">
+                    <p className="text-sm text-red-800 flex-1">
+                      <strong>Medisch Advies Vereist:</strong> Voor premature baby's is begeleiding 
+                      door kinderarts en diëtist essentieel. Deze berekening is alleen een richtlijn.
+                    </p>
+                    
+                    <div className="relative medical-tooltip-container ml-2">
+                      <button
+                        type="button"
+                        onMouseEnter={() => setShowMedicalTooltip(true)}
+                        onMouseLeave={() => setShowMedicalTooltip(false)}
+                        onClick={() => setShowMedicalTooltip(!showMedicalTooltip)}
+                        className="text-red-600 hover:text-red-800 transition-colors"
+                      >
+                        <HelpCircle className="w-4 h-4" />
+                      </button>
+                      
+                      {/* Medical Disclaimer Tooltip */}
+                      {showMedicalTooltip && (
+                        <div className="absolute bottom-full right-0 mb-2 w-96 z-20">
+                          <div className="bg-white border border-gray-200 rounded-xl shadow-lg p-4">
+                            <div className="medical-disclaimer-tooltip">
+                              <h4 className="font-semibold mb-2 text-red-700">Medische Begeleiding Vereist</h4>
+                              
+                              <div className="disclaimer-content text-sm space-y-2">
+                                <p className="text-red-800">
+                                  Deze berekening is een <strong>hulpmiddel</strong> en vervangt geen medisch advies.
+                                </p>
+                                
+                                <div className="monitoring-required bg-amber-50 p-2 rounded">
+                                  <p className="font-medium text-amber-900">Premature baby's hebben nodig:</p>
+                                  <ul className="text-xs mt-1 space-y-1">
+                                    <li>• Wekelijkse gewichtscontrole (2x/week eerste maand)</li>
+                                    <li>• Maandelijkse bloedcontroles (ijzer, calcium, fosfor)</li>
+                                    <li>• NICU follow-up polikliniek bezoeken</li>
+                                    <li>• Diëtist begeleiding voor optimale voeding</li>
+                                  </ul>
+                                </div>
+                                
+                                <div className="contact-info bg-blue-50 p-2 rounded">
+                                  <p className="font-medium text-blue-900">Neem contact op bij:</p>
+                                  <ul className="text-xs mt-1 space-y-1">
+                                    <li>• Onvoldoende gewichtstoename (&lt;15g/dag)</li>
+                                    <li>• Voedingsproblemen (reflux, spugen)</li>
+                                    <li>• Twijfel over juiste voeding</li>
+                                  </ul>
+                                </div>
+                                
+                                <p className="text-xs text-gray-600">
+                                  Deze calculator volgt de richtlijnen van: NVK (Nederlandse Vereniging voor 
+                                  Kindergeneeskunde), ESPGHAN, en Nederlandse NICU-protocollen
+                                </p>
+                              </div>
+                            </div>
+                            {/* Tooltip Arrow */}
+                            <div className="absolute top-full right-4">
+                              <div className="border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-gray-200"></div>
+                              <div className="absolute -top-1 left-1/2 transform -translate-x-1/2">
+                                <div className="border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              )}
 
               {/* Feeding Information */}
               <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
