@@ -53,7 +53,12 @@ const calculateCorrectedAge = (birthDate, gestationalAge) => {
   const weeksPremature = 40 - parseInt(gestationalAge);
   const correctedAgeWeeks = ageInWeeks - weeksPremature;
   
-  return correctedAgeWeeks;
+  return {
+    correctedWeeks: correctedAgeWeeks,
+    chronologicalWeeks: ageInWeeks,
+    weeksPremature: weeksPremature,
+    gestationalWeeks: parseInt(gestationalAge)
+  };
 };
 
 export default function HomePage() {
@@ -76,8 +81,10 @@ export default function HomePage() {
   // Use effect to calculate corrected age when inputs change
   useEffect(() => {
     if (isPremature && birthDate && gestationalAge) {
-      const corrected = calculateCorrectedAge(birthDate, gestationalAge);
-      setCorrectedAge(corrected);
+      const ageData = calculateCorrectedAge(birthDate, gestationalAge);
+      setCorrectedAge(ageData);
+    } else {
+      setCorrectedAge(null);
     }
   }, [birthDate, gestationalAge, isPremature]);
 
@@ -121,14 +128,15 @@ export default function HomePage() {
       }
 
       isPrematureCalculation = true
-      const correctedAgeWeeks = calculateCorrectedAge(birthDate, gestationalAge)
+      const ageData = calculateCorrectedAge(birthDate, gestationalAge)
+      const correctedAgeWeeks = ageData.correctedWeeks
       
       // Convert corrected age to months for calculation
       if (correctedAgeWeeks < 0) {
         // Still before term - use special premature formula
         mlPerKg = 180 // Higher needs for very premature
         age = 0
-        specialNotes.push('Baby is nog niet op termijn datum - hogere voedingsbehoefte')
+        specialNotes.push(`Baby is nog niet op termijn (${Math.abs(correctedAgeWeeks)} weken te vroeg) - gebruikt ${mlPerKg}ml/kg per dag`)
       } else {
         // Use corrected age in months
         age = Math.max(0, Math.floor(correctedAgeWeeks / 4))
@@ -136,13 +144,13 @@ export default function HomePage() {
         // Premature babies need more nutrition
         if (parseInt(gestationalAge) < 32) {
           mlPerKg = 170 // Very premature
-          specialNotes.push('Verhoogde voedingsbehoefte voor inhaalgroei')
+          specialNotes.push(`Zeer premature baby - gebruikt ${mlPerKg}ml/kg per dag voor inhaalgroei`)
         } else if (parseInt(gestationalAge) < 34) {
           mlPerKg = 160 // Moderately premature
-          specialNotes.push('Aangepaste voeding voor premature ontwikkeling')
+          specialNotes.push(`Matig premature baby - gebruikt ${mlPerKg}ml/kg per dag voor ontwikkeling`)
         } else {
           mlPerKg = 155 // Late premature
-          specialNotes.push('Licht verhoogde voedingsbehoefte')
+          specialNotes.push(`Laat premature baby - gebruikt ${mlPerKg}ml/kg per dag (licht verhoogd)`)
         }
       }
       
@@ -165,7 +173,7 @@ export default function HomePage() {
     
     // Adjust feeding frequency for premature babies
     let feedings = parseInt(feedingsPerDay)
-    if (isPrematureCalculation && correctedAge < 0) {
+    if (isPrematureCalculation && correctedAgeWeeks < 0) {
       feedings = Math.max(8, feedings) // Minimum 8 feedings for very premature
       specialNotes.push('Minimaal 8 voedingen per dag aanbevolen')
     }
@@ -185,7 +193,7 @@ export default function HomePage() {
       trackCalculatorUsage('premature_calculator', {
         weight: weightKg,
         gestational_age: gestationalAge,
-        corrected_age: correctedAge
+        corrected_age: correctedAgeWeeks
       })
     } else {
       trackCalculatorUsage('feeding_calculator', {
@@ -204,7 +212,8 @@ export default function HomePage() {
       mlPerKg,
       weightKg,
       isPremature: isPrematureCalculation,
-      correctedAge: correctedAge,
+      correctedAge: isPrematureCalculation ? correctedAgeWeeks : null,
+      ageData: isPrematureCalculation ? ageData : null,
       gestationalAge: gestationalAge,
       specialNotes: specialNotes
     })
@@ -289,6 +298,7 @@ export default function HomePage() {
                     }}
                     className="w-full px-4 py-3 pr-10 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none appearance-none bg-white text-gray-800"
                   >
+                  <option value="premature">Prematuur geboren</option>
                   <option value="0">0-1 maand</option>
                   <option value="1">1-2 maanden</option>
                   <option value="2">2-3 maanden</option>
@@ -296,7 +306,6 @@ export default function HomePage() {
                   <option value="4">4-5 maanden</option>
                   <option value="5">5-6 maanden</option>
                   <option value="6">6+ maanden</option>
-                  <option value="premature">Prematuur geboren</option>
                   </select>
                   <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-primary pointer-events-none" />
                 </div>
@@ -469,12 +478,22 @@ export default function HomePage() {
                   {/* Display Corrected Age */}
                   {correctedAge !== null && (
                     <div className="bg-white rounded-lg p-3">
-                      <div className="text-sm text-gray-600">Gecorrigeerde leeftijd:</div>
-                      <div className="font-semibold text-primary">
-                        {correctedAge < 0 
-                          ? `${correctedAge} weken (nog niet op termijn)` 
-                          : `${Math.floor(correctedAge / 4)} maanden en ${correctedAge % 4} weken`
-                        }
+                      <div className="text-sm text-gray-600 mb-2">Leeftijd berekening:</div>
+                      <div className="space-y-1 text-xs">
+                        <div>Chronologische leeftijd: {correctedAge.chronologicalWeeks} weken</div>
+                        <div>Geboren bij: {correctedAge.gestationalWeeks} weken zwangerschap</div>
+                        <div>Te vroeg: {correctedAge.weeksPremature} weken</div>
+                      </div>
+                      <div className="mt-2 pt-2 border-t border-gray-200">
+                        <div className="text-sm text-gray-600">Gecorrigeerde leeftijd:</div>
+                        <div className="font-semibold text-primary">
+                          {correctedAge.correctedWeeks < 0 
+                            ? `${correctedAge.correctedWeeks} weken (nog ${Math.abs(correctedAge.correctedWeeks)} weken voor termijn)` 
+                            : correctedAge.correctedWeeks < 4 
+                              ? `${correctedAge.correctedWeeks} weken`
+                              : `${Math.floor(correctedAge.correctedWeeks / 4)} maanden en ${correctedAge.correctedWeeks % 4} weken`
+                          }
+                        </div>
                       </div>
                     </div>
                   )}
@@ -569,12 +588,17 @@ export default function HomePage() {
                       </h4>
                       <p className="text-sm text-blue-800">
                         Gecorrigeerde leeftijd: {results.correctedAge < 0 
-                          ? `${results.correctedAge} weken (pre-term)` 
-                          : `${Math.floor(results.correctedAge / 4)} maanden`
+                          ? `${results.correctedAge} weken (nog ${Math.abs(results.correctedAge)} weken voor termijn)` 
+                          : results.correctedAge < 4 
+                            ? `${results.correctedAge} weken`
+                            : `${Math.floor(results.correctedAge / 4)} maanden`
                         }
                       </p>
                       <p className="text-sm text-blue-800 mt-1">
-                        Geboren bij: {results.gestationalAge} weken zwangerschap
+                        Geboren bij: {results.gestationalAge} weken zwangerschap (chronologisch: {results.ageData?.chronologicalWeeks} weken oud)
+                      </p>
+                      <p className="text-sm text-blue-800 mt-1 font-medium">
+                        Voedingsbehoefte: {results.mlPerKg}ml per kg lichaamsgewicht
                       </p>
                     </div>
                   </div>
