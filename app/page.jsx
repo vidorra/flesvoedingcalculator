@@ -626,7 +626,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-3 gap-3">
                     <div className="bg-white/20 backdrop-blur rounded-xl p-4">
                       <div className="text-white/70 text-sm mb-1">Aantal voedingen</div>
                       <div className="text-xl font-bold">{results.feedingsPerDay}x</div>
@@ -636,6 +636,17 @@ export default function HomePage() {
                       <div className="text-white/70 text-sm mb-1">Aanbevolen per voeding</div>
                       <div className="text-xl font-bold">{results.recommendedAmount} ml</div>
                       <div className="text-xs text-white/60 mt-1">Bij groeispurt: tot {results.maxAmount} ml</div>
+                    </div>
+                    
+                    {/* Schepjes Calculator Button */}
+                    <div className="flex items-center">
+                      <Link 
+                        href="/schepjes-calculator"
+                        className="w-full bg-white text-primary font-semibold py-3 px-3 rounded-xl transition-colors hover:bg-gray-100 flex items-center justify-center space-x-1 text-sm"
+                      >
+                        <Calculator className="w-4 h-4" />
+                        <span>Schepjes</span>
+                      </Link>
                     </div>
                   </div>
                 </div>
