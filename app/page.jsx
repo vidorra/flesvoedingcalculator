@@ -644,6 +644,14 @@ export default function HomePage() {
                     <div className="text-white/70 text-sm mb-1">Aantal schepjes per voeding</div>
                     <div className="text-xl font-bold">{Math.round((results.recommendedAmount / 30) * 10) / 10}</div>
                     <div className="text-xs text-white/60 mt-1">30ml water per schepje poeder</div>
+                    <div className="mt-3">
+                      <Link 
+                        href="/schepjes-calculator"
+                        className="text-white text-xs hover:text-white/80 transition-colors underline"
+                      >
+                        Andere hoeveelheid en ratio berekenen →
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
