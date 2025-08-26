@@ -141,7 +141,7 @@ export default function SchepjesCalculatorPage() {
                   <div className="text-2xl font-bold text-white">
                     {results.scoopsNeeded}
                   </div>
-                  <div className="text-sm text-white/70">Schepjes poeder</div>
+                  <div className="text-sm text-white/70">Aantal schepjes</div>
                 </div>
                 
                 <div className="bg-white/20 backdrop-blur rounded-xl p-4 text-center">
