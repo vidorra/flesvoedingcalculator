@@ -4,6 +4,14 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
+  // Optimize build for smaller size
+  compress: true,
+  poweredByHeader: false,
+  generateEtags: false,
+  // Reduce build output
+  experimental: {
+    optimizePackageImports: ['lucide-react']
+  },
   async rewrites() {
     return [
       {
