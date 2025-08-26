@@ -626,7 +626,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   
-                  <div className="grid grid-cols-3 gap-3">
+                  <div className="grid grid-cols-2 gap-3">
                     <div className="bg-white/20 backdrop-blur rounded-xl p-4">
                       <div className="text-white/70 text-sm mb-1">Aantal voedingen</div>
                       <div className="text-xl font-bold">{results.feedingsPerDay}x</div>
@@ -637,17 +637,13 @@ export default function HomePage() {
                       <div className="text-xl font-bold">{results.recommendedAmount} ml</div>
                       <div className="text-xs text-white/60 mt-1">Bij groeispurt: tot {results.maxAmount} ml</div>
                     </div>
-                    
-                    {/* Schepjes Calculator Button */}
-                    <div className="flex items-center">
-                      <Link 
-                        href="/schepjes-calculator"
-                        className="w-full bg-white text-primary font-semibold py-3 px-2 rounded-xl transition-colors hover:bg-gray-100 flex items-center justify-center space-x-1 text-xs"
-                      >
-                        <Calculator className="w-4 h-4" />
-                        <span>Bereken Aantal Schepjes</span>
-                      </Link>
-                    </div>
+                  </div>
+                  
+                  {/* Schepjes Calculation */}
+                  <div className="bg-white/20 backdrop-blur rounded-xl p-4">
+                    <div className="text-white/70 text-sm mb-1">Aantal schepjes per voeding</div>
+                    <div className="text-xl font-bold">{Math.round((results.recommendedAmount / 30) * 10) / 10}</div>
+                    <div className="text-xs text-white/60 mt-1">30ml water per schepje poeder</div>
                   </div>
                 </div>
               </div>
