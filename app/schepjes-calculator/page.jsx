@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import Layout from '../../components/Layout'
 import { Calculator, AlertCircle, Check, Info, Baby, ArrowRight, Home } from 'lucide-react'
 
@@ -59,28 +60,30 @@ export default function SchepjesCalculatorPage() {
 
   return (
     <Layout>
-      <div className="space-y-6">
-        {/* Breadcrumb */}
-        <div className="flex items-center space-x-2 text-sm text-gray-600">
-          <Link href="/" className="hover:text-primary flex items-center">
-            <Home className="w-4 h-4 mr-1" />
-            Home
-          </Link>
-          <ArrowRight className="w-4 h-4" />
-          <span className="text-primary">Schepjes Calculator</span>
-        </div>
+      <div className="grid grid-cols-12 gap-6 min-h-screen">
+        {/* Main Calculator Content - 7 columns on desktop, full width on mobile */}
+        <div className="col-span-12 lg:col-span-7">
+          {/* Breadcrumb */}
+          <div className="flex items-center space-x-2 text-sm text-gray-600 mb-6">
+            <Link href="/" className="hover:text-primary flex items-center">
+              <Home className="w-4 h-4 mr-1" />
+              Home
+            </Link>
+            <ArrowRight className="w-4 h-4" />
+            <span className="text-primary">Schepjes Calculator</span>
+          </div>
 
-        {/* Header */}
-        <div className="mb-6">
-          <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
-            <Calculator className="w-6 h-6 mr-3 text-primary" />
-            Kunstvoeding Schepjes Calculator
-          </h1>
-          <p className="text-gray-600">
-            Bereken de exacte verhouding van water en poeder voor uw gewenste hoeveelheid kunstvoeding. 
-            Perfect voor wanneer de standaard verhoudingen niet uitkomen.
-          </p>
-        </div>
+          {/* Header */}
+          <div className="mb-6">
+            <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+              <Calculator className="w-6 h-6 mr-3 text-primary" />
+              Kunstvoeding Schepjes Calculator
+            </h1>
+            <p className="text-gray-600">
+              Bereken de exacte verhouding van water en poeder voor uw gewenste hoeveelheid kunstvoeding. 
+              Perfect voor wanneer de standaard verhoudingen niet uitkomen.
+            </p>
+          </div>
 
         {/* Calculator Form */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
@@ -256,18 +259,79 @@ export default function SchepjesCalculatorPage() {
           </div>
         </div>
 
-        {/* Back to Calculator */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h3 className="font-semibold text-gray-800 mb-3">Terug naar hoofdcalculator</h3>
-          <Link 
-            href="/"
-            className="inline-flex items-center space-x-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-hover transition-colors font-medium"
-          >
-            <Baby className="w-4 h-4" />
-            <span>Flesvoeding Calculator</span>
-          </Link>
+          {/* Back to Calculator */}
+          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <h3 className="font-semibold text-gray-800 mb-3">Terug naar hoofdcalculator</h3>
+            <Link 
+              href="/"
+              className="inline-flex items-center space-x-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-hover transition-colors font-medium"
+            >
+              <Baby className="w-4 h-4" />
+              <span>Flesvoeding Calculator</span>
+            </Link>
+          </div>
         </div>
 
+        {/* Sidebar - 5 columns on desktop, hidden on mobile */}
+        <div className="col-span-12 lg:col-span-5 space-y-6">
+          {/* Images - Hidden on mobile, visible on desktop */}
+          <div className="hidden lg:block space-y-6">
+            {/* Mother and Baby Image */}
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+              <Image
+                src="/mother_and_baby.png"
+                alt="Moeder en baby"
+                width={300}
+                height={200}
+                className="w-full h-auto rounded-xl"
+              />
+            </div>
+            
+            {/* Google Ad 1 */}
+            <div className="text-center space-y-2">
+              <div className="text-gray-500 text-xs font-medium">Google Advertentie</div>
+              <ins className="adsbygoogle"
+                   style={{display: 'block'}}
+                   data-ad-client="ca-pub-5215838917916938"
+                   data-ad-slot="1234567890"
+                   data-ad-format="auto"
+                   data-full-width-responsive="true"></ins>
+            </div>
+            
+            {/* Baby Image */}
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+              <Image
+                src="/baby.png"
+                alt="Baby"
+                width={300}
+                height={200}
+                className="w-full h-auto rounded-xl"
+              />
+            </div>
+            
+            {/* Google Ad 2 */}
+            <div className="text-center space-y-2">
+              <div className="text-gray-500 text-xs font-medium">Google Advertentie</div>
+              <ins className="adsbygoogle"
+                   style={{display: 'block'}}
+                   data-ad-client="ca-pub-5215838917916938"
+                   data-ad-slot="0987654321"
+                   data-ad-format="auto"
+                   data-full-width-responsive="true"></ins>
+            </div>
+            
+            {/* Baby Bottle Image */}
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+              <Image
+                src="/baby_bottle.png"
+                alt="Babyfles"
+                width={300}
+                height={200}
+                className="w-full h-auto rounded-xl"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </Layout>
   )
