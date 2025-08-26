@@ -75,6 +75,7 @@ export default function HomePage() {
   const [correctedAge, setCorrectedAge] = useState(null)
   const [prematureCategory, setPrematureCategory] = useState('')
   const [showTooltip, setShowTooltip] = useState(false)
+  const [showSchepjesTooltip, setShowSchepjesTooltip] = useState(false)
   const [showMedicalTooltip, setShowMedicalTooltip] = useState(false)
   const [showSourcesTooltip, setShowSourcesTooltip] = useState(false)
 
@@ -641,7 +642,42 @@ export default function HomePage() {
                   
                   {/* Schepjes Calculation */}
                   <div className="bg-white/20 backdrop-blur rounded-xl p-4">
-                    <div className="text-white/70 text-sm mb-1">Aantal schepjes per voeding</div>
+                    <div className="text-white/70 text-sm mb-1 flex items-center space-x-1">
+                      <span>Aantal schepjes per voeding</span>
+                      <div className="relative tooltip-container">
+                        <button
+                          type="button"
+                          onMouseEnter={() => setShowSchepjesTooltip(true)}
+                          onMouseLeave={() => setShowSchepjesTooltip(false)}
+                          onClick={() => setShowSchepjesTooltip(!showSchepjesTooltip)}
+                          className="text-white/60 hover:text-white/80 transition-colors"
+                        >
+                          <HelpCircle className="w-3 h-3" />
+                        </button>
+                        
+                        {/* Schepjes Tooltip */}
+                        {showSchepjesTooltip && (
+                          <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-72 z-10">
+                            <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-4">
+                              <div className="space-y-2 text-xs text-gray-700">
+                                <p className="font-semibold text-gray-800">Nederlandse Standaard Verhoudingen:</p>
+                                <ul className="space-y-1">
+                                  <li>• <strong>30ml water + 1 schepje poeder = 30ml voeding</strong></li>
+                                  <li>• Alle Nederlandse merken gebruiken deze verhouding</li>
+                                  <li>• Nutrilon, HiPP, Albert Heijn, Kruidvat - maakt niet uit</li>
+                                  <li>• EU-richtlijn standaardiseert alle verhoudingen</li>
+                                </ul>
+                                <p className="text-xs text-gray-500 mt-2 italic">
+                                  Het schepje neemt ~3ml ruimte in, daarom blijft totaal volume 30ml
+                                </p>
+                              </div>
+                              {/* Tooltip arrow */}
+                              <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-white"></div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
                     <div className="text-xl font-bold">{Math.round((results.recommendedAmount / 30) * 10) / 10}</div>
                     <div className="text-xs text-white/60 mt-1">30ml water per schepje poeder</div>
                     <div className="mt-3">
