@@ -123,7 +123,10 @@ export default function HomePage() {
     // Special calculation for premature babies
     if (isPremature) {
       if (!gestationalAge || !birthDate) {
-        alert('Vul de zwangerschapsduur en geboortedatum in voor premature berekening')
+        const missingFields = []
+        if (!gestationalAge) missingFields.push('zwangerschapsduur bij geboorte')
+        if (!birthDate) missingFields.push('geboortedatum')
+        alert(`Vul de volgende velden in voor premature berekening:\n• ${missingFields.join('\n• ')}`)
         return
       }
 
@@ -319,7 +322,7 @@ export default function HomePage() {
                     <div className="flex-1">
                       <div className="flex items-center space-x-2">
                         <p className="text-sm text-blue-800">
-                          Voor premature baby's berekenen we de voeding op basis van gecorrigeerde leeftijd
+                          Voor premature baby's berekenen we de voeding op basis van gecorrigeerde leeftijd. Vul de onderstaande velden in.
                         </p>
                         <div className="relative tooltip-container">
                           <button
@@ -433,7 +436,7 @@ export default function HomePage() {
                   {/* Gestational Age at Birth */}
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Zwangerschapsduur bij geboorte (weken)
+                      Zwangerschapsduur bij geboorte (weken) <span className="text-red-500">*</span>
                     </label>
                     <div className="relative">
                       <select
@@ -467,7 +470,7 @@ export default function HomePage() {
                   {/* Birth Date */}
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Geboortedatum
+                      Geboortedatum <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="date"
