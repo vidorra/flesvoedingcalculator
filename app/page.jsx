@@ -642,10 +642,10 @@ export default function HomePage() {
                     <div className="flex items-center">
                       <Link 
                         href="/schepjes-calculator"
-                        className="w-full bg-white text-primary font-semibold py-3 px-3 rounded-xl transition-colors hover:bg-gray-100 flex items-center justify-center space-x-1 text-sm"
+                        className="w-full bg-white text-primary font-semibold py-3 px-2 rounded-xl transition-colors hover:bg-gray-100 flex items-center justify-center space-x-1 text-xs"
                       >
                         <Calculator className="w-4 h-4" />
-                        <span>Schepjes</span>
+                        <span>Bereken Aantal Schepjes</span>
                       </Link>
                     </div>
                   </div>
