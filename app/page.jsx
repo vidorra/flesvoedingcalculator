@@ -80,6 +80,7 @@ export default function HomePage() {
   const [showSourcesTooltip, setShowSourcesTooltip] = useState(false)
   const [customAmount, setCustomAmount] = useState('')
   const [customSchepjes, setCustomSchepjes] = useState(null)
+  const [showCustomInput, setShowCustomInput] = useState(false)
 
   // Use effect to calculate corrected age when inputs change
   useEffect(() => {
@@ -655,21 +656,23 @@ export default function HomePage() {
                   
                   {/* Schepjes Calculation */}
                   <div className="bg-white/20 backdrop-blur rounded-xl p-4">
-                    <div className="flex items-center justify-between mb-4">
-                      <input
-                        type="number"
-                        value={customAmount}
-                        onChange={(e) => setCustomAmount(e.target.value)}
-                        placeholder={`${results.recommendedAmount} ml`}
-                        className="flex-1 mr-3 px-3 py-2 rounded-lg border border-white/30 bg-white/20 text-white placeholder:text-white/60 focus:border-white/50 focus:bg-white/30 transition-all outline-none"
-                      />
-                      <button
-                        onClick={calculateCustomSchepjes}
-                        className="bg-white text-primary px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors font-medium whitespace-nowrap"
-                      >
-                        Andere hoeveelheid en ratio berekenen
-                      </button>
-                    </div>
+                    {showCustomInput && (
+                      <div className="flex items-center justify-between mb-4">
+                        <input
+                          type="number"
+                          value={customAmount}
+                          onChange={(e) => setCustomAmount(e.target.value)}
+                          placeholder={`${results.recommendedAmount} ml`}
+                          className="flex-1 mr-3 px-3 py-2 rounded-lg border border-white/30 bg-white/20 text-white placeholder:text-white/60 focus:border-white/50 focus:bg-white/30 transition-all outline-none"
+                        />
+                        <button
+                          onClick={calculateCustomSchepjes}
+                          className="bg-white text-primary px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors font-medium whitespace-nowrap"
+                        >
+                          Bereken
+                        </button>
+                      </div>
+                    )}
                     
                     <div className="text-white/70 text-sm mb-1 flex items-center space-x-1">
                       <span>Aantal schepjes per voeding</span>
@@ -711,6 +714,17 @@ export default function HomePage() {
                       {customSchepjes !== null ? customSchepjes : Math.round((results.recommendedAmount / 30) * 10) / 10}
                     </div>
                     <div className="text-xs text-white/60 mt-1">30ml water per schepje poeder</div>
+                    
+                    {!showCustomInput && (
+                      <div className="mt-3">
+                        <button
+                          onClick={() => setShowCustomInput(true)}
+                          className="text-white text-xs hover:text-white/80 transition-colors underline"
+                        >
+                          Andere hoeveelheid en ratio berekenen →
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
