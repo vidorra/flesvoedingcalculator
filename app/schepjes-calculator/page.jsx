@@ -218,11 +218,26 @@ export default function SchepjesCalculatorPage() {
             <div className="space-y-2 text-sm text-gray-600">
               <p className="font-medium">✓ Alle populaire merken gebruiken 30ml/schepje:</p>
               <ul className="space-y-1 ml-4">
-                <li>• Nutrilon (45% marktaandeel)</li>
-                <li>• HiPP Organic (18% marktaandeel)</li>
-                <li>• Albert Heijn eigen merk (15% marktaandeel)</li>
-                <li>• Kruidvat eigen merk</li>
-                <li>• Hero Baby, Aptamil, etc.</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Nutrilon (45% marktaandeel)</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>HiPP Organic (18% marktaandeel)</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Albert Heijn eigen merk (15% marktaandeel)</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Kruidvat eigen merk</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Hero Baby, Aptamil, etc.</span>
+                </li>
               </ul>
               <p className="mt-2 text-xs text-gray-500 italic">
                 EU-verordening 2016/127 standaardiseert verhoudingen
@@ -236,11 +251,26 @@ export default function SchepjesCalculatorPage() {
               Bereidingstips
             </h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li>• Gebruik altijd eerst water, dan poeder</li>
-              <li>• Schud goed maar voorzichtig (geen luchtbellen)</li>
-              <li>• Controleer temperatuur op pols (lauwwarm)</li>
-              <li>• Gebruik binnen 2 uur na bereiding</li>
-              <li>• Gooi restjes altijd weg</li>
+              <li className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                <span>Gebruik altijd eerst water, dan poeder</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                <span>Schud goed maar voorzichtig (geen luchtbellen)</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                <span>Controleer temperatuur op pols (lauwwarm)</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                <span>Gebruik binnen 2 uur na bereiding</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                <span>Gooi restjes altijd weg</span>
+              </li>
             </ul>
           </div>
         </div>
