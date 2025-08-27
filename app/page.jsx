@@ -448,6 +448,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
+                  </div>
                   
                   {/* Gestational Age at Birth */}
                   <div>
