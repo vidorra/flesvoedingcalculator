@@ -361,9 +361,18 @@ export default function HomePage() {
                                     Voor te vroeg geboren baby's gebruiken we een aangepaste berekeningsmethode op basis van:
                                   </p>
                                   <ul className="text-sm space-y-1">
-                                    <li>• <strong>Gecorrigeerde leeftijd</strong> (chronologische leeftijd minus weken te vroeg)</li>
-                                    <li>• <strong>Verhoogde voedingsbehoefte</strong> voor inhaalgroei</li>
-                                    <li>• <strong>ESPGHAN 2022 richtlijnen</strong> voor prematurenvoeding</li>
+                                    <li className="flex items-center space-x-2">
+                                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                      <span><strong>Gecorrigeerde leeftijd</strong> (chronologische leeftijd minus weken te vroeg)</span>
+                                    </li>
+                                    <li className="flex items-center space-x-2">
+                                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                      <span><strong>Verhoogde voedingsbehoefte</strong> voor inhaalgroei</span>
+                                    </li>
+                                    <li className="flex items-center space-x-2">
+                                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                      <span><strong>ESPGHAN 2022 richtlijnen</strong> voor prematurenvoeding</span>
+                                    </li>
                                   </ul>
                                   <div className="flex items-center justify-between mt-2">
                                     <p className="text-xs text-gray-600 flex-1">
@@ -404,9 +413,18 @@ export default function HomePage() {
                                                 <div className="dutch-protocols bg-orange-50 p-2 rounded">
                                                   <p className="font-medium">Nederlandse protocollen:</p>
                                                   <ul className="ml-3 space-y-1">
-                                                    <li>• NICU protocollen grote centra (AMC, Erasmus MC, UMCU)</li>
-                                                    <li>• Landelijke Neonatologie Richtlijnen (LNR)</li>
-                                                    <li>• Care4Neo oudervereniging aanbevelingen</li>
+                                                    <li className="flex items-center space-x-2">
+                                                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                                      <span>NICU protocollen grote centra (AMC, Erasmus MC, UMCU)</span>
+                                                    </li>
+                                                    <li className="flex items-center space-x-2">
+                                                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                                      <span>Landelijke Neonatologie Richtlijnen (LNR)</span>
+                                                    </li>
+                                                    <li className="flex items-center space-x-2">
+                                                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                                      <span>Care4Neo oudervereniging aanbevelingen</span>
+                                                    </li>
                                                   </ul>
                                                 </div>
                                                 
@@ -696,10 +714,22 @@ export default function HomePage() {
                               <div className="space-y-2 text-xs text-gray-700">
                                 <p className="font-semibold text-gray-800">Nederlandse Standaard Verhoudingen:</p>
                                 <ul className="space-y-1">
-                                  <li>• <strong>30ml water + 1 schepje poeder = 30ml voeding</strong></li>
-                                  <li>• Alle Nederlandse merken gebruiken deze verhouding</li>
-                                  <li>• Nutrilon, HiPP, Albert Heijn, Kruidvat - maakt niet uit</li>
-                                  <li>• EU-richtlijn standaardiseert alle verhoudingen</li>
+                                  <li className="flex items-center space-x-2">
+                                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                    <span><strong>30ml water + 1 schepje poeder = 30ml voeding</strong></span>
+                                  </li>
+                                  <li className="flex items-center space-x-2">
+                                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                    <span>Alle Nederlandse merken gebruiken deze verhouding</span>
+                                  </li>
+                                  <li className="flex items-center space-x-2">
+                                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                    <span>Nutrilon, HiPP, Albert Heijn, Kruidvat - maakt niet uit</span>
+                                  </li>
+                                  <li className="flex items-center space-x-2">
+                                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                    <span>EU-richtlijn standaardiseert alle verhoudingen</span>
+                                  </li>
                                 </ul>
                                 <p className="text-xs text-gray-500 mt-2 italic">
                                   Het schepje neemt ~3ml ruimte in, daarom blijft totaal volume 30ml
@@ -784,19 +814,40 @@ export default function HomePage() {
                                 <div className="monitoring-required bg-amber-50 p-2 rounded">
                                   <p className="font-medium text-amber-900">Premature baby's hebben nodig:</p>
                                   <ul className="text-xs mt-1 space-y-1">
-                                    <li>• Wekelijkse gewichtscontrole (2x/week eerste maand)</li>
-                                    <li>• Maandelijkse bloedcontroles (ijzer, calcium, fosfor)</li>
-                                    <li>• NICU follow-up polikliniek bezoeken</li>
-                                    <li>• Diëtist begeleiding voor optimale voeding</li>
+                                    <li className="flex items-center space-x-2">
+                                      <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></div>
+                                      <span>Wekelijkse gewichtscontrole (2x/week eerste maand)</span>
+                                    </li>
+                                    <li className="flex items-center space-x-2">
+                                      <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></div>
+                                      <span>Maandelijkse bloedcontroles (ijzer, calcium, fosfor)</span>
+                                    </li>
+                                    <li className="flex items-center space-x-2">
+                                      <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></div>
+                                      <span>NICU follow-up polikliniek bezoeken</span>
+                                    </li>
+                                    <li className="flex items-center space-x-2">
+                                      <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></div>
+                                      <span>Diëtist begeleiding voor optimale voeding</span>
+                                    </li>
                                   </ul>
                                 </div>
                                 
                                 <div className="contact-info bg-blue-50 p-2 rounded">
                                   <p className="font-medium text-blue-900">Neem contact op bij:</p>
                                   <ul className="text-xs mt-1 space-y-1">
-                                    <li>• Onvoldoende gewichtstoename (&lt;15g/dag)</li>
-                                    <li>• Voedingsproblemen (reflux, spugen)</li>
-                                    <li>• Twijfel over juiste voeding</li>
+                                    <li className="flex items-center space-x-2">
+                                      <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></div>
+                                      <span>Onvoldoende gewichtstoename (&lt;15g/dag)</span>
+                                    </li>
+                                    <li className="flex items-center space-x-2">
+                                      <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></div>
+                                      <span>Voedingsproblemen (reflux, spugen)</span>
+                                    </li>
+                                    <li className="flex items-center space-x-2">
+                                      <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></div>
+                                      <span>Twijfel over juiste voeding</span>
+                                    </li>
                                   </ul>
                                 </div>
                                 
