@@ -347,7 +347,7 @@ export default function HomePage() {
                             onClick={() => setShowTooltip(!showTooltip)}
                             className="text-blue-600 hover:text-blue-800 transition-colors"
                           >
-                            <HelpCircle className="w-4 h-4" />
+                            <Info className="w-4 h-4" />
                           </button>
                           
                           {/* Tooltip */}
@@ -377,7 +377,7 @@ export default function HomePage() {
                                         onClick={() => setShowSourcesTooltip(!showSourcesTooltip)}
                                         className="text-gray-600 hover:text-gray-800 transition-colors"
                                       >
-                                        <HelpCircle className="w-3 h-3" />
+                                        <Info className="w-3 h-3" />
                                       </button>
                                       
                                       {/* Scientific Sources Tooltip */}
@@ -684,7 +684,7 @@ export default function HomePage() {
                           onClick={() => setShowSchepjesTooltip(!showSchepjesTooltip)}
                           className="text-white/60 hover:text-white/80 transition-colors"
                         >
-                          <HelpCircle className="w-3 h-3" />
+                          <Info className="w-3 h-3" />
                         </button>
                         
                         {/* Schepjes Tooltip */}
@@ -764,7 +764,7 @@ export default function HomePage() {
                         onClick={() => setShowMedicalTooltip(!showMedicalTooltip)}
                         className="text-red-600 hover:text-red-800 transition-colors"
                       >
-                        <HelpCircle className="w-4 h-4" />
+                        <Info className="w-4 h-4" />
                       </button>
                       
                       {/* Medical Disclaimer Tooltip */}
