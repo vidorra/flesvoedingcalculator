@@ -332,27 +332,28 @@ export default function HomePage() {
               {/* Premature Baby Input Fields */}
               {isPremature && (
                 <div className="space-y-5">
-                  <div className="flex items-start space-x-2">
-                    <Info className="w-5 h-5 text-blue-600 mt-0.5" />
-                    <div className="flex-1">
-                      <div className="flex items-center space-x-2">
-                        <p className="text-sm text-blue-800">
-                          Voor premature baby's berekenen we de voeding op basis van gecorrigeerde leeftijd. Vul de onderstaande velden in.
-                        </p>
-                        <div className="relative tooltip-container">
-                          <button
-                            type="button"
-                            onMouseEnter={() => setShowTooltip(true)}
-                            onMouseLeave={() => setShowTooltip(false)}
-                            onClick={() => setShowTooltip(!showTooltip)}
-                            className="text-blue-600 hover:text-blue-800 transition-colors"
-                          >
-                            <Info className="w-4 h-4" />
-                          </button>
-                          
-                          {/* Tooltip */}
-                          {showTooltip && (
-                            <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-80 z-10">
+                  <div className="bg-blue-50 rounded-2xl p-4 border border-blue-200">
+                    <div className="flex items-start space-x-2">
+                      <Info className="w-5 h-5 text-blue-600 mt-0.5" />
+                      <div className="flex-1">
+                        <div className="flex items-center space-x-2">
+                          <p className="text-sm text-blue-800">
+                            Voor premature baby's berekenen we de voeding op basis van gecorrigeerde leeftijd. Vul de onderstaande velden in.
+                          </p>
+                          <div className="relative tooltip-container">
+                            <button
+                              type="button"
+                              onMouseEnter={() => setShowTooltip(true)}
+                              onMouseLeave={() => setShowTooltip(false)}
+                              onClick={() => setShowTooltip(!showTooltip)}
+                              className="text-blue-600 hover:text-blue-800 transition-colors"
+                            >
+                              <Info className="w-4 h-4" />
+                            </button>
+                            
+                            {/* Tooltip */}
+                            {showTooltip && (
+                              <div className="absolute bottom-full right-0 mb-2 w-80 z-10">
                               <div className="bg-white border border-gray-200 rounded-xl shadow-lg p-4">
                                 <div className="tooltip-content">
                                   <h4 className="font-semibold mb-2">Prematurenberekening</h4>
@@ -434,7 +435,7 @@ export default function HomePage() {
                                   </div>
                                 </div>
                                 {/* Tooltip Arrow */}
-                                <div className="absolute top-full left-1/2 transform -translate-x-1/2">
+                                <div className="absolute top-full right-4">
                                   <div className="border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-gray-200"></div>
                                   <div className="absolute -top-1 left-1/2 transform -translate-x-1/2">
                                     <div className="border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white"></div>
