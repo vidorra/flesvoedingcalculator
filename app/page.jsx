@@ -663,7 +663,7 @@ export default function HomePage() {
                           value={customAmount}
                           onChange={(e) => setCustomAmount(e.target.value)}
                           placeholder={`${results.recommendedAmount} ml`}
-                          className="flex-1 mr-3 px-3 py-2 rounded-lg border border-white/30 bg-white/20 text-white placeholder:text-white/60 focus:border-white/50 focus:bg-white/30 transition-all outline-none"
+                          className="flex-1 mr-3 px-3 py-2 rounded-lg border border-gray-300 bg-white text-gray-800 placeholder:text-gray-500 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none"
                         />
                         <button
                           onClick={calculateCustomSchepjes}
