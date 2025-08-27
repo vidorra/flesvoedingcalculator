@@ -657,7 +657,7 @@ export default function HomePage() {
                   {/* Schepjes Calculation */}
                   <div className="bg-white/20 backdrop-blur rounded-xl p-4">
                     {showCustomInput && (
-                      <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center justify-between mb-4 max-w-[372px]">
                         <input
                           type="number"
                           value={customAmount}
