@@ -4,7 +4,7 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  // Optimize build for smaller size
+  // Optimize build for smaller size and better performance
   compress: true,
   poweredByHeader: false,
   generateEtags: false,
