@@ -58,11 +58,26 @@ export default function SoortenFlesvoedingPage() {
               <div>
                 <h3 className="font-medium text-gray-800 mb-3">Kenmerken:</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Volledige zuigelingenvoeding vanaf geboorte</li>
-                  <li>• Bevat alle essentiële voedingsstoffen</li>
-                  <li>• Eiwitgehalte: 1.2-1.8g per 100ml</li>
-                  <li>• IJzergehalte: 0.5-1.0mg per 100ml</li>
-                  <li>• Mag tot 12 maanden gebruikt worden</li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Volledige zuigelingenvoeding vanaf geboorte</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Bevat alle essentiële voedingsstoffen</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Eiwitgehalte: 1.2-1.8g per 100ml</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>IJzergehalte: 0.5-1.0mg per 100ml</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Mag tot 12 maanden gebruikt worden</span>
+                </li>
                 </ul>
               </div>
               
@@ -93,10 +108,22 @@ export default function SoortenFlesvoedingPage() {
               <div>
                 <h3 className="font-medium text-gray-800 mb-3">Kenmerken:</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Vanaf 6 maanden naast vaste voeding</li>
-                  <li>• Hoger ijzergehalte: ongeveer 6mg per 100ml</li>
-                  <li>• Meer vitamine D voor groei</li>
-                  <li>• Aangepaste eiwitsamenstelling</li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Vanaf 6 maanden naast vaste voeding</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Hoger ijzergehalte: ongeveer 6mg per 100ml</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Meer vitamine D voor groei</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Aangepaste eiwitsamenstelling</span>
+                </li>
                   <li className="text-red-600 font-medium">• NIET geschikt voor baby&apos;s jonger dan 6 maanden</li>
                 </ul>
               </div>
@@ -104,9 +131,18 @@ export default function SoortenFlesvoedingPage() {
               <div>
                 <h3 className="font-medium text-gray-800 mb-3">Wanneer overstappen:</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Baby is 6 maanden oud</li>
-                  <li>• Start met vaste voeding</li>
-                  <li>• Op advies van consultatiebureau</li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Baby is 6 maanden oud</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Start met vaste voeding</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Op advies van consultatiebureau</span>
+                </li>
                 </ul>
               </div>
             </div>
@@ -126,19 +162,40 @@ export default function SoortenFlesvoedingPage() {
               <div>
                 <h3 className="font-medium text-gray-800 mb-3">Kenmerken:</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Vanaf 1 jaar als aanvulling</li>
-                  <li>• Verrijkt met vitamines en mineralen</li>
-                  <li>• OPTIONEEL - gewone volle melk kan ook</li>
-                  <li>• Vaak duurder dan gewone melk</li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Vanaf 1 jaar als aanvulling</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Verrijkt met vitamines en mineralen</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>OPTIONEEL - gewone volle melk kan ook</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Vaak duurder dan gewone melk</span>
+                </li>
                 </ul>
               </div>
               
               <div>
                 <h3 className="font-medium text-gray-800 mb-3">Afweging maken:</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• Gewone volle melk is vanaf 1 jaar prima</li>
-                  <li>• Peutermelk bij slechte eters</li>
-                  <li>• Overleg met consultatiebureau</li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Gewone volle melk is vanaf 1 jaar prima</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Peutermelk bij slechte eters</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Overleg met consultatiebureau</span>
+                </li>
                 </ul>
               </div>
             </div>
@@ -226,30 +283,66 @@ export default function SoortenFlesvoedingPage() {
             <div>
               <h3 className="font-medium text-amber-800 mb-2">Hypoallergene (HA) voeding:</h3>
               <ul className="space-y-1 text-sm text-amber-700">
-                <li>• Bij hoog allergie-risico in familie</li>
-                <li>• Gedeeltelijk afgebroken eiwitten</li>
-                <li>• Alleen op advies kinderarts</li>
-                <li>• Beschikbaar in type 1 en 2</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Bij hoog allergie-risico in familie</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Gedeeltelijk afgebroken eiwitten</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Alleen op advies kinderarts</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Beschikbaar in type 1 en 2</span>
+                </li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-medium text-amber-800 mb-2">Anti-reflux (AR) voeding:</h3>
               <ul className="space-y-1 text-sm text-amber-700">
-                <li>• Bij overmatig spugen</li>
-                <li>• Verdikt automatisch in maag</li>
-                <li>• Alleen op medisch advies</li>
-                <li>• Johannesbroodpitmeel als verdikker</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Bij overmatig spugen</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Verdikt automatisch in maag</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Alleen op medisch advies</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Johannesbroodpitmeel als verdikker</span>
+                </li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-medium text-amber-800 mb-2">Lactosevrije voeding:</h3>
               <ul className="space-y-1 text-sm text-amber-700">
-                <li>• Bij lactose-intolerantie</li>
-                <li>• Zeer zeldzaam bij baby's</li>
-                <li>• Diagnose door kinderarts</li>
-                <li>• Soja of lactase-behandeld</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Bij lactose-intolerantie</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Zeer zeldzaam bij baby's</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Diagnose door kinderarts</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Soja of lactase-behandeld</span>
+                </li>
               </ul>
             </div>
           </div>

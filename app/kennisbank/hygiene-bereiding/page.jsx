@@ -283,9 +283,18 @@ export default function HygieneBereidingPage() {
               <strong>Tot 6 maanden verplicht</strong> - Baby's immuunsysteem is dan voldoende ontwikkeld
             </p>
             <ul className="text-blue-800 text-sm space-y-1">
-              <li>• <strong>0-3 maanden:</strong> Altijd steriliseren (ook water koken)</li>
-              <li>• <strong>3-6 maanden:</strong> Steriliseren aanbevolen</li>
-              <li>• <strong>6+ maanden:</strong> Grondig schoonmaken met warm zeepsop voldoet</li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>0-3 maanden:</strong> Altijd steriliseren (ook water koken)</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>3-6 maanden:</strong> Steriliseren aanbevolen</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>6+ maanden:</strong> Grondig schoonmaken met warm zeepsop voldoet</span>
+                </li>
             </ul>
           </div>
 
@@ -352,14 +361,32 @@ export default function HygieneBereidingPage() {
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               <ul className="text-amber-700 text-sm space-y-1">
-                <li>• Plaats flessen in bovenste rek</li>
-                <li>• Gebruik baby-veilige tabletten</li>
-                <li>• Controleer dat vaatwasser 65°C+ haalt</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Plaats flessen in bovenste rek</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Gebruik baby-veilige tabletten</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Controleer dat vaatwasser 65°C+ haalt</span>
+                </li>
               </ul>
               <ul className="text-amber-700 text-sm space-y-1">
-                <li>• Efficiënt met normale vaaswas</li>
-                <li>• Ideaal voor grote huishoudens</li>
-                <li>• Oudere vaatwassers mogelijk te koud</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Efficiënt met normale vaaswas</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Ideaal voor grote huishoudens</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Oudere vaatwassers mogelijk te koud</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -370,22 +397,52 @@ export default function HygieneBereidingPage() {
             <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
               <h4 className="text-blue-900 font-medium mb-2">💧 Nederlands Kraanwater</h4>
               <ul className="text-blue-800 text-sm space-y-1">
-                <li>• ✅ Wereldklasse kwaliteit, EU-standaarden</li>
-                <li>• ⚠️ Oudere huizen (voor 1960): loodleidingen</li>
-                <li>• 🚿 Laat water 2-3 min lopen 's ochtends</li>
-                <li>• 🔥 Koken voor baby's onder 6 maanden</li>
-                <li>• ❄️ Winter: kouder water, langer opwarmen</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>✅ Wereldklasse kwaliteit, EU-standaarden</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>⚠️ Oudere huizen (voor 1960): loodleidingen</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>🚿 Laat water 2-3 min lopen 's ochtends</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>🔥 Koken voor baby's onder 6 maanden</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>❄️ Winter: kouder water, langer opwarmen</span>
+                </li>
               </ul>
             </div>
             
             <div className="bg-green-50 rounded-xl p-4 border border-green-200">
               <h4 className="text-green-900 font-medium mb-2">🍼 Flessenwater</h4>
               <ul className="text-green-800 text-sm space-y-1">
-                <li>• Label: "geschikt voor baby's"</li>
-                <li>• Natrium &lt; 20mg/L</li>
-                <li>• Ook koken tot 6 maanden</li>
-                <li>• Nederlandse supermarkten: breed aanbod</li>
-                <li>• Duurder dan kraanwater</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Label: "geschikt voor baby's"</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Natrium &lt; 20mg/L</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Ook koken tot 6 maanden</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Nederlandse supermarkten: breed aanbod</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Duurder dan kraanwater</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -398,14 +455,32 @@ export default function HygieneBereidingPage() {
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               <ul className="text-red-700 text-sm space-y-1">
-                <li>• Zomer: snellere bacteriegroei</li>
-                <li>• Winter: droge verwarmingslucht</li>
-                <li>• Flessen binnen 2-4 uur besmet</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Zomer: snellere bacteriegroei</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Winter: droge verwarmingslucht</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Flessen binnen 2-4 uur besmet</span>
+                </li>
               </ul>
               <ul className="text-red-700 text-sm space-y-1">
-                <li>• Emma Kinderziekenhuis onderzoek</li>
-                <li>• Maag-darm, oorinfecties risico</li>
-                <li>• Tot 6 mnd extra gevoelig</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Emma Kinderziekenhuis onderzoek</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Maag-darm, oorinfecties risico</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Tot 6 mnd extra gevoelig</span>
+                </li>
               </ul>
             </div>
           </div>

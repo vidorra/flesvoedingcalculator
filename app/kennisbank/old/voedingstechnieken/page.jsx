@@ -142,19 +142,40 @@ export default function VoedingstechniekenPage() {
                 Tot 6 maanden VERPLICHT:
               </h3>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Uitkoken 10 minuten in pan</li>
-                <li>• Stoomsterilisator (makkelijkst)</li>
-                <li>• Koude sterilisatie met tabletten</li>
-                <li>• Magnetron sterilisator</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Uitkoken 10 minuten in pan</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Stoomsterilisator (makkelijkst)</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Koude sterilisatie met tabletten</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Magnetron sterilisator</span>
+                </li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-medium text-gray-800 mb-3">Na 6 maanden:</h3>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Goed wassen in heet sop voldoende</li>
-                <li>• Extra steriliseren bij ziekte</li>
-                <li>• Spenen blijven steriliseren</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Goed wassen in heet sop voldoende</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Extra steriliseren bij ziekte</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Spenen blijven steriliseren</span>
+                </li>
               </ul>
             </div>
           </div>
