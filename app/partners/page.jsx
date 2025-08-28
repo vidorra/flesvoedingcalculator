@@ -187,17 +187,41 @@ export default function PartnersPage() {
             
             <div className="grid md:grid-cols-2 gap-4">
               <ul className="space-y-1 text-sm">
-                <li>• Verplichte voedingsstoffen (zoals DHA)</li>
-                <li>• Maximum gehalten voor bepaalde stoffen</li>
-                <li>• Kwaliteitscontroles en certificering</li>
-                <li>• Strikte labeling voorschriften</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Verplichte voedingsstoffen (zoals DHA)</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Maximum gehalten voor bepaalde stoffen</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Kwaliteitscontroles en certificering</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Strikte labeling voorschriften</span>
+                </li>
               </ul>
               
               <ul className="space-y-1 text-sm">
-                <li>• Veiligheidsstandaarden productie</li>
-                <li>• Traceerbaarheid van ingrediënten</li>
-                <li>• Regelmatige inspecties NVWA</li>
-                <li>• Verbod op misleidende claims</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Veiligheidsstandaarden productie</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Traceerbaarheid van ingrediënten</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Regelmatige inspecties NVWA</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Verbod op misleidende claims</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -215,10 +239,22 @@ export default function PartnersPage() {
             </p>
             
             <ul className="space-y-2 text-sm ml-4">
-              <li>• Onafhankelijke en objectieve informatie te garanderen</li>
-              <li>• Geen voorkeur te tonen voor bepaalde merken</li>
-              <li>• Te focussen op wat het beste is voor ouders en baby's</li>
-              <li>• Transparantie te behouden over onze bronnen</li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Onafhankelijke en objectieve informatie te garanderen</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Geen voorkeur te tonen voor bepaalde merken</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Te focussen op wat het beste is voor ouders en baby's</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Transparantie te behouden over onze bronnen</span>
+                </li>
             </ul>
             
             <p className="text-sm">

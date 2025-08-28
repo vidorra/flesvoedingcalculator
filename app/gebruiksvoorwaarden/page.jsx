@@ -43,10 +43,22 @@ export default function GebruiksvoorwaardenPage() {
               FlesvoedingCalculator.nl is een informatieve website en vervangt GEEN medisch advies.
             </p>
             <ul className="space-y-1 text-sm">
-              <li>• Raadpleeg altijd uw kinderarts of consultatiebureau voor persoonlijk advies</li>
-              <li>• De calculator geeft richtlijnen, maar elk kind is uniek</li>
-              <li>• Bij twijfel over de voeding van uw baby, zoek professionele hulp</li>
-              <li>• Wij zijn niet aansprakelijk voor gevolgen van het gebruik van onze informatie</li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Raadpleeg altijd uw kinderarts of consultatiebureau voor persoonlijk advies</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>De calculator geeft richtlijnen, maar elk kind is uniek</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Bij twijfel over de voeding van uw baby, zoek professionele hulp</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Wij zijn niet aansprakelijk voor gevolgen van het gebruik van onze informatie</span>
+                </li>
             </ul>
           </div>
         </div>
@@ -69,21 +81,48 @@ export default function GebruiksvoorwaardenPage() {
             <div>
               <h3 className="font-medium text-gray-800 mb-3">Wat wij aanbieden:</h3>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Gratis flesvoeding calculator</li>
-                <li>• Educatieve informatie over flesvoeding</li>
-                <li>• Voedingsschema's per leeftijd</li>
-                <li>• Kennisbank met praktische tips</li>
-                <li>• Veelgestelde vragen en antwoorden</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Gratis flesvoeding calculator</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Educatieve informatie over flesvoeding</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Voedingsschema's per leeftijd</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Kennisbank met praktische tips</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Veelgestelde vragen en antwoorden</span>
+                </li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-medium text-gray-800 mb-3">Bronnen van informatie:</h3>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Nederlandse Voedingscentrum richtlijnen</li>
-                <li>• NCJ (Nederlandse Centrum Jeugdgezondheid)</li>
-                <li>• Nederlandse Vereniging voor Kindergeneeskunde</li>
-                <li>• EU verordening 2016/127 voor zuigelingenvoeding</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Nederlandse Voedingscentrum richtlijnen</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>NCJ (Nederlandse Centrum Jeugdgezondheid)</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Nederlandse Vereniging voor Kindergeneeskunde</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>EU verordening 2016/127 voor zuigelingenvoeding</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -100,21 +139,48 @@ export default function GebruiksvoorwaardenPage() {
             <div>
               <h3 className="font-medium text-gray-800 mb-2">Toegestaan gebruik:</h3>
               <ul className="space-y-1 text-sm text-gray-600 ml-4">
-                <li>• Persoonlijk, niet-commercieel gebruik</li>
-                <li>• Informatieve doeleinden voor flesvoeding</li>
-                <li>• Delen van links naar onze website</li>
-                <li>• Gebruik van de calculator voor uw eigen baby</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Persoonlijk, niet-commercieel gebruik</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Informatieve doeleinden voor flesvoeding</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Delen van links naar onze website</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Gebruik van de calculator voor uw eigen baby</span>
+                </li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-medium text-gray-800 mb-2">Niet toegestaan:</h3>
               <ul className="space-y-1 text-sm text-gray-600 ml-4">
-                <li>• Commercieel gebruik zonder toestemming</li>
-                <li>• Kopiëren van onze content zonder bronvermelding</li>
-                <li>• Misbruik van de website of diensten</li>
-                <li>• Inbreuk maken op rechten van anderen</li>
-                <li>• Spam of ongewenste berichten verzenden</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Commercieel gebruik zonder toestemming</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Kopiëren van onze content zonder bronvermelding</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Misbruik van de website of diensten</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Inbreuk maken op rechten van anderen</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Spam of ongewenste berichten verzenden</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -155,20 +221,44 @@ export default function GebruiksvoorwaardenPage() {
             <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
               <h3 className="font-medium text-blue-800 mb-2">Wat wij garanderen:</h3>
               <ul className="space-y-1 text-sm text-blue-700">
-                <li>• Informatie gebaseerd op officiële Nederlandse richtlijnen</li>
-                <li>• Regelmatige updates van content</li>
-                <li>• Zorgvuldige controle van medische informatie</li>
-                <li>• Verwijzing naar betrouwbare bronnen</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Informatie gebaseerd op officiële Nederlandse richtlijnen</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Regelmatige updates van content</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Zorgvuldige controle van medische informatie</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Verwijzing naar betrouwbare bronnen</span>
+                </li>
               </ul>
             </div>
             
             <div className="bg-amber-50 rounded-xl p-4 border border-amber-200">
               <h3 className="font-medium text-amber-800 mb-2">Belangrijk om te weten:</h3>
               <ul className="space-y-1 text-sm text-amber-700">
-                <li>• Informatie kan veranderen door nieuwe inzichten</li>
-                <li>• Elk kind is uniek en kan afwijken van gemiddelden</li>
-                <li>• Bij twijfel altijd professionele hulp zoeken</li>
-                <li>• Wij zijn geen vervanging voor medisch advies</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Informatie kan veranderen door nieuwe inzichten</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Elk kind is uniek en kan afwijken van gemiddelden</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Bij twijfel altijd professionele hulp zoeken</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Wij zijn geen vervanging voor medisch advies</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -189,11 +279,26 @@ export default function GebruiksvoorwaardenPage() {
             <div className="bg-red-50 rounded-xl p-4 border border-red-200">
               <h3 className="font-medium text-red-800 mb-2">Wij zijn niet aansprakelijk voor:</h3>
               <ul className="space-y-1 text-sm text-red-700">
-                <li>• Directe of indirecte schade door gebruik van onze website</li>
-                <li>• Gevolgen van het volgen van onze adviezen</li>
-                <li>• Problemen door onjuiste invoer in de calculator</li>
-                <li>• Technische problemen of tijdelijke uitval</li>
-                <li>• Content van externe websites waarnaar wij linken</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Directe of indirecte schade door gebruik van onze website</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Gevolgen van het volgen van onze adviezen</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Problemen door onjuiste invoer in de calculator</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Technische problemen of tijdelijke uitval</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Content van externe websites waarnaar wij linken</span>
+                </li>
               </ul>
             </div>
           </div>

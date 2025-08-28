@@ -111,9 +111,18 @@ export default function ProblemenOplossenPage() {
           <div className="mt-4 p-4 bg-amber-50 rounded-lg border border-amber-200">
             <h3 className="font-medium text-amber-800 mb-2">Ziekte of ongemak:</h3>
             <ul className="space-y-1 text-sm text-amber-700">
-              <li>• Check op oorontsteking</li>
-              <li>• Kijk naar doorkomende tandjes</li>
-              <li>• Raadpleeg arts bij aanhoudende weigering</li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Check op oorontsteking</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Kijk naar doorkomende tandjes</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Raadpleeg arts bij aanhoudende weigering</span>
+                </li>
             </ul>
           </div>
         </div>
@@ -130,20 +139,44 @@ export default function ProblemenOplossenPage() {
               <div>
                 <h3 className="font-medium text-green-800 mb-2">Normaal spugen:</h3>
                 <ul className="space-y-1 text-sm text-green-700">
-                  <li>• Tot 1 jaar normaal</li>
-                  <li>• Kleine hoeveelheden na voeding</li>
-                  <li>• Baby groeit goed</li>
-                  <li>• Geen pijn signalen</li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Tot 1 jaar normaal</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Kleine hoeveelheden na voeding</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Baby groeit goed</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Geen pijn signalen</span>
+                </li>
                 </ul>
               </div>
               
               <div>
                 <h3 className="font-medium text-red-800 mb-2">Problematische reflux:</h3>
                 <ul className="space-y-1 text-sm text-red-700">
-                  <li>• Grote hoeveelheden</li>
-                  <li>• Pijn bij/na voeding</li>
-                  <li>• Slecht groeien</li>
-                  <li>• Huilen bij platliggen</li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Grote hoeveelheden</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Pijn bij/na voeding</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Slecht groeien</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Huilen bij platliggen</span>
+                </li>
                 </ul>
               </div>
             </div>
