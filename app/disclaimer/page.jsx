@@ -43,10 +43,22 @@ export default function DisclaimerPage() {
               FlesvoedingCalculator.nl vervangt NOOIT professioneel medisch advies, diagnose of behandeling.
             </p>
             <ul className="space-y-1 text-sm">
-              <li>• Raadpleeg altijd uw kinderarts, huisarts of consultatiebureau</li>
-              <li>• Bij vragen over de gezondheid van uw baby: zoek professionele hulp</li>
-              <li>• Onze calculator geeft alleen algemene richtlijnen</li>
-              <li>• Elk kind is uniek en kan andere behoeften hebben</li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Raadpleeg altijd uw kinderarts, huisarts of consultatiebureau</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Bij vragen over de gezondheid van uw baby: zoek professionele hulp</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Onze calculator geeft alleen algemene richtlijnen</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Elk kind is uniek en kan andere behoeften hebben</span>
+                </li>
             </ul>
           </div>
         </div>
@@ -64,10 +76,22 @@ export default function DisclaimerPage() {
                 Informatieve tools:
               </h3>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Calculator gebaseerd op Nederlandse richtlijnen</li>
-                <li>• Educatieve informatie over flesvoeding</li>
-                <li>• Algemene voedingsschema's per leeftijd</li>
-                <li>• Praktische tips en technieken</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Calculator gebaseerd op Nederlandse richtlijnen</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Educatieve informatie over flesvoeding</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Algemene voedingsschema's per leeftijd</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Praktische tips en technieken</span>
+                </li>
               </ul>
             </div>
             
@@ -77,10 +101,22 @@ export default function DisclaimerPage() {
                 Onze bronnen:
               </h3>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Nederlandse Voedingscentrum</li>
-                <li>• NCJ (Nederlands Centrum Jeugdgezondheid)</li>
-                <li>• Nederlandse Vereniging voor Kindergeneeskunde</li>
-                <li>• EU-verordening 2016/127</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Nederlandse Voedingscentrum</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>NCJ (Nederlands Centrum Jeugdgezondheid)</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Nederlandse Vereniging voor Kindergeneeskunde</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>EU-verordening 2016/127</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -130,23 +166,56 @@ export default function DisclaimerPage() {
             <div>
               <h3 className="font-medium text-gray-800 mb-3">Direct contact opnemen bij:</h3>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Baby weigert eten of drinken</li>
-                <li>• Tekenen van uitdroging</li>
-                <li>• Koorts, braken of diarree</li>
-                <li>• Allergische reacties</li>
-                <li>• Zorgen over groei of gewichtstoename</li>
-                <li>• Overmatig huilen of onrust</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Baby weigert eten of drinken</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Tekenen van uitdroging</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Koorts, braken of diarree</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Allergische reacties</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Zorgen over groei of gewichtstoename</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Overmatig huilen of onrust</span>
+                </li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-medium text-gray-800 mb-3">Ook advies vragen bij:</h3>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Overstappen van borstvoeding naar flesvoeding</li>
-                <li>• Keuze voor specifieke flesvoeding</li>
-                <li>• Voedingsproblemen of weigering</li>
-                <li>• Vragen over voedingsschema's</li>
-                <li>• Introductie van vaste voeding</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Overstappen van borstvoeding naar flesvoeding</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Keuze voor specifieke flesvoeding</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Voedingsproblemen of weigering</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Vragen over voedingsschema's</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Introductie van vaste voeding</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -164,11 +233,26 @@ export default function DisclaimerPage() {
             </p>
             
             <ul className="space-y-1 text-sm text-gray-600 ml-4">
-              <li>• Directe of indirecte gevolgen van het gebruik van onze informatie</li>
-              <li>• Beslissingen genomen op basis van onze calculator of content</li>
-              <li>• Medische problemen die ontstaan door het volgen van onze adviezen</li>
-              <li>• Onjuistheden in de informatie (ondanks zorgvuldige controle)</li>
-              <li>• Technische problemen of uitval van de website</li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Directe of indirecte gevolgen van het gebruik van onze informatie</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Beslissingen genomen op basis van onze calculator of content</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Medische problemen die ontstaan door het volgen van onze adviezen</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Onjuistheden in de informatie (ondanks zorgvuldige controle)</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Technische problemen of uitval van de website</span>
+                </li>
             </ul>
             
             <p className="text-sm">

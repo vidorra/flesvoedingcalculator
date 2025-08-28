@@ -191,17 +191,35 @@ const BereidingInfographic = () => {
           <div className="bg-white/20 backdrop-blur rounded-xl p-4">
             <p className="font-medium mb-2">✅ Altijd doen:</p>
             <ul className="text-sm space-y-1 text-white/90">
-              <li>• Flessen steriliseren tot 6 maanden</li>
-              <li>• Direct opdrinken na bereiding</li>
-              <li>• Verse voeding per keer maken</li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Flessen steriliseren tot 6 maanden</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Direct opdrinken na bereiding</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Verse voeding per keer maken</span>
+                </li>
             </ul>
           </div>
           <div className="bg-white/20 backdrop-blur rounded-xl p-4">
             <p className="font-medium mb-2">❌ Nooit doen:</p>
             <ul className="text-sm space-y-1 text-white/90">
-              <li>• Restjes bewaren voor later</li>
-              <li>• Fles opnieuw opwarmen</li>
-              <li>• Poeder vooraf in fles doen</li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Restjes bewaren voor later</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Fles opnieuw opwarmen</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Poeder vooraf in fles doen</span>
+                </li>
             </ul>
           </div>
         </div>

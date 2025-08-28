@@ -343,22 +343,52 @@ export default function BasisFlesvoedingPage() {
             <div className="bg-red-50 rounded-xl p-4 border border-red-200">
               <h3 className="text-red-900 font-medium mb-3">Meest voorkomende oorzaken:</h3>
               <ul className="text-red-800 text-sm space-y-1">
-                <li>• <strong>Temperatuur verkeerd</strong> - Te warm of koud</li>
-                <li>• <strong>Verkeerde speen</strong> - Vorm, flow, materiaal</li>
-                <li>• <strong>Timing probleem</strong> - Te hongerig of verzadigd</li>
-                <li>• <strong>Verkeerde persoon</strong> - Baby verwacht borstvoeding van mama</li>
-                <li>• <strong>Stress/omgeving</strong> - Onrustige sfeer</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Temperatuur verkeerd</strong> - Te warm of koud</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Verkeerde speen</strong> - Vorm, flow, materiaal</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Timing probleem</strong> - Te hongerig of verzadigd</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Verkeerde persoon</strong> - Baby verwacht borstvoeding van mama</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Stress/omgeving</strong> - Onrustige sfeer</span>
+                </li>
               </ul>
             </div>
             
             <div className="bg-green-50 rounded-xl p-4 border border-green-200">
               <h3 className="text-green-900 font-medium mb-3">Snelle oplossingen:</h3>
               <ul className="text-green-800 text-sm space-y-1">
-                <li>• <strong>Test temperatuur</strong> op pols (37°C)</li>
-                <li>• <strong>Probeer andere spenen</strong> verschillende vormen</li>
-                <li>• <strong>Laat partner proberen</strong> Papa vaak meer succes</li>
-                <li>• <strong>Rustige omgeving</strong> dimmen licht, geen afleiding</li>
-                <li>• <strong>Juiste timing</strong> vroege hongersignalen</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Test temperatuur</strong> op pols (37°C)</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Probeer andere spenen</strong> verschillende vormen</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Laat partner proberen</strong> Papa vaak meer succes</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Rustige omgeving</strong> dimmen licht, geen afleiding</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Juiste timing</strong> vroege hongersignalen</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -369,28 +399,64 @@ export default function BasisFlesvoedingPage() {
               <div className="bg-white rounded-lg p-3">
                 <h4 className="font-medium text-blue-900 mb-2">Dag 1-2: Diagnostiek</h4>
                 <ul className="text-blue-800 text-xs space-y-1">
-                  <li>• Controleer temperatuur systematisch</li>
-                  <li>• Test verschillende spenen (5 min per stuk)</li>
-                  <li>• Varieer timing aanbiedingen</li>
-                  <li>• Laat anderen proberen</li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Controleer temperatuur systematisch</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Test verschillende spenen (5 min per stuk)</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Varieer timing aanbiedingen</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Laat anderen proberen</span>
+                </li>
                 </ul>
               </div>
               <div className="bg-white rounded-lg p-3">
                 <h4 className="font-medium text-blue-900 mb-2">Dag 3-4: Optimaliseren</h4>
                 <ul className="text-blue-800 text-xs space-y-1">
-                  <li>• Creëer speciale flesvoeding-plek</li>
-                  <li>• Zachte muziek/white noise</li>
-                  <li>• Experimenteer met houdingen</li>
-                  <li>• Rustige routine opbouwen</li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Creëer speciale flesvoeding-plek</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Zachte muziek/white noise</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Experimenteer met houdingen</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Rustige routine opbouwen</span>
+                </li>
                 </ul>
               </div>
               <div className="bg-white rounded-lg p-3">
                 <h4 className="font-medium text-blue-900 mb-2">Dag 5-7: Geduld</h4>
                 <ul className="text-blue-800 text-xs space-y-1">
-                  <li>• Laat baby speen verkennen</li>
-                  <li>• Positieve associaties opbouwen</li>
-                  <li>• Bevochtig speen met moedermelk</li>
-                  <li>• Blijf aanbieden zonder dwang</li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Laat baby speen verkennen</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Positieve associaties opbouwen</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Bevochtig speen met moedermelk</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Blijf aanbieden zonder dwang</span>
+                </li>
                 </ul>
               </div>
             </div>
@@ -439,16 +505,40 @@ export default function BasisFlesvoedingPage() {
             <h3 className="text-green-900 font-medium mb-2">💡 Tips voor succes eerste keer:</h3>
             <div className="grid md:grid-cols-2 gap-4">
               <ul className="text-green-800 text-sm space-y-1">
-                <li>• Begin niet als baby al heel boos van honger</li>
-                <li>• Herkent vroege hongersignalen (lipjes likken)</li>
-                <li>• Blijf kalm en geduldig</li>
-                <li>• Maak oogcontact en praat zacht</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Begin niet als baby al heel boos van honger</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Herkent vroege hongersignalen (lipjes likken)</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Blijf kalm en geduldig</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Maak oogcontact en praat zacht</span>
+                </li>
               </ul>
               <ul className="text-green-800 text-sm space-y-1">
-                <li>• Eerste keren kunnen lastig zijn - normaal!</li>
-                <li>• Na paar dagen krijg je een ritme</li>
-                <li>• Elke baby is anders</li>
-                <li>• Vind jullie eigen manier</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Eerste keren kunnen lastig zijn - normaal!</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Na paar dagen krijg je een ritme</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Elke baby is anders</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Vind jullie eigen manier</span>
+                </li>
               </ul>
             </div>
           </div>

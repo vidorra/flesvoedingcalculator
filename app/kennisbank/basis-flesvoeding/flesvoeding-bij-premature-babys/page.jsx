@@ -131,20 +131,44 @@ export default function FlesvoedingPrematurePage() {
             <div className="bg-blue-50 rounded-xl p-4">
               <h3 className="font-medium text-blue-900 mb-3">Verschillen met normale baby's:</h3>
               <ul className="space-y-2 text-sm text-blue-800">
-                <li>• <strong>Hogere voedingsbehoefte:</strong> 155-180ml/kg vs 150ml/kg</li>
-                <li>• <strong>Frequentere voedingen:</strong> 7-10x per dag vs 5-6x</li>
-                <li>• <strong>Speciale voeding:</strong> Prematurenvoeding tot termijn datum</li>
-                <li>• <strong>Gecorrigeerde leeftijd:</strong> Voeding aangepast aan ontwikkeling</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Hogere voedingsbehoefte:</strong> 155-180ml/kg vs 150ml/kg</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Frequentere voedingen:</strong> 7-10x per dag vs 5-6x</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Speciale voeding:</strong> Prematurenvoeding tot termijn datum</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Gecorrigeerde leeftijd:</strong> Voeding aangepast aan ontwikkeling</span>
+                </li>
               </ul>
             </div>
             
             <div className="bg-green-50 rounded-xl p-4">
               <h3 className="font-medium text-green-900 mb-3">Extra aandacht voor:</h3>
               <ul className="space-y-2 text-sm text-green-800">
-                <li>• <strong>Gewichtsmonitoring:</strong> Wekelijkse controles</li>
-                <li>• <strong>Ontwikkelingsmonitoring:</strong> Motoriek en reflexen</li>
-                <li>• <strong>Bloedwaardes:</strong> IJzer, calcium, vitamines</li>
-                <li>• <strong>Lange termijn:</strong> Follow-up tot schoolleeftijd</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Gewichtsmonitoring:</strong> Wekelijkse controles</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Ontwikkelingsmonitoring:</strong> Motoriek en reflexen</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Bloedwaardes:</strong> IJzer, calcium, vitamines</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Lange termijn:</strong> Follow-up tot schoolleeftijd</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -182,10 +206,22 @@ export default function FlesvoedingPrematurePage() {
             <div className="bg-purple-50 rounded-lg p-4">
               <h4 className="font-medium text-purple-900 mb-2">Praktisch gebruik:</h4>
               <ul className="text-sm text-purple-800 space-y-1">
-                <li>• Voedingshoeveelheden berekenen</li>
-                <li>• Ontwikkelingsmijlpalen beoordelen</li>
-                <li>• Slaappatronen verwachten</li>
-                <li>• Groeicurves interpreteren</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Voedingshoeveelheden berekenen</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Ontwikkelingsmijlpalen beoordelen</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Slaappatronen verwachten</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Groeicurves interpreteren</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -257,10 +293,22 @@ export default function FlesvoedingPrematurePage() {
           <div className="mt-4 p-4 bg-blue-50 rounded-xl">
             <h4 className="font-medium text-blue-900 mb-2">Belangrijk om te weten:</h4>
             <ul className="text-sm text-blue-800 space-y-1">
-              <li>• Prematurenvoeding is alleen op medisch advies</li>
-              <li>• Meestal gebruikt tot gecorrigeerde leeftijd van 40 weken</li>
-              <li>• Overgang naar gewone startvoeding gebeurt geleidelijk</li>
-              <li>• Altijd in overleg met kinderarts en diëtist</li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Prematurenvoeding is alleen op medisch advies</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Meestal gebruikt tot gecorrigeerde leeftijd van 40 weken</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Overgang naar gewone startvoeding gebeurt geleidelijk</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Altijd in overleg met kinderarts en diëtist</span>
+                </li>
             </ul>
           </div>
         </div>
@@ -369,10 +417,22 @@ export default function FlesvoedingPrematurePage() {
           <div className="mt-4 p-4 bg-white rounded-lg">
             <h4 className="font-medium text-red-900 mb-2">Noodcontact:</h4>
             <ul className="text-sm text-red-800 space-y-1">
-              <li>• <strong>Spoed:</strong> 112 (bij acute ademhaling/bewusteloosheid)</li>
-              <li>• <strong>Huisartspost:</strong> 0900-8844 (avond/weekend/nacht)</li>
-              <li>• <strong>NICU waar baby geboren is:</strong> Direct lijn vaak beschikbaar</li>
-              <li>• <strong>Consultatiebureau:</strong> Voor niet-acute zorgen</li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Spoed:</strong> 112 (bij acute ademhaling/bewusteloosheid)</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Huisartspost:</strong> 0900-8844 (avond/weekend/nacht)</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>NICU waar baby geboren is:</strong> Direct lijn vaak beschikbaar</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Consultatiebureau:</strong> Voor niet-acute zorgen</span>
+                </li>
             </ul>
           </div>
         </div>

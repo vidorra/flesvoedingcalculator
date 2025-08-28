@@ -146,19 +146,40 @@ export default function VoedingstechniekenPage() {
                 Tot 6 maanden VERPLICHT:
               </h3>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Uitkoken 10 minuten in pan</li>
-                <li>• Stoomsterilisator (makkelijkst)</li>
-                <li>• Koude sterilisatie met tabletten</li>
-                <li>• Magnetron sterilisator</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Uitkoken 10 minuten in pan</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Stoomsterilisator (makkelijkst)</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Koude sterilisatie met tabletten</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Magnetron sterilisator</span>
+                </li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-medium text-gray-800 mb-3">Na 6 maanden:</h3>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Goed wassen in heet sop voldoende</li>
-                <li>• Extra steriliseren bij ziekte</li>
-                <li>• Spenen blijven steriliseren</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Goed wassen in heet sop voldoende</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Extra steriliseren bij ziekte</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Spenen blijven steriliseren</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -422,19 +443,43 @@ export default function VoedingstechniekenPage() {
               <div>
                 <h4 className="font-medium text-amber-800 mb-2">💧 Nederlands Kraanwater:</h4>
                 <ul className="text-amber-700 text-sm space-y-1">
-                  <li>• Wereldklasse kwaliteit, EU-standaarden</li>
-                  <li>• Oudere huizen (voor 1960): laat 2-3 min lopen</li>
-                  <li>• Koken verplicht voor baby's onder 6 maanden</li>
-                  <li>• Winter: kouder, langer opwarmen</li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Wereldklasse kwaliteit, EU-standaarden</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Oudere huizen (voor 1960): laat 2-3 min lopen</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Koken verplicht voor baby's onder 6 maanden</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Winter: kouder, langer opwarmen</span>
+                </li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-medium text-amber-800 mb-2">🌡️ Temperatuur Tips:</h4>
                 <ul className="text-amber-700 text-sm space-y-1">
-                  <li>• 70°C voor poeder (bacteriën doden)</li>
-                  <li>• 37°C voor serveren (lichaamstemperatuur)</li>
-                  <li>• Polstest betrouwbaarder dan thermometer</li>
-                  <li>• Nederlandse klimaat: snellere afkoeling</li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>70°C voor poeder (bacteriën doden)</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>37°C voor serveren (lichaamstemperatuur)</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Polstest betrouwbaarder dan thermometer</span>
+                </li>
+                  <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Nederlandse klimaat: snellere afkoeling</span>
+                </li>
                 </ul>
               </div>
             </div>
@@ -473,22 +518,52 @@ export default function VoedingstechniekenPage() {
             <div className="bg-red-50 rounded-xl p-4 border border-red-200">
               <h3 className="text-red-900 font-medium mb-2">❌ Veelgemaakte fouten:</h3>
               <ul className="text-red-800 text-sm space-y-1">
-                <li>• Te veel poeder (nierbelasting, gevaarlijk)</li>
-                <li>• Magnetron gebruik (hete plekken)</li>
-                <li>• Hergebruik restjes (bacteriegroei)</li>
-                <li>• Verkeerde maatlepel tussen merken</li>
-                <li>• Bolle lepels i.p.v. gestreept</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Te veel poeder (nierbelasting, gevaarlijk)</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Magnetron gebruik (hete plekken)</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Hergebruik restjes (bacteriegroei)</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Verkeerde maatlepel tussen merken</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Bolle lepels i.p.v. gestreept</span>
+                </li>
               </ul>
             </div>
             
             <div className="bg-green-50 rounded-xl p-4 border border-green-200">
               <h3 className="text-green-900 font-medium mb-2">✅ Tips voor success:</h3>
               <ul className="text-green-800 text-sm space-y-1">
-                <li>• Heb alles klaar voordat je begint</li>
-                <li>• Thermosfles met gekookt water voor nacht</li>
-                <li>• Controleer vervaldatum poeder</li>
-                <li>• Bewaar poeder droog en koel</li>
-                <li>• Gebruik binnen 4 weken na openen</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Heb alles klaar voordat je begint</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Thermosfles met gekookt water voor nacht</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Controleer vervaldatum poeder</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Bewaar poeder droog en koel</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Gebruik binnen 4 weken na openen</span>
+                </li>
               </ul>
             </div>
           </div>

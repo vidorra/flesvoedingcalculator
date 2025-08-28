@@ -52,19 +52,40 @@ export default function PrivacyBeleidPage() {
             <div>
               <h3 className="font-medium text-gray-800 mb-2">Gegevens die u vrijwillig verstrekt:</h3>
               <ul className="space-y-1 text-sm text-gray-600 ml-4">
-                <li>• Baby's gewicht en leeftijd (alleen voor calculatie, niet opgeslagen)</li>
-                <li>• E-mailadres bij het sturen van contactberichten</li>
-                <li>• Naam en bericht inhoud bij contact formulier</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Baby's gewicht en leeftijd (alleen voor calculatie, niet opgeslagen)</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>E-mailadres bij het sturen van contactberichten</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Naam en bericht inhoud bij contact formulier</span>
+                </li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-medium text-gray-800 mb-2">Automatisch verzamelde gegevens:</h3>
               <ul className="space-y-1 text-sm text-gray-600 ml-4">
-                <li>• IP-adres (geanonimiseerd voor analytics)</li>
-                <li>• Browser type en versie</li>
-                <li>• Bezochte pagina's en tijdstip van bezoek</li>
-                <li>• Apparaat informatie (desktop/mobiel)</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>IP-adres (geanonimiseerd voor analytics)</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Browser type en versie</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Bezochte pagina's en tijdstip van bezoek</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Apparaat informatie (desktop/mobiel)</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -111,19 +132,40 @@ export default function PrivacyBeleidPage() {
             <div>
               <h3 className="font-medium text-gray-800 mb-3">Essentiële cookies:</h3>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Voorkeursinstellingen onthouden</li>
-                <li>• Sessie informatie bewaren</li>
-                <li>• Beveiliging waarborgen</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Voorkeursinstellingen onthouden</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Sessie informatie bewaren</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Beveiliging waarborgen</span>
+                </li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-medium text-gray-800 mb-3">Analytische cookies:</h3>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Google Analytics (geanonimiseerd)</li>
-                <li>• Microsoft Clarity voor gebruikersgedrag</li>
-                <li>• Gebruiksstatistieken verzamelen</li>
-                <li>• Website prestaties monitoren</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Google Analytics (geanonimiseerd)</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Microsoft Clarity voor gebruikersgedrag</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Gebruiksstatistieken verzamelen</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Website prestaties monitoren</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -144,10 +186,22 @@ export default function PrivacyBeleidPage() {
           <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
             <h3 className="font-medium text-blue-900 mb-2">Wat verzamelt Clarity?</h3>
             <ul className="text-sm text-blue-800 space-y-1">
-              <li>• Algemene gebruikspatronen en navigatie</li>
-              <li>• Klik- en scroll gedrag (geanonimiseerd)</li>
-              <li>• Technische informatie over uw browser en apparaat</li>
-              <li>• Prestatie gegevens van de website</li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Algemene gebruikspatronen en navigatie</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Klik- en scroll gedrag (geanonimiseerd)</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Technische informatie over uw browser en apparaat</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Prestatie gegevens van de website</span>
+                </li>
             </ul>
             <p className="text-xs text-blue-700 mt-3">
               Voor meer informatie zie het <a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener noreferrer" className="underline">Microsoft Privacy Statement</a>.
@@ -167,9 +221,18 @@ export default function PrivacyBeleidPage() {
               Uw gegevens kunnen alleen worden gedeeld in de volgende situaties:
             </p>
             <ul className="text-sm text-green-700 mt-2 space-y-1">
-              <li>• Met uw expliciete toestemming</li>
-              <li>• Bij wettelijke verplichting</li>
-              <li>• Voor technische dienstverlening (zoals hosting)</li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Met uw expliciete toestemming</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Bij wettelijke verplichting</span>
+                </li>
+              <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Voor technische dienstverlening (zoals hosting)</span>
+                </li>
             </ul>
           </div>
         </div>
@@ -185,12 +248,30 @@ export default function PrivacyBeleidPage() {
             <div>
               <h3 className="font-medium text-gray-800 mb-3">U heeft het recht op:</h3>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• <strong>Inzage</strong> - Welke gegevens hebben wij van u?</li>
-                <li>• <strong>Rectificatie</strong> - Onjuiste gegevens corrigeren</li>
-                <li>• <strong>Verwijdering</strong> - Uw gegevens laten wissen</li>
-                <li>• <strong>Beperking</strong> - Gebruik van gegevens beperken</li>
-                <li>• <strong>Overdraagbaarheid</strong> - Gegevens overdragen</li>
-                <li>• <strong>Bezwaar</strong> - Tegen verwerking bezwaar maken</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Inzage</strong> - Welke gegevens hebben wij van u?</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Rectificatie</strong> - Onjuiste gegevens corrigeren</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Verwijdering</strong> - Uw gegevens laten wissen</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Beperking</strong> - Gebruik van gegevens beperken</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Overdraagbaarheid</strong> - Gegevens overdragen</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span><strong>Bezwaar</strong> - Tegen verwerking bezwaar maken</span>
+                </li>
               </ul>
             </div>
             

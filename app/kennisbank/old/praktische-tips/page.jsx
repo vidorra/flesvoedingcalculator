@@ -201,20 +201,44 @@ export default function PraktischeTipsPage() {
             <div>
               <h3 className="font-medium text-yellow-800 mb-3">Bij problemen eerst checken:</h3>
               <ul className="space-y-1 text-sm text-yellow-700">
-                <li>• Temperatuur flesvoeding (lauw op pols)</li>
-                <li>• Speen niet verstopt of versleten</li>
-                <li>• Juiste poeder-water verhouding</li>
-                <li>• Baby niet overmoe of overstimuleerd</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Temperatuur flesvoeding (lauw op pols)</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Speen niet verstopt of versleten</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Juiste poeder-water verhouding</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Baby niet overmoe of overstimuleerd</span>
+                </li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-medium text-yellow-800 mb-3">Altijd bij de hand hebben:</h3>
               <ul className="space-y-1 text-sm text-yellow-700">
-                <li>• Reserve fles en spenen</li>
-                <li>• Flessenreiniger en borstel</li>
-                <li>• Thermosfles voor warm water</li>
-                <li>• Nummer huisarts en consultatiebureau</li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Reserve fles en spenen</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Flessenreiniger en borstel</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Thermosfles voor warm water</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span>Nummer huisarts en consultatiebureau</span>
+                </li>
               </ul>
             </div>
           </div>
