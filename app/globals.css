@@ -29,15 +29,12 @@
   }
 }
 
-body {
+html, body {
   font-family: 'Lexend Deca', sans-serif;
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: white;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 /* Custom color utilities */
@@ -149,4 +146,61 @@ select option {
 /* Ensure consistent dropdown styling on mobile */
 select {
   background-image: none;
+}
+
+/* Hero section animations */
+@keyframes gentleFloat {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(30px, -20px) rotate(1deg); }
+  66% { transform: translate(-20px, 30px) rotate(-1deg); }
+}
+
+@keyframes underlineGrow {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .hero-section .gentle-float,
+  .hero-section .underline-grow {
+    animation: none;
+  }
+}
+
+/* Override shadow-sm to have no shadow */
+.shadow-sm {
+  box-shadow: none !important;
+}
+
+/* Override border classes to have no border except for inputs */
+.border:not(input):not(select):not(textarea),
+.border-b:not(input):not(select):not(textarea),
+.border-t:not(input):not(select):not(textarea) {
+  border: none !important;
+}
+
+/* Main element styling with gradient background */
+main {
+  background: radial-gradient(circle at center, rgb(220, 240, 250) 0%, rgb(200, 240, 245) 40%, rgb(244, 250, 252) 100%);
+  width: calc(100% - 48px);
+  max-width: calc(100vw - 48px);
+  margin: 0;
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+main::before {
+  content: '';
+  position: absolute;
+  top: -25%;
+  left: -25%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle at 30% 30%, rgba(20, 184, 218, 0.1) 0%, rgba(16, 148, 174, 0.05) 40%, transparent 70%);
+  animation: gentleFloat 20s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.3;
 }
