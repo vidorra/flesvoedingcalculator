@@ -207,7 +207,7 @@ export default function KennisbankPage() {
               onClick={() => setSelectedCategory('all')}
               className={`text-left p-4 rounded-xl transition-colors ${
                 selectedCategory === 'all'
-                  ? 'bg-primary/10 border border-primary text-primary'
+                  ? 'bg-gradient-active border border-primary text-primary'
                   : 'bg-gray-50 hover:bg-gray-100 text-gray-700 border border-gray-200'
               }`}
             >
@@ -224,7 +224,7 @@ export default function KennisbankPage() {
                   onClick={() => setSelectedCategory(category.id)}
                   className={`text-left p-4 rounded-xl transition-colors ${
                     selectedCategory === category.id
-                      ? 'bg-primary/10 border border-primary text-primary'
+                      ? 'bg-gradient-active border border-primary text-primary'
                       : 'bg-gray-50 hover:bg-gray-100 text-gray-700 border border-gray-200'
                   }`}
                 >

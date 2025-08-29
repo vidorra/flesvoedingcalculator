@@ -34,12 +34,12 @@ export default function Header() {
           <nav className="hidden md:flex items-center space-x-6">
             {navigation.map((item) => {
               const Icon = item.icon
-              const isActive = pathname === item.href
+              const isActive = item.href === '/' ? pathname === '/' : pathname.startsWith(item.href)
               return (
                 <Link
                   key={item.id}
                   href={item.href}
-                  className={`flex items-center space-x-1 px-6 py-4 rounded-xl transition-colors ${
+                  className={`flex items-center space-x-1 px-6 py-4 rounded-nav transition-colors ${
                     isActive
                       ? 'bg-default text-primary'
                       : 'text-gray-600 hover:text-primary hover:bg-default'
@@ -68,13 +68,13 @@ export default function Header() {
           <div className="container mx-auto px-4 py-8">
             {navigation.map((item) => {
               const Icon = item.icon
-              const isActive = pathname === item.href
+              const isActive = item.href === '/' ? pathname === '/' : pathname.startsWith(item.href)
               return (
                 <Link
                   key={item.id}
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`w-full flex items-center space-x-2 px-6 py-6 rounded-xl transition-colors ${
+                  className={`w-full flex items-center space-x-2 px-6 py-6 rounded-nav transition-colors ${
                     isActive
                       ? 'bg-default text-primary'
                       : 'text-gray-600 hover:text-primary hover:bg-default'
