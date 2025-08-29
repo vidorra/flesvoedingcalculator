@@ -61,14 +61,12 @@ export default function HeroSection() {
           <button 
             onClick={() => {
               // Scroll to calculator section
-              const calculator = document.querySelector('.bg-white\\/80.backdrop-blur.rounded-2xl') || 
-                                document.querySelector('[class*="bg-white/80"]') ||
-                                document.querySelector('.col-span-12.lg\\:col-span-7');
+              const calculator = document.querySelector('.col-span-12.lg\\:col-span-7');
               if (calculator) {
                 calculator.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }
             }}
-            className="inline-flex items-center gap-2 sm:gap-3 bg-primary hover:bg-primary-hover text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-xl transition-all hover:shadow-lg shadow-md"
+            className="inline-flex items-center gap-2 sm:gap-3 bg-primary hover:bg-primary-hover text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-xl transition-all"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
               <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
