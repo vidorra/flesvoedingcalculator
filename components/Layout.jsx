@@ -5,7 +5,7 @@ export default function Layout({ children }) {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="mx-auto px-4 py-6 pb-20">
+      <main className="mx-auto px-4 py-8">
         <div className="container mx-auto">
           {children}
         </div>

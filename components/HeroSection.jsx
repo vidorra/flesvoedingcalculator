@@ -5,7 +5,7 @@ export default function HeroSection() {
   const [hoveredBadge, setHoveredBadge] = useState(null)
 
   return (
-    <section className="relative py-16 px-4">
+    <section className="relative py-8 px-4">
       
       {/* Main content container */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
