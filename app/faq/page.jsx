@@ -103,7 +103,7 @@ export default function FAQPage() {
                   onClick={() => setSelectedCategory(category.id)}
                   className={`p-4 rounded-xl border transition-all text-left ${
                     selectedCategory === category.id
-                      ? 'bg-default border-gray-200 text-primary'
+                      ? 'bg-gradient-active border-primary text-primary'
                       : 'bg-white border-gray-200 hover:border-primary text-gray-700'
                   }`}
                 >
@@ -129,7 +129,7 @@ export default function FAQPage() {
                   className="w-full p-4 text-left hover:bg-default transition-colors flex items-center justify-between"
                 >
                   <span className="font-medium text-gray-800">{faq.question}</span>
-                  {openFAQ === faq.id ? <ChevronUp className="w-5 h-5 text-gray-500" /> : <ChevronDown className="w-5 h-5 text-gray-500" />}
+                  {openFAQ === faq.id ? <ChevronUp className="w-5 h-5 text-primary" /> : <ChevronDown className="w-5 h-5 text-primary" />}
                 </button>
                 {openFAQ === faq.id && (
                   <div className="px-4 pb-4 text-gray-600 border-t border-gray-100 bg-default/50">
