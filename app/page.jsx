@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Layout from '../components/Layout'
+import HeroSection from '../components/HeroSection'
 import { generateCalculatorSchema, generateOrganizationSchema, generateFAQSchema } from '../lib/structured-data'
 import { trackCalculatorUsage } from '../lib/analytics'
 import { Baby, Calculator, Info, Clock, ChevronDown, ChevronUp, AlertCircle, HelpCircle } from 'lucide-react'
@@ -276,20 +277,12 @@ export default function HomePage() {
       />
       
     <Layout>
+      {/* Hero Section */}
+      <HeroSection />
+      
       <div className="grid grid-cols-12 gap-6 min-h-screen">
         {/* Main Calculator Content - 8 columns on desktop, full width on mobile */}
         <div className="col-span-12 lg:col-span-7">
-          {/* Page Title - No card container */}
-          <div className="mb-6">
-            <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
-              <Baby className="w-6 h-6 mr-3 text-primary" />
-              Bereken de juiste hoeveelheid flesvoeding
-            </h1>
-            <p className="text-gray-600 leading-relaxed">
-              Gebruik deze calculator om te bepalen hoeveel flesvoeding uw baby nodig heeft. Gebaseerd op de officiële Nederlandse richtlijnen van het Voedingscentrum (150ml per kg lichaamsgewicht).
-            </p>
-          </div>
-
           {/* Calculator Card */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6 mb-6">
             <div className="space-y-5">

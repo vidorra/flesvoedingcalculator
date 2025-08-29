@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <header className="bg-white shadow-sm border-b border-gray-200">
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 py-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Baby className="w-6 h-6 text-primary" />
@@ -39,7 +39,7 @@ export default function Header() {
                 <Link
                   key={item.id}
                   href={item.href}
-                  className={`flex items-center space-x-1 px-3 py-2 rounded-lg transition-colors ${
+                  className={`flex items-center space-x-1 px-6 py-4 rounded-xl transition-colors ${
                     isActive
                       ? 'bg-default text-primary'
                       : 'text-gray-600 hover:text-primary hover:bg-default'
@@ -65,7 +65,7 @@ export default function Header() {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-100">
-          <div className="container mx-auto px-4 py-2">
+          <div className="container mx-auto px-4 py-8">
             {navigation.map((item) => {
               const Icon = item.icon
               const isActive = pathname === item.href
@@ -74,7 +74,7 @@ export default function Header() {
                   key={item.id}
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`w-full flex items-center space-x-2 px-3 py-3 rounded-lg transition-colors ${
+                  className={`w-full flex items-center space-x-2 px-6 py-6 rounded-xl transition-colors ${
                     isActive
                       ? 'bg-default text-primary'
                       : 'text-gray-600 hover:text-primary hover:bg-default'
