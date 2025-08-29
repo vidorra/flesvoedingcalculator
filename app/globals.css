@@ -180,6 +180,21 @@ select {
   border: none !important;
 }
 
+/* Override rounded-2xl to have more radius (equivalent to rounded-3xl) */
+.rounded-2xl {
+  border-radius: 1.5rem !important; /* 24px instead of default 16px */
+}
+
+/* Custom nav border radius - between xl (12px) and 2xl (16px) */
+.rounded-nav {
+  border-radius: 14px;
+}
+
+/* Custom background for active states - more pastel */
+.bg-gradient-active {
+  background: rgba(200, 240, 245, 0.3);
+}
+
 /* Main element styling with gradient background */
 main {
   background: radial-gradient(circle at center, rgb(220, 240, 250) 0%, rgb(200, 240, 245) 40%, rgb(244, 250, 252) 100%);
