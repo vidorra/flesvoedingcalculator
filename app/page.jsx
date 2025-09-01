@@ -285,6 +285,7 @@ export default function HomePage() {
         <div className="col-span-12 lg:col-span-7">
           {/* Calculator Card */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6 mb-6">
+            <h2 className="text-lg font-semibold text-primary mb-4">Calculator</h2>
             <div className="space-y-5">
 
               {/* Age Input */}
