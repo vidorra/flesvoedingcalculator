@@ -104,7 +104,7 @@ export default function HygieneBereidingPage() {
 
         {/* Basic hygiene rules */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="bg-green-50 rounded-2xl border border-green-200 p-6">
+          <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
             <h2 className="text-lg font-semibold text-green-800 mb-4 flex items-center">
               <CheckCircle className="w-5 h-5 mr-2" />
               Altijd doen:
@@ -113,13 +113,13 @@ export default function HygieneBereidingPage() {
               {alwaysDo.map((item, index) => (
                 <div key={index} className="flex items-start space-x-2">
                   <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-green-700 text-sm">{item}</span>
+                  <span className="text-gray-700 text-sm">{item}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="bg-red-50 rounded-2xl border border-red-200 p-6">
+          <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
             <h2 className="text-lg font-semibold text-red-800 mb-4 flex items-center">
               <X className="w-5 h-5 mr-2" />
               Nooit doen:
@@ -128,7 +128,7 @@ export default function HygieneBereidingPage() {
               {neverDo.map((item, index) => (
                 <div key={index} className="flex items-start space-x-2">
                   <X className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-red-700 text-sm">{item}</span>
+                  <span className="text-gray-700 text-sm">{item}</span>
                 </div>
               ))}
             </div>
@@ -173,7 +173,7 @@ export default function HygieneBereidingPage() {
             <div className="space-y-2">
               {powderStorage.map((tip, index) => (
                 <div key={index} className="flex items-start space-x-2">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-gray-500 rounded-full mt-2 flex-shrink-0"></div>
                   <span className="text-gray-700 text-sm">{tip}</span>
                 </div>
               ))}
@@ -207,7 +207,7 @@ export default function HygieneBereidingPage() {
                 {travelTipsCold.map((tip, index) => (
                   <div key={index} className="flex items-start space-x-2">
                     <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-green-700 text-sm">{tip}</span>
+                    <span className="text-gray-700 text-sm">{tip}</span>
                   </div>
                 ))}
               </div>
@@ -235,25 +235,25 @@ export default function HygieneBereidingPage() {
           </h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div className="bg-green-50 rounded-lg p-4">
+            <div className="bg-gray-50 rounded-lg p-4">
               <h3 className="font-medium text-green-800 mb-3">Flessenwarmer voordelen:</h3>
               <div className="space-y-2">
                 {bottleWarmerAdvantages.map((advantage, index) => (
                   <div key={index} className="flex items-start space-x-2">
                     <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-green-700 text-sm">{advantage}</span>
+                    <span className="text-gray-700 text-sm">{advantage}</span>
                   </div>
                 ))}
               </div>
             </div>
             
-            <div className="bg-red-50 rounded-lg p-4">
+            <div className="bg-gray-50 rounded-lg p-4">
               <h3 className="font-medium text-red-800 mb-3">Magnetron nadelen:</h3>
               <div className="space-y-2">
                 {microwaveDisadvantages.map((disadvantage, index) => (
                   <div key={index} className="flex items-start space-x-2">
                     <X className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-red-700 text-sm">{disadvantage}</span>
+                    <span className="text-gray-700 text-sm">{disadvantage}</span>
                   </div>
                 ))}
               </div>
@@ -277,7 +277,7 @@ export default function HygieneBereidingPage() {
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Flessen Steriliseren: Complete Gids</h2>
           
-          <div className="bg-blue-50 rounded-xl p-4 border border-blue-200 mb-6">
+          <div className="bg-gray-50 rounded-xl p-4 border border-gray-200 mb-6">
             <h3 className="text-blue-900 font-semibold mb-2">⏰ Tot wanneer steriliseren?</h3>
             <p className="text-blue-800 text-sm mb-2">
               <strong>Tot 6 maanden verplicht</strong> - Baby's immuunsysteem is dan voldoende ontwikkeld
@@ -301,14 +301,14 @@ export default function HygieneBereidingPage() {
           <h3 className="font-medium text-gray-800 mb-4">Sterilisatiemethoden: Voor- en Nadelen</h3>
           
           <div className="grid md:grid-cols-2 gap-6 mb-6">
-            <div className="bg-green-50 rounded-xl p-4 border border-green-200">
+            <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
               <h4 className="text-green-900 font-medium mb-3">🔥 Uitkoken (Gratis)</h4>
               <div className="text-green-800 text-sm space-y-1 mb-3">
                 <p><strong>Methode:</strong> 10 minuten in kokend water</p>
                 <p><strong>Kosten:</strong> Alleen gas/elektra</p>
                 <p><strong>Tijd:</strong> 15-20 minuten totaal</p>
               </div>
-              <div className="text-green-700 text-xs">
+              <div className="text-gray-700 text-xs">
                 <p><strong>✓ Voordelen:</strong> 100% effectief, grote hoeveelheden, geen aanschaf</p>
                 <p><strong>✗ Nadelen:</strong> Tijdrovend, brandgevaar, veel energie</p>
               </div>
@@ -327,14 +327,14 @@ export default function HygieneBereidingPage() {
               </div>
             </div>
 
-            <div className="bg-orange-50 rounded-xl p-4 border border-orange-200">
+            <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
               <h4 className="text-orange-900 font-medium mb-3">📱 Magnetron (€15-30)</h4>
               <div className="text-orange-800 text-sm space-y-1 mb-3">
                 <p><strong>Methode:</strong> Speciale zakken/containers</p>
                 <p><strong>Tijd:</strong> 2-6 minuten</p>
                 <p><strong>Zakken:</strong> €0.25 per gebruik</p>
               </div>
-              <div className="text-orange-700 text-xs">
+              <div className="text-gray-700 text-xs">
                 <p><strong>✓ Voordelen:</strong> Supersnel, praktisch onderweg</p>
                 <p><strong>✗ Nadelen:</strong> Ongelijke verhitting, beperkte capaciteit</p>
               </div>
@@ -394,7 +394,7 @@ export default function HygieneBereidingPage() {
           <h3 className="font-medium text-gray-800 mb-4">Nederlandse Context & Water</h3>
           
           <div className="grid md:grid-cols-2 gap-6 mb-6">
-            <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
+            <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
               <h4 className="text-blue-900 font-medium mb-2">💧 Nederlands Kraanwater</h4>
               <ul className="text-blue-800 text-sm space-y-1">
                 <li className="flex items-center space-x-2">
@@ -420,7 +420,7 @@ export default function HygieneBereidingPage() {
               </ul>
             </div>
             
-            <div className="bg-green-50 rounded-xl p-4 border border-green-200">
+            <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
               <h4 className="text-green-900 font-medium mb-2">🍼 Flessenwater</h4>
               <ul className="text-green-800 text-sm space-y-1">
                 <li className="flex items-center space-x-2">
@@ -447,14 +447,14 @@ export default function HygieneBereidingPage() {
             </div>
           </div>
 
-          <div className="bg-red-50 rounded-xl p-4 border border-red-200">
+          <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
             <h3 className="text-red-900 font-semibold mb-2">⚠️ Nederlandse Klimaat Impact</h3>
             <p className="text-red-800 text-sm mb-2">
               Nederland's hoge luchtvochtigheid en gematigde temperaturen creëren ideale omstandigheden 
               voor bacteriegroei. Extra voorzichtigheid is daarom essentieel.
             </p>
             <div className="grid md:grid-cols-2 gap-4">
-              <ul className="text-red-700 text-sm space-y-1">
+              <ul className="text-gray-700 text-sm space-y-1">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span>Zomer: snellere bacteriegroei</span>
@@ -468,7 +468,7 @@ export default function HygieneBereidingPage() {
                   <span>Flessen binnen 2-4 uur besmet</span>
                 </li>
               </ul>
-              <ul className="text-red-700 text-sm space-y-1">
+              <ul className="text-gray-700 text-sm space-y-1">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span>Emma Kinderziekenhuis onderzoek</span>

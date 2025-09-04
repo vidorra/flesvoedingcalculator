@@ -64,18 +64,18 @@ export default function VeiligheidPage() {
         </div>
 
         {/* Emergency contacts */}
-        <div className="bg-red-50 rounded-2xl border border-red-200 p-6">
+        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-red-800 mb-4 flex items-center">
             <Phone className="w-5 h-5 mr-2" />
             Wanneer direct arts contacteren
           </h2>
-          <p className="text-red-700 mb-4 font-medium">
+          <p className="text-gray-700 mb-4 font-medium">
             Bij deze signalen ALTIJD direct contact opnemen met huisarts of spoedeisende hulp:
           </p>
           <div className="space-y-3">
             {emergencyContacts.map((contact, index) => (
               <div key={index} className="flex items-start space-x-3">
-                <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">
+                <div className="w-6 h-6 bg-gray-500 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">
                   !
                 </div>
                 <span className="text-red-800 font-medium">{contact}</span>
@@ -91,14 +91,14 @@ export default function VeiligheidPage() {
         </div>
 
         {/* Never do */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-red-200 p-6">
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-red-800 mb-4 flex items-center">
             <X className="w-5 h-5 mr-2" />
             Voedingsveiligheid - Nooit doen:
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {neverDo.map((item, index) => (
-              <div key={index} className="flex items-start space-x-2 p-3 bg-red-50 rounded-lg">
+              <div key={index} className="flex items-start space-x-2 p-3 bg-gray-50 rounded-lg">
                 <X className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
                 <span className="text-red-800 text-sm font-medium">{item}</span>
               </div>
@@ -108,7 +108,7 @@ export default function VeiligheidPage() {
 
         {/* Allergy signals */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-orange-200 p-6">
+          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-semibold text-orange-800 mb-4 flex items-center">
               <Eye className="w-5 h-5 mr-2" />
               Allergiesignalen - Let op:
@@ -143,10 +143,10 @@ export default function VeiligheidPage() {
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Belangrijke telefoonnummers</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="p-4 bg-red-50 rounded-lg text-center">
+            <div className="p-4 bg-gray-50 rounded-lg text-center">
               <h3 className="font-bold text-red-800 mb-2">Spoedeisende hulp</h3>
               <p className="text-2xl font-bold text-red-600">112</p>
-              <p className="text-xs text-red-700">Bij levensbedreigende situaties</p>
+              <p className="text-xs text-gray-700">Bij levensbedreigende situaties</p>
             </div>
             
             <div className="p-4 bg-default rounded-lg text-center">
@@ -155,10 +155,10 @@ export default function VeiligheidPage() {
               <p className="text-xs text-gray-600">Voor advies en afspraken</p>
             </div>
             
-            <div className="p-4 bg-green-50 rounded-lg text-center">
+            <div className="p-4 bg-gray-50 rounded-lg text-center">
               <h3 className="font-bold text-green-800 mb-2">Consultatiebureau</h3>
               <p className="text-lg font-bold text-green-600">Lokaal nummer</p>
-              <p className="text-xs text-green-700">Voor ontwikkelingsvragen</p>
+              <p className="text-xs text-gray-700">Voor ontwikkelingsvragen</p>
             </div>
           </div>
         </div>

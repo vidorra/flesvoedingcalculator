@@ -1,41 +1,42 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
+import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { BookOpen, AlertCircle, ArrowRight, Home, Info, Heart, Calculator, Clock } from 'lucide-react'
 
 export const metadata = {
-  title: 'Flesvoeding bij Premature Baby\'s: Complete Gids voor Nederlandse Ouders | 2025',
-  description: 'Alles over flesvoeding voor premature baby\'s. Gecorrigeerde leeftijd, voedingsbehoefte, NICU-protocollen en praktische tips voor ouders van te vroeg geboren baby\'s.',
+  title: 'Flesvoeding bij Premature Baby\'s: Complete Medische Gids 2025',
+  description: 'Speciale aandachtspunten, NICU ervaring en evidence-based advies voor Nederlandse ouders. Van gecorrigeerde leeftijd tot lange termijn ontwikkeling.',
 }
 
 export default function FlesvoedingPrematurePage() {
   const prematureCategories = [
     {
-      category: 'Extreem prematuur',
+      category: 'Extremely Preterm',
       weeks: '< 28 weken',
-      feeding: '180ml/kg per dag',
+      feeding: '120-150 kcal/kg/dag',
       frequency: '8-10x per dag',
-      special: 'NICU begeleiding essentieel'
+      special: 'NICU begeleiding essentieel, sondevoeding'
     },
     {
-      category: 'Zeer prematuur', 
-      weeks: '28-31 weken',
-      feeding: '170ml/kg per dag',
+      category: 'Very Preterm', 
+      weeks: '28-32 weken',
+      feeding: '140ml/kg per dag',
       frequency: '8x per dag',
-      special: 'Speciale prematurenvoeding'
+      special: 'Premature formule, volume opbouw 10-20ml/kg/dag'
     },
     {
-      category: 'Matig prematuur',
-      weeks: '32-33 weken', 
-      feeding: '160ml/kg per dag',
+      category: 'Moderate Preterm',
+      weeks: '32-34 weken', 
+      feeding: '150ml/kg per dag',
       frequency: '7-8x per dag',
-      special: 'Verhoogde voedingsbehoefte'
+      special: 'Fles + sonde combinatie, fortified formule'
     },
     {
-      category: 'Laat prematuur',
-      weeks: '34-36 weken',
-      feeding: '155ml/kg per dag', 
-      frequency: '6-7x per dag',
-      special: 'Aangepaste startvoeding'
+      category: 'Late Preterm',
+      weeks: '34-37 weken',
+      feeding: '140ml/kg per dag', 
+      frequency: '8-10x per dag',
+      special: 'Volledige flesvoeding mogelijk, paced feeding'
     }
   ]
 
@@ -51,18 +52,23 @@ export default function FlesvoedingPrematurePage() {
   const specialFormulas = [
     {
       name: 'Nutrilon Nenatal',
-      indication: 'Voor baby\'s < 34 weken of < 1800g',
-      benefits: 'Extra eiwit, calcium, fosfor voor botopbouw'
+      indication: 'NICU gebruik, < 34 weken of < 1800g',
+      benefits: '80-85 kcal/100ml, extra eiwit 2.0-2.4g/100ml, MCT oliën'
     },
     {
-      name: 'Aptamil Prematil',
-      indication: 'Premature baby\'s tot termijn datum', 
-      benefits: 'Verhoogde energiedichtheid, DHA/ARA'
+      name: 'Aptamil Pre', 
+      indication: 'Baby\'s 32+ weken zwangerschap',
+      benefits: 'Verhoogde calorie-dichtheid, prebiotica voor darmflora'
     },
     {
-      name: 'HiPP Pre HA Combiotic',
-      indication: 'Bij verhoogd allergie risico',
-      benefits: 'Gedeeltelijk gehydrolyseerd eiwit'
+      name: 'Nutrilon Post-Discharge',
+      indication: 'Thuis transitie 36-40 weken',
+      benefits: '72 kcal/100ml, hogere mineralen dan standaard'
+    },
+    {
+      name: 'SMA Gold Prem',
+      indication: 'Import via ziekenhuis voor zeer premature baby\'s',
+      benefits: 'Extra calcium, fosfor, ijzer voor botopbouw'
     }
   ]
 
@@ -77,7 +83,10 @@ export default function FlesvoedingPrematurePage() {
 
   return (
     <Layout>
-      <div className="space-y-6">
+      <div className="grid grid-cols-12 gap-6 min-h-screen">
+        {/* Main Content - 7 columns on desktop, full width on mobile */}
+        <div className="col-span-12 lg:col-span-7">
+          <div className="space-y-6">
         {/* Breadcrumb */}
         <div className="flex items-center space-x-2 text-sm text-gray-600">
           <Link href="/" className="hover:text-primary flex items-center">
@@ -96,21 +105,27 @@ export default function FlesvoedingPrematurePage() {
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
             <Heart className="w-6 h-6 mr-3 text-primary" />
-            Flesvoeding bij Premature Baby's
+            Flesvoeding bij Premature Baby's: Complete Medische Gids
           </h1>
           <p className="text-gray-600">
-            Complete gids voor voeding van te vroeg geboren baby's. Van gecorrigeerde leeftijd tot speciale voedingsbehoeften - 
-            alles wat Nederlandse ouders moeten weten.
+            Speciale aandachtspunten, NICU ervaring en evidence-based advies voor Nederlandse ouders. 
+            Van gecorrigeerde leeftijd tot lange termijn ontwikkeling.
           </p>
+          <div className="mt-4 p-3 border border-gray-200 rounded-lg">
+            <p className="text-sm text-gray-700">
+              <strong>In Nederland</strong> worden jaarlijks 15.000 baby's (8,7%) te vroeg geboren. 
+              Deze gids biedt gespecialiseerde kennis voor optimale zorg.
+            </p>
+          </div>
         </div>
 
         {/* Alert Box */}
-        <div className="bg-red-50 rounded-xl p-4 border border-red-200 mb-6">
+        <div className="border border-gray-200 rounded-xl p-4 mb-6">
           <div className="flex items-start space-x-2">
-            <AlertCircle className="w-5 h-5 text-red-600 mt-0.5" />
+            <AlertCircle className="w-5 h-5 text-primary mt-0.5" />
             <div>
-              <h4 className="font-semibold text-red-900 mb-1">Medische Begeleiding Vereist</h4>
-              <p className="text-sm text-red-800">
+              <h4 className="font-semibold text-gray-800 mb-1">Medische Begeleiding Vereist</h4>
+              <p className="text-sm text-gray-600">
                 Voor premature baby's is professionele begeleiding door kinderarts, diëtist en jeugdverpleegkundige 
                 essentieel. Deze informatie is ter ondersteuning en vervangt geen medisch advies.
               </p>
@@ -122,37 +137,36 @@ export default function FlesvoedingPrematurePage() {
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Waarom is voeding anders bij premature baby's?</h2>
           <p className="text-gray-600 leading-relaxed mb-4">
-            Premature baby's hebben andere voedingsbehoeften dan baby's die op termijn geboren zijn. 
-            Hun spijsverteringssysteem is nog niet volledig ontwikkeld en ze hebben extra voedingsstoffen 
-            nodig voor inhaalgroei.
+            Premature baby's hebben fundamenteel andere voedingsbehoeften dan baby's die op termijn geboren zijn. 
+            Hun spijsverteringssysteem, zuigreflex en temperatuurregulatie zijn nog niet volledig ontwikkeld.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-blue-50 rounded-xl p-4">
-              <h3 className="font-medium text-blue-900 mb-3">Verschillen met normale baby's:</h3>
-              <ul className="space-y-2 text-sm text-blue-800">
+            <div className="border border-gray-200 rounded-xl p-4">
+              <h3 className="font-medium text-gray-800 mb-3">Verschillen met normale baby's:</h3>
+              <ul className="space-y-2">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <span><strong>Hogere voedingsbehoefte:</strong> 155-180ml/kg vs 150ml/kg</span>
+                  <span><strong>Hogere voedingsbehoefte:</strong> 120-150 kcal/kg/dag vs 100-120 kcal</span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <span><strong>Frequentere voedingen:</strong> 7-10x per dag vs 5-6x</span>
+                  <span><strong>Frequentere voedingen:</strong> 8-10x per dag vs 6-8x</span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <span><strong>Speciale voeding:</strong> Prematurenvoeding tot termijn datum</span>
+                  <span><strong>Premature formule:</strong> 80-85 kcal/100ml vs 67 kcal/100ml</span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <span><strong>Gecorrigeerde leeftijd:</strong> Voeding aangepast aan ontwikkeling</span>
+                  <span><strong>Zwakkere zuigreflex:</strong> Tot 34 weken incomplete ontwikkeling</span>
                 </li>
               </ul>
             </div>
             
-            <div className="bg-green-50 rounded-xl p-4">
-              <h3 className="font-medium text-green-900 mb-3">Extra aandacht voor:</h3>
-              <ul className="space-y-2 text-sm text-green-800">
+            <div className="border border-gray-200 rounded-xl p-4">
+              <h3 className="font-medium text-gray-800 mb-3">Extra aandacht voor:</h3>
+              <ul className="space-y-2">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span><strong>Gewichtsmonitoring:</strong> Wekelijkse controles</span>
@@ -178,23 +192,23 @@ export default function FlesvoedingPrematurePage() {
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-800 mb-4">Gecorrigeerde Leeftijd Uitgelegd</h2>
           
-          <div className="bg-blue-50 rounded-xl p-4 mb-4">
-            <h3 className="font-medium text-blue-900 mb-2">Wat is gecorrigeerde leeftijd?</h3>
-            <p className="text-sm text-blue-800 mb-3">
+          <div className="border border-gray-200 rounded-xl p-4 mb-4">
+            <h3 className="font-medium text-gray-800 mb-2">Wat is gecorrigeerde leeftijd?</h3>
+            <p className="text-sm text-gray-600 mb-3">
               Gecorrigeerde leeftijd is de leeftijd die je baby zou hebben gehad als hij/zij op de verwachte datum geboren was (40 weken zwangerschap).
             </p>
-            <div className="bg-white rounded-lg p-3">
-              <div className="text-xs text-blue-600 mb-1">Berekening:</div>
-              <div className="font-mono text-sm text-blue-900">
+            <div className="bg-gray-50 rounded-lg p-3">
+              <div className="text-xs text-gray-600 mb-1">Berekening:</div>
+              <div className="font-mono text-sm text-gray-800">
                 Gecorrigeerde leeftijd = Chronologische leeftijd - (40 - zwangerschapsduur bij geboorte)
               </div>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-amber-50 rounded-lg p-4">
-              <h4 className="font-medium text-amber-900 mb-2">Voorbeeld berekening:</h4>
-              <div className="text-sm text-amber-800 space-y-1">
+            <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
+              <h4 className="font-medium text-gray-800 mb-2">Voorbeeld berekening:</h4>
+              <div className="text-sm text-gray-600 space-y-1">
                 <div>Baby geboren bij: 32 weken</div>
                 <div>Nu chronologisch: 8 weken oud</div>
                 <div>Weken te vroeg: 40 - 32 = 8 weken</div>
@@ -203,9 +217,9 @@ export default function FlesvoedingPrematurePage() {
               </div>
             </div>
             
-            <div className="bg-purple-50 rounded-lg p-4">
-              <h4 className="font-medium text-purple-900 mb-2">Praktisch gebruik:</h4>
-              <ul className="text-sm text-purple-800 space-y-1">
+            <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
+              <h4 className="font-medium text-gray-800 mb-2">Praktisch gebruik:</h4>
+              <ul className="text-sm text-gray-600 space-y-1">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span>Voedingshoeveelheden berekenen</span>
@@ -256,7 +270,7 @@ export default function FlesvoedingPrematurePage() {
             </table>
           </div>
           
-          <div className="mt-4 p-3 bg-yellow-50 rounded-lg">
+          <div className="mt-4 p-3 border border-gray-200 bg-gray-50 rounded-lg">
             <p className="text-sm text-yellow-800">
               <strong>Let op:</strong> Deze waarden zijn richtlijnen. De exacte behoefte verschilt per baby 
               en moet altijd in overleg met het medische team bepaald worden.
@@ -290,7 +304,7 @@ export default function FlesvoedingPrematurePage() {
             ))}
           </div>
           
-          <div className="mt-4 p-4 bg-blue-50 rounded-xl">
+          <div className="mt-4 p-4 border border-gray-200 bg-gray-50 rounded-xl">
             <h4 className="font-medium text-blue-900 mb-2">Belangrijk om te weten:</h4>
             <ul className="text-sm text-blue-800 space-y-1">
               <li className="flex items-center space-x-2">
@@ -341,7 +355,7 @@ export default function FlesvoedingPrematurePage() {
                 <div>• <strong>UMCG Groningen:</strong> Niveau 3 NICU</div>
               </div>
               
-              <div className="mt-4 p-3 bg-green-50 rounded-lg">
+              <div className="mt-4 p-3 border border-gray-200 bg-gray-50 rounded-lg">
                 <p className="text-sm text-green-800">
                   <strong>Care4Neo:</strong> Nederlandse oudervereniging biedt ondersteuning 
                   en informatie voor ouders van premature baby's.
@@ -377,15 +391,15 @@ export default function FlesvoedingPrematurePage() {
             <div>
               <h3 className="font-medium text-gray-800 mb-3">Bijzondere aandachtspunten:</h3>
               <div className="space-y-3">
-                <div className="p-3 bg-amber-50 rounded-lg">
-                  <h4 className="font-medium text-amber-900">Voedingsproblemen</h4>
-                  <p className="text-sm text-amber-800">Premature baby's kunnen moeite hebben met zuigen, slikken en ademhalen tegelijk.</p>
+                <div className="p-3 border border-gray-200 bg-gray-50 rounded-lg">
+                  <h4 className="font-medium text-gray-800">Voedingsproblemen</h4>
+                  <p className="text-sm text-gray-600">Premature baby's kunnen moeite hebben met zuigen, slikken en ademhalen tegelijk.</p>
                 </div>
-                <div className="p-3 bg-blue-50 rounded-lg">
+                <div className="p-3 border border-gray-200 bg-gray-50 rounded-lg">
                   <h4 className="font-medium text-blue-900">Reflux</h4>
                   <p className="text-sm text-blue-800">Komt vaker voor. Houd baby rechtop na voeding, kleine porties vaker.</p>
                 </div>
-                <div className="p-3 bg-green-50 rounded-lg">
+                <div className="p-3 border border-gray-200 bg-gray-50 rounded-lg">
                   <h4 className="font-medium text-green-900">Gewichtstoename</h4>
                   <p className="text-sm text-green-800">15-30g per dag is normaal. Wekelijks wegen tot stabiele groei.</p>
                 </div>
@@ -395,13 +409,13 @@ export default function FlesvoedingPrematurePage() {
         </div>
 
         {/* Warning Signs */}
-        <div className="bg-red-50 rounded-2xl border border-red-200 p-6">
+        <div className="border border-gray-200 bg-gray-50 rounded-2xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-red-800 mb-4 flex items-center">
             <AlertCircle className="w-5 h-5 mr-2" />
             Waarschuwingssignalen - Direct Contact Opnemen
           </h2>
           
-          <p className="text-red-700 mb-4">
+          <p className="text-gray-700 mb-4">
             Neem direct contact op met het consultatiebureau, kinderarts of NICU bij deze signalen:
           </p>
           
@@ -510,6 +524,25 @@ export default function FlesvoedingPrematurePage() {
             </Link>
           </div>
         </div>
+          </div>
+        </div>
+
+        {/* Sidebar */}
+        <KennisbankSidebar 
+          images={[
+            {
+              src: "/mother_and_baby.png",
+              alt: "Premature baby zorg",
+              caption: "Specialistische zorg voor premature baby's"
+            },
+            {
+              src: "/baby_feeding.png", 
+              alt: "NICU voeding ondersteuning",
+              caption: "Professionele begeleiding bij premature voeding"
+            }
+          ]}
+          adTopics={["Premature Baby Producten", "NICU Ondersteuning"]}
+        />
       </div>
     </Layout>
   )

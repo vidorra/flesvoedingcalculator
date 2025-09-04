@@ -48,15 +48,15 @@ export default function JuisteHoudingBijFlesvoeding() {
               Complete gids voor ergonomische en veilige voedingshoudingen - voor jou en je baby
             </p>
 
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">🤱 Inleiding</h2>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-8">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed">
                 De juiste houding bij flesvoeding is cruciaal voor de veiligheid van je baby en jouw eigen comfort. Een goede voedingshouding voorkomt verslikking, oorontstekingen, rug- en nekklachten, en bevordert de band tussen jou en je baby. Deze uitgebreide gids legt uit hoe je ergonomisch en veilig voedt, welke houdingen het beste werken, en hoe je veelvoorkomende problemen voorkomt.
               </p>
             </div>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">👶 Veilige houding voor je baby</h2>
+              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Veilige houding voor je baby</h2>
               
               <div className="mb-6">
                 <h3 className="text-2xl font-semibold text-gray-800 mb-4">De perfecte baby positie: 45 graden regel</h3>
@@ -158,9 +158,9 @@ export default function JuisteHoudingBijFlesvoeding() {
                 </div>
               </div>
 
-              <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6">
                 <p className="text-gray-700">
-                  ⚠️ <strong>Veiligheidswaarschuwing</strong>: Voer je baby NOOIT liggend. Dit verhoogt het risico op verslikking, oorontsteking en wiegendood aanzienlijk.
+                  <strong>Veiligheidswaarschuwing</strong>: Voer je baby NOOIT liggend. Dit verhoogt het risico op verslikking, oorontsteking en wiegendood aanzienlijk.
                 </p>
               </div>
 
@@ -343,23 +343,23 @@ export default function JuisteHoudingBijFlesvoeding() {
               <div className="mb-6">
                 <h3 className="text-2xl font-semibold text-gray-800 mb-4">Voedingskussens en hulpmiddelen</h3>
                 
-                <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
                   <h4 className="font-semibold text-gray-800 mb-3">Voedingskussen voordelen:</h4>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
-                      <span className="text-green-600">✅</span>
+                      <span className="text-gray-600">✅</span>
                       <span className="text-gray-700"><strong>Juiste hoogte</strong>: Baby op borst niveau</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <span className="text-green-600">✅</span>
+                      <span className="text-gray-600">✅</span>
                       <span className="text-gray-700"><strong>Armontlasting</strong>: Minder spiervermoeidheid</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <span className="text-green-600">✅</span>
+                      <span className="text-gray-600">✅</span>
                       <span className="text-gray-700"><strong>Stabiele basis</strong>: Baby ligt veilig</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <span className="text-green-600">✅</span>
+                      <span className="text-gray-600">✅</span>
                       <span className="text-gray-700"><strong>Langere voedingen</strong>: Comfortabel volhouden</span>
                     </li>
                   </ul>
@@ -414,7 +414,7 @@ export default function JuisteHoudingBijFlesvoeding() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">🍼 Fles houding en techniek</h2>
+              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Fles houding en techniek</h2>
               
               <div className="space-y-6">
                 <div>
@@ -492,51 +492,51 @@ export default function JuisteHoudingBijFlesvoeding() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">❌ Veelgemaakte fouten voorkomen</h2>
+              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Veelgemaakte fouten voorkomen</h2>
               
               <div className="space-y-6">
                 <div>
                   <h3 className="text-2xl font-semibold text-gray-800 mb-4">Gevaarlijke houdingen vermijden</h3>
                   
-                  <div className="bg-red-50 border border-red-200 rounded-lg p-6 mb-6">
+                  <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
                     <h4 className="font-semibold text-gray-800 mb-3">NOOIT doen:</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
-                        <span className="text-red-600">❌</span>
+                        <span className="text-gray-600">❌</span>
                         <span className="text-gray-700"><strong>Baby plat leggen</strong>: Verhoogt verslikking risico</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <span className="text-red-600">❌</span>
+                        <span className="text-gray-600">❌</span>
                         <span className="text-gray-700"><strong>Fles vastzetten</strong>: Baby kan niet aangeven bij problemen</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <span className="text-red-600">❌</span>
+                        <span className="text-gray-600">❌</span>
                         <span className="text-gray-700"><strong>Baby alleen laten</strong>: Altijd blijven bij voeding</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <span className="text-red-600">❌</span>
+                        <span className="text-gray-600">❌</span>
                         <span className="text-gray-700"><strong>Te snel voeden</strong>: Dwingen tot snel drinken</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <span className="text-red-600">❌</span>
+                        <span className="text-gray-600">❌</span>
                         <span className="text-gray-700"><strong>Verkeerde armhouding</strong>: Eigen nek/rug belasten</span>
                       </li>
                     </ul>
                   </div>
 
-                  <div className="bg-orange-50 border border-orange-200 rounded-lg p-6">
+                  <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
                     <h4 className="font-semibold text-gray-800 mb-3">Waarschuwingssignalen herkennen:</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
-                        <span className="text-orange-600">🚨</span>
+                        <span className="text-gray-600">🚨</span>
                         <span className="text-gray-700"><strong>Stop direct bij</strong>: Hoesten, proesten, blauw worden</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <span className="text-orange-600">🚨</span>
+                        <span className="text-gray-600">🚨</span>
                         <span className="text-gray-700"><strong>Pas aan bij</strong>: Onrust, melk uit neus, gulzig drinken</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <span className="text-orange-600">🚨</span>
+                        <span className="text-gray-600">🚨</span>
                         <span className="text-gray-700"><strong>Zoek hulp bij</strong>: Structurele voedingsproblemen</span>
                       </li>
                     </ul>
@@ -546,7 +546,7 @@ export default function JuisteHoudingBijFlesvoeding() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">❓ Veelgestelde vragen</h2>
+              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Veelgestelde vragen</h2>
               
               <div className="space-y-6">
                 <div className="border border-gray-200 rounded-lg p-6">
@@ -582,9 +582,9 @@ export default function JuisteHoudingBijFlesvoeding() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">🎯 Conclusie: Juiste houding = betere voeding</h2>
+              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Conclusie: Juiste houding = betere voeding</h2>
               
-              <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
                 <h4 className="font-semibold text-gray-800 mb-3">De belangrijkste uitgangspunten:</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center space-x-2">
@@ -606,7 +606,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                 </ul>
               </div>
 
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
                 <h4 className="font-semibold text-gray-800 mb-3">Praktische samenvatting:</h4>
                 <ul className="space-y-2 mb-4">
                   <li className="flex items-start space-x-2">
@@ -632,7 +632,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                 </p>
 
                 <p className="text-gray-700">
-                  💚 <strong>Het belangrijkst</strong>: Een ontspannen ouder voedt beter dan een gespannen ouder met de 'perfecte' techniek. Zorg goed voor jezelf, dan zorg je automatisch goed voor je baby.
+                  <strong>Het belangrijkst</strong>: Een ontspannen ouder voedt beter dan een gespannen ouder met de 'perfecte' techniek. Zorg goed voor jezelf, dan zorg je automatisch goed voor je baby.
                 </p>
               </div>
             </section>
