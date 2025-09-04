@@ -12,13 +12,13 @@ export default function KennisbankPage() {
   const articles = [
     // Basis Flesvoeding - appears to have multiple articles
     { id: 1, title: 'Wat is flesvoeding en wanneer gebruik je het?', category: 'basis-flesvoeding', description: 'Fundamentele kennis voor beginners', duration: '5 min' },
-    { id: 2, title: 'Eerste keer flesvoeding geven', category: 'basis-flesvoeding', description: 'Stap voor stap handleiding', duration: '4 min' },
-    { id: 3, title: 'Flesvoeding vs borstvoeding', category: 'basis-flesvoeding', description: 'Vergelijking en keuze maken', duration: '6 min' },
+    { id: 2, title: 'Eerste keer flesvoeding geven', category: 'basis-flesvoeding', description: 'Complete stap-voor-stap gids van voorbereiding tot eerste voeding', duration: '8 min' },
+    { id: 3, title: 'Flesvoeding vs borstvoeding', category: 'basis-flesvoeding', description: 'Complete wetenschappelijke vergelijking met kosten en onderzoek', duration: '12 min' },
     { id: 4, title: 'Kosten van flesvoeding', category: 'basis-flesvoeding', description: 'Wat kost flesvoeding per maand?', duration: '3 min' },
     { id: 5, title: 'Flesvoeding en werk', category: 'basis-flesvoeding', description: 'Combineren van flesvoeding met werken', duration: '4 min' },
     { id: 6, title: 'Baby weigert de fles', category: 'basis-flesvoeding', description: 'Wat te doen als baby fles weigert', duration: '5 min' },
     { id: 7, title: 'Overstappen van borst naar fles', category: 'basis-flesvoeding', description: 'Geleidelijke overgang maken', duration: '7 min' },
-    { id: 8, title: 'Flesvoeding bij premature baby\'s', category: 'basis-flesvoeding', description: 'Speciale aandachtspunten', duration: '6 min' },
+    { id: 8, title: 'Flesvoeding bij premature baby\'s', category: 'basis-flesvoeding', description: 'Complete medische gids, NICU ervaring, paced feeding', duration: '15 min' },
     { id: 9, title: 'Flesvoeding en slapen', category: 'basis-flesvoeding', description: 'Impact op slaappatroon', duration: '5 min' },
     { id: 10, title: 'Verschillende merken uitproberen', category: 'basis-flesvoeding', description: 'Hoe en waarom wisselen van merk', duration: '4 min' },
     { id: 11, title: 'Flesvoeding onderweg', category: 'basis-flesvoeding', description: 'Tips voor reizen met flesvoeding', duration: '5 min' },
@@ -29,7 +29,7 @@ export default function KennisbankPage() {
     { id: 14, title: 'Verschil tussen startvoeding en opvolgmelk', category: 'soorten-flesvoeding', description: 'Wanneer en waarom overstappen', duration: '3 min' },
     { id: 15, title: 'Wanneer overstappen naar opvolgmelk?', category: 'soorten-flesvoeding', description: 'Het juiste moment bepalen', duration: '4 min' },
     { id: 16, title: 'Hypoallergene flesvoeding', category: 'soorten-flesvoeding', description: 'Voor baby\'s met allergie risico', duration: '5 min' },
-    { id: 17, title: 'Anti-reflux flesvoeding', category: 'soorten-flesvoeding', description: 'Bij spugen en reflux', duration: '4 min' },
+    { id: 17, title: 'Anti-reflux flesvoeding', category: 'soorten-flesvoeding', description: 'Complete gids tegen spugen en reflux, merken vergelijking', duration: '12 min' },
     { id: 18, title: 'Bio en organische flesvoeding', category: 'soorten-flesvoeding', description: 'Voordelen en verschillen', duration: '4 min' },
     { id: 19, title: 'Lactosevrije flesvoeding', category: 'soorten-flesvoeding', description: 'Voor lactose-intolerantie', duration: '5 min' },
     { id: 20, title: 'Peutermelk: wel of niet?', category: 'soorten-flesvoeding', description: 'Na 12 maanden', duration: '3 min' },
@@ -40,10 +40,10 @@ export default function KennisbankPage() {
     { id: 23, title: 'Juiste temperatuur controleren', category: 'voedingstechnieken', description: 'Veilig en comfortabel', duration: '3 min' },
     { id: 24, title: 'Boertje laten tijdens voeding', category: 'voedingstechnieken', description: 'Wanneer en hoe', duration: '4 min' },
     { id: 25, title: 'Voedingsritme opbouwen', category: 'voedingstechnieken', description: 'Structuur aanbrengen', duration: '7 min' },
-    { id: 26, title: 'Nachtvoeding technieken', category: 'voedingstechnieken', description: 'Efficiënt voeden in het donker', duration: '5 min' },
+    { id: 26, title: 'Nachtvoeding technieken', category: 'voedingstechnieken', description: 'Van 30 naar 10 minuten per nachtvoeding', duration: '8 min' },
     { id: 27, title: 'Baby leren zelf drinken', category: 'voedingstechnieken', description: 'Overgang naar zelfstandigheid', duration: '6 min' },
     { id: 28, title: 'Verschillende spenen uitproberen', category: 'voedingstechnieken', description: 'Juiste speen kiezen', duration: '4 min' },
-    { id: 29, title: 'Voeden van tweeling', category: 'voedingstechnieken', description: 'Praktische tips voor meerlingen', duration: '8 min' },
+    { id: 29, title: 'Voeden van tweeling', category: 'voedingstechnieken', description: 'Complete survival gids, tijdsbesparing en equipment', duration: '15 min' },
     { id: 30, title: 'Overgang naar beker', category: 'voedingstechnieken', description: 'Van fles naar beker', duration: '5 min' },
 
     // Problemen Oplossen - 9 artikelen
@@ -73,10 +73,11 @@ export default function KennisbankPage() {
     { id: 50, title: 'Reizen met flesvoeding', category: 'veiligheid', description: 'Veilig onderweg', duration: '5 min' },
     { id: 51, title: 'Noodvoorraad flesvoeding', category: 'veiligheid', description: 'Altijd prepared zijn', duration: '4 min' },
 
-    // Praktische Tips - 15 artikelen
+    // Praktische Tips - 16 artikelen
     { id: 52, title: 'Geld besparen op flesvoeding', category: 'praktische-tips', description: 'Budget tips', duration: '5 min' },
-    { id: 53, title: 'Nachtvoeding optimaliseren', category: 'praktische-tips', description: 'Efficiënter nachts', duration: '4 min' },
+    { id: 53, title: 'Nachtvoeding optimaliseren', category: 'praktische-tips', description: 'Van 30 naar 10 minuten per nachtvoeding, complete gids', duration: '12 min' },
     { id: 54, title: 'Flesvoeding en werk combineren', category: 'praktische-tips', description: 'Werkende ouders', duration: '6 min' },
+    { id: 67, title: 'Uitgebreide Flesvoeding Gids 2025', category: 'praktische-tips', description: 'Complete 5-in-1 gids: besparen, kosten, overstappen, werk en problemen oplossen', duration: '40+ min' },
     { id: 55, title: 'Organisatie van flesvoeding', category: 'praktische-tips', description: 'Planning en voorbereiding', duration: '5 min' },
     { id: 56, title: 'Partner betrekken', category: 'praktische-tips', description: 'Samen verantwoordelijk', duration: '4 min' },
     { id: 57, title: 'Flesvoeding op vakantie', category: 'praktische-tips', description: 'Reizen met baby', duration: '7 min' },
@@ -113,9 +114,24 @@ export default function KennisbankPage() {
     return filtered
   }
 
-  // Generate article URLs - link to category pages with comprehensive content
+  // Generate article URLs - link to specific articles or category pages
   const getArticleUrl = (article) => {
-    return `/kennisbank/${article.category}`
+    // Special tier2 articles with dedicated pages
+    const specialArticles = {
+      2: '/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven',
+      3: '/kennisbank/basis-flesvoeding/flesvoeding-vs-borstvoeding',
+      4: '/kennisbank/financiele-aspecten/kosten-van-flesvoeding',
+      8: '/kennisbank/basis-flesvoeding/flesvoeding-bij-premature-babys',
+      17: '/kennisbank/soorten-flesvoeding/anti-reflux-flesvoeding',
+      21: '/kennisbank/voedingstechnieken/juiste-houding-bij-flesvoeding',
+      22: '/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap',
+      23: '/kennisbank/voedingstechnieken/juiste-temperatuur-controleren',
+      29: '/kennisbank/voedingstechnieken/voeden-van-tweeling',
+      53: '/kennisbank/praktische-tips/nachtvoeding-optimaliseren',
+      67: '/kennisbank/praktische-gidsen/uitgebreide-flesvoeding-gids'
+    }
+    
+    return specialArticles[article.id] || `/kennisbank/${article.category}`
   }
 
   const knowledgeCategories = [
