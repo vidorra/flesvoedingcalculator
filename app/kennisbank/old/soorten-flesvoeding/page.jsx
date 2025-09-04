@@ -9,17 +9,6 @@ export default function SoortenFlesvoedingPage() {
   return (
     <Layout>
       <div className="space-y-6">
-        {/* Breadcrumb */}
-        <div className="flex items-center space-x-2 text-sm text-gray-600">
-          <Link href="/" className="hover:text-primary flex items-center">
-            <Home className="w-4 h-4 mr-1" />
-            Home
-          </Link>
-          <ArrowRight className="w-4 h-4" />
-          <Link href="/kennisbank" className="hover:text-primary">Kennisbank</Link>
-          <ArrowRight className="w-4 h-4" />
-          <span className="text-primary">Soorten Flesvoeding</span>
-        </div>
 
         {/* Header */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
@@ -39,14 +28,14 @@ export default function SoortenFlesvoedingPage() {
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold">1</div>
               <div>
-                <h2 className="text-lg font-semibold text-gray-800">Startvoeding (Nummer 1)</h2>
+                <h2 className="text-lg font-semibold text-primary">Startvoeding (Nummer 1)</h2>
                 <p className="text-sm text-gray-600">0 tot 6 maanden</p>
               </div>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div>
-                <h3 className="font-medium text-gray-800 mb-3">Kenmerken:</h3>
+                <h3 className="font-medium text-primary mb-3">Kenmerken:</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -72,7 +61,7 @@ export default function SoortenFlesvoedingPage() {
               </div>
               
               <div>
-                <h3 className="font-medium text-gray-800 mb-3">Populaire merken in Nederland:</h3>
+                <h3 className="font-medium text-primary mb-3">Populaire merken in Nederland:</h3>
                 <div className="grid grid-cols-2 gap-2">
                   {formula1Brands.map((brand, index) => (
                     <div key={index} className="bg-default px-3 py-2 rounded-lg text-sm text-primary">
@@ -89,14 +78,14 @@ export default function SoortenFlesvoedingPage() {
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-10 h-10 bg-gray-500 rounded-full flex items-center justify-center text-white font-bold">2</div>
               <div>
-                <h2 className="text-lg font-semibold text-gray-800">Opvolgmelk (Nummer 2)</h2>
+                <h2 className="text-lg font-semibold text-primary">Opvolgmelk (Nummer 2)</h2>
                 <p className="text-sm text-gray-600">6 tot 12 maanden</p>
               </div>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div>
-                <h3 className="font-medium text-gray-800 mb-3">Kenmerken:</h3>
+                <h3 className="font-medium text-primary mb-3">Kenmerken:</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -119,7 +108,7 @@ export default function SoortenFlesvoedingPage() {
               </div>
               
               <div>
-                <h3 className="font-medium text-gray-800 mb-3">Wanneer overstappen:</h3>
+                <h3 className="font-medium text-primary mb-3">Wanneer overstappen:</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -143,14 +132,14 @@ export default function SoortenFlesvoedingPage() {
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold">3</div>
               <div>
-                <h2 className="text-lg font-semibold text-gray-800">Peutermelk (Nummer 3)</h2>
+                <h2 className="text-lg font-semibold text-primary">Peutermelk (Nummer 3)</h2>
                 <p className="text-sm text-gray-600">12+ maanden</p>
               </div>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div>
-                <h3 className="font-medium text-gray-800 mb-3">Kenmerken:</h3>
+                <h3 className="font-medium text-primary mb-3">Kenmerken:</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -172,7 +161,7 @@ export default function SoortenFlesvoedingPage() {
               </div>
               
               <div>
-                <h3 className="font-medium text-gray-800 mb-3">Afweging maken:</h3>
+                <h3 className="font-medium text-primary mb-3">Afweging maken:</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -240,20 +229,20 @@ export default function SoortenFlesvoedingPage() {
 
         {/* Navigation */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Meer informatie</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Meer informatie</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 
               href="/kennisbank/voedingstechnieken"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-gray-800">Voedingstechnieken →</div>
+              <div className="font-medium text-primary">Voedingstechnieken →</div>
               <div className="text-sm text-gray-600">Hoe bereid je flesvoeding?</div>
             </Link>
             <Link 
               href="/kennisbank/problemen-oplossen"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-gray-800">Problemen Oplossen →</div>
+              <div className="font-medium text-primary">Problemen Oplossen →</div>
               <div className="text-sm text-gray-600">Hulp bij veelvoorkomende problemen</div>
             </Link>
           </div>

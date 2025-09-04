@@ -40,7 +40,7 @@ export default function KostenVanFlesvoeding() {
         <div className="col-span-12 lg:col-span-7">
           <div className="max-w-4xl mx-auto p-8 bg-white/80 backdrop-blur rounded-2xl shadow-lg border border-gray-200">
             
-            <h1 className="text-4xl font-bold text-gray-800 mb-6">
+            <h1 className="text-4xl font-bold text-primary mb-6">
               Kosten van Flesvoeding: Complete Budgetgids Nederland 2025
             </h1>
             
@@ -49,16 +49,16 @@ export default function KostenVanFlesvoeding() {
             </p>
 
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-8">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Inleiding</h2>
+              <h2 className="text-2xl font-semibold text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed">
                 Hoeveel kost flesvoeding nou eigenlijk? Deze vraag houdt veel aanstaande ouders bezig. Deze complete budgetgids geeft je alle Nederlandse prijzen van 2025, van goedkoopste tot duurste opties. Plus: praktische bespaartips die kunnen opleveren tot €300 per jaar, zonder in te leveren op kwaliteit of veiligheid.
               </p>
             </div>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Totaal overzicht kosten eerste jaar</h2>
+              <h2 className="text-3xl font-semibold text-primary mb-6">Totaal overzicht kosten eerste jaar</h2>
               
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">Complete kosten flesvoeding (0-12 maanden)</h3>
+              <h3 className="text-xl font-semibold text-primary mb-4">Complete kosten flesvoeding (0-12 maanden)</h3>
               
               <div className="overflow-x-auto mb-6">
                 <table className="w-full border-collapse border border-gray-300">
@@ -105,7 +105,7 @@ export default function KostenVanFlesvoeding() {
                 </table>
               </div>
 
-              <p className="text-lg font-semibold text-gray-800 mb-4">
+              <p className="text-lg font-semibold text-primary mb-4">
                 <strong>Gemiddelde maandkosten:</strong> €50-130 afhankelijk van keuzes
               </p>
 
@@ -117,15 +117,15 @@ export default function KostenVanFlesvoeding() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Flesvoeding poeder: Prijsoverzicht per merk</h2>
+              <h2 className="text-3xl font-semibold text-primary mb-6">Flesvoeding poeder: Prijsoverzicht per merk</h2>
               
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-4">Budget vriendelijke merken (€12-18 per 900g blik)</h3>
+                  <h3 className="text-2xl font-semibold text-primary mb-4">Budget vriendelijke merken (€12-18 per 900g blik)</h3>
                   
                   <div className="grid md:grid-cols-3 gap-6 mb-6">
                     <div className="border border-gray-200 rounded-lg p-4">
-                      <h4 className="font-semibold text-gray-800 mb-2">Kruidvat Baby Melkpoeder</h4>
+                      <h4 className="font-semibold text-primary mb-2">Kruidvat Baby Melkpoeder</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -147,7 +147,7 @@ export default function KostenVanFlesvoeding() {
                     </div>
 
                     <div className="border border-gray-200 rounded-lg p-4">
-                      <h4 className="font-semibold text-gray-800 mb-2">AH Basic Babyvoeding</h4>
+                      <h4 className="font-semibold text-primary mb-2">AH Basic Babyvoeding</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -169,7 +169,7 @@ export default function KostenVanFlesvoeding() {
                     </div>
 
                     <div className="border border-gray-200 rounded-lg p-4">
-                      <h4 className="font-semibold text-gray-800 mb-2">Jumbo Baby</h4>
+                      <h4 className="font-semibold text-primary mb-2">Jumbo Baby</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -193,11 +193,11 @@ export default function KostenVanFlesvoeding() {
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-4">Mainstream merken (€18-25 per 800g blik)</h3>
+                  <h3 className="text-2xl font-semibold text-primary mb-4">Mainstream merken (€18-25 per 800g blik)</h3>
                   
                   <div className="grid md:grid-cols-3 gap-6 mb-6">
                     <div className="border border-gray-200 rounded-lg p-4">
-                      <h4 className="font-semibold text-gray-800 mb-2">Nutrilon (Nederlandse marktleider)</h4>
+                      <h4 className="font-semibold text-primary mb-2">Nutrilon (Nederlandse marktleider)</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -219,7 +219,7 @@ export default function KostenVanFlesvoeding() {
                     </div>
 
                     <div className="border border-gray-200 rounded-lg p-4">
-                      <h4 className="font-semibold text-gray-800 mb-2">Hero Baby Nutradefense</h4>
+                      <h4 className="font-semibold text-primary mb-2">Hero Baby Nutradefense</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -241,7 +241,7 @@ export default function KostenVanFlesvoeding() {
                     </div>
 
                     <div className="border border-gray-200 rounded-lg p-4">
-                      <h4 className="font-semibold text-gray-800 mb-2">Aptamil Pronutra</h4>
+                      <h4 className="font-semibold text-primary mb-2">Aptamil Pronutra</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -265,11 +265,11 @@ export default function KostenVanFlesvoeding() {
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-4">Premium/Biologisch (€25-35 per 600-800g blik)</h3>
+                  <h3 className="text-2xl font-semibold text-primary mb-4">Premium/Biologisch (€25-35 per 600-800g blik)</h3>
                   
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="border border-gray-200 rounded-lg p-4">
-                      <h4 className="font-semibold text-gray-800 mb-2">HIPP Biologisch</h4>
+                      <h4 className="font-semibold text-primary mb-2">HIPP Biologisch</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -291,7 +291,7 @@ export default function KostenVanFlesvoeding() {
                     </div>
 
                     <div className="border border-gray-200 rounded-lg p-4">
-                      <h4 className="font-semibold text-gray-800 mb-2">Holle Biologisch</h4>
+                      <h4 className="font-semibold text-primary mb-2">Holle Biologisch</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -317,11 +317,11 @@ export default function KostenVanFlesvoeding() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Flessen en spenen: Wat heb je nodig?</h2>
+              <h2 className="text-3xl font-semibold text-primary mb-6">Flessen en spenen: Wat heb je nodig?</h2>
               
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-4">Minimum benodigdheden</h3>
+                  <h3 className="text-xl font-semibold text-primary mb-4">Minimum benodigdheden</h3>
                   <p className="text-gray-700 mb-4"><strong>4-6 flessen</strong>: Voor pasgeborenen voldoende</p>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
@@ -340,7 +340,7 @@ export default function KostenVanFlesvoeding() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-4">Aanbevolen hoeveelheden per leeftijd</h3>
+                  <h3 className="text-xl font-semibold text-primary mb-4">Aanbevolen hoeveelheden per leeftijd</h3>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -358,7 +358,7 @@ export default function KostenVanFlesvoeding() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-800 mb-4">Kosten overzicht flessen</h3>
+                  <h3 className="text-xl font-semibold text-primary mb-4">Kosten overzicht flessen</h3>
                   <div className="overflow-x-auto">
                     <table className="w-full border-collapse border border-gray-300">
                       <thead>
@@ -402,11 +402,11 @@ export default function KostenVanFlesvoeding() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">25 Bespaartips zonder kwaliteitsverlies</h2>
+              <h2 className="text-3xl font-semibold text-primary mb-6">25 Bespaartips zonder kwaliteitsverlies</h2>
               
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-4">Inkooptips (besparing: €150-200/jaar)</h3>
+                  <h3 className="text-2xl font-semibold text-primary mb-4">Inkooptips (besparing: €150-200/jaar)</h3>
                   <ul className="space-y-2">
                     <li className="flex items-start space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -432,7 +432,7 @@ export default function KostenVanFlesvoeding() {
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-4">Slim gebruik (besparing: €50-100/jaar)</h3>
+                  <h3 className="text-2xl font-semibold text-primary mb-4">Slim gebruik (besparing: €50-100/jaar)</h3>
                   <ul className="space-y-2">
                     <li className="flex items-start space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -458,7 +458,7 @@ export default function KostenVanFlesvoeding() {
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-4">Equipment besparing (besparing: €100-150 eenmalig)</h3>
+                  <h3 className="text-2xl font-semibold text-primary mb-4">Equipment besparing (besparing: €100-150 eenmalig)</h3>
                   <ul className="space-y-2">
                     <li className="flex items-start space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -486,9 +486,9 @@ export default function KostenVanFlesvoeding() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">🛒 Waar het goedkoopst winkelen?</h2>
+              <h2 className="text-3xl font-semibold text-primary mb-6">🛒 Waar het goedkoopst winkelen?</h2>
               
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">Prijs vergelijking Nederlandse retailers</h3>
+              <h3 className="text-xl font-semibold text-primary mb-4">Prijs vergelijking Nederlandse retailers</h3>
               <div className="overflow-x-auto mb-6">
                 <table className="w-full border-collapse border border-gray-300">
                   <thead>
@@ -542,45 +542,45 @@ export default function KostenVanFlesvoeding() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Veelgestelde vragen over kosten</h2>
+              <h2 className="text-3xl font-semibold text-primary mb-6">Veelgestelde vragen over kosten</h2>
               
               <div className="space-y-6">
                 <div className="border border-gray-200 rounded-lg p-6">
-                  <h4 className="font-semibold text-gray-800 mb-2">Wat als ik per ongeluk te dure flesvoeding heb gekocht?</h4>
+                  <h4 className="font-semibold text-primary mb-2">Wat als ik per ongeluk te dure flesvoeding heb gekocht?</h4>
                   <p className="text-gray-700">Alle Nederlandse flesvoeding voldoet aan dezelfde voedingsnormen. Je betaalt vooral voor merk, marketing en extra toegevoegde ingrediënten zoals prebiotica.</p>
                 </div>
 
                 <div className="border border-gray-200 rounded-lg p-6">
-                  <h4 className="font-semibold text-gray-800 mb-2">Kan ik geld terugkrijgen van de zorgverzekering?</h4>
+                  <h4 className="font-semibold text-primary mb-2">Kan ik geld terugkrijgen van de zorgverzekering?</h4>
                   <p className="text-gray-700">Bij medische noodzaak (bijv. hypoallergene voeding) kan dit vergoed worden. Check met je verzekeraar en zorgverlener.</p>
                 </div>
 
                 <div className="border border-gray-200 rounded-lg p-6">
-                  <h4 className="font-semibold text-gray-800 mb-2">Hoeveel bespaar ik als ik huismerk koop?</h4>
+                  <h4 className="font-semibold text-primary mb-2">Hoeveel bespaar ik als ik huismerk koop?</h4>
                   <p className="text-gray-700">Gemiddeld 40-50% besparing ten opzichte van A-merken. Voor een jaar kan dit €200-300 schelen.</p>
                 </div>
 
                 <div className="border border-gray-200 rounded-lg p-6">
-                  <h4 className="font-semibold text-gray-800 mb-2">Zijn goedkope flessen even veilig?</h4>
+                  <h4 className="font-semibold text-primary mb-2">Zijn goedkope flessen even veilig?</h4>
                   <p className="text-gray-700">Ja, alle flessen in Nederland moeten voldoen aan EU veiligheidsnormen. Het verschil zit in design, gebruiksgemak en duurzaamheid.</p>
                 </div>
 
                 <div className="border border-gray-200 rounded-lg p-6">
-                  <h4 className="font-semibold text-gray-800 mb-2">Wat kost flesvoeding vergeleken met borstvoeding?</h4>
+                  <h4 className="font-semibold text-primary mb-2">Wat kost flesvoeding vergeleken met borstvoeding?</h4>
                   <p className="text-gray-700">Flesvoeding kost €575-1500 eerste jaar. Borstvoeding €400-800 (extra voeding moeder + hulpmiddelen).</p>
                 </div>
               </div>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Conclusie: Slim budgetteren voor flesvoeding</h2>
+              <h2 className="text-3xl font-semibold text-primary mb-6">Conclusie: Slim budgetteren voor flesvoeding</h2>
               
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Flesvoeding hoeft niet duur te zijn als je slimme keuzes maakt. Met de juiste aanpak kun je <strong>€200-400 per jaar</strong> besparen zonder in te leveren op kwaliteit of veiligheid.
                 </p>
 
-                <h4 className="font-semibold text-gray-800 mb-3">Belangrijkste bespaartips samengevat:</h4>
+                <h4 className="font-semibold text-primary mb-3">Belangrijkste bespaartips samengevat:</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -606,7 +606,7 @@ export default function KostenVanFlesvoeding() {
               </div>
 
               <div className="space-y-4 mb-6">
-                <h4 className="font-semibold text-gray-800">Realistisch budget plannen:</h4>
+                <h4 className="font-semibold text-primary">Realistisch budget plannen:</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -628,7 +628,7 @@ export default function KostenVanFlesvoeding() {
                   <strong>Onthoud</strong>: Het belangrijkste is dat je baby goed gevoed wordt en jij je financieel comfortabel voelt bij je keuzes. Dure flesvoeding maakt je niet tot een betere ouder.
                 </p>
                 
-                <h4 className="font-semibold text-gray-800 mb-3">Volgende stappen:</h4>
+                <h4 className="font-semibold text-primary mb-3">Volgende stappen:</h4>
                 <ul className="space-y-2">
                   <li className="flex items-start space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>

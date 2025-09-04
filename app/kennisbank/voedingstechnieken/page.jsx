@@ -52,17 +52,6 @@ export default function VoedingstechniekenPage() {
   return (
     <Layout>
       <div className="space-y-6">
-        {/* Breadcrumb */}
-        <div className="flex items-center space-x-2 text-sm text-gray-600">
-          <Link href="/" className="hover:text-primary flex items-center">
-            <Home className="w-4 h-4 mr-1" />
-            Home
-          </Link>
-          <ArrowRight className="w-4 h-4" />
-          <Link href="/kennisbank" className="hover:text-primary">Kennisbank</Link>
-          <ArrowRight className="w-4 h-4" />
-          <span className="text-primary">Voedingstechnieken</span>
-        </div>
 
         {/* Header */}
         <div className="mb-6">
@@ -77,7 +66,7 @@ export default function VoedingstechniekenPage() {
 
         {/* Preparation Steps */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Fles klaarmaken - Stap voor stap</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Fles klaarmaken - Stap voor stap</h2>
           <div className="space-y-3">
             {preparationSteps.map((step, index) => (
               <div key={index} className="flex items-start space-x-3">
@@ -93,7 +82,7 @@ export default function VoedingstechniekenPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Baby Position */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-gray-800 mb-4">De juiste houding - Voor de baby</h2>
+            <h2 className="text-lg font-semibold text-primary mb-4">De juiste houding - Voor de baby</h2>
             <div className="space-y-2">
               {babyPosition.map((position, index) => (
                 <div key={index} className="flex items-start space-x-2">
@@ -106,7 +95,7 @@ export default function VoedingstechniekenPage() {
 
           {/* Bottle Position */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-gray-800 mb-4">De juiste houding - Voor de fles</h2>
+            <h2 className="text-lg font-semibold text-primary mb-4">De juiste houding - Voor de fles</h2>
             <div className="space-y-2">
               {bottlePosition.map((position, index) => (
                 <div key={index} className="flex items-start space-x-2">
@@ -137,11 +126,11 @@ export default function VoedingstechniekenPage() {
 
         {/* Sterilization */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Steriliseren van flessen</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Steriliseren van flessen</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
-              <h3 className="font-medium text-gray-800 mb-3 flex items-center">
+              <h3 className="font-medium text-primary mb-3 flex items-center">
                 <AlertTriangle className="w-4 h-4 mr-2 text-red-500" />
                 Tot 6 maanden VERPLICHT:
               </h3>
@@ -166,7 +155,7 @@ export default function VoedingstechniekenPage() {
             </div>
             
             <div>
-              <h3 className="font-medium text-gray-800 mb-3">Na 6 maanden:</h3>
+              <h3 className="font-medium text-primary mb-3">Na 6 maanden:</h3>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -245,10 +234,10 @@ export default function VoedingstechniekenPage() {
 
         {/* FAQ Section */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Veelgestelde Vragen over Voedingstechnieken</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde Vragen over Voedingstechnieken</h2>
           <div className="space-y-4">
             <div>
-              <h3 className="font-medium text-gray-800 mb-2">Hoelang duurt een voeding normaal?</h3>
+              <h3 className="font-medium text-primary mb-2">Hoelang duurt een voeding normaal?</h3>
               <p className="text-sm text-gray-600">
                 Gemiddeld 15-20 minuten. Korter dan 10 minuten kan te snel zijn (risico overslikken), 
                 langer dan 30 minuten kan wijzen op verkeerde speenmaat.
@@ -256,7 +245,7 @@ export default function VoedingstechniekenPage() {
             </div>
             
             <div>
-              <h3 className="font-medium text-gray-800 mb-2">Mijn baby valt in slaap tijdens voeding, wat nu?</h3>
+              <h3 className="font-medium text-primary mb-2">Mijn baby valt in slaap tijdens voeding, wat nu?</h3>
               <p className="text-sm text-gray-600">
                 Dit is normaal, vooral 's nachts. Laat baby rustig drinken. 
                 Zorg wel dat baby genoeg binnen krijgt over de hele dag.
@@ -264,7 +253,7 @@ export default function VoedingstechniekenPage() {
             </div>
             
             <div>
-              <h3 className="font-medium text-gray-800 mb-2">Hoeveel moet mijn baby boeren?</h3>
+              <h3 className="font-medium text-primary mb-2">Hoeveel moet mijn baby boeren?</h3>
               <p className="text-sm text-gray-600">
                 Niet elke baby hoeft te boeren. Laat baby halverwege even pauzeren. 
                 Als baby geen boertje laat na 5 minuten, ga gewoon door met voeden.
@@ -272,7 +261,7 @@ export default function VoedingstechniekenPage() {
             </div>
             
             <div>
-              <h3 className="font-medium text-gray-800 mb-2">Kan ik de fles warm houden?</h3>
+              <h3 className="font-medium text-primary mb-2">Kan ik de fles warm houden?</h3>
               <p className="text-sm text-gray-600">
                 Nee, bereide flesvoeding maximaal 1 uur bewaren op kamertemperatuur. 
                 Bacteriën groeien snel in warme melk. Maak altijd vers als dat kan.
@@ -280,7 +269,7 @@ export default function VoedingstechniekenPage() {
             </div>
             
             <div>
-              <h3 className="font-medium text-gray-800 mb-2">Welke speenmaat voor welke leeftijd?</h3>
+              <h3 className="font-medium text-primary mb-2">Welke speenmaat voor welke leeftijd?</h3>
               <p className="text-sm text-gray-600">
                 0-3 maanden: Small/Slow flow. 3-6 maanden: Medium flow. 
                 6+ maanden: Large/Fast flow. Let op signalen van je baby - sommigen hebben voorkeur voor andere flow.
@@ -341,28 +330,28 @@ export default function VoedingstechniekenPage() {
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
                     <div>
-                      <div className="font-medium text-gray-800">Boertje proberen (geduld hebben)</div>
+                      <div className="font-medium text-primary">Boertje proberen (geduld hebben)</div>
                       <div className="text-sm text-gray-600">Soms komt pas na 5-10 minuten</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
                     <div>
-                      <div className="font-medium text-gray-800">Baby rechtop houden (20 minuten)</div>
+                      <div className="font-medium text-primary">Baby rechtop houden (20 minuten)</div>
                       <div className="text-sm text-gray-600">Voorkomt spugen en reflux</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
                     <div>
-                      <div className="font-medium text-gray-800">Positief afsluiten met knuffel</div>
+                      <div className="font-medium text-primary">Positief afsluiten met knuffel</div>
                       <div className="text-sm text-gray-600">Reinforcement van de ervaring</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
                     <div>
-                      <div className="font-medium text-gray-800">Fles direct opruimen</div>
+                      <div className="font-medium text-primary">Fles direct opruimen</div>
                       <div className="text-sm text-gray-600">Voorkomt bacteriegroei</div>
                     </div>
                   </div>
@@ -389,7 +378,7 @@ export default function VoedingstechniekenPage() {
 
         {/* Fles Bereiden Section */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Fles Bereiden Stap voor Stap: Van Poeder tot Klare Fles</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Fles Bereiden Stap voor Stap: Van Poeder tot Klare Fles</h2>
           
           <p className="text-gray-600 leading-relaxed mb-4">
             Perfect voeding keer op keer maken. Met de juiste techniek voor veilige fles bereiding volgens 
@@ -397,24 +386,24 @@ export default function VoedingstechniekenPage() {
           </p>
 
           <div className="bg-gray-50 rounded-xl p-4 border border-gray-200 mb-6">
-            <h3 className="text-blue-900 font-semibold mb-3">🔄 Snelle stappen overzicht:</h3>
+            <h3 className="text-primary font-semibold mb-3">🔄 Snelle stappen overzicht:</h3>
             <div className="grid md:grid-cols-3 gap-4">
               <div className="bg-white rounded-lg p-3">
-                <h4 className="font-medium text-blue-900 mb-1">1. Water voorbereiden</h4>
-                <p className="text-blue-800 text-sm">Kook water, laat afkoelen tot 70°C</p>
+                <h4 className="font-medium text-primary mb-1">1. Water voorbereiden</h4>
+                <p className="text-gray-600 text-sm">Kook water, laat afkoelen tot 70°C</p>
               </div>
               <div className="bg-white rounded-lg p-3">
-                <h4 className="font-medium text-blue-900 mb-1">2. Meten & mengen</h4>
-                <p className="text-blue-800 text-sm">Juiste ratio: 1 maatlepel per 30ml</p>
+                <h4 className="font-medium text-primary mb-1">2. Meten & mengen</h4>
+                <p className="text-gray-600 text-sm">Juiste ratio: 1 maatlepel per 30ml</p>
               </div>
               <div className="bg-white rounded-lg p-3">
-                <h4 className="font-medium text-blue-900 mb-1">3. Temperatuur testen</h4>
-                <p className="text-blue-800 text-sm">37°C - lauwwarm op pols</p>
+                <h4 className="font-medium text-primary mb-1">3. Temperatuur testen</h4>
+                <p className="text-gray-600 text-sm">37°C - lauwwarm op pols</p>
               </div>
             </div>
           </div>
 
-          <h3 className="font-medium text-gray-800 mb-4">Gedetailleerd Bereidingsproces</h3>
+          <h3 className="font-medium text-primary mb-4">Gedetailleerd Bereidingsproces</h3>
           
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div className="space-y-4">
@@ -485,7 +474,7 @@ export default function VoedingstechniekenPage() {
             </div>
           </div>
 
-          <h3 className="font-medium text-gray-800 mb-4">Juiste Meng Verhoudingen</h3>
+          <h3 className="font-medium text-primary mb-4">Juiste Meng Verhoudingen</h3>
           
           <div className="overflow-x-auto mb-6">
             <table className="w-full text-sm border border-gray-200 rounded-lg">
@@ -586,27 +575,27 @@ export default function VoedingstechniekenPage() {
 
         {/* Navigation */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Gerelateerde informatie</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde informatie</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <Link 
               href="/kennisbank/hygiene-bereiding"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-gray-800">Hygiëne & Bereiding →</div>
+              <div className="font-medium text-primary">Hygiëne & Bereiding →</div>
               <div className="text-sm text-gray-600">Veilig bereiden en bewaren</div>
             </Link>
             <Link 
               href="/kennisbank/problemen-oplossen"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-gray-800">Problemen Oplossen →</div>
+              <div className="font-medium text-primary">Problemen Oplossen →</div>
               <div className="text-sm text-gray-600">Hulp bij veelvoorkomende problemen</div>
             </Link>
             <Link 
               href="/kennisbank/soorten-flesvoeding"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-gray-800">Soorten Flesvoeding →</div>
+              <div className="font-medium text-primary">Soorten Flesvoeding →</div>
               <div className="text-sm text-gray-600">Welk type voor welke leeftijd</div>
             </Link>
           </div>

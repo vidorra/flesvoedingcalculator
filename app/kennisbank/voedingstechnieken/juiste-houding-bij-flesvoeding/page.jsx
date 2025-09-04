@@ -40,7 +40,7 @@ export default function JuisteHoudingBijFlesvoeding() {
         <div className="col-span-12 lg:col-span-7">
           <div className="max-w-4xl mx-auto p-8 bg-white/80 backdrop-blur rounded-2xl shadow-lg border border-gray-200">
             
-            <h1 className="text-4xl font-bold text-gray-800 mb-6">
+            <h1 className="text-4xl font-bold text-primary mb-6">
               Juiste Houding bij Flesvoeding: Veilig en Comfortabel Voeden
             </h1>
             
@@ -49,19 +49,19 @@ export default function JuisteHoudingBijFlesvoeding() {
             </p>
 
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-8">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Inleiding</h2>
+              <h2 className="text-2xl font-semibold text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed">
                 De juiste houding bij flesvoeding is cruciaal voor de veiligheid van je baby en jouw eigen comfort. Een goede voedingshouding voorkomt verslikking, oorontstekingen, rug- en nekklachten, en bevordert de band tussen jou en je baby. Deze uitgebreide gids legt uit hoe je ergonomisch en veilig voedt, welke houdingen het beste werken, en hoe je veelvoorkomende problemen voorkomt.
               </p>
             </div>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Veilige houding voor je baby</h2>
+              <h2 className="text-3xl font-semibold text-primary mb-6">Veilige houding voor je baby</h2>
               
               <div className="mb-6">
-                <h3 className="text-2xl font-semibold text-gray-800 mb-4">De perfecte baby positie: 45 graden regel</h3>
+                <h3 className="text-2xl font-semibold text-primary mb-4">De perfecte baby positie: 45 graden regel</h3>
                 
-                <h4 className="text-xl font-semibold text-gray-800 mb-3">Waarom 45 graden?</h4>
+                <h4 className="text-xl font-semibold text-primary mb-3">Waarom 45 graden?</h4>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -87,11 +87,11 @@ export default function JuisteHoudingBijFlesvoeding() {
               </div>
 
               <div className="mb-6">
-                <h3 className="text-2xl font-semibold text-gray-800 mb-4">Stap-voor-stap: Baby positioneren</h3>
+                <h3 className="text-2xl font-semibold text-primary mb-4">Stap-voor-stap: Baby positioneren</h3>
                 
                 <div className="space-y-6">
                   <div className="border border-gray-200 rounded-lg p-6">
-                    <h4 className="text-lg font-semibold text-gray-800 mb-3">1. Hoofd en nek ondersteuning</h4>
+                    <h4 className="text-lg font-semibold text-primary mb-3">1. Hoofd en nek ondersteuning</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -113,7 +113,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                   </div>
 
                   <div className="border border-gray-200 rounded-lg p-6">
-                    <h4 className="text-lg font-semibold text-gray-800 mb-3">2. Lichaamshouding</h4>
+                    <h4 className="text-lg font-semibold text-primary mb-3">2. Lichaamshouding</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -135,7 +135,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                   </div>
 
                   <div className="border border-gray-200 rounded-lg p-6">
-                    <h4 className="text-lg font-semibold text-gray-800 mb-3">3. Ademruimte controleren</h4>
+                    <h4 className="text-lg font-semibold text-primary mb-3">3. Ademruimte controleren</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -165,11 +165,11 @@ export default function JuisteHoudingBijFlesvoeding() {
               </div>
 
               <div className="mb-6">
-                <h3 className="text-2xl font-semibold text-gray-800 mb-4">Verschillende baby houdingen</h3>
+                <h3 className="text-2xl font-semibold text-primary mb-4">Verschillende baby houdingen</h3>
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="border border-gray-200 rounded-lg p-6">
-                    <h4 className="text-lg font-semibold text-gray-800 mb-3">Klassieke wieghouding 👑</h4>
+                    <h4 className="text-lg font-semibold text-primary mb-3">Klassieke wieghouding 👑</h4>
                     <ul className="space-y-2">
                       <li className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -191,7 +191,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                   </div>
 
                   <div className="border border-gray-200 rounded-lg p-6">
-                    <h4 className="text-lg font-semibold text-gray-800 mb-3">Voetbal houding 🏈</h4>
+                    <h4 className="text-lg font-semibold text-primary mb-3">Voetbal houding 🏈</h4>
                     <ul className="space-y-2">
                       <li className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -213,7 +213,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                   </div>
 
                   <div className="border border-gray-200 rounded-lg p-6">
-                    <h4 className="text-lg font-semibold text-gray-800 mb-3">Cross-cradle houding ↔️</h4>
+                    <h4 className="text-lg font-semibold text-primary mb-3">Cross-cradle houding ↔️</h4>
                     <ul className="space-y-2">
                       <li className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -235,7 +235,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                   </div>
 
                   <div className="border border-gray-200 rounded-lg p-6">
-                    <h4 className="text-lg font-semibold text-gray-800 mb-3">Rechtop zitten 🪑</h4>
+                    <h4 className="text-lg font-semibold text-primary mb-3">Rechtop zitten 🪑</h4>
                     <ul className="space-y-2">
                       <li className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -260,12 +260,12 @@ export default function JuisteHoudingBijFlesvoeding() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">🧘‍♀️ Ergonomische houding voor jezelf</h2>
+              <h2 className="text-3xl font-semibold text-primary mb-6">🧘‍♀️ Ergonomische houding voor jezelf</h2>
               
               <div className="mb-6">
-                <h3 className="text-2xl font-semibold text-gray-800 mb-4">Jouw houding: Net zo belangrijk als die van baby</h3>
+                <h3 className="text-2xl font-semibold text-primary mb-4">Jouw houding: Net zo belangrijk als die van baby</h3>
                 
-                <h4 className="text-xl font-semibold text-gray-800 mb-3">Waarom ergonomie belangrijk is:</h4>
+                <h4 className="text-xl font-semibold text-primary mb-3">Waarom ergonomie belangrijk is:</h4>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -291,11 +291,11 @@ export default function JuisteHoudingBijFlesvoeding() {
               </div>
 
               <div className="mb-6">
-                <h3 className="text-2xl font-semibold text-gray-800 mb-4">De perfecte zithouding</h3>
+                <h3 className="text-2xl font-semibold text-primary mb-4">De perfecte zithouding</h3>
                 
                 <div className="space-y-6">
                   <div className="border border-gray-200 rounded-lg p-6">
-                    <h4 className="text-lg font-semibold text-gray-800 mb-3">Ruggengraat uitgelijnd 🏗️</h4>
+                    <h4 className="text-lg font-semibold text-primary mb-3">Ruggengraat uitgelijnd 🏗️</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -317,7 +317,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                   </div>
 
                   <div className="border border-gray-200 rounded-lg p-6">
-                    <h4 className="text-lg font-semibold text-gray-800 mb-3">Armondersteuning 💪</h4>
+                    <h4 className="text-lg font-semibold text-primary mb-3">Armondersteuning 💪</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -341,10 +341,10 @@ export default function JuisteHoudingBijFlesvoeding() {
               </div>
 
               <div className="mb-6">
-                <h3 className="text-2xl font-semibold text-gray-800 mb-4">Voedingskussens en hulpmiddelen</h3>
+                <h3 className="text-2xl font-semibold text-primary mb-4">Voedingskussens en hulpmiddelen</h3>
                 
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
-                  <h4 className="font-semibold text-gray-800 mb-3">Voedingskussen voordelen:</h4>
+                  <h4 className="font-semibold text-primary mb-3">Voedingskussen voordelen:</h4>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
                       <span className="text-gray-600">✅</span>
@@ -367,7 +367,7 @@ export default function JuisteHoudingBijFlesvoeding() {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h4 className="font-semibold text-gray-800 mb-3">Populaire Nederlandse merken:</h4>
+                    <h4 className="font-semibold text-primary mb-3">Populaire Nederlandse merken:</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -389,7 +389,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                   </div>
 
                   <div>
-                    <h4 className="font-semibold text-gray-800 mb-3">DIY alternatieven:</h4>
+                    <h4 className="font-semibold text-primary mb-3">DIY alternatieven:</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -414,15 +414,15 @@ export default function JuisteHoudingBijFlesvoeding() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Fles houding en techniek</h2>
+              <h2 className="text-3xl font-semibold text-primary mb-6">Fles houding en techniek</h2>
               
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-4">De fles correct vasthouden</h3>
+                  <h3 className="text-2xl font-semibold text-primary mb-4">De fles correct vasthouden</h3>
                   
                   <div className="grid md:grid-cols-3 gap-6">
                     <div className="border border-gray-200 rounded-lg p-6">
-                      <h4 className="font-semibold text-gray-800 mb-3">Fles positie 📐</h4>
+                      <h4 className="font-semibold text-primary mb-3">Fles positie 📐</h4>
                       <ul className="space-y-2">
                         <li className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -444,7 +444,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                     </div>
 
                     <div className="border border-gray-200 rounded-lg p-6">
-                      <h4 className="font-semibold text-gray-800 mb-3">Speen plaatsing 👄</h4>
+                      <h4 className="font-semibold text-primary mb-3">Speen plaatsing 👄</h4>
                       <ul className="space-y-2">
                         <li className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -466,7 +466,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                     </div>
 
                     <div className="border border-gray-200 rounded-lg p-6">
-                      <h4 className="font-semibold text-gray-800 mb-3">Flow controle 💧</h4>
+                      <h4 className="font-semibold text-primary mb-3">Flow controle 💧</h4>
                       <ul className="space-y-2">
                         <li className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -492,14 +492,14 @@ export default function JuisteHoudingBijFlesvoeding() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Veelgemaakte fouten voorkomen</h2>
+              <h2 className="text-3xl font-semibold text-primary mb-6">Veelgemaakte fouten voorkomen</h2>
               
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-4">Gevaarlijke houdingen vermijden</h3>
+                  <h3 className="text-2xl font-semibold text-primary mb-4">Gevaarlijke houdingen vermijden</h3>
                   
                   <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
-                    <h4 className="font-semibold text-gray-800 mb-3">NOOIT doen:</h4>
+                    <h4 className="font-semibold text-primary mb-3">NOOIT doen:</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
                         <span className="text-gray-600">❌</span>
@@ -525,7 +525,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                   </div>
 
                   <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
-                    <h4 className="font-semibold text-gray-800 mb-3">Waarschuwingssignalen herkennen:</h4>
+                    <h4 className="font-semibold text-primary mb-3">Waarschuwingssignalen herkennen:</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
                         <span className="text-gray-600">🚨</span>
@@ -546,46 +546,46 @@ export default function JuisteHoudingBijFlesvoeding() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Veelgestelde vragen</h2>
+              <h2 className="text-3xl font-semibold text-primary mb-6">Veelgestelde vragen</h2>
               
               <div className="space-y-6">
                 <div className="border border-gray-200 rounded-lg p-6">
-                  <h4 className="font-semibold text-gray-800 mb-2">Hoe lang kan ik in dezelfde houding voeden?</h4>
+                  <h4 className="font-semibold text-primary mb-2">Hoe lang kan ik in dezelfde houding voeden?</h4>
                   <p className="text-gray-700">Wissel elke 10-15 minuten van houding als voeding langer duurt. Luister naar je lichaam - pijn is signaal om te bewegen.</p>
                 </div>
 
                 <div className="border border-gray-200 rounded-lg p-6">
-                  <h4 className="font-semibold text-gray-800 mb-2">Mijn baby valt altijd in slaap tijdens voeding, wat nu?</h4>
+                  <h4 className="font-semibold text-primary mb-2">Mijn baby valt altijd in slaap tijdens voeding, wat nu?</h4>
                   <p className="text-gray-700">Zacht tegen wangen strelen, voetjes kriebelen, of korte pauze. Sommige baby's hebben dit nodig - forceer niet.</p>
                 </div>
 
                 <div className="border border-gray-200 rounded-lg p-6">
-                  <h4 className="font-semibold text-gray-800 mb-2">Kan ik liggen tijdens nachtvoeding?</h4>
+                  <h4 className="font-semibold text-primary mb-2">Kan ik liggen tijdens nachtvoeding?</h4>
                   <p className="text-gray-700">Alleen als je 100% wakker bent en baby veilig 45 graden ondersteund is. Risico op in slaap vallen is te groot.</p>
                 </div>
 
                 <div className="border border-gray-200 rounded-lg p-6">
-                  <h4 className="font-semibold text-gray-800 mb-2">Mijn rug doet pijn na voedingen, wat doe ik fout?</h4>
+                  <h4 className="font-semibold text-primary mb-2">Mijn rug doet pijn na voedingen, wat doe ik fout?</h4>
                   <p className="text-gray-700">Waarschijnlijk rug gebogen, schouders opgetrokken, of baby te ver weg. Investeer in voedingskussen en check zithouding.</p>
                 </div>
 
                 <div className="border border-gray-200 rounded-lg p-6">
-                  <h4 className="font-semibold text-gray-800 mb-2">Baby weigert bepaalde houdingen, is dat normaal?</h4>
+                  <h4 className="font-semibold text-primary mb-2">Baby weigert bepaalde houdingen, is dat normaal?</h4>
                   <p className="text-gray-700">Ja, baby's hebben voorkeuren. Respecteer dit en zoek alternatieven. Comfort voor baby is belangrijker dan 'juiste' techniek.</p>
                 </div>
 
                 <div className="border border-gray-200 rounded-lg p-6">
-                  <h4 className="font-semibold text-gray-800 mb-2">Hoe voorkom ik oorontstekingen?</h4>
+                  <h4 className="font-semibold text-primary mb-2">Hoe voorkom ik oorontstekingen?</h4>
                   <p className="text-gray-700">Voer nooit liggend, houd hoofd altijd hoger dan lichaam, laat baby boeren na voeding om druk op oren te verminderen.</p>
                 </div>
               </div>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Conclusie: Juiste houding = betere voeding</h2>
+              <h2 className="text-3xl font-semibold text-primary mb-6">Conclusie: Juiste houding = betere voeding</h2>
               
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
-                <h4 className="font-semibold text-gray-800 mb-3">De belangrijkste uitgangspunten:</h4>
+                <h4 className="font-semibold text-primary mb-3">De belangrijkste uitgangspunten:</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -607,7 +607,7 @@ export default function JuisteHoudingBijFlesvoeding() {
               </div>
 
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
-                <h4 className="font-semibold text-gray-800 mb-3">Praktische samenvatting:</h4>
+                <h4 className="font-semibold text-primary mb-3">Praktische samenvatting:</h4>
                 <ul className="space-y-2 mb-4">
                   <li className="flex items-start space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>

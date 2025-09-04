@@ -69,27 +69,14 @@ export default function EersteKeerFlesvoedingPage() {
       <div className="col-span-12 lg:col-span-7">
         <div className="max-w-4xl mx-auto p-8 bg-white/80 backdrop-blur rounded-2xl shadow-lg border border-gray-200">
           
-          {/* Breadcrumb */}
-          <div className="flex items-center space-x-2 text-sm text-gray-600 mb-6">
-            <Link href="/" className="hover:text-primary flex items-center">
-              <Home className="w-4 h-4 mr-1" />
-              Home
-            </Link>
-            <ArrowRight className="w-4 h-4" />
-            <Link href="/kennisbank" className="hover:text-primary">Kennisbank</Link>
-            <ArrowRight className="w-4 h-4" />
-            <Link href="/kennisbank/basis-flesvoeding" className="hover:text-primary">Basis Flesvoeding</Link>
-            <ArrowRight className="w-4 h-4" />
-            <span className="text-gray-800">Eerste keer flesvoeding geven</span>
-          </div>
 
           {/* Header */}
           <div className="mb-8">
-            <div className="text-sm text-blue-600 mb-2">Basis Flesvoeding • Beginners Gids</div>
-            <h1 className="text-4xl font-bold text-gray-800 mb-4">
+            <div className="text-sm text-gray-600 mb-2">Basis Flesvoeding • Beginners Gids</div>
+            <h1 className="text-4xl font-bold text-primary mb-4">
               Eerste keer flesvoeding geven
             </h1>
-            <p className="text-xl text-gray-600 mb-6">
+            <p className="text-gray-600 mb-6">
               Complete stap-voor-stap handleiding voor Nederlandse ouders die voor het eerst 
               flesvoeding gaan geven. Van voorbereiding tot hygiëne - alles voor een succesvolle start.
             </p>
@@ -111,11 +98,11 @@ export default function EersteKeerFlesvoedingPage() {
 
           {/* What you need */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Wat heb je nodig?</h2>
+            <h2 className="text-2xl font-bold text-primary mb-6">Wat heb je nodig?</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="border border-gray-200 rounded-xl p-6">
-                <h3 className="font-semibold text-gray-800 mb-4 flex items-center">
+                <h3 className="font-semibold text-primary mb-4 flex items-center">
                   <CheckCircle className="w-5 h-5 text-gray-600 mr-2" />
                   Essentiële benodigdheden
                 </h3>
@@ -130,8 +117,8 @@ export default function EersteKeerFlesvoedingPage() {
               </div>
 
               <div className="border border-gray-200 rounded-xl p-6">
-                <h3 className="font-semibold text-gray-800 mb-4 flex items-center">
-                  <Baby className="w-5 h-5 text-blue-600 mr-2" />
+                <h3 className="font-semibold text-primary mb-4 flex items-center">
+                  <Baby className="w-5 h-5 text-gray-600 mr-2" />
                   Handig om te hebben
                 </h3>
                 <ul className="space-y-2">
@@ -148,10 +135,10 @@ export default function EersteKeerFlesvoedingPage() {
 
           {/* Water preparation */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Water: De basis van goede flesvoeding</h2>
+            <h2 className="text-2xl font-bold text-primary mb-6">Water: De basis van goede flesvoeding</h2>
             
             <div className="border border-gray-200 rounded-xl p-6 mb-6">
-              <h3 className="font-semibold text-gray-800 mb-3">Nederlands kraanwater: Veilig voor baby's</h3>
+              <h3 className="font-semibold text-primary mb-3">Nederlands kraanwater: Veilig voor baby's</h3>
               <p className="text-gray-700 mb-4">
                 In Nederland is kraanwater uitstekend geschikt voor flesvoeding:
               </p>
@@ -172,7 +159,7 @@ export default function EersteKeerFlesvoedingPage() {
             </div>
 
             <div className="border border-gray-200 rounded-xl p-6">
-              <h3 className="font-semibold text-gray-800 mb-4">Watervoorbereiding per leeftijd</h3>
+              <h3 className="font-semibold text-primary mb-4">Watervoorbereiding per leeftijd</h3>
               <div className="space-y-3">
                 {waterPreparation.map((item, index) => (
                   <div key={index} className="flex items-start space-x-3 p-3 rounded-lg border border-gray-200">
@@ -186,7 +173,7 @@ export default function EersteKeerFlesvoedingPage() {
                 <div className="flex items-start space-x-2">
                   <AlertTriangle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-gray-800">Let op:</strong>
+                    <strong className="text-primary">Let op:</strong>
                     <span className="text-gray-700"> Gebruik nooit water uit de warmwaterboiler - dit kan bacteriën bevatten.</span>
                   </div>
                 </div>
@@ -196,11 +183,11 @@ export default function EersteKeerFlesvoedingPage() {
 
           {/* Step by step guide */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Stap-voor-stap: Je eerste fles klaarmaken</h2>
+            <h2 className="text-2xl font-bold text-primary mb-6">Stap-voor-stap: Je eerste fles klaarmaken</h2>
             
             <div className="space-y-6">
               <div className="border border-gray-200 rounded-xl p-6">
-                <h3 className="font-semibold text-gray-800 mb-4 flex items-center">
+                <h3 className="font-semibold text-primary mb-4 flex items-center">
                   <span className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">1</span>
                   Voorbereiding (5 minuten)
                 </h3>
@@ -225,7 +212,7 @@ export default function EersteKeerFlesvoedingPage() {
               </div>
 
               <div className="border border-gray-200 rounded-xl p-6">
-                <h3 className="font-semibold text-gray-800 mb-4 flex items-center">
+                <h3 className="font-semibold text-primary mb-4 flex items-center">
                   <span className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">2</span>
                   Poeder toevoegen (2 minuten)
                 </h3>
@@ -250,7 +237,7 @@ export default function EersteKeerFlesvoedingPage() {
               </div>
 
               <div className="border border-gray-200 rounded-xl p-6">
-                <h3 className="font-semibold text-gray-800 mb-4 flex items-center">
+                <h3 className="font-semibold text-primary mb-4 flex items-center">
                   <span className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">3</span>
                   Mengen en temperatuur checken (3 minuten)
                 </h3>
@@ -278,23 +265,23 @@ export default function EersteKeerFlesvoedingPage() {
 
           {/* Feeding amounts table */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Juiste hoeveelheden per leeftijd</h2>
+            <h2 className="text-2xl font-bold text-primary mb-6">Juiste hoeveelheden per leeftijd</h2>
             
             <div className="border border-gray-200 rounded-xl p-6">
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
                     <tr className="border-b border-gray-200">
-                      <th className="text-left py-3 px-2 font-semibold text-gray-800">Leeftijd</th>
-                      <th className="text-left py-3 px-2 font-semibold text-gray-800">Per voeding</th>
-                      <th className="text-left py-3 px-2 font-semibold text-gray-800">Voedingen/dag</th>
-                      <th className="text-left py-3 px-2 font-semibold text-gray-800">Totaal/dag</th>
+                      <th className="text-left py-3 px-2 font-semibold text-primary">Leeftijd</th>
+                      <th className="text-left py-3 px-2 font-semibold text-primary">Per voeding</th>
+                      <th className="text-left py-3 px-2 font-semibold text-primary">Voedingen/dag</th>
+                      <th className="text-left py-3 px-2 font-semibold text-primary">Totaal/dag</th>
                     </tr>
                   </thead>
                   <tbody>
                     {feedingGuide.map((row, index) => (
                       <tr key={index} className="border-b border-gray-100">
-                        <td className="py-3 px-2 font-medium text-gray-800">{row.age}</td>
+                        <td className="py-3 px-2 font-medium text-primary">{row.age}</td>
                         <td className="py-3 px-2 text-gray-700">{row.perFeeding}</td>
                         <td className="py-3 px-2 text-gray-700">{row.frequency}</td>
                         <td className="py-3 px-2 text-gray-700">{row.total}</td>
@@ -314,10 +301,10 @@ export default function EersteKeerFlesvoedingPage() {
 
           {/* Transition from breastfeeding */}
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Van borstvoeding naar flesvoeding</h2>
+            <h2 className="text-2xl font-bold text-primary mb-6">Van borstvoeding naar flesvoeding</h2>
             
             <div className="border border-gray-200 rounded-xl p-6 mb-6">
-              <h3 className="font-semibold text-gray-800 mb-4">Geleidelijke overstap (aanbevolen)</h3>
+              <h3 className="font-semibold text-primary mb-4">Geleidelijke overstap (aanbevolen)</h3>
               <div className="space-y-3">
                 {transitionSchedule.map((item, index) => (
                   <div key={index} className="flex items-center space-x-3 p-3 rounded-lg border border-gray-200">
@@ -329,7 +316,7 @@ export default function EersteKeerFlesvoedingPage() {
             </div>
 
             <div className="border border-gray-200 rounded-xl p-6">
-              <h3 className="font-semibold text-gray-800 mb-4">Tips voor succesvolle overstap</h3>
+              <h3 className="font-semibold text-primary mb-4">Tips voor succesvolle overstap</h3>
               <ul className="space-y-2">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -353,7 +340,7 @@ export default function EersteKeerFlesvoedingPage() {
 
           {/* When to seek help */}
           <section className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Wanneer hulp zoeken?</h2>
+            <h2 className="text-2xl font-bold text-primary mb-6">Wanneer hulp zoeken?</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="border border-gray-200 rounded-xl p-6">
@@ -404,7 +391,7 @@ export default function EersteKeerFlesvoedingPage() {
 
           {/* Conclusion */}
           <section className="border border-gray-200 rounded-xl p-6">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Belangrijkste tips</h2>
+            <h2 className="text-2xl font-bold text-primary mb-4">Belangrijkste tips</h2>
             <ol className="space-y-2">
               <li className="flex items-center space-x-2">
                 <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">1</span>
@@ -429,7 +416,7 @@ export default function EersteKeerFlesvoedingPage() {
             </ol>
             
             <div className="mt-6 p-4 border border-gray-200 rounded-lg text-center">
-              <p className="text-lg font-medium text-gray-800">Onthoud: Je doet het geweldig!</p>
+              <p className="text-lg font-medium text-primary">Onthoud: Je doet het geweldig!</p>
               <p className="text-gray-600">Flesvoeding geven is een liefdevolle manier om je baby te voeden en te koesteren.</p>
             </div>
           </section>
