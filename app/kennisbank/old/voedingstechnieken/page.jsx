@@ -48,17 +48,6 @@ export default function VoedingstechniekenPage() {
   return (
     <Layout>
       <div className="space-y-6">
-        {/* Breadcrumb */}
-        <div className="flex items-center space-x-2 text-sm text-gray-600">
-          <Link href="/" className="hover:text-primary flex items-center">
-            <Home className="w-4 h-4 mr-1" />
-            Home
-          </Link>
-          <ArrowRight className="w-4 h-4" />
-          <Link href="/kennisbank" className="hover:text-primary">Kennisbank</Link>
-          <ArrowRight className="w-4 h-4" />
-          <span className="text-primary">Voedingstechnieken</span>
-        </div>
 
         {/* Header */}
         <div className="mb-6">
@@ -73,7 +62,7 @@ export default function VoedingstechniekenPage() {
 
         {/* Preparation Steps */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Fles klaarmaken - Stap voor stap</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Fles klaarmaken - Stap voor stap</h2>
           <div className="space-y-3">
             {preparationSteps.map((step, index) => (
               <div key={index} className="flex items-start space-x-3">
@@ -89,7 +78,7 @@ export default function VoedingstechniekenPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Baby Position */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-gray-800 mb-4">De juiste houding - Voor de baby</h2>
+            <h2 className="text-lg font-semibold text-primary mb-4">De juiste houding - Voor de baby</h2>
             <div className="space-y-2">
               {babyPosition.map((position, index) => (
                 <div key={index} className="flex items-start space-x-2">
@@ -102,7 +91,7 @@ export default function VoedingstechniekenPage() {
 
           {/* Bottle Position */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-gray-800 mb-4">De juiste houding - Voor de fles</h2>
+            <h2 className="text-lg font-semibold text-primary mb-4">De juiste houding - Voor de fles</h2>
             <div className="space-y-2">
               {bottlePosition.map((position, index) => (
                 <div key={index} className="flex items-start space-x-2">
@@ -133,11 +122,11 @@ export default function VoedingstechniekenPage() {
 
         {/* Sterilization */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Steriliseren van flessen</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Steriliseren van flessen</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
-              <h3 className="font-medium text-gray-800 mb-3 flex items-center">
+              <h3 className="font-medium text-primary mb-3 flex items-center">
                 <AlertTriangle className="w-4 h-4 mr-2 text-red-500" />
                 Tot 6 maanden VERPLICHT:
               </h3>
@@ -162,7 +151,7 @@ export default function VoedingstechniekenPage() {
             </div>
             
             <div>
-              <h3 className="font-medium text-gray-800 mb-3">Na 6 maanden:</h3>
+              <h3 className="font-medium text-primary mb-3">Na 6 maanden:</h3>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -200,20 +189,20 @@ export default function VoedingstechniekenPage() {
 
         {/* Navigation */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Meer informatie</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Meer informatie</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 
               href="/kennisbank/hygiene-bereiding"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-gray-800">Hygiëne & Bereiding →</div>
+              <div className="font-medium text-primary">Hygiëne & Bereiding →</div>
               <div className="text-sm text-gray-600">Veilig bereiden en bewaren</div>
             </Link>
             <Link 
               href="/kennisbank/problemen-oplossen"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-gray-800">Problemen Oplossen →</div>
+              <div className="font-medium text-primary">Problemen Oplossen →</div>
               <div className="text-sm text-gray-600">Hulp bij veelvoorkomende problemen</div>
             </Link>
           </div>

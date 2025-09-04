@@ -34,17 +34,6 @@ export default function BasisFlesvoedingPage() {
   return (
     <Layout>
       <div className="space-y-6">
-        {/* Breadcrumb */}
-        <div className="flex items-center space-x-2 text-sm text-gray-600">
-          <Link href="/" className="hover:text-primary flex items-center">
-            <Home className="w-4 h-4 mr-1" />
-            Home
-          </Link>
-          <ArrowRight className="w-4 h-4" />
-          <Link href="/kennisbank" className="hover:text-primary">Kennisbank</Link>
-          <ArrowRight className="w-4 h-4" />
-          <span className="text-primary">Basis Flesvoeding</span>
-        </div>
 
         {/* Header */}
         <div className="mb-6">
@@ -60,7 +49,7 @@ export default function BasisFlesvoedingPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* What is bottle feeding */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-gray-800 mb-4">Wat is flesvoeding?</h2>
+            <h2 className="text-lg font-semibold text-primary mb-4">Wat is flesvoeding?</h2>
             <p className="text-gray-600 leading-relaxed">
               Flesvoeding is speciaal samengestelde babymelk die alle voedingsstoffen bevat die een baby nodig heeft 
               voor gezonde groei en ontwikkeling. In Nederland moet alle flesvoeding voldoen aan strenge Europese 
@@ -70,7 +59,7 @@ export default function BasisFlesvoedingPage() {
 
           {/* When to choose bottle feeding */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-gray-800 mb-4">Wanneer kies je voor flesvoeding?</h2>
+            <h2 className="text-lg font-semibold text-primary mb-4">Wanneer kies je voor flesvoeding?</h2>
             <div className="space-y-2">
               {reasons.map((reason, index) => (
                 <div key={index} className="flex items-start space-x-2">
@@ -84,7 +73,7 @@ export default function BasisFlesvoedingPage() {
 
         {/* Benefits */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Voordelen van flesvoeding</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Voordelen van flesvoeding</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {benefits.map((benefit, index) => (
               <div key={index} className="flex items-start space-x-2">
@@ -163,7 +152,7 @@ export default function BasisFlesvoedingPage() {
 
         {/* Myth Busting */}
         <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-blue-800 mb-4">Veelgehoorde Mythes over Flesvoeding</h2>
+          <h2 className="text-lg font-semibold text-gray-600 mb-4">Veelgehoorde Mythes over Flesvoeding</h2>
           <div className="space-y-4">
             <div className="bg-white p-4 rounded-lg">
               <h3 className="font-medium text-red-600 mb-2">❌ Mythe: "Flesvoeding is minder gezond dan borstvoeding"</h3>
@@ -201,10 +190,10 @@ export default function BasisFlesvoedingPage() {
 
         {/* FAQ Section */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Veelgestelde Vragen</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde Vragen</h2>
           <div className="space-y-4">
             <div>
-              <h3 className="font-medium text-gray-800 mb-2">Kan ik van borstvoeding overstappen naar flesvoeding?</h3>
+              <h3 className="font-medium text-primary mb-2">Kan ik van borstvoeding overstappen naar flesvoeding?</h3>
               <p className="text-sm text-gray-600">
                 Ja, dit kan altijd en op elke leeftijd. Een geleidelijke overgang over 1-2 weken 
                 wordt aangeraden om borstontsteking te voorkomen. Raadpleeg het consultatiebureau voor persoonlijk advies.
@@ -212,7 +201,7 @@ export default function BasisFlesvoedingPage() {
             </div>
             
             <div>
-              <h3 className="font-medium text-gray-800 mb-2">Welk merk flesvoeding is het beste?</h3>
+              <h3 className="font-medium text-primary mb-2">Welk merk flesvoeding is het beste?</h3>
               <p className="text-sm text-gray-600">
                 Alle Nederlandse merken voldoen aan dezelfde strenge EU-eisen en zijn even veilig. 
                 Kies op basis van prijs, beschikbaarheid en voorkeur van je baby.
@@ -220,7 +209,7 @@ export default function BasisFlesvoedingPage() {
             </div>
             
             <div>
-              <h3 className="font-medium text-gray-800 mb-2">Vanaf welke leeftijd kan mijn baby flesvoeding krijgen?</h3>
+              <h3 className="font-medium text-primary mb-2">Vanaf welke leeftijd kan mijn baby flesvoeding krijgen?</h3>
               <p className="text-sm text-gray-600">
                 Flesvoeding is veilig vanaf de geboorte. Startvoeding (nummer 1) is geschikt 
                 voor baby's van 0-12 maanden als volledig alternatief voor borstvoeding.
@@ -228,7 +217,7 @@ export default function BasisFlesvoedingPage() {
             </div>
             
             <div>
-              <h3 className="font-medium text-gray-800 mb-2">Hoeveel ml heeft mijn baby precies nodig?</h3>
+              <h3 className="font-medium text-primary mb-2">Hoeveel ml heeft mijn baby precies nodig?</h3>
               <p className="text-sm text-gray-600">
                 Elke baby is anders. De Nederlandse richtlijn is 150ml per kg lichaamsgewicht per dag. 
                 <Link href="/" className="text-primary hover:underline font-medium">
@@ -238,7 +227,7 @@ export default function BasisFlesvoedingPage() {
             </div>
             
             <div>
-              <h3 className="font-medium text-gray-800 mb-2">Kan ik borstvoeding en flesvoeding combineren?</h3>
+              <h3 className="font-medium text-primary mb-2">Kan ik borstvoeding en flesvoeding combineren?</h3>
               <p className="text-sm text-gray-600">
                 Ja, combivoeiding is mogelijk. Start met flesvoeding als aanvulling en bouw 
                 geleidelijk op. Let wel op dat melkproductie kan afnemen.
@@ -249,12 +238,12 @@ export default function BasisFlesvoedingPage() {
 
         {/* Comprehensive Guide Section */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Complete Flesvoeding Gids</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Complete Flesvoeding Gids</h2>
           
           <div className="space-y-6">
             {/* What is bottle feeding - expanded */}
             <div>
-              <h3 className="font-medium text-gray-800 mb-3">Wat is flesvoeding precies?</h3>
+              <h3 className="font-medium text-primary mb-3">Wat is flesvoeding precies?</h3>
               <p className="text-gray-600 leading-relaxed mb-3">
                 Flesvoeding is kunstmatige babyvoeding die alle voedingsstoffen bevat die je baby nodig heeft voor een gezonde groei en ontwikkeling. 
                 In Nederland volgen we de richtlijnen van het Voedingscentrum voor optimale babyvoedering.
@@ -269,7 +258,7 @@ export default function BasisFlesvoedingPage() {
 
             {/* Cost Information */}
             <div>
-              <h3 className="font-medium text-gray-800 mb-3">Kosten van flesvoeding in Nederland</h3>
+              <h3 className="font-medium text-primary mb-3">Kosten van flesvoeding in Nederland</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <h4 className="font-medium text-green-800 mb-2">Gemiddelde kosten per maand:</h4>
@@ -280,7 +269,7 @@ export default function BasisFlesvoedingPage() {
                   </div>
                 </div>
                 <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-medium text-blue-800 mb-2">Geld besparen tips:</h4>
+                  <h4 className="font-medium text-gray-600 mb-2">Geld besparen tips:</h4>
                   <div className="space-y-1 text-sm text-gray-700">
                     <div>• Huismerken even goed als A-merken</div>
                     <div>• Grotere verpakkingen goedkoper</div>
@@ -293,7 +282,7 @@ export default function BasisFlesvoedingPage() {
 
             {/* Work and bottle feeding */}
             <div>
-              <h3 className="font-medium text-gray-800 mb-3">Flesvoeding en werk combineren</h3>
+              <h3 className="font-medium text-primary mb-3">Flesvoeding en werk combineren</h3>
               <p className="text-gray-600 leading-relaxed mb-3">
                 Flesvoeding biedt flexibiliteit bij werkhervatting. Partners kunnen overnemen, oppas kan voeden, 
                 en je hoeft niet te kolven. Plan geleidelijke overgang minimaal 2 weken voor werkhervatting.
@@ -312,7 +301,7 @@ export default function BasisFlesvoedingPage() {
 
             {/* Partner involvement */}
             <div>
-              <h3 className="font-medium text-gray-800 mb-3">Partner betrekken bij flesvoeding</h3>
+              <h3 className="font-medium text-primary mb-3">Partner betrekken bij flesvoeding</h3>
               <p className="text-gray-600 leading-relaxed mb-3">
                 Flesvoeding biedt unieke kans voor partner om volledig betrokken te zijn bij voeding. 
                 Dit versterkt de band en geeft mama rust.
@@ -332,7 +321,7 @@ export default function BasisFlesvoedingPage() {
 
         {/* Baby Weigert de Fles Section */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Baby Weigert de Fles: Praktische Oplossingen</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Baby Weigert de Fles: Praktische Oplossingen</h2>
           
           <p className="text-gray-600 leading-relaxed mb-4">
             Ongeveer 30% van alle baby's weigert op enig moment de fles. Dit is één van de meest frustrerende 
@@ -394,11 +383,11 @@ export default function BasisFlesvoedingPage() {
           </div>
 
           <div className="bg-gray-50 rounded-xl p-4 border border-gray-200 mb-6">
-            <h3 className="text-blue-900 font-semibold mb-3">7-Dagen Actieplan bij Flesweigering:</h3>
+            <h3 className="text-primary font-semibold mb-3">7-Dagen Actieplan bij Flesweigering:</h3>
             <div className="grid md:grid-cols-3 gap-4">
               <div className="bg-white rounded-lg p-3">
-                <h4 className="font-medium text-blue-900 mb-2">Dag 1-2: Diagnostiek</h4>
-                <ul className="text-blue-800 text-xs space-y-1">
+                <h4 className="font-medium text-primary mb-2">Dag 1-2: Diagnostiek</h4>
+                <ul className="text-gray-600 text-xs space-y-1">
                   <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span>Controleer temperatuur systematisch</span>
@@ -418,8 +407,8 @@ export default function BasisFlesvoedingPage() {
                 </ul>
               </div>
               <div className="bg-white rounded-lg p-3">
-                <h4 className="font-medium text-blue-900 mb-2">Dag 3-4: Optimaliseren</h4>
-                <ul className="text-blue-800 text-xs space-y-1">
+                <h4 className="font-medium text-primary mb-2">Dag 3-4: Optimaliseren</h4>
+                <ul className="text-gray-600 text-xs space-y-1">
                   <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span>Creëer speciale flesvoeding-plek</span>
@@ -439,8 +428,8 @@ export default function BasisFlesvoedingPage() {
                 </ul>
               </div>
               <div className="bg-white rounded-lg p-3">
-                <h4 className="font-medium text-blue-900 mb-2">Dag 5-7: Geduld</h4>
-                <ul className="text-blue-800 text-xs space-y-1">
+                <h4 className="font-medium text-primary mb-2">Dag 5-7: Geduld</h4>
+                <ul className="text-gray-600 text-xs space-y-1">
                   <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span>Laat baby speen verkennen</span>
@@ -473,7 +462,7 @@ export default function BasisFlesvoedingPage() {
 
         {/* Eerste Keer Flesvoeding Section */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Eerste Keer Flesvoeding Geven</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Eerste Keer Flesvoeding Geven</h2>
           
           <p className="text-gray-600 leading-relaxed mb-4">
             De eerste keer flesvoeding geven kan spannend zijn. Met de juiste voorbereiding en aanpak 
@@ -482,7 +471,7 @@ export default function BasisFlesvoedingPage() {
 
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div>
-              <h3 className="font-medium text-gray-800 mb-3">Stap 1-4: Voorbereiding</h3>
+              <h3 className="font-medium text-primary mb-3">Stap 1-4: Voorbereiding</h3>
               <div className="bg-gray-50 rounded-xl p-4 space-y-2">
                 <p><strong>1. Handen wassen</strong> grondig met warme zeep</p>
                 <p><strong>2. Materiaal checken</strong> fles, speen, geen scheurtjes</p>
@@ -491,7 +480,7 @@ export default function BasisFlesvoedingPage() {
               </div>
             </div>
             <div>
-              <h3 className="font-medium text-gray-800 mb-3">Stap 5-8: Fles geven</h3>
+              <h3 className="font-medium text-primary mb-3">Stap 5-8: Fles geven</h3>
               <div className="bg-gray-50 rounded-xl p-4 space-y-2">
                 <p><strong>5. Juiste houding</strong> baby iets omhoog (45°)</p>
                 <p><strong>6. Stimuleer reflexen</strong> wang aanraken</p>
@@ -546,27 +535,27 @@ export default function BasisFlesvoedingPage() {
 
         {/* Navigation to other pages */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Verder lezen</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Verder lezen</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <Link 
               href="/kennisbank/soorten-flesvoeding"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-gray-800">Soorten Flesvoeding →</div>
+              <div className="font-medium text-primary">Soorten Flesvoeding →</div>
               <div className="text-sm text-gray-600">Nummer 1, 2, 3 uitgelegd</div>
             </Link>
             <Link 
               href="/kennisbank/voedingstechnieken"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-gray-800">Voedingstechnieken →</div>
+              <div className="font-medium text-primary">Voedingstechnieken →</div>
               <div className="text-sm text-gray-600">Bereiden en geven van fles</div>
             </Link>
             <Link 
               href="/"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-gray-800">Flesvoeding Calculator →</div>
+              <div className="font-medium text-primary">Flesvoeding Calculator →</div>
               <div className="text-sm text-gray-600">Bereken hoeveelheden</div>
             </Link>
           </div>

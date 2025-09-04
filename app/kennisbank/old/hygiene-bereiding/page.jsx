@@ -79,17 +79,6 @@ export default function HygieneBereidingPage() {
   return (
     <Layout>
       <div className="space-y-6">
-        {/* Breadcrumb */}
-        <div className="flex items-center space-x-2 text-sm text-gray-600">
-          <Link href="/" className="hover:text-primary flex items-center">
-            <Home className="w-4 h-4 mr-1" />
-            Home
-          </Link>
-          <ArrowRight className="w-4 h-4" />
-          <Link href="/kennisbank" className="hover:text-primary">Kennisbank</Link>
-          <ArrowRight className="w-4 h-4" />
-          <span className="text-primary">Hygiëne & Bereiding</span>
-        </div>
 
         {/* Header */}
         <div className="mb-6">
@@ -137,7 +126,7 @@ export default function HygieneBereidingPage() {
 
         {/* Water for formula */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Water voor flesvoeding</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Water voor flesvoeding</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
@@ -169,7 +158,7 @@ export default function HygieneBereidingPage() {
         {/* Storage */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-gray-800 mb-4">Poeder bewaren:</h2>
+            <h2 className="text-lg font-semibold text-primary mb-4">Poeder bewaren:</h2>
             <div className="space-y-2">
               {powderStorage.map((tip, index) => (
                 <div key={index} className="flex items-start space-x-2">
@@ -181,7 +170,7 @@ export default function HygieneBereidingPage() {
           </div>
 
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+            <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
               <Refrigerator className="w-5 h-5 mr-2" />
               Bereide flesvoeding:
             </h2>
@@ -198,7 +187,7 @@ export default function HygieneBereidingPage() {
 
         {/* Travel feeding */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Onderweg flesvoeding</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Onderweg flesvoeding</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
@@ -229,7 +218,7 @@ export default function HygieneBereidingPage() {
 
         {/* Bottle warmer vs microwave */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
             <Thermometer className="w-5 h-5 mr-2" />
             Flessenwarmer vs Magnetron
           </h2>
@@ -275,20 +264,20 @@ export default function HygieneBereidingPage() {
 
         {/* Navigation */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Meer informatie</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Meer informatie</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 
               href="/kennisbank/veiligheid"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-gray-800">Veiligheidsrichtlijnen →</div>
+              <div className="font-medium text-primary">Veiligheidsrichtlijnen →</div>
               <div className="text-sm text-gray-600">Belangrijke veiligheidstips</div>
             </Link>
             <Link 
               href="/kennisbank/praktische-tips"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-gray-800">Praktische Tips →</div>
+              <div className="font-medium text-primary">Praktische Tips →</div>
               <div className="text-sm text-gray-600">Handige tips voor ouders</div>
             </Link>
           </div>

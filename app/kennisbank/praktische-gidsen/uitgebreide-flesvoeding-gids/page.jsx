@@ -25,11 +25,11 @@ export default function UitgebreideFlesvoedingGids() {
           
           {/* Header */}
           <div className="mb-8">
-            <div className="text-sm text-blue-600 mb-2">Kennisbank • Praktische Gidsen</div>
-            <h1 className="text-4xl font-bold text-gray-800 mb-4">
+            <div className="text-sm text-gray-600 mb-2">Kennisbank • Praktische Gidsen</div>
+            <h1 className="text-4xl font-bold text-primary mb-4">
               Uitgebreide Flesvoeding Gids 2025
             </h1>
-            <p className="text-xl text-gray-600 mb-6">
+            <p className="text-gray-600 mb-6">
               Alles wat je moet weten over flesvoeding: van geld besparen tot werk combineren. 
               5 complete gidsen in één uitgebreide resource.
             </p>
@@ -42,21 +42,21 @@ export default function UitgebreideFlesvoedingGids() {
 
           {/* Table of Contents */}
           <div className="mb-12 bg-gray-50 rounded-xl p-6">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">Inhoudsopgave</h2>
+            <h2 className="text-2xl font-bold text-primary mb-4">Inhoudsopgave</h2>
             <nav className="space-y-2">
-              <a href="#geld-besparen" className="block text-blue-600 hover:text-gray-700 font-medium">
+              <a href="#geld-besparen" className="block text-gray-600 hover:text-gray-700 font-medium">
                 1. Geld Besparen op Flesvoeding - Bespaar tot €500 per jaar
               </a>
-              <a href="#kosten-analyse" className="block text-blue-600 hover:text-gray-700 font-medium">
+              <a href="#kosten-analyse" className="block text-gray-600 hover:text-gray-700 font-medium">
                 2. Kosten van Flesvoeding - Volledige kostenanalyse 2025
               </a>
-              <a href="#borst-naar-fles" className="block text-blue-600 hover:text-gray-700 font-medium">
+              <a href="#borst-naar-fles" className="block text-gray-600 hover:text-gray-700 font-medium">
                 3. Overstappen van Borst naar Fles - Stap-voor-stap overgang
               </a>
-              <a href="#werk-combineren" className="block text-blue-600 hover:text-gray-700 font-medium">
+              <a href="#werk-combineren" className="block text-gray-600 hover:text-gray-700 font-medium">
                 4. Flesvoeding en Werk Combineren - Voor werkende ouders
               </a>
-              <a href="#fles-weigering" className="block text-blue-600 hover:text-gray-700 font-medium">
+              <a href="#fles-weigering" className="block text-gray-600 hover:text-gray-700 font-medium">
                 5. Baby Weigert de Fles - Probleemoplossende gids
               </a>
             </nav>
@@ -65,7 +65,7 @@ export default function UitgebreideFlesvoedingGids() {
           {/* Blog 1: Geld Besparen */}
           <section id="geld-besparen" className="mb-16">
             <div className="border-l-4 border-green-500 pl-6 mb-8">
-              <h2 className="text-3xl font-bold text-gray-800 mb-2">
+              <h2 className="text-3xl font-bold text-primary mb-2">
                 1. Geld Besparen op Flesvoeding - Volledige Gids 2025
               </h2>
               <p className="text-gray-600">
@@ -249,8 +249,8 @@ export default function UitgebreideFlesvoedingGids() {
 
           {/* Blog 2: Kosten Analyse */}
           <section id="kosten-analyse" className="mb-16">
-            <div className="border-l-4 border-blue-500 pl-6 mb-8">
-              <h2 className="text-3xl font-bold text-gray-800 mb-2">
+            <div className="border-l-4 border-primary pl-6 mb-8">
+              <h2 className="text-3xl font-bold text-primary mb-2">
                 2. Kosten van Flesvoeding - Volledige Kostenanalyse 2025
               </h2>
               <p className="text-gray-600">
@@ -275,7 +275,7 @@ export default function UitgebreideFlesvoedingGids() {
                 </div>
                 
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-                  <h5 className="font-bold text-blue-800">Middensegment:</h5>
+                  <h5 className="font-bold text-gray-600">Middensegment:</h5>
                   <ul className="text-sm">
                     <li>Hero Baby: €11,99 × 4,5 = <strong>€54/maand</strong></li>
                     <li>Aptamil: €13,49 × 4,5 = <strong>€61/maand</strong></li>
@@ -328,7 +328,7 @@ export default function UitgebreideFlesvoedingGids() {
           {/* Blog 3: Overstappen van Borst naar Fles */}
           <section id="borst-naar-fles" className="mb-16">
             <div className="border-l-4 border-purple-500 pl-6 mb-8">
-              <h2 className="text-3xl font-bold text-gray-800 mb-2">
+              <h2 className="text-3xl font-bold text-primary mb-2">
                 3. Overstappen van Borst naar Fles - Volledige Overgang Gids
               </h2>
               <p className="text-gray-600">
@@ -388,7 +388,7 @@ export default function UitgebreideFlesvoedingGids() {
 
               <div className="space-y-6 my-6">
                 <div className="border border-gray-200 rounded-lg p-4">
-                  <h4 className="font-bold text-blue-600">Week 1: Kennismaking Fase</h4>
+                  <h4 className="font-bold text-gray-600">Week 1: Kennismaking Fase</h4>
                   <p><strong>Doel:</strong> Baby wennen aan fles zonder druk</p>
                   <ul>
                     <li>Kies rustig moment tussen voedingen</li>
@@ -399,7 +399,7 @@ export default function UitgebreideFlesvoedingGids() {
                 </div>
 
                 <div className="border border-gray-200 rounded-lg p-4">
-                  <h4 className="font-bold text-blue-600">Week 2: Routine Opbouwen</h4>
+                  <h4 className="font-bold text-gray-600">Week 2: Routine Opbouwen</h4>
                   <p><strong>Doel:</strong> Vestig 1-2 betrouwbare fles voedingen</p>
                   <ul>
                     <li>Vervang 1 consistente dagelijkse voeding</li>
@@ -409,7 +409,7 @@ export default function UitgebreideFlesvoedingGids() {
                 </div>
 
                 <div className="border border-gray-200 rounded-lg p-4">
-                  <h4 className="font-bold text-blue-600">Week 3-4: Opschalen</h4>
+                  <h4 className="font-bold text-gray-600">Week 3-4: Opschalen</h4>
                   <p><strong>Doel:</strong> Verhoog naar 3-4 fles voedingen per dag</p>
                   <ul>
                     <li>Week 3: Ochtend borst, 3 flessen, avond borst</li>
@@ -454,7 +454,7 @@ export default function UitgebreideFlesvoedingGids() {
           {/* Blog 4: Flesvoeding en Werk */}
           <section id="werk-combineren" className="mb-16">
             <div className="border-l-4 border-orange-500 pl-6 mb-8">
-              <h2 className="text-3xl font-bold text-gray-800 mb-2">
+              <h2 className="text-3xl font-bold text-primary mb-2">
                 4. Flesvoeding en Werk Combineren - Praktische Gids voor Werkende Ouders
               </h2>
               <p className="text-gray-600">
@@ -594,7 +594,7 @@ export default function UitgebreideFlesvoedingGids() {
           {/* Blog 5: Baby Weigert de Fles */}
           <section id="fles-weigering" className="mb-16">
             <div className="border-l-4 border-red-500 pl-6 mb-8">
-              <h2 className="text-3xl font-bold text-gray-800 mb-2">
+              <h2 className="text-3xl font-bold text-primary mb-2">
                 5. Baby Weigert de Fles - Volledige Probleemoplossende Gids
               </h2>
               <p className="text-gray-600">
@@ -625,7 +625,7 @@ export default function UitgebreideFlesvoedingGids() {
                 </div>
 
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-                  <h4 className="font-bold text-blue-800">2. Speen Incompatibiliteit (28%)</h4>
+                  <h4 className="font-bold text-gray-600">2. Speen Incompatibiliteit (28%)</h4>
                   <p className="text-sm">Verkeerde doorstroomsnelheid, vorm, of materiaal.</p>
                   <ul className="text-sm">
                     <li>Test verschillende doorstroomsnelheden</li>
@@ -724,8 +724,8 @@ export default function UitgebreideFlesvoedingGids() {
           </section>
 
           {/* Final Call-to-Action */}
-          <div className="bg-gradient-to-r from-blue-50 to-green-50 border border-gray-200 rounded-xl p-8 text-center">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">
+          <div className="bg-gradient-to-r from-gray-50 to-green-50 border border-gray-200 rounded-xl p-8 text-center">
+            <h2 className="text-2xl font-bold text-primary mb-4">
               Klaar om te Beginnen?
             </h2>
             <p className="text-gray-600 mb-6">
@@ -734,7 +734,7 @@ export default function UitgebreideFlesvoedingGids() {
             <div className="flex flex-wrap justify-center gap-4">
               <a 
                 href="/calculator" 
-                className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
+                className="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-dark transition-colors"
               >
                 Bereken Kosten
               </a>

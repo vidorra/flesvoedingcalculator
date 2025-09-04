@@ -30,17 +30,6 @@ export default function BasisFlesvoedingPage() {
   return (
     <Layout>
       <div className="space-y-6">
-        {/* Breadcrumb */}
-        <div className="flex items-center space-x-2 text-sm text-gray-600">
-          <Link href="/" className="hover:text-primary flex items-center">
-            <Home className="w-4 h-4 mr-1" />
-            Home
-          </Link>
-          <ArrowRight className="w-4 h-4" />
-          <Link href="/kennisbank" className="hover:text-primary">Kennisbank</Link>
-          <ArrowRight className="w-4 h-4" />
-          <span className="text-primary">Basis Flesvoeding</span>
-        </div>
 
         {/* Header */}
         <div className="mb-6">
@@ -56,7 +45,7 @@ export default function BasisFlesvoedingPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* What is bottle feeding */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-gray-800 mb-4">Wat is flesvoeding?</h2>
+            <h2 className="text-lg font-semibold text-primary mb-4">Wat is flesvoeding?</h2>
             <p className="text-gray-600 leading-relaxed">
               Flesvoeding is speciaal samengestelde babymelk die alle voedingsstoffen bevat die een baby nodig heeft 
               voor gezonde groei en ontwikkeling. In Nederland moet alle flesvoeding voldoen aan strenge Europese 
@@ -66,7 +55,7 @@ export default function BasisFlesvoedingPage() {
 
           {/* When to choose bottle feeding */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-gray-800 mb-4">Wanneer kies je voor flesvoeding?</h2>
+            <h2 className="text-lg font-semibold text-primary mb-4">Wanneer kies je voor flesvoeding?</h2>
             <div className="space-y-2">
               {reasons.map((reason, index) => (
                 <div key={index} className="flex items-start space-x-2">
@@ -80,7 +69,7 @@ export default function BasisFlesvoedingPage() {
 
         {/* Benefits */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Voordelen van flesvoeding</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Voordelen van flesvoeding</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {benefits.map((benefit, index) => (
               <div key={index} className="flex items-start space-x-2">
@@ -109,20 +98,20 @@ export default function BasisFlesvoedingPage() {
 
         {/* Navigation to other pages */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Meer weten?</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Meer weten?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 
               href="/kennisbank/soorten-flesvoeding"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-gray-800">Soorten Flesvoeding →</div>
+              <div className="font-medium text-primary">Soorten Flesvoeding →</div>
               <div className="text-sm text-gray-600">Leer over nummer 1, 2 en 3</div>
             </Link>
             <Link 
               href="/kennisbank/voedingstechnieken"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-gray-800">Voedingstechnieken →</div>
+              <div className="font-medium text-primary">Voedingstechnieken →</div>
               <div className="text-sm text-gray-600">Hoe geef je de fles goed?</div>
             </Link>
           </div>

@@ -79,17 +79,6 @@ export default function HygieneBereidingPage() {
   return (
     <Layout>
       <div className="space-y-6">
-        {/* Breadcrumb */}
-        <div className="flex items-center space-x-2 text-sm text-gray-600">
-          <Link href="/" className="hover:text-primary flex items-center">
-            <Home className="w-4 h-4 mr-1" />
-            Home
-          </Link>
-          <ArrowRight className="w-4 h-4" />
-          <Link href="/kennisbank" className="hover:text-primary">Kennisbank</Link>
-          <ArrowRight className="w-4 h-4" />
-          <span className="text-primary">Hygiëne & Bereiding</span>
-        </div>
 
         {/* Header */}
         <div className="mb-6">
@@ -137,7 +126,7 @@ export default function HygieneBereidingPage() {
 
         {/* Water for formula */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Water voor flesvoeding</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Water voor flesvoeding</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
@@ -169,7 +158,7 @@ export default function HygieneBereidingPage() {
         {/* Storage */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-gray-800 mb-4">Poeder bewaren:</h2>
+            <h2 className="text-lg font-semibold text-primary mb-4">Poeder bewaren:</h2>
             <div className="space-y-2">
               {powderStorage.map((tip, index) => (
                 <div key={index} className="flex items-start space-x-2">
@@ -181,7 +170,7 @@ export default function HygieneBereidingPage() {
           </div>
 
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+            <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
               <Refrigerator className="w-5 h-5 mr-2" />
               Bereide flesvoeding:
             </h2>
@@ -198,7 +187,7 @@ export default function HygieneBereidingPage() {
 
         {/* Travel feeding */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Onderweg flesvoeding</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Onderweg flesvoeding</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
@@ -229,7 +218,7 @@ export default function HygieneBereidingPage() {
 
         {/* Bottle warmer vs microwave */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
             <Thermometer className="w-5 h-5 mr-2" />
             Flessenwarmer vs Magnetron
           </h2>
@@ -275,14 +264,14 @@ export default function HygieneBereidingPage() {
 
         {/* Flessen Steriliseren Section */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Flessen Steriliseren: Complete Gids</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Flessen Steriliseren: Complete Gids</h2>
           
           <div className="bg-gray-50 rounded-xl p-4 border border-gray-200 mb-6">
-            <h3 className="text-blue-900 font-semibold mb-2">⏰ Tot wanneer steriliseren?</h3>
-            <p className="text-blue-800 text-sm mb-2">
+            <h3 className="text-primary font-semibold mb-2">⏰ Tot wanneer steriliseren?</h3>
+            <p className="text-gray-600 text-sm mb-2">
               <strong>Tot 6 maanden verplicht</strong> - Baby's immuunsysteem is dan voldoende ontwikkeld
             </p>
-            <ul className="text-blue-800 text-sm space-y-1">
+            <ul className="text-gray-600 text-sm space-y-1">
               <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span><strong>0-3 maanden:</strong> Altijd steriliseren (ook water koken)</span>
@@ -298,7 +287,7 @@ export default function HygieneBereidingPage() {
             </ul>
           </div>
 
-          <h3 className="font-medium text-gray-800 mb-4">Sterilisatiemethoden: Voor- en Nadelen</h3>
+          <h3 className="font-medium text-primary mb-4">Sterilisatiemethoden: Voor- en Nadelen</h3>
           
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
@@ -391,12 +380,12 @@ export default function HygieneBereidingPage() {
             </div>
           </div>
 
-          <h3 className="font-medium text-gray-800 mb-4">Nederlandse Context & Water</h3>
+          <h3 className="font-medium text-primary mb-4">Nederlandse Context & Water</h3>
           
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
-              <h4 className="text-blue-900 font-medium mb-2">💧 Nederlands Kraanwater</h4>
-              <ul className="text-blue-800 text-sm space-y-1">
+              <h4 className="text-primary font-medium mb-2">💧 Nederlands Kraanwater</h4>
+              <ul className="text-gray-600 text-sm space-y-1">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span>✅ Wereldklasse kwaliteit, EU-standaarden</span>
@@ -488,20 +477,20 @@ export default function HygieneBereidingPage() {
 
         {/* Navigation */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Meer informatie</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Meer informatie</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 
               href="/kennisbank/veiligheid"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-gray-800">Veiligheidsrichtlijnen →</div>
+              <div className="font-medium text-primary">Veiligheidsrichtlijnen →</div>
               <div className="text-sm text-gray-600">Belangrijke veiligheidstips</div>
             </Link>
             <Link 
               href="/kennisbank/praktische-tips"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-gray-800">Praktische Tips →</div>
+              <div className="font-medium text-primary">Praktische Tips →</div>
               <div className="text-sm text-gray-600">Handige tips voor ouders</div>
             </Link>
           </div>

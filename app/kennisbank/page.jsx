@@ -209,14 +209,14 @@ export default function KennisbankPage() {
               value={filteredContent}
               onChange={(e) => setFilteredContent(e.target.value)}
               placeholder="Zoek op leeftijd, onderwerp of vraag..."
-              className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none text-gray-800 placeholder:text-gray-500"
+              className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none text-primary placeholder:text-gray-500"
             />
           </div>
         </div>
 
         {/* Categories Filter */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-semibold text-gray-800 mb-4">Categorieën</h2>
+          <h2 className="font-semibold text-primary mb-4">Categorieën</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
             {/* All Categories */}
             <button
@@ -258,7 +258,7 @@ export default function KennisbankPage() {
         {/* Filtered Articles Display */}
         {getFilteredArticles().length > 0 && (
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h3 className="font-semibold text-gray-800 mb-4">
+            <h3 className="font-semibold text-primary mb-4">
               {selectedCategory === 'all' ? 'Alle artikelen' : knowledgeCategories.find(c => c.id === selectedCategory)?.title}
               <span className="text-sm font-normal text-gray-500 ml-2">({getFilteredArticles().length} {getFilteredArticles().length === 1 ? 'artikel' : 'artikelen'})</span>
             </h3>
@@ -276,7 +276,7 @@ export default function KennisbankPage() {
                       <Icon className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                       <div>
                         <div className="flex items-center justify-between mb-1">
-                          <h4 className="font-medium text-gray-800">{article.title}</h4>
+                          <h4 className="font-medium text-primary">{article.title}</h4>
                           {article.duration && (
                             <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">{article.duration}</span>
                           )}
@@ -293,7 +293,7 @@ export default function KennisbankPage() {
 
         {/* Knowledge Base Categories */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-semibold text-gray-800 mb-4">Kennisbank Onderwerpen</h2>
+          <h2 className="font-semibold text-primary mb-4">Kennisbank Onderwerpen</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {knowledgeCategories.map((category) => {
               const Icon = category.icon
@@ -327,7 +327,7 @@ export default function KennisbankPage() {
 
         {/* Quick Access */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-semibold text-gray-800 mb-4">Snelle toegang</h2>
+          <h2 className="font-semibold text-primary mb-4">Snelle toegang</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Link 
               href="/voedingsschemas"
@@ -335,7 +335,7 @@ export default function KennisbankPage() {
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="font-medium text-gray-800">Voedingsschema&apos;s</h3>
+                  <h3 className="font-medium text-primary">Voedingsschema&apos;s</h3>
                   <p className="text-sm text-gray-600 mt-1">Interactieve schema&apos;s per leeftijd</p>
                 </div>
                 <ArrowRight className="w-5 h-5 text-gray-400" />
@@ -347,7 +347,7 @@ export default function KennisbankPage() {
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="font-medium text-gray-800">Flesvoeding Calculator</h3>
+                  <h3 className="font-medium text-primary">Flesvoeding Calculator</h3>
                   <p className="text-sm text-gray-600 mt-1">Bereken persoonlijke hoeveelheden</p>
                 </div>
                 <ArrowRight className="w-5 h-5 text-gray-400" />
@@ -359,7 +359,7 @@ export default function KennisbankPage() {
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="font-medium text-gray-800">Veelgestelde Vragen</h3>
+                  <h3 className="font-medium text-primary">Veelgestelde Vragen</h3>
                   <p className="text-sm text-gray-600 mt-1">Antwoorden op veel gestelde vragen</p>
                 </div>
                 <ArrowRight className="w-5 h-5 text-gray-400" />
@@ -371,7 +371,7 @@ export default function KennisbankPage() {
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="font-medium text-gray-800">Partners & Merken</h3>
+                  <h3 className="font-medium text-primary">Partners & Merken</h3>
                   <p className="text-sm text-gray-600 mt-1">Informatie over verschillende merken</p>
                 </div>
                 <ArrowRight className="w-5 h-5 text-gray-400" />
@@ -382,10 +382,10 @@ export default function KennisbankPage() {
 
         {/* Nederlandse Context */}
         <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
-          <h2 className="font-semibold text-blue-800 mb-4">Flesvoeding in Nederland</h2>
+          <h2 className="font-semibold text-gray-600 mb-4">Flesvoeding in Nederland</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
-              <h3 className="font-medium text-blue-800 mb-3">Regelgeving & Veiligheid:</h3>
+              <h3 className="font-medium text-gray-600 mb-3">Regelgeving & Veiligheid:</h3>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -410,7 +410,7 @@ export default function KennisbankPage() {
               </ul>
             </div>
             <div>
-              <h3 className="font-medium text-blue-800 mb-3">Beschikbaarheid & Kosten:</h3>
+              <h3 className="font-medium text-gray-600 mb-3">Beschikbaarheid & Kosten:</h3>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -439,38 +439,38 @@ export default function KennisbankPage() {
 
         {/* FAQ Section */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-semibold text-gray-800 mb-4">Meest Gestelde Vragen</h2>
+          <h2 className="font-semibold text-primary mb-4">Meest Gestelde Vragen</h2>
           <div className="space-y-4">
             <div className="border-l-4 border-primary pl-4">
-              <h3 className="font-medium text-gray-800 mb-2">Welk merk flesvoeding is het beste?</h3>
+              <h3 className="font-medium text-primary mb-2">Welk merk flesvoeding is het beste?</h3>
               <p className="text-sm text-gray-600">
                 Alle Nederlandse merken voldoen aan dezelfde strenge EU-eisen. Kruidvat huismerk is even veilig als Nutrilon of Hero Baby, maar wel goedkoper. Kies op basis van budget en beschikbaarheid.
               </p>
             </div>
             
             <div className="border-l-4 border-primary pl-4">
-              <h3 className="font-medium text-gray-800 mb-2">Hoeveel kost flesvoeding per maand?</h3>
+              <h3 className="font-medium text-primary mb-2">Hoeveel kost flesvoeding per maand?</h3>
               <p className="text-sm text-gray-600">
                 Budget variant (Kruidvat): €35-50/maand. Middenklasse (Hero Baby): €50-70/maand. Premium (Nutrilon): €70-90/maand. Eerste jaar totaal: €400-1000 afhankelijk van merkkeuze.
               </p>
             </div>
             
             <div className="border-l-4 border-primary pl-4">
-              <h3 className="font-medium text-gray-800 mb-2">Wanneer overstappen van nummer 1 naar 2?</h3>
+              <h3 className="font-medium text-primary mb-2">Wanneer overstappen van nummer 1 naar 2?</h3>
               <p className="text-sm text-gray-600">
                 Pas vanaf 6 maanden én wanneer baby vaste voeding krijgt. Nummer 1 mag tot 12 maanden gebruikt worden. Overstappen is dus optioneel, niet verplicht.
               </p>
             </div>
             
             <div className="border-l-4 border-primary pl-4">
-              <h3 className="font-medium text-gray-800 mb-2">Kan ik van borstvoeding overstappen naar flesvoeding?</h3>
+              <h3 className="font-medium text-primary mb-2">Kan ik van borstvoeding overstappen naar flesvoeding?</h3>
               <p className="text-sm text-gray-600">
                 Ja, dit kan op elke leeftijd. Geleidelijke overgang over 1-2 weken voorkomt borstontsteking. Combivoeiding (borstvoeding + flesvoeding) is ook mogelijk.
               </p>
             </div>
             
             <div className="border-l-4 border-primary pl-4">
-              <h3 className="font-medium text-gray-800 mb-2">Mijn baby weigert de fles, wat nu?</h3>
+              <h3 className="font-medium text-primary mb-2">Mijn baby weigert de fles, wat nu?</h3>
               <p className="text-sm text-gray-600">
                 Check temperatuur (37°C), probeer andere speen, laat partner proberen, gebruik afgekolfde melk eerst. Geduld is belangrijk - sommige baby's hebben tijd nodig.
               </p>
@@ -480,7 +480,7 @@ export default function KennisbankPage() {
 
         {/* Quick Tools */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-semibold text-gray-800 mb-4 flex items-center">
+          <h2 className="font-semibold text-primary mb-4 flex items-center">
             <Info className="w-5 h-5 mr-2 text-primary" />
             Handige Tools
           </h2>
@@ -507,11 +507,11 @@ export default function KennisbankPage() {
             </Link>
             <Link 
               href="/infographics"
-              className="p-4 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 border border-gray-200 hover:border-primary transition-colors"
+              className="p-4 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 hover:border-primary transition-colors"
             >
-              <h3 className="font-medium text-blue-800 mb-2">Visuele Guides</h3>
-              <p className="text-sm text-blue-600 mb-3">Stap-voor-stap infographics en tijdlijnen</p>
-              <div className="text-blue-600 hover:text-gray-700 font-medium text-sm flex items-center">
+              <h3 className="font-medium text-gray-600 mb-2">Visuele Guides</h3>
+              <p className="text-sm text-gray-600 mb-3">Stap-voor-stap infographics en tijdlijnen</p>
+              <div className="text-gray-600 hover:text-gray-700 font-medium text-sm flex items-center">
                 Bekijk guides <ArrowRight className="w-4 h-4 ml-1" />
               </div>
             </Link>

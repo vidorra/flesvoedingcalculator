@@ -62,17 +62,6 @@ export default function PraktischeTipsPage() {
   return (
     <Layout>
       <div className="space-y-6">
-        {/* Breadcrumb */}
-        <div className="flex items-center space-x-2 text-sm text-gray-600">
-          <Link href="/" className="hover:text-primary flex items-center">
-            <Home className="w-4 h-4 mr-1" />
-            Home
-          </Link>
-          <ArrowRight className="w-4 h-4" />
-          <Link href="/kennisbank" className="hover:text-primary">Kennisbank</Link>
-          <ArrowRight className="w-4 h-4" />
-          <span className="text-primary">Praktische Tips</span>
-        </div>
 
         {/* Header */}
         <div className="mb-6">
@@ -154,12 +143,12 @@ export default function PraktischeTipsPage() {
 
         {/* Organization tips */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Organisatie & Efficiëntie</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Organisatie & Efficiëntie</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {organizationTips.map((section, index) => (
               <div key={index} className="border border-gray-200 rounded-lg p-4">
-                <h3 className="font-medium text-gray-800 mb-3">{section.title}:</h3>
+                <h3 className="font-medium text-primary mb-3">{section.title}:</h3>
                 <div className="space-y-2">
                   {section.tips.map((tip, tipIndex) => (
                     <div key={tipIndex} className="flex items-start space-x-2">
@@ -175,7 +164,7 @@ export default function PraktischeTipsPage() {
 
         {/* Age-specific tips */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Tips per Leeftijd</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Tips per Leeftijd</h2>
           
           <div className="space-y-4">
             {developmentTips.map((ageGroup, index) => (
@@ -246,20 +235,20 @@ export default function PraktischeTipsPage() {
 
         {/* Navigation */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Meer informatie</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Meer informatie</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 
               href="/voedingsschemas"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-gray-800">Voedingsschema&apos;s →</div>
+              <div className="font-medium text-primary">Voedingsschema&apos;s →</div>
               <div className="text-sm text-gray-600">Interactieve schema&apos;s per leeftijd</div>
             </Link>
             <Link 
               href="/"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-gray-800">Calculator →</div>
+              <div className="font-medium text-primary">Calculator →</div>
               <div className="text-sm text-gray-600">Bereken persoonlijke hoeveelheden</div>
             </Link>
           </div>
