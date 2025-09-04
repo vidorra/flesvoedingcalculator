@@ -112,12 +112,12 @@ export default function BasisFlesvoedingPage() {
         </div>
 
         {/* EU Regulations & Safety */}
-        <div className="bg-green-50 rounded-2xl border border-green-200 p-6">
+        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-green-800 mb-4">Veiligheid & Regelgeving in Nederland</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
               <h3 className="font-medium text-green-800 mb-3">EU-verordening 2016/127:</h3>
-              <div className="space-y-2 text-sm text-green-700">
+              <div className="space-y-2 text-sm text-gray-700">
                 <div className="flex items-start space-x-2">
                   <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
                   <span>Alle Nederlandse flesvoeding voldoet aan strenge EU-eisen</span>
@@ -139,7 +139,7 @@ export default function BasisFlesvoedingPage() {
             
             <div>
               <h3 className="font-medium text-green-800 mb-3">Nederlandse context:</h3>
-              <div className="space-y-2 text-sm text-green-700">
+              <div className="space-y-2 text-sm text-gray-700">
                 <div className="flex items-start space-x-2">
                   <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
                   <span>Kraanwater is veilig voor bereiding flesvoeding</span>
@@ -162,12 +162,12 @@ export default function BasisFlesvoedingPage() {
         </div>
 
         {/* Myth Busting */}
-        <div className="bg-blue-50 rounded-2xl border border-blue-200 p-6">
+        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-blue-800 mb-4">Veelgehoorde Mythes over Flesvoeding</h2>
           <div className="space-y-4">
             <div className="bg-white p-4 rounded-lg">
               <h3 className="font-medium text-red-600 mb-2">❌ Mythe: "Flesvoeding is minder gezond dan borstvoeding"</h3>
-              <p className="text-sm text-blue-700">
+              <p className="text-sm text-gray-700">
                 ✅ Feit: Moderne flesvoeding bevat alle essentiële voedingsstoffen. 
                 Elk kind dat goed groeit en gezond is, krijgt de juiste voeding.
               </p>
@@ -175,7 +175,7 @@ export default function BasisFlesvoedingPage() {
             
             <div className="bg-white p-4 rounded-lg">
               <h3 className="font-medium text-red-600 mb-2">❌ Mythe: "Dure merken zijn beter"</h3>
-              <p className="text-sm text-blue-700">
+              <p className="text-sm text-gray-700">
                 ✅ Feit: Alle merken voldoen aan dezelfde EU-richtlijnen. 
                 Kruidvat huismerk is even veilig als premium merken.
               </p>
@@ -183,7 +183,7 @@ export default function BasisFlesvoedingPage() {
             
             <div className="bg-white p-4 rounded-lg">
               <h3 className="font-medium text-red-600 mb-2">❌ Mythe: "Baby's worden minder slim van flesvoeding"</h3>
-              <p className="text-sm text-blue-700">
+              <p className="text-sm text-gray-700">
                 ✅ Feit: DHA (voor hersenontwikkeling) is verplicht in alle flesvoeding sinds 2020. 
                 Liefde en aandacht zijn belangrijker dan voedingstype.
               </p>
@@ -191,7 +191,7 @@ export default function BasisFlesvoedingPage() {
             
             <div className="bg-white p-4 rounded-lg">
               <h3 className="font-medium text-red-600 mb-2">❌ Mythe: "Flesvoeding baby's worden vaker ziek"</h3>
-              <p className="text-sm text-blue-700">
+              <p className="text-sm text-gray-700">
                 ✅ Feit: Goede hygiëne bij bereiding is belangrijker dan voedingstype. 
                 Veel factoren beïnvloeden weerstand (slaap, stress, genetica).
               </p>
@@ -271,17 +271,17 @@ export default function BasisFlesvoedingPage() {
             <div>
               <h3 className="font-medium text-gray-800 mb-3">Kosten van flesvoeding in Nederland</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-green-50 p-4 rounded-lg">
+                <div className="bg-gray-50 p-4 rounded-lg">
                   <h4 className="font-medium text-green-800 mb-2">Gemiddelde kosten per maand:</h4>
-                  <div className="space-y-1 text-sm text-green-700">
+                  <div className="space-y-1 text-sm text-gray-700">
                     <div>• Startvoeding (0-6 mnd): €15-25</div>
                     <div>• Opvolgmelk (6+ mnd): €20-30</div>
                     <div>• Totaal eerste jaar: circa €250-350</div>
                   </div>
                 </div>
-                <div className="bg-blue-50 p-4 rounded-lg">
+                <div className="bg-gray-50 p-4 rounded-lg">
                   <h4 className="font-medium text-blue-800 mb-2">Geld besparen tips:</h4>
-                  <div className="space-y-1 text-sm text-blue-700">
+                  <div className="space-y-1 text-sm text-gray-700">
                     <div>• Huismerken even goed als A-merken</div>
                     <div>• Grotere verpakkingen goedkoper</div>
                     <div>• Let op aanbiedingen</div>
@@ -340,7 +340,7 @@ export default function BasisFlesvoedingPage() {
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 mb-6">
-            <div className="bg-red-50 rounded-xl p-4 border border-red-200">
+            <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
               <h3 className="text-red-900 font-medium mb-3">Meest voorkomende oorzaken:</h3>
               <ul className="text-red-800 text-sm space-y-1">
                 <li className="flex items-center space-x-2">
@@ -366,7 +366,7 @@ export default function BasisFlesvoedingPage() {
               </ul>
             </div>
             
-            <div className="bg-green-50 rounded-xl p-4 border border-green-200">
+            <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
               <h3 className="text-green-900 font-medium mb-3">Snelle oplossingen:</h3>
               <ul className="text-green-800 text-sm space-y-1">
                 <li className="flex items-center space-x-2">
@@ -393,7 +393,7 @@ export default function BasisFlesvoedingPage() {
             </div>
           </div>
 
-          <div className="bg-blue-50 rounded-xl p-4 border border-blue-200 mb-6">
+          <div className="bg-gray-50 rounded-xl p-4 border border-gray-200 mb-6">
             <h3 className="text-blue-900 font-semibold mb-3">7-Dagen Actieplan bij Flesweigering:</h3>
             <div className="grid md:grid-cols-3 gap-4">
               <div className="bg-white rounded-lg p-3">
@@ -501,7 +501,7 @@ export default function BasisFlesvoedingPage() {
             </div>
           </div>
 
-          <div className="bg-green-50 rounded-xl p-4 border border-green-200">
+          <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
             <h3 className="text-green-900 font-medium mb-2">💡 Tips voor succes eerste keer:</h3>
             <div className="grid md:grid-cols-2 gap-4">
               <ul className="text-green-800 text-sm space-y-1">

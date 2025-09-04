@@ -90,8 +90,8 @@ export default function FlesvoedingVsBorstvoedingPage() {
   return (
     <Layout>
       <div className="grid grid-cols-12 gap-6 min-h-screen">
-      <div className="col-span-12 lg:col-span-7">
-        <div className="max-w-4xl mx-auto p-8 bg-white/80 backdrop-blur rounded-2xl shadow-lg border border-gray-200">
+        <div className="col-span-12 lg:col-span-7">
+          <div className="max-w-4xl mx-auto p-8 bg-white/80 backdrop-blur rounded-2xl shadow-lg border border-gray-200">
           
           {/* Breadcrumb */}
           <div className="flex items-center space-x-2 text-sm text-gray-600 mb-6">
@@ -118,9 +118,9 @@ export default function FlesvoedingVsBorstvoedingPage() {
               onderzoek. Alle feiten om een weloverwogen keuze te maken die past bij jouw situatie.
             </p>
             <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-              <span>📖 Leestijd: 12 minuten</span>
-              <span>🔬 Wetenschappelijk onderbouwd</span>
-              <span>⚖️ Objectieve vergelijking</span>
+              <span>Leestijd: 12 minuten</span>
+              <span>Wetenschappelijk onderbouwd</span>
+              <span>Objectieve vergelijking</span>
             </div>
           </div>
 
@@ -200,7 +200,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
                   Borstvoeding
                 </h3>
                 
-                <h4 className="font-medium text-green-700 mb-3">✅ Voordelen:</h4>
+                <h4 className="font-medium text-gray-700 mb-3">Voordelen:</h4>
                 <ul className="space-y-1 mb-4">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -220,7 +220,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
                   </li>
                 </ul>
                 
-                <h4 className="font-medium text-red-700 mb-3">❌ Nadelen:</h4>
+                <h4 className="font-medium text-gray-700 mb-3">Nadelen:</h4>
                 <ul className="space-y-1">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -243,12 +243,11 @@ export default function FlesvoedingVsBorstvoedingPage() {
 
               {/* Flesvoeding */}
               <div className="border border-gray-200 rounded-xl p-6">
-                <h3 className="font-semibold text-gray-800 mb-4 flex items-center">
-                  <span className="text-2xl mr-2">🍼</span>
+                <h3 className="font-semibold text-gray-800 mb-4">
                   Flesvoeding
                 </h3>
                 
-                <h4 className="font-medium text-green-700 mb-3">✅ Voordelen:</h4>
+                <h4 className="font-medium text-gray-700 mb-3">Voordelen:</h4>
                 <ul className="space-y-1 mb-4">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -268,7 +267,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
                   </li>
                 </ul>
                 
-                <h4 className="font-medium text-red-700 mb-3">❌ Nadelen:</h4>
+                <h4 className="font-medium text-gray-700 mb-3">Nadelen:</h4>
                 <ul className="space-y-1">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -374,7 +373,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
               
               <div className="mt-6 p-4 border border-gray-200 rounded-lg">
                 <p className="text-sm text-gray-600">
-                  <strong>🔬 Onderzoek conclusie:</strong> Langetermijn verschillen zijn kleiner dan vaak gedacht. 
+                  <strong>Onderzoek conclusie:</strong> Langetermijn verschillen zijn kleiner dan vaak gedacht. 
                   Sociaal-economische factoren hebben meer invloed dan voedingsmethode.
                 </p>
               </div>
@@ -395,7 +394,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
                   <ul className="space-y-2">
                     {factor.criteria.map((criterion, criterionIndex) => (
                       <li key={criterionIndex} className="flex items-center space-x-2">
-                        <span className="text-green-600">✅</span>
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                         <span className="text-gray-700">{criterion}</span>
                       </li>
                     ))}
@@ -454,7 +453,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
             </div>
             
             <div className="mt-6 p-4 border border-gray-200 rounded-lg text-center">
-              <p className="text-lg font-medium text-gray-800 mb-2">💚 Uiteindelijk:</p>
+              <p className="text-lg font-medium text-gray-800 mb-2">Uiteindelijk:</p>
               <p className="text-gray-600">
                 Een gelukkige, ontspannen ouder die vol vertrouwen voedt, is het belangrijkste voor 
                 een baby's ontwikkeling - ongeacht de methode.
@@ -462,10 +461,10 @@ export default function FlesvoedingVsBorstvoedingPage() {
             </div>
           </section>
 
+          </div>
         </div>
-      </div>
-
-      <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />
+        
+        <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />
       </div>
     </Layout>
   )

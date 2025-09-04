@@ -48,15 +48,15 @@ export default function KostenVanFlesvoeding() {
               Alle kosten op een rij + tips om geld te besparen zonder kwaliteit in te leveren
             </p>
 
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">💰 Inleiding</h2>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-8">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed">
                 Hoeveel kost flesvoeding nou eigenlijk? Deze vraag houdt veel aanstaande ouders bezig. Deze complete budgetgids geeft je alle Nederlandse prijzen van 2025, van goedkoopste tot duurste opties. Plus: praktische bespaartips die kunnen opleveren tot €300 per jaar, zonder in te leveren op kwaliteit of veiligheid.
               </p>
             </div>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">📊 Totaal overzicht kosten eerste jaar</h2>
+              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Totaal overzicht kosten eerste jaar</h2>
               
               <h3 className="text-xl font-semibold text-gray-800 mb-4">Complete kosten flesvoeding (0-12 maanden)</h3>
               
@@ -109,15 +109,15 @@ export default function KostenVanFlesvoeding() {
                 <strong>Gemiddelde maandkosten:</strong> €50-130 afhankelijk van keuzes
               </p>
 
-              <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                 <p className="text-gray-700">
-                  💡 <strong>Vergelijking</strong>: Borstvoeding kost €40-80 per maand (extra voeding moeder + hulpmiddelen)
+                  <strong>Vergelijking</strong>: Borstvoeding kost €40-80 per maand (extra voeding moeder + hulpmiddelen)
                 </p>
               </div>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">🥛 Flesvoeding poeder: Prijsoverzicht per merk</h2>
+              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Flesvoeding poeder: Prijsoverzicht per merk</h2>
               
               <div className="space-y-8">
                 <div>
@@ -317,7 +317,7 @@ export default function KostenVanFlesvoeding() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">🍼 Flessen en spenen: Wat heb je nodig?</h2>
+              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Flessen en spenen: Wat heb je nodig?</h2>
               
               <div className="space-y-6">
                 <div>
@@ -402,7 +402,7 @@ export default function KostenVanFlesvoeding() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">💡 25 Bespaartips zonder kwaliteitsverlies</h2>
+              <h2 className="text-3xl font-semibold text-gray-800 mb-6">25 Bespaartips zonder kwaliteitsverlies</h2>
               
               <div className="space-y-6">
                 <div>
@@ -542,7 +542,7 @@ export default function KostenVanFlesvoeding() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">❓ Veelgestelde vragen over kosten</h2>
+              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Veelgestelde vragen over kosten</h2>
               
               <div className="space-y-6">
                 <div className="border border-gray-200 rounded-lg p-6">
@@ -573,9 +573,9 @@ export default function KostenVanFlesvoeding() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">🎯 Conclusie: Slim budgetteren voor flesvoeding</h2>
+              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Conclusie: Slim budgetteren voor flesvoeding</h2>
               
-              <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Flesvoeding hoeft niet duur te zijn als je slimme keuzes maakt. Met de juiste aanpak kun je <strong>€200-400 per jaar</strong> besparen zonder in te leveren op kwaliteit of veiligheid.
                 </p>
@@ -623,9 +623,9 @@ export default function KostenVanFlesvoeding() {
                 </ul>
               </div>
 
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
                 <p className="text-gray-700 mb-4">
-                  💚 <strong>Onthoud</strong>: Het belangrijkste is dat je baby goed gevoed wordt en jij je financieel comfortabel voelt bij je keuzes. Dure flesvoeding maakt je niet tot een betere ouder.
+                  <strong>Onthoud</strong>: Het belangrijkste is dat je baby goed gevoed wordt en jij je financieel comfortabel voelt bij je keuzes. Dure flesvoeding maakt je niet tot een betere ouder.
                 </p>
                 
                 <h4 className="font-semibold text-gray-800 mb-3">Volgende stappen:</h4>

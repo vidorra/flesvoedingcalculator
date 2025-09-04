@@ -138,7 +138,7 @@ export default function ProblemenOplossenPage() {
             <div className="space-y-4">
               <div>
                 <h3 className="font-medium text-green-800 mb-2">Normaal spugen:</h3>
-                <ul className="space-y-1 text-sm text-green-700">
+                <ul className="space-y-1 text-sm text-gray-700">
                   <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span>Tot 1 jaar normaal</span>
@@ -160,7 +160,7 @@ export default function ProblemenOplossenPage() {
               
               <div>
                 <h3 className="font-medium text-red-800 mb-2">Problematische reflux:</h3>
-                <ul className="space-y-1 text-sm text-red-700">
+                <ul className="space-y-1 text-sm text-gray-700">
                   <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span>Grote hoeveelheden</span>
@@ -206,7 +206,7 @@ export default function ProblemenOplossenPage() {
                 {constipationSigns.map((sign, index) => (
                   <div key={index} className="flex items-start space-x-2">
                     <AlertCircle className="w-4 h-4 text-red-500 mt-0.5 flex-shrink-0" />
-                    <span className="text-red-700 text-sm">{sign}</span>
+                    <span className="text-gray-700 text-sm">{sign}</span>
                   </div>
                 ))}
               </div>
@@ -217,8 +217,8 @@ export default function ProblemenOplossenPage() {
               <div className="space-y-2">
                 {constipationSolutions.map((solution, index) => (
                   <div key={index} className="flex items-start space-x-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-green-700 text-sm">{solution}</span>
+                    <div className="w-2 h-2 bg-gray-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-gray-700 text-sm">{solution}</span>
                   </div>
                 ))}
               </div>
@@ -227,7 +227,7 @@ export default function ProblemenOplossenPage() {
         </div>
 
         {/* Diarrhea */}
-        <div className="bg-red-50 rounded-2xl border border-red-200 p-6">
+        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-red-800 mb-4 flex items-center">
             <Phone className="w-5 h-5 mr-2" />
             Diarree - Wanneer arts bellen
@@ -240,7 +240,7 @@ export default function ProblemenOplossenPage() {
                 {diarrheaWarnings.map((warning, index) => (
                   <div key={index} className="flex items-start space-x-2">
                     <AlertCircle className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-red-700 text-sm font-medium">{warning}</span>
+                    <span className="text-gray-700 text-sm font-medium">{warning}</span>
                   </div>
                 ))}
               </div>

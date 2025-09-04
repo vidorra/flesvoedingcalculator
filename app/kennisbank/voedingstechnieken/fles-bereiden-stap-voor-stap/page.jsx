@@ -48,15 +48,15 @@ export default function FlesBerenStapVoorStap() {
               Complete handleiding voor veilige en correcte flesbereiding - van poeder tot klare fles
             </p>
 
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">🍼 Inleiding</h2>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-8">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed">
                 Het correct bereiden van een fles is een vaardigheid die elke ouder onder de knie moet hebben. Een goed bereide fles zorgt niet alleen voor optimale voeding, maar voorkomt ook gezondheidsrisico's zoals bacteriële infecties en voedingsproblemen. Deze uitgebreide stap-voor-stap gids laat zien hoe je elke keer perfect flesvoeding bereidt, volgens Nederlandse veiligheidsnormen.
               </p>
             </div>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">🧼 Voorbereiding: De basis van veilige flesbereiding</h2>
+              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Voorbereiding: De basis van veilige flesbereiding</h2>
               
               <div className="mb-6">
                 <h3 className="text-2xl font-semibold text-gray-800 mb-4">Hygiëne: Het fundament</h3>
@@ -145,7 +145,7 @@ export default function FlesBerenStapVoorStap() {
               <div className="mb-6">
                 <h3 className="text-2xl font-semibold text-gray-800 mb-4">Water: De basis van goede flesvoeding</h3>
                 
-                <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
                   <h4 className="font-semibold text-gray-800 mb-3">Nederlands kraanwater: Uitstekend geschikt 💧</h4>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
@@ -237,16 +237,16 @@ export default function FlesBerenStapVoorStap() {
                   </div>
                 </div>
 
-                <div className="bg-red-50 border border-red-200 rounded-lg p-4 mt-6">
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mt-6">
                   <p className="text-gray-700">
-                    ⚠️ <strong>Belangrijke uitzondering</strong>: Gebruik nooit water uit de warmwater boiler - dit kan bacteriën bevatten zoals Legionella.
+                    <strong>Belangrijke uitzondering</strong>: Gebruik nooit water uit de warmwater boiler - dit kan bacteriën bevatten zoals Legionella.
                   </p>
                 </div>
               </div>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">📏 Stap-voor-stap: De perfecte fles bereiden</h2>
+              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Stap-voor-stap: De perfecte fles bereiden</h2>
               
               <div className="space-y-8">
                 <div>
@@ -302,7 +302,7 @@ export default function FlesBerenStapVoorStap() {
                 <div>
                   <h3 className="text-2xl font-semibold text-gray-800 mb-4">Stap 2: Poeder toevoegen - De kritieke fase</h3>
                   
-                  <div className="bg-orange-50 border border-orange-200 rounded-lg p-6 mb-6">
+                  <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
                     <h4 className="font-semibold text-gray-800 mb-3">Poeder afmeten - Nauwkeurigheid is cruciaal ⚖️</h4>
                     
                     <div className="grid md:grid-cols-2 gap-6">
@@ -405,19 +405,19 @@ export default function FlesBerenStapVoorStap() {
                       <h4 className="font-semibold text-gray-800 mb-3">Oplossen controle checklist ✅</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
-                          <span className="text-green-600">✅</span>
+                          <span className="text-gray-600">✅</span>
                           <span className="text-gray-700"><strong>Geen klontjes</strong>: Vloeistof moet volledig glad zijn</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-green-600">✅</span>
+                          <span className="text-gray-600">✅</span>
                           <span className="text-gray-700"><strong>Uniforme kleur</strong>: Geen lichte/donkere plekken</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-green-600">✅</span>
+                          <span className="text-gray-600">✅</span>
                           <span className="text-gray-700"><strong>Geen bezinksel</strong>: Niets op de bodem</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-green-600">✅</span>
+                          <span className="text-gray-600">✅</span>
                           <span className="text-gray-700"><strong>Goede flow</strong>: Melk stroomt normaal uit speen</span>
                         </li>
                       </ul>
@@ -428,7 +428,7 @@ export default function FlesBerenStapVoorStap() {
                 <div>
                   <h3 className="text-2xl font-semibold text-gray-800 mb-4">Stap 4: Temperatuur finale controle</h3>
                   
-                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+                  <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
                     <h4 className="font-semibold text-gray-800 mb-3">Eindtemperatuur: 37°C (lichaamstemperatuur) 🌡️</h4>
                     
                     <h5 className="font-semibold text-gray-800 mb-2">Controlmethoden rangschikking:</h5>
@@ -453,7 +453,7 @@ export default function FlesBerenStapVoorStap() {
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="border border-red-200 rounded-lg p-6 bg-red-50">
+                    <div className="border border-gray-200 rounded-lg p-6 bg-gray-50">
                       <h4 className="font-semibold text-gray-800 mb-3">Te heet - wat doen? 🔥</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
@@ -475,7 +475,7 @@ export default function FlesBerenStapVoorStap() {
                       </ul>
                     </div>
 
-                    <div className="border border-blue-200 rounded-lg p-6 bg-blue-50">
+                    <div className="border border-gray-200 rounded-lg p-6 bg-gray-50">
                       <h4 className="font-semibold text-gray-800 mb-3">Te koud - snel opwarmen ❄️</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
@@ -491,7 +491,7 @@ export default function FlesBerenStapVoorStap() {
                           <span className="text-gray-700"><strong>Onder warme kraan</strong>: Draaiend bewegen</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-red-600">❌</span>
+                          <span className="text-gray-600">❌</span>
                           <span className="text-gray-700"><strong>NOOIT magnetron</strong>: Creëert gevaarlijke hot spots</span>
                         </li>
                       </ul>
@@ -502,52 +502,52 @@ export default function FlesBerenStapVoorStap() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">⚠️ Veiligheid en gezondheidsrisico's</h2>
+              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Veiligheid en gezondheidsrisico's</h2>
               
               <div className="space-y-6">
                 <div>
                   <h3 className="text-2xl font-semibold text-gray-800 mb-4">Veelvoorkomende fouten voorkomen</h3>
                   
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="border border-red-200 rounded-lg p-6 bg-red-50">
+                    <div className="border border-gray-200 rounded-lg p-6 bg-gray-50">
                       <h4 className="font-semibold text-gray-800 mb-3">Dosering fouten - Ernstige gevolgen ❌</h4>
                       <ul className="space-y-2">
                         <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0 mt-2"></div>
+                          <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0 mt-2"></div>
                           <span className="text-gray-700"><strong>Te veel poeder</strong>: Dehydratie, nierbelasting, obstipatie</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0 mt-2"></div>
+                          <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0 mt-2"></div>
                           <span className="text-gray-700"><strong>Te weinig poeder</strong>: Ondervoeding, groeiachterstand</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0 mt-2"></div>
+                          <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0 mt-2"></div>
                           <span className="text-gray-700"><strong>Geschatte hoeveelheden</strong>: Altijd nauwkeurig meten</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0 mt-2"></div>
+                          <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0 mt-2"></div>
                           <span className="text-gray-700"><strong>Verkeerde schep</strong>: Alleen bijgeleverde schep gebruiken</span>
                         </li>
                       </ul>
                     </div>
 
-                    <div className="border border-orange-200 rounded-lg p-6 bg-orange-50">
+                    <div className="border border-gray-200 rounded-lg p-6 bg-gray-50">
                       <h4 className="font-semibold text-gray-800 mb-3">Temperatuur gevaren 🌡️</h4>
                       <ul className="space-y-2">
                         <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-orange-500 rounded-full flex-shrink-0 mt-2"></div>
+                          <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0 mt-2"></div>
                           <span className="text-gray-700"><strong>Brandwonden</strong>: Hete melk beschadigt mond en keel</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-orange-500 rounded-full flex-shrink-0 mt-2"></div>
+                          <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0 mt-2"></div>
                           <span className="text-gray-700"><strong>Ongelijkmatige verhitting</strong>: Magnetron creëert hot spots</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-orange-500 rounded-full flex-shrink-0 mt-2"></div>
+                          <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0 mt-2"></div>
                           <span className="text-gray-700"><strong>Te koude melk</strong>: Slechte opname voedingsstoffen</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-orange-500 rounded-full flex-shrink-0 mt-2"></div>
+                          <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0 mt-2"></div>
                           <span className="text-gray-700"><strong>Bacteriële groei</strong>: Lauw water ideaal voor bacteriën</span>
                         </li>
                       </ul>
@@ -558,7 +558,7 @@ export default function FlesBerenStapVoorStap() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">📋 Troubleshooting: Problemen oplossen</h2>
+              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Troubleshooting: Problemen oplossen</h2>
               
               <div className="space-y-6">
                 <div className="border border-gray-200 rounded-lg p-6">
@@ -604,8 +604,8 @@ export default function FlesBerenStapVoorStap() {
                 </div>
               </div>
 
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mt-6">
-                <h4 className="font-semibold text-gray-800 mb-3">🔄 Maak nieuwe fles bij:</h4>
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mt-6">
+                <h4 className="font-semibold text-gray-800 mb-3">Maak nieuwe fles bij:</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -632,7 +632,7 @@ export default function FlesBerenStapVoorStap() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">❓ Veelgestelde vragen flesbereiding</h2>
+              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Veelgestelde vragen flesbereiding</h2>
               
               <div className="space-y-6">
                 <div className="border border-gray-200 rounded-lg p-6">
@@ -663,9 +663,9 @@ export default function FlesBerenStapVoorStap() {
             </section>
 
             <section className="mb-8">
-              <h2 className="text-3xl font-semibold text-gray-800 mb-6">🎯 Conclusie: Routine ontwikkelen voor perfecte bereiding</h2>
+              <h2 className="text-3xl font-semibold text-gray-800 mb-6">Conclusie: Routine ontwikkelen voor perfecte bereiding</h2>
               
-              <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
                 <h4 className="font-semibold text-gray-800 mb-3">Het leerproces:</h4>
                 <ul className="space-y-2 mb-4">
                   <li className="flex items-center space-x-2">
@@ -707,9 +707,9 @@ export default function FlesBerenStapVoorStap() {
                 </ul>
               </div>
 
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
                 <p className="text-gray-700 mb-4">
-                  💙 <strong>Onthoudt</strong>: Een perfect bereide fles is liefde in actie. Je geeft je baby niet alleen voeding, maar ook veiligheid en zorg. Elke keer dat je zorgvuldig een fles bereidt, investeer je in de gezondheid en het welzijn van je kindje.
+                  <strong>Onthoudt</strong>: Een perfect bereide fles is liefde in actie. Je geeft je baby niet alleen voeding, maar ook veiligheid en zorg. Elke keer dat je zorgvuldig een fles bereidt, investeer je in de gezondheid en het welzijn van je kindje.
                 </p>
                 
                 <h4 className="font-semibold text-gray-800 mb-3">Handige hulpmiddelen:</h4>

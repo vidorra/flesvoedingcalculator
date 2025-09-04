@@ -97,7 +97,7 @@ export default function SoortenFlesvoedingPage() {
           {/* Opvolgmelk (2) */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-green-100 p-6">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">2</div>
+              <div className="w-10 h-10 bg-gray-500 rounded-full flex items-center justify-center text-white font-bold">2</div>
               <div>
                 <h2 className="text-lg font-semibold text-gray-800">Opvolgmelk (Nummer 2)</h2>
                 <p className="text-sm text-gray-600">6 tot 12 maanden</p>
@@ -397,7 +397,7 @@ export default function SoortenFlesvoedingPage() {
         </div>
 
         {/* Complete switching guide */}
-        <div className="bg-blue-50 rounded-2xl border border-blue-200 p-6">
+        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-blue-800 mb-4">Complete Overstap Gids</h2>
           
           <div className="space-y-6">
@@ -407,7 +407,7 @@ export default function SoortenFlesvoedingPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="bg-white p-4 rounded-lg">
                   <h4 className="font-medium text-blue-800 mb-2">Van 1 naar 2 (6+ maanden):</h4>
-                  <div className="space-y-1 text-sm text-blue-700">
+                  <div className="space-y-1 text-sm text-gray-700">
                     <div>• Hoger ijzergehalte voor groei</div>
                     <div>• Aangepast aan groeiende behoefte</div>
                     <div>• Meer vitaminen voor ontwikkeling</div>
@@ -416,7 +416,7 @@ export default function SoortenFlesvoedingPage() {
                 </div>
                 <div className="bg-white p-4 rounded-lg">
                   <h4 className="font-medium text-blue-800 mb-2">Van 2 naar gewone melk (12+ maanden):</h4>
-                  <div className="space-y-1 text-sm text-blue-700">
+                  <div className="space-y-1 text-sm text-gray-700">
                     <div>• Volle koemelk is vanaf 12 maanden prima</div>
                     <div>• Peutermelk alleen bij slecht eten</div>
                     <div>• Goedkoper dan peutermelk</div>
@@ -459,9 +459,9 @@ export default function SoortenFlesvoedingPage() {
         </div>
 
         {/* Schema Infographic Highlight */}
-        <div className="bg-green-50 rounded-2xl border border-green-200 p-6">
+        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-green-800 mb-4">Voedingsschema Overzicht</h2>
-          <p className="text-green-700 mb-4">
+          <p className="text-gray-700 mb-4">
             Bekijk onze visuele tijdlijn met alle voedingsschema's per leeftijd en flesvoeding type.
           </p>
           <Link 
