@@ -112,19 +112,6 @@ export default function AntiRefluxPage() {
         {/* Main Content - 7 columns on desktop, full width on mobile */}
         <div className="col-span-12 lg:col-span-7">
           <div className="space-y-6">
-        {/* Breadcrumb */}
-        <div className="flex items-center space-x-2 text-sm text-gray-600">
-          <Link href="/" className="hover:text-primary flex items-center">
-            <Home className="w-4 h-4 mr-1" />
-            Home
-          </Link>
-          <ArrowRight className="w-4 h-4" />
-          <Link href="/kennisbank" className="hover:text-primary">Kennisbank</Link>
-          <ArrowRight className="w-4 h-4" />
-          <Link href="/kennisbank/soorten-flesvoeding" className="hover:text-primary">Soorten Flesvoeding</Link>
-          <ArrowRight className="w-4 h-4" />
-          <span className="text-primary">Anti-Reflux Flesvoeding</span>
-        </div>
 
         {/* Header */}
         <div className="mb-6">
@@ -140,7 +127,7 @@ export default function AntiRefluxPage() {
 
         {/* What is Reflux */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Wat is Reflux bij Baby's?</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Wat is Reflux bij Baby's?</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -150,7 +137,7 @@ export default function AntiRefluxPage() {
               </p>
               
               <div className="border border-gray-200 bg-gray-50 rounded-xl p-4">
-                <h3 className="font-medium text-blue-900 mb-3">Normale vs Problematische Reflux:</h3>
+                <h3 className="font-medium text-primary mb-3">Normale vs Problematische Reflux:</h3>
                 <div className="space-y-2 text-sm">
                   <div className="flex items-center space-x-2 text-gray-700">
                     <CheckCircle className="w-4 h-4" />
@@ -173,7 +160,7 @@ export default function AntiRefluxPage() {
             </div>
             
             <div>
-              <h3 className="font-medium text-gray-800 mb-3">Nederlandse cijfers reflux:</h3>
+              <h3 className="font-medium text-primary mb-3">Nederlandse cijfers reflux:</h3>
               <div className="space-y-3">
                 <div className="p-3 border border-gray-200 bg-gray-50 rounded-lg">
                   <div className="font-medium text-yellow-900">15-20%</div>
@@ -194,7 +181,7 @@ export default function AntiRefluxPage() {
 
         {/* Recognizing Reflux */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Reflux Herkennen: Signalen & Symptomen</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Reflux Herkennen: Signalen & Symptomen</h2>
           
           <div className="space-y-3">
             {refluxSigns.map((item, index) => {
@@ -223,8 +210,8 @@ export default function AntiRefluxPage() {
           </div>
           
           <div className="mt-4 p-4 border border-gray-200 bg-gray-50 rounded-xl">
-            <h4 className="font-medium text-blue-900 mb-2">Belangrijk om te weten:</h4>
-            <p className="text-sm text-blue-800">
+            <h4 className="font-medium text-primary mb-2">Belangrijk om te weten:</h4>
+            <p className="text-sm text-gray-600">
               Niet alle baby's die spugen hebben reflux. Sommige baby's zijn gewoon "happy spitters" - 
               ze spugen wel maar groeien goed door en zijn tevreden. Reflux wordt pas een probleem 
               als het de groei of het welzijn van de baby beïnvloedt.
@@ -234,7 +221,7 @@ export default function AntiRefluxPage() {
 
         {/* AR Formula Comparison */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
             <Package className="w-5 h-5 mr-2" />
             Anti-Reflux Voeding in Nederland: Vergelijking
           </h2>
@@ -252,7 +239,7 @@ export default function AntiRefluxPage() {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <h4 className="font-medium text-gray-800 mb-2">Werkzame stof:</h4>
+                    <h4 className="font-medium text-primary mb-2">Werkzame stof:</h4>
                     <p className="text-sm text-gray-600 mb-3">{formula.ingredients}</p>
                     
                     <h4 className="font-medium text-gray-700 mb-1">Voordelen:</h4>
@@ -306,7 +293,7 @@ export default function AntiRefluxPage() {
 
         {/* Feeding Techniques */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Voedingstechnieken bij Reflux</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Voedingstechnieken bij Reflux</h2>
           
           <div className="space-y-4">
             {feedingTechniques.map((technique, index) => (
@@ -333,7 +320,7 @@ export default function AntiRefluxPage() {
 
         {/* Practical Tips */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Praktische Tips voor Thuis</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Praktische Tips voor Thuis</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {practicalTips.map((section, index) => (
@@ -419,12 +406,12 @@ export default function AntiRefluxPage() {
 
         {/* Timeline Expectation */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Verwachtingen: Wanneer Verbetering?</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Verwachtingen: Wanneer Verbetering?</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
-              <h3 className="font-medium text-blue-900">Week 1-2</h3>
-              <p className="text-sm text-blue-800">AR voeding uitproberen, voedingstechniek aanpassen</p>
+              <h3 className="font-medium text-primary">Week 1-2</h3>
+              <p className="text-sm text-gray-600">AR voeding uitproberen, voedingstechniek aanpassen</p>
             </div>
             <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
               <h3 className="font-medium text-green-900">Week 3-4</h3>
@@ -441,7 +428,7 @@ export default function AntiRefluxPage() {
           </div>
           
           <div className="mt-4 p-4 bg-gray-100 rounded-lg">
-            <h4 className="font-medium text-gray-800 mb-2">Realistische verwachtingen:</h4>
+            <h4 className="font-medium text-primary mb-2">Realistische verwachtingen:</h4>
             <p className="text-sm text-gray-700">
               AR voeding vermindert spugen met 70-85%, maar elimineert het zelden volledig. 
               De meeste baby's groeien er overheen tussen 6-12 maanden wanneer de spierklep 
@@ -504,20 +491,20 @@ export default function AntiRefluxPage() {
 
         {/* Navigation */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">Gerelateerde Artikelen</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde Artikelen</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 
               href="/kennisbank/soorten-flesvoeding"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-gray-800">Soorten Flesvoeding →</div>
+              <div className="font-medium text-primary">Soorten Flesvoeding →</div>
               <div className="text-sm text-gray-600">Alle verschillende types flesvoeding</div>
             </Link>
             <Link 
               href="/kennisbank/voedingstechnieken"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-gray-800">Voedingstechnieken →</div>
+              <div className="font-medium text-primary">Voedingstechnieken →</div>
               <div className="text-sm text-gray-600">Juiste technieken voor flesvoeding</div>
             </Link>
           </div>
