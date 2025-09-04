@@ -119,17 +119,17 @@ export default function VoedingstechniekenPage() {
         </div>
 
         {/* Responsive Feeding */}
-        <div className="bg-green-50 rounded-2xl border border-green-200 p-6">
+        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-green-800 mb-4 flex items-center">
             <Heart className="w-5 h-5 mr-2" />
             Responsive Feeding
           </h2>
-          <p className="text-green-700 mb-4">Responsive feeding betekent dat je op de signalen van je baby let:</p>
+          <p className="text-gray-700 mb-4">Responsive feeding betekent dat je op de signalen van je baby let:</p>
           <div className="space-y-2">
             {responsiveFeeding.map((tip, index) => (
               <div key={index} className="flex items-start space-x-2">
                 <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                <span className="text-green-700 text-sm">{tip}</span>
+                <span className="text-gray-700 text-sm">{tip}</span>
               </div>
             ))}
           </div>
@@ -203,7 +203,7 @@ export default function VoedingstechniekenPage() {
         </div>
 
         {/* Temperature Control */}
-        <div className="bg-red-50 rounded-2xl border border-red-200 p-6">
+        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-red-800 mb-4 flex items-center">
             <AlertTriangle className="w-5 h-5 mr-2" />
             Temperatuur Controle - Belangrijk!
@@ -211,7 +211,7 @@ export default function VoedingstechniekenPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
               <h3 className="font-medium text-red-800 mb-3">Juiste temperatuur (37°C):</h3>
-              <div className="space-y-2 text-sm text-red-700">
+              <div className="space-y-2 text-sm text-gray-700">
                 <div className="flex items-start space-x-2">
                   <CheckCircle className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
                   <span>Test op pols: moet lauw aanvoelen</span>
@@ -233,7 +233,7 @@ export default function VoedingstechniekenPage() {
             
             <div>
               <h3 className="font-medium text-red-800 mb-3">Waarom juiste temperatuur?</h3>
-              <div className="space-y-2 text-sm text-red-700">
+              <div className="space-y-2 text-sm text-gray-700">
                 <div>• Te heet: brandwonden in mond/keel</div>
                 <div>• Te koud: baby weigert fles</div>
                 <div>• Schommelingen: stress voor baby</div>
@@ -313,7 +313,7 @@ export default function VoedingstechniekenPage() {
               <h3 className="font-medium text-purple-800 mb-3">Herken eerste keer signalen</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="bg-white p-4 rounded-lg">
-                  <h4 className="font-medium text-green-700 mb-2">✅ Positieve signalen:</h4>
+                  <h4 className="font-medium text-gray-700 mb-2">✅ Positieve signalen:</h4>
                   <div className="space-y-1 text-sm text-green-600">
                     <div>• Baby zuigt actief</div>
                     <div>• Ontspannen lichaampje</div>
@@ -396,7 +396,7 @@ export default function VoedingstechniekenPage() {
             Nederlandse richtlijnen wordt elke fles consistent en veilig.
           </p>
 
-          <div className="bg-blue-50 rounded-xl p-4 border border-blue-200 mb-6">
+          <div className="bg-gray-50 rounded-xl p-4 border border-gray-200 mb-6">
             <h3 className="text-blue-900 font-semibold mb-3">🔄 Snelle stappen overzicht:</h3>
             <div className="grid md:grid-cols-3 gap-4">
               <div className="bg-white rounded-lg p-3">
@@ -419,7 +419,7 @@ export default function VoedingstechniekenPage() {
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div className="space-y-4">
               <h4 className="font-medium text-green-800">Stap 1-4: Voorbereiding</h4>
-              <div className="bg-green-50 rounded-xl p-4 border border-green-200 space-y-2">
+              <div className="bg-gray-50 rounded-xl p-4 border border-gray-200 space-y-2">
                 <p className="text-green-800"><strong>1. Was je handen</strong> grondig met warme zeep</p>
                 <p className="text-green-800"><strong>2. Steriliseer fles en speen</strong> (eerste 6 maanden)</p>
                 <p className="text-green-800"><strong>3. Kook water</strong> en laat afkoelen tot 70°C</p>
@@ -504,7 +504,7 @@ export default function VoedingstechniekenPage() {
                   <td className="p-3">30ml</td>
                   <td className="p-3">1 gestreepte maatlepel</td>
                 </tr>
-                <tr className="border-t bg-blue-50">
+                <tr className="border-t bg-gray-50">
                   <td className="p-3">Nutrilon, Hero Baby, Kruidvat</td>
                   <td className="p-3">1:30</td>
                   <td className="p-3">30ml</td>
@@ -515,7 +515,7 @@ export default function VoedingstechniekenPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-red-50 rounded-xl p-4 border border-red-200">
+            <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
               <h3 className="text-red-900 font-medium mb-2">❌ Veelgemaakte fouten:</h3>
               <ul className="text-red-800 text-sm space-y-1">
                 <li className="flex items-center space-x-2">
@@ -541,7 +541,7 @@ export default function VoedingstechniekenPage() {
               </ul>
             </div>
             
-            <div className="bg-green-50 rounded-xl p-4 border border-green-200">
+            <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
               <h3 className="text-green-900 font-medium mb-2">✅ Tips voor success:</h3>
               <ul className="text-green-800 text-sm space-y-1">
                 <li className="flex items-center space-x-2">

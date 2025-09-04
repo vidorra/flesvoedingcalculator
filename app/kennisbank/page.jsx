@@ -300,10 +300,10 @@ export default function KennisbankPage() {
               const colorClasses = {
                 blue: 'bg-gray-50 border-gray-200 text-primary hover:bg-gray-100',
                 purple: 'bg-purple-50 border-purple-200 text-purple-800 hover:bg-purple-100',
-                green: 'bg-green-50 border-green-200 text-green-800 hover:bg-green-100',
-                orange: 'bg-orange-50 border-orange-200 text-orange-800 hover:bg-orange-100',
+                green: 'bg-gray-50 border-gray-200 text-green-800 hover:bg-green-100',
+                orange: 'bg-gray-50 border-gray-200 text-orange-800 hover:bg-orange-100',
                 teal: 'bg-teal-50 border-teal-200 text-teal-800 hover:bg-teal-100',
-                red: 'bg-red-50 border-red-200 text-red-800 hover:bg-red-100',
+                red: 'bg-gray-50 border-gray-200 text-red-800 hover:bg-red-100',
                 yellow: 'bg-yellow-50 border-yellow-200 text-yellow-800 hover:bg-yellow-100'
               }
               return (
@@ -381,12 +381,12 @@ export default function KennisbankPage() {
         </div>
 
         {/* Nederlandse Context */}
-        <div className="bg-blue-50 rounded-2xl border border-blue-200 p-6">
+        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
           <h2 className="font-semibold text-blue-800 mb-4">Flesvoeding in Nederland</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
               <h3 className="font-medium text-blue-800 mb-3">Regelgeving & Veiligheid:</h3>
-              <ul className="space-y-2 text-sm text-blue-700">
+              <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span>Alle merken voldoen aan EU-verordening 2016/127</span>
@@ -411,7 +411,7 @@ export default function KennisbankPage() {
             </div>
             <div>
               <h3 className="font-medium text-blue-800 mb-3">Beschikbaarheid & Kosten:</h3>
-              <ul className="space-y-2 text-sm text-blue-700">
+              <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span>Breed assortiment in alle supermarkten</span>
@@ -497,21 +497,21 @@ export default function KennisbankPage() {
             </Link>
             <Link 
               href="/voedingsschemas"
-              className="p-4 rounded-xl bg-gradient-to-br from-green-50 to-green-100 border border-green-200 hover:border-primary transition-colors"
+              className="p-4 rounded-xl bg-gradient-to-br from-green-50 to-green-100 border border-gray-200 hover:border-primary transition-colors"
             >
               <h3 className="font-medium text-green-800 mb-2">Voedingsschema's</h3>
               <p className="text-sm text-green-600 mb-3">Interactieve schema's per leeftijdsgroep</p>
-              <div className="text-green-600 hover:text-green-700 font-medium text-sm flex items-center">
+              <div className="text-green-600 hover:text-gray-700 font-medium text-sm flex items-center">
                 Bekijk schema's <ArrowRight className="w-4 h-4 ml-1" />
               </div>
             </Link>
             <Link 
               href="/infographics"
-              className="p-4 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 hover:border-primary transition-colors"
+              className="p-4 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 border border-gray-200 hover:border-primary transition-colors"
             >
               <h3 className="font-medium text-blue-800 mb-2">Visuele Guides</h3>
               <p className="text-sm text-blue-600 mb-3">Stap-voor-stap infographics en tijdlijnen</p>
-              <div className="text-blue-600 hover:text-blue-700 font-medium text-sm flex items-center">
+              <div className="text-blue-600 hover:text-gray-700 font-medium text-sm flex items-center">
                 Bekijk guides <ArrowRight className="w-4 h-4 ml-1" />
               </div>
             </Link>

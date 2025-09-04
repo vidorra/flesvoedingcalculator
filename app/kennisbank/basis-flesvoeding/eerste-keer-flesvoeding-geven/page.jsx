@@ -94,9 +94,9 @@ export default function EersteKeerFlesvoedingPage() {
               flesvoeding gaan geven. Van voorbereiding tot hygiëne - alles voor een succesvolle start.
             </p>
             <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-              <span>📖 Leestijd: 8 minuten</span>
-              <span>👶 Geschikt vanaf: Geboorte</span>
-              <span>✅ Stap-voor-stap gids</span>
+              <span>Leestijd: 8 minuten</span>
+              <span>Geschikt vanaf: Geboorte</span>
+              <span>Stap-voor-stap gids</span>
             </div>
           </div>
 
@@ -116,7 +116,7 @@ export default function EersteKeerFlesvoedingPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="border border-gray-200 rounded-xl p-6">
                 <h3 className="font-semibold text-gray-800 mb-4 flex items-center">
-                  <CheckCircle className="w-5 h-5 text-green-600 mr-2" />
+                  <CheckCircle className="w-5 h-5 text-gray-600 mr-2" />
                   Essentiële benodigdheden
                 </h3>
                 <ul className="space-y-2">
@@ -357,7 +357,7 @@ export default function EersteKeerFlesvoedingPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="border border-gray-200 rounded-xl p-6">
-                <h3 className="font-semibold text-red-600 mb-4">Direct contact opnemen</h3>
+                <h3 className="font-semibold text-gray-600 mb-4">Direct contact opnemen</h3>
                 <ul className="space-y-2">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -429,7 +429,7 @@ export default function EersteKeerFlesvoedingPage() {
             </ol>
             
             <div className="mt-6 p-4 border border-gray-200 rounded-lg text-center">
-              <p className="text-lg font-medium text-gray-800">💚 Onthoud: Je doet het geweldig!</p>
+              <p className="text-lg font-medium text-gray-800">Onthoud: Je doet het geweldig!</p>
               <p className="text-gray-600">Flesvoeding geven is een liefdevolle manier om je baby te voeden en te koesteren.</p>
             </div>
           </section>
