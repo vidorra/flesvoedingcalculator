@@ -75,47 +75,47 @@ export default function ConstipatieFlespagePage() {
                   <h3 className="font-medium text-primary mb-3">Echte constipatie kenmerken</h3>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                       <span className="text-gray-700 text-sm">Harde, droge ontlasting (kleine balletjes)</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                       <span className="text-gray-700 text-sm">Zichtbare moeite en pijn bij poepen</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                       <span className="text-gray-700 text-sm">Huilen en persen voorafgaand aan ontlasting</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                       <span className="text-gray-700 text-sm">Bloed op ontlasting door hard persen</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                       <span className="text-gray-700 text-sm">Minder frequent dan normaal voor dat kind</span>
                     </li>
                   </ul>
                 </div>
               </div>
 
-              <div className="bg-green-50 border border-green-200 rounded-lg p-4 mt-4">
-                <h3 className="font-medium text-green-800 mb-2">Niet constipatie:</h3>
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mt-4">
+                <h3 className="font-medium text-gray-700 mb-2">Niet constipatie:</h3>
                 <ul className="space-y-1">
                   <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                    <span className="text-green-700 text-sm">Normaal persen (baby's gebruiken hele lichaam)</span>
+                    <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span className="text-gray-700 text-sm">Normaal persen (baby's gebruiken hele lichaam)</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                    <span className="text-green-700 text-sm">Rood worden tijdens poepen (normale inspanning)</span>
+                    <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span className="text-gray-700 text-sm">Rood worden tijdens poepen (normale inspanning)</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                    <span className="text-green-700 text-sm">Een dag overslaan (kan normaal zijn)</span>
+                    <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span className="text-gray-700 text-sm">Een dag overslaan (kan normaal zijn)</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                    <span className="text-green-700 text-sm">Zachte ontlasting ook al is het minder frequent</span>
+                    <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span className="text-gray-700 text-sm">Zachte ontlasting ook al is het minder frequent</span>
                   </li>
                 </ul>
               </div>
@@ -169,20 +169,20 @@ export default function ConstipatieFlespagePage() {
 
                 <div>
                   <h3 className="font-medium text-primary mb-3">Voeding gerelateerde factoren</h3>
-                  <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-                    <h4 className="font-medium text-yellow-800 mb-2">Dehydratie risico:</h4>
+                  <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                    <h4 className="font-medium text-gray-700 mb-2">Dehydratie risico:</h4>
                     <ul className="space-y-1">
                       <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-yellow-500 rounded-full flex-shrink-0"></div>
-                        <span className="text-yellow-700 text-sm">Inadequate vloeistofinname, vooral bij warm weer</span>
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                        <span className="text-gray-700 text-sm">Inadequate vloeistofinname, vooral bij warm weer</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-yellow-500 rounded-full flex-shrink-0"></div>
-                        <span className="text-yellow-700 text-sm">Te geconcentreerde melk door verkeerde bereiding</span>
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                        <span className="text-gray-700 text-sm">Te geconcentreerde melk door verkeerde bereiding</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-yellow-500 rounded-full flex-shrink-0"></div>
-                        <span className="text-yellow-700 text-sm">Onvoldoende water tussen voedingen (6+ maanden)</span>
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                        <span className="text-gray-700 text-sm">Onvoldoende water tussen voedingen (6+ maanden)</span>
                       </li>
                     </ul>
                   </div>
@@ -256,38 +256,38 @@ export default function ConstipatieFlespagePage() {
                 <div>
                   <h3 className="font-medium text-primary mb-3">Natuurlijke hulpmiddelen</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                      <h4 className="font-medium text-green-800 mb-2">Veilige home remedies:</h4>
+                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                      <h4 className="font-medium text-gray-700 mb-2">Veilige home remedies:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                          <span className="text-green-700 text-sm">Pruimen sap: 15-30ml per dag (6+ maanden)</span>
+                          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span className="text-gray-700 text-sm">Pruimen sap: 15-30ml per dag (6+ maanden)</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                          <span className="text-green-700 text-sm">Warm waterbad: ontspant en stimuleert</span>
+                          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span className="text-gray-700 text-sm">Warm waterbad: ontspant en stimuleert</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                          <span className="text-green-700 text-sm">Zachte buik warmte: warme handdoek</span>
+                          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span className="text-gray-700 text-sm">Zachte buik warmte: warme handdoek</span>
                         </li>
                       </ul>
                     </div>
                     
-                    <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                      <h4 className="font-medium text-red-800 mb-2">NOOIT gebruiken bij baby's:</h4>
+                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                      <h4 className="font-medium text-gray-700 mb-2">NOOIT gebruiken bij baby's:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
-                          <span className="text-red-700 text-sm">Laxatives voor volwassenen</span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-700 text-sm">Laxatives voor volwassenen</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
-                          <span className="text-red-700 text-sm">Honing (botulisme risico &lt;12 maanden)</span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-700 text-sm">Honing (botulisme risico &lt;12 maanden)</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
-                          <span className="text-red-700 text-sm">Thermometer stimulatie</span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-700 text-sm">Thermometer stimulatie</span>
                         </li>
                       </ul>
                     </div>
@@ -395,46 +395,46 @@ export default function ConstipatieFlespagePage() {
               <h2 className="text-lg font-semibold text-primary mb-4">Wanneer medisch advies zoeken</h2>
               
               <div className="space-y-4">
-                <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                  <h3 className="font-medium text-red-800 mb-2">Urgent situations (zelfde dag contact):</h3>
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <h3 className="font-medium text-gray-700 mb-2">Urgent situations (zelfde dag contact):</h3>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
-                      <span className="text-red-700 text-sm">Geen ontlasting >4 dagen ondanks interventies</span>
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-gray-700 text-sm">Geen ontlasting {'>'}4 dagen ondanks interventies</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
-                      <span className="text-red-700 text-sm">Bloed in ontlasting meer dan kleine sporen</span>
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-gray-700 text-sm">Bloed in ontlasting meer dan kleine sporen</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
-                      <span className="text-red-700 text-sm">Braken in combinatie met constipatie</span>
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-gray-700 text-sm">Braken in combinatie met constipatie</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
-                      <span className="text-red-700 text-sm">Koorts boven 38°C met constipatie</span>
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-gray-700 text-sm">Koorts boven 38°C met constipatie</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
-                      <span className="text-red-700 text-sm">Extreme onrust en huilen</span>
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-gray-700 text-sm">Extreme onrust en huilen</span>
                     </li>
                   </ul>
                 </div>
 
-                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-                  <h3 className="font-medium text-yellow-800 mb-2">Routine medical consultation:</h3>
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <h3 className="font-medium text-gray-700 mb-2">Routine medical consultation:</h3>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-yellow-500 rounded-full flex-shrink-0"></div>
-                      <span className="text-yellow-700 text-sm">Persistent constipatie >2 weken ondanks aanpassingen</span>
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-gray-700 text-sm">Persistent constipatie {'>'}2 weken ondanks aanpassingen</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-yellow-500 rounded-full flex-shrink-0"></div>
-                      <span className="text-yellow-700 text-sm">Growth concerns gecombineerd met constipatie</span>
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-gray-700 text-sm">Growth concerns gecombineerd met constipatie</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-yellow-500 rounded-full flex-shrink-0"></div>
-                      <span className="text-yellow-700 text-sm">Parent stress wordt te groot</span>
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-gray-700 text-sm">Parent stress wordt te groot</span>
                     </li>
                   </ul>
                 </div>
@@ -499,16 +499,16 @@ export default function ConstipatieFlespagePage() {
                 </div>
               </div>
 
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
-                <h3 className="font-medium text-blue-800 mb-2">Key reminders:</h3>
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mt-4">
+                <h3 className="font-medium text-gray-700 mb-2">Key reminders:</h3>
                 <ul className="space-y-1">
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></div>
-                    <span className="text-blue-700 text-sm">Constipatie door flesvoeding is veel voorkomend maar oplosbaar</span>
+                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                    <span className="text-gray-700 text-sm">Constipatie door flesvoeding is veel voorkomend maar oplosbaar</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></div>
-                    <span className="text-blue-700 text-sm">Met juiste technieken, geduld en eventueel medische ondersteuning verbetert het bijna altijd binnen 1-2 weken</span>
+                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                    <span className="text-gray-700 text-sm">Met juiste technieken, geduld en eventueel medische ondersteuning verbetert het bijna altijd binnen 1-2 weken</span>
                   </li>
                 </ul>
               </div>
