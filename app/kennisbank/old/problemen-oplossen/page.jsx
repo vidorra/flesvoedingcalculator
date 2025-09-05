@@ -126,7 +126,7 @@ export default function ProblemenOplossenPage() {
             
             <div className="space-y-4">
               <div>
-                <h3 className="font-medium text-green-800 mb-2">Normaal spugen:</h3>
+                <h3 className="font-medium text-gray-700 mb-2">Normaal spugen:</h3>
                 <ul className="space-y-1 text-sm text-gray-700">
                   <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -148,7 +148,7 @@ export default function ProblemenOplossenPage() {
               </div>
               
               <div>
-                <h3 className="font-medium text-red-800 mb-2">Problematische reflux:</h3>
+                <h3 className="font-medium text-gray-700 mb-2">Problematische reflux:</h3>
                 <ul className="space-y-1 text-sm text-gray-700">
                   <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -190,7 +190,7 @@ export default function ProblemenOplossenPage() {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
-              <h3 className="font-medium text-red-800 mb-3">Signalen:</h3>
+              <h3 className="font-medium text-gray-700 mb-3">Signalen:</h3>
               <div className="space-y-2">
                 {constipationSigns.map((sign, index) => (
                   <div key={index} className="flex items-start space-x-2">
@@ -202,7 +202,7 @@ export default function ProblemenOplossenPage() {
             </div>
             
             <div>
-              <h3 className="font-medium text-green-800 mb-3">Oplossingen:</h3>
+              <h3 className="font-medium text-gray-700 mb-3">Oplossingen:</h3>
               <div className="space-y-2">
                 {constipationSolutions.map((solution, index) => (
                   <div key={index} className="flex items-start space-x-2">
@@ -217,18 +217,18 @@ export default function ProblemenOplossenPage() {
 
         {/* Diarrhea */}
         <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-red-800 mb-4 flex items-center">
+          <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
             <Phone className="w-5 h-5 mr-2" />
             Diarree - Wanneer arts bellen
           </h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
-              <h3 className="font-medium text-red-800 mb-3">Alarmerende signalen:</h3>
+              <h3 className="font-medium text-gray-700 mb-3">Alarmerende signalen:</h3>
               <div className="space-y-2">
                 {diarrheaWarnings.map((warning, index) => (
                   <div key={index} className="flex items-start space-x-2">
-                    <AlertCircle className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
+                    <AlertCircle className="w-4 h-4 text-gray-600 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700 text-sm font-medium">{warning}</span>
                   </div>
                 ))}

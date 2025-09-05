@@ -65,7 +65,7 @@ export default function EersteKeerFlesvoedingPage() {
 
   return (
     <Layout>
-      <div className="grid grid-cols-12 gap-6 min-h-screen">
+      <div className="grid grid-cols-12 gap-6">
       <div className="col-span-12 lg:col-span-7">
         <div className="max-w-4xl mx-auto p-8 bg-white/80 backdrop-blur rounded-2xl shadow-lg border border-gray-200">
           

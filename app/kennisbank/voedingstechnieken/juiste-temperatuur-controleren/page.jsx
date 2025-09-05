@@ -36,7 +36,7 @@ export default function JuisteTemperatuurControleren() {
 
   return (
     <Layout>
-      <div className="grid grid-cols-12 gap-6 min-h-screen">
+      <div className="grid grid-cols-12 gap-6">
         <div className="col-span-12 lg:col-span-7">
           <div className="max-w-4xl mx-auto p-8 bg-white/80 backdrop-blur rounded-2xl shadow-lg border border-gray-200">
             
@@ -111,7 +111,7 @@ export default function JuisteTemperatuurControleren() {
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="border border-gray-200 rounded-lg p-6 bg-gray-50">
-                    <h4 className="font-semibold text-primary mb-3">Acceptabele temperaturen 📊</h4>
+                    <h4 className="font-semibold text-primary mb-3">Acceptabele temperaturen </h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -133,22 +133,22 @@ export default function JuisteTemperatuurControleren() {
                   </div>
 
                   <div className="border border-gray-200 rounded-lg p-6 bg-gray-50">
-                    <h4 className="font-semibold text-primary mb-3">Gevaarlijke temperaturen vermijden ⚠️</h4>
+                    <h4 className="font-semibold text-primary mb-3">Gevaarlijke temperaturen vermijden </h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
-                        <span className="text-gray-600">❌</span>
+                        <span className="text-gray-600"></span>
                         <span className="text-gray-700"><strong>Boven 45°C</strong>: Risico op brandwonden mond en keel</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <span className="text-gray-600">❌</span>
+                        <span className="text-gray-600"></span>
                         <span className="text-gray-700"><strong>Onder 30°C</strong>: Slechte opname voedingsstoffen, baby weigert</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <span className="text-gray-600">❌</span>
+                        <span className="text-gray-600"></span>
                         <span className="text-gray-700"><strong>Ongelijkmatig</strong>: Hot spots door magnetron verhitting</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <span className="text-gray-600">❌</span>
+                        <span className="text-gray-600"></span>
                         <span className="text-gray-700"><strong>Te snelle wisseling</strong>: Van koud naar heet stresst spijsvertering</span>
                       </li>
                     </ul>
@@ -215,19 +215,19 @@ export default function JuisteTemperatuurControleren() {
                       <h4 className="font-semibold text-primary mb-3">Voordelen pols test:</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">✅</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Altijd beschikbaar</strong>: Geen apparatuur nodig</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">✅</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Gratis</strong>: Kost niets extra</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">✅</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Snel</strong>: In 2 seconden gedaan</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">✅</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Betrouwbaar</strong>: Eeuwenlang bewezen methode</span>
                         </li>
                       </ul>
@@ -237,19 +237,19 @@ export default function JuisteTemperatuurControleren() {
                       <h4 className="font-semibold text-primary mb-3">Nadelen pols test:</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">❌</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Subjectief</strong>: Iedereen voelt anders</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">❌</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Minder nauwkeurig</strong>: Geen exacte graden</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">❌</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Beïnvloed door omgeving</strong>: Koude handen geven verkeerd gevoel</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">❌</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Leerproces</strong>: Ervaring nodig voor goede inschatting</span>
                         </li>
                       </ul>
@@ -367,19 +367,19 @@ export default function JuisteTemperatuurControleren() {
                       <h4 className="font-semibold text-primary mb-3">Voordelen IR thermometer:</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">✅</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Snel</strong>: Instant resultaat</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">✅</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Hygiënisch</strong>: Geen contact met melk</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">✅</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Meerdere doelen</strong>: Ook voor bad, kamer, baby</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">✅</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Modern</strong>: Technologisch geavanceerd</span>
                         </li>
                       </ul>
@@ -389,19 +389,19 @@ export default function JuisteTemperatuurControleren() {
                       <h4 className="font-semibold text-primary mb-3">Nadelen IR thermometer:</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">❌</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Duur</strong>: €20-50 voor goede kwaliteit</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">❌</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Oppervlakte alleen</strong>: Niet de binnentemperatuur</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">❌</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Omgevingsgevoelig</strong>: Reflectie kan resultaat beïnvloeden</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">❌</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Leerproces</strong>: Juiste afstand en hoek vinden</span>
                         </li>
                       </ul>
@@ -541,19 +541,19 @@ export default function JuisteTemperatuurControleren() {
                       <h4 className="font-semibold text-primary mb-3">NIET doen bij afkoelen:</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">❌</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>IJsblokjes toevoegen</strong>: Verdunt de melk</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">❌</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>In vriezer</strong>: Te snelle afkoeling, kan melk laten scheiden</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">❌</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Blazen</strong>: Onhygiënisch, bacteriën uit mond</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">❌</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Schudden met koud</strong>: Kan melk laten klonteren</span>
                         </li>
                       </ul>
@@ -615,19 +615,19 @@ export default function JuisteTemperatuurControleren() {
                       <h4 className="font-semibold text-primary mb-3">ABSOLUUT NIET doen:</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">❌</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Magnetron</strong>: Creëert gevaarlijke hot spots</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">❌</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Direct op fornuis</strong>: Overmatige verhitting, melk kan scheiden</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">❌</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Kokend water</strong>: Te heet, vernietigt voedingsstoffen</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">❌</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Hete radiator</strong>: Ongelijkmatige verhitting, oncontroleerbaar</span>
                         </li>
                       </ul>
@@ -743,19 +743,19 @@ export default function JuisteTemperatuurControleren() {
                       <h4 className="font-semibold text-primary mb-3">Preventie bacteriële groei:</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">✅</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Verse bereiding</strong>: Elke fles vers maken</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">✅</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Juiste temperatuur</strong>: Direct op 37°C brengen</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">✅</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Snel consumeren</strong>: Binnen 1 uur na bereiding</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">✅</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Bij twijfel weggooien</strong>: Veiligheid boven kosten</span>
                         </li>
                       </ul>
