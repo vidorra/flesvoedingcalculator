@@ -5,16 +5,16 @@ This document provides a complete overview of all planned articles in the kennis
 ## 📊 Summary Statistics
 
 - **Total Planned Articles**: 66
-- **Currently Written**: 18 ✅
-- **Still Need Writing**: 48 ❌
-- **Completion Rate**: 27%
+- **Currently Written**: 23 ✅
+- **Still Need Writing**: 43 ❌
+- **Completion Rate**: 35%
 
 ---
 
 ## 📁 Category Breakdown
 
 ### 🍼 Basis Flesvoeding (12 articles)
-**Status: 4/12 written (33%)**
+**Status: 6/12 written (50%)**
 
 | ID | Title | Status | File Path | Duration |
 |----|-------|--------|-----------|----------|
@@ -24,8 +24,8 @@ This document provides a complete overview of all planned articles in the kennis
 | 8 | Flesvoeding bij premature baby's | ✅ **WRITTEN** | `/basis-flesvoeding/flesvoeding-bij-premature-babys/page.jsx` | 15 min |
 | 4 | Kosten van flesvoeding | ❌ *Needs writing* | *Not created* | 3 min |
 | 5 | Flesvoeding en werk | ❌ *Needs writing* | *Not created* | 4 min |
-| 6 | Baby weigert de fles | ❌ *Needs writing* | *Not created* | 5 min |
-| 7 | Overstappen van borst naar fles | ❌ *Needs writing* | *Not created* | 7 min |
+| 6 | Baby weigert de fles | ✅ **WRITTEN** | `/basis-flesvoeding/baby-weigert-de-fles/page.jsx` | 8 min |
+| 7 | Overstappen van borst naar fles | ✅ **WRITTEN** | `/basis-flesvoeding/overstappen-van-borst-naar-fles/page.jsx` | 10 min |
 | 9 | Flesvoeding en slapen | ❌ *Needs writing* | *Not created* | 5 min |
 | 10 | Verschillende merken uitproberen | ❌ *Needs writing* | *Not created* | 4 min |
 | 11 | Flesvoeding onderweg | ❌ *Needs writing* | *Not created* | 5 min |
@@ -63,15 +63,15 @@ This document provides a complete overview of all planned articles in the kennis
 | 30 | Overgang naar beker | ❌ *Needs writing* | *Not created* | 5 min |
 
 ### 🚨 Problemen Oplossen (9 articles)
-**Status: 1/9 written (11%)**
+**Status: 3/9 written (33%)**
 
 | ID | Title | Status | File Path | Duration |
 |----|-------|--------|-----------|----------|
 | - | Problemen oplossen overzicht | ✅ **WRITTEN** | `/problemen-oplossen/page.jsx` | - |
-| 31 | Baby drinkt niet genoeg | ❌ *Needs writing* | *Not created* | 5 min |
+| 31 | Baby drinkt niet genoeg | ✅ **WRITTEN** | `/problemen-oplossen/baby-drinkt-niet-genoeg/page.jsx` | 6 min |
 | 32 | Krampjes na flesvoeding | ❌ *Needs writing* | *Not created* | 4 min |
 | 33 | Spugen na de fles | ❌ *Needs writing* | *Not created* | 4 min |
-| 34 | Constipatie door flesvoeding | ❌ *Needs writing* | *Not created* | 5 min |
+| 34 | Constipatie door flesvoeding | ✅ **WRITTEN** | `/problemen-oplossen/constipatie-door-flesvoeding/page.jsx` | 7 min |
 | 35 | Diarree en flesvoeding | ❌ *Needs writing* | *Not created* | 4 min |
 | 36 | Allergische reacties | ❌ *Needs writing* | *Not created* | 6 min |
 | 37 | Baby weigert nieuwe formule | ❌ *Needs writing* | *Not created* | 4 min |
@@ -79,12 +79,12 @@ This document provides a complete overview of all planned articles in the kennis
 | 39 | Slaapproblemen door flesvoeding | ❌ *Needs writing* | *Not created* | 6 min |
 
 ### 🧼 Hygiëne & Bereiding (6 articles)
-**Status: 1/6 written (17%)**
+**Status: 2/6 written (33%)**
 
 | ID | Title | Status | File Path | Duration |
 |----|-------|--------|-----------|----------|
 | - | Hygiëne & bereiding overzicht | ✅ **WRITTEN** | `/hygiene-bereiding/page.jsx` | - |
-| 40 | Flessen steriliseren | ❌ *Needs writing* | *Not created* | 5 min |
+| 40 | Flessen steriliseren | ✅ **WRITTEN** | `/hygiene-bereiding/flessen-steriliseren/page.jsx` | 8 min |
 | 41 | Flesvoeding bewaren | ❌ *Needs writing* | *Not created* | 4 min |
 | 42 | Water koken voor flesvoeding | ❌ *Needs writing* | *Not created* | 3 min |
 | 43 | Schone bereiding werkplek | ❌ *Needs writing* | *Not created* | 4 min |
@@ -149,11 +149,11 @@ This document provides a complete overview of all planned articles in the kennis
 ### **High Priority** (Core functionality)
 These articles are essential for basic flesvoeding knowledge:
 
-1. **Baby weigert de fles** - Common problem, needs dedicated article
-2. **Overstappen van borst naar fles** - Major transition topic  
+1. ~~**Baby weigert de fles**~~ - ✅ **COMPLETED**
+2. ~~**Overstappen van borst naar fles**~~ - ✅ **COMPLETED**  
 3. **Boertje laten tijdens voeding** - Basic technique
 4. **Voedingsritme opbouwen** - Fundamental skill
-5. **Flessen steriliseren** - Essential hygiene
+5. ~~**Flessen steriliseren**~~ - ✅ **COMPLETED**
 6. **Flesvoeding bewaren** - Safety critical
 7. **Temperatuur controleren** - Safety duplicate (already exists in voedingstechnieken)
 
@@ -162,8 +162,8 @@ Articles for frequent problems and questions:
 
 8. **Krampjes na flesvoeding** - Common problem
 9. **Spugen na de fles** - Very common concern
-10. **Constipatie door flesvoeding** - Medical concern
-11. **Baby drinkt niet genoeg** - Parental worry
+10. ~~**Constipatie door flesvoeding**~~ - ✅ **COMPLETED**
+11. ~~**Baby drinkt niet genoeg**~~ - ✅ **COMPLETED**
 12. **Verschillende spenen uitproberen** - Practical need
 13. **Verschil tussen startvoeding en opvolgmelk** - Basic knowledge gap
 
@@ -180,10 +180,22 @@ More specific or advanced topics:
 
 ## 📋 Content Development Notes
 
-### Articles That Need Immediate Attention
-- Many category overview pages exist but lack individual detailed articles
-- Several safety-critical topics are missing (sterilization, storage, temperature)
-- Common problems (spugen, krampjes, weigeren) need dedicated pages
+### Recent Completions (January 2025)
+✅ **Added 5 new comprehensive articles:**
+- Baby weigert de fles - Complete troubleshooting guide
+- Overstappen van borst naar fles - Detailed transition strategies  
+- Baby drinkt niet genoeg - Problem-solving approach
+- Constipatie door flesvoeding - Medical insights and solutions
+- Flessen steriliseren - All sterilization methods compared
+
+✅ **Enhanced existing articles:**
+- Flesvoeding vs borstvoeding - Added emotional considerations, myths debunked
+- Eerste keer flesvoeding geven - Added baby preparation and feeding techniques
+
+### Articles That Still Need Immediate Attention
+- Several safety-critical topics still missing (storage, temperature)
+- Common problems (spugen, krampjes) need dedicated pages
+- Basic techniques (boertje laten, voedingsritme) gaps remain
 
 ### SEO Considerations
 - High-priority articles target common search terms
@@ -210,5 +222,11 @@ More specific or advanced topics:
 
 **Last Updated:** January 2025  
 **Total Articles Planned:** 66  
-**Articles Written:** 18  
-**Remaining Work:** 48 articles
+**Articles Written:** 23 (+5 new articles created)  
+**Remaining Work:** 43 articles
+
+### Recent Updates:
+- ✅ Created 5 missing articles from new-articles analysis
+- ✅ Enhanced 2 existing articles with additional content  
+- ✅ Completion rate improved from 27% to 35%
+- ✅ High-priority articles addressed: baby refusing bottle, breast-to-bottle transition, sterilization

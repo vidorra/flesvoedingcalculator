@@ -96,18 +96,29 @@ export default function FlesvoedingVsBorstvoedingPage() {
 
           {/* Header */}
           <div className="mb-8">
-            <div className="text-sm text-gray-600 mb-2">Basis Flesvoeding • Vergelijking</div>
+            <div className="text-sm text-gray-600 mb-2">Basis Flesvoeding • Objectieve Vergelijking</div>
             <h1 className="text-4xl font-bold text-primary mb-4">
-              Flesvoeding vs Borstvoeding
+              Flesvoeding vs Borstvoeding: Objectieve Gids
             </h1>
             <p className="text-gray-600 mb-6">
-              Een eerlijke, wetenschappelijke vergelijking gebaseerd op Nederlands en internationaal 
-              onderzoek. Alle feiten om een weloverwogen keuze te maken die past bij jouw situatie.
+              Een eerlijke, wetenschappelijke vergelijking zonder schuldgevoelens. Beide voedingsmethoden 
+              kunnen gezonde, gelukkige baby's opleveren. Deze gids geeft je alle feiten om een geïnformeerde 
+              beslissing te maken die past bij jouw unieke situatie.
             </p>
             <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-              <span>Leestijd: 12 minuten</span>
-              <span><CheckCircle className="w-4 h-4" /></span>
+              <span>Leestijd: 15 minuten</span>
               <span>Objectieve vergelijking</span>
+              <span>95% van baby's groeit gezond op met flesvoeding</span>
+            </div>
+            
+            <div className="mt-4 p-4 border border-gray-200 rounded-lg">
+              <h3 className="font-semibold text-primary mb-2">Belangrijke waarheid vooraf:</h3>
+              <ul className="space-y-1 text-sm text-gray-700">
+                <li>• <strong>95% van baby's</strong> groeit gezond op met flesvoeding</li>
+                <li>• <strong>Borstvoeding is ideaal</strong> maar niet altijd mogelijk of gewenst</li>
+                <li>• <strong>Geen perfecte keuze</strong> - beide hebben voor- en nadelen</li>
+                <li>• <strong>Jouw welzijn</strong> als ouder is ook belangrijk voor baby's ontwikkeling</li>
+              </ul>
             </div>
           </div>
 
@@ -325,6 +336,114 @@ export default function FlesvoedingVsBorstvoedingPage() {
               <p className="text-sm text-gray-600">
                 Gebruik onze <Link href="/" className="text-primary hover:underline">flesvoeding calculator</Link> om je specifieke kosten te berekenen.
               </p>
+            </div>
+          </section>
+
+          {/* Emotionele en praktische overwegingen */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-primary mb-6">Emotionele en praktische overwegingen</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              {/* Moeder welzijn */}
+              <div className="border border-gray-200 rounded-xl p-6">
+                <h3 className="font-semibold text-primary mb-4">Impact op moeder welzijn</h3>
+                
+                <h4 className="font-medium text-gray-700 mb-3">Borstvoeding uitdagingen:</h4>
+                <ul className="space-y-2 mb-4">
+                  <li className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                    <span className="text-sm text-gray-700">Fysieke pijn: tepelkloven, borstontsteking (10-15%)</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                    <span className="text-sm text-gray-700">Mentale belasting: constante beschikbaarheid</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                    <span className="text-sm text-gray-700">Sociale isolatie: moeilijker om huis te verlaten</span>
+                  </li>
+                </ul>
+                
+                <h4 className="font-medium text-gray-700 mb-3">Flesvoeding voordelen:</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                    <span className="text-sm text-gray-700">Gedeelde verantwoordelijkheid met partner</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                    <span className="text-sm text-gray-700">Beter slaappatroon door afwisseling</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                    <span className="text-sm text-gray-700">Meer sociale vrijheid</span>
+                  </li>
+                </ul>
+              </div>
+              
+              {/* Partner betrokkenheid */}
+              <div className="border border-gray-200 rounded-xl p-6">
+                <h3 className="font-semibold text-primary mb-4">Partner betrokkenheid</h3>
+                
+                <h4 className="font-medium text-gray-700 mb-3">Bij borstvoeding:</h4>
+                <ul className="space-y-2 mb-4">
+                  <li className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                    <span className="text-sm text-gray-700">Beperkte rol bij voedingen</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                    <span className="text-sm text-gray-700">Andere ondersteuning: luiers, boertjes, troost</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                    <span className="text-sm text-gray-700">Kan frustratie opleveren door machteloosheid</span>
+                  </li>
+                </ul>
+                
+                <h4 className="font-medium text-gray-700 mb-3">Bij flesvoeding:</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                    <span className="text-sm text-gray-700">Gelijkwaardige rol beide ouders</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                    <span className="text-sm text-gray-700">Bonding mogelijkheden voor beide</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                    <span className="text-sm text-gray-700">Betere verdeling nachtelijke taken</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* Mythen ontkracht */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-primary mb-6">Mythen ontkracht</h2>
+            
+            <div className="space-y-6">
+              <div className="border border-gray-200 rounded-xl p-6">
+                <h3 className="font-semibold text-primary mb-2">Mythe: "Flesvoeding baby's zijn vaker ziek"</h3>
+                <p className="text-gray-700 mb-3"><strong>Realiteit:</strong> In ontwikkelde landen met goede hygiëne zijn verschillen minimaal. Goede verzorging en liefde zijn belangrijker dan voedingsmethode.</p>
+              </div>
+              
+              <div className="border border-gray-200 rounded-xl p-6">
+                <h3 className="font-semibold text-primary mb-2">Mythe: "Borstvoeding is altijd gratis"</h3>
+                <p className="text-gray-700 mb-3"><strong>Realiteit:</strong> Kolfapparatuur, extra voeding moeder, verlies inkomsten door meer zwangerschapsverlof - kosten lopen op.</p>
+              </div>
+              
+              <div className="border border-gray-200 rounded-xl p-6">
+                <h3 className="font-semibold text-primary mb-2">Mythe: "Flesvoeding verstoort moeder-baby band"</h3>
+                <p className="text-gray-700 mb-3"><strong>Realiteit:</strong> Bonding gebeurt door liefdevol contact, niet voedingsmethode. Veel factoren beïnvloeden hechting.</p>
+              </div>
+              
+              <div className="border border-gray-200 rounded-xl p-6">
+                <h3 className="font-semibold text-primary mb-2">Mythe: "Flesvoeding baby's zijn minder intelligent"</h3>
+                <p className="text-gray-700 mb-3"><strong>Realiteit:</strong> Geen bewezen causaal verband. Sociaal-economische factoren verklaren meeste verschillen.</p>
+              </div>
             </div>
           </section>
 
