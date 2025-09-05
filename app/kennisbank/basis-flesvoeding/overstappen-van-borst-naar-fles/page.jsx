@@ -83,19 +83,19 @@ export default function OverstappenBorstNaarFlesPage() {
                   <h3 className="font-medium text-primary mb-3">Ideale timing voor overstap:</h3>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
                       <span className="text-gray-700 text-sm">Niet te vroeg: minimaal 2-3 weken voor goede borstvoeding opbouw</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
                       <span className="text-gray-700 text-sm">Niet tijdens groeispurt: baby is dan onrustiger</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
                       <span className="text-gray-700 text-sm">Plan vooruit: begin 2-4 weken voor deadline (werk)</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
                       <span className="text-gray-700 text-sm">Geen stress periode: vermijd drukke tijden</span>
                     </li>
                   </ul>
@@ -108,89 +108,89 @@ export default function OverstappenBorstNaarFlesPage() {
               <h2 className="text-lg font-semibold text-primary mb-4">Overstap strategieën: 3 verschillende benaderingen</h2>
               
               <div className="space-y-6">
-                <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                  <h3 className="font-medium text-green-800 mb-3 flex items-center">
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <h3 className="font-medium text-gray-700 mb-3 flex items-center">
                     <CheckCircle className="w-4 h-4 mr-2" />
                     Strategie 1: Geleidelijke overstap (2-4 weken)
                   </h3>
-                  <p className="text-green-700 text-sm mb-3 italic">Beste optie voor meeste moeders en baby's</p>
+                  <p className="text-gray-700 text-sm mb-3 italic">Beste optie voor meeste moeders en baby's</p>
                   
                   <div className="space-y-3">
                     <div>
-                      <h4 className="font-medium text-green-700 mb-1">Week 1: Eén voeding vervangen</h4>
+                      <h4 className="font-medium text-gray-700 mb-1">Week 1: Eén voeding vervangen</h4>
                       <ul className="space-y-1">
-                        <li className="text-green-700 text-sm">• Kies middag voeding (meestal minste melkproductie)</li>
-                        <li className="text-green-700 text-sm">• Geef fles op vast tijdstip elke dag</li>
-                        <li className="text-green-700 text-sm">• Kolven niet nodig - lichaam past productie aan</li>
+                        <li className="text-gray-700 text-sm">• Kies middag voeding (meestal minste melkproductie)</li>
+                        <li className="text-gray-700 text-sm">• Geef fles op vast tijdstip elke dag</li>
+                        <li className="text-gray-700 text-sm">• Kolven niet nodig - lichaam past productie aan</li>
                       </ul>
                     </div>
                     
                     <div>
-                      <h4 className="font-medium text-green-700 mb-1">Week 2: Tweede voeding toevoegen</h4>
+                      <h4 className="font-medium text-gray-700 mb-1">Week 2: Tweede voeding toevoegen</h4>
                       <ul className="space-y-1">
-                        <li className="text-green-700 text-sm">• Vervang ochtendsupplement of avondvoeding</li>
-                        <li className="text-green-700 text-sm">• Houd belangrijkste voedingen (ochtend/nacht) intact</li>
-                        <li className="text-green-700 text-sm">• Let op tekenen van verstopte melkkanalen</li>
+                        <li className="text-gray-700 text-sm">• Vervang ochtendsupplement of avondvoeding</li>
+                        <li className="text-gray-700 text-sm">• Houd belangrijkste voedingen (ochtend/nacht) intact</li>
+                        <li className="text-gray-700 text-sm">• Let op tekenen van verstopte melkkanalen</li>
                       </ul>
                     </div>
                     
                     <div>
-                      <h4 className="font-medium text-green-700 mb-1">Week 3: Uitbreiden naar meer voedingen</h4>
+                      <h4 className="font-medium text-gray-700 mb-1">Week 3: Uitbreiden naar meer voedingen</h4>
                       <ul className="space-y-1">
-                        <li className="text-green-700 text-sm">• Vervang nog 1-2 voedingen per dag</li>
-                        <li className="text-green-700 text-sm">• Hou 1-2 borstvoedingen voor binding</li>
-                        <li className="text-green-700 text-sm">• Kolven indien nodig om ongemak te voorkomen</li>
+                        <li className="text-gray-700 text-sm">• Vervang nog 1-2 voedingen per dag</li>
+                        <li className="text-gray-700 text-sm">• Hou 1-2 borstvoedingen voor binding</li>
+                        <li className="text-gray-700 text-sm">• Kolven indien nodig om ongemak te voorkomen</li>
                       </ul>
                     </div>
                     
                     <div>
-                      <h4 className="font-medium text-green-700 mb-1">Week 4: Volledige overstap of behoud laatste voeding</h4>
+                      <h4 className="font-medium text-gray-700 mb-1">Week 4: Volledige overstap of behoud laatste voeding</h4>
                       <ul className="space-y-1">
-                        <li className="text-green-700 text-sm">• Laatste borstvoeding(en) vervangen</li>
-                        <li className="text-green-700 text-sm">• Of behoud 1 voeding voor binding (vaak avond)</li>
+                        <li className="text-gray-700 text-sm">• Laatste borstvoeding(en) vervangen</li>
+                        <li className="text-gray-700 text-sm">• Of behoud 1 voeding voor binding (vaak avond)</li>
                       </ul>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-                  <h3 className="font-medium text-yellow-800 mb-3 flex items-center">
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <h3 className="font-medium text-gray-700 mb-3 flex items-center">
                     <AlertTriangle className="w-4 h-4 mr-2" />
                     Strategie 2: Snelle overstap (3-7 dagen)
                   </h3>
-                  <p className="text-yellow-700 text-sm mb-3 italic">Bij medische noodzaak of acute situaties</p>
+                  <p className="text-gray-700 text-sm mb-3 italic">Bij medische noodzaak of acute situaties</p>
                   
                   <div className="space-y-3">
                     <div>
-                      <h4 className="font-medium text-yellow-700 mb-1">Dag 1-2: Alle voedingen vervangen</h4>
+                      <h4 className="font-medium text-gray-700 mb-1">Dag 1-2: Alle voedingen vervangen</h4>
                       <ul className="space-y-1">
-                        <li className="text-yellow-700 text-sm">• Direct volledig overstappen op fles</li>
-                        <li className="text-yellow-700 text-sm">• Kolven indien borsten te vol/pijnlijk worden</li>
-                        <li className="text-yellow-700 text-sm">• Kolven geleidelijk verminderen</li>
+                        <li className="text-gray-700 text-sm">• Direct volledig overstappen op fles</li>
+                        <li className="text-gray-700 text-sm">• Kolven indien borsten te vol/pijnlijk worden</li>
+                        <li className="text-gray-700 text-sm">• Kolven geleidelijk verminderen</li>
                       </ul>
                     </div>
                     
                     <div>
-                      <h4 className="font-medium text-yellow-700 mb-1">Dag 3-7: Melkproductie afbouwen</h4>
+                      <h4 className="font-medium text-gray-700 mb-1">Dag 3-7: Melkproductie afbouwen</h4>
                       <ul className="space-y-1">
-                        <li className="text-yellow-700 text-sm">• Kolven alleen bij ongemak</li>
-                        <li className="text-yellow-700 text-sm">• Koude kompressen tegen zwelling</li>
-                        <li className="text-yellow-700 text-sm">• Paracetamol bij pijn</li>
+                        <li className="text-gray-700 text-sm">• Kolven alleen bij ongemak</li>
+                        <li className="text-gray-700 text-sm">• Koude kompressen tegen zwelling</li>
+                        <li className="text-gray-700 text-sm">• Paracetamol bij pijn</li>
                       </ul>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                  <h3 className="font-medium text-blue-800 mb-3">Strategie 3: Gedeeltelijke overstap (combi-voeding)</h3>
-                  <p className="text-blue-700 text-sm mb-3 italic">Voor moeders die deels willen blijven geven</p>
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <h3 className="font-medium text-gray-700 mb-3">Strategie 3: Gedeeltelijke overstap (combi-voeding)</h3>
+                  <p className="text-gray-700 text-sm mb-3 italic">Voor moeders die deels willen blijven geven</p>
                   
                   <div>
-                    <h4 className="font-medium text-blue-700 mb-1">Blijvende verdeling:</h4>
+                    <h4 className="font-medium text-gray-700 mb-1">Blijvende verdeling:</h4>
                     <ul className="space-y-1">
-                      <li className="text-blue-700 text-sm">• Ochtend en avond: borstvoeding</li>
-                      <li className="text-blue-700 text-sm">• Middag en nacht: flesvoeding</li>
-                      <li className="text-blue-700 text-sm">• Of werkdagen fles, weekend borst</li>
+                      <li className="text-gray-700 text-sm">• Ochtend en avond: borstvoeding</li>
+                      <li className="text-gray-700 text-sm">• Middag en nacht: flesvoeding</li>
+                      <li className="text-gray-700 text-sm">• Of werkdagen fles, weekend borst</li>
                     </ul>
                   </div>
                 </div>
@@ -285,11 +285,11 @@ export default function OverstappenBorstNaarFlesPage() {
                       <h4 className="font-medium text-gray-700 mb-2">Kies de juiste voeding om te vervangen:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
                           <span className="text-gray-700 text-sm"><strong>Makkelijkst:</strong> Middag voeding (minste melk)</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <AlertTriangle className="w-4 h-4 text-red-600 flex-shrink-0" />
+                          <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
                           <span className="text-gray-700 text-sm"><strong>Moeilijkst:</strong> Ochtend of voor het slapen (veel melk/binding)</span>
                         </li>
                         <li className="flex items-center space-x-2">
@@ -378,28 +378,28 @@ export default function OverstappenBorstNaarFlesPage() {
                     Baby accepteert fles niet
                   </h3>
                   
-                  <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                    <h4 className="font-medium text-green-800 mb-2">Meest effectieve oplossingen:</h4>
+                  <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                    <h4 className="font-medium text-gray-700 mb-2">Meest effectieve oplossingen:</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                        <span className="text-green-700 text-sm"><strong>Laat iemand anders geven</strong> - baby associeert jou met borst</span>
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                        <span className="text-gray-700 text-sm"><strong>Laat iemand anders geven</strong> - baby associeert jou met borst</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                        <span className="text-green-700 text-sm"><strong>Andere speen proberen</strong> - vorm en materiaal maken verschil</span>
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                        <span className="text-gray-700 text-sm"><strong>Andere speen proberen</strong> - vorm en materiaal maken verschil</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                        <span className="text-green-700 text-sm"><strong>Temperatuur aanpassen</strong> - precies lichaamstemperatuur</span>
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                        <span className="text-gray-700 text-sm"><strong>Temperatuur aanpassen</strong> - precies lichaamstemperatuur</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                        <span className="text-green-700 text-sm"><strong>Timing veranderen</strong> - niet te hongerig, niet te vol</span>
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                        <span className="text-gray-700 text-sm"><strong>Timing veranderen</strong> - niet te hongerig, niet te vol</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                        <span className="text-green-700 text-sm"><strong>Positie variëren</strong> - staand, zittend, wandelend</span>
+                        <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                        <span className="text-gray-700 text-sm"><strong>Positie variëren</strong> - staand, zittend, wandelend</span>
                       </li>
                     </ul>
                   </div>
@@ -431,46 +431,46 @@ export default function OverstappenBorstNaarFlesPage() {
                   <h3 className="font-medium text-primary mb-3">Overvol/pijnlijke borsten</h3>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                      <h4 className="font-medium text-blue-800 mb-2">Verlichting zoeken:</h4>
+                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                      <h4 className="font-medium text-gray-700 mb-2">Verlichting zoeken:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></div>
-                          <span className="text-blue-700 text-sm">Kolven minimaal - alleen tot comfort</span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-700 text-sm">Kolven minimaal - alleen tot comfort</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></div>
-                          <span className="text-blue-700 text-sm">Koude kompressen tussen voedingen</span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-700 text-sm">Koude kompressen tussen voedingen</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></div>
-                          <span className="text-blue-700 text-sm">Warme douche voor kolfing</span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-700 text-sm">Warme douche voor kolfing</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></div>
-                          <span className="text-blue-700 text-sm">Savooikool bladeren in beha</span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-700 text-sm">Savooikool bladeren in beha</span>
                         </li>
                       </ul>
                     </div>
                     
-                    <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                      <h4 className="font-medium text-red-800 mb-2">Wanneer arts bellen:</h4>
+                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                      <h4 className="font-medium text-gray-700 mb-2">Wanneer arts bellen:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
-                          <AlertTriangle className="w-4 h-4 text-red-600 flex-shrink-0" />
-                          <span className="text-red-700 text-sm">Koorts boven 38.5°C</span>
+                          <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span className="text-gray-700 text-sm">Koorts boven 38.5°C</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <AlertTriangle className="w-4 h-4 text-red-600 flex-shrink-0" />
-                          <span className="text-red-700 text-sm">Rode, warme plekken op borst</span>
+                          <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span className="text-gray-700 text-sm">Rode, warme plekken op borst</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <AlertTriangle className="w-4 h-4 text-red-600 flex-shrink-0" />
-                          <span className="text-red-700 text-sm">Griepachtige symptomen</span>
+                          <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span className="text-gray-700 text-sm">Griepachtige symptomen</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <AlertTriangle className="w-4 h-4 text-red-600 flex-shrink-0" />
-                          <span className="text-red-700 text-sm">Harde, pijnlijke knopen</span>
+                          <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span className="text-gray-700 text-sm">Harde, pijnlijke knopen</span>
                         </li>
                       </ul>
                     </div>
@@ -510,19 +510,19 @@ export default function OverstappenBorstNaarFlesPage() {
                       <h4 className="font-medium text-gray-700 mb-2">Ondersteuning zoeken:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
                           <span className="text-gray-600 text-sm">Praat met partner over gevoelens</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
                           <span className="text-gray-600 text-sm">Zoek contact met andere moeders</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
                           <span className="text-gray-600 text-sm">Overweeg professionele hulp bij sterke emoties</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
                           <span className="text-gray-600 text-sm">Onthoud: gelukkige moeder = gelukkige baby</span>
                         </li>
                       </ul>
@@ -575,7 +575,7 @@ export default function OverstappenBorstNaarFlesPage() {
                   
                   <div className="space-y-3">
                     <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-800 rounded-full flex items-center justify-center text-sm font-medium">1</div>
+                      <div className="flex-shrink-0 w-8 h-8 bg-gray-100 text-gray-700 rounded-full flex items-center justify-center text-sm font-medium">1</div>
                       <div>
                         <h4 className="font-medium text-gray-700">Week 1:</h4>
                         <ul className="text-gray-600 text-sm space-y-1">
@@ -587,7 +587,7 @@ export default function OverstappenBorstNaarFlesPage() {
                     </div>
                     
                     <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-800 rounded-full flex items-center justify-center text-sm font-medium">2</div>
+                      <div className="flex-shrink-0 w-8 h-8 bg-gray-100 text-gray-700 rounded-full flex items-center justify-center text-sm font-medium">2</div>
                       <div>
                         <h4 className="font-medium text-gray-700">Week 2:</h4>
                         <ul className="text-gray-600 text-sm space-y-1">
@@ -599,7 +599,7 @@ export default function OverstappenBorstNaarFlesPage() {
                     </div>
                     
                     <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0 w-8 h-8 bg-blue-100 text-blue-800 rounded-full flex items-center justify-center text-sm font-medium">3</div>
+                      <div className="flex-shrink-0 w-8 h-8 bg-gray-100 text-gray-700 rounded-full flex items-center justify-center text-sm font-medium">3</div>
                       <div>
                         <h4 className="font-medium text-gray-700">Week 3:</h4>
                         <ul className="text-gray-600 text-sm space-y-1">
@@ -611,7 +611,7 @@ export default function OverstappenBorstNaarFlesPage() {
                     </div>
                     
                     <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0 w-8 h-8 bg-green-100 text-green-800 rounded-full flex items-center justify-center text-sm font-medium">4</div>
+                      <div className="flex-shrink-0 w-8 h-8 bg-gray-100 text-gray-700 rounded-full flex items-center justify-center text-sm font-medium">4</div>
                       <div>
                         <h4 className="font-medium text-gray-700">Week 4:</h4>
                         <ul className="text-gray-600 text-sm space-y-1">
@@ -658,8 +658,8 @@ export default function OverstappenBorstNaarFlesPage() {
               </div>
             </div>
 
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-              <p className="text-blue-800 text-sm text-center">
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
+              <p className="text-gray-700 text-sm text-center">
                 Overstappen van borst naar fles is een grote verandering voor beide. Met de juiste aanpak, geduld en ondersteuning verloopt deze overgang voor de meeste gezinnen succesvol.
               </p>
             </div>

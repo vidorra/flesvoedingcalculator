@@ -273,42 +273,42 @@ export default function BabyWeigertFlespagePage() {
               <h2 className="text-lg font-semibold text-primary mb-4">Wanneer professionele hulp zoeken?</h2>
               
               <div className="space-y-4">
-                <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                  <h3 className="font-medium text-red-800 mb-2">Direct contact opnemen met huisarts/consultatiebureau bij:</h3>
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <h3 className="font-medium text-gray-700 mb-2">Direct contact opnemen met huisarts/consultatiebureau bij:</h3>
                   <ul className="space-y-1">
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
-                      <span className="text-red-700 text-sm">Baby verliest gewicht of groeit niet volgens curve</span>
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-gray-700 text-sm">Baby verliest gewicht of groeit niet volgens curve</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
-                      <span className="text-red-700 text-sm">Meer dan 48 uur zeer weinig vocht binnen</span>
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-gray-700 text-sm">Meer dan 48 uur zeer weinig vocht binnen</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
-                      <span className="text-red-700 text-sm">Tekenen van uitdroging (droge luier, slapheid)</span>
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-gray-700 text-sm">Tekenen van uitdroging (droge luier, slapheid)</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
-                      <span className="text-red-700 text-sm">Koorts in combinatie met weigeren</span>
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-gray-700 text-sm">Koorts in combinatie met weigeren</span>
                     </li>
                   </ul>
                 </div>
 
-                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-                  <h3 className="font-medium text-yellow-800 mb-2">Overleg binnen 1 week bij:</h3>
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <h3 className="font-medium text-gray-700 mb-2">Overleg binnen 1 week bij:</h3>
                   <ul className="space-y-1">
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-yellow-500 rounded-full flex-shrink-0"></div>
-                      <span className="text-yellow-700 text-sm">Geen vooruitgang na alle bovenstaande stappen</span>
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-gray-700 text-sm">Geen vooruitgang na alle bovenstaande stappen</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-yellow-500 rounded-full flex-shrink-0"></div>
-                      <span className="text-yellow-700 text-sm">Baby lijkt hongerig maar blijft weigeren</span>
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-gray-700 text-sm">Baby lijkt hongerig maar blijft weigeren</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-yellow-500 rounded-full flex-shrink-0"></div>
-                      <span className="text-yellow-700 text-sm">Stress voor hele gezin wordt te groot</span>
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-gray-700 text-sm">Stress voor hele gezin wordt te groot</span>
                     </li>
                   </ul>
                 </div>
