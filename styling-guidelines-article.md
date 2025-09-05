@@ -188,6 +188,57 @@ export default function ArticlePage() {
 </div>
 ```
 
+### ⚠️ Avoid Excessive Card Nesting
+
+**Problem:** Too many nested cards create visual clutter and poor user experience.
+
+**Bad Example:**
+```jsx
+{/* TOO MUCH NESTING - Hard to scan */}
+<div className="bg-white/80 p-6">
+  <div className="space-y-4">
+    {items.map(item => (
+      <div className="border border-gray-200 rounded-lg p-4">  {/* Card 1 */}
+        <div className="bg-gray-50 rounded-lg p-3">             {/* Card 2 */}
+          <div className="bg-white rounded p-2">               {/* Card 3 */}
+            {/* Content buried in 3 layers */}
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+```
+
+**Good Example:**
+```jsx
+{/* CLEAN & SCANNABLE */}
+<div className="bg-white/80 p-6">
+  <div className="space-y-6">
+    {items.map(item => (
+      <div key={item.id}>
+        <h3 className="font-medium text-primary mb-3">{item.title}</h3>
+        <p className="text-gray-700 mb-4">{item.description}</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {/* Direct content layout */}
+        </div>
+        {/* Add separators between items */}
+        {index < items.length - 1 && (
+          <div className="border-b border-gray-200 mt-6"></div>
+        )}
+      </div>
+    ))}
+  </div>
+</div>
+```
+
+**Card Nesting Rules:**
+- ✅ **Maximum 2 levels** of card nesting
+- ✅ Use visual separators instead of nested borders
+- ✅ Prefer `space-y-*` and grid layouts over nested containers
+- ❌ Never nest 3+ card containers
+- ❌ Avoid `bg-white` cards inside `bg-gray-50` cards inside `bg-white/80` cards
+
 ### Lists and Bullet Points
 
 ```jsx
@@ -298,6 +349,8 @@ Before publishing any article, verify:
 - [ ] No `min-h-screen` on containers
 - [ ] **NO single large container** wrapping all content
 - [ ] Each section in **individual card containers**
+- [ ] **NO excessive card nesting** (maximum 2 levels)
+- [ ] Uses visual separators instead of nested borders
 - [ ] Uses `space-y-6` for section spacing
 - [ ] Proper responsive breakpoints
 - [ ] Content flows naturally on mobile
@@ -334,6 +387,10 @@ Before publishing any article, verify:
 4. **Missing sidebar**: Add KennisbankSidebar component and configuration
 5. **UTF-8 icons**: Replace with proper Lucide icons or remove entirely
 6. **Colored cards**: Convert info/warning/success cards to neutral gray styling
+7. **Excessive card nesting**: Remove unnecessary nested containers, use visual separators instead
+   - Replace 3+ levels of card nesting with cleaner layouts
+   - Use `border-b border-gray-200` dividers between content sections
+   - Prefer grid layouts over nested card structures
 
 ## 📚 Examples
 
