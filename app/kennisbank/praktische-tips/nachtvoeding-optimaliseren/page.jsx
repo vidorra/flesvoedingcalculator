@@ -168,7 +168,7 @@ export default function NachtvoedingOptimaliserenPage() {
 
   return (
     <Layout>
-      <div className="grid grid-cols-12 gap-6 min-h-screen">
+      <div className="grid grid-cols-12 gap-6">
         {/* Main Content - 7 columns on desktop, full width on mobile */}
         <div className="col-span-12 lg:col-span-7">
           <div className="space-y-6">
@@ -192,8 +192,8 @@ export default function NachtvoedingOptimaliserenPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <div className="border border-gray-200 bg-gray-50 rounded-xl p-4 mb-4">
-                <h3 className="font-medium text-red-900 mb-3">Zonder optimalisatie:</h3>
-                <ul className="space-y-2 text-sm text-red-800">
+                <h3 className="font-medium text-gray-800 mb-3">Zonder optimalisatie:</h3>
+                <ul className="space-y-2 text-sm text-gray-700">
                   <li className="flex items-center space-x-2">
                     <Coffee className="w-4 h-4" />
                     <span>30-45 minuten per nachtvoeding</span>
@@ -225,8 +225,8 @@ export default function NachtvoedingOptimaliserenPage() {
             
             <div>
               <div className="border border-gray-200 bg-gray-50 rounded-xl p-4">
-                <h3 className="font-medium text-green-900 mb-3">Met optimalisatie:</h3>
-                <ul className="space-y-2 text-sm text-green-800">
+                <h3 className="font-medium text-gray-800 mb-3">Met optimalisatie:</h3>
+                <ul className="space-y-2 text-sm text-gray-700">
                   <li className="flex items-center space-x-2">
                     <Zap className="w-4 h-4" />
                     <span>10-15 minuten per nachtvoeding</span>
@@ -246,8 +246,8 @@ export default function NachtvoedingOptimaliserenPage() {
                 </ul>
                 
                 <div className="mt-4 p-3 bg-gray-100 rounded-lg">
-                  <div className="text-green-900 font-bold text-lg">Besparing: 1.5-2 uur slaap per nacht!</div>
-                  <div className="text-sm text-green-800">= 10-14 uur meer slaap per week</div>
+                  <div className="text-gray-800 font-bold text-lg">Besparing: 1.5-2 uur slaap per nacht!</div>
+                  <div className="text-sm text-gray-700">= 10-14 uur meer slaap per week</div>
                 </div>
               </div>
             </div>
@@ -271,10 +271,10 @@ export default function NachtvoedingOptimaliserenPage() {
                 <div className="space-y-2 mb-4">
                   {method.steps.map((step, stepIndex) => (
                     <div key={stepIndex} className="flex justify-between items-center text-sm">
-                      <span className={method.method === 'Traditioneel' ? 'text-red-800' : 'text-green-800'}>
+                      <span className={method.method === 'Traditioneel' ? 'text-gray-700' : 'text-gray-700'}>
                         {step.action}
                       </span>
-                      <span className={`font-medium ${method.method === 'Traditioneel' ? 'text-red-600' : 'text-green-600'}`}>
+                      <span className={`font-medium ${method.method === 'Traditioneel' ? 'text-gray-600' : 'text-gray-600'}`}>
                         {step.time}
                       </span>
                     </div>
@@ -308,7 +308,7 @@ export default function NachtvoedingOptimaliserenPage() {
                   <h3 className="font-medium text-gray-900">{strategy.strategy}</h3>
                   <div className="text-right">
                     <div className="text-primary font-bold text-sm">{strategy.timeReduction}</div>
-                    <div className="text-green-600 text-xs">{strategy.effectiveness}</div>
+                    <div className="text-gray-600 text-xs">{strategy.effectiveness}</div>
                   </div>
                 </div>
                 
@@ -344,7 +344,7 @@ export default function NachtvoedingOptimaliserenPage() {
                       <h4 className="font-medium text-gray-900">{item.name}</h4>
                       <span className="text-primary font-medium text-sm">{item.price}</span>
                     </div>
-                    <p className="text-sm text-green-600">{item.benefit}</p>
+                    <p className="text-sm text-gray-600">{item.benefit}</p>
                   </div>
                 ))}
               </div>
@@ -418,11 +418,11 @@ export default function NachtvoedingOptimaliserenPage() {
               <div key={index} className="border border-gray-200 rounded-lg p-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <h3 className="font-medium text-red-800 mb-2">Probleem:</h3>
+                    <h3 className="font-medium text-gray-700 mb-2">Probleem:</h3>
                     <p className="text-sm text-gray-700">{item.challenge}</p>
                   </div>
                   <div>
-                    <h3 className="font-medium text-green-800 mb-2">Oplossing: {item.solution}</h3>
+                    <h3 className="font-medium text-gray-700 mb-2">Oplossing: {item.solution}</h3>
                     <ul className="text-sm text-gray-700 space-y-1">
                       {item.steps.map((step, stepIndex) => (
                         <li key={stepIndex} className="flex items-start space-x-2">
@@ -444,7 +444,7 @@ export default function NachtvoedingOptimaliserenPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <h3 className="font-medium text-green-800 mb-3">✅ Wel doen:</h3>
+              <h3 className="font-medium text-gray-700 mb-3"> Wel doen:</h3>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 border border-gray-200 bg-gray-500 rounded-full"></div>
@@ -470,7 +470,7 @@ export default function NachtvoedingOptimaliserenPage() {
             </div>
             
             <div>
-              <h3 className="font-medium text-red-800 mb-3">❌ Niet doen:</h3>
+              <h3 className="font-medium text-gray-700 mb-3"> Niet doen:</h3>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 border border-gray-200 bg-gray-500 rounded-full"></div>

@@ -83,7 +83,7 @@ export default function FlesvoedingPrematurePage() {
 
   return (
     <Layout>
-      <div className="grid grid-cols-12 gap-6 min-h-screen">
+      <div className="grid grid-cols-12 gap-6">
         {/* Main Content - 7 columns on desktop, full width on mobile */}
         <div className="col-span-12 lg:col-span-7">
           <div className="space-y-6">
@@ -343,7 +343,7 @@ export default function FlesvoedingPrematurePage() {
               </div>
               
               <div className="mt-4 p-3 border border-gray-200 bg-gray-50 rounded-lg">
-                <p className="text-sm text-green-800">
+                <p className="text-sm text-gray-700">
                   <strong>Care4Neo:</strong> Nederlandse oudervereniging biedt ondersteuning 
                   en informatie voor ouders van premature baby's.
                 </p>
@@ -387,8 +387,8 @@ export default function FlesvoedingPrematurePage() {
                   <p className="text-sm text-gray-600">Komt vaker voor. Houd baby rechtop na voeding, kleine porties vaker.</p>
                 </div>
                 <div className="p-3 border border-gray-200 bg-gray-50 rounded-lg">
-                  <h4 className="font-medium text-green-900">Gewichtstoename</h4>
-                  <p className="text-sm text-green-800">15-30g per dag is normaal. Wekelijks wegen tot stabiele groei.</p>
+                  <h4 className="font-medium text-gray-800">Gewichtstoename</h4>
+                  <p className="text-sm text-gray-700">15-30g per dag is normaal. Wekelijks wegen tot stabiele groei.</p>
                 </div>
               </div>
             </div>
@@ -397,7 +397,7 @@ export default function FlesvoedingPrematurePage() {
 
         {/* Warning Signs */}
         <div className="border border-gray-200 bg-gray-50 rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-red-800 mb-4 flex items-center">
+          <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
             <AlertCircle className="w-5 h-5 mr-2" />
             Waarschuwingssignalen - Direct Contact Opnemen
           </h2>
@@ -409,15 +409,15 @@ export default function FlesvoedingPrematurePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {warningSigns.map((sign, index) => (
               <div key={index} className="flex items-start space-x-2">
-                <AlertCircle className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
-                <span className="text-sm text-red-800">{sign}</span>
+                <AlertCircle className="w-4 h-4 text-gray-600 mt-0.5 flex-shrink-0" />
+                <span className="text-sm text-gray-700">{sign}</span>
               </div>
             ))}
           </div>
           
           <div className="mt-4 p-4 bg-white rounded-lg">
-            <h4 className="font-medium text-red-900 mb-2">Noodcontact:</h4>
-            <ul className="text-sm text-red-800 space-y-1">
+            <h4 className="font-medium text-gray-800 mb-2">Noodcontact:</h4>
+            <ul className="text-sm text-gray-700 space-y-1">
               <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span><strong>Spoed:</strong> 112 (bij acute ademhaling/bewusteloosheid)</span>
