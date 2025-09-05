@@ -109,7 +109,29 @@ export default function ArticlePage() {
    - Content area: `col-span-12 lg:col-span-7`
    - Sidebar automatically takes remaining space
 
-2. **Content Spacing:**
+2. **Content Organization:**
+   - **Never** wrap all content in single large container (`max-w-4xl mx-auto p-8`)
+   - Each major section must be in separate card container
+   - Use individual `bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6` cards
+   - Content structure: `<div className="space-y-6">` containing individual section cards
+
+3. **Section Structure:**
+   ```jsx
+   <div className="space-y-6">
+     {/* Header section */}
+     <div className="mb-6">
+       <h1>...</h1>
+     </div>
+     
+     {/* Each content section */}
+     <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+       <h2 className="text-lg font-semibold text-primary mb-4">Section Title</h2>
+       {/* Section content */}
+     </div>
+   </div>
+   ```
+
+4. **Content Spacing:**
    - Use `space-y-6` for main content sections
    - Use `space-y-4` for subsections
    - Use `space-y-2` for list items
@@ -274,6 +296,9 @@ Before publishing any article, verify:
 - [ ] Uses `grid grid-cols-12 gap-6` structure
 - [ ] Has `KennisbankSidebar` component
 - [ ] No `min-h-screen` on containers
+- [ ] **NO single large container** wrapping all content
+- [ ] Each section in **individual card containers**
+- [ ] Uses `space-y-6` for section spacing
 - [ ] Proper responsive breakpoints
 - [ ] Content flows naturally on mobile
 
