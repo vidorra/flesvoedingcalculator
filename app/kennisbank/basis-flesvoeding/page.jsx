@@ -577,7 +577,9 @@ export default function BasisFlesvoedingPage() {
               <div className="text-sm text-gray-600">Bereken hoeveelheden</div>
             </Link>
           </div>
-          </div>
+        </div>
+        
+        </div>
         </div>
         
         <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />

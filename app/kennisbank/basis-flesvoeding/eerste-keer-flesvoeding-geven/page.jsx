@@ -78,12 +78,22 @@ export default function EersteKeerFlesvoedingPage() {
             </h1>
             <p className="text-gray-600 mb-6">
               Complete stap-voor-stap handleiding voor Nederlandse ouders die voor het eerst 
-              flesvoeding gaan geven. Van voorbereiding tot hygiëne - alles voor een succesvolle start.
+              flesvoeding gaan geven. Of je nu overstapt van borstvoeding of direct begint - 
+              van voorbereiding tot hygiëne, alles voor een succesvolle start.
             </p>
             <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-              <span>Leestijd: 8 minuten</span>
+              <span>Leestijd: 10 minuten</span>
               <span>Geschikt vanaf: Geboorte</span>
               <span>Stap-voor-stap gids</span>
+            </div>
+            
+            <div className="mt-4 p-4 border border-gray-200 rounded-lg">
+              <h3 className="font-semibold text-primary mb-2">Timing voor eerste fles:</h3>
+              <ul className="space-y-1 text-sm text-gray-700">
+                <li>• <strong>Bij volledige flesvoeding:</strong> direct na geboorte mogelijk</li>
+                <li>• <strong>Bij combinatie met borst:</strong> ideaal tussen 2-4 weken</li>
+                <li>• <strong>Bij overstap van borst:</strong> elk moment mogelijk, meer geduld nodig</li>
+              </ul>
             </div>
           </div>
 
@@ -338,6 +348,134 @@ export default function EersteKeerFlesvoedingPage() {
             </div>
           </section>
 
+          {/* Baby voorbereiden */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-primary mb-6">Baby voorbereiden voor eerste fles</h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="border border-gray-200 rounded-xl p-6">
+                <h3 className="font-semibold text-primary mb-4">Herken honger signalen</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                    <span className="text-gray-700">Zuigbewegingen met mond</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                    <span className="text-gray-700">Handje naar mond brengen</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                    <span className="text-gray-700">Zoekreflex (hoofd draaien naar aanraking)</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                    <span className="text-gray-700">Zachte hongergeluiden</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                    <span className="text-gray-700">Wakker worden en alert zijn</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="border border-gray-200 rounded-xl p-6">
+                <h3 className="font-semibold text-primary mb-4">Optimale omgeving</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                    <span className="text-gray-700">Rustige setting - stil of zachte muziek</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                    <span className="text-gray-700">Gedimde verlichting</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                    <span className="text-gray-700">Comfortabele temperatuur (20-22°C)</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                    <span className="text-gray-700">Telefoon op stil</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                    <span className="text-gray-700">Andere kinderen bezighouden</span>
+                  </li>
+                </ul>
+                
+                <div className="mt-4 p-3 border border-gray-200 rounded-lg">
+                  <p className="text-sm text-gray-600">
+                    <strong>Vermijd:</strong> Voeden tijdens huilbui, wanneer baby te moe is, of bij koorts.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Voedingstechniek */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-primary mb-6">De perfecte voedingstechniek</h2>
+            
+            <div className="space-y-6">
+              <div className="border border-gray-200 rounded-xl p-6">
+                <h3 className="font-semibold text-primary mb-4">Juiste houding</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <h4 className="font-medium text-gray-700 mb-2">Voor baby:</h4>
+                    <ul className="space-y-1 text-sm text-gray-700">
+                      <li>• Houd baby semi-rechtop (45-60 graden)</li>
+                      <li>• Ondersteun hoofd en nek goed</li>
+                      <li>• Hoofd iets hoger dan lichaam</li>
+                      <li>• Hou baby dicht tegen je aan</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-gray-700 mb-2">Voor jezelf:</h4>
+                    <ul className="space-y-1 text-sm text-gray-700">
+                      <li>• Ga comfortabel zitten met rugsteun</li>
+                      <li>• Arm ondersteunen met kussen</li>
+                      <li>• Zorg dat je ontspannen bent</li>
+                      <li>• Varieer soms van arm (goede ontwikkeling)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="border border-gray-200 rounded-xl p-6">
+                <h3 className="font-semibold text-primary mb-4">De fles introduceren</h3>
+                <ol className="space-y-2">
+                  <li className="flex items-center space-x-2">
+                    <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">1</span>
+                    <span className="text-gray-700">Laat baby de speen met lippen verkennen</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">2</span>
+                    <span className="text-gray-700">Raak zachtjes onderlip aan met speen</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">3</span>
+                    <span className="text-gray-700">Wacht tot baby mond opent</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">4</span>
+                    <span className="text-gray-700">Plaats speen zachtjes in mond (niet forceren)</span>
+                  </li>
+                </ol>
+                
+                <div className="mt-4 p-3 border border-gray-200 rounded-lg">
+                  <h4 className="font-medium text-primary mb-2">Tijdens het voeden:</h4>
+                  <ul className="space-y-1 text-sm text-gray-700">
+                    <li>• Houd fles licht schuin (speen gevuld met melk)</li>
+                    <li>• Laat baby eigen tempo bepalen</li>
+                    <li>• Boertje laten na elke 60-90ml</li>
+                    <li>• Praat of zing zachtjes tijdens voeding</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* When to seek help */}
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-primary mb-6">Wanneer hulp zoeken?</h2>
@@ -417,7 +555,9 @@ export default function EersteKeerFlesvoedingPage() {
             
             <div className="mt-6 p-4 border border-gray-200 rounded-lg text-center">
               <p className="text-lg font-medium text-primary">Onthoud: Je doet het geweldig!</p>
-              <p className="text-gray-600">Flesvoeding geven is een liefdevolle manier om je baby te voeden en te koesteren.</p>
+              <p className="text-gray-600">Flesvoeding geven is een liefdevolle manier om je baby te voeden en te koesteren. 
+              De eerste fles geven is een mijlpaal - met voorbereiding, geduld en de juiste technieken 
+              wordt het al snel een natuurlijke routine.</p>
             </div>
           </section>
 
