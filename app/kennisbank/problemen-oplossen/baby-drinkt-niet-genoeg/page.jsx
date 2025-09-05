@@ -70,14 +70,14 @@ export default function BabyDrinktNietGenoegPage() {
                 </ul>
               </div>
 
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                <h3 className="font-medium text-blue-800 mb-2">Voorbeeldberekening 3 maanden oude baby (5kg):</h3>
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                <h3 className="font-medium text-gray-700 mb-2">Voorbeeldberekening 3 maanden oude baby (5kg):</h3>
                 <ul className="space-y-1">
-                  <li className="text-blue-700 text-sm"><strong>Dagelijkse behoefte:</strong> 5kg × 150ml = 750ml per dag</li>
-                  <li className="text-blue-700 text-sm"><strong>Per voeding (6x per dag):</strong> 750ml ÷ 6 = 125ml per keer</li>
-                  <li className="text-blue-700 text-sm"><strong>Variatie normaal:</strong> 100-150ml per voeding</li>
+                  <li className="text-gray-700 text-sm"><strong>Dagelijkse behoefte:</strong> 5kg × 150ml = 750ml per dag</li>
+                  <li className="text-gray-700 text-sm"><strong>Per voeding (6x per dag):</strong> 750ml ÷ 6 = 125ml per keer</li>
+                  <li className="text-gray-700 text-sm"><strong>Variatie normaal:</strong> 100-150ml per voeding</li>
                 </ul>
-                <p className="text-blue-600 text-sm mt-2 font-medium">
+                <p className="text-gray-700 text-sm mt-2 font-medium">
                   Belangrijke waarschuwing: Dit zijn richtlijnen. Sommige baby's hebben meer nodig, andere minder.
                 </p>
               </div>
@@ -88,81 +88,81 @@ export default function BabyDrinktNietGenoegPage() {
               <h2 className="text-lg font-semibold text-primary mb-4">Waarschuwingssignalen: Wanneer zorgen maken?</h2>
               
               <div className="space-y-4">
-                <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                  <h3 className="font-medium text-red-800 mb-2 flex items-center">
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <h3 className="font-medium text-gray-700 mb-2 flex items-center">
                     <AlertTriangle className="w-4 h-4 mr-2" />
                     Acute signalen - direct medisch contact
                   </h3>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <h4 className="font-medium text-red-700 mb-2">Dehydratie waarschuwingen:</h4>
+                      <h4 className="font-medium text-gray-700 mb-2">Dehydratie waarschuwingen:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
-                          <span className="text-red-700 text-sm">Minder dan 3 natte luiers per dag (na eerste week)</span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-700 text-sm">Minder dan 3 natte luiers per dag (na eerste week)</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
-                          <span className="text-red-700 text-sm">Droge mond en tong</span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-700 text-sm">Droge mond en tong</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
-                          <span className="text-red-700 text-sm">Ingevallen fontanel (zachte plek op hoofd)</span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-700 text-sm">Ingevallen fontanel (zachte plek op hoofd)</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
-                          <span className="text-red-700 text-sm">Geen tranen bij huilen</span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-700 text-sm">Geen tranen bij huilen</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
-                          <span className="text-red-700 text-sm">Lethargie of extreme slaperigheid</span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-700 text-sm">Lethargie of extreme slaperigheid</span>
                         </li>
                       </ul>
                     </div>
                     
                     <div>
-                      <h4 className="font-medium text-red-700 mb-2">Gewichtsverlies signalen:</h4>
+                      <h4 className="font-medium text-gray-700 mb-2">Gewichtsverlies signalen:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
-                          <span className="text-red-700 text-sm">Meer dan 10% gewichtsverlies na geboorte</span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-700 text-sm">Meer dan 10% gewichtsverlies na geboorte</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
-                          <span className="text-red-700 text-sm">Niet terug op geboortegewicht na 2 weken</span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-700 text-sm">Niet terug op geboortegewicht na 2 weken</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
-                          <span className="text-red-700 text-sm">Gewichtsverlies na initiële herstel</span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-700 text-sm">Gewichtsverlies na initiële herstel</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
-                          <span className="text-red-700 text-sm">Geen gewichtstoename 2 weken achter elkaar</span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-700 text-sm">Geen gewichtstoename 2 weken achter elkaar</span>
                         </li>
                       </ul>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-                  <h3 className="font-medium text-yellow-800 mb-2">Signalen voor extra aandacht</h3>
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <h3 className="font-medium text-gray-700 mb-2">Signalen voor extra aandacht</h3>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-yellow-500 rounded-full flex-shrink-0"></div>
-                      <span className="text-yellow-700 text-sm">Langzame gewichtstoename: &lt;150g per week eerste 4 maanden</span>
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-gray-700 text-sm">Langzame gewichtstoename: &lt;150g per week eerste 4 maanden</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-yellow-500 rounded-full flex-shrink-0"></div>
-                      <span className="text-yellow-700 text-sm">Frequente weigering fles zonder duidelijke reden</span>
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-gray-700 text-sm">Frequente weigering fles zonder duidelijke reden</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-yellow-500 rounded-full flex-shrink-0"></div>
-                      <span className="text-yellow-700 text-sm">Zeer korte voedingen: &lt;10 minuten en lijkt niet voldaan</span>
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-gray-700 text-sm">Zeer korte voedingen: &lt;10 minuten en lijkt niet voldaan</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-yellow-500 rounded-full flex-shrink-0"></div>
-                      <span className="text-yellow-700 text-sm">Onrustig gedrag kort na voeding</span>
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-gray-700 text-sm">Onrustig gedrag kort na voeding</span>
                     </li>
                   </ul>
                 </div>
@@ -191,20 +191,20 @@ export default function BabyDrinktNietGenoegPage() {
                         </li>
                       </ul>
                       
-                      <div className="mt-2 p-3 bg-green-50 border border-green-200 rounded">
-                        <h5 className="font-medium text-green-800 mb-1">Oplossing:</h5>
+                      <div className="mt-2 p-3 bg-gray-50 border border-gray-200 rounded">
+                        <h5 className="font-medium text-gray-700 mb-1">Oplossing:</h5>
                         <ul className="space-y-1">
                           <li className="flex items-center space-x-2">
-                            <CheckCircle className="w-3 h-3 text-green-600 flex-shrink-0" />
-                            <span className="text-green-700 text-sm">Test verschillende maten: Start met size 1, probeer size 2 bij langzame voeding</span>
+                            <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
+                            <span className="text-gray-700 text-sm">Test verschillende maten: Start met size 1, probeer size 2 bij langzame voeding</span>
                           </li>
                           <li className="flex items-center space-x-2">
-                            <CheckCircle className="w-3 h-3 text-green-600 flex-shrink-0" />
-                            <span className="text-green-700 text-sm">Let op flow: 1 druppel per seconde bij omgekeerde fles is ideaal</span>
+                            <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
+                            <span className="text-gray-700 text-sm">Let op flow: 1 druppel per seconde bij omgekeerde fles is ideaal</span>
                           </li>
                           <li className="flex items-center space-x-2">
-                            <CheckCircle className="w-3 h-3 text-green-600 flex-shrink-0" />
-                            <span className="text-green-700 text-sm">Wissel geleidelijk naar nieuwe speen</span>
+                            <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
+                            <span className="text-gray-700 text-sm">Wissel geleidelijk naar nieuwe speen</span>
                           </li>
                         </ul>
                       </div>
@@ -251,20 +251,20 @@ export default function BabyDrinktNietGenoegPage() {
                         </li>
                       </ul>
                       
-                      <div className="mt-2 p-3 bg-green-50 border border-green-200 rounded">
-                        <h5 className="font-medium text-green-800 mb-1">Oplossing:</h5>
+                      <div className="mt-2 p-3 bg-gray-50 border border-gray-200 rounded">
+                        <h5 className="font-medium text-gray-700 mb-1">Oplossing:</h5>
                         <ul className="space-y-1">
                           <li className="flex items-center space-x-2">
-                            <CheckCircle className="w-3 h-3 text-green-600 flex-shrink-0" />
-                            <span className="text-green-700 text-sm">Altijd testen op pols: moet lauwwarm aanvoelen</span>
+                            <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
+                            <span className="text-gray-700 text-sm">Altijd testen op pols: moet lauwwarm aanvoelen</span>
                           </li>
                           <li className="flex items-center space-x-2">
-                            <CheckCircle className="w-3 h-3 text-green-600 flex-shrink-0" />
-                            <span className="text-green-700 text-sm">Gebruik thermometer: 37°C is ideaal</span>
+                            <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
+                            <span className="text-gray-700 text-sm">Gebruik thermometer: 37°C is ideaal</span>
                           </li>
                           <li className="flex items-center space-x-2">
-                            <CheckCircle className="w-3 h-3 text-green-600 flex-shrink-0" />
-                            <span className="text-green-700 text-sm">Consistentie: zelfde temperatuur elke voeding</span>
+                            <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
+                            <span className="text-gray-700 text-sm">Consistentie: zelfde temperatuur elke voeding</span>
                           </li>
                         </ul>
                       </div>
@@ -282,68 +282,68 @@ export default function BabyDrinktNietGenoegPage() {
               </h2>
               
               <div className="space-y-6">
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                  <h3 className="font-medium text-blue-800 mb-3">Stap 1: Basis checklist (24 uur)</h3>
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <h3 className="font-medium text-gray-700 mb-3">Stap 1: Basis checklist (24 uur)</h3>
                   
                   <div className="space-y-2">
-                    <p className="text-blue-700 text-sm font-medium mb-3">Direct controleren:</p>
+                    <p className="text-gray-700 text-sm font-medium mb-3">Direct controleren:</p>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
                         <input type="checkbox" className="w-4 h-4 text-primary rounded" />
-                        <span className="text-blue-700 text-sm">Temperatuur fles: 37°C, test op pols</span>
+                        <span className="text-gray-700 text-sm">Temperatuur fles: 37°C, test op pols</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <input type="checkbox" className="w-4 h-4 text-primary rounded" />
-                        <span className="text-blue-700 text-sm">Speen conditie: niet gescheurd, goede flow</span>
+                        <span className="text-gray-700 text-sm">Speen conditie: niet gescheurd, goede flow</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <input type="checkbox" className="w-4 h-4 text-primary rounded" />
-                        <span className="text-blue-700 text-sm">Voedingstiming: baby toont honger signalen?</span>
+                        <span className="text-gray-700 text-sm">Voedingstiming: baby toont honger signalen?</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <input type="checkbox" className="w-4 h-4 text-primary rounded" />
-                        <span className="text-blue-700 text-sm">Omgeving: rustig, geen afleidingen</span>
+                        <span className="text-gray-700 text-sm">Omgeving: rustig, geen afleidingen</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <input type="checkbox" className="w-4 h-4 text-primary rounded" />
-                        <span className="text-blue-700 text-sm">Eigen rust: ben je ontspannen en geduldig?</span>
+                        <span className="text-gray-700 text-sm">Eigen rust: ben je ontspannen en geduldig?</span>
                       </li>
                     </ul>
-                    <p className="text-blue-600 text-sm mt-3 font-medium">
+                    <p className="text-gray-700 text-sm mt-3 font-medium">
                       Als geen verbetering na 24 uur: Ga naar stap 2
                     </p>
                   </div>
                 </div>
 
-                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-                  <h3 className="font-medium text-yellow-800 mb-3">Stap 2: Equipment aanpassingen (2-3 dagen)</h3>
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <h3 className="font-medium text-gray-700 mb-3">Stap 2: Equipment aanpassingen (2-3 dagen)</h3>
                   
                   <div className="space-y-2">
-                    <p className="text-yellow-700 text-sm font-medium mb-3">Systematisch testen:</p>
+                    <p className="text-gray-700 text-sm font-medium mb-3">Systematisch testen:</p>
                     <ul className="space-y-1">
-                      <li className="text-yellow-700 text-sm"><strong>Dag 1:</strong> Andere speen maat/type proberen</li>
-                      <li className="text-yellow-700 text-sm"><strong>Dag 2:</strong> Andere fles gebruiken (materiaal/vorm)</li>
-                      <li className="text-yellow-700 text-sm"><strong>Dag 3:</strong> Andere voedingspositie proberen</li>
+                      <li className="text-gray-700 text-sm"><strong>Dag 1:</strong> Andere speen maat/type proberen</li>
+                      <li className="text-gray-700 text-sm"><strong>Dag 2:</strong> Andere fles gebruiken (materiaal/vorm)</li>
+                      <li className="text-gray-700 text-sm"><strong>Dag 3:</strong> Andere voedingspositie proberen</li>
                     </ul>
                     
                     <div className="mt-3">
-                      <p className="text-yellow-700 text-sm font-medium mb-2">Bijhouden wat werkt:</p>
+                      <p className="text-gray-700 text-sm font-medium mb-2">Bijhouden wat werkt:</p>
                       <ul className="space-y-1">
-                        <li className="text-yellow-700 text-sm">• Welke speen: merk, maat, materiaal</li>
-                        <li className="text-yellow-700 text-sm">• Welke positie: zittend, staand, in beweging</li>
-                        <li className="text-yellow-700 text-sm">• Welke timing: interval tussen voedingen</li>
+                        <li className="text-gray-700 text-sm">• Welke speen: merk, maat, materiaal</li>
+                        <li className="text-gray-700 text-sm">• Welke positie: zittend, staand, in beweging</li>
+                        <li className="text-gray-700 text-sm">• Welke timing: interval tussen voedingen</li>
                       </ul>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                  <h3 className="font-medium text-green-800 mb-3">Stap 3: Diepere analyse (1 week)</h3>
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <h3 className="font-medium text-gray-700 mb-3">Stap 3: Diepere analyse (1 week)</h3>
                   
                   <div className="space-y-3">
                     <div>
-                      <p className="text-green-700 text-sm font-medium mb-2">Voedingsdagboek bijhouden:</p>
-                      <div className="bg-white border border-green-300 rounded p-3 font-mono text-xs">
+                      <p className="text-gray-700 text-sm font-medium mb-2">Voedingsdagboek bijhouden:</p>
+                      <div className="bg-white border border-gray-300 rounded p-3 font-mono text-xs">
                         <div>Datum: _______</div>
                         <div>Tijd: _______</div>
                         <div>Aangeboden: ___ml</div>
@@ -355,37 +355,37 @@ export default function BabyDrinktNietGenoegPage() {
                     </div>
                     
                     <div>
-                      <p className="text-green-700 text-sm font-medium mb-2">Patronen zoeken:</p>
+                      <p className="text-gray-700 text-sm font-medium mb-2">Patronen zoeken:</p>
                       <ul className="space-y-1">
-                        <li className="text-green-700 text-sm">• Tijden van dag: drinkt baby beter 's ochtends/avonds?</li>
-                        <li className="text-green-700 text-sm">• Dagen van week: weekend vs doordeweeks verschil?</li>
-                        <li className="text-green-700 text-sm">• Na activiteiten: na bad, wandeling, spelen?</li>
+                        <li className="text-gray-700 text-sm">• Tijden van dag: drinkt baby beter 's ochtends/avonds?</li>
+                        <li className="text-gray-700 text-sm">• Dagen van week: weekend vs doordeweeks verschil?</li>
+                        <li className="text-gray-700 text-sm">• Na activiteiten: na bad, wandeling, spelen?</li>
                       </ul>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                  <h3 className="font-medium text-red-800 mb-3">Stap 4: Medische consultatie</h3>
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <h3 className="font-medium text-gray-700 mb-3">Stap 4: Medische consultatie</h3>
                   
                   <div>
-                    <p className="text-red-700 text-sm font-medium mb-2">Contact huisarts/consultatiebureau bij:</p>
+                    <p className="text-gray-700 text-sm font-medium mb-2">Contact huisarts/consultatiebureau bij:</p>
                     <ul className="space-y-1">
                       <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
-                        <span className="text-red-700 text-sm">Geen verbetering na 1 week systematisch proberen</span>
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                        <span className="text-gray-700 text-sm">Geen verbetering na 1 week systematisch proberen</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
-                        <span className="text-red-700 text-sm">Gewichtsverlies of stagnatie</span>
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                        <span className="text-gray-700 text-sm">Gewichtsverlies of stagnatie</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
-                        <span className="text-red-700 text-sm">Tekenen van dehydratie</span>
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                        <span className="text-gray-700 text-sm">Tekenen van dehydratie</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"></div>
-                        <span className="text-red-700 text-sm">Ouderlijke stress wordt te groot</span>
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                        <span className="text-gray-700 text-sm">Ouderlijke stress wordt te groot</span>
                       </li>
                     </ul>
                   </div>
@@ -425,8 +425,8 @@ export default function BabyDrinktNietGenoegPage() {
                 </div>
               </div>
               
-              <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                <p className="text-blue-800 text-sm text-center italic">
+              <div className="mt-6 p-4 bg-gray-50 border border-gray-200 rounded-lg">
+                <p className="text-gray-700 text-sm text-center italic">
                   Baby's die weinig drinken zijn meestal gewoon efficient drinkers of hebben minder nodig. Met patience, systematische aanpak en professionele ondersteuning wanneer nodig, lost dit probleem zich meestal binnen enkele weken op.
                 </p>
               </div>
