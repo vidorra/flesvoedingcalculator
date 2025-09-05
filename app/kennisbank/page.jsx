@@ -2,11 +2,27 @@
 import { useState } from 'react'
 import Layout from '../../components/Layout'
 import Link from 'next/link'
+import KennisbankSidebar from '../../components/KennisbankSidebar'
 import { BookOpen, Search, Info, ArrowRight, Package, Clock, Baby, Shield, Wrench, AlertCircle, Refrigerator, Lightbulb, AlertTriangle } from 'lucide-react'
 
 export default function KennisbankPage() {
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [filteredContent, setFilteredContent] = useState('')
+
+  const sidebarImages = [
+    {
+      src: "/kennisbank-overzicht.png",
+      alt: "Kennisbank overzicht flesvoeding",
+      caption: "Complete flesvoeding gids"
+    },
+    {
+      src: "/flesvoeding-tips.png",
+      alt: "Flesvoeding tips en technieken",
+      caption: "Praktische tips voor ouders"
+    }
+  ]
+
+  const adTopics = ["Flesvoeding Gids", "Baby Voeding", "Kennisbank", "Voedingstips"]
 
   // Article data structure - represents actual articles/content available
   const articles = [
@@ -189,7 +205,9 @@ export default function KennisbankPage() {
 
   return (
     <Layout>
-      <div className="space-y-6">
+      <div className="grid grid-cols-12 gap-6">
+        <div className="col-span-12 lg:col-span-7">
+          <div className="space-y-6">
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
             <BookOpen className="w-6 h-6 mr-3 text-primary" />
@@ -516,7 +534,11 @@ export default function KennisbankPage() {
               </div>
             </Link>
           </div>
+          </div>
         </div>
+        </div>
+        
+        <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />
       </div>
     </Layout>
   )
