@@ -120,7 +120,7 @@ export default function BasisFlesvoedingPage() {
 
         {/* EU Regulations & Safety */}
         <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">Veiligheid & Regelgeving in Nederland</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Veiligheid & Regelgeving in Nederland</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
               <h3 className="font-medium text-gray-700 mb-3">EU-verordening 2016/127:</h3>
@@ -170,7 +170,7 @@ export default function BasisFlesvoedingPage() {
 
         {/* Myth Busting */}
         <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-600 mb-4">Veelgehoorde Mythes over Flesvoeding</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Veelgehoorde Mythes over Flesvoeding</h2>
           <div className="space-y-4">
             <div className="bg-white p-4 rounded-lg">
               <h3 className="font-medium text-gray-600 mb-2"> Mythe: "Flesvoeding is minder gezond dan borstvoeding"</h3>
@@ -306,13 +306,13 @@ export default function BasisFlesvoedingPage() {
                 en je hoeft niet te kolven. Plan geleidelijke overgang minimaal 2 weken voor werkhervatting.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-amber-50 p-3 rounded-lg">
-                  <div className="font-medium text-amber-800 mb-1">Voorbereiding:</div>
-                  <div className="text-sm text-amber-700">Start vroeg met wennen aan fles, laat partner oefenen, stock voorraad op</div>
+                <div className="bg-gray-50 p-3 rounded-lg">
+                  <div className="font-medium text-gray-700 mb-1">Voorbereiding:</div>
+                  <div className="text-sm text-gray-700">Start vroeg met wennen aan fles, laat partner oefenen, stock voorraad op</div>
                 </div>
-                <div className="bg-purple-50 p-3 rounded-lg">
-                  <div className="font-medium text-purple-800 mb-1">Praktisch:</div>
-                  <div className="text-sm text-purple-700">Instructies voor oppas, noodvoorraad, backup plan maken</div>
+                <div className="bg-gray-50 p-3 rounded-lg">
+                  <div className="font-medium text-gray-700 mb-1">Praktisch:</div>
+                  <div className="text-sm text-gray-700">Instructies voor oppas, noodvoorraad, backup plan maken</div>
                 </div>
               </div>
             </div>
@@ -324,9 +324,9 @@ export default function BasisFlesvoedingPage() {
                 Flesvoeding biedt unieke kans voor partner om volledig betrokken te zijn bij voeding. 
                 Dit versterkt de band en geeft mama rust.
               </p>
-              <div className="bg-pink-50 p-4 rounded-lg">
-                <h4 className="font-medium text-pink-800 mb-2">Praktische tips:</h4>
-                <div className="space-y-1 text-sm text-pink-700">
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <h4 className="font-medium text-gray-700 mb-2">Praktische tips:</h4>
+                <div className="space-y-1 text-sm text-gray-700">
                   <div>• Verdeel voedingen: bijvoorbeeld mama overdag, papa 's avonds</div>
                   <div>• Laat partner nachtvoeding overnemen voor mama's rust</div>
                   <div>• Creëer eigen rituelen: papa's liedjes, mama's verhalen</div>
@@ -469,9 +469,9 @@ export default function BasisFlesvoedingPage() {
             </div>
           </div>
 
-          <div className="bg-amber-50 rounded-xl p-4 border border-amber-200">
-            <h3 className="text-amber-900 font-semibold mb-2"> Wanneer hulp zoeken:</h3>
-            <p className="text-amber-800 text-sm mb-2">
+          <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
+            <h3 className="text-gray-700 font-semibold mb-2"> Wanneer hulp zoeken:</h3>
+            <p className="text-gray-700 text-sm mb-2">
               Als baby 48 uur geen significante hoeveelheden drinkt, of tekenen van uitdroging toont 
               (minder natte luiers, droge mond, verminderde energie), neem direct contact op met het consultatiebureau.
             </p>

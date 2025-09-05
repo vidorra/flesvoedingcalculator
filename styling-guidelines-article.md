@@ -25,15 +25,40 @@ This document outlines the complete styling standards for all kennisbank article
 
 ### ❌ Forbidden Colors
 
-**Never use these color classes:**
-- `text-blue-*` (any shade)
-- `text-red-*` (any shade) 
-- `text-green-*` (any shade)
-- `bg-red-*` (any shade)
-- `bg-blue-*` (any shade)
-- `bg-green-*` (any shade)
+**STRICTLY PROHIBITED - Never use any of these color classes:**
 
-**Exception:** Icon colors like `text-red-500` for warning icons are acceptable if semantically appropriate.
+**Text Colors:**
+- `text-blue-*` (any shade: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900)
+- `text-red-*` (any shade)
+- `text-green-*` (any shade)
+- `text-yellow-*` (any shade)
+- `text-purple-*` (any shade)
+- `text-pink-*` (any shade)
+- `text-indigo-*` (any shade)
+- `text-amber-*` (any shade)
+- `text-orange-*` (any shade)
+
+**Background Colors:**
+- `bg-blue-*` (any shade)
+- `bg-red-*` (any shade)
+- `bg-green-*` (any shade)
+- `bg-yellow-*` (any shade)
+- `bg-purple-*` (any shade)
+- `bg-pink-*` (any shade)
+- `bg-indigo-*` (any shade)
+- `bg-amber-*` (any shade)
+- `bg-orange-*` (any shade)
+
+**Border Colors:**
+- `border-blue-*` (any shade)
+- `border-red-*` (any shade)
+- `border-green-*` (any shade)
+- `border-yellow-*` (any shade)
+- `border-purple-*` (any shade)
+- `border-pink-*` (any shade)
+- `border-amber-*` (any shade)
+
+**NO EXCEPTIONS:** All colored elements must use neutral colors only (gray shades + primary brand color).
 
 ## 📱 Layout Structure
 
@@ -136,7 +161,7 @@ export default function ArticlePage() {
 
 {/* Secondary background card */}
 <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
-  <h2 className="text-lg font-semibold text-gray-700 mb-4">Card Title</h2>
+  <h2 className="text-lg font-semibold text-primary mb-4">Card Title</h2>
   {/* Content */}
 </div>
 ```
@@ -238,10 +263,11 @@ export default function ArticlePage() {
 Before publishing any article, verify:
 
 ### Colors ✓
-- [ ] No blue text colors (`text-blue-*`)
-- [ ] No red text colors (`text-red-*`) except semantic icons
-- [ ] No green text colors (`text-green-*`)
-- [ ] Only approved color palette used
+- [ ] **NO colored text**: No `text-blue-*`, `text-red-*`, `text-green-*`, `text-yellow-*`, `text-purple-*`, `text-pink-*`, `text-amber-*`
+- [ ] **NO colored backgrounds**: No `bg-blue-*`, `bg-red-*`, `bg-green-*`, `bg-yellow-*`, `bg-purple-*`, `bg-pink-*`, `bg-amber-*`
+- [ ] **NO colored borders**: No `border-blue-*`, `border-red-*`, `border-green-*`, etc.
+- [ ] **ALL h2 headers use `text-primary`** (not gray colors)
+- [ ] Only neutral colors: `text-gray-*`, `bg-gray-*`, `text-primary`, `bg-primary`
 - [ ] Proper contrast ratios maintained
 
 ### Layout ✓
@@ -274,9 +300,15 @@ Before publishing any article, verify:
 
 ### Common Issues to Fix
 1. **Double scroll**: Remove `min-h-screen` from grid containers
-2. **Color inconsistency**: Replace non-standard colors with approved palette
-3. **Missing sidebar**: Add KennisbankSidebar component and configuration
-4. **UTF-8 icons**: Replace with proper Lucide icons or remove entirely
+2. **Color violations**: Replace ALL colored elements with neutral styling
+   - `bg-red-50` → `bg-gray-50`
+   - `text-blue-700` → `text-gray-700`
+   - `text-green-600` → `text-primary` (for icons)
+   - `border-yellow-200` → `border-gray-200`
+3. **Header styling**: All h2 elements MUST use `text-primary`, not gray colors
+4. **Missing sidebar**: Add KennisbankSidebar component and configuration
+5. **UTF-8 icons**: Replace with proper Lucide icons or remove entirely
+6. **Colored cards**: Convert info/warning/success cards to neutral gray styling
 
 ## 📚 Examples
 
