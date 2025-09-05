@@ -54,7 +54,7 @@ export default function VeiligheidPage() {
 
         {/* Emergency contacts */}
         <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-red-800 mb-4 flex items-center">
+          <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
             <Phone className="w-5 h-5 mr-2" />
             Wanneer direct arts contacteren
           </h2>
@@ -67,13 +67,13 @@ export default function VeiligheidPage() {
                 <div className="w-6 h-6 bg-gray-500 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">
                   !
                 </div>
-                <span className="text-red-800 font-medium">{contact}</span>
+                <span className="text-gray-700 font-medium">{contact}</span>
               </div>
             ))}
           </div>
           
-          <div className="mt-4 p-4 bg-red-100 rounded-lg">
-            <p className="text-red-800 font-bold text-center">
+          <div className="mt-4 p-4 bg-gray-100 rounded-lg">
+            <p className="text-gray-700 font-bold text-center">
               📞 Bij levensbedreigende situaties: bel direct 112
             </p>
           </div>
@@ -81,15 +81,15 @@ export default function VeiligheidPage() {
 
         {/* Never do */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-red-800 mb-4 flex items-center">
+          <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
             <X className="w-5 h-5 mr-2" />
             Voedingsveiligheid - Nooit doen:
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {neverDo.map((item, index) => (
               <div key={index} className="flex items-start space-x-2 p-3 bg-gray-50 rounded-lg">
-                <X className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
-                <span className="text-red-800 text-sm font-medium">{item}</span>
+                <X className="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
+                <span className="text-gray-700 text-sm font-medium">{item}</span>
               </div>
             ))}
           </div>
@@ -133,8 +133,8 @@ export default function VeiligheidPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="p-4 bg-gray-50 rounded-lg text-center">
-              <h3 className="font-bold text-red-800 mb-2">Spoedeisende hulp</h3>
-              <p className="text-2xl font-bold text-red-600">112</p>
+              <h3 className="font-bold text-gray-700 mb-2">Spoedeisende hulp</h3>
+              <p className="text-2xl font-bold text-gray-600">112</p>
               <p className="text-xs text-gray-700">Bij levensbedreigende situaties</p>
             </div>
             
@@ -145,8 +145,8 @@ export default function VeiligheidPage() {
             </div>
             
             <div className="p-4 bg-gray-50 rounded-lg text-center">
-              <h3 className="font-bold text-green-800 mb-2">Consultatiebureau</h3>
-              <p className="text-lg font-bold text-green-600">Lokaal nummer</p>
+              <h3 className="font-bold text-gray-700 mb-2">Consultatiebureau</h3>
+              <p className="text-lg font-bold text-gray-600">Lokaal nummer</p>
               <p className="text-xs text-gray-700">Voor ontwikkelingsvragen</p>
             </div>
           </div>

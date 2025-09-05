@@ -94,14 +94,14 @@ export default function HygieneBereidingPage() {
         {/* Basic hygiene rules */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-green-800 mb-4 flex items-center">
+            <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
               <CheckCircle className="w-5 h-5 mr-2" />
               Altijd doen:
             </h2>
             <div className="space-y-2">
               {alwaysDo.map((item, index) => (
                 <div key={index} className="flex items-start space-x-2">
-                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-gray-600 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700 text-sm">{item}</span>
                 </div>
               ))}
@@ -109,14 +109,14 @@ export default function HygieneBereidingPage() {
           </div>
 
           <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-red-800 mb-4 flex items-center">
+            <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
               <X className="w-5 h-5 mr-2" />
               Nooit doen:
             </h2>
             <div className="space-y-2">
               {neverDo.map((item, index) => (
                 <div key={index} className="flex items-start space-x-2">
-                  <X className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
+                  <X className="w-4 h-4 text-gray-600 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700 text-sm">{item}</span>
                 </div>
               ))}
@@ -191,11 +191,11 @@ export default function HygieneBereidingPage() {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
-              <h3 className="font-medium text-green-800 mb-3">Koud water methode (aanbevolen):</h3>
+              <h3 className="font-medium text-gray-700 mb-3">Koud water methode (aanbevolen):</h3>
               <div className="space-y-2">
                 {travelTipsCold.map((tip, index) => (
                   <div key={index} className="flex items-start space-x-2">
-                    <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-gray-600 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700 text-sm">{tip}</span>
                   </div>
                 ))}
@@ -225,11 +225,11 @@ export default function HygieneBereidingPage() {
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="bg-gray-50 rounded-lg p-4">
-              <h3 className="font-medium text-green-800 mb-3">Flessenwarmer voordelen:</h3>
+              <h3 className="font-medium text-gray-700 mb-3">Flessenwarmer voordelen:</h3>
               <div className="space-y-2">
                 {bottleWarmerAdvantages.map((advantage, index) => (
                   <div key={index} className="flex items-start space-x-2">
-                    <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-gray-600 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700 text-sm">{advantage}</span>
                   </div>
                 ))}
@@ -237,11 +237,11 @@ export default function HygieneBereidingPage() {
             </div>
             
             <div className="bg-gray-50 rounded-lg p-4">
-              <h3 className="font-medium text-red-800 mb-3">Magnetron nadelen:</h3>
+              <h3 className="font-medium text-gray-700 mb-3">Magnetron nadelen:</h3>
               <div className="space-y-2">
                 {microwaveDisadvantages.map((disadvantage, index) => (
                   <div key={index} className="flex items-start space-x-2">
-                    <X className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
+                    <X className="w-4 h-4 text-gray-600 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700 text-sm">{disadvantage}</span>
                   </div>
                 ))}

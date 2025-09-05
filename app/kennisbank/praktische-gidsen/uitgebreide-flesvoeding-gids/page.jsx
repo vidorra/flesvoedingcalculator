@@ -19,7 +19,7 @@ export default function UitgebreideFlesvoedingGids() {
   const adTopics = ["Flesvoeding Besparingen", "Baby Voeding Tips"]
 
   return (
-    <div className="grid grid-cols-12 gap-6 min-h-screen">
+    <div className="grid grid-cols-12 gap-6">
       <div className="col-span-12 lg:col-span-7">
         <div className="max-w-4xl mx-auto p-8 bg-white/80 backdrop-blur rounded-2xl shadow-lg border border-gray-200">
           
@@ -35,8 +35,8 @@ export default function UitgebreideFlesvoedingGids() {
             </p>
             <div className="flex flex-wrap gap-4 text-sm text-gray-600">
               <span>📖 Leestijd: 40+ minuten</span>
-              <span>💰 Gemiddelde besparing: €400+ per jaar</span>
-              <span>✅ 95% succes ratio</span>
+              <span> Gemiddelde besparing: €400+ per jaar</span>
+              <span> 95% succes ratio</span>
             </div>
           </div>
 
@@ -266,7 +266,7 @@ export default function UitgebreideFlesvoedingGids() {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-                  <h5 className="font-bold text-green-800">Budget opties:</h5>
+                  <h5 className="font-bold text-gray-700">Budget opties:</h5>
                   <ul className="text-sm">
                     <li>Kruidvat: €7,99 × 4,5 = <strong>€36/maand</strong></li>
                     <li>Etos: €8,49 × 4,5 = <strong>€38/maand</strong></li>
@@ -645,7 +645,7 @@ export default function UitgebreideFlesvoedingGids() {
                 </div>
 
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-                  <h4 className="font-bold text-green-800">4. Overmoeide Baby (10%)</h4>
+                  <h4 className="font-bold text-gray-700">4. Overmoeide Baby (10%)</h4>
                   <p className="text-sm">Timing is cruciaal voor successvolle voeding.</p>
                   <ul className="text-sm">
                     <li>Alert maar kalme staat</li>

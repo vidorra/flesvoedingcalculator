@@ -36,7 +36,7 @@ export default function JuisteHoudingBijFlesvoeding() {
 
   return (
     <Layout>
-      <div className="grid grid-cols-12 gap-6 min-h-screen">
+      <div className="grid grid-cols-12 gap-6">
         <div className="col-span-12 lg:col-span-7">
           <div className="max-w-4xl mx-auto p-8 bg-white/80 backdrop-blur rounded-2xl shadow-lg border border-gray-200">
             
@@ -317,7 +317,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                   </div>
 
                   <div className="border border-gray-200 rounded-lg p-6">
-                    <h4 className="text-lg font-semibold text-primary mb-3">Armondersteuning 💪</h4>
+                    <h4 className="text-lg font-semibold text-primary mb-3">Armondersteuning </h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -347,19 +347,19 @@ export default function JuisteHoudingBijFlesvoeding() {
                   <h4 className="font-semibold text-primary mb-3">Voedingskussen voordelen:</h4>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
-                      <span className="text-gray-600">✅</span>
+                      <span className="text-gray-600"></span>
                       <span className="text-gray-700"><strong>Juiste hoogte</strong>: Baby op borst niveau</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <span className="text-gray-600">✅</span>
+                      <span className="text-gray-600"></span>
                       <span className="text-gray-700"><strong>Armontlasting</strong>: Minder spiervermoeidheid</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <span className="text-gray-600">✅</span>
+                      <span className="text-gray-600"></span>
                       <span className="text-gray-700"><strong>Stabiele basis</strong>: Baby ligt veilig</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <span className="text-gray-600">✅</span>
+                      <span className="text-gray-600"></span>
                       <span className="text-gray-700"><strong>Langere voedingen</strong>: Comfortabel volhouden</span>
                     </li>
                   </ul>
@@ -466,7 +466,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                     </div>
 
                     <div className="border border-gray-200 rounded-lg p-6">
-                      <h4 className="font-semibold text-primary mb-3">Flow controle 💧</h4>
+                      <h4 className="font-semibold text-primary mb-3">Flow controle </h4>
                       <ul className="space-y-2">
                         <li className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -502,23 +502,23 @@ export default function JuisteHoudingBijFlesvoeding() {
                     <h4 className="font-semibold text-primary mb-3">NOOIT doen:</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
-                        <span className="text-gray-600">❌</span>
+                        <span className="text-gray-600"></span>
                         <span className="text-gray-700"><strong>Baby plat leggen</strong>: Verhoogt verslikking risico</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <span className="text-gray-600">❌</span>
+                        <span className="text-gray-600"></span>
                         <span className="text-gray-700"><strong>Fles vastzetten</strong>: Baby kan niet aangeven bij problemen</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <span className="text-gray-600">❌</span>
+                        <span className="text-gray-600"></span>
                         <span className="text-gray-700"><strong>Baby alleen laten</strong>: Altijd blijven bij voeding</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <span className="text-gray-600">❌</span>
+                        <span className="text-gray-600"></span>
                         <span className="text-gray-700"><strong>Te snel voeden</strong>: Dwingen tot snel drinken</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <span className="text-gray-600">❌</span>
+                        <span className="text-gray-600"></span>
                         <span className="text-gray-700"><strong>Verkeerde armhouding</strong>: Eigen nek/rug belasten</span>
                       </li>
                     </ul>

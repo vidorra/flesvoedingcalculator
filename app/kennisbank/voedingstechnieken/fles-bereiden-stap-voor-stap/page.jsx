@@ -36,7 +36,7 @@ export default function FlesBerenStapVoorStap() {
 
   return (
     <Layout>
-      <div className="grid grid-cols-12 gap-6 min-h-screen">
+      <div className="grid grid-cols-12 gap-6">
         <div className="col-span-12 lg:col-span-7">
           <div className="max-w-4xl mx-auto p-8 bg-white/80 backdrop-blur rounded-2xl shadow-lg border border-gray-200">
             
@@ -111,7 +111,7 @@ export default function FlesBerenStapVoorStap() {
                   </div>
 
                   <div className="border border-gray-200 rounded-lg p-6">
-                    <h4 className="text-lg font-semibold text-primary mb-3">Benodigdheden checken ✅</h4>
+                    <h4 className="text-lg font-semibold text-primary mb-3">Benodigdheden checken </h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -146,7 +146,7 @@ export default function FlesBerenStapVoorStap() {
                 <h3 className="text-2xl font-semibold text-primary mb-4">Water: De basis van goede flesvoeding</h3>
                 
                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
-                  <h4 className="font-semibold text-primary mb-3">Nederlands kraanwater: Uitstekend geschikt 💧</h4>
+                  <h4 className="font-semibold text-primary mb-3">Nederlands kraanwater: Uitstekend geschikt </h4>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -402,22 +402,22 @@ export default function FlesBerenStapVoorStap() {
                     </div>
 
                     <div className="border border-gray-200 rounded-lg p-6">
-                      <h4 className="font-semibold text-primary mb-3">Oplossen controle checklist ✅</h4>
+                      <h4 className="font-semibold text-primary mb-3">Oplossen controle checklist </h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">✅</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Geen klontjes</strong>: Vloeistof moet volledig glad zijn</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">✅</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Uniforme kleur</strong>: Geen lichte/donkere plekken</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">✅</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Geen bezinksel</strong>: Niets op de bodem</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">✅</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Goede flow</strong>: Melk stroomt normaal uit speen</span>
                         </li>
                       </ul>
@@ -476,7 +476,7 @@ export default function FlesBerenStapVoorStap() {
                     </div>
 
                     <div className="border border-gray-200 rounded-lg p-6 bg-gray-50">
-                      <h4 className="font-semibold text-primary mb-3">Te koud - snel opwarmen ❄️</h4>
+                      <h4 className="font-semibold text-primary mb-3">Te koud - snel opwarmen </h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -491,7 +491,7 @@ export default function FlesBerenStapVoorStap() {
                           <span className="text-gray-700"><strong>Onder warme kraan</strong>: Draaiend bewegen</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">❌</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>NOOIT magnetron</strong>: Creëert gevaarlijke hot spots</span>
                         </li>
                       </ul>
@@ -510,7 +510,7 @@ export default function FlesBerenStapVoorStap() {
                   
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="border border-gray-200 rounded-lg p-6 bg-gray-50">
-                      <h4 className="font-semibold text-primary mb-3">Dosering fouten - Ernstige gevolgen ❌</h4>
+                      <h4 className="font-semibold text-primary mb-3">Dosering fouten - Ernstige gevolgen </h4>
                       <ul className="space-y-2">
                         <li className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0 mt-2"></div>
@@ -733,7 +733,7 @@ export default function FlesBerenStapVoorStap() {
                 </ul>
 
                 <p className="text-gray-700 mt-4">
-                  Met de juiste techniek, goede voorbereiding en wat oefening wordt flesbereiding een natuurlijk onderdeel van je dagelijkse routine. Vertrouw op jezelf - je doet het geweldig! 🍼💚
+                  Met de juiste techniek, goede voorbereiding en wat oefening wordt flesbereiding een natuurlijk onderdeel van je dagelijkse routine. Vertrouw op jezelf - je doet het geweldig! 💚
                 </p>
               </div>
             </section>

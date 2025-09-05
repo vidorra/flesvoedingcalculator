@@ -300,10 +300,10 @@ export default function KennisbankPage() {
               const colorClasses = {
                 blue: 'bg-gray-50 border-gray-200 text-primary hover:bg-gray-100',
                 purple: 'bg-purple-50 border-purple-200 text-purple-800 hover:bg-purple-100',
-                green: 'bg-gray-50 border-gray-200 text-green-800 hover:bg-green-100',
+                green: 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100',
                 orange: 'bg-gray-50 border-gray-200 text-orange-800 hover:bg-orange-100',
                 teal: 'bg-teal-50 border-teal-200 text-teal-800 hover:bg-teal-100',
-                red: 'bg-gray-50 border-gray-200 text-red-800 hover:bg-red-100',
+                red: 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100',
                 yellow: 'bg-yellow-50 border-yellow-200 text-yellow-800 hover:bg-yellow-100'
               }
               return (
@@ -499,9 +499,9 @@ export default function KennisbankPage() {
               href="/voedingsschemas"
               className="p-4 rounded-xl bg-gradient-to-br from-green-50 to-green-100 border border-gray-200 hover:border-primary transition-colors"
             >
-              <h3 className="font-medium text-green-800 mb-2">Voedingsschema's</h3>
-              <p className="text-sm text-green-600 mb-3">Interactieve schema's per leeftijdsgroep</p>
-              <div className="text-green-600 hover:text-gray-700 font-medium text-sm flex items-center">
+              <h3 className="font-medium text-gray-700 mb-2">Voedingsschema's</h3>
+              <p className="text-sm text-gray-600 mb-3">Interactieve schema's per leeftijdsgroep</p>
+              <div className="text-gray-600 hover:text-gray-700 font-medium text-sm flex items-center">
                 Bekijk schema's <ArrowRight className="w-4 h-4 ml-1" />
               </div>
             </Link>

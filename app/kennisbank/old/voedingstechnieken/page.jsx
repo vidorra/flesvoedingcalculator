@@ -82,7 +82,7 @@ export default function VoedingstechniekenPage() {
             <div className="space-y-2">
               {babyPosition.map((position, index) => (
                 <div key={index} className="flex items-start space-x-2">
-                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-gray-500 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-600 text-sm">{position}</span>
                 </div>
               ))}
@@ -105,7 +105,7 @@ export default function VoedingstechniekenPage() {
 
         {/* Responsive Feeding */}
         <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-green-800 mb-4 flex items-center">
+          <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
             <Heart className="w-5 h-5 mr-2" />
             Responsive Feeding
           </h2>
@@ -113,7 +113,7 @@ export default function VoedingstechniekenPage() {
           <div className="space-y-2">
             {responsiveFeeding.map((tip, index) => (
               <div key={index} className="flex items-start space-x-2">
-                <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                <CheckCircle className="w-4 h-4 text-gray-600 mt-0.5 flex-shrink-0" />
                 <span className="text-gray-700 text-sm">{tip}</span>
               </div>
             ))}

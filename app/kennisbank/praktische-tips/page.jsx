@@ -85,21 +85,21 @@ export default function PraktischeTipsPage() {
 
         {/* Money saving tips */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-green-800 mb-4 flex items-center">
+          <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
             <DollarSign className="w-5 h-5 mr-2" />
             Geld besparen
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {moneySavingTips.map((tip, index) => (
               <div key={index} className="flex items-start space-x-2 p-3 bg-gray-50 rounded-lg">
-                <ShoppingCart className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                <span className="text-green-800 text-sm">{tip}</span>
+                <ShoppingCart className="w-4 h-4 text-gray-600 mt-0.5 flex-shrink-0" />
+                <span className="text-gray-700 text-sm">{tip}</span>
               </div>
             ))}
           </div>
           
-          <div className="mt-4 p-4 bg-green-100 rounded-lg">
-            <p className="text-green-800 text-sm">
+          <div className="mt-4 p-4 bg-gray-100 rounded-lg">
+            <p className="text-gray-700 text-sm">
               <strong>Tip:</strong> Alle flesvoeding in Nederland voldoet aan dezelfde Europese normen. 
               Huismerken zijn vaak 30-50% goedkoper met dezelfde kwaliteit!
             </p>

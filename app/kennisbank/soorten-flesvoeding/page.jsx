@@ -113,7 +113,7 @@ export default function SoortenFlesvoedingPage() {
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span>Aangepaste eiwitsamenstelling</span>
                 </li>
-                  <li className="text-red-600 font-medium">• NIET geschikt voor baby&apos;s jonger dan 6 maanden</li>
+                  <li className="text-gray-600 font-medium">• NIET geschikt voor baby&apos;s jonger dan 6 maanden</li>
                 </ul>
               </div>
               
@@ -449,13 +449,13 @@ export default function SoortenFlesvoedingPage() {
 
         {/* Schema Infographic Highlight */}
         <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-green-800 mb-4">Voedingsschema Overzicht</h2>
+          <h2 className="text-lg font-semibold text-gray-700 mb-4">Voedingsschema Overzicht</h2>
           <p className="text-gray-700 mb-4">
             Bekijk onze visuele tijdlijn met alle voedingsschema's per leeftijd en flesvoeding type.
           </p>
           <Link 
             href="/infographics"
-            className="bg-green-100 hover:bg-green-200 text-green-800 font-medium py-3 px-6 rounded-xl transition-all inline-flex items-center"
+            className="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-3 px-6 rounded-xl transition-all inline-flex items-center"
           >
             <ArrowRight className="w-5 h-5 mr-2" />
             Bekijk Schema Tijdlijn
