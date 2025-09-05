@@ -91,13 +91,13 @@ export default function FlesvoedingVsBorstvoedingPage() {
     <Layout>
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-12 lg:col-span-7">
-          <div className="max-w-4xl mx-auto p-8 bg-white/80 backdrop-blur rounded-2xl shadow-lg border border-gray-200">
-          
+          <div className="space-y-6">
 
-          {/* Header */}
-          <div className="mb-8">
+        {/* Header */}
+        <div className="mb-6">
             <div className="text-sm text-gray-600 mb-2">Basis Flesvoeding • Objectieve Vergelijking</div>
-            <h1 className="text-4xl font-bold text-primary mb-4">
+            <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+              <BookOpen className="w-6 h-6 mr-3 text-primary" />
               Flesvoeding vs Borstvoeding: Objectieve Gids
             </h1>
             <p className="text-gray-600 mb-6">
@@ -120,10 +120,10 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 <li>• <strong>Jouw welzijn</strong> als ouder is ook belangrijk voor baby's ontwikkeling</li>
               </ul>
             </div>
-          </div>
+        </div>
 
-          {/* Nederlandse statistieken */}
-          <section className="mb-12">
+        {/* Nederlandse statistieken */}
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-2xl font-bold text-primary mb-6 flex items-center">
               <TrendingUp className="w-6 h-6 mr-3 text-primary" />
               Feiten en cijfers Nederland 2025
@@ -150,11 +150,11 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 </p>
               </div>
             </div>
-          </section>
+        </div>
 
-          {/* Voedingswaarde vergelijking */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-primary mb-6 flex items-center">
+        {/* Voedingswaarde vergelijking */}
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
               <Scale className="w-6 h-6 mr-3 text-primary" />
               Wetenschappelijke vergelijking
             </h2>
@@ -184,17 +184,17 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 </table>
               </div>
             </div>
-          </section>
+        </div>
 
-          {/* Voordelen en nadelen */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-primary mb-6">Voordelen en nadelen overzicht</h2>
+        {/* Voordelen en nadelen */}
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <h2 className="text-lg font-semibold text-primary mb-4">Voordelen en nadelen overzicht</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               {/* Borstvoeding */}
               <div className="border border-gray-200 rounded-xl p-6">
                 <h3 className="font-semibold text-primary mb-4 flex items-center">
-                  <Heart className="w-5 h-5 mr-2 text-red-500" />
+                  <Heart className="w-5 h-5 mr-2 text-primary" />
                   Borstvoeding
                 </h3>
                 
@@ -286,11 +286,11 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 </ul>
               </div>
             </div>
-          </section>
+        </div>
 
-          {/* Kosten vergelijking */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-primary mb-6 flex items-center">
+        {/* Kosten vergelijking */}
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
               <Calculator className="w-6 h-6 mr-3 text-primary" />
               Kosten vergelijking (12 maanden)
             </h2>
@@ -337,11 +337,11 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 Gebruik onze <Link href="/" className="text-primary hover:underline">flesvoeding calculator</Link> om je specifieke kosten te berekenen.
               </p>
             </div>
-          </section>
+        </div>
 
-          {/* Emotionele en praktische overwegingen */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-primary mb-6">Emotionele en praktische overwegingen</h2>
+        {/* Emotionele en praktische overwegingen */}
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <h2 className="text-lg font-semibold text-primary mb-4">Emotionele en praktische overwegingen</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               {/* Moeder welzijn */}
@@ -418,11 +418,11 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 </ul>
               </div>
             </div>
-          </section>
+        </div>
 
-          {/* Mythen ontkracht */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-primary mb-6">Mythen ontkracht</h2>
+        {/* Mythen ontkracht */}
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <h2 className="text-lg font-semibold text-primary mb-4">Mythen ontkracht</h2>
             
             <div className="space-y-6">
               <div className="border border-gray-200 rounded-xl p-6">
@@ -445,11 +445,11 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 <p className="text-gray-700 mb-3"><strong>Realiteit:</strong> Geen bewezen causaal verband. Sociaal-economische factoren verklaren meeste verschillen.</p>
               </div>
             </div>
-          </section>
+        </div>
 
-          {/* Langetermijn onderzoek */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-primary mb-6">Langetermijn ontwikkeling: Onderzoek resultaten</h2>
+        {/* Langetermijn onderzoek */}
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <h2 className="text-lg font-semibold text-primary mb-4">Langetermijn ontwikkeling: Onderzoek resultaten</h2>
             
             <div className="border border-gray-200 rounded-xl p-6">
               <h3 className="font-semibold text-primary mb-4">Nederlandse longitudinale studies (2020-2024)</h3>
@@ -484,11 +484,11 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 </p>
               </div>
             </div>
-          </section>
+        </div>
 
-          {/* Beslissingswijzer */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-primary mb-6 flex items-center">
+        {/* Beslissingswijzer */}
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
               <Users className="w-6 h-6 mr-3 text-primary" />
               Beslissingswijzer: Wat past bij jou?
             </h2>
@@ -508,11 +508,11 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 </div>
               ))}
             </div>
-          </section>
+        </div>
 
-          {/* Conclusie */}
-          <section className="border border-gray-200 rounded-xl p-6">
-            <h2 className="text-2xl font-bold text-primary mb-4">Conclusie</h2>
+        {/* Conclusie */}
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <h2 className="text-lg font-semibold text-primary mb-4">Conclusie</h2>
             
             <p className="text-lg text-gray-700 mb-6">
               Er is geen "beste" keuze tussen borst- en flesvoeding - er is alleen de beste keuze voor jouw 
@@ -565,9 +565,9 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 een baby's ontwikkeling - ongeacht de methode.
               </p>
             </div>
-          </section>
+        </div>
 
-          </div>
+        </div>
         </div>
         
         <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />
