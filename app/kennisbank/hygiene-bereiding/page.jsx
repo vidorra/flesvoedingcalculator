@@ -142,12 +142,12 @@ export default function HygieneBereidingPage() {
             </div>
             
             <div>
-              <h3 className="font-medium text-purple-800 mb-3">Flessenwater:</h3>
+              <h3 className="font-medium text-gray-700 mb-3">Flessenwater:</h3>
               <div className="space-y-2">
                 {bottleWaterTips.map((tip, index) => (
                   <div key={index} className="flex items-start space-x-2">
-                    <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-purple-700 text-sm">{tip}</span>
+                    <div className="w-2 h-2 bg-gray-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-gray-700 text-sm">{tip}</span>
                   </div>
                 ))}
               </div>
@@ -303,14 +303,14 @@ export default function HygieneBereidingPage() {
               </div>
             </div>
 
-            <div className="bg-purple-50 rounded-xl p-4 border border-purple-200">
-              <h4 className="text-purple-900 font-medium mb-3"> Stoomsterilisator (€30-150)</h4>
-              <div className="text-purple-800 text-sm space-y-1 mb-3">
+            <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
+              <h4 className="text-gray-700 font-medium mb-3"> Stoomsterilisator (€30-150)</h4>
+              <div className="text-gray-700 text-sm space-y-1 mb-3">
                 <p><strong>Methode:</strong> Hete stoom, automatisch</p>
                 <p><strong>Tijd:</strong> 6-15 minuten</p>
                 <p><strong>Merken:</strong> Philips Avent, Tommee Tippee</p>
               </div>
-              <div className="text-purple-700 text-xs">
+              <div className="text-gray-700 text-xs">
                 <p><strong>✓ Voordelen:</strong> Snel, consistent, veilig, weinig toezicht</p>
                 <p><strong>✗ Nadelen:</strong> Aanschafkosten, beperkte capaciteit</p>
               </div>

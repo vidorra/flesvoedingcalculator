@@ -84,7 +84,7 @@ export default function SoortenFlesvoedingPage() {
           </div>
 
           {/* Opvolgmelk (2) */}
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-green-100 p-6">
+          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-10 h-10 bg-gray-500 rounded-full flex items-center justify-center text-white font-bold">2</div>
               <div>
@@ -138,9 +138,9 @@ export default function SoortenFlesvoedingPage() {
           </div>
 
           {/* Peutermelk (3) */}
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-purple-100 p-6">
+          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold">3</div>
+              <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold">3</div>
               <div>
                 <h2 className="text-lg font-semibold text-primary">Peutermelk (Nummer 3)</h2>
                 <p className="text-sm text-gray-600">12+ maanden</p>

@@ -21,7 +21,7 @@ export default function UitgebreideFlesvoedingGids() {
   return (
     <div className="grid grid-cols-12 gap-6">
       <div className="col-span-12 lg:col-span-7">
-        <div className="max-w-4xl mx-auto p-8 bg-white/80 backdrop-blur rounded-2xl shadow-lg border border-gray-200">
+        <div className="space-y-6">
           
           {/* Header */}
           <div className="mb-8">
@@ -42,7 +42,7 @@ export default function UitgebreideFlesvoedingGids() {
 
           {/* Table of Contents */}
           <div className="mb-12 bg-gray-50 rounded-xl p-6">
-            <h2 className="text-2xl font-bold text-primary mb-4">Inhoudsopgave</h2>
+            <h2 className="text-lg font-semibold text-primary mb-4">Inhoudsopgave</h2>
             <nav className="space-y-2">
               <a href="#geld-besparen" className="block text-gray-600 hover:text-gray-700 font-medium">
                 1. Geld Besparen op Flesvoeding - Bespaar tot €500 per jaar

@@ -163,12 +163,12 @@ export default function AntiRefluxPage() {
               <h3 className="font-medium text-primary mb-3">Nederlandse cijfers reflux:</h3>
               <div className="space-y-3">
                 <div className="p-3 border border-gray-200 bg-gray-50 rounded-lg">
-                  <div className="font-medium text-yellow-900">15-20%</div>
-                  <div className="text-sm text-yellow-800">van baby's heeft mild reflux</div>
+                  <div className="font-medium text-gray-700">15-20%</div>
+                  <div className="text-sm text-gray-700">van baby's heeft mild reflux</div>
                 </div>
                 <div className="p-3 border border-gray-200 bg-gray-50 rounded-lg">
-                  <div className="font-medium text-orange-900">3-5%</div>
-                  <div className="text-sm text-orange-800">heeft ernstige reflux (GERD)</div>
+                  <div className="font-medium text-gray-700">3-5%</div>
+                  <div className="text-sm text-gray-700">heeft ernstige reflux (GERD)</div>
                 </div>
                 <div className="p-3 border border-gray-200 bg-gray-50 rounded-lg">
                   <div className="font-medium text-gray-800">80%</div>

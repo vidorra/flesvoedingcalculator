@@ -98,15 +98,15 @@ export default function VeiligheidPage() {
         {/* Allergy signals */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-orange-800 mb-4 flex items-center">
+            <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
               <Eye className="w-5 h-5 mr-2" />
               Allergiesignalen - Let op:
             </h2>
             <div className="space-y-3">
               {allergySignals.map((signal, index) => (
                 <div key={index} className="flex items-start space-x-2">
-                  <AlertTriangle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-orange-800 text-sm">{signal}</span>
+                  <AlertTriangle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700 text-sm">{signal}</span>
                 </div>
               ))}
             </div>
