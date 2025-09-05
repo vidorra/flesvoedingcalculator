@@ -258,7 +258,7 @@ export default function FlesvoedingPrematurePage() {
           </div>
           
           <div className="mt-4 p-3 border border-gray-200 bg-gray-50 rounded-lg">
-            <p className="text-sm text-yellow-800">
+            <p className="text-sm text-gray-700">
               <strong>Let op:</strong> Deze waarden zijn richtlijnen. De exacte behoefte verschilt per baby 
               en moet altijd in overleg met het medische team bepaald worden.
             </p>
