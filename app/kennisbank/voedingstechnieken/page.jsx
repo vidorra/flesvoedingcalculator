@@ -131,7 +131,7 @@ export default function VoedingstechniekenPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
               <h3 className="font-medium text-primary mb-3 flex items-center">
-                <AlertTriangle className="w-4 h-4 mr-2 text-red-500" />
+                <AlertTriangle className="w-4 h-4 mr-2 text-gray-600" />
                 Tot 6 maanden VERPLICHT:
               </h3>
               <ul className="space-y-2 text-sm text-gray-600">
@@ -175,17 +175,17 @@ export default function VoedingstechniekenPage() {
         </div>
 
         {/* Binding during feeding */}
-        <div className="bg-pink-50 rounded-2xl border border-pink-200 p-6">
-          <h2 className="text-lg font-semibold text-pink-800 mb-4 flex items-center">
+        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+          <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
             <Heart className="w-5 h-5 mr-2" />
             Binding tijdens flesvoeding
           </h2>
-          <p className="text-pink-700 mb-4">Flesvoeding is ook een moment van verbinding met je baby:</p>
+          <p className="text-gray-700 mb-4">Flesvoeding is ook een moment van verbinding met je baby:</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {bondingTips.map((tip, index) => (
               <div key={index} className="flex items-start space-x-2">
-                <Heart className="w-4 h-4 text-pink-600 mt-0.5 flex-shrink-0" />
-                <span className="text-pink-700 text-sm">{tip}</span>
+                <Heart className="w-4 h-4 text-gray-600 mt-0.5 flex-shrink-0" />
+                <span className="text-gray-700 text-sm">{tip}</span>
               </div>
             ))}
           </div>
@@ -279,15 +279,15 @@ export default function VoedingstechniekenPage() {
         </div>
 
         {/* First Time Feeding Guide */}
-        <div className="bg-purple-50 rounded-2xl border border-purple-200 p-6">
-          <h2 className="text-lg font-semibold text-purple-800 mb-4">Je Eerste Fles: Stap-voor-Stap voor Beginners</h2>
+        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+          <h2 className="text-lg font-semibold text-gray-700 mb-4">Je Eerste Fles: Stap-voor-Stap voor Beginners</h2>
           
           <div className="space-y-6">
             {/* Mental preparation */}
             <div>
-              <h3 className="font-medium text-purple-800 mb-3">Mentale voorbereiding (belangrijker dan je denkt!)</h3>
+              <h3 className="font-medium text-gray-700 mb-3">Mentale voorbereiding (belangrijker dan je denkt!)</h3>
               <div className="bg-white p-4 rounded-lg">
-                <div className="space-y-2 text-sm text-purple-700">
+                <div className="space-y-2 text-sm text-gray-700">
                   <div>• Geen perfectie verwachten - eerste keer is oefenen</div>
                   <div>• Baby bepaalt het tempo, niet jij</div>
                   <div>• Stress vermijden (baby voelt jouw spanning)</div>
@@ -299,7 +299,7 @@ export default function VoedingstechniekenPage() {
 
             {/* First feeding signals */}
             <div>
-              <h3 className="font-medium text-purple-800 mb-3">Herken eerste keer signalen</h3>
+              <h3 className="font-medium text-gray-700 mb-3">Herken eerste keer signalen</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="bg-white p-4 rounded-lg">
                   <h4 className="font-medium text-gray-700 mb-2"> Positieve signalen:</h4>
@@ -311,8 +311,8 @@ export default function VoedingstechniekenPage() {
                   </div>
                 </div>
                 <div className="bg-white p-4 rounded-lg">
-                  <h4 className="font-medium text-amber-700 mb-2"> Normale "problemen":</h4>
-                  <div className="space-y-1 text-sm text-amber-600">
+                  <h4 className="font-medium text-gray-700 mb-2"> Normale "problemen":</h4>
+                  <div className="space-y-1 text-sm text-gray-600">
                     <div>• Weinig gedronken (normaal!)</div>
                     <div>• Veel gespuugd (komt voor)</div>
                     <div>• Fles geweigerd (niet persoonlijk nemen)</div>
@@ -324,32 +324,32 @@ export default function VoedingstechniekenPage() {
 
             {/* After feeding */}
             <div>
-              <h3 className="font-medium text-purple-800 mb-3">Na de eerste voeding</h3>
+              <h3 className="font-medium text-gray-700 mb-3">Na de eerste voeding</h3>
               <div className="bg-white p-4 rounded-lg">
                 <div className="space-y-3">
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
                     <div>
                       <div className="font-medium text-primary">Boertje proberen (geduld hebben)</div>
                       <div className="text-sm text-gray-600">Soms komt pas na 5-10 minuten</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
                     <div>
                       <div className="font-medium text-primary">Baby rechtop houden (20 minuten)</div>
                       <div className="text-sm text-gray-600">Voorkomt spugen en reflux</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
                     <div>
                       <div className="font-medium text-primary">Positief afsluiten met knuffel</div>
                       <div className="text-sm text-gray-600">Reinforcement van de ervaring</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
                     <div>
                       <div className="font-medium text-primary">Fles direct opruimen</div>
                       <div className="text-sm text-gray-600">Voorkomt bacteriegroei</div>
@@ -361,9 +361,9 @@ export default function VoedingstechniekenPage() {
 
             {/* Evaluation without judgment */}
             <div>
-              <h3 className="font-medium text-purple-800 mb-3">Evalueren zonder oordeel</h3>
+              <h3 className="font-medium text-gray-700 mb-3">Evalueren zonder oordeel</h3>
               <div className="bg-white p-4 rounded-lg">
-                <div className="text-sm text-purple-700 space-y-1">
+                <div className="text-sm text-gray-700 space-y-1">
                   <div>• Focus op wat WEL goed ging</div>
                   <div>• Wat leerde je voor volgende keer?</div>
                   <div>• Hoe reageerde baby (zonder oordeel)?</div>
@@ -416,22 +416,22 @@ export default function VoedingstechniekenPage() {
               </div>
             </div>
             <div className="space-y-4">
-              <h4 className="font-medium text-purple-800">Stap 5-8: Mengen & Serveren</h4>
-              <div className="bg-purple-50 rounded-xl p-4 border border-purple-200 space-y-2">
-                <p className="text-purple-800"><strong>5. Voeg poeder toe</strong> (1 lepel per 30ml)</p>
-                <p className="text-purple-800"><strong>6. Roer en schud</strong> tot volledig opgelost</p>
-                <p className="text-purple-800"><strong>7. Koel af</strong> tot 37°C (lichaamstemperatuur)</p>
-                <p className="text-purple-800"><strong>8. Test en serveer</strong> direct aan baby</p>
+              <h4 className="font-medium text-gray-700">Stap 5-8: Mengen & Serveren</h4>
+              <div className="bg-gray-50 rounded-xl p-4 border border-gray-200 space-y-2">
+                <p className="text-gray-700"><strong>5. Voeg poeder toe</strong> (1 lepel per 30ml)</p>
+                <p className="text-gray-700"><strong>6. Roer en schud</strong> tot volledig opgelost</p>
+                <p className="text-gray-700"><strong>7. Koel af</strong> tot 37°C (lichaamstemperatuur)</p>
+                <p className="text-gray-700"><strong>8. Test en serveer</strong> direct aan baby</p>
               </div>
             </div>
           </div>
 
-          <div className="bg-amber-50 rounded-xl p-4 border border-amber-200 mb-6">
-            <h3 className="text-amber-900 font-semibold mb-3"> Belangrijke Nederlandse Context</h3>
+          <div className="bg-gray-50 rounded-xl p-4 border border-gray-200 mb-6">
+            <h3 className="text-gray-700 font-semibold mb-3"> Belangrijke Nederlandse Context</h3>
             <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <h4 className="font-medium text-amber-800 mb-2"> Nederlands Kraanwater:</h4>
-                <ul className="text-amber-700 text-sm space-y-1">
+                <h4 className="font-medium text-gray-700 mb-2"> Nederlands Kraanwater:</h4>
+                <ul className="text-gray-700 text-sm space-y-1">
                   <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span>Wereldklasse kwaliteit, EU-standaarden</span>
@@ -451,8 +451,8 @@ export default function VoedingstechniekenPage() {
                 </ul>
               </div>
               <div>
-                <h4 className="font-medium text-amber-800 mb-2">🌡️ Temperatuur Tips:</h4>
-                <ul className="text-amber-700 text-sm space-y-1">
+                <h4 className="font-medium text-gray-700 mb-2">🌡️ Temperatuur Tips:</h4>
+                <ul className="text-gray-700 text-sm space-y-1">
                   <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span>70°C voor poeder (bacteriën doden)</span>

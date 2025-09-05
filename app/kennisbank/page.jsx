@@ -299,12 +299,12 @@ export default function KennisbankPage() {
               const Icon = category.icon
               const colorClasses = {
                 blue: 'bg-gray-50 border-gray-200 text-primary hover:bg-gray-100',
-                purple: 'bg-purple-50 border-purple-200 text-purple-800 hover:bg-purple-100',
+                purple: 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100',
                 green: 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100',
-                orange: 'bg-gray-50 border-gray-200 text-orange-800 hover:bg-orange-100',
-                teal: 'bg-teal-50 border-teal-200 text-teal-800 hover:bg-teal-100',
+                orange: 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100',
+                teal: 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100',
                 red: 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100',
-                yellow: 'bg-yellow-50 border-yellow-200 text-yellow-800 hover:bg-yellow-100'
+                yellow: 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100'
               }
               return (
                 <Link

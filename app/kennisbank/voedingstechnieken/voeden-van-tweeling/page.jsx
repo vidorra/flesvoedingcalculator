@@ -154,12 +154,12 @@ export default function TweelingVoedenPage() {
                   <p className="text-sm text-gray-700">Beide baby's tegelijk voeden bespaart enorm veel tijd</p>
                 </div>
                 <div className="p-3 border border-gray-200 bg-gray-50 rounded-lg">
-                  <h4 className="font-medium text-purple-900">Meetbare inname per baby</h4>
-                  <p className="text-sm text-purple-800">Precies bijhouden hoeveel elke baby drinkt</p>
+                  <h4 className="font-medium text-gray-700">Meetbare inname per baby</h4>
+                  <p className="text-sm text-gray-700">Precies bijhouden hoeveel elke baby drinkt</p>
                 </div>
                 <div className="p-3 border border-gray-200 bg-gray-50 rounded-lg">
-                  <h4 className="font-medium text-amber-900">Verdeling van nachtvoedingen</h4>
-                  <p className="text-sm text-amber-800">Partner kan helpen met voedingen</p>
+                  <h4 className="font-medium text-gray-700">Verdeling van nachtvoedingen</h4>
+                  <p className="text-sm text-gray-700">Partner kan helpen met voedingen</p>
                 </div>
               </div>
             </div>
@@ -256,8 +256,8 @@ export default function TweelingVoedenPage() {
               </ul>
             </div>
             <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
-              <h4 className="font-medium text-purple-900 mb-2">Premium pakket (€400-600):</h4>
-              <ul className="text-sm text-purple-800 space-y-1">
+              <h4 className="font-medium text-gray-700 mb-2">Premium pakket (€400-600):</h4>
+              <ul className="text-sm text-gray-700 space-y-1">
                 <li>• Hoogwaardige flessen: €120</li>
                 <li>• Elektrische sterilisator: €80</li>
                 <li>• Dubbele flessenwarmer: €65</li>
@@ -458,12 +458,12 @@ export default function TweelingVoedenPage() {
               <p className="text-sm text-gray-700">Gelijktijdig voeden oefenen</p>
             </div>
             <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
-              <h3 className="font-medium text-purple-900">Week 3</h3>
-              <p className="text-sm text-purple-800">Schema implementeren</p>
+              <h3 className="font-medium text-gray-700">Week 3</h3>
+              <p className="text-sm text-gray-700">Schema implementeren</p>
             </div>
             <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
-              <h3 className="font-medium text-amber-900">Week 4</h3>
-              <p className="text-sm text-amber-800">Verfijnen en automatiseren</p>
+              <h3 className="font-medium text-gray-700">Week 4</h3>
+              <p className="text-sm text-gray-700">Verfijnen en automatiseren</p>
             </div>
           </div>
           

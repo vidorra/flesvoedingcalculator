@@ -67,11 +67,11 @@ export default function EersteKeerFlesvoedingPage() {
     <Layout>
       <div className="grid grid-cols-12 gap-6">
       <div className="col-span-12 lg:col-span-7">
-        <div className="max-w-4xl mx-auto p-8 bg-white/80 backdrop-blur rounded-2xl shadow-lg border border-gray-200">
+        <div className="space-y-6">
           
 
           {/* Header */}
-          <div className="mb-8">
+          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <div className="text-sm text-gray-600 mb-2">Basis Flesvoeding • Beginners Gids</div>
             <h1 className="text-4xl font-bold text-primary mb-4">
               Eerste keer flesvoeding geven
@@ -98,7 +98,7 @@ export default function EersteKeerFlesvoedingPage() {
           </div>
 
           {/* Introduction */}
-          <section className="mb-8">
+          <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <p className="text-lg text-gray-700 leading-relaxed">
               Ben je klaar om je baby voor de eerste keer flesvoeding te geven? Dat kan spannend zijn! 
               Of je nu overstapt van borstvoeding, begint met combivoeeding, of direct start met flesvoeding - 
@@ -107,8 +107,8 @@ export default function EersteKeerFlesvoedingPage() {
           </section>
 
           {/* What you need */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-primary mb-6">Wat heb je nodig?</h2>
+          <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <h2 className="text-lg font-semibold text-primary mb-4">Wat heb je nodig?</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="border border-gray-200 rounded-xl p-6">
@@ -144,8 +144,8 @@ export default function EersteKeerFlesvoedingPage() {
           </section>
 
           {/* Water preparation */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-primary mb-6">Water: De basis van goede flesvoeding</h2>
+          <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <h2 className="text-lg font-semibold text-primary mb-4">Water: De basis van goede flesvoeding</h2>
             
             <div className="border border-gray-200 rounded-xl p-6 mb-6">
               <h3 className="font-semibold text-primary mb-3">Nederlands kraanwater: Veilig voor baby's</h3>
@@ -181,7 +181,7 @@ export default function EersteKeerFlesvoedingPage() {
               
               <div className="mt-4 p-3 border border-gray-200 rounded-lg">
                 <div className="flex items-start space-x-2">
-                  <AlertTriangle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                  <AlertTriangle className="w-5 h-5 text-gray-600 flex-shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-primary">Let op:</strong>
                     <span className="text-gray-700"> Gebruik nooit water uit de warmwaterboiler - dit kan bacteriën bevatten.</span>
@@ -192,8 +192,8 @@ export default function EersteKeerFlesvoedingPage() {
           </section>
 
           {/* Step by step guide */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-primary mb-6">Stap-voor-stap: Je eerste fles klaarmaken</h2>
+          <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <h2 className="text-lg font-semibold text-primary mb-4">Stap-voor-stap: Je eerste fles klaarmaken</h2>
             
             <div className="space-y-6">
               <div className="border border-gray-200 rounded-xl p-6">
@@ -274,8 +274,8 @@ export default function EersteKeerFlesvoedingPage() {
           </section>
 
           {/* Feeding amounts table */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-primary mb-6">Juiste hoeveelheden per leeftijd</h2>
+          <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <h2 className="text-lg font-semibold text-primary mb-4">Juiste hoeveelheden per leeftijd</h2>
             
             <div className="border border-gray-200 rounded-xl p-6">
               <div className="overflow-x-auto">
@@ -310,8 +310,8 @@ export default function EersteKeerFlesvoedingPage() {
           </section>
 
           {/* Transition from breastfeeding */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-primary mb-6">Van borstvoeding naar flesvoeding</h2>
+          <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <h2 className="text-lg font-semibold text-primary mb-4">Van borstvoeding naar flesvoeding</h2>
             
             <div className="border border-gray-200 rounded-xl p-6 mb-6">
               <h3 className="font-semibold text-primary mb-4">Geleidelijke overstap (aanbevolen)</h3>
@@ -349,8 +349,8 @@ export default function EersteKeerFlesvoedingPage() {
           </section>
 
           {/* Baby voorbereiden */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-primary mb-6">Baby voorbereiden voor eerste fles</h2>
+          <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <h2 className="text-lg font-semibold text-primary mb-4">Baby voorbereiden voor eerste fles</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="border border-gray-200 rounded-xl p-6">
@@ -414,8 +414,8 @@ export default function EersteKeerFlesvoedingPage() {
           </section>
 
           {/* Voedingstechniek */}
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold text-primary mb-6">De perfecte voedingstechniek</h2>
+          <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <h2 className="text-lg font-semibold text-primary mb-4">De perfecte voedingstechniek</h2>
             
             <div className="space-y-6">
               <div className="border border-gray-200 rounded-xl p-6">
@@ -477,8 +477,8 @@ export default function EersteKeerFlesvoedingPage() {
           </section>
 
           {/* When to seek help */}
-          <section className="mb-8">
-            <h2 className="text-2xl font-bold text-primary mb-6">Wanneer hulp zoeken?</h2>
+          <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <h2 className="text-lg font-semibold text-primary mb-4">Wanneer hulp zoeken?</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="border border-gray-200 rounded-xl p-6">
@@ -504,7 +504,7 @@ export default function EersteKeerFlesvoedingPage() {
               </div>
 
               <div className="border border-gray-200 rounded-xl p-6">
-                <h3 className="font-semibold text-amber-600 mb-4">Binnen 1-2 dagen contact</h3>
+                <h3 className="font-semibold text-gray-600 mb-4">Binnen 1-2 dagen contact</h3>
                 <ul className="space-y-2">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -528,8 +528,8 @@ export default function EersteKeerFlesvoedingPage() {
           </section>
 
           {/* Conclusion */}
-          <section className="border border-gray-200 rounded-xl p-6">
-            <h2 className="text-2xl font-bold text-primary mb-4">Belangrijkste tips</h2>
+          <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <h2 className="text-lg font-semibold text-primary mb-4">Belangrijkste tips</h2>
             <ol className="space-y-2">
               <li className="flex items-center space-x-2">
                 <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">1</span>
