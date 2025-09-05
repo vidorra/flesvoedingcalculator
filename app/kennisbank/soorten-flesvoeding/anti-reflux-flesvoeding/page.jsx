@@ -140,19 +140,19 @@ export default function AntiRefluxPage() {
                 <h3 className="font-medium text-primary mb-3">Normale vs Problematische Reflux:</h3>
                 <div className="space-y-2 text-sm">
                   <div className="flex items-center space-x-2 text-gray-700">
-                    <CheckCircle className="w-4 h-4" />
+                    <CheckCircle className="w-4 h-4 text-primary" />
                     <span><strong>Normaal:</strong> Af en toe spugen na voeding</span>
                   </div>
                   <div className="flex items-center space-x-2 text-gray-700">
-                    <CheckCircle className="w-4 h-4" />
+                    <CheckCircle className="w-4 h-4 text-primary" />
                     <span><strong>Normaal:</strong> Baby groeit goed door</span>
                   </div>
                   <div className="flex items-center space-x-2 text-gray-700">
-                    <AlertTriangle className="w-4 h-4" />
+                    <AlertTriangle className="w-4 h-4 text-primary" />
                     <span><strong>Problematisch:</strong> Dagelijks veel spugen</span>
                   </div>
                   <div className="flex items-center space-x-2 text-gray-700">
-                    <AlertTriangle className="w-4 h-4" />
+                    <AlertTriangle className="w-4 h-4 text-primary" />
                     <span><strong>Problematisch:</strong> Slechte gewichtstoename</span>
                   </div>
                 </div>
@@ -161,14 +161,14 @@ export default function AntiRefluxPage() {
             
             <div>
               <h3 className="font-medium text-primary mb-3">Nederlandse cijfers reflux:</h3>
-              <div className="space-y-3">
-                <div className="p-3 border border-gray-200 bg-gray-50 rounded-lg">
-                  <div className="font-medium text-gray-700">15-20%</div>
-                  <div className="text-sm text-gray-700">van baby's heeft mild reflux</div>
+              <div className="space-y-2">
+                <div className="flex justify-between items-center py-2">
+                  <span className="font-medium text-gray-700">15-20%</span>
+                  <span className="text-sm text-gray-600">van baby's heeft mild reflux</span>
                 </div>
-                <div className="p-3 border border-gray-200 bg-gray-50 rounded-lg">
-                  <div className="font-medium text-gray-700">3-5%</div>
-                  <div className="text-sm text-gray-700">heeft ernstige reflux (GERD)</div>
+                <div className="flex justify-between items-center py-2">
+                  <span className="font-medium text-gray-700">3-5%</span>
+                  <span className="text-sm text-gray-600">heeft ernstige reflux (GERD)</span>
                 </div>
                 <div className="p-3 border border-gray-200 bg-gray-50 rounded-lg">
                   <div className="font-medium text-gray-800">80%</div>
@@ -226,10 +226,10 @@ export default function AntiRefluxPage() {
             Anti-Reflux Voeding in Nederland: Vergelijking
           </h2>
           
-          <div className="space-y-4">
+          <div className="space-y-6">
             {arFormulas.map((formula, index) => (
-              <div key={index} className="border border-gray-200 rounded-lg p-4">
-                <div className="flex justify-between items-start mb-3">
+              <div key={index} className="">
+                <div className="flex justify-between items-start mb-4">
                   <h3 className="font-bold text-lg text-gray-900">{formula.brand}</h3>
                   <div className="text-right">
                     <div className="text-primary font-bold">{formula.price}</div>
@@ -237,16 +237,18 @@ export default function AntiRefluxPage() {
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                   <div>
                     <h4 className="font-medium text-primary mb-2">Werkzame stof:</h4>
-                    <p className="text-sm text-gray-600 mb-3">{formula.ingredients}</p>
-                    
-                    <h4 className="font-medium text-gray-700 mb-1">Voordelen:</h4>
+                    <p className="text-sm text-gray-600">{formula.ingredients}</p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-medium text-gray-700 mb-2">Voordelen:</h4>
                     <ul className="text-sm text-gray-700 space-y-1">
                       {formula.pros.map((pro, proIndex) => (
-                        <li key={proIndex} className="flex items-center space-x-2">
-                          <CheckCircle className="w-3 h-3" />
+                        <li key={proIndex} className="flex items-start space-x-2">
+                          <CheckCircle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
                           <span>{pro}</span>
                         </li>
                       ))}
@@ -254,38 +256,42 @@ export default function AntiRefluxPage() {
                   </div>
                   
                   <div>
-                    <h4 className="font-medium text-gray-700 mb-1">Aandachtspunten:</h4>
+                    <h4 className="font-medium text-gray-700 mb-2">Aandachtspunten:</h4>
                     <ul className="text-sm text-gray-700 space-y-1">
                       {formula.cons.map((con, conIndex) => (
-                        <li key={conIndex} className="flex items-center space-x-2">
-                          <AlertTriangle className="w-3 h-3" />
+                        <li key={conIndex} className="flex items-start space-x-2">
+                          <AlertTriangle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
                           <span>{con}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                 </div>
+                
+                {index < arFormulas.length - 1 && (
+                  <div className="border-b border-gray-200 mt-4"></div>
+                )}
               </div>
             ))}
           </div>
           
           <div className="mt-4 p-4 border border-gray-200 bg-gray-50 rounded-xl">
-            <h4 className="font-medium text-amber-900 mb-2">Kostenvergelijking per maand:</h4>
+            <h4 className="font-medium text-primary mb-2">Kostenvergelijking per maand:</h4>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
               <div className="text-center">
-                <div className="font-bold text-amber-800">Hero Baby AR</div>
-                <div className="text-amber-700">€56-64/maand</div>
-                <div className="text-xs text-amber-600">(Beste prijs-kwaliteit)</div>
+                <div className="font-bold text-gray-900">Hero Baby AR</div>
+                <div className="text-gray-700">€56-64/maand</div>
+                <div className="text-xs text-gray-600">(Beste prijs-kwaliteit)</div>
               </div>
               <div className="text-center">
-                <div className="font-bold text-amber-800">Nutrilon AR</div>
-                <div className="text-amber-700">€64-72/maand</div>
-                <div className="text-xs text-amber-600">(Meest verkocht)</div>
+                <div className="font-bold text-gray-900">Nutrilon AR</div>
+                <div className="text-gray-700">€64-72/maand</div>
+                <div className="text-xs text-gray-600">(Meest verkocht)</div>
               </div>
               <div className="text-center">
-                <div className="font-bold text-amber-800">Aptamil AR</div>
-                <div className="text-amber-700">€68-76/maand</div>
-                <div className="text-xs text-amber-600">(Premium optie)</div>
+                <div className="font-bold text-gray-900">Aptamil AR</div>
+                <div className="text-gray-700">€68-76/maand</div>
+                <div className="text-xs text-gray-600">(Premium optie)</div>
               </div>
             </div>
           </div>
@@ -295,17 +301,17 @@ export default function AntiRefluxPage() {
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-primary mb-4">Voedingstechnieken bij Reflux</h2>
           
-          <div className="space-y-4">
+          <div className="space-y-6">
             {feedingTechniques.map((technique, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-4">
+              <div key={index} className="">
                 <div className="flex justify-between items-start mb-3">
                   <h3 className="font-medium text-gray-900">{technique.technique}</h3>
                   <span className="text-sm bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
                     {technique.effectiveness}
                   </span>
                 </div>
-                <p className="text-gray-700 mb-3">{technique.description}</p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+                <p className="text-gray-700 mb-4">{technique.description}</p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                   {technique.tips.map((tip, tipIndex) => (
                     <div key={tipIndex} className="flex items-start space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
@@ -313,6 +319,10 @@ export default function AntiRefluxPage() {
                     </div>
                   ))}
                 </div>
+                
+                {index < feedingTechniques.length - 1 && (
+                  <div className="border-b border-gray-200 mt-6"></div>
+                )}
               </div>
             ))}
           </div>
@@ -322,14 +332,14 @@ export default function AntiRefluxPage() {
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-primary mb-4">Praktische Tips voor Thuis</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {practicalTips.map((section, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-4">
-                <h3 className="font-medium text-gray-900 mb-3">{section.category}</h3>
+              <div key={index}>
+                <h3 className="font-medium text-primary mb-3">{section.category}</h3>
                 <ul className="space-y-2">
                   {section.tips.map((tip, tipIndex) => (
                     <li key={tipIndex} className="text-sm text-gray-700 flex items-start space-x-2">
-                      <div className="w-2 h-2 border border-gray-200 bg-gray-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                       <span>{tip}</span>
                     </li>
                   ))}
@@ -338,32 +348,62 @@ export default function AntiRefluxPage() {
             ))}
           </div>
           
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
-              <h4 className="font-medium text-gray-800 mb-2">Wat werkt goed bij reflux:</h4>
-              <ul className="text-sm text-gray-700 space-y-1">
-                <li>• Kleine frequente voedingen</li>
-                <li>• Baby rechtop houden na voeding</li>
-                <li>• AR voeding proberen</li>
-                <li>• Rustige voedingsomgeving</li>
-                <li>• Geduld - het gaat meestal vanzelf over</li>
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 className="font-medium text-primary mb-3">Wat werkt goed bij reflux:</h4>
+              <ul className="text-sm text-gray-700 space-y-2">
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span>Kleine frequente voedingen</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span>Baby rechtop houden na voeding</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span>AR voeding proberen</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span>Rustige voedingsomgeving</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span>Geduld - het gaat meestal vanzelf over</span>
+                </li>
               </ul>
             </div>
-            <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
-              <h4 className="font-medium text-gray-800 mb-2">Vermijd bij reflux:</h4>
-              <ul className="text-sm text-gray-700 space-y-1">
-                <li>• Grote voedingen tegelijk</li>
-                <li>• Direct neerleggen na voeding</li>
-                <li>• Te strakke luiers/kleding</li>
-                <li>• Schudden of heftige bewegingen</li>
-                <li>• Stress tijdens voedingen</li>
+            <div>
+              <h4 className="font-medium text-primary mb-3">Vermijd bij reflux:</h4>
+              <ul className="text-sm text-gray-700 space-y-2">
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <span>Grote voedingen tegelijk</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <span>Direct neerleggen na voeding</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <span>Te strakke luiers/kleding</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <span>Schudden of heftige bewegingen</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <span>Stress tijdens voedingen</span>
+                </li>
               </ul>
             </div>
           </div>
         </div>
 
         {/* When to See Doctor */}
-        <div className="border border-gray-200 bg-gray-50 rounded-2xl border border-gray-200 p-6">
+        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
             <AlertTriangle className="w-5 h-5 mr-2" />
             Wanneer naar de Dokter?
@@ -382,23 +422,47 @@ export default function AntiRefluxPage() {
             ))}
           </div>
           
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-white rounded-lg p-4">
-              <h4 className="font-medium text-gray-800 mb-2">Medische opties bij ernstige reflux:</h4>
-              <ul className="text-sm text-gray-700 space-y-1">
-                <li>• <strong>Medicatie:</strong> Maagzuurremmer (omeprazol)</li>
-                <li>• <strong>Speciaal dieet:</strong> Hypoallergene voeding</li>
-                <li>• <strong>Verdikkingsmiddel:</strong> Op recept verkrijgbaar</li>
-                <li>• <strong>Doorverwijzing:</strong> Naar kinderarts indien nodig</li>
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 className="font-medium text-primary mb-3">Medische opties bij ernstige reflux:</h4>
+              <ul className="text-sm text-gray-700 space-y-2">
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span><strong>Medicatie:</strong> Maagzuurremmer (omeprazol)</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span><strong>Speciaal dieet:</strong> Hypoallergene voeding</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span><strong>Verdikkingsmiddel:</strong> Op recept verkrijgbaar</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span><strong>Doorverwijzing:</strong> Naar kinderarts indien nodig</span>
+                </li>
               </ul>
             </div>
-            <div className="bg-white rounded-lg p-4">
-              <h4 className="font-medium text-gray-800 mb-2">Nederlandse zorgverlening reflux:</h4>
-              <ul className="text-sm text-gray-700 space-y-1">
-                <li>• <strong>Consultatiebureau:</strong> Eerste aanspreekpunt</li>
-                <li>• <strong>Huisarts:</strong> Bij aanhoudende klachten</li>
-                <li>• <strong>Kinderarts:</strong> Bij ernstige gevallen</li>
-                <li>• <strong>Diëtist:</strong> Voor voedingsadvies</li>
+            <div>
+              <h4 className="font-medium text-primary mb-3">Nederlandse zorgverlening reflux:</h4>
+              <ul className="text-sm text-gray-700 space-y-2">
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span><strong>Consultatiebureau:</strong> Eerste aanspreekpunt</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span><strong>Huisarts:</strong> Bij aanhoudende klachten</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span><strong>Kinderarts:</strong> Bij ernstige gevallen</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span><strong>Diëtist:</strong> Voor voedingsadvies</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -417,13 +481,13 @@ export default function AntiRefluxPage() {
               <h3 className="font-medium text-gray-800">Week 3-4</h3>
               <p className="text-sm text-gray-700">Eerste verbetering zichtbaar, minder spugen</p>
             </div>
-            <div className="bg-purple-50 rounded-lg p-4">
-              <h3 className="font-medium text-purple-900">Maand 2-3</h3>
-              <p className="text-sm text-purple-800">Duidelijke verbetering, baby rustiger</p>
+            <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
+              <h3 className="font-medium text-gray-900">Maand 2-3</h3>
+              <p className="text-sm text-gray-700">Duidelijke verbetering, baby rustiger</p>
             </div>
             <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
-              <h3 className="font-medium text-amber-900">Maand 6-12</h3>
-              <p className="text-sm text-amber-800">Reflux verdwijnt meestal vanzelf</p>
+              <h3 className="font-medium text-gray-900">Maand 6-12</h3>
+              <p className="text-sm text-gray-700">Reflux verdwijnt meestal vanzelf</p>
             </div>
           </div>
           
@@ -457,20 +521,20 @@ export default function AntiRefluxPage() {
         </div>
 
         {/* Success Stories */}
-        <div className="border border-gray-200 bg-gray-50 rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">Success Stories van Ouders</h2>
+        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+          <h2 className="text-lg font-semibold text-primary mb-4">Success Stories van Ouders</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-white rounded-lg p-4">
-              <h3 className="font-medium text-gray-900 mb-2">"AR voeding was de oplossing" - Sandra, Amsterdam</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-medium text-primary mb-2">"AR voeding was de oplossing" - Sandra, Amsterdam</h3>
               <p className="text-sm text-gray-700">
                 "Emma spuugde na elke voeding. Hero Baby AR gaf binnen 2 weken 80% minder spugen. 
                 Ze is nu een gelukkige, groeiende baby."
               </p>
             </div>
             
-            <div className="bg-white rounded-lg p-4">
-              <h3 className="font-medium text-gray-900 mb-2">"Kleinere voedingen maakten het verschil" - Mark, Utrecht</h3>
+            <div>
+              <h3 className="font-medium text-primary mb-2">"Kleinere voedingen maakten het verschil" - Mark, Utrecht</h3>
               <p className="text-sm text-gray-700">
                 "In plaats van 6×120ml gaven we 8×90ml. Lucas hield veel meer binnen en groeide beter. 
                 Vraagt meer discipline maar werkt echt."
@@ -478,13 +542,25 @@ export default function AntiRefluxPage() {
             </div>
           </div>
           
-          <div className="mt-4 p-4 bg-gray-100 rounded-lg">
-            <h4 className="font-medium text-gray-800 mb-2">Belangrijkste tips van ervaren ouders:</h4>
-            <ul className="text-sm text-gray-700 space-y-1">
-              <li>• Geduld hebben - verbetering komt geleidelijk</li>
-              <li>• Verschillende AR merken proberen tot je de juiste vindt</li>
-              <li>• Voedingslogboek bijhouden om patronen te zien</li>
-              <li>• Niet te vroeg opgeven - geef elke aanpassing 2-3 weken</li>
+          <div className="mt-6">
+            <h4 className="font-medium text-primary mb-3">Belangrijkste tips van ervaren ouders:</h4>
+            <ul className="text-sm text-gray-700 space-y-2">
+              <li className="flex items-start space-x-2">
+                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                <span>Geduld hebben - verbetering komt geleidelijk</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                <span>Verschillende AR merken proberen tot je de juiste vindt</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                <span>Voedingslogboek bijhouden om patronen te zien</span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                <span>Niet te vroeg opgeven - geef elke aanpassing 2-3 weken</span>
+              </li>
             </ul>
           </div>
         </div>
