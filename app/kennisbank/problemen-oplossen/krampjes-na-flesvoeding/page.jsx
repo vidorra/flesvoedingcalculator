@@ -1,6 +1,6 @@
-import Layout from '../../../../../components/Layout'
+import Layout from '../../../../components/Layout'
 import Link from 'next/link'
-import KennisbankSidebar from '../../../../../components/KennisbankSidebar'
+import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { AlertTriangle, Clock, Heart, Thermometer, Search, Shield } from 'lucide-react'
 
 export const metadata = {

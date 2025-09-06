@@ -1,6 +1,6 @@
-import Layout from '../../../../../components/Layout'
+import Layout from '../../../../components/Layout'
 import Link from 'next/link'
-import KennisbankSidebar from '../../../../../components/KennisbankSidebar'
+import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { Calendar, Clock, CheckCircle, XCircle, Users } from 'lucide-react'
 
 export const metadata = {
