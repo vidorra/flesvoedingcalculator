@@ -138,6 +138,42 @@ export default function ArticlePage() {
 
 ## 📝 Typography Hierarchy
 
+### ⚠️ CRITICAL: Font Size Consistency
+
+**STRICTLY ENFORCED - Typography must follow exact hierarchy:**
+
+**Main Titles (h1):**
+- ✅ `text-2xl font-bold` - ONLY size allowed for main page titles
+- ❌ NEVER use: `text-3xl`, `text-4xl`, `text-xl`, or any other size
+- ✅ ALWAYS include icon: `<Icon className="w-6 h-6 mr-3 text-primary" />`
+
+**Section Headers (h2):**
+- ✅ `text-lg font-semibold` - ONLY size allowed for major sections
+- ❌ NEVER use: `text-2xl`, `text-3xl`, `text-xl`, or any other size
+
+**Subsection Headers (h3):**
+- ✅ `font-medium` - NO text-size class needed
+- ❌ NEVER use: `text-lg`, `text-xl`, or any size classes
+
+**Body Text:**
+- ✅ `text-gray-600` or `text-gray-700` - NO size classes
+- ❌ NEVER use: `text-lg`, `text-base`, `text-sm` for body text
+
+### Contrast Requirements
+
+**MINIMUM CONTRAST STANDARDS:**
+
+**Background/Text Combinations:**
+- ✅ `bg-gray-100` + `text-gray-700` (Good contrast)
+- ✅ `bg-white` + `text-gray-600` (Good contrast)
+- ❌ `bg-gray-50` + `text-gray-600` (Insufficient contrast)
+- ❌ `bg-gray-50` + `text-gray-500` (Poor contrast)
+
+**Card Contrast Rules:**
+- If using `bg-gray-50`, text must be minimum `text-gray-700`
+- For better accessibility, use `bg-gray-100` + `text-gray-700`
+- Never use text lighter than `text-gray-600` on light backgrounds
+
 ### Heading Structure
 
 ```jsx
@@ -342,6 +378,17 @@ Before publishing any article, verify:
 - [ ] **ALL h2 headers use `text-primary`** (not gray colors)
 - [ ] Only neutral colors: `text-gray-*`, `bg-gray-*`, `text-primary`, `bg-primary`
 - [ ] Proper contrast ratios maintained
+
+### Typography & Contrast ✓
+- [ ] **h1 ONLY uses `text-2xl font-bold`** - NO other sizes allowed
+- [ ] **h2 ONLY uses `text-lg font-semibold`** - NO other sizes allowed  
+- [ ] **h3 ONLY uses `font-medium`** - NO text-size classes
+- [ ] **Body text uses NO size classes** - only `text-gray-600` or `text-gray-700`
+- [ ] **NO `text-3xl`, `text-4xl`, `text-xl` anywhere** - Strictly forbidden
+- [ ] **All h1 have required icon** with `<Icon className="w-6 h-6 mr-3 text-primary" />`
+- [ ] **Sufficient contrast**: No `bg-gray-50` + `text-gray-600` combinations
+- [ ] **Child cards use `bg-gray-100` + `text-gray-700`** for proper contrast
+- [ ] **NO light text on light backgrounds** - minimum `text-gray-600`
 
 ### Layout ✓
 - [ ] Uses `grid grid-cols-12 gap-6` structure

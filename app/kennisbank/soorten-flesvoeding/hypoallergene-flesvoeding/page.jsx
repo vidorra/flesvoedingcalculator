@@ -92,7 +92,8 @@ export default function HypoallergeneVoedingPage() {
                 <ArrowRight className="w-4 h-4 mx-2" />
                 <span>Hypoallergene Flesvoeding</span>
               </div>
-              <h1 className="text-2xl font-bold text-gray-900 mb-3">
+              <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+                <Shield className="w-6 h-6 mr-3 text-primary" />
                 Hypoallergene Flesvoeding: Complete Medische Gids
               </h1>
               <p className="text-gray-600 leading-relaxed">
