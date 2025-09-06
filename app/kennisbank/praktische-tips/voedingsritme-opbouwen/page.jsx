@@ -84,7 +84,8 @@ export default function VoedingsritmeOpbouwenPage() {
         { time: '15:30', activity: 'Tussenfles (180ml)' },
         { time: '17:30', activity: 'Diner (vaste voeding)' },
         { time: '20:00', activity: 'Bedtijdfles (200ml)' }
-      ]
+      ],
+      tip: 'Combinatie van melkvoeding en vaste voeding vereist meer flexibiliteit in schema.'
     }
   ]
 
@@ -97,6 +98,15 @@ export default function VoedingsritmeOpbouwenPage() {
         'Herkennen natuurlijke patronen van je baby',
         'Identificeren beste tijden voor voeding',
         'Nog geen forcering - gewoon observeren'
+      ],
+      tips: [
+        'Gebruik voedingsdagboek of app voor nauwkeurige bijhouding',
+        'Let op natuurlijke slaaptijden na voeding',
+        'Noteer hoeveelheden en reacties van baby'
+      ],
+      progression: [
+        'Week 1: Alleen observeren en noteren',
+        'Week 2: Patronen herkennen en identificeren'
       ],
       example: 'Dag 1: 05:30 - Baby wakker, voeding 80ml; 08:45 - Honger signalen, voeding 90ml'
     },
@@ -113,6 +123,10 @@ export default function VoedingsritmeOpbouwenPage() {
         'Te vroeg honger? Afleiden met speeltje/wandeling',
         'Te laat honger? Gently wakker maken voor voeding',
         'Huilen voor vaste tijd? Kleine snack, grote voeding op tijd'
+      ],
+      progression: [
+        'Week 3: Introduceer 3 vaste voedingstijden',
+        'Week 4: Verfijn bedtime routine en interval timing'
       ]
     },
     {
