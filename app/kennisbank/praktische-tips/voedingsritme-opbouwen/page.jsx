@@ -156,30 +156,42 @@ export default function VoedingsritmeOpbouwenPage() {
         'Te laat honger: Max 15 min uitstellen',
         'Flexibiliteit behouden binnen smalle marges',
         'Geleidelijke aanpassing naar ideale tijden'
-      ]
+      ],
+      windows: [],
+      details: [],
+      approach: []
     },
     {
       name: 'Wake Windows Gebruiken',
       description: 'Optimale waaktijden per leeftijd',
+      rules: [],
       windows: [
         { age: '0-6 weken', wakePeriod: '45-60 min', sequence: 'Voeding → Slaap' },
         { age: '6-12 weken', wakePeriod: '60-90 min', sequence: 'Voeding → Spelen → Slaap' },
         { age: '3-6 maanden', wakePeriod: '90-120 min', sequence: 'Meer speeltijd mogelijk' }
-      ]
+      ],
+      details: [],
+      approach: []
     },
     {
       name: 'Dreamfeeding Techniek',
       description: 'Voeding zonder baby wakker maken',
+      rules: [],
+      windows: [],
       details: [
         'Tijdstip: 22:00-23:00 (vlak voor jouw bedtijd)',
         'Methode: Voeding geven zonder baby wakker maken',
         'Doel: Langere nachtrust voor iedereen',
         'Succes: Werkt bij 70% van baby\'s'
-      ]
+      ],
+      approach: []
     },
     {
       name: 'Cluster Feeding Management',
       description: 'Meerdere voedingen kort na elkaar',
+      rules: [],
+      windows: [],
+      details: [],
       approach: [
         'Wat: Meerdere voedingen kort na elkaar (avond)',
         'Timing: Meestal 17:00-21:00',
@@ -203,10 +215,15 @@ export default function VoedingsritmeOpbouwenPage() {
         'Extra tussenvoeding tijdens groeiperiodes',
         'Controleren of baby volledig leegdrinkt',
         'Water aanbieden bij warm weer (6+ maanden)'
-      ]
+      ],
+      workdaySchedule: [],
+      communicationTips: [],
+      balanceStrategy: []
     },
     {
       challenge: 'Schema Werkt niet met Werk/Kinderopvang',
+      causes: [],
+      solutions: [],
       workdaySchedule: [
         { time: '06:30', activity: 'Thuis ochtendvoeding' },
         { time: '08:00', activity: 'Naar kinderopvang' },
@@ -221,10 +238,15 @@ export default function VoedingsritmeOpbouwenPage() {
         'Flexibiliteit afspreken voor overgangsmomenten',
         'Bijhouden hoe schema werkt op opvang',
         'Aanpassen indien nodig voor werkdagen'
-      ]
+      ],
+      balanceStrategy: []
     },
     {
       challenge: 'Weekend Verstoort heel Schema',
+      causes: [],
+      solutions: [],
+      workdaySchedule: [],
+      communicationTips: [],
       balanceStrategy: [
         'Behoud vaste bedtijd ook in weekend',
         'Wake-up tijd max 1 uur later',
@@ -242,19 +264,27 @@ export default function VoedingsritmeOpbouwenPage() {
         'Onderweg: Plan stops rond voedingstijden',
         'Bestemming: Eerste voeding op normale tijd',
         'Terugkeer: Schema zo snel mogelijk hervatten'
-      ]
+      ],
+      approach: [],
+      babyIll: [],
+      parentIll: []
     },
     {
       situation: 'Vakantie Schema - Tijdzone Aanpassing',
+      planning: [],
       approach: [
         'Geleidelijk verschuiven 30 min per dag',
         'Licht blootstelling helpt biologische klok',
         'Eerste dagen flexibeler zijn',
         'Schema aanpassen aan lokale tijd'
-      ]
+      ],
+      babyIll: [],
+      parentIll: []
     },
     {
       situation: 'Ziekte & Schema',
+      planning: [],
+      approach: [],
       babyIll: [
         'Meer responsive feeding tijdens ziekte',
         'Kleinere, frequentere voedingen',
@@ -283,10 +313,14 @@ export default function VoedingsritmeOpbouwenPage() {
         'Normale week: 5 voedingen',
         'Growth spurt week: 6-7 voedingen',
         'Herstel week: Geleidelijk terug naar 5'
-      ]
+      ],
+      impact: [],
+      strategy: []
     },
     {
       phase: 'Tandjes Komen',
+      timing: [],
+      modifications: [],
       impact: [
         'Meer comfort voeding nodig',
         'Kleinere hoeveelheden per keer',
@@ -330,10 +364,14 @@ export default function VoedingsritmeOpbouwenPage() {
         'Flexibiliteit afspraken maken vooraf',
         'Verschillende benaderingen respecteren',
         'Regelmatige evaluatie samen'
-      ]
+      ],
+      managingExpectations: [],
+      socialActivities: []
     },
     {
       aspect: 'Familie & Vrienden',
+      roleDivision: [],
+      conflictPrevention: [],
       managingExpectations: [
         'Uitleg geven waarom schema belangrijk is',
         'Flexibiliteit tonen voor speciale momenten',
@@ -547,7 +585,7 @@ export default function VoedingsritmeOpbouwenPage() {
                       </div>
                     )}
                     
-                    {step.tips && (
+                    {step.tips && Array.isArray(step.tips) && step.tips.length > 0 && (
                       <div className="mb-4">
                         <h4 className="font-medium text-primary mb-2">Praktische Aanpak:</h4>
                         <ul className="space-y-1">
@@ -593,7 +631,7 @@ export default function VoedingsritmeOpbouwenPage() {
                     <h3 className="font-medium text-gray-900 mb-2">{technique.name}</h3>
                     <p className="text-sm text-gray-600 mb-3">{technique.description}</p>
                     
-                    {technique.rules && (
+                    {technique.rules && Array.isArray(technique.rules) && technique.rules.length > 0 && (
                       <ul className="space-y-1">
                         {technique.rules.map((rule, ruleIndex) => (
                           <li key={ruleIndex} className="flex items-start space-x-2">
@@ -604,7 +642,7 @@ export default function VoedingsritmeOpbouwenPage() {
                       </ul>
                     )}
                     
-                    {technique.windows && (
+                    {technique.windows && Array.isArray(technique.windows) && technique.windows.length > 0 && (
                       <div className="overflow-x-auto">
                         <table className="w-full">
                           <thead>
@@ -627,7 +665,7 @@ export default function VoedingsritmeOpbouwenPage() {
                       </div>
                     )}
                     
-                    {technique.details && (
+                    {technique.details && Array.isArray(technique.details) && technique.details.length > 0 && (
                       <ul className="space-y-1">
                         {technique.details.map((detail, detailIndex) => (
                           <li key={detailIndex} className="flex items-start space-x-2">
@@ -638,7 +676,7 @@ export default function VoedingsritmeOpbouwenPage() {
                       </ul>
                     )}
                     
-                    {technique.approach && (
+                    {technique.approach && Array.isArray(technique.approach) && technique.approach.length > 0 && (
                       <ul className="space-y-1">
                         {technique.approach.map((item, itemIndex) => (
                           <li key={itemIndex} className="flex items-start space-x-2">
@@ -670,7 +708,7 @@ export default function VoedingsritmeOpbouwenPage() {
                       <div>
                         <h4 className="font-medium text-primary mb-2">Mogelijke oorzaken:</h4>
                         <ul className="space-y-1">
-                          {challenge.causes.map((cause, causeIndex) => (
+                          {(challenge.causes || []).map((cause, causeIndex) => (
                             <li key={causeIndex} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
                               <span className="text-sm text-gray-700">{cause}</span>
@@ -682,7 +720,7 @@ export default function VoedingsritmeOpbouwenPage() {
                       <div>
                         <h4 className="font-medium text-primary mb-2">Oplossingen:</h4>
                         <ul className="space-y-1">
-                          {challenge.solutions.map((solution, solutionIndex) => (
+                          {(challenge.solutions || []).map((solution, solutionIndex) => (
                             <li key={solutionIndex} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                               <span className="text-sm text-gray-700">{solution}</span>
@@ -692,7 +730,7 @@ export default function VoedingsritmeOpbouwenPage() {
                       </div>
                     </div>
                     
-                    {challenge.workdaySchedule && (
+                    {challenge.workdaySchedule && Array.isArray(challenge.workdaySchedule) && challenge.workdaySchedule.length > 0 && (
                       <div className="mb-4">
                         <h4 className="font-medium text-primary mb-2">Werkdag Schema:</h4>
                         <div className="space-y-2">
@@ -706,7 +744,7 @@ export default function VoedingsritmeOpbouwenPage() {
                       </div>
                     )}
                     
-                    {challenge.communicationTips && (
+                    {challenge.communicationTips && Array.isArray(challenge.communicationTips) && challenge.communicationTips.length > 0 && (
                       <div className="mb-4">
                         <h4 className="font-medium text-primary mb-2">Communicatie Tips:</h4>
                         <ul className="space-y-1">
@@ -720,7 +758,7 @@ export default function VoedingsritmeOpbouwenPage() {
                       </div>
                     )}
                     
-                    {challenge.balanceStrategy && (
+                    {challenge.balanceStrategy && Array.isArray(challenge.balanceStrategy) && challenge.balanceStrategy.length > 0 && (
                       <div>
                         <h4 className="font-medium text-primary mb-2">Balans Strategie:</h4>
                         <ul className="space-y-1">
@@ -751,7 +789,7 @@ export default function VoedingsritmeOpbouwenPage() {
                   <div key={index}>
                     <h3 className="font-medium text-gray-900 mb-3">{situation.situation}</h3>
                     
-                    {situation.planning && (
+                    {situation.planning && Array.isArray(situation.planning) && situation.planning.length > 0 && (
                       <ul className="space-y-2 text-sm text-gray-700">
                         {situation.planning.map((item, itemIndex) => (
                           <li key={itemIndex} className="flex items-start space-x-2">
@@ -762,7 +800,7 @@ export default function VoedingsritmeOpbouwenPage() {
                       </ul>
                     )}
                     
-                    {situation.approach && (
+                    {situation.approach && Array.isArray(situation.approach) && situation.approach.length > 0 && (
                       <ul className="space-y-2 text-sm text-gray-700">
                         {situation.approach.map((item, itemIndex) => (
                           <li key={itemIndex} className="flex items-start space-x-2">
@@ -773,12 +811,12 @@ export default function VoedingsritmeOpbouwenPage() {
                       </ul>
                     )}
                     
-                    {situation.babyIll && (
+                    {situation.babyIll && situation.parentIll && (
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                           <h4 className="font-medium text-primary mb-2">Baby Ziek:</h4>
                           <ul className="space-y-1">
-                            {situation.babyIll.map((item, itemIndex) => (
+                            {(situation.babyIll || []).map((item, itemIndex) => (
                               <li key={itemIndex} className="flex items-start space-x-2">
                                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                                 <span className="text-sm text-gray-700">{item}</span>
@@ -790,7 +828,7 @@ export default function VoedingsritmeOpbouwenPage() {
                         <div>
                           <h4 className="font-medium text-primary mb-2">Ouder Ziek:</h4>
                           <ul className="space-y-1">
-                            {situation.parentIll.map((item, itemIndex) => (
+                            {(situation.parentIll || []).map((item, itemIndex) => (
                               <li key={itemIndex} className="flex items-start space-x-2">
                                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                                 <span className="text-sm text-gray-700">{item}</span>
@@ -818,7 +856,7 @@ export default function VoedingsritmeOpbouwenPage() {
                   <div key={index}>
                     <h3 className="font-medium text-gray-900 mb-3">{adjustment.phase}</h3>
                     
-                    {adjustment.timing && (
+                    {adjustment.timing && Array.isArray(adjustment.timing) && adjustment.timing.length > 0 && (
                       <div className="mb-4">
                         <h4 className="font-medium text-primary mb-2">Timing Verwachtingen:</h4>
                         <ul className="space-y-1">
@@ -832,7 +870,7 @@ export default function VoedingsritmeOpbouwenPage() {
                       </div>
                     )}
                     
-                    {adjustment.modifications && (
+                    {adjustment.modifications && Array.isArray(adjustment.modifications) && adjustment.modifications.length > 0 && (
                       <div className="p-3 border border-gray-200 bg-white rounded-lg mb-4">
                         <h4 className="font-medium text-primary mb-2">Schema Modificaties:</h4>
                         <ul className="space-y-1">
@@ -843,7 +881,7 @@ export default function VoedingsritmeOpbouwenPage() {
                       </div>
                     )}
                     
-                    {adjustment.impact && (
+                    {adjustment.impact && Array.isArray(adjustment.impact) && adjustment.impact.length > 0 && (
                       <div className="mb-4">
                         <h4 className="font-medium text-primary mb-2">Schema Impact:</h4>
                         <ul className="space-y-1">
@@ -857,7 +895,7 @@ export default function VoedingsritmeOpbouwenPage() {
                       </div>
                     )}
                     
-                    {adjustment.strategy && (
+                    {adjustment.strategy && Array.isArray(adjustment.strategy) && adjustment.strategy.length > 0 && (
                       <div>
                         <h4 className="font-medium text-primary mb-2">Aanpassingsstrategie:</h4>
                         <ul className="space-y-1">
@@ -891,7 +929,7 @@ export default function VoedingsritmeOpbouwenPage() {
                   <div key={index}>
                     <h3 className="font-medium text-gray-900 mb-3">{aspect.aspect}</h3>
                     
-                    {aspect.roleDivision && (
+                    {aspect.roleDivision && Array.isArray(aspect.roleDivision) && aspect.roleDivision.length > 0 && (
                       <div className="mb-4">
                         <h4 className="font-medium text-primary mb-2">Rol Verdeling:</h4>
                         <ul className="space-y-1">
@@ -905,7 +943,7 @@ export default function VoedingsritmeOpbouwenPage() {
                       </div>
                     )}
                     
-                    {aspect.conflictPrevention && (
+                    {aspect.conflictPrevention && Array.isArray(aspect.conflictPrevention) && aspect.conflictPrevention.length > 0 && (
                       <div className="mb-4">
                         <h4 className="font-medium text-primary mb-2">Conflict Preventie:</h4>
                         <ul className="space-y-1">
@@ -919,7 +957,7 @@ export default function VoedingsritmeOpbouwenPage() {
                       </div>
                     )}
                     
-                    {aspect.managingExpectations && (
+                    {aspect.managingExpectations && Array.isArray(aspect.managingExpectations) && aspect.managingExpectations.length > 0 && (
                       <div className="mb-4">
                         <h4 className="font-medium text-primary mb-2">Verwachtingen Manageren:</h4>
                         <ul className="space-y-1">
@@ -933,7 +971,7 @@ export default function VoedingsritmeOpbouwenPage() {
                       </div>
                     )}
                     
-                    {aspect.socialActivities && (
+                    {aspect.socialActivities && Array.isArray(aspect.socialActivities) && aspect.socialActivities.length > 0 && (
                       <div>
                         <h4 className="font-medium text-primary mb-2">Sociale Activiteiten:</h4>
                         <div className="space-y-2">
