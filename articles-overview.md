@@ -5,16 +5,16 @@ This document provides a complete overview of all planned articles in the kennis
 ## 📊 Summary Statistics
 
 - **Total Planned Articles**: 66
-- **Currently Written**: 40 ✅
-- **Still Need Writing**: 26 ❌
-- **Completion Rate**: 61%
+- **Currently Written**: 30 ✅
+- **Still Need Writing**: 36 ❌
+- **Completion Rate**: 45%
 
 ---
 
 ## 📁 Category Breakdown
 
 ### 🍼 Basis Flesvoeding (12 articles)
-**Status: 6/12 written (50%)**
+**Status: 7/12 written (58%)**
 
 | ID | Title | Status | File Path | Duration |
 |----|-------|--------|-----------|----------|
@@ -22,7 +22,7 @@ This document provides a complete overview of all planned articles in the kennis
 | 2 | Eerste keer flesvoeding geven | ✅ **WRITTEN** | `/basis-flesvoeding/eerste-keer-flesvoeding-geven/page.jsx` | 8 min |
 | 3 | Flesvoeding vs borstvoeding | ✅ **WRITTEN** | `/basis-flesvoeding/flesvoeding-vs-borstvoeding/page.jsx` | 12 min |
 | 8 | Flesvoeding bij premature baby's | ✅ **WRITTEN** | `/basis-flesvoeding/flesvoeding-bij-premature-babys/page.jsx` | 15 min |
-| 4 | Kosten van flesvoeding | ❌ *Needs writing* | *Not created* | 3 min |
+| 4 | Kosten van flesvoeding | ✅ **WRITTEN** | `/financiele-aspecten/kosten-van-flesvoeding/page.jsx` | 15 min |
 | 5 | Flesvoeding en werk | ❌ *Needs writing* | *Not created* | 4 min |
 | 6 | Baby weigert de fles | ✅ **WRITTEN** | `/basis-flesvoeding/baby-weigert-de-fles/page.jsx` | 8 min |
 | 7 | Overstappen van borst naar fles | ✅ **WRITTEN** | `/basis-flesvoeding/overstappen-van-borst-naar-fles/page.jsx` | 10 min |
@@ -46,7 +46,7 @@ This document provides a complete overview of all planned articles in the kennis
 | 20 | Peutermelk: wel of niet? | ❌ *Needs writing* | *Not created* | 3 min |
 
 ### 🔧 Voedingstechnieken (10 articles)  
-**Status: 8/10 written (80%)**
+**Status: 9/10 written (90%)**
 
 | ID | Title | Status | File Path | Duration |
 |----|-------|--------|-----------|----------|
@@ -57,7 +57,7 @@ This document provides a complete overview of all planned articles in the kennis
 | 29 | Voeden van tweeling | ✅ **WRITTEN** | `/voedingstechnieken/voeden-van-tweeling/page.jsx` | 15 min |
 | 24 | Boertje laten tijdens voeding | ✅ **WRITTEN** | `/voedingstechnieken/boertje-laten-tijdens-voeding/page.jsx` | 12 min |
 | 28 | Verschillende spenen uitproberen | ✅ **WRITTEN** | `/voedingstechnieken/verschillende-spenen-uitproberen/page.jsx` | 22 min |
-| 25 | Voedingsritme opbouwen | ❌ *Needs writing* | *Not created* | 7 min |
+| 25 | Voedingsritme opbouwen | ✅ **WRITTEN** | `/praktische-tips/voedingsritme-opbouwen/page.jsx` | 18 min |
 | 26 | Nachtvoeding technieken | ❌ *Needs writing* | *Not created* | 8 min |
 | 27 | Baby leren zelf drinken | ❌ *Needs writing* | *Not created* | 6 min |
 | 30 | Overgang naar beker | ❌ *Needs writing* | *Not created* | 5 min |
@@ -145,37 +145,45 @@ This document provides a complete overview of all planned articles in the kennis
 
 ---
 
-## 🎯 Priority List for Article Creation
+## 🎯 TOP 20 PRIORITY ARTICLES TO WRITE NEXT
 
-### **High Priority** (Core functionality)
-These articles are essential for basic flesvoeding knowledge:
+Based on user needs, SEO value, and knowledge gaps, here are the most important articles to create:
 
-1. ~~**Baby weigert de fles**~~ - ✅ **COMPLETED**
-2. ~~**Overstappen van borst naar fles**~~ - ✅ **COMPLETED**  
-3. ~~**Boertje laten tijdens voeding**~~ - ✅ **COMPLETED**
-4. ~~**Voedingsritme opbouwen**~~ - ✅ **COMPLETED**
-5. ~~**Flessen steriliseren**~~ - ✅ **COMPLETED**
-6. ~~**Flesvoeding bewaren**~~ - ✅ **COMPLETED**
-7. **Temperatuur controleren** - Safety duplicate (already exists in voedingstechnieken)
+### **🔥 TIER 1: Critical Safety & Basic Needs (1-7)**
 
-### **Medium Priority** (Common issues)
-Articles for frequent problems and questions:
+1. **Water koken voor flesvoeding** - Essential safety knowledge for new parents
+2. **Veilig verwarmen van flesvoeding** - Critical safety: magnetron vs waterpad dangers  
+3. **Houdbaarheid van flesvoeding** - Food safety: when to discard prepared bottles
+4. **Bio en organische flesvoeding** - Growing market segment, high search volume
+5. **Lactosevrije flesvoeding** - Medical necessity for some babies
+6. **Flesvoeding en slapen** - Major parent concern, affects whole family
+7. **Partner betrekken bij flesvoeding** - Relationship dynamics, shared responsibility
 
-8. **Krampjes na flesvoeding** - Common problem
-9. ~~**Spugen na de fles**~~ - ✅ **COMPLETED**
-10. ~~**Constipatie door flesvoeding**~~ - ✅ **COMPLETED**
-11. ~~**Baby drinkt niet genoeg**~~ - ✅ **COMPLETED**
-12. **Verschillende spenen uitproberen** - Practical need
-13. **Verschil tussen startvoeding en opvolgmelk** - Basic knowledge gap
+### **⭐ TIER 2: Common Problems & Techniques (8-14)**
 
-### **Lower Priority** (Specialized topics)
-More specific or advanced topics:
+8. **Baby leren zelf drinken** - Important developmental milestone
+9. **Overgang naar beker** - Natural progression from bottle feeding
+10. **Diarree en flesvoeding** - Common health concern, when to seek help
+11. **Allergische reacties** - Critical medical knowledge for parents
+12. **Baby weigert nieuwe formule** - Common when switching brands
+13. **Time-saving hacks** - Practical tips for busy parents
+14. **Equipment voor flesvoeding** - Shopping guide, what's essential vs nice-to-have
 
-14. **Hypoallergene flesvoeding** - Specialized need
-15. **Bio en organische flesvoeding** - Lifestyle choice
-16. **Lactosevrije flesvoeding** - Medical specialty
-17. **Equipment voor flesvoeding** - Shopping guide
-18. **Time-saving hacks** - Convenience tips
+### **💡 TIER 3: Advanced & Specialized Topics (15-20)**
+
+15. **Peutermelk: wel of niet?** - Transition after 12 months, marketing vs nutrition
+16. **Flesvoeding bij oppas/kinderopvang** - Practical guidance for working parents
+17. **Flesvoeding bij ziekte** - Special considerations when baby is ill
+18. **Overvoeding voorkomen** - Important health topic, preventing childhood obesity
+19. **Bonding tijdens flesvoeding** - Emotional connection, especially important for non-breastfeeding families
+20. **Eco-friendly flesvoeding** - Environmental concerns, sustainable choices
+
+### **📈 SEO & Impact Reasoning:**
+
+**High search volume:** Bio/organic, lactose-free, sleep issues, partner involvement
+**Safety critical:** Water preparation, heating methods, storage duration
+**Common problems:** Formula switching, developmental transitions, illness care  
+**Market gaps:** Environmental concerns, childcare instructions, health prevention
 
 ---
 
@@ -227,8 +235,8 @@ More specific or advanced topics:
 
 **Last Updated:** January 2025  
 **Total Articles Planned:** 66  
-**Articles Written:** 40 (+22 new articles created total)  
-**Remaining Work:** 26 articles
+**Articles Written:** 30 ✅ 
+**Remaining Work:** 36 articles
 
 ### Recent Updates:
 - ✅ Created 22 missing articles from new-articles analysis (13 o- articles + 9 s- articles) 
