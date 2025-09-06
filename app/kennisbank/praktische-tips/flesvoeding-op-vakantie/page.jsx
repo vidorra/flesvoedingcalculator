@@ -173,11 +173,11 @@ export default function VakantiePage() {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium text-green-700 mb-3">✓ Flesvoeding Travel Advantages</h3>
+                  <h3 className="font-medium text-gray-700 mb-3">✓ Flesvoeding Travel Advantages</h3>
                   <div className="space-y-2">
                     {travelAdvantages.map((advantage, index) => (
                       <div key={index} className="flex items-start space-x-2">
-                        <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                         <span className="text-sm text-gray-700">{advantage}</span>
                       </div>
                     ))}
@@ -185,7 +185,7 @@ export default function VakantiePage() {
                 </div>
 
                 <div>
-                  <h3 className="font-medium text-blue-700 mb-3">🇳🇱 Nederlandse Reis Patronen</h3>
+                  <h3 className="font-medium text-gray-700 mb-3">🇳🇱 Nederlandse Reis Patronen</h3>
                   <div className="text-sm text-gray-600 space-y-2">
                     <div><strong>Zomer vakanties:</strong> 80% families juni-augustus</div>
                     <div><strong>Kort breaks:</strong> Weekend trips populair</div>
@@ -195,8 +195,8 @@ export default function VakantiePage() {
                 </div>
               </div>
 
-              <div className="mt-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
-                <p className="text-blue-800 text-sm">
+              <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
+                <p className="text-gray-700 text-sm">
                   <strong>ANWB Onderzoek:</strong> Families met flesvoeding ervaren 30% minder 
                   reis-stress dan families die kolven tijdens vakantie.
                 </p>
@@ -216,7 +216,7 @@ export default function VakantiePage() {
                     </h3>
                     <div className="grid md:grid-cols-2 gap-4 mb-3">
                       <div>
-                        <h4 className="font-medium text-green-700 mb-2">✓ Voordelen:</h4>
+                        <h4 className="font-medium text-gray-700 mb-2">✓ Voordelen:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           {transport.pros.map((pro, idx) => (
                             <li key={idx}>• {pro}</li>
@@ -224,7 +224,7 @@ export default function VakantiePage() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-medium text-amber-700 mb-2">⚠ Uitdagingen:</h4>
+                        <h4 className="font-medium text-gray-700 mb-2">⚠ Uitdagingen:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           {transport.cons.map((con, idx) => (
                             <li key={idx}>• {con}</li>
@@ -232,7 +232,7 @@ export default function VakantiePage() {
                         </ul>
                       </div>
                     </div>
-                    <div className="p-2 bg-blue-50 rounded text-sm text-blue-700">
+                    <div className="p-2 bg-gray-50 rounded text-sm text-gray-700">
                       <strong>Success Tips:</strong> {transport.tips}
                     </div>
                   </div>
@@ -253,22 +253,22 @@ export default function VakantiePage() {
                     <h3 className="font-semibold text-gray-800 mb-3">{accommodation.type}</h3>
                     <div className="grid md:grid-cols-2 gap-4 mb-3">
                       <div>
-                        <h4 className="font-medium text-blue-600 mb-2">Features:</h4>
+                        <h4 className="font-medium text-gray-600 mb-2">Features:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           {accommodation.features.map((feature, idx) => (
                             <li key={idx} className="flex items-center space-x-2">
-                              <CheckCircle className="w-3 h-3 text-blue-500 flex-shrink-0" />
+                              <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
                               <span>{feature}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-medium text-green-600 mb-2">Setup Tips:</h4>
+                        <h4 className="font-medium text-gray-600 mb-2">Setup Tips:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           {accommodation.setup.map((tip, idx) => (
                             <li key={idx} className="flex items-center space-x-2">
-                              <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0" />
+                              <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
                               <span>{tip}</span>
                             </li>
                           ))}
@@ -292,7 +292,7 @@ export default function VakantiePage() {
                   <div key={index} className="border border-gray-200 rounded-lg p-4">
                     <div className="flex justify-between items-start mb-3">
                       <h3 className="font-semibold text-gray-800">{region.region}</h3>
-                      <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">
+                      <span className="bg-blue-100 text-gray-700 px-2 py-1 rounded text-sm">
                         {region.climate}
                       </span>
                     </div>
@@ -306,7 +306,7 @@ export default function VakantiePage() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-medium text-green-600 mb-2">Solutions:</h4>
+                        <h4 className="font-medium text-gray-600 mb-2">Solutions:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           {region.solutions.map((solution, idx) => (
                             <li key={idx}>• {solution}</li>
@@ -340,7 +340,7 @@ export default function VakantiePage() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-medium text-blue-600 mb-2">🔄 Backup Plan:</h4>
+                        <h4 className="font-medium text-gray-600 mb-2">🔄 Backup Plan:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           {protocol.backup.map((plan, idx) => (
                             <li key={idx}>• {plan}</li>
@@ -348,7 +348,7 @@ export default function VakantiePage() {
                         </ul>
                       </div>
                     </div>
-                    <div className="p-2 bg-green-50 rounded text-sm text-green-700">
+                    <div className="p-2 bg-green-50 rounded text-sm text-gray-700">
                       <strong>Prevention:</strong> {protocol.prevention}
                     </div>
                   </div>
@@ -361,13 +361,13 @@ export default function VakantiePage() {
               <h2 className="text-lg font-semibold text-primary mb-4">Packing Strategies: Complete Lists</h2>
               
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
-                  <h3 className="font-medium text-blue-800 mb-3">🎒 Hand Luggage Essentials</h3>
+                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                  <h3 className="font-medium text-gray-700 mb-3">🎒 Hand Luggage Essentials</h3>
                   <div className="space-y-2">
                     {packingEssentials.handLuggage.map((item, index) => (
                       <div key={index} className="flex items-center space-x-2">
-                        <CheckCircle className="w-3 h-3 text-blue-500 flex-shrink-0" />
-                        <span className="text-sm text-blue-700">{item}</span>
+                        <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
+                        <span className="text-sm text-gray-700">{item}</span>
                       </div>
                     ))}
                   </div>
@@ -378,8 +378,8 @@ export default function VakantiePage() {
                   <div className="space-y-2">
                     {packingEssentials.checkedLuggage.map((item, index) => (
                       <div key={index} className="flex items-center space-x-2">
-                        <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0" />
-                        <span className="text-sm text-green-700">{item}</span>
+                        <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
+                        <span className="text-sm text-gray-700">{item}</span>
                       </div>
                     ))}
                   </div>
@@ -419,9 +419,9 @@ export default function VakantiePage() {
               </h2>
               
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-orange-50 rounded-lg p-4 border border-orange-200">
-                  <h3 className="font-medium text-orange-800 mb-3">☀️ Zomer Vakanties (Juni-Augustus)</h3>
-                  <div className="text-sm text-orange-700 space-y-2">
+                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                  <h3 className="font-medium text-gray-700 mb-3">☀️ Zomer Vakanties (Juni-Augustus)</h3>
+                  <div className="text-sm text-gray-600 space-y-2">
                     <div><strong>Uitdagingen:</strong> Formula storage temperature, spoilage risk</div>
                     <div><strong>Oplossingen:</strong> Insulated bags, ice pack rotation, shaded areas</div>
                     <div><strong>Extra behoeften:</strong> Verhoogde hydratatie, cooling backup</div>
@@ -429,9 +429,9 @@ export default function VakantiePage() {
                   </div>
                 </div>
                 
-                <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
-                  <h3 className="font-medium text-blue-800 mb-3">❄️ Winter Vakanties (December-Februari)</h3>
-                  <div className="text-sm text-blue-700 space-y-2">
+                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                  <h3 className="font-medium text-gray-700 mb-3">❄️ Winter Vakanties (December-Februari)</h3>
+                  <div className="text-sm text-gray-700 space-y-2">
                     <div><strong>Uitdagingen:</strong> Formula freezing, heating reliability</div>
                     <div><strong>Oplossingen:</strong> Thermos equipment, indoor feeding areas</div>
                     <div><strong>Voordelen:</strong> No spoilage concerns, cozy indoor routines</div>

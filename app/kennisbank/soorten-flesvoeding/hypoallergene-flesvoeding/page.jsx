@@ -122,7 +122,7 @@ export default function HypoallergeneVoedingPage() {
                   <div className="space-y-3">
                     {allergySigns.slice(0, 3).map((sign, index) => (
                       <div key={index} className="flex items-start space-x-3">
-                        <AlertTriangle className="w-4 h-4 text-amber-500 mt-1 flex-shrink-0" />
+                        <AlertTriangle className="w-4 h-4 text-gray-500 mt-1 flex-shrink-0" />
                         <div>
                           <div className="font-medium text-gray-700">{sign.sign}</div>
                           <div className="text-sm text-gray-600">{sign.description}</div>
@@ -145,12 +145,12 @@ export default function HypoallergeneVoedingPage() {
                 </div>
               </div>
 
-              <div className="mt-6 p-4 bg-red-50 rounded-lg border border-red-200">
+              <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
                 <div className="flex items-start space-x-3">
-                  <Shield className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                  <Shield className="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
                   <div>
-                    <h4 className="font-medium text-red-800 mb-1">Belangrijk: Medische Diagnose Vereist</h4>
-                    <p className="text-red-700 text-sm">
+                    <h4 className="font-medium text-gray-700 mb-1">Belangrijk: Medische Diagnose Vereist</h4>
+                    <p className="text-gray-600 text-sm">
                       Start nooit zelf met HA-voeding zonder medisch advies. Diagnose door kinderarts/allergoloog 
                       is essentieel voor juiste behandeling.
                     </p>
@@ -173,28 +173,28 @@ export default function HypoallergeneVoedingPage() {
                       </div>
                       <div className="text-right">
                         <div className="font-medium text-gray-700">{formula.price}</div>
-                        <div className="text-sm text-green-600">{formula.effectiveness}</div>
+                        <div className="text-sm text-gray-600">{formula.effectiveness}</div>
                       </div>
                     </div>
                     
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <h4 className="font-medium text-green-700 mb-2">✓ Voordelen:</h4>
+                        <h4 className="font-medium text-gray-700 mb-2">✓ Voordelen:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           {formula.pros.map((pro, idx) => (
                             <li key={idx} className="flex items-center space-x-2">
-                              <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0" />
+                              <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
                               <span>{pro}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-medium text-amber-700 mb-2">⚠ Nadelen:</h4>
+                        <h4 className="font-medium text-gray-700 mb-2">⚠ Nadelen:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           {formula.cons.map((con, idx) => (
                             <li key={idx} className="flex items-center space-x-2">
-                              <AlertTriangle className="w-3 h-3 text-amber-500 flex-shrink-0" />
+                              <AlertTriangle className="w-3 h-3 text-gray-500 flex-shrink-0" />
                               <span>{con}</span>
                             </li>
                           ))}
@@ -205,20 +205,20 @@ export default function HypoallergeneVoedingPage() {
                 ))}
               </div>
 
-              <div className="bg-blue-50 rounded-lg p-4 border border-blue-200">
-                <h4 className="font-medium text-blue-800 mb-2">💰 Kosten & Vergoeding</h4>
+              <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                <h4 className="font-medium text-gray-700 mb-2">💰 Kosten & Vergoeding</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <h5 className="font-medium text-blue-700 mb-1">Volledig Vergoed:</h5>
-                    <ul className="text-blue-600 space-y-1">
+                    <h5 className="font-medium text-gray-700 mb-1">Volledig Vergoed:</h5>
+                    <ul className="text-gray-600 space-y-1">
                       <li>• Therapeutische formules op recept</li>
                       <li>• Bij bewezen diagnose kinderarts</li>
                       <li>• Aminozuur formules (Neocate)</li>
                     </ul>
                   </div>
                   <div>
-                    <h5 className="font-medium text-blue-700 mb-1">Eigen Kosten:</h5>
-                    <ul className="text-blue-600 space-y-1">
+                    <h5 className="font-medium text-gray-700 mb-1">Eigen Kosten:</h5>
+                    <ul className="text-gray-600 space-y-1">
                       <li>• Preventieve HA-voeding</li>
                       <li>• Exploratie zonder diagnose</li>
                       <li>• €200-500 extra per jaar</li>
@@ -248,9 +248,9 @@ export default function HypoallergeneVoedingPage() {
                 ))}
               </div>
 
-              <div className="mt-6 p-4 bg-amber-50 rounded-lg border border-amber-200">
-                <h4 className="font-medium text-amber-800 mb-2">⚠️ Belangrijke Waarschuwingen</h4>
-                <div className="text-sm text-amber-700 space-y-1">
+              <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                <h4 className="font-medium text-gray-700 mb-2">⚠️ Belangrijke Waarschuwingen</h4>
+                <div className="text-sm text-gray-600 space-y-1">
                   <div>• Bij bewezen allergie: onmiddellijke volledige overstap</div>
                   <div>• Baby weigert HA? Probeer andere temperatuur/speen</div>
                   <div>• Medicijnbaby: altijd eerst medisch overleg</div>
@@ -267,17 +267,17 @@ export default function HypoallergeneVoedingPage() {
               </h2>
               
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-yellow-50 rounded-lg p-4 border border-yellow-200">
-                  <h3 className="font-medium text-yellow-800 mb-3">🟡 Milde Reactie</h3>
-                  <div className="text-sm text-yellow-700 space-y-2">
+                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                  <h3 className="font-medium text-gray-700 mb-3">🟡 Milde Reactie</h3>
+                  <div className="text-sm text-gray-600 space-y-2">
                     <div><strong>Symptomen:</strong> Rode vlekken, jeuk, lichte diarree</div>
                     <div><strong>Actie:</strong> Stop voeding, observeer, contact medisch team</div>
                   </div>
                 </div>
                 
-                <div className="bg-red-50 rounded-lg p-4 border border-red-200">
-                  <h3 className="font-medium text-red-800 mb-3">🔴 Ernstige Reactie - BEL 112</h3>
-                  <div className="text-sm text-red-700 space-y-1">
+                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                  <h3 className="font-medium text-gray-700 mb-3">🔴 Ernstige Reactie - BEL 112</h3>
+                  <div className="text-sm text-gray-600 space-y-1">
                     <div>• Zwelling gezicht/lippen/tong</div>
                     <div>• Moeilijke ademhaling/wheezing</div>
                     <div>• Blauw worden huid/lippen</div>
