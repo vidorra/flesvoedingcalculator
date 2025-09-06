@@ -1,10 +1,9 @@
-'use client'
 import Layout from '../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../components/KennisbankSidebar'
 import { Shield, ArrowRight, Home, CheckCircle, X, Thermometer, Refrigerator } from 'lucide-react'
 
-export default function HygieneBereidingPage() {
+function HygieneBereidingPage() {
   const alwaysDo = [
     'Handen wassen voor bereiding',
     'Schoon aanrecht gebruiken',
@@ -16,12 +15,12 @@ export default function HygieneBereidingPage() {
     'Restjes bewaren',
     'Fles opnieuw opwarmen',
     'Poeder met vuile lepel scheppen',
-    'Flessen delen tussen baby\'s'
+    'Flessen delen tussen baby&apos;s'
   ]
 
   const waterTips = [
     'Veilig vanaf geboorte',
-    'Eerst 3 minuten laten lopen (\'s ochtends)',
+    'Eerst 3 minuten laten lopen (&apos;s ochtends)',
     'Koud water gebruiken (warm water kan lood bevatten)',
     'Koken tot 3 maanden verplicht, 3-6 maanden geadviseerd'
   ]
@@ -499,6 +498,7 @@ export default function HygieneBereidingPage() {
           </div>
           </div>
         </div>
+      </div>
         <div className="col-span-12 lg:col-span-5">
           <KennisbankSidebar 
             images={[
@@ -517,3 +517,5 @@ export default function HygieneBereidingPage() {
     </Layout>
   )
 }
+
+export default HygieneBereidingPage

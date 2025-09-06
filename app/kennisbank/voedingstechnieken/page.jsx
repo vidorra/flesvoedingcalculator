@@ -8,7 +8,7 @@ export const metadata = {
   description: 'Leer hoe je veilig flesvoeding klaarmaakt en geeft. ✓ Juiste temperatuur ✓ Houding ✓ Steriliseren ✓ Responsive feeding technieken.',
 }
 
-export default function VoedingstechniekenPage() {
+function VoedingstechniekenPage() {
   const preparationSteps = [
     'Was je handen grondig met zeep',
     'Check houdbaarheidsdatum van het poeder',
@@ -604,6 +604,7 @@ export default function VoedingstechniekenPage() {
           </div>
           </div>
         </div>
+      </div>
         <div className="col-span-12 lg:col-span-5">
           <KennisbankSidebar 
             images={[
@@ -622,3 +623,5 @@ export default function VoedingstechniekenPage() {
     </Layout>
   )
 }
+
+export default VoedingstechniekenPage

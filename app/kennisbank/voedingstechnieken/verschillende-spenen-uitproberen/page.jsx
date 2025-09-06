@@ -1,6 +1,6 @@
-import Layout from '../../../../../components/Layout'
+import Layout from '../../../../components/Layout'
 import Link from 'next/link'
-import KennisbankSidebar from '../../../../../components/KennisbankSidebar'
+import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { TestTube, Clock, Target, Search, ShoppingCart, AlertCircle } from 'lucide-react'
 
 export const metadata = {
