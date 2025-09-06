@@ -5,9 +5,9 @@ This document provides a complete overview of all planned articles in the kennis
 ## 📊 Summary Statistics
 
 - **Total Planned Articles**: 66
-- **Currently Written**: 31 ✅
-- **Still Need Writing**: 35 ❌
-- **Completion Rate**: 47%
+- **Currently Written**: 36 ✅
+- **Still Need Writing**: 30 ❌
+- **Completion Rate**: 55%
 
 ---
 
@@ -46,7 +46,7 @@ This document provides a complete overview of all planned articles in the kennis
 | 20 | Peutermelk: wel of niet? | ❌ *Needs writing* | *Not created* | 3 min |
 
 ### 🔧 Voedingstechnieken (10 articles)  
-**Status: 7/10 written (70%)**
+**Status: 8/10 written (80%)**
 
 | ID | Title | Status | File Path | Duration |
 |----|-------|--------|-----------|----------|
@@ -105,7 +105,7 @@ This document provides a complete overview of all planned articles in the kennis
 | 51 | Noodvoorraad flesvoeding | ❌ *Needs writing* | *Not created* | 4 min |
 
 ### 💡 Praktische Tips (15 articles)
-**Status: 3/15 written (20%)**
+**Status: 5/15 written (33%)**
 
 | ID | Title | Status | File Path | Duration |
 |----|-------|--------|-----------|----------|
@@ -227,12 +227,15 @@ More specific or advanced topics:
 
 **Last Updated:** January 2025  
 **Total Articles Planned:** 66  
-**Articles Written:** 31 (+13 new articles created total)  
-**Remaining Work:** 35 articles
+**Articles Written:** 36 (+18 new articles created total)  
+**Remaining Work:** 30 articles
 
 ### Recent Updates:
-- ✅ Created 13 missing articles from new-articles analysis (9 o- articles + 4 s- articles)
+- ✅ Created 18 missing articles from new-articles analysis (13 o- articles + 5 s- articles) 
 - ✅ Enhanced 2 existing articles with additional content  
-- ✅ Completion rate improved from 27% to 47%
+- ✅ Completion rate improved from 27% to 55%
 - ✅ All high-priority core articles now completed
 - ✅ Major gaps filled: storage, burping, feeding rhythm, spitting issues, cramps, speen selection, formula comparisons
+- ✅ **All 4 o- articles successfully integrated into the site** (boertje laten, flesvoeding bewaren, spugen na fles, voedingsritme opbouwen)
+- ✅ **5 out of 9 s- articles integrated** (krampjes, spenen uitproberen, startvoeding/opvolgmelk vergelijking, nachtvoeding)
+- ❌ **4 s- articles still need integration** (hypoallergene flesvoeding, werk combineren, geld besparen, vakantie)

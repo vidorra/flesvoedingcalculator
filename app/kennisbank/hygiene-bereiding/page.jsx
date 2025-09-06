@@ -1,6 +1,7 @@
 'use client'
 import Layout from '../../../components/Layout'
 import Link from 'next/link'
+import KennisbankSidebar from '../../../components/KennisbankSidebar'
 import { Shield, ArrowRight, Home, CheckCircle, X, Thermometer, Refrigerator } from 'lucide-react'
 
 export default function HygieneBereidingPage() {
@@ -78,7 +79,9 @@ export default function HygieneBereidingPage() {
 
   return (
     <Layout>
-      <div className="space-y-6">
+      <div className="grid grid-cols-12 gap-6">
+        <div className="col-span-12 lg:col-span-7">
+          <div className="space-y-6">
 
         {/* Header */}
         <div className="mb-6">
@@ -494,6 +497,21 @@ export default function HygieneBereidingPage() {
               <div className="text-sm text-gray-600">Handige tips voor ouders</div>
             </Link>
           </div>
+          </div>
+        </div>
+        <div className="col-span-12 lg:col-span-5">
+          <KennisbankSidebar 
+            images={[
+              '/images/hygiene-bereiding-1.jpg',
+              '/images/hygiene-bereiding-2.jpg',
+              '/images/hygiene-bereiding-3.jpg'
+            ]}
+            adTopics={[
+              'Beste sterilisatoren kopen',
+              'Veilige flessenset aanschaffen',
+              'Thermometers voor babyvoeding'
+            ]}
+          />
         </div>
       </div>
     </Layout>

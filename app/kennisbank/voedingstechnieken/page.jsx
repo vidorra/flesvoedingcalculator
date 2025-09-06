@@ -1,5 +1,6 @@
 import Layout from '../../../components/Layout'
 import Link from 'next/link'
+import KennisbankSidebar from '../../../components/KennisbankSidebar'
 import { Wrench, ArrowRight, Home, CheckCircle, AlertTriangle, Heart } from 'lucide-react'
 
 export const metadata = {
@@ -51,7 +52,9 @@ export default function VoedingstechniekenPage() {
 
   return (
     <Layout>
-      <div className="space-y-6">
+      <div className="grid grid-cols-12 gap-6">
+        <div className="col-span-12 lg:col-span-7">
+          <div className="space-y-6">
 
         {/* Header */}
         <div className="mb-6">
@@ -599,6 +602,21 @@ export default function VoedingstechniekenPage() {
               <div className="text-sm text-gray-600">Welk type voor welke leeftijd</div>
             </Link>
           </div>
+          </div>
+        </div>
+        <div className="col-span-12 lg:col-span-5">
+          <KennisbankSidebar 
+            images={[
+              '/images/voedingstechnieken-1.jpg',
+              '/images/voedingstechnieken-2.jpg',
+              '/images/voedingstechnieken-3.jpg'
+            ]}
+            adTopics={[
+              'Beste flessenwarmer kopen',
+              'Kwaliteitsflessen voor baby',
+              'Veilige sterilisatoren vergelijken'
+            ]}
+          />
         </div>
       </div>
     </Layout>
