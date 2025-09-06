@@ -5,9 +5,9 @@ This document provides a complete overview of all planned articles in the kennis
 ## 📊 Summary Statistics
 
 - **Total Planned Articles**: 66
-- **Currently Written**: 27 ✅
-- **Still Need Writing**: 39 ❌
-- **Completion Rate**: 41%
+- **Currently Written**: 31 ✅
+- **Still Need Writing**: 35 ❌
+- **Completion Rate**: 47%
 
 ---
 
@@ -32,21 +32,21 @@ This document provides a complete overview of all planned articles in the kennis
 | 12 | Partner betrekken bij flesvoeding | ❌ *Needs writing* | *Not created* | 4 min |
 
 ### 📦 Soorten Flesvoeding (8 articles)
-**Status: 2/8 written (25%)**
+**Status: 4/8 written (50%)**
 
 | ID | Title | Status | File Path | Duration |
 |----|-------|--------|-----------|----------|
 | 13 | Soorten flesvoeding (1, 2, 3) | ✅ **WRITTEN** | `/soorten-flesvoeding/page.jsx` | 8 min |
 | 17 | Anti-reflux flesvoeding | ✅ **WRITTEN** | `/soorten-flesvoeding/anti-reflux-flesvoeding/page.jsx` | 12 min |
-| 14 | Verschil tussen startvoeding en opvolgmelk | ❌ *Needs writing* | *Not created* | 3 min |
-| 15 | Wanneer overstappen naar opvolgmelk? | ❌ *Needs writing* | *Not created* | 4 min |
+| 14 | Verschil tussen startvoeding en opvolgmelk | ✅ **WRITTEN** | `/soorten-flesvoeding/verschil-startvoeding-opvolgmelk/page.jsx` | 25 min |
+| 15 | Wanneer overstappen naar opvolgmelk? | ✅ **WRITTEN** | `/soorten-flesvoeding/wanneer-overstappen-opvolgmelk/page.jsx` | 20 min |
 | 16 | Hypoallergene flesvoeding | ❌ *Needs writing* | *Not created* | 5 min |
 | 18 | Bio en organische flesvoeding | ❌ *Needs writing* | *Not created* | 4 min |
 | 19 | Lactosevrije flesvoeding | ❌ *Needs writing* | *Not created* | 5 min |
 | 20 | Peutermelk: wel of niet? | ❌ *Needs writing* | *Not created* | 3 min |
 
 ### 🔧 Voedingstechnieken (10 articles)  
-**Status: 6/10 written (60%)**
+**Status: 7/10 written (70%)**
 
 | ID | Title | Status | File Path | Duration |
 |----|-------|--------|-----------|----------|
@@ -56,20 +56,20 @@ This document provides a complete overview of all planned articles in the kennis
 | 23 | Juiste temperatuur controleren | ✅ **WRITTEN** | `/voedingstechnieken/juiste-temperatuur-controleren/page.jsx` | 3 min |
 | 29 | Voeden van tweeling | ✅ **WRITTEN** | `/voedingstechnieken/voeden-van-tweeling/page.jsx` | 15 min |
 | 24 | Boertje laten tijdens voeding | ✅ **WRITTEN** | `/voedingstechnieken/boertje-laten-tijdens-voeding/page.jsx` | 12 min |
+| 28 | Verschillende spenen uitproberen | ✅ **WRITTEN** | `/voedingstechnieken/verschillende-spenen-uitproberen/page.jsx` | 22 min |
 | 25 | Voedingsritme opbouwen | ❌ *Needs writing* | *Not created* | 7 min |
 | 26 | Nachtvoeding technieken | ❌ *Needs writing* | *Not created* | 8 min |
 | 27 | Baby leren zelf drinken | ❌ *Needs writing* | *Not created* | 6 min |
-| 28 | Verschillende spenen uitproberen | ❌ *Needs writing* | *Not created* | 4 min |
 | 30 | Overgang naar beker | ❌ *Needs writing* | *Not created* | 5 min |
 
 ### 🚨 Problemen Oplossen (9 articles)
-**Status: 4/9 written (44%)**
+**Status: 5/9 written (56%)**
 
 | ID | Title | Status | File Path | Duration |
 |----|-------|--------|-----------|----------|
 | - | Problemen oplossen overzicht | ✅ **WRITTEN** | `/problemen-oplossen/page.jsx` | - |
 | 31 | Baby drinkt niet genoeg | ✅ **WRITTEN** | `/problemen-oplossen/baby-drinkt-niet-genoeg/page.jsx` | 6 min |
-| 32 | Krampjes na flesvoeding | ❌ *Needs writing* | *Not created* | 4 min |
+| 32 | Krampjes na flesvoeding | ✅ **WRITTEN** | `/problemen-oplossen/krampjes-na-flesvoeding/page.jsx` | 18 min |
 | 33 | Spugen na de fles | ✅ **WRITTEN** | `/problemen-oplossen/spugen-na-de-fles/page.jsx` | 15 min |
 | 34 | Constipatie door flesvoeding | ✅ **WRITTEN** | `/problemen-oplossen/constipatie-door-flesvoeding/page.jsx` | 7 min |
 | 35 | Diarree en flesvoeding | ❌ *Needs writing* | *Not created* | 4 min |
@@ -227,12 +227,12 @@ More specific or advanced topics:
 
 **Last Updated:** January 2025  
 **Total Articles Planned:** 66  
-**Articles Written:** 27 (+9 new articles created total)  
-**Remaining Work:** 39 articles
+**Articles Written:** 31 (+13 new articles created total)  
+**Remaining Work:** 35 articles
 
 ### Recent Updates:
-- ✅ Created 9 missing articles from new-articles analysis (5 earlier + 4 o- articles)
+- ✅ Created 13 missing articles from new-articles analysis (9 o- articles + 4 s- articles)
 - ✅ Enhanced 2 existing articles with additional content  
-- ✅ Completion rate improved from 27% to 41%
+- ✅ Completion rate improved from 27% to 47%
 - ✅ All high-priority core articles now completed
-- ✅ Major safety and technique gaps filled: storage, burping, feeding rhythm, spitting issues
+- ✅ Major gaps filled: storage, burping, feeding rhythm, spitting issues, cramps, speen selection, formula comparisons
