@@ -2,27 +2,12 @@
 import { useState } from 'react'
 import Layout from '../../components/Layout'
 import Link from 'next/link'
-import KennisbankSidebar from '../../components/KennisbankSidebar'
 import { BookOpen, Search, Info, ArrowRight, Package, Clock, Baby, Shield, Wrench, AlertCircle, Refrigerator, Lightbulb, AlertTriangle } from 'lucide-react'
 
 export default function KennisbankPage() {
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [filteredContent, setFilteredContent] = useState('')
 
-  const sidebarImages = [
-    {
-      src: "/kennisbank-overzicht.png",
-      alt: "Kennisbank overzicht flesvoeding",
-      caption: "Complete flesvoeding gids"
-    },
-    {
-      src: "/flesvoeding-tips.png",
-      alt: "Flesvoeding tips en technieken",
-      caption: "Praktische tips voor ouders"
-    }
-  ]
-
-  const adTopics = ["Flesvoeding Gids", "Baby Voeding", "Kennisbank", "Voedingstips"]
 
   // Article data structure - ONLY includes actual existing articles with proper links
   const articles = [
@@ -343,9 +328,8 @@ export default function KennisbankPage() {
 
   return (
     <Layout>
-      <div className="grid grid-cols-12 gap-6">
-        <div className="col-span-12 lg:col-span-7">
-          <div className="space-y-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="space-y-6">
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
             <BookOpen className="w-6 h-6 mr-3 text-primary" />
@@ -521,18 +505,6 @@ export default function KennisbankPage() {
                 <ArrowRight className="w-5 h-5 text-gray-400" />
               </div>
             </Link>
-            <Link 
-              href="/partners"
-              className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors"
-            >
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="font-medium text-primary">Partners & Merken</h3>
-                  <p className="text-sm text-gray-600 mt-1">Informatie over verschillende merken</p>
-                </div>
-                <ArrowRight className="w-5 h-5 text-gray-400" />
-              </div>
-            </Link>
           </div>
         </div>
 
@@ -672,11 +644,8 @@ export default function KennisbankPage() {
               </div>
             </Link>
           </div>
-          </div>
         </div>
         </div>
-        
-        <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />
       </div>
     </Layout>
   )
