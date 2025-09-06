@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import { BookOpen } from 'lucide-react'
 
 export default function UitgebreideFlesvoedingGids() {
   // Custom sidebar content for this comprehensive guide
@@ -26,7 +27,8 @@ export default function UitgebreideFlesvoedingGids() {
           {/* Header */}
           <div className="mb-8">
             <div className="text-sm text-gray-600 mb-2">Kennisbank • Praktische Gidsen</div>
-            <h1 className="text-4xl font-bold text-primary mb-4">
+            <h1 className="text-2xl font-bold text-primary mb-4 flex items-center">
+              <BookOpen className="w-6 h-6 mr-3 text-primary" />
               Uitgebreide Flesvoeding Gids 2025
             </h1>
             <p className="text-gray-600 mb-6">

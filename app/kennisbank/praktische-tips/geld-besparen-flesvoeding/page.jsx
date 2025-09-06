@@ -119,7 +119,8 @@ export default function GeldBesparenPage() {
                 <ArrowRight className="w-4 h-4 mx-2" />
                 <span>Geld Besparen</span>
               </div>
-              <h1 className="text-2xl font-bold text-gray-900 mb-3">
+              <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+                <DollarSign className="w-6 h-6 mr-3 text-primary" />
                 Geld Besparen op Flesvoeding: Complete Budget Gids
               </h1>
               <p className="text-gray-600 leading-relaxed">

@@ -514,7 +514,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-semibold text-primary mb-4">Conclusie</h2>
             
-            <p className="text-lg text-gray-700 mb-6">
+            <p className="text-gray-700 mb-6">
               Er is geen "beste" keuze tussen borst- en flesvoeding - er is alleen de beste keuze voor jouw 
               unieke situatie. Beide methoden kunnen zorgen voor gezonde, gelukkige baby's en een positieve 
               ouder-kind relatie.

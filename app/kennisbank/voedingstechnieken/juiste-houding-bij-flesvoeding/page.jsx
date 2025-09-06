@@ -1,5 +1,6 @@
 import Layout from '../../../../components/Layout'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import { User } from 'lucide-react'
 
 export const metadata = {
   title: 'Juiste Houding bij Flesvoeding: Veilig en Comfortabel Voeden',
@@ -40,11 +41,12 @@ export default function JuisteHoudingBijFlesvoeding() {
         <div className="col-span-12 lg:col-span-7">
           <div className="space-y-6">
             
-            <h1 className="text-4xl font-bold text-primary mb-6">
+            <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+              <User className="w-6 h-6 mr-3 text-primary" />
               Juiste Houding bij Flesvoeding: Veilig en Comfortabel Voeden
             </h1>
             
-            <p className="text-lg text-gray-600 mb-8 italic">
+            <p className="text-gray-600 mb-8 italic">
               Complete gids voor ergonomische en veilige voedingshoudingen - voor jou en je baby
             </p>
 
