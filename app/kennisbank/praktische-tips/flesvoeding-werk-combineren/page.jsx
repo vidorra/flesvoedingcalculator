@@ -115,7 +115,8 @@ export default function FlesvoedingWerkPage() {
                 <ArrowRight className="w-4 h-4 mx-2" />
                 <span>Flesvoeding en Werk</span>
               </div>
-              <h1 className="text-2xl font-bold text-gray-900 mb-3">
+              <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+                <Briefcase className="w-6 h-6 mr-3 text-primary" />
                 Flesvoeding en Werk Combineren: Complete Gids
               </h1>
               <p className="text-gray-600 leading-relaxed">
@@ -250,7 +251,7 @@ export default function FlesvoedingWerkPage() {
                         </ul>
                       </div>
                     </div>
-                    <div className="p-2 bg-gray-50 rounded text-sm text-gray-600">
+                    <div className="p-2 bg-gray-100 rounded text-gray-700">
                       <strong>Tip:</strong> {type.tips}
                     </div>
                   </div>
@@ -295,7 +296,7 @@ export default function FlesvoedingWerkPage() {
                         </div>
                       </div>
                     </div>
-                    <div className="p-2 bg-gray-50 rounded text-sm text-gray-600 border border-gray-200">
+                    <div className="p-2 bg-gray-100 rounded text-gray-700 border border-gray-200">
                       <strong>Success Tips:</strong> {schedule.tips}
                     </div>
                   </div>

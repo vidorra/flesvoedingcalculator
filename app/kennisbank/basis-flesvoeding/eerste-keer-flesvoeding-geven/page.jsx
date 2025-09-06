@@ -73,7 +73,8 @@ export default function EersteKeerFlesvoedingPage() {
           {/* Header */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <div className="text-sm text-gray-600 mb-2">Basis Flesvoeding • Beginners Gids</div>
-            <h1 className="text-4xl font-bold text-primary mb-4">
+            <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+              <Baby className="w-6 h-6 mr-3 text-primary" />
               Eerste keer flesvoeding geven
             </h1>
             <p className="text-gray-600 mb-6">
@@ -99,7 +100,7 @@ export default function EersteKeerFlesvoedingPage() {
 
           {/* Introduction */}
           <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-gray-600 leading-relaxed">
               Ben je klaar om je baby voor de eerste keer flesvoeding te geven? Dat kan spannend zijn! 
               Of je nu overstapt van borstvoeding, begint met combivoeeding, of direct start met flesvoeding - 
               deze stap-voor-stap gids helpt je om het veilig en succesvol te doen.
@@ -554,7 +555,7 @@ export default function EersteKeerFlesvoedingPage() {
             </ol>
             
             <div className="mt-6 p-4 border border-gray-200 rounded-lg text-center">
-              <p className="text-lg font-medium text-primary">Onthoud: Je doet het geweldig!</p>
+              <p className="font-medium text-primary">Onthoud: Je doet het geweldig!</p>
               <p className="text-gray-600">Flesvoeding geven is een liefdevolle manier om je baby te voeden en te koesteren. 
               De eerste fles geven is een mijlpaal - met voorbereiding, geduld en de juiste technieken 
               wordt het al snel een natuurlijke routine.</p>

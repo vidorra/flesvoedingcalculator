@@ -1,5 +1,6 @@
 import Layout from '../../../../components/Layout'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import { Baby } from 'lucide-react'
 
 export const metadata = {
   title: 'Fles Bereiden Stap voor Stap: Perfect Flesvoeding Elke Keer',
@@ -40,11 +41,12 @@ export default function FlesBerenStapVoorStap() {
         <div className="col-span-12 lg:col-span-7">
           <div className="space-y-6">
             
-            <h1 className="text-4xl font-bold text-primary mb-6">
+            <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+              <Baby className="w-6 h-6 mr-3 text-primary" />
               Fles Bereiden Stap voor Stap: Perfect Flesvoeding Elke Keer
             </h1>
             
-            <p className="text-lg text-gray-600 mb-8 italic">
+            <p className="text-gray-600 mb-8 italic">
               Complete handleiding voor veilige en correcte flesbereiding - van poeder tot klare fles
             </p>
 
