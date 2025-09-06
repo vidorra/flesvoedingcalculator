@@ -1,6 +1,6 @@
-import Layout from '../../../../../components/Layout'
+import Layout from '../../../../components/Layout'
 import Link from 'next/link'
-import KennisbankSidebar from '../../../../../components/KennisbankSidebar'
+import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { Scale, Euro, Calendar, AlertCircle, CheckCircle, XCircle } from 'lucide-react'
 
 export const metadata = {
@@ -410,7 +410,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                 <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
                   <h3 className="font-medium text-primary mb-2">Waarom Meer Eiwit in Opvolgmelk?</h3>
                   <ul className="text-sm text-gray-700 space-y-1">
-                    <li>• Baby's >6 maanden groeien sneller</li>
+                    <li>• Baby's &gt;6 maanden groeien sneller</li>
                     <li>• Vaste voeding bevat al veel koolhydraten</li>
                     <li>• Eiwitten ondersteunen spierontwikkeling</li>
                     <li>• Voorbereiden op koemelk (3.3g eiwit/100ml)</li>
