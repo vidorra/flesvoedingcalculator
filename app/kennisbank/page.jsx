@@ -328,8 +328,7 @@ export default function KennisbankPage() {
 
   return (
     <Layout>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-6">
+      <div className="space-y-6">
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
             <BookOpen className="w-6 h-6 mr-3 text-primary" />
@@ -644,7 +643,6 @@ export default function KennisbankPage() {
               </div>
             </Link>
           </div>
-        </div>
         </div>
       </div>
     </Layout>
