@@ -189,7 +189,7 @@ const BereidingInfographic = () => {
         </h3>
         <div className="grid md:grid-cols-2 gap-4">
           <div className="bg-white/20 backdrop-blur rounded-xl p-4">
-            <p className="font-medium mb-2">✅ Altijd doen:</p>
+            <p className="font-medium mb-2">Altijd doen:</p>
             <ul className="text-sm space-y-1 text-white/90">
               <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -206,7 +206,7 @@ const BereidingInfographic = () => {
             </ul>
           </div>
           <div className="bg-white/20 backdrop-blur rounded-xl p-4">
-            <p className="font-medium mb-2">❌ Nooit doen:</p>
+            <p className="font-medium mb-2">Nooit doen:</p>
             <ul className="text-sm space-y-1 text-white/90">
               <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -233,7 +233,7 @@ const VoedingsschemaInfographic = () => {
   const ageGroups = [
     {
       age: "0-1 maand",
-      color: "bg-pink-500",
+      color: "bg-primary",
       mlPerKg: 150,
       avgWeight: "3.5-4.5 kg",
       feedings: "8-12x per dag",
@@ -246,7 +246,7 @@ const VoedingsschemaInfographic = () => {
     },
     {
       age: "1-2 maanden",
-      color: "bg-purple-500",
+      color: "bg-primary",
       mlPerKg: 150,
       avgWeight: "4.5-5.5 kg",
       feedings: "7-9x per dag",
@@ -272,7 +272,7 @@ const VoedingsschemaInfographic = () => {
     },
     {
       age: "4-6 maanden",
-      color: "bg-green-500",
+      color: "bg-primary",
       mlPerKg: 150,
       avgWeight: "6.5-8.0 kg",
       feedings: "5-6x per dag",
@@ -285,7 +285,7 @@ const VoedingsschemaInfographic = () => {
     },
     {
       age: "6-9 maanden",
-      color: "bg-yellow-500",
+      color: "bg-primary",
       mlPerKg: 120,
       avgWeight: "7.5-9.0 kg",
       feedings: "4-5x per dag",
@@ -298,7 +298,7 @@ const VoedingsschemaInfographic = () => {
     },
     {
       age: "9-12 maanden",
-      color: "bg-orange-500",
+      color: "bg-primary",
       mlPerKg: 100,
       avgWeight: "8.5-10.0 kg",
       feedings: "3-4x per dag",
@@ -326,7 +326,7 @@ const VoedingsschemaInfographic = () => {
       {/* Timeline */}
       <div className="relative">
         {/* Vertical Line - Hidden on mobile */}
-        <div className="hidden lg:block absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-pink-400 via-primary to-orange-400"></div>
+        <div className="hidden lg:block absolute left-8 top-0 bottom-0 w-0.5 bg-primary"></div>
 
         {/* Age Groups */}
         <div className="space-y-6">
