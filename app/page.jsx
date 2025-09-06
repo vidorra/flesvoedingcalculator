@@ -137,6 +137,9 @@ export default function HomePage() {
     let specialNotes = []
 
     // Special calculation for premature babies
+    let correctedAgeWeeks = null
+    let ageData = null
+    
     if (isPremature) {
       if (!gestationalAge || !birthDate) {
         const missingFields = []
@@ -147,8 +150,8 @@ export default function HomePage() {
       }
 
       isPrematureCalculation = true
-      const ageData = calculateCorrectedAge(birthDate, gestationalAge)
-      const correctedAgeWeeks = ageData.correctedWeeks
+      ageData = calculateCorrectedAge(birthDate, gestationalAge)
+      correctedAgeWeeks = ageData.correctedWeeks
       
       // Convert corrected age to months for calculation
       if (correctedAgeWeeks < 0) {
@@ -754,6 +757,31 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
+
+              {/* Premature Baby Information Banner */}
+              {results.isPremature && (
+                <div className="bg-gradient-to-r from-blue-500 to-primary rounded-xl p-6 text-white shadow-lg">
+                  <div className="flex items-start space-x-3">
+                    <AlertCircle className="w-6 h-6 mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-bold text-lg mb-2">Premature Baby Voeding - Speciale Berekening</h4>
+                      <p className="text-blue-100 mb-3">
+                        Deze berekening is gebaseerd op de gecorrigeerde leeftijd van uw premature baby volgens Nederlandse richtlijnen.
+                        Premature baby's hebben verhoogde voedingsbehoeften voor optimale groei en ontwikkeling.
+                      </p>
+                      <div className="bg-white/20 backdrop-blur rounded-lg p-3 mb-3">
+                        <p className="text-sm">
+                          <strong>Belangrijke informatie:</strong> Bij premature baby's wordt {results.mlPerKg}ml per kg lichaamsgewicht aangehouden
+                          (in plaats van de standaard 150ml/kg). Dit is nodig voor inhaalgroei en herstel.
+                        </p>
+                      </div>
+                      <p className="text-blue-100 text-sm">
+                        💡 <strong>Tip:</strong> Bespreek deze berekening altijd met uw kinderarts of consultatiebureau voor persoonlijk advies.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
 
               {/* Special Notes for Premature */}
               {results.specialNotes && results.specialNotes.length > 0 && (
