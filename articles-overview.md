@@ -5,9 +5,9 @@ This document provides a complete overview of all planned articles in the kennis
 ## 📊 Summary Statistics
 
 - **Total Planned Articles**: 66
-- **Currently Written**: 36 ✅
-- **Still Need Writing**: 30 ❌
-- **Completion Rate**: 55%
+- **Currently Written**: 40 ✅
+- **Still Need Writing**: 26 ❌
+- **Completion Rate**: 61%
 
 ---
 
@@ -32,7 +32,7 @@ This document provides a complete overview of all planned articles in the kennis
 | 12 | Partner betrekken bij flesvoeding | ❌ *Needs writing* | *Not created* | 4 min |
 
 ### 📦 Soorten Flesvoeding (8 articles)
-**Status: 4/8 written (50%)**
+**Status: 5/8 written (63%)**
 
 | ID | Title | Status | File Path | Duration |
 |----|-------|--------|-----------|----------|
@@ -40,7 +40,7 @@ This document provides a complete overview of all planned articles in the kennis
 | 17 | Anti-reflux flesvoeding | ✅ **WRITTEN** | `/soorten-flesvoeding/anti-reflux-flesvoeding/page.jsx` | 12 min |
 | 14 | Verschil tussen startvoeding en opvolgmelk | ✅ **WRITTEN** | `/soorten-flesvoeding/verschil-startvoeding-opvolgmelk/page.jsx` | 25 min |
 | 15 | Wanneer overstappen naar opvolgmelk? | ✅ **WRITTEN** | `/soorten-flesvoeding/wanneer-overstappen-opvolgmelk/page.jsx` | 20 min |
-| 16 | Hypoallergene flesvoeding | ❌ *Needs writing* | *Not created* | 5 min |
+| 16 | Hypoallergene flesvoeding | ✅ **WRITTEN** | `/soorten-flesvoeding/hypoallergene-flesvoeding/page.jsx` | 25 min |
 | 18 | Bio en organische flesvoeding | ❌ *Needs writing* | *Not created* | 4 min |
 | 19 | Lactosevrije flesvoeding | ❌ *Needs writing* | *Not created* | 5 min |
 | 20 | Peutermelk: wel of niet? | ❌ *Needs writing* | *Not created* | 3 min |
@@ -105,18 +105,18 @@ This document provides a complete overview of all planned articles in the kennis
 | 51 | Noodvoorraad flesvoeding | ❌ *Needs writing* | *Not created* | 4 min |
 
 ### 💡 Praktische Tips (15 articles)
-**Status: 5/15 written (33%)**
+**Status: 8/15 written (53%)**
 
 | ID | Title | Status | File Path | Duration |
 |----|-------|--------|-----------|----------|
 | - | Praktische tips overzicht | ✅ **WRITTEN** | `/praktische-tips/page.jsx` | - |
 | 53 | Nachtvoeding optimaliseren | ✅ **WRITTEN** | `/praktische-tips/nachtvoeding-optimaliseren/page.jsx` | 12 min |
 | 25 | Voedingsritme opbouwen | ✅ **WRITTEN** | `/praktische-tips/voedingsritme-opbouwen/page.jsx` | 18 min |
-| 52 | Geld besparen op flesvoeding | ❌ *Needs writing* | *Not created* | 5 min |
-| 54 | Flesvoeding en werk combineren | ❌ *Needs writing* | *Not created* | 6 min |
+| 52 | Geld besparen op flesvoeding | ✅ **WRITTEN** | `/praktische-tips/geld-besparen-flesvoeding/page.jsx` | 20 min |
+| 54 | Flesvoeding en werk combineren | ✅ **WRITTEN** | `/praktische-tips/flesvoeding-werk-combineren/page.jsx` | 25 min |
 | 55 | Organisatie van flesvoeding | ❌ *Needs writing* | *Not created* | 5 min |
 | 56 | Partner betrekken | ❌ *Needs writing* | *Not created* | 4 min |
-| 57 | Flesvoeding op vakantie | ❌ *Needs writing* | *Not created* | 7 min |
+| 57 | Flesvoeding op vakantie | ✅ **WRITTEN** | `/praktische-tips/flesvoeding-op-vakantie/page.jsx` | 30 min |
 | 58 | Equipment voor flesvoeding | ❌ *Needs writing* | *Not created* | 5 min |
 | 59 | Time-saving hacks | ❌ *Needs writing* | *Not created* | 4 min |
 | 60 | Flesvoeding bij oppas/kinderopvang | ❌ *Needs writing* | *Not created* | 5 min |
@@ -227,15 +227,15 @@ More specific or advanced topics:
 
 **Last Updated:** January 2025  
 **Total Articles Planned:** 66  
-**Articles Written:** 36 (+18 new articles created total)  
-**Remaining Work:** 30 articles
+**Articles Written:** 40 (+22 new articles created total)  
+**Remaining Work:** 26 articles
 
 ### Recent Updates:
-- ✅ Created 18 missing articles from new-articles analysis (13 o- articles + 5 s- articles) 
+- ✅ Created 22 missing articles from new-articles analysis (13 o- articles + 9 s- articles) 
 - ✅ Enhanced 2 existing articles with additional content  
-- ✅ Completion rate improved from 27% to 55%
+- ✅ Completion rate improved from 27% to 61%
 - ✅ All high-priority core articles now completed
 - ✅ Major gaps filled: storage, burping, feeding rhythm, spitting issues, cramps, speen selection, formula comparisons
 - ✅ **All 4 o- articles successfully integrated into the site** (boertje laten, flesvoeding bewaren, spugen na fles, voedingsritme opbouwen)
-- ✅ **5 out of 9 s- articles integrated** (krampjes, spenen uitproberen, startvoeding/opvolgmelk vergelijking, nachtvoeding)
-- ❌ **4 s- articles still need integration** (hypoallergene flesvoeding, werk combineren, geld besparen, vakantie)
+- ✅ **All 9 s- articles successfully integrated into the site** (krampjes, spenen uitproberen, startvoeding/opvolgmelk vergelijking, nachtvoeding, hypoallergene flesvoeding, werk combineren, geld besparen, vakantie)
+- ✅ **Project milestone: 61% completion achieved** - Significant progress toward full kennisbank coverage
