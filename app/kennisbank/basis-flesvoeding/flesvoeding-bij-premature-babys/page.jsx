@@ -408,7 +408,7 @@ export default function FlesvoedingPrematurePage() {
 
         {/* Warning Signs */}
         <div className="border border-gray-200 bg-gray-100 rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
+          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
             <AlertCircle className="w-5 h-5 mr-2" />
             Waarschuwingssignalen - Direct Contact Opnemen
           </h2>

@@ -378,23 +378,23 @@ export default function AntiRefluxPage() {
               <h4 className="font-medium text-primary mb-3">Vermijd bij reflux:</h4>
               <ul className="text-sm text-gray-700 space-y-2">
                 <li className="flex items-start space-x-2">
-                  <div className="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <span>Grote voedingen tegelijk</span>
                 </li>
                 <li className="flex items-start space-x-2">
-                  <div className="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <span>Direct neerleggen na voeding</span>
                 </li>
                 <li className="flex items-start space-x-2">
-                  <div className="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <span>Te strakke luiers/kleding</span>
                 </li>
                 <li className="flex items-start space-x-2">
-                  <div className="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <span>Schudden of heftige bewegingen</span>
                 </li>
                 <li className="flex items-start space-x-2">
-                  <div className="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <span>Stress tijdens voedingen</span>
                 </li>
               </ul>
@@ -404,7 +404,7 @@ export default function AntiRefluxPage() {
 
         {/* When to See Doctor */}
         <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
+          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
             <AlertTriangle className="w-5 h-5 mr-2" />
             Wanneer naar de Dokter?
           </h2>

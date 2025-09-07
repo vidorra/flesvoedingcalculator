@@ -96,7 +96,7 @@ function HygieneBereidingPage() {
         {/* Basic hygiene rules */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
+            <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
               <CheckCircle className="w-5 h-5 mr-2" />
               Altijd doen:
             </h2>
@@ -111,7 +111,7 @@ function HygieneBereidingPage() {
           </div>
 
           <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
+            <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
               <X className="w-5 h-5 mr-2" />
               Nooit doen:
             </h2>
@@ -148,7 +148,7 @@ function HygieneBereidingPage() {
               <div className="space-y-2">
                 {bottleWaterTips.map((tip, index) => (
                   <div key={index} className="flex items-start space-x-2">
-                    <div className="w-2 h-2 bg-gray-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span className="text-gray-700 text-sm">{tip}</span>
                   </div>
                 ))}
@@ -164,7 +164,7 @@ function HygieneBereidingPage() {
             <div className="space-y-2">
               {powderStorage.map((tip, index) => (
                 <div key={index} className="flex items-start space-x-2">
-                  <div className="w-2 h-2 bg-gray-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <span className="text-gray-700 text-sm">{tip}</span>
                 </div>
               ))}

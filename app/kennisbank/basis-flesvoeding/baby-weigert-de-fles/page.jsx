@@ -83,15 +83,15 @@ export default function BabyWeigertFlespagePage() {
                       <h4 className="font-medium text-gray-700 mb-2">Verkeerde speenvorm of -grootte</h4>
                       <ul className="space-y-1 ml-4">
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Te kleine opening: baby moet te hard zuigen</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Te grote opening: melk stroomt te snel, baby raakt overweldigd</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Verkeerde vorm: past niet bij baby's mondstructuur</span>
                         </li>
                       </ul>
@@ -101,15 +101,15 @@ export default function BabyWeigertFlespagePage() {
                       <h4 className="font-medium text-gray-700 mb-2">Materiaal en textuur</h4>
                       <ul className="space-y-1 ml-4">
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Sommige baby's hebben voorkeur voor siliconen vs. latex</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Textuur voelt anders dan borst (bij overstap van borstvoeding)</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Smaak van nieuwe speen kan afstotend werken</span>
                         </li>
                       </ul>
@@ -124,15 +124,15 @@ export default function BabyWeigertFlespagePage() {
                       <h4 className="font-medium text-gray-700 mb-2">Temperatuurproblemen</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Te warm: baby verbrandt tong/gehemelte</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Te koud: onnatuurlijk en onaangenaam</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Wisselende temperaturen: gebrek aan consistentie</span>
                         </li>
                       </ul>
@@ -142,15 +142,15 @@ export default function BabyWeigertFlespagePage() {
                       <h4 className="font-medium text-gray-700 mb-2">Smaakveranderingen</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Ander flesvoedingsmerk</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Flesvoeding te lang bewaard</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Medicijnen die smaak beïnvloeden</span>
                         </li>
                       </ul>

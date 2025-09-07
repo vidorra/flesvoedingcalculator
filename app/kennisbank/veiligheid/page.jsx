@@ -54,7 +54,7 @@ export default function VeiligheidPage() {
 
         {/* Emergency contacts */}
         <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
+          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
             <Phone className="w-5 h-5 mr-2" />
             Wanneer direct arts contacteren
           </h2>
@@ -64,7 +64,7 @@ export default function VeiligheidPage() {
           <div className="space-y-3">
             {emergencyContacts.map((contact, index) => (
               <div key={index} className="flex items-start space-x-3">
-                <div className="w-6 h-6 bg-gray-500 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">
+                <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">
                   !
                 </div>
                 <span className="text-gray-700 font-medium">{contact}</span>
@@ -81,7 +81,7 @@ export default function VeiligheidPage() {
 
         {/* Never do */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
+          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
             <X className="w-5 h-5 mr-2" />
             Voedingsveiligheid - Nooit doen:
           </h2>
@@ -98,7 +98,7 @@ export default function VeiligheidPage() {
         {/* Allergy signals */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
+            <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
               <Eye className="w-5 h-5 mr-2" />
               Allergiesignalen - Let op:
             </h2>

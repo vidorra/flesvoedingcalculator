@@ -410,7 +410,7 @@ export default function KrampjesNaFlesvoedingPage() {
                       'Temperatuur verschillen - Niet altijd lichaamswarmte'
                     ].map((cause, index) => (
                       <li key={index} className="flex items-start space-x-2">
-                        <div className="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-sm text-gray-700">{cause}</span>
                       </li>
                     ))}
@@ -654,7 +654,7 @@ export default function KrampjesNaFlesvoedingPage() {
                         <ul className="space-y-1">
                           {age.expectations.map((expectation, expIndex) => (
                             <li key={expIndex} className="flex items-start space-x-2">
-                              <div className="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                               <span className="text-sm text-gray-700">{expectation}</span>
                             </li>
                           ))}

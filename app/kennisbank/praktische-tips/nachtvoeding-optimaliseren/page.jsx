@@ -397,7 +397,7 @@ export default function NachtvoedingOptimaliserenPage() {
                     <ul className="space-y-1">
                       {phase.tips.map((tip, tipIndex) => (
                         <li key={tipIndex} className="text-sm text-gray-700 flex items-start space-x-2">
-                          <div className="w-1.5 h-1.5 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                          <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                           <span>{tip}</span>
                         </li>
                       ))}
@@ -426,7 +426,7 @@ export default function NachtvoedingOptimaliserenPage() {
                     <ul className="text-sm text-gray-700 space-y-1">
                       {item.steps.map((step, stepIndex) => (
                         <li key={stepIndex} className="flex items-start space-x-2">
-                          <div className="w-2 h-2 border border-gray-200 bg-gray-500 rounded-full mt-2 flex-shrink-0"></div>
+                          <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                           <span>{step}</span>
                         </li>
                       ))}
@@ -447,23 +447,23 @@ export default function NachtvoedingOptimaliserenPage() {
               <h3 className="font-medium text-gray-700 mb-3"> Wel doen:</h3>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 border border-gray-200 bg-gray-500 rounded-full"></div>
+                  <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full"></div>
                   <span>Alles binnen handbereik klaarzetten</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 border border-gray-200 bg-gray-500 rounded-full"></div>
+                  <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full"></div>
                   <span>Minimaal licht gebruiken (rood)</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 border border-gray-200 bg-gray-500 rounded-full"></div>
+                  <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full"></div>
                   <span>Dream feeding proberen</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 border border-gray-200 bg-gray-500 rounded-full"></div>
+                  <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full"></div>
                   <span>Routine kort en saai houden</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 border border-gray-200 bg-gray-500 rounded-full"></div>
+                  <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full"></div>
                   <span>Partner laten uitslapen om de beurt</span>
                 </li>
               </ul>
@@ -473,23 +473,23 @@ export default function NachtvoedingOptimaliserenPage() {
               <h3 className="font-medium text-gray-700 mb-3"> Niet doen:</h3>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 border border-gray-200 bg-gray-500 rounded-full"></div>
+                  <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full"></div>
                   <span>Felle verlichting aandoen</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 border border-gray-200 bg-gray-500 rounded-full"></div>
+                  <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full"></div>
                   <span>Praten tegen baby tijdens voeding</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 border border-gray-200 bg-gray-500 rounded-full"></div>
+                  <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full"></div>
                   <span>Luier verschonen tenzij nodig</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 border border-gray-200 bg-gray-500 rounded-full"></div>
+                  <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full"></div>
                   <span>Spelen of stimuleren</span>
                 </li>
                 <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 border border-gray-200 bg-gray-500 rounded-full"></div>
+                  <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full"></div>
                   <span>Perfectie nastreven - efficiency is key</span>
                 </li>
               </ul>
@@ -499,7 +499,7 @@ export default function NachtvoedingOptimaliserenPage() {
 
         {/* Success Stories */}
         <div className="border border-gray-200 bg-gray-50 rounded-2xl p-6">
-          <h2 className="text-lg font-semibold text-gray-600 mb-4">Success Stories</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Success Stories</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-white rounded-lg p-4">
