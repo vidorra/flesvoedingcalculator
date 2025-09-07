@@ -88,14 +88,12 @@ export default function EersteKeerFlesvoedingPage() {
               <span>Stap-voor-stap gids</span>
             </div>
             
-            <div className="mt-4">
-              <h3 className="text-lg font-medium text-primary mb-2">Timing voor eerste fles:</h3>
-              <ul className="space-y-1 text-gray-700">
-                <li>• <strong>Bij volledige flesvoeding:</strong> direct na geboorte mogelijk</li>
-                <li>• <strong>Bij combinatie met borst:</strong> ideaal tussen 2-4 weken</li>
-                <li>• <strong>Bij overstap van borst:</strong> elk moment mogelijk, meer geduld nodig</li>
-              </ul>
-            </div>
+            <h3 className="text-lg font-medium text-primary mb-2 mt-6">Timing voor eerste fles:</h3>
+            <ul className="space-y-1 text-gray-700">
+              <li>• <strong>Bij volledige flesvoeding:</strong> direct na geboorte mogelijk</li>
+              <li>• <strong>Bij combinatie met borst:</strong> ideaal tussen 2-4 weken</li>
+              <li>• <strong>Bij overstap van borst:</strong> elk moment mogelijk, meer geduld nodig</li>
+            </ul>
           </div>
 
           {/* Introduction */}
@@ -278,56 +276,50 @@ export default function EersteKeerFlesvoedingPage() {
           <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-semibold text-primary mb-4">Juiste hoeveelheden per leeftijd</h2>
             
-            <div className="border border-gray-200 rounded-xl p-6">
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead>
-                    <tr className="border-b border-gray-200">
-                      <th className="text-left py-3 px-2 font-semibold text-primary">Leeftijd</th>
-                      <th className="text-left py-3 px-2 font-semibold text-primary">Per voeding</th>
-                      <th className="text-left py-3 px-2 font-semibold text-primary">Voedingen/dag</th>
-                      <th className="text-left py-3 px-2 font-semibold text-primary">Totaal/dag</th>
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-gray-200">
+                    <th className="text-left py-3 px-2 font-semibold text-primary">Leeftijd</th>
+                    <th className="text-left py-3 px-2 font-semibold text-primary">Per voeding</th>
+                    <th className="text-left py-3 px-2 font-semibold text-primary">Voedingen/dag</th>
+                    <th className="text-left py-3 px-2 font-semibold text-primary">Totaal/dag</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {feedingGuide.map((row, index) => (
+                    <tr key={index} className="border-b border-gray-100">
+                      <td className="py-3 px-2 font-medium text-primary">{row.age}</td>
+                      <td className="py-3 px-2 text-gray-700">{row.perFeeding}</td>
+                      <td className="py-3 px-2 text-gray-700">{row.frequency}</td>
+                      <td className="py-3 px-2 text-gray-700">{row.total}</td>
                     </tr>
-                  </thead>
-                  <tbody>
-                    {feedingGuide.map((row, index) => (
-                      <tr key={index} className="border-b border-gray-100">
-                        <td className="py-3 px-2 font-medium text-primary">{row.age}</td>
-                        <td className="py-3 px-2 text-gray-700">{row.perFeeding}</td>
-                        <td className="py-3 px-2 text-gray-700">{row.frequency}</td>
-                        <td className="py-3 px-2 text-gray-700">{row.total}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              
-              <div className="mt-4 p-3 border border-gray-200 rounded-lg">
-                <p className="text-sm text-gray-600">
-                  <strong>Persoonlijke berekening:</strong> Gebruik onze <Link href="/" className="text-primary hover:underline">calculator</Link> voor exacte hoeveelheden op basis van gewicht en leeftijd van je baby.
-                </p>
-              </div>
+                  ))}
+                </tbody>
+              </table>
             </div>
+            
+            <p className="text-sm text-gray-600 mt-4">
+              <strong>Persoonlijke berekening:</strong> Gebruik onze <Link href="/" className="text-primary hover:underline">calculator</Link> voor exacte hoeveelheden op basis van gewicht en leeftijd van je baby.
+            </p>
           </section>
 
           {/* Transition from breastfeeding */}
           <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-semibold text-primary mb-4">Van borstvoeding naar flesvoeding</h2>
             
-            <div className="border border-gray-200 rounded-xl p-6 mb-6">
-              <h3 className="font-semibold text-primary mb-4">Geleidelijke overstap (aanbevolen)</h3>
-              <div className="space-y-3">
-                {transitionSchedule.map((item, index) => (
-                  <div key={index} className="flex items-center space-x-3 p-3 rounded-lg border border-gray-200">
-                    <div className="font-medium text-primary min-w-20">{item.week}:</div>
-                    <div className="text-gray-700">{item.action}</div>
-                  </div>
-                ))}
-              </div>
+            <h3 className="font-medium text-primary mb-4">Geleidelijke overstap (aanbevolen)</h3>
+            <div className="space-y-3 mb-6">
+              {transitionSchedule.map((item, index) => (
+                <div key={index} className="flex items-center space-x-3 py-2">
+                  <div className="font-medium text-primary min-w-20">{item.week}:</div>
+                  <div className="text-gray-700">{item.action}</div>
+                </div>
+              ))}
             </div>
 
-            <div className="border border-gray-200 rounded-xl p-6">
-              <h3 className="font-semibold text-primary mb-4">Tips voor succesvolle overstap</h3>
+            <div className="border-t border-gray-200 pt-6">
+              <h3 className="font-medium text-primary mb-4">Tips voor succesvolle overstap</h3>
               <ul className="space-y-2">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
