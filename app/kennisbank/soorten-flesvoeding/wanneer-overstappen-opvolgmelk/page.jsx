@@ -302,13 +302,13 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                       'Te abrupt: 85% verhoogd weigergedrag'
                     ].map((consequence, index) => (
                       <li key={index} className="flex items-start space-x-2">
-                        <div className="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-sm text-gray-700">{consequence}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
+                <div className="border-t border-gray-200 pt-6 mt-6">
                   <p className="text-sm text-gray-700">
                     <strong>Sophia Kinderziekenhuis Onderzoek:</strong> Baby's die op het juiste moment overstappen 
                     vertonen 3x minder weigergedrag.
@@ -332,12 +332,12 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                     {factor.minimum && (
                       <div className="mb-4">
                         <h4 className="font-medium text-primary mb-2">{factor.minimum}</h4>
-                        <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
+                        <div className="border-t border-gray-200 pt-6 mt-6">
                           <p className="text-sm text-gray-700 mb-2">WAAROM 6 MAANDEN MINIMUM:</p>
                           <ul className="space-y-1">
                             {factor.reasons.map((reason, reasonIndex) => (
                               <li key={reasonIndex} className="flex items-start space-x-2">
-                                <span className="text-green-600">✓</span>
+                                <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
                                 <span className="text-sm text-gray-700">{reason}</span>
                               </li>
                             ))}
@@ -362,11 +362,11 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                     
                     {factor.checklist && (
                       <div className="mb-4">
-                        <h4 className="font-medium text-primary mb-2">✅ Klaar voor Overstap:</h4>
+                        <h4 className="font-medium text-primary mb-2">Klaar voor Overstap:</h4>
                         <div className="space-y-1">
                           {factor.checklist.map((item, itemIndex) => (
                             <div key={itemIndex} className="flex items-center space-x-2">
-                              <span className="text-primary">□</span>
+                              <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
                               <span className="text-sm text-gray-700">{item}</span>
                             </div>
                           ))}
@@ -376,11 +376,11 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                     
                     {factor.notReady && (
                       <div className="mb-4">
-                        <h4 className="font-medium text-primary mb-2">❌ Nog Niet Klaar:</h4>
+                        <h4 className="font-medium text-primary mb-2">Nog Niet Klaar:</h4>
                         <ul className="space-y-1">
                           {factor.notReady.map((item, itemIndex) => (
                             <li key={itemIndex} className="flex items-start space-x-2">
-                              <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
+                              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                               <span className="text-sm text-gray-700">{item}</span>
                             </li>
                           ))}
@@ -417,12 +417,12 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                     {factor.milestones && (
                       <div className="mb-4">
                         <h4 className="font-medium text-primary mb-2">Ontwikkelingsmijlpalen:</h4>
-                        <div className="p-3 border border-gray-200 bg-gray-50 rounded-xl">
+                        <div className="border-t border-gray-200 pt-6 mt-6">
                           <p className="text-sm font-medium text-gray-700 mb-2">FYSIEKE GEREEDHEID:</p>
                           <ul className="space-y-1">
                             {factor.milestones.map((milestone, milestoneIndex) => (
                               <li key={milestoneIndex} className="flex items-start space-x-2">
-                                <span className="text-green-600">✓</span>
+                                <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
                                 <span className="text-sm text-gray-700">{milestone}</span>
                               </li>
                             ))}
@@ -495,23 +495,26 @@ export default function WanneerOverstappenOpvolgmelkPage() {
             </div>
 
             {/* Baby Signals */}
-            <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4">Signalen van Je Baby</h2>
               
               <div className="space-y-6">
                 {signalsFromBaby.map((category, index) => (
-                  <div key={index} className="bg-white border border-gray-200 rounded-lg p-4">
+                  <div key={index}>
                     <h3 className={`font-medium mb-3 ${category.color}`}>{category.category}</h3>
                     <ul className="space-y-2">
                       {category.signals.map((signal, signalIndex) => (
                         <li key={signalIndex} className="flex items-start space-x-2">
                           <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
-                            category.color === 'text-green-600' ? 'bg-green-400' : 'bg-red-400'
+                            category.color === 'text-green-600' ? 'bg-primary' : 'bg-primary'
                           }`}></div>
                           <span className="text-sm text-gray-700">{signal}</span>
                         </li>
                       ))}
                     </ul>
+                    {index < signalsFromBaby.length - 1 && (
+                      <div className="border-t border-gray-200 mt-6 pt-6"></div>
+                    )}
                   </div>
                 ))}
               </div>
@@ -526,7 +529,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
               
               <div className="space-y-4">
                 {timingCalendar.map((timeframe, index) => (
-                  <div key={index} className="border border-gray-200 rounded-lg p-4">
+                  <div key={index}>
                     <h3 className="font-medium text-primary mb-3">{timeframe.timeframe}</h3>
                     <ul className="space-y-1">
                       {timeframe.activities.map((activity, activityIndex) => (
@@ -536,6 +539,9 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                         </li>
                       ))}
                     </ul>
+                    {index < timingCalendar.length - 1 && (
+                      <div className="border-t border-gray-200 mt-6 pt-6"></div>
+                    )}
                   </div>
                 ))}
               </div>
@@ -555,7 +561,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                         <ul className="space-y-1">
                           {mistake.consequences.map((consequence, consIndex) => (
                             <li key={consIndex} className="flex items-start space-x-2">
-                              <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
+                              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                               <span className="text-sm text-gray-700">{consequence}</span>
                             </li>
                           ))}
@@ -563,7 +569,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                       </div>
                       <div>
                         <h4 className="font-medium text-primary mb-2">Oplossing:</h4>
-                        <p className="text-sm text-gray-700 p-3 border border-gray-200 bg-gray-50 rounded">
+                        <p className="text-sm text-gray-700 p-3 border-t border-gray-200 pt-3 mt-3">
                           {mistake.solution}
                         </p>
                       </div>
@@ -599,7 +605,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
               
               <div className="space-y-4">
                 {expertTiming.map((expert, index) => (
-                  <div key={index} className="border border-gray-200 rounded-lg p-4">
+                  <div key={index}>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
                       <div>
                         <span className="font-medium text-primary">Expert: </span>
@@ -614,6 +620,9 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                         <span className="text-gray-700">{expert.reasoning}</span>
                       </div>
                     </div>
+                    {index < expertTiming.length - 1 && (
+                      <div className="border-t border-gray-200 mt-4 pt-4"></div>
+                    )}
                   </div>
                 ))}
               </div>
