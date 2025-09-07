@@ -710,7 +710,7 @@ export default function VoedingsritmeOpbouwenPage() {
                         <ul className="space-y-1">
                           {(challenge.causes || []).map((cause, causeIndex) => (
                             <li key={causeIndex} className="flex items-start space-x-2">
-                              <div className="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                               <span className="text-sm text-gray-700">{cause}</span>
                             </li>
                           ))}
@@ -887,7 +887,7 @@ export default function VoedingsritmeOpbouwenPage() {
                         <ul className="space-y-1">
                           {adjustment.impact.map((impact, impactIndex) => (
                             <li key={impactIndex} className="flex items-start space-x-2">
-                              <div className="w-2 h-2 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
+                              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                               <span className="text-sm text-gray-700">{impact}</span>
                             </li>
                           ))}

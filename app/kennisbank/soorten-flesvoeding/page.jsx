@@ -86,7 +86,7 @@ export default function SoortenFlesvoedingPage() {
           {/* Opvolgmelk (2) */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-gray-500 rounded-full flex items-center justify-center text-white font-bold">2</div>
+              <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold">2</div>
               <div>
                 <h2 className="text-lg font-semibold text-primary">Opvolgmelk (Nummer 2)</h2>
                 <p className="text-sm text-gray-600">6 tot 12 maanden</p>
@@ -387,7 +387,7 @@ export default function SoortenFlesvoedingPage() {
 
         {/* Complete switching guide */}
         <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-600 mb-4">Complete Overstap Gids</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Complete Overstap Gids</h2>
           
           <div className="space-y-6">
             {/* Why switch */}
@@ -421,21 +421,21 @@ export default function SoortenFlesvoedingPage() {
               <div className="bg-white p-4 rounded-lg">
                 <div className="space-y-3">
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 font-bold text-sm">1</div>
+                    <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-gray-600 font-bold text-sm">1</div>
                     <div>
                       <div className="font-medium text-primary">Week 1: Geleidelijk introduceren</div>
                       <div className="text-sm text-gray-600">Mix 75% oude voeding + 25% nieuwe voeding</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 font-bold text-sm">2</div>
+                    <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-gray-600 font-bold text-sm">2</div>
                     <div>
                       <div className="font-medium text-primary">Week 2: Verhogen naar 50/50</div>
                       <div className="text-sm text-gray-600">Baby went aan nieuwe smaak en samenstelling</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 font-bold text-sm">3</div>
+                    <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-gray-600 font-bold text-sm">3</div>
                     <div>
                       <div className="font-medium text-primary">Week 3: Volledig overstappen</div>
                       <div className="text-sm text-gray-600">100% nieuwe voeding, oude pot bewaren als backup</div>
@@ -449,7 +449,7 @@ export default function SoortenFlesvoedingPage() {
 
         {/* Schema Infographic Highlight */}
         <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">Voedingsschema Overzicht</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Voedingsschema Overzicht</h2>
           <p className="text-gray-700 mb-4">
             Bekijk onze visuele tijdlijn met alle voedingsschema's per leeftijd en flesvoeding type.
           </p>

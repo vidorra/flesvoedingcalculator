@@ -334,7 +334,7 @@ export default function KennisbankPage() {
             <BookOpen className="w-6 h-6 mr-3 text-primary" />
             Kennisbank
           </h1>
-          <p className="text-gray-600">
+          <p className="text-gray-500">
             Vind alle informatie over flesvoeding op één plek. Van basis kennis tot het oplossen van specifieke problemen.
           </p>
         </div>

@@ -78,14 +78,14 @@ export default function PraktischeTipsPage() {
             <Lightbulb className="w-6 h-6 mr-3 text-primary" />
             Praktische Tips
           </h1>
-          <p className="text-gray-600">
+          <p className="text-gray-500">
             Handige tips en trucs om flesvoeding makkelijker en voordeliger te maken.
           </p>
         </div>
 
         {/* Money saving tips */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
+          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
             <DollarSign className="w-5 h-5 mr-2" />
             Geld besparen
           </h2>

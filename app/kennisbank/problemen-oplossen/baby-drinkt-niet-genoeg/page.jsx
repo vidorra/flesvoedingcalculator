@@ -182,11 +182,11 @@ export default function BabyDrinktNietGenoegPage() {
                       <h4 className="font-medium text-gray-700 mb-2">Probleem: Verkeerde speengrootte</h4>
                       <ul className="space-y-1 ml-4">
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Te klein: baby wordt moe van zuigen</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Te groot: melk stroomt te snel, baby raakt overweldigd</span>
                         </li>
                       </ul>
@@ -214,15 +214,15 @@ export default function BabyDrinktNietGenoegPage() {
                       <h4 className="font-medium text-gray-700 mb-2">Probleem: Fles of speen smaak</h4>
                       <ul className="space-y-1 ml-4">
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Plastic vs glas: sommige baby's hebben voorkeur</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Nieuwe speen: siliconen smaakt anders dan latex</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Ongewassen residuen: zeeprestanten kunnen afstoten</span>
                         </li>
                       </ul>
@@ -238,15 +238,15 @@ export default function BabyDrinktNietGenoegPage() {
                       <h4 className="font-medium text-gray-700 mb-2">Probleem: Temperatuur niet optimaal</h4>
                       <ul className="space-y-1 ml-4">
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Te koud: onnatuurlijk, baby weigert</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Te warm: verbrandt mond, baby wordt angstig</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Inconsistente temperatuur: baby wordt onzeker</span>
                         </li>
                       </ul>
