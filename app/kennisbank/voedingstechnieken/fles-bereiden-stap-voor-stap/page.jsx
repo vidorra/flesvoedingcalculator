@@ -50,12 +50,12 @@ export default function FlesBerenStapVoorStap() {
               Complete handleiding voor veilige en correcte flesbereiding - van poeder tot klare fles
             </p>
 
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-8">
-              <h2 className="text-2xl font-semibold text-primary mb-4">Inleiding</h2>
+            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+              <h2 className="text-lg font-semibold text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed">
                 Het correct bereiden van een fles is een vaardigheid die elke ouder onder de knie moet hebben. Een goed bereide fles zorgt niet alleen voor optimale voeding, maar voorkomt ook gezondheidsrisico's zoals bacteriële infecties en voedingsproblemen. Deze uitgebreide stap-voor-stap gids laat zien hoe je elke keer perfect flesvoeding bereidt, volgens Nederlandse veiligheidsnormen.
               </p>
-            </div>
+            </section>
 
             <section className="mb-8">
               <h2 className="text-3xl font-semibold text-primary mb-6">Voorbereiding: De basis van veilige flesbereiding</h2>

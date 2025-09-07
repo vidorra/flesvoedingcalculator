@@ -50,12 +50,12 @@ export default function KostenVanFlesvoeding() {
               Alle kosten op een rij + tips om geld te besparen zonder kwaliteit in te leveren
             </p>
 
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-8">
-              <h2 className="font-medium text-primary mb-4">Inleiding</h2>
+            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+              <h2 className="text-lg font-semibold text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed">
                 Hoeveel kost flesvoeding nou eigenlijk? Deze vraag houdt veel aanstaande ouders bezig. Deze complete budgetgids geeft je alle Nederlandse prijzen van 2025, van goedkoopste tot duurste opties. Plus: praktische bespaartips die kunnen opleveren tot €300 per jaar, zonder in te leveren op kwaliteit of veiligheid.
               </p>
-            </div>
+            </section>
 
             <section className="mb-8">
               <h2 className="text-gray-600 font-semibold text-primary mb-6">Totaal overzicht kosten eerste jaar</h2>
