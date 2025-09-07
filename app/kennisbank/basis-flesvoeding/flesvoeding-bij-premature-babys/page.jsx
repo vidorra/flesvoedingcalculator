@@ -257,11 +257,22 @@ export default function FlesvoedingPrematurePage() {
             </table>
           </div>
           
-          <div className="mt-4 p-3 border border-gray-200 bg-gray-100 rounded-lg">
-            <p className="text-sm text-gray-700">
-              <strong>Let op:</strong> Deze waarden zijn richtlijnen. De exacte behoefte verschilt per baby 
-              en moet altijd in overleg met het medische team bepaald worden.
-            </p>
+          <div className="bg-amber-50 rounded-2xl shadow-sm border border-amber-200 p-6 mt-4">
+            <div className="flex items-start space-x-3">
+              <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-amber-600">
+                  <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+                  <path d="M12 9v4"></path>
+                  <path d="M12 17h.01"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 className="font-semibold text-amber-800 mb-2">Let op</h3>
+                <p className="text-sm text-amber-700 leading-relaxed">
+                  Deze waarden zijn richtlijnen. De exacte behoefte verschilt per baby en moet altijd in overleg met het medische team bepaald worden.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
