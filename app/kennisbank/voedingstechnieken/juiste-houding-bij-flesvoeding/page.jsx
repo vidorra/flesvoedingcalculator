@@ -50,12 +50,12 @@ export default function JuisteHoudingBijFlesvoeding() {
               Complete gids voor ergonomische en veilige voedingshoudingen - voor jou en je baby
             </p>
 
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-8">
-              <h2 className="text-2xl font-semibold text-primary mb-4">Inleiding</h2>
+            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+              <h2 className="text-lg font-semibold text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed">
                 De juiste houding bij flesvoeding is cruciaal voor de veiligheid van je baby en jouw eigen comfort. Een goede voedingshouding voorkomt verslikking, oorontstekingen, rug- en nekklachten, en bevordert de band tussen jou en je baby. Deze uitgebreide gids legt uit hoe je ergonomisch en veilig voedt, welke houdingen het beste werken, en hoe je veelvoorkomende problemen voorkomt.
               </p>
-            </div>
+            </section>
 
             <section className="mb-8">
               <h2 className="text-3xl font-semibold text-primary mb-6">Veilige houding voor je baby</h2>

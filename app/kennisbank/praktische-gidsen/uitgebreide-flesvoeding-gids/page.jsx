@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Layout from '../../../../components/Layout'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { BookOpen } from 'lucide-react'
 
@@ -20,7 +21,8 @@ export default function UitgebreideFlesvoedingGids() {
   const adTopics = ["Flesvoeding Besparingen", "Baby Voeding Tips"]
 
   return (
-    <div className="grid grid-cols-12 gap-6">
+    <Layout>
+      <div className="grid grid-cols-12 gap-6">
       <div className="col-span-12 lg:col-span-7">
         <div className="space-y-6">
           
@@ -753,6 +755,7 @@ export default function UitgebreideFlesvoedingGids() {
       </div>
 
       <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />
-    </div>
+      </div>
+    </Layout>
   )
 }
