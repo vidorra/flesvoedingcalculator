@@ -36,7 +36,7 @@ export default function OverstappenBorstNaarFlesPage() {
                 <ArrowRight className="w-6 h-6 mr-3 text-primary" />
                 Overstappen van borstvoeding naar fles: Stapsgewijze gids
               </h1>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-500 leading-relaxed">
                 Complete handleiding voor een soepele overgang zonder stress voor baby en moeder
               </p>
             </div>
@@ -213,19 +213,19 @@ export default function OverstappenBorstNaarFlesPage() {
                       <h4 className="font-medium text-gray-700 mb-2">Equipment verzamelen:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">4-6 flessen (250ml formaat)</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Verschillende spenen proberen</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Flesvoeding kopen (start klein)</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Sterilisatie systeem opzetten</span>
                         </li>
                       </ul>
@@ -235,19 +235,19 @@ export default function OverstappenBorstNaarFlesPage() {
                       <h4 className="font-medium text-gray-700 mb-2">Baby voorbereiden:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Introduceer fles met afgekolfde melk</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Laat partner/familie fles geven</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Kies rustig moment, niet hongrig</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Begin met kleine hoeveelheden</span>
                         </li>
                       </ul>
@@ -257,19 +257,19 @@ export default function OverstappenBorstNaarFlesPage() {
                       <h4 className="font-medium text-gray-700 mb-2">Jezelf voorbereiden:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Comfortabele, ondersteunende beha's</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Pijnstillers (paracetamol/ibuprofen)</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Plan rustmomenten in</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Informeer partner over proces</span>
                         </li>
                       </ul>
@@ -331,15 +331,15 @@ export default function OverstappenBorstNaarFlesPage() {
                       <h4 className="font-medium text-gray-700 mb-2">Tweede voeding toevoegen:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Wacht 3-5 dagen tussen nieuwe vervangingen</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Kies voeding die 6+ uur na eerste ligt</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Let op reactie van baby en je eigen lichaam</span>
                         </li>
                       </ul>
@@ -349,15 +349,15 @@ export default function OverstappenBorstNaarFlesPage() {
                       <h4 className="font-medium text-gray-700 mb-2">Formule introductie:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Begin met 25% formule, 75% moedermelk</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Verhoog geleidelijk naar 100% formule</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Let op allergische reacties of maagklachten</span>
                         </li>
                       </ul>
@@ -408,19 +408,19 @@ export default function OverstappenBorstNaarFlesPage() {
                     <h4 className="font-medium text-gray-700 mb-2">Alternatieve methoden:</h4>
                     <ul className="space-y-1">
                       <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-gray-400 rounded-full flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                         <span className="text-gray-600 text-sm">Bekertje voeding (tijdelijk)</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-gray-400 rounded-full flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                         <span className="text-gray-600 text-sm">Lepeltje kleine hoeveelheden</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-gray-400 rounded-full flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                         <span className="text-gray-600 text-sm">Mix afgekolfde melk met formule</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-gray-400 rounded-full flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                         <span className="text-gray-600 text-sm">Verschillende omgevingen proberen</span>
                       </li>
                     </ul>
@@ -488,19 +488,19 @@ export default function OverstappenBorstNaarFlesPage() {
                       <h4 className="font-medium text-gray-700 mb-2">Normale gevoelens:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Schuld over stoppen met borstvoeding</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Verdriet om gemiste binding</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Opluchting over meer vrijheid</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Twijfel over juiste beslissing</span>
                         </li>
                       </ul>
