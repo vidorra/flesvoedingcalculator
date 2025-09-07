@@ -651,19 +651,19 @@ export default function JuisteTemperatuurControleren() {
                       <h4 className="font-semibold text-primary mb-3">Hoe ontstaan brandwonden? 🔥</h4>
                       <ul className="space-y-2">
                         <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0 mt-2"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                           <span className="text-gray-700"><strong>Te hete melk</strong>: Boven 45°C direct gevaarlijk</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0 mt-2"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                           <span className="text-gray-700"><strong>Hot spots</strong>: Magnetron verhitting creëert lokale hete plekken</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0 mt-2"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                           <span className="text-gray-700"><strong>Oneerlijke verdeling</strong>: Buitenkant koel, binnenkant heet</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0 mt-2"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                           <span className="text-gray-700"><strong>Snelle temperatuur wisseling</strong>: Baby verwacht koele melk, krijgt hete</span>
                         </li>
                       </ul>
@@ -723,19 +723,19 @@ export default function JuisteTemperatuurControleren() {
                       <h4 className="font-semibold text-primary mb-3">Gevaarlijke temperatuur zones 🦠</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-700"><strong>20-50°C</strong>: Ideaal voor bacteriële groei</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-700"><strong>35-42°C</strong>: Snelste groei Cronobacter sakazakii</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-700"><strong>Lauw water</strong>: Perfect broeihaard voor schadelijke bacteriën</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-700"><strong>Lang bewaren</strong>: Tijd verergert probleem exponentieel</span>
                         </li>
                       </ul>

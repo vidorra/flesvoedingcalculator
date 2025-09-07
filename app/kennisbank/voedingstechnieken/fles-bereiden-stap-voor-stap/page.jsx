@@ -515,19 +515,19 @@ export default function FlesBerenStapVoorStap() {
                       <h4 className="font-semibold text-primary mb-3">Dosering fouten - Ernstige gevolgen </h4>
                       <ul className="space-y-2">
                         <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0 mt-2"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                           <span className="text-gray-700"><strong>Te veel poeder</strong>: Dehydratie, nierbelasting, obstipatie</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0 mt-2"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                           <span className="text-gray-700"><strong>Te weinig poeder</strong>: Ondervoeding, groeiachterstand</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0 mt-2"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                           <span className="text-gray-700"><strong>Geschatte hoeveelheden</strong>: Altijd nauwkeurig meten</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0 mt-2"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                           <span className="text-gray-700"><strong>Verkeerde schep</strong>: Alleen bijgeleverde schep gebruiken</span>
                         </li>
                       </ul>
@@ -537,19 +537,19 @@ export default function FlesBerenStapVoorStap() {
                       <h4 className="font-semibold text-primary mb-3">Temperatuur gevaren 🌡️</h4>
                       <ul className="space-y-2">
                         <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0 mt-2"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                           <span className="text-gray-700"><strong>Brandwonden</strong>: Hete melk beschadigt mond en keel</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0 mt-2"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                           <span className="text-gray-700"><strong>Ongelijkmatige verhitting</strong>: Magnetron creëert hot spots</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0 mt-2"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                           <span className="text-gray-700"><strong>Te koude melk</strong>: Slechte opname voedingsstoffen</span>
                         </li>
                         <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0 mt-2"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                           <span className="text-gray-700"><strong>Bacteriële groei</strong>: Lauw water ideaal voor bacteriën</span>
                         </li>
                       </ul>

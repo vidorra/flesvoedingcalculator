@@ -59,7 +59,7 @@ export default function BasisFlesvoedingPage() {
             <BookOpen className="w-6 h-6 mr-3 text-primary" />
             Complete Gids Flesvoeding voor Nederlandse Ouders
           </h1>
-          <p className="text-gray-600">
+          <p className="text-gray-500">
             Alles over flesvoeding: van eerste keuze tot dagelijkse praktijk. Betrouwbare informatie gebaseerd op Nederlandse richtlijnen van het Voedingscentrum en JGZ.
           </p>
         </div>
@@ -95,7 +95,7 @@ export default function BasisFlesvoedingPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {benefits.map((benefit, index) => (
               <div key={index} className="flex items-start space-x-2">
-                <CheckCircle className="w-4 h-4 text-gray-500 mt-0.5 flex-shrink-0" />
+                <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-gray-600 text-sm">{benefit}</span>
               </div>
             ))}

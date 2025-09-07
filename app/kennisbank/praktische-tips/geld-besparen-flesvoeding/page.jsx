@@ -107,18 +107,7 @@ export default function GeldBesparenPage() {
 
             {/* Header */}
             <div className="mb-6">
-              <div className="flex items-center text-sm text-gray-600 mb-2">
-                <Link href="/" className="hover:text-primary flex items-center">
-                  <Home className="w-4 h-4 mr-1" />
-                  Home
-                </Link>
-                <ArrowRight className="w-4 h-4 mx-2" />
-                <Link href="/kennisbank" className="hover:text-primary">Kennisbank</Link>
-                <ArrowRight className="w-4 h-4 mx-2" />
-                <Link href="/kennisbank/praktische-tips" className="hover:text-primary">Praktische Tips</Link>
-                <ArrowRight className="w-4 h-4 mx-2" />
-                <span>Geld Besparen</span>
-              </div>
+              <div className="text-sm text-gray-600 mb-2">Praktische Tips • Geld Besparen</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <DollarSign className="w-6 h-6 mr-3 text-primary" />
                 Geld Besparen op Flesvoeding: Complete Budget Gids

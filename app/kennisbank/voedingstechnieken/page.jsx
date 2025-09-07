@@ -112,7 +112,7 @@ function VoedingstechniekenPage() {
 
         {/* Responsive Feeding */}
         <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
+          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
             <Heart className="w-5 h-5 mr-2" />
             Responsive Feeding
           </h2>
@@ -179,7 +179,7 @@ function VoedingstechniekenPage() {
 
         {/* Binding during feeding */}
         <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
+          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
             <Heart className="w-5 h-5 mr-2" />
             Binding tijdens flesvoeding
           </h2>
@@ -196,7 +196,7 @@ function VoedingstechniekenPage() {
 
         {/* Temperature Control */}
         <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
+          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
             <AlertTriangle className="w-5 h-5 mr-2" />
             Temperatuur Controle - Belangrijk!
           </h2>
@@ -283,7 +283,7 @@ function VoedingstechniekenPage() {
 
         {/* First Time Feeding Guide */}
         <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">Je Eerste Fles: Stap-voor-Stap voor Beginners</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Je Eerste Fles: Stap-voor-Stap voor Beginners</h2>
           
           <div className="space-y-6">
             {/* Mental preparation */}

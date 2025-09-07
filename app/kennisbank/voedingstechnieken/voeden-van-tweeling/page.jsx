@@ -322,7 +322,7 @@ export default function TweelingVoedenPage() {
                     <ul className="text-xs text-gray-600 space-y-1">
                       {item.details.map((detail, detailIndex) => (
                         <li key={detailIndex} className="flex items-center space-x-2">
-                          <div className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></div>
+                          <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></div>
                           <span>{detail}</span>
                         </li>
                       ))}
@@ -386,7 +386,7 @@ export default function TweelingVoedenPage() {
 
         {/* Success Stories */}
         <div className="border border-gray-200 bg-gray-50 rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-600 mb-4 flex items-center">
+          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
             <Heart className="w-5 h-5 mr-2" />
             Ervaringen van Ouders
           </h2>
@@ -471,19 +471,19 @@ export default function TweelingVoedenPage() {
             <h4 className="font-medium text-primary mb-2">Belangrijkste Takeaways:</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-700">
               <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 border border-gray-200 bg-gray-500 rounded-full"></div>
+                <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full"></div>
                 <span>Gelijktijdig voeden bespaart 7 uur per dag</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 border border-gray-200 bg-gray-500 rounded-full"></div>
+                <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full"></div>
                 <span>Batch-bereiding elimineert stress</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 border border-gray-200 bg-gray-500 rounded-full"></div>
+                <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full"></div>
                 <span>Juiste equipment is investering waard</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 border border-gray-200 bg-gray-500 rounded-full"></div>
+                <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full"></div>
                 <span>Tag-team zorgt voor uitgeruste ouders</span>
               </div>
             </div>
