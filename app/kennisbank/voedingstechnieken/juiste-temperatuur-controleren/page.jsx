@@ -50,12 +50,12 @@ export default function JuisteTemperatuurControleren() {
               Complete gids voor perfecte flesvoeding temperatuur - van meten tot aanpassen
             </p>
 
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-8">
-              <h2 className="text-2xl font-semibold text-primary mb-4">Inleiding</h2>
+            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+              <h2 className="text-lg font-semibold text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed">
                 De juiste temperatuur van flesvoeding is cruciaal voor de veiligheid en het comfort van je baby. Te hete melk kan brandwonden veroorzaken, terwijl te koude melk slecht wordt opgenomen en je baby oncomfortabel maakt. Deze uitgebreide gids legt uit hoe je elke keer de perfecte temperatuur bereikt, welke meetmethoden het meest betrouwbaar zijn, en hoe je snel en veilig kunt aanpassen.
               </p>
-            </div>
+            </section>
 
             <section className="mb-8">
               <h2 className="text-3xl font-semibold text-primary mb-6">De perfecte temperatuur: 37°C</h2>

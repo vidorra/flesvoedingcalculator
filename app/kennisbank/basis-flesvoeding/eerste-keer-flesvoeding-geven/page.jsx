@@ -88,9 +88,9 @@ export default function EersteKeerFlesvoedingPage() {
               <span>Stap-voor-stap gids</span>
             </div>
             
-            <div className="mt-4 p-4 border border-gray-200 rounded-lg">
-              <h3 className="font-semibold text-primary mb-2">Timing voor eerste fles:</h3>
-              <ul className="space-y-1 text-sm text-gray-700">
+            <div className="mt-4">
+              <h3 className="text-lg font-medium text-primary mb-2">Timing voor eerste fles:</h3>
+              <ul className="space-y-1 text-gray-700">
                 <li>• <strong>Bij volledige flesvoeding:</strong> direct na geboorte mogelijk</li>
                 <li>• <strong>Bij combinatie met borst:</strong> ideaal tussen 2-4 weken</li>
                 <li>• <strong>Bij overstap van borst:</strong> elk moment mogelijk, meer geduld nodig</li>
@@ -121,7 +121,7 @@ export default function EersteKeerFlesvoedingPage() {
                   {essentialItems.map((item, index) => (
                     <li key={index} className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      <span className="text-sm text-gray-700">{item}</span>
+                      <span className="text-gray-700">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -136,7 +136,7 @@ export default function EersteKeerFlesvoedingPage() {
                   {handigItems.map((item, index) => (
                     <li key={index} className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      <span className="text-sm text-gray-700">{item}</span>
+                      <span className="text-gray-700">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -424,7 +424,7 @@ export default function EersteKeerFlesvoedingPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <h4 className="font-medium text-gray-700 mb-2">Voor baby:</h4>
-                    <ul className="space-y-1 text-sm text-gray-700">
+                    <ul className="space-y-1 text-gray-700">
                       <li>• Houd baby semi-rechtop (45-60 graden)</li>
                       <li>• Ondersteun hoofd en nek goed</li>
                       <li>• Hoofd iets hoger dan lichaam</li>
@@ -433,7 +433,7 @@ export default function EersteKeerFlesvoedingPage() {
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-700 mb-2">Voor jezelf:</h4>
-                    <ul className="space-y-1 text-sm text-gray-700">
+                    <ul className="space-y-1 text-gray-700">
                       <li>• Ga comfortabel zitten met rugsteun</li>
                       <li>• Arm ondersteunen met kussen</li>
                       <li>• Zorg dat je ontspannen bent</li>
@@ -466,7 +466,7 @@ export default function EersteKeerFlesvoedingPage() {
                 
                 <div className="mt-4 p-3 border border-gray-200 rounded-lg">
                   <h4 className="font-medium text-primary mb-2">Tijdens het voeden:</h4>
-                  <ul className="space-y-1 text-sm text-gray-700">
+                  <ul className="space-y-1 text-gray-700">
                     <li>• Houd fles licht schuin (speen gevuld met melk)</li>
                     <li>• Laat baby eigen tempo bepalen</li>
                     <li>• Boertje laten na elke 60-90ml</li>
