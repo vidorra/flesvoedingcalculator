@@ -214,7 +214,7 @@ export default function BoertjeLatenPage() {
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4">Waarom is Boertje Laten Zo Belangrijk?</h2>
               
-              <p className="text-gray-700 mb-4">
+              <p className="text-gray-500 mb-4">
                 Tijdens het drinken van flesvoeding slikt je baby onvermijdelijk lucht mee. 
                 Deze ingesloten lucht kan leiden tot verschillende ongemakken:
               </p>

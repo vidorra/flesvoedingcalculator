@@ -46,13 +46,13 @@ export default function JuisteHoudingBijFlesvoeding() {
               Juiste Houding bij Flesvoeding: Veilig en Comfortabel Voeden
             </h1>
             
-            <p className="text-gray-600 mb-8 italic">
+            <p className="text-gray-500 mb-8 italic">
               Complete gids voor ergonomische en veilige voedingshoudingen - voor jou en je baby
             </p>
 
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4">Inleiding</h2>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-500 leading-relaxed">
                 De juiste houding bij flesvoeding is cruciaal voor de veiligheid van je baby en jouw eigen comfort. Een goede voedingshouding voorkomt verslikking, oorontstekingen, rug- en nekklachten, en bevordert de band tussen jou en je baby. Deze uitgebreide gids legt uit hoe je ergonomisch en veilig voedt, welke houdingen het beste werken, en hoe je veelvoorkomende problemen voorkomt.
               </p>
             </section>
@@ -92,7 +92,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                 <h3 className="text-2xl font-semibold text-primary mb-4">Stap-voor-stap: Baby positioneren</h3>
                 
                 <div className="space-y-6">
-                  <div className="border border-gray-200 rounded-lg p-6">
+                  <div className="border-t border-gray-200 pt-6 mt-6">
                     <h4 className="text-lg font-semibold text-primary mb-3">1. Hoofd en nek ondersteuning</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
@@ -114,7 +114,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                     </ul>
                   </div>
 
-                  <div className="border border-gray-200 rounded-lg p-6">
+                  <div className="border-t border-gray-200 pt-6 mt-6">
                     <h4 className="text-lg font-semibold text-primary mb-3">2. Lichaamshouding</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
@@ -136,7 +136,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                     </ul>
                   </div>
 
-                  <div className="border border-gray-200 rounded-lg p-6">
+                  <div className="border-t border-gray-200 pt-6 mt-6">
                     <h4 className="text-lg font-semibold text-primary mb-3">3. Ademruimte controleren</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
