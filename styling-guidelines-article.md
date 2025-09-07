@@ -353,16 +353,59 @@ export default function ArticlePage() {
 </div>
 ```
 
-**INTRO TEXT COLOR RULES:**
+**🚨 FONT SIZING HIERARCHY - CRITICAL VIOLATIONS FOUND:**
+
+❌ **WRONG: Intro text heavier than body text:**
+```jsx
+// BAD - Introduction text is visually heavier than body text
+<p className="text-gray-700 mb-4">
+  Tijdens het drinken van flesvoeding slikt je baby onvermijdelijk lucht mee.
+</p>
+// Later in body:
+<span className="text-gray-600">Leg baby rechtop tegen je schouder</span>
+// Results in: Introduction appears LARGER than body text!
+```
+
+✅ **CORRECT: Proper visual hierarchy:**
+```jsx
+// GOOD - Introduction text is lighter than body text  
+<p className="text-gray-500 leading-relaxed">
+  Tijdens het drinken van flesvoeding slikt je baby onvermijdelijk lucht mee.
+</p>
+// Later in body:
+<span className="text-gray-600">Leg baby rechtop tegen je schouder</span>
+// Results in: Body text appears darker/more prominent than intro
+```
+
+**FONT HIERARCHY RULES:**
 - ✅ **Intro paragraph uses `text-gray-500`** (lighter than body text)
 - ✅ **Body text uses `text-gray-600` or `text-gray-700`** (darker than intro)
 - ✅ **Category breadcrumb uses `text-gray-600`**
 - ✅ **Clear visual hierarchy: breadcrumb → title → light intro → darker body**
+- ❌ **NEVER use `text-gray-700` for intro text** - creates reverse hierarchy
+
+**Breadcrumb Format Rules:**
+❌ **WRONG: Complex navigation breadcrumbs:**
+```jsx
+<div className="flex items-center text-sm text-gray-600 mb-2">
+  <Link href="/" className="hover:text-primary flex items-center">
+    <Home className="w-4 h-4 mr-1" />Home
+  </Link>
+  <ArrowRight className="w-4 h-4 mx-2" />
+  <Link href="/kennisbank">Kennisbank</Link>
+  // ... complex chain
+</div>
+```
+
+✅ **CORRECT: Simple tag format:**
+```jsx
+<div className="text-sm text-gray-600 mb-2">Category • Subcategory</div>
+```
 
 **Common Mistakes:**
-- ❌ Using `text-gray-600` for intro text (too dark)
+- ❌ Using `text-gray-600` or `text-gray-700` for intro text (too dark)
+- ❌ Using complex navigation-style breadcrumbs instead of simple tags
 - ❌ Missing icon in h1 title
-- ❌ Inconsistent breadcrumb format
 - ❌ Placing intro inside a card container
 
 ### Content Cards
@@ -385,6 +428,42 @@ export default function ArticlePage() {
 
 **⚠️ ZERO TOLERANCE POLICY - This is the #1 styling violation that MUST be eliminated from all articles.**
 
+**🚨 SPECIFIC VIOLATIONS FOUND & FIXED:**
+
+❌ **ACTUAL VIOLATION EXAMPLE - hypoallergene-flesvoeding:**
+```jsx
+{/* BAD - Card within card causing alignment issues */}
+<div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+  <h2>Section Title</h2>
+  <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">  {/* ← VIOLATION! */}
+    <div className="flex items-start space-x-3">
+      <Shield className="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
+      <div>
+        <h4 className="font-medium text-gray-700 mb-1">Important info</h4>
+        <p className="text-gray-600 text-sm">Content becomes misaligned</p>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+✅ **CORRECTED VERSION:**
+```jsx
+{/* GOOD - Clean separator instead of nested container */}
+<div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+  <h2>Section Title</h2>
+  <div className="border-t border-gray-200 pt-6 mt-6">  {/* Clean separator */}
+    <div className="flex items-start space-x-3">
+      <Shield className="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
+      <div>
+        <h4 className="font-medium text-gray-700 mb-1">Important info</h4>
+        <p className="text-gray-600 text-sm">Content flows naturally</p>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
 **What constitutes a card-within-card violation:**
 
 ❌ **STRICTLY FORBIDDEN:**
@@ -398,31 +477,19 @@ export default function ArticlePage() {
   </div>
 </section>
 
-{/* VIOLATION 2: Multiple nested bordered containers */}
+{/* VIOLATION 2: Background containers with borders within main sections */}
 <div className="bg-white/80 p-6">
-  <div className="border border-gray-200 rounded-lg p-4">  {/* ← VIOLATION! */}
-    <div className="border border-gray-200 rounded p-3">   {/* ← VIOLATION! */}
-      Content buried in multiple layers
-    </div>
+  <div className="bg-gray-50 rounded-lg border border-gray-200 p-4">  {/* ← VIOLATION! */}
+    <h3>Info box causes alignment issues</h3>
   </div>
 </div>
 
-{/* VIOLATION 3: Background containers within background containers */}
-<div className="bg-white/80 p-6">
-  <div className="bg-gray-50 rounded-lg p-4">  {/* ← VIOLATION! */}
-    <div className="bg-white rounded p-3">     {/* ← VIOLATION! */}
-      Nested background layers
-    </div>
-  </div>
-</div>
-
-{/* VIOLATION 4: Special info boxes within main sections */}
+{/* VIOLATION 3: Emergency protocol misaligned sections */}
 <section className="bg-white/80 p-6">
-  <h2>Title</h2>
-  <p>Description</p>
-  <div className="mt-4 p-4 border border-gray-200 rounded-lg">  {/* ← VIOLATION! */}
-    <h3>Timing info</h3>  {/* Creates alignment issues */}
-    <ul>...</ul>
+  <div className="border-t border-gray-200 pt-6 mt-6">  {/* OK separator */}
+    <div className="border-t border-gray-200 pt-6 mt-6">  {/* VIOLATION - redundant nesting! */}
+      <h3>Creates double spacing and alignment issues</h3>
+    </div>
   </div>
 </section>
 ```
@@ -437,7 +504,7 @@ export default function ArticlePage() {
   <p className="text-gray-700 mb-6">Content flows naturally</p>
   
   {/* Use visual separators instead of nested containers */}
-  <div className="border-t border-gray-200 pt-6">
+  <div className="border-t border-gray-200 pt-6 mt-6">  {/* Only ONE level of separation */}
     <h3 className="font-medium text-primary mb-4">Another Subsection</h3>
     <ul className="space-y-2">...</ul>
   </div>
@@ -447,7 +514,7 @@ export default function ArticlePage() {
 <section className="bg-white/80 p-6">
   <h2 className="text-lg font-semibold text-primary mb-4">Title</h2>
   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <div>
+    <div>  {/* No borders/backgrounds - just clean content */}
       <h3 className="font-medium text-primary mb-3">Item 1</h3>
       <p className="text-gray-700">Content</p>
     </div>
@@ -731,8 +798,16 @@ See these articles as reference implementations:
 ---
 
 **Last Updated:** January 2025 (Major Update - Comprehensive Style Standards)
-**Version:** 1.2
+**Version:** 1.3
 **Status:** Active Guidelines
+
+**URGENT UPDATE 1.3 - PERSISTENT VIOLATIONS CLARIFIED:**
+- Added specific font size hierarchy examples with actual violations found
+- Clarified card-within-card violations with real examples from hypoallergene-flesvoeding
+- Added breadcrumb format violations (complex navigation vs simple tags)
+- Enhanced bullet point standards with zero tolerance policy
+- Updated emergency protocol alignment examples
+- Added specific examples of intro text sizing violations
 
 **Recent Major Updates:**
 - Added critical introduction section consistency requirements
@@ -740,3 +815,4 @@ See these articles as reference implementations:
 - Enhanced typography consistency rules  
 - Added specific examples of recently fixed issues
 - Updated quality checklist with new requirements
+- **NEW**: Added specific violation examples with before/after code
