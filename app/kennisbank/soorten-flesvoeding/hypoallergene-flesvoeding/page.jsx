@@ -80,23 +80,12 @@ export default function HypoallergeneVoedingPage() {
 
             {/* Header */}
             <div className="mb-6">
-              <div className="flex items-center text-sm text-gray-600 mb-2">
-                <Link href="/" className="hover:text-primary flex items-center">
-                  <Home className="w-4 h-4 mr-1" />
-                  Home
-                </Link>
-                <ArrowRight className="w-4 h-4 mx-2" />
-                <Link href="/kennisbank" className="hover:text-primary">Kennisbank</Link>
-                <ArrowRight className="w-4 h-4 mx-2" />
-                <Link href="/kennisbank/soorten-flesvoeding" className="hover:text-primary">Soorten Flesvoeding</Link>
-                <ArrowRight className="w-4 h-4 mx-2" />
-                <span>Hypoallergene Flesvoeding</span>
-              </div>
+              <div className="text-sm text-gray-600 mb-2">Soorten Flesvoeding • Hypoallergeen</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <Shield className="w-6 h-6 mr-3 text-primary" />
                 Hypoallergene Flesvoeding: Complete Medische Gids
               </h1>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-500 leading-relaxed">
                 Hypoallergene flesvoeding kan levensreddend zijn voor baby's met koemelkallergie. Leer wanneer HA-voeding nodig is, 
                 welke Nederlandse merken werken, en hoe je veilig overstapt met medische begeleiding.
               </p>
@@ -146,7 +135,7 @@ export default function HypoallergeneVoedingPage() {
                 </div>
               </div>
 
-              <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+              <div className="border-t border-gray-200 pt-6 mt-6">
                 <div className="flex items-start space-x-3">
                   <Shield className="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
                   <div>
@@ -308,7 +297,7 @@ export default function HypoallergeneVoedingPage() {
               </h2>
               
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="border-t border-gray-200 pt-6 mt-6">
+                <div>
                   <h3 className="font-medium text-gray-700 mb-3">Milde Reactie</h3>
                   <div className="text-sm text-gray-600 space-y-2">
                     <div><strong>Symptomen:</strong> Rode vlekken, jeuk, lichte diarree</div>
@@ -316,7 +305,7 @@ export default function HypoallergeneVoedingPage() {
                   </div>
                 </div>
                 
-                <div className="border-t border-gray-200 pt-6 mt-6">
+                <div>
                   <h3 className="font-medium text-gray-700 mb-3">Ernstige Reactie - BEL 112</h3>
                   <div className="text-sm text-gray-600 space-y-1">
                     <div className="flex items-start space-x-2">
