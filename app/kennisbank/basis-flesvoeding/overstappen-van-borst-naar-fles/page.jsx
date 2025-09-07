@@ -108,7 +108,7 @@ export default function OverstappenBorstNaarFlesPage() {
               <h2 className="text-lg font-semibold text-primary mb-4">Overstap strategieën: 3 verschillende benaderingen</h2>
               
               <div className="space-y-6">
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                <div>
                   <h3 className="font-medium text-gray-700 mb-3 flex items-center">
                     <CheckCircle className="w-4 h-4 mr-2" />
                     Strategie 1: Geleidelijke overstap (2-4 weken)
@@ -153,7 +153,7 @@ export default function OverstappenBorstNaarFlesPage() {
                   </div>
                 </div>
 
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                <div>
                   <h3 className="font-medium text-gray-700 mb-3 flex items-center">
                     <AlertTriangle className="w-4 h-4 mr-2" />
                     Strategie 2: Snelle overstap (3-7 dagen)
@@ -181,7 +181,7 @@ export default function OverstappenBorstNaarFlesPage() {
                   </div>
                 </div>
 
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                <div>
                   <h3 className="font-medium text-gray-700 mb-3">Strategie 3: Gedeeltelijke overstap (combi-voeding)</h3>
                   <p className="text-gray-700 text-sm mb-3 italic">Voor moeders die deels willen blijven geven</p>
                   
@@ -205,7 +205,7 @@ export default function OverstappenBorstNaarFlesPage() {
               </h2>
               
               <div className="space-y-6">
-                <div className="bg-gray-50 rounded-2xl border border-gray-200 p-4">
+                <div className="border-t border-gray-200 pt-6 mt-6">
                   <h3 className="font-medium text-primary mb-3">Fase 1: Voorbereiding (1 week voor start)</h3>
                   
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -277,7 +277,7 @@ export default function OverstappenBorstNaarFlesPage() {
                   </div>
                 </div>
 
-                <div className="bg-gray-50 rounded-2xl border border-gray-200 p-4">
+                <div className="border-t border-gray-200 pt-6 mt-6">
                   <h3 className="font-medium text-primary mb-3">Fase 2: Eerste vervangingen</h3>
                   
                   <div className="space-y-4">
@@ -323,7 +323,7 @@ export default function OverstappenBorstNaarFlesPage() {
                   </div>
                 </div>
 
-                <div className="bg-gray-50 rounded-2xl border border-gray-200 p-4">
+                <div className="border-t border-gray-200 pt-6 mt-6">
                   <h3 className="font-medium text-primary mb-3">Fase 3: Uitbreiding</h3>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -378,7 +378,7 @@ export default function OverstappenBorstNaarFlesPage() {
                     Baby accepteert fles niet
                   </h3>
                   
-                  <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <div>
                     <h4 className="font-medium text-gray-700 mb-2">Meest effectieve oplossingen:</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
@@ -431,7 +431,7 @@ export default function OverstappenBorstNaarFlesPage() {
                   <h3 className="font-medium text-primary mb-3">Overvol/pijnlijke borsten</h3>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                    <div>
                       <h4 className="font-medium text-gray-700 mb-2">Verlichting zoeken:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
@@ -453,7 +453,7 @@ export default function OverstappenBorstNaarFlesPage() {
                       </ul>
                     </div>
                     
-                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                    <div>
                       <h4 className="font-medium text-gray-700 mb-2">Wanneer arts bellen:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
@@ -541,7 +541,7 @@ export default function OverstappenBorstNaarFlesPage() {
                   <h3 className="font-medium text-primary mb-3">Leeftijd-specifieke hoeveelheden</h3>
                   
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                    <div>
                       <h4 className="font-medium text-gray-700 mb-2">0-3 maanden:</h4>
                       <ul className="space-y-1">
                         <li className="text-gray-600 text-sm">• 60-120ml per voeding</li>
@@ -550,7 +550,7 @@ export default function OverstappenBorstNaarFlesPage() {
                       </ul>
                     </div>
                     
-                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                    <div>
                       <h4 className="font-medium text-gray-700 mb-2">3-6 maanden:</h4>
                       <ul className="space-y-1">
                         <li className="text-gray-600 text-sm">• 120-180ml per voeding</li>
@@ -559,7 +559,7 @@ export default function OverstappenBorstNaarFlesPage() {
                       </ul>
                     </div>
                     
-                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                    <div>
                       <h4 className="font-medium text-gray-700 mb-2">6+ maanden:</h4>
                       <ul className="space-y-1">
                         <li className="text-gray-600 text-sm">• 180-240ml per voeding</li>
@@ -575,7 +575,7 @@ export default function OverstappenBorstNaarFlesPage() {
                   
                   <div className="space-y-3">
                     <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0 w-8 h-8 bg-gray-100 text-gray-700 rounded-full flex items-center justify-center text-sm font-medium">1</div>
+                      <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-medium">1</div>
                       <div>
                         <h4 className="font-medium text-gray-700">Week 1:</h4>
                         <ul className="text-gray-600 text-sm space-y-1">
@@ -587,7 +587,7 @@ export default function OverstappenBorstNaarFlesPage() {
                     </div>
                     
                     <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0 w-8 h-8 bg-gray-100 text-gray-700 rounded-full flex items-center justify-center text-sm font-medium">2</div>
+                      <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-medium">2</div>
                       <div>
                         <h4 className="font-medium text-gray-700">Week 2:</h4>
                         <ul className="text-gray-600 text-sm space-y-1">
@@ -599,7 +599,7 @@ export default function OverstappenBorstNaarFlesPage() {
                     </div>
                     
                     <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0 w-8 h-8 bg-gray-100 text-gray-700 rounded-full flex items-center justify-center text-sm font-medium">3</div>
+                      <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-medium">3</div>
                       <div>
                         <h4 className="font-medium text-gray-700">Week 3:</h4>
                         <ul className="text-gray-600 text-sm space-y-1">
@@ -611,7 +611,7 @@ export default function OverstappenBorstNaarFlesPage() {
                     </div>
                     
                     <div className="flex items-start space-x-4">
-                      <div className="flex-shrink-0 w-8 h-8 bg-gray-100 text-gray-700 rounded-full flex items-center justify-center text-sm font-medium">4</div>
+                      <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-medium">4</div>
                       <div>
                         <h4 className="font-medium text-gray-700">Week 4:</h4>
                         <ul className="text-gray-600 text-sm space-y-1">
