@@ -58,7 +58,28 @@ This document outlines the complete styling standards for all kennisbank article
 - `border-pink-*` (any shade)
 - `border-amber-*` (any shade)
 
-**NO EXCEPTIONS:** All colored elements must use neutral colors only (gray shades + primary brand color).
+**ONE EXCEPTION - Warning/Alert Colors:**
+- ✅ `bg-amber-*`, `text-amber-*`, `border-amber-*` ONLY for warning/alert messages
+- ✅ Must include "Let op" text or warning context
+- ✅ Must use proper alert structure with warning icon
+- ✅ Example: `<div className="bg-amber-50 rounded-2xl shadow-sm border border-amber-200 p-6">` with AlertTriangle icon
+
+**Standard Warning Alert Structure:**
+```jsx
+<div className="bg-amber-50 rounded-2xl shadow-sm border border-amber-200 p-6">
+  <div className="flex items-start space-x-3">
+    <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+      <AlertTriangle className="w-5 h-5 text-amber-600" />
+    </div>
+    <div>
+      <h3 className="font-semibold text-amber-800 mb-2">Let op</h3>
+      <p className="text-sm text-amber-700 leading-relaxed">Warning message content</p>
+    </div>
+  </div>
+</div>
+```
+
+**ALL OTHER COLORED ELEMENTS FORBIDDEN:** All other colored elements must use neutral colors only (gray shades + primary brand color).
 
 ## 📱 Layout Structure
 
@@ -109,7 +130,24 @@ export default function ArticlePage() {
    - Content area: `col-span-12 lg:col-span-7`
    - Sidebar automatically takes remaining space
 
-2. **Content Organization:**
+2. **CRITICAL: Layout Component Requirement:**
+   - ✅ **ALL pages MUST use Layout component wrapper**
+   - ❌ **NEVER start with naked grid structure**
+   ```jsx
+   // ✅ CORRECT - Layout wrapper required
+   <Layout>
+     <div className="grid grid-cols-12 gap-6">
+       // Content
+     </div>
+   </Layout>
+   
+   // ❌ WRONG - Missing Layout wrapper causes scrollbar issues
+   <div className="grid grid-cols-12 gap-6">
+     // Content - NO Layout wrapper!
+   </div>
+   ```
+
+3. **Content Organization:**
    - **Never** wrap all content in single large container (`max-w-4xl mx-auto p-8`)
    - Each major section must be in separate card container
    - Use individual `bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6` cards
@@ -151,13 +189,19 @@ export default function ArticlePage() {
 - ✅ `text-lg font-semibold` - ONLY size allowed for major sections
 - ❌ NEVER use: `text-2xl`, `text-3xl`, `text-xl`, or any other size
 
+**Introduction Headers (in intro sections):**
+- ✅ `text-lg font-semibold` - Consistent with section headers
+- ❌ NEVER use: `text-2xl font-semibold`, `font-semibold` without size, or any other variations
+
 **Subsection Headers (h3):**
 - ✅ `font-medium` - NO text-size class needed
 - ❌ NEVER use: `text-lg`, `text-xl`, or any size classes
 
-**Body Text:**
+**Body Text & List Items:**
 - ✅ `text-gray-600` or `text-gray-700` - NO size classes
+- ❌ NEVER use: `text-sm text-gray-700` for regular list items
 - ❌ NEVER use: `text-lg`, `text-base`, `text-sm` for body text
+- ✅ `text-sm` ONLY for meta information, captions, or secondary details
 
 ### Contrast Requirements
 
@@ -208,6 +252,119 @@ export default function ArticlePage() {
 
 ## 🎯 Component Standards
 
+### ⚠️ CRITICAL: Introduction Section Consistency
+
+**ALL ARTICLES MUST HAVE CONSISTENTLY FRAMED INTRODUCTION SECTIONS:**
+
+**Required Structure:**
+```jsx
+{/* Introduction section - REQUIRED for all articles */}
+<section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+  <h2 className="text-lg font-semibold text-primary mb-4">Inleiding</h2>
+  <p className="text-gray-700 leading-relaxed">
+    Introduction content explaining the article purpose and what the reader will learn.
+  </p>
+</section>
+```
+
+**Common Mistakes Found & Fixed:**
+
+❌ **NEVER use these deprecated patterns:**
+```jsx
+{/* OLD - Gray background without glassmorphism */}
+<div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-8">
+  <h2 className="text-2xl font-semibold text-primary mb-4">Inleiding</h2>
+  // content
+</div>
+
+{/* OLD - Inconsistent heading size */}
+<div className="bg-white/80 p-6">
+  <h2 className="font-medium text-primary mb-4">Inleiding</h2>  {/* Wrong size */}
+  // content
+</div>
+
+{/* OLD - Border box styling that misaligns with content */}
+<div className="mt-4 p-4 border border-gray-200 rounded-lg">
+  <h3 className="font-semibold text-primary mb-2">Timing voor eerste fles:</h3>
+  // content
+</div>
+```
+
+✅ **Always use the standardized glassmorphism pattern:**
+- `bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6`
+- `text-lg font-semibold text-primary mb-4` for introduction headers
+- `<section>` semantic HTML element, not generic `<div>`
+
+**Introduction Content Guidelines:**
+- Explain the article's purpose and scope
+- Mention key benefits or learning outcomes
+- Keep to 2-4 sentences maximum
+- Use `text-gray-700 leading-relaxed` for readability
+- No special timing boxes or highlighted sections within intro
+
+**Header Card Content Rules:**
+- Content within header cards should flow naturally without nested containers
+- ❌ **NEVER create card-within-card in headers:**
+```jsx
+{/* BAD - Creates alignment issues */}
+<div className="bg-white/80 p-6">
+  <h1>Title</h1>
+  <p>Description</p>
+  <div className="mt-4 p-4 border border-gray-200 rounded-lg">  {/* Card within card! */}
+    <h3>Timing info</h3>
+    <ul>...</ul>
+  </div>
+</div>
+```
+
+- ✅ **Keep content flat and aligned:**
+```jsx
+{/* GOOD - Clean alignment */}
+<div className="bg-white/80 p-6">
+  <h1>Title</h1>
+  <p>Description</p>
+  <h3 className="mt-6">Timing info</h3>  {/* No container, just proper spacing */}
+  <ul>...</ul>
+</div>
+```
+
+**Key Principles:**
+- Use `mt-6` for spacing between sections within cards
+- No borders, backgrounds, or padding for subsections within header cards
+- Let content flow naturally within the card container
+- Avoid visual separation within single conceptual sections
+
+### ⚠️ CRITICAL: Article Introduction Standards
+
+**ALL ARTICLE INTROS MUST FOLLOW THIS EXACT PATTERN:**
+
+✅ **REQUIRED Structure:**
+```jsx
+{/* Header - OUTSIDE any card container */}
+<div>
+  <div className="text-sm text-gray-600 mb-2">Category • Subcategory</div>
+  <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+    <Icon className="w-6 h-6 mr-3 text-primary" />
+    Article Title
+  </h1>
+  <p className="text-gray-500 leading-relaxed">  {/* NOTE: gray-500 for intro text */}
+    Brief description of what the article covers
+  </p>
+</div>
+```
+
+**INTRO TEXT COLOR RULES:**
+- ✅ **Intro paragraph uses `text-gray-500`** (lighter than body text)
+- ✅ **Body text uses `text-gray-600` or `text-gray-700`** (darker than intro)
+- ✅ **Category breadcrumb uses `text-gray-600`**
+- ✅ **Clear visual hierarchy: breadcrumb → title → light intro → darker body**
+
+**Common Mistakes:**
+- ❌ Using `text-gray-600` for intro text (too dark)
+- ❌ Missing icon in h1 title
+- ❌ Inconsistent breadcrumb format
+- ❌ Placing intro inside a card container
+
 ### Content Cards
 
 ```jsx
@@ -224,61 +381,104 @@ export default function ArticlePage() {
 </div>
 ```
 
-### ⚠️ Avoid Excessive Card Nesting
+### 🚨 CRITICAL: NO CARD-WITHIN-CARD PATTERNS
 
-**Problem:** Too many nested cards create visual clutter and poor user experience.
+**⚠️ ZERO TOLERANCE POLICY - This is the #1 styling violation that MUST be eliminated from all articles.**
 
-**Bad Example:**
+**What constitutes a card-within-card violation:**
+
+❌ **STRICTLY FORBIDDEN:**
 ```jsx
-{/* TOO MUCH NESTING - Hard to scan */}
+{/* VIOLATION 1: Bordered containers within main sections */}
+<section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+  <h2>Section Title</h2>
+  <div className="border border-gray-200 rounded-xl p-6">  {/* ← VIOLATION! */}
+    <h3>Subsection</h3>
+    <p>Content</p>
+  </div>
+</section>
+
+{/* VIOLATION 2: Multiple nested bordered containers */}
 <div className="bg-white/80 p-6">
-  <div className="space-y-4">
-    {items.map(item => (
-      <div className="border border-gray-200 rounded-lg p-4">  {/* Card 1 */}
-        <div className="bg-gray-50 rounded-lg p-3">             {/* Card 2 */}
-          <div className="bg-white rounded p-2">               {/* Card 3 */}
-            {/* Content buried in 3 layers */}
-          </div>
-        </div>
-      </div>
-    ))}
+  <div className="border border-gray-200 rounded-lg p-4">  {/* ← VIOLATION! */}
+    <div className="border border-gray-200 rounded p-3">   {/* ← VIOLATION! */}
+      Content buried in multiple layers
+    </div>
   </div>
 </div>
-```
 
-**Good Example:**
-```jsx
-{/* CLEAN & SCANNABLE */}
+{/* VIOLATION 3: Background containers within background containers */}
 <div className="bg-white/80 p-6">
-  <div className="space-y-6">
-    {items.map(item => (
-      <div key={item.id}>
-        <h3 className="font-medium text-primary mb-3">{item.title}</h3>
-        <p className="text-gray-700 mb-4">{item.description}</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {/* Direct content layout */}
-        </div>
-        {/* Add separators between items */}
-        {index < items.length - 1 && (
-          <div className="border-b border-gray-200 mt-6"></div>
-        )}
-      </div>
-    ))}
+  <div className="bg-gray-50 rounded-lg p-4">  {/* ← VIOLATION! */}
+    <div className="bg-white rounded p-3">     {/* ← VIOLATION! */}
+      Nested background layers
+    </div>
   </div>
 </div>
+
+{/* VIOLATION 4: Special info boxes within main sections */}
+<section className="bg-white/80 p-6">
+  <h2>Title</h2>
+  <p>Description</p>
+  <div className="mt-4 p-4 border border-gray-200 rounded-lg">  {/* ← VIOLATION! */}
+    <h3>Timing info</h3>  {/* Creates alignment issues */}
+    <ul>...</ul>
+  </div>
+</section>
 ```
+
+✅ **ALWAYS USE INSTEAD:**
+```jsx
+{/* CORRECT: Clean content flow within sections */}
+<section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+  <h2 className="text-lg font-semibold text-primary mb-4">Section Title</h2>
+  
+  <h3 className="font-medium text-primary mb-4">Subsection</h3>
+  <p className="text-gray-700 mb-6">Content flows naturally</p>
+  
+  {/* Use visual separators instead of nested containers */}
+  <div className="border-t border-gray-200 pt-6">
+    <h3 className="font-medium text-primary mb-4">Another Subsection</h3>
+    <ul className="space-y-2">...</ul>
+  </div>
+</section>
+
+{/* CORRECT: Grid layouts instead of nested cards */}
+<section className="bg-white/80 p-6">
+  <h2 className="text-lg font-semibold text-primary mb-4">Title</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div>
+      <h3 className="font-medium text-primary mb-3">Item 1</h3>
+      <p className="text-gray-700">Content</p>
+    </div>
+    <div>
+      <h3 className="font-medium text-primary mb-3">Item 2</h3>
+      <p className="text-gray-700">Content</p>
+    </div>
+  </div>
+</section>
+```
+
+**Visual Separation Techniques (APPROVED ALTERNATIVES):**
+- ✅ `border-t border-gray-200 pt-6` - Top border separator
+- ✅ `mt-6` - Spacing between content blocks
+- ✅ Grid layouts with `gap-*` 
+- ✅ `space-y-*` for vertical spacing
+- ✅ Typography hierarchy (h2 → h3 → h4)
 
 **Card Nesting Rules:**
-- ✅ **Maximum 2 levels** of card nesting
-- ✅ Use visual separators instead of nested borders
-- ✅ Prefer `space-y-*` and grid layouts over nested containers
-- ❌ Never nest 3+ card containers
-- ❌ Avoid `bg-white` cards inside `bg-gray-50` cards inside `bg-white/80` cards
+- ✅ **MAXIMUM 1 level** of background/border containers per content section
+- ✅ Use visual separators (`border-t`) instead of nested containers
+- ✅ Prefer semantic spacing (`mt-*`, `pt-*`) over bordered containers
+- ❌ **NEVER nest any containers with `border`, `bg-`, `p-` within main section cards**
+- ❌ **ZERO TOLERANCE** for timing boxes, info boxes, or special containers within header/section cards
 
-### Lists and Bullet Points
+### ⚠️ CRITICAL: Bullet Point Standards
 
+**ALL BULLET POINTS MUST USE PRIMARY COLOR:**
+
+✅ **CORRECT - Standard bullet points:**
 ```jsx
-{/* Standard list with primary bullets */}
 <ul className="space-y-2">
   {items.map((item, index) => (
     <li key={index} className="flex items-center space-x-2">
@@ -287,8 +487,25 @@ export default function ArticlePage() {
     </li>
   ))}
 </ul>
+```
 
-{/* Icon-based list */}
+❌ **FORBIDDEN - Gray bullet points:**
+```jsx
+{/* NEVER USE THESE */}
+<div className="w-2 h-2 bg-gray-400 rounded-full flex-shrink-0"></div>  {/* WRONG */}
+<div className="w-1 h-1 bg-gray-400 rounded-full flex-shrink-0"></div>  {/* WRONG */}
+<div className="w-2 h-2 bg-gray-500 rounded-full flex-shrink-0"></div>  {/* WRONG */}
+```
+
+**BULLET POINT RULES:**
+- ✅ **ALWAYS use `bg-primary`** for bullet points
+- ✅ **Standard size: `w-2 h-2`** for regular bullets
+- ✅ **Consistent spacing: `space-x-2`** between bullet and text
+- ❌ **NEVER use `bg-gray-*`** for bullets
+- ❌ **NEVER use different sizes** (`w-1 h-1`) for bullets
+
+✅ **Icon-based lists (alternative):**
+```jsx
 <ul className="space-y-2">
   {items.map((item, index) => (
     <li key={index} className="flex items-start space-x-2">
@@ -371,13 +588,38 @@ export default function ArticlePage() {
 
 Before publishing any article, verify:
 
+### 🚨 CRITICAL PRIORITY: Card-Within-Card Violations ✓
+- [ ] **ZERO TOLERANCE: NO card-within-card patterns anywhere**
+- [ ] **NO `border border-gray-200 rounded-* p-*` containers within main sections**
+- [ ] **NO `bg-gray-50` or background containers within `bg-white/80` sections**  
+- [ ] **NO timing boxes, info boxes, or special containers within header cards**
+- [ ] **NO nested containers with borders/backgrounds/padding**
+- [ ] **ALL content flows naturally with typography hierarchy only**
+- [ ] **Uses `border-t border-gray-200 pt-6` separators instead of nested containers**
+- [ ] **Uses `mt-6` spacing instead of padded containers**
+
 ### Colors ✓
-- [ ] **NO colored text**: No `text-blue-*`, `text-red-*`, `text-green-*`, `text-yellow-*`, `text-purple-*`, `text-pink-*`, `text-amber-*`
-- [ ] **NO colored backgrounds**: No `bg-blue-*`, `bg-red-*`, `bg-green-*`, `bg-yellow-*`, `bg-purple-*`, `bg-pink-*`, `bg-amber-*`
+- [ ] **NO colored text**: No `text-blue-*`, `text-red-*`, `text-green-*`, `text-yellow-*`, `text-purple-*`, `text-pink-*` 
+- [ ] **NO colored backgrounds**: No `bg-blue-*`, `bg-red-*`, `bg-green-*`, `bg-yellow-*`, `bg-purple-*`, `bg-pink-*`
 - [ ] **NO colored borders**: No `border-blue-*`, `border-red-*`, `border-green-*`, etc.
+- [ ] **EXCEPTION: Amber colors ONLY for warnings** with "Let op" text and proper alert structure
 - [ ] **ALL h2 headers use `text-primary`** (not gray colors)
 - [ ] Only neutral colors: `text-gray-*`, `bg-gray-*`, `text-primary`, `bg-primary`
 - [ ] Proper contrast ratios maintained
+
+### Bullet Points ✓  
+- [ ] **CRITICAL: ALL bullet points use `bg-primary rounded-full`** - NO gray bullets
+- [ ] **NO `bg-gray-400`, `bg-gray-500` bullets** - Strictly forbidden
+- [ ] **Standard size: `w-2 h-2`** for all bullets
+- [ ] **Consistent spacing: `space-x-2`** between bullet and text
+- [ ] **NEVER use `w-1 h-1` bullet sizes**
+
+### Article Introduction ✓
+- [ ] **CRITICAL: Uses `text-gray-500` for intro paragraph** - lighter than body text  
+- [ ] **Category breadcrumb uses `text-gray-600`**
+- [ ] **Clear visual hierarchy: breadcrumb → title → light intro → darker body**
+- [ ] **h1 includes required icon** with `w-6 h-6 mr-3 text-primary`
+- [ ] **Intro is OUTSIDE card containers** - direct child of main div
 
 ### Typography & Contrast ✓
 - [ ] **h1 ONLY uses `text-2xl font-bold`** - NO other sizes allowed
@@ -391,6 +633,7 @@ Before publishing any article, verify:
 - [ ] **NO light text on light backgrounds** - minimum `text-gray-600`
 
 ### Layout ✓
+- [ ] **CRITICAL: Uses Layout component wrapper** - Never start with naked grid structure
 - [ ] Uses `grid grid-cols-12 gap-6` structure
 - [ ] Has `KennisbankSidebar` component
 - [ ] No `min-h-screen` on containers
@@ -401,6 +644,21 @@ Before publishing any article, verify:
 - [ ] Uses `space-y-6` for section spacing
 - [ ] Proper responsive breakpoints
 - [ ] Content flows naturally on mobile
+
+### Introduction Section Consistency ✓
+- [ ] **CRITICAL: Has properly framed introduction section** using glassmorphism pattern
+- [ ] Uses `bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6`
+- [ ] **NO old-style `bg-gray-50` introduction sections**
+- [ ] **NO border-box timing sections in header** - keep intro clean and aligned
+- [ ] Introduction header uses `text-lg font-semibold text-primary mb-4`
+- [ ] Uses `<section>` semantic element, not generic `<div>`
+
+### Header Card Content Flow ✓
+- [ ] **NO card-within-card patterns in headers** - content flows naturally
+- [ ] **NO nested containers with borders/backgrounds** within header cards
+- [ ] Uses `mt-6` for spacing between subsections within cards
+- [ ] Content aligns properly without visual separation boxes
+- [ ] Subsections use heading + content pattern, not container + content
 
 ### Content ✓
 - [ ] No UTF-8 emojis or symbols
@@ -424,20 +682,44 @@ Before publishing any article, verify:
 - Test on multiple devices/browsers
 
 ### Common Issues to Fix
-1. **Double scroll**: Remove `min-h-screen` from grid containers
-2. **Color violations**: Replace ALL colored elements with neutral styling
+
+**RECENT FIXES IMPLEMENTED (January 2025):**
+
+1. **Introduction Section Inconsistency** - FIXED in 4 files:
+   - ❌ `bg-gray-50 border border-gray-200 rounded-lg p-6 mb-8` 
+   - ✅ `bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6`
+   - Fixed in: `fles-bereiden-stap-voor-stap`, `juiste-houding-bij-flesvoeding`, `juiste-temperatuur-controleren`, `kosten-van-flesvoeding`
+
+2. **Missing Layout Component** - FIXED:
+   - ❌ Naked grid structure causing scrollbar issues
+   - ✅ Added proper `<Layout>` wrapper to `uitgebreide-flesvoeding-gids`
+
+3. **Font Size Inconsistencies** - FIXED:
+   - ❌ `text-sm text-gray-700` for regular list items
+   - ✅ `text-gray-700` for consistent list styling
+   - ❌ `text-2xl font-semibold` for introduction headers
+   - ✅ `text-lg font-semibold` for consistency
+
+4. **Header Alignment Issues** - FIXED:
+   - ❌ Border-box timing sections misaligned with intro text
+   - ✅ Clean alignment using consistent typography hierarchy
+
+**ONGOING MAINTENANCE ISSUES:**
+
+5. **Double scroll**: Remove `min-h-screen` from grid containers
+6. **Color violations**: Replace ALL colored elements with neutral styling
    - `bg-red-50` → `bg-gray-50`
    - `text-blue-700` → `text-gray-700`
    - `text-green-600` → `text-primary` (for icons)
    - `border-yellow-200` → `border-gray-200`
-3. **Header styling**: All h2 elements MUST use `text-primary`, not gray colors
-4. **Missing sidebar**: Add KennisbankSidebar component and configuration
-5. **UTF-8 icons**: Replace with proper Lucide icons or remove entirely
-6. **Colored cards**: Convert info/warning/success cards to neutral gray styling
-7. **Excessive card nesting**: Remove unnecessary nested containers, use visual separators instead
-   - Replace 3+ levels of card nesting with cleaner layouts
-   - Use `border-b border-gray-200` dividers between content sections
-   - Prefer grid layouts over nested card structures
+7. **Header styling**: All h2 elements MUST use `text-primary`, not gray colors
+8. **Missing sidebar**: Add KennisbankSidebar component and configuration
+9. **UTF-8 icons**: Replace with proper Lucide icons or remove entirely
+10. **Colored cards**: Convert info/warning/success cards to neutral gray styling
+11. **Excessive card nesting**: Remove unnecessary nested containers, use visual separators instead
+    - Replace 3+ levels of card nesting with cleaner layouts
+    - Use `border-b border-gray-200` dividers between content sections
+    - Prefer grid layouts over nested card structures
 
 ## 📚 Examples
 
@@ -448,6 +730,13 @@ See these articles as reference implementations:
 
 ---
 
-**Last Updated:** January 2025
-**Version:** 1.0
+**Last Updated:** January 2025 (Major Update - Kennisbank Consistency Fixes)
+**Version:** 1.1
 **Status:** Active Guidelines
+
+**Recent Major Updates:**
+- Added critical introduction section consistency requirements
+- Fixed Layout component wrapper requirements
+- Enhanced typography consistency rules  
+- Added specific examples of recently fixed issues
+- Updated quality checklist with new requirements
