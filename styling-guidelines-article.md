@@ -730,8 +730,8 @@ See these articles as reference implementations:
 
 ---
 
-**Last Updated:** January 2025 (Major Update - Kennisbank Consistency Fixes)
-**Version:** 1.1
+**Last Updated:** January 2025 (Major Update - Comprehensive Style Standards)
+**Version:** 1.2
 **Status:** Active Guidelines
 
 **Recent Major Updates:**
