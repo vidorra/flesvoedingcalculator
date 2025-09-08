@@ -205,7 +205,7 @@ function HygieneBereidingPage() {
             </div>
             
             <div>
-              <h3 className="font-medium text-amber-800 mb-3">Vooraf bereiden:</h3>
+              <h3 className="font-medium text-gray-700 mb-3">Vooraf bereiden:</h3>
               <div className="space-y-2">
                 {travelTipsPrepared.map((tip, index) => (
                   <div key={index} className="flex items-start space-x-2">
@@ -251,7 +251,7 @@ function HygieneBereidingPage() {
             </div>
             
             <div className="bg-amber-50 rounded-lg p-4">
-              <h3 className="font-medium text-amber-800 mb-3">Als magnetron nodig:</h3>
+              <h3 className="font-medium text-gray-700 mb-3">Als magnetron nodig:</h3>
               <div className="space-y-2">
                 {microwaveTips.map((tip, index) => (
                   <div key={index} className="flex items-start space-x-2">
