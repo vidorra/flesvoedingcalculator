@@ -107,12 +107,12 @@ export default function GeldBesparenPage() {
 
             {/* Header */}
             <div className="mb-6">
-              <div className="text-sm text-gray-600 mb-2">Praktische Tips • Geld Besparen</div>
+              <div className="text-sm text-primary mb-2">Praktische Tips • Geld Besparen</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <DollarSign className="w-6 h-6 mr-3 text-primary" />
                 Geld Besparen op Flesvoeding: Complete Budget Gids
               </h1>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-primary leading-relaxed">
                 Flesvoeding kost Nederlandse families €600-1000 per jaar. Met slimme strategieën kun je 
                 tot 50% besparen zonder kwaliteit in te leveren.
               </p>
@@ -126,7 +126,7 @@ export default function GeldBesparenPage() {
               </h2>
               
               <div className="mb-4">
-                <p className="text-gray-600 mb-4">
+                <p className="text-primary mb-4">
                   Flesvoeding is de 3e grootste kostenpost voor Nederlandse baby's na luiers en kinderopvang. 
                   Voor families met krap budget kan dit het verschil maken tussen stress en rust.
                 </p>
@@ -134,8 +134,8 @@ export default function GeldBesparenPage() {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium text-gray-700 mb-3">💰 Nederlandse Familie Budget Reality</h3>
-                  <div className="text-sm text-gray-600 space-y-2">
+                  <h3 className="font-medium text-primary mb-3">💰 Nederlandse Familie Budget Reality</h3>
+                  <div className="text-sm text-primary space-y-2">
                     <div><strong>Besteedbaar inkomen:</strong> €3.200/maand (gemiddeld)</div>
                     <div><strong>Baby kosten totaal:</strong> €500-800/maand</div>
                     <div><strong>Flesvoeding aandeel:</strong> 15-20% baby budget</div>
@@ -144,8 +144,8 @@ export default function GeldBesparenPage() {
                 </div>
 
                 <div>
-                  <h3 className="font-medium text-gray-700 mb-3">🎯 Impact van €300 Besparing</h3>
-                  <div className="text-sm text-gray-600 space-y-2">
+                  <h3 className="font-medium text-primary mb-3">🎯 Impact van €300 Besparing</h3>
+                  <div className="text-sm text-primary space-y-2">
                     <div>• 1 week vakantie extra mogelijk</div>
                     <div>• 6 maanden luiers gedekt</div>
                     <div>• 3 maanden kinderopvang</div>
@@ -156,7 +156,7 @@ export default function GeldBesparenPage() {
               </div>
 
               <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-amber-200">
-                <p className="text-gray-700 text-sm">
+                <p className="text-primary text-sm">
                   <strong>Nibud Onderzoek:</strong> 40% Nederlandse gezinnen heeft moeite met 
                   baby-gerelateerde uitgaven in het eerste jaar.
                 </p>
@@ -170,7 +170,7 @@ export default function GeldBesparenPage() {
               <div className="space-y-6">
                 {costComparison.map((category, index) => (
                   <div key={index}>
-                    <h3 className="font-semibold text-gray-800 mb-3">{category.category}</h3>
+                    <h3 className="font-semibold text-primary mb-3">{category.category}</h3>
                     <div className="overflow-x-auto">
                       <table className="w-full text-sm border border-gray-200 rounded-lg">
                         <thead>
@@ -198,8 +198,8 @@ export default function GeldBesparenPage() {
               </div>
 
               <div className="mt-6 p-4 bg-green-50 rounded-lg border border-green-200">
-                <h4 className="font-medium text-gray-700 mb-2">💡 Realistische Besparing Voorbeeld</h4>
-                <div className="text-sm text-gray-700 space-y-1">
+                <h4 className="font-medium text-primary mb-2">💡 Realistische Besparing Voorbeeld</h4>
+                <div className="text-sm text-primary space-y-1">
                   <div><strong>Van:</strong> Nutrilon (€1020/jaar) → <strong>Naar:</strong> Hero Baby (€780/jaar)</div>
                   <div><strong>Jaarlijkse besparing:</strong> €240 (23.5%) - Zelfde kwaliteit voeding!</div>
                   <div><strong>Resultaat:</strong> €20 per maand extra budget voor andere baby behoeften</div>
@@ -218,16 +218,16 @@ export default function GeldBesparenPage() {
                 {savingStrategies.map((strategy, index) => (
                   <div key={index} className="border border-gray-200 rounded-lg p-4">
                     <div className="flex justify-between items-start mb-3">
-                      <h3 className="font-semibold text-gray-800">{strategy.strategy}</h3>
-                      <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm font-medium">
+                      <h3 className="font-semibold text-primary">{strategy.strategy}</h3>
+                      <span className="bg-gray-100 text-primary px-2 py-1 rounded text-sm font-medium">
                         {strategy.savings} besparing
                       </span>
                     </div>
                     
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <h4 className="font-medium text-gray-600 mb-2">Methoden:</h4>
-                        <ul className="text-sm text-gray-600 space-y-1">
+                        <h4 className="font-medium text-primary mb-2">Methoden:</h4>
+                        <ul className="text-sm text-primary space-y-1">
                           {strategy.methods.map((method, idx) => (
                             <li key={idx} className="flex items-center space-x-2">
                               <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
@@ -237,8 +237,8 @@ export default function GeldBesparenPage() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-medium text-gray-600 mb-2">Pro Tip:</h4>
-                        <p className="text-sm text-gray-600">{strategy.tips}</p>
+                        <h4 className="font-medium text-primary mb-2">Pro Tip:</h4>
+                        <p className="text-sm text-primary">{strategy.tips}</p>
                       </div>
                     </div>
                   </div>
@@ -252,11 +252,11 @@ export default function GeldBesparenPage() {
               
               <div className="mb-6">
                 <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                  <h3 className="font-medium text-gray-700 mb-3">🇪🇺 Alle Flesvoeding in Nederland</h3>
+                  <h3 className="font-medium text-primary mb-3">🇪🇺 Alle Flesvoeding in Nederland</h3>
                   <div className="grid md:grid-cols-2 gap-4 text-sm">
                     <div>
-                      <h4 className="font-medium text-gray-700 mb-2">✓ Verplicht Identiek:</h4>
-                      <ul className="text-gray-600 space-y-1">
+                      <h4 className="font-medium text-primary mb-2">✓ Verplicht Identiek:</h4>
+                      <ul className="text-primary space-y-1">
                         <li>• EU-verordening 2016/127</li>
                         <li>• NVWA kwaliteitscontrole</li>
                         <li>• Minimum voedingsstoffen gelijk</li>
@@ -264,8 +264,8 @@ export default function GeldBesparenPage() {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="font-medium text-gray-700 mb-2">≈ Verschil Zit In:</h4>
-                      <ul className="text-gray-600 space-y-1">
+                      <h4 className="font-medium text-primary mb-2">≈ Verschil Zit In:</h4>
+                      <ul className="text-primary space-y-1">
                         <li>• Marketing en verpakking</li>
                         <li>• Extra ingrediënten (prebiotica)</li>
                         <li>• Smaak nuances</li>
@@ -277,14 +277,14 @@ export default function GeldBesparenPage() {
               </div>
 
               <div className="bg-gray-50 rounded-lg p-4">
-                <h4 className="font-medium text-gray-700 mb-3">🧪 Consumentenbond Test Resultaten 2024</h4>
-                <div className="text-sm text-gray-600 space-y-2">
+                <h4 className="font-medium text-primary mb-3">🧪 Consumentenbond Test Resultaten 2024</h4>
+                <div className="text-sm text-primary space-y-2">
                   <div><strong>Acceptatie test (200 baby's):</strong></div>
                   <div>• 78% baby's accepteerde budget merk even goed</div>
                   <div>• 15% had voorkeur premium (smaak)</div>
                   <div>• 7% weigerde budget opties</div>
                   <div>• Geen verschil groei/ontwikkeling</div>
-                  <div className="pt-2 font-medium text-gray-700">
+                  <div className="pt-2 font-medium text-primary">
                     <strong>Conclusie:</strong> Voor 85% gezinnen is budget merk volledig adequate substitutie
                   </div>
                 </div>
@@ -299,13 +299,13 @@ export default function GeldBesparenPage() {
                 {smartHacks.map((hack, index) => (
                   <div key={index} className="border-l-4 border-primary pl-4">
                     <div className="flex justify-between items-start mb-2">
-                      <h3 className="font-semibold text-gray-800">{hack.hack}</h3>
+                      <h3 className="font-semibold text-primary">{hack.hack}</h3>
                       <span className="bg-primary text-white px-2 py-1 rounded text-sm">
                         {hack.savings}
                       </span>
                     </div>
-                    <p className="text-gray-600 text-sm mb-1">{hack.description}</p>
-                    <p className="text-gray-500 text-sm">{hack.method}</p>
+                    <p className="text-primary text-sm mb-1">{hack.description}</p>
+                    <p className="text-primary text-sm">{hack.method}</p>
                   </div>
                 ))}
               </div>
@@ -341,17 +341,17 @@ export default function GeldBesparenPage() {
                 {budgetBreakdown.map((budget, index) => (
                   <div key={index} className={`border rounded-lg p-4 ${budget.realistic ? 'border-green-200 bg-green-50' : 'border-amber-200 bg-gray-50'}`}>
                     <div className="flex justify-between items-start mb-3">
-                      <h3 className="font-semibold text-gray-800">{budget.scenario}</h3>
+                      <h3 className="font-semibold text-primary">{budget.scenario}</h3>
                       <div className="text-right">
-                        <div className="font-medium text-gray-700">{budget.monthly}/maand</div>
+                        <div className="font-medium text-primary">{budget.monthly}/maand</div>
                         {budget.realistic && <span className="text-xs text-green-600">Realistisch</span>}
                       </div>
                     </div>
                     <div className="grid md:grid-cols-2 gap-3">
                       {budget.strategies.map((strategy, idx) => (
                         <div key={idx} className="flex items-center space-x-2">
-                          <CheckCircle className="w-3 h-3 text-gray-500 flex-shrink-0" />
-                          <span className="text-sm text-gray-600">{strategy}</span>
+                          <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
+                          <span className="text-sm text-primary">{strategy}</span>
                         </div>
                       ))}
                     </div>
@@ -380,8 +380,8 @@ export default function GeldBesparenPage() {
               </div>
 
               <div className="p-4 bg-gray-50 rounded-lg">
-                <h4 className="font-medium text-gray-700 mb-2">⚠️ Health Impact van Foute Besparingen</h4>
-                <p className="text-sm text-gray-600">
+                <h4 className="font-medium text-primary mb-2">⚠️ Health Impact van Foute Besparingen</h4>
+                <p className="text-sm text-primary">
                   Malnutrition, infection susceptibility, groei retardation, verteringsproblemen. 
                   Medische kosten zijn veel hoger dan besparingen!
                 </p>
@@ -394,26 +394,26 @@ export default function GeldBesparenPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/praktische-tips/flesvoeding-werk-combineren" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
                   <div className="font-medium text-primary">Werk combineren →</div>
-                  <div className="text-sm text-gray-600">Kinderopvang kosten optimaliseren</div>
+                  <div className="text-sm text-primary">Kinderopvang kosten optimaliseren</div>
                 </Link>
                 <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
                   <div className="font-medium text-primary">Startvoeding vs opvolgmelk →</div>
-                  <div className="text-sm text-gray-600">Prijs vergelijking verschillende types</div>
+                  <div className="text-sm text-primary">Prijs vergelijking verschillende types</div>
                 </Link>
                 <Link href="/kennisbank/hygiene-bereiding/flesvoeding-bewaren" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
                   <div className="font-medium text-primary">Flesvoeding bewaren →</div>
-                  <div className="text-sm text-gray-600">Verspilling voorkomen tips</div>
+                  <div className="text-sm text-primary">Verspilling voorkomen tips</div>
                 </Link>
                 <Link href="/kennisbank/praktische-tips" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
                   <div className="font-medium text-primary">Alle praktische tips →</div>
-                  <div className="text-sm text-gray-600">Meer handige ouder tips</div>
+                  <div className="text-sm text-primary">Meer handige ouder tips</div>
                 </Link>
               </div>
             </div>
 
             {/* Calculator CTA */}
             <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
-              <h2 className="text-lg font-semibold mb-4 flex items-center">
+              <h2 className="text-lg font-semibold text-white mb-4 flex items-center">
                 <Calculator className="w-5 h-5 mr-2" />
                 Bereken je Exacte Besparingen
               </h2>
