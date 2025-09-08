@@ -380,7 +380,7 @@ export default function ArticlePage() {
 **FONT HIERARCHY RULES:**
 - ✅ **Intro paragraph uses `text-gray-500`** (lighter than body text)
 - ✅ **Body text uses `text-gray-600` or `text-gray-700`** (darker than intro)
-- ✅ **Category breadcrumb uses `text-gray-600`**
+- ✅ **Category breadcrumb uses `text-gray-500`**
 - ✅ **Clear visual hierarchy: breadcrumb → title → light intro → darker body**
 - ❌ **NEVER use `text-gray-700` for intro text** - creates reverse hierarchy
 
@@ -399,7 +399,7 @@ export default function ArticlePage() {
 
 ✅ **CORRECT: Simple tag format:**
 ```jsx
-<div className="text-sm text-gray-600 mb-2">Category • Subcategory</div>
+<div className="text-sm text-gray-500 mb-2">Category • Subcategory</div>
 ```
 
 **Common Mistakes:**
@@ -428,7 +428,49 @@ export default function ArticlePage() {
 
 **⚠️ ZERO TOLERANCE POLICY - This is the #1 styling violation that MUST be eliminated from all articles.**
 
+**🚫 SPECIFIC FORBIDDEN PATTERN:**
+❌ **NEVER use `border border-gray-200 rounded-xl p-6` within `bg-white/80` containers**
+- This creates problematic nested card styling that breaks visual hierarchy
+- Found extensively in eerste-keer-flesvoeding-geven and other articles
+- Must be replaced with clean content flow or visual separators
+
 **🚨 SPECIFIC VIOLATIONS FOUND & FIXED:**
+
+❌ **ACTUAL VIOLATION EXAMPLE - eerste-keer-flesvoeding-geven:**
+```jsx
+{/* BAD - Multiple card-within-card violations */}
+<section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+  <h2>What you need?</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="border border-gray-200 rounded-xl p-6">  {/* ← VIOLATION! */}
+      <h3>Essential items</h3>
+      <ul>...</ul>
+    </div>
+    <div className="border border-gray-200 rounded-xl p-6">  {/* ← VIOLATION! */}
+      <h3>Nice to have</h3>
+      <ul>...</ul>
+    </div>
+  </div>
+</section>
+```
+
+✅ **CORRECTED VERSION:**
+```jsx
+{/* GOOD - Clean grid layout without nested cards */}
+<section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+  <h2>What you need?</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div>  {/* No borders/backgrounds - clean content */}
+      <h3>Essential items</h3>
+      <ul>...</ul>
+    </div>
+    <div>
+      <h3>Nice to have</h3>
+      <ul>...</ul>
+    </div>
+  </div>
+</section>
+```
 
 ❌ **ACTUAL VIOLATION EXAMPLE - hypoallergene-flesvoeding:**
 ```jsx
@@ -683,7 +725,7 @@ Before publishing any article, verify:
 
 ### Article Introduction ✓
 - [ ] **CRITICAL: Uses `text-gray-500` for intro paragraph** - lighter than body text  
-- [ ] **Category breadcrumb uses `text-gray-600`**
+- [ ] **Category breadcrumb uses `text-gray-500`**
 - [ ] **Clear visual hierarchy: breadcrumb → title → light intro → darker body**
 - [ ] **h1 includes required icon** with `w-6 h-6 mr-3 text-primary`
 - [ ] **Intro is OUTSIDE card containers** - direct child of main div

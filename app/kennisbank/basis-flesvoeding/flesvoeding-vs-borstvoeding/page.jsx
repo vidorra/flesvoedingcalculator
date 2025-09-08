@@ -95,7 +95,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
 
         {/* Header */}
         <div className="mb-6">
-            <div className="text-sm text-gray-600 mb-2">Basis Flesvoeding • Objectieve Vergelijking</div>
+            <div className="text-sm text-gray-500 mb-2">Basis Flesvoeding • Objectieve Vergelijking</div>
             <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
               <BookOpen className="w-6 h-6 mr-3 text-primary" />
               Flesvoeding vs Borstvoeding: Objectieve Gids

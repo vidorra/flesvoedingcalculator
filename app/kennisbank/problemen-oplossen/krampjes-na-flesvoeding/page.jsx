@@ -377,7 +377,7 @@ export default function KrampjesNaFlesvoedingPage() {
           <div className="space-y-6">
             {/* Header */}
             <div className="mb-6">
-              <div className="text-sm text-gray-600 mb-2">Problemen Oplossen • Krampjes</div>
+              <div className="text-sm text-gray-500 mb-2">Problemen Oplossen • Krampjes</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <AlertTriangle className="w-6 h-6 mr-3 text-primary" />
                 Krampjes na Flesvoeding: Complete Gids voor Nederlandse Ouders

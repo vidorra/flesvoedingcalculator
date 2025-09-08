@@ -31,7 +31,7 @@ export default function FlessenSteriligerenPage() {
           <div className="space-y-6">
             {/* Header */}
             <div>
-              <div className="text-sm text-gray-600 mb-2">Hygiëne & Bereiding • Sterilisatie</div>
+              <div className="text-sm text-gray-500 mb-2">Hygiëne & Bereiding • Sterilisatie</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <Shield className="w-6 h-6 mr-3 text-primary" />
                 Flessen steriliseren: Complete gids voor veilige hygiëne

@@ -72,7 +72,7 @@ export default function EersteKeerFlesvoedingPage() {
 
           {/* Header */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <div className="text-sm text-gray-600 mb-2">Basis Flesvoeding • Beginners Gids</div>
+            <div className="text-sm text-gray-500 mb-2">Basis Flesvoeding • Beginners Gids</div>
             <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
               <Baby className="w-6 h-6 mr-3 text-primary" />
               Eerste keer flesvoeding geven
@@ -110,7 +110,7 @@ export default function EersteKeerFlesvoedingPage() {
             <h2 className="text-lg font-semibold text-primary mb-4">Wat heb je nodig?</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="border border-gray-200 rounded-xl p-6">
+              <div>
                 <h3 className="font-semibold text-primary mb-4 flex items-center">
                   <CheckCircle className="w-5 h-5 text-gray-600 mr-2" />
                   Essentiële benodigdheden
@@ -125,7 +125,7 @@ export default function EersteKeerFlesvoedingPage() {
                 </ul>
               </div>
 
-              <div className="border border-gray-200 rounded-xl p-6">
+              <div>
                 <h3 className="font-semibold text-primary mb-4 flex items-center">
                   <Baby className="w-5 h-5 text-gray-600 mr-2" />
                   Handig om te hebben
@@ -146,8 +146,8 @@ export default function EersteKeerFlesvoedingPage() {
           <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-semibold text-primary mb-4">Water: De basis van goede flesvoeding</h2>
             
-            <div className="border border-gray-200 rounded-xl p-6 mb-6">
-              <h3 className="font-semibold text-primary mb-3">Nederlands kraanwater: Veilig voor baby's</h3>
+            <h3 className="font-semibold text-primary mb-3">Nederlands kraanwater: Veilig voor baby's</h3>
+            <div className="mb-6">
               <p className="text-gray-700 mb-4">
                 In Nederland is kraanwater uitstekend geschikt voor flesvoeding:
               </p>
@@ -167,7 +167,7 @@ export default function EersteKeerFlesvoedingPage() {
               </ul>
             </div>
 
-            <div className="border border-gray-200 rounded-xl p-6">
+            <div className="border-t border-gray-200 pt-6">
               <h3 className="font-semibold text-primary mb-4">Watervoorbereiding per leeftijd</h3>
               <div className="space-y-3">
                 {waterPreparation.map((item, index) => (
@@ -195,7 +195,7 @@ export default function EersteKeerFlesvoedingPage() {
             <h2 className="text-lg font-semibold text-primary mb-4">Stap-voor-stap: Je eerste fles klaarmaken</h2>
             
             <div className="space-y-6">
-              <div className="border border-gray-200 rounded-xl p-6">
+              <div>
                 <h3 className="font-semibold text-primary mb-4 flex items-center">
                   <span className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">1</span>
                   Voorbereiding (5 minuten)
@@ -220,7 +220,7 @@ export default function EersteKeerFlesvoedingPage() {
                 </ol>
               </div>
 
-              <div className="border border-gray-200 rounded-xl p-6">
+              <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-semibold text-primary mb-4 flex items-center">
                   <span className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">2</span>
                   Poeder toevoegen (2 minuten)
@@ -245,7 +245,7 @@ export default function EersteKeerFlesvoedingPage() {
                 </ol>
               </div>
 
-              <div className="border border-gray-200 rounded-xl p-6">
+              <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-semibold text-primary mb-4 flex items-center">
                   <span className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">3</span>
                   Mengen en temperatuur checken (3 minuten)
@@ -346,7 +346,7 @@ export default function EersteKeerFlesvoedingPage() {
             <h2 className="text-lg font-semibold text-primary mb-4">Baby voorbereiden voor eerste fles</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="border border-gray-200 rounded-xl p-6">
+              <div>
                 <h3 className="font-semibold text-primary mb-4">Herken honger signalen</h3>
                 <ul className="space-y-2">
                   <li className="flex items-center space-x-2">
@@ -372,7 +372,7 @@ export default function EersteKeerFlesvoedingPage() {
                 </ul>
               </div>
               
-              <div className="border border-gray-200 rounded-xl p-6">
+              <div>
                 <h3 className="font-semibold text-primary mb-4">Optimale omgeving</h3>
                 <ul className="space-y-2">
                   <li className="flex items-center space-x-2">
@@ -411,7 +411,7 @@ export default function EersteKeerFlesvoedingPage() {
             <h2 className="text-lg font-semibold text-primary mb-4">De perfecte voedingstechniek</h2>
             
             <div className="space-y-6">
-              <div className="border border-gray-200 rounded-xl p-6">
+              <div>
                 <h3 className="font-semibold text-primary mb-4">Juiste houding</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
@@ -435,7 +435,7 @@ export default function EersteKeerFlesvoedingPage() {
                 </div>
               </div>
               
-              <div className="border border-gray-200 rounded-xl p-6">
+              <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-semibold text-primary mb-4">De fles introduceren</h3>
                 <ol className="space-y-2">
                   <li className="flex items-center space-x-2">
@@ -474,7 +474,7 @@ export default function EersteKeerFlesvoedingPage() {
             <h2 className="text-lg font-semibold text-primary mb-4">Wanneer hulp zoeken?</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="border border-gray-200 rounded-xl p-6">
+              <div>
                 <h3 className="font-semibold text-gray-600 mb-4">Direct contact opnemen</h3>
                 <ul className="space-y-2">
                   <li className="flex items-center space-x-2">
@@ -496,7 +496,7 @@ export default function EersteKeerFlesvoedingPage() {
                 </ul>
               </div>
 
-              <div className="border border-gray-200 rounded-xl p-6">
+              <div>
                 <h3 className="font-semibold text-gray-600 mb-4">Binnen 1-2 dagen contact</h3>
                 <ul className="space-y-2">
                   <li className="flex items-center space-x-2">
