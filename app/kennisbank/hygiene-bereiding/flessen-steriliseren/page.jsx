@@ -173,7 +173,7 @@ export default function FlessenSteriligerenPage() {
               
               <div className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <div className="">
                     <h3 className="font-medium text-gray-700 mb-3">Methode 1: Koken in pan (klassiek)</h3>
                     
                     <div className="space-y-3">
@@ -210,7 +210,7 @@ export default function FlessenSteriligerenPage() {
                     </div>
                   </div>
 
-                  <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <div className="">
                     <h3 className="font-medium text-gray-700 mb-3">Methode 2: Elektrische sterilisator (populairst)</h3>
                     
                     <div className="space-y-3">
@@ -248,7 +248,7 @@ export default function FlessenSteriligerenPage() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <div className="">
                     <h3 className="font-medium text-gray-700 mb-3">Methode 3: Magnetron sterilisatie</h3>
                     
                     <div className="space-y-2">
@@ -513,7 +513,7 @@ export default function FlessenSteriligerenPage() {
                   </div>
                 </div>
 
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                <div className="">
                   <h3 className="font-medium text-gray-700 mb-2">Conclusie kosten:</h3>
                   <p className="text-gray-700 text-sm">
                     Elektrische sterilisator is na 3-4 maanden de goedkoopste optie en meest praktisch voor dagelijks gebruik.
@@ -554,7 +554,7 @@ export default function FlessenSteriligerenPage() {
               </div>
             </div>
 
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
+            <div className="">
               <p className="text-gray-700 text-sm text-center">
                 Steriliseren is een essentiële vaardigheid voor veilige flesvoeding. Met de juiste methode en routine bescherm je je baby tegen gevaarlijke infecties.
               </p>

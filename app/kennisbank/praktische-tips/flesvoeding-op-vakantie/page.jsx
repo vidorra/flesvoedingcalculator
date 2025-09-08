@@ -210,7 +210,7 @@ export default function VakantiePage() {
               
               <div className="space-y-6">
                 {transportTypes.map((transport, index) => (
-                  <div key={index} className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <div key={index} className="p-4">
                     <h3 className="font-semibold text-primary mb-3 flex items-center">
                       <span className="text-xl mr-2">{transport.icon}</span>
                       {transport.type}
@@ -250,7 +250,7 @@ export default function VakantiePage() {
               
               <div className="space-y-6">
                 {accommodationTypes.map((accommodation, index) => (
-                  <div key={index} className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <div key={index} className="p-4">
                     <h3 className="font-semibold text-primary mb-3">{accommodation.type}</h3>
                     <div className="grid md:grid-cols-2 gap-4 mb-3">
                       <div>
@@ -290,7 +290,7 @@ export default function VakantiePage() {
               
               <div className="space-y-4">
                 {internationalTips.map((region, index) => (
-                  <div key={index} className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <div key={index} className="p-4">
                     <div className="flex justify-between items-start mb-3">
                       <h3 className="font-semibold text-primary">{region.region}</h3>
                       <span className="bg-blue-100 text-primary px-2 py-1 rounded text-sm">

@@ -180,14 +180,14 @@ export default function EersteKeerFlesvoedingPage() {
               <h3 className="font-semibold text-primary mb-4">Watervoorbereiding per leeftijd</h3>
               <div className="space-y-3">
                 {waterPreparation.map((item, index) => (
-                  <div key={index} className="flex items-start space-x-3 py-2 px-3 rounded-lg bg-gray-50 border border-gray-200">
+                  <div key={index} className="flex items-start space-x-3 py-2 px-3">
                     <div className="font-medium text-primary min-w-24">{item.age}:</div>
                     <div className="text-gray-700">{item.instruction}</div>
                   </div>
                 ))}
               </div>
               
-              <div className="mt-4 py-2 px-3 bg-gray-50 border border-gray-200 rounded-lg">
+              <div className="mt-4 py-2 px-3">
                 <div className="flex items-start space-x-2">
                   <AlertTriangle className="w-5 h-5 text-gray-600 flex-shrink-0 mt-0.5" />
                   <div>
@@ -406,7 +406,7 @@ export default function EersteKeerFlesvoedingPage() {
                   </li>
                 </ul>
                 
-                <div className="mt-4 py-2 px-3 bg-gray-50 border border-gray-200 rounded-lg">
+                <div className="mt-4 py-2 px-3">
                   <p className="text-sm text-gray-600">
                     <strong>Vermijd:</strong> Voeden tijdens huilbui, wanneer baby te moe is, of bij koorts.
                   </p>
@@ -465,7 +465,7 @@ export default function EersteKeerFlesvoedingPage() {
                   </li>
                 </ol>
                 
-                <div className="mt-4 py-2 px-3 bg-gray-50 border border-gray-200 rounded-lg">
+                <div className="mt-4 py-2 px-3">
                   <h4 className="font-medium text-primary mb-2">Tijdens het voeden:</h4>
                   <ul className="space-y-1 text-gray-700">
                     <li>• Houd fles licht schuin (speen gevuld met melk)</li>
@@ -555,7 +555,7 @@ export default function EersteKeerFlesvoedingPage() {
               </li>
             </ol>
             
-            <div className="mt-6 p-4 bg-gray-50 border border-gray-200 rounded-lg text-center">
+            <div className="mt-6 p-4 text-center">
               <p className="font-medium text-primary">Onthoud: Je doet het geweldig!</p>
               <p className="text-gray-600">Flesvoeding geven is een liefdevolle manier om je baby te voeden en te koesteren. 
               De eerste fles geven is een mijlpaal - met voorbereiding, geduld en de juiste technieken 

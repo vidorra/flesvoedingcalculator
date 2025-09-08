@@ -70,7 +70,7 @@ export default function BabyDrinktNietGenoegPage() {
                 </ul>
               </div>
 
-              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+              <div className="p-4">
                 <h3 className="font-medium text-gray-700 mb-2">Voorbeeldberekening 3 maanden oude baby (5kg):</h3>
                 <ul className="space-y-1">
                   <li className="text-gray-700 text-sm"><strong>Dagelijkse behoefte:</strong> 5kg × 150ml = 750ml per dag</li>
@@ -88,7 +88,7 @@ export default function BabyDrinktNietGenoegPage() {
               <h2 className="text-lg font-semibold text-primary mb-4">Waarschuwingssignalen: Wanneer zorgen maken?</h2>
               
               <div className="space-y-4">
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                <div className="p-4">
                   <h3 className="font-medium text-gray-700 mb-2 flex items-center">
                     <AlertTriangle className="w-4 h-4 mr-2" />
                     Acute signalen - direct medisch contact
@@ -145,7 +145,7 @@ export default function BabyDrinktNietGenoegPage() {
                   </div>
                 </div>
 
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                <div className="p-4">
                   <h3 className="font-medium text-gray-700 mb-2">Signalen voor extra aandacht</h3>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
@@ -282,7 +282,7 @@ export default function BabyDrinktNietGenoegPage() {
               </h2>
               
               <div className="space-y-6">
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                <div className="p-4">
                   <h3 className="font-medium text-gray-700 mb-3">Stap 1: Basis checklist (24 uur)</h3>
                   
                   <div className="space-y-2">
@@ -315,7 +315,7 @@ export default function BabyDrinktNietGenoegPage() {
                   </div>
                 </div>
 
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                <div className="p-4">
                   <h3 className="font-medium text-gray-700 mb-3">Stap 2: Equipment aanpassingen (2-3 dagen)</h3>
                   
                   <div className="space-y-2">
@@ -337,7 +337,7 @@ export default function BabyDrinktNietGenoegPage() {
                   </div>
                 </div>
 
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                <div className="p-4">
                   <h3 className="font-medium text-gray-700 mb-3">Stap 3: Diepere analyse (1 week)</h3>
                   
                   <div className="space-y-3">
@@ -365,7 +365,7 @@ export default function BabyDrinktNietGenoegPage() {
                   </div>
                 </div>
 
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                <div className="p-4">
                   <h3 className="font-medium text-gray-700 mb-3">Stap 4: Medische consultatie</h3>
                   
                   <div>

@@ -112,7 +112,7 @@ export default function KostenVanFlesvoeding() {
                 <strong>Gemiddelde maandkosten:</strong> €50-130 afhankelijk van keuzes
               </p>
 
-              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+              <div className="p-4">
                 <p className="text-gray-700">
                   <strong>Vergelijking</strong>: Borstvoeding kost €40-80 per maand (extra voeding moeder + hulpmiddelen)
                 </p>
@@ -127,7 +127,7 @@ export default function KostenVanFlesvoeding() {
                   <h3 className="font-medium text-primary mb-4">Budget vriendelijke merken (€12-18 per 900g blik)</h3>
                   
                   <div className="grid md:grid-cols-3 gap-6 mb-6">
-                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                    <div className="p-4">
                       <h4 className="font-semibold text-primary mb-2">Kruidvat Baby Melkpoeder</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
@@ -149,7 +149,7 @@ export default function KostenVanFlesvoeding() {
                       </ul>
                     </div>
 
-                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                    <div className="p-4">
                       <h4 className="font-semibold text-primary mb-2">AH Basic Babyvoeding</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
@@ -171,7 +171,7 @@ export default function KostenVanFlesvoeding() {
                       </ul>
                     </div>
 
-                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                    <div className="p-4">
                       <h4 className="font-semibold text-primary mb-2">Jumbo Baby</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
@@ -199,7 +199,7 @@ export default function KostenVanFlesvoeding() {
                   <h3 className="font-medium text-primary mb-4">Mainstream merken (€18-25 per 800g blik)</h3>
                   
                   <div className="grid md:grid-cols-3 gap-6 mb-6">
-                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                    <div className="p-4">
                       <h4 className="font-semibold text-primary mb-2">Nutrilon (Nederlandse marktleider)</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
@@ -221,7 +221,7 @@ export default function KostenVanFlesvoeding() {
                       </ul>
                     </div>
 
-                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                    <div className="p-4">
                       <h4 className="font-semibold text-primary mb-2">Hero Baby Nutradefense</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
@@ -243,7 +243,7 @@ export default function KostenVanFlesvoeding() {
                       </ul>
                     </div>
 
-                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                    <div className="p-4">
                       <h4 className="font-semibold text-primary mb-2">Aptamil Pronutra</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
@@ -271,7 +271,7 @@ export default function KostenVanFlesvoeding() {
                   <h3 className="font-medium text-primary mb-4">Premium/Biologisch (€25-35 per 600-800g blik)</h3>
                   
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                    <div className="p-4">
                       <h4 className="font-semibold text-primary mb-2">HIPP Biologisch</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
@@ -293,7 +293,7 @@ export default function KostenVanFlesvoeding() {
                       </ul>
                     </div>
 
-                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                    <div className="p-4">
                       <h4 className="font-semibold text-primary mb-2">Holle Biologisch</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
@@ -548,27 +548,27 @@ export default function KostenVanFlesvoeding() {
               <h2 className="text-gray-600 font-semibold text-primary mb-6">Veelgestelde vragen over kosten</h2>
               
               <div className="space-y-6">
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
+                <div className="">
                   <h4 className="font-semibold text-primary mb-2">Wat als ik per ongeluk te dure flesvoeding heb gekocht?</h4>
                   <p className="text-gray-700">Alle Nederlandse flesvoeding voldoet aan dezelfde voedingsnormen. Je betaalt vooral voor merk, marketing en extra toegevoegde ingrediënten zoals prebiotica.</p>
                 </div>
 
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
+                <div className="">
                   <h4 className="font-semibold text-primary mb-2">Kan ik geld terugkrijgen van de zorgverzekering?</h4>
                   <p className="text-gray-700">Bij medische noodzaak (bijv. hypoallergene voeding) kan dit vergoed worden. Check met je verzekeraar en zorgverlener.</p>
                 </div>
 
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
+                <div className="">
                   <h4 className="font-semibold text-primary mb-2">Hoeveel bespaar ik als ik huismerk koop?</h4>
                   <p className="text-gray-700">Gemiddeld 40-50% besparing ten opzichte van A-merken. Voor een jaar kan dit €200-300 schelen.</p>
                 </div>
 
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
+                <div className="">
                   <h4 className="font-semibold text-primary mb-2">Zijn goedkope flessen even veilig?</h4>
                   <p className="text-gray-700">Ja, alle flessen in Nederland moeten voldoen aan EU veiligheidsnormen. Het verschil zit in design, gebruiksgemak en duurzaamheid.</p>
                 </div>
 
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
+                <div className="">
                   <h4 className="font-semibold text-primary mb-2">Wat kost flesvoeding vergeleken met borstvoeding?</h4>
                   <p className="text-gray-700">Flesvoeding kost €575-1500 eerste jaar. Borstvoeding €400-800 (extra voeding moeder + hulpmiddelen).</p>
                 </div>
@@ -578,7 +578,7 @@ export default function KostenVanFlesvoeding() {
             <section className="mb-8">
               <h2 className="text-gray-600 font-semibold text-primary mb-6">Conclusie: Slim budgetteren voor flesvoeding</h2>
               
-              <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-6">
+              <div className=" mb-6">
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Flesvoeding hoeft niet duur te zijn als je slimme keuzes maakt. Met de juiste aanpak kun je <strong>€200-400 per jaar</strong> besparen zonder in te leveren op kwaliteit of veiligheid.
                 </p>
@@ -626,7 +626,7 @@ export default function KostenVanFlesvoeding() {
                 </ul>
               </div>
 
-              <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
+              <div className="">
                 <p className="text-gray-700 mb-4">
                   <strong>Onthoud</strong>: Het belangrijkste is dat je baby goed gevoed wordt en jij je financieel comfortabel voelt bij je keuzes. Dure flesvoeding maakt je niet tot een betere ouder.
                 </p>
@@ -657,7 +657,7 @@ export default function KostenVanFlesvoeding() {
               </div>
             </section>
 
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 text-center">
+            <div className=" text-center">
               <p className="text-gray-700">
                 Met de juiste planning en bewuste keuzes zorg je ervoor dat flesvoeding past binnen je budget, zodat je kunt focussen op het belangrijkste: genieten van je baby!
               </p>
