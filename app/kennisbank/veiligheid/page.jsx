@@ -154,11 +154,11 @@ export default function VeiligheidPage() {
 
         {/* Warning about online information */}
         <div className="bg-amber-50 rounded-2xl border border-amber-200 p-6">
-          <h2 className="text-lg font-semibold text-amber-800 mb-3 flex items-center">
+          <h2 className="text-lg font-semibold text-primary mb-3 flex items-center">
             <AlertTriangle className="w-5 h-5 mr-2" />
             Belangrijk: Medische disclaimer
           </h2>
-          <div className="space-y-3 text-amber-800">
+          <div className="space-y-3 text-gray-700">
             <p>
               <strong>Deze kennisbank is alleen voor informatieve doeleinden.</strong> De informatie 
               vervangt geen professioneel medisch advies, diagnose of behandeling.

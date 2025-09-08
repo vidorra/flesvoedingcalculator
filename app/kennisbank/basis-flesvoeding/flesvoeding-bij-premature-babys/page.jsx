@@ -268,7 +268,7 @@ export default function FlesvoedingPrematurePage() {
                 </svg>
               </div>
               <div>
-                <h3 className="font-semibold text-amber-800 mb-2">Let op</h3>
+                <h3 className="font-semibold text-gray-700 mb-2">Let op</h3>
                 <p className="text-sm text-amber-700 leading-relaxed">
                   Deze waarden zijn richtlijnen. De exacte behoefte verschilt per baby en moet altijd in overleg met het medische team bepaald worden.
                 </p>

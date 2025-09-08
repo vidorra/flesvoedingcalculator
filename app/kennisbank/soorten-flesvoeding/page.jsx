@@ -263,14 +263,14 @@ export default function SoortenFlesvoedingPage() {
 
         {/* Special Formula */}
         <div className="bg-amber-50 rounded-2xl border border-amber-200 p-6">
-          <h2 className="text-lg font-semibold text-amber-800 mb-4 flex items-center">
+          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
             <AlertCircle className="w-5 h-5 mr-2" />
             Speciale voeding (op medisch advies)
           </h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div>
-              <h3 className="font-medium text-amber-800 mb-2">Hypoallergene (HA) voeding:</h3>
+              <h3 className="font-medium text-gray-700 mb-2">Hypoallergene (HA) voeding:</h3>
               <ul className="space-y-1 text-sm text-amber-700">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -292,7 +292,7 @@ export default function SoortenFlesvoedingPage() {
             </div>
             
             <div>
-              <h3 className="font-medium text-amber-800 mb-2">Anti-reflux (AR) voeding:</h3>
+              <h3 className="font-medium text-gray-700 mb-2">Anti-reflux (AR) voeding:</h3>
               <ul className="space-y-1 text-sm text-amber-700">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -314,7 +314,7 @@ export default function SoortenFlesvoedingPage() {
             </div>
             
             <div>
-              <h3 className="font-medium text-amber-800 mb-2">Lactosevrije voeding:</h3>
+              <h3 className="font-medium text-gray-700 mb-2">Lactosevrije voeding:</h3>
               <ul className="space-y-1 text-sm text-amber-700">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
