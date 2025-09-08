@@ -233,7 +233,7 @@ export default function TweelingVoedenPage() {
               <h3 className="font-medium text-primary mb-3">{category.category}</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {category.items.map((item, itemIndex) => (
-                  <div key={itemIndex} className="p-3 border border-gray-200 rounded-lg">
+                  <div key={itemIndex} className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
                     <div className="flex justify-between items-start mb-1">
                       <h4 className="font-medium text-primary">{item.name}</h4>
                       <span className="text-primary font-medium text-sm">{item.price}</span>
@@ -311,7 +311,7 @@ export default function TweelingVoedenPage() {
           
           <div className="space-y-4">
             {commonProblems.map((item, index) => (
-              <div key={index} className="border border-gray-200 rounded-lg p-4">
+              <div key={index} className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <h3 className="font-medium text-primary mb-2">Probleem:</h3>
@@ -344,7 +344,7 @@ export default function TweelingVoedenPage() {
           
           <div className="space-y-6">
             {budgetBreakdown.map((budget, index) => (
-              <div key={index} className="border border-gray-200 rounded-lg p-4">
+              <div key={index} className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                 <h3 className="font-medium text-primary mb-3">{budget.category}</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
                   {budget.periods.map((period, periodIndex) => (

@@ -504,7 +504,7 @@ export default function KrampjesNaFlesvoedingPage() {
                     <h3 className="font-medium text-gray-900 mb-4">{category.category}</h3>
                     <div className="space-y-4">
                       {category.causes.map((cause, causeIndex) => (
-                        <div key={causeIndex} className="border border-gray-200 rounded-lg p-4">
+                        <div key={causeIndex} className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                           <div className="flex items-center justify-between mb-2">
                             <h4 className="font-medium text-primary">{cause.cause}</h4>
                             <span className="text-sm font-medium bg-gray-100 text-gray-700 px-2 py-1 rounded">
@@ -540,7 +540,7 @@ export default function KrampjesNaFlesvoedingPage() {
                 
                 <div className="space-y-4">
                   {solutions[0].options.map((option, index) => (
-                    <div key={index} className="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                    <div key={index} className="bg-gray-50 border border-gray-200 rounded-lg p-4 bg-gray-50">
                       <div className="flex items-center justify-between mb-2">
                         <h4 className="font-medium text-primary">{option.name}</h4>
                         <span className="text-sm text-gray-600">{option.price}</span>
@@ -775,7 +775,7 @@ export default function KrampjesNaFlesvoedingPage() {
               
               <div className="space-y-4">
                 {dailyRoutine.map((routine, index) => (
-                  <div key={index} className="border border-gray-200 rounded-lg p-4">
+                  <div key={index} className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                     <h3 className="font-medium text-primary mb-3">{routine.timeframe}</h3>
                     <div className="space-y-2">
                       {routine.tasks.map((task, taskIndex) => (
@@ -813,7 +813,7 @@ export default function KrampjesNaFlesvoedingPage() {
               
               <div className="space-y-4">
                 {myths.map((myth, index) => (
-                  <div key={index} className="border border-gray-200 rounded-lg p-4">
+                  <div key={index} className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                     <div className="mb-2">
                       <span className="text-red-600 font-medium">❌ "{myth.myth}"</span>
                     </div>

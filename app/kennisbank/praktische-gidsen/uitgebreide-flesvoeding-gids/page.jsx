@@ -89,7 +89,7 @@ export default function UitgebreideFlesvoedingGids() {
               <h3>De Grote Prijsvergelijking: Wat Betaal Je Echt?</h3>
 
               <h4>Budget Opties (€35-50 per maand)</h4>
-              <div className="border border-gray-200 rounded-lg p-4 my-4">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 my-4">
                 <p><strong>Kruidvat Eigen Merk</strong> - €7,99 per 800g</p>
                 <ul className="space-y-2 mt-2">
                   <li className="flex items-center space-x-2">
@@ -111,7 +111,7 @@ export default function UitgebreideFlesvoedingGids() {
                 </ul>
               </div>
 
-              <div className="border border-gray-200 rounded-lg p-4 my-4">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 my-4">
                 <p><strong>Etos Baby</strong> - €8,49 per 800g</p>
                 <ul className="space-y-2 mt-2">
                   <li className="flex items-center space-x-2">
@@ -133,7 +133,7 @@ export default function UitgebreideFlesvoedingGids() {
                 </ul>
               </div>
 
-              <div className="border border-gray-200 rounded-lg p-4 my-4">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 my-4">
                 <p><strong>Action Babymilk</strong> - €6,99 per 800g</p>
                 <ul className="space-y-2 mt-2">
                   <li className="flex items-center space-x-2">
@@ -154,7 +154,7 @@ export default function UitgebreideFlesvoedingGids() {
               <h4>Waar Kopen Voor Beste Aanbiedingen?</h4>
 
               <h5>Online Shopping (Grootste Besparingen)</h5>
-              <div className="border border-gray-200 rounded-lg p-4 my-4">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 my-4">
                 <p><strong>Bol.com Abonneer & Bespaar</strong> - Tot 15% korting</p>
                 <ul className="space-y-2 mt-2">
                   <li className="flex items-center space-x-2">
@@ -176,7 +176,7 @@ export default function UitgebreideFlesvoedingGids() {
                 </ul>
               </div>
 
-              <div className="border border-gray-200 rounded-lg p-4 my-4">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 my-4">
                 <p><strong>Amazon.nl Bulk Bestellingen</strong> - 8-12% korting</p>
                 <ul className="space-y-2 mt-2">
                   <li className="flex items-center space-x-2">
@@ -200,7 +200,7 @@ export default function UitgebreideFlesvoedingGids() {
 
               <h5>Timing is Alles: Wanneer Kopen?</h5>
               
-              <div className="border border-gray-200 rounded-lg p-4 my-4">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 my-4">
                 <h6>Seizoenspatronen</h6>
                 <ul className="space-y-2 mt-2">
                   <li className="flex items-center space-x-2">
@@ -224,7 +224,7 @@ export default function UitgebreideFlesvoedingGids() {
 
               <h3>Rendement Calculator: Jouw Persoonlijke Besparing</h3>
               
-              <div className="border border-gray-200 rounded-lg p-6 my-6">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 my-6">
                 <h4>Huidige Situatie (Premium Merk):</h4>
                 <p>€16 per blik × 4 blikken/maand = €64/maand<br />
                 Jaarkosten: €768</p>
@@ -234,7 +234,7 @@ export default function UitgebreideFlesvoedingGids() {
                 Met aanbiedingen/bulk: €28/maand gemiddeld<br />
                 Jaarkosten: €336</p>
 
-                <div className="text-center border border-gray-200 rounded-lg p-4 mt-4">
+                <div className="text-center bg-gray-50 border border-gray-200 rounded-lg p-4 mt-4">
                   <h4 className="text-primary font-bold text-xl">Netto Besparing: €432 per jaar</h4>
                   <p className="text-gray-600">Rendement op geïnvesteerde tijd: 2000%+ (€432 besparing voor ~4 uur onderzoek)</p>
                 </div>
@@ -245,7 +245,7 @@ export default function UitgebreideFlesvoedingGids() {
                 Besparen op flesvoeding draait niet om goedkoop zijn - het draait om slim zijn. Met de juiste strategie geef je je baby dezelfde hoogwaardige voeding voor 40-60% minder geld. Dat is €300-500 per jaar die je kunt besteden aan andere belangrijke dingen.
               </p>
               
-              <div className="border border-gray-200 rounded-lg p-4 my-4">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 my-4">
                 <p><strong>Belangrijke disclaimer:</strong> Schakel altijd eerst overleg met je consultatiebureau voordat je van merk wisselt, vooral bij baby's onder 3 maanden of met speciale voedingsbehoeften.</p>
               </div>
             </div>
@@ -348,7 +348,7 @@ export default function UitgebreideFlesvoedingGids() {
 
               <h3>Timing: Wanneer is het Beste Moment?</h3>
               
-              <div className="border border-gray-200 rounded-lg p-4 my-4">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 my-4">
                 <h4>Ideale Leeftijden voor Overgang</h4>
                 <ul className="space-y-2 mt-2">
                   <li className="flex items-center space-x-2">
@@ -366,7 +366,7 @@ export default function UitgebreideFlesvoedingGids() {
                 </ul>
               </div>
 
-              <div className="border border-gray-200 rounded-lg p-4 my-4">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 my-4">
                 <h4>Vermijd Deze Periodes</h4>
                 <ul className="space-y-2 mt-2">
                   <li className="flex items-center space-x-2">
@@ -391,7 +391,7 @@ export default function UitgebreideFlesvoedingGids() {
               <h3>De Technische Overgang: Stap-voor-Stap</h3>
 
               <div className="space-y-6 my-6">
-                <div className="border border-gray-200 rounded-lg p-4">
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                   <h4 className="font-bold text-gray-600">Week 1: Kennismaking Fase</h4>
                   <p><strong>Doel:</strong> Baby wennen aan fles zonder druk</p>
                   <ul>
@@ -402,7 +402,7 @@ export default function UitgebreideFlesvoedingGids() {
                   </ul>
                 </div>
 
-                <div className="border border-gray-200 rounded-lg p-4">
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                   <h4 className="font-bold text-gray-600">Week 2: Routine Opbouwen</h4>
                   <p><strong>Doel:</strong> Vestig 1-2 betrouwbare fles voedingen</p>
                   <ul>
@@ -412,7 +412,7 @@ export default function UitgebreideFlesvoedingGids() {
                   </ul>
                 </div>
 
-                <div className="border border-gray-200 rounded-lg p-4">
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                   <h4 className="font-bold text-gray-600">Week 3-4: Opschalen</h4>
                   <p><strong>Doel:</strong> Verhoog naar 3-4 fles voedingen per dag</p>
                   <ul>
@@ -425,7 +425,7 @@ export default function UitgebreideFlesvoedingGids() {
 
               <h3>Emotionele Aspecten: De Psychologische Reis</h3>
               
-              <div className="border border-gray-200 rounded-lg p-4 my-4">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 my-4">
                 <h4>Verwachte Emoties</h4>
                 <ul className="space-y-2 mt-2">
                   <li className="flex items-center space-x-2">
@@ -478,7 +478,7 @@ export default function UitgebreideFlesvoedingGids() {
               <h3>Pre-Werk Planning: 4 Weken Voor Start</h3>
               
               <div className="space-y-4 my-6">
-                <div className="border border-gray-200 rounded-lg p-4">
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                   <h4 className="font-bold">Week 4: Beoordeling & Onderzoek</h4>
                   <ul className="space-y-2 mt-2">
                     <li className="flex items-center space-x-2">
@@ -500,7 +500,7 @@ export default function UitgebreideFlesvoedingGids() {
                   </ul>
                 </div>
 
-                <div className="border border-gray-200 rounded-lg p-4">
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                   <h4 className="font-bold">Week 3: Uitrusting & Systemen Opzet</h4>
                   <ul className="space-y-2 mt-2">
                     <li className="flex items-center space-x-2">
@@ -526,7 +526,7 @@ export default function UitgebreideFlesvoedingGids() {
               <h3>Werkschema Optimalisatie</h3>
 
               <h4>Fulltime Traditioneel Kantoor</h4>
-              <div className="border border-gray-200 rounded-lg p-4 my-4">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 my-4">
                 <h5>Typische dag structuur:</h5>
                 <ul className="space-y-2 mt-2">
                   <li className="flex items-center space-x-2">
@@ -558,7 +558,7 @@ export default function UitgebreideFlesvoedingGids() {
 
               <h3>Noodgeval Protocollen & Reserveplannen</h3>
               
-              <div className="border border-gray-200 rounded-lg p-4 my-4">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 my-4">
                 <h4>Noodgeval Voorraad Kit (Werk Locatie)</h4>
                 <ul className="space-y-2 mt-2">
                   <li className="flex items-center space-x-2">
@@ -698,7 +698,7 @@ export default function UitgebreideFlesvoedingGids() {
 
               <h3>Wanneer Professionele Hulp Zoeken</h3>
               
-              <div className="border border-gray-200 rounded-lg p-4 my-4">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 my-4">
                 <h4>Rode Vlaggen</h4>
                 <ul className="space-y-2 mt-2">
                   <li className="flex items-center space-x-2">

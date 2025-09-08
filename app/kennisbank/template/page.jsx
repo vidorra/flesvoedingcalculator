@@ -36,7 +36,7 @@ export default function KennisbankTemplatePage() {
     "Maintain clear visual hierarchy with proper text colors",
     "Use primary color only for headings and emphasis elements", 
     "Keep body text in gray shades for optimal readability",
-    "Never nest cards within cards (except approved related articles)",
+    "Avoid borders without background colors (causes alignment issues)",
     "Use proper bullet points with bg-primary rounded elements",
     "Include breadcrumbs with text-gray-500 for navigation"
   ]
@@ -52,8 +52,8 @@ export default function KennisbankTemplatePage() {
 
   const forbiddenElements = [
     "UTF-8 icons/emojis (❌ ✅ ⭐ 📊 💰) - Use Lucide icons instead",
-    "Red/green colors (text-red-600, bg-green-400) - Use neutral colors",
-    "Card-within-card patterns - Use grid layouts and separators",
+    "Red/green colors (text-red-600, bg-green-400) - Use neutral colors", 
+    "Borders without backgrounds (border border-gray-200 p-4) - Creates floating boxes",
     "Gray bullet points - Always use bg-primary rounded-full",
     "Missing breadcrumbs - Required for all articles",
     "Text-primary for body content - Reserve for headings only"
@@ -190,6 +190,28 @@ export default function KennisbankTemplatePage() {
                 </div>
               </div>
 
+              <div className="border-t border-gray-200 pt-6">
+                <h3 className="font-medium text-primary mb-4">Border Usage Policy</h3>
+                <div className="bg-gray-100 rounded-lg p-4 mb-4">
+                  <pre className="text-sm text-gray-800 overflow-x-auto">
+{`{/* ✅ CORRECT: Borders WITH background colors */}
+<div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+  Content with proper visual context
+</div>
+
+{/* ❌ WRONG: Borders WITHOUT background colors */}
+<div className="border border-gray-200 rounded-lg p-4">
+  Creates floating box effect - alignment issues
+</div>
+
+{/* ✅ CORRECT: Clean content flow */}
+<div className="p-4">
+  Clean content without visual clutter
+</div>`}
+                  </pre>
+                </div>
+              </div>
+              
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Juiste Bullet Points</h3>
                 <div className="bg-gray-100 rounded-lg p-4">

@@ -480,7 +480,7 @@ function VoedingstechniekenPage() {
           <h3 className="font-medium text-primary mb-4">Juiste Meng Verhoudingen</h3>
           
           <div className="overflow-x-auto mb-6">
-            <table className="w-full text-sm border border-gray-200 rounded-lg">
+            <table className="w-full text-sm bg-white border border-gray-200 rounded-lg">
               <thead>
                 <tr className="bg-gray-50">
                   <th className="text-left p-3 font-medium">Merk</th>

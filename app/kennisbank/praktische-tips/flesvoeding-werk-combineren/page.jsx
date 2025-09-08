@@ -177,7 +177,7 @@ export default function FlesvoedingWerkPage() {
               
               <div className="space-y-4">
                 {dutchScenarios.map((scenario, index) => (
-                  <div key={index} className="border border-gray-200 rounded-lg p-4">
+                  <div key={index} className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                     <h3 className="font-semibold text-primary mb-2">{scenario.type}</h3>
                     <div className="grid md:grid-cols-3 gap-4">
                       <div>
@@ -231,7 +231,7 @@ export default function FlesvoedingWerkPage() {
 
               <div className="space-y-4">
                 {childcareTypes.map((type, index) => (
-                  <div key={index} className="border border-gray-200 rounded-lg p-4">
+                  <div key={index} className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                     <h3 className="font-semibold text-primary mb-3">{type.type}</h3>
                     <div className="grid md:grid-cols-2 gap-4 mb-3">
                       <div>
@@ -268,7 +268,7 @@ export default function FlesvoedingWerkPage() {
               
               <div className="space-y-6">
                 {scheduleExamples.map((schedule, index) => (
-                  <div key={index} className="border border-gray-200 rounded-lg p-4">
+                  <div key={index} className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                     <h3 className="font-semibold text-primary mb-4">{schedule.type}</h3>
                     <div className="grid md:grid-cols-3 gap-4 mb-3">
                       <div>
