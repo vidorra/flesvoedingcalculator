@@ -99,7 +99,7 @@ export default function FlesvoedingPrematurePage() {
             Speciale aandachtspunten, NICU ervaring en evidence-based advies voor Nederlandse ouders. 
             Van gecorrigeerde leeftijd tot lange termijn ontwikkeling.
           </p>
-          <div className="mt-4 p-3 bg-gray-50 border border-gray-200 rounded-lg">
+          <div className="mt-4 p-3">
             <p className="text-sm text-gray-600">
               <strong>In Nederland</strong> worden jaarlijks 15.000 baby's (8,7%) te vroeg geboren. 
               Deze gids biedt gespecialiseerde kennis voor optimale zorg.
@@ -108,7 +108,7 @@ export default function FlesvoedingPrematurePage() {
         </div>
 
         {/* Alert Box */}
-        <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 mb-6">
+        <div className="p-4 mb-6">
           <div className="flex items-start space-x-2">
             <AlertCircle className="w-5 h-5 text-primary mt-0.5" />
             <div>
@@ -130,7 +130,7 @@ export default function FlesvoedingPrematurePage() {
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-gray-50 border border-gray-200 rounded-xl p-4">
+            <div className="p-4">
               <h3 className="font-medium text-primary mb-3">Verschillen met normale baby's:</h3>
               <ul className="space-y-2">
                 <li className="flex items-center space-x-2">
@@ -152,7 +152,7 @@ export default function FlesvoedingPrematurePage() {
               </ul>
             </div>
             
-            <div className="bg-gray-50 border border-gray-200 rounded-xl p-4">
+            <div className="p-4">
               <h3 className="font-medium text-primary mb-3">Extra aandacht voor:</h3>
               <ul className="space-y-2">
                 <li className="flex items-center space-x-2">
@@ -180,7 +180,7 @@ export default function FlesvoedingPrematurePage() {
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-primary mb-4">Gecorrigeerde Leeftijd Uitgelegd</h2>
           
-          <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 mb-4">
+          <div className="p-4 mb-4">
             <h3 className="font-medium text-primary mb-2">Wat is gecorrigeerde leeftijd?</h3>
             <p className="text-sm text-gray-600 mb-3">
               Gecorrigeerde leeftijd is de leeftijd die je baby zou hebben gehad als hij/zij op de verwachte datum geboren was (40 weken zwangerschap).

@@ -273,7 +273,7 @@ export default function BabyWeigertFlespagePage() {
               <h2 className="text-lg font-semibold text-primary mb-4">Wanneer professionele hulp zoeken?</h2>
               
               <div className="space-y-4">
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                <div className="p-4">
                   <h3 className="font-medium text-gray-700 mb-2">Direct contact opnemen met huisarts/consultatiebureau bij:</h3>
                   <ul className="space-y-1">
                     <li className="flex items-center space-x-2">
@@ -295,7 +295,7 @@ export default function BabyWeigertFlespagePage() {
                   </ul>
                 </div>
 
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                <div className="p-4">
                   <h3 className="font-medium text-gray-700 mb-2">Overleg binnen 1 week bij:</h3>
                   <ul className="space-y-1">
                     <li className="flex items-center space-x-2">

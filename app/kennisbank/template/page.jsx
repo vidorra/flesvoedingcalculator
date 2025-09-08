@@ -195,7 +195,7 @@ export default function KennisbankTemplatePage() {
                 <div className="bg-gray-100 rounded-lg p-4 mb-4">
                   <pre className="text-sm text-gray-800 overflow-x-auto">
 {`{/* ✅ CORRECT: Borders WITH background colors */}
-<div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+<div className="p-4">
   Content with proper visual context
 </div>
 

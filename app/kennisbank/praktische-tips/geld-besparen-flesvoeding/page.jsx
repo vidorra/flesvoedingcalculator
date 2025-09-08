@@ -216,7 +216,7 @@ export default function GeldBesparenPage() {
               
               <div className="space-y-6">
                 {savingStrategies.map((strategy, index) => (
-                  <div key={index} className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <div key={index} className="p-4">
                     <div className="flex justify-between items-start mb-3">
                       <h3 className="font-semibold text-primary">{strategy.strategy}</h3>
                       <span className="bg-gray-100 text-primary px-2 py-1 rounded text-sm font-medium">
