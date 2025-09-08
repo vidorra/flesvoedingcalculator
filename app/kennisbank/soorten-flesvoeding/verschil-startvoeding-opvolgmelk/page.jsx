@@ -439,7 +439,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                     <h3 className="font-medium text-gray-900 mb-4">{category.category}</h3>
                     <div className="space-y-4">
                       {category.brands.map((brand, brandIndex) => (
-                        <div key={brandIndex} className="border border-gray-200 rounded-lg p-4">
+                        <div key={brandIndex} className="p-4">
                           <div className="flex items-center justify-between mb-3">
                             <h4 className="font-medium text-primary">{brand.name}</h4>
                             <div className="text-sm text-primary font-medium">
@@ -556,7 +556,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                 <h3 className="font-medium text-gray-900 mb-3">Geleidelijke Overgang (Aanbevolen)</h3>
                 <div className="space-y-4">
                   {transitionProcess.map((week, index) => (
-                    <div key={index} className="border border-gray-200 rounded-lg p-4">
+                    <div key={index} className="p-4 mb-4">
                       <h4 className="font-medium text-primary mb-3">{week.week}</h4>
                       <div className="space-y-2 mb-3">
                         {week.days.map((day, dayIndex) => (
@@ -657,7 +657,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
               
               <div className="space-y-4">
                 {expertRecommendations.map((expert, index) => (
-                  <div key={index} className="border border-gray-200 rounded-lg p-4">
+                  <div key={index} className="p-4 mb-4">
                     <h3 className="font-medium text-primary mb-2">{expert.organization}</h3>
                     <p className="text-sm text-gray-700 italic">"{expert.recommendation}"</p>
                   </div>
@@ -688,7 +688,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
               
               <div className="space-y-4">
                 {myths.map((myth, index) => (
-                  <div key={index} className="border border-gray-200 rounded-lg p-4">
+                  <div key={index} className="p-4 mb-4">
                     <div className="mb-2">
                       <span className="text-gray-700 font-medium">Mythe: "{myth.myth}"</span>
                     </div>
