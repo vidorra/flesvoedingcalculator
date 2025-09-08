@@ -335,11 +335,12 @@ export default function SpugenNaDeFlesPage() {
           <div className="space-y-6">
             {/* Header */}
             <div className="mb-6">
+              <div className="text-sm text-gray-600 mb-2">Problemen Oplossen • Spugen</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <Heart className="w-6 h-6 mr-3 text-primary" />
                 Spugen na de Fles: Wanneer Normaal en Wanneer Zorgen?
               </h1>
-              <p className="text-gray-600">
+              <p className="text-gray-500">
                 Spugen na flesvoeding is de #1 zorg van Nederlandse ouders. Leer het verschil tussen 
                 normaal spugen en reflux, praktische oplossingen om spugen te verminderen, en wanneer 
                 je de huisarts moet bellen.

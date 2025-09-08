@@ -377,11 +377,12 @@ export default function KrampjesNaFlesvoedingPage() {
           <div className="space-y-6">
             {/* Header */}
             <div className="mb-6">
+              <div className="text-sm text-gray-600 mb-2">Problemen Oplossen • Krampjes</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <AlertTriangle className="w-6 h-6 mr-3 text-primary" />
                 Krampjes na Flesvoeding: Complete Gids voor Nederlandse Ouders
               </h1>
-              <p className="text-gray-600">
+              <p className="text-gray-500">
                 Krampjes na flesvoeding zijn de #2 zorg van Nederlandse ouders na spugen. 
                 Leer de oorzaken herkennen, effectieve oplossingen toepassen, en wanneer je medische hulp moet zoeken. 
                 Praktische tips die echt werken.

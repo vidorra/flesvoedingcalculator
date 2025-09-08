@@ -115,11 +115,12 @@ export default function AntiRefluxPage() {
 
         {/* Header */}
         <div className="mb-6">
+          <div className="text-sm text-gray-600 mb-2">Soorten Flesvoeding • Anti-Reflux</div>
           <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
             <Shield className="w-6 h-6 mr-3 text-primary" />
             Anti-Reflux Flesvoeding: Complete Gids tegen Spugen en Reflux
           </h1>
-          <p className="text-gray-600">
+          <p className="text-gray-500">
             Praktische oplossingen voor baby's met reflux en overmatig spugen. Van herkenning tot behandeling - 
             alles wat Nederlandse ouders moeten weten over anti-reflux flesvoeding.
           </p>

@@ -41,12 +41,13 @@ export default function KostenVanFlesvoeding() {
         <div className="col-span-12 lg:col-span-7">
           <div className="space-y-6">
             
+            <div className="text-sm text-gray-600 mb-2">Financiële Aspecten • Kosten</div>
             <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
               <Euro className="w-6 h-6 mr-3 text-primary" />
               Kosten van Flesvoeding: Complete Budgetgids Nederland 2025
             </h1>
             
-            <p className="text-gray-600 mb-6 italic">
+            <p className="text-gray-500 mb-6 italic">
               Alle kosten op een rij + tips om geld te besparen zonder kwaliteit in te leveren
             </p>
 
