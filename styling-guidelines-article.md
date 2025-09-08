@@ -666,6 +666,68 @@ export default function ArticlePage() {
 - All styling must use Tailwind CSS classes
 - Follow the approved color palette only
 
+## 📋 Kennisbank Article Template
+
+### ✅ APPROVED TEMPLATE - Based on overstappen-van-borst-naar-fles
+
+**Perfect template for all future kennisbank articles** - see `kennisbank-article-template.jsx`
+
+**Template demonstrates correct implementation of:**
+- ✅ Proper breadcrumb structure with `text-gray-500`
+- ✅ Clean header outside card containers with correct hierarchy
+- ✅ Intro text lighter than body text (`text-gray-500` vs `text-gray-600`)
+- ✅ No card-within-card violations - uses grid layouts and border-t separators
+- ✅ Proper bullet points with `bg-primary rounded-full`
+- ✅ Related articles section with `bg-gray-50` for visibility
+- ✅ Consistent spacing, typography, and visual hierarchy
+
+## 🚨 CRITICAL ISSUES DISCOVERED & FIXED (January 2025)
+
+### Issue 1: Missing Breadcrumbs
+**Problem:** `verschil-startvoeding-opvolgmelk` had no breadcrumb navigation
+**Solution:** Added `<div className="text-sm text-gray-500 mb-2">Category • Subcategory</div>`
+**Prevention:** All articles must include category breadcrumbs
+
+### Issue 2: UTF-8 Icons Everywhere  
+**Problem:** Multiple articles using ❌ ✅ ⭐ 📊 💰 and other UTF-8 symbols
+**Solution:** Replace all with proper Lucide icons or remove entirely
+**Prevention:** Zero tolerance for UTF-8 symbols - use semantic HTML and Lucide icons
+
+### Issue 3: Forbidden Red/Green Colors
+**Problem:** `text-red-600`, `text-green-600`, `bg-red-400`, `bg-green-400` found across articles
+**Solution:** Replace with approved colors (`text-primary`, `text-gray-700`, `bg-primary`, `bg-gray-400`)
+**Prevention:** Only neutral colors + primary brand color allowed
+
+### Issue 4: Wrong Bullet Points
+**Problem:** Using `•` UTF-8 character instead of proper styled bullets
+**Solution:** Replace with `<div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>`
+**Prevention:** All bullet points must use primary color rounded elements
+
+### Issue 5: Card-Within-Card Violations
+**Problem:** `border border-gray-200 rounded-xl p-6` nested within `bg-white/80` containers
+**Solution:** Remove nested containers, use clean content flow and `border-t` separators
+**Prevention:** Maximum one level of card nesting (exception: related articles with `bg-gray-50`)
+
+### Issue 6: Text-Primary Overuse
+**Problem:** Body text using `text-primary` instead of proper gray hierarchy
+**Solution:** Reserve `text-primary` for headings/emphasis only, use `text-gray-600` for body
+**Prevention:** Maintain clear hierarchy: breadcrumb (gray-500) → intro (gray-500) → body (gray-600+)
+
+### Issue 7: Alignment Issues from Incorrect Padding
+**Problem:** Using `p-3` causing vertical misalignment in content containers
+**Solution:** Use `py-2 px-3` for proper vertical/horizontal spacing balance
+**Prevention:** Consider vertical rhythm when choosing padding classes
+
+### Issue 8: Poor Related Article Visibility  
+**Problem:** Related article cards invisible within white containers
+**Solution:** Add `bg-gray-50` to related article cards for proper contrast
+**Prevention:** Test contrast ratios, especially for interactive elements
+
+### Issue 9: Breadcrumb Color Inconsistency
+**Problem:** Using `text-gray-600` instead of lighter `text-gray-500` for breadcrumbs  
+**Solution:** Standardize all breadcrumbs to `text-gray-500`
+**Prevention:** Maintain proper visual hierarchy - breadcrumbs should be lighter than body text
+
 ## 🔗 Navigation & Links
 
 ### Internal Links
@@ -859,22 +921,22 @@ See these articles as reference implementations:
 
 ---
 
-**Last Updated:** January 2025 (Major Update - Comprehensive Style Standards)
-**Version:** 1.3
+**Last Updated:** January 2025 (Major Update - Critical Issues Fixed + Template Added)
+**Version:** 2.0
 **Status:** Active Guidelines
 
-**URGENT UPDATE 1.3 - PERSISTENT VIOLATIONS CLARIFIED:**
+**MAJOR UPDATE 2.0 - COMPREHENSIVE VIOLATION FIXES + TEMPLATE:**
+- ✅ **Created kennisbank-article-template.jsx** based on overstappen-van-borst-naar-fles
+- ✅ **Documented 9 critical issues** discovered and fixed across multiple articles
+- ✅ **Added prevention strategies** for each violation type
+- ✅ **Fixed UTF-8 icons, forbidden colors, card violations** across artikel pages
+- ✅ **Standardized bullet points and breadcrumb colors** 
+- ✅ **Improved related article visibility** with bg-gray-50 pattern
+- ✅ **Fixed text-primary overuse** and alignment issues
+
+**Previous Updates (v1.3):**
 - Added specific font size hierarchy examples with actual violations found
-- Clarified card-within-card violations with real examples from hypoallergene-flesvoeding
+- Clarified card-within-card violations with real examples
 - Added breadcrumb format violations (complex navigation vs simple tags)
 - Enhanced bullet point standards with zero tolerance policy
 - Updated emergency protocol alignment examples
-- Added specific examples of intro text sizing violations
-
-**Recent Major Updates:**
-- Added critical introduction section consistency requirements
-- Fixed Layout component wrapper requirements
-- Enhanced typography consistency rules  
-- Added specific examples of recently fixed issues
-- Updated quality checklist with new requirements
-- **NEW**: Added specific violation examples with before/after code
