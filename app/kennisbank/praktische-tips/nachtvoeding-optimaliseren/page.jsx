@@ -340,7 +340,7 @@ export default function NachtvoedingOptimaliserenPage() {
               <h3 className="font-medium text-primary mb-3">{category.category}</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {category.items.map((item, itemIndex) => (
-                  <div key={itemIndex} className="p-3 border border-gray-200 rounded-lg">
+                  <div key={itemIndex} className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
                     <div className="flex justify-between items-start mb-2">
                       <h4 className="font-medium text-primary">{item.name}</h4>
                       <span className="text-primary font-medium text-sm">{item.price}</span>
@@ -383,7 +383,7 @@ export default function NachtvoedingOptimaliserenPage() {
           
           <div className="space-y-4">
             {ageBasedStrategies.map((phase, index) => (
-              <div key={index} className="border border-gray-200 rounded-lg p-4">
+              <div key={index} className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
                     <h3 className="font-bold text-primary text-lg">{phase.age}</h3>
@@ -416,7 +416,7 @@ export default function NachtvoedingOptimaliserenPage() {
           
           <div className="space-y-4">
             {commonChallenges.map((item, index) => (
-              <div key={index} className="border border-gray-200 rounded-lg p-4">
+              <div key={index} className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <h3 className="font-medium text-primary mb-2">Probleem:</h3>

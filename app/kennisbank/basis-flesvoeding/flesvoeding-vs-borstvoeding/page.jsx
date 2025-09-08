@@ -111,7 +111,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
               <span>95% van baby's groeit gezond op met flesvoeding</span>
             </div>
             
-            <div className="mt-4 p-4 border border-gray-200 rounded-lg">
+            <div className="mt-4 p-4 bg-gray-50 border border-gray-200 rounded-lg">
               <h3 className="font-semibold text-primary mb-2">Belangrijke waarheid vooraf:</h3>
               <ul className="space-y-1 text-sm text-gray-700">
                 <li>• <strong>95% van baby's</strong> groeit gezond op met flesvoeding</li>
@@ -129,7 +129,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
               Feiten en cijfers Nederland 2025
             </h2>
             
-            <div className="border border-gray-200 rounded-xl p-6">
+            <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
               <h3 className="font-semibold text-primary mb-4">Nederlandse statistieken</h3>
               <ul className="space-y-2">
                 {nederlandseStats.map((stat, index) => (
@@ -140,7 +140,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 ))}
               </ul>
               
-              <div className="mt-6 p-4 border border-gray-200 rounded-lg">
+              <div className="mt-6 p-4 bg-gray-50 border border-gray-200 rounded-lg">
                 <p className="text-sm text-gray-600">
                   <strong>Gemiddelde duur exclusieve borstvoeding:</strong> 3.2 maanden
                 </p>
@@ -159,7 +159,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
               Wetenschappelijke vergelijking
             </h2>
             
-            <div className="border border-gray-200 rounded-xl p-6">
+            <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
               <h3 className="font-semibold text-primary mb-4">Voedingswaarde vergelijking</h3>
               <div className="overflow-x-auto">
                 <table className="w-full">
@@ -192,7 +192,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               {/* Borstvoeding */}
-              <div className="border border-gray-200 rounded-xl p-6">
+              <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
                 <h3 className="font-semibold text-primary mb-4 flex items-center">
                   <Heart className="w-5 h-5 mr-2 text-primary" />
                   Borstvoeding
@@ -240,7 +240,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
               </div>
 
               {/* Flesvoeding */}
-              <div className="border border-gray-200 rounded-xl p-6">
+              <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
                 <h3 className="font-semibold text-primary mb-4">
                   Flesvoeding
                 </h3>
@@ -296,7 +296,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="border border-gray-200 rounded-xl p-6">
+              <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
                 <h3 className="font-semibold text-primary mb-4">Borstvoeding kosten</h3>
                 <ul className="space-y-3">
                   {kostenvergelijking.borstvoeding.map((item, index) => (
@@ -312,7 +312,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 </ul>
               </div>
               
-              <div className="border border-gray-200 rounded-xl p-6">
+              <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
                 <h3 className="font-semibold text-primary mb-4">Flesvoeding kosten</h3>
                 <ul className="space-y-3">
                   {kostenvergelijking.flesvoeding.map((item, index) => (
@@ -329,7 +329,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
               </div>
             </div>
             
-            <div className="mt-6 p-4 border border-gray-200 rounded-lg text-center">
+            <div className="mt-6 p-4 bg-gray-50 border border-gray-200 rounded-lg text-center">
               <p className="font-medium text-primary mb-2">
                 <strong>Verschil: €200-280 duurder voor flesvoeding</strong>
               </p>
@@ -345,7 +345,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               {/* Moeder welzijn */}
-              <div className="border border-gray-200 rounded-xl p-6">
+              <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
                 <h3 className="font-semibold text-primary mb-4">Impact op moeder welzijn</h3>
                 
                 <h4 className="font-medium text-gray-700 mb-3">Borstvoeding uitdagingen:</h4>
@@ -382,7 +382,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
               </div>
               
               {/* Partner betrokkenheid */}
-              <div className="border border-gray-200 rounded-xl p-6">
+              <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
                 <h3 className="font-semibold text-primary mb-4">Partner betrokkenheid</h3>
                 
                 <h4 className="font-medium text-gray-700 mb-3">Bij borstvoeding:</h4>
@@ -425,22 +425,22 @@ export default function FlesvoedingVsBorstvoedingPage() {
             <h2 className="text-lg font-semibold text-primary mb-4">Mythen ontkracht</h2>
             
             <div className="space-y-6">
-              <div className="border border-gray-200 rounded-xl p-6">
+              <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
                 <h3 className="font-semibold text-primary mb-2">Mythe: "Flesvoeding baby's zijn vaker ziek"</h3>
                 <p className="text-gray-700 mb-3"><strong>Realiteit:</strong> In ontwikkelde landen met goede hygiëne zijn verschillen minimaal. Goede verzorging en liefde zijn belangrijker dan voedingsmethode.</p>
               </div>
               
-              <div className="border border-gray-200 rounded-xl p-6">
+              <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
                 <h3 className="font-semibold text-primary mb-2">Mythe: "Borstvoeding is altijd gratis"</h3>
                 <p className="text-gray-700 mb-3"><strong>Realiteit:</strong> Kolfapparatuur, extra voeding moeder, verlies inkomsten door meer zwangerschapsverlof - kosten lopen op.</p>
               </div>
               
-              <div className="border border-gray-200 rounded-xl p-6">
+              <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
                 <h3 className="font-semibold text-primary mb-2">Mythe: "Flesvoeding verstoort moeder-baby band"</h3>
                 <p className="text-gray-700 mb-3"><strong>Realiteit:</strong> Bonding gebeurt door liefdevol contact, niet voedingsmethode. Veel factoren beïnvloeden hechting.</p>
               </div>
               
-              <div className="border border-gray-200 rounded-xl p-6">
+              <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
                 <h3 className="font-semibold text-primary mb-2">Mythe: "Flesvoeding baby's zijn minder intelligent"</h3>
                 <p className="text-gray-700 mb-3"><strong>Realiteit:</strong> Geen bewezen causaal verband. Sociaal-economische factoren verklaren meeste verschillen.</p>
               </div>
@@ -451,7 +451,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-semibold text-primary mb-4">Langetermijn ontwikkeling: Onderzoek resultaten</h2>
             
-            <div className="border border-gray-200 rounded-xl p-6">
+            <div className="bg-gray-50 border border-gray-200 rounded-xl p-6">
               <h3 className="font-semibold text-primary mb-4">Nederlandse longitudinale studies (2020-2024)</h3>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -477,7 +477,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 </div>
               </div>
               
-              <div className="mt-6 p-4 border border-gray-200 rounded-lg">
+              <div className="mt-6 p-4 bg-gray-50 border border-gray-200 rounded-lg">
                 <p className="text-sm text-gray-600">
                   <strong>Onderzoek conclusie:</strong> Langetermijn verschillen zijn kleiner dan vaak gedacht. 
                   Sociaal-economische factoren hebben meer invloed dan voedingsmethode.
@@ -495,7 +495,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
             
             <div className="space-y-6">
               {decisionFactors.map((factor, index) => (
-                <div key={index} className="border border-gray-200 rounded-xl p-6">
+                <div key={index} className="bg-gray-50 border border-gray-200 rounded-xl p-6">
                   <h3 className="font-semibold text-primary mb-4">{factor.factor}</h3>
                   <ul className="space-y-2">
                     {factor.criteria.map((criterion, criterionIndex) => (
@@ -558,7 +558,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
               </div>
             </div>
             
-            <div className="mt-6 p-4 border border-gray-200 rounded-lg text-center">
+            <div className="mt-6 p-4 bg-gray-50 border border-gray-200 rounded-lg text-center">
               <p className="text-lg font-medium text-primary mb-2">Uiteindelijk:</p>
               <p className="text-gray-600">
                 Een gelukkige, ontspannen ouder die vol vertrouwen voedt, is het belangrijkste voor 
