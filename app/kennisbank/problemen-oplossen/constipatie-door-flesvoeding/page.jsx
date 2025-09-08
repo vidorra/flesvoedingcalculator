@@ -169,7 +169,7 @@ export default function ConstipatieFlespagePage() {
 
                 <div>
                   <h3 className="font-medium text-primary mb-3">Voeding gerelateerde factoren</h3>
-                  <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                  <div className="p-4">
                     <h4 className="font-medium text-gray-700 mb-2">Dehydratie risico:</h4>
                     <ul className="space-y-1">
                       <li className="flex items-center space-x-2">
@@ -256,7 +256,7 @@ export default function ConstipatieFlespagePage() {
                 <div>
                   <h3 className="font-medium text-primary mb-3">Natuurlijke hulpmiddelen</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                    <div className="p-4">
                       <h4 className="font-medium text-gray-700 mb-2">Veilige home remedies:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
@@ -274,7 +274,7 @@ export default function ConstipatieFlespagePage() {
                       </ul>
                     </div>
                     
-                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                    <div className="p-4">
                       <h4 className="font-medium text-gray-700 mb-2">NOOIT gebruiken bij baby's:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
@@ -395,7 +395,7 @@ export default function ConstipatieFlespagePage() {
               <h2 className="text-lg font-semibold text-primary mb-4">Wanneer medisch advies zoeken</h2>
               
               <div className="space-y-4">
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                <div className="p-4">
                   <h3 className="font-medium text-gray-700 mb-2">Urgent situations (zelfde dag contact):</h3>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
@@ -421,7 +421,7 @@ export default function ConstipatieFlespagePage() {
                   </ul>
                 </div>
 
-                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                <div className="p-4">
                   <h3 className="font-medium text-gray-700 mb-2">Routine medical consultation:</h3>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
