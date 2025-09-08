@@ -428,11 +428,22 @@ export default function ArticlePage() {
 
 **⚠️ ZERO TOLERANCE POLICY - This is the #1 styling violation that MUST be eliminated from all articles.**
 
-**🚫 SPECIFIC FORBIDDEN PATTERN:**
-❌ **NEVER use `border border-gray-200 rounded-xl p-6` within `bg-white/80` containers**
-- This creates problematic nested card styling that breaks visual hierarchy
-- Found extensively in eerste-keer-flesvoeding-geven and other articles
+**🚫 SPECIFIC FORBIDDEN PATTERNS:**
+
+❌ **NEVER use `border border-gray-200 rounded-* p-*` WITHOUT background colors**
+- Borders without backgrounds create alignment issues and visual clutter
+- Examples: `border border-gray-200 rounded-lg p-4` (no bg-*)
 - Must be replaced with clean content flow or visual separators
+
+✅ **BORDERS ARE ALLOWED with background colors**
+- `bg-gray-50 border border-gray-200 rounded-lg p-4` ✅ (has background)
+- `bg-amber-50 border border-amber-200 rounded-xl p-6` ✅ (has background) 
+- Background provides visual context and proper contrast for borders
+
+❌ **FORBIDDEN: Borders without backgrounds**
+- `border border-gray-200 rounded-lg p-4` (no background)
+- `border border-gray-200 rounded-xl p-6` (no background)
+- These create floating boxes that break visual flow
 
 **✅ APPROVED EXCEPTION - Related Articles Cards:**
 **ONLY for gerelateerde artikelen sections within `bg-white/80` containers:**
