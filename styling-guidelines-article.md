@@ -434,6 +434,26 @@ export default function ArticlePage() {
 - Found extensively in eerste-keer-flesvoeding-geven and other articles
 - Must be replaced with clean content flow or visual separators
 
+**✅ APPROVED EXCEPTION - Related Articles Cards:**
+**ONLY for gerelateerde artikelen sections within `bg-white/80` containers:**
+```jsx
+{/* APPROVED: Related articles with bg-gray-50 for visibility */}
+<div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+  <h2>Gerelateerde artikelen</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <Link href="/link" className="p-3 bg-gray-50 border border-gray-200 rounded-lg hover:border-primary">
+      <div className="font-medium text-primary">Article Title →</div>
+      <div className="text-sm text-gray-600">Description</div>
+    </Link>
+  </div>
+</div>
+```
+**Key Requirements for this exception:**
+- ✅ Must use `bg-gray-50` for sufficient contrast within white containers
+- ✅ Only for navigation/link cards in related articles sections
+- ✅ Must include hover states for interactivity
+- ❌ Never use this pattern for content sections or informational cards
+
 **🚨 SPECIFIC VIOLATIONS FOUND & FIXED:**
 
 ❌ **ACTUAL VIOLATION EXAMPLE - eerste-keer-flesvoeding-geven:**
