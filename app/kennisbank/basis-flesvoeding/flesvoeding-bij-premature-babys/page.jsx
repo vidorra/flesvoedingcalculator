@@ -95,12 +95,12 @@ export default function FlesvoedingPrematurePage() {
             <Heart className="w-6 h-6 mr-3 text-primary" />
             Flesvoeding bij Premature Baby's: Complete Medische Gids
           </h1>
-          <p className="text-primary">
+          <p className="text-gray-500">
             Speciale aandachtspunten, NICU ervaring en evidence-based advies voor Nederlandse ouders. 
             Van gecorrigeerde leeftijd tot lange termijn ontwikkeling.
           </p>
           <div className="mt-4 p-3 border border-gray-200 rounded-lg">
-            <p className="text-sm text-primary">
+            <p className="text-sm text-gray-600">
               <strong>In Nederland</strong> worden jaarlijks 15.000 baby's (8,7%) te vroeg geboren. 
               Deze gids biedt gespecialiseerde kennis voor optimale zorg.
             </p>
@@ -113,7 +113,7 @@ export default function FlesvoedingPrematurePage() {
             <AlertCircle className="w-5 h-5 text-primary mt-0.5" />
             <div>
               <h4 className="font-semibold text-primary mb-1">Medische Begeleiding Vereist</h4>
-              <p className="text-sm text-primary">
+              <p className="text-sm text-gray-600">
                 Voor premature baby's is professionele begeleiding door kinderarts, diëtist en jeugdverpleegkundige 
                 essentieel. Deze informatie is ter ondersteuning en vervangt geen medisch advies.
               </p>
@@ -124,7 +124,7 @@ export default function FlesvoedingPrematurePage() {
         {/* What makes premature feeding different */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-primary mb-4">Waarom is voeding anders bij premature baby's?</h2>
-          <p className="text-primary leading-relaxed mb-4">
+          <p className="text-gray-600 leading-relaxed mb-4">
             Premature baby's hebben fundamenteel andere voedingsbehoeften dan baby's die op termijn geboren zijn. 
             Hun spijsverteringssysteem, zuigreflex en temperatuurregulatie zijn nog niet volledig ontwikkeld.
           </p>
@@ -182,7 +182,7 @@ export default function FlesvoedingPrematurePage() {
           
           <div className="border border-gray-200 rounded-xl p-4 mb-4">
             <h3 className="font-medium text-primary mb-2">Wat is gecorrigeerde leeftijd?</h3>
-            <p className="text-sm text-primary mb-3">
+            <p className="text-sm text-gray-600 mb-3">
               Gecorrigeerde leeftijd is de leeftijd die je baby zou hebben gehad als hij/zij op de verwachte datum geboren was (40 weken zwangerschap).
             </p>
             <div className="bg-gray-100 rounded-lg p-3">
@@ -355,7 +355,7 @@ export default function FlesvoedingPrematurePage() {
               </div>
               
               <div className="mt-4 p-3 border border-gray-200 bg-gray-100 rounded-lg">
-                <p className="text-sm text-primary">
+                <p className="text-sm text-gray-600">
                   <strong>Care4Neo:</strong> Nederlandse oudervereniging biedt ondersteuning 
                   en informatie voor ouders van premature baby's.
                 </p>
@@ -374,15 +374,15 @@ export default function FlesvoedingPrematurePage() {
               <div className="bg-gray-100 rounded-xl p-4 space-y-3">
                 <div>
                   <h4 className="font-medium text-primary">Voedingstijden</h4>
-                  <p className="text-sm text-primary">Elke 2-3 uur, ook 's nachts. Volg baby's signalen, maar houd minimum frequentie aan.</p>
+                  <p className="text-sm text-gray-600">Elke 2-3 uur, ook 's nachts. Volg baby's signalen, maar houd minimum frequentie aan.</p>
                 </div>
                 <div>
                   <h4 className="font-medium text-primary">Bereiding</h4>
-                  <p className="text-sm text-primary">Extra hygiëne belangrijk. Steriliseren tot 6 maanden gecorrigeerde leeftijd.</p>
+                  <p className="text-sm text-gray-600">Extra hygiëne belangrijk. Steriliseren tot 6 maanden gecorrigeerde leeftijd.</p>
                 </div>
                 <div>
                   <h4 className="font-medium text-primary">Temperatuur</h4>
-                  <p className="text-sm text-primary">37°C - premature baby's zijn gevoeliger voor temperatuurverschillen.</p>
+                  <p className="text-sm text-gray-600">37°C - premature baby's zijn gevoeliger voor temperatuurverschillen.</p>
                 </div>
               </div>
             </div>
@@ -392,15 +392,15 @@ export default function FlesvoedingPrematurePage() {
               <div className="space-y-3">
                 <div className="p-3 border border-gray-200 bg-gray-100 rounded-lg">
                   <h4 className="font-medium text-primary">Voedingsproblemen</h4>
-                  <p className="text-sm text-primary">Premature baby's kunnen moeite hebben met zuigen, slikken en ademhalen tegelijk.</p>
+                  <p className="text-sm text-gray-600">Premature baby's kunnen moeite hebben met zuigen, slikken en ademhalen tegelijk.</p>
                 </div>
                 <div className="p-3 border border-gray-200 bg-gray-100 rounded-lg">
                   <h4 className="font-medium text-primary">Reflux</h4>
-                  <p className="text-sm text-primary">Komt vaker voor. Houd baby rechtop na voeding, kleine porties vaker.</p>
+                  <p className="text-sm text-gray-600">Komt vaker voor. Houd baby rechtop na voeding, kleine porties vaker.</p>
                 </div>
                 <div className="p-3 border border-gray-200 bg-gray-100 rounded-lg">
                   <h4 className="font-medium text-primary">Gewichtstoename</h4>
-                  <p className="text-sm text-primary">15-30g per dag is normaal. Wekelijks wegen tot stabiele groei.</p>
+                  <p className="text-sm text-gray-600">15-30g per dag is normaal. Wekelijks wegen tot stabiele groei.</p>
                 </div>
               </div>
             </div>
