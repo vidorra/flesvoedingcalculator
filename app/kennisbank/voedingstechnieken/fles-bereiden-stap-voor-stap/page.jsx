@@ -41,7 +41,7 @@ export default function FlesBerenStapVoorStap() {
         <div className="col-span-12 lg:col-span-7">
           <div className="space-y-6">
             
-            <div className="text-sm text-gray-600 mb-2">Voedingstechnieken • Bereiding</div>
+            <div className="text-sm text-gray-500 mb-2">Voedingstechnieken • Bereiding</div>
             <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
               <Baby className="w-6 h-6 mr-3 text-primary" />
               Fles Bereiden Stap voor Stap: Perfect Flesvoeding Elke Keer

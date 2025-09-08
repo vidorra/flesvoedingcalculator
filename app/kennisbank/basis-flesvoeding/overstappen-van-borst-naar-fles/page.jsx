@@ -31,7 +31,7 @@ export default function OverstappenBorstNaarFlesPage() {
           <div className="space-y-6">
             {/* Header */}
             <div>
-              <div className="text-sm text-gray-600 mb-2">Basis Flesvoeding • Overstap</div>
+              <div className="text-sm text-gray-500 mb-2">Basis Flesvoeding • Overstap</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <ArrowRight className="w-6 h-6 mr-3 text-primary" />
                 Overstappen van borstvoeding naar fles: Stapsgewijze gids
