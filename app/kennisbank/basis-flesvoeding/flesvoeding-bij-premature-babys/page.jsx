@@ -90,11 +90,12 @@ export default function FlesvoedingPrematurePage() {
 
         {/* Header */}
         <div className="mb-6">
+          <div className="text-sm text-gray-600 mb-2">Basis Flesvoeding • Premature Baby's</div>
           <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
             <Heart className="w-6 h-6 mr-3 text-primary" />
             Flesvoeding bij Premature Baby's: Complete Medische Gids
           </h1>
-          <p className="text-gray-700">
+          <p className="text-gray-500">
             Speciale aandachtspunten, NICU ervaring en evidence-based advies voor Nederlandse ouders. 
             Van gecorrigeerde leeftijd tot lange termijn ontwikkeling.
           </p>
