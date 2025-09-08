@@ -265,7 +265,7 @@ export default function HypoallergeneVoedingPage() {
                     <AlertTriangle className="w-5 h-5 text-amber-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-amber-800 mb-2">Let op</h3>
+                    <h3 className="font-semibold text-gray-700 mb-2">Let op</h3>
                     <div className="text-sm text-amber-700 leading-relaxed space-y-1">
                       <div className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
