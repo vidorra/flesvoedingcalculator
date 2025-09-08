@@ -131,7 +131,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
     {
       category: 'JA, Overstappen naar Nummer 2',
       icon: CheckCircle,
-      color: 'text-green-600',
+      color: 'text-primary',
       reasons: [
         {
           type: 'Medische Indicaties',
@@ -155,7 +155,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
     {
       category: 'NEE, Niet Overstappen',
       icon: XCircle,
-      color: 'text-red-600',
+      color: 'text-gray-700',
       reasons: [
         {
           type: 'Baby Gedijt Goed',
@@ -325,6 +325,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
           <div className="space-y-6">
             {/* Header */}
             <div className="mb-6">
+              <div className="text-sm text-gray-500 mb-2">Soorten Flesvoeding • Verschillen</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <Scale className="w-6 h-6 mr-3 text-primary" />
                 Verschil tussen Startvoeding en Opvolgmelk: Complete Nederlandse Gids
@@ -350,15 +351,15 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                 <h3 className="font-medium text-primary mb-2">Belangrijkste Misverstand:</h3>
                 <div className="space-y-2 text-sm">
                   <div className="flex items-start space-x-2">
-                    <span className="text-red-600">❌</span>
+                    <XCircle className="w-4 h-4 text-gray-600" />
                     <span className="text-gray-700"><strong>Mythe:</strong> "Na 6 maanden MOET je overstappen naar nummer 2"</span>
                   </div>
                   <div className="flex items-start space-x-2">
-                    <span className="text-green-600">✅</span>
+                    <CheckCircle className="w-4 h-4 text-primary" />
                     <span className="text-gray-700"><strong>Feit:</strong> Startvoeding mag tot 12 maanden gebruikt worden</span>
                   </div>
                   <div className="flex items-start space-x-2">
-                    <span className="text-primary">ℹ️</span>
+                    <AlertCircle className="w-4 h-4 text-primary" />
                     <span className="text-gray-700"><strong>Waarom verwarring:</strong> Marketing en winkelindeling suggereren overstap noodzakelijk</span>
                   </div>
                 </div>
@@ -395,7 +396,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                           {item.verschil.includes('meer') && item.verschil.includes('6x') ? (
                             <span className="text-primary font-bold">{item.verschil}</span>
                           ) : item.verschil.includes('goedkoper') ? (
-                            <span className="text-green-600 font-medium">{item.verschil}</span>
+                            <span className="text-primary font-medium">{item.verschil}</span>
                           ) : (
                             item.verschil
                           )}
@@ -441,12 +442,8 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                         <div key={brandIndex} className="border border-gray-200 rounded-lg p-4">
                           <div className="flex items-center justify-between mb-3">
                             <h4 className="font-medium text-primary">{brand.name}</h4>
-                            <div className="flex">
-                              {[...Array(5)].map((_, i) => (
-                                <div key={i} className={`w-4 h-4 ${i < brand.rating ? 'text-primary' : 'text-gray-300'}`}>
-                                  ⭐
-                                </div>
-                              ))}
+                            <div className="text-sm text-primary font-medium">
+                              {brand.rating}/5 sterren
                             </div>
                           </div>
                           
@@ -511,7 +508,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                             {reason.items.map((item, itemIndex) => (
                               <li key={itemIndex} className="flex items-start space-x-2">
                                 <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
-                                  decision.color === 'text-green-600' ? 'bg-green-400' : 'bg-red-400'
+                                  decision.color === 'text-primary' ? 'bg-primary' : 'bg-gray-400'
                                 }`}></div>
                                 <span className="text-sm text-gray-700">{item}</span>
                               </li>
@@ -693,7 +690,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                 {myths.map((myth, index) => (
                   <div key={index} className="border border-gray-200 rounded-lg p-4">
                     <div className="mb-2">
-                      <span className="text-red-600 font-medium">❌ "{myth.myth}"</span>
+                      <span className="text-gray-700 font-medium">Mythe: "{myth.myth}"</span>
                     </div>
                     <p className="text-sm text-gray-700">
                       <strong>Feit:</strong> {myth.fact}

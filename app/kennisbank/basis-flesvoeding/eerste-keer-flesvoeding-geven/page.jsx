@@ -89,10 +89,19 @@ export default function EersteKeerFlesvoedingPage() {
             </div>
             
             <h3 className="text-lg font-medium text-primary mb-2 mt-6">Timing voor eerste fles:</h3>
-            <ul className="space-y-1 text-gray-700">
-              <li>• <strong>Bij volledige flesvoeding:</strong> direct na geboorte mogelijk</li>
-              <li>• <strong>Bij combinatie met borst:</strong> ideaal tussen 2-4 weken</li>
-              <li>• <strong>Bij overstap van borst:</strong> elk moment mogelijk, meer geduld nodig</li>
+            <ul className="space-y-1">
+              <li className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                <span className="text-gray-700"><strong>Bij volledige flesvoeding:</strong> direct na geboorte mogelijk</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                <span className="text-gray-700"><strong>Bij combinatie met borst:</strong> ideaal tussen 2-4 weken</span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                <span className="text-gray-700"><strong>Bij overstap van borst:</strong> elk moment mogelijk, meer geduld nodig</span>
+              </li>
             </ul>
           </div>
 
@@ -171,14 +180,14 @@ export default function EersteKeerFlesvoedingPage() {
               <h3 className="font-semibold text-primary mb-4">Watervoorbereiding per leeftijd</h3>
               <div className="space-y-3">
                 {waterPreparation.map((item, index) => (
-                  <div key={index} className="flex items-start space-x-3 p-3 rounded-lg border border-gray-200">
+                  <div key={index} className="flex items-start space-x-3 py-2 px-3 rounded-lg border border-gray-200">
                     <div className="font-medium text-primary min-w-24">{item.age}:</div>
                     <div className="text-gray-700">{item.instruction}</div>
                   </div>
                 ))}
               </div>
               
-              <div className="mt-4 p-3 border border-gray-200 rounded-lg">
+              <div className="mt-4 py-2 px-3 border border-gray-200 rounded-lg">
                 <div className="flex items-start space-x-2">
                   <AlertTriangle className="w-5 h-5 text-gray-600 flex-shrink-0 mt-0.5" />
                   <div>
@@ -397,7 +406,7 @@ export default function EersteKeerFlesvoedingPage() {
                   </li>
                 </ul>
                 
-                <div className="mt-4 p-3 border border-gray-200 rounded-lg">
+                <div className="mt-4 py-2 px-3 border border-gray-200 rounded-lg">
                   <p className="text-sm text-gray-600">
                     <strong>Vermijd:</strong> Voeden tijdens huilbui, wanneer baby te moe is, of bij koorts.
                   </p>
@@ -456,7 +465,7 @@ export default function EersteKeerFlesvoedingPage() {
                   </li>
                 </ol>
                 
-                <div className="mt-4 p-3 border border-gray-200 rounded-lg">
+                <div className="mt-4 py-2 px-3 border border-gray-200 rounded-lg">
                   <h4 className="font-medium text-primary mb-2">Tijdens het voeden:</h4>
                   <ul className="space-y-1 text-gray-700">
                     <li>• Houd fles licht schuin (speen gevuld met melk)</li>
