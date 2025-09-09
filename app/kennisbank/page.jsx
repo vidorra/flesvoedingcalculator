@@ -179,7 +179,7 @@ export default function KennisbankPage() {
       href: '/kennisbank/problemen-oplossen/constipatie-door-flesvoeding'
     },
 
-    // HYGIËNE & BEREIDING - 2 actual articles
+    // HYGIËNE & BEREIDING - 3 actual articles
     { 
       id: 21, 
       title: 'Flessen steriliseren', 
@@ -196,10 +196,18 @@ export default function KennisbankPage() {
       duration: '4 min',
       href: '/kennisbank/hygiene-bereiding/flesvoeding-bewaren'
     },
+    { 
+      id: 23, 
+      title: 'Water koken voor flesvoeding', 
+      category: 'hygiene-bereiding', 
+      description: 'Complete veiligheidsgids voor juiste waterbereiding', 
+      duration: '10 min',
+      href: '/kennisbank/hygiene-bereiding/water-koken-flesvoeding'
+    },
 
     // PRAKTISCHE TIPS - 6 actual articles
     { 
-      id: 23, 
+      id: 24, 
       title: 'Geld besparen op flesvoeding', 
       category: 'praktische-tips', 
       description: 'Budget tips', 
@@ -207,7 +215,7 @@ export default function KennisbankPage() {
       href: '/kennisbank/praktische-tips/geld-besparen-flesvoeding'
     },
     { 
-      id: 24, 
+      id: 25, 
       title: 'Nachtvoeding optimaliseren', 
       category: 'praktische-tips', 
       description: 'Van 30 naar 10 minuten per nachtvoeding, complete gids', 
@@ -215,7 +223,7 @@ export default function KennisbankPage() {
       href: '/kennisbank/praktische-tips/nachtvoeding-optimaliseren'
     },
     { 
-      id: 25, 
+      id: 26, 
       title: 'Flesvoeding en werk combineren', 
       category: 'praktische-tips', 
       description: 'Werkende ouders', 
@@ -223,7 +231,7 @@ export default function KennisbankPage() {
       href: '/kennisbank/praktische-tips/flesvoeding-werk-combineren'
     },
     { 
-      id: 26, 
+      id: 27, 
       title: 'Flesvoeding op vakantie', 
       category: 'praktische-tips', 
       description: 'Reizen met baby', 
@@ -231,7 +239,7 @@ export default function KennisbankPage() {
       href: '/kennisbank/praktische-tips/flesvoeding-op-vakantie'
     },
     { 
-      id: 27, 
+      id: 28, 
       title: 'Uitgebreide Flesvoeding Gids 2025', 
       category: 'praktische-tips', 
       description: 'Complete 5-in-1 gids: besparen, kosten, overstappen, werk en problemen oplossen', 
@@ -241,7 +249,7 @@ export default function KennisbankPage() {
 
     // FINANCIËLE ASPECTEN - 1 actual article
     { 
-      id: 28, 
+      id: 29, 
       title: 'Kosten van flesvoeding', 
       category: 'basis-flesvoeding', 
       description: 'Complete budgetgids Nederland 2025', 
