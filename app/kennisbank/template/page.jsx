@@ -290,19 +290,19 @@ export default function KennisbankTemplatePage() {
                 Gerelateerde Artikelen
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link href="/kennisbank/basis-flesvoeding/overstappen-van-borst-naar-fles" className="p-3 bg-gray-50 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/basis-flesvoeding/overstappen-van-borst-naar-fles" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Overstappen van borst naar fles →</div>
                   <div className="text-sm text-gray-600">Het originele artikel waar deze template op gebaseerd is</div>
                 </Link>
-                <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 bg-gray-50 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Eerste keer flesvoeding →</div>
                   <div className="text-sm text-gray-600">Compleet aangepast met template patronen</div>
                 </Link>
-                <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="p-3 bg-gray-50 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Startvoeding vs Opvolgmelk →</div>
                   <div className="text-sm text-gray-600">Voorbeeld van fixes toegepast op complex artikel</div>
                 </Link>
-                <Link href="/kennisbank/basis-flesvoeding" className="p-3 bg-gray-50 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/basis-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Alle Basis Flesvoeding →</div>
                   <div className="text-sm text-gray-600">Overzicht van alle basis artikelen</div>
                 </Link>

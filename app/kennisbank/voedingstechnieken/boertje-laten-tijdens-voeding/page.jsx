@@ -550,14 +550,14 @@ export default function BoertjeLatenPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <Link 
                   href="/kennisbank/voedingstechnieken"
-                  className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
                   <div className="font-medium text-primary">Voedingstechnieken →</div>
                   <div className="text-sm text-gray-600">Alle technieken voor flesvoeding</div>
                 </Link>
                 <Link 
                   href="/kennisbank/problemen-oplossen"
-                  className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
                   <div className="font-medium text-primary">Problemen Oplossen →</div>
                   <div className="text-sm text-gray-600">Hulp bij voedingsproblemen</div>

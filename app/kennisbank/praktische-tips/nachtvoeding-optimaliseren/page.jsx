@@ -217,9 +217,9 @@ export default function NachtvoedingOptimaliserenPage() {
               <div className="border border-gray-200 bg-gray-50 rounded-xl p-4">
                 <h3 className="font-medium text-primary mb-3">Nederlandse slaapstatistieken ouders:</h3>
                 <ul className="space-y-1 text-sm text-primary">
-                  <li>• 73% ouders slaapt minder dan 6u per nacht eerste 3 maanden</li>
-                  <li>• 41% voelt zich chronisch uitgeput</li>
-                  <li>• 28% heeft nachtvoeding-gerelateerde stress</li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>73% ouders slaapt minder dan 6u per nacht eerste 3 maanden</span></li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>41% voelt zich chronisch uitgeput</span></li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>28% heeft nachtvoeding-gerelateerde stress</span></li>
                 </ul>
               </div>
             </div>
@@ -358,19 +358,19 @@ export default function NachtvoedingOptimaliserenPage() {
               <div>
                 <h5 className="font-medium">Naast het bed:</h5>
                 <ul className="space-y-1 mt-1">
-                  <li>• Thermosfles met warm water</li>
-                  <li>• 2-3 flesjes met poeder</li>
-                  <li>• Tissues en doekjes</li>
-                  <li>• Rode nachtlamp</li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Thermosfles met warm water</span></li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>2-3 flesjes met poeder</span></li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Tissues en doekjes</span></li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Rode nachtlamp</span></li>
                 </ul>
               </div>
               <div>
                 <h5 className="font-medium">In slaapkamer baby:</h5>
                 <ul className="space-y-1 mt-1">
-                  <li>• Stille flessenwarmer</li>
-                  <li>• Extra speen en luiers</li>
-                  <li>• White noise machine</li>
-                  <li>• Comfortabele stoel</li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Stille flessenwarmer</span></li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Extra speen en luiers</span></li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>White noise machine</span></li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Comfortabele stoel</span></li>
                 </ul>
               </div>
             </div>
@@ -523,10 +523,10 @@ export default function NachtvoedingOptimaliserenPage() {
           <div className="mt-4 p-4 bg-gray-100 rounded-lg">
             <h4 className="font-medium text-primary mb-2">Tips van ervaren ouders:</h4>
             <ul className="text-sm text-primary space-y-1">
-              <li>• "Perfect Prep machine kopen was beste investering"</li>
-              <li>• "Rode nachtlamp werkt echt - geen wit licht meer"</li>  
-              <li>• "Dream feeding vanaf week 6 proberen, patience is key"</li>
-              <li>• "Luier alleen verschonen bij poop, niet bij plassen"</li>
+              <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>"Perfect Prep machine kopen was beste investering"</span></li>
+              <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>"Rode nachtlamp werkt echt - geen wit licht meer"</span></li>  
+              <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>"Dream feeding vanaf week 6 proberen, patience is key"</span></li>
+              <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>"Luier alleen verschonen bij poop, niet bij plassen"</span></li>
             </ul>
           </div>
         </div>
@@ -556,14 +556,14 @@ export default function NachtvoedingOptimaliserenPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 
               href="/kennisbank/praktische-tips"
-              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-primary">Praktische Tips →</div>
               <div className="text-sm text-primary">Alle handige tips voor flesvoeding</div>
             </Link>
             <Link 
               href="/kennisbank/voedingstechnieken"
-              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-primary">Voedingstechnieken →</div>
               <div className="text-sm text-primary">Juiste technieken voor flesvoeding</div>

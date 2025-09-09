@@ -634,14 +634,14 @@ export default function WanneerOverstappenOpvolgmelkPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <Link 
                   href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk"
-                  className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
                   <div className="font-medium text-primary">Verschil Nummer 1 en 2 →</div>
                   <div className="text-sm text-gray-600">Complete vergelijking startvoeding vs opvolgmelk</div>
                 </Link>
                 <Link 
                   href="/kennisbank/soorten-flesvoeding"
-                  className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
                   <div className="font-medium text-primary">Alle Flesvoeding Types →</div>
                   <div className="text-sm text-gray-600">Overzicht van alle beschikbare opties</div>

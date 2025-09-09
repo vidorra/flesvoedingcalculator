@@ -417,7 +417,7 @@ export default function KennisbankPage() {
                   <Link
                     key={article.id}
                     href={article.href || `/kennisbank/${article.category}`}
-                    className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors"
+                    className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white"
                   >
                     <div className="flex items-start space-x-3">
                       <Icon className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
@@ -478,7 +478,7 @@ export default function KennisbankPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Link 
               href="/voedingsschemas"
-              className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors"
+              className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white"
             >
               <div className="flex items-center justify-between">
                 <div>
@@ -490,7 +490,7 @@ export default function KennisbankPage() {
             </Link>
             <Link 
               href="/"
-              className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors"
+              className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white"
             >
               <div className="flex items-center justify-between">
                 <div>
@@ -502,7 +502,7 @@ export default function KennisbankPage() {
             </Link>
             <Link 
               href="/faq"
-              className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors"
+              className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white"
             >
               <div className="flex items-center justify-between">
                 <div>

@@ -94,7 +94,7 @@ export default function ProblemenOplossenPage() {
                   </div>
                   <ul className="space-y-1 ml-7">
                     {item.solutions.map((solution, idx) => (
-                      <li key={idx} className="text-sm text-gray-600">• {solution}</li>
+                      <li key={idx} className="text-sm text-gray-600"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>{solution}</span></li>
                     ))}
                   </ul>
                 </div>
@@ -260,14 +260,14 @@ export default function ProblemenOplossenPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 
               href="/kennisbank/veiligheid"
-              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-primary">Veiligheidsrichtlijnen →</div>
               <div className="text-sm text-gray-600">Wanneer direct hulp zoeken</div>
             </Link>
             <Link 
               href="/faq"
-              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-primary">Veelgestelde Vragen →</div>
               <div className="text-sm text-gray-600">Nog meer antwoorden</div>

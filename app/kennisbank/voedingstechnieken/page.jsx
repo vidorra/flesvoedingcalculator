@@ -582,21 +582,21 @@ function VoedingstechniekenPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <Link 
               href="/kennisbank/hygiene-bereiding"
-              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-primary">Hygiëne & Bereiding →</div>
               <div className="text-sm text-primary">Veilig bereiden en bewaren</div>
             </Link>
             <Link 
               href="/kennisbank/problemen-oplossen"
-              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-primary">Problemen Oplossen →</div>
               <div className="text-sm text-primary">Hulp bij veelvoorkomende problemen</div>
             </Link>
             <Link 
               href="/kennisbank/soorten-flesvoeding"
-              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-primary">Soorten Flesvoeding →</div>
               <div className="text-sm text-primary">Welk type voor welke leeftijd</div>

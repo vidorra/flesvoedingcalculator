@@ -455,11 +455,11 @@ export default function KrampjesNaFlesvoedingPage() {
               <div className="mt-6 p-4 border border-gray-200 bg-gray-50 rounded-xl font-mono text-sm">
                 <h4 className="font-medium text-primary mb-2">TYPISCH KRAMPJE PATROON:</h4>
                 <ul className="space-y-1">
-                  <li>• Start 30-60 minuten na voeding</li>
-                  <li>• Duurt 15-45 minuten per episode</li>
-                  <li>• Vooral 's avonds tussen 17:00-22:00</li>
-                  <li>• Piek rond 6-8 weken leeftijd</li>
-                  <li>• Vermindert na 3-4 maanden</li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Start 30-60 minuten na voeding</span></li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Duurt 15-45 minuten per episode</span></li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Vooral 's avonds tussen 17:00-22:00</span></li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Piek rond 6-8 weken leeftijd</span></li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Vermindert na 3-4 maanden</span></li>
                 </ul>
               </div>
             </div>
@@ -839,10 +839,10 @@ export default function KrampjesNaFlesvoedingPage() {
                 <div>
                   <h3 className="font-medium text-primary mb-2">Kernprincipes:</h3>
                   <ul className="space-y-1 text-sm">
-                    <li>• Start met basics: Anti-koliek spenen en goede voedingstechniek</li>
-                    <li>• Wees geduldig: Meeste oplossingen hebben 1-2 weken nodig</li>
-                    <li>• Zoek steun: Je hoeft dit niet alleen te doen</li>
-                    <li>• Vertrouw je instinct: Bij twijfel altijd medische hulp zoeken</li>
+                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Start met basics: Anti-koliek spenen en goede voedingstechniek</span></li>
+                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Wees geduldig: Meeste oplossingen hebben 1-2 weken nodig</span></li>
+                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Zoek steun: Je hoeft dit niet alleen te doen</span></li>
+                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Vertrouw je instinct: Bij twijfel altijd medische hulp zoeken</span></li>
                   </ul>
                 </div>
                 <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
@@ -860,14 +860,14 @@ export default function KrampjesNaFlesvoedingPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <Link 
                   href="/kennisbank/problemen-oplossen"
-                  className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
                   <div className="font-medium text-primary">Problemen Oplossen →</div>
                   <div className="text-sm text-gray-600">Alle oplossingen voor flesvoeding problemen</div>
                 </Link>
                 <Link 
                   href="/kennisbank/voedingstechnieken/verschillende-spenen-uitproberen"
-                  className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
                   <div className="font-medium text-primary">Spenen Uitproberen →</div>
                   <div className="text-sm text-gray-600">Anti-koliek spenen voor minder krampjes</div>

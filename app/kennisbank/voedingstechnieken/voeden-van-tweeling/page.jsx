@@ -249,21 +249,21 @@ export default function TweelingVoedenPage() {
             <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
               <h4 className="font-medium text-primary mb-2">Starter pakket (€200-300):</h4>
               <ul className="text-sm text-primary space-y-1">
-                <li>• 16 flessen: €60-80</li>
-                <li>• Sterilisator: €40-80</li>
-                <li>• Flessenwarmer: €35-45</li>
-                <li>• Twin pillow: €85</li>
-                <li>• Accessoires: €30-50</li>
+                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>16 flessen: €60-80</span></li>
+                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Sterilisator: €40-80</span></li>
+                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Flessenwarmer: €35-45</span></li>
+                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Twin pillow: €85</span></li>
+                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Accessoires: €30-50</span></li>
               </ul>
             </div>
             <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
               <h4 className="font-medium text-primary mb-2">Premium pakket (€400-600):</h4>
               <ul className="text-sm text-primary space-y-1">
-                <li>• Hoogwaardige flessen: €120</li>
-                <li>• Elektrische sterilisator: €80</li>
-                <li>• Dubbele flessenwarmer: €65</li>
-                <li>• Complete twin set: €150</li>
-                <li>• Extra accessoires: €85</li>
+                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Hoogwaardige flessen: €120</span></li>
+                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Elektrische sterilisator: €80</span></li>
+                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Dubbele flessenwarmer: €65</span></li>
+                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Complete twin set: €150</span></li>
+                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Extra accessoires: €85</span></li>
               </ul>
             </div>
           </div>
@@ -368,17 +368,17 @@ export default function TweelingVoedenPage() {
               <div>
                 <h4 className="font-medium">Bulk inkopen:</h4>
                 <ul className="space-y-1 mt-1">
-                  <li>• Action/Kruidvat: 2e gratis acties</li>
-                  <li>• Albert Heijn: Bonusbox kortingen</li>
-                  <li>• Online: Subscription 10% korting</li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Action/Kruidvat: 2e gratis acties</span></li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Albert Heijn: Bonusbox kortingen</span></li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Online: Subscription 10% korting</span></li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-medium">Tweede hands:</h4>
                 <ul className="space-y-1 mt-1">
-                  <li>• Equipment via Marktplaats</li>
-                  <li>• Twin pillows tweedehands</li>
-                  <li>• Besparing: 30-50% op startkosten</li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Equipment via Marktplaats</span></li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Twin pillows tweedehands</span></li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Besparing: 30-50% op startkosten</span></li>
                 </ul>
               </div>
             </div>
@@ -497,14 +497,14 @@ export default function TweelingVoedenPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 
               href="/kennisbank/voedingstechnieken"
-              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-primary">Voedingstechnieken →</div>
               <div className="text-sm text-primary">Alle technieken voor flesvoeding</div>
             </Link>
             <Link 
               href="/kennisbank/praktische-tips"
-              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-primary">Praktische Tips →</div>
               <div className="text-sm text-primary">Time-saving tips en organisatie</div>

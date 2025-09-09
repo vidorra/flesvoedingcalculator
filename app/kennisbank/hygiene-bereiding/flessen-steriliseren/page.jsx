@@ -132,34 +132,34 @@ export default function FlessenSteriligerenPage() {
                   </ul>
                 </div>
 
-                <div className="bg-gray-50 rounded-2xl border border-gray-200 p-4">
+                <div className="mb-4">
                   <h3 className="font-medium text-primary mb-3">Frequentie schema</h3>
                   
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
                       <h4 className="font-medium text-gray-700 mb-2">0-6 maanden:</h4>
                       <ul className="space-y-1">
-                        <li className="text-gray-600 text-sm">• Na elke voeding steriliseren</li>
-                        <li className="text-gray-600 text-sm">• Dagelijks: alle gebruikte items</li>
-                        <li className="text-gray-600 text-sm">• Wekelijks: doseerschepjes en accessoires</li>
+                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Na elke voeding steriliseren</span></li>
+                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Dagelijks: alle gebruikte items</span></li>
+                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Wekelijks: doseerschepjes en accessoires</span></li>
                       </ul>
                     </div>
                     
                     <div>
                       <h4 className="font-medium text-gray-700 mb-2">6-12 maanden:</h4>
                       <ul className="space-y-1">
-                        <li className="text-gray-600 text-sm">• Dagelijks of na elke gebruik</li>
-                        <li className="text-gray-600 text-sm">• Bij ziekte: terug naar elke voeding</li>
-                        <li className="text-gray-600 text-sm">• Spenen: altijd na gebruik</li>
+                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Dagelijks of na elke gebruik</span></li>
+                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Bij ziekte: terug naar elke voeding</span></li>
+                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Spenen: altijd na gebruik</span></li>
                       </ul>
                     </div>
                     
                     <div>
                       <h4 className="font-medium text-gray-700 mb-2">12+ maanden:</h4>
                       <ul className="space-y-1">
-                        <li className="text-gray-600 text-sm">• Wekelijks of bij ziekte</li>
-                        <li className="text-gray-600 text-sm">• Nieuwe items: altijd eerst</li>
-                        <li className="text-gray-600 text-sm">• Goede was meestal voldoende</li>
+                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Wekelijks of bij ziekte</span></li>
+                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Nieuwe items: altijd eerst</span></li>
+                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Goede was meestal voldoende</span></li>
                       </ul>
                     </div>
                   </div>
@@ -180,19 +180,19 @@ export default function FlessenSteriligerenPage() {
                       <div>
                         <h4 className="font-medium text-gray-700 mb-1">Voordelen:</h4>
                         <ul className="space-y-1">
-                          <li className="text-gray-700 text-sm">• Geen extra apparaat nodig</li>
-                          <li className="text-gray-700 text-sm">• 100% effectief</li>
-                          <li className="text-gray-700 text-sm">• Goedkoopste methode</li>
-                          <li className="text-gray-700 text-sm">• Altijd beschikbaar</li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Geen extra apparaat nodig</span></li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>100% effectief</span></li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Goedkoopste methode</span></li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Altijd beschikbaar</span></li>
                         </ul>
                       </div>
                       
                       <div>
                         <h4 className="font-medium text-gray-700 mb-1">Nadelen:</h4>
                         <ul className="space-y-1">
-                          <li className="text-gray-700 text-sm">• Tijdrovend (15-20 minuten)</li>
-                          <li className="text-gray-700 text-sm">• Meer energieverbruik</li>
-                          <li className="text-gray-700 text-sm">• Spenen kunnen sneller verslijten</li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Tijdrovend (15-20 minuten)</span></li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Meer energieverbruik</span></li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Spenen kunnen sneller verslijten</span></li>
                         </ul>
                       </div>
                       
@@ -217,30 +217,30 @@ export default function FlessenSteriligerenPage() {
                       <div>
                         <h4 className="font-medium text-gray-700 mb-1">Voordelen:</h4>
                         <ul className="space-y-1">
-                          <li className="text-gray-700 text-sm">• Snelste methode (6-15 minuten)</li>
-                          <li className="text-gray-700 text-sm">• Automatische uitschakeling</li>
-                          <li className="text-gray-700 text-sm">• Economisch energiegebruik</li>
-                          <li className="text-gray-700 text-sm">• Items blijven 24 uur steriel</li>
-                          <li className="text-gray-700 text-sm">• Makkelijk en betrouwbaar</li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Snelste methode (6-15 minuten)</span></li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Automatische uitschakeling</span></li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Economisch energiegebruik</span></li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Items blijven 24 uur steriel</span></li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Makkelijk en betrouwbaar</span></li>
                         </ul>
                       </div>
                       
                       <div>
                         <h4 className="font-medium text-gray-700 mb-1">Nadelen:</h4>
                         <ul className="space-y-1">
-                          <li className="text-gray-700 text-sm">• Aanschafkosten (€25-80)</li>
-                          <li className="text-gray-700 text-sm">• Neemt keukenplek in</li>
-                          <li className="text-gray-700 text-sm">• Enkel babyspullen</li>
-                          <li className="text-gray-700 text-sm">• Kalkaanslag bij hard water</li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Aanschafkosten (€25-80)</span></li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Neemt keukenplek in</span></li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Enkel babyspullen</span></li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Kalkaanslag bij hard water</span></li>
                         </ul>
                       </div>
                       
                       <div>
                         <h4 className="font-medium text-gray-700 mb-1">Populaire modellen:</h4>
                         <ul className="space-y-1">
-                          <li className="text-gray-700 text-sm">• Philips Avent: €35-50, snelle stoom</li>
-                          <li className="text-gray-700 text-sm">• MAM sterilisator: €25-40, compact</li>
-                          <li className="text-gray-700 text-sm">• Chicco: €30-45, grote capaciteit</li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Philips Avent: €35-50, snelle stoom</span></li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>MAM sterilisator: €25-40, compact</span></li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Chicco: €30-45, grote capaciteit</span></li>
                         </ul>
                       </div>
                     </div>
@@ -255,19 +255,19 @@ export default function FlessenSteriligerenPage() {
                       <div>
                         <h4 className="font-medium text-gray-700 mb-1">Voordelen:</h4>
                         <ul className="space-y-1">
-                          <li className="text-gray-700 text-sm">• Zeer snel (2-8 minuten)</li>
-                          <li className="text-gray-700 text-sm">• Gebruikt bestaande magnetron</li>
-                          <li className="text-gray-700 text-sm">• Goedkope sterilisatorzakken</li>
-                          <li className="text-gray-700 text-sm">• Praktisch onderweg</li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Zeer snel (2-8 minuten)</span></li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Gebruikt bestaande magnetron</span></li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Goedkope sterilisatorzakken</span></li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Praktisch onderweg</span></li>
                         </ul>
                       </div>
                       
                       <div>
                         <h4 className="font-medium text-gray-700 mb-1">Nadelen:</h4>
                         <ul className="space-y-1">
-                          <li className="text-gray-700 text-sm">• Niet alle materialen geschikt</li>
-                          <li className="text-gray-700 text-sm">• Risico oververhitting</li>
-                          <li className="text-gray-700 text-sm">• Zakken zijn wegwerp</li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Niet alle materialen geschikt</span></li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Risico oververhitting</span></li>
+                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Zakken zijn wegwerp</span></li>
                         </ul>
                       </div>
                     </div>
@@ -280,20 +280,20 @@ export default function FlessenSteriligerenPage() {
                       <div>
                         <h4 className="font-medium text-purple-700 mb-1">Voordelen:</h4>
                         <ul className="space-y-1">
-                          <li className="text-purple-700 text-sm">• Makkelijk onderweg</li>
-                          <li className="text-purple-700 text-sm">• Geen apparaat nodig</li>
-                          <li className="text-purple-700 text-sm">• Koude sterilisatie mogelijk</li>
-                          <li className="text-purple-700 text-sm">• Lange houdbaarheid tabletten</li>
+                          <li className="text-purple-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Makkelijk onderweg</span></li>
+                          <li className="text-purple-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Geen apparaat nodig</span></li>
+                          <li className="text-purple-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Koude sterilisatie mogelijk</span></li>
+                          <li className="text-purple-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Lange houdbaarheid tabletten</span></li>
                         </ul>
                       </div>
                       
                       <div>
                         <h4 className="font-medium text-purple-700 mb-1">Nadelen:</h4>
                         <ul className="space-y-1">
-                          <li className="text-purple-700 text-sm">• Chemische methode</li>
-                          <li className="text-purple-700 text-sm">• Langere wachttijd (30 minuten)</li>
-                          <li className="text-purple-700 text-sm">• Kosten per gebruik</li>
-                          <li className="text-purple-700 text-sm">• Moet goed afspoelen</li>
+                          <li className="text-purple-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Chemische methode</span></li>
+                          <li className="text-purple-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Langere wachttijd (30 minuten)</span></li>
+                          <li className="text-purple-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Kosten per gebruik</span></li>
+                          <li className="text-purple-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Moet goed afspoelen</span></li>
                         </ul>
                       </div>
                     </div>
@@ -307,7 +307,7 @@ export default function FlessenSteriligerenPage() {
               <h2 className="text-lg font-semibold text-primary mb-4">Stap-voor-stap: Elektrische sterilisator (meest gebruikt)</h2>
               
               <div className="space-y-6">
-                <div className="bg-gray-50 rounded-2xl border border-gray-200 p-4">
+                <div className="mb-4">
                   <h3 className="font-medium text-primary mb-3">Voorbereiding</h3>
                   
                   <div className="space-y-4">
@@ -357,7 +357,7 @@ export default function FlessenSteriligerenPage() {
                   </div>
                 </div>
 
-                <div className="bg-gray-50 rounded-2xl border border-gray-200 p-4">
+                <div className="mb-4">
                   <h3 className="font-medium text-primary mb-3">Laden van sterilisator</h3>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -403,7 +403,7 @@ export default function FlessenSteriligerenPage() {
                   </div>
                 </div>
 
-                <div className="bg-gray-50 rounded-2xl border border-gray-200 p-4">
+                <div className="mb-4">
                   <h3 className="font-medium text-primary mb-3">Sterilisatieproces</h3>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -582,19 +582,19 @@ export default function FlessenSteriligerenPage() {
                 Gerelateerde artikelen
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Fles bereiden stap voor stap →</div>
                   <div className="text-sm text-gray-600">Veilige bereiding na sterilisatie</div>
                 </Link>
-                <Link href="/kennisbank/hygiene-bereiding" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/hygiene-bereiding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Hygiëne & Bereiding overzicht →</div>
                   <div className="text-sm text-gray-600">Alle hygiëne aspecten</div>
                 </Link>
-                <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Eerste keer flesvoeding →</div>
                   <div className="text-sm text-gray-600">Complete beginnersgids</div>
                 </Link>
-                <Link href="/kennisbank/veiligheid" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/veiligheid" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Veiligheidsrichtlijnen →</div>
                   <div className="text-sm text-gray-600">Alle veiligheidsaspecten</div>
                 </Link>

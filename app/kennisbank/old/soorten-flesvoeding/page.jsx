@@ -103,7 +103,7 @@ export default function SoortenFlesvoedingPage() {
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span>Aangepaste eiwitsamenstelling</span>
                 </li>
-                  <li className="text-gray-600 font-medium">• NIET geschikt voor baby&apos;s jonger dan 6 maanden</li>
+                  <li className="text-gray-600 font-medium"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>NIET geschikt voor baby&apos;s jonger dan 6 maanden</span></li>
                 </ul>
               </div>
               

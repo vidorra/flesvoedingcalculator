@@ -257,19 +257,19 @@ export default function GeldBesparenPage() {
                     <div>
                       <h4 className="font-medium text-primary mb-2">✓ Verplicht Identiek:</h4>
                       <ul className="text-primary space-y-1">
-                        <li>• EU-verordening 2016/127</li>
-                        <li>• NVWA kwaliteitscontrole</li>
-                        <li>• Minimum voedingsstoffen gelijk</li>
-                        <li>• Veiligheid gegarandeerd</li>
+                        <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>EU-verordening 2016/127</span></li>
+                        <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>NVWA kwaliteitscontrole</span></li>
+                        <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Minimum voedingsstoffen gelijk</span></li>
+                        <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Veiligheid gegarandeerd</span></li>
                       </ul>
                     </div>
                     <div>
                       <h4 className="font-medium text-primary mb-2">≈ Verschil Zit In:</h4>
                       <ul className="text-primary space-y-1">
-                        <li>• Marketing en verpakking</li>
-                        <li>• Extra ingrediënten (prebiotica)</li>
-                        <li>• Smaak nuances</li>
-                        <li>• Brand prestige</li>
+                        <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Marketing en verpakking</span></li>
+                        <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Extra ingrediënten (prebiotica)</span></li>
+                        <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Smaak nuances</span></li>
+                        <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Brand prestige</span></li>
                       </ul>
                     </div>
                   </div>
@@ -316,17 +316,17 @@ export default function GeldBesparenPage() {
                   <div>
                     <h5 className="font-medium text-yellow-700 mb-1">Price Comparison:</h5>
                     <ul className="text-yellow-600 space-y-1">
-                      <li>• Kieskeurig.nl - Real-time vergelijking</li>
-                      <li>• Scoupy - Cashback baby products</li>
-                      <li>• Honey - Auto coupon codes</li>
+                      <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Kieskeurig.nl - Real-time vergelijking</span></li>
+                      <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Scoupy - Cashback baby products</span></li>
+                      <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Honey - Auto coupon codes</span></li>
                     </ul>
                   </div>
                   <div>
                     <h5 className="font-medium text-yellow-700 mb-1">Budget Tracking:</h5>
                     <ul className="text-yellow-600 space-y-1">
-                      <li>• YNAB - Envelope budgeting</li>
-                      <li>• Baby costs tracking spreadsheets</li>
-                      <li>• Inventory management apps</li>
+                      <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>YNAB - Envelope budgeting</span></li>
+                      <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Baby costs tracking spreadsheets</span></li>
+                      <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Inventory management apps</span></li>
                     </ul>
                   </div>
                 </div>
@@ -392,19 +392,19 @@ export default function GeldBesparenPage() {
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link href="/kennisbank/praktische-tips/flesvoeding-werk-combineren" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/praktische-tips/flesvoeding-werk-combineren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Werk combineren →</div>
                   <div className="text-sm text-primary">Kinderopvang kosten optimaliseren</div>
                 </Link>
-                <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Startvoeding vs opvolgmelk →</div>
                   <div className="text-sm text-primary">Prijs vergelijking verschillende types</div>
                 </Link>
-                <Link href="/kennisbank/hygiene-bereiding/flesvoeding-bewaren" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/hygiene-bereiding/flesvoeding-bewaren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Flesvoeding bewaren →</div>
                   <div className="text-sm text-primary">Verspilling voorkomen tips</div>
                 </Link>
-                <Link href="/kennisbank/praktische-tips" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/praktische-tips" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Alle praktische tips →</div>
                   <div className="text-sm text-primary">Meer handige ouder tips</div>
                 </Link>
