@@ -593,14 +593,19 @@ export default function AntiRefluxPage() {
         <KennisbankSidebar 
           images={[
             {
-              src: "/mother_and_baby.png",
-              alt: "Anti-reflux voeding",
+              src: "/kunstvoeding.webp",
+              alt: "Anti-reflux flesvoeding voeding",
               caption: "Speciale voeding tegen reflux en spugen"
             },
             {
-              src: "/baby_feeding.png", 
-              alt: "Baby comfort bij reflux",
-              caption: "Comfort technieken voor baby's met reflux"
+              src: "/slapende-baby-2.webp", 
+              alt: "Baby comfort na anti-reflux voeding",
+              caption: "Rust na de juiste anti-reflux voeding"
+            },
+            {
+              src: "/baby-met-fopspeen.webp",
+              alt: "Baby comfort bij reflux problemen",
+              caption: "Comfort maatregelen bij reflux"
             }
           ]}
           adTopics={["Anti-Reflux Producten", "Baby Comfort"]}

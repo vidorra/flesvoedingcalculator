@@ -6,19 +6,19 @@ import { Shield, Clock, DollarSign, Users, CheckCircle, AlertTriangle } from 'lu
 export default function FlessenSteriligerenPage() {
   const sidebarImages = [
     {
-      src: "/sterilisator-types.png",
-      alt: "Verschillende sterilisator types",
-      caption: "Keuze uit verschillende sterilisatie methoden"
+      src: "/sterilisator-babyflessen.webp",
+      alt: "Sterilisator met babyflessen",
+      caption: "Professionele sterilisatie van babyflessen"
     },
     {
-      src: "/sterilisatie-stappen.png", 
-      alt: "Sterilisatie proces stappen",
+      src: "/difrax-fles-kunstvoeding.webp", 
+      alt: "Schone babyflessen klaar voor gebruik",
       caption: "Stap voor stap sterilisatie proces"
     },
     {
-      src: "/schone-flessen.png",
-      alt: "Schone gesteunde flessen",
-      caption: "Perfect schone flessen voor baby"
+      src: "/flesvoeding-close-up.webp",
+      alt: "Veilig voorbereidde flesvoeding",
+      caption: "Perfect schone bereiding voor baby"
     }
   ]
 

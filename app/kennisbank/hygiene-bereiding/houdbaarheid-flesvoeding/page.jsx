@@ -12,17 +12,17 @@ export default function HoudbaarheidFlesvoedingPage() {
   // Sidebar configuration
   const sidebarImages = [
     {
-      src: "/baby_feeding.png",
+      src: "/flesvoeding-close-up.webp",
       alt: "Veilige flesvoeding bewaring",
       caption: "Juiste bewaring voorkomt voedselvergiftiging"
     },
     {
-      src: "/mother_and_baby.png", 
+      src: "/sterilisator-babyflessen.webp", 
       alt: "Baby krijgt veilige fles",
       caption: "Veiligheid staat altijd voorop"
     },
     {
-      src: "/feeding_guide.png",
+      src: "/difrax-fles-kunstvoeding.webp",
       alt: "Flesvoeding tijdslimieten",
       caption: "Ken de exacte bewaarregels"
     }

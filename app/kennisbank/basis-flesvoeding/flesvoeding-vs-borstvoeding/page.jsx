@@ -11,14 +11,19 @@ export const metadata = {
 export default function FlesvoedingVsBorstvoedingPage() {
   const sidebarImages = [
     {
-      src: "/flesvoeding-vs-borstvoeding.png",
-      alt: "Vergelijking flesvoeding en borstvoeding",
+      src: "/borstvoeding.webp",
+      alt: "Borstvoeding beeld",
       caption: "Objectieve vergelijking beide methoden"
     },
     {
-      src: "/ouder-keuze-voeding.png",
-      alt: "Ouders maken voeding keuze",
+      src: "/flesvoeding.webp",
+      alt: "Flesvoeding beeld",
       caption: "De juiste keuze voor jouw gezin"
+    },
+    {
+      src: "/mother_and_baby.png",
+      alt: "Moeder en baby samen",
+      caption: "Liefde en zorg bij elke voedingsmethode"
     }
   ]
 

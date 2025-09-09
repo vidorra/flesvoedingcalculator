@@ -725,14 +725,19 @@ export default function VerschillendeSpenenUitproberenPage() {
         <KennisbankSidebar 
           images={[
             {
-              src: "/baby_feeding.png",
-              alt: "Verschillende spenen uitproberen",
+              src: "/difrax-fles-kunstvoeding.webp",
+              alt: "Verschillende flessen en spenen vergelijken",
               caption: "Vind de perfecte speen voor je baby"
             },
             {
-              src: "/mother_and_baby.png", 
-              alt: "Baby met fles",
+              src: "/close-up-baby.webp", 
+              alt: "Baby concentratie tijdens speenacceptatie",
               caption: "Een tevreden baby met de juiste speen"
+            },
+            {
+              src: "/flesvoeding-close-up.webp",
+              alt: "Close-up van speen en voeding",
+              caption: "Details van speenkeuze en gebruik"
             }
           ]}
           adTopics={["Baby Uitrusting", "Voeding Accessoires"]}

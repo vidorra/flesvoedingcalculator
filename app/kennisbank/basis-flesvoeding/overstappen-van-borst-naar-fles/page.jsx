@@ -6,17 +6,17 @@ import { ArrowRight, Clock, Heart, Users, CheckCircle, AlertTriangle } from 'luc
 export default function OverstappenBorstNaarFlesPage() {
   const sidebarImages = [
     {
-      src: "/overstappen-borst-fles.png",
+      src: "/borstvoeding-2.webp",
       alt: "Overstappen van borstvoeding naar fles",
       caption: "Stapsgewijze overgang naar flesvoeding"
     },
     {
-      src: "/verschillende-spenen-borst.png", 
-      alt: "Spenen die lijken op borst",
-      caption: "Spenen die overstap vergemakkelijken"
+      src: "/difrax-fles-kunstvoeding.webp", 
+      alt: "Verschillende flesvoeding opties",
+      caption: "Verschillende flessen die overstap vergemakkelijken"
     },
     {
-      src: "/partner-fles-voeding.png",
+      src: "/flesvoeding-door-mama.webp",
       alt: "Partner geeft fles aan baby",
       caption: "Partner kan helpen bij overstap"
     }

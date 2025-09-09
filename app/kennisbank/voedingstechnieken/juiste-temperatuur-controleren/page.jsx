@@ -11,19 +11,19 @@ export const metadata = {
 export default function JuisteTemperatuurControleren() {
   const sidebarImages = [
     {
-      src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=400&h=300",
-      alt: "Temperatuur meten flesvoeding",
-      title: "Perfecte temperatuur"
+      src: "/flesvoeding-close-up.webp",
+      alt: "Temperatuur controleren flesvoeding close-up",
+      caption: "Perfecte temperatuur"
     },
     {
-      src: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&h=300", 
-      alt: "Veilige baby voeding",
-      title: "Veiligheid voorop"
+      src: "/kunstvoeding.webp", 
+      alt: "Veilige baby voeding temperatuur",
+      caption: "Veiligheid voorop"
     },
     {
-      src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=400&h=300",
-      alt: "Thermometer baby hulpmiddelen",
-      title: "Meetinstrumenten"
+      src: "/close-up-baby.webp",
+      alt: "Baby wacht op juiste temperatuur voeding",
+      caption: "Geduld voor perfecte warmte"
     }
   ]
 

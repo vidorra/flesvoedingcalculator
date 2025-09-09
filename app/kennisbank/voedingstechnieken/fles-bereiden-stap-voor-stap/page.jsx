@@ -11,19 +11,19 @@ export const metadata = {
 export default function FlesBerenStapVoorStap() {
   const sidebarImages = [
     {
-      src: "https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?auto=format&fit=crop&w=400&h=300",
-      alt: "Fles bereiding stap voor stap",
-      title: "Perfecte bereiding"
+      src: "/flesvoeding-close-up.webp",
+      alt: "Fles bereiding stap voor stap close-up",
+      caption: "Perfecte bereiding"
     },
     {
-      src: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&h=300", 
-      alt: "Veilige flesbereiding",
-      title: "Veiligheid voorop"
+      src: "/sterilisator-babyflessen.webp", 
+      alt: "Veilige flesbereiding met sterilisator",
+      caption: "Veiligheid voorop"
     },
     {
-      src: "https://images.unsplash.com/photo-1585435465980-8a64522d0a7e?auto=format&fit=crop&w=400&h=300",
-      alt: "Flesvoeding hulpmiddelen",
-      title: "Benodigde spullen"
+      src: "/difrax-fles-kunstvoeding.webp",
+      alt: "Flesvoeding hulpmiddelen en spullen",
+      caption: "Benodigde spullen"
     }
   ]
 

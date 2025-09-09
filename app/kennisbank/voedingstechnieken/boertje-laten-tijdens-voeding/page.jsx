@@ -571,14 +571,19 @@ export default function BoertjeLatenPage() {
         <KennisbankSidebar 
           images={[
             {
-              src: "/mother_and_baby.png",
-              alt: "Boertje laten tijdens voeding",
+              src: "/borstvoeding-3.webp",
+              alt: "Boertje laten technieken tijdens voeding",
               caption: "Juiste technieken voor effectief boertje laten"
             },
             {
-              src: "/baby_feeding.png", 
-              alt: "Baby comfort",
+              src: "/slapende-baby-2.webp", 
+              alt: "Tevreden baby na boertje",
               caption: "Een tevreden baby na succesvolle voeding"
+            },
+            {
+              src: "/baby-met-fopspeen.webp",
+              alt: "Baby comfort na voeding",
+              caption: "Comfort en rust na de voeding"
             }
           ]}
           adTopics={["Baby Comfort", "Voedingstechnieken"]}

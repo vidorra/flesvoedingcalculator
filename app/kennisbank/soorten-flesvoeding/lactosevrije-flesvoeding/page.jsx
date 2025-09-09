@@ -12,18 +12,18 @@ export default function LactosevrijeFlesvoedingPage() {
   // Sidebar configuration
   const sidebarImages = [
     {
-      src: "/baby_feeding.png",
+      src: "/flesvoeding.webp",
       alt: "Baby met lactosevrije flesvoeding",
       caption: "Lactosevrije voeding voor gevoelige buikjes"
     },
     {
-      src: "/mother_and_baby.png", 
-      alt: "Moeder voert baby met speciale fles",
+      src: "/flesvoeding-door-mama.webp", 
+      alt: "Moeder voert baby met lactosevrije fles",
       caption: "Rust en vertrouwen met de juiste voeding"
     },
     {
-      src: "/feeding_guide.png",
-      alt: "Lactosevrije flesvoeding merken",
+      src: "/difrax-fles-kunstvoeding.webp",
+      alt: "Lactosevrije flesvoeding merken en flessen",
       caption: "Keuze uit verschillende lactosevrije opties"
     }
   ]

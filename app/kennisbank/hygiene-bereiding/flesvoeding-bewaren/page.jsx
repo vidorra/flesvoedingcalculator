@@ -714,14 +714,19 @@ export default function FlesvoedingBewarenPage() {
         <KennisbankSidebar 
           images={[
             {
-              src: "/mother_and_baby.png",
+              src: "/flesvoeding-close-up.webp",
               alt: "Veilige flesvoeding bereiding",
               caption: "Veilige bereiding en bewaring van flesvoeding"
             },
             {
-              src: "/baby_feeding.png", 
+              src: "/sterilisator-babyflessen.webp", 
               alt: "Hygiëne bij flesvoeding",
               caption: "Hygiëne voorkomt voedselinfecties"
+            },
+            {
+              src: "/difrax-fles-kunstvoeding.webp",
+              alt: "Verse babyflessen",
+              caption: "Verse bereiding voor optimale veiligheid"
             }
           ]}
           adTopics={["Baby Veiligheid", "Hygiëne Producten"]}

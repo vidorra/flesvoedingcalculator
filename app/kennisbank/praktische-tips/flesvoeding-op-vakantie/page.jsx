@@ -540,9 +540,21 @@ export default function VakantiePage() {
         <div className="col-span-12 lg:col-span-5">
           <KennisbankSidebar 
             images={[
-              '/images/vakantie-1.jpg',
-              '/images/vakantie-2.jpg',
-              '/images/vakantie-3.jpg'
+              {
+                src: "/difrax-fles-kunstvoeding.webp",
+                alt: "Flesvoeding onderweg",
+                caption: "Praktisch reizen met flesvoeding"
+              },
+              {
+                src: "/flesvoeding-door-mama.webp",
+                alt: "Reizen met baby",
+                caption: "Stress-vrij reizen met baby"
+              },
+              {
+                src: "/mother_and_baby.png",
+                alt: "Familie vakantie",
+                caption: "Gezellige familie tijd op vakantie"
+              }
             ]}
             adTopics={[
               'Baby reisuitrusting kopen',

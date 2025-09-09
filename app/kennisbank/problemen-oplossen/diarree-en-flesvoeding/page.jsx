@@ -12,19 +12,19 @@ export default function DiarreeEnFlesvoedingPage() {
   // Sidebar configuration
   const sidebarImages = [
     {
-      src: "/diarree-herkenning-baby.png",
-      alt: "Diarree herkennen bij baby's",
-      caption: "Verschil tussen normale en abnormale ontlasting"
+      src: "/baby-met-fopspeen.webp",
+      alt: "Baby met fopspeen voor comfort bij diarree",
+      caption: "Comfort bieden tijdens ziekteperiodes"
     },
     {
-      src: "/dehydratie-signalen.png", 
-      alt: "Dehydratie signalen bij baby's",
-      caption: "Vroege waarschuwingssignalen herkennen"
+      src: "/slapende-baby-2.webp", 
+      alt: "Slapende baby tijdens herstel van diarree",
+      caption: "Rust is belangrijk voor herstel"
     },
     {
-      src: "/ors-rehydratie.png",
-      alt: "ORS rehydratie bij baby's",
-      caption: "Juiste toediening van elektrolyten"
+      src: "/flesvoeding-close-up.webp",
+      alt: "Close-up flesvoeding bereiding voor diarree behandeling",
+      caption: "Juiste voedingsbereiding voorkomt problemen"
     }
   ]
 

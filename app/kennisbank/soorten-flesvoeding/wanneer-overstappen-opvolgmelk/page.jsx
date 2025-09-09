@@ -655,14 +655,19 @@ export default function WanneerOverstappenOpvolgmelkPage() {
         <KennisbankSidebar 
           images={[
             {
-              src: "/mother_and_baby.png",
-              alt: "Timing overstap opvolgmelk",
+              src: "/flesvoeding-door-mama.webp",
+              alt: "Timing overstap opvolgmelk moeder en baby",
               caption: "Het juiste moment kiezen voor je baby"
             },
             {
-              src: "/baby_feeding.png", 
-              alt: "Baby klaar voor overstap",
+              src: "/close-up-baby.webp", 
+              alt: "Baby signalen voor overstap herkenning",
               caption: "Signalen herkennen van je baby"
+            },
+            {
+              src: "/top-view-sleeping-baby.webp",
+              alt: "Ontspannen baby tijdens voedingsovergang",
+              caption: "Rustige overgang naar opvolgmelk"
             }
           ]}
           adTopics={["Baby Timing", "Voeding Overstap"]}

@@ -6,18 +6,18 @@ import { Activity, AlertTriangle, Clock, Users, CheckCircle } from 'lucide-react
 export default function BabyDrinktNietGenoegPage() {
   const sidebarImages = [
     {
-      src: "/baby-drink-hoeveelheden.png",
-      alt: "Baby drink hoeveelheden per leeftijd",
+      src: "/difrax-fles-kunstvoeding.webp",
+      alt: "Baby fles voor voedingshoeveelheden monitoring",
       caption: "Normale voedingshoeveelheden herkennen"
     },
     {
-      src: "/hungersignals-baby.png", 
-      alt: "Honger signalen bij baby's",
+      src: "/close-up-baby.webp", 
+      alt: "Close-up baby voor honger signalen herkenning",
       caption: "Herken wanneer baby echt honger heeft"
     },
     {
-      src: "/growth-chart-baby.png",
-      alt: "Groeicurve baby monitoring",
+      src: "/baby-voeten.webp",
+      alt: "Baby voeten als teken van gezonde groei",
       caption: "Groei is belangrijkste indicator"
     }
   ]

@@ -11,19 +11,19 @@ export const metadata = {
 export default function KostenVanFlesvoeding() {
   const sidebarImages = [
     {
-      src: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&h=300",
-      alt: "Baby budget planning",
-      title: "Smart budgetteren"
+      src: "/difrax-fles-kunstvoeding.webp",
+      alt: "Baby budget planning voor flesvoeding",
+      caption: "Smart budgetteren voor flesvoeding"
     },
     {
-      src: "https://images.unsplash.com/photo-1586105251261-72a756497a11?auto=format&fit=crop&w=400&h=300", 
-      alt: "Flesvoeding merken vergelijken",
-      title: "Prijzen vergelijken"
+      src: "/sterilisator-babyflessen.webp", 
+      alt: "Flesvoeding merken en equipment vergelijken",
+      caption: "Prijzen vergelijken spaart geld"
     },
     {
-      src: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=400&h=300",
-      alt: "Geld besparen op baby spullen",
-      title: "Slim besparen"
+      src: "/baby-voeten.webp",
+      alt: "Baby groeit, kosten stijgen",
+      caption: "Denk vooruit bij je budget"
     }
   ]
 
