@@ -387,9 +387,21 @@ export default function HypoallergeneVoedingPage() {
         <div className="col-span-12 lg:col-span-5">
           <KennisbankSidebar 
             images={[
-              '/images/hypoallergene-1.jpg',
-              '/images/hypoallergene-2.jpg',
-              '/images/hypoallergene-3.jpg'
+              {
+                src: "/kunstsvoeding-2.webp",
+                alt: "Hypoallergene flesvoeding opties",
+                caption: "Speciale formules voor allergische baby's"
+              },
+              {
+                src: "/close-up-baby.webp",
+                alt: "Baby met allergie signalen herkenning",
+                caption: "Vroege symptomen herkennen"
+              },
+              {
+                src: "/slapende-babe.webp",
+                alt: "Rustige baby na juiste hypoallergene voeding",
+                caption: "Comfort na de juiste voeding"
+              }
             ]}
             adTopics={[
               'HA-voeding merken vergelijken',

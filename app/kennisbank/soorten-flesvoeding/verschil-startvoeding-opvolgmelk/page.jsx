@@ -756,14 +756,19 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
         <KennisbankSidebar 
           images={[
             {
-              src: "/baby_feeding.png",
-              alt: "Startvoeding vs opvolgmelk vergelijking",
+              src: "/flesvoeding-close-up.webp",
+              alt: "Startvoeding vs opvolgmelk vergelijking close-up",
               caption: "De juiste keuze voor jouw baby"
             },
             {
-              src: "/mother_and_baby.png", 
-              alt: "Flesvoeding keuze maken",
-              caption: "Informed choice zonder druk"
+              src: "/borstvoeding-2.webp", 
+              alt: "Flesvoeding keuze maken met baby",
+              caption: "Weloverwogen keuze voor groei"
+            },
+            {
+              src: "/baby-voeten.webp",
+              alt: "Groeiende baby voeten als teken van ontwikkeling",
+              caption: "Groei en ontwikkeling volgen"
             }
           ]}
           adTopics={["Baby Voeding", "Flesvoeding Merken"]}

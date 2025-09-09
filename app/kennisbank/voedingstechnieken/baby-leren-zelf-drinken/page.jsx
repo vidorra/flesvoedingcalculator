@@ -12,19 +12,19 @@ export default function BabyLerenZelfDrinkenPage() {
   // Sidebar configuration
   const sidebarImages = [
     {
-      src: "/baby-zelf-drinken-stappen.png",
-      alt: "Baby leert zelfstandig drinken",
+      src: "/baby-voeten.webp",
+      alt: "Baby voeten tonen ontwikkeling en zelfstandigheid",
       caption: "Stapsgewijze begeleiding naar zelfstandigheid"
     },
     {
-      src: "/sippy-cups-vergelijking.png", 
-      alt: "Verschillende soorten drinkbekers",
-      caption: "Van sippy cup tot open beker"
+      src: "/difrax-fles-kunstvoeding.webp", 
+      alt: "Transitie van fles naar zelfstandig drinken",
+      caption: "Van fles naar zelfstandige beker"
     },
     {
-      src: "/motoriek-ontwikkeling.png",
-      alt: "Motorische ontwikkeling baby",
-      caption: "Hand-oog coördinatie ontwikkeling"
+      src: "/close-up-baby.webp",
+      alt: "Baby concentratie tijdens leerproces",
+      caption: "Ontwikkeling van vaardigheden"
     }
   ]
 

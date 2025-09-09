@@ -12,18 +12,18 @@ export default function WaterKokenFlesvoedingPage() {
   // Sidebar configuration
   const sidebarImages = [
     {
-      src: "/water-koken-veiligheid.png",
-      alt: "Veilig water koken voor flesvoeding",
+      src: "/sterilisator-babyflessen.webp",
+      alt: "Veilige water bereiding voor flesvoeding",
       caption: "Altijd water eerst volledig laten koken voor optimale veiligheid"
     },
     {
-      src: "/thermometer-70-graden.png", 
-      alt: "Thermometer toont 70 graden voor flesvoeding",
+      src: "/flesvoeding-close-up.webp", 
+      alt: "Correct bereide flesvoeding",
       caption: "Water van 70°C is de perfecte temperatuur voor flesvoeding"
     },
     {
-      src: "/nederlandse-kraanwater-kwaliteit.png",
-      alt: "Nederlandse kraanwater kwaliteit controle", 
+      src: "/difrax-fles-kunstvoeding.webp",
+      alt: "Nederlandse flesvoeding kwaliteit", 
       caption: "Nederlands kraanwater voldoet aan alle EU-veiligheidsnormen"
     }
   ]

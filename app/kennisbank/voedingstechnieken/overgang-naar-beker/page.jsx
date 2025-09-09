@@ -312,19 +312,19 @@ export default function OvergangNaarBekerPage() {
   // Sidebar configuration
   const sidebarImages = [
     {
-      src: "/beker-overgang-timing.png",
-      alt: "Optimale timing voor beker overgang",
+      src: "/flesvoeding.webp",
+      alt: "Flesvoeding als startpunt voor beker overgang",
       caption: "De juiste timing kan de overgang veel soepeler maken"
     },
     {
-      src: "/beste-bekers-nederland.png", 
-      alt: "Beste baby bekers verkrijgbaar in Nederland",
-      caption: "Bewezen bekers die Nederlandse ouders helpen met de overgang"
+      src: "/kunstsvoeding-2.webp", 
+      alt: "Transitie van fles naar beker training",
+      caption: "Geleidelijke overgang naar zelfstandigheid"
     },
     {
-      src: "/beker-training-tips.png",
-      alt: "Praktische tips voor beker training", 
-      caption: "Eenvoudige technieken voor een succesvolle overgang"
+      src: "/top-view-sleeping-baby.webp",
+      alt: "Tevreden baby tijdens overgangsperiode", 
+      caption: "Rust en geduld tijdens de overgang"
     }
   ]
 

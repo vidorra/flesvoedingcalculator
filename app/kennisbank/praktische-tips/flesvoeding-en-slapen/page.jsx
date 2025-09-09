@@ -12,17 +12,17 @@ export default function FlesvoedingEnSlapenPage() {
   // Sidebar configuration
   const sidebarImages = [
     {
-      src: "/baby-slaap-routine.png",
+      src: "/slapende-baby-2.webp",
       alt: "Baby slaap routine met flesvoeding",
       caption: "Optimale timing voor betere nachtrust"
     },
     {
-      src: "/nachtvoeding-afbouw.png", 
+      src: "/top-view-sleeping-baby.webp", 
       alt: "Geleidelijke afbouw nachtvoedingen",
       caption: "Stapsgewijse aanpak voor doorslapen"
     },
     {
-      src: "/slaap-omgeving-baby.png",
+      src: "/slapende-babe.webp",
       alt: "Perfecte slaapomgeving voor baby",
       caption: "Ideale setup voor rustgevende voeding"
     }

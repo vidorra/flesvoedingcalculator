@@ -12,14 +12,19 @@ export default function EersteKeerFlesvoedingPage() {
   // Custom sidebar content
   const sidebarImages = [
     {
-      src: "/eerste-fles-geven.png",
+      src: "/flesvoeding.webp",
       alt: "Eerste keer flesvoeding geven",
       caption: "Stap-voor-stap eerste flesvoeding"
     },
     {
-      src: "/baby-fles-houding.png",
-      alt: "Juiste houding flesvoeding",
-      caption: "Veilige en comfortabele voedingshouding"
+      src: "/mother_and_baby.png",
+      alt: "Moeder en baby samen",
+      caption: "Veilige en liefdevolle voedingshouding"
+    },
+    {
+      src: "/baby.png",
+      alt: "Baby close-up",
+      caption: "Signalen herkennen bij eerste fles"
     }
   ]
 

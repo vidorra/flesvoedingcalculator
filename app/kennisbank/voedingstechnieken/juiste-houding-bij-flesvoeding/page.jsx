@@ -11,19 +11,19 @@ export const metadata = {
 export default function JuisteHoudingBijFlesvoeding() {
   const sidebarImages = [
     {
-      src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=400&h=300",
-      alt: "Ergonomische voedingshouding",
-      title: "Comfortabel voeden"
+      src: "/flesvoeding-door-mama.webp",
+      alt: "Ergonomische voedingshouding moeder en baby",
+      caption: "Comfortabel voeden"
     },
     {
-      src: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&h=300", 
-      alt: "Veilige baby houding",
-      title: "Veiligheid voorop"
+      src: "/borstvoeding.webp", 
+      alt: "Veilige baby houding tijdens voeding",
+      caption: "Veiligheid voorop"
     },
     {
-      src: "https://images.unsplash.com/photo-1609220136736-443140cffec6?auto=format&fit=crop&w=400&h=300",
-      alt: "Voedingskussens hulpmiddelen",
-      title: "Handige hulpmiddelen"
+      src: "/slapende-baby-2.webp",
+      alt: "Ontspannen baby na juiste voedingshouding",
+      caption: "Tevreden na goede voeding"
     }
   ]
 

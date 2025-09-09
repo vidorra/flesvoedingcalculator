@@ -6,19 +6,19 @@ import { AlertCircle, Heart, Clock, Users, CheckCircle } from 'lucide-react'
 export default function ConstipatieFlespagePage() {
   const sidebarImages = [
     {
-      src: "/constipatie-baby.png",
-      alt: "Constipatie bij baby's herkennen",
-      caption: "Signalen van constipatie herkennen"
+      src: "/slapende-babe.webp",
+      alt: "Rustige baby tijdens constipatie behandeling",
+      caption: "Comfort en rust tijdens problemen"
     },
     {
-      src: "/buik-massage.png", 
-      alt: "Buik massage technieken",
-      caption: "Massage technieken voor verlichting"
+      src: "/baby-voeten.webp", 
+      alt: "Baby voeten voor massage en beweging",
+      caption: "Beweging helpt bij constipatie"
     },
     {
-      src: "/comfort-formule.png",
-      alt: "Comfort flesvoeding opties",
-      caption: "Speciale formules kunnen helpen"
+      src: "/flesvoeding.webp",
+      alt: "Juiste flesvoeding bereiding tegen constipatie",
+      caption: "Juiste bereiding voorkomt problemen"
     }
   ]
 

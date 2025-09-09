@@ -881,14 +881,19 @@ export default function KrampjesNaFlesvoedingPage() {
         <KennisbankSidebar 
           images={[
             {
-              src: "/mother_and_baby.png",
-              alt: "Krampjes na flesvoeding oplossen",
+              src: "/borstvoeding-2.webp",
+              alt: "Rustige baby tijdens voeding voor krampjes preventie",
               caption: "Comfort technieken voor een tevreden baby"
             },
             {
-              src: "/baby_feeding.png", 
-              alt: "Baby zonder krampjes",
-              caption: "Anti-koliek maatregelen die werken"
+              src: "/baby-met-fopspeen.webp", 
+              alt: "Baby met fopspeen tegen krampjes",
+              caption: "Comfort maatregelen die werken"
+            },
+            {
+              src: "/top-view-sleeping-baby.webp",
+              alt: "Ontspannen slapende baby",
+              caption: "Rust na succesvol comfort"
             }
           ]}
           adTopics={["Baby Comfort", "Anti-Koliek Producten"]}
