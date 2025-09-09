@@ -1,7 +1,7 @@
 'use client'
 import Layout from '../components/Layout'
 import Link from 'next/link'
-import { Home, ArrowLeft, Calculator, BookOpen, HelpCircle } from 'lucide-react'
+import { Calculator, ArrowLeft, Calendar, BookOpen, HelpCircle } from 'lucide-react'
 
 export default function NotFound() {
   return (
@@ -42,9 +42,9 @@ export default function NotFound() {
                 href="/"
                 className="flex items-center p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-primary/5 transition-all group"
               >
-                <Home className="w-5 h-5 text-primary mr-3 group-hover:scale-110 transition-transform" />
+                <Calculator className="w-5 h-5 text-primary mr-3 group-hover:scale-110 transition-transform" />
                 <div className="text-left">
-                  <div className="font-medium text-gray-800">Homepage</div>
+                  <div className="font-medium text-gray-800">Calculator</div>
                   <div className="text-sm text-gray-600">Terug naar de hoofdpagina</div>
                 </div>
               </Link>
@@ -53,9 +53,9 @@ export default function NotFound() {
                 href="/voedingsschemas"
                 className="flex items-center p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-primary/5 transition-all group"
               >
-                <Calculator className="w-5 h-5 text-primary mr-3 group-hover:scale-110 transition-transform" />
+                <Calendar className="w-5 h-5 text-primary mr-3 group-hover:scale-110 transition-transform" />
                 <div className="text-left">
-                  <div className="font-medium text-gray-800">Calculator</div>
+                  <div className="font-medium text-gray-800">Voedingsschema's</div>
                   <div className="text-sm text-gray-600">Bereken voedingsschema's</div>
                 </div>
               </Link>
