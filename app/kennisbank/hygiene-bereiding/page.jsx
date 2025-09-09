@@ -480,7 +480,14 @@ function HygieneBereidingPage() {
         {/* Navigation */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-primary mb-4">Meer informatie</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <Link 
+              href="/kennisbank/hygiene-bereiding/water-koken-flesvoeding"
+              className="p-3 bg-gray-50 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+            >
+              <div className="font-medium text-primary">Water koken voor flesvoeding →</div>
+              <div className="text-sm text-gray-600">Complete veiligheidsgids</div>
+            </Link>
             <Link 
               href="/kennisbank/veiligheid"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
