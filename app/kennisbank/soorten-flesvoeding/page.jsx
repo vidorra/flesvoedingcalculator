@@ -113,7 +113,7 @@ export default function SoortenFlesvoedingPage() {
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span>Aangepaste eiwitsamenstelling</span>
                 </li>
-                  <li className="text-gray-600 font-medium">• NIET geschikt voor baby&apos;s jonger dan 6 maanden</li>
+                  <li className="text-gray-600 font-medium"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>NIET geschikt voor baby&apos;s jonger dan 6 maanden</span></li>
                 </ul>
               </div>
               
@@ -468,21 +468,21 @@ export default function SoortenFlesvoedingPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <Link 
               href="/kennisbank/basis-flesvoeding"
-              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-primary">Basis Flesvoeding →</div>
               <div className="text-sm text-gray-600">Beginnen met flesvoeding</div>
             </Link>
             <Link 
               href="/kennisbank/voedingstechnieken"
-              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-primary">Voedingstechnieken →</div>
               <div className="text-sm text-gray-600">Hoe bereid je flesvoeding?</div>
             </Link>
             <Link 
               href="/kennisbank/problemen-oplossen"
-              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-primary">Problemen Oplossen →</div>
               <div className="text-sm text-gray-600">Hulp bij veelvoorkomende problemen</div>

@@ -411,19 +411,19 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                 <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
                   <h3 className="font-medium text-primary mb-2">Waarom Meer Eiwit in Opvolgmelk?</h3>
                   <ul className="text-sm text-gray-700 space-y-1">
-                    <li>• Baby's &gt;6 maanden groeien sneller</li>
-                    <li>• Vaste voeding bevat al veel koolhydraten</li>
-                    <li>• Eiwitten ondersteunen spierontwikkeling</li>
-                    <li>• Voorbereiden op koemelk (3.3g eiwit/100ml)</li>
+                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Baby's &gt;6 maanden groeien sneller</span></li>
+                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Vaste voeding bevat al veel koolhydraten</span></li>
+                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Eiwitten ondersteunen spierontwikkeling</span></li>
+                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Voorbereiden op koemelk (3.3g eiwit/100ml)</span></li>
                   </ul>
                 </div>
                 <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
                   <h3 className="font-medium text-primary mb-2">IJzer Boost Verklaard</h3>
                   <ul className="text-sm text-gray-700 space-y-1">
-                    <li>• Baby's geboren met ijzervoorraad voor 6 maanden</li>
-                    <li>• Na 6 maanden natuurlijke voorraad opgebruikt</li>
-                    <li>• Compenseert tekort als vaste voeding beperkt</li>
-                    <li>• Vooral belangrijk als baby weinig vlees/vis eet</li>
+                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Baby's geboren met ijzervoorraad voor 6 maanden</span></li>
+                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Na 6 maanden natuurlijke voorraad opgebruikt</span></li>
+                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Compenseert tekort als vaste voeding beperkt</span></li>
+                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Vooral belangrijk als baby weinig vlees/vis eet</span></li>
                   </ul>
                 </div>
               </div>
@@ -574,10 +574,10 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
               <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
                 <h3 className="font-medium text-primary mb-2">Beste Momenten voor Overstap:</h3>
                 <ul className="space-y-1 text-sm text-gray-700">
-                  <li>• 6-7 maanden: Ideale leeftijd, vaste voeding gestart</li>
-                  <li>• Niet tijdens ziekte: Wacht tot baby weer gezond is</li>
-                  <li>• Weekend start: Meer tijd om aanpassingen te observeren</li>
-                  <li>• Geen andere veranderingen: Niet tegelijk met nieuwe speen/routine</li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>6-7 maanden: Ideale leeftijd, vaste voeding gestart</span></li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Niet tijdens ziekte: Wacht tot baby weer gezond is</span></li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Weekend start: Meer tijd om aanpassingen te observeren</span></li>
+                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Geen andere veranderingen: Niet tegelijk met nieuwe speen/routine</span></li>
                 </ul>
               </div>
             </div>
@@ -735,14 +735,14 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <Link 
                   href="/kennisbank/soorten-flesvoeding"
-                  className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
                   <div className="font-medium text-primary">Soorten Flesvoeding →</div>
                   <div className="text-sm text-gray-600">Complete overzicht van alle flesvoeding types</div>
                 </Link>
                 <Link 
                   href="/kennisbank/financiele-aspecten/kosten-van-flesvoeding"
-                  className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
                   <div className="font-medium text-primary">Kosten van Flesvoeding →</div>
                   <div className="text-sm text-gray-600">Budgettering en kostenvergelijking</div>

@@ -114,10 +114,10 @@ export default function FlesvoedingVsBorstvoedingPage() {
             <div className="mt-4 p-4">
               <h3 className="font-semibold text-primary mb-2">Belangrijke waarheid vooraf:</h3>
               <ul className="space-y-1 text-sm text-gray-700">
-                <li>• <strong>95% van baby's</strong> groeit gezond op met flesvoeding</li>
-                <li>• <strong>Borstvoeding is ideaal</strong> maar niet altijd mogelijk of gewenst</li>
-                <li>• <strong>Geen perfecte keuze</strong> - beide hebben voor- en nadelen</li>
-                <li>• <strong>Jouw welzijn</strong> als ouder is ook belangrijk voor baby's ontwikkeling</li>
+                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span><strong>95% van baby's</strong> groeit gezond op met flesvoeding</span></li>
+                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span><strong>Borstvoeding is ideaal</strong> maar niet altijd mogelijk of gewenst</span></li>
+                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span><strong>Geen perfecte keuze</strong> - beide hebben voor- en nadelen</span></li>
+                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span><strong>Jouw welzijn</strong> als ouder is ook belangrijk voor baby's ontwikkeling</span></li>
               </ul>
             </div>
         </div>
@@ -129,7 +129,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
               Feiten en cijfers Nederland 2025
             </h2>
             
-            <div className="p-6">
+            <div>
               <h3 className="font-semibold text-primary mb-4">Nederlandse statistieken</h3>
               <ul className="space-y-2">
                 {nederlandseStats.map((stat, index) => (
@@ -140,7 +140,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 ))}
               </ul>
               
-              <div className="mt-6 p-4">
+              <div className="mt-6 p-4 bg-default rounded-lg">
                 <p className="text-sm text-gray-600">
                   <strong>Gemiddelde duur exclusieve borstvoeding:</strong> 3.2 maanden
                 </p>

@@ -557,21 +557,21 @@ export default function BasisFlesvoedingPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <Link 
               href="/kennisbank/soorten-flesvoeding"
-              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-primary">Soorten Flesvoeding →</div>
               <div className="text-sm text-gray-600">Nummer 1, 2, 3 uitgelegd</div>
             </Link>
             <Link 
               href="/kennisbank/voedingstechnieken"
-              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-primary">Voedingstechnieken →</div>
               <div className="text-sm text-gray-600">Bereiden en geven van fles</div>
             </Link>
             <Link 
               href="/"
-              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-primary">Flesvoeding Calculator →</div>
               <div className="text-sm text-gray-600">Bereken hoeveelheden</div>

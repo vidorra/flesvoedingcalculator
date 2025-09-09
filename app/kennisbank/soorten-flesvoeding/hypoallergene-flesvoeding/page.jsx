@@ -80,12 +80,12 @@ export default function HypoallergeneVoedingPage() {
 
             {/* Header */}
             <div className="mb-6">
-              <div className="text-sm text-primary mb-2">Soorten Flesvoeding • Hypoallergeen</div>
+              <div className="text-sm text-gray-700 mb-2">Soorten Flesvoeding • Hypoallergeen</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <Shield className="w-6 h-6 mr-3 text-primary" />
                 Hypoallergene Flesvoeding: Complete Medische Gids
               </h1>
-              <p className="text-primary leading-relaxed">
+              <p className="text-gray-500 leading-relaxed">
                 Hypoallergene flesvoeding kan levensreddend zijn voor baby's met koemelkallergie. Leer wanneer HA-voeding nodig is, 
                 welke Nederlandse merken werken, en hoe je veilig overstapt met medische begeleiding.
               </p>
@@ -100,7 +100,7 @@ export default function HypoallergeneVoedingPage() {
               
               <div className="mb-6">
                 <h3 className="font-medium text-primary mb-3">8% van Nederlandse baby's ontwikkelt koemelkallergie</h3>
-                <p className="text-primary mb-4">
+                <p className="text-gray-700 mb-4">
                   Voor deze groep is hypoallergene (HA) flesvoeding niet alleen een voorkeur - het is een medische noodzaak 
                   die ernstige allergische reacties kan voorkomen.
                 </p>
@@ -115,7 +115,7 @@ export default function HypoallergeneVoedingPage() {
                         <AlertTriangle className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
                         <div>
                           <div className="font-medium text-primary">{sign.sign}</div>
-                          <div className="text-sm text-primary">{sign.description}</div>
+                          <div className="text-sm text-gray-600">{sign.description}</div>
                         </div>
                       </div>
                     ))}
@@ -128,7 +128,7 @@ export default function HypoallergeneVoedingPage() {
                     {riskFactors.slice(0, 4).map((factor, index) => (
                       <div key={index} className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-sm text-primary">{factor}</span>
+                        <span className="text-sm text-gray-700">{factor}</span>
                       </div>
                     ))}
                   </div>
@@ -140,7 +140,7 @@ export default function HypoallergeneVoedingPage() {
                   <Shield className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
                     <h4 className="font-medium text-primary mb-1">Belangrijk: Medische Diagnose Vereist</h4>
-                    <p className="text-primary text-sm">
+                    <p className="text-gray-700 text-sm">
                       Start nooit zelf met HA-voeding zonder medisch advies. Diagnose door kinderarts/allergoloog 
                       is essentieel voor juiste behandeling.
                     </p>
@@ -159,18 +159,18 @@ export default function HypoallergeneVoedingPage() {
                     <div className="flex justify-between items-start mb-3">
                       <div>
                         <h3 className="font-semibold text-primary">{formula.brand}</h3>
-                        <span className="text-sm text-primary">{formula.type}</span>
+                        <span className="text-sm text-gray-600">{formula.type}</span>
                       </div>
                       <div className="text-right">
                         <div className="font-medium text-primary">{formula.price}</div>
-                        <div className="text-sm text-primary">{formula.effectiveness}</div>
+                        <div className="text-sm text-gray-600">{formula.effectiveness}</div>
                       </div>
                     </div>
                     
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
                         <h4 className="font-medium text-primary mb-2">Voordelen:</h4>
-                        <ul className="text-sm text-primary space-y-1">
+                        <ul className="text-sm text-gray-700 space-y-1">
                           {formula.pros.map((pro, idx) => (
                             <li key={idx} className="flex items-center space-x-2">
                               <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
@@ -181,7 +181,7 @@ export default function HypoallergeneVoedingPage() {
                       </div>
                       <div>
                         <h4 className="font-medium text-primary mb-2">Nadelen:</h4>
-                        <ul className="text-sm text-primary space-y-1">
+                        <ul className="text-sm text-gray-700 space-y-1">
                           {formula.cons.map((con, idx) => (
                             <li key={idx} className="flex items-center space-x-2">
                               <AlertTriangle className="w-3 h-3 text-primary flex-shrink-0" />
@@ -251,7 +251,7 @@ export default function HypoallergeneVoedingPage() {
                       {step.actions.map((action, idx) => (
                         <div key={idx} className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                          <span className="text-sm text-primary">{action}</span>
+                          <span className="text-sm text-gray-700">{action}</span>
                         </div>
                       ))}
                     </div>
@@ -299,7 +299,7 @@ export default function HypoallergeneVoedingPage() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h3 className="font-medium text-primary mb-3">Milde Reactie</h3>
-                  <div className="text-sm text-primary space-y-2">
+                  <div className="text-sm text-gray-700 space-y-2">
                     <div><strong>Symptomen:</strong> Rode vlekken, jeuk, lichte diarree</div>
                     <div><strong>Actie:</strong> Stop voeding, observeer, contact medisch team</div>
                   </div>
@@ -307,7 +307,7 @@ export default function HypoallergeneVoedingPage() {
                 
                 <div>
                   <h3 className="font-medium text-primary mb-3">Ernstige Reactie - BEL 112</h3>
-                  <div className="text-sm text-primary space-y-1">
+                  <div className="text-sm text-gray-700 space-y-1">
                     <div className="flex items-start space-x-2">
                       <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
                       <span>Zwelling gezicht/lippen/tong</span>
@@ -330,7 +330,7 @@ export default function HypoallergeneVoedingPage() {
 
               <div className="border-t border-gray-200 pt-6 mt-6">
                 <h4 className="font-medium text-primary mb-2">Noodplan Template (voor koelkast/oppas)</h4>
-                <div className="text-sm text-primary space-y-1">
+                <div className="text-sm text-gray-700 space-y-1">
                   <div><strong>Bekende allergieën:</strong> Koemelk</div>
                   <div><strong>Toegestane voeding:</strong> [HA-merk] + borstvoeding</div>
                   <div><strong>Bij reactie:</strong> Stop voeding → Bel ouders → Bij ernstig: 112</div>
@@ -343,21 +343,21 @@ export default function HypoallergeneVoedingPage() {
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link href="/kennisbank/problemen-oplossen/krampjes-na-flesvoeding" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/problemen-oplossen/krampjes-na-flesvoeding" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors bg-default">
                   <div className="font-medium text-primary">Krampjes na flesvoeding →</div>
-                  <div className="text-sm text-primary">HA-voeding als oplossing voor krampen</div>
+                  <div className="text-sm text-gray-600">HA-voeding als oplossing voor krampen</div>
                 </Link>
-                <Link href="/kennisbank/soorten-flesvoeding/anti-reflux-flesvoeding" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/soorten-flesvoeding/anti-reflux-flesvoeding" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors bg-default">
                   <div className="font-medium text-primary">Anti-reflux flesvoeding →</div>
-                  <div className="text-sm text-primary">Specialistische voeding voor reflux</div>
+                  <div className="text-sm text-gray-600">Specialistische voeding voor reflux</div>
                 </Link>
-                <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors bg-default">
                   <div className="font-medium text-primary">Verschil startvoeding/opvolgmelk →</div>
-                  <div className="text-sm text-primary">HA-voeding door verschillende leeftijden</div>
+                  <div className="text-sm text-gray-600">HA-voeding door verschillende leeftijden</div>
                 </Link>
-                <Link href="/kennisbank/soorten-flesvoeding" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/soorten-flesvoeding" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors bg-default">
                   <div className="font-medium text-primary">Alle soorten flesvoeding →</div>
-                  <div className="text-sm text-primary">Overzicht alle flesvoeding types</div>
+                  <div className="text-sm text-gray-600">Overzicht alle flesvoeding types</div>
                 </Link>
               </div>
             </div>
