@@ -12,18 +12,18 @@ export default function BioOrganischeFlesvoedingPage() {
   // Sidebar configuration
   const sidebarImages = [
     {
-      src: "/bio-flesvoeding-merken.png",
-      alt: "Nederlandse bio flesvoeding merken",
+      src: "/kunstvoeding.webp",
+      alt: "Biologische flesvoeding opties",
       caption: "Vergelijking van alle bio merken in Nederland"
     },
     {
-      src: "/biologische-landbouw.png", 
-      alt: "Biologische melkproductie",
+      src: "/flesvoeding.webp", 
+      alt: "Kwaliteitsvolle flesvoeding",
       caption: "Hoe biologische melk wordt geproduceerd"
     },
     {
-      src: "/kosten-vergelijking-bio.png",
-      alt: "Kosten bio vs reguliere flesvoeding",
+      src: "/difrax-fles-kunstvoeding.webp",
+      alt: "Premium flesvoeding keuzes",
       caption: "Complete kosten-baten analyse"
     }
   ]

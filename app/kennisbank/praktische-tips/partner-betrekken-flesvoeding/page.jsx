@@ -6,17 +6,17 @@ import { Users, Heart, Clock, MessageCircle, CheckCircle, AlertTriangle, Refresh
 export default function PartnerBetrekkenFlesvoedingPage() {
   const sidebarImages = [
     {
-      src: "/partner-flesvoeding-samen.png",
+      src: "/borstvoeding-3.webp",
       alt: "Partners geven samen flesvoeding",
       caption: "Gedeelde verantwoordelijkheid creëert sterke bands"
     },
     {
-      src: "/vader-geeft-fles-baby.png", 
+      src: "/borstvoeding-4.webp", 
       alt: "Vader geeft fles aan baby",
       caption: "Moderne Nederlandse vaders actief in voeding"
     },
     {
-      src: "/nachtvoeding-planning-schema.png",
+      src: "/flesvoeding-door-mama.webp",
       alt: "Nachtvoeding planning schema",
       caption: "Strategische verdeling nachtvoedingen"
     }

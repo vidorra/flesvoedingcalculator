@@ -450,9 +450,21 @@ export default function FlesvoedingWerkPage() {
         <div className="col-span-12 lg:col-span-5">
           <KennisbankSidebar 
             images={[
-              '/images/werk-combineren-1.jpg',
-              '/images/werk-combineren-2.jpg',
-              '/images/werk-combineren-3.jpg'
+              {
+                src: "/flesvoeding.webp",
+                alt: "Flesvoeding voor werkende ouders",
+                caption: "Praktische oplossingen voor werkende ouders"
+              },
+              {
+                src: "/sterilisator-babyflessen.webp",
+                alt: "Voorbereiding flesvoeding voor werk",
+                caption: "Organisatie en planning is alles"
+              },
+              {
+                src: "/close-up-baby.webp",
+                alt: "Baby bij kinderopvang",
+                caption: "Vertrouwen in goede zorg"
+              }
             ]}
             adTopics={[
               'Beste kinderopvang vinden',

@@ -841,14 +841,19 @@ export default function SpugenNaDeFlesPage() {
         <KennisbankSidebar 
           images={[
             {
-              src: "/mother_and_baby.png",
-              alt: "Baby spugen na voeding",
+              src: "/flesvoeding-door-mama.webp",
+              alt: "Baby spugen na voeding herkennen",
               caption: "Begrijpen wanneer spugen normaal is"
             },
             {
-              src: "/baby_feeding.png", 
-              alt: "Comfort technieken",
+              src: "/kunstvoeding.webp", 
+              alt: "Anti-reflux voedingstechnieken",
               caption: "Technieken om spugen te verminderen"
+            },
+            {
+              src: "/slapende-baby-2.webp",
+              alt: "Tevreden baby na voeding",
+              caption: "Rust na succesvolle voeding"
             }
           ]}
           adTopics={["Baby Comfort", "Voedingshulp"]}

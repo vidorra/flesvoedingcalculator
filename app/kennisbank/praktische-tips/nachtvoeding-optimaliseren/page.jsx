@@ -577,14 +577,19 @@ export default function NachtvoedingOptimaliserenPage() {
         <KennisbankSidebar 
           images={[
             {
-              src: "/mother_and_baby.png",
-              alt: "Nachtvoeding optimaliseren",
+              src: "/slapende-baby-2.webp",
+              alt: "Slapende baby voor nachtvoeding",
               caption: "Efficiënte nachtvoeding technieken"
             },
             {
-              src: "/baby_feeding.png", 
-              alt: "Baby slaap ondersteuning",
+              src: "/flesvoeding-door-mama.webp", 
+              alt: "Nachtvoeding door moeder",
               caption: "Meer slaap voor uitgeruste ouders"
+            },
+            {
+              src: "/top-view-sleeping-baby.webp",
+              alt: "Rustgevende baby slaap",
+              caption: "Optimale slaapomgeving voor baby"
             }
           ]}
           adTopics={["Nacht Voeding Producten", "Slaap Hulpmiddelen"]}

@@ -518,14 +518,19 @@ export default function TweelingVoedenPage() {
         <KennisbankSidebar 
           images={[
             {
-              src: "/mother_and_baby.png",
-              alt: "Tweeling voeding",
+              src: "/borstvoeding-4.webp",
+              alt: "Tweeling voeding technieken",
               caption: "Praktische tips voor het voeden van een tweeling"
             },
             {
-              src: "/baby_feeding.png", 
-              alt: "Tweeling voeding equipment",
+              src: "/sterilisator-babyflessen.webp", 
+              alt: "Sterilisator voor tweeling voeding equipment",
               caption: "Essentieel equipment voor tweeling voeding"
+            },
+            {
+              src: "/baby-voeten.webp",
+              alt: "Twee baby voeten voor tweeling",
+              caption: "Dubbele zorg, dubbele vreugde"
             }
           ]}
           adTopics={["Tweeling Producten", "Baby Equipment"]}

@@ -1108,14 +1108,19 @@ export default function VoedingsritmeOpbouwenPage() {
         <KennisbankSidebar 
           images={[
             {
-              src: "/mother_and_baby.png",
-              alt: "Voedingsritme opbouwen",
+              src: "/borstvoeding.webp",
+              alt: "Voedingsritme opbouwen moeder en baby",
               caption: "Structuur en routine voor baby en ouders"
             },
             {
-              src: "/baby_feeding.png", 
-              alt: "Baby schema",
+              src: "/kunstvoeding.webp", 
+              alt: "Baby met voedingsschema",
               caption: "Een tevreden baby met voorspelbaar ritme"
+            },
+            {
+              src: "/top-view-sleeping-baby.webp",
+              alt: "Slapende baby door goed ritme",
+              caption: "Rust door een goed voedingsritme"
             }
           ]}
           adTopics={["Baby Planning", "Ouder Ondersteuning"]}

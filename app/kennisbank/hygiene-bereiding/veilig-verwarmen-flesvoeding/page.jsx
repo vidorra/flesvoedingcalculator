@@ -6,17 +6,17 @@ import { Zap, AlertTriangle, Thermometer, CheckCircle, Clock, RefreshCw } from '
 export default function VeiligVerwarmenFlesvoedingPage() {
   const sidebarImages = [
     {
-      src: "/flesvoeding-waterpad-verwarmen.png",
+      src: "/flesvoeding.webp",
       alt: "Flesvoeding verwarmen in waterpad",
       caption: "Veilige waterpad methode voor gelijkmatige verhitting"
     },
     {
-      src: "/magnetron-gevaar-flesvoeding.png", 
+      src: "/kunstvoeding.webp", 
       alt: "Magnetron gevaren flesvoeding",
       caption: "Waarom magnetron gebruik gevaarlijk is"
     },
     {
-      src: "/temperatuur-testen-pols.png",
+      src: "/close-up-baby.webp",
       alt: "Temperatuur testen op pols",
       caption: "Correct temperatuur testen op pols"
     }

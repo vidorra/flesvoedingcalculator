@@ -12,19 +12,19 @@ export default function AllergischeReactiesFlesvoedingPage() {
   // Sidebar configuration
   const sidebarImages = [
     {
-      src: "/allergische-reacties-herkenning.png",
-      alt: "Allergische reacties herkennen bij baby's",
+      src: "/close-up-baby.webp",
+      alt: "Close-up van baby gezicht voor allergische reacties herkenning",
       caption: "Vroege symptomen herkennen is cruciaal"
     },
     {
-      src: "/noodprotocol-anafylaxie.png", 
-      alt: "Noodprotocol bij anafylactische reactie",
-      caption: "EpiPen gebruik en emergency protocol"
+      src: "/flesvoeding-door-mama.webp", 
+      alt: "Veilige flesvoeding door moeder",
+      caption: "Veilige voeding bij allergieën"
     },
     {
-      src: "/alternatieve-flesvoeding.png",
-      alt: "Alternatieve flesvoeding opties",
-      caption: "Hydrolysaat en amino acid formules"
+      src: "/kunstsvoeding-2.webp",
+      alt: "Alternatieve flesvoeding formulen",
+      caption: "Hypoallergene voedingsopties"
     }
   ]
 

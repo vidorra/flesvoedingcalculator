@@ -535,9 +535,14 @@ export default function FlesvoedingPrematurePage() {
               caption: "Specialistische zorg voor premature baby's"
             },
             {
-              src: "/baby_feeding.png", 
+              src: "/flesvoeding-close-up.webp", 
               alt: "NICU voeding ondersteuning",
               caption: "Professionele begeleiding bij premature voeding"
+            },
+            {
+              src: "/baby.png",
+              alt: "Kleine baby",
+              caption: "Extra zorg voor premature baby's"
             }
           ]}
           adTopics={["Premature Baby Producten", "NICU Ondersteuning"]}

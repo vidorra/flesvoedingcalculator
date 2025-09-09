@@ -6,19 +6,19 @@ import { AlertTriangle, Heart, Clock, Users } from 'lucide-react'
 export default function BabyWeigertFlespagePage() {
   const sidebarImages = [
     {
-      src: "/flesvoeding-weigeraing.png",
-      alt: "Baby weigert fles oplossingen",
+      src: "/flesvoeding-door-mama.webp",
+      alt: "Moeder geeft fles aan baby",
       caption: "Tips voor baby die fles weigert"
     },
     {
-      src: "/verschillende-spenen.png", 
-      alt: "Verschillende spenen typen",
-      caption: "Verschillende spenen kunnen helpen"
+      src: "/difrax-fles-kunstvoeding.webp", 
+      alt: "Verschillende flesvoeding opties",
+      caption: "Verschillende flessen kunnen helpen"
     },
     {
-      src: "/rustige-voeding.png",
-      alt: "Rustige voeding omgeving",
-      caption: "Rustige omgeving bevordert acceptatie"
+      src: "/close-up-baby.webp",
+      alt: "Close-up van baby's gezicht",
+      caption: "Rustige benadering bevordert acceptatie"
     }
   ]
 
