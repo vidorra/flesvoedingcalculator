@@ -483,21 +483,21 @@ function HygieneBereidingPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <Link 
               href="/kennisbank/hygiene-bereiding/water-koken-flesvoeding"
-              className="p-3 bg-gray-50 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-primary">Water koken voor flesvoeding →</div>
               <div className="text-sm text-gray-600">Complete veiligheidsgids</div>
             </Link>
             <Link 
               href="/kennisbank/veiligheid"
-              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-primary">Veiligheidsrichtlijnen →</div>
               <div className="text-sm text-gray-600">Belangrijke veiligheidstips</div>
             </Link>
             <Link 
               href="/kennisbank/praktische-tips"
-              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-primary">Praktische Tips →</div>
               <div className="text-sm text-gray-600">Handige tips voor ouders</div>

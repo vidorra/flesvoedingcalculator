@@ -248,14 +248,14 @@ export default function PraktischeTipsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 
               href="/voedingsschemas"
-              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-primary">Voedingsschema&apos;s →</div>
               <div className="text-sm text-primary">Interactieve schema&apos;s per leeftijd</div>
             </Link>
             <Link 
               href="/"
-              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-primary">Calculator →</div>
               <div className="text-sm text-primary">Bereken persoonlijke hoeveelheden</div>

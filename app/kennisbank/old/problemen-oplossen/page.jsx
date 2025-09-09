@@ -89,7 +89,7 @@ export default function ProblemenOplossenPage() {
                   </div>
                   <ul className="space-y-1 ml-7">
                     {item.solutions.map((solution, idx) => (
-                      <li key={idx} className="text-sm text-gray-600">• {solution}</li>
+                      <li key={idx} className="text-sm text-gray-600"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>{solution}</span></li>
                     ))}
                   </ul>
                 </div>

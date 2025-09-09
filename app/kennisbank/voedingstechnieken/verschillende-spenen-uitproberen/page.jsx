@@ -683,10 +683,10 @@ export default function VerschillendeSpenenUitproberenPage() {
                 <div>
                   <h3 className="font-medium text-primary mb-2">Kernprincipes:</h3>
                   <ul className="space-y-1 text-sm">
-                    <li>• Start simpel met breed geaccepteerde merken</li>
-                    <li>• Test één variabele tegelijk (flow OF vorm)</li>
-                    <li>• Geef nieuwe spenen tijd (3-5 voedingen minimum)</li>
-                    <li>• Documenteer wat werkt voor toekomstige referentie</li>
+                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Start simpel met breed geaccepteerde merken</span></li>
+                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Test één variabele tegelijk (flow OF vorm)</span></li>
+                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Geef nieuwe spenen tijd (3-5 voedingen minimum)</span></li>
+                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Documenteer wat werkt voor toekomstige referentie</span></li>
                   </ul>
                 </div>
                 <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
@@ -704,14 +704,14 @@ export default function VerschillendeSpenenUitproberenPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <Link 
                   href="/kennisbank/voedingstechnieken"
-                  className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
                   <div className="font-medium text-primary">Voedingstechnieken →</div>
                   <div className="text-sm text-gray-600">Alle voedingstechnieken op een rij</div>
                 </Link>
                 <Link 
                   href="/kennisbank/problemen-oplossen"
-                  className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
                   <div className="font-medium text-primary">Problemen Oplossen →</div>
                   <div className="text-sm text-gray-600">Oplossingen voor veelvoorkomende problemen</div>

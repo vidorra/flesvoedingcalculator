@@ -1,6 +1,6 @@
-import Layout from '../../../components/Layout'
+import Layout from '../../../../components/Layout'
 import Link from 'next/link'
-import KennisbankSidebar from '../../../components/KennisbankSidebar'
+import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { Droplets, Thermometer, Clock, Shield, AlertTriangle, CheckCircle, Home, Coffee } from 'lucide-react'
 
 export const metadata = {
@@ -411,19 +411,19 @@ export default function WaterKokenFlesvoedingPage() {
                 Gerelateerde Artikelen
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link href="/kennisbank/hygiene-bereiding/veilig-verwarmen-flesvoeding" className="p-3 bg-gray-50 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/hygiene-bereiding/veilig-verwarmen-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Veilig verwarmen van flesvoeding →</div>
                   <div className="text-sm text-gray-600">Leer hoe je flesvoeding veilig verwarmt</div>
                 </Link>
-                <Link href="/kennisbank/hygiene-bereiding/houdbaarheid-flesvoeding" className="p-3 bg-gray-50 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/hygiene-bereiding/houdbaarheid-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Houdbaarheid flesvoeding →</div>
                   <div className="text-sm text-gray-600">Hoelang kun je flesvoeding bewaren?</div>
                 </Link>
-                <Link href="/kennisbank/hygiene-bereiding/flessen-steriliseren" className="p-3 bg-gray-50 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/hygiene-bereiding/flessen-steriliseren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Flessen steriliseren →</div>
                   <div className="text-sm text-gray-600">Complete gids voor het steriliseren van babyflessen</div>
                 </Link>
-                <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="p-3 bg-gray-50 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Fles bereiden stap-voor-stap →</div>
                   <div className="text-sm text-gray-600">Volledige handleiding voor fles bereiding</div>
                 </Link>

@@ -238,7 +238,7 @@ export default function FlesvoedingWerkPage() {
                         <h4 className="font-medium text-primary mb-2">Voordelen:</h4>
                         <ul className="text-sm text-primary space-y-1">
                           {type.pros.map((pro, idx) => (
-                            <li key={idx}>• {pro}</li>
+                            <li key={idx}><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>{pro}</span></li>
                           ))}
                         </ul>
                       </div>
@@ -246,7 +246,7 @@ export default function FlesvoedingWerkPage() {
                         <h4 className="font-medium text-primary mb-2">Aandachtspunten:</h4>
                         <ul className="text-sm text-primary space-y-1">
                           {type.cons.map((con, idx) => (
-                            <li key={idx}>• {con}</li>
+                            <li key={idx}><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>{con}</span></li>
                           ))}
                         </ul>
                       </div>
@@ -406,19 +406,19 @@ export default function FlesvoedingWerkPage() {
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link href="/kennisbank/praktische-tips/voedingsritme-opbouwen" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/praktische-tips/voedingsritme-opbouwen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Voedingsritme opbouwen →</div>
                   <div className="text-sm text-primary">Work-ready schema's ontwikkelen</div>
                 </Link>
-                <Link href="/kennisbank/hygiene-bereiding/flesvoeding-bewaren" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/hygiene-bereiding/flesvoeding-bewaren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Flesvoeding bewaren →</div>
                   <div className="text-sm text-primary">Kinderopvang veiligheid tips</div>
                 </Link>
-                <Link href="/kennisbank/voedingstechnieken/verschillende-spenen-uitproberen" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/voedingstechnieken/verschillende-spenen-uitproberen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Verschillende spenen →</div>
                   <div className="text-sm text-primary">Opvang acceptatie verbeteren</div>
                 </Link>
-                <Link href="/kennisbank/praktische-tips" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/praktische-tips" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Alle praktische tips →</div>
                   <div className="text-sm text-primary">Meer handige ouder tips</div>
                 </Link>

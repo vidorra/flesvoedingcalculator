@@ -516,49 +516,50 @@ export default function HomePage() {
                   {/* Display Corrected Age */}
                   {correctedAge !== null && (
                     <div className="bg-white rounded-lg p-3">
-                      <div className="text-sm text-gray-600 mb-2">Leeftijd berekening:</div>
+                      {/* Top section with Lees meer link */}
+                      <div className="flex items-start justify-between mb-2">
+                        <div className="text-sm text-gray-600">Leeftijd berekening:</div>
+                        <Link 
+                          href="/kennisbank/basis-flesvoeding/flesvoeding-bij-premature-babys"
+                          className="text-xs text-primary hover:underline flex items-center"
+                        >
+                          <Info className="w-3 h-3 mr-1" />
+                          Lees meer →
+                        </Link>
+                      </div>
                       <div className="space-y-1 text-xs">
                         <div>Chronologische leeftijd: {correctedAge.chronologicalWeeks} weken</div>
                         <div>Geboren bij: {correctedAge.gestationalWeeks} weken zwangerschap</div>
                         <div>Te vroeg: {correctedAge.weeksPremature} weken</div>
                       </div>
                       <div className="mt-2 pt-2 border-t border-gray-200">
-                        <div className="text-sm text-gray-600">Gecorrigeerde leeftijd:</div>
-                        <div className="font-semibold text-primary">
-                          {correctedAge.correctedWeeks < 0 
-                            ? `${correctedAge.correctedWeeks} weken (nog ${Math.abs(correctedAge.correctedWeeks)} weken voor termijn)` 
-                            : correctedAge.correctedWeeks < 4 
-                              ? `${correctedAge.correctedWeeks} weken`
-                              : `${Math.floor(correctedAge.correctedWeeks / 4)} maanden en ${correctedAge.correctedWeeks % 4} weken`
-                          }
+                        <div className="flex items-center justify-between">
+                          <div className="flex-1">
+                            <div className="text-sm text-gray-600">Gecorrigeerde leeftijd:</div>
+                            <div className="font-semibold text-primary">
+                              {correctedAge.correctedWeeks < 0 
+                                ? `${correctedAge.correctedWeeks} weken (nog ${Math.abs(correctedAge.correctedWeeks)} weken voor termijn)` 
+                                : correctedAge.correctedWeeks < 4 
+                                  ? `${correctedAge.correctedWeeks} weken`
+                                  : `${Math.floor(correctedAge.correctedWeeks / 4)} maanden en ${correctedAge.correctedWeeks % 4} weken`
+                              }
+                            </div>
+                          </div>
+                          {/* Premature Category moved to right side */}
+                          {prematureCategory && (
+                            <div className="bg-amber-50 rounded-lg p-2 border border-amber-200 ml-3 flex-shrink-0">
+                              <div className="text-xs text-amber-800">
+                                <strong>Categorie:</strong><br/>{prematureCategory}
+                              </div>
+                            </div>
+                          )}
                         </div>
-                      </div>
-                    </div>
-                  )}
-                  
-                  {/* Premature Category */}
-                  {prematureCategory && (
-                    <div className="bg-amber-50 rounded-lg p-3 border border-amber-200">
-                      <div className="text-sm text-amber-800">
-                        <strong>Categorie:</strong> {prematureCategory}
                       </div>
                     </div>
                   )}
                 </div>
               )}
               
-              {/* Help link for premature information */}
-              {isPremature && (
-                <div className="mt-4 p-3 bg-gray-50 rounded-lg">
-                  <Link 
-                    href="/kennisbank/basis-flesvoeding/flesvoeding-bij-premature-babys"
-                    className="text-sm text-primary hover:underline flex items-center"
-                  >
-                    <Info className="w-4 h-4 mr-1" />
-                    Lees meer over voeding voor premature baby's →
-                  </Link>
-                </div>
-              )}
 
               {/* Weight Input */}
               <div>
@@ -615,40 +616,40 @@ export default function HomePage() {
           {/* Results */}
           {results && (
             <div className="space-y-6">
-              {/* Special Premature Alert */}
-              {results.isPremature && (
-                <div className="bg-blue-50 border border-blue-300 rounded-xl p-4">
-                  <div className="flex items-start space-x-2">
-                    <AlertCircle className="w-5 h-5 text-blue-600 mt-0.5" />
-                    <div>
-                      <h4 className="font-semibold text-blue-900 mb-1">
-                        Premature Baby Berekening
-                      </h4>
-                      <p className="text-sm text-blue-800">
-                        Gecorrigeerde leeftijd: {results.correctedAge < 0 
-                          ? `${results.correctedAge} weken (nog ${Math.abs(results.correctedAge)} weken voor termijn)` 
-                          : results.correctedAge < 4 
-                            ? `${results.correctedAge} weken`
-                            : `${Math.floor(results.correctedAge / 4)} maanden`
-                        }
-                      </p>
-                      <p className="text-sm text-blue-800 mt-1">
-                        Geboren bij: {results.gestationalAge} weken zwangerschap (chronologisch: {results.ageData?.chronologicalWeeks} weken oud)
-                      </p>
-                      <p className="text-sm text-blue-800 mt-1 font-medium">
-                        Voedingsbehoefte: {results.mlPerKg}ml per kg lichaamsgewicht
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              )}
-              
               {/* Main Results */}
               <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
                 <h3 className="text-lg font-semibold mb-4 flex items-center">
                   <Baby className="w-5 h-5 mr-2" />
                   Aanbevolen Hoeveelheden
                 </h3>
+                
+                {/* Special Premature Alert - moved inside and styled with white bg */}
+                {results.isPremature && (
+                  <div className="bg-white rounded-xl p-4 mb-4">
+                    <div className="flex items-start space-x-2">
+                      <AlertCircle className="w-5 h-5 text-primary mt-0.5" />
+                      <div>
+                        <h4 className="font-semibold text-primary mb-1">
+                          Premature Baby Berekening
+                        </h4>
+                        <p className="text-sm text-primary">
+                          Gecorrigeerde leeftijd: {results.correctedAge < 0 
+                            ? `${results.correctedAge} weken (nog ${Math.abs(results.correctedAge)} weken voor termijn)` 
+                            : results.correctedAge < 4 
+                              ? `${results.correctedAge} weken`
+                              : `${Math.floor(results.correctedAge / 4)} maanden`
+                          }
+                        </p>
+                        <p className="text-sm text-primary mt-1">
+                          Geboren bij: {results.gestationalAge} weken zwangerschap (chronologisch: {results.ageData?.chronologicalWeeks} weken oud)
+                        </p>
+                        <p className="text-sm text-primary mt-1 font-medium">
+                          Voedingsbehoefte: {results.mlPerKg}ml per kg lichaamsgewicht
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
                 
                 <div className="grid grid-cols-1 gap-4">
                   <div className="bg-white/20 backdrop-blur rounded-xl p-4">
@@ -760,22 +761,20 @@ export default function HomePage() {
 
               {/* Premature Baby Information Banner */}
               {results.isPremature && (
-                <div className="bg-gradient-to-r from-blue-500 to-primary rounded-xl p-6 text-white shadow-lg">
+                <div className="bg-amber-50 rounded-xl p-6 shadow-lg">
                   <div className="flex items-start space-x-3">
-                    <AlertCircle className="w-6 h-6 mt-1 flex-shrink-0" />
+                    <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="font-bold text-lg mb-2">Premature Baby Voeding - Speciale Berekening</h4>
-                      <p className="text-blue-100 mb-3">
+                      <h4 className="font-semibold text-amber-800 mb-1">Premature Baby Voeding - Speciale Berekening</h4>
+                      <p className="text-sm text-amber-700 mb-3">
                         Deze berekening is gebaseerd op de gecorrigeerde leeftijd van uw premature baby volgens Nederlandse richtlijnen.
                         Premature baby's hebben verhoogde voedingsbehoeften voor optimale groei en ontwikkeling.
                       </p>
-                      <div className="bg-white/20 backdrop-blur rounded-lg p-3 mb-3">
-                        <p className="text-sm">
-                          <strong>Belangrijke informatie:</strong> Bij premature baby's wordt {results.mlPerKg}ml per kg lichaamsgewicht aangehouden
-                          (in plaats van de standaard 150ml/kg). Dit is nodig voor inhaalgroei en herstel.
-                        </p>
-                      </div>
-                      <p className="text-blue-100 text-sm">
+                      <p className="text-sm text-amber-700 mb-3">
+                        <strong>Belangrijke informatie:</strong> Bij premature baby's wordt {results.mlPerKg}ml per kg lichaamsgewicht aangehouden
+                        (in plaats van de standaard 150ml/kg). Dit is nodig voor inhaalgroei en herstel.
+                      </p>
+                      <p className="text-sm text-amber-700">
                         💡 <strong>Tip:</strong> Bespreek deze berekening altijd met uw kinderarts of consultatiebureau voor persoonlijk advies.
                       </p>
                     </div>

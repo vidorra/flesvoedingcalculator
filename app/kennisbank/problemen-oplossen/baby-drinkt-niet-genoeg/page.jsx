@@ -48,7 +48,7 @@ export default function BabyDrinktNietGenoegPage() {
                 Voor je in paniek raakt, is het belangrijk te weten wat normale voedingshoeveelheden zijn. Baby's verschillen enorm in hun voedingsbehoeften, en deze veranderen constant tijdens groeiperiodes.
               </p>
               
-              <div className="bg-gray-50 rounded-2xl border border-gray-200 p-4 mb-4">
+              <div className="mb-4">
                 <h3 className="font-medium text-primary mb-3">Normale dagelijkse hoeveelheden:</h3>
                 <ul className="space-y-2">
                   <li className="flex items-center space-x-2">
@@ -70,7 +70,7 @@ export default function BabyDrinktNietGenoegPage() {
                 </ul>
               </div>
 
-              <div className="p-4">
+              <div>
                 <h3 className="font-medium text-gray-700 mb-2">Voorbeeldberekening 3 maanden oude baby (5kg):</h3>
                 <ul className="space-y-1">
                   <li className="text-gray-700 text-sm"><strong>Dagelijkse behoefte:</strong> 5kg × 150ml = 750ml per dag</li>
@@ -88,7 +88,7 @@ export default function BabyDrinktNietGenoegPage() {
               <h2 className="text-lg font-semibold text-primary mb-4">Waarschuwingssignalen: Wanneer zorgen maken?</h2>
               
               <div className="space-y-4">
-                <div className="p-4">
+                <div>
                   <h3 className="font-medium text-gray-700 mb-2 flex items-center">
                     <AlertTriangle className="w-4 h-4 mr-2" />
                     Acute signalen - direct medisch contact
@@ -145,7 +145,7 @@ export default function BabyDrinktNietGenoegPage() {
                   </div>
                 </div>
 
-                <div className="p-4">
+                <div>
                   <h3 className="font-medium text-gray-700 mb-2">Signalen voor extra aandacht</h3>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
@@ -174,7 +174,7 @@ export default function BabyDrinktNietGenoegPage() {
               <h2 className="text-lg font-semibold text-primary mb-4">Veelvoorkomende oorzaken en oplossingen</h2>
               
               <div className="space-y-6">
-                <div className="bg-gray-50 rounded-2xl border border-gray-200 p-4">
+                <div className="mb-4">
                   <h3 className="font-medium text-primary mb-3">Categorie 1: Fles en speen problemen</h3>
                   
                   <div className="space-y-4">
@@ -191,7 +191,7 @@ export default function BabyDrinktNietGenoegPage() {
                         </li>
                       </ul>
                       
-                      <div className="mt-2 p-3 bg-gray-50 border border-gray-200 rounded">
+                      <div className="mt-2 p-3 bg-gray-100 rounded">
                         <h5 className="font-medium text-gray-700 mb-1">Oplossing:</h5>
                         <ul className="space-y-1">
                           <li className="flex items-center space-x-2">
@@ -230,7 +230,7 @@ export default function BabyDrinktNietGenoegPage() {
                   </div>
                 </div>
 
-                <div className="bg-gray-50 rounded-2xl border border-gray-200 p-4">
+                <div className="mb-4">
                   <h3 className="font-medium text-primary mb-3">Categorie 2: Temperatuur en smaak issues</h3>
                   
                   <div className="space-y-4">
@@ -251,7 +251,7 @@ export default function BabyDrinktNietGenoegPage() {
                         </li>
                       </ul>
                       
-                      <div className="mt-2 p-3 bg-gray-50 border border-gray-200 rounded">
+                      <div className="mt-2 p-3 bg-gray-100 rounded">
                         <h5 className="font-medium text-gray-700 mb-1">Oplossing:</h5>
                         <ul className="space-y-1">
                           <li className="flex items-center space-x-2">
@@ -282,7 +282,7 @@ export default function BabyDrinktNietGenoegPage() {
               </h2>
               
               <div className="space-y-6">
-                <div className="p-4">
+                <div>
                   <h3 className="font-medium text-gray-700 mb-3">Stap 1: Basis checklist (24 uur)</h3>
                   
                   <div className="space-y-2">
@@ -315,7 +315,7 @@ export default function BabyDrinktNietGenoegPage() {
                   </div>
                 </div>
 
-                <div className="p-4">
+                <div>
                   <h3 className="font-medium text-gray-700 mb-3">Stap 2: Equipment aanpassingen (2-3 dagen)</h3>
                   
                   <div className="space-y-2">
@@ -329,15 +329,15 @@ export default function BabyDrinktNietGenoegPage() {
                     <div className="mt-3">
                       <p className="text-gray-700 text-sm font-medium mb-2">Bijhouden wat werkt:</p>
                       <ul className="space-y-1">
-                        <li className="text-gray-700 text-sm">• Welke speen: merk, maat, materiaal</li>
-                        <li className="text-gray-700 text-sm">• Welke positie: zittend, staand, in beweging</li>
-                        <li className="text-gray-700 text-sm">• Welke timing: interval tussen voedingen</li>
+                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Welke speen: merk, maat, materiaal</span></li>
+                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Welke positie: zittend, staand, in beweging</span></li>
+                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Welke timing: interval tussen voedingen</span></li>
                       </ul>
                     </div>
                   </div>
                 </div>
 
-                <div className="p-4">
+                <div>
                   <h3 className="font-medium text-gray-700 mb-3">Stap 3: Diepere analyse (1 week)</h3>
                   
                   <div className="space-y-3">
@@ -357,15 +357,15 @@ export default function BabyDrinktNietGenoegPage() {
                     <div>
                       <p className="text-gray-700 text-sm font-medium mb-2">Patronen zoeken:</p>
                       <ul className="space-y-1">
-                        <li className="text-gray-700 text-sm">• Tijden van dag: drinkt baby beter 's ochtends/avonds?</li>
-                        <li className="text-gray-700 text-sm">• Dagen van week: weekend vs doordeweeks verschil?</li>
-                        <li className="text-gray-700 text-sm">• Na activiteiten: na bad, wandeling, spelen?</li>
+                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Tijden van dag: drinkt baby beter 's ochtends/avonds?</span></li>
+                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Dagen van week: weekend vs doordeweeks verschil?</span></li>
+                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Na activiteiten: na bad, wandeling, spelen?</span></li>
                       </ul>
                     </div>
                   </div>
                 </div>
 
-                <div className="p-4">
+                <div>
                   <h3 className="font-medium text-gray-700 mb-3">Stap 4: Medische consultatie</h3>
                   
                   <div>
@@ -454,19 +454,19 @@ export default function BabyDrinktNietGenoegPage() {
                 Gerelateerde artikelen
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link href="/kennisbank/basis-flesvoeding/baby-weigert-de-fles" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/basis-flesvoeding/baby-weigert-de-fles" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Baby weigert de fles →</div>
                   <div className="text-sm text-gray-600">Als baby helemaal niet wil drinken</div>
                 </Link>
-                <Link href="/kennisbank/voedingstechnieken/juiste-houding-bij-flesvoeding" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/voedingstechnieken/juiste-houding-bij-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Juiste houding bij flesvoeding →</div>
                   <div className="text-sm text-gray-600">Optimale positionering voor betere intake</div>
                 </Link>
-                <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Eerste keer flesvoeding →</div>
                   <div className="text-sm text-gray-600">Basis technieken perfectioneren</div>
                 </Link>
-                <Link href="/kennisbank/problemen-oplossen" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <Link href="/kennisbank/problemen-oplossen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Meer probleemoplossing →</div>
                   <div className="text-sm text-gray-600">Overzicht alle voedingsproblemen</div>
                 </Link>

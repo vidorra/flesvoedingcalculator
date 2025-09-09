@@ -694,6 +694,60 @@ export default function ArticlePage() {
 
 ## 🚨 CRITICAL ISSUES DISCOVERED & FIXED (January 2025)
 
+### Issue 10: Text Color Hierarchy Problems
+**Problem:** Overuse of `text-primary` for regular body text and descriptions
+**Solution:** Reserve `text-primary` ONLY for headings and highlights. Use proper gray hierarchy:
+- Headings: `text-primary`
+- Body text: `text-gray-700` or `text-gray-600` 
+- Descriptions: `text-gray-600`
+- Meta/secondary text: `text-gray-500`
+**Prevention:** Maintain clear visual hierarchy with appropriate text colors for content type
+
+### Issue 11: Child Element Padding in Cards
+**Problem:** Child elements having padding (`p-4`, `p-3`) when parent card already has padding, causing alignment issues
+**Solution:** Remove padding from child elements that don't have their own backgrounds
+**Rule:** Child elements in cards should NOT have padding unless they have their own background color
+```jsx
+// ❌ WRONG - Child with padding in padded parent
+<div className="bg-white/80 p-6">
+  <div className="p-4">  {/* Unnecessary padding! */}
+    <h3>Title</h3>
+    <p>Content</p>
+  </div>
+</div>
+
+// ✅ CORRECT - Clean child without padding
+<div className="bg-white/80 p-6">
+  <div>
+    <h3>Title</h3>
+    <p>Content</p>
+  </div>
+</div>
+
+// ✅ CORRECT - Child with own background can have padding
+<div className="bg-white/80 p-6">
+  <div className="p-4 bg-default rounded-lg">
+    <h3>Title</h3>
+    <p>Content</p>
+  </div>
+</div>
+```
+
+### Issue 12: Related Articles Link Styling
+**Problem:** Related article links missing proper background color for visibility
+**Solution:** All "Gerelateerde artikelen" Link elements MUST use `bg-default` for proper contrast
+```jsx
+// ✅ CORRECT - Related articles with bg-default
+<Link 
+  href="/kennisbank/other-article" 
+  className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors bg-default"
+>
+  <div className="font-medium text-primary">Article Title →</div>
+  <div className="text-sm text-gray-600">Description</div>
+</Link>
+```
+**Prevention:** Always test link visibility within their container backgrounds
+
 ### Issue 1: Missing Breadcrumbs
 **Problem:** `verschil-startvoeding-opvolgmelk` had no breadcrumb navigation
 **Solution:** Added `<div className="text-sm text-gray-500 mb-2">Category • Subcategory</div>`
@@ -800,12 +854,16 @@ Before publishing any article, verify:
 - [ ] **Uses `border-t border-gray-200 pt-6` separators instead of nested containers**
 - [ ] **Uses `mt-6` spacing instead of padded containers**
 
-### Colors ✓
+### Colors & Text Hierarchy ✓
 - [ ] **NO colored text**: No `text-blue-*`, `text-red-*`, `text-green-*`, `text-yellow-*`, `text-purple-*`, `text-pink-*` 
 - [ ] **NO colored backgrounds**: No `bg-blue-*`, `bg-red-*`, `bg-green-*`, `bg-yellow-*`, `bg-purple-*`, `bg-pink-*`
 - [ ] **NO colored borders**: No `border-blue-*`, `border-red-*`, `border-green-*`, etc.
 - [ ] **EXCEPTION: Amber colors ONLY for warnings** with "Let op" text and proper alert structure
 - [ ] **ALL h2 headers use `text-primary`** (not gray colors)
+- [ ] **`text-primary` ONLY for headings and highlights** - NOT for regular body text
+- [ ] **Body text uses proper gray hierarchy**: `text-gray-700` or `text-gray-600`
+- [ ] **Descriptions use `text-gray-600`** for secondary content
+- [ ] **Meta/secondary text uses `text-gray-500`**
 - [ ] Only neutral colors: `text-gray-*`, `bg-gray-*`, `text-primary`, `bg-primary`
 - [ ] Proper contrast ratios maintained
 
@@ -861,6 +919,20 @@ Before publishing any article, verify:
 - [ ] Uses `mt-6` for spacing between subsections within cards
 - [ ] Content aligns properly without visual separation boxes
 - [ ] Subsections use heading + content pattern, not container + content
+
+### Padding & Child Elements ✓
+- [ ] **Child elements in cards have NO padding** unless they have their own background
+- [ ] **Remove `p-4`, `p-3` etc. from child divs** in padded parent cards
+- [ ] **Exception: Elements with backgrounds CAN have padding** (e.g., `p-4 bg-default rounded-lg`)
+- [ ] **Proper spacing with `mt-6`, `mb-4`** instead of unnecessary padding
+- [ ] **No double-padding violations** - parent card padding should be sufficient
+
+### Links & Navigation ✓
+- [ ] **Related articles links use `bg-default`** for proper visibility
+- [ ] **All Link elements have proper hover states** with `hover:bg-default`
+- [ ] **Link text uses `font-medium text-primary` for titles**
+- [ ] **Link descriptions use `text-sm text-gray-600`**
+- [ ] **Links are easily distinguishable** from their container background
 
 ### Content ✓
 - [ ] No UTF-8 emojis or symbols
