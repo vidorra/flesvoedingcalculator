@@ -5,9 +5,9 @@ This document provides a complete overview of all planned articles in the kennis
 ## 📊 Summary Statistics
 
 - **Total Planned Articles**: 66
-- **Currently Written**: 30 ✅
-- **Still Need Writing**: 36 ❌
-- **Completion Rate**: 45%
+- **Currently Written**: 31 ✅
+- **Still Need Writing**: 35 ❌
+- **Completion Rate**: 47%
 
 ---
 
@@ -79,14 +79,14 @@ This document provides a complete overview of all planned articles in the kennis
 | 39 | Slaapproblemen door flesvoeding | ❌ *Needs writing* | *Not created* | 6 min |
 
 ### 🧼 Hygiëne & Bereiding (6 articles)
-**Status: 3/6 written (50%)**
+**Status: 4/6 written (67%)**
 
 | ID | Title | Status | File Path | Duration |
 |----|-------|--------|-----------|----------|
 | - | Hygiëne & bereiding overzicht | ✅ **WRITTEN** | `/hygiene-bereiding/page.jsx` | - |
 | 40 | Flessen steriliseren | ✅ **WRITTEN** | `/hygiene-bereiding/flessen-steriliseren/page.jsx` | 8 min |
 | 41 | Flesvoeding bewaren | ✅ **WRITTEN** | `/hygiene-bereiding/flesvoeding-bewaren/page.jsx` | 15 min |
-| 42 | Water koken voor flesvoeding | ❌ *Needs writing* | *Not created* | 3 min |
+| 42 | Water koken voor flesvoeding | ✅ **WRITTEN** | `/hygiene-bereiding/water-koken-flesvoeding/page.jsx` | 10 min |
 | 43 | Schone bereiding werkplek | ❌ *Needs writing* | *Not created* | 4 min |
 | 44 | Spenen en flessen schoonmaken | ❌ *Needs writing* | *Not created* | 5 min |
 | 45 | Vooraf bereiden van flessen | ❌ *Needs writing* | *Not created* | 6 min |
@@ -151,7 +151,7 @@ Based on user needs, SEO value, and knowledge gaps, here are the most important 
 
 ### **🔥 TIER 1: Critical Safety & Basic Needs (1-7)**
 
-1. **Water koken voor flesvoeding** - Essential safety knowledge for new parents
+1. ✅ **Water koken voor flesvoeding** - Essential safety knowledge for new parents [COMPLETED]
 2. **Veilig verwarmen van flesvoeding** - Critical safety: magnetron vs waterpad dangers  
 3. **Houdbaarheid van flesvoeding** - Food safety: when to discard prepared bottles
 4. **Bio en organische flesvoeding** - Growing market segment, high search volume
