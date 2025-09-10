@@ -104,14 +104,14 @@ export default function BasisFlesvoedingPage() {
               href="/kennisbank/soorten-flesvoeding"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-primary">Soorten Flesvoeding →</div>
+              <div className="font-medium text-gray-700">Soorten Flesvoeding </div>
               <div className="text-sm text-gray-600">Leer over nummer 1, 2 en 3</div>
             </Link>
             <Link 
               href="/kennisbank/voedingstechnieken"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-primary">Voedingstechnieken →</div>
+              <div className="font-medium text-gray-700">Voedingstechnieken </div>
               <div className="text-sm text-gray-600">Hoe geef je de fles goed?</div>
             </Link>
           </div>

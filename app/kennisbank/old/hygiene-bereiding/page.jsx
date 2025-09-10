@@ -270,14 +270,14 @@ export default function HygieneBereidingPage() {
               href="/kennisbank/veiligheid"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-primary">Veiligheidsrichtlijnen →</div>
+              <div className="font-medium text-gray-700">Veiligheidsrichtlijnen </div>
               <div className="text-sm text-gray-600">Belangrijke veiligheidstips</div>
             </Link>
             <Link 
               href="/kennisbank/praktische-tips"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-primary">Praktische Tips →</div>
+              <div className="font-medium text-gray-700">Praktische Tips </div>
               <div className="text-sm text-gray-600">Handige tips voor ouders</div>
             </Link>
           </div>

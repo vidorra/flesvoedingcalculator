@@ -51,7 +51,7 @@ export default function KennisbankTemplatePage() {
   ]
 
   const forbiddenElements = [
-    "UTF-8 icons/emojis (❌ ✅ ⭐ 📊 💰) - Use Lucide icons instead",
+    "UTF-8 icons/emojis (    💰) - Use Lucide icons instead",
     "Red/green colors (text-red-600, bg-green-400) - Use neutral colors", 
     "Borders without backgrounds (border border-gray-200 p-4) - Creates floating boxes",
     "Gray bullet points - Always use bg-primary rounded-full",
@@ -67,7 +67,7 @@ export default function KennisbankTemplatePage() {
             
             {/* Header - ALWAYS outside of card containers */}
             <div>
-              <div className="text-sm text-gray-500 mb-2">Kennisbank • Template</div>
+              <div className="text-sm text-gray-500 mb-2">Kennisbank  Template</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <BookOpen className="w-6 h-6 mr-3 text-primary" />
                 Perfect Article Template: Complete Styling Guide
@@ -88,8 +88,8 @@ export default function KennisbankTemplatePage() {
               
               <div className="mt-4 p-4 bg-gray-100 rounded-lg">
                 <p className="text-sm text-gray-700">
-                  <strong>Gebaseerd op:</strong> overstappen-van-borst-naar-fles (beste artikel structuur) • 
-                  <strong>Versie:</strong> 2.0 • 
+                  <strong>Gebaseerd op:</strong> overstappen-van-borst-naar-fles (beste artikel structuur)  
+                  <strong>Versie:</strong> 2.0  
                   <strong>Status:</strong> Approved Template
                 </p>
               </div>
@@ -177,9 +177,9 @@ export default function KennisbankTemplatePage() {
                 <h3 className="font-medium text-primary mb-4">Juiste Header Structuur</h3>
                 <div className="bg-gray-100 rounded-lg p-4 mb-4">
                   <pre className="text-sm text-gray-800 overflow-x-auto">
-{`{/* ✅ CORRECT: Clean header outside cards */}
+{`{/*  CORRECT: Clean header outside cards */}
 <div>
-  <div className="text-sm text-gray-500 mb-2">Category • Subcategory</div>
+  <div className="text-sm text-gray-500 mb-2">Category  Subcategory</div>
   <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
     <Icon className="w-6 h-6 mr-3 text-primary" />
     Article Title
@@ -194,17 +194,17 @@ export default function KennisbankTemplatePage() {
                 <h3 className="font-medium text-primary mb-4">Border Usage Policy</h3>
                 <div className="bg-gray-100 rounded-lg p-4 mb-4">
                   <pre className="text-sm text-gray-800 overflow-x-auto">
-{`{/* ✅ CORRECT: Borders WITH background colors */}
+{`{/*  CORRECT: Borders WITH background colors */}
 <div className="p-4">
   Content with proper visual context
 </div>
 
-{/* ❌ WRONG: Borders WITHOUT background colors */}
+{/*  WRONG: Borders WITHOUT background colors */}
 <div className="border border-gray-200 rounded-lg p-4">
   Creates floating box effect - alignment issues
 </div>
 
-{/* ✅ CORRECT: Clean content flow */}
+{/*  CORRECT: Clean content flow */}
 <div className="p-4">
   Clean content without visual clutter
 </div>`}
@@ -216,7 +216,7 @@ export default function KennisbankTemplatePage() {
                 <h3 className="font-medium text-primary mb-4">Juiste Bullet Points</h3>
                 <div className="bg-gray-100 rounded-lg p-4">
                   <pre className="text-sm text-gray-800 overflow-x-auto">
-{`{/* ✅ CORRECT: Primary color bullets */}
+{`{/*  CORRECT: Primary color bullets */}
 <li className="flex items-center space-x-2">
   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
   <span className="text-gray-700">List item text</span>
@@ -263,7 +263,7 @@ export default function KennisbankTemplatePage() {
                   rel="noopener noreferrer"
                 >
                   <BookOpen className="w-4 h-4 mr-2" />
-                  <span className="text-primary font-medium">Bekijk Volledige Styling Guide →</span>
+                  <span className="text-primary font-medium">Bekijk Volledige Styling Guide </span>
                 </Link>
               </div>
             </section>
@@ -276,7 +276,7 @@ export default function KennisbankTemplatePage() {
                   className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
                   <div className="text-center">
-                    <div className="font-medium text-primary">Hulp nodig met flesvoeding berekeningen? →</div>
+                    <div className="font-medium text-gray-700">Hulp nodig met flesvoeding berekeningen? </div>
                     <div className="text-sm text-gray-600">Gebruik onze calculator voor gepersonaliseerd advies</div>
                   </div>
                 </Link>
@@ -291,19 +291,19 @@ export default function KennisbankTemplatePage() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/basis-flesvoeding/overstappen-van-borst-naar-fles" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Overstappen van borst naar fles →</div>
+                  <div className="font-medium text-gray-700">Overstappen van borst naar fles </div>
                   <div className="text-sm text-gray-600">Het originele artikel waar deze template op gebaseerd is</div>
                 </Link>
                 <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Eerste keer flesvoeding →</div>
+                  <div className="font-medium text-gray-700">Eerste keer flesvoeding </div>
                   <div className="text-sm text-gray-600">Compleet aangepast met template patronen</div>
                 </Link>
                 <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Startvoeding vs Opvolgmelk →</div>
+                  <div className="font-medium text-gray-700">Startvoeding vs Opvolgmelk </div>
                   <div className="text-sm text-gray-600">Voorbeeld van fixes toegepast op complex artikel</div>
                 </Link>
                 <Link href="/kennisbank/basis-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Alle Basis Flesvoeding →</div>
+                  <div className="font-medium text-gray-700">Alle Basis Flesvoeding </div>
                   <div className="text-sm text-gray-600">Overzicht van alle basis artikelen</div>
                 </Link>
               </div>

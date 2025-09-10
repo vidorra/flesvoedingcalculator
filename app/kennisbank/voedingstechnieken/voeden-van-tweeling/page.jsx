@@ -106,12 +106,12 @@ export default function TweelingVoedenPage() {
 
         {/* Header */}
         <div className="mb-6">
-          <div className="text-sm text-primary mb-2">Voedingstechnieken • Tweeling</div>
+          <div className="text-sm text-gray-500 mb-2">Voedingstechnieken  Tweeling</div>
           <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
             <Users className="w-6 h-6 mr-3 text-primary" />
             Flesvoeding voor Tweeling: Complete Survival Gids 2025
           </h1>
-          <p className="text-primary">
+          <p className="text-gray-700">
             Praktische hacks, tijdsbesparing en equipment voor Nederlandse ouders van een tweeling. 
             Van gelijktijdige voeding tot kostenoptimalisatie.
           </p>
@@ -123,14 +123,14 @@ export default function TweelingVoedenPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <p className="text-primary mb-4">
+              <p className="text-gray-700 mb-4">
                 Flesvoeding geven aan een tweeling betekent <strong>16-20 voedingen per dag</strong> in plaats van 8-10. 
                 Dit vraagt om slimme strategieën en de juiste aanpak.
               </p>
               
               <div className="border border-gray-200 bg-gray-50 rounded-xl p-4">
                 <h3 className="font-medium text-primary mb-3">Nederlandse cijfers tweeling flesvoeding:</h3>
-                <ul className="space-y-2 text-sm text-primary">
+                <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                     <span>78% van tweelingen krijgt (deels) flesvoeding vanaf 3 maanden</span>
@@ -151,16 +151,16 @@ export default function TweelingVoedenPage() {
               <h3 className="font-medium text-primary mb-3">Voordelen specifiek voor tweeling:</h3>
               <div className="space-y-3">
                 <div className="p-3 border border-gray-200 bg-gray-50 rounded-lg">
-                  <h4 className="font-medium text-primary">Synchroon voeden mogelijk</h4>
-                  <p className="text-sm text-primary">Beide baby's tegelijk voeden bespaart enorm veel tijd</p>
+                  <h4 className="font-medium text-gray-700">Synchroon voeden mogelijk</h4>
+                  <p className="text-sm text-gray-600">Beide baby's tegelijk voeden bespaart enorm veel tijd</p>
                 </div>
                 <div className="p-3 border border-gray-200 bg-gray-50 rounded-lg">
-                  <h4 className="font-medium text-primary">Meetbare inname per baby</h4>
-                  <p className="text-sm text-primary">Precies bijhouden hoeveel elke baby drinkt</p>
+                  <h4 className="font-medium text-gray-700">Meetbare inname per baby</h4>
+                  <p className="text-sm text-gray-600">Precies bijhouden hoeveel elke baby drinkt</p>
                 </div>
                 <div className="p-3 border border-gray-200 bg-gray-50 rounded-lg">
-                  <h4 className="font-medium text-primary">Verdeling van nachtvoedingen</h4>
-                  <p className="text-sm text-primary">Partner kan helpen met voedingen</p>
+                  <h4 className="font-medium text-gray-700">Verdeling van nachtvoedingen</h4>
+                  <p className="text-sm text-gray-600">Partner kan helpen met voedingen</p>
                 </div>
               </div>
             </div>
@@ -175,12 +175,12 @@ export default function TweelingVoedenPage() {
             {practicalHacks.map((hack, index) => (
               <div key={index} className="bg-gray-50 rounded-xl p-4">
                 <h3 className="font-medium text-primary mb-2">{hack.title}</h3>
-                <p className="text-sm text-primary font-medium mb-3">{hack.description}</p>
+                <p className="text-sm text-gray-600 font-medium mb-3">{hack.description}</p>
                 <ul className="space-y-2">
                   {hack.tips.map((tip, tipIndex) => (
-                    <li key={tipIndex} className="text-sm text-primary flex items-start space-x-2">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                      <span>{tip}</span>
+                    <li key={tipIndex} className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-sm text-gray-600">{tip}</span>
                     </li>
                   ))}
                 </ul>
@@ -196,7 +196,7 @@ export default function TweelingVoedenPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="border border-gray-200 bg-gray-50 rounded-xl p-4">
               <h3 className="font-medium text-primary mb-3">Traditionele methode (1 voor 1):</h3>
-              <div className="space-y-2 text-sm text-primary">
+              <div className="space-y-2 text-sm text-gray-600">
                 <div>Voeding klaarmaken: 10 min × 16 = <strong>160 min</strong></div>
                 <div>Voeden zelf: 30 min × 16 = <strong>480 min</strong></div>
                 <div>Opruimen: 5 min × 16 = <strong>80 min</strong></div>
@@ -206,7 +206,7 @@ export default function TweelingVoedenPage() {
             
             <div className="border border-gray-200 bg-gray-50 rounded-xl p-4">
               <h3 className="font-medium text-primary mb-3">Geoptimaliseerde methode:</h3>
-              <div className="space-y-2 text-sm text-primary">
+              <div className="space-y-2 text-sm text-gray-600">
                 <div>Batch klaarmaken: <strong>45 min</strong> per dag</div>
                 <div>Gelijktijdig voeden: 30 min × 8 = <strong>240 min</strong></div>
                 <div>Opruimen: 3 min × 8 = <strong>24 min</strong></div>
@@ -235,10 +235,10 @@ export default function TweelingVoedenPage() {
                 {category.items.map((item, itemIndex) => (
                   <div key={itemIndex} className="p-3">
                     <div className="flex justify-between items-start mb-1">
-                      <h4 className="font-medium text-primary">{item.name}</h4>
-                      <span className="text-primary font-medium text-sm">{item.price}</span>
+                      <h4 className="font-medium text-gray-700">{item.name}</h4>
+                      <span className="text-gray-600 font-medium text-sm">{item.price}</span>
                     </div>
-                    <p className="text-sm text-primary">{item.description}</p>
+                    <p className="text-sm text-gray-600">{item.description}</p>
                   </div>
                 ))}
               </div>
@@ -248,22 +248,22 @@ export default function TweelingVoedenPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
             <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
               <h4 className="font-medium text-primary mb-2">Starter pakket (€200-300):</h4>
-              <ul className="text-sm text-primary space-y-1">
-                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>16 flessen: €60-80</span></li>
-                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Sterilisator: €40-80</span></li>
-                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Flessenwarmer: €35-45</span></li>
-                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Twin pillow: €85</span></li>
-                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Accessoires: €30-50</span></li>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>16 flessen: €60-80</span></li>
+                <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Sterilisator: €40-80</span></li>
+                <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Flessenwarmer: €35-45</span></li>
+                <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Twin pillow: €85</span></li>
+                <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Accessoires: €30-50</span></li>
               </ul>
             </div>
             <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
               <h4 className="font-medium text-primary mb-2">Premium pakket (€400-600):</h4>
-              <ul className="text-sm text-primary space-y-1">
-                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Hoogwaardige flessen: €120</span></li>
-                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Elektrische sterilisator: €80</span></li>
-                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Dubbele flessenwarmer: €65</span></li>
-                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Complete twin set: €150</span></li>
-                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Extra accessoires: €85</span></li>
+              <ul className="text-sm text-gray-600 space-y-1">
+                <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Hoogwaardige flessen: €120</span></li>
+                <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Elektrische sterilisator: €80</span></li>
+                <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Dubbele flessenwarmer: €65</span></li>
+                <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Complete twin set: €150</span></li>
+                <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Extra accessoires: €85</span></li>
               </ul>
             </div>
           </div>
@@ -280,17 +280,17 @@ export default function TweelingVoedenPage() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-gray-200">
-                  <th className="text-left py-3 px-2 font-medium text-primary">Tijd</th>
-                  <th className="text-left py-3 px-2 font-medium text-primary">Activiteit</th>
-                  <th className="text-left py-3 px-2 font-medium text-primary">Hoeveelheid</th>
+                  <th className="text-left py-3 px-2 font-medium text-gray-700">Tijd</th>
+                  <th className="text-left py-3 px-2 font-medium text-gray-700">Activiteit</th>
+                  <th className="text-left py-3 px-2 font-medium text-gray-700">Hoeveelheid</th>
                 </tr>
               </thead>
               <tbody>
                 {scheduleExample.map((entry, index) => (
                   <tr key={index} className="border-b border-gray-100">
-                    <td className="py-3 px-2 font-medium text-primary">{entry.time}</td>
-                    <td className="py-3 px-2 text-primary">{entry.activity}</td>
-                    <td className="py-3 px-2 text-primary">{entry.amount}</td>
+                    <td className="py-3 px-2 font-medium text-gray-700">{entry.time}</td>
+                    <td className="py-3 px-2 text-gray-700">{entry.activity}</td>
+                    <td className="py-3 px-2 text-gray-700">{entry.amount}</td>
                   </tr>
                 ))}
               </tbody>
@@ -298,8 +298,8 @@ export default function TweelingVoedenPage() {
           </div>
           
           <div className="mt-4 p-3 bg-gray-50 rounded-lg">
-            <p className="text-sm text-primary">
-              <strong>Totaal per dag:</strong> 1720ml (860ml per baby) • 
+            <p className="text-sm text-gray-600">
+              <strong>Totaal per dag:</strong> 1720ml (860ml per baby)  
               <strong>Tip:</strong> Flexibiliteit binnen 30 minuten is prima
             </p>
           </div>
@@ -315,12 +315,12 @@ export default function TweelingVoedenPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <h3 className="font-medium text-primary mb-2">Probleem:</h3>
-                    <p className="text-sm text-primary">{item.problem}</p>
+                    <p className="text-sm text-gray-700">{item.problem}</p>
                   </div>
                   <div>
                     <h3 className="font-medium text-primary mb-2">Oplossing:</h3>
-                    <p className="text-sm text-primary mb-2">{item.solution}</p>
-                    <ul className="text-xs text-primary space-y-1">
+                    <p className="text-sm text-gray-700 mb-2">{item.solution}</p>
+                    <ul className="text-xs text-gray-600 space-y-1">
                       {item.details.map((detail, detailIndex) => (
                         <li key={detailIndex} className="flex items-center space-x-2">
                           <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></div>
@@ -349,14 +349,14 @@ export default function TweelingVoedenPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
                   {budget.periods.map((period, periodIndex) => (
                     <div key={periodIndex} className="bg-gray-50 rounded-lg p-3">
-                      <div className="font-medium text-primary">{period.age}</div>
-                      <div className="text-primary font-medium">{period.cost}</div>
-                      <div className="text-xs text-primary">{period.details}</div>
+                      <div className="font-medium text-gray-700">{period.age}</div>
+                      <div className="text-gray-700 font-medium">{period.cost}</div>
+                      <div className="text-xs text-gray-600">{period.details}</div>
                     </div>
                   ))}
                 </div>
                 <div className="text-right">
-                  <span className="text-lg font-bold text-primary">Jaarkosten: {budget.yearly}</span>
+                  <span className="text-lg font-bold text-gray-700">Jaarkosten: {budget.yearly}</span>
                 </div>
               </div>
             ))}
@@ -364,21 +364,21 @@ export default function TweelingVoedenPage() {
           
           <div className="mt-6 border border-gray-200 bg-gray-50 rounded-xl p-4">
             <h3 className="font-medium text-primary mb-3">Bespaartips:</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-primary">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600">
               <div>
                 <h4 className="font-medium">Bulk inkopen:</h4>
                 <ul className="space-y-1 mt-1">
-                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Action/Kruidvat: 2e gratis acties</span></li>
-                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Albert Heijn: Bonusbox kortingen</span></li>
-                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Online: Subscription 10% korting</span></li>
+                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Action/Kruidvat: 2e gratis acties</span></li>
+                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Albert Heijn: Bonusbox kortingen</span></li>
+                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Online: Subscription 10% korting</span></li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-medium">Tweede hands:</h4>
                 <ul className="space-y-1 mt-1">
-                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Equipment via Marktplaats</span></li>
-                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Twin pillows tweedehands</span></li>
-                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Besparing: 30-50% op startkosten</span></li>
+                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Equipment via Marktplaats</span></li>
+                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Twin pillows tweedehands</span></li>
+                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Besparing: 30-50% op startkosten</span></li>
                 </ul>
               </div>
             </div>
@@ -395,7 +395,7 @@ export default function TweelingVoedenPage() {
           <div className="space-y-4">
             <div className="bg-white rounded-lg p-4">
               <h3 className="font-medium text-primary mb-2">"De productielijn redde ons leven" - Marieke, Almere</h3>
-              <p className="text-sm text-primary">
+              <p className="text-sm text-gray-600">
                 "Iedere avond 8 flessen maken voor de volgende dag. Partner kan direct helpen zonder instructies. 
                 Nachtvoedingen duren nu 10 minuten in plaats van 30."
               </p>
@@ -403,7 +403,7 @@ export default function TweelingVoedenPage() {
             
             <div className="bg-white rounded-lg p-4">
               <h3 className="font-medium text-primary mb-2">"Twin pillow = game changer" - Patrick, Utrecht</h3>
-              <p className="text-sm text-primary">
+              <p className="text-sm text-gray-600">
                 "€85 beste investering ooit. Beide baby's tegelijk voeden terwijl ik koffie drink. 
                 Mijn rug doet niet meer zeer en baby's zijn rustiger."
               </p>
@@ -411,7 +411,7 @@ export default function TweelingVoedenPage() {
             
             <div className="bg-white rounded-lg p-4">
               <h3 className="font-medium text-primary mb-2">"Schema discipline werkt echt" - Lisa, Rotterdam</h3>
-              <p className="text-sm text-primary">
+              <p className="text-sm text-gray-600">
                 "Eerste maand chaos, tweede maand strict schema. Beide baby's slapen nu door. 
                 Vrienden begrijpen niet hoe relaxed wij zijn."
               </p>
@@ -420,7 +420,7 @@ export default function TweelingVoedenPage() {
           
           <div className="mt-6 p-4 bg-gray-100 rounded-lg">
             <h4 className="font-medium text-primary mb-2">Meest waardevolle tip:</h4>
-            <p className="text-primary italic">
+            <p className="text-gray-600 italic">
               "Perfectie bestaat niet bij tweeling. 80% goed is uitstekend." - Ervaren tweelingmoeder
             </p>
           </div>
@@ -438,7 +438,7 @@ export default function TweelingVoedenPage() {
           </p>
           <Link 
             href="/"
-            className="inline-flex items-center space-x-2 bg-white text-primary px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors font-medium"
+            className="inline-flex items-center space-x-2 bg-white text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors font-medium"
           >
             <Calculator className="w-4 h-4" />
             <span>Naar Tweeling Calculator</span>
@@ -451,26 +451,26 @@ export default function TweelingVoedenPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
-              <h3 className="font-medium text-primary">Week 1</h3>
-              <p className="text-sm text-primary">Basis equipment aanschaffen</p>
+              <h3 className="font-medium text-gray-700">Week 1</h3>
+              <p className="text-sm text-gray-600">Basis equipment aanschaffen</p>
             </div>
             <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
-              <h3 className="font-medium text-primary">Week 2</h3>
-              <p className="text-sm text-primary">Gelijktijdig voeden oefenen</p>
+              <h3 className="font-medium text-gray-700">Week 2</h3>
+              <p className="text-sm text-gray-600">Gelijktijdig voeden oefenen</p>
             </div>
             <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
-              <h3 className="font-medium text-primary">Week 3</h3>
-              <p className="text-sm text-primary">Schema implementeren</p>
+              <h3 className="font-medium text-gray-700">Week 3</h3>
+              <p className="text-sm text-gray-600">Schema implementeren</p>
             </div>
             <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
-              <h3 className="font-medium text-primary">Week 4</h3>
-              <p className="text-sm text-primary">Verfijnen en automatiseren</p>
+              <h3 className="font-medium text-gray-700">Week 4</h3>
+              <p className="text-sm text-gray-600">Verfijnen en automatiseren</p>
             </div>
           </div>
           
           <div className="mt-6 p-4 bg-gray-100 rounded-lg">
             <h4 className="font-medium text-primary mb-2">Belangrijkste Takeaways:</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-primary">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-600">
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full"></div>
                 <span>Gelijktijdig voeden bespaart 7 uur per dag</span>
@@ -499,15 +499,15 @@ export default function TweelingVoedenPage() {
               href="/kennisbank/voedingstechnieken"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-primary">Voedingstechnieken →</div>
-              <div className="text-sm text-primary">Alle technieken voor flesvoeding</div>
+              <div className="font-medium text-gray-700">Voedingstechnieken </div>
+              <div className="text-sm text-gray-600">Alle technieken voor flesvoeding</div>
             </Link>
             <Link 
               href="/kennisbank/praktische-tips"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-primary">Praktische Tips →</div>
-              <div className="text-sm text-primary">Time-saving tips en organisatie</div>
+              <div className="font-medium text-gray-700">Praktische Tips </div>
+              <div className="text-sm text-gray-600">Time-saving tips en organisatie</div>
             </Link>
           </div>
         </div>

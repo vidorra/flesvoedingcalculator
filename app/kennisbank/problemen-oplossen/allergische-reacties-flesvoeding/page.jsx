@@ -76,7 +76,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
             
             {/* Header - ALWAYS outside of card containers */}
             <div>
-              <div className="text-sm text-gray-500 mb-2">Kennisbank • Problemen Oplossen</div>
+              <div className="text-sm text-gray-500 mb-2">Kennisbank  Problemen Oplossen</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <AlertTriangle className="w-6 h-6 mr-3 text-primary" />
                 Allergische Reacties Flesvoeding: Nederlandse Herkenning & Behandeling Gids
@@ -308,7 +308,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
                   className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-white transition-colors"
                 >
                   <div className="text-center">
-                    <div className="font-medium text-primary">Bereken veilige voeding hoeveelheden →</div>
+                    <div className="font-medium text-gray-700">Bereken veilige voeding hoeveelheden </div>
                     <div className="text-sm text-gray-600">Gebruik onze calculator voor gepersonaliseerd advies</div>
                   </div>
                 </Link>
@@ -323,19 +323,19 @@ export default function AllergischeReactiesFlesvoedingPage() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/soorten-flesvoeding/hypoallergene-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Hypoallergene flesvoeding →</div>
+                  <div className="font-medium text-gray-700">Hypoallergene flesvoeding </div>
                   <div className="text-sm text-gray-600">Speciaal ontwikkeld voor allergische baby's</div>
                 </Link>
                 <Link href="/kennisbank/problemen-oplossen/krampjes-na-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Krampjes na flesvoeding →</div>
+                  <div className="font-medium text-gray-700">Krampjes na flesvoeding </div>
                   <div className="text-sm text-gray-600">Herkennen en behandelen van voedingsgerelateerde krampjes</div>
                 </Link>
                 <Link href="/kennisbank/problemen-oplossen/spugen-na-de-fles" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Spugen na de fles →</div>
+                  <div className="font-medium text-gray-700">Spugen na de fles </div>
                   <div className="text-sm text-gray-600">Wanneer spugen normaal is en wanneer niet</div>
                 </Link>
                 <Link href="/kennisbank/veiligheid" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Veiligheid algemeen →</div>
+                  <div className="font-medium text-gray-700">Veiligheid algemeen </div>
                   <div className="text-sm text-gray-600">Alle aspecten van veilige flesvoeding</div>
                 </Link>
               </div>

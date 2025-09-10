@@ -267,7 +267,7 @@ export default function BasisFlesvoedingPage() {
                 In Nederland volgen we de richtlijnen van het Voedingscentrum voor optimale babyvoedering.
               </p>
               <div className="bg-default p-4 rounded-lg">
-                <p className="text-primary font-medium text-sm">
+                <p className="text-gray-600 font-medium text-sm">
                   <strong>Nederlandse standaard:</strong> 150ml per kg lichaamsgewicht per 24 uur als uitgangspunt, 
                   met maximum 1000ml per dag voor baby's tot 1 jaar.
                 </p>
@@ -281,18 +281,18 @@ export default function BasisFlesvoedingPage() {
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <h4 className="font-medium text-gray-700 mb-2">Gemiddelde kosten per maand:</h4>
                   <div className="space-y-1 text-sm text-gray-700">
-                    <div>• Startvoeding (0-6 mnd): €15-25</div>
-                    <div>• Opvolgmelk (6+ mnd): €20-30</div>
-                    <div>• Totaal eerste jaar: circa €250-350</div>
+                    <div> Startvoeding (0-6 mnd): €15-25</div>
+                    <div> Opvolgmelk (6+ mnd): €20-30</div>
+                    <div> Totaal eerste jaar: circa €250-350</div>
                   </div>
                 </div>
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <h4 className="font-medium text-gray-600 mb-2">Geld besparen tips:</h4>
                   <div className="space-y-1 text-sm text-gray-700">
-                    <div>• Huismerken even goed als A-merken</div>
-                    <div>• Grotere verpakkingen goedkoper</div>
-                    <div>• Let op aanbiedingen</div>
-                    <div>• Vergelijk prijzen online</div>
+                    <div> Huismerken even goed als A-merken</div>
+                    <div> Grotere verpakkingen goedkoper</div>
+                    <div> Let op aanbiedingen</div>
+                    <div> Vergelijk prijzen online</div>
                   </div>
                 </div>
               </div>
@@ -327,10 +327,10 @@ export default function BasisFlesvoedingPage() {
               <div className="bg-gray-50 p-4 rounded-lg">
                 <h4 className="font-medium text-gray-700 mb-2">Praktische tips:</h4>
                 <div className="space-y-1 text-sm text-gray-700">
-                  <div>• Verdeel voedingen: bijvoorbeeld mama overdag, papa 's avonds</div>
-                  <div>• Laat partner nachtvoeding overnemen voor mama's rust</div>
-                  <div>• Creëer eigen rituelen: papa's liedjes, mama's verhalen</div>
-                  <div>• Beide ouders leren alle handgrepen (bereiding, temperatuur)</div>
+                  <div> Verdeel voedingen: bijvoorbeeld mama overdag, papa 's avonds</div>
+                  <div> Laat partner nachtvoeding overnemen voor mama's rust</div>
+                  <div> Creëer eigen rituelen: papa's liedjes, mama's verhalen</div>
+                  <div> Beide ouders leren alle handgrepen (bereiding, temperatuur)</div>
                 </div>
               </div>
             </div>
@@ -559,21 +559,21 @@ export default function BasisFlesvoedingPage() {
               href="/kennisbank/soorten-flesvoeding"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-primary">Soorten Flesvoeding →</div>
+              <div className="font-medium text-gray-700">Soorten Flesvoeding </div>
               <div className="text-sm text-gray-600">Nummer 1, 2, 3 uitgelegd</div>
             </Link>
             <Link 
               href="/kennisbank/voedingstechnieken"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-primary">Voedingstechnieken →</div>
+              <div className="font-medium text-gray-700">Voedingstechnieken </div>
               <div className="text-sm text-gray-600">Bereiden en geven van fles</div>
             </Link>
             <Link 
               href="/"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+              <div className="font-medium text-gray-700">Flesvoeding Calculator </div>
               <div className="text-sm text-gray-600">Bereken hoeveelheden</div>
             </Link>
           </div>

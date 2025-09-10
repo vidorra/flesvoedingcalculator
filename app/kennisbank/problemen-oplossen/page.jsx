@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { AlertCircle, ArrowRight, Home, Thermometer, Baby, Droplets, Phone } from 'lucide-react'
 
 export const metadata = {
-  title: 'Baby Weigert Fles? Spugen? Reflux? → Oplossingen & Tips',
+  title: 'Baby Weigert Fles? Spugen? Reflux?  Oplossingen & Tips',
   description: 'Praktische oplossingen voor flesvoeding problemen. Baby weigert fles, overmatig spugen, reflux of constipatie? Directe hulp van experts.',
 }
 
@@ -90,7 +90,7 @@ export default function ProblemenOplossenPage() {
                 <div key={index} className="p-4">
                   <div className="flex items-center space-x-2 mb-2">
                     <Icon className="w-5 h-5 text-primary" />
-                    <h3 className="font-medium text-primary">{item.cause}:</h3>
+                    <h3 className="font-medium text-gray-700">{item.cause}:</h3>
                   </div>
                   <ul className="space-y-1 ml-7">
                     {item.solutions.map((solution, idx) => (
@@ -262,14 +262,14 @@ export default function ProblemenOplossenPage() {
               href="/kennisbank/veiligheid"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-primary">Veiligheidsrichtlijnen →</div>
+              <div className="font-medium text-gray-700">Veiligheidsrichtlijnen </div>
               <div className="text-sm text-gray-600">Wanneer direct hulp zoeken</div>
             </Link>
             <Link 
               href="/faq"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-primary">Veelgestelde Vragen →</div>
+              <div className="font-medium text-gray-700">Veelgestelde Vragen </div>
               <div className="text-sm text-gray-600">Nog meer antwoorden</div>
             </Link>
           </div>

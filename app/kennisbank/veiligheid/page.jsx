@@ -140,7 +140,7 @@ export default function VeiligheidPage() {
             
             <div className="p-4 bg-default rounded-lg text-center">
               <h3 className="font-bold text-primary mb-2">Huisartsenpraktijk</h3>
-              <p className="text-lg font-bold text-primary">Uw eigen nummer</p>
+              <p className="text-lg font-bold text-gray-700">Uw eigen nummer</p>
               <p className="text-xs text-gray-600">Voor advies en afspraken</p>
             </div>
             
@@ -183,14 +183,14 @@ export default function VeiligheidPage() {
               href="/kennisbank/problemen-oplossen"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-primary">Problemen Oplossen →</div>
+              <div className="font-medium text-gray-700">Problemen Oplossen </div>
               <div className="text-sm text-gray-600">Hulp bij veelvoorkomende problemen</div>
             </Link>
             <Link 
               href="/faq"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-primary">Veelgestelde Vragen →</div>
+              <div className="font-medium text-gray-700">Veelgestelde Vragen </div>
               <div className="text-sm text-gray-600">Antwoorden op veel gestelde vragen</div>
             </Link>
           </div>

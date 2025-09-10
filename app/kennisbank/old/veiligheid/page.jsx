@@ -183,14 +183,14 @@ export default function VeiligheidPage() {
               href="/kennisbank/problemen-oplossen"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-primary">Problemen Oplossen →</div>
+              <div className="font-medium text-gray-700">Problemen Oplossen </div>
               <div className="text-sm text-gray-600">Hulp bij veelvoorkomende problemen</div>
             </Link>
             <Link 
               href="/faq"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-primary">Veelgestelde Vragen →</div>
+              <div className="font-medium text-gray-700">Veelgestelde Vragen </div>
               <div className="text-sm text-gray-600">Antwoorden op veel gestelde vragen</div>
             </Link>
           </div>
