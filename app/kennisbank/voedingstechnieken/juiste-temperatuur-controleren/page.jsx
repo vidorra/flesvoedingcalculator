@@ -41,14 +41,17 @@ export default function JuisteTemperatuurControleren() {
         <div className="col-span-12 lg:col-span-7">
           <div className="space-y-6">
             
-            <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
-              <Thermometer className="w-6 h-6 mr-3 text-primary" />
-              Juiste Temperatuur Controleren: Veilig en Comfortabel Voeden
-            </h1>
-            
-            <p className="text-gray-600 mb-8 italic">
-              Complete gids voor perfecte flesvoeding temperatuur - van meten tot aanpassen
-            </p>
+            {/* Header */}
+            <div className="mb-6">
+              <div className="text-sm text-gray-500 mb-2">Voedingstechnieken  Temperatuur Controleren</div>
+              <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+                <Thermometer className="w-6 h-6 mr-3 text-primary" />
+                Juiste Temperatuur Controleren: Veilig en Comfortabel Voeden
+              </h1>
+              <p className="text-gray-600 mb-8 italic">
+                Complete gids voor perfecte flesvoeding temperatuur - van meten tot aanpassen
+              </p>
+            </div>
 
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4">Inleiding</h2>
@@ -344,7 +347,7 @@ export default function JuisteTemperatuurControleren() {
                   
                   <div className="grid md:grid-cols-3 gap-6">
                     <div className="p-6">
-                      <h4 className="font-semibold text-primary mb-3">Hoe werkt infrarood? 📡</h4>
+                      <h4 className="font-semibold text-primary mb-3">Hoe werkt infrarood?</h4>
                       <ul className="space-y-2">
                         <li className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -416,7 +419,7 @@ export default function JuisteTemperatuurControleren() {
                   
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="p-6">
-                      <h4 className="font-semibold text-primary mb-3">Hoe werken temperatuurstrips? 🏷️</h4>
+                      <h4 className="font-semibold text-primary mb-3">Hoe werken temperatuurstrips?</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -673,15 +676,15 @@ export default function JuisteTemperatuurControleren() {
                       <h4 className="font-semibold text-primary mb-3">Symptomen brandwonden baby:</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">🚨</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Direct herkenbaar</strong>: Schreeuwen, terugtrekken, rode lippen/mond</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">🚨</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Latere symptomen</strong>: Witte vlekjes in mond, weigeren drinken</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600">🚨</span>
+                          <span className="text-gray-600"></span>
                           <span className="text-gray-700"><strong>Ernstige gevallen</strong>: Blaren, zwelling, extreme pijn</span>
                         </li>
                       </ul>

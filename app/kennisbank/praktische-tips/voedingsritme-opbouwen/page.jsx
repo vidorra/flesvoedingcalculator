@@ -440,6 +440,7 @@ export default function VoedingsritmeOpbouwenPage() {
           <div className="space-y-6">
             {/* Header */}
             <div className="mb-6">
+              <div className="text-sm text-gray-500 mb-2">Praktische Tips  Voedingsritme</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <Clock className="w-6 h-6 mr-3 text-primary" />
                 Voedingsritme Opbouwen: Complete Gids voor Nederlandse Ouders
