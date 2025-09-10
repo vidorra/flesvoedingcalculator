@@ -454,7 +454,7 @@ function VoedingstechniekenPage() {
                 </ul>
               </div>
               <div>
-                <h4 className="font-medium text-primary mb-2">🌡️ Temperatuur Tips:</h4>
+                <h4 className="font-medium text-primary mb-2"> Temperatuur Tips:</h4>
                 <ul className="text-gray-600 text-sm space-y-1">
                   <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>

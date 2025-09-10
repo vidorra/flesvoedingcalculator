@@ -318,7 +318,7 @@ export default function HoudbaarheidFlesvoedingPage() {
                       </div>
                       <div className="bg-amber-50 rounded-lg p-3">
                         <p className="text-sm text-amber-700 font-medium">
-                          ⚠️ {limit.warning}
+                           {limit.warning}
                         </p>
                       </div>
                     </div>

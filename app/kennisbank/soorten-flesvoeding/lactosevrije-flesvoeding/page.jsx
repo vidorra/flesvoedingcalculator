@@ -339,7 +339,7 @@ export default function LactosevrijeFlesvoedingPage() {
                     </div>
 
                     <div className="bg-blue-50 rounded-lg p-3 mb-4">
-                      <h4 className="font-medium text-gray-700 mb-1">🧪 Uniek kenmerk:</h4>
+                      <h4 className="font-medium text-gray-700 mb-1"> Uniek kenmerk:</h4>
                       <p className="text-sm text-gray-600">{option.unique}</p>
                     </div>
 

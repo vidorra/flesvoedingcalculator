@@ -21,21 +21,21 @@ export default function VakantiePage() {
   const transportTypes = [
     {
       type: 'Vliegtuig Reizen',
-      icon: '✈️',
+      icon: '',
       pros: ['Formule poeder geen beperking handbagage', 'Pre-mixed >100ml toegestaan met baby', 'Bottle warming service meeste airlines'],
       cons: ['Security extra tijd (15-30 min)', 'Pressure changes baby oren', 'Limited preparation space'],
       tips: 'Takeoff/landing feeding voor ear pressure, extra formule voor delays'
     },
     {
       type: 'Auto Reizen',
-      icon: '🚗',
+      icon: '',
       pros: ['Volledige controle over voorzieningen', 'Flexibele stops schema', 'Onbeperkte bagage ruimte'],
       cons: ['Koeling management uitdaging', 'Weather dependent', 'Long travel times baby'],
       tips: '12V koelbox, stops elke 2-3 uur, backup routes plannen'
     },
     {
       type: 'Trein Reizen',
-      icon: '🚂',
+      icon: '',
       pros: ['More space movement', 'Onboard facilities', 'Less security restrictions'],
       cons: ['Limited hot water NS', 'Crowded during peak', 'Connection timing critical'],
       tips: 'Family carriages reserveren, thermos meenemen, flexible tickets'
@@ -186,7 +186,7 @@ export default function VakantiePage() {
                 </div>
 
                 <div>
-                  <h3 className="font-medium text-primary mb-3">🇳🇱 Nederlandse Reis Patronen</h3>
+                  <h3 className="font-medium text-primary mb-3"> Nederlandse Reis Patronen</h3>
                   <div className="text-sm text-primary space-y-2">
                     <div><strong>Zomer vakanties:</strong> 80% families juni-augustus</div>
                     <div><strong>Kort breaks:</strong> Weekend trips populair</div>
@@ -388,7 +388,7 @@ export default function VakantiePage() {
               </div>
 
               <div className="mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
-                <h4 className="font-medium text-yellow-800 mb-2">📱 Essential Travel Apps</h4>
+                <h4 className="font-medium text-yellow-800 mb-2"> Essential Travel Apps</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
                     <h5 className="font-medium text-yellow-700 mb-1">Navigation & Planning:</h5>

@@ -153,7 +153,7 @@ export default function FlesvoedingWerkPage() {
                 </div>
 
                 <div>
-                  <h3 className="font-medium text-gray-600 mb-3">🇳🇱 Nederlandse Work Context</h3>
+                  <h3 className="font-medium text-gray-600 mb-3"> Nederlandse Work Context</h3>
                   <div className="text-sm text-gray-600 space-y-2">
                     <div><strong>16 weken zwangerschapsverlof:</strong> Standaard regeling</div>
                     <div><strong>Parttime cultuur:</strong> 75% moeders werkt parttime</div>
@@ -206,7 +206,7 @@ export default function FlesvoedingWerkPage() {
               </h2>
               
               <div className="mb-6">
-                <h3 className="font-medium text-gray-600 mb-3">📋 Essential Information Checklist</h3>
+                <h3 className="font-medium text-gray-600 mb-3"> Essential Information Checklist</h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="bg-gray-50 rounded-lg p-3">
                     <h4 className="font-medium text-gray-600 mb-2">Voeding Details</h4>
@@ -288,7 +288,7 @@ export default function FlesvoedingWerkPage() {
                         </div>
                       </div>
                       <div>
-                        <h4 className="font-medium text-gray-600 mb-2">🏠 Avond</h4>
+                        <h4 className="font-medium text-gray-600 mb-2"> Avond</h4>
                         <div className="text-sm text-gray-600 space-y-1">
                           {schedule.evening.map((item, idx) => (
                             <div key={idx}>{item}</div>
@@ -355,7 +355,7 @@ export default function FlesvoedingWerkPage() {
                 </div>
                 
                 <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                  <h3 className="font-medium text-gray-600 mb-3">🍼 Baby Weigert Voeding op Opvang</h3>
+                  <h3 className="font-medium text-gray-600 mb-3"> Baby Weigert Voeding op Opvang</h3>
                   <div className="text-sm text-gray-600 space-y-2">
                     <div><strong>Direct:</strong> Kinderopvang bellen voor details</div>
                     <div><strong>Proberen:</strong> Andere speen/merk, partner laten proberen</div>
@@ -390,7 +390,7 @@ export default function FlesvoedingWerkPage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-medium text-gray-600 mb-3">💰 Flesvoeding Cost Advantage</h3>
+                  <h3 className="font-medium text-gray-600 mb-3"> Flesvoeding Cost Advantage</h3>
                   <div className="text-sm text-gray-600 space-y-2">
                     <div><strong>Geen kolfpomp:</strong> €150-400 besparing</div>
                     <div><strong>Geen koelkastje werk:</strong> €100</div>

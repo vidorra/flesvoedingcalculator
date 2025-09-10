@@ -108,12 +108,12 @@ export default function FlesvoedingPrematurePage() {
         </div>
 
         {/* Alert Box */}
-        <div className="p-4 mb-6">
-          <div className="flex items-start space-x-2">
-            <AlertCircle className="w-5 h-5 text-primary mt-0.5" />
+        <div className="bg-amber-50 rounded-2xl border border-amber-200 p-6 mb-6">
+          <div className="flex items-start space-x-3">
+            <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
             <div>
-              <h4 className="font-semibold text-primary mb-1">Medische Begeleiding Vereist</h4>
-              <p className="text-sm text-gray-600">
+              <h3 className="font-semibold text-amber-800 mb-1">Medische Begeleiding Vereist</h3>
+              <p className="text-sm text-amber-700">
                 Voor premature baby's is professionele begeleiding door kinderarts, diëtist en jeugdverpleegkundige 
                 essentieel. Deze informatie is ter ondersteuning en vervangt geen medisch advies.
               </p>

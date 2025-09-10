@@ -64,7 +64,7 @@ export default function JuisteTemperatuurControleren() {
                 <h3 className="text-2xl font-semibold text-primary mb-4">Waarom lichaamstemperatuur ideaal is</h3>
                 
                 <div className="bg-gray-50 p-6 mb-6">
-                  <h4 className="font-semibold text-primary mb-3">37°C: Het natuurlijke referentiepunt 🫀</h4>
+                  <h4 className="font-semibold text-primary mb-3">37°C: Het natuurlijke referentiepunt </h4>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -168,7 +168,7 @@ export default function JuisteTemperatuurControleren() {
                   
                   <div className="grid md:grid-cols-2 gap-6 mb-6">
                     <div className="p-6">
-                      <h4 className="font-semibold text-primary mb-3">Hoe doe je dit? 🖐️</h4>
+                      <h4 className="font-semibold text-primary mb-3">Hoe doe je dit? </h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -648,7 +648,7 @@ export default function JuisteTemperatuurControleren() {
                   
                   <div className="grid md:grid-cols-2 gap-6 mb-6">
                     <div className="bg-gray-50 p-6">
-                      <h4 className="font-semibold text-primary mb-3">Hoe ontstaan brandwonden? 🔥</h4>
+                      <h4 className="font-semibold text-primary mb-3">Hoe ontstaan brandwonden? </h4>
                       <ul className="space-y-2">
                         <li className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -776,7 +776,7 @@ export default function JuisteTemperatuurControleren() {
                   
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="p-6">
-                      <h4 className="font-semibold text-primary mb-3">Consistente procedure opbouwen 📋</h4>
+                      <h4 className="font-semibold text-primary mb-3">Consistente procedure opbouwen </h4>
                       <ol className="space-y-2">
                         <li className="flex items-start space-x-2">
                           <span className="text-primary font-semibold">1.</span>

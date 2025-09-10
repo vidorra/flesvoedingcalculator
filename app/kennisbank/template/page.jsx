@@ -51,7 +51,7 @@ export default function KennisbankTemplatePage() {
   ]
 
   const forbiddenElements = [
-    "UTF-8 icons/emojis (    💰) - Use Lucide icons instead",
+    "UTF-8 icons/emojis (    ) - Use Lucide icons instead",
     "Red/green colors (text-red-600, bg-green-400) - Use neutral colors", 
     "Borders without backgrounds (border border-gray-200 p-4) - Creates floating boxes",
     "Gray bullet points - Always use bg-primary rounded-full",
