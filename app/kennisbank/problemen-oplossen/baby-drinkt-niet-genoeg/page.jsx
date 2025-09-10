@@ -191,7 +191,7 @@ export default function BabyDrinktNietGenoegPage() {
                         </li>
                       </ul>
                       
-                      <div className="mt-2 p-3 bg-gray-100 rounded">
+                      <div className="mt-2 p-3 bg-white rounded">
                         <h5 className="font-medium text-gray-700 mb-1">Oplossing:</h5>
                         <ul className="space-y-1">
                           <li className="flex items-center space-x-2">
@@ -251,7 +251,7 @@ export default function BabyDrinktNietGenoegPage() {
                         </li>
                       </ul>
                       
-                      <div className="mt-2 p-3 bg-gray-100 rounded">
+                      <div className="mt-2 p-3 bg-white rounded">
                         <h5 className="font-medium text-gray-700 mb-1">Oplossing:</h5>
                         <ul className="space-y-1">
                           <li className="flex items-center space-x-2">
@@ -425,7 +425,7 @@ export default function BabyDrinktNietGenoegPage() {
                 </div>
               </div>
               
-              <div className="mt-6 p-4 bg-gray-50 border border-gray-200 rounded-lg">
+              <div className="mt-6 p-4 bg-white border border-gray-200 rounded-lg">
                 <p className="text-gray-700 text-sm text-center italic">
                   Baby's die weinig drinken zijn meestal gewoon efficient drinkers of hebben minder nodig. Met patience, systematische aanpak en professionele ondersteuning wanneer nodig, lost dit probleem zich meestal binnen enkele weken op.
                 </p>
@@ -433,7 +433,7 @@ export default function BabyDrinktNietGenoegPage() {
             </div>
 
             {/* Call to action */}
-            <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
                 <Link 
                   href="/calculator"

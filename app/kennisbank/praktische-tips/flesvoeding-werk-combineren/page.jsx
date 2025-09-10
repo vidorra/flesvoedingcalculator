@@ -152,7 +152,7 @@ export default function FlesvoedingWerkPage() {
                 </div>
               </div>
 
-              <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
+              <div className="mt-4 p-3 bg-white rounded-lg border border-gray-200">
                 <p className="text-gray-600 text-sm">
                   <strong>TNO Onderzoek:</strong> Ouders met flesvoeding baby's ervaren 25% minder stress 
                   bij werkhervatting dan ouders die kolven tijdens werk.
@@ -197,7 +197,7 @@ export default function FlesvoedingWerkPage() {
               <div className="mb-6">
                 <h3 className="font-medium text-gray-600 mb-3"> Essential Information Checklist</h3>
                 <div className="grid md:grid-cols-2 gap-4">
-                  <div className="bg-gray-50 rounded-lg p-3">
+                  <div className="bg-white rounded-lg p-3">
                     <h4 className="font-medium text-gray-600 mb-2">Voeding Details</h4>
                     <div className="text-sm text-gray-600 space-y-1">
                       <div> Schema met exacte tijden</div>
@@ -206,7 +206,7 @@ export default function FlesvoedingWerkPage() {
                       <div> Speen voorkeur + backups</div>
                     </div>
                   </div>
-                  <div className="bg-gray-50 rounded-lg p-3">
+                  <div className="bg-white rounded-lg p-3">
                     <h4 className="font-medium text-gray-600 mb-2">Praktische Info</h4>
                     <div className="text-sm text-gray-600 space-y-1">
                       <div> Bereidingsinstructies</div>
@@ -240,7 +240,7 @@ export default function FlesvoedingWerkPage() {
                         </ul>
                       </div>
                     </div>
-                    <div className="p-2 bg-gray-100 rounded text-primary">
+                    <div className="p-2 bg-white rounded text-primary">
                       <strong>Tip:</strong> {type.tips}
                     </div>
                   </div>
@@ -285,7 +285,7 @@ export default function FlesvoedingWerkPage() {
                         </div>
                       </div>
                     </div>
-                    <div className="p-2 bg-gray-100 rounded text-primary border border-gray-200">
+                    <div className="p-2 bg-white rounded text-primary border border-gray-200">
                       <strong>Success Tips:</strong> {schedule.tips}
                     </div>
                   </div>
@@ -306,7 +306,7 @@ export default function FlesvoedingWerkPage() {
                 ))}
               </div>
 
-              <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+              <div className="mt-6 p-4 bg-white rounded-lg border border-gray-200">
                 <h4 className="font-medium text-gray-600 mb-2"> Success Strategies - Week voor Week</h4>
                 <div className="grid md:grid-cols-3 gap-4 text-sm">
                   <div>
@@ -333,7 +333,7 @@ export default function FlesvoedingWerkPage() {
               </h2>
               
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                <div className="bg-white rounded-lg p-4 border border-gray-200">
                   <h3 className="font-medium text-gray-600 mb-3">🏫 Kinderopvang Ziek/Gesloten</h3>
                   <div className="text-sm text-gray-600 space-y-2">
                     <div><strong>Backup Plan A:</strong> Partner thuisblijven (afwisselen)</div>
@@ -343,7 +343,7 @@ export default function FlesvoedingWerkPage() {
                   </div>
                 </div>
                 
-                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                <div className="bg-white rounded-lg p-4 border border-gray-200">
                   <h3 className="font-medium text-gray-600 mb-3"> Baby Weigert Voeding op Opvang</h3>
                   <div className="text-sm text-gray-600 space-y-2">
                     <div><strong>Direct:</strong> Kinderopvang bellen voor details</div>
@@ -354,7 +354,7 @@ export default function FlesvoedingWerkPage() {
                 </div>
               </div>
 
-              <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
+              <div className="mt-4 p-3 bg-white rounded-lg border border-gray-200">
                 <h4 className="font-medium text-gray-600 mb-2">🚨 Work Emergency + Baby Crisis Protocol</h4>
                 <div className="text-sm text-gray-600">
                   <strong>Priority:</strong> Baby health/safety ALTIJD eerst  Partner contacteren  

@@ -185,7 +185,7 @@ export default function VakantiePage() {
                 </div>
               </div>
 
-              <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
+              <div className="mt-4 p-3 bg-white rounded-lg border border-gray-200">
                 <p className="text-gray-600 text-sm">
                   <strong>ANWB Onderzoek:</strong> Families met flesvoeding ervaren 30% minder 
                   reis-stress dan families die kolven tijdens vakantie.
@@ -222,7 +222,7 @@ export default function VakantiePage() {
                         </ul>
                       </div>
                     </div>
-                    <div className="p-2 bg-gray-50 rounded text-sm text-primary">
+                    <div className="p-2 bg-white rounded text-sm text-primary">
                       <strong>Success Tips:</strong> {transport.tips}
                     </div>
                   </div>
@@ -265,7 +265,7 @@ export default function VakantiePage() {
                         </ul>
                       </div>
                     </div>
-                    <div className="p-2 bg-gray-50 rounded text-sm text-primary">
+                    <div className="p-2 bg-white rounded text-sm text-primary">
                       <strong>Voordeel:</strong> {accommodation.advantages}
                     </div>
                   </div>
@@ -351,7 +351,7 @@ export default function VakantiePage() {
               <h2 className="text-lg font-semibold text-primary mb-4">Packing Strategies: Complete Lists</h2>
               
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                <div className="bg-white rounded-lg p-4 border border-gray-200">
                   <h3 className="font-medium text-primary mb-3">🎒 Hand Luggage Essentials</h3>
                   <div className="space-y-2">
                     {packingEssentials.handLuggage.map((item, index) => (
@@ -409,7 +409,7 @@ export default function VakantiePage() {
               </h2>
               
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                <div className="bg-white rounded-lg p-4 border border-gray-200">
                   <h3 className="font-medium text-primary mb-3">☀️ Zomer Vakanties (Juni-Augustus)</h3>
                   <div className="text-sm text-primary space-y-2">
                     <div><strong>Uitdagingen:</strong> Formula storage temperature, spoilage risk</div>
@@ -419,7 +419,7 @@ export default function VakantiePage() {
                   </div>
                 </div>
                 
-                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                <div className="bg-white rounded-lg p-4 border border-gray-200">
                   <h3 className="font-medium text-primary mb-3">❄️ Winter Vakanties (December-Februari)</h3>
                   <div className="text-sm text-primary space-y-2">
                     <div><strong>Uitdagingen:</strong> Formula freezing, heating reliability</div>

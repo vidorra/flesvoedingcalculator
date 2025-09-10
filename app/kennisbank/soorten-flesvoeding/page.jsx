@@ -386,7 +386,7 @@ export default function SoortenFlesvoedingPage() {
         </div>
 
         {/* Complete switching guide */}
-        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+        <div className="bg-white rounded-2xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-primary mb-4">Complete Overstap Gids</h2>
           
           <div className="space-y-6">
@@ -448,14 +448,14 @@ export default function SoortenFlesvoedingPage() {
         </div>
 
         {/* Schema Infographic Highlight */}
-        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+        <div className="bg-white rounded-2xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-primary mb-4">Voedingsschema Overzicht</h2>
           <p className="text-gray-700 mb-4">
             Bekijk onze visuele tijdlijn met alle voedingsschema's per leeftijd en flesvoeding type.
           </p>
           <Link 
             href="/infographics"
-            className="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-3 px-6 rounded-xl transition-all inline-flex items-center"
+            className="bg-white hover:bg-gray-200 text-gray-700 font-medium py-3 px-6 rounded-xl transition-all inline-flex items-center"
           >
             <ArrowRight className="w-5 h-5 mr-2" />
             Bekijk Schema Tijdlijn

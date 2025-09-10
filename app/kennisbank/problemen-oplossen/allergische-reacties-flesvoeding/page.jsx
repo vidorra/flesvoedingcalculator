@@ -94,7 +94,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
                 Vroege herkenning en juiste behandeling zijn cruciaal voor het welzijn van je baby.
               </p>
               
-              <div className="mt-4 p-4 bg-gray-100 rounded-lg">
+              <div className="mt-4 p-4 bg-white rounded-lg">
                 <p className="text-sm text-gray-700">
                   <strong>Belangrijk:</strong> Dit artikel vervangt geen medisch advies. Neem altijd contact op met je huisarts of consultatiebureau bij verdenking van allergie.
                 </p>
@@ -115,7 +115,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
                   inclusief anafylaxie. Ze worden veroorzaakt door IgE antibodies en histamine release.
                 </p>
                 
-                <div className="bg-gray-50 rounded-lg p-4 mb-6">
+                <div className="bg-white rounded-lg p-4 mb-6">
                   <h4 className="font-medium text-gray-700 mb-2">Timing en Ernst:</h4>
                   <ul className="space-y-2">
                     <li className="flex items-start space-x-2">
@@ -179,21 +179,21 @@ export default function AllergischeReactiesFlesvoedingPage() {
               
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Nederlandse Diagnose Protocol</h3>
-                <div className="bg-gray-50 rounded-lg p-4 mb-4">
+                <div className="bg-white rounded-lg p-4 mb-4">
                   <h4 className="font-medium text-gray-700 mb-2">Stap 1: Clinical Assessment</h4>
                   <p className="text-gray-700 text-sm mb-2">
                     Uitgebreide anamnese, fysiek onderzoek en symptoom dagboek gedurende 1-2 weken.
                   </p>
                 </div>
                 
-                <div className="bg-gray-50 rounded-lg p-4 mb-4">
+                <div className="bg-white rounded-lg p-4 mb-4">
                   <h4 className="font-medium text-gray-700 mb-2">Stap 2: Elimination Diet</h4>
                   <p className="text-gray-700 text-sm mb-2">
                     2-4 weken trial met extensively hydrolyzed formula onder medische supervisie.
                   </p>
                 </div>
                 
-                <div className="bg-gray-50 rounded-lg p-4">
+                <div className="bg-white rounded-lg p-4">
                   <h4 className="font-medium text-gray-700 mb-2">Stap 3: Challenge Test</h4>
                   <p className="text-gray-700 text-sm">
                     Gecontroleerde reïntroductie in ziekenhuisomgeving voor definitieve diagnose.
@@ -247,7 +247,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
                   ))}
                 </ul>
                 
-                <div className="mt-6 p-4 bg-gray-100 rounded-lg">
+                <div className="mt-6 p-4 bg-white rounded-lg">
                   <h4 className="font-medium text-gray-700 mb-2">Kosten en Vergoeding</h4>
                   <p className="text-gray-700 text-sm">
                     Extensively hydrolyzed formula kost €100-120 per maand, amino acid formula €160-200 per maand. 
@@ -301,7 +301,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
             </section>
 
             {/* Call to Action */}
-            <section className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <section className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
                 <Link 
                   href="/calculator"

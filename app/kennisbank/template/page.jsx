@@ -47,7 +47,7 @@ export default function KennisbankTemplatePage() {
     "text-gray-600 - For body paragraphs and content",
     "text-gray-700 - For list items and secondary text",
     "bg-white/80 - For main content cards",
-    "bg-gray-50 - For subtle backgrounds and related articles"
+    "bg-white - For subtle backgrounds and related articles"
   ]
 
   const forbiddenElements = [
@@ -86,7 +86,7 @@ export default function KennisbankTemplatePage() {
                 Gebruik deze structuur als basis voor alle nieuwe artikelen om consistentie en kwaliteit te waarborgen.
               </p>
               
-              <div className="mt-4 p-4 bg-gray-100 rounded-lg">
+              <div className="mt-4 p-4 bg-white rounded-lg">
                 <p className="text-sm text-gray-700">
                   <strong>Gebaseerd op:</strong> overstappen-van-borst-naar-fles (beste artikel structuur)  
                   <strong>Versie:</strong> 2.0  
@@ -175,7 +175,7 @@ export default function KennisbankTemplatePage() {
               
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Juiste Header Structuur</h3>
-                <div className="bg-gray-100 rounded-lg p-4 mb-4">
+                <div className="bg-white rounded-lg p-4 mb-4">
                   <pre className="text-sm text-gray-800 overflow-x-auto">
 {`{/*  CORRECT: Clean header outside cards */}
 <div>
@@ -192,7 +192,7 @@ export default function KennisbankTemplatePage() {
 
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Border Usage Policy</h3>
-                <div className="bg-gray-100 rounded-lg p-4 mb-4">
+                <div className="bg-white rounded-lg p-4 mb-4">
                   <pre className="text-sm text-gray-800 overflow-x-auto">
 {`{/*  CORRECT: Borders WITH background colors */}
 <div className="p-4">
@@ -214,7 +214,7 @@ export default function KennisbankTemplatePage() {
               
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Juiste Bullet Points</h3>
-                <div className="bg-gray-100 rounded-lg p-4">
+                <div className="bg-white rounded-lg p-4">
                   <pre className="text-sm text-gray-800 overflow-x-auto">
 {`{/*  CORRECT: Primary color bullets */}
 <li className="flex items-center space-x-2">
@@ -227,7 +227,7 @@ export default function KennisbankTemplatePage() {
             </section>
 
             {/* FAQ Section Example */}
-            <section className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <section className="bg-white rounded-2xl border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde Vragen over Template</h2>
               
               <div className="space-y-4">
@@ -249,7 +249,7 @@ export default function KennisbankTemplatePage() {
             </section>
 
             {/* Development Notes */}
-            <section className="bg-gray-50 border border-gray-200 rounded-lg p-6">
+            <section className="bg-white border border-gray-200 rounded-lg p-6">
               <p className="text-gray-700 text-sm text-center mb-4">
                 <strong>Voor Ontwikkelaars:</strong> Dit template demonstreert alle goedgekeurde patronen. 
                 Kopieer de structuur voor nieuwe artikelen en pas de inhoud aan terwijl je de styling behoudt.
@@ -269,7 +269,7 @@ export default function KennisbankTemplatePage() {
             </section>
 
             {/* Call to Action */}
-            <section className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <section className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
                 <Link 
                   href="/calculator"

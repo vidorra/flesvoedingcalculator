@@ -119,7 +119,7 @@ export default function BasisFlesvoedingPage() {
         </div>
 
         {/* EU Regulations & Safety */}
-        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+        <div className="bg-white rounded-2xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-primary mb-4">Veiligheid & Regelgeving in Nederland</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
@@ -169,7 +169,7 @@ export default function BasisFlesvoedingPage() {
         </div>
 
         {/* Myth Busting */}
-        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+        <div className="bg-white rounded-2xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-primary mb-4">Veelgehoorde Mythes over Flesvoeding</h2>
           <div className="space-y-4">
             <div className="bg-white p-4 rounded-lg">
@@ -278,7 +278,7 @@ export default function BasisFlesvoedingPage() {
             <div>
               <h3 className="font-medium text-primary mb-3">Kosten van flesvoeding in Nederland</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-gray-50 p-4 rounded-lg">
+                <div className="bg-white p-4 rounded-lg">
                   <h4 className="font-medium text-gray-700 mb-2">Gemiddelde kosten per maand:</h4>
                   <div className="space-y-1 text-sm text-gray-700">
                     <div> Startvoeding (0-6 mnd): €15-25</div>
@@ -286,7 +286,7 @@ export default function BasisFlesvoedingPage() {
                     <div> Totaal eerste jaar: circa €250-350</div>
                   </div>
                 </div>
-                <div className="bg-gray-50 p-4 rounded-lg">
+                <div className="bg-white p-4 rounded-lg">
                   <h4 className="font-medium text-gray-600 mb-2">Geld besparen tips:</h4>
                   <div className="space-y-1 text-sm text-gray-700">
                     <div> Huismerken even goed als A-merken</div>
@@ -306,11 +306,11 @@ export default function BasisFlesvoedingPage() {
                 en je hoeft niet te kolven. Plan geleidelijke overgang minimaal 2 weken voor werkhervatting.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-gray-50 p-3 rounded-lg">
+                <div className="bg-white p-3 rounded-lg">
                   <div className="font-medium text-gray-700 mb-1">Voorbereiding:</div>
                   <div className="text-sm text-gray-700">Start vroeg met wennen aan fles, laat partner oefenen, stock voorraad op</div>
                 </div>
-                <div className="bg-gray-50 p-3 rounded-lg">
+                <div className="bg-white p-3 rounded-lg">
                   <div className="font-medium text-gray-700 mb-1">Praktisch:</div>
                   <div className="text-sm text-gray-700">Instructies voor oppas, noodvoorraad, backup plan maken</div>
                 </div>
@@ -324,7 +324,7 @@ export default function BasisFlesvoedingPage() {
                 Flesvoeding biedt unieke kans voor partner om volledig betrokken te zijn bij voeding. 
                 Dit versterkt de band en geeft mama rust.
               </p>
-              <div className="bg-gray-50 p-4 rounded-lg">
+              <div className="bg-white p-4 rounded-lg">
                 <h4 className="font-medium text-gray-700 mb-2">Praktische tips:</h4>
                 <div className="space-y-1 text-sm text-gray-700">
                   <div> Verdeel voedingen: bijvoorbeeld mama overdag, papa 's avonds</div>
@@ -347,7 +347,7 @@ export default function BasisFlesvoedingPage() {
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 mb-6">
-            <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
+            <div className="bg-white rounded-xl p-4 border border-gray-200">
               <h3 className="text-gray-800 font-medium mb-3">Meest voorkomende oorzaken:</h3>
               <ul className="text-gray-700 text-sm space-y-1">
                 <li className="flex items-center space-x-2">
@@ -373,7 +373,7 @@ export default function BasisFlesvoedingPage() {
               </ul>
             </div>
             
-            <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
+            <div className="bg-white rounded-xl p-4 border border-gray-200">
               <h3 className="text-gray-800 font-medium mb-3">Snelle oplossingen:</h3>
               <ul className="text-gray-700 text-sm space-y-1">
                 <li className="flex items-center space-x-2">
@@ -400,7 +400,7 @@ export default function BasisFlesvoedingPage() {
             </div>
           </div>
 
-          <div className="bg-gray-50 rounded-xl p-4 border border-gray-200 mb-6">
+          <div className="bg-white rounded-xl p-4 border border-gray-200 mb-6">
             <h3 className="text-primary font-semibold mb-3">7-Dagen Actieplan bij Flesweigering:</h3>
             <div className="grid md:grid-cols-3 gap-4">
               <div className="bg-white rounded-lg p-3">
@@ -469,7 +469,7 @@ export default function BasisFlesvoedingPage() {
             </div>
           </div>
 
-          <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
+          <div className="bg-white rounded-xl p-4 border border-gray-200">
             <h3 className="text-gray-700 font-semibold mb-2"> Wanneer hulp zoeken:</h3>
             <p className="text-gray-700 text-sm mb-2">
               Als baby 48 uur geen significante hoeveelheden drinkt, of tekenen van uitdroging toont 
@@ -490,7 +490,7 @@ export default function BasisFlesvoedingPage() {
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div>
               <h3 className="font-medium text-primary mb-3">Stap 1-4: Voorbereiding</h3>
-              <div className="bg-gray-50 rounded-xl p-4 space-y-2">
+              <div className="bg-white rounded-xl p-4 space-y-2">
                 <p><strong>1. Handen wassen</strong> grondig met warme zeep</p>
                 <p><strong>2. Materiaal checken</strong> fles, speen, geen scheurtjes</p>
                 <p><strong>3. Water klaarmaken</strong> afgekoeld gekookt water</p>
@@ -499,7 +499,7 @@ export default function BasisFlesvoedingPage() {
             </div>
             <div>
               <h3 className="font-medium text-primary mb-3">Stap 5-8: Fles geven</h3>
-              <div className="bg-gray-50 rounded-xl p-4 space-y-2">
+              <div className="bg-white rounded-xl p-4 space-y-2">
                 <p><strong>5. Juiste houding</strong> baby iets omhoog (45°)</p>
                 <p><strong>6. Stimuleer reflexen</strong> wang aanraken</p>
                 <p><strong>7. Speen plaatsen</strong> vol met melk, geen lucht</p>
@@ -508,7 +508,7 @@ export default function BasisFlesvoedingPage() {
             </div>
           </div>
 
-          <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
+          <div className="bg-white rounded-xl p-4 border border-gray-200">
             <h3 className="text-gray-800 font-medium mb-2"> Tips voor succes eerste keer:</h3>
             <div className="grid md:grid-cols-2 gap-4">
               <ul className="text-gray-700 text-sm space-y-1">

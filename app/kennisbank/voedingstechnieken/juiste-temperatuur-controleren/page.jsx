@@ -870,7 +870,7 @@ export default function JuisteTemperatuurControleren() {
                   </div>
                 </div>
 
-                <div className="mt-6 p-4 bg-gray-100 rounded-lg">
+                <div className="mt-6 p-4 bg-white rounded-lg">
                   <p className="text-gray-700">
                     <strong>Onthoud</strong>: Een baby die rustig drinkt en niet reageert op de temperatuur heeft een perfecte fles gekregen. Vertrouw op je instinct en de signalen van je baby - zij vertellen je of de temperatuur goed is.
                   </p>

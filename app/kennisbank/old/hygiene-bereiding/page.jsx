@@ -93,7 +93,7 @@ export default function HygieneBereidingPage() {
 
         {/* Basic hygiene rules */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+          <div className="bg-white rounded-2xl border border-gray-200 p-6">
             <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
               <CheckCircle className="w-5 h-5 mr-2" />
               Altijd doen:
@@ -108,7 +108,7 @@ export default function HygieneBereidingPage() {
             </div>
           </div>
 
-          <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+          <div className="bg-white rounded-2xl border border-gray-200 p-6">
             <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
               <X className="w-5 h-5 mr-2" />
               Nooit doen:
@@ -162,7 +162,7 @@ export default function HygieneBereidingPage() {
             <div className="space-y-2">
               {powderStorage.map((tip, index) => (
                 <div key={index} className="flex items-start space-x-2">
-                  <div className="w-2 h-2 bg-gray-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="w-2 h-2 bg-white0 rounded-full mt-2 flex-shrink-0"></div>
                   <span className="text-gray-700 text-sm">{tip}</span>
                 </div>
               ))}
@@ -224,7 +224,7 @@ export default function HygieneBereidingPage() {
           </h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div className="bg-gray-50 rounded-lg p-4">
+            <div className="bg-white rounded-lg p-4">
               <h3 className="font-medium text-gray-700 mb-3">Flessenwarmer voordelen:</h3>
               <div className="space-y-2">
                 {bottleWarmerAdvantages.map((advantage, index) => (
@@ -236,7 +236,7 @@ export default function HygieneBereidingPage() {
               </div>
             </div>
             
-            <div className="bg-gray-50 rounded-lg p-4">
+            <div className="bg-white rounded-lg p-4">
               <h3 className="font-medium text-gray-700 mb-3">Magnetron nadelen:</h3>
               <div className="space-y-2">
                 {microwaveDisadvantages.map((disadvantage, index) => (

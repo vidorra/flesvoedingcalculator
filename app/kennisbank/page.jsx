@@ -371,7 +371,7 @@ export default function KennisbankPage() {
               className={`text-left p-4 rounded-xl transition-colors ${
                 selectedCategory === 'all'
                   ? 'bg-gradient-active border border-primary text-primary'
-                  : 'bg-gray-50 hover:bg-gray-100 text-gray-700 border border-gray-200'
+                  : 'bg-white hover:bg-white text-gray-700 border border-gray-200'
               }`}
             >
               <div className="font-medium mb-1">Alle categorieën</div>
@@ -388,7 +388,7 @@ export default function KennisbankPage() {
                   className={`text-left p-4 rounded-xl transition-colors ${
                     selectedCategory === category.id
                       ? 'bg-gradient-active border border-primary text-primary'
-                      : 'bg-gray-50 hover:bg-gray-100 text-gray-700 border border-gray-200'
+                      : 'bg-white hover:bg-white text-gray-700 border border-gray-200'
                   }`}
                 >
                   <div className="flex items-center mb-2">
@@ -425,7 +425,7 @@ export default function KennisbankPage() {
                         <div className="flex items-center justify-between mb-1">
                           <h4 className="font-medium text-gray-700">{article.title}</h4>
                           {article.duration && (
-                            <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">{article.duration}</span>
+                            <span className="text-xs text-gray-500 bg-white px-2 py-1 rounded">{article.duration}</span>
                           )}
                         </div>
                         <p className="text-sm text-gray-600">{article.description}</p>
@@ -445,13 +445,13 @@ export default function KennisbankPage() {
             {knowledgeCategories.map((category) => {
               const Icon = category.icon
               const colorClasses = {
-                blue: 'bg-gray-50 border-gray-200 text-primary hover:bg-gray-100',
-                purple: 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100',
-                green: 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100',
-                orange: 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100',
-                teal: 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100',
-                red: 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100',
-                yellow: 'bg-gray-50 border-gray-200 text-gray-700 hover:bg-gray-100'
+                blue: 'bg-white border-gray-200 text-primary hover:bg-white',
+                purple: 'bg-white border-gray-200 text-gray-700 hover:bg-white',
+                green: 'bg-white border-gray-200 text-gray-700 hover:bg-white',
+                orange: 'bg-white border-gray-200 text-gray-700 hover:bg-white',
+                teal: 'bg-white border-gray-200 text-gray-700 hover:bg-white',
+                red: 'bg-white border-gray-200 text-gray-700 hover:bg-white',
+                yellow: 'bg-white border-gray-200 text-gray-700 hover:bg-white'
               }
               return (
                 <Link
@@ -516,7 +516,7 @@ export default function KennisbankPage() {
         </div>
 
         {/* Nederlandse Context */}
-        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+        <div className="bg-white rounded-2xl border border-gray-200 p-6">
           <h2 className="font-semibold text-gray-600 mb-4">Flesvoeding in Nederland</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>

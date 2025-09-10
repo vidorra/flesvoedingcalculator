@@ -309,7 +309,7 @@ export default function FlesvoedingBewarenPage() {
                 </div>
               </div>
               
-              <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
+              <div className="p-4 border border-gray-200 bg-white rounded-xl">
                 <p className="text-sm text-gray-700">
                   <strong>Het RIVM rapporteert</strong> jaarlijks 50+ ziekenhuisopnames door verkeerd bewaarde babyvoeding in Nederland.
                 </p>
@@ -462,7 +462,7 @@ export default function FlesvoedingBewarenPage() {
                       <div className="flex items-center justify-between mb-2">
                         <h4 className="font-medium text-gray-900">{method.method}</h4>
                         {method.rating && (
-                          <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
+                          <span className="text-xs bg-white text-gray-700 px-2 py-1 rounded-full">
                             {method.rating}
                           </span>
                         )}
@@ -550,7 +550,7 @@ export default function FlesvoedingBewarenPage() {
                   <div key={index}>
                     <h3 className="font-medium text-primary mb-3">{method.method}</h3>
                     
-                    <div className="p-4 border border-gray-200 bg-gray-50 rounded-lg">
+                    <div className="p-4 border border-gray-200 bg-white rounded-lg">
                       {method.method === 'Koelkast Voorbereiding' && (
                         <p className="text-sm text-gray-700 mb-3">Voor het slapen:</p>
                       )}
@@ -594,7 +594,7 @@ export default function FlesvoedingBewarenPage() {
             </div>
 
             {/* Safety Checklist */}
-            <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4">Voedselveiligheid Checklist</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -680,7 +680,7 @@ export default function FlesvoedingBewarenPage() {
                 terug door verspilling te voorkomen.
               </p>
               
-              <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
+              <div className="p-4 border border-gray-200 bg-white rounded-xl">
                 <p className="text-gray-700">
                   <strong>Onthoud de gouden regel:</strong> Als je twijfelt over de bewaartijd of -methode, 
                   maak een verse fles. De gezondheid van je baby is belangrijker dan de kosten van weggegooid voeding.

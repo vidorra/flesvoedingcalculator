@@ -338,7 +338,7 @@ export default function VerschillendeSpenenUitproberenPage() {
                     ))}
                   </ul>
                 </div>
-                <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
+                <div className="p-4 border border-gray-200 bg-white rounded-xl">
                   <p className="text-sm text-gray-700">
                     <strong>TNO Onderzoek:</strong> Baby's met de juiste speen hebben 60% minder last van 
                     koliekklachten en slapen 40% langer door.
@@ -403,7 +403,7 @@ export default function VerschillendeSpenenUitproberenPage() {
                     {step.problems && (
                       <div className="space-y-3">
                         {step.problems.map((problem, problemIndex) => (
-                          <div key={problemIndex} className="border border-gray-200 bg-gray-50 rounded-lg p-3">
+                          <div key={problemIndex} className="border border-gray-200 bg-white rounded-lg p-3">
                             <h4 className="font-medium text-primary mb-2">{problem.issue}:</h4>
                             <ul className="space-y-1">
                               {problem.solutions.map((solution, solutionIndex) => (
@@ -421,7 +421,7 @@ export default function VerschillendeSpenenUitproberenPage() {
                     {step.protocol && (
                       <div className="space-y-2">
                         {step.protocol.map((item, itemIndex) => (
-                          <div key={itemIndex} className="p-3 border border-gray-200 bg-gray-50 rounded font-mono text-sm">
+                          <div key={itemIndex} className="p-3 border border-gray-200 bg-white rounded font-mono text-sm">
                             {item}
                           </div>
                         ))}
@@ -520,7 +520,7 @@ export default function VerschillendeSpenenUitproberenPage() {
                         <h4 className="font-medium text-primary mb-2">Bewezen oplossingen:</h4>
                         <ul className="space-y-1">
                           {problem.solutions.map((solution, solutionIndex) => (
-                            <li key={solutionIndex} className="text-sm text-gray-700 p-2 border border-gray-200 bg-gray-50 rounded font-mono">
+                            <li key={solutionIndex} className="text-sm text-gray-700 p-2 border border-gray-200 bg-white rounded font-mono">
                               {solution}
                             </li>
                           ))}
@@ -537,7 +537,7 @@ export default function VerschillendeSpenenUitproberenPage() {
             </div>
 
             {/* Age Recommendations */}
-            <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4">Leeftijd-Specifieke Aanbevelingen</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -599,7 +599,7 @@ export default function VerschillendeSpenenUitproberenPage() {
                     'Store brands: Voor backup/testing',
                     'Sales: Stock up tijdens acties'
                   ].map((tip, index) => (
-                    <div key={index} className="text-sm text-gray-700 p-2 border border-gray-200 bg-gray-50 rounded">
+                    <div key={index} className="text-sm text-gray-700 p-2 border border-gray-200 bg-white rounded">
                       {tip}
                     </div>
                   ))}
@@ -690,7 +690,7 @@ export default function VerschillendeSpenenUitproberenPage() {
                     <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Documenteer wat werkt voor toekomstige referentie</span></li>
                   </ul>
                 </div>
-                <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
+                <div className="p-4 border border-gray-200 bg-white rounded-xl">
                   <p className="text-sm text-gray-700">
                     <strong>Success tip:</strong> Bewaar spenen die werken, zelfs als je baby eruit groeit. 
                     Bij ziekte, tandjes, of regressies kunnen oude vertrouwde spenen tijdelijk uitkomst bieden.

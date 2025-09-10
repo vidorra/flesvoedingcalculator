@@ -14,9 +14,13 @@ This document outlines the complete styling standards for all kennisbank article
 
 **Background Colors:**
 - `bg-white/80` - For main content cards with transparency
-- `bg-gray-50` - For subtle section backgrounds
-- `bg-gray-100` - For neutral highlight sections
+- `bg-white` - For child cards within main cards (ALWAYS white, never gray)
+- `bg-gray-50` - For subtle section backgrounds (limited use)
 - `bg-default` - For brand-consistent backgrounds
+
+**CRITICAL CARD RULE:** 
+- Main cards: `bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6`
+- Child cards: `bg-white rounded-xl p-4` (NEVER use bg-gray-100 or bg-gray-50)
 
 **Icon Colors:**
 - `text-primary` - For brand-consistent icons
@@ -889,7 +893,7 @@ Before publishing any article, verify:
 - [ ] **NO `text-3xl`, `text-4xl`, `text-xl` anywhere** - Strictly forbidden
 - [ ] **All h1 have required icon** with `<Icon className="w-6 h-6 mr-3 text-primary" />`
 - [ ] **Sufficient contrast**: No `bg-gray-50` + `text-gray-600` combinations
-- [ ] **Child cards use `bg-gray-100` + `text-gray-700`** for proper contrast
+- [ ] **Child cards use `bg-white` + `text-gray-600`** for proper contrast
 - [ ] **NO light text on light backgrounds** - minimum `text-gray-600`
 
 ### Layout ✓
