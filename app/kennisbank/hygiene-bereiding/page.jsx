@@ -293,7 +293,7 @@ function HygieneBereidingPage() {
           
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
-              <h4 className="text-gray-800 font-medium mb-3">🔥 Uitkoken (Gratis)</h4>
+              <h4 className="text-gray-800 font-medium mb-3"> Uitkoken (Gratis)</h4>
               <div className="text-gray-700 text-sm space-y-1 mb-3">
                 <p><strong>Methode:</strong> 10 minuten in kokend water</p>
                 <p><strong>Kosten:</strong> Alleen gas/elektra</p>
@@ -319,7 +319,7 @@ function HygieneBereidingPage() {
             </div>
 
             <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
-              <h4 className="text-orange-900 font-medium mb-3">📱 Magnetron (€15-30)</h4>
+              <h4 className="text-orange-900 font-medium mb-3"> Magnetron (€15-30)</h4>
               <div className="text-orange-800 text-sm space-y-1 mb-3">
                 <p><strong>Methode:</strong> Speciale zakken/containers</p>
                 <p><strong>Tijd:</strong> 2-6 minuten</p>
@@ -332,7 +332,7 @@ function HygieneBereidingPage() {
             </div>
 
             <div className="bg-cyan-50 rounded-xl p-4 border border-cyan-200">
-              <h4 className="text-cyan-900 font-medium mb-3">🧪 Koude Sterilisatie (€10-20)</h4>
+              <h4 className="text-cyan-900 font-medium mb-3"> Koude Sterilisatie (€10-20)</h4>
               <div className="text-cyan-800 text-sm space-y-1 mb-3">
                 <p><strong>Methode:</strong> Milton tabletten in water</p>
                 <p><strong>Tijd:</strong> 30 minuten inweken</p>
@@ -346,7 +346,7 @@ function HygieneBereidingPage() {
           </div>
 
           <div className="bg-amber-50 rounded-xl p-4 border border-amber-200 mb-6">
-            <h3 className="text-amber-900 font-semibold mb-3">🚿 Vaatwasser Sterilisatie</h3>
+            <h3 className="text-amber-900 font-semibold mb-3">Vaatwasser Sterilisatie</h3>
             <p className="text-amber-800 text-sm mb-2">
               Nederlandse vaatwassers kunnen effectieve sterilisatie bieden op 65°C+ programma's
             </p>
@@ -398,11 +398,11 @@ function HygieneBereidingPage() {
                 </li>
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <span>🚿 Laat water 2-3 min lopen 's ochtends</span>
+                  <span>Laat water 2-3 min lopen 's ochtends</span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <span>🔥 Koken voor baby's onder 6 maanden</span>
+                  <span> Koken voor baby's onder 6 maanden</span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>

@@ -134,7 +134,7 @@ export default function GeldBesparenPage() {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium text-gray-600 mb-3">💰 Nederlandse Familie Budget Reality</h3>
+                  <h3 className="font-medium text-gray-600 mb-3"> Nederlandse Familie Budget Reality</h3>
                   <div className="text-sm text-gray-600 space-y-2">
                     <div><strong>Besteedbaar inkomen:</strong> €3.200/maand (gemiddeld)</div>
                     <div><strong>Baby kosten totaal:</strong> €500-800/maand</div>
@@ -277,7 +277,7 @@ export default function GeldBesparenPage() {
               </div>
 
               <div className="bg-gray-50 rounded-lg p-4">
-                <h4 className="font-medium text-gray-600 mb-3">🧪 Consumentenbond Test Resultaten 2024</h4>
+                <h4 className="font-medium text-gray-600 mb-3"> Consumentenbond Test Resultaten 2024</h4>
                 <div className="text-sm text-gray-600 space-y-2">
                   <div><strong>Acceptatie test (200 baby's):</strong></div>
                   <div> 78% baby's accepteerde budget merk even goed</div>
@@ -311,7 +311,7 @@ export default function GeldBesparenPage() {
               </div>
 
               <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
-                <h4 className="font-medium text-yellow-800 mb-2">📱 Essential Money-Saving Apps</h4>
+                <h4 className="font-medium text-yellow-800 mb-2"> Essential Money-Saving Apps</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
                     <h5 className="font-medium text-yellow-700 mb-1">Price Comparison:</h5>
@@ -380,7 +380,7 @@ export default function GeldBesparenPage() {
               </div>
 
               <div className="p-4 bg-gray-50 rounded-lg">
-                <h4 className="font-medium text-gray-600 mb-2">⚠️ Health Impact van Foute Besparingen</h4>
+                <h4 className="font-medium text-gray-600 mb-2"> Health Impact van Foute Besparingen</h4>
                 <p className="text-sm text-gray-600">
                   Malnutrition, infection susceptibility, groei retardation, verteringsproblemen. 
                   Medische kosten zijn veel hoger dan besparingen!
