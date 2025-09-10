@@ -66,7 +66,7 @@ export default function JuisteTemperatuurControleren() {
               <div className="mb-6">
                 <h3 className="text-2xl font-semibold text-primary mb-4">Waarom lichaamstemperatuur ideaal is</h3>
                 
-                <div className="bg-gray-50 p-6 mb-6">
+                <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6 mb-6">
                   <h4 className="font-semibold text-primary mb-3">37°C: Het natuurlijke referentiepunt </h4>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
@@ -115,7 +115,7 @@ export default function JuisteTemperatuurControleren() {
                 <h3 className="text-2xl font-semibold text-primary mb-4">Veilige temperatuur range</h3>
                 
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-gray-50 p-6">
+                  <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
                     <h4 className="font-semibold text-primary mb-3">Acceptabele temperaturen </h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
@@ -137,7 +137,7 @@ export default function JuisteTemperatuurControleren() {
                     </ul>
                   </div>
 
-                  <div className="bg-gray-50 p-6">
+                  <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
                     <h4 className="font-semibold text-primary mb-3">Gevaarlijke temperaturen vermijden </h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
@@ -216,7 +216,7 @@ export default function JuisteTemperatuurControleren() {
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-gray-50 p-6">
+                    <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
                       <h4 className="font-semibold text-primary mb-3">Voordelen pols test:</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
@@ -238,7 +238,7 @@ export default function JuisteTemperatuurControleren() {
                       </ul>
                     </div>
 
-                    <div className="bg-gray-50 p-6">
+                    <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
                       <h4 className="font-semibold text-primary mb-3">Nadelen pols test:</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
@@ -319,7 +319,7 @@ export default function JuisteTemperatuurControleren() {
                     </div>
                   </div>
 
-                  <div className="bg-gray-50 p-6">
+                  <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
                     <h4 className="font-semibold text-primary mb-3">Gebruikstips digitale thermometer:</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
@@ -368,7 +368,7 @@ export default function JuisteTemperatuurControleren() {
                       </ul>
                     </div>
 
-                    <div className="bg-gray-50 p-6">
+                    <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
                       <h4 className="font-semibold text-primary mb-3">Voordelen IR thermometer:</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
@@ -390,7 +390,7 @@ export default function JuisteTemperatuurControleren() {
                       </ul>
                     </div>
 
-                    <div className="bg-gray-50 p-6">
+                    <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
                       <h4 className="font-semibold text-primary mb-3">Nadelen IR thermometer:</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
@@ -475,7 +475,7 @@ export default function JuisteTemperatuurControleren() {
                   
                   <div className="space-y-6">
                     <div className="grid md:grid-cols-3 gap-6">
-                      <div className="bg-gray-50 p-6">
+                      <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
                         <h4 className="font-semibold text-primary mb-3">Koud water bad - Beste methode</h4>
                         <ul className="space-y-2">
                           <li className="flex items-start space-x-2">
@@ -497,7 +497,7 @@ export default function JuisteTemperatuurControleren() {
                         </ul>
                       </div>
 
-                      <div className="bg-gray-50 p-6">
+                      <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
                         <h4 className="font-semibold text-primary mb-3">Onder koude kraan</h4>
                         <ul className="space-y-2">
                           <li className="flex items-start space-x-2">
@@ -542,7 +542,7 @@ export default function JuisteTemperatuurControleren() {
                       </div>
                     </div>
 
-                    <div className="bg-gray-50 p-6">
+                    <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
                       <h4 className="font-semibold text-primary mb-3">NIET doen bij afkoelen:</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
@@ -571,7 +571,7 @@ export default function JuisteTemperatuurControleren() {
                   
                   <div className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
-                      <div className="bg-gray-50 p-6">
+                      <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
                         <h4 className="font-semibold text-primary mb-3">Warm water bad - Meest gecontroleerd</h4>
                         <ul className="space-y-2">
                           <li className="flex items-start space-x-2">
@@ -593,7 +593,7 @@ export default function JuisteTemperatuurControleren() {
                         </ul>
                       </div>
 
-                      <div className="bg-gray-50 p-6">
+                      <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
                         <h4 className="font-semibold text-primary mb-3">Flessenwarmer - Meest convenient</h4>
                         <ul className="space-y-2">
                           <li className="flex items-center space-x-2">
@@ -616,7 +616,7 @@ export default function JuisteTemperatuurControleren() {
                       </div>
                     </div>
 
-                    <div className="bg-gray-50 p-6">
+                    <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
                       <h4 className="font-semibold text-primary mb-3">ABSOLUUT NIET doen:</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
@@ -650,7 +650,7 @@ export default function JuisteTemperatuurControleren() {
                   <h3 className="text-2xl font-semibold text-primary mb-4">Brandwonden voorkomen</h3>
                   
                   <div className="grid md:grid-cols-2 gap-6 mb-6">
-                    <div className="bg-gray-50 p-6">
+                    <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
                       <h4 className="font-semibold text-primary mb-3">Hoe ontstaan brandwonden? </h4>
                       <ul className="space-y-2">
                         <li className="flex items-start space-x-2">
@@ -672,7 +672,7 @@ export default function JuisteTemperatuurControleren() {
                       </ul>
                     </div>
 
-                    <div className="bg-gray-50 p-6">
+                    <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
                       <h4 className="font-semibold text-primary mb-3">Symptomen brandwonden baby:</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
@@ -691,7 +691,7 @@ export default function JuisteTemperatuurControleren() {
                     </div>
                   </div>
 
-                  <div className="bg-gray-50 p-6">
+                  <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
                     <h4 className="font-semibold text-primary mb-3">Eerste hulp brandwonden:</h4>
                     <ol className="space-y-2">
                       <li className="flex items-start space-x-2">
@@ -722,7 +722,7 @@ export default function JuisteTemperatuurControleren() {
                   <h3 className="text-2xl font-semibold text-primary mb-4">Bacteriële groei bij verkeerde temperatuur</h3>
                   
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-gray-50 p-6">
+                    <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
                       <h4 className="font-semibold text-primary mb-3">Gevaarlijke temperatuur zones 🦠</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
@@ -744,7 +744,7 @@ export default function JuisteTemperatuurControleren() {
                       </ul>
                     </div>
 
-                    <div className="bg-gray-50 p-6">
+                    <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
                       <h4 className="font-semibold text-primary mb-3">Preventie bacteriële groei:</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
@@ -829,7 +829,7 @@ export default function JuisteTemperatuurControleren() {
             <section className="mb-8">
               <h2 className="text-3xl font-semibold text-primary mb-6">Conclusie: Perfecte temperatuur elke keer</h2>
               
-              <div className="bg-gray-50 p-6">
+              <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
                 <h4 className="font-semibold text-primary mb-4">Belangrijkste takeaways:</h4>
                 
                 <div className="grid md:grid-cols-2 gap-6">
@@ -878,7 +878,7 @@ export default function JuisteTemperatuurControleren() {
               </div>
             </section>
 
-            <div className="bg-gray-50 p-6 text-center">
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6 text-center">
               <p className="text-gray-700">
                 <strong>Hulpbronnen:</strong> <a href="/" className="text-primary hover:underline">Flesvoeding Calculator</a> - Bereken optimale hoeveelheden | Thermometers verkrijgbaar bij drogisterijen en online | Bij vragen over temperatuur altijd contact opnemen met consultatiebureau
               </p>
