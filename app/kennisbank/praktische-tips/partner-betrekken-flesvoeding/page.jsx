@@ -189,27 +189,27 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                 <div>
                   <h3 className="font-medium text-primary mb-3">Flesvoeding gerelateerde taken</h3>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    <div className="text-center bg-gray-50 rounded-lg p-3">
+                    <div className="text-center bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">Flessen klaarmaken</div>
                       <div className="text-sm text-gray-600">Wie, wanneer, hoeveel</div>
                     </div>
-                    <div className="text-center bg-gray-50 rounded-lg p-3">
+                    <div className="text-center bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">Steriliseren</div>
                       <div className="text-sm text-gray-600">Dagelijkse routine</div>
                     </div>
-                    <div className="text-center bg-gray-50 rounded-lg p-3">
+                    <div className="text-center bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">Boodschappen</div>
                       <div className="text-sm text-gray-600">Melkpoeder + supplies</div>
                     </div>
-                    <div className="text-center bg-gray-50 rounded-lg p-3">
+                    <div className="text-center bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">Tracking</div>
                       <div className="text-sm text-gray-600">Volumes, tijden bijhouden</div>
                     </div>
-                    <div className="text-center bg-gray-50 rounded-lg p-3">
+                    <div className="text-center bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">Temperatuur check</div>
                       <div className="text-sm text-gray-600">Veiligheids controle</div>
                     </div>
-                    <div className="text-center bg-gray-50 rounded-lg p-3">
+                    <div className="text-center bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">Voorraad</div>
                       <div className="text-sm text-gray-600">Management systeem</div>
                     </div>
@@ -455,7 +455,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                   <h3 className="font-medium text-primary mb-3">Effective communication strategieën</h3>
                   
                   <div className="space-y-4">
-                    <div className="bg-gray-50 rounded-lg p-4">
+                    <div className="bg-white rounded-lg p-4">
                       <h4 className="font-medium text-gray-700 mb-2">Daily communication rituals</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
@@ -625,27 +625,27 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                 <div>
                   <h3 className="font-medium text-primary mb-3">Nederlandse vader success patterns</h3>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                    <div className="text-center bg-gray-50 rounded-lg p-3">
+                    <div className="text-center bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">"Bakfiets papa"</div>
                       <div className="text-sm text-gray-600">Actieve vader met kinderen</div>
                     </div>
-                    <div className="text-center bg-gray-50 rounded-lg p-3">
+                    <div className="text-center bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">"Baby wearing"</div>
                       <div className="text-sm text-gray-600">Draagdoek + flesvoeding</div>
                     </div>
-                    <div className="text-center bg-gray-50 rounded-lg p-3">
+                    <div className="text-center bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">"Café dates"</div>
                       <div className="text-sm text-gray-600">Vader-baby uitjes</div>
                     </div>
-                    <div className="text-center bg-gray-50 rounded-lg p-3">
+                    <div className="text-center bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">"Play group dad"</div>
                       <div className="text-sm text-gray-600">Enige vader bij activiteiten</div>
                     </div>
-                    <div className="text-center bg-gray-50 rounded-lg p-3">
+                    <div className="text-center bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">Papa WhatsApp</div>
                       <div className="text-sm text-gray-600">Lokale vader groepen</div>
                     </div>
-                    <div className="text-center bg-gray-50 rounded-lg p-3">
+                    <div className="text-center bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">Buggy Boot Camp</div>
                       <div className="text-sm text-gray-600">Sport met baby</div>
                     </div>
@@ -698,7 +698,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
             </div>
 
             {/* Call to action */}
-            <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
                 <Link 
                   href="/calculator"

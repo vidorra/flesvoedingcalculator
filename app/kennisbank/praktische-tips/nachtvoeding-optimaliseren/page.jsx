@@ -192,7 +192,7 @@ export default function NachtvoedingOptimaliserenPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <div className="border border-gray-200 bg-gray-50 rounded-xl p-4 mb-4">
+              <div className="border border-gray-200 bg-white rounded-xl p-4 mb-4">
                 <h3 className="font-medium text-gray-600 mb-3">Zonder optimalisatie:</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center space-x-2">
@@ -214,7 +214,7 @@ export default function NachtvoedingOptimaliserenPage() {
                 </ul>
               </div>
               
-              <div className="border border-gray-200 bg-gray-50 rounded-xl p-4">
+              <div className="border border-gray-200 bg-white rounded-xl p-4">
                 <h3 className="font-medium text-gray-600 mb-3">Nederlandse slaapstatistieken ouders:</h3>
                 <ul className="space-y-1 text-sm text-gray-600">
                   <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>73% ouders slaapt minder dan 6u per nacht eerste 3 maanden</span></li>
@@ -225,7 +225,7 @@ export default function NachtvoedingOptimaliserenPage() {
             </div>
             
             <div>
-              <div className="border border-gray-200 bg-gray-50 rounded-xl p-4">
+              <div className="border border-gray-200 bg-white rounded-xl p-4">
                 <h3 className="font-medium text-gray-600 mb-3">Met optimalisatie:</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center space-x-2">
@@ -246,7 +246,7 @@ export default function NachtvoedingOptimaliserenPage() {
                   </li>
                 </ul>
                 
-                <div className="mt-4 p-3 bg-gray-100 rounded-lg">
+                <div className="mt-4 p-3 bg-white rounded-lg">
                   <div className="text-primary font-bold text-lg">Besparing: 1.5-2 uur slaap per nacht!</div>
                   <div className="text-sm text-gray-600">= 10-14 uur meer slaap per week</div>
                 </div>
@@ -264,7 +264,7 @@ export default function NachtvoedingOptimaliserenPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {timeComparison.map((method, index) => (
-              <div key={index} className="rounded-xl p-4 border border-gray-200 bg-gray-50">
+              <div key={index} className="rounded-xl p-4 border border-gray-200 bg-white">
                 <h3 className="font-medium mb-3 text-primary">
                   {method.method} Methode
                 </h3>
@@ -304,7 +304,7 @@ export default function NachtvoedingOptimaliserenPage() {
           
           <div className="space-y-4">
             {optimizationStrategies.map((strategy, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-4">
+              <div key={index} className="bg-white rounded-xl p-4">
                 <div className="flex justify-between items-start mb-3">
                   <h3 className="font-medium text-gray-600">{strategy.strategy}</h3>
                   <div className="text-right">
@@ -340,7 +340,7 @@ export default function NachtvoedingOptimaliserenPage() {
               <h3 className="font-medium text-gray-600 mb-3">{category.category}</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {category.items.map((item, itemIndex) => (
-                  <div key={itemIndex} className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
+                  <div key={itemIndex} className="p-3 bg-white border border-gray-200 rounded-lg">
                     <div className="flex justify-between items-start mb-2">
                       <h4 className="font-medium text-gray-600">{item.name}</h4>
                       <span className="text-primary font-medium text-sm">{item.price}</span>
@@ -352,7 +352,7 @@ export default function NachtvoedingOptimaliserenPage() {
             </div>
           ))}
           
-          <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
+          <div className="border border-gray-200 bg-white rounded-lg p-4">
             <h4 className="font-medium text-gray-600 mb-2">DIY Nachtvoeding Station Checklist:</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-600">
               <div>
@@ -440,7 +440,7 @@ export default function NachtvoedingOptimaliserenPage() {
         </div>
 
         {/* Quick Reference Guide */}
-        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+        <div className="bg-white rounded-2xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-700 mb-4">Quick Reference: Perfect Nachtvoeding</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -499,7 +499,7 @@ export default function NachtvoedingOptimaliserenPage() {
         </div>
 
         {/* Success Stories */}
-        <div className="border border-gray-200 bg-gray-50 rounded-2xl p-6">
+        <div className="border border-gray-200 bg-white rounded-2xl p-6">
           <h2 className="text-lg font-semibold text-gray-700 mb-4">Success Stories</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -520,7 +520,7 @@ export default function NachtvoedingOptimaliserenPage() {
             </div>
           </div>
           
-          <div className="mt-4 p-4 bg-gray-100 rounded-lg">
+          <div className="mt-4 p-4 bg-white rounded-lg">
             <h4 className="font-medium text-gray-600 mb-2">Tips van ervaren ouders:</h4>
             <ul className="text-sm text-gray-600 space-y-1">
               <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>"Perfect Prep machine kopen was beste investering"</span></li>
@@ -543,7 +543,7 @@ export default function NachtvoedingOptimaliserenPage() {
           </p>
           <Link 
             href="/"
-            className="inline-flex items-center space-x-2 bg-white text-primary px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors font-medium"
+            className="inline-flex items-center space-x-2 bg-white text-primary px-4 py-2 rounded-lg hover:bg-white transition-colors font-medium"
           >
             <Calculator className="w-4 h-4" />
             <span>Naar Nacht Calculator</span>

@@ -417,7 +417,7 @@ export default function KrampjesNaFlesvoedingPage() {
                     ))}
                   </ul>
                 </div>
-                <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
+                <div className="p-4 border border-gray-200 bg-white rounded-xl">
                   <p className="text-sm text-gray-700">
                     <strong>Erasmus MC Onderzoek:</strong> Anti-koliek maatregelen kunnen krampjes met 70% verminderen 
                     wanneer systematisch toegepast.
@@ -452,7 +452,7 @@ export default function KrampjesNaFlesvoedingPage() {
                 ))}
               </div>
               
-              <div className="mt-6 p-4 border border-gray-200 bg-gray-50 rounded-xl font-mono text-sm">
+              <div className="mt-6 p-4 border border-gray-200 bg-white rounded-xl font-mono text-sm">
                 <h4 className="font-medium text-primary mb-2">TYPISCH KRAMPJE PATROON:</h4>
                 <ul className="space-y-1">
                   <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Start 30-60 minuten na voeding</span></li>
@@ -507,7 +507,7 @@ export default function KrampjesNaFlesvoedingPage() {
                         <div key={causeIndex} className="p-4">
                           <div className="flex items-center justify-between mb-2">
                             <h4 className="font-medium text-gray-700">{cause.cause}</h4>
-                            <span className="text-sm font-medium bg-gray-100 text-gray-700 px-2 py-1 rounded">
+                            <span className="text-sm font-medium bg-white text-gray-700 px-2 py-1 rounded">
                               {cause.percentage}
                             </span>
                           </div>
@@ -540,7 +540,7 @@ export default function KrampjesNaFlesvoedingPage() {
                 
                 <div className="space-y-4">
                   {solutions[0].options.map((option, index) => (
-                    <div key={index} className="bg-gray-50 border border-gray-200 rounded-lg p-4 bg-gray-50">
+                    <div key={index} className="bg-white border border-gray-200 rounded-lg p-4 bg-white">
                       <div className="flex items-center justify-between mb-2">
                         <h4 className="font-medium text-gray-700">{option.name}</h4>
                         <span className="text-sm text-gray-600">{option.price}</span>
@@ -555,7 +555,7 @@ export default function KrampjesNaFlesvoedingPage() {
               {/* Feeding Technique */}
               <div>
                 <h3 className="font-medium text-gray-900 mb-4">Voedingstechniek Optimalisatie</h3>
-                <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl font-mono text-sm">
+                <div className="p-4 border border-gray-200 bg-white rounded-xl font-mono text-sm">
                   <h4 className="font-medium text-primary mb-3">STAP-VOOR-STAP KRAMPJE PREVENTIE:</h4>
                   <div className="space-y-4">
                     {feedingTechnique.map((phase, index) => (
@@ -620,7 +620,7 @@ export default function KrampjesNaFlesvoedingPage() {
                         <h4 className="font-medium text-primary mb-2">Posities:</h4>
                         <div className="space-y-3">
                           {comfort.positions.map((position, posIndex) => (
-                            <div key={posIndex} className="p-3 border border-gray-200 bg-gray-50 rounded">
+                            <div key={posIndex} className="p-3 border border-gray-200 bg-white rounded">
                               <div className="flex items-center justify-between mb-1">
                                 <span className="font-medium text-gray-900">"{position.name}"</span>
                                 <span className="text-sm text-gray-600">{position.duration}</span>
@@ -641,7 +641,7 @@ export default function KrampjesNaFlesvoedingPage() {
             </div>
 
             {/* Age Specific Approach */}
-            <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4">Leeftijd-Specifieke Aanpak</h2>
               
               <div className="space-y-6">
@@ -682,7 +682,7 @@ export default function KrampjesNaFlesvoedingPage() {
                         <h4 className="font-medium text-primary mb-2">Systematische Aanpak:</h4>
                         <ul className="space-y-1">
                           {age.approach.map((item, itemIndex) => (
-                            <li key={itemIndex} className="text-sm text-gray-700 font-mono p-2 border border-gray-200 bg-gray-50 rounded">
+                            <li key={itemIndex} className="text-sm text-gray-700 font-mono p-2 border border-gray-200 bg-white rounded">
                               {item}
                             </li>
                           ))}
@@ -845,7 +845,7 @@ export default function KrampjesNaFlesvoedingPage() {
                     <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Vertrouw je instinct: Bij twijfel altijd medische hulp zoeken</span></li>
                   </ul>
                 </div>
-                <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
+                <div className="p-4 border border-gray-200 bg-white rounded-xl">
                   <p className="text-sm text-gray-700">
                     <strong>Dit gaat voorbij.</strong> Elke week wordt het iets makkelijker. 
                     De investering in de juiste aanpak nu betekent meer slaap en minder stress voor het hele gezin.

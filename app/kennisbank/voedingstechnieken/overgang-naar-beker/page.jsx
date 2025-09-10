@@ -333,7 +333,7 @@ export default function OvergangNaarBekerPage() {
 
   return (
     <Layout>
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       {/* Header buiten de card */}
       <div className="bg-white shadow-sm">
         <div className="max-w-4xl mx-auto px-6 py-8">
@@ -634,7 +634,7 @@ export default function OvergangNaarBekerPage() {
                   <h3 className="font-medium text-primary mb-3">Nederlandse top beker merken</h3>
                   
                   <div className="space-y-4">
-                    <div className="bg-gray-50 rounded-lg p-4">
+                    <div className="bg-white rounded-lg p-4">
                       <h4 className="font-medium text-gray-700 mb-2">Tommee Tippee Closer to Nature (€8-15)</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         <div>
@@ -656,7 +656,7 @@ export default function OvergangNaarBekerPage() {
                       </div>
                     </div>
                     
-                    <div className="bg-gray-50 rounded-lg p-4">
+                    <div className="bg-white rounded-lg p-4">
                       <h4 className="font-medium text-gray-700 mb-2">Philips AVENT Overgang Serie (€10-18)</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         <div>
@@ -678,7 +678,7 @@ export default function OvergangNaarBekerPage() {
                       </div>
                     </div>
                     
-                    <div className="bg-gray-50 rounded-lg p-4">
+                    <div className="bg-white rounded-lg p-4">
                       <h4 className="font-medium text-gray-700 mb-2">IKEA BÖRJA Serie (€2-6) - Budget optie</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         <div>
@@ -1082,7 +1082,7 @@ export default function OvergangNaarBekerPage() {
             </div>
 
             {/* Call to action */}
-            <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
                 <Link 
                   href="/calculator"

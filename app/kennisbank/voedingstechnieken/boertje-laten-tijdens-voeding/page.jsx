@@ -243,7 +243,7 @@ export default function BoertjeLatenPage() {
                 </ul>
               </div>
               
-              <div className="mt-4 p-4 border border-gray-200 bg-gray-50 rounded-xl">
+              <div className="mt-4 p-4 border border-gray-200 bg-white rounded-xl">
                 <p className="text-sm text-gray-700">
                   <strong>Onderzoek toont aan</strong> dat baby's die regelmatig een boertje laten tot 40% minder last hebben van koliekklachten.
                 </p>
@@ -259,7 +259,7 @@ export default function BoertjeLatenPage() {
                   <div key={index}>
                     <div className="flex items-center justify-between mb-3">
                       <h3 className="font-medium text-gray-900">{technique.name}</h3>
-                      <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
+                      <span className="text-xs bg-white text-gray-700 px-2 py-1 rounded-full">
                         {technique.popularity}
                       </span>
                     </div>
@@ -291,7 +291,7 @@ export default function BoertjeLatenPage() {
                     </div>
                     
                     {technique.tip && (
-                      <div className="p-3 border border-gray-200 bg-gray-50 rounded-lg">
+                      <div className="p-3 border border-gray-200 bg-white rounded-lg">
                         <p className="text-sm text-gray-700">
                           <strong>Tip:</strong> {technique.tip}
                         </p>
@@ -299,7 +299,7 @@ export default function BoertjeLatenPage() {
                     )}
                     
                     {technique.warning && (
-                      <div className="p-3 border border-gray-200 bg-gray-50 rounded-lg">
+                      <div className="p-3 border border-gray-200 bg-white rounded-lg">
                         <p className="text-sm text-gray-700">
                           <strong>Let op:</strong> {technique.warning}
                         </p>
@@ -484,7 +484,7 @@ export default function BoertjeLatenPage() {
             </div>
 
             {/* When to See Doctor */}
-            <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
                 <AlertTriangle className="w-5 h-5 mr-2" />
                 Wanneer Naar de Huisarts?
@@ -537,7 +537,7 @@ export default function BoertjeLatenPage() {
                 verschillende technieken proberen en vertrouwen op je instinct</strong> zijn de sleutels tot succes.
               </p>
               
-              <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
+              <div className="p-4 border border-gray-200 bg-white rounded-xl">
                 <p className="text-gray-700">
                   <strong>Onthoud:</strong> Een tevreden baby die goed drinkt en groeit, doet het goed - 
                   ook al laat niet elke keer een perfect boertje.

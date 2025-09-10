@@ -82,14 +82,14 @@ export default function PraktischeTipsPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {moneySavingTips.map((tip, index) => (
-              <div key={index} className="flex items-start space-x-2 p-3 bg-gray-50 rounded-lg">
+              <div key={index} className="flex items-start space-x-2 p-3 bg-white rounded-lg">
                 <ShoppingCart className="w-4 h-4 text-gray-600 mt-0.5 flex-shrink-0" />
                 <span className="text-gray-700 text-sm">{tip}</span>
               </div>
             ))}
           </div>
           
-          <div className="mt-4 p-4 bg-gray-100 rounded-lg">
+          <div className="mt-4 p-4 bg-white rounded-lg">
             <p className="text-gray-700 text-sm">
               <strong>Tip:</strong> Alle flesvoeding in Nederland voldoet aan dezelfde Europese normen. 
               Huismerken zijn vaak 30-50% goedkoper met dezelfde kwaliteit!
@@ -172,7 +172,7 @@ export default function PraktischeTipsPage() {
                 <h3 className="font-medium text-primary mb-2">{ageGroup.age}:</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                   {ageGroup.tips.map((tip, tipIndex) => (
-                    <div key={tipIndex} className="text-sm text-gray-700 bg-gray-50 px-3 py-2 rounded">
+                    <div key={tipIndex} className="text-sm text-gray-700 bg-white px-3 py-2 rounded">
                       {tip}
                     </div>
                   ))}

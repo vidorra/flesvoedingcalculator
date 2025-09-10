@@ -366,7 +366,7 @@ export default function BabyWeigertFlespagePage() {
             </div>
 
             {/* Call to action */}
-            <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
                 <p className="text-gray-700 mb-4">
                   Flesweigering is frustrerend maar bijna altijd tijdelijk. Met geduld, de juiste aanpak en eventueel professionele ondersteuning gaat vrijwel elke baby uiteindelijk de fles accepteren.

@@ -163,7 +163,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                 </div>
               </div>
 
-              <div className="bg-gray-50 p-4 mb-6">
+              <div className="bg-white p-4 mb-6">
                 <p className="text-gray-700">
                   <strong>Veiligheidswaarschuwing</strong>: Voer je baby NOOIT liggend. Dit verhoogt het risico op verslikking, oorontsteking en wiegendood aanzienlijk.
                 </p>
@@ -348,7 +348,7 @@ export default function JuisteHoudingBijFlesvoeding() {
               <div className="mb-6">
                 <h3 className="text-2xl font-semibold text-primary mb-4">Voedingskussens en hulpmiddelen</h3>
                 
-                <div className="bg-gray-50 p-6 mb-6">
+                <div className="bg-white p-6 mb-6">
                   <h4 className="font-semibold text-primary mb-3">Voedingskussen voordelen:</h4>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
@@ -503,7 +503,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                 <div>
                   <h3 className="text-2xl font-semibold text-primary mb-4">Gevaarlijke houdingen vermijden</h3>
                   
-                  <div className="bg-gray-50 p-6 mb-6">
+                  <div className="bg-white p-6 mb-6">
                     <h4 className="font-semibold text-primary mb-3">NOOIT doen:</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
@@ -529,7 +529,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                     </ul>
                   </div>
 
-                  <div className="bg-gray-50 p-6">
+                  <div className="bg-white p-6">
                     <h4 className="font-semibold text-primary mb-3">Waarschuwingssignalen herkennen:</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
@@ -586,7 +586,7 @@ export default function JuisteHoudingBijFlesvoeding() {
             <section className="mb-8">
               <h2 className="text-3xl font-semibold text-primary mb-6">Conclusie: Juiste houding = betere voeding</h2>
               
-              <div className="bg-gray-50 p-6 mb-6">
+              <div className="bg-white p-6 mb-6">
                 <h4 className="font-semibold text-primary mb-3">De belangrijkste uitgangspunten:</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center space-x-2">
@@ -608,7 +608,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                 </ul>
               </div>
 
-              <div className="bg-gray-50 p-6">
+              <div className="bg-white p-6">
                 <h4 className="font-semibold text-primary mb-3">Praktische samenvatting:</h4>
                 <ul className="space-y-2 mb-4">
                   <li className="flex items-start space-x-2">
@@ -639,7 +639,7 @@ export default function JuisteHoudingBijFlesvoeding() {
               </div>
             </section>
 
-            <div className="bg-gray-50 p-6 text-center">
+            <div className="bg-white p-6 text-center">
               <p className="text-gray-700">
                 <strong>Hulpmiddelen:</strong> <a href="/" className="text-primary hover:underline">Flesvoeding Calculator</a> - Bereken optimale hoeveelheden | Consultatiebureau - Advies bij voedingsproblemen | Kraamverzorgster - Praktische begeleiding eerste weken
               </p>

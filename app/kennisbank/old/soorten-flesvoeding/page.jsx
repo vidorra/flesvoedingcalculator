@@ -76,7 +76,7 @@ export default function SoortenFlesvoedingPage() {
           {/* Opvolgmelk (2) */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-green-100 p-6">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-gray-500 rounded-full flex items-center justify-center text-white font-bold">2</div>
+              <div className="w-10 h-10 bg-white0 rounded-full flex items-center justify-center text-white font-bold">2</div>
               <div>
                 <h2 className="text-lg font-semibold text-primary">Opvolgmelk (Nummer 2)</h2>
                 <p className="text-sm text-gray-600">6 tot 12 maanden</p>

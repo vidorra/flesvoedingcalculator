@@ -138,7 +138,7 @@ export default function BabyLerenZelfDrinkenPage() {
                 Deze milestone bevordert niet alleen zelfstandigheid, maar ook fijne motoriek en cognitieve ontwikkeling.
               </p>
               
-              <div className="mt-4 p-4 bg-gray-100 rounded-lg">
+              <div className="mt-4 p-4 bg-white rounded-lg">
                 <p className="text-sm text-gray-700">
                   <strong>Nederlandse statistiek:</strong> 95% van Nederlandse baby's kan zelfstandig drinken op 15 maanden, 
                   met kinderopvang baby's gemiddeld 2 maanden eerder door peer learning.
@@ -180,7 +180,7 @@ export default function BabyLerenZelfDrinkenPage() {
                   ))}
                 </ul>
                 
-                <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+                <div className="mt-6 p-4 bg-white rounded-lg">
                   <h4 className="font-medium text-gray-700 mb-2">Nederlandse Baby Statistieken (2024)</h4>
                   <div className="text-sm text-gray-700 space-y-1">
                     <p><strong>12 maanden:</strong> 80% zelfstandig, 18% assisted, 2% niet klaar</p>
@@ -200,7 +200,7 @@ export default function BabyLerenZelfDrinkenPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {ontwikkelingsStadia.map((stadium, index) => (
-                  <div key={index} className="bg-gray-50 rounded-lg p-4">
+                  <div key={index} className="bg-white rounded-lg p-4">
                     <h3 className="font-medium text-primary mb-3">{stadium.fase}</h3>
                     <p className="text-gray-700 text-sm mb-3"><strong>Kenmerken:</strong> {stadium.kenmerken}</p>
                     <p className="text-gray-700 text-sm"><strong>Activiteiten:</strong> {stadium.activiteiten}</p>
@@ -221,7 +221,7 @@ export default function BabyLerenZelfDrinkenPage() {
               
               <div className="space-y-4">
                 {topProducten.map((product, index) => (
-                  <div key={index} className="bg-gray-50 rounded-lg p-4">
+                  <div key={index} className="bg-white rounded-lg p-4">
                     <div className="flex justify-between items-start mb-2">
                       <h3 className="font-medium text-gray-700">{product.naam}</h3>
                       <span className="text-sm text-gray-600 font-medium">{product.prijs}</span>
@@ -232,7 +232,7 @@ export default function BabyLerenZelfDrinkenPage() {
                 ))}
               </div>
               
-              <div className="mt-6 p-4 bg-gray-100 rounded-lg">
+              <div className="mt-6 p-4 bg-white rounded-lg">
                 <h4 className="font-medium text-gray-700 mb-2">Nederlandse Inkoop Tips</h4>
                 <p className="text-gray-700 text-sm">
                   <strong>Beste retailers:</strong> Baby-Dump (grootste selectie), Prenatal (expert advice), 
@@ -248,7 +248,7 @@ export default function BabyLerenZelfDrinkenPage() {
               
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Week 1-2: Introductie Fase</h3>
-                <div className="bg-gray-50 rounded-lg p-4 mb-4">
+                <div className="bg-white rounded-lg p-4 mb-4">
                   <p className="text-gray-700 text-sm mb-2"><strong>Doelen:</strong> Familiarity, vrije exploratie, 30-60ml success</p>
                   <p className="text-gray-700 text-sm"><strong>Routine:</strong> 2x per dag, 5 minuten sessies, veel praise voor interesse</p>
                 </div>
@@ -256,7 +256,7 @@ export default function BabyLerenZelfDrinkenPage() {
 
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Week 3-4: Skill Building</h3>
-                <div className="bg-gray-50 rounded-lg p-4 mb-4">
+                <div className="bg-white rounded-lg p-4 mb-4">
                   <p className="text-gray-700 text-sm mb-2"><strong>Doelen:</strong> Cup naar mond brengen, 60-120ml per sessie, minder hand-over-hand</p>
                   <p className="text-gray-700 text-sm"><strong>Activiteiten:</strong> Verschillende shapes proberen, reward system, 3x per dag</p>
                 </div>
@@ -264,7 +264,7 @@ export default function BabyLerenZelfDrinkenPage() {
 
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Week 5-8: Competentie Ontwikkeling</h3>
-                <div className="bg-gray-50 rounded-lg p-4 mb-4">
+                <div className="bg-white rounded-lg p-4 mb-4">
                   <p className="text-gray-700 text-sm mb-2"><strong>Doelen:</strong> 150-200ml zelfstandig, minimaal morsen, routine integration</p>
                   <p className="text-gray-700 text-sm"><strong>Challenges:</strong> Multiple cup types, meal integration, sociale context</p>
                 </div>
@@ -272,7 +272,7 @@ export default function BabyLerenZelfDrinkenPage() {
 
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Week 9-12: Mastery & Refinement</h3>
-                <div className="bg-gray-50 rounded-lg p-4">
+                <div className="bg-white rounded-lg p-4">
                   <p className="text-gray-700 text-sm mb-2"><strong>Doelen:</strong> Volledige zelfstandigheid, verschillende situaties, sociale drinking</p>
                   <p className="text-gray-700 text-sm"><strong>Real-world:</strong> Restaurant visits, playdates, travel, daycare prep</p>
                 </div>
@@ -288,7 +288,7 @@ export default function BabyLerenZelfDrinkenPage() {
               
               <div className="space-y-4">
                 {veelvoorkomendeProblemen.map((item, index) => (
-                  <div key={index} className="bg-gray-50 rounded-lg p-4">
+                  <div key={index} className="bg-white rounded-lg p-4">
                     <h3 className="font-medium text-primary mb-2">{item.probleem}</h3>
                     <p className="text-gray-700 text-sm mb-2"><strong>Mogelijke oorzaak:</strong> {item.oorzaak}</p>
                     <p className="text-gray-700 text-sm"><strong>Oplossing:</strong> {item.oplossing}</p>
@@ -320,7 +320,7 @@ export default function BabyLerenZelfDrinkenPage() {
             </section>
 
             {/* Call to Action */}
-            <section className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <section className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
                 <Link 
                   href="/calculator"

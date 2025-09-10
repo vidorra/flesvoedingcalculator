@@ -361,7 +361,7 @@ export default function SpugenNaDeFlesPage() {
                 <h3 className="font-medium text-primary mb-3">Cijfers die Geruststellen:</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {reassuringStats.map((stat, index) => (
-                    <div key={index} className="flex justify-between items-center p-3 border border-gray-200 bg-gray-50 rounded-lg">
+                    <div key={index} className="flex justify-between items-center p-3 border border-gray-200 bg-white rounded-lg">
                       <span className="font-bold text-primary">{stat.stat}</span>
                       <span className="text-sm text-gray-700">{stat.description}</span>
                     </div>
@@ -369,7 +369,7 @@ export default function SpugenNaDeFlesPage() {
                 </div>
               </div>
               
-              <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
+              <div className="p-4 border border-gray-200 bg-white rounded-xl">
                 <p className="text-sm text-gray-700">
                   <strong>Onderzoek van het Sophia Kinderziekenhuis</strong> toont aan dat slechts 3% 
                   van spugende baby's daadwerkelijk medische interventie nodig heeft.
@@ -442,7 +442,7 @@ export default function SpugenNaDeFlesPage() {
                     <div className="flex items-center justify-between mb-3">
                       <h3 className="font-medium text-gray-900">{technique.technique}</h3>
                       {technique.effectiveness && (
-                        <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
+                        <span className="text-xs bg-white text-gray-700 px-2 py-1 rounded-full">
                           {technique.effectiveness}
                         </span>
                       )}
@@ -503,7 +503,7 @@ export default function SpugenNaDeFlesPage() {
                   <div key={index}>
                     <div className="flex items-center justify-between mb-3">
                       <h3 className="font-medium text-gray-900">{age.age}</h3>
-                      <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
+                      <span className="text-xs bg-white text-gray-700 px-2 py-1 rounded-full">
                         {age.phase}
                       </span>
                     </div>
@@ -540,7 +540,7 @@ export default function SpugenNaDeFlesPage() {
             </div>
 
             {/* Medical Conditions */}
-            <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4">Medische Aandoeningen: Wanneer Zorgen?</h2>
               
               <div className="space-y-6">
@@ -670,7 +670,7 @@ export default function SpugenNaDeFlesPage() {
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {arFormula.map((formula, index) => (
-                    <div key={index} className="p-4 border border-gray-200 bg-gray-50 rounded-lg">
+                    <div key={index} className="p-4 border border-gray-200 bg-white rounded-lg">
                       <h4 className="font-medium text-gray-900 mb-1">{formula.brand}</h4>
                       <p className="text-sm text-gray-700">{formula.description}</p>
                       {formula.indication && (
@@ -681,7 +681,7 @@ export default function SpugenNaDeFlesPage() {
                 </div>
               </div>
               
-              <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
+              <div className="p-4 border border-gray-200 bg-white rounded-xl">
                 <h4 className="font-medium text-primary mb-2">Wanneer Overwegen:</h4>
                 <ul className="space-y-1 text-sm text-gray-700">
                   <li className="flex items-start space-x-2">
@@ -751,7 +751,7 @@ export default function SpugenNaDeFlesPage() {
             </div>
 
             {/* Emotional Support */}
-            <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4">Emotionele Impact op Ouders</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -799,13 +799,13 @@ export default function SpugenNaDeFlesPage() {
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
+                <div className="p-4 border border-gray-200 bg-white rounded-xl">
                   <p className="text-sm text-gray-700">
                     <strong>Vertrouw op je ouderinstinct:</strong> Als iets niet goed voelt, aarzel niet om 
                     medische hulp te zoeken.
                   </p>
                 </div>
-                <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
+                <div className="p-4 border border-gray-200 bg-white rounded-xl">
                   <p className="text-sm text-gray-700">
                     <strong>Onthoud:</strong> Deze fase gaat voorbij. De meeste ouders kijken er later op 
                     terug als een kleine hindernis in de mooie reis van het ouderschap.

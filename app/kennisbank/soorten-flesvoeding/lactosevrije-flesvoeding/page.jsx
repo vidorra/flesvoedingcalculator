@@ -294,7 +294,7 @@ export default function LactosevrijeFlesvoedingPage() {
                   <div key={index} className="p-4">
                     <div className="flex justify-between items-start mb-3">
                       <h3 className="font-medium text-gray-700">{indicator.category}</h3>
-                      <span className="text-sm bg-gray-100 text-gray-700 px-2 py-1 rounded">
+                      <span className="text-sm bg-white text-gray-700 px-2 py-1 rounded">
                         {indicator.severity}
                       </span>
                     </div>
@@ -368,7 +368,7 @@ export default function LactosevrijeFlesvoedingPage() {
                       </div>
                     </div>
 
-                    <div className="bg-gray-50 rounded-lg p-3">
+                    <div className="bg-white rounded-lg p-3">
                       <h4 className="font-medium text-gray-700 mb-2">Samenstelling highlights:</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-600">
                         {Object.entries(option.composition).map(([key, value]) => (
@@ -426,7 +426,7 @@ export default function LactosevrijeFlesvoedingPage() {
               <div className="overflow-x-auto">
                 <table className="w-full text-sm bg-white border border-gray-200 rounded-lg">
                   <thead>
-                    <tr className="bg-gray-50">
+                    <tr className="bg-white">
                       <th className="text-left p-3 font-medium">Merk</th>
                       <th className="text-left p-3 font-medium">Per Blik</th>
                       <th className="text-left p-3 font-medium">Per Maand</th>
@@ -436,7 +436,7 @@ export default function LactosevrijeFlesvoedingPage() {
                   </thead>
                   <tbody>
                     {costComparison.map((cost, index) => (
-                      <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                      <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-white"}>
                         <td className="p-3 font-medium text-gray-900">{cost.brand}</td>
                         <td className="p-3 text-gray-700">{cost.costPerTin}</td>
                         <td className="p-3 text-gray-700">{cost.monthlyCost}</td>
@@ -526,7 +526,7 @@ export default function LactosevrijeFlesvoedingPage() {
             </section>
 
             {/* Call to action */}
-            <section className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <section className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
                 <Link 
                   href="/"
