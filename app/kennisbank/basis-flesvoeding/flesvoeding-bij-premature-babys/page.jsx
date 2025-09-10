@@ -90,7 +90,7 @@ export default function FlesvoedingPrematurePage() {
 
         {/* Header */}
         <div className="mb-6">
-          <div className="text-sm text-primary mb-2">Basis Flesvoeding  Premature Baby's</div>
+          <div className="text-sm text-gray-500 mb-2">Basis Flesvoeding  Premature Baby's</div>
           <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
             <Heart className="w-6 h-6 mr-3 text-primary" />
             Flesvoeding bij Premature Baby's: Complete Medische Gids

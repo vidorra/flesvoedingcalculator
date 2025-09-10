@@ -88,7 +88,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
     {
       situation: 'Ideale Omstandigheden',
       icon: CheckCircle,
-      color: 'text-green-600',
+      color: 'text-primary',
       conditions: [
         'Stabiele routine: Geen grote veranderingen gepland',
         'Weekend/vrije dagen: Tijd om aanpassingen te observeren',
@@ -112,7 +112,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
   const signalsFromBaby = [
     {
       category: 'Baby Signalen: Klaar voor Overstap',
-      color: 'text-green-600',
+      color: 'text-primary',
       signals: [
         'Toont interesse in eten van ouders',
         'Opent mond automatisch bij lepel',
@@ -272,6 +272,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
           <div className="space-y-6">
             {/* Header */}
             <div className="mb-6">
+              <div className="text-sm text-gray-500 mb-2">Soorten Flesvoeding  Opvolgmelk</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <Clock className="w-6 h-6 mr-3 text-primary" />
                 Wanneer Overstappen naar Opvolgmelk: Complete Timing Gids
@@ -337,7 +338,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                           <ul className="space-y-1">
                             {factor.reasons.map((reason, reasonIndex) => (
                               <li key={reasonIndex} className="flex items-start space-x-2">
-                                <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                                <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                                 <span className="text-sm text-gray-700">{reason}</span>
                               </li>
                             ))}
@@ -422,7 +423,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                           <ul className="space-y-1">
                             {factor.milestones.map((milestone, milestoneIndex) => (
                               <li key={milestoneIndex} className="flex items-start space-x-2">
-                                <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
+                                <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                                 <span className="text-sm text-gray-700">{milestone}</span>
                               </li>
                             ))}
@@ -480,7 +481,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                       {situation.conditions.map((condition, conditionIndex) => (
                         <li key={conditionIndex} className="flex items-start space-x-2">
                           <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
-                            situation.color === 'text-green-600' ? 'bg-green-400' : 'bg-red-400'
+                            situation.color === 'text-primary' ? 'bg-primary' : 'bg-gray-400'
                           }`}></div>
                           <span className="text-sm text-gray-700">{condition}</span>
                         </li>
@@ -506,7 +507,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                       {category.signals.map((signal, signalIndex) => (
                         <li key={signalIndex} className="flex items-start space-x-2">
                           <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
-                            category.color === 'text-green-600' ? 'bg-primary' : 'bg-primary'
+                            'bg-primary'
                           }`}></div>
                           <span className="text-sm text-gray-700">{signal}</span>
                         </li>

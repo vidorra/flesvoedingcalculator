@@ -80,7 +80,7 @@ export default function HypoallergeneVoedingPage() {
 
             {/* Header */}
             <div className="mb-6">
-              <div className="text-sm text-gray-700 mb-2">Soorten Flesvoeding  Hypoallergeen</div>
+              <div className="text-sm text-gray-500 mb-2">Soorten Flesvoeding  Hypoallergeen</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <Shield className="w-6 h-6 mr-3 text-primary" />
                 Hypoallergene Flesvoeding: Complete Medische Gids
@@ -203,7 +203,7 @@ export default function HypoallergeneVoedingPage() {
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
                     <h5 className="font-medium text-primary mb-1">Volledig Vergoed:</h5>
-                    <ul className="text-primary space-y-1">
+                    <ul className="text-gray-600 space-y-1">
                       <li className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                         <span>Therapeutische formules op recept</span>
@@ -220,7 +220,7 @@ export default function HypoallergeneVoedingPage() {
                   </div>
                   <div>
                     <h5 className="font-medium text-primary mb-1">Eigen Kosten:</h5>
-                    <ul className="text-primary space-y-1">
+                    <ul className="text-gray-600 space-y-1">
                       <li className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                         <span>Preventieve HA-voeding</span>

@@ -107,7 +107,7 @@ export default function GeldBesparenPage() {
 
             {/* Header */}
             <div className="mb-6">
-              <div className="text-sm text-gray-600 mb-2">Praktische Tips  Geld Besparen</div>
+              <div className="text-sm text-gray-500 mb-2">Praktische Tips  Geld Besparen</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <DollarSign className="w-6 h-6 mr-3 text-primary" />
                 Geld Besparen op Flesvoeding: Complete Budget Gids
@@ -120,7 +120,7 @@ export default function GeldBesparenPage() {
 
             {/* Why budget optimization matters */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
+              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
                 <TrendingDown className="w-5 h-5 mr-2" />
                 Waarom Budget Optimalisatie Cruciaal Is
               </h2>
@@ -134,7 +134,7 @@ export default function GeldBesparenPage() {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium text-gray-600 mb-3"> Nederlandse Familie Budget Reality</h3>
+                  <h3 className="font-medium text-primary mb-3"> Nederlandse Familie Budget Reality</h3>
                   <div className="text-sm text-gray-600 space-y-2">
                     <div><strong>Besteedbaar inkomen:</strong> €3.200/maand (gemiddeld)</div>
                     <div><strong>Baby kosten totaal:</strong> €500-800/maand</div>
@@ -144,7 +144,7 @@ export default function GeldBesparenPage() {
                 </div>
 
                 <div>
-                  <h3 className="font-medium text-gray-600 mb-3"> Impact van €300 Besparing</h3>
+                  <h3 className="font-medium text-primary mb-3"> Impact van €300 Besparing</h3>
                   <div className="text-sm text-gray-600 space-y-2">
                     <div> 1 week vakantie extra mogelijk</div>
                     <div> 6 maanden luiers gedekt</div>
@@ -165,7 +165,7 @@ export default function GeldBesparenPage() {
 
             {/* Cost breakdown comparison */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-gray-700 mb-4">Complete Kosten Vergelijking (2025)</h2>
+              <h2 className="text-lg font-semibold text-primary mb-4">Complete Kosten Vergelijking (2025)</h2>
               
               <div className="space-y-6">
                 {costComparison.map((category, index) => (
@@ -209,7 +209,7 @@ export default function GeldBesparenPage() {
 
             {/* Saving strategies */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
+              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
                 <ShoppingCart className="w-5 h-5 mr-2" />
                 Smart Shopping Strategieën
               </h2>
@@ -248,11 +248,11 @@ export default function GeldBesparenPage() {
 
             {/* Quality vs price analysis */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-gray-700 mb-4">Kwaliteit vs Prijs: EU Regulatie Reality Check</h2>
+              <h2 className="text-lg font-semibold text-primary mb-4">Kwaliteit vs Prijs: EU Regulatie Reality Check</h2>
               
               <div className="mb-6">
                 <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                  <h3 className="font-medium text-gray-600 mb-3">🇪🇺 Alle Flesvoeding in Nederland</h3>
+                  <h3 className="font-medium text-primary mb-3">Alle Flesvoeding in Nederland</h3>
                   <div className="grid md:grid-cols-2 gap-4 text-sm">
                     <div>
                       <h4 className="font-medium text-gray-600 mb-2"> Verplicht Identiek:</h4>
@@ -293,7 +293,7 @@ export default function GeldBesparenPage() {
 
             {/* Advanced hacks */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-gray-700 mb-4">Advanced Budget Hacks</h2>
+              <h2 className="text-lg font-semibold text-primary mb-4">Advanced Budget Hacks</h2>
               
               <div className="space-y-4">
                 {smartHacks.map((hack, index) => (
@@ -311,19 +311,19 @@ export default function GeldBesparenPage() {
               </div>
 
               <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
-                <h4 className="font-medium text-yellow-800 mb-2"> Essential Money-Saving Apps</h4>
+                <h4 className="font-medium text-gray-600 mb-2"> Essential Money-Saving Apps</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <h5 className="font-medium text-yellow-700 mb-1">Price Comparison:</h5>
-                    <ul className="text-yellow-600 space-y-1">
+                    <h5 className="font-medium text-gray-600 mb-1">Price Comparison:</h5>
+                    <ul className="text-gray-600 space-y-1">
                       <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Kieskeurig.nl - Real-time vergelijking</span></li>
                       <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Scoupy - Cashback baby products</span></li>
                       <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Honey - Auto coupon codes</span></li>
                     </ul>
                   </div>
                   <div>
-                    <h5 className="font-medium text-yellow-700 mb-1">Budget Tracking:</h5>
-                    <ul className="text-yellow-600 space-y-1">
+                    <h5 className="font-medium text-gray-600 mb-1">Budget Tracking:</h5>
+                    <ul className="text-gray-600 space-y-1">
                       <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>YNAB - Envelope budgeting</span></li>
                       <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Baby costs tracking spreadsheets</span></li>
                       <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Inventory management apps</span></li>
@@ -335,7 +335,7 @@ export default function GeldBesparenPage() {
 
             {/* Budget allocation */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-gray-700 mb-4">Familie Budget Integratie</h2>
+              <h2 className="text-lg font-semibold text-primary mb-4">Familie Budget Integratie</h2>
               
               <div className="space-y-4">
                 {budgetBreakdown.map((budget, index) => (
@@ -344,7 +344,7 @@ export default function GeldBesparenPage() {
                       <h3 className="font-semibold text-primary">{budget.scenario}</h3>
                       <div className="text-right">
                         <div className="font-medium text-gray-600">{budget.monthly}/maand</div>
-                        {budget.realistic && <span className="text-xs text-green-600">Realistisch</span>}
+                        {budget.realistic && <span className="text-xs text-gray-600">Realistisch</span>}
                       </div>
                     </div>
                     <div className="grid md:grid-cols-2 gap-3">
@@ -362,18 +362,18 @@ export default function GeldBesparenPage() {
 
             {/* Dangerous savings to avoid */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
+              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
                 <AlertTriangle className="w-5 h-5 mr-2" />
                 Gevaarlijke Besparingsmethoden - NOOIT DOEN
               </h2>
               
               <div className="bg-red-50 rounded-lg p-4 border border-red-200 mb-4">
-                <h3 className="font-medium text-red-800 mb-3">🚫 Nooit Doen voor Geld Besparen:</h3>
+                <h3 className="font-medium text-gray-600 mb-3">Nooit Doen voor Geld Besparen:</h3>
                 <div className="space-y-2">
                   {dangerousSavings.map((danger, index) => (
                     <div key={index} className="flex items-start space-x-2">
                       <AlertTriangle className="w-4 h-4 text-red-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-red-700">{danger}</span>
+                      <span className="text-sm text-gray-600">{danger}</span>
                     </div>
                   ))}
                 </div>
@@ -390,7 +390,7 @@ export default function GeldBesparenPage() {
 
             {/* Navigation */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-gray-700 mb-4">Gerelateerde artikelen</h2>
+              <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/praktische-tips/flesvoeding-werk-combineren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-600">Werk combineren </div>

@@ -92,7 +92,7 @@ export default function FlesBerenStapVoorStap() {
                   </div>
 
                   <div className="p-6">
-                    <h4 className="text-lg font-semibold text-primary mb-3">Werkoppervlak voorbereiden 🧽</h4>
+                    <h4 className="text-lg font-semibold text-primary mb-3">Werkoppervlak voorbereiden</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -218,7 +218,7 @@ export default function FlesBerenStapVoorStap() {
                   </div>
 
                   <div className="p-6">
-                    <h5 className="font-semibold text-primary mb-3">6+ maanden: Kraanwater direct mogelijk 🚿</h5>
+                    <h5 className="font-semibold text-primary mb-3">6+ maanden: Kraanwater direct mogelijk</h5>
                     <ul className="space-y-2">
                       <li className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -257,7 +257,7 @@ export default function FlesBerenStapVoorStap() {
                   
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="p-6">
-                      <h4 className="font-semibold text-primary mb-3">Juiste hoeveelheid bepalen 🧮</h4>
+                      <h4 className="font-semibold text-primary mb-3">Juiste hoeveelheid bepalen</h4>
                       <ul className="space-y-2">
                         <li className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -383,7 +383,7 @@ export default function FlesBerenStapVoorStap() {
                   
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="p-6">
-                      <h4 className="font-semibold text-primary mb-3">Fles sluiten en schudden 🤝</h4>
+                      <h4 className="font-semibold text-primary mb-3">Fles sluiten en schudden</h4>
                       <ul className="space-y-2">
                         <li className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -565,7 +565,7 @@ export default function FlesBerenStapVoorStap() {
               
               <div className="space-y-6">
                 <div className="p-6">
-                  <h4 className="font-semibold text-primary mb-2">Poeder lost niet op 🌊</h4>
+                  <h4 className="font-semibold text-primary mb-2">Poeder lost niet op</h4>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <p className="text-gray-700 mb-2"><strong>Oorzaak</strong>: Water te koud, te weinig schudden, oud poeder</p>
@@ -736,7 +736,7 @@ export default function FlesBerenStapVoorStap() {
                 </ul>
 
                 <p className="text-gray-700 mt-4">
-                  Met de juiste techniek, goede voorbereiding en wat oefening wordt flesbereiding een natuurlijk onderdeel van je dagelijkse routine. Vertrouw op jezelf - je doet het geweldig! 💚
+                  Met de juiste techniek, goede voorbereiding en wat oefening wordt flesbereiding een natuurlijk onderdeel van je dagelijkse routine. Vertrouw op jezelf - je doet het geweldig!
                 </p>
               </div>
             </section>

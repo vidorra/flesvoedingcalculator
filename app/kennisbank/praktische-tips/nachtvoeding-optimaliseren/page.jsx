@@ -175,7 +175,7 @@ export default function NachtvoedingOptimaliserenPage() {
 
         {/* Header */}
         <div className="mb-6">
-          <div className="text-sm text-gray-600 mb-2">Praktische Tips  Nachtvoeding</div>
+          <div className="text-sm text-gray-500 mb-2">Praktische Tips  Nachtvoeding</div>
           <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
             <Moon className="w-6 h-6 mr-3 text-primary" />
             Nachtvoeding Optimaliseren: Efficiënt Voeden in het Donker
