@@ -115,7 +115,7 @@ export default function AntiRefluxPage() {
 
         {/* Header */}
         <div className="mb-6">
-          <div className="text-sm text-primary mb-2">Soorten Flesvoeding  Anti-Reflux</div>
+          <div className="text-sm text-gray-500 mb-2">Soorten Flesvoeding  Anti-Reflux</div>
           <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
             <Shield className="w-6 h-6 mr-3 text-primary" />
             Anti-Reflux Flesvoeding: Complete Gids tegen Spugen en Reflux
@@ -545,7 +545,7 @@ export default function AntiRefluxPage() {
           
           <div className="mt-6">
             <h4 className="font-medium text-primary mb-3">Belangrijkste tips van ervaren ouders:</h4>
-            <ul className="text-sm text-primary space-y-2">
+            <ul className="text-sm text-gray-600 space-y-2">
               <li className="flex items-start space-x-2">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                 <span>Geduld hebben - verbetering komt geleidelijk</span>
