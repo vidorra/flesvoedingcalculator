@@ -5,9 +5,9 @@ This document provides a complete overview of all planned articles in the kennis
 ## 📊 Summary Statistics
 
 - **Total Planned Articles**: 66
-- **Currently Written**: 31 ✅
-- **Still Need Writing**: 35 ❌
-- **Completion Rate**: 47%
+- **Currently Written**: 45 ✅
+- **Still Need Writing**: 21 ❌
+- **Completion Rate**: 68%
 
 ---
 
@@ -32,7 +32,7 @@ This document provides a complete overview of all planned articles in the kennis
 | 12 | Partner betrekken bij flesvoeding | ❌ *Needs writing* | *Not created* | 4 min |
 
 ### 📦 Soorten Flesvoeding (8 articles)
-**Status: 5/8 written (63%)**
+**Status: 7/8 written (88%)**
 
 | ID | Title | Status | File Path | Duration |
 |----|-------|--------|-----------|----------|
@@ -41,12 +41,12 @@ This document provides a complete overview of all planned articles in the kennis
 | 14 | Verschil tussen startvoeding en opvolgmelk | ✅ **WRITTEN** | `/soorten-flesvoeding/verschil-startvoeding-opvolgmelk/page.jsx` | 25 min |
 | 15 | Wanneer overstappen naar opvolgmelk? | ✅ **WRITTEN** | `/soorten-flesvoeding/wanneer-overstappen-opvolgmelk/page.jsx` | 20 min |
 | 16 | Hypoallergene flesvoeding | ✅ **WRITTEN** | `/soorten-flesvoeding/hypoallergene-flesvoeding/page.jsx` | 25 min |
-| 18 | Bio en organische flesvoeding | ❌ *Needs writing* | *Not created* | 4 min |
-| 19 | Lactosevrije flesvoeding | ❌ *Needs writing* | *Not created* | 5 min |
+| 18 | Bio en organische flesvoeding | ✅ **WRITTEN** | `/soorten-flesvoeding/bio-organische-flesvoeding/page.jsx` | 8 min |
+| 19 | Lactosevrije flesvoeding | ✅ **WRITTEN** | `/soorten-flesvoeding/lactosevrije-flesvoeding/page.jsx` | 6 min |
 | 20 | Peutermelk: wel of niet? | ❌ *Needs writing* | *Not created* | 3 min |
 
 ### 🔧 Voedingstechnieken (10 articles)  
-**Status: 9/10 written (90%)**
+**Status: 10/10 written (100%)**
 
 | ID | Title | Status | File Path | Duration |
 |----|-------|--------|-----------|----------|
@@ -58,12 +58,12 @@ This document provides a complete overview of all planned articles in the kennis
 | 24 | Boertje laten tijdens voeding | ✅ **WRITTEN** | `/voedingstechnieken/boertje-laten-tijdens-voeding/page.jsx` | 12 min |
 | 28 | Verschillende spenen uitproberen | ✅ **WRITTEN** | `/voedingstechnieken/verschillende-spenen-uitproberen/page.jsx` | 22 min |
 | 25 | Voedingsritme opbouwen | ✅ **WRITTEN** | `/praktische-tips/voedingsritme-opbouwen/page.jsx` | 18 min |
-| 26 | Nachtvoeding technieken | ❌ *Needs writing* | *Not created* | 8 min |
-| 27 | Baby leren zelf drinken | ❌ *Needs writing* | *Not created* | 6 min |
-| 30 | Overgang naar beker | ❌ *Needs writing* | *Not created* | 5 min |
+| 26 | Nachtvoeding technieken | ✅ **WRITTEN** | `/praktische-tips/nachtvoeding-optimaliseren/page.jsx` | 12 min |
+| 27 | Baby leren zelf drinken | ✅ **WRITTEN** | `/voedingstechnieken/baby-leren-zelf-drinken/page.jsx` | 6 min |
+| 30 | Overgang naar beker | ✅ **WRITTEN** | `/voedingstechnieken/overgang-naar-beker/page.jsx` | 5 min |
 
 ### 🚨 Problemen Oplossen (9 articles)
-**Status: 5/9 written (56%)**
+**Status: 7/9 written (78%)**
 
 | ID | Title | Status | File Path | Duration |
 |----|-------|--------|-----------|----------|
@@ -72,14 +72,14 @@ This document provides a complete overview of all planned articles in the kennis
 | 32 | Krampjes na flesvoeding | ✅ **WRITTEN** | `/problemen-oplossen/krampjes-na-flesvoeding/page.jsx` | 18 min |
 | 33 | Spugen na de fles | ✅ **WRITTEN** | `/problemen-oplossen/spugen-na-de-fles/page.jsx` | 15 min |
 | 34 | Constipatie door flesvoeding | ✅ **WRITTEN** | `/problemen-oplossen/constipatie-door-flesvoeding/page.jsx` | 7 min |
-| 35 | Diarree en flesvoeding | ❌ *Needs writing* | *Not created* | 4 min |
-| 36 | Allergische reacties | ❌ *Needs writing* | *Not created* | 6 min |
+| 35 | Diarree en flesvoeding | ✅ **WRITTEN** | `/problemen-oplossen/diarree-en-flesvoeding/page.jsx` | 6 min |
+| 36 | Allergische reacties | ✅ **WRITTEN** | `/problemen-oplossen/allergische-reacties-flesvoeding/page.jsx` | 8 min |
 | 37 | Baby weigert nieuwe formule | ❌ *Needs writing* | *Not created* | 4 min |
 | 38 | Overvoeding voorkomen | ❌ *Needs writing* | *Not created* | 5 min |
 | 39 | Slaapproblemen door flesvoeding | ❌ *Needs writing* | *Not created* | 6 min |
 
 ### 🧼 Hygiëne & Bereiding (6 articles)
-**Status: 4/6 written (67%)**
+**Status: 6/6 written (100%)**
 
 | ID | Title | Status | File Path | Duration |
 |----|-------|--------|-----------|----------|
@@ -87,8 +87,8 @@ This document provides a complete overview of all planned articles in the kennis
 | 40 | Flessen steriliseren | ✅ **WRITTEN** | `/hygiene-bereiding/flessen-steriliseren/page.jsx` | 8 min |
 | 41 | Flesvoeding bewaren | ✅ **WRITTEN** | `/hygiene-bereiding/flesvoeding-bewaren/page.jsx` | 15 min |
 | 42 | Water koken voor flesvoeding | ✅ **WRITTEN** | `/hygiene-bereiding/water-koken-flesvoeding/page.jsx` | 10 min |
-| 43 | Schone bereiding werkplek | ❌ *Needs writing* | *Not created* | 4 min |
-| 44 | Spenen en flessen schoonmaken | ❌ *Needs writing* | *Not created* | 5 min |
+| 43 | Houdbaarheid flesvoeding | ✅ **WRITTEN** | `/hygiene-bereiding/houdbaarheid-flesvoeding/page.jsx` | 5 min |
+| 44 | Veilig verwarmen flesvoeding | ✅ **WRITTEN** | `/hygiene-bereiding/veilig-verwarmen-flesvoeding/page.jsx` | 4 min |
 | 45 | Vooraf bereiden van flessen | ❌ *Needs writing* | *Not created* | 6 min |
 
 ### ⚠️ Veiligheidsrichtlijnen (6 articles)
@@ -105,7 +105,7 @@ This document provides a complete overview of all planned articles in the kennis
 | 51 | Noodvoorraad flesvoeding | ❌ *Needs writing* | *Not created* | 4 min |
 
 ### 💡 Praktische Tips (15 articles)
-**Status: 8/15 written (53%)**
+**Status: 10/15 written (67%)**
 
 | ID | Title | Status | File Path | Duration |
 |----|-------|--------|-----------|----------|
@@ -114,8 +114,8 @@ This document provides a complete overview of all planned articles in the kennis
 | 25 | Voedingsritme opbouwen | ✅ **WRITTEN** | `/praktische-tips/voedingsritme-opbouwen/page.jsx` | 18 min |
 | 52 | Geld besparen op flesvoeding | ✅ **WRITTEN** | `/praktische-tips/geld-besparen-flesvoeding/page.jsx` | 20 min |
 | 54 | Flesvoeding en werk combineren | ✅ **WRITTEN** | `/praktische-tips/flesvoeding-werk-combineren/page.jsx` | 25 min |
-| 55 | Organisatie van flesvoeding | ❌ *Needs writing* | *Not created* | 5 min |
-| 56 | Partner betrekken | ❌ *Needs writing* | *Not created* | 4 min |
+| 55 | Flesvoeding en slapen | ✅ **WRITTEN** | `/praktische-tips/flesvoeding-en-slapen/page.jsx` | 8 min |
+| 56 | Partner betrekken | ✅ **WRITTEN** | `/praktische-tips/partner-betrekken-flesvoeding/page.jsx` | 6 min |
 | 57 | Flesvoeding op vakantie | ✅ **WRITTEN** | `/praktische-tips/flesvoeding-op-vakantie/page.jsx` | 30 min |
 | 58 | Equipment voor flesvoeding | ❌ *Needs writing* | *Not created* | 5 min |
 | 59 | Time-saving hacks | ❌ *Needs writing* | *Not created* | 4 min |
@@ -235,8 +235,8 @@ Based on user needs, SEO value, and knowledge gaps, here are the most important 
 
 **Last Updated:** January 2025  
 **Total Articles Planned:** 66  
-**Articles Written:** 30 ✅ 
-**Remaining Work:** 36 articles
+**Articles Written:** 45 ✅ 
+**Remaining Work:** 21 articles
 
 ### Recent Updates:
 - ✅ Created 22 missing articles from new-articles analysis (13 o- articles + 9 s- articles) 

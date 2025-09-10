@@ -341,7 +341,7 @@ export default function DiarreeEnFlesvoedingPage() {
 
             {/* Behandeling en Thuiszorg */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibent text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
                 <Shield className="w-5 h-5 mr-2" />
                 Behandeling en Thuiszorg Protocol
               </h2>

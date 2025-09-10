@@ -3,6 +3,12 @@ import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { Users, Heart, Clock, MessageCircle, CheckCircle, AlertTriangle, RefreshCw } from 'lucide-react'
 
+export const metadata = {
+  title: 'Partner betrekken bij flesvoeding: Nederlandse gids voor gedeelde zorg 2025',
+  description: 'Flesvoeding biedt unieke kansen voor beide ouders om te bonden met baby. Gedeelde voedingsverantwoordelijkheid versterkt partnerrelaties en baby ontwikkeling.',
+  keywords: 'partner betrekken flesvoeding, vader flesvoeding, gedeelde baby zorg, vaders en moeders flesvoeding, nachtvoeding verdelen'
+}
+
 export default function PartnerBetrekkenFlesvoedingPage() {
   const sidebarImages = [
     {
@@ -31,7 +37,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
           <div className="space-y-6">
             {/* Header */}
             <div>
-              <div className="text-sm text-gray-500 mb-2">Praktische Tips  Samenwerking</div>
+              <div className="text-sm text-gray-500 mb-2">Praktische Tips • Partner Betrekken</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <Users className="w-6 h-6 mr-3 text-primary" />
                 Partner betrekken bij flesvoeding: Nederlandse gids voor gedeelde zorg
@@ -323,68 +329,68 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                   <h3 className="font-medium text-primary mb-3">Shift systemen</h3>
                   
                   <div className="space-y-4">
-                    <div className="bg-green-50 rounded-lg p-4">
-                      <h4 className="font-medium text-green-800 mb-2">Optie 1: Tijd-gebaseerde shifts</h4>
+                    <div className="bg-white rounded-lg p-4">
+                      <h4 className="font-medium text-primary mb-2">Optie 1: Tijd-gebaseerde shifts</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                          <p className="text-sm text-green-700 mb-1">Verdeling:</p>
+                          <p className="text-sm text-gray-700 mb-1">Verdeling:</p>
                           <ul className="space-y-1">
-                            <li className="text-green-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Early night (20:00-02:00): Partner A</span></li>
-                            <li className="text-green-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Late night (02:00-06:00): Partner B</span></li>
-                            <li className="text-green-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Clear boundaries</span></li>
-                            <li className="text-green-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Beide krijgen 4-6 uur ononderbroken</span></li>
+                            <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Early night (20:00-02:00): Partner A</span></li>
+                            <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Late night (02:00-06:00): Partner B</span></li>
+                            <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Clear boundaries</span></li>
+                            <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Beide krijgen 4-6 uur ononderbroken</span></li>
                           </ul>
                         </div>
                         <div>
-                          <p className="text-sm text-green-700 mb-1">Nadelen:</p>
+                          <p className="text-sm text-gray-700 mb-1">Nadelen:</p>
                           <ul className="space-y-1">
-                            <li className="text-green-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Moeilijk bij unpredictable baby</span></li>
-                            <li className="text-green-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Mogelijk 2 wake-ups per persoon</span></li>
+                            <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Moeilijk bij unpredictable baby</span></li>
+                            <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Mogelijk 2 wake-ups per persoon</span></li>
                           </ul>
                         </div>
                       </div>
                     </div>
                     
-                    <div className="bg-blue-50 rounded-lg p-4">
-                      <h4 className="font-medium text-blue-800 mb-2">Optie 2: Alternaterende nachten</h4>
+                    <div className="bg-white rounded-lg p-4">
+                      <h4 className="font-medium text-primary mb-2">Optie 2: Alternaterende nachten</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                          <p className="text-sm text-blue-700 mb-1">Schema:</p>
+                          <p className="text-sm text-gray-700 mb-1">Schema:</p>
                           <ul className="space-y-1">
-                            <li className="text-blue-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Ma, wo, vr: Partner A</span></li>
-                            <li className="text-blue-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Di, do, za: Partner B</span></li>
-                            <li className="text-blue-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Zondag: Flexibel samen</span></li>
-                            <li className="text-blue-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Volledige nacht 'off duty'</span></li>
+                            <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Ma, wo, vr: Partner A</span></li>
+                            <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Di, do, za: Partner B</span></li>
+                            <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Zondag: Flexibel samen</span></li>
+                            <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Volledige nacht 'off duty'</span></li>
                           </ul>
                         </div>
                         <div>
-                          <p className="text-sm text-blue-700 mb-1">Overwegingen:</p>
+                          <p className="text-sm text-gray-700 mb-1">Overwegingen:</p>
                           <ul className="space-y-1">
-                            <li className="text-blue-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Diepe slaap mogelijk</span></li>
-                            <li className="text-blue-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Makkelijke planning</span></li>
-                            <li className="text-blue-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Mogelijk inconsistent voor baby</span></li>
+                            <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Diepe slaap mogelijk</span></li>
+                            <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Makkelijke planning</span></li>
+                            <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Mogelijk inconsistent voor baby</span></li>
                           </ul>
                         </div>
                       </div>
                     </div>
                     
-                    <div className="bg-purple-50 rounded-lg p-4">
-                      <h4 className="font-medium text-purple-800 mb-2">Optie 3: Capaciteit-gebaseerd</h4>
+                    <div className="bg-white rounded-lg p-4">
+                      <h4 className="font-medium text-primary mb-2">Optie 3: Capaciteit-gebaseerd</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                          <p className="text-sm text-purple-700 mb-1">Factoren:</p>
+                          <p className="text-sm text-gray-700 mb-1">Factoren:</p>
                           <ul className="space-y-1">
-                            <li className="text-purple-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Wie beter in baby sussen</span></li>
-                            <li className="text-purple-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Wie heeft meer slaap nodig</span></li>
-                            <li className="text-purple-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Wie heeft zwaarder werk</span></li>
-                            <li className="text-purple-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Wie vindt nachten minder erg</span></li>
+                            <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Wie beter in baby sussen</span></li>
+                            <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Wie heeft meer slaap nodig</span></li>
+                            <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Wie heeft zwaarder werk</span></li>
+                            <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Wie vindt nachten minder erg</span></li>
                           </ul>
                         </div>
                         <div>
-                          <p className="text-sm text-purple-700 mb-1">Voorbeeld verdeling:</p>
+                          <p className="text-sm text-gray-700 mb-1">Voorbeeld verdeling:</p>
                           <ul className="space-y-1">
-                            <li className="text-purple-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Partner A (light sleeper): 40%</span></li>
-                            <li className="text-purple-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Partner B (heavy sleeper): 60%</span></li>
+                            <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Partner A (light sleeper): 40%</span></li>
+                            <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Partner B (heavy sleeper): 60%</span></li>
                           </ul>
                         </div>
                       </div>
@@ -598,25 +604,25 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                 <div>
                   <h3 className="font-medium text-primary mb-3">Stereotype breaking</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="bg-red-50 rounded-lg p-3">
-                      <h4 className="font-medium text-red-800 mb-2">Oud denken:</h4>
+                    <div className="bg-amber-50 rounded-lg p-3">
+                      <h4 className="font-medium text-amber-800 mb-2">Oud denken:</h4>
                       <ul className="space-y-1">
-                        <li className="text-red-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>"Mama weet beter"</span></li>
-                        <li className="text-red-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>"Vader helpt mama"</span></li>
-                        <li className="text-red-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>"Borstvoeding is natuurlijker"</span></li>
-                        <li className="text-red-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>"Mama doet nachten"</span></li>
-                        <li className="text-red-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>"Vader werkt, mama zorgt"</span></li>
+                        <li className="text-amber-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>"Mama weet beter"</span></li>
+                        <li className="text-amber-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>"Vader helpt mama"</span></li>
+                        <li className="text-amber-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>"Borstvoeding is natuurlijker"</span></li>
+                        <li className="text-amber-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>"Mama doet nachten"</span></li>
+                        <li className="text-amber-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>"Vader werkt, mama zorgt"</span></li>
                       </ul>
                     </div>
                     
-                    <div className="bg-green-50 rounded-lg p-3">
-                      <h4 className="font-medium text-green-800 mb-2">Nieuw denken:</h4>
+                    <div className="bg-white rounded-lg p-3">
+                      <h4 className="font-medium text-primary mb-2">Nieuw denken:</h4>
                       <ul className="space-y-1">
-                        <li className="text-green-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>"Beide ouders expert"</span></li>
-                        <li className="text-green-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>"Vader is volledig verantwoordelijk"</span></li>
-                        <li className="text-green-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>"Flesvoeding = gelijke participatie"</span></li>
-                        <li className="text-green-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>"Nachten delen we eerlijk"</span></li>
-                        <li className="text-green-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>"Beide werken en zorgen"</span></li>
+                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>"Beide ouders expert"</span></li>
+                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>"Vader is volledig verantwoordelijk"</span></li>
+                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>"Flesvoeding = gelijke participatie"</span></li>
+                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>"Nachten delen we eerlijk"</span></li>
+                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>"Beide werken en zorgen"</span></li>
                       </ul>
                     </div>
                   </div>
