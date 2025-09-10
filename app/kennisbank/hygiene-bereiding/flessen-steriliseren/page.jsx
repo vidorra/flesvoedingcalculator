@@ -180,31 +180,49 @@ export default function FlessenSteriligerenPage() {
                       <div>
                         <h4 className="font-medium text-gray-700 mb-1">Voordelen:</h4>
                         <ul className="space-y-1">
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Geen extra apparaat nodig</span></li>
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>100% effectief</span></li>
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Goedkoopste methode</span></li>
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Altijd beschikbaar</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Geen extra apparaat nodig</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">100% effectief</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Goedkoopste methode</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Altijd beschikbaar</span></li>
                         </ul>
                       </div>
                       
                       <div>
                         <h4 className="font-medium text-gray-700 mb-1">Nadelen:</h4>
                         <ul className="space-y-1">
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Tijdrovend (15-20 minuten)</span></li>
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Meer energieverbruik</span></li>
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Spenen kunnen sneller verslijten</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Tijdrovend (15-20 minuten)</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Meer energieverbruik</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Spenen kunnen sneller verslijten</span></li>
                         </ul>
                       </div>
                       
                       <div>
                         <h4 className="font-medium text-gray-700 mb-1">Stap-voor-stap:</h4>
                         <ol className="space-y-1 text-sm">
-                          <li className="text-gray-700">1. Vul grote pan met water</li>
-                          <li className="text-gray-700">2. Leg items volledig ondergedompeld</li>
-                          <li className="text-gray-700">3. Breng aan de kook</li>
-                          <li className="text-gray-700">4. Laat 5 minuten doorkoken</li>
-                          <li className="text-gray-700">5. Laat afkoelen in het water</li>
-                          <li className="text-gray-700">6. Haal eruit met schone tang</li>
+                          <li className="flex space-x-2">
+                            <span className="flex-shrink-0 w-5 h-5 bg-primary text-white rounded-full flex items-center justify-center text-xs">1</span>
+                            <span className="text-gray-700 text-sm">Vul grote pan met water</span>
+                          </li>
+                          <li className="flex space-x-2">
+                            <span className="flex-shrink-0 w-5 h-5 bg-primary text-white rounded-full flex items-center justify-center text-xs">2</span>
+                            <span className="text-gray-700 text-sm">Leg items volledig ondergedompeld</span>
+                          </li>
+                          <li className="flex space-x-2">
+                            <span className="flex-shrink-0 w-5 h-5 bg-primary text-white rounded-full flex items-center justify-center text-xs">3</span>
+                            <span className="text-gray-700 text-sm">Breng aan de kook</span>
+                          </li>
+                          <li className="flex space-x-2">
+                            <span className="flex-shrink-0 w-5 h-5 bg-primary text-white rounded-full flex items-center justify-center text-xs">4</span>
+                            <span className="text-gray-700 text-sm">Laat 5 minuten doorkoken</span>
+                          </li>
+                          <li className="flex space-x-2">
+                            <span className="flex-shrink-0 w-5 h-5 bg-primary text-white rounded-full flex items-center justify-center text-xs">5</span>
+                            <span className="text-gray-700 text-sm">Laat afkoelen in het water</span>
+                          </li>
+                          <li className="flex space-x-2">
+                            <span className="flex-shrink-0 w-5 h-5 bg-primary text-white rounded-full flex items-center justify-center text-xs">6</span>
+                            <span className="text-gray-700 text-sm">Haal eruit met schone tang</span>
+                          </li>
                         </ol>
                       </div>
                     </div>
@@ -217,30 +235,30 @@ export default function FlessenSteriligerenPage() {
                       <div>
                         <h4 className="font-medium text-gray-700 mb-1">Voordelen:</h4>
                         <ul className="space-y-1">
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Snelste methode (6-15 minuten)</span></li>
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Automatische uitschakeling</span></li>
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Economisch energiegebruik</span></li>
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Items blijven 24 uur steriel</span></li>
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Makkelijk en betrouwbaar</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Snelste methode (6-15 minuten)</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Automatische uitschakeling</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Economisch energiegebruik</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Items blijven 24 uur steriel</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Makkelijk en betrouwbaar</span></li>
                         </ul>
                       </div>
                       
                       <div>
                         <h4 className="font-medium text-gray-700 mb-1">Nadelen:</h4>
                         <ul className="space-y-1">
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Aanschafkosten (€25-80)</span></li>
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Neemt keukenplek in</span></li>
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Enkel babyspullen</span></li>
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Kalkaanslag bij hard water</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Aanschafkosten (€25-80)</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Neemt keukenplek in</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Enkel babyspullen</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Kalkaanslag bij hard water</span></li>
                         </ul>
                       </div>
                       
                       <div>
                         <h4 className="font-medium text-gray-700 mb-1">Populaire modellen:</h4>
                         <ul className="space-y-1">
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Philips Avent: €35-50, snelle stoom</span></li>
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>MAM sterilisator: €25-40, compact</span></li>
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Chicco: €30-45, grote capaciteit</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Philips Avent: €35-50, snelle stoom</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">MAM sterilisator: €25-40, compact</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Chicco: €30-45, grote capaciteit</span></li>
                         </ul>
                       </div>
                     </div>
@@ -255,19 +273,19 @@ export default function FlessenSteriligerenPage() {
                       <div>
                         <h4 className="font-medium text-gray-700 mb-1">Voordelen:</h4>
                         <ul className="space-y-1">
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Zeer snel (2-8 minuten)</span></li>
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Gebruikt bestaande magnetron</span></li>
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Goedkope sterilisatorzakken</span></li>
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Praktisch onderweg</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Zeer snel (2-8 minuten)</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Gebruikt bestaande magnetron</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Goedkope sterilisatorzakken</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Praktisch onderweg</span></li>
                         </ul>
                       </div>
                       
                       <div>
                         <h4 className="font-medium text-gray-700 mb-1">Nadelen:</h4>
                         <ul className="space-y-1">
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Niet alle materialen geschikt</span></li>
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Risico oververhitting</span></li>
-                          <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Zakken zijn wegwerp</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Niet alle materialen geschikt</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Risico oververhitting</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Zakken zijn wegwerp</span></li>
                         </ul>
                       </div>
                     </div>

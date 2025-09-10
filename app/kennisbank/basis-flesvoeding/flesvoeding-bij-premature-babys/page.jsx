@@ -97,14 +97,9 @@ export default function FlesvoedingPrematurePage() {
           </h1>
           <p className="text-gray-500">
             Speciale aandachtspunten, NICU ervaring en evidence-based advies voor Nederlandse ouders. 
-            Van gecorrigeerde leeftijd tot lange termijn ontwikkeling.
+            Van gecorrigeerde leeftijd tot lange termijn ontwikkeling. In Nederland worden jaarlijks 
+            15.000 baby's (8,7%) te vroeg geboren - deze gids biedt gespecialiseerde kennis voor optimale zorg.
           </p>
-          <div className="mt-4 p-3">
-            <p className="text-sm text-gray-600">
-              <strong>In Nederland</strong> worden jaarlijks 15.000 baby's (8,7%) te vroeg geboren. 
-              Deze gids biedt gespecialiseerde kennis voor optimale zorg.
-            </p>
-          </div>
         </div>
 
         {/* Alert Box */}
