@@ -77,7 +77,7 @@ export default function EersteKeerFlesvoedingPage() {
 
           {/* Header */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <div className="text-sm text-gray-500 mb-2">Basis Flesvoeding • Beginners Gids</div>
+            <div className="text-sm text-gray-500 mb-2">Basis Flesvoeding  Beginners Gids</div>
             <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
               <Baby className="w-6 h-6 mr-3 text-primary" />
               Eerste keer flesvoeding geven
@@ -303,7 +303,7 @@ export default function EersteKeerFlesvoedingPage() {
                 <tbody>
                   {feedingGuide.map((row, index) => (
                     <tr key={index} className="border-b border-gray-100">
-                      <td className="py-3 px-2 font-medium text-primary">{row.age}</td>
+                      <td className="py-3 px-2 font-medium text-gray-700">{row.age}</td>
                       <td className="py-3 px-2 text-gray-700">{row.perFeeding}</td>
                       <td className="py-3 px-2 text-gray-700">{row.frequency}</td>
                       <td className="py-3 px-2 text-gray-700">{row.total}</td>
@@ -431,19 +431,19 @@ export default function EersteKeerFlesvoedingPage() {
                   <div>
                     <h4 className="font-medium text-gray-700 mb-2">Voor baby:</h4>
                     <ul className="space-y-1 text-gray-700">
-                      <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Houd baby semi-rechtop (45-60 graden)</span></li>
-                      <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Ondersteun hoofd en nek goed</span></li>
-                      <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Hoofd iets hoger dan lichaam</span></li>
-                      <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Hou baby dicht tegen je aan</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Houd baby semi-rechtop (45-60 graden)</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Ondersteun hoofd en nek goed</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Hoofd iets hoger dan lichaam</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Hou baby dicht tegen je aan</span></li>
                     </ul>
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-700 mb-2">Voor jezelf:</h4>
                     <ul className="space-y-1 text-gray-700">
-                      <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Ga comfortabel zitten met rugsteun</span></li>
-                      <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Arm ondersteunen met kussen</span></li>
-                      <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Zorg dat je ontspannen bent</span></li>
-                      <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Varieer soms van arm (goede ontwikkeling)</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Ga comfortabel zitten met rugsteun</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Arm ondersteunen met kussen</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Zorg dat je ontspannen bent</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Varieer soms van arm (goede ontwikkeling)</span></li>
                     </ul>
                   </div>
                 </div>
@@ -473,10 +473,10 @@ export default function EersteKeerFlesvoedingPage() {
                 <div className="mt-4 py-2 px-3">
                   <h4 className="font-medium text-primary mb-2">Tijdens het voeden:</h4>
                   <ul className="space-y-1 text-gray-700">
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Houd fles licht schuin (speen gevuld met melk)</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Laat baby eigen tempo bepalen</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Boertje laten na elke 60-90ml</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Praat of zing zachtjes tijdens voeding</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Houd fles licht schuin (speen gevuld met melk)</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Laat baby eigen tempo bepalen</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Boertje laten na elke 60-90ml</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Praat of zing zachtjes tijdens voeding</span></li>
                   </ul>
                 </div>
               </div>
@@ -561,7 +561,7 @@ export default function EersteKeerFlesvoedingPage() {
             </ol>
             
             <div className="mt-6 p-4 text-center">
-              <p className="font-medium text-primary">Onthoud: Je doet het geweldig!</p>
+              <p className="font-medium text-gray-700">Onthoud: Je doet het geweldig!</p>
               <p className="text-gray-600">Flesvoeding geven is een liefdevolle manier om je baby te voeden en te koesteren. 
               De eerste fles geven is een mijlpaal - met voorbereiding, geduld en de juiste technieken 
               wordt het al snel een natuurlijke routine.</p>

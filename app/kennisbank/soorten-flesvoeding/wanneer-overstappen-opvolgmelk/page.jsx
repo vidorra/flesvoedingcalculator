@@ -608,15 +608,15 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                   <div key={index}>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
                       <div>
-                        <span className="font-medium text-primary">Expert: </span>
+                        <span className="font-medium text-gray-700">Expert: </span>
                         <span className="text-gray-700">{expert.expert}</span>
                       </div>
                       <div>
-                        <span className="font-medium text-primary">Timing: </span>
+                        <span className="font-medium text-gray-700">Timing: </span>
                         <span className="text-gray-700">{expert.timing}</span>
                       </div>
                       <div>
-                        <span className="font-medium text-primary">Redenering: </span>
+                        <span className="font-medium text-gray-700">Redenering: </span>
                         <span className="text-gray-700">{expert.reasoning}</span>
                       </div>
                     </div>
@@ -636,14 +636,14 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                   href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk"
                   className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
-                  <div className="font-medium text-primary">Verschil Nummer 1 en 2 →</div>
+                  <div className="font-medium text-gray-700">Verschil Nummer 1 en 2 </div>
                   <div className="text-sm text-gray-600">Complete vergelijking startvoeding vs opvolgmelk</div>
                 </Link>
                 <Link 
                   href="/kennisbank/soorten-flesvoeding"
                   className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
-                  <div className="font-medium text-primary">Alle Flesvoeding Types →</div>
+                  <div className="font-medium text-gray-700">Alle Flesvoeding Types </div>
                   <div className="text-sm text-gray-600">Overzicht van alle beschikbare opties</div>
                 </Link>
               </div>

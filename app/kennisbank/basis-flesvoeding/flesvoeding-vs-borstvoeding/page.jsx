@@ -100,7 +100,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
 
         {/* Header */}
         <div className="mb-6">
-            <div className="text-sm text-gray-500 mb-2">Basis Flesvoeding • Objectieve Vergelijking</div>
+            <div className="text-sm text-gray-500 mb-2">Basis Flesvoeding  Objectieve Vergelijking</div>
             <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
               <BookOpen className="w-6 h-6 mr-3 text-primary" />
               Flesvoeding vs Borstvoeding: Objectieve Gids
@@ -119,10 +119,10 @@ export default function FlesvoedingVsBorstvoedingPage() {
             <div className="mt-4 p-4">
               <h3 className="font-semibold text-primary mb-2">Belangrijke waarheid vooraf:</h3>
               <ul className="space-y-1 text-sm text-gray-700">
-                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span><strong>95% van baby's</strong> groeit gezond op met flesvoeding</span></li>
-                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span><strong>Borstvoeding is ideaal</strong> maar niet altijd mogelijk of gewenst</span></li>
-                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span><strong>Geen perfecte keuze</strong> - beide hebben voor- en nadelen</span></li>
-                <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span><strong>Jouw welzijn</strong> als ouder is ook belangrijk voor baby's ontwikkeling</span></li>
+                <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span><strong>95% van baby's</strong> groeit gezond op met flesvoeding</span></li>
+                <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span><strong>Borstvoeding is ideaal</strong> maar niet altijd mogelijk of gewenst</span></li>
+                <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span><strong>Geen perfecte keuze</strong> - beide hebben voor- en nadelen</span></li>
+                <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span><strong>Jouw welzijn</strong> als ouder is ook belangrijk voor baby's ontwikkeling</span></li>
               </ul>
             </div>
         </div>
@@ -179,7 +179,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
                   <tbody>
                     {voedingswaarden.map((row, index) => (
                       <tr key={index} className="border-b border-gray-100">
-                        <td className="py-3 px-2 font-medium text-primary">{row.component}</td>
+                        <td className="py-3 px-2 font-medium text-gray-700">{row.component}</td>
                         <td className="py-3 px-2 text-gray-700">{row.borst}</td>
                         <td className="py-3 px-2 text-gray-700">{row.fles}</td>
                         <td className="py-3 px-2 text-sm text-gray-600">{row.opmerking}</td>
@@ -307,12 +307,12 @@ export default function FlesvoedingVsBorstvoedingPage() {
                   {kostenvergelijking.borstvoeding.map((item, index) => (
                     <li key={index} className="flex justify-between items-center">
                       <span className="text-gray-700">{item.item}</span>
-                      <span className="font-medium text-primary">{item.kosten}</span>
+                      <span className="font-medium text-gray-700">{item.kosten}</span>
                     </li>
                   ))}
                   <li className="border-t border-gray-200 pt-3 flex justify-between items-center font-bold">
-                    <span className="text-primary">Totaal</span>
-                    <span className="text-primary">€560-980</span>
+                    <span className="text-gray-700">Totaal</span>
+                    <span className="text-gray-700">€560-980</span>
                   </li>
                 </ul>
               </div>
@@ -323,19 +323,19 @@ export default function FlesvoedingVsBorstvoedingPage() {
                   {kostenvergelijking.flesvoeding.map((item, index) => (
                     <li key={index} className="flex justify-between items-center">
                       <span className="text-gray-700">{item.item}</span>
-                      <span className="font-medium text-primary">{item.kosten}</span>
+                      <span className="font-medium text-gray-700">{item.kosten}</span>
                     </li>
                   ))}
                   <li className="border-t border-gray-200 pt-3 flex justify-between items-center font-bold">
-                    <span className="text-primary">Totaal</span>
-                    <span className="text-primary">€760-1260</span>
+                    <span className="text-gray-700">Totaal</span>
+                    <span className="text-gray-700">€760-1260</span>
                   </li>
                 </ul>
               </div>
             </div>
             
             <div className="mt-6 p-4 text-center">
-              <p className="font-medium text-primary mb-2">
+              <p className="font-medium text-gray-700 mb-2">
                 <strong>Verschil: €200-280 duurder voor flesvoeding</strong>
               </p>
               <p className="text-sm text-gray-600">
@@ -461,24 +461,24 @@ export default function FlesvoedingVsBorstvoedingPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="text-center">
-                  <h4 className="font-medium text-primary mb-2">Cognitieve ontwikkeling (5 jaar)</h4>
+                  <h4 className="font-medium text-gray-700 mb-2">Cognitieve ontwikkeling (5 jaar)</h4>
                   <p className="text-sm text-gray-600">Borstvoeding 6+ maanden: IQ 101.2</p>
                   <p className="text-sm text-gray-600">Flesvoeding vanaf geboorte: IQ 100.8</p>
-                  <p className="text-xs font-medium text-primary mt-2">Verschil: 0.4 punt (niet significant)</p>
+                  <p className="text-xs font-medium text-gray-700 mt-2">Verschil: 0.4 punt (niet significant)</p>
                 </div>
                 
                 <div className="text-center">
-                  <h4 className="font-medium text-primary mb-2">Sociale-emotionele ontwikkeling</h4>
+                  <h4 className="font-medium text-gray-700 mb-2">Sociale-emotionele ontwikkeling</h4>
                   <p className="text-sm text-gray-600">Geen verschil in gehechtheid op 2 jaar</p>
                   <p className="text-sm text-gray-600">Geen verschil in gedragsproblemen</p>
-                  <p className="text-xs font-medium text-primary mt-2">Geen significant verschil</p>
+                  <p className="text-xs font-medium text-gray-700 mt-2">Geen significant verschil</p>
                 </div>
                 
                 <div className="text-center">
-                  <h4 className="font-medium text-primary mb-2">Fysieke gezondheid</h4>
+                  <h4 className="font-medium text-gray-700 mb-2">Fysieke gezondheid</h4>
                   <p className="text-sm text-gray-600">Infecties eerste 2 jaar: 15% meer bij flesvoeding</p>
                   <p className="text-sm text-gray-600">Allergieën: 8% hoger bij flesvoeding</p>
-                  <p className="text-xs font-medium text-primary mt-2">Kleine maar meetbare verschillen</p>
+                  <p className="text-xs font-medium text-gray-700 mt-2">Kleine maar meetbare verschillen</p>
                 </div>
               </div>
               
@@ -564,7 +564,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
             </div>
             
             <div className="mt-6 p-4 text-center">
-              <p className="text-lg font-medium text-primary mb-2">Uiteindelijk:</p>
+              <p className="text-lg font-medium text-gray-700 mb-2">Uiteindelijk:</p>
               <p className="text-gray-600">
                 Een gelukkige, ontspannen ouder die vol vertrouwen voedt, is het belangrijkste voor 
                 een baby's ontwikkeling - ongeacht de methode.

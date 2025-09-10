@@ -136,7 +136,7 @@ export default function VakantiePage() {
 
             {/* Header */}
             <div className="mb-6">
-              <div className="flex items-center text-sm text-primary mb-2">
+              <div className="flex items-center text-sm text-gray-500 mb-2">
                 <Link href="/" className="hover:text-primary flex items-center">
                   <Home className="w-4 h-4 mr-1" />
                   Home
@@ -152,7 +152,7 @@ export default function VakantiePage() {
                 <Plane className="w-6 h-6 mr-3 text-primary" />
                 Flesvoeding op Vakantie: Complete Reis Gids
               </h1>
-              <p className="text-primary leading-relaxed">
+              <p className="text-gray-700 leading-relaxed">
                 Reizen met baby en flesvoeding hoeft geen stress te zijn. Leer alle praktische tips 
                 voor zorgeloze vakanties met je baby.
               </p>
@@ -166,7 +166,7 @@ export default function VakantiePage() {
               </h2>
               
               <div className="mb-4">
-                <p className="text-primary mb-4">
+                <p className="text-gray-700 mb-4">
                   68% van Nederlandse families reist binnen het eerste jaar na geboorte. 
                   Flesvoeding families ervaren 30% minder reis-stress dan families die kolven.
                 </p>
@@ -174,12 +174,12 @@ export default function VakantiePage() {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium text-primary mb-3">✓ Flesvoeding Travel Advantages</h3>
+                  <h3 className="font-medium text-primary mb-3"> Flesvoeding Travel Advantages</h3>
                   <div className="space-y-2">
                     {travelAdvantages.map((advantage, index) => (
                       <div key={index} className="flex items-start space-x-2">
                         <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-primary">{advantage}</span>
+                        <span className="text-sm text-gray-600">{advantage}</span>
                       </div>
                     ))}
                   </div>
@@ -197,7 +197,7 @@ export default function VakantiePage() {
               </div>
 
               <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
-                <p className="text-primary text-sm">
+                <p className="text-gray-600 text-sm">
                   <strong>ANWB Onderzoek:</strong> Families met flesvoeding ervaren 30% minder 
                   reis-stress dan families die kolven tijdens vakantie.
                 </p>
@@ -217,10 +217,10 @@ export default function VakantiePage() {
                     </h3>
                     <div className="grid md:grid-cols-2 gap-4 mb-3">
                       <div>
-                        <h4 className="font-medium text-primary mb-2">✓ Voordelen:</h4>
+                        <h4 className="font-medium text-primary mb-2"> Voordelen:</h4>
                         <ul className="text-sm text-primary space-y-1">
                           {transport.pros.map((pro, idx) => (
-                            <li key={idx}><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>{pro}</span></li>
+                            <li key={idx} className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>{pro}</span></li>
                           ))}
                         </ul>
                       </div>
@@ -228,7 +228,7 @@ export default function VakantiePage() {
                         <h4 className="font-medium text-primary mb-2">⚠ Uitdagingen:</h4>
                         <ul className="text-sm text-primary space-y-1">
                           {transport.cons.map((con, idx) => (
-                            <li key={idx}><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>{con}</span></li>
+                            <li key={idx} className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>{con}</span></li>
                           ))}
                         </ul>
                       </div>
@@ -293,7 +293,7 @@ export default function VakantiePage() {
                   <div key={index} className="p-4">
                     <div className="flex justify-between items-start mb-3">
                       <h3 className="font-semibold text-primary">{region.region}</h3>
-                      <span className="bg-blue-100 text-primary px-2 py-1 rounded text-sm">
+                      <span className="bg-blue-100 text-gray-600 px-2 py-1 rounded text-sm">
                         {region.climate}
                       </span>
                     </div>
@@ -302,7 +302,7 @@ export default function VakantiePage() {
                         <h4 className="font-medium text-amber-600 mb-2">Considerations:</h4>
                         <ul className="text-sm text-primary space-y-1">
                           {region.considerations.map((consideration, idx) => (
-                            <li key={idx}><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>{consideration}</span></li>
+                            <li key={idx} className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>{consideration}</span></li>
                           ))}
                         </ul>
                       </div>
@@ -310,7 +310,7 @@ export default function VakantiePage() {
                         <h4 className="font-medium text-primary mb-2">Solutions:</h4>
                         <ul className="text-sm text-primary space-y-1">
                           {region.solutions.map((solution, idx) => (
-                            <li key={idx}><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>{solution}</span></li>
+                            <li key={idx} className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>{solution}</span></li>
                           ))}
                         </ul>
                       </div>
@@ -336,7 +336,7 @@ export default function VakantiePage() {
                         <h4 className="font-medium text-red-600 mb-2">🚨 Immediate Response:</h4>
                         <ul className="text-sm text-primary space-y-1">
                           {protocol.immediate.map((action, idx) => (
-                            <li key={idx}><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>{action}</span></li>
+                            <li key={idx} className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>{action}</span></li>
                           ))}
                         </ul>
                       </div>
@@ -344,7 +344,7 @@ export default function VakantiePage() {
                         <h4 className="font-medium text-primary mb-2">🔄 Backup Plan:</h4>
                         <ul className="text-sm text-primary space-y-1">
                           {protocol.backup.map((plan, idx) => (
-                            <li key={idx}><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>{plan}</span></li>
+                            <li key={idx} className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>{plan}</span></li>
                           ))}
                         </ul>
                       </div>
@@ -368,7 +368,7 @@ export default function VakantiePage() {
                     {packingEssentials.handLuggage.map((item, index) => (
                       <div key={index} className="flex items-center space-x-2">
                         <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
-                        <span className="text-sm text-primary">{item}</span>
+                        <span className="text-sm text-gray-600">{item}</span>
                       </div>
                     ))}
                   </div>
@@ -380,7 +380,7 @@ export default function VakantiePage() {
                     {packingEssentials.checkedLuggage.map((item, index) => (
                       <div key={index} className="flex items-center space-x-2">
                         <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
-                        <span className="text-sm text-primary">{item}</span>
+                        <span className="text-sm text-gray-600">{item}</span>
                       </div>
                     ))}
                   </div>
@@ -393,19 +393,19 @@ export default function VakantiePage() {
                   <div>
                     <h5 className="font-medium text-yellow-700 mb-1">Navigation & Planning:</h5>
                     <ul className="text-yellow-600 space-y-1">
-                      <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Google Maps offline (pharmacy locations)</span></li>
-                      <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Google Translate (baby/medical terms)</span></li>
-                      <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Baby Tracker (feeding schedules)</span></li>
-                      <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Weather apps (climate planning)</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Google Maps offline (pharmacy locations)</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Google Translate (baby/medical terms)</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Baby Tracker (feeding schedules)</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Weather apps (climate planning)</span></li>
                     </ul>
                   </div>
                   <div>
                     <h5 className="font-medium text-yellow-700 mb-1">Baby Care:</h5>
                     <ul className="text-yellow-600 space-y-1">
-                      <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>White noise app (sleep routine)</span></li>
-                      <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>First aid app (emergency guidance)</span></li>
-                      <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Formula calculator (local measurements)</span></li>
-                      <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Time zone converter (schedules)</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>White noise app (sleep routine)</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>First aid app (emergency guidance)</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Formula calculator (local measurements)</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Time zone converter (schedules)</span></li>
                     </ul>
                   </div>
                 </div>
@@ -497,19 +497,19 @@ export default function VakantiePage() {
               <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/hygiene-bereiding/flesvoeding-bewaren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Flesvoeding bewaren →</div>
+                  <div className="font-medium text-gray-700">Flesvoeding bewaren </div>
                   <div className="text-sm text-primary">Reis veiligheid en opslag tips</div>
                 </Link>
                 <Link href="/kennisbank/praktische-tips/voedingsritme-opbouwen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Voedingsritme opbouwen →</div>
+                  <div className="font-medium text-gray-700">Voedingsritme opbouwen </div>
                   <div className="text-sm text-primary">Vakantie schema aanpassingen</div>
                 </Link>
                 <Link href="/kennisbank/praktische-tips/nachtvoeding-optimaliseren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Nachtvoeding optimaliseren →</div>
+                  <div className="font-medium text-gray-700">Nachtvoeding optimaliseren </div>
                   <div className="text-sm text-primary">Hotel en reis optimalisatie</div>
                 </Link>
                 <Link href="/kennisbank/praktische-tips" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Alle praktische tips →</div>
+                  <div className="font-medium text-gray-700">Alle praktische tips </div>
                   <div className="text-sm text-primary">Meer handige ouder tips</div>
                 </Link>
               </div>

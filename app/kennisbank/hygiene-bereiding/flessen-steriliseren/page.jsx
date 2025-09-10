@@ -31,7 +31,7 @@ export default function FlessenSteriligerenPage() {
           <div className="space-y-6">
             {/* Header */}
             <div>
-              <div className="text-sm text-gray-500 mb-2">Hygiëne & Bereiding • Sterilisatie</div>
+              <div className="text-sm text-gray-500 mb-2">Hygiëne & Bereiding  Sterilisatie</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <Shield className="w-6 h-6 mr-3 text-primary" />
                 Flessen steriliseren: Complete gids voor veilige hygiëne
@@ -568,7 +568,7 @@ export default function FlessenSteriligerenPage() {
                   className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
                   <div className="text-center">
-                    <div className="font-medium text-primary">Hulp nodig bij het organiseren van je flesvoeding routine? →</div>
+                    <div className="font-medium text-gray-700">Hulp nodig bij het organiseren van je flesvoeding routine? </div>
                     <div className="text-sm text-gray-600">Gebruik onze flesvoeding calculator voor een gepersonaliseerd voedingsschema</div>
                   </div>
                 </Link>
@@ -583,19 +583,19 @@ export default function FlessenSteriligerenPage() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Fles bereiden stap voor stap →</div>
+                  <div className="font-medium text-gray-700">Fles bereiden stap voor stap </div>
                   <div className="text-sm text-gray-600">Veilige bereiding na sterilisatie</div>
                 </Link>
                 <Link href="/kennisbank/hygiene-bereiding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Hygiëne & Bereiding overzicht →</div>
+                  <div className="font-medium text-gray-700">Hygiëne & Bereiding overzicht </div>
                   <div className="text-sm text-gray-600">Alle hygiëne aspecten</div>
                 </Link>
                 <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Eerste keer flesvoeding →</div>
+                  <div className="font-medium text-gray-700">Eerste keer flesvoeding </div>
                   <div className="text-sm text-gray-600">Complete beginnersgids</div>
                 </Link>
                 <Link href="/kennisbank/veiligheid" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Veiligheidsrichtlijnen →</div>
+                  <div className="font-medium text-gray-700">Veiligheidsrichtlijnen </div>
                   <div className="text-sm text-gray-600">Alle veiligheidsaspecten</div>
                 </Link>
               </div>

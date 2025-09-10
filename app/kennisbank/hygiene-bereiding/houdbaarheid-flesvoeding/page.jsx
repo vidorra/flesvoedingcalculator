@@ -182,7 +182,7 @@ export default function HoudbaarheidFlesvoedingPage() {
             
             {/* Header */}
             <div>
-              <div className="text-sm text-gray-500 mb-2">Kennisbank • Hygiëne & Bereiding</div>
+              <div className="text-sm text-gray-500 mb-2">Kennisbank  Hygiëne & Bereiding</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <Clock className="w-6 h-6 mr-3 text-primary" />
                 Houdbaarheid van Flesvoeding: Wanneer Weggooien?
@@ -407,12 +407,12 @@ export default function HoudbaarheidFlesvoedingPage() {
               <div className="space-y-4">
                 {commonMistakes.map((mistake, index) => (
                   <div key={index} className="p-4">
-                    <h3 className="font-medium text-primary mb-2">❌ {mistake.mistake}</h3>
+                    <h3 className="font-medium text-primary mb-2"> {mistake.mistake}</h3>
                     <p className="text-gray-700 text-sm mb-2">
                       <strong>Waarom gevaarlijk:</strong> {mistake.why}
                     </p>
                     <p className="text-gray-700 text-sm">
-                      <strong>✅ Juiste aanpak:</strong> {mistake.solution}
+                      <strong> Juiste aanpak:</strong> {mistake.solution}
                     </p>
                     {index < commonMistakes.length - 1 && (
                       <div className="border-b border-gray-200 mt-4"></div>
@@ -434,11 +434,11 @@ export default function HoudbaarheidFlesvoedingPage() {
                     Contact opnemen met huisarts of spoedeisende hulp bij deze symptomen na mogelijk bedorven voeding:
                   </p>
                   <ul className="space-y-1 text-sm text-amber-700">
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Koorts hoger dan 38°C</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Aanhoudend braken (meer dan 6 uur)</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Bloedige diarree</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Tekenen van uitdroging (droge luier, slapheid)</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Ongewoon veel huilen of slapheid</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Koorts hoger dan 38°C</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Aanhoudend braken (meer dan 6 uur)</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Bloedige diarree</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Tekenen van uitdroging (droge luier, slapheid)</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Ongewoon veel huilen of slapheid</span></li>
                   </ul>
                 </div>
               </div>
@@ -469,7 +469,7 @@ export default function HoudbaarheidFlesvoedingPage() {
                   className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
                   <div className="text-center">
-                    <div className="font-medium text-primary">Bereken de juiste hoeveelheden →</div>
+                    <div className="font-medium text-gray-700">Bereken de juiste hoeveelheden </div>
                     <div className="text-sm text-gray-600">Gebruik onze calculator voor veilige voedingsschemas</div>
                   </div>
                 </Link>
@@ -484,19 +484,19 @@ export default function HoudbaarheidFlesvoedingPage() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/hygiene-bereiding/flessen-steriliseren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Flessen steriliseren →</div>
+                  <div className="font-medium text-gray-700">Flessen steriliseren </div>
                   <div className="text-sm text-gray-600">Complete gids voor veilige fles reiniging</div>
                 </Link>
                 <Link href="/kennisbank/hygiene-bereiding/flesvoeding-bewaren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Flesvoeding bewaren →</div>
+                  <div className="font-medium text-gray-700">Flesvoeding bewaren </div>
                   <div className="text-sm text-gray-600">Alle bewaar en opwarming tips</div>
                 </Link>
                 <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Fles bereiden stap voor stap →</div>
+                  <div className="font-medium text-gray-700">Fles bereiden stap voor stap </div>
                   <div className="text-sm text-gray-600">Veilige bereiding van A tot Z</div>
                 </Link>
                 <Link href="/kennisbank/problemen-oplossen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Problemen oplossen →</div>
+                  <div className="font-medium text-gray-700">Problemen oplossen </div>
                   <div className="text-sm text-gray-600">Hulp bij veelvoorkomende problemen</div>
                 </Link>
               </div>

@@ -241,14 +241,14 @@ export default function PraktischeTipsPage() {
               href="/voedingsschemas"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-primary">Voedingsschema&apos;s →</div>
+              <div className="font-medium text-gray-700">Voedingsschema&apos;s </div>
               <div className="text-sm text-gray-600">Interactieve schema&apos;s per leeftijd</div>
             </Link>
             <Link 
               href="/"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-primary">Calculator →</div>
+              <div className="font-medium text-gray-700">Calculator </div>
               <div className="text-sm text-gray-600">Bereken persoonlijke hoeveelheden</div>
             </Link>
           </div>

@@ -407,7 +407,7 @@ export default function VerschillendeSpenenUitproberenPage() {
                             <ul className="space-y-1">
                               {problem.solutions.map((solution, solutionIndex) => (
                                 <li key={solutionIndex} className="flex items-start space-x-2">
-                                  <span className="text-primary">→</span>
+                                  <span className="text-gray-600"></span>
                                   <span className="text-sm text-gray-700">{solution}</span>
                                 </li>
                               ))}
@@ -461,30 +461,30 @@ export default function VerschillendeSpenenUitproberenPage() {
                       <div className="flex">
                         {[...Array(5)].map((_, i) => (
                           <div key={i} className={`w-4 h-4 ${i < brand.rating ? 'text-primary' : 'text-gray-300'}`}>
-                            ⭐
+                            
                           </div>
                         ))}
                       </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
                       <div>
-                        <span className="font-medium text-primary">Sterkste punten: </span>
+                        <span className="font-medium text-gray-600">Sterkste punten: </span>
                         <span className="text-gray-700">{brand.strengths}</span>
                       </div>
                       <div>
-                        <span className="font-medium text-primary">Flows: </span>
+                        <span className="font-medium text-gray-600">Flows: </span>
                         <span className="text-gray-700">{brand.flows}</span>
                       </div>
                       <div>
-                        <span className="font-medium text-primary">Types: </span>
+                        <span className="font-medium text-gray-600">Types: </span>
                         <span className="text-gray-700">{brand.types}</span>
                       </div>
                       <div>
-                        <span className="font-medium text-primary">Prijs: </span>
+                        <span className="font-medium text-gray-600">Prijs: </span>
                         <span className="text-gray-700">{brand.price}</span>
                       </div>
                       <div className="md:col-span-2">
-                        <span className="font-medium text-primary">Beschikbaarheid: </span>
+                        <span className="font-medium text-gray-600">Beschikbaarheid: </span>
                         <span className="text-gray-700">{brand.availability}</span>
                       </div>
                     </div>
@@ -545,19 +545,19 @@ export default function VerschillendeSpenenUitproberenPage() {
                     <h3 className="font-medium text-gray-900 mb-3">{age.age}</h3>
                     <div className="space-y-2 text-sm">
                       <div>
-                        <span className="font-medium text-primary">Primair: </span>
+                        <span className="font-medium text-gray-600">Primair: </span>
                         <span className="text-gray-700">{age.primary}</span>
                       </div>
                       <div>
-                        <span className="font-medium text-primary">Backup: </span>
+                        <span className="font-medium text-gray-600">Backup: </span>
                         <span className="text-gray-700">{age.backup}</span>
                       </div>
                       <div>
-                        <span className="font-medium text-primary">Duur: </span>
+                        <span className="font-medium text-gray-600">Duur: </span>
                         <span className="text-gray-700">{age.duration}</span>
                       </div>
                       <div>
-                        <span className="font-medium text-primary">Notities: </span>
+                        <span className="font-medium text-gray-600">Notities: </span>
                         <span className="text-gray-700">{age.notes}</span>
                       </div>
                     </div>
@@ -636,7 +636,7 @@ export default function VerschillendeSpenenUitproberenPage() {
                         <ul className="space-y-1">
                           {guide.permanentSolution.map((solution, solutionIndex) => (
                             <li key={solutionIndex} className="flex items-start space-x-2">
-                              <span className="text-primary">→</span>
+                              <span className="text-gray-600"></span>
                               <span className="text-sm text-gray-700">{solution}</span>
                             </li>
                           ))}
@@ -683,10 +683,10 @@ export default function VerschillendeSpenenUitproberenPage() {
                 <div>
                   <h3 className="font-medium text-primary mb-2">Kernprincipes:</h3>
                   <ul className="space-y-1 text-sm">
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Start simpel met breed geaccepteerde merken</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Test één variabele tegelijk (flow OF vorm)</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Geef nieuwe spenen tijd (3-5 voedingen minimum)</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Documenteer wat werkt voor toekomstige referentie</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Start simpel met breed geaccepteerde merken</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Test één variabele tegelijk (flow OF vorm)</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Geef nieuwe spenen tijd (3-5 voedingen minimum)</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Documenteer wat werkt voor toekomstige referentie</span></li>
                   </ul>
                 </div>
                 <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
@@ -706,14 +706,14 @@ export default function VerschillendeSpenenUitproberenPage() {
                   href="/kennisbank/voedingstechnieken"
                   className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
-                  <div className="font-medium text-primary">Voedingstechnieken →</div>
+                  <div className="font-medium text-gray-700">Voedingstechnieken </div>
                   <div className="text-sm text-gray-600">Alle voedingstechnieken op een rij</div>
                 </Link>
                 <Link 
                   href="/kennisbank/problemen-oplossen"
                   className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
-                  <div className="font-medium text-primary">Problemen Oplossen →</div>
+                  <div className="font-medium text-gray-700">Problemen Oplossen </div>
                   <div className="text-sm text-gray-600">Oplossingen voor veelvoorkomende problemen</div>
                 </Link>
               </div>

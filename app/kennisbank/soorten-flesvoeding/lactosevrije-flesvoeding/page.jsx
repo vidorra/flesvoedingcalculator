@@ -266,7 +266,7 @@ export default function LactosevrijeFlesvoedingPage() {
             
             {/* Header */}
             <div>
-              <div className="text-sm text-gray-500 mb-2">Kennisbank • Soorten Flesvoeding</div>
+              <div className="text-sm text-gray-500 mb-2">Kennisbank  Soorten Flesvoeding</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <Milk className="w-6 h-6 mr-3 text-primary" />
                 Lactosevrije Flesvoeding: Complete Nederlandse Gids
@@ -293,7 +293,7 @@ export default function LactosevrijeFlesvoedingPage() {
                 {needIndicators.map((indicator, index) => (
                   <div key={index} className="p-4">
                     <div className="flex justify-between items-start mb-3">
-                      <h3 className="font-medium text-primary">{indicator.category}</h3>
+                      <h3 className="font-medium text-gray-700">{indicator.category}</h3>
                       <span className="text-sm bg-gray-100 text-gray-700 px-2 py-1 rounded">
                         {indicator.severity}
                       </span>
@@ -345,7 +345,7 @@ export default function LactosevrijeFlesvoedingPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                       <div>
-                        <h4 className="font-medium text-primary mb-2">✅ Voordelen:</h4>
+                        <h4 className="font-medium text-primary mb-2"> Voordelen:</h4>
                         <ul className="space-y-1">
                           {option.pros.map((pro, proIndex) => (
                             <li key={proIndex} className="flex items-start space-x-2">
@@ -356,7 +356,7 @@ export default function LactosevrijeFlesvoedingPage() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-medium text-primary mb-2">❌ Nadelen:</h4>
+                        <h4 className="font-medium text-primary mb-2"> Nadelen:</h4>
                         <ul className="space-y-1">
                           {option.cons.map((con, conIndex) => (
                             <li key={conIndex} className="flex items-start space-x-2">
@@ -440,7 +440,7 @@ export default function LactosevrijeFlesvoedingPage() {
                         <td className="p-3 font-medium text-gray-900">{cost.brand}</td>
                         <td className="p-3 text-gray-700">{cost.costPerTin}</td>
                         <td className="p-3 text-gray-700">{cost.monthlyCost}</td>
-                        <td className="p-3 font-medium text-primary">{cost.yearlyTotal}</td>
+                        <td className="p-3 font-medium text-gray-700">{cost.yearlyTotal}</td>
                         <td className="p-3">
                           <span className={`text-xs px-2 py-1 rounded font-medium ${
                             cost.insurance === 'Vergoed op recept' ? 'bg-green-100 text-green-700' :
@@ -471,12 +471,12 @@ export default function LactosevrijeFlesvoedingPage() {
               <div className="space-y-4">
                 {commonMistakes.map((mistake, index) => (
                   <div key={index} className="p-4">
-                    <h3 className="font-medium text-primary mb-2">❌ {mistake.mistake}</h3>
+                    <h3 className="font-medium text-primary mb-2"> {mistake.mistake}</h3>
                     <p className="text-gray-700 text-sm mb-2">
                       <strong>Waarom problematisch:</strong> {mistake.why}
                     </p>
                     <p className="text-gray-700 text-sm">
-                      <strong>✅ Juiste aanpak:</strong> {mistake.solution}
+                      <strong> Juiste aanpak:</strong> {mistake.solution}
                     </p>
                     {index < commonMistakes.length - 1 && (
                       <div className="border-b border-gray-200 mt-4"></div>
@@ -499,10 +499,10 @@ export default function LactosevrijeFlesvoedingPage() {
                     Symptomen die lijken op lactose-intolerantie kunnen andere oorzaken hebben:
                   </p>
                   <ul className="space-y-1 text-sm text-amber-700">
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Koemelkallergie (veel ernstiger dan lactose-intolerantie)</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Reflux of andere spijsverteringsproblemen</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Verkeerde flesvoeding bereiding</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Andere medische condities</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Koemelkallergie (veel ernstiger dan lactose-intolerantie)</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Reflux of andere spijsverteringsproblemen</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Verkeerde flesvoeding bereiding</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Andere medische condities</span></li>
                   </ul>
                 </div>
               </div>
@@ -533,7 +533,7 @@ export default function LactosevrijeFlesvoedingPage() {
                   className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
                   <div className="text-center">
-                    <div className="font-medium text-primary">Bereken juiste hoeveelheden →</div>
+                    <div className="font-medium text-gray-700">Bereken juiste hoeveelheden </div>
                     <div className="text-sm text-gray-600">Ook voor lactosevrije flesvoeding</div>
                   </div>
                 </Link>
@@ -548,19 +548,19 @@ export default function LactosevrijeFlesvoedingPage() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/soorten-flesvoeding/hypoallergene-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Hypoallergene flesvoeding →</div>
+                  <div className="font-medium text-gray-700">Hypoallergene flesvoeding </div>
                   <div className="text-sm text-gray-600">Voor baby's met koemelkallergie</div>
                 </Link>
                 <Link href="/kennisbank/problemen-oplossen/constipatie-door-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Constipatie door flesvoeding →</div>
+                  <div className="font-medium text-gray-700">Constipatie door flesvoeding </div>
                   <div className="text-sm text-gray-600">Oorzaken en oplossingen</div>
                 </Link>
                 <Link href="/kennisbank/soorten-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Alle soorten flesvoeding →</div>
+                  <div className="font-medium text-gray-700">Alle soorten flesvoeding </div>
                   <div className="text-sm text-gray-600">Overzicht van alle flesvoeding types</div>
                 </Link>
                 <Link href="/kennisbank/problemen-oplossen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Problemen oplossen →</div>
+                  <div className="font-medium text-gray-700">Problemen oplossen </div>
                   <div className="text-sm text-gray-600">Hulp bij flesvoeding problemen</div>
                 </Link>
               </div>

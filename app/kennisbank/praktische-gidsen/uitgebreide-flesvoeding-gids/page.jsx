@@ -28,7 +28,7 @@ export default function UitgebreideFlesvoedingGids() {
           
           {/* Header */}
           <div className="mb-8">
-            <div className="text-sm text-gray-500 mb-2">Kennisbank • Praktische Gidsen</div>
+            <div className="text-sm text-gray-500 mb-2">Kennisbank  Praktische Gidsen</div>
             <h1 className="text-2xl font-bold text-primary mb-4 flex items-center">
               <BookOpen className="w-6 h-6 mr-3 text-primary" />
               Uitgebreide Flesvoeding Gids 2025

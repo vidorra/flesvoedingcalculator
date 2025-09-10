@@ -195,14 +195,14 @@ export default function VoedingstechniekenPage() {
               href="/kennisbank/hygiene-bereiding"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-primary">Hygiëne & Bereiding →</div>
+              <div className="font-medium text-gray-700">Hygiëne & Bereiding </div>
               <div className="text-sm text-gray-600">Veilig bereiden en bewaren</div>
             </Link>
             <Link 
               href="/kennisbank/problemen-oplossen"
               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-primary">Problemen Oplossen →</div>
+              <div className="font-medium text-gray-700">Problemen Oplossen </div>
               <div className="text-sm text-gray-600">Hulp bij veelvoorkomende problemen</div>
             </Link>
           </div>

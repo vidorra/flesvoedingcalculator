@@ -31,7 +31,7 @@ export default function OverstappenBorstNaarFlesPage() {
           <div className="space-y-6">
             {/* Header */}
             <div>
-              <div className="text-sm text-gray-500 mb-2">Basis Flesvoeding • Overstap</div>
+              <div className="text-sm text-gray-500 mb-2">Basis Flesvoeding  Overstap</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <ArrowRight className="w-6 h-6 mr-3 text-primary" />
                 Overstappen van borstvoeding naar fles: Stapsgewijze gids
@@ -119,35 +119,35 @@ export default function OverstappenBorstNaarFlesPage() {
                     <div>
                       <h4 className="font-medium text-gray-700 mb-1">Week 1: Eén voeding vervangen</h4>
                       <ul className="space-y-1">
-                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Kies middag voeding (meestal minste melkproductie)</span></li>
-                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Geef fles op vast tijdstip elke dag</span></li>
-                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Kolven niet nodig - lichaam past productie aan</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Kies middag voeding (meestal minste melkproductie)</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Geef fles op vast tijdstip elke dag</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Kolven niet nodig - lichaam past productie aan</span></li>
                       </ul>
                     </div>
                     
                     <div>
                       <h4 className="font-medium text-gray-700 mb-1">Week 2: Tweede voeding toevoegen</h4>
                       <ul className="space-y-1">
-                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Vervang ochtendsupplement of avondvoeding</span></li>
-                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Houd belangrijkste voedingen (ochtend/nacht) intact</span></li>
-                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Let op tekenen van verstopte melkkanalen</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Vervang ochtendsupplement of avondvoeding</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Houd belangrijkste voedingen (ochtend/nacht) intact</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Let op tekenen van verstopte melkkanalen</span></li>
                       </ul>
                     </div>
                     
                     <div>
                       <h4 className="font-medium text-gray-700 mb-1">Week 3: Uitbreiden naar meer voedingen</h4>
                       <ul className="space-y-1">
-                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Vervang nog 1-2 voedingen per dag</span></li>
-                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Hou 1-2 borstvoedingen voor binding</span></li>
-                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Kolven indien nodig om ongemak te voorkomen</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Vervang nog 1-2 voedingen per dag</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Hou 1-2 borstvoedingen voor binding</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Kolven indien nodig om ongemak te voorkomen</span></li>
                       </ul>
                     </div>
                     
                     <div>
                       <h4 className="font-medium text-gray-700 mb-1">Week 4: Volledige overstap of behoud laatste voeding</h4>
                       <ul className="space-y-1">
-                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Laatste borstvoeding(en) vervangen</span></li>
-                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Of behoud 1 voeding voor binding (vaak avond)</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Laatste borstvoeding(en) vervangen</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Of behoud 1 voeding voor binding (vaak avond)</span></li>
                       </ul>
                     </div>
                   </div>
@@ -164,18 +164,18 @@ export default function OverstappenBorstNaarFlesPage() {
                     <div>
                       <h4 className="font-medium text-gray-700 mb-1">Dag 1-2: Alle voedingen vervangen</h4>
                       <ul className="space-y-1">
-                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Direct volledig overstappen op fles</span></li>
-                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Kolven indien borsten te vol/pijnlijk worden</span></li>
-                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Kolven geleidelijk verminderen</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Direct volledig overstappen op fles</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Kolven indien borsten te vol/pijnlijk worden</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Kolven geleidelijk verminderen</span></li>
                       </ul>
                     </div>
                     
                     <div>
                       <h4 className="font-medium text-gray-700 mb-1">Dag 3-7: Melkproductie afbouwen</h4>
                       <ul className="space-y-1">
-                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Kolven alleen bij ongemak</span></li>
-                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Koude kompressen tegen zwelling</span></li>
-                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Paracetamol bij pijn</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Kolven alleen bij ongemak</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Koude kompressen tegen zwelling</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Paracetamol bij pijn</span></li>
                       </ul>
                     </div>
                   </div>
@@ -188,9 +188,9 @@ export default function OverstappenBorstNaarFlesPage() {
                   <div>
                     <h4 className="font-medium text-gray-700 mb-1">Blijvende verdeling:</h4>
                     <ul className="space-y-1">
-                      <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Ochtend en avond: borstvoeding</span></li>
-                      <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Middag en nacht: flesvoeding</span></li>
-                      <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Of werkdagen fles, weekend borst</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Ochtend en avond: borstvoeding</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Middag en nacht: flesvoeding</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Of werkdagen fles, weekend borst</span></li>
                     </ul>
                   </div>
                 </div>
@@ -544,27 +544,27 @@ export default function OverstappenBorstNaarFlesPage() {
                     <div>
                       <h4 className="font-medium text-gray-700 mb-2">0-3 maanden:</h4>
                       <ul className="space-y-1">
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>60-120ml per voeding</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>8-12 voedingen per dag</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Totaal: 480-720ml per dag</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">60-120ml per voeding</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">8-12 voedingen per dag</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Totaal: 480-720ml per dag</span></li>
                       </ul>
                     </div>
                     
                     <div>
                       <h4 className="font-medium text-gray-700 mb-2">3-6 maanden:</h4>
                       <ul className="space-y-1">
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>120-180ml per voeding</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>6-8 voedingen per dag</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Totaal: 720-960ml per dag</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">120-180ml per voeding</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">6-8 voedingen per dag</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Totaal: 720-960ml per dag</span></li>
                       </ul>
                     </div>
                     
                     <div>
                       <h4 className="font-medium text-gray-700 mb-2">6+ maanden:</h4>
                       <ul className="space-y-1">
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>180-240ml per voeding</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>4-6 voedingen per dag</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Totaal: 480-720ml per dag (door bijvoeding)</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">180-240ml per voeding</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">4-6 voedingen per dag</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Totaal: 480-720ml per dag (door bijvoeding)</span></li>
                       </ul>
                     </div>
                   </div>
@@ -579,9 +579,9 @@ export default function OverstappenBorstNaarFlesPage() {
                       <div>
                         <h4 className="font-medium text-gray-700">Week 1:</h4>
                         <ul className="text-gray-600 text-sm space-y-1">
-                          <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>1 flesvoeding per dag succesvol</span></li>
-                          <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Mogelijk enige weerstand baby</span></li>
-                          <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Lichte ongemak borsten</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>1 flesvoeding per dag succesvol</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Mogelijk enige weerstand baby</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Lichte ongemak borsten</span></li>
                         </ul>
                       </div>
                     </div>
@@ -591,9 +591,9 @@ export default function OverstappenBorstNaarFlesPage() {
                       <div>
                         <h4 className="font-medium text-gray-700">Week 2:</h4>
                         <ul className="text-gray-600 text-sm space-y-1">
-                          <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>2-3 flesvoedingen per dag</span></li>
-                          <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Baby went aan nieuwe routine</span></li>
-                          <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Melkproductie begint af te nemen</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>2-3 flesvoedingen per dag</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Baby went aan nieuwe routine</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Melkproductie begint af te nemen</span></li>
                         </ul>
                       </div>
                     </div>
@@ -603,9 +603,9 @@ export default function OverstappenBorstNaarFlesPage() {
                       <div>
                         <h4 className="font-medium text-gray-700">Week 3:</h4>
                         <ul className="text-gray-600 text-sm space-y-1">
-                          <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Meerderheid voedingen via fles</span></li>
-                          <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Nog 1-2 borstvoedingen per dag</span></li>
-                          <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Borsten minder vol</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Meerderheid voedingen via fles</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Nog 1-2 borstvoedingen per dag</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Borsten minder vol</span></li>
                         </ul>
                       </div>
                     </div>
@@ -615,9 +615,9 @@ export default function OverstappenBorstNaarFlesPage() {
                       <div>
                         <h4 className="font-medium text-gray-700">Week 4:</h4>
                         <ul className="text-gray-600 text-sm space-y-1">
-                          <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Volledige overstap mogelijk</span></li>
-                          <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Of bewust behoud 1 borstvoeding</span></li>
-                          <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Nieuwe routine ingesteld</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Volledige overstap mogelijk</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Of bewust behoud 1 borstvoeding</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Nieuwe routine ingesteld</span></li>
                         </ul>
                       </div>
                     </div>
@@ -672,7 +672,7 @@ export default function OverstappenBorstNaarFlesPage() {
                   className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
                   <div className="text-center">
-                    <div className="font-medium text-primary">Hulp nodig bij bepalen van juiste hoeveelheden na overstap? →</div>
+                    <div className="font-medium text-gray-700">Hulp nodig bij bepalen van juiste hoeveelheden na overstap? </div>
                     <div className="text-sm text-gray-600">Gebruik onze flesvoeding calculator voor gepersonaliseerd advies</div>
                   </div>
                 </Link>
@@ -687,19 +687,19 @@ export default function OverstappenBorstNaarFlesPage() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/basis-flesvoeding/baby-weigert-de-fles" className="p-3 ">
-                  <div className="font-medium text-primary">Baby weigert de fles →</div>
+                  <div className="font-medium text-gray-700">Baby weigert de fles </div>
                   <div className="text-sm text-gray-600">Als baby geen fles wil accepteren</div>
                 </Link>
                 <Link href="/kennisbank/basis-flesvoeding/flesvoeding-vs-borstvoeding" className="p-3 ">
-                  <div className="font-medium text-primary">Flesvoeding vs borstvoeding →</div>
+                  <div className="font-medium text-gray-700">Flesvoeding vs borstvoeding </div>
                   <div className="text-sm text-gray-600">Eerlijke vergelijking beide methoden</div>
                 </Link>
                 <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 ">
-                  <div className="font-medium text-primary">Eerste keer flesvoeding →</div>
+                  <div className="font-medium text-gray-700">Eerste keer flesvoeding </div>
                   <div className="text-sm text-gray-600">Complete beginnersgids</div>
                 </Link>
                 <Link href="/kennisbank/praktische-tips/nachtvoeding-optimaliseren" className="p-3 ">
-                  <div className="font-medium text-primary">Nachtvoeding optimaliseren →</div>
+                  <div className="font-medium text-gray-700">Nachtvoeding optimaliseren </div>
                   <div className="text-sm text-gray-600">Efficiënte nachtvoedingen</div>
                 </Link>
               </div>
