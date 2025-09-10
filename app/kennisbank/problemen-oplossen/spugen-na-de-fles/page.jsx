@@ -335,7 +335,7 @@ export default function SpugenNaDeFlesPage() {
           <div className="space-y-6">
             {/* Header */}
             <div className="mb-6">
-              <div className="text-sm text-gray-500 mb-2">Problemen Oplossen • Spugen</div>
+              <div className="text-sm text-gray-500 mb-2">Problemen Oplossen  Spugen</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <Heart className="w-6 h-6 mr-3 text-primary" />
                 Spugen na de Fles: Wanneer Normaal en Wanneer Zorgen?
@@ -511,21 +511,21 @@ export default function SpugenNaDeFlesPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <div>
-                          <span className="text-sm font-medium text-primary">Frequentie: </span>
+                          <span className="text-sm font-medium text-gray-700">Frequentie: </span>
                           <span className="text-sm text-gray-700">{age.frequency}</span>
                         </div>
                         <div>
-                          <span className="text-sm font-medium text-primary">Hoeveelheid: </span>
+                          <span className="text-sm font-medium text-gray-700">Hoeveelheid: </span>
                           <span className="text-sm text-gray-700">{age.amount}</span>
                         </div>
                       </div>
                       <div className="space-y-2">
                         <div>
-                          <span className="text-sm font-medium text-primary">Reden: </span>
+                          <span className="text-sm font-medium text-gray-700">Reden: </span>
                           <span className="text-sm text-gray-700">{age.reason}</span>
                         </div>
                         <div>
-                          <span className="text-sm font-medium text-primary">Aanpak: </span>
+                          <span className="text-sm font-medium text-gray-700">Aanpak: </span>
                           <span className="text-sm text-gray-700">{age.approach}</span>
                         </div>
                       </div>
@@ -822,14 +822,14 @@ export default function SpugenNaDeFlesPage() {
                   href="/kennisbank/problemen-oplossen"
                   className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
-                  <div className="font-medium text-primary">Problemen Oplossen →</div>
+                  <div className="font-medium text-gray-700">Problemen Oplossen </div>
                   <div className="text-sm text-gray-600">Alle voedingsproblemen</div>
                 </Link>
                 <Link 
                   href="/kennisbank/voedingstechnieken"
                   className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
-                  <div className="font-medium text-primary">Voedingstechnieken →</div>
+                  <div className="font-medium text-gray-700">Voedingstechnieken </div>
                   <div className="text-sm text-gray-600">Technieken tegen spugen</div>
                 </Link>
               </div>

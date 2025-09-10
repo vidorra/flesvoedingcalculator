@@ -31,7 +31,7 @@ export default function ConstipatieFlespagePage() {
           <div className="space-y-6">
             {/* Header */}
             <div>
-              <div className="text-sm text-gray-500 mb-2">Problemen Oplossen • Spijsvertering</div>
+              <div className="text-sm text-gray-500 mb-2">Problemen Oplossen  Spijsvertering</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <AlertCircle className="w-6 h-6 mr-3 text-primary" />
                 Constipatie door flesvoeding: Herkenning, oorzaken en effectieve oplossingen
@@ -522,7 +522,7 @@ export default function ConstipatieFlespagePage() {
                   className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
                   <div className="text-center">
-                    <div className="font-medium text-primary">Hulp nodig bij het aanpassen van voedingshoeveelheden? →</div>
+                    <div className="font-medium text-gray-700">Hulp nodig bij het aanpassen van voedingshoeveelheden? </div>
                     <div className="text-sm text-gray-600">Gebruik onze flesvoeding calculator voor aangepaste aanbevelingen</div>
                   </div>
                 </Link>
@@ -537,19 +537,19 @@ export default function ConstipatieFlespagePage() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/soorten-flesvoeding/anti-reflux-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Anti-reflux flesvoeding →</div>
+                  <div className="font-medium text-gray-700">Anti-reflux flesvoeding </div>
                   <div className="text-sm text-gray-600">Voor baby's met spijsverteringsproblemen</div>
                 </Link>
                 <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Fles bereiden stap voor stap →</div>
+                  <div className="font-medium text-gray-700">Fles bereiden stap voor stap </div>
                   <div className="text-sm text-gray-600">Correcte bereiding voorkomt problemen</div>
                 </Link>
                 <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Eerste keer flesvoeding →</div>
+                  <div className="font-medium text-gray-700">Eerste keer flesvoeding </div>
                   <div className="text-sm text-gray-600">Complete beginnersgids</div>
                 </Link>
                 <Link href="/kennisbank/problemen-oplossen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Meer probleemoplossing →</div>
+                  <div className="font-medium text-gray-700">Meer probleemoplossing </div>
                   <div className="text-sm text-gray-600">Overzicht alle problemen</div>
                 </Link>
               </div>

@@ -120,7 +120,7 @@ export default function BabyLerenZelfDrinkenPage() {
             
             {/* Header - ALWAYS outside of card containers */}
             <div>
-              <div className="text-sm text-gray-500 mb-2">Kennisbank • Voedingstechnieken</div>
+              <div className="text-sm text-gray-500 mb-2">Kennisbank  Voedingstechnieken</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <Baby className="w-6 h-6 mr-3 text-primary" />
                 Baby Leren Zelf Drinken: Nederlandse Gids voor Zelfstandigheid
@@ -223,7 +223,7 @@ export default function BabyLerenZelfDrinkenPage() {
                 {topProducten.map((product, index) => (
                   <div key={index} className="bg-gray-50 rounded-lg p-4">
                     <div className="flex justify-between items-start mb-2">
-                      <h3 className="font-medium text-primary">{product.naam}</h3>
+                      <h3 className="font-medium text-gray-700">{product.naam}</h3>
                       <span className="text-sm text-gray-600 font-medium">{product.prijs}</span>
                     </div>
                     <p className="text-gray-700 text-sm mb-2"><strong>Geschikt:</strong> {product.geschikt}</p>
@@ -310,10 +310,10 @@ export default function BabyLerenZelfDrinkenPage() {
                     Start de training 2-3 maanden voor opvang begint.
                   </p>
                   <ul className="space-y-1 text-sm text-amber-700">
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Independent drinking gedurende de dag</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Redelijke spill control</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Can signal thirst/needs</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Follows daycare routine</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Independent drinking gedurende de dag</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Redelijke spill control</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Can signal thirst/needs</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Follows daycare routine</span></li>
                   </ul>
                 </div>
               </div>
@@ -327,7 +327,7 @@ export default function BabyLerenZelfDrinkenPage() {
                   className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-white transition-colors"
                 >
                   <div className="text-center">
-                    <div className="font-medium text-primary">Bereken optimale drink volumes →</div>
+                    <div className="font-medium text-gray-700">Bereken optimale drink volumes </div>
                     <div className="text-sm text-gray-600">Gebruik onze calculator voor leeftijd-specifiek advies</div>
                   </div>
                 </Link>
@@ -342,19 +342,19 @@ export default function BabyLerenZelfDrinkenPage() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/voedingstechnieken/overgang-naar-beker" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Overgang naar beker →</div>
+                  <div className="font-medium text-gray-700">Overgang naar beker </div>
                   <div className="text-sm text-gray-600">Van fles naar open beker: complete gids</div>
                 </Link>
                 <Link href="/kennisbank/voedingstechnieken/juiste-houding-bij-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Juiste houding bij flesvoeding →</div>
+                  <div className="font-medium text-gray-700">Juiste houding bij flesvoeding </div>
                   <div className="text-sm text-gray-600">Optimale posities voor comfortabel drinken</div>
                 </Link>
                 <Link href="/kennisbank/voedingstechnieken/verschillende-spenen-uitproberen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Verschillende spenen uitproberen →</div>
+                  <div className="font-medium text-gray-700">Verschillende spenen uitproberen </div>
                   <div className="text-sm text-gray-600">Vind de perfecte speen voor jouw baby</div>
                 </Link>
                 <Link href="/kennisbank/praktische-tips" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Alle praktische tips →</div>
+                  <div className="font-medium text-gray-700">Alle praktische tips </div>
                   <div className="text-sm text-gray-600">Meer handige tips voor de flesvoeding</div>
                 </Link>
               </div>

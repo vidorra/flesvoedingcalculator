@@ -327,15 +327,15 @@ export default function FlesvoedingBewarenPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                       <div className="space-y-3">
                         <div>
-                          <span className="text-sm font-medium text-primary">Locatie:</span>
+                          <span className="text-sm font-medium text-gray-600">Locatie:</span>
                           <span className="text-sm text-gray-700 ml-2">{item.location}</span>
                         </div>
                         <div>
-                          <span className="text-sm font-medium text-primary">Temperatuur:</span>
+                          <span className="text-sm font-medium text-gray-600">Temperatuur:</span>
                           <span className="text-sm text-gray-700 ml-2">{item.temperature}</span>
                         </div>
                         <div>
-                          <span className="text-sm font-medium text-primary">Houdbaar:</span>
+                          <span className="text-sm font-medium text-gray-600">Houdbaar:</span>
                           <span className="text-sm text-gray-700 ml-2">{item.duration}</span>
                         </div>
                       </div>
@@ -384,7 +384,7 @@ export default function FlesvoedingBewarenPage() {
                             {section.items.map((item, itemIndex) => (
                               <tr key={itemIndex} className="border-b border-gray-200">
                                 <td className="py-2 text-sm text-gray-700">{item.situation}</td>
-                                <td className="py-2 text-sm font-medium text-primary">{item.maxTime}</td>
+                                <td className="py-2 text-sm font-medium text-gray-700">{item.maxTime}</td>
                                 <td className="py-2 text-sm text-gray-600">{item.warning}</td>
                               </tr>
                             ))}
@@ -425,7 +425,7 @@ export default function FlesvoedingBewarenPage() {
                   <ol className="space-y-2">
                     {safePreparationSteps.map((step, index) => (
                       <li key={index} className="flex items-start space-x-2">
-                        <span className="text-primary font-medium text-sm">{index + 1}.</span>
+                        <span className="text-gray-600 font-medium text-sm">{index + 1}.</span>
                         <span className="text-sm text-gray-700">{step}</span>
                       </li>
                     ))}
@@ -437,7 +437,7 @@ export default function FlesvoedingBewarenPage() {
                   <ol className="space-y-2">
                     {fridgeStorageSteps.map((step, index) => (
                       <li key={index} className="flex items-start space-x-2">
-                        <span className="text-primary font-medium text-sm">{index + 1}.</span>
+                        <span className="text-gray-600 font-medium text-sm">{index + 1}.</span>
                         <span className="text-sm text-gray-700">{step}</span>
                       </li>
                     ))}
@@ -478,7 +478,7 @@ export default function FlesvoedingBewarenPage() {
                         </ul>
                         
                         <div>
-                          <span className="text-sm font-medium text-primary">Tijd: </span>
+                          <span className="text-sm font-medium text-gray-600">Tijd: </span>
                           <span className="text-sm text-gray-700">{method.time}</span>
                         </div>
                       </div>
@@ -634,11 +634,11 @@ export default function FlesvoedingBewarenPage() {
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <span className="text-sm font-medium text-primary">Probleem: </span>
+                        <span className="text-sm font-medium text-gray-600">Probleem: </span>
                         <span className="text-sm text-gray-700">{mistake.problem}</span>
                       </div>
                       <div>
-                        <span className="text-sm font-medium text-primary">Oplossing: </span>
+                        <span className="text-sm font-medium text-gray-600">Oplossing: </span>
                         <span className="text-sm text-gray-700">{mistake.solution}</span>
                       </div>
                     </div>
@@ -695,14 +695,14 @@ export default function FlesvoedingBewarenPage() {
                   href="/kennisbank/hygiene-bereiding"
                   className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
-                  <div className="font-medium text-primary">Hygiëne & Bereiding →</div>
+                  <div className="font-medium text-gray-700">Hygiëne & Bereiding </div>
                   <div className="text-sm text-gray-600">Alle hygiëne richtlijnen</div>
                 </Link>
                 <Link 
                   href="/kennisbank/voedingstechnieken"
                   className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
-                  <div className="font-medium text-primary">Voedingstechnieken →</div>
+                  <div className="font-medium text-gray-700">Voedingstechnieken </div>
                   <div className="text-sm text-gray-600">Technieken voor veilig voeden</div>
                 </Link>
               </div>

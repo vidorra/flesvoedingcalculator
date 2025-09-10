@@ -41,7 +41,7 @@ export default function FlesBerenStapVoorStap() {
         <div className="col-span-12 lg:col-span-7">
           <div className="space-y-6">
             
-            <div className="text-sm text-gray-500 mb-2">Voedingstechnieken • Bereiding</div>
+            <div className="text-sm text-gray-500 mb-2">Voedingstechnieken  Bereiding</div>
             <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
               <Baby className="w-6 h-6 mr-3 text-primary" />
               Fles Bereiden Stap voor Stap: Perfect Flesvoeding Elke Keer
@@ -313,19 +313,19 @@ export default function FlesBerenStapVoorStap() {
                         <h5 className="font-semibold text-primary mb-2">Perfect afmeten techniek</h5>
                         <ol className="space-y-2">
                           <li className="flex items-start space-x-2">
-                            <span className="text-primary font-semibold">1.</span>
+                            <span className="text-gray-600 font-semibold">1.</span>
                             <span className="text-gray-700"><strong>Schep vol maken</strong>: Ruim vullen met poeder</span>
                           </li>
                           <li className="flex items-start space-x-2">
-                            <span className="text-primary font-semibold">2.</span>
+                            <span className="text-gray-600 font-semibold">2.</span>
                             <span className="text-gray-700"><strong>Afstrijken</strong>: Met mes of lepel afstrijken (niet aandrukken!)</span>
                           </li>
                           <li className="flex items-start space-x-2">
-                            <span className="text-primary font-semibold">3.</span>
+                            <span className="text-gray-600 font-semibold">3.</span>
                             <span className="text-gray-700"><strong>Niet aankloppen</strong>: Dit comprimeert poeder = verkeerde dosering</span>
                           </li>
                           <li className="flex items-start space-x-2">
-                            <span className="text-primary font-semibold">4.</span>
+                            <span className="text-gray-600 font-semibold">4.</span>
                             <span className="text-gray-700"><strong>Niveau controle</strong>: Schep moet precies vol zijn, niet bol of hol</span>
                           </li>
                         </ol>
@@ -437,19 +437,19 @@ export default function FlesBerenStapVoorStap() {
                     <h5 className="font-semibold text-primary mb-2">Controlmethoden rangschikking:</h5>
                     <ol className="space-y-2">
                       <li className="flex items-start space-x-2">
-                        <span className="text-primary font-semibold">1.</span>
+                        <span className="text-gray-600 font-semibold">1.</span>
                         <span className="text-gray-700"><strong>Thermometer</strong>: Meest betrouwbaar (36-38°C)</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <span className="text-primary font-semibold">2.</span>
+                        <span className="text-gray-600 font-semibold">2.</span>
                         <span className="text-gray-700"><strong>Pols test</strong>: Druppel op pols, moet lauw aanvoelen</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <span className="text-primary font-semibold">3.</span>
+                        <span className="text-gray-600 font-semibold">3.</span>
                         <span className="text-gray-700"><strong>Temperatuurstrip</strong>: Op fles plakken, visuele controle</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <span className="text-primary font-semibold">4.</span>
+                        <span className="text-gray-600 font-semibold">4.</span>
                         <span className="text-gray-700"><strong>Baby's reactie</strong>: Drinkt rustig = goede temperatuur</span>
                       </li>
                     </ol>
@@ -688,23 +688,23 @@ export default function FlesBerenStapVoorStap() {
                 <h4 className="font-semibold text-primary mb-3">Belangrijkste succesfactoren:</h4>
                 <ul className="space-y-2">
                   <li className="flex items-start space-x-2">
-                    <span className="text-primary font-semibold">1.</span>
+                    <span className="text-gray-600 font-semibold">1.</span>
                     <span className="text-gray-700"><strong>Hygiëne altijd</strong>: Schone handen, schone spullen</span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <span className="text-primary font-semibold">2.</span>
+                    <span className="text-gray-600 font-semibold">2.</span>
                     <span className="text-gray-700"><strong>Nauwkeurigheid</strong>: Exacte dosering en temperatuur</span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <span className="text-primary font-semibold">3.</span>
+                    <span className="text-gray-600 font-semibold">3.</span>
                     <span className="text-gray-700"><strong>Veiligheid eerst</strong>: Bij twijfel opnieuw beginnen</span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <span className="text-primary font-semibold">4.</span>
+                    <span className="text-gray-600 font-semibold">4.</span>
                     <span className="text-gray-700"><strong>Routine ontwikkelen</strong>: Zelfde volgorde, minder fouten</span>
                   </li>
                   <li className="flex items-start space-x-2">
-                    <span className="text-primary font-semibold">5.</span>
+                    <span className="text-gray-600 font-semibold">5.</span>
                     <span className="text-gray-700"><strong>Flexibel blijven</strong>: Verschillende situaties, zelfde principes</span>
                   </li>
                 </ul>

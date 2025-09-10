@@ -1089,7 +1089,7 @@ export default function OvergangNaarBekerPage() {
                   className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
                   <div className="text-center">
-                    <div className="font-medium text-primary">Bereken overgang hoeveelheden →</div>
+                    <div className="font-medium text-gray-700">Bereken overgang hoeveelheden </div>
                     <div className="text-sm text-gray-600">Aanpassing volumes tijdens beker overgang</div>
                   </div>
                 </Link>
@@ -1104,19 +1104,19 @@ export default function OvergangNaarBekerPage() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/voedingstechnieken/juiste-houding-bij-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Juiste houding bij flesvoeding →</div>
+                  <div className="font-medium text-gray-700">Juiste houding bij flesvoeding </div>
                   <div className="text-sm text-gray-600">Optimale posities voor baby en ouder</div>
                 </Link>
                 <Link href="/kennisbank/voedingstechnieken/verschillende-spenen-uitproberen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Verschillende spenen uitproberen →</div>
+                  <div className="font-medium text-gray-700">Verschillende spenen uitproberen </div>
                   <div className="text-sm text-gray-600">Vinden van de perfecte speen</div>
                 </Link>
                 <Link href="/kennisbank/soorten-flesvoeding/wanneer-overstappen-opvolgmelk" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Overstappen naar opvolgmelk →</div>
+                  <div className="font-medium text-gray-700">Overstappen naar opvolgmelk </div>
                   <div className="text-sm text-gray-600">Timing en voorbereiding opvolgmelk</div>
                 </Link>
                 <Link href="/kennisbank/praktische-tips/voedingsritme-opbouwen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Voedingsritme opbouwen →</div>
+                  <div className="font-medium text-gray-700">Voedingsritme opbouwen </div>
                   <div className="text-sm text-gray-600">Structuur in voeding ontwikkelen</div>
                 </Link>
               </div>

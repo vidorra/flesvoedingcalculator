@@ -107,7 +107,7 @@ export default function DiarreeEnFlesvoedingPage() {
             
             {/* Header - ALWAYS outside of card containers */}
             <div>
-              <div className="text-sm text-gray-500 mb-2">Kennisbank • Problemen Oplossen</div>
+              <div className="text-sm text-gray-500 mb-2">Kennisbank  Problemen Oplossen</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <Droplets className="w-6 h-6 mr-3 text-primary" />
                 Diarree en Flesvoeding: Nederlandse Gids voor Ouders
@@ -146,20 +146,20 @@ export default function DiarreeEnFlesvoedingPage() {
                   <div className="bg-gray-50 rounded-lg p-4">
                     <h4 className="font-medium text-primary mb-3">Normale Flesvoeding Ontlasting:</h4>
                     <ul className="space-y-2">
-                      <li className="flex items-start space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                         <span className="text-gray-700 text-sm">Kleur: Geel-bruin tot lichtbruin</span>
                       </li>
-                      <li className="flex items-start space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                         <span className="text-gray-700 text-sm">Consistentie: Peurig, zacht-gevormd</span>
                       </li>
-                      <li className="flex items-start space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                         <span className="text-gray-700 text-sm">Frequentie: 1-4x per dag</span>
                       </li>
-                      <li className="flex items-start space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                         <span className="text-gray-700 text-sm">Geur: Mild, niet overweldigend</span>
                       </li>
                     </ul>
@@ -191,8 +191,8 @@ export default function DiarreeEnFlesvoedingPage() {
                 </p>
                 <ul className="space-y-3 mb-6">
                   {voedingGerelateerdeOorzaken.map((oorzaak, index) => (
-                    <li key={index} className="flex items-start space-x-2">
-                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                    <li key={index} className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                       <span className="text-gray-700">{oorzaak}</span>
                     </li>
                   ))}
@@ -205,16 +205,16 @@ export default function DiarreeEnFlesvoedingPage() {
                   <div>
                     <h4 className="font-medium text-primary mb-3">Virale Infecties (60% gevallen):</h4>
                     <ul className="space-y-2">
-                      <li className="flex items-start space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                         <span className="text-gray-700 text-sm">Rotavirus: 3-7 dagen waterige diarree</span>
                       </li>
-                      <li className="flex items-start space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                         <span className="text-gray-700 text-sm">Norovirus: Explosieve diarree + braken</span>
                       </li>
-                      <li className="flex items-start space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                         <span className="text-gray-700 text-sm">Adenovirus: Langdurige diarree (7-14 dagen)</span>
                       </li>
                     </ul>
@@ -223,16 +223,16 @@ export default function DiarreeEnFlesvoedingPage() {
                   <div>
                     <h4 className="font-medium text-primary mb-3">Bacteriële Infecties:</h4>
                     <ul className="space-y-2">
-                      <li className="flex items-start space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                         <span className="text-gray-700 text-sm">Salmonella: Bloederige diarree + hoge koorts</span>
                       </li>
-                      <li className="flex items-start space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                         <span className="text-gray-700 text-sm">E. coli: Variabel van mild tot ernstig</span>
                       </li>
-                      <li className="flex items-start space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                         <span className="text-gray-700 text-sm">C. difficile: Na antibiotica gebruik</span>
                       </li>
                     </ul>
@@ -257,20 +257,20 @@ export default function DiarreeEnFlesvoedingPage() {
                     <div className="bg-amber-100/50 rounded-lg p-3">
                       <h4 className="font-medium text-amber-800 text-sm mb-2">Direct Stoppen Bij:</h4>
                       <ul className="space-y-1 text-xs text-amber-700">
-                        <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Bloed in diarree + koorts</span></li>
-                        <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Heftig braken elke voeding</span></li>
-                        <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Tekenen ernstige dehydratie</span></li>
-                        <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Koorts &gt;39°C bij baby &lt;3 maanden</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Bloed in diarree + koorts</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Heftig braken elke voeding</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Tekenen ernstige dehydratie</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Koorts &gt;39°C bij baby &lt;3 maanden</span></li>
                       </ul>
                     </div>
                     
                     <div className="bg-amber-100/50 rounded-lg p-3">
                       <h4 className="font-medium text-amber-800 text-sm mb-2">Tijdelijke Pauze Overwegen:</h4>
                       <ul className="space-y-1 text-xs text-amber-700">
-                        <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Waterige diarree &gt;6x per dag</span></li>
-                        <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Braken na meerdere voedingen</span></li>
-                        <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Koorts 38-39°C combinatie</span></li>
-                        <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Verminderde urine productie</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Waterige diarree &gt;6x per dag</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Braken na meerdere voedingen</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Koorts 38-39°C combinatie</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Verminderde urine productie</span></li>
                       </ul>
                     </div>
                   </div>
@@ -365,11 +365,11 @@ export default function DiarreeEnFlesvoedingPage() {
                 <div className="bg-gray-50 rounded-lg p-4">
                   <p className="text-gray-700 text-sm mb-3"><strong>Stapsgewijze hervatting:</strong></p>
                   <ul className="space-y-1 text-sm text-gray-700">
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Dag 1-2: Alleen ORS + water</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Dag 3: 25% formule + 75% ORS</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Dag 4: 50% formule + 50% ORS</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Dag 5: 75% formule + 25% ORS</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Dag 6: 100% formule (als goed verdragen)</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Dag 1-2: Alleen ORS + water</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Dag 3: 25% formule + 75% ORS</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Dag 4: 50% formule + 50% ORS</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Dag 5: 75% formule + 25% ORS</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Dag 6: 100% formule (als goed verdragen)</span></li>
                   </ul>
                 </div>
               </div>
@@ -410,7 +410,7 @@ export default function DiarreeEnFlesvoedingPage() {
                   className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-white transition-colors"
                 >
                   <div className="text-center">
-                    <div className="font-medium text-primary">Bereken veilige voeding hoeveelheden →</div>
+                    <div className="font-medium text-gray-700">Bereken veilige voeding hoeveelheden </div>
                     <div className="text-sm text-gray-600">Voorkom overvoeding die diarree kan veroorzaken</div>
                   </div>
                 </Link>
@@ -425,19 +425,19 @@ export default function DiarreeEnFlesvoedingPage() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/problemen-oplossen/allergische-reacties-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Allergische reacties flesvoeding →</div>
+                  <div className="font-medium text-gray-700">Allergische reacties flesvoeding </div>
                   <div className="text-sm text-gray-600">Onderscheid tussen allergie en diarree</div>
                 </Link>
                 <Link href="/kennisbank/hygiene-bereiding/flesvoeding-bewaren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Flesvoeding bewaren →</div>
+                  <div className="font-medium text-gray-700">Flesvoeding bewaren </div>
                   <div className="text-sm text-gray-600">Voorkom besmetting door juiste bewaring</div>
                 </Link>
                 <Link href="/kennisbank/hygiene-bereiding/veilig-verwarmen-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Veilig verwarmen flesvoeding →</div>
+                  <div className="font-medium text-gray-700">Veilig verwarmen flesvoeding </div>
                   <div className="text-sm text-gray-600">Juiste temperatuur voorkomt maagproblemen</div>
                 </Link>
                 <Link href="/kennisbank/problemen-oplossen/krampjes-na-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Krampjes na flesvoeding →</div>
+                  <div className="font-medium text-gray-700">Krampjes na flesvoeding </div>
                   <div className="text-sm text-gray-600">Andere maag-darm problemen herkennen</div>
                 </Link>
               </div>

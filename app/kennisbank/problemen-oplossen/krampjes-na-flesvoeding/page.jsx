@@ -377,7 +377,7 @@ export default function KrampjesNaFlesvoedingPage() {
           <div className="space-y-6">
             {/* Header */}
             <div className="mb-6">
-              <div className="text-sm text-gray-500 mb-2">Problemen Oplossen • Krampjes</div>
+              <div className="text-sm text-gray-500 mb-2">Problemen Oplossen  Krampjes</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <AlertTriangle className="w-6 h-6 mr-3 text-primary" />
                 Krampjes na Flesvoeding: Complete Gids voor Nederlandse Ouders
@@ -455,11 +455,11 @@ export default function KrampjesNaFlesvoedingPage() {
               <div className="mt-6 p-4 border border-gray-200 bg-gray-50 rounded-xl font-mono text-sm">
                 <h4 className="font-medium text-primary mb-2">TYPISCH KRAMPJE PATROON:</h4>
                 <ul className="space-y-1">
-                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Start 30-60 minuten na voeding</span></li>
-                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Duurt 15-45 minuten per episode</span></li>
-                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Vooral 's avonds tussen 17:00-22:00</span></li>
-                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Piek rond 6-8 weken leeftijd</span></li>
-                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Vermindert na 3-4 maanden</span></li>
+                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Start 30-60 minuten na voeding</span></li>
+                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Duurt 15-45 minuten per episode</span></li>
+                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Vooral 's avonds tussen 17:00-22:00</span></li>
+                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Piek rond 6-8 weken leeftijd</span></li>
+                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Vermindert na 3-4 maanden</span></li>
                 </ul>
               </div>
             </div>
@@ -473,7 +473,7 @@ export default function KrampjesNaFlesvoedingPage() {
                   <thead>
                     <tr className="border-b border-gray-200">
                       <th className="text-left py-3 px-4 font-medium text-gray-900">Symptoom</th>
-                      <th className="text-left py-3 px-4 font-medium text-primary">Krampjes</th>
+                      <th className="text-left py-3 px-4 font-medium text-gray-700">Krampjes</th>
                       <th className="text-left py-3 px-4 font-medium text-gray-700">Reflux</th>
                       <th className="text-left py-3 px-4 font-medium text-gray-700">Honger</th>
                       <th className="text-left py-3 px-4 font-medium text-gray-700">Overstimulatie</th>
@@ -483,7 +483,7 @@ export default function KrampjesNaFlesvoedingPage() {
                     {differentialDiagnosis.map((item, index) => (
                       <tr key={index} className="border-b border-gray-200">
                         <td className="py-3 px-4 font-medium text-gray-900">{item.symptom}</td>
-                        <td className="py-3 px-4 text-primary font-medium">{item.krampjes}</td>
+                        <td className="py-3 px-4 text-gray-700 font-medium">{item.krampjes}</td>
                         <td className="py-3 px-4 text-gray-700">{item.reflux}</td>
                         <td className="py-3 px-4 text-gray-700">{item.honger}</td>
                         <td className="py-3 px-4 text-gray-700">{item.overstimulatie}</td>
@@ -506,7 +506,7 @@ export default function KrampjesNaFlesvoedingPage() {
                       {category.causes.map((cause, causeIndex) => (
                         <div key={causeIndex} className="p-4">
                           <div className="flex items-center justify-between mb-2">
-                            <h4 className="font-medium text-primary">{cause.cause}</h4>
+                            <h4 className="font-medium text-gray-700">{cause.cause}</h4>
                             <span className="text-sm font-medium bg-gray-100 text-gray-700 px-2 py-1 rounded">
                               {cause.percentage}
                             </span>
@@ -542,7 +542,7 @@ export default function KrampjesNaFlesvoedingPage() {
                   {solutions[0].options.map((option, index) => (
                     <div key={index} className="bg-gray-50 border border-gray-200 rounded-lg p-4 bg-gray-50">
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-medium text-primary">{option.name}</h4>
+                        <h4 className="font-medium text-gray-700">{option.name}</h4>
                         <span className="text-sm text-gray-600">{option.price}</span>
                       </div>
                       <p className="text-sm text-gray-700 mb-1">{option.features}</p>
@@ -593,7 +593,7 @@ export default function KrampjesNaFlesvoedingPage() {
                         <ol className="space-y-1">
                           {comfort.steps.map((step, stepIndex) => (
                             <li key={stepIndex} className="flex items-start space-x-2">
-                              <span className="font-medium text-primary">{stepIndex + 1}.</span>
+                              <span className="font-medium text-gray-700">{stepIndex + 1}.</span>
                               <span className="text-sm text-gray-700">{step}</span>
                             </li>
                           ))}
@@ -669,7 +669,7 @@ export default function KrampjesNaFlesvoedingPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                           {age.toolkit.map((tool, toolIndex) => (
                             <div key={toolIndex} className="flex items-center space-x-2">
-                              <span className="text-primary">□</span>
+                              <span className="text-gray-600">□</span>
                               <span className="text-sm text-gray-700">{tool}</span>
                             </div>
                           ))}
@@ -780,7 +780,7 @@ export default function KrampjesNaFlesvoedingPage() {
                     <div className="space-y-2">
                       {routine.tasks.map((task, taskIndex) => (
                         <div key={taskIndex} className="flex items-center space-x-2">
-                          <span className="text-primary">□</span>
+                          <span className="text-gray-600">□</span>
                           <span className="text-sm text-gray-700">{task}</span>
                         </div>
                       ))}
@@ -815,7 +815,7 @@ export default function KrampjesNaFlesvoedingPage() {
                 {myths.map((myth, index) => (
                   <div key={index} className="p-4">
                     <div className="mb-2">
-                      <span className="text-red-600 font-medium">❌ "{myth.myth}"</span>
+                      <span className="text-red-600 font-medium"> "{myth.myth}"</span>
                     </div>
                     <p className="text-sm text-gray-700">
                       <strong>Feit:</strong> {myth.fact}
@@ -839,10 +839,10 @@ export default function KrampjesNaFlesvoedingPage() {
                 <div>
                   <h3 className="font-medium text-primary mb-2">Kernprincipes:</h3>
                   <ul className="space-y-1 text-sm">
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Start met basics: Anti-koliek spenen en goede voedingstechniek</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Wees geduldig: Meeste oplossingen hebben 1-2 weken nodig</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Zoek steun: Je hoeft dit niet alleen te doen</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Vertrouw je instinct: Bij twijfel altijd medische hulp zoeken</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Start met basics: Anti-koliek spenen en goede voedingstechniek</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Wees geduldig: Meeste oplossingen hebben 1-2 weken nodig</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Zoek steun: Je hoeft dit niet alleen te doen</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Vertrouw je instinct: Bij twijfel altijd medische hulp zoeken</span></li>
                   </ul>
                 </div>
                 <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
@@ -862,14 +862,14 @@ export default function KrampjesNaFlesvoedingPage() {
                   href="/kennisbank/problemen-oplossen"
                   className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
-                  <div className="font-medium text-primary">Problemen Oplossen →</div>
+                  <div className="font-medium text-gray-700">Problemen Oplossen </div>
                   <div className="text-sm text-gray-600">Alle oplossingen voor flesvoeding problemen</div>
                 </Link>
                 <Link 
                   href="/kennisbank/voedingstechnieken/verschillende-spenen-uitproberen"
                   className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
-                  <div className="font-medium text-primary">Spenen Uitproberen →</div>
+                  <div className="font-medium text-gray-700">Spenen Uitproberen </div>
                   <div className="text-sm text-gray-600">Anti-koliek spenen voor minder krampjes</div>
                 </Link>
               </div>

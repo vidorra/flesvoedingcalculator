@@ -166,8 +166,8 @@ export default function VoedingsritmeOpbouwenPage() {
       description: 'Optimale waaktijden per leeftijd',
       rules: [],
       windows: [
-        { age: '0-6 weken', wakePeriod: '45-60 min', sequence: 'Voeding → Slaap' },
-        { age: '6-12 weken', wakePeriod: '60-90 min', sequence: 'Voeding → Spelen → Slaap' },
+        { age: '0-6 weken', wakePeriod: '45-60 min', sequence: 'Voeding  Slaap' },
+        { age: '6-12 weken', wakePeriod: '60-90 min', sequence: 'Voeding  Spelen  Slaap' },
         { age: '3-6 maanden', wakePeriod: '90-120 min', sequence: 'Meer speeltijd mogelijk' }
       ],
       details: [],
@@ -466,7 +466,7 @@ export default function VoedingsritmeOpbouwenPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {benefits.map((benefit, index) => (
                     <div key={index} className="flex justify-between items-center p-3 border border-gray-200 bg-gray-50 rounded-lg">
-                      <span className="font-medium text-primary">{benefit.stat}</span>
+                      <span className="font-medium text-gray-700">{benefit.stat}</span>
                       <span className="text-sm text-gray-700">{benefit.description}</span>
                     </div>
                   ))}
@@ -501,19 +501,19 @@ export default function VoedingsritmeOpbouwenPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
                       <div className="space-y-3">
                         <div>
-                          <span className="text-sm font-medium text-primary">Frequentie: </span>
+                          <span className="text-sm font-medium text-gray-600">Frequentie: </span>
                           <span className="text-sm text-gray-700">{ageGroup.frequency}</span>
                         </div>
                         <div>
-                          <span className="text-sm font-medium text-primary">Hoeveelheid: </span>
+                          <span className="text-sm font-medium text-gray-600">Hoeveelheid: </span>
                           <span className="text-sm text-gray-700">{ageGroup.amount}</span>
                         </div>
                         <div>
-                          <span className="text-sm font-medium text-primary">Doelstelling: </span>
+                          <span className="text-sm font-medium text-gray-600">Doelstelling: </span>
                           <span className="text-sm text-gray-700">{ageGroup.flexibility}</span>
                         </div>
                         <div>
-                          <span className="text-sm font-medium text-primary">Nachtvoeding: </span>
+                          <span className="text-sm font-medium text-gray-600">Nachtvoeding: </span>
                           <span className="text-sm text-gray-700">{ageGroup.nightFeeding}</span>
                         </div>
                       </div>
@@ -591,7 +591,7 @@ export default function VoedingsritmeOpbouwenPage() {
                         <ul className="space-y-1">
                           {step.tips.map((tip, tipIndex) => (
                             <li key={tipIndex} className="flex items-start space-x-2">
-                              <span className="text-primary font-medium text-sm">•</span>
+                              <span className="text-gray-600 font-medium text-sm"></span>
                               <span className="text-sm text-gray-700">{tip}</span>
                             </li>
                           ))}
@@ -605,7 +605,7 @@ export default function VoedingsritmeOpbouwenPage() {
                         <ul className="space-y-1">
                           {step.progression.map((prog, progIndex) => (
                             <li key={progIndex} className="flex items-start space-x-2">
-                              <span className="text-primary font-medium text-sm">•</span>
+                              <span className="text-gray-600 font-medium text-sm"></span>
                               <span className="text-sm text-gray-700">{prog}</span>
                             </li>
                           ))}
@@ -1089,14 +1089,14 @@ export default function VoedingsritmeOpbouwenPage() {
                   href="/kennisbank/praktische-tips"
                   className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
-                  <div className="font-medium text-primary">Praktische Tips →</div>
+                  <div className="font-medium text-gray-700">Praktische Tips </div>
                   <div className="text-sm text-gray-600">Alle praktische voedingstips</div>
                 </Link>
                 <Link 
                   href="/kennisbank/voedingstechnieken"
                   className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
-                  <div className="font-medium text-primary">Voedingstechnieken →</div>
+                  <div className="font-medium text-gray-700">Voedingstechnieken </div>
                   <div className="text-sm text-gray-600">Technieken voor succesvol voeden</div>
                 </Link>
               </div>

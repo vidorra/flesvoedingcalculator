@@ -226,7 +226,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
       solutions: [
         'Monitor: Kleur iets donkerder is normaal',
         'Let op verstopping: >3 dagen geen ontlasting',
-        'Zorgelijk: Diarree, bloed, of slijm → arts'
+        'Zorgelijk: Diarree, bloed, of slijm  arts'
       ]
     }
   ]
@@ -325,7 +325,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
           <div className="space-y-6">
             {/* Header */}
             <div className="mb-6">
-              <div className="text-sm text-gray-500 mb-2">Soorten Flesvoeding • Verschillen</div>
+              <div className="text-sm text-gray-500 mb-2">Soorten Flesvoeding  Verschillen</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <Scale className="w-6 h-6 mr-3 text-primary" />
                 Verschil tussen Startvoeding en Opvolgmelk: Complete Nederlandse Gids
@@ -381,8 +381,8 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                   <thead>
                     <tr className="border-b border-gray-200">
                       <th className="text-left py-3 px-4 font-medium text-gray-900">Component</th>
-                      <th className="text-left py-3 px-4 font-medium text-primary">Startvoeding (1)</th>
-                      <th className="text-left py-3 px-4 font-medium text-primary">Opvolgmelk (2)</th>
+                      <th className="text-left py-3 px-4 font-medium text-gray-700">Startvoeding (1)</th>
+                      <th className="text-left py-3 px-4 font-medium text-gray-700">Opvolgmelk (2)</th>
                       <th className="text-left py-3 px-4 font-medium text-gray-700">Verschil</th>
                     </tr>
                   </thead>
@@ -394,9 +394,9 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                         <td className="py-3 px-4 text-gray-700">{item.opvolgmelk}</td>
                         <td className="py-3 px-4 text-gray-700 font-medium">
                           {item.verschil.includes('meer') && item.verschil.includes('6x') ? (
-                            <span className="text-primary font-bold">{item.verschil}</span>
+                            <span className="text-gray-700 font-bold">{item.verschil}</span>
                           ) : item.verschil.includes('goedkoper') ? (
-                            <span className="text-primary font-medium">{item.verschil}</span>
+                            <span className="text-gray-700 font-medium">{item.verschil}</span>
                           ) : (
                             item.verschil
                           )}
@@ -411,19 +411,19 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                 <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
                   <h3 className="font-medium text-primary mb-2">Waarom Meer Eiwit in Opvolgmelk?</h3>
                   <ul className="text-sm text-gray-700 space-y-1">
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Baby's &gt;6 maanden groeien sneller</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Vaste voeding bevat al veel koolhydraten</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Eiwitten ondersteunen spierontwikkeling</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Voorbereiden op koemelk (3.3g eiwit/100ml)</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Baby's &gt;6 maanden groeien sneller</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Vaste voeding bevat al veel koolhydraten</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Eiwitten ondersteunen spierontwikkeling</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Voorbereiden op koemelk (3.3g eiwit/100ml)</span></li>
                   </ul>
                 </div>
                 <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
                   <h3 className="font-medium text-primary mb-2">IJzer Boost Verklaard</h3>
                   <ul className="text-sm text-gray-700 space-y-1">
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Baby's geboren met ijzervoorraad voor 6 maanden</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Na 6 maanden natuurlijke voorraad opgebruikt</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Compenseert tekort als vaste voeding beperkt</span></li>
-                    <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Vooral belangrijk als baby weinig vlees/vis eet</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Baby's geboren met ijzervoorraad voor 6 maanden</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Na 6 maanden natuurlijke voorraad opgebruikt</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Compenseert tekort als vaste voeding beperkt</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Vooral belangrijk als baby weinig vlees/vis eet</span></li>
                   </ul>
                 </div>
               </div>
@@ -441,7 +441,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                       {category.brands.map((brand, brandIndex) => (
                         <div key={brandIndex} className="p-4">
                           <div className="flex items-center justify-between mb-3">
-                            <h4 className="font-medium text-primary">{brand.name}</h4>
+                            <h4 className="font-medium text-gray-700">{brand.name}</h4>
                             <div className="text-sm text-primary font-medium">
                               {brand.rating}/5 sterren
                             </div>
@@ -537,7 +537,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                     'Partner meningsverschil over timing'
                   ].map((situation, index) => (
                     <div key={index} className="flex items-center space-x-2">
-                      <span className="text-primary">□</span>
+                      <span className="text-gray-600">□</span>
                       <span className="text-sm text-gray-700">{situation}</span>
                     </div>
                   ))}
@@ -574,10 +574,10 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
               <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
                 <h3 className="font-medium text-primary mb-2">Beste Momenten voor Overstap:</h3>
                 <ul className="space-y-1 text-sm text-gray-700">
-                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>6-7 maanden: Ideale leeftijd, vaste voeding gestart</span></li>
-                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Niet tijdens ziekte: Wacht tot baby weer gezond is</span></li>
-                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Weekend start: Meer tijd om aanpassingen te observeren</span></li>
-                  <li><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Geen andere veranderingen: Niet tegelijk met nieuwe speen/routine</span></li>
+                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>6-7 maanden: Ideale leeftijd, vaste voeding gestart</span></li>
+                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Niet tijdens ziekte: Wacht tot baby weer gezond is</span></li>
+                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Weekend start: Meer tijd om aanpassingen te observeren</span></li>
+                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Geen andere veranderingen: Niet tegelijk met nieuwe speen/routine</span></li>
                 </ul>
               </div>
             </div>
@@ -737,14 +737,14 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                   href="/kennisbank/soorten-flesvoeding"
                   className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
-                  <div className="font-medium text-primary">Soorten Flesvoeding →</div>
+                  <div className="font-medium text-gray-700">Soorten Flesvoeding </div>
                   <div className="text-sm text-gray-600">Complete overzicht van alle flesvoeding types</div>
                 </Link>
                 <Link 
                   href="/kennisbank/financiele-aspecten/kosten-van-flesvoeding"
                   className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
-                  <div className="font-medium text-primary">Kosten van Flesvoeding →</div>
+                  <div className="font-medium text-gray-700">Kosten van Flesvoeding </div>
                   <div className="text-sm text-gray-600">Budgettering en kostenvergelijking</div>
                 </Link>
               </div>

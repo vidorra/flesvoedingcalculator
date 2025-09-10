@@ -198,17 +198,17 @@ export default function SoortenFlesvoedingPage() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-gray-200">
-                  <th className="text-left py-2 font-medium text-primary">Type</th>
-                  <th className="text-left py-2 font-medium text-primary">Eiwitgehalte</th>
-                  <th className="text-left py-2 font-medium text-primary">IJzergehalte</th>
-                  <th className="text-left py-2 font-medium text-primary">Gebruik</th>
-                  <th className="text-left py-2 font-medium text-primary">Noodzakelijk</th>
+                  <th className="text-left py-2 font-medium text-gray-700">Type</th>
+                  <th className="text-left py-2 font-medium text-gray-700">Eiwitgehalte</th>
+                  <th className="text-left py-2 font-medium text-gray-700">IJzergehalte</th>
+                  <th className="text-left py-2 font-medium text-gray-700">Gebruik</th>
+                  <th className="text-left py-2 font-medium text-gray-700">Noodzakelijk</th>
                 </tr>
               </thead>
               <tbody>
                 {formulaComparison.map((item, index) => (
                   <tr key={index} className="border-b border-gray-100">
-                    <td className="py-2 font-medium text-primary">{item.type}</td>
+                    <td className="py-2 font-medium text-gray-700">{item.type}</td>
                     <td className="py-2 text-gray-700">{item.protein}</td>
                     <td className="py-2 text-gray-700">{item.iron}</td>
                     <td className="py-2 text-gray-700">{item.usage}</td>
@@ -228,15 +228,15 @@ export default function SoortenFlesvoedingPage() {
               <h3 className="font-medium text-primary mb-3">Breed verkrijgbaar:</h3>
               <div className="space-y-2">
                 <div className="bg-white p-3 rounded-lg">
-                  <div className="font-medium text-primary">Nutrilon</div>
+                  <div className="font-medium text-gray-700">Nutrilon</div>
                   <div className="text-sm text-gray-600">Nederlandse ontwikkeling, marktleider</div>
                 </div>
                 <div className="bg-white p-3 rounded-lg">
-                  <div className="font-medium text-primary">Hero Baby</div>
+                  <div className="font-medium text-gray-700">Hero Baby</div>
                   <div className="text-sm text-gray-600">Swiss kwaliteit, goede prijs-kwaliteit</div>
                 </div>
                 <div className="bg-white p-3 rounded-lg">
-                  <div className="font-medium text-primary">Kruidvat</div>
+                  <div className="font-medium text-gray-700">Kruidvat</div>
                   <div className="text-sm text-gray-600">Budget optie, zelfde EU-standaarden</div>
                 </div>
               </div>
@@ -246,11 +246,11 @@ export default function SoortenFlesvoedingPage() {
               <h3 className="font-medium text-primary mb-3">Biologisch:</h3>
               <div className="space-y-2">
                 <div className="bg-white p-3 rounded-lg">
-                  <div className="font-medium text-primary">HIPP Bio</div>
+                  <div className="font-medium text-gray-700">HIPP Bio</div>
                   <div className="text-sm text-gray-600">100% biologisch, Europese kwaliteit</div>
                 </div>
                 <div className="bg-white p-3 rounded-lg">
-                  <div className="font-medium text-primary">Aptamil</div>
+                  <div className="font-medium text-gray-700">Aptamil</div>
                   <div className="text-sm text-gray-600">Focus op hersensontwikkeling</div>
                 </div>
               </div>
@@ -397,19 +397,19 @@ export default function SoortenFlesvoedingPage() {
                 <div className="bg-white p-4 rounded-lg">
                   <h4 className="font-medium text-gray-600 mb-2">Van 1 naar 2 (6+ maanden):</h4>
                   <div className="space-y-1 text-sm text-gray-700">
-                    <div>• Hoger ijzergehalte voor groei</div>
-                    <div>• Aangepast aan groeiende behoefte</div>
-                    <div>• Meer vitaminen voor ontwikkeling</div>
-                    <div>• Maar: type 1 kan ook tot 12 maanden</div>
+                    <div> Hoger ijzergehalte voor groei</div>
+                    <div> Aangepast aan groeiende behoefte</div>
+                    <div> Meer vitaminen voor ontwikkeling</div>
+                    <div> Maar: type 1 kan ook tot 12 maanden</div>
                   </div>
                 </div>
                 <div className="bg-white p-4 rounded-lg">
                   <h4 className="font-medium text-gray-600 mb-2">Van 2 naar gewone melk (12+ maanden):</h4>
                   <div className="space-y-1 text-sm text-gray-700">
-                    <div>• Volle koemelk is vanaf 12 maanden prima</div>
-                    <div>• Peutermelk alleen bij slecht eten</div>
-                    <div>• Goedkoper dan peutermelk</div>
-                    <div>• Deel van gevarieerd dieet</div>
+                    <div> Volle koemelk is vanaf 12 maanden prima</div>
+                    <div> Peutermelk alleen bij slecht eten</div>
+                    <div> Goedkoper dan peutermelk</div>
+                    <div> Deel van gevarieerd dieet</div>
                   </div>
                 </div>
               </div>
@@ -423,21 +423,21 @@ export default function SoortenFlesvoedingPage() {
                   <div className="flex items-start space-x-3">
                     <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-gray-600 font-bold text-sm">1</div>
                     <div>
-                      <div className="font-medium text-primary">Week 1: Geleidelijk introduceren</div>
+                      <div className="font-medium text-gray-700">Week 1: Geleidelijk introduceren</div>
                       <div className="text-sm text-gray-600">Mix 75% oude voeding + 25% nieuwe voeding</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-gray-600 font-bold text-sm">2</div>
                     <div>
-                      <div className="font-medium text-primary">Week 2: Verhogen naar 50/50</div>
+                      <div className="font-medium text-gray-700">Week 2: Verhogen naar 50/50</div>
                       <div className="text-sm text-gray-600">Baby went aan nieuwe smaak en samenstelling</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-gray-600 font-bold text-sm">3</div>
                     <div>
-                      <div className="font-medium text-primary">Week 3: Volledig overstappen</div>
+                      <div className="font-medium text-gray-700">Week 3: Volledig overstappen</div>
                       <div className="text-sm text-gray-600">100% nieuwe voeding, oude pot bewaren als backup</div>
                     </div>
                   </div>
@@ -470,21 +470,21 @@ export default function SoortenFlesvoedingPage() {
               href="/kennisbank/basis-flesvoeding"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-primary">Basis Flesvoeding →</div>
+              <div className="font-medium text-gray-700">Basis Flesvoeding </div>
               <div className="text-sm text-gray-600">Beginnen met flesvoeding</div>
             </Link>
             <Link 
               href="/kennisbank/voedingstechnieken"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-primary">Voedingstechnieken →</div>
+              <div className="font-medium text-gray-700">Voedingstechnieken </div>
               <div className="text-sm text-gray-600">Hoe bereid je flesvoeding?</div>
             </Link>
             <Link 
               href="/kennisbank/problemen-oplossen"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-primary">Problemen Oplossen →</div>
+              <div className="font-medium text-gray-700">Problemen Oplossen </div>
               <div className="text-sm text-gray-600">Hulp bij veelvoorkomende problemen</div>
             </Link>
           </div>

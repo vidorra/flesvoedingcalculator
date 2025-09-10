@@ -103,7 +103,7 @@ export default function FlesvoedingWerkPage() {
 
             {/* Header */}
             <div className="mb-6">
-              <div className="flex items-center text-sm text-primary mb-2">
+              <div className="flex items-center text-sm text-gray-600 mb-2">
                 <Link href="/" className="hover:text-primary flex items-center">
                   <Home className="w-4 h-4 mr-1" />
                   Home
@@ -119,7 +119,7 @@ export default function FlesvoedingWerkPage() {
                 <Briefcase className="w-6 h-6 mr-3 text-primary" />
                 Flesvoeding en Werk Combineren: Complete Gids
               </h1>
-              <p className="text-primary leading-relaxed">
+              <p className="text-gray-700 leading-relaxed">
                 Terugkeer naar werk met flesvoeding baby brengt unieke uitdagingen én voordelen. 
                 Leer hoe je een soepele overgang maakt met praktische schema's en expert tips.
               </p>
@@ -127,13 +127,13 @@ export default function FlesvoedingWerkPage() {
 
             {/* Advantages of bottle feeding for work */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
                 <Briefcase className="w-5 h-5 mr-2" />
                 Waarom Flesvoeding Voordelig is voor Werkende Ouders
               </h2>
               
               <div className="mb-4">
-                <p className="text-primary mb-4">
+                <p className="text-gray-700 mb-4">
                   67% van Nederlandse moeders keert terug naar werk binnen 12 maanden. Flesvoeding families 
                   ervaren 25% minder stress bij werkhervatting dan families die kolven.
                 </p>
@@ -141,20 +141,20 @@ export default function FlesvoedingWerkPage() {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium text-primary mb-3">✓ Flesvoeding Work Advantages</h3>
+                  <h3 className="font-medium text-gray-600 mb-3"> Flesvoeding Work Advantages</h3>
                   <div className="space-y-2">
                     {workAdvantages.map((advantage, index) => (
                       <div key={index} className="flex items-start space-x-2">
                         <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-primary">{advantage}</span>
+                        <span className="text-sm text-gray-600">{advantage}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="font-medium text-primary mb-3">🇳🇱 Nederlandse Work Context</h3>
-                  <div className="text-sm text-primary space-y-2">
+                  <h3 className="font-medium text-gray-600 mb-3">🇳🇱 Nederlandse Work Context</h3>
+                  <div className="text-sm text-gray-600 space-y-2">
                     <div><strong>16 weken zwangerschapsverlof:</strong> Standaard regeling</div>
                     <div><strong>Parttime cultuur:</strong> 75% moeders werkt parttime</div>
                     <div><strong>Kinderopvang:</strong> Vanaf 10 weken mogelijk</div>
@@ -164,7 +164,7 @@ export default function FlesvoedingWerkPage() {
               </div>
 
               <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
-                <p className="text-primary text-sm">
+                <p className="text-gray-600 text-sm">
                   <strong>TNO Onderzoek:</strong> Ouders met flesvoeding baby's ervaren 25% minder stress 
                   bij werkhervatting dan ouders die kolven tijdens werk.
                 </p>
@@ -173,7 +173,7 @@ export default function FlesvoedingWerkPage() {
 
             {/* Dutch work scenarios */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Nederlandse Werkhervatting Scenario's</h2>
+              <h2 className="text-lg font-semibold text-gray-700 mb-4">Nederlandse Werkhervatting Scenario's</h2>
               
               <div className="space-y-4">
                 {dutchScenarios.map((scenario, index) => (
@@ -181,16 +181,16 @@ export default function FlesvoedingWerkPage() {
                     <h3 className="font-semibold text-primary mb-2">{scenario.type}</h3>
                     <div className="grid md:grid-cols-3 gap-4">
                       <div>
-                        <h4 className="font-medium text-primary text-sm mb-1">Timeline</h4>
-                        <p className="text-sm text-primary">{scenario.timeline}</p>
+                        <h4 className="font-medium text-gray-600 text-sm mb-1">Timeline</h4>
+                        <p className="text-sm text-gray-600">{scenario.timeline}</p>
                       </div>
                       <div>
-                        <h4 className="font-medium text-primary text-sm mb-1">Voorbereiding</h4>
-                        <p className="text-sm text-primary">{scenario.prep}</p>
+                        <h4 className="font-medium text-gray-600 text-sm mb-1">Voorbereiding</h4>
+                        <p className="text-sm text-gray-600">{scenario.prep}</p>
                       </div>
                       <div>
-                        <h4 className="font-medium text-primary text-sm mb-1">Voordeel</h4>
-                        <p className="text-sm text-primary">{scenario.advantage}</p>
+                        <h4 className="font-medium text-gray-600 text-sm mb-1">Voordeel</h4>
+                        <p className="text-sm text-gray-600">{scenario.advantage}</p>
                       </div>
                     </div>
                   </div>
@@ -200,30 +200,30 @@ export default function FlesvoedingWerkPage() {
 
             {/* Childcare instruction guide */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
                 <Users className="w-5 h-5 mr-2" />
                 Kinderopvang Instrueren: Complete Gids
               </h2>
               
               <div className="mb-6">
-                <h3 className="font-medium text-primary mb-3">📋 Essential Information Checklist</h3>
+                <h3 className="font-medium text-gray-600 mb-3">📋 Essential Information Checklist</h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="bg-gray-50 rounded-lg p-3">
-                    <h4 className="font-medium text-primary mb-2">Voeding Details</h4>
-                    <div className="text-sm text-primary space-y-1">
-                      <div>• Schema met exacte tijden</div>
-                      <div>• Hoeveelheden per voeding</div>
-                      <div>• Merk en type flesvoeding</div>
-                      <div>• Speen voorkeur + backups</div>
+                    <h4 className="font-medium text-gray-600 mb-2">Voeding Details</h4>
+                    <div className="text-sm text-gray-600 space-y-1">
+                      <div> Schema met exacte tijden</div>
+                      <div> Hoeveelheden per voeding</div>
+                      <div> Merk en type flesvoeding</div>
+                      <div> Speen voorkeur + backups</div>
                     </div>
                   </div>
                   <div className="bg-gray-50 rounded-lg p-3">
-                    <h4 className="font-medium text-primary mb-2">Praktische Info</h4>
-                    <div className="text-sm text-primary space-y-1">
-                      <div>• Bereidingsinstructies</div>
-                      <div>• Opwarm methode voorkeur</div>
-                      <div>• Boertje laten techniek</div>
-                      <div>• Noodcontact informatie</div>
+                    <h4 className="font-medium text-gray-600 mb-2">Praktische Info</h4>
+                    <div className="text-sm text-gray-600 space-y-1">
+                      <div> Bereidingsinstructies</div>
+                      <div> Opwarm methode voorkeur</div>
+                      <div> Boertje laten techniek</div>
+                      <div> Noodcontact informatie</div>
                     </div>
                   </div>
                 </div>
@@ -235,16 +235,16 @@ export default function FlesvoedingWerkPage() {
                     <h3 className="font-semibold text-primary mb-3">{type.type}</h3>
                     <div className="grid md:grid-cols-2 gap-4 mb-3">
                       <div>
-                        <h4 className="font-medium text-primary mb-2">Voordelen:</h4>
-                        <ul className="text-sm text-primary space-y-1">
+                        <h4 className="font-medium text-gray-600 mb-2">Voordelen:</h4>
+                        <ul className="text-sm text-gray-600 space-y-1">
                           {type.pros.map((pro, idx) => (
                             <li key={idx}><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>{pro}</span></li>
                           ))}
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-medium text-primary mb-2">Aandachtspunten:</h4>
-                        <ul className="text-sm text-primary space-y-1">
+                        <h4 className="font-medium text-gray-600 mb-2">Aandachtspunten:</h4>
+                        <ul className="text-sm text-gray-600 space-y-1">
                           {type.cons.map((con, idx) => (
                             <li key={idx}><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>{con}</span></li>
                           ))}
@@ -261,7 +261,7 @@ export default function FlesvoedingWerkPage() {
 
             {/* Schedule examples */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 Praktische Werkdag Schema's
               </h2>
@@ -269,27 +269,27 @@ export default function FlesvoedingWerkPage() {
               <div className="space-y-6">
                 {scheduleExamples.map((schedule, index) => (
                   <div key={index} className="p-4">
-                    <h3 className="font-semibold text-primary mb-4">{schedule.type}</h3>
+                    <h3 className="font-semibold text-gray-700 mb-4">{schedule.type}</h3>
                     <div className="grid md:grid-cols-3 gap-4 mb-3">
                       <div>
                         <h4 className="font-medium text-blue-600 mb-2">🌅 Ochtend</h4>
-                        <div className="text-sm text-primary space-y-1">
+                        <div className="text-sm text-gray-600 space-y-1">
                           {schedule.morning.map((item, idx) => (
                             <div key={idx}>{item}</div>
                           ))}
                         </div>
                       </div>
                       <div>
-                        <h4 className="font-medium text-primary mb-2">🏫 Kinderopvang</h4>
-                        <div className="text-sm text-primary space-y-1">
+                        <h4 className="font-medium text-gray-600 mb-2">🏫 Kinderopvang</h4>
+                        <div className="text-sm text-gray-600 space-y-1">
                           {schedule.daycare.map((item, idx) => (
                             <div key={idx}>{item}</div>
                           ))}
                         </div>
                       </div>
                       <div>
-                        <h4 className="font-medium text-primary mb-2">🏠 Avond</h4>
-                        <div className="text-sm text-primary space-y-1">
+                        <h4 className="font-medium text-gray-600 mb-2">🏠 Avond</h4>
+                        <div className="text-sm text-gray-600 space-y-1">
                           {schedule.evening.map((item, idx) => (
                             <div key={idx}>{item}</div>
                           ))}
@@ -306,31 +306,31 @@ export default function FlesvoedingWerkPage() {
 
             {/* Stress management */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Stress Management & Praktische Oplossingen</h2>
+              <h2 className="text-lg font-semibold text-gray-700 mb-4">Stress Management & Praktische Oplossingen</h2>
               
               <div className="space-y-4">
                 {stressManagement.map((item, index) => (
                   <div key={index} className="border-l-4 border-primary pl-4 py-2">
-                    <h3 className="font-medium text-primary mb-1">"{item.concern}"</h3>
-                    <p className="text-sm text-primary">{item.solution}</p>
+                    <h3 className="font-medium text-gray-600 mb-1">"{item.concern}"</h3>
+                    <p className="text-sm text-gray-600">{item.solution}</p>
                   </div>
                 ))}
               </div>
 
               <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
-                <h4 className="font-medium text-primary mb-2">💡 Success Strategies - Week voor Week</h4>
+                <h4 className="font-medium text-gray-600 mb-2"> Success Strategies - Week voor Week</h4>
                 <div className="grid md:grid-cols-3 gap-4 text-sm">
                   <div>
-                    <h5 className="font-medium text-primary mb-1">Week 1-2: Aanpassing</h5>
-                    <p className="text-primary">Flexibel zijn, communicatie prioriteit, eigen welzijn niet vergeten</p>
+                    <h5 className="font-medium text-gray-600 mb-1">Week 1-2: Aanpassing</h5>
+                    <p className="text-gray-600">Flexibel zijn, communicatie prioriteit, eigen welzijn niet vergeten</p>
                   </div>
                   <div>
-                    <h5 className="font-medium text-primary mb-1">Week 3-6: Routine</h5>
-                    <p className="text-primary">Schema optimaliseren, vertrouwen opbouwen, efficiency terugwinnen</p>
+                    <h5 className="font-medium text-gray-600 mb-1">Week 3-6: Routine</h5>
+                    <p className="text-gray-600">Schema optimaliseren, vertrouwen opbouwen, efficiency terugwinnen</p>
                   </div>
                   <div>
-                    <h5 className="font-medium text-primary mb-1">Week 7+: Mastery</h5>
-                    <p className="text-primary">Automatische routine, crisis management, work-life balance</p>
+                    <h5 className="font-medium text-gray-600 mb-1">Week 7+: Mastery</h5>
+                    <p className="text-gray-600">Automatische routine, crisis management, work-life balance</p>
                   </div>
                 </div>
               </div>
@@ -338,15 +338,15 @@ export default function FlesvoedingWerkPage() {
 
             {/* Emergency planning */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
                 <AlertTriangle className="w-5 h-5 mr-2" />
                 Crisis Management: Noodplannen
               </h2>
               
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                  <h3 className="font-medium text-primary mb-3">🏫 Kinderopvang Ziek/Gesloten</h3>
-                  <div className="text-sm text-primary space-y-2">
+                  <h3 className="font-medium text-gray-600 mb-3">🏫 Kinderopvang Ziek/Gesloten</h3>
+                  <div className="text-sm text-gray-600 space-y-2">
                     <div><strong>Backup Plan A:</strong> Partner thuisblijven (afwisselen)</div>
                     <div><strong>Backup Plan B:</strong> Familie/vrienden emergency hulp</div>
                     <div><strong>Werkgever:</strong> Thuiswerk dag, flexibele eindtijd</div>
@@ -355,8 +355,8 @@ export default function FlesvoedingWerkPage() {
                 </div>
                 
                 <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                  <h3 className="font-medium text-primary mb-3">🍼 Baby Weigert Voeding op Opvang</h3>
-                  <div className="text-sm text-primary space-y-2">
+                  <h3 className="font-medium text-gray-600 mb-3">🍼 Baby Weigert Voeding op Opvang</h3>
+                  <div className="text-sm text-gray-600 space-y-2">
                     <div><strong>Direct:</strong> Kinderopvang bellen voor details</div>
                     <div><strong>Proberen:</strong> Andere speen/merk, partner laten proberen</div>
                     <div><strong>Lange termijn:</strong> Routine herevalueren, training intensiveren</div>
@@ -366,22 +366,22 @@ export default function FlesvoedingWerkPage() {
               </div>
 
               <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-gray-200">
-                <h4 className="font-medium text-primary mb-2">🚨 Work Emergency + Baby Crisis Protocol</h4>
-                <div className="text-sm text-primary">
-                  <strong>Priority:</strong> Baby health/safety ALTIJD eerst → Partner contacteren → 
-                  Werk delegeren → Emergency childcare → Medical help indien nodig
+                <h4 className="font-medium text-gray-600 mb-2">🚨 Work Emergency + Baby Crisis Protocol</h4>
+                <div className="text-sm text-gray-600">
+                  <strong>Priority:</strong> Baby health/safety ALTIJD eerst  Partner contacteren  
+                  Werk delegeren  Emergency childcare  Medical help indien nodig
                 </div>
               </div>
             </div>
 
             {/* Financial planning */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Financiële Planning: Kosten & Besparingen</h2>
+              <h2 className="text-lg font-semibold text-gray-700 mb-4">Financiële Planning: Kosten & Besparingen</h2>
               
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium text-primary mb-3">💸 Extra Kosten Werkhervatting</h3>
-                  <div className="text-sm text-primary space-y-2">
+                  <h3 className="font-medium text-gray-600 mb-3">💸 Extra Kosten Werkhervatting</h3>
+                  <div className="text-sm text-gray-600 space-y-2">
                     <div><strong>Kinderopvang:</strong> €800-1200/maand (fulltime)</div>
                     <div><strong>Extra flesvoeding:</strong> €20/maand (opvang)</div>
                     <div><strong>Transport:</strong> €50-100/maand</div>
@@ -390,8 +390,8 @@ export default function FlesvoedingWerkPage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-medium text-primary mb-3">💰 Flesvoeding Cost Advantage</h3>
-                  <div className="text-sm text-primary space-y-2">
+                  <h3 className="font-medium text-gray-600 mb-3">💰 Flesvoeding Cost Advantage</h3>
+                  <div className="text-sm text-gray-600 space-y-2">
                     <div><strong>Geen kolfpomp:</strong> €150-400 besparing</div>
                     <div><strong>Geen koelkastje werk:</strong> €100</div>
                     <div><strong>Minder tijd verlies:</strong> Meer productiviteit</div>
@@ -404,23 +404,23 @@ export default function FlesvoedingWerkPage() {
 
             {/* Navigation */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde artikelen</h2>
+              <h2 className="text-lg font-semibold text-gray-700 mb-4">Gerelateerde artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/praktische-tips/voedingsritme-opbouwen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Voedingsritme opbouwen →</div>
-                  <div className="text-sm text-primary">Work-ready schema's ontwikkelen</div>
+                  <div className="font-medium text-gray-600">Voedingsritme opbouwen </div>
+                  <div className="text-sm text-gray-600">Work-ready schema's ontwikkelen</div>
                 </Link>
                 <Link href="/kennisbank/hygiene-bereiding/flesvoeding-bewaren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Flesvoeding bewaren →</div>
-                  <div className="text-sm text-primary">Kinderopvang veiligheid tips</div>
+                  <div className="font-medium text-gray-600">Flesvoeding bewaren </div>
+                  <div className="text-sm text-gray-600">Kinderopvang veiligheid tips</div>
                 </Link>
                 <Link href="/kennisbank/voedingstechnieken/verschillende-spenen-uitproberen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Verschillende spenen →</div>
-                  <div className="text-sm text-primary">Opvang acceptatie verbeteren</div>
+                  <div className="font-medium text-gray-600">Verschillende spenen </div>
+                  <div className="text-sm text-gray-600">Opvang acceptatie verbeteren</div>
                 </Link>
                 <Link href="/kennisbank/praktische-tips" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Alle praktische tips →</div>
-                  <div className="text-sm text-primary">Meer handige ouder tips</div>
+                  <div className="font-medium text-gray-600">Alle praktische tips </div>
+                  <div className="text-sm text-gray-600">Meer handige ouder tips</div>
                 </Link>
               </div>
             </div>

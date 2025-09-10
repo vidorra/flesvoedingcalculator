@@ -31,7 +31,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
           <div className="space-y-6">
             {/* Header */}
             <div>
-              <div className="text-sm text-gray-500 mb-2">Hygiëne & Bereiding • Veiligheid</div>
+              <div className="text-sm text-gray-500 mb-2">Hygiëne & Bereiding  Veiligheid</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <Zap className="w-6 h-6 mr-3 text-primary" />
                 Veilig verwarmen van flesvoeding: Complete Nederlandse gids
@@ -445,51 +445,51 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                       <tbody className="space-y-1">
                         <tr className="border-b border-gray-100">
                           <td className="py-2 font-medium">Waterpad</td>
-                          <td className="py-2">⭐⭐⭐</td>
-                          <td className="py-2">⭐⭐⭐⭐⭐</td>
-                          <td className="py-2">⭐⭐⭐⭐⭐</td>
-                          <td className="py-2">⭐⭐⭐</td>
-                          <td className="py-2">⭐⭐⭐⭐⭐</td>
+                          <td className="py-2"></td>
+                          <td className="py-2"></td>
+                          <td className="py-2"></td>
+                          <td className="py-2"></td>
+                          <td className="py-2"></td>
                         </tr>
                         <tr className="border-b border-gray-100">
                           <td className="py-2 font-medium">Flessenwarmer</td>
-                          <td className="py-2">⭐⭐⭐</td>
-                          <td className="py-2">⭐⭐⭐⭐⭐</td>
-                          <td className="py-2">⭐⭐⭐</td>
-                          <td className="py-2">⭐⭐⭐⭐⭐</td>
-                          <td className="py-2">⭐⭐⭐⭐⭐</td>
+                          <td className="py-2"></td>
+                          <td className="py-2"></td>
+                          <td className="py-2"></td>
+                          <td className="py-2"></td>
+                          <td className="py-2"></td>
                         </tr>
                         <tr className="border-b border-gray-100">
                           <td className="py-2 font-medium">Stromend water</td>
-                          <td className="py-2">⭐⭐⭐⭐</td>
-                          <td className="py-2">⭐⭐⭐⭐</td>
-                          <td className="py-2">⭐⭐⭐⭐⭐</td>
-                          <td className="py-2">⭐⭐⭐⭐</td>
-                          <td className="py-2">⭐⭐⭐⭐</td>
+                          <td className="py-2"></td>
+                          <td className="py-2"></td>
+                          <td className="py-2"></td>
+                          <td className="py-2"></td>
+                          <td className="py-2"></td>
                         </tr>
                         <tr className="border-b border-gray-100">
                           <td className="py-2 font-medium">Thermosfles</td>
-                          <td className="py-2">⭐⭐⭐⭐⭐</td>
-                          <td className="py-2">⭐⭐⭐⭐⭐</td>
-                          <td className="py-2">⭐⭐⭐</td>
-                          <td className="py-2">⭐⭐⭐⭐</td>
-                          <td className="py-2">⭐⭐⭐⭐⭐</td>
+                          <td className="py-2"></td>
+                          <td className="py-2"></td>
+                          <td className="py-2"></td>
+                          <td className="py-2"></td>
+                          <td className="py-2"></td>
                         </tr>
                         <tr className="border-b border-gray-100 bg-red-50">
                           <td className="py-2 font-medium">Magnetron</td>
-                          <td className="py-2">⭐⭐⭐⭐⭐</td>
-                          <td className="py-2">⭐</td>
-                          <td className="py-2">⭐⭐⭐⭐⭐</td>
-                          <td className="py-2">⭐⭐⭐⭐⭐</td>
-                          <td className="py-2">⭐</td>
+                          <td className="py-2"></td>
+                          <td className="py-2"></td>
+                          <td className="py-2"></td>
+                          <td className="py-2"></td>
+                          <td className="py-2"></td>
                         </tr>
                         <tr>
                           <td className="py-2 font-medium">Auto 12V</td>
-                          <td className="py-2">⭐⭐</td>
-                          <td className="py-2">⭐⭐⭐⭐</td>
-                          <td className="py-2">⭐⭐⭐</td>
-                          <td className="py-2">⭐⭐⭐</td>
-                          <td className="py-2">⭐⭐⭐⭐</td>
+                          <td className="py-2"></td>
+                          <td className="py-2"></td>
+                          <td className="py-2"></td>
+                          <td className="py-2"></td>
+                          <td className="py-2"></td>
                         </tr>
                       </tbody>
                     </table>
@@ -732,7 +732,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                   className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
                   <div className="text-center">
-                    <div className="font-medium text-primary">Bereken de juiste hoeveelheid flesvoeding →</div>
+                    <div className="font-medium text-gray-700">Bereken de juiste hoeveelheid flesvoeding </div>
                     <div className="text-sm text-gray-600">Precies de juiste temperatuur en hoeveelheid</div>
                   </div>
                 </Link>
@@ -747,19 +747,19 @@ export default function VeiligVerwarmenFlesvoedingPage() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/hygiene-bereiding/houdbaarheid-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Houdbaarheid flesvoeding →</div>
+                  <div className="font-medium text-gray-700">Houdbaarheid flesvoeding </div>
                   <div className="text-sm text-gray-600">Veilige bewaring en tijdslimieten</div>
                 </Link>
                 <Link href="/kennisbank/voedingstechnieken/juiste-temperatuur-controleren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Juiste temperatuur controleren →</div>
+                  <div className="font-medium text-gray-700">Juiste temperatuur controleren </div>
                   <div className="text-sm text-gray-600">Temperatuur testen en controleren</div>
                 </Link>
                 <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Fles bereiden stap voor stap →</div>
+                  <div className="font-medium text-gray-700">Fles bereiden stap voor stap </div>
                   <div className="text-sm text-gray-600">Complete bereiding handleiding</div>
                 </Link>
                 <Link href="/kennisbank/hygiene-bereiding/flessen-steriliseren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Flessen steriliseren →</div>
+                  <div className="font-medium text-gray-700">Flessen steriliseren </div>
                   <div className="text-sm text-gray-600">Hygiënische fles voorbereiding</div>
                 </Link>
               </div>

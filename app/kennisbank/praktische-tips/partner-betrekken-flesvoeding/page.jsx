@@ -31,7 +31,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
           <div className="space-y-6">
             {/* Header */}
             <div>
-              <div className="text-sm text-gray-500 mb-2">Praktische Tips • Samenwerking</div>
+              <div className="text-sm text-gray-500 mb-2">Praktische Tips  Samenwerking</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <Users className="w-6 h-6 mr-3 text-primary" />
                 Partner betrekken bij flesvoeding: Nederlandse gids voor gedeelde zorg
@@ -705,7 +705,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                   className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
                   <div className="text-center">
-                    <div className="font-medium text-primary">Bereken gedeelde voeding schema →</div>
+                    <div className="font-medium text-gray-700">Bereken gedeelde voeding schema </div>
                     <div className="text-sm text-gray-600">Plan samen de perfect flesvoeding routine</div>
                   </div>
                 </Link>
@@ -720,19 +720,19 @@ export default function PartnerBetrekkenFlesvoedingPage() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/praktische-tips/nachtvoeding-optimaliseren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Nachtvoeding optimaliseren →</div>
+                  <div className="font-medium text-gray-700">Nachtvoeding optimaliseren </div>
                   <div className="text-sm text-gray-600">Efficiënte nachtvoedingen strategieën</div>
                 </Link>
                 <Link href="/kennisbank/praktische-tips/flesvoeding-werk-combineren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Flesvoeding en werk combineren →</div>
+                  <div className="font-medium text-gray-700">Flesvoeding en werk combineren </div>
                   <div className="text-sm text-gray-600">Balans tussen carrière en ouderschap</div>
                 </Link>
                 <Link href="/kennisbank/praktische-tips/voedingsritme-opbouwen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Voedingsritme opbouwen →</div>
+                  <div className="font-medium text-gray-700">Voedingsritme opbouwen </div>
                   <div className="text-sm text-gray-600">Structuur voor het hele gezin</div>
                 </Link>
                 <Link href="/kennisbank/basis-flesvoeding/overstappen-van-borst-naar-fles" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Overstappen van borst naar fles →</div>
+                  <div className="font-medium text-gray-700">Overstappen van borst naar fles </div>
                   <div className="text-sm text-gray-600">Stapsgewijze overgang voor partners</div>
                 </Link>
               </div>

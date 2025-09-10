@@ -356,7 +356,7 @@ export default function KennisbankPage() {
               value={filteredContent}
               onChange={(e) => setFilteredContent(e.target.value)}
               placeholder="Zoek op leeftijd, onderwerp of vraag..."
-              className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none text-primary placeholder:text-gray-500"
+              className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none text-gray-700 placeholder:text-gray-500"
             />
           </div>
         </div>
@@ -423,7 +423,7 @@ export default function KennisbankPage() {
                       <Icon className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                       <div>
                         <div className="flex items-center justify-between mb-1">
-                          <h4 className="font-medium text-primary">{article.title}</h4>
+                          <h4 className="font-medium text-gray-700">{article.title}</h4>
                           {article.duration && (
                             <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">{article.duration}</span>
                           )}
@@ -482,7 +482,7 @@ export default function KennisbankPage() {
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="font-medium text-primary">Voedingsschema&apos;s</h3>
+                  <h3 className="font-medium text-gray-700">Voedingsschema&apos;s</h3>
                   <p className="text-sm text-gray-600 mt-1">Interactieve schema&apos;s per leeftijd</p>
                 </div>
                 <ArrowRight className="w-5 h-5 text-gray-400" />
@@ -494,7 +494,7 @@ export default function KennisbankPage() {
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="font-medium text-primary">Flesvoeding Calculator</h3>
+                  <h3 className="font-medium text-gray-700">Flesvoeding Calculator</h3>
                   <p className="text-sm text-gray-600 mt-1">Bereken persoonlijke hoeveelheden</p>
                 </div>
                 <ArrowRight className="w-5 h-5 text-gray-400" />
@@ -506,7 +506,7 @@ export default function KennisbankPage() {
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="font-medium text-primary">Veelgestelde Vragen</h3>
+                  <h3 className="font-medium text-gray-700">Veelgestelde Vragen</h3>
                   <p className="text-sm text-gray-600 mt-1">Antwoorden op veel gestelde vragen</p>
                 </div>
                 <ArrowRight className="w-5 h-5 text-gray-400" />
@@ -626,7 +626,7 @@ export default function KennisbankPage() {
             >
               <h3 className="font-medium text-primary mb-2">Flesvoeding Calculator</h3>
               <p className="text-sm text-gray-600 mb-3">Bereken persoonlijke hoeveelheden per voeding</p>
-              <div className="text-primary hover:text-gray-700 font-medium text-sm flex items-center">
+              <div className="text-gray-700 hover:text-gray-600 font-medium text-sm flex items-center">
                 Bereken nu <ArrowRight className="w-4 h-4 ml-1" />
               </div>
             </Link>

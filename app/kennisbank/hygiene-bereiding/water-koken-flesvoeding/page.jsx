@@ -146,7 +146,7 @@ export default function WaterKokenFlesvoedingPage() {
             
             {/* Header */}
             <div>
-              <div className="text-sm text-gray-500 mb-2">Kennisbank • Hygiëne & Bereiding</div>
+              <div className="text-sm text-gray-500 mb-2">Kennisbank  Hygiëne & Bereiding</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <Droplets className="w-6 h-6 mr-3 text-primary" />
                 Water Koken voor Flesvoeding: Complete Veiligheidsgids
@@ -193,9 +193,9 @@ export default function WaterKokenFlesvoedingPage() {
                 <table className="w-full border-collapse">
                   <thead>
                     <tr className="border-b border-gray-200">
-                      <th className="text-left p-3 font-medium text-primary">Leeftijd</th>
-                      <th className="text-left p-3 font-medium text-primary">Infectierisico</th>
-                      <th className="text-left p-3 font-medium text-primary">Advies Waterbereiding</th>
+                      <th className="text-left p-3 font-medium text-gray-700">Leeftijd</th>
+                      <th className="text-left p-3 font-medium text-gray-700">Infectierisico</th>
+                      <th className="text-left p-3 font-medium text-gray-700">Advies Waterbereiding</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -397,7 +397,7 @@ export default function WaterKokenFlesvoedingPage() {
                   className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
                   <div className="text-center">
-                    <div className="font-medium text-primary">Hulp nodig met flesvoeding berekeningen? →</div>
+                    <div className="font-medium text-gray-700">Hulp nodig met flesvoeding berekeningen? </div>
                     <div className="text-sm text-gray-600">Gebruik onze calculator voor gepersonaliseerd advies</div>
                   </div>
                 </Link>
@@ -412,19 +412,19 @@ export default function WaterKokenFlesvoedingPage() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/hygiene-bereiding/veilig-verwarmen-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Veilig verwarmen van flesvoeding →</div>
+                  <div className="font-medium text-gray-700">Veilig verwarmen van flesvoeding </div>
                   <div className="text-sm text-gray-600">Leer hoe je flesvoeding veilig verwarmt</div>
                 </Link>
                 <Link href="/kennisbank/hygiene-bereiding/houdbaarheid-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Houdbaarheid flesvoeding →</div>
+                  <div className="font-medium text-gray-700">Houdbaarheid flesvoeding </div>
                   <div className="text-sm text-gray-600">Hoelang kun je flesvoeding bewaren?</div>
                 </Link>
                 <Link href="/kennisbank/hygiene-bereiding/flessen-steriliseren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Flessen steriliseren →</div>
+                  <div className="font-medium text-gray-700">Flessen steriliseren </div>
                   <div className="text-sm text-gray-600">Complete gids voor het steriliseren van babyflessen</div>
                 </Link>
                 <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Fles bereiden stap-voor-stap →</div>
+                  <div className="font-medium text-gray-700">Fles bereiden stap-voor-stap </div>
                   <div className="text-sm text-gray-600">Volledige handleiding voor fles bereiding</div>
                 </Link>
               </div>

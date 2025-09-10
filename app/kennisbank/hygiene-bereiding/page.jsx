@@ -300,8 +300,8 @@ function HygieneBereidingPage() {
                 <p><strong>Tijd:</strong> 15-20 minuten totaal</p>
               </div>
               <div className="text-gray-700 text-xs">
-                <p><strong>✓ Voordelen:</strong> 100% effectief, grote hoeveelheden, geen aanschaf</p>
-                <p><strong>✗ Nadelen:</strong> Tijdrovend, brandgevaar, veel energie</p>
+                <p><strong> Voordelen:</strong> 100% effectief, grote hoeveelheden, geen aanschaf</p>
+                <p><strong> Nadelen:</strong> Tijdrovend, brandgevaar, veel energie</p>
               </div>
             </div>
 
@@ -313,8 +313,8 @@ function HygieneBereidingPage() {
                 <p><strong>Merken:</strong> Philips Avent, Tommee Tippee</p>
               </div>
               <div className="text-gray-700 text-xs">
-                <p><strong>✓ Voordelen:</strong> Snel, consistent, veilig, weinig toezicht</p>
-                <p><strong>✗ Nadelen:</strong> Aanschafkosten, beperkte capaciteit</p>
+                <p><strong> Voordelen:</strong> Snel, consistent, veilig, weinig toezicht</p>
+                <p><strong> Nadelen:</strong> Aanschafkosten, beperkte capaciteit</p>
               </div>
             </div>
 
@@ -326,8 +326,8 @@ function HygieneBereidingPage() {
                 <p><strong>Zakken:</strong> €0.25 per gebruik</p>
               </div>
               <div className="text-gray-700 text-xs">
-                <p><strong>✓ Voordelen:</strong> Supersnel, praktisch onderweg</p>
-                <p><strong>✗ Nadelen:</strong> Ongelijke verhitting, beperkte capaciteit</p>
+                <p><strong> Voordelen:</strong> Supersnel, praktisch onderweg</p>
+                <p><strong> Nadelen:</strong> Ongelijke verhitting, beperkte capaciteit</p>
               </div>
             </div>
 
@@ -339,8 +339,8 @@ function HygieneBereidingPage() {
                 <p><strong>Geldig:</strong> 24 uur effectief</p>
               </div>
               <div className="text-cyan-700 text-xs">
-                <p><strong>✓ Voordelen:</strong> Geen verhitting, grote hoeveelheden</p>
-                <p><strong>✗ Nadelen:</strong> Chemische geur, goed spoelen nodig</p>
+                <p><strong> Voordelen:</strong> Geen verhitting, grote hoeveelheden</p>
+                <p><strong> Nadelen:</strong> Chemische geur, goed spoelen nodig</p>
               </div>
             </div>
           </div>
@@ -485,21 +485,21 @@ function HygieneBereidingPage() {
               href="/kennisbank/hygiene-bereiding/water-koken-flesvoeding"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-primary">Water koken voor flesvoeding →</div>
+              <div className="font-medium text-gray-700">Water koken voor flesvoeding </div>
               <div className="text-sm text-gray-600">Complete veiligheidsgids</div>
             </Link>
             <Link 
               href="/kennisbank/veiligheid"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-primary">Veiligheidsrichtlijnen →</div>
+              <div className="font-medium text-gray-700">Veiligheidsrichtlijnen </div>
               <div className="text-sm text-gray-600">Belangrijke veiligheidstips</div>
             </Link>
             <Link 
               href="/kennisbank/praktische-tips"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-primary">Praktische Tips →</div>
+              <div className="font-medium text-gray-700">Praktische Tips </div>
               <div className="text-sm text-gray-600">Handige tips voor ouders</div>
             </Link>
           </div>
