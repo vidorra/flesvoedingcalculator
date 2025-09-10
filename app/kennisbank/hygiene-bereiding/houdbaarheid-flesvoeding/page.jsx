@@ -259,7 +259,7 @@ export default function HoudbaarheidFlesvoedingPage() {
               <div className="overflow-x-auto">
                 <table className="w-full text-sm bg-white border border-gray-200 rounded-lg">
                   <thead>
-                    <tr className="bg-gray-50">
+                    <tr className="bg-white">
                       <th className="text-left p-3 font-medium">Bacterie</th>
                       <th className="text-left p-3 font-medium">Symptomen</th>
                       <th className="text-left p-3 font-medium">Ernstgraad</th>
@@ -268,7 +268,7 @@ export default function HoudbaarheidFlesvoedingPage() {
                   </thead>
                   <tbody>
                     {dangerBacteria.map((bacteria, index) => (
-                      <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                      <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-white"}>
                         <td className="p-3 font-medium text-gray-900">{bacteria.name}</td>
                         <td className="p-3 text-gray-700">{bacteria.symptoms}</td>
                         <td className="p-3">
@@ -462,7 +462,7 @@ export default function HoudbaarheidFlesvoedingPage() {
             </section>
 
             {/* Call to action */}
-            <section className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <section className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
                 <Link 
                   href="/"

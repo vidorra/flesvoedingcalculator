@@ -166,7 +166,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                   <div className="space-y-4">
                     <div className="border-l-4 border-red-300 pl-4">
                       <h4 className="font-medium text-gray-700 mb-2">1. Ongelijkmatige verhitting</h4>
-                      <div className="bg-gray-50 rounded-lg p-3">
+                      <div className="bg-white rounded-lg p-3">
                         <p className="text-sm text-gray-700 mb-2">Magnetron verwarmt:</p>
                         <ul className="space-y-1">
                           <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Buitenkant fles: 25°C (koud)</span></li>
@@ -399,7 +399,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                 <div>
                   <h3 className="font-medium text-primary mb-3">Beste elektrische flessenwarmer modellen</h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="bg-gray-50 rounded-lg p-4">
+                    <div className="bg-white rounded-lg p-4">
                       <h4 className="font-medium text-gray-700 mb-2">Philips AVENT (€35-45)</h4>
                       <ul className="space-y-1">
                         <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Nederlandse garantie</span></li>
@@ -408,7 +408,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                       </ul>
                     </div>
                     
-                    <div className="bg-gray-50 rounded-lg p-4">
+                    <div className="bg-white rounded-lg p-4">
                       <h4 className="font-medium text-gray-700 mb-2">Tommee Tippee (€25-35)</h4>
                       <ul className="space-y-1">
                         <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Snelle opwarming (3-4 min)</span></li>
@@ -417,7 +417,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                       </ul>
                     </div>
                     
-                    <div className="bg-gray-50 rounded-lg p-4">
+                    <div className="bg-white rounded-lg p-4">
                       <h4 className="font-medium text-gray-700 mb-2">MAM (€30-40)</h4>
                       <ul className="space-y-1">
                         <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Extra stil (nachtgebruik)</span></li>
@@ -585,7 +585,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                   </div>
                 </div>
 
-                <div className="bg-gray-50 rounded-lg p-4">
+                <div className="bg-white rounded-lg p-4">
                   <h4 className="font-medium text-gray-700 mb-2">Nederlandse ER statistieken:</h4>
                   <ul className="space-y-1">
                     <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>67% brandwonden: onvoldoende getest</span></li>
@@ -725,7 +725,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
             </div>
 
             {/* Call to action */}
-            <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
                 <Link 
                   href="/calculator"

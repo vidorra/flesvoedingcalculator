@@ -53,7 +53,7 @@ export default function VeiligheidPage() {
         </div>
 
         {/* Emergency contacts */}
-        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+        <div className="bg-white rounded-2xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
             <Phone className="w-5 h-5 mr-2" />
             Wanneer direct arts contacteren
@@ -64,7 +64,7 @@ export default function VeiligheidPage() {
           <div className="space-y-3">
             {emergencyContacts.map((contact, index) => (
               <div key={index} className="flex items-start space-x-3">
-                <div className="w-6 h-6 bg-gray-500 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">
+                <div className="w-6 h-6 bg-white0 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">
                   !
                 </div>
                 <span className="text-gray-700 font-medium">{contact}</span>
@@ -72,7 +72,7 @@ export default function VeiligheidPage() {
             ))}
           </div>
           
-          <div className="mt-4 p-4 bg-gray-100 rounded-lg">
+          <div className="mt-4 p-4 bg-white rounded-lg">
             <p className="text-gray-700 font-bold text-center">
               📞 Bij levensbedreigende situaties: bel direct 112
             </p>
@@ -87,7 +87,7 @@ export default function VeiligheidPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {neverDo.map((item, index) => (
-              <div key={index} className="flex items-start space-x-2 p-3 bg-gray-50 rounded-lg">
+              <div key={index} className="flex items-start space-x-2 p-3 bg-white rounded-lg">
                 <X className="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
                 <span className="text-gray-700 text-sm font-medium">{item}</span>
               </div>
@@ -132,7 +132,7 @@ export default function VeiligheidPage() {
           <h2 className="text-lg font-semibold text-primary mb-4">Belangrijke telefoonnummers</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="p-4 bg-gray-50 rounded-lg text-center">
+            <div className="p-4 bg-white rounded-lg text-center">
               <h3 className="font-bold text-gray-700 mb-2">Spoedeisende hulp</h3>
               <p className="text-2xl font-bold text-gray-600">112</p>
               <p className="text-xs text-gray-700">Bij levensbedreigende situaties</p>
@@ -144,7 +144,7 @@ export default function VeiligheidPage() {
               <p className="text-xs text-gray-600">Voor advies en afspraken</p>
             </div>
             
-            <div className="p-4 bg-gray-50 rounded-lg text-center">
+            <div className="p-4 bg-white rounded-lg text-center">
               <h3 className="font-bold text-gray-700 mb-2">Consultatiebureau</h3>
               <p className="text-lg font-bold text-gray-600">Lokaal nummer</p>
               <p className="text-xs text-gray-700">Voor ontwikkelingsvragen</p>

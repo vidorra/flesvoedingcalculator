@@ -347,7 +347,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                 maar dat klopt niet altijd.
               </p>
               
-              <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
+              <div className="p-4 border border-gray-200 bg-white rounded-xl">
                 <h3 className="font-medium text-primary mb-2">Belangrijkste Misverstand:</h3>
                 <div className="space-y-2 text-sm">
                   <div className="flex items-start space-x-2">
@@ -365,7 +365,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                 </div>
               </div>
               
-              <div className="mt-4 p-3 border border-gray-200 bg-gray-50 rounded-lg">
+              <div className="mt-4 p-3 border border-gray-200 bg-white rounded-lg">
                 <p className="text-sm text-gray-700">
                   <strong>Voedingscentrum Onderzoek:</strong> 60% van ouders stapt te vroeg of onnodig over naar opvolgmelk.
                 </p>
@@ -408,7 +408,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
               </div>
               
               <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
+                <div className="p-4 border border-gray-200 bg-white rounded-xl">
                   <h3 className="font-medium text-primary mb-2">Waarom Meer Eiwit in Opvolgmelk?</h3>
                   <ul className="text-sm text-gray-700 space-y-1">
                     <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Baby's &gt;6 maanden groeien sneller</span></li>
@@ -417,7 +417,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                     <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Voorbereiden op koemelk (3.3g eiwit/100ml)</span></li>
                   </ul>
                 </div>
-                <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
+                <div className="p-4 border border-gray-200 bg-white rounded-xl">
                   <h3 className="font-medium text-primary mb-2">IJzer Boost Verklaard</h3>
                   <ul className="text-sm text-gray-700 space-y-1">
                     <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Baby's geboren met ijzervoorraad voor 6 maanden</span></li>
@@ -525,7 +525,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                 ))}
               </div>
               
-              <div className="mt-6 p-4 border border-gray-200 bg-gray-50 rounded-xl">
+              <div className="mt-6 p-4 border border-gray-200 bg-white rounded-xl">
                 <h3 className="font-medium text-primary mb-2">NEUTRAAL - Beiden Kunnen</h3>
                 <p className="text-sm text-gray-700 mb-2">Situaties waarin beide opties prima zijn:</p>
                 <div className="space-y-1">
@@ -560,7 +560,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                       <h4 className="font-medium text-primary mb-3">{week.week}</h4>
                       <div className="space-y-2 mb-3">
                         {week.days.map((day, dayIndex) => (
-                          <div key={dayIndex} className="text-sm text-gray-700 font-mono p-2 bg-gray-50 rounded">
+                          <div key={dayIndex} className="text-sm text-gray-700 font-mono p-2 bg-white rounded">
                             {day}
                           </div>
                         ))}
@@ -571,7 +571,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                 </div>
               </div>
               
-              <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
+              <div className="p-4 border border-gray-200 bg-white rounded-xl">
                 <h3 className="font-medium text-primary mb-2">Beste Momenten voor Overstap:</h3>
                 <ul className="space-y-1 text-sm text-gray-700">
                   <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>6-7 maanden: Ideale leeftijd, vaste voeding gestart</span></li>
@@ -611,7 +611,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                         <h4 className="font-medium text-primary mb-2">Stapsgewijze Oplossingen:</h4>
                         <ul className="space-y-1">
                           {problem.solutions.map((solution, solutionIndex) => (
-                            <li key={solutionIndex} className="text-sm text-gray-700 p-2 border border-gray-200 bg-gray-50 rounded font-mono">
+                            <li key={solutionIndex} className="text-sm text-gray-700 p-2 border border-gray-200 bg-white rounded font-mono">
                               {solution}
                             </li>
                           ))}
@@ -628,7 +628,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
             </div>
 
             {/* Cost Comparison */}
-            <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
                 <Euro className="w-5 h-5 mr-2" />
                 Kosten Vergelijking: Financiële Impact
@@ -641,7 +641,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                     <p className="text-sm text-gray-600 mb-3">{scenario.calculation}</p>
                     <div className="space-y-1">
                       {scenario.costs.map((cost, costIndex) => (
-                        <div key={costIndex} className="text-sm text-gray-700 p-2 bg-gray-50 rounded font-mono">
+                        <div key={costIndex} className="text-sm text-gray-700 p-2 bg-white rounded font-mono">
                           {cost}
                         </div>
                       ))}
@@ -719,7 +719,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                     <li>4. <strong>Ouder voorkeur</strong> (eenvoud, vertrouwdheid)</li>
                   </ol>
                 </div>
-                <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
+                <div className="p-4 border border-gray-200 bg-white rounded-xl">
                   <p className="text-sm text-gray-700">
                     <strong>Onthoud:</strong> Er is <strong>geen verkeerde keuze</strong> tussen nummer 1 en 2. 
                     Beide zijn veilig, voedzaam, en geschikt voor gezonde baby's. Het belangrijkste is een 

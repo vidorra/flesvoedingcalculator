@@ -155,7 +155,7 @@ export default function GeldBesparenPage() {
                 </div>
               </div>
 
-              <div className="mt-4 p-3 bg-gray-50 rounded-lg border border-amber-200">
+              <div className="mt-4 p-3 bg-white rounded-lg border border-amber-200">
                 <p className="text-gray-700 text-sm">
                   <strong>Nibud Onderzoek:</strong> 40% Nederlandse gezinnen heeft moeite met 
                   baby-gerelateerde uitgaven in het eerste jaar.
@@ -174,7 +174,7 @@ export default function GeldBesparenPage() {
                     <div className="overflow-x-auto">
                       <table className="w-full text-sm bg-white border border-gray-200 rounded-lg">
                         <thead>
-                          <tr className="bg-gray-50">
+                          <tr className="bg-white">
                             <th className="text-left p-3 font-medium">Merk</th>
                             <th className="text-left p-3 font-medium">Per 800g</th>
                             <th className="text-left p-3 font-medium">Maandkosten</th>
@@ -183,7 +183,7 @@ export default function GeldBesparenPage() {
                         </thead>
                         <tbody>
                           {category.brands.map((brand, idx) => (
-                            <tr key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                            <tr key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-white"}>
                               <td className="p-3 font-medium">{brand.name}</td>
                               <td className="p-3">{brand.price}</td>
                               <td className="p-3">{brand.monthly}</td>
@@ -219,7 +219,7 @@ export default function GeldBesparenPage() {
                   <div key={index} className="p-4">
                     <div className="flex justify-between items-start mb-3">
                       <h3 className="font-semibold text-primary">{strategy.strategy}</h3>
-                      <span className="bg-gray-100 text-primary px-2 py-1 rounded text-sm font-medium">
+                      <span className="bg-white text-primary px-2 py-1 rounded text-sm font-medium">
                         {strategy.savings} besparing
                       </span>
                     </div>
@@ -251,7 +251,7 @@ export default function GeldBesparenPage() {
               <h2 className="text-lg font-semibold text-primary mb-4">Kwaliteit vs Prijs: EU Regulatie Reality Check</h2>
               
               <div className="mb-6">
-                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                <div className="bg-white rounded-lg p-4 border border-gray-200">
                   <h3 className="font-medium text-primary mb-3">Alle Flesvoeding in Nederland</h3>
                   <div className="grid md:grid-cols-2 gap-4 text-sm">
                     <div>
@@ -276,7 +276,7 @@ export default function GeldBesparenPage() {
                 </div>
               </div>
 
-              <div className="bg-gray-50 rounded-lg p-4">
+              <div className="bg-white rounded-lg p-4">
                 <h4 className="font-medium text-gray-600 mb-3"> Consumentenbond Test Resultaten 2024</h4>
                 <div className="text-sm text-gray-600 space-y-2">
                   <div><strong>Acceptatie test (200 baby's):</strong></div>
@@ -310,7 +310,7 @@ export default function GeldBesparenPage() {
                 ))}
               </div>
 
-              <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+              <div className="mt-6 p-4 bg-white rounded-lg border border-gray-200">
                 <h4 className="font-medium text-gray-600 mb-2"> Essential Money-Saving Apps</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
@@ -339,7 +339,7 @@ export default function GeldBesparenPage() {
               
               <div className="space-y-4">
                 {budgetBreakdown.map((budget, index) => (
-                  <div key={index} className={`border rounded-lg p-4 ${budget.realistic ? 'border-green-200 bg-green-50' : 'border-amber-200 bg-gray-50'}`}>
+                  <div key={index} className={`border rounded-lg p-4 ${budget.realistic ? 'border-green-200 bg-green-50' : 'border-amber-200 bg-white'}`}>
                     <div className="flex justify-between items-start mb-3">
                       <h3 className="font-semibold text-primary">{budget.scenario}</h3>
                       <div className="text-right">
@@ -379,7 +379,7 @@ export default function GeldBesparenPage() {
                 </div>
               </div>
 
-              <div className="p-4 bg-gray-50 rounded-lg">
+              <div className="p-4 bg-white rounded-lg">
                 <h4 className="font-medium text-gray-600 mb-2"> Health Impact van Foute Besparingen</h4>
                 <p className="text-sm text-gray-600">
                   Malnutrition, infection susceptibility, groei retardation, verteringsproblemen. 

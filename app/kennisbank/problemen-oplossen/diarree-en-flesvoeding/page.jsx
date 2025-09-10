@@ -125,7 +125,7 @@ export default function DiarreeEnFlesvoedingPage() {
                 Vroege herkenning en juiste behandeling zijn essentieel voor het welzijn van je baby en het voorkomen van dehydratie.
               </p>
               
-              <div className="mt-4 p-4 bg-gray-100 rounded-lg">
+              <div className="mt-4 p-4 bg-white rounded-lg">
                 <p className="text-sm text-gray-700">
                   <strong>Nederlandse statistiek:</strong> 60% infectieus, 25% voeding-gerelateerd, 
                   8% antibiotica gerelateerd. Meeste gevallen zijn zelf-limiterend binnen 3-7 dagen.
@@ -143,7 +143,7 @@ export default function DiarreeEnFlesvoedingPage() {
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Normale vs Abnormale Ontlasting</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-gray-50 rounded-lg p-4">
+                  <div className="bg-white rounded-lg p-4">
                     <h4 className="font-medium text-primary mb-3">Normale Flesvoeding Ontlasting:</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
@@ -290,14 +290,14 @@ export default function DiarreeEnFlesvoedingPage() {
               
               <div className="space-y-4">
                 {dehydratieSignalen.map((stadium, index) => (
-                  <div key={index} className="bg-gray-50 rounded-lg p-4">
+                  <div key={index} className="bg-white rounded-lg p-4">
                     <h3 className="font-medium text-primary mb-2">{stadium.ernst}</h3>
                     <p className="text-gray-700 text-sm">{stadium.symptomen}</p>
                   </div>
                 ))}
               </div>
               
-              <div className="mt-6 p-4 bg-gray-100 rounded-lg">
+              <div className="mt-6 p-4 bg-white rounded-lg">
                 <h4 className="font-medium text-gray-700 mb-2">Nederlandse ORS Opties</h4>
                 <p className="text-gray-700 text-sm mb-2">
                   <strong>Verkrijgbaar bij:</strong> apotheek (op recept vergoed), drogist, online
@@ -317,14 +317,14 @@ export default function DiarreeEnFlesvoedingPage() {
               
               <div className="space-y-4">
                 {medischeHulpCriteria.map((criterium, index) => (
-                  <div key={index} className="bg-gray-50 rounded-lg p-4">
+                  <div key={index} className="bg-white rounded-lg p-4">
                     <h3 className="font-medium text-primary mb-2">{criterium.urgentie}</h3>
                     <p className="text-gray-700 text-sm">{criterium.symptomen}</p>
                   </div>
                 ))}
               </div>
               
-              <div className="mt-6 p-4 bg-gray-100 rounded-lg">
+              <div className="mt-6 p-4 bg-white rounded-lg">
                 <h4 className="font-medium text-gray-700 mb-2">Nederlandse Hulpnummers</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
                   <div>
@@ -362,7 +362,7 @@ export default function DiarreeEnFlesvoedingPage() {
 
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Geleidelijke Herstart Flesvoeding</h3>
-                <div className="bg-gray-50 rounded-lg p-4">
+                <div className="bg-white rounded-lg p-4">
                   <p className="text-gray-700 text-sm mb-3"><strong>Stapsgewijze hervatting:</strong></p>
                   <ul className="space-y-1 text-sm text-gray-700">
                     <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Dag 1-2: Alleen ORS + water</span></li>
@@ -393,7 +393,7 @@ export default function DiarreeEnFlesvoedingPage() {
               
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Nederlandse Water Veiligheid</h3>
-                <div className="bg-gray-50 rounded-lg p-4">
+                <div className="bg-white rounded-lg p-4">
                   <p className="text-gray-700 text-sm">
                     <strong>Kraanwater is veilig</strong> in heel Nederland, maar kook het tot baby 6 maanden oud is. 
                     Geen additieven nodig - Nederlands water heeft uitstekende kwaliteit.
@@ -403,7 +403,7 @@ export default function DiarreeEnFlesvoedingPage() {
             </section>
 
             {/* Call to Action */}
-            <section className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <section className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
                 <Link 
                   href="/calculator"

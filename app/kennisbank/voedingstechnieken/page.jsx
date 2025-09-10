@@ -111,7 +111,7 @@ function VoedingstechniekenPage() {
         </div>
 
         {/* Responsive Feeding */}
-        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+        <div className="bg-white rounded-2xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
             <Heart className="w-5 h-5 mr-2" />
             Responsive Feeding
@@ -178,7 +178,7 @@ function VoedingstechniekenPage() {
         </div>
 
         {/* Binding during feeding */}
-        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+        <div className="bg-white rounded-2xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
             <Heart className="w-5 h-5 mr-2" />
             Binding tijdens flesvoeding
@@ -195,7 +195,7 @@ function VoedingstechniekenPage() {
         </div>
 
         {/* Temperature Control */}
-        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+        <div className="bg-white rounded-2xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
             <AlertTriangle className="w-5 h-5 mr-2" />
             Temperatuur Controle - Belangrijk!
@@ -282,7 +282,7 @@ function VoedingstechniekenPage() {
         </div>
 
         {/* First Time Feeding Guide */}
-        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+        <div className="bg-white rounded-2xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-primary mb-4">Je Eerste Fles: Stap-voor-Stap voor Beginners</h2>
           
           <div className="space-y-6">
@@ -388,7 +388,7 @@ function VoedingstechniekenPage() {
             Nederlandse richtlijnen wordt elke fles consistent en veilig.
           </p>
 
-          <div className="bg-gray-50 rounded-xl p-4 border border-gray-200 mb-6">
+          <div className="bg-white rounded-xl p-4 border border-gray-200 mb-6">
             <h3 className="text-primary font-semibold mb-3">🔄 Snelle stappen overzicht:</h3>
             <div className="grid md:grid-cols-3 gap-4">
               <div className="bg-white rounded-lg p-3">
@@ -411,7 +411,7 @@ function VoedingstechniekenPage() {
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div className="space-y-4">
               <h4 className="font-medium text-gray-700">Stap 1-4: Voorbereiding</h4>
-              <div className="bg-gray-50 rounded-xl p-4 border border-gray-200 space-y-2">
+              <div className="bg-white rounded-xl p-4 border border-gray-200 space-y-2">
                 <p className="text-gray-700"><strong>1. Was je handen</strong> grondig met warme zeep</p>
                 <p className="text-gray-700"><strong>2. Steriliseer fles en speen</strong> (eerste 6 maanden)</p>
                 <p className="text-gray-700"><strong>3. Kook water</strong> en laat afkoelen tot 70°C</p>
@@ -420,7 +420,7 @@ function VoedingstechniekenPage() {
             </div>
             <div className="space-y-4">
               <h4 className="font-medium text-gray-700">Stap 5-8: Mengen & Serveren</h4>
-              <div className="bg-gray-50 rounded-xl p-4 border border-gray-200 space-y-2">
+              <div className="bg-white rounded-xl p-4 border border-gray-200 space-y-2">
                 <p className="text-gray-700"><strong>5. Voeg poeder toe</strong> (1 lepel per 30ml)</p>
                 <p className="text-gray-700"><strong>6. Roer en schud</strong> tot volledig opgelost</p>
                 <p className="text-gray-700"><strong>7. Koel af</strong> tot 37°C (lichaamstemperatuur)</p>
@@ -429,7 +429,7 @@ function VoedingstechniekenPage() {
             </div>
           </div>
 
-          <div className="bg-gray-50 rounded-xl p-4 border border-gray-200 mb-6">
+          <div className="bg-white rounded-xl p-4 border border-gray-200 mb-6">
             <h3 className="text-primary font-semibold mb-3"> Belangrijke Nederlandse Context</h3>
             <div className="grid md:grid-cols-2 gap-4">
               <div>
@@ -482,7 +482,7 @@ function VoedingstechniekenPage() {
           <div className="overflow-x-auto mb-6">
             <table className="w-full text-sm bg-white border border-gray-200 rounded-lg">
               <thead>
-                <tr className="bg-gray-50">
+                <tr className="bg-white">
                   <th className="text-left p-3 font-medium">Merk</th>
                   <th className="text-left p-3 font-medium">Ratio</th>
                   <th className="text-left p-3 font-medium">Water</th>
@@ -496,7 +496,7 @@ function VoedingstechniekenPage() {
                   <td className="p-3">30ml</td>
                   <td className="p-3">1 gestreepte maatlepel</td>
                 </tr>
-                <tr className="border-t bg-gray-50">
+                <tr className="border-t bg-white">
                   <td className="p-3">Nutrilon, Hero Baby, Kruidvat</td>
                   <td className="p-3">1:30</td>
                   <td className="p-3">30ml</td>
@@ -507,7 +507,7 @@ function VoedingstechniekenPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
+            <div className="bg-white rounded-xl p-4 border border-gray-200">
               <h3 className="text-primary font-medium mb-2"> Veelgemaakte fouten:</h3>
               <ul className="text-gray-600 text-sm space-y-1">
                 <li className="flex items-center space-x-2">
@@ -533,7 +533,7 @@ function VoedingstechniekenPage() {
               </ul>
             </div>
             
-            <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
+            <div className="bg-white rounded-xl p-4 border border-gray-200">
               <h3 className="text-primary font-medium mb-2"> Tips voor success:</h3>
               <ul className="text-gray-600 text-sm space-y-1">
                 <li className="flex items-center space-x-2">

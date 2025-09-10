@@ -665,7 +665,7 @@ export default function OverstappenBorstNaarFlesPage() {
             </div>
 
             {/* Call to action */}
-            <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
                 <Link 
                   href="/calculator"

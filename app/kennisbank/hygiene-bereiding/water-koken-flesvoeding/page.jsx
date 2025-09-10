@@ -277,7 +277,7 @@ export default function WaterKokenFlesvoedingPage() {
 
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Nederlandse Kraanwaterkwaliteit</h3>
-                <div className="bg-gray-100 rounded-lg p-4">
+                <div className="bg-white rounded-lg p-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                     <div>
                       <div className="font-medium text-gray-700">Nitraat: &lt;50mg/L (EU-norm)</div>
@@ -363,7 +363,7 @@ export default function WaterKokenFlesvoedingPage() {
             </section>
 
             {/* FAQ Section */}
-            <section className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <section className="bg-white rounded-2xl border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde Vragen</h2>
               
               <div className="space-y-4">
@@ -390,7 +390,7 @@ export default function WaterKokenFlesvoedingPage() {
             </section>
 
             {/* Call to Action */}
-            <section className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <section className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
                 <Link 
                   href="/calculator"

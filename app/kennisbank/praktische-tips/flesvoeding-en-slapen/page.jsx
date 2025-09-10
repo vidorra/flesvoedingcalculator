@@ -133,7 +133,7 @@ export default function FlesvoedingEnSlapenPage() {
                 gemiddeld vanaf 3-4 maanden 6+ uur aaneengesloten slapen versus 4-5 uur bij borstvoeding.
               </p>
               
-              <div className="mt-4 p-4 bg-gray-100 rounded-lg">
+              <div className="mt-4 p-4 bg-white rounded-lg">
                 <p className="text-sm text-gray-700">
                   <strong>Nederlandse slaap data 2024:</strong> 85% flesvoeding baby's slaapt door op 6 maanden vs 70% borstvoeding. 
                   80% ouders rapporteert 6+ uur aaneengesloten slaap met flesvoeding routine.
@@ -162,7 +162,7 @@ export default function FlesvoedingEnSlapenPage() {
 
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Hormoon Interactie</h3>
-                <div className="bg-gray-50 rounded-lg p-4">
+                <div className="bg-white rounded-lg p-4">
                   <p className="text-gray-700 text-sm mb-2">
                     <strong>CCK (Cholecystokinine):</strong> Verhoogd na flesvoeding  verzadiging + slaperigheid 2-4 uur
                   </p>
@@ -185,7 +185,7 @@ export default function FlesvoedingEnSlapenPage() {
               
               <div className="space-y-4">
                 {leeftijdSpecifiekeSchemas.map((schema, index) => (
-                  <div key={index} className="bg-gray-50 rounded-lg p-4">
+                  <div key={index} className="bg-white rounded-lg p-4">
                     <h3 className="font-medium text-primary mb-3">{schema.leeftijd}</h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                       <div>
@@ -205,7 +205,7 @@ export default function FlesvoedingEnSlapenPage() {
                 ))}
               </div>
               
-              <div className="mt-6 p-4 bg-gray-100 rounded-lg">
+              <div className="mt-6 p-4 bg-white rounded-lg">
                 <h4 className="font-medium text-gray-700 mb-2">Perfecte Bedtijd Voeding</h4>
                 <p className="text-gray-700 text-sm">
                   <strong>Timing:</strong> 30-45 min voor gewenste slaaptijd  
@@ -221,7 +221,7 @@ export default function FlesvoedingEnSlapenPage() {
               
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Fysiologische Readiness Signalen</h3>
-                <div className="bg-gray-50 rounded-lg p-4 mb-6">
+                <div className="bg-white rounded-lg p-4 mb-6">
                   <p className="text-gray-700 text-sm mb-2"><strong>Biologische indicatoren:</strong></p>
                   <ul className="space-y-1 text-sm text-gray-700">
                     <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Gewicht &gt;5kg (voldoende reserves)</span></li>
@@ -264,7 +264,7 @@ export default function FlesvoedingEnSlapenPage() {
               
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Pre-Feed Routine (30 minuten voor bedtijd)</h3>
-                <div className="bg-gray-50 rounded-lg p-4">
+                <div className="bg-white rounded-lg p-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
                     <div>
                       <p><strong>Voorbereiding:</strong></p>
@@ -289,7 +289,7 @@ export default function FlesvoedingEnSlapenPage() {
               
               <div className="space-y-4">
                 {veelvoorkomendeProblemen.map((item, index) => (
-                  <div key={index} className="bg-gray-50 rounded-lg p-4">
+                  <div key={index} className="bg-white rounded-lg p-4">
                     <h3 className="font-medium text-primary mb-2">{item.probleem}</h3>
                     <p className="text-gray-700 text-sm mb-2"><strong>Mogelijke oorzaak:</strong> {item.oorzaak}</p>
                     <p className="text-gray-700 text-sm"><strong>Oplossing:</strong> {item.oplossing}</p>
@@ -297,7 +297,7 @@ export default function FlesvoedingEnSlapenPage() {
                 ))}
               </div>
               
-              <div className="mt-6 p-4 bg-gray-100 rounded-lg">
+              <div className="mt-6 p-4 bg-white rounded-lg">
                 <h4 className="font-medium text-gray-700 mb-2">Gas/Boertjes Verstoren Slaap</h4>
                 <p className="text-gray-700 text-sm">
                   <strong>Preventie:</strong> Anti-colic flessen, juiste temperatuur (37°C), pauzes tijdens voeding, 45° angle  
@@ -315,7 +315,7 @@ export default function FlesvoedingEnSlapenPage() {
               
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">0-8 Weken: Survival Mode</h3>
-                <div className="bg-gray-50 rounded-lg p-4 mb-6">
+                <div className="bg-white rounded-lg p-4 mb-6">
                   <p className="text-gray-700 text-sm mb-2"><strong>Realistische verwachtingen:</strong></p>
                   <p className="text-gray-700 text-sm mb-2">16-20 uur slaap/dag, max 2-4 uur aaneengesloten, 2-4x nachtvoeding normaal</p>
                   <p className="text-gray-700 text-sm"><strong>Strategie:</strong> Dag = licht, nacht = donker, minimal interaction 's nachts, partner shifts</p>
@@ -324,7 +324,7 @@ export default function FlesvoedingEnSlapenPage() {
 
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">4-6 Maanden: Sleep Training Window</h3>
-                <div className="bg-gray-50 rounded-lg p-4 mb-6">
+                <div className="bg-white rounded-lg p-4 mb-6">
                   <p className="text-gray-700 text-sm mb-2"><strong>Nederlandse sleep training voorkeur:</strong></p>
                   <ul className="space-y-1 text-sm text-gray-700">
                     <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Chair Method: Stoel naast bed, elke 3 dagen verder (2-3 weken)</span></li>
@@ -336,7 +336,7 @@ export default function FlesvoedingEnSlapenPage() {
 
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">6+ Maanden: Consistency & Maintenance</h3>
-                <div className="bg-gray-50 rounded-lg p-4">
+                <div className="bg-white rounded-lg p-4">
                   <p className="text-gray-700 text-sm">
                     <strong>Capaciteiten:</strong> 10-12 uur doorslapen mogelijk, geen nachtvoeding nodig, 3-4x overdag voldoende  
                     <strong>Challenges:</strong> Tandje komen, travel adaptations, daycare coordination
@@ -369,7 +369,7 @@ export default function FlesvoedingEnSlapenPage() {
             </section>
 
             {/* Call to Action */}
-            <section className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <section className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
                 <Link 
                   href="/calculator"

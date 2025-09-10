@@ -66,7 +66,7 @@ export default function KostenVanFlesvoeding() {
               <div className="overflow-x-auto mb-6">
                 <table className="w-full border-collapse border border-gray-300">
                   <thead>
-                    <tr className="bg-gray-50">
+                    <tr className="bg-white">
                       <th className="border border-gray-300 px-4 py-2 text-left">Categorie</th>
                       <th className="border border-gray-300 px-4 py-2 text-left">Budget optie</th>
                       <th className="border border-gray-300 px-4 py-2 text-left">Gemiddeld</th>
@@ -80,7 +80,7 @@ export default function KostenVanFlesvoeding() {
                       <td className="border border-gray-300 px-4 py-2">€650-800</td>
                       <td className="border border-gray-300 px-4 py-2">€850-1000</td>
                     </tr>
-                    <tr className="bg-gray-50">
+                    <tr className="bg-white">
                       <td className="border border-gray-300 px-4 py-2 font-semibold">Flessen & spenen</td>
                       <td className="border border-gray-300 px-4 py-2">€40-60</td>
                       <td className="border border-gray-300 px-4 py-2">€80-120</td>
@@ -92,7 +92,7 @@ export default function KostenVanFlesvoeding() {
                       <td className="border border-gray-300 px-4 py-2">€60-100</td>
                       <td className="border border-gray-300 px-4 py-2">€120-180</td>
                     </tr>
-                    <tr className="bg-gray-50">
+                    <tr className="bg-white">
                       <td className="border border-gray-300 px-4 py-2 font-semibold">Accessoires</td>
                       <td className="border border-gray-300 px-4 py-2">€30-50</td>
                       <td className="border border-gray-300 px-4 py-2">€70-100</td>
@@ -363,7 +363,7 @@ export default function KostenVanFlesvoeding() {
                   <div className="overflow-x-auto">
                     <table className="w-full border-collapse border border-gray-300">
                       <thead>
-                        <tr className="bg-gray-50">
+                        <tr className="bg-white">
                           <th className="border border-gray-300 px-4 py-2 text-left">Merk</th>
                           <th className="border border-gray-300 px-4 py-2 text-left">Starterset</th>
                           <th className="border border-gray-300 px-4 py-2 text-left">Per fles</th>
@@ -377,7 +377,7 @@ export default function KostenVanFlesvoeding() {
                           <td className="border border-gray-300 px-4 py-2">€4</td>
                           <td className="border border-gray-300 px-4 py-2">€1.50</td>
                         </tr>
-                        <tr className="bg-gray-50">
+                        <tr className="bg-white">
                           <td className="border border-gray-300 px-4 py-2">MAM</td>
                           <td className="border border-gray-300 px-4 py-2">€60 (4 flessen)</td>
                           <td className="border border-gray-300 px-4 py-2">€12</td>
@@ -389,7 +389,7 @@ export default function KostenVanFlesvoeding() {
                           <td className="border border-gray-300 px-4 py-2">€15</td>
                           <td className="border border-gray-300 px-4 py-2">€3.00</td>
                         </tr>
-                        <tr className="bg-gray-50">
+                        <tr className="bg-white">
                           <td className="border border-gray-300 px-4 py-2">Dr Brown's</td>
                           <td className="border border-gray-300 px-4 py-2">€80 (4 flessen)</td>
                           <td className="border border-gray-300 px-4 py-2">€18</td>
@@ -493,7 +493,7 @@ export default function KostenVanFlesvoeding() {
               <div className="overflow-x-auto mb-6">
                 <table className="w-full border-collapse border border-gray-300">
                   <thead>
-                    <tr className="bg-gray-50">
+                    <tr className="bg-white">
                       <th className="border border-gray-300 px-4 py-2 text-left">Winkel</th>
                       <th className="border border-gray-300 px-4 py-2 text-left">Prijs/blik</th>
                       <th className="border border-gray-300 px-4 py-2 text-left">Voordeel</th>
@@ -507,7 +507,7 @@ export default function KostenVanFlesvoeding() {
                       <td className="border border-gray-300 px-4 py-2">Goedkoopst</td>
                       <td className="border border-gray-300 px-4 py-2">Beperkt assortiment</td>
                     </tr>
-                    <tr className="bg-gray-50">
+                    <tr className="bg-white">
                       <td className="border border-gray-300 px-4 py-2 font-semibold">Kruidvat</td>
                       <td className="border border-gray-300 px-4 py-2">€12-16</td>
                       <td className="border border-gray-300 px-4 py-2">Eigen merk + acties</td>
@@ -519,7 +519,7 @@ export default function KostenVanFlesvoeding() {
                       <td className="border border-gray-300 px-4 py-2">Groot assortiment</td>
                       <td className="border border-gray-300 px-4 py-2">Duurder</td>
                     </tr>
-                    <tr className="bg-gray-50">
+                    <tr className="bg-white">
                       <td className="border border-gray-300 px-4 py-2 font-semibold">Jumbo</td>
                       <td className="border border-gray-300 px-4 py-2">€16-22</td>
                       <td className="border border-gray-300 px-4 py-2">Goede acties</td>
@@ -531,7 +531,7 @@ export default function KostenVanFlesvoeding() {
                       <td className="border border-gray-300 px-4 py-2">Groot assortiment</td>
                       <td className="border border-gray-300 px-4 py-2">Verzendkosten</td>
                     </tr>
-                    <tr className="bg-gray-50">
+                    <tr className="bg-white">
                       <td className="border border-gray-300 px-4 py-2 font-semibold">Drogisterij.net</td>
                       <td className="border border-gray-300 px-4 py-2">€14-19</td>
                       <td className="border border-gray-300 px-4 py-2">Online voordeel</td>

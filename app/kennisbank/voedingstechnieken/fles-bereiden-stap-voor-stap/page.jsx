@@ -148,7 +148,7 @@ export default function FlesBerenStapVoorStap() {
               <div className="mb-6">
                 <h3 className="text-2xl font-semibold text-primary mb-4">Water: De basis van goede flesvoeding</h3>
                 
-                <div className="bg-gray-50 p-6 mb-6">
+                <div className="bg-white p-6 mb-6">
                   <h4 className="font-semibold text-primary mb-3">Nederlands kraanwater: Uitstekend geschikt </h4>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
@@ -240,7 +240,7 @@ export default function FlesBerenStapVoorStap() {
                   </div>
                 </div>
 
-                <div className="bg-gray-50 p-4 mt-6">
+                <div className="bg-white p-4 mt-6">
                   <p className="text-gray-700">
                     <strong>Belangrijke uitzondering</strong>: Gebruik nooit water uit de warmwater boiler - dit kan bacteriën bevatten zoals Legionella.
                   </p>
@@ -305,7 +305,7 @@ export default function FlesBerenStapVoorStap() {
                 <div>
                   <h3 className="text-2xl font-semibold text-primary mb-4">Stap 2: Poeder toevoegen - De kritieke fase</h3>
                   
-                  <div className="bg-gray-50 p-6 mb-6">
+                  <div className="bg-white p-6 mb-6">
                     <h4 className="font-semibold text-primary mb-3">Poeder afmeten - Nauwkeurigheid is cruciaal </h4>
                     
                     <div className="grid md:grid-cols-2 gap-6">
@@ -431,7 +431,7 @@ export default function FlesBerenStapVoorStap() {
                 <div>
                   <h3 className="text-2xl font-semibold text-primary mb-4">Stap 4: Temperatuur finale controle</h3>
                   
-                  <div className="bg-gray-50 p-6 mb-6">
+                  <div className="bg-white p-6 mb-6">
                     <h4 className="font-semibold text-primary mb-3">Eindtemperatuur: 37°C (lichaamstemperatuur) </h4>
                     
                     <h5 className="font-semibold text-primary mb-2">Controlmethoden rangschikking:</h5>
@@ -456,7 +456,7 @@ export default function FlesBerenStapVoorStap() {
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-gray-50 p-6">
+                    <div className="bg-white p-6">
                       <h4 className="font-semibold text-primary mb-3">Te heet - wat doen? </h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
@@ -478,7 +478,7 @@ export default function FlesBerenStapVoorStap() {
                       </ul>
                     </div>
 
-                    <div className="bg-gray-50 p-6">
+                    <div className="bg-white p-6">
                       <h4 className="font-semibold text-primary mb-3">Te koud - snel opwarmen </h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
@@ -512,7 +512,7 @@ export default function FlesBerenStapVoorStap() {
                   <h3 className="text-2xl font-semibold text-primary mb-4">Veelvoorkomende fouten voorkomen</h3>
                   
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-gray-50 p-6">
+                    <div className="bg-white p-6">
                       <h4 className="font-semibold text-primary mb-3">Dosering fouten - Ernstige gevolgen </h4>
                       <ul className="space-y-2">
                         <li className="flex items-start space-x-2">
@@ -534,7 +534,7 @@ export default function FlesBerenStapVoorStap() {
                       </ul>
                     </div>
 
-                    <div className="bg-gray-50 p-6">
+                    <div className="bg-white p-6">
                       <h4 className="font-semibold text-primary mb-3">Temperatuur gevaren </h4>
                       <ul className="space-y-2">
                         <li className="flex items-start space-x-2">
@@ -607,7 +607,7 @@ export default function FlesBerenStapVoorStap() {
                 </div>
               </div>
 
-              <div className="bg-gray-50 p-6 mt-6">
+              <div className="bg-white p-6 mt-6">
                 <h4 className="font-semibold text-primary mb-3">Maak nieuwe fles bij:</h4>
                 <ul className="space-y-2">
                   <li className="flex items-center space-x-2">
@@ -668,7 +668,7 @@ export default function FlesBerenStapVoorStap() {
             <section className="mb-8">
               <h2 className="text-3xl font-semibold text-primary mb-6">Conclusie: Routine ontwikkelen voor perfecte bereiding</h2>
               
-              <div className="bg-gray-50 p-6 mb-6">
+              <div className="bg-white p-6 mb-6">
                 <h4 className="font-semibold text-primary mb-3">Het leerproces:</h4>
                 <ul className="space-y-2 mb-4">
                   <li className="flex items-center space-x-2">
@@ -710,7 +710,7 @@ export default function FlesBerenStapVoorStap() {
                 </ul>
               </div>
 
-              <div className="bg-gray-50 p-6">
+              <div className="bg-white p-6">
                 <p className="text-gray-700 mb-4">
                   <strong>Onthoudt</strong>: Een perfect bereide fles is liefde in actie. Je geeft je baby niet alleen voeding, maar ook veiligheid en zorg. Elke keer dat je zorgvuldig een fles bereidt, investeer je in de gezondheid en het welzijn van je kindje.
                 </p>

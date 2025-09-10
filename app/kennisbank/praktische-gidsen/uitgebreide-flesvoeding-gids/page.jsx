@@ -45,7 +45,7 @@ export default function UitgebreideFlesvoedingGids() {
           </div>
 
           {/* Table of Contents */}
-          <div className="mb-12 bg-gray-50 rounded-xl p-6">
+          <div className="mb-12 bg-white rounded-xl p-6">
             <h2 className="text-lg font-semibold text-primary mb-4">Inhoudsopgave</h2>
             <nav className="space-y-2">
               <a href="#geld-besparen" className="block text-gray-600 hover:text-gray-700 font-medium">

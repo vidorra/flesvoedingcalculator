@@ -221,7 +221,7 @@ export default function ProblemenOplossenPage() {
         </div>
 
         {/* Diarrhea */}
-        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+        <div className="bg-white rounded-2xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
             <Phone className="w-5 h-5 mr-2" />
             Diarree - Wanneer arts bellen

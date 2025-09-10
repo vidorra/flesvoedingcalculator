@@ -104,7 +104,7 @@ export default function VoedingstechniekenPage() {
         </div>
 
         {/* Responsive Feeding */}
-        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+        <div className="bg-white rounded-2xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-700 mb-4 flex items-center">
             <Heart className="w-5 h-5 mr-2" />
             Responsive Feeding

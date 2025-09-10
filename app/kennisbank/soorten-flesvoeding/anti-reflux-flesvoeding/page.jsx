@@ -137,7 +137,7 @@ export default function AntiRefluxPage() {
                 Bij baby's is dit vaak normaal vanwege hun nog onderontwikkelde spijsverteringssysteem.
               </p>
               
-              <div className="border border-gray-200 bg-gray-50 rounded-xl p-4">
+              <div className="border border-gray-200 bg-white rounded-xl p-4">
                 <h3 className="font-medium text-primary mb-3">Normale vs Problematische Reflux:</h3>
                 <div className="space-y-2 text-sm">
                   <div className="flex items-center space-x-2 text-gray-700">
@@ -171,7 +171,7 @@ export default function AntiRefluxPage() {
                   <span className="font-medium text-gray-700">3-5%</span>
                   <span className="text-sm text-gray-600">heeft ernstige reflux (GERD)</span>
                 </div>
-                <div className="p-3 border border-gray-200 bg-gray-50 rounded-lg">
+                <div className="p-3 border border-gray-200 bg-white rounded-lg">
                   <div className="font-medium text-gray-700">80%</div>
                   <div className="text-sm text-gray-600">verbetert vanzelf binnen 12 maanden</div>
                 </div>
@@ -187,9 +187,9 @@ export default function AntiRefluxPage() {
           <div className="space-y-3">
             {refluxSigns.map((item, index) => {
               const severityColors = {
-                mild: 'border border-gray-200 bg-gray-50 text-primary',
-                moderate: 'border border-gray-200 bg-gray-50 text-primary', 
-                severe: 'border border-gray-200 bg-gray-50 text-primary'
+                mild: 'border border-gray-200 bg-white text-primary',
+                moderate: 'border border-gray-200 bg-white text-primary', 
+                severe: 'border border-gray-200 bg-white text-primary'
               }
               
               return (
@@ -210,7 +210,7 @@ export default function AntiRefluxPage() {
             })}
           </div>
           
-          <div className="mt-4 p-4 border border-gray-200 bg-gray-50 rounded-xl">
+          <div className="mt-4 p-4 border border-gray-200 bg-white rounded-xl">
             <h4 className="font-medium text-primary mb-2">Belangrijk om te weten:</h4>
             <p className="text-sm text-gray-600">
               Niet alle baby's die spugen hebben reflux. Sommige baby's zijn gewoon "happy spitters" - 
@@ -276,7 +276,7 @@ export default function AntiRefluxPage() {
             ))}
           </div>
           
-          <div className="mt-4 p-4 border border-gray-200 bg-gray-50 rounded-xl">
+          <div className="mt-4 p-4 border border-gray-200 bg-white rounded-xl">
             <h4 className="font-medium text-primary mb-2">Kostenvergelijking per maand:</h4>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
               <div className="text-center">
@@ -307,7 +307,7 @@ export default function AntiRefluxPage() {
               <div key={index} className="">
                 <div className="flex justify-between items-start mb-3">
                   <h3 className="font-medium text-gray-700">{technique.technique}</h3>
-                  <span className="text-sm bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
+                  <span className="text-sm bg-white text-gray-600 px-2 py-1 rounded-full">
                     {technique.effectiveness}
                   </span>
                 </div>
@@ -404,7 +404,7 @@ export default function AntiRefluxPage() {
         </div>
 
         {/* When to See Doctor */}
-        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+        <div className="bg-white rounded-2xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
             <AlertTriangle className="w-5 h-5 mr-2" />
             Wanneer naar de Dokter?
@@ -474,25 +474,25 @@ export default function AntiRefluxPage() {
           <h2 className="text-lg font-semibold text-primary mb-4">Verwachtingen: Wanneer Verbetering?</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
+            <div className="border border-gray-200 bg-white rounded-lg p-4">
               <h3 className="font-medium text-gray-700">Week 1-2</h3>
               <p className="text-sm text-gray-600">AR voeding uitproberen, voedingstechniek aanpassen</p>
             </div>
-            <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
+            <div className="border border-gray-200 bg-white rounded-lg p-4">
               <h3 className="font-medium text-gray-700">Week 3-4</h3>
               <p className="text-sm text-gray-600">Eerste verbetering zichtbaar, minder spugen</p>
             </div>
-            <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
+            <div className="border border-gray-200 bg-white rounded-lg p-4">
               <h3 className="font-medium text-gray-700">Maand 2-3</h3>
               <p className="text-sm text-gray-600">Duidelijke verbetering, baby rustiger</p>
             </div>
-            <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
+            <div className="border border-gray-200 bg-white rounded-lg p-4">
               <h3 className="font-medium text-gray-700">Maand 6-12</h3>
               <p className="text-sm text-gray-600">Reflux verdwijnt meestal vanzelf</p>
             </div>
           </div>
           
-          <div className="mt-4 p-4 bg-gray-100 rounded-lg">
+          <div className="mt-4 p-4 bg-white rounded-lg">
             <h4 className="font-medium text-primary mb-2">Realistische verwachtingen:</h4>
             <p className="text-sm text-gray-700">
               AR voeding vermindert spugen met 70-85%, maar elimineert het zelden volledig. 
@@ -514,7 +514,7 @@ export default function AntiRefluxPage() {
           </p>
           <Link 
             href="/"
-            className="inline-flex items-center space-x-2 bg-white text-primary px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors font-medium"
+            className="inline-flex items-center space-x-2 bg-white text-primary px-4 py-2 rounded-lg hover:bg-white transition-colors font-medium"
           >
             <Calculator className="w-4 h-4" />
             <span>Naar Reflux Calculator</span>
@@ -522,7 +522,7 @@ export default function AntiRefluxPage() {
         </div>
 
         {/* Success Stories */}
-        <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+        <div className="bg-white rounded-2xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-primary mb-4">Success Stories van Ouders</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

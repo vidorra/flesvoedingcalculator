@@ -116,7 +116,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
               <span>95% van baby's groeit gezond op met flesvoeding</span>
             </div>
             
-            <div className="mt-4 p-4 bg-gray-50 rounded-lg">
+            <div className="mt-4 p-4 bg-white rounded-lg">
               <h3 className="font-semibold text-primary mb-2">Belangrijke waarheid vooraf:</h3>
               <ul className="space-y-1 text-sm text-gray-700">
                 <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span><strong>95% van baby's</strong> groeit gezond op met flesvoeding</span></li>

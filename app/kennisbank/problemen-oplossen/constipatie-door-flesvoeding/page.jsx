@@ -98,7 +98,7 @@ export default function ConstipatieFlespagePage() {
                 </div>
               </div>
 
-              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mt-4">
+              <div className="bg-white border border-gray-200 rounded-lg p-4 mt-4">
                 <h3 className="font-medium text-gray-700 mb-2">Niet constipatie:</h3>
                 <ul className="space-y-1">
                   <li className="flex items-center space-x-2">
@@ -499,7 +499,7 @@ export default function ConstipatieFlespagePage() {
                 </div>
               </div>
 
-              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mt-4">
+              <div className="bg-white border border-gray-200 rounded-lg p-4 mt-4">
                 <h3 className="font-medium text-gray-700 mb-2">Key reminders:</h3>
                 <ul className="space-y-1">
                   <li className="flex items-center space-x-2">
@@ -515,7 +515,7 @@ export default function ConstipatieFlespagePage() {
             </div>
 
             {/* Call to action */}
-            <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
                 <Link 
                   href="/calculator"

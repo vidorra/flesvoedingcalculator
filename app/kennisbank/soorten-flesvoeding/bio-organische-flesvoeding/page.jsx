@@ -148,7 +148,7 @@ export default function BioOrganischeFlesvoedingPage() {
                 Met 280.000 Nederlandse baby's die bio voeding krijgen, is het belangrijk om de juiste keuze te maken.
               </p>
               
-              <div className="mt-4 p-4 bg-gray-100 rounded-lg">
+              <div className="mt-4 p-4 bg-white rounded-lg">
                 <p className="text-sm text-gray-700">
                   <strong>Nederlandse markt 2025:</strong> €95 miljoen jaarlijkse omzet, 95% supermarkt beschikbaarheid, 
                   gemiddelde kosten €18-35 per week vs €12-22 regulier.
@@ -232,7 +232,7 @@ export default function BioOrganischeFlesvoedingPage() {
               
               <div className="space-y-4">
                 {nederlandseBioMerken.map((merk, index) => (
-                  <div key={index} className="bg-gray-50 rounded-lg p-4">
+                  <div key={index} className="bg-white rounded-lg p-4">
                     <div className="flex justify-between items-start mb-2">
                       <h3 className="font-medium text-gray-700">{merk.merk}</h3>
                       <span className="text-sm text-gray-600 font-medium">{merk.prijs}</span>
@@ -244,7 +244,7 @@ export default function BioOrganischeFlesvoedingPage() {
                 ))}
               </div>
               
-              <div className="mt-6 p-4 bg-gray-100 rounded-lg">
+              <div className="mt-6 p-4 bg-white rounded-lg">
                 <h4 className="font-medium text-gray-700 mb-2">Nederlandse Top 3 Aanbevelingen</h4>
                 <p className="text-gray-700 text-sm">
                   <strong>Premium:</strong> HiPP (beste overall kwaliteit)  
@@ -276,7 +276,7 @@ export default function BioOrganischeFlesvoedingPage() {
                   ))}
                 </ul>
                 
-                <div className="bg-gray-50 rounded-lg p-4">
+                <div className="bg-white rounded-lg p-4">
                   <h4 className="font-medium text-gray-700 mb-2">Lange Termijn Impact</h4>
                   <p className="text-gray-700 text-sm">
                     Wageningen University 5-jaar follow-up studie: Bio groep had 19% minder antibiotica gebruik, 
@@ -321,7 +321,7 @@ export default function BioOrganischeFlesvoedingPage() {
 
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Potentiële Besparingen & ROI</h3>
-                <div className="bg-gray-50 rounded-lg p-4">
+                <div className="bg-white rounded-lg p-4">
                   <p className="text-gray-700 text-sm mb-3">
                     <strong>Gezondheidszorg besparingen:</strong> Families met bio kinderen bezoeken gemiddeld 30% minder vaak de dokter.
                   </p>
@@ -346,15 +346,15 @@ export default function BioOrganischeFlesvoedingPage() {
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Geleidelijke Overstap (Aanbevolen)</h3>
                 <div className="space-y-4">
-                  <div className="bg-gray-50 rounded-lg p-4">
+                  <div className="bg-white rounded-lg p-4">
                     <h4 className="font-medium text-gray-700 mb-2">Week 1-2: Kennismaking</h4>
                     <p className="text-gray-700 text-sm">25% bio + 75% regulier per fles, test acceptatie en allergische reacties</p>
                   </div>
-                  <div className="bg-gray-50 rounded-lg p-4">
+                  <div className="bg-white rounded-lg p-4">
                     <h4 className="font-medium text-gray-700 mb-2">Week 3-4: Verhogen</h4>
                     <p className="text-gray-700 text-sm">50% bio + 50% regulier per fles, monitor welzijn en acceptatie</p>
                   </div>
-                  <div className="bg-gray-50 rounded-lg p-4">
+                  <div className="bg-white rounded-lg p-4">
                     <h4 className="font-medium text-gray-700 mb-2">Week 5-6: Voltooien</h4>
                     <p className="text-gray-700 text-sm">75% bio  100% bio, volledige overgang afgerond</p>
                   </div>
@@ -400,7 +400,7 @@ export default function BioOrganischeFlesvoedingPage() {
             </section>
 
             {/* Call to Action */}
-            <section className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <section className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
                 <Link 
                   href="/calculator"

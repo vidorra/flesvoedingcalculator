@@ -466,7 +466,7 @@ export default function VoedingsritmeOpbouwenPage() {
                 <h3 className="font-medium text-primary mb-3">Bewezen Voordelen van een Vast Ritme:</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {benefits.map((benefit, index) => (
-                    <div key={index} className="flex justify-between items-center p-3 border border-gray-200 bg-gray-50 rounded-lg">
+                    <div key={index} className="flex justify-between items-center p-3 border border-gray-200 bg-white rounded-lg">
                       <span className="font-medium text-gray-700">{benefit.stat}</span>
                       <span className="text-sm text-gray-700">{benefit.description}</span>
                     </div>
@@ -474,7 +474,7 @@ export default function VoedingsritmeOpbouwenPage() {
                 </div>
               </div>
               
-              <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
+              <div className="p-4 border border-gray-200 bg-white rounded-xl">
                 <p className="text-sm text-gray-700">
                   <strong>Onderzoek van de Vrije Universiteit Amsterdam</strong> toont aan dat baby's 
                   met een vast voedingsritme vanaf 8 weken 2 uur langer doorslapen dan baby's zonder routine.
@@ -494,7 +494,7 @@ export default function VoedingsritmeOpbouwenPage() {
                   <div key={index}>
                     <div className="flex items-center justify-between mb-4">
                       <h3 className="font-medium text-gray-900">{ageGroup.age}</h3>
-                      <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
+                      <span className="text-xs bg-white text-gray-700 px-2 py-1 rounded-full">
                         {ageGroup.phase}
                       </span>
                     </div>
@@ -535,7 +535,7 @@ export default function VoedingsritmeOpbouwenPage() {
                     </div>
                     
                     {ageGroup.tip && (
-                      <div className="p-3 border border-gray-200 bg-gray-50 rounded-lg">
+                      <div className="p-3 border border-gray-200 bg-white rounded-lg">
                         <p className="text-sm text-gray-700">
                           <strong>Tip:</strong> {ageGroup.tip}
                         </p>
@@ -562,7 +562,7 @@ export default function VoedingsritmeOpbouwenPage() {
                   <div key={index}>
                     <div className="flex items-center justify-between mb-3">
                       <h3 className="font-medium text-gray-900">{step.period}</h3>
-                      <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
+                      <span className="text-xs bg-white text-gray-700 px-2 py-1 rounded-full">
                         {step.phase}
                       </span>
                     </div>
@@ -580,7 +580,7 @@ export default function VoedingsritmeOpbouwenPage() {
                     </div>
                     
                     {step.example && (
-                      <div className="p-3 border border-gray-200 bg-gray-50 rounded-lg mb-4">
+                      <div className="p-3 border border-gray-200 bg-white rounded-lg mb-4">
                         <h4 className="font-medium text-primary mb-1">Dagboek Voorbeeld:</h4>
                         <p className="text-sm text-gray-700 font-mono">{step.example}</p>
                       </div>
@@ -736,7 +736,7 @@ export default function VoedingsritmeOpbouwenPage() {
                         <h4 className="font-medium text-primary mb-2">Werkdag Schema:</h4>
                         <div className="space-y-2">
                           {challenge.workdaySchedule.map((item, itemIndex) => (
-                            <div key={itemIndex} className="flex justify-between items-center text-sm p-2 border border-gray-200 bg-gray-50 rounded">
+                            <div key={itemIndex} className="flex justify-between items-center text-sm p-2 border border-gray-200 bg-white rounded">
                               <span className="font-medium text-gray-700">{item.time}</span>
                               <span className="text-gray-600">{item.activity}</span>
                             </div>
@@ -849,7 +849,7 @@ export default function VoedingsritmeOpbouwenPage() {
             </div>
 
             {/* Growth Adjustments */}
-            <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <div className="bg-white rounded-2xl border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4">Schema Aanpassingen per Ontwikkelingsfase</h2>
               
               <div className="space-y-6">
@@ -977,7 +977,7 @@ export default function VoedingsritmeOpbouwenPage() {
                         <h4 className="font-medium text-primary mb-2">Sociale Activiteiten:</h4>
                         <div className="space-y-2">
                           {aspect.socialActivities.map((activity, actIndex) => (
-                            <div key={actIndex} className="text-sm text-gray-700 p-2 border border-gray-200 bg-gray-50 rounded font-mono">
+                            <div key={actIndex} className="text-sm text-gray-700 p-2 border border-gray-200 bg-white rounded font-mono">
                               {activity}
                             </div>
                           ))}
@@ -1005,7 +1005,7 @@ export default function VoedingsritmeOpbouwenPage() {
                   <h3 className="font-medium text-primary mb-3">6-12 Maanden Vooruitzicht</h3>
                   <div className="space-y-2">
                     {longTermPerspective.evolution.map((evolution, index) => (
-                      <div key={index} className="text-sm text-gray-700 p-2 border border-gray-200 bg-gray-50 rounded">
+                      <div key={index} className="text-sm text-gray-700 p-2 border border-gray-200 bg-white rounded">
                         {evolution}
                       </div>
                     ))}
@@ -1066,13 +1066,13 @@ export default function VoedingsritmeOpbouwenPage() {
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
+                <div className="p-4 border border-gray-200 bg-white rounded-xl">
                   <p className="text-sm text-gray-700">
                     <strong>Onthoud:</strong> Het doel is niet een perfect schema, maar een 
                     <strong>voorspelbare routine</strong> die werkt voor jouw gezin.
                   </p>
                 </div>
-                <div className="p-4 border border-gray-200 bg-gray-50 rounded-xl">
+                <div className="p-4 border border-gray-200 bg-white rounded-xl">
                   <p className="text-sm text-gray-700">
                     <strong>Start klein,</strong> bouw geleidelijk op, en <strong>vier kleine 
                     overwinningen</strong>. Voor je het weet heb je een routine die iedereen helpt 

@@ -128,7 +128,7 @@ export default function TweelingVoedenPage() {
                 Dit vraagt om slimme strategieën en de juiste aanpak.
               </p>
               
-              <div className="border border-gray-200 bg-gray-50 rounded-xl p-4">
+              <div className="border border-gray-200 bg-white rounded-xl p-4">
                 <h3 className="font-medium text-primary mb-3">Nederlandse cijfers tweeling flesvoeding:</h3>
                 <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center space-x-2">
@@ -150,15 +150,15 @@ export default function TweelingVoedenPage() {
             <div>
               <h3 className="font-medium text-primary mb-3">Voordelen specifiek voor tweeling:</h3>
               <div className="space-y-3">
-                <div className="p-3 border border-gray-200 bg-gray-50 rounded-lg">
+                <div className="p-3 border border-gray-200 bg-white rounded-lg">
                   <h4 className="font-medium text-gray-700">Synchroon voeden mogelijk</h4>
                   <p className="text-sm text-gray-600">Beide baby's tegelijk voeden bespaart enorm veel tijd</p>
                 </div>
-                <div className="p-3 border border-gray-200 bg-gray-50 rounded-lg">
+                <div className="p-3 border border-gray-200 bg-white rounded-lg">
                   <h4 className="font-medium text-gray-700">Meetbare inname per baby</h4>
                   <p className="text-sm text-gray-600">Precies bijhouden hoeveel elke baby drinkt</p>
                 </div>
-                <div className="p-3 border border-gray-200 bg-gray-50 rounded-lg">
+                <div className="p-3 border border-gray-200 bg-white rounded-lg">
                   <h4 className="font-medium text-gray-700">Verdeling van nachtvoedingen</h4>
                   <p className="text-sm text-gray-600">Partner kan helpen met voedingen</p>
                 </div>
@@ -173,7 +173,7 @@ export default function TweelingVoedenPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {practicalHacks.map((hack, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-4">
+              <div key={index} className="bg-white rounded-xl p-4">
                 <h3 className="font-medium text-primary mb-2">{hack.title}</h3>
                 <p className="text-sm text-gray-600 font-medium mb-3">{hack.description}</p>
                 <ul className="space-y-2">
@@ -194,7 +194,7 @@ export default function TweelingVoedenPage() {
           <h2 className="text-lg font-semibold text-primary mb-4">Tijdsbesparing: Van 12 naar 5 Uur per Dag</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="border border-gray-200 bg-gray-50 rounded-xl p-4">
+            <div className="border border-gray-200 bg-white rounded-xl p-4">
               <h3 className="font-medium text-primary mb-3">Traditionele methode (1 voor 1):</h3>
               <div className="space-y-2 text-sm text-gray-600">
                 <div>Voeding klaarmaken: 10 min × 16 = <strong>160 min</strong></div>
@@ -204,7 +204,7 @@ export default function TweelingVoedenPage() {
               </div>
             </div>
             
-            <div className="border border-gray-200 bg-gray-50 rounded-xl p-4">
+            <div className="border border-gray-200 bg-white rounded-xl p-4">
               <h3 className="font-medium text-primary mb-3">Geoptimaliseerde methode:</h3>
               <div className="space-y-2 text-sm text-gray-600">
                 <div>Batch klaarmaken: <strong>45 min</strong> per dag</div>
@@ -246,7 +246,7 @@ export default function TweelingVoedenPage() {
           ))}
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-            <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
+            <div className="border border-gray-200 bg-white rounded-lg p-4">
               <h4 className="font-medium text-primary mb-2">Starter pakket (€200-300):</h4>
               <ul className="text-sm text-gray-600 space-y-1">
                 <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>16 flessen: €60-80</span></li>
@@ -256,7 +256,7 @@ export default function TweelingVoedenPage() {
                 <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Accessoires: €30-50</span></li>
               </ul>
             </div>
-            <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
+            <div className="border border-gray-200 bg-white rounded-lg p-4">
               <h4 className="font-medium text-primary mb-2">Premium pakket (€400-600):</h4>
               <ul className="text-sm text-gray-600 space-y-1">
                 <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Hoogwaardige flessen: €120</span></li>
@@ -297,7 +297,7 @@ export default function TweelingVoedenPage() {
             </table>
           </div>
           
-          <div className="mt-4 p-3 bg-gray-50 rounded-lg">
+          <div className="mt-4 p-3 bg-white rounded-lg">
             <p className="text-sm text-gray-600">
               <strong>Totaal per dag:</strong> 1720ml (860ml per baby)  
               <strong>Tip:</strong> Flexibiliteit binnen 30 minuten is prima
@@ -348,7 +348,7 @@ export default function TweelingVoedenPage() {
                 <h3 className="font-medium text-primary mb-3">{budget.category}</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
                   {budget.periods.map((period, periodIndex) => (
-                    <div key={periodIndex} className="bg-gray-50 rounded-lg p-3">
+                    <div key={periodIndex} className="bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">{period.age}</div>
                       <div className="text-gray-700 font-medium">{period.cost}</div>
                       <div className="text-xs text-gray-600">{period.details}</div>
@@ -362,7 +362,7 @@ export default function TweelingVoedenPage() {
             ))}
           </div>
           
-          <div className="mt-6 border border-gray-200 bg-gray-50 rounded-xl p-4">
+          <div className="mt-6 border border-gray-200 bg-white rounded-xl p-4">
             <h3 className="font-medium text-primary mb-3">Bespaartips:</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600">
               <div>
@@ -386,7 +386,7 @@ export default function TweelingVoedenPage() {
         </div>
 
         {/* Success Stories */}
-        <div className="border border-gray-200 bg-gray-50 rounded-2xl border border-gray-200 p-6">
+        <div className="border border-gray-200 bg-white rounded-2xl border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
             <Heart className="w-5 h-5 mr-2" />
             Ervaringen van Ouders
@@ -418,7 +418,7 @@ export default function TweelingVoedenPage() {
             </div>
           </div>
           
-          <div className="mt-6 p-4 bg-gray-100 rounded-lg">
+          <div className="mt-6 p-4 bg-white rounded-lg">
             <h4 className="font-medium text-primary mb-2">Meest waardevolle tip:</h4>
             <p className="text-gray-600 italic">
               "Perfectie bestaat niet bij tweeling. 80% goed is uitstekend." - Ervaren tweelingmoeder
@@ -438,7 +438,7 @@ export default function TweelingVoedenPage() {
           </p>
           <Link 
             href="/"
-            className="inline-flex items-center space-x-2 bg-white text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors font-medium"
+            className="inline-flex items-center space-x-2 bg-white text-gray-700 px-4 py-2 rounded-lg hover:bg-white transition-colors font-medium"
           >
             <Calculator className="w-4 h-4" />
             <span>Naar Tweeling Calculator</span>
@@ -450,25 +450,25 @@ export default function TweelingVoedenPage() {
           <h2 className="text-lg font-semibold text-primary mb-4">Jouw Tweeling Succes Plan</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
+            <div className="border border-gray-200 bg-white rounded-lg p-4">
               <h3 className="font-medium text-gray-700">Week 1</h3>
               <p className="text-sm text-gray-600">Basis equipment aanschaffen</p>
             </div>
-            <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
+            <div className="border border-gray-200 bg-white rounded-lg p-4">
               <h3 className="font-medium text-gray-700">Week 2</h3>
               <p className="text-sm text-gray-600">Gelijktijdig voeden oefenen</p>
             </div>
-            <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
+            <div className="border border-gray-200 bg-white rounded-lg p-4">
               <h3 className="font-medium text-gray-700">Week 3</h3>
               <p className="text-sm text-gray-600">Schema implementeren</p>
             </div>
-            <div className="border border-gray-200 bg-gray-50 rounded-lg p-4">
+            <div className="border border-gray-200 bg-white rounded-lg p-4">
               <h3 className="font-medium text-gray-700">Week 4</h3>
               <p className="text-sm text-gray-600">Verfijnen en automatiseren</p>
             </div>
           </div>
           
-          <div className="mt-6 p-4 bg-gray-100 rounded-lg">
+          <div className="mt-6 p-4 bg-white rounded-lg">
             <h4 className="font-medium text-primary mb-2">Belangrijkste Takeaways:</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-600">
               <div className="flex items-center space-x-2">
