@@ -66,7 +66,7 @@ export default function FlesBerenStapVoorStap() {
                 
                 <div className="space-y-6">
                   <div className="p-6">
-                    <h4 className="text-lg font-semibold text-primary mb-3">Handen wassen - Stap 1 🖐️</h4>
+                    <h4 className="text-lg font-semibold text-primary mb-3">Handen wassen - Stap 1 </h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -174,7 +174,7 @@ export default function FlesBerenStapVoorStap() {
                 
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="p-6">
-                    <h5 className="font-semibold text-primary mb-3">0-3 maanden: Koken verplicht 🔥</h5>
+                    <h5 className="font-semibold text-primary mb-3">0-3 maanden: Koken verplicht </h5>
                     <ul className="space-y-2">
                       <li className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -196,7 +196,7 @@ export default function FlesBerenStapVoorStap() {
                   </div>
 
                   <div className="p-6">
-                    <h5 className="font-semibold text-primary mb-3">3-6 maanden: Koken aanbevolen ♨️</h5>
+                    <h5 className="font-semibold text-primary mb-3">3-6 maanden: Koken aanbevolen </h5>
                     <ul className="space-y-2">
                       <li className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -279,7 +279,7 @@ export default function FlesBerenStapVoorStap() {
                     </div>
 
                     <div className="p-6">
-                      <h4 className="font-semibold text-primary mb-3">Water temperatuur checken 🌡️</h4>
+                      <h4 className="font-semibold text-primary mb-3">Water temperatuur checken </h4>
                       <ul className="space-y-2">
                         <li className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -306,7 +306,7 @@ export default function FlesBerenStapVoorStap() {
                   <h3 className="text-2xl font-semibold text-primary mb-4">Stap 2: Poeder toevoegen - De kritieke fase</h3>
                   
                   <div className="bg-gray-50 p-6 mb-6">
-                    <h4 className="font-semibold text-primary mb-3">Poeder afmeten - Nauwkeurigheid is cruciaal ⚖️</h4>
+                    <h4 className="font-semibold text-primary mb-3">Poeder afmeten - Nauwkeurigheid is cruciaal </h4>
                     
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
@@ -356,7 +356,7 @@ export default function FlesBerenStapVoorStap() {
                   </div>
 
                   <div className="p-6">
-                    <h4 className="font-semibold text-primary mb-3">Poeder toevoegen aan water 🥛</h4>
+                    <h4 className="font-semibold text-primary mb-3">Poeder toevoegen aan water </h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -432,7 +432,7 @@ export default function FlesBerenStapVoorStap() {
                   <h3 className="text-2xl font-semibold text-primary mb-4">Stap 4: Temperatuur finale controle</h3>
                   
                   <div className="bg-gray-50 p-6 mb-6">
-                    <h4 className="font-semibold text-primary mb-3">Eindtemperatuur: 37°C (lichaamstemperatuur) 🌡️</h4>
+                    <h4 className="font-semibold text-primary mb-3">Eindtemperatuur: 37°C (lichaamstemperatuur) </h4>
                     
                     <h5 className="font-semibold text-primary mb-2">Controlmethoden rangschikking:</h5>
                     <ol className="space-y-2">
@@ -457,7 +457,7 @@ export default function FlesBerenStapVoorStap() {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-gray-50 p-6">
-                      <h4 className="font-semibold text-primary mb-3">Te heet - wat doen? 🔥</h4>
+                      <h4 className="font-semibold text-primary mb-3">Te heet - wat doen? </h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -535,7 +535,7 @@ export default function FlesBerenStapVoorStap() {
                     </div>
 
                     <div className="bg-gray-50 p-6">
-                      <h4 className="font-semibold text-primary mb-3">Temperatuur gevaren 🌡️</h4>
+                      <h4 className="font-semibold text-primary mb-3">Temperatuur gevaren </h4>
                       <ul className="space-y-2">
                         <li className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -579,7 +579,7 @@ export default function FlesBerenStapVoorStap() {
                 </div>
 
                 <div className="p-6">
-                  <h4 className="font-semibold text-primary mb-2">Melk is klonterig 🥛</h4>
+                  <h4 className="font-semibold text-primary mb-2">Melk is klonterig </h4>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <p className="text-gray-700 mb-2"><strong>Oorzaak</strong>: Poeder eerst toegevoegd, verkeerde mengtechniek</p>
@@ -593,7 +593,7 @@ export default function FlesBerenStapVoorStap() {
                 </div>
 
                 <div className="p-6">
-                  <h4 className="font-semibold text-primary mb-2">Verkeerde concentratie ⚖️</h4>
+                  <h4 className="font-semibold text-primary mb-2">Verkeerde concentratie </h4>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <p className="text-gray-700 mb-2"><strong>Te dik</strong>: Baby krijgt dorst, kan obstipatie veroorzaken</p>
