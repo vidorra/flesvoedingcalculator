@@ -232,7 +232,7 @@ export default function HoudbaarheidFlesvoedingPage() {
                   <h3 className="font-medium text-primary mb-3">Bacteriegroei Snelheid:</h3>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
                       <span className="text-gray-700 text-sm">0-1 uur: Veilig niveau</span>
                     </li>
                     <li className="flex items-center space-x-2">
@@ -240,11 +240,11 @@ export default function HoudbaarheidFlesvoedingPage() {
                       <span className="text-gray-700 text-sm">1-2 uur: Verhoogd risico</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <XCircle className="w-4 h-4 text-red-500 flex-shrink-0" />
+                      <XCircle className="w-4 h-4 text-amber-700 flex-shrink-0" />
                       <span className="text-gray-700 text-sm">2-4 uur: Gevaarlijk niveau</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <XCircle className="w-4 h-4 text-red-600 flex-shrink-0" />
+                      <XCircle className="w-4 h-4 text-amber-700 flex-shrink-0" />
                       <span className="text-gray-700 text-sm">4+ uur: Zeer gevaarlijk</span>
                     </li>
                   </ul>
@@ -273,7 +273,7 @@ export default function HoudbaarheidFlesvoedingPage() {
                         <td className="p-3 text-gray-700">{bacteria.symptoms}</td>
                         <td className="p-3">
                           <span className={`text-sm font-medium ${
-                            bacteria.severity === 'Levensbedreigend' ? 'text-red-600' :
+                            bacteria.severity === 'Levensbedreigend' ? 'text-amber-700' :
                             bacteria.severity === 'Zeer hoog' ? 'text-orange-600' :
                             'text-amber-600'
                           }`}>
@@ -383,7 +383,7 @@ export default function HoudbaarheidFlesvoedingPage() {
                 <div>
                   <h3 className="font-medium text-primary mb-3">Temperatuur Richtlijnen:</h3>
                   <div className="space-y-3">
-                    <div className="p-3 bg-blue-50 rounded-lg">
+                    <div className="p-3 bg-white rounded-lg">
                       <h4 className="font-medium text-gray-700 mb-1">Koelkast:</h4>
                       <p className="text-sm text-gray-600">2-4°C - Controleer met thermometer</p>
                     </div>
@@ -391,7 +391,7 @@ export default function HoudbaarheidFlesvoedingPage() {
                       <h4 className="font-medium text-gray-700 mb-1">Kamertemperatuur:</h4>
                       <p className="text-sm text-gray-600">18-22°C - Maximum 1 uur</p>
                     </div>
-                    <div className="p-3 bg-red-50 rounded-lg">
+                    <div className="p-3 bg-amber-50 rounded-lg">
                       <h4 className="font-medium text-gray-700 mb-1">Warm weer:</h4>
                       <p className="text-sm text-gray-600">25°C+ - Maximum 30 minuten</p>
                     </div>

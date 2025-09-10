@@ -328,8 +328,8 @@ export default function LactosevrijeFlesvoedingPage() {
                       <div>
                         <h3 className="font-medium text-primary text-lg mb-1">{option.name}</h3>
                         <div className="flex items-center space-x-4 text-sm text-gray-600">
-                          <span>🏷️ {option.price}</span>
-                          <span>📍 {option.availability}</span>
+                          <span className="flex items-center space-x-1"><Euro className="w-3 h-3" /><span>{option.price}</span></span>
+                          <span className="flex items-center space-x-1"><Users className="w-3 h-3" /><span>{option.availability}</span></span>
                         </div>
                       </div>
                       <div className="text-right">
@@ -338,7 +338,7 @@ export default function LactosevrijeFlesvoedingPage() {
                       </div>
                     </div>
 
-                    <div className="bg-blue-50 rounded-lg p-3 mb-4">
+                    <div className="bg-white rounded-lg p-3 mb-4">
                       <h4 className="font-medium text-gray-700 mb-1"> Uniek kenmerk:</h4>
                       <p className="text-sm text-gray-600">{option.unique}</p>
                     </div>
@@ -349,7 +349,7 @@ export default function LactosevrijeFlesvoedingPage() {
                         <ul className="space-y-1">
                           {option.pros.map((pro, proIndex) => (
                             <li key={proIndex} className="flex items-start space-x-2">
-                              <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                              <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                               <span className="text-gray-700 text-sm">{pro}</span>
                             </li>
                           ))}
@@ -443,9 +443,9 @@ export default function LactosevrijeFlesvoedingPage() {
                         <td className="p-3 font-medium text-gray-700">{cost.yearlyTotal}</td>
                         <td className="p-3">
                           <span className={`text-xs px-2 py-1 rounded font-medium ${
-                            cost.insurance === 'Vergoed op recept' ? 'bg-green-100 text-green-700' :
+                            cost.insurance === 'Vergoed op recept' ? 'bg-white text-primary' :
                             cost.insurance === 'Deels vergoed' ? 'bg-amber-100 text-amber-700' :
-                            'bg-red-100 text-red-700'
+                            'bg-amber-50 text-amber-700'
                           }`}>
                             {cost.insurance}
                           </span>
@@ -456,8 +456,8 @@ export default function LactosevrijeFlesvoedingPage() {
                 </table>
               </div>
               
-              <div className="mt-4 p-4 bg-blue-50 rounded-lg">
-                <p className="text-sm text-blue-700">
+              <div className="mt-4 p-4 bg-white rounded-lg">
+                <p className="text-sm text-primary">
                   <strong>Tip:</strong> Vraag je huisarts om een recept voor lactosevrije flesvoeding. 
                   Dit kan €200-400 per jaar besparen via zorgverzekeraar vergoeding.
                 </p>

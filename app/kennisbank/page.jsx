@@ -53,7 +53,7 @@ export default function KennisbankPage() {
       href: '/kennisbank/basis-flesvoeding/flesvoeding-bij-premature-babys'
     },
 
-    // SOORTEN FLESVOEDING - 4 actual articles  
+    // SOORTEN FLESVOEDING - 6 actual articles  
     { 
       id: 6, 
       title: 'Verschil tussen startvoeding en opvolgmelk', 
@@ -86,8 +86,24 @@ export default function KennisbankPage() {
       duration: '12 min',
       href: '/kennisbank/soorten-flesvoeding/anti-reflux-flesvoeding'
     },
+    { 
+      id: 30, 
+      title: 'Bio-organische flesvoeding', 
+      category: 'soorten-flesvoeding', 
+      description: 'Biologische opties en duurzame keuzes', 
+      duration: '8 min',
+      href: '/kennisbank/soorten-flesvoeding/bio-organische-flesvoeding'
+    },
+    { 
+      id: 31, 
+      title: 'Lactosevrije flesvoeding', 
+      category: 'soorten-flesvoeding', 
+      description: 'Voor baby\'s met lactose-intolerantie', 
+      duration: '6 min',
+      href: '/kennisbank/soorten-flesvoeding/lactosevrije-flesvoeding'
+    },
 
-    // VOEDINGSTECHNIEKEN - 7 actual articles
+    // VOEDINGSTECHNIEKEN - 9 actual articles
     { 
       id: 10, 
       title: 'Juiste houding bij flesvoeding', 
@@ -144,8 +160,24 @@ export default function KennisbankPage() {
       duration: '12 min',
       href: '/kennisbank/praktische-tips/voedingsritme-opbouwen'
     },
+    { 
+      id: 32, 
+      title: 'Baby leren zelf drinken', 
+      category: 'voedingstechnieken', 
+      description: 'Ontwikkeling naar zelfstandigheid', 
+      duration: '6 min',
+      href: '/kennisbank/voedingstechnieken/baby-leren-zelf-drinken'
+    },
+    { 
+      id: 33, 
+      title: 'Overgang naar beker', 
+      category: 'voedingstechnieken', 
+      description: 'Van fles naar beker stap voor stap', 
+      duration: '5 min',
+      href: '/kennisbank/voedingstechnieken/overgang-naar-beker'
+    },
 
-    // PROBLEMEN OPLOSSEN - 4 actual articles
+    // PROBLEMEN OPLOSSEN - 6 actual articles
     { 
       id: 17, 
       title: 'Baby drinkt niet genoeg', 
@@ -178,8 +210,24 @@ export default function KennisbankPage() {
       duration: '5 min',
       href: '/kennisbank/problemen-oplossen/constipatie-door-flesvoeding'
     },
+    { 
+      id: 34, 
+      title: 'Allergische reacties flesvoeding', 
+      category: 'problemen-oplossen', 
+      description: 'Herkennen en handelen bij allergieën', 
+      duration: '8 min',
+      href: '/kennisbank/problemen-oplossen/allergische-reacties-flesvoeding'
+    },
+    { 
+      id: 35, 
+      title: 'Diarree en flesvoeding', 
+      category: 'problemen-oplossen', 
+      description: 'Oorzaken en wanneer naar de dokter', 
+      duration: '6 min',
+      href: '/kennisbank/problemen-oplossen/diarree-en-flesvoeding'
+    },
 
-    // HYGIËNE & BEREIDING - 3 actual articles
+    // HYGIËNE & BEREIDING - 5 actual articles
     { 
       id: 21, 
       title: 'Flessen steriliseren', 
@@ -204,8 +252,24 @@ export default function KennisbankPage() {
       duration: '10 min',
       href: '/kennisbank/hygiene-bereiding/water-koken-flesvoeding'
     },
+    { 
+      id: 36, 
+      title: 'Houdbaarheid flesvoeding', 
+      category: 'hygiene-bereiding', 
+      description: 'Wanneer wegooien en veilige bewaartijd', 
+      duration: '5 min',
+      href: '/kennisbank/hygiene-bereiding/houdbaarheid-flesvoeding'
+    },
+    { 
+      id: 37, 
+      title: 'Veilig verwarmen flesvoeding', 
+      category: 'hygiene-bereiding', 
+      description: 'Magnetron vs flessenwarmer veiligheid', 
+      duration: '4 min',
+      href: '/kennisbank/hygiene-bereiding/veilig-verwarmen-flesvoeding'
+    },
 
-    // PRAKTISCHE TIPS - 6 actual articles
+    // PRAKTISCHE TIPS - 8 actual articles
     { 
       id: 24, 
       title: 'Geld besparen op flesvoeding', 
@@ -245,6 +309,22 @@ export default function KennisbankPage() {
       description: 'Complete 5-in-1 gids: besparen, kosten, overstappen, werk en problemen oplossen', 
       duration: '40+ min',
       href: '/kennisbank/praktische-gidsen/uitgebreide-flesvoeding-gids'
+    },
+    { 
+      id: 38, 
+      title: 'Flesvoeding en slapen', 
+      category: 'praktische-tips', 
+      description: 'Nachtvoeding en slaapritme optimaliseren', 
+      duration: '8 min',
+      href: '/kennisbank/praktische-tips/flesvoeding-en-slapen'
+    },
+    { 
+      id: 39, 
+      title: 'Partner betrekken flesvoeding', 
+      category: 'praktische-tips', 
+      description: 'Samen verantwoordelijkheid delen', 
+      duration: '6 min',
+      href: '/kennisbank/praktische-tips/partner-betrekken-flesvoeding'
     },
 
     // FINANCIËLE ASPECTEN - 1 actual article

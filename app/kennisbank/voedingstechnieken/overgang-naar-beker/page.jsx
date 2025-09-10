@@ -9,39 +9,6 @@ export const metadata = {
   keywords: 'overgang naar beker, sippy cup, training cup, fles naar beker, baby bekers Nederland, beker training, flesvoeding afbouwen'
 };
 
-// Breadcrumb component
-const Breadcrumb = ({ items }) => (
-  <nav className="flex text-sm text-gray-500 mb-6">
-    {items.map((item, index) => (
-      <span key={index} className="flex items-center">
-        {item.href ? (
-          <a href={item.href} className="hover:text-gray-700">{item.label}</a>
-        ) : (
-          <span className="text-gray-700">{item.label}</span>
-        )}
-        {index < items.length - 1 && <ChevronRight className="w-4 h-4 mx-2" />}
-      </span>
-    ))}
-  </nav>
-);
-
-// Warning Component
-const Warning = ({ children, type = "warning" }) => {
-  const styles = {
-    warning: "bg-amber-50 border border-amber-200 text-amber-800",
-    danger: "bg-red-50 border border-red-200 text-red-800",
-    info: "bg-blue-50 border border-blue-200 text-blue-800"
-  };
-  
-  return (
-    <div className={`p-4 rounded-lg ${styles[type]} my-4`}>
-      <div className="flex">
-        <AlertTriangle className="w-5 h-5 mt-0.5 mr-3 flex-shrink-0" />
-        <div>{children}</div>
-      </div>
-    </div>
-  );
-};
 
 // Timing indicators data
 const timingIndicators = [
@@ -333,35 +300,21 @@ export default function OvergangNaarBekerPage() {
 
   return (
     <Layout>
-    <div className="min-h-screen bg-white">
-      {/* Header buiten de card */}
-      <div className="bg-white shadow-sm">
-        <div className="max-w-4xl mx-auto px-6 py-8">
-          <Breadcrumb items={[
-            { label: 'Kennisbank', href: '/kennisbank' },
-            { label: 'Voedingstechnieken', href: '/kennisbank/voedingstechnieken' },
-            { label: 'Overgang naar Beker' }
-          ]} />
-          
-          <div className="flex items-start gap-4 mb-6">
-            <Target className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+      <div className="grid grid-cols-12 gap-6">
+        <div className="col-span-12 lg:col-span-7">
+          <div className="space-y-6">
+            
+            {/* Header - ALWAYS outside of card containers */}
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-3">
+              <div className="text-sm text-gray-500 mb-2">Voedingstechnieken • Overgang naar Beker</div>
+              <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+                <Target className="w-6 h-6 mr-3 text-primary" />
                 Overgang naar Beker: Nederlandse Gids voor de Volgende Stap
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-gray-500 leading-relaxed">
                 De overgang van fles naar beker is een natuurlijke progressie in je baby's ontwikkeling. Deze uitgebreide gids helpt Nederlandse ouders deze belangrijke transitie succesvol en stressvrij te maken.
               </p>
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main content */}
-      <div className="max-w-4xl mx-auto px-6 py-8">
-        <div className="grid lg:grid-cols-4 gap-8">
-          {/* Main content */}
-          <div className="lg:col-span-3 space-y-8">
 
             {/* Introduction */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
@@ -483,46 +436,46 @@ export default function OvergangNaarBekerPage() {
                 <div>
                   <h3 className="font-medium text-primary mb-3">Readiness assessment</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="bg-green-50 rounded-lg p-4">
-                      <h4 className="font-medium text-green-800 mb-2">Positieve signalen:</h4>
-                      <ul className="space-y-1">
+                    <div>
+                      <h4 className="font-medium text-primary mb-2">Positieve signalen:</h4>
+                      <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                          <span className="text-green-700 text-sm">Interest in volwassen drinkgedrag</span>
+                          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span className="text-gray-700">Interest in volwassen drinkgedrag</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                          <span className="text-green-700 text-sm">Verliest zuigreflex tijdens voeding</span>
+                          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span className="text-gray-700">Verliest zuigreflex tijdens voeding</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                          <span className="text-green-700 text-sm">Zit stabiel in kinderstoel 15+ min</span>
+                          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span className="text-gray-700">Zit stabiel in kinderstoel 15+ min</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                          <span className="text-green-700 text-sm">Frustratie bij hulp (wil zelf doen)</span>
+                          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span className="text-gray-700">Frustratie bij hulp (wil zelf doen)</span>
                         </li>
                       </ul>
                     </div>
                     
-                    <div className="bg-red-50 rounded-lg p-4">
-                      <h4 className="font-medium text-red-800 mb-2">Uitstellen overgang bij:</h4>
-                      <ul className="space-y-1">
+                    <div>
+                      <h4 className="font-medium text-primary mb-2">Uitstellen overgang bij:</h4>
+                      <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
-                          <AlertTriangle className="w-4 h-4 text-red-600 flex-shrink-0" />
-                          <span className="text-red-700 text-sm">Recente ziekte of ziekenhuisopname</span>
+                          <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span className="text-gray-700">Recente ziekte of ziekenhuisopname</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <AlertTriangle className="w-4 h-4 text-red-600 flex-shrink-0" />
-                          <span className="text-red-700 text-sm">Grote levensveranderingen</span>
+                          <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span className="text-gray-700">Grote levensveranderingen</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <AlertTriangle className="w-4 h-4 text-red-600 flex-shrink-0" />
-                          <span className="text-red-700 text-sm">Gewichtsverlies of groei problemen</span>
+                          <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span className="text-gray-700">Gewichtsverlies of groei problemen</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <AlertTriangle className="w-4 h-4 text-red-600 flex-shrink-0" />
-                          <span className="text-red-700 text-sm">Extreme voedingsselectiviteit</span>
+                          <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span className="text-gray-700">Extreme voedingsselectiviteit</span>
                         </li>
                       </ul>
                     </div>
@@ -864,53 +817,53 @@ export default function OvergangNaarBekerPage() {
 
                 <div>
                   <h3 className="font-medium text-primary mb-3">Geleidelijk vs versneld aanpak</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="bg-green-50 rounded-lg p-4">
-                      <h4 className="font-medium text-green-800 mb-2">Geleidelijke aanpak (aanbevolen):</h4>
-                      <ul className="space-y-1">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-medium text-primary mb-3">Geleidelijke aanpak (aanbevolen):</h4>
+                      <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                          <span className="text-green-700 text-sm">Minder stress voor baby</span>
+                          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span className="text-gray-700">Minder stress voor baby</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                          <span className="text-green-700 text-sm">Behoudt voeding inname</span>
+                          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span className="text-gray-700">Behoudt voeding inname</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                          <span className="text-green-700 text-sm">Bouwt zelfvertrouwen geleidelijk op</span>
+                          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span className="text-gray-700">Bouwt zelfvertrouwen geleidelijk op</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                          <span className="text-green-700 text-sm">Hogere lange termijn succes</span>
+                          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span className="text-gray-700">Hogere lange termijn succes</span>
                         </li>
                       </ul>
-                      <p className="text-sm text-green-700 mt-2"><strong>Timeline:</strong> 4-8 weken</p>
-                      <p className="text-sm text-green-700"><strong>Best voor:</strong> Gevoelige baby's, eerste-tijd ouders</p>
+                      <p className="text-gray-600 mt-3"><strong>Timeline:</strong> 4-8 weken</p>
+                      <p className="text-gray-600"><strong>Best voor:</strong> Gevoelige baby's, eerste-tijd ouders</p>
                     </div>
                     
-                    <div className="bg-amber-50 rounded-lg p-4">
-                      <h4 className="font-medium text-amber-800 mb-2">Versnelde aanpak:</h4>
-                      <ul className="space-y-1">
+                    <div>
+                      <h4 className="font-medium text-primary mb-3">Versnelde aanpak:</h4>
+                      <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
-                          <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0" />
-                          <span className="text-amber-700 text-sm">Tijdsdruk (kinderdagverblijf deadline)</span>
+                          <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span className="text-gray-700">Tijdsdruk (kinderdagverblijf deadline)</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0" />
-                          <span className="text-amber-700 text-sm">Baby toont sterke readiness</span>
+                          <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span className="text-gray-700">Baby toont sterke readiness</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0" />
-                          <span className="text-amber-700 text-sm">Sterke fles voorkeur problemen</span>
+                          <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span className="text-gray-700">Sterke fles voorkeur problemen</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0" />
-                          <span className="text-amber-700 text-sm">Familie vakantie/reis behoeften</span>
+                          <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span className="text-gray-700">Familie vakantie/reis behoeften</span>
                         </li>
                       </ul>
-                      <p className="text-sm text-amber-700 mt-2"><strong>Timeline:</strong> 1-2 weken</p>
-                      <p className="text-sm text-amber-700"><strong>Risico's:</strong> Hogere stress, mogelijke regressie</p>
+                      <p className="text-gray-600 mt-3"><strong>Timeline:</strong> 1-2 weken</p>
+                      <p className="text-gray-600"><strong>Risico's:</strong> Hogere stress, mogelijke regressie</p>
                     </div>
                   </div>
                 </div>
@@ -1121,12 +1074,12 @@ export default function OvergangNaarBekerPage() {
                 </Link>
               </div>
             </div>
+
           </div>
         </div>
         
         <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />
       </div>
-    </div>
     </Layout>
   )
 }
