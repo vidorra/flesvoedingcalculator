@@ -38,14 +38,13 @@ export default function UitgebreideFlesvoedingGids() {
               5 complete gidsen in één uitgebreide resource.
             </p>
             <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-              <span>📖 Leestijd: 40+ minuten</span>
+              <span>Leestijd: 40+ minuten</span>
               <span> Gemiddelde besparing: €400+ per jaar</span>
               <span> 95% succes ratio</span>
-            </div>
           </div>
 
           {/* Table of Contents */}
-          <div className="mb-12 bg-white rounded-xl p-6">
+          <div className="mb-12 bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-semibold text-primary mb-4">Inhoudsopgave</h2>
             <nav className="space-y-2">
               <a href="#geld-besparen" className="block text-gray-600 hover:text-gray-700 font-medium">
@@ -68,15 +67,15 @@ export default function UitgebreideFlesvoedingGids() {
 
           {/* Blog 1: Geld Besparen */}
           <section id="geld-besparen" className="mb-16">
-            <div className="border-l-4 border-green-500 pl-6 mb-8">
-              <h2 className="text-3xl font-bold text-primary mb-2">
+            <div className="border-l-4 border-primary pl-6 mb-8">
+              <h2 className="text-lg font-semibold text-primary mb-2">
                 1. Geld Besparen op Flesvoeding - Volledige Gids 2025
               </h2>
               <p className="text-gray-600">
                 <em>Leestijd: 8 minuten | Gemiddelde besparing: €400 per jaar</em>
               </p>
-            </div>
 
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <div className="prose prose-lg max-w-none">
               <h3>Inleiding: De Werkelijke Kosten van Flesvoeding</h3>
               <p>
@@ -110,6 +109,7 @@ export default function UitgebreideFlesvoedingGids() {
                   </li>
                 </ul>
               </div>
+          </div>
 
               <div className=" my-4">
                 <p><strong>Etos Baby</strong> - €8,49 per 800g</p>
@@ -132,6 +132,7 @@ export default function UitgebreideFlesvoedingGids() {
                   </li>
                 </ul>
               </div>
+          </div>
 
               <div className=" my-4">
                 <p><strong>Action Babymilk</strong> - €6,99 per 800g</p>
@@ -150,6 +151,7 @@ export default function UitgebreideFlesvoedingGids() {
                   </li>
                 </ul>
               </div>
+          </div>
 
               <h4>Waar Kopen Voor Beste Aanbiedingen?</h4>
 
@@ -175,6 +177,7 @@ export default function UitgebreideFlesvoedingGids() {
                   </li>
                 </ul>
               </div>
+          </div>
 
               <div className=" my-4">
                 <p><strong>Amazon.nl Bulk Bestellingen</strong> - 8-12% korting</p>
@@ -197,6 +200,7 @@ export default function UitgebreideFlesvoedingGids() {
                   </li>
                 </ul>
               </div>
+          </div>
 
               <h5>Timing is Alles: Wanneer Kopen?</h5>
               
@@ -221,6 +225,7 @@ export default function UitgebreideFlesvoedingGids() {
                   </li>
                 </ul>
               </div>
+          </div>
 
               <h3>Rendement Calculator: Jouw Persoonlijke Besparing</h3>
               
@@ -238,7 +243,9 @@ export default function UitgebreideFlesvoedingGids() {
                   <h4 className="text-primary font-bold text-xl">Netto Besparing: €432 per jaar</h4>
                   <p className="text-gray-600">Rendement op geïnvesteerde tijd: 2000%+ (€432 besparing voor ~4 uur onderzoek)</p>
                 </div>
+          </div>
               </div>
+          </div>
 
               <h3>Conclusie: Slim Besparen Zonder Compromissen</h3>
               <p>
@@ -248,20 +255,22 @@ export default function UitgebreideFlesvoedingGids() {
               <div className=" my-4">
                 <p><strong>Belangrijke disclaimer:</strong> Schakel altijd eerst overleg met je consultatiebureau voordat je van merk wisselt, vooral bij baby's onder 3 maanden of met speciale voedingsbehoeften.</p>
               </div>
+          </div>
+            </div>
             </div>
           </section>
 
           {/* Blog 2: Kosten Analyse */}
           <section id="kosten-analyse" className="mb-16">
             <div className="border-l-4 border-primary pl-6 mb-8">
-              <h2 className="text-3xl font-bold text-primary mb-2">
+              <h2 className="text-lg font-semibold text-primary mb-2">
                 2. Kosten van Flesvoeding - Volledige Kostenanalyse 2025
               </h2>
               <p className="text-gray-600">
                 <em>Leestijd: 6 minuten | Actuele prijzen | Budgetplanner inbegrepen</em>
               </p>
-            </div>
 
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <div className="prose prose-lg max-w-none">
               <h3>Maandelijkse Kosten Uitsplitsing per Leeftijd</h3>
 
@@ -277,6 +286,7 @@ export default function UitgebreideFlesvoedingGids() {
                     <li>Action: €6,99 × 4,5 = <strong>€31/maand</strong></li>
                   </ul>
                 </div>
+          </div>
                 
                 <div className="p-4">
                   <h5 className="font-bold text-gray-600">Middensegment:</h5>
@@ -285,15 +295,18 @@ export default function UitgebreideFlesvoedingGids() {
                     <li>Aptamil: €13,49 × 4,5 = <strong>€61/maand</strong></li>
                   </ul>
                 </div>
+          </div>
                 
-                <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
-                  <h5 className="font-bold text-purple-800">Premium:</h5>
+                <div className="bg-white border border-gray-200 rounded-lg p-4">
+                  <h5 className="font-bold text-primary">Premium:</h5>
                   <ul className="text-sm">
                     <li>Nutrilon: €15,99 × 4,5 = <strong>€72/maand</strong></li>
                     <li>HiPP Bio: €18,99 × 4,5 = <strong>€85/maand</strong></li>
                   </ul>
                 </div>
+          </div>
               </div>
+          </div>
 
               <h3>Jaarkosten Totaaloverzicht</h3>
               
@@ -305,11 +318,13 @@ export default function UitgebreideFlesvoedingGids() {
                   <li><strong>Premium:</strong> €72-113 gemiddeld = <strong>€900-1200 per jaar</strong></li>
                 </ul>
                 
-                <div className="text-center bg-yellow-100 rounded-lg p-4 mt-4">
+                <div className="text-center bg-white rounded-lg p-4 mt-4">
                   <p className="font-bold">Verschil budget vs premium: €500-700 per jaar</p>
                   <p className="text-sm"><em>Dat is een leuke vakantie of complete babykamer inrichting!</em></p>
                 </div>
+          </div>
               </div>
+          </div>
 
               <h3>Budgetplanner Instrument</h3>
               
@@ -321,25 +336,27 @@ export default function UitgebreideFlesvoedingGids() {
                   <li>Maand 7-12: 3,5 blikken × jouw prijs per blik</li>
                 </ul>
               </div>
+          </div>
 
               <h3>Conclusie: Budgetteren voor Succes</h3>
               <p>
                 Flesvoeding kost €400-1200 per jaar - een significante post in het babybudget. De sleutel tot slim uitgeven is de 80/20 regel: 80% van je besparingen komt van 20% van de acties: kies slim merk, winkel online met abonnementen, time je aankopen op aanbiedingen, en bouw voorraad bij kortingen.
               </p>
             </div>
+            </div>
           </section>
 
           {/* Blog 3: Overstappen van Borst naar Fles */}
           <section id="borst-naar-fles" className="mb-16">
-            <div className="border-l-4 border-purple-500 pl-6 mb-8">
-              <h2 className="text-3xl font-bold text-primary mb-2">
+            <div className="border-l-4 border-primary pl-6 mb-8">
+              <h2 className="text-lg font-semibold text-primary mb-2">
                 3. Overstappen van Borst naar Fles - Volledige Overgang Gids
               </h2>
               <p className="text-gray-600">
                 <em>Leestijd: 10 minuten | Voor elke leeftijd | Stap-voor-stap plan</em>
               </p>
-            </div>
 
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <div className="prose prose-lg max-w-none">
               <h3>Inleiding: Een Emotionele en Praktische Overgang</h3>
               <p>
@@ -365,6 +382,7 @@ export default function UitgebreideFlesvoedingGids() {
                   </li>
                 </ul>
               </div>
+          </div>
 
               <div className=" my-4">
                 <h4>Vermijd Deze Periodes</h4>
@@ -387,6 +405,7 @@ export default function UitgebreideFlesvoedingGids() {
                   </li>
                 </ul>
               </div>
+          </div>
 
               <h3>De Technische Overgang: Stap-voor-Stap</h3>
 
@@ -401,6 +420,7 @@ export default function UitgebreideFlesvoedingGids() {
                     <li>15-30ml is genoeg voor eerste ervaring</li>
                   </ul>
                 </div>
+          </div>
 
                 <div className="p-4">
                   <h4 className="font-bold text-gray-600">Week 2: Routine Opbouwen</h4>
@@ -411,6 +431,7 @@ export default function UitgebreideFlesvoedingGids() {
                     <li>Gebruik flesvoeding voor sociale situaties</li>
                   </ul>
                 </div>
+          </div>
 
                 <div className="p-4">
                   <h4 className="font-bold text-gray-600">Week 3-4: Opschalen</h4>
@@ -421,7 +442,9 @@ export default function UitgebreideFlesvoedingGids() {
                     <li>Behoud 1 troostvoeding zo lang als gewenst</li>
                   </ul>
                 </div>
+          </div>
               </div>
+          </div>
 
               <h3>Emotionele Aspecten: De Psychologische Reis</h3>
               
@@ -447,25 +470,27 @@ export default function UitgebreideFlesvoedingGids() {
                 </ul>
                 <p className="font-bold mt-4">Normaal: Al deze gevoelens zijn geldig en tijdelijk.</p>
               </div>
+          </div>
 
               <h3>Conclusie: Jouw Reis, Jouw Succes</h3>
               <p>
                 De overgang van borstvoeding naar flesvoeding is een persoonlijke reis die tijd, geduld en zelfacceptatie vraagt. Er bestaat geen "perfecte" timing of methode - alleen wat werkt voor jouw gezin. Succes wordt niet gemeten aan snelheid of hoe soepel de overgang verloopt. Succes is een tevreden baby, een gezonde mama, en een familie die goed samen functioneert.
               </p>
             </div>
+            </div>
           </section>
 
           {/* Blog 4: Flesvoeding en Werk */}
           <section id="werk-combineren" className="mb-16">
-            <div className="border-l-4 border-orange-500 pl-6 mb-8">
-              <h2 className="text-3xl font-bold text-primary mb-2">
+            <div className="border-l-4 border-primary pl-6 mb-8">
+              <h2 className="text-lg font-semibold text-primary mb-2">
                 4. Flesvoeding en Werk Combineren - Praktische Gids voor Werkende Ouders
               </h2>
               <p className="text-gray-600">
                 <em>Leestijd: 9 minuten | Voor alle werksituaties | Inclusief downloadbare sjablonen</em>
               </p>
-            </div>
 
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <div className="prose prose-lg max-w-none">
               <h3>Inleiding: De Realiteit van Werkende Ouders</h3>
               <p>
@@ -499,6 +524,7 @@ export default function UitgebreideFlesvoedingGids() {
                     </li>
                   </ul>
                 </div>
+          </div>
 
                 <div className="p-4">
                   <h4 className="font-bold">Week 3: Uitrusting & Systemen Opzet</h4>
@@ -521,7 +547,9 @@ export default function UitgebreideFlesvoedingGids() {
                     </li>
                   </ul>
                 </div>
+          </div>
               </div>
+          </div>
 
               <h3>Werkschema Optimalisatie</h3>
 
@@ -555,6 +583,7 @@ export default function UitgebreideFlesvoedingGids() {
                   </li>
                 </ul>
               </div>
+          </div>
 
               <h3>Noodgeval Protocollen & Reserveplannen</h3>
               
@@ -587,25 +616,27 @@ export default function UitgebreideFlesvoedingGids() {
                   </li>
                 </ul>
               </div>
+          </div>
 
               <h3>Conclusie: Maak Het Werkend voor Jouw Gezin</h3>
               <p>
                 Flesvoeding combineren met werk vereist planning, flexibiliteit, en het belangrijkste - jezelf gratie geven tijdens het leerproces. De belangrijkste succesfactoren zijn: over-voorbereiden, communicatie is alles, flexibiliteit verslaat perfectionisme, investeer in tijdbesparende gereedschappen, en bouw ondersteuningsnetwerken.
               </p>
             </div>
+            </div>
           </section>
 
           {/* Blog 5: Baby Weigert de Fles */}
           <section id="fles-weigering" className="mb-16">
-            <div className="border-l-4 border-red-500 pl-6 mb-8">
-              <h2 className="text-3xl font-bold text-primary mb-2">
+            <div className="border-l-4 border-primary pl-6 mb-8">
+              <h2 className="text-lg font-semibold text-primary mb-2">
                 5. Baby Weigert de Fles - Volledige Probleemoplossende Gids
               </h2>
               <p className="text-gray-600">
                 <em>Leestijd: 8 minuten | Stap-voor-stap oplossingen | 95% succes ratio</em>
               </p>
-            </div>
 
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <div className="prose prose-lg max-w-none">
               <h3>Inleiding: Een Universeel Ouder Drama</h3>
               <p>
@@ -619,7 +650,7 @@ export default function UitgebreideFlesvoedingGids() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
                 <div className="p-4">
-                  <h4 className="font-bold text-orange-800">1. Temperatuur Problemen (35%)</h4>
+                  <h4 className="font-bold text-primary">1. Temperatuur Problemen (35%)</h4>
                   <p className="text-sm">Baby's zijn gevoeliger voor temperatuurverschillen dan we denken.</p>
                   <ul className="text-sm">
                     <li>Test op verschillende plekken pols</li>
@@ -627,6 +658,7 @@ export default function UitgebreideFlesvoedingGids() {
                     <li>Probeer 1-2 graden variatie</li>
                   </ul>
                 </div>
+          </div>
 
                 <div className="p-4">
                   <h4 className="font-bold text-gray-600">2. Speen Incompatibiliteit (28%)</h4>
@@ -637,9 +669,10 @@ export default function UitgebreideFlesvoedingGids() {
                     <li>Varieer tussen orthodontisch/natuurlijk</li>
                   </ul>
                 </div>
+          </div>
 
-                <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
-                  <h4 className="font-bold text-purple-800">3. Borstvoeding Voorkeur (22%)</h4>
+                <div className="bg-white border border-gray-200 rounded-lg p-4">
+                  <h4 className="font-bold text-primary">3. Borstvoeding Voorkeur (22%)</h4>
                   <p className="text-sm">Baby ervaart fles als "nep" alternatief.</p>
                   <ul className="text-sm">
                     <li>Laat partner fles geven</li>
@@ -647,6 +680,7 @@ export default function UitgebreideFlesvoedingGids() {
                     <li>Andere locatie dan voedingsplek</li>
                   </ul>
                 </div>
+          </div>
 
                 <div className="p-4">
                   <h4 className="font-bold text-gray-700">4. Overmoeide Baby (10%)</h4>
@@ -657,7 +691,9 @@ export default function UitgebreideFlesvoedingGids() {
                     <li>Voor overmoeide huilen</li>
                   </ul>
                 </div>
+          </div>
               </div>
+          </div>
 
               <h3>Stap-voor-Stap Probleemoplossing Protocol</h3>
 
@@ -668,12 +704,13 @@ export default function UitgebreideFlesvoedingGids() {
                     <div>
                       <h5>Basis checklist:</h5>
                       <ul className="text-sm">
-                        <li>☐ Temperatuur gecontroleerd</li>
-                        <li>☐ Speen doorstroom getest</li>
-                        <li>☐ Melkpoeder correct gemengd</li>
-                        <li>☐ Omgeving kalm</li>
+                        <li>□ Temperatuur gecontroleerd</li>
+                        <li>□ Speen doorstroom getest</li>
+                        <li>□ Melkpoeder correct gemengd</li>
+                        <li>□ Omgeving kalm</li>
                       </ul>
                     </div>
+          </div>
                     <div>
                       <h5>Documenteer patronen:</h5>
                       <ul className="text-sm">
@@ -683,8 +720,11 @@ export default function UitgebreideFlesvoedingGids() {
                         <li>Omgeving factoren</li>
                       </ul>
                     </div>
+          </div>
                   </div>
+          </div>
                 </div>
+          </div>
 
                 <div className="p-4">
                   <h4 className="font-bold">Fase 2: Systematisch Testen (Dag 2-4)</h4>
@@ -694,7 +734,9 @@ export default function UitgebreideFlesvoedingGids() {
                     <li><strong>Dag 4:</strong> Probeer andere vorm/merk</li>
                   </ul>
                 </div>
+          </div>
               </div>
+          </div>
 
               <h3>Wanneer Professionele Hulp Zoeken</h3>
               
@@ -719,16 +761,18 @@ export default function UitgebreideFlesvoedingGids() {
                   </li>
                 </ul>
               </div>
+          </div>
 
               <h3>Conclusie: Geduld en Volharding Winnen</h3>
               <p>
                 Fles weigering voelt als onoverkomelijk probleem, maar met de juiste aanpak en voldoende geduld lost het bijna altijd op. De belangrijkste takeaways zijn: temperatuur en speen zijn meest voorkomende oorzaken, elke baby is uniek, geduld is cruciaal, zoek hulp wanneer nodig, en dit is tijdelijk - vrijwel alle baby's accepteren uiteindelijk fles.
               </p>
             </div>
+            </div>
           </section>
 
           {/* Final Call-to-Action */}
-          <div className="bg-gradient-to-r from-gray-50 to-green-50 border border-gray-200 rounded-xl p-8 text-center">
+          <div className="bg-gradient-to-r from-gray-50 to-gray-100 border border-gray-200 rounded-xl p-8 text-center">
             <h2 className="text-2xl font-bold text-primary mb-4">
               Klaar om te Beginnen?
             </h2>
@@ -744,11 +788,10 @@ export default function UitgebreideFlesvoedingGids() {
               </a>
               <a 
                 href="/kennisbank" 
-                className="bg-green-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors"
+                className="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-dark transition-colors"
               >
                 Meer Kennisbank
               </a>
-            </div>
           </div>
 
         </div>
