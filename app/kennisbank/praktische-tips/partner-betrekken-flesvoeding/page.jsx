@@ -148,11 +148,26 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                     <div>
                       <h4 className="font-medium text-gray-700 mb-2">Nederlands onderzoek (2024):</h4>
                       <ul className="space-y-1">
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>73% sterkere partnerschap</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>68% betere taak verdeling</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>81% tevredener met ouderrol</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>23% betere sociale ontwikkeling baby</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Eerder slapen door nacht (3,2 vs 4,1 mnd)</span></li>
+                        <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">73% sterkere partnerschap</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">68% betere taak verdeling</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">81% tevredener met ouderrol</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">23% betere sociale ontwikkeling baby</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Eerder slapen door nacht (3,2 vs 4,1 mnd)</span>
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -164,22 +179,52 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                     <div>
                       <h4 className="font-medium text-gray-700 mb-2">Moeder voordelen:</h4>
                       <ul className="space-y-1">
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Eerder terugkeer werk mogelijk</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Flexibiliteit werkuren</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Minder afkolven stress</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Carrière continuïteit</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Minder 'mommy guilt' over werk</span></li>
+                        <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Eerder terugkeer werk mogelijk</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Flexibiliteit werkuren</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Minder afkolven stress</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Carrière continuïteit</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Minder 'mommy guilt' over werk</span>
+                        </li>
                       </ul>
                     </div>
                     
                     <div>
                       <h4 className="font-medium text-gray-700 mb-2">Vader voordelen:</h4>
                       <ul className="space-y-1">
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Vaderschapsverlof zinvoller</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Echt betrokken ouderschap</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Flexibiliteit eigen werkuren</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Minder afhankelijkheid partner</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Sterker gevoel competentie</span></li>
+                        <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Vaderschapsverlof zinvoller</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Echt betrokken ouderschap</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Flexibiliteit eigen werkuren</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Minder afhankelijkheid partner</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Sterker gevoel competentie</span>
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -232,21 +277,51 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                         <div>
                           <p className="text-sm text-gray-600 mb-1">Moeder taken:</p>
                           <ul className="space-y-1">
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Ochtend voeding (06:00-09:00)</span></li>
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Avond voeding (18:00-21:00)</span></li>
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Weekend middag voedingen</span></li>
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Boodschappen melkpoeder</span></li>
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Tracking app bijhouden</span></li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Ochtend voeding (06:00-09:00)</span>
+                        </li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Avond voeding (18:00-21:00)</span>
+                        </li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Weekend middag voedingen</span>
+                        </li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Boodschappen melkpoeder</span>
+                        </li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Tracking app bijhouden</span>
+                        </li>
                           </ul>
                         </div>
                         <div>
                           <p className="text-sm text-gray-600 mb-1">Partner taken:</p>
                           <ul className="space-y-1">
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Middag voeding (12:00-15:00)</span></li>
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Nachtvoedingen (21:00-06:00)</span></li>
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Weekend ochtend voedingen</span></li>
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Flessen steriliseren</span></li>
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Voorraad management</span></li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Middag voeding (12:00-15:00)</span>
+                        </li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Nachtvoedingen (21:00-06:00)</span>
+                        </li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Weekend ochtend voedingen</span>
+                        </li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Flessen steriliseren</span>
+                        </li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Voorraad management</span>
+                        </li>
                           </ul>
                         </div>
                       </div>
@@ -258,19 +333,43 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                         <div>
                           <p className="text-sm text-gray-600 mb-1">Thuisblijver (70%):</p>
                           <ul className="space-y-1">
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Alle werkdag voedingen</span></li>
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Fles voorbereiding</span></li>
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Dagelijkse sterilisatie</span></li>
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Tracking bijhouden</span></li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Alle werkdag voedingen</span>
+                        </li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Fles voorbereiding</span>
+                        </li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Dagelijkse sterilisatie</span>
+                        </li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Tracking bijhouden</span>
+                        </li>
                           </ul>
                         </div>
                         <div>
                           <p className="text-sm text-gray-600 mb-1">Werkende partner (30%):</p>
                           <ul className="space-y-1">
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Weekend voedingen</span></li>
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Nachtvoedingen doordeweeks</span></li>
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Grote sterilisatie sessies</span></li>
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Boodschappen + voorraad</span></li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Weekend voedingen</span>
+                        </li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Nachtvoedingen doordeweeks</span>
+                        </li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Grote sterilisatie sessies</span>
+                        </li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Boodschappen + voorraad</span>
+                        </li>
                           </ul>
                         </div>
                       </div>
@@ -306,10 +405,22 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                     <div>
                       <h4 className="font-medium text-gray-700 mb-2">Communication protocols:</h4>
                       <ul className="space-y-1">
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Ochtend (5 min): Dag planning</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Avond (10 min): Evaluatie</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Realtime: Updates via app/SMS</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Wekelijks (30 min): Review + aanpassingen</span></li>
+                        <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Ochtend (5 min): Dag planning</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Avond (10 min): Evaluatie</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Realtime: Updates via app/SMS</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Wekelijks (30 min): Review + aanpassingen</span>
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -467,19 +578,43 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                         <div>
                           <h5 className="text-sm font-medium text-gray-700 mb-1">Morning briefing (5 min):</h5>
                           <ul className="space-y-1">
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Night report: Hoe ging het?</span></li>
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Day planning: Wie doet wat vandaag?</span></li>
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Special needs: Extra aandacht punten</span></li>
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Mood check: Hoe voelen we ons?</span></li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Night report: Hoe ging het?</span>
+                        </li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Day planning: Wie doet wat vandaag?</span>
+                        </li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Special needs: Extra aandacht punten</span>
+                        </li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Mood check: Hoe voelen we ons?</span>
+                        </li>
                           </ul>
                         </div>
                         <div>
                           <h5 className="text-sm font-medium text-gray-700 mb-1">Evening debrief (10 min):</h5>
                           <ul className="space-y-1">
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Day review: Wat ging goed/moeilijk?</span></li>
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Baby updates: Ontwikkeling/changes</span></li>
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Tomorrow prep: Planning volgende dag</span></li>
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Appreciation: Dankbaarheid uitspreken</span></li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Day review: Wat ging goed/moeilijk?</span>
+                        </li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Baby updates: Ontwikkeling/changes</span>
+                        </li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Tomorrow prep: Planning volgende dag</span>
+                        </li>
+                            <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Appreciation: Dankbaarheid uitspreken</span>
+                        </li>
                           </ul>
                         </div>
                       </div>
