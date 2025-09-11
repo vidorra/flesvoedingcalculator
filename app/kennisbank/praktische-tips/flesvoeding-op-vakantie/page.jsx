@@ -163,7 +163,7 @@ export default function VakantiePage() {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium text-primary mb-3"> Flesvoeding Travel Advantages</h3>
+                  <h3 className="font-medium text-primary mb-3">Flesvoeding Travel Advantages</h3>
                   <div className="space-y-2">
                     {travelAdvantages.map((advantage, index) => (
                       <div key={index} className="flex items-start space-x-2">
@@ -175,8 +175,8 @@ export default function VakantiePage() {
                 </div>
 
                 <div>
-                  <h3 className="font-medium text-primary mb-3"> Nederlandse Reis Patronen</h3>
-                  <div className="text-sm text-primary space-y-2">
+                  <h3 className="font-medium text-primary mb-3">Nederlandse Reis Patronen</h3>
+                  <div className="text-sm text-gray-600 space-y-2">
                     <div><strong>Zomer vakanties:</strong> 80% families juni-augustus</div>
                     <div><strong>Kort breaks:</strong> Weekend trips populair</div>
                     <div><strong>Familie bezoek:</strong> 3x per jaar gemiddeld</div>
@@ -206,23 +206,23 @@ export default function VakantiePage() {
                     </h3>
                     <div className="grid md:grid-cols-2 gap-4 mb-3">
                       <div>
-                        <h4 className="font-medium text-primary mb-2"> Voordelen:</h4>
-                        <ul className="text-sm text-primary space-y-1">
+                        <h4 className="font-medium text-primary mb-2">Voordelen:</h4>
+                        <ul className="text-sm text-gray-600 space-y-1">
                           {transport.pros.map((pro, idx) => (
                             <li key={idx} className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>{pro}</span></li>
                           ))}
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-medium text-primary mb-2">⚠ Uitdagingen:</h4>
-                        <ul className="text-sm text-primary space-y-1">
+                        <h4 className="font-medium text-primary mb-2">Uitdagingen:</h4>
+                        <ul className="text-sm text-gray-600 space-y-1">
                           {transport.cons.map((con, idx) => (
                             <li key={idx} className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>{con}</span></li>
                           ))}
                         </ul>
                       </div>
                     </div>
-                    <div className="p-2 bg-white rounded text-sm text-primary">
+                    <div className="p-2 bg-white rounded text-sm text-gray-600">
                       <strong>Success Tips:</strong> {transport.tips}
                     </div>
                   </div>
@@ -244,7 +244,7 @@ export default function VakantiePage() {
                     <div className="grid md:grid-cols-2 gap-4 mb-3">
                       <div>
                         <h4 className="font-medium text-primary mb-2">Features:</h4>
-                        <ul className="text-sm text-primary space-y-1">
+                        <ul className="text-sm text-gray-600 space-y-1">
                           {accommodation.features.map((feature, idx) => (
                             <li key={idx} className="flex items-center space-x-2">
                               <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
@@ -255,7 +255,7 @@ export default function VakantiePage() {
                       </div>
                       <div>
                         <h4 className="font-medium text-primary mb-2">Setup Tips:</h4>
-                        <ul className="text-sm text-primary space-y-1">
+                        <ul className="text-sm text-gray-600 space-y-1">
                           {accommodation.setup.map((tip, idx) => (
                             <li key={idx} className="flex items-center space-x-2">
                               <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
@@ -265,7 +265,7 @@ export default function VakantiePage() {
                         </ul>
                       </div>
                     </div>
-                    <div className="p-2 bg-white rounded text-sm text-primary">
+                    <div className="p-2 bg-white rounded text-sm text-gray-600">
                       <strong>Voordeel:</strong> {accommodation.advantages}
                     </div>
                   </div>
@@ -282,14 +282,14 @@ export default function VakantiePage() {
                   <div key={index} className="p-4">
                     <div className="flex justify-between items-start mb-3">
                       <h3 className="font-semibold text-primary">{region.region}</h3>
-                      <span className="bg-blue-100 text-gray-600 px-2 py-1 rounded text-sm">
+                      <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-sm">
                         {region.climate}
                       </span>
                     </div>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <h4 className="font-medium text-amber-600 mb-2">Considerations:</h4>
-                        <ul className="text-sm text-primary space-y-1">
+                        <h4 className="font-medium text-primary mb-2">Considerations:</h4>
+                        <ul className="text-sm text-gray-600 space-y-1">
                           {region.considerations.map((consideration, idx) => (
                             <li key={idx} className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>{consideration}</span></li>
                           ))}
@@ -297,7 +297,7 @@ export default function VakantiePage() {
                       </div>
                       <div>
                         <h4 className="font-medium text-primary mb-2">Solutions:</h4>
-                        <ul className="text-sm text-primary space-y-1">
+                        <ul className="text-sm text-gray-600 space-y-1">
                           {region.solutions.map((solution, idx) => (
                             <li key={idx} className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>{solution}</span></li>
                           ))}
@@ -322,23 +322,23 @@ export default function VakantiePage() {
                     <h3 className="font-semibold text-primary mb-3">{protocol.scenario}</h3>
                     <div className="grid md:grid-cols-2 gap-4 mb-3">
                       <div>
-                        <h4 className="font-medium text-red-600 mb-2">🚨 Immediate Response:</h4>
-                        <ul className="text-sm text-primary space-y-1">
+                        <h4 className="font-medium text-primary mb-2">Immediate Response:</h4>
+                        <ul className="text-sm text-gray-600 space-y-1">
                           {protocol.immediate.map((action, idx) => (
                             <li key={idx} className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>{action}</span></li>
                           ))}
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-medium text-primary mb-2">🔄 Backup Plan:</h4>
-                        <ul className="text-sm text-primary space-y-1">
+                        <h4 className="font-medium text-primary mb-2">Backup Plan:</h4>
+                        <ul className="text-sm text-gray-600 space-y-1">
                           {protocol.backup.map((plan, idx) => (
                             <li key={idx} className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>{plan}</span></li>
                           ))}
                         </ul>
                       </div>
                     </div>
-                    <div className="p-2 bg-green-50 rounded text-sm text-primary">
+                    <div className="p-2 bg-white rounded text-sm text-gray-600">
                       <strong>Prevention:</strong> {protocol.prevention}
                     </div>
                   </div>
@@ -352,7 +352,7 @@ export default function VakantiePage() {
               
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-white rounded-lg p-4 border border-gray-200">
-                  <h3 className="font-medium text-primary mb-3">🎒 Hand Luggage Essentials</h3>
+                  <h3 className="font-medium text-primary mb-3">Hand Luggage Essentials</h3>
                   <div className="space-y-2">
                     {packingEssentials.handLuggage.map((item, index) => (
                       <div key={index} className="flex items-center space-x-2">
@@ -363,8 +363,8 @@ export default function VakantiePage() {
                   </div>
                 </div>
 
-                <div className="bg-green-50 rounded-lg p-4 border border-green-200">
-                  <h3 className="font-medium text-green-800 mb-3">🧳 Checked Luggage Must-Haves</h3>
+                <div className="bg-white rounded-lg p-4 border border-gray-200">
+                  <h3 className="font-medium text-primary mb-3">Checked Luggage Must-Haves</h3>
                   <div className="space-y-2">
                     {packingEssentials.checkedLuggage.map((item, index) => (
                       <div key={index} className="flex items-center space-x-2">
@@ -376,12 +376,12 @@ export default function VakantiePage() {
                 </div>
               </div>
 
-              <div className="mt-4 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
-                <h4 className="font-medium text-yellow-800 mb-2"> Essential Travel Apps</h4>
+              <div className="mt-4 p-4 bg-white rounded-lg border border-gray-200">
+                <h4 className="font-medium text-primary mb-2">Essential Travel Apps</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <h5 className="font-medium text-yellow-700 mb-1">Navigation & Planning:</h5>
-                    <ul className="text-yellow-600 space-y-1">
+                    <h5 className="font-medium text-primary mb-1">Navigation & Planning:</h5>
+                    <ul className="text-gray-600 space-y-1">
                       <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Google Maps offline (pharmacy locations)</span></li>
                       <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Google Translate (baby/medical terms)</span></li>
                       <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Baby Tracker (feeding schedules)</span></li>
@@ -389,8 +389,8 @@ export default function VakantiePage() {
                     </ul>
                   </div>
                   <div>
-                    <h5 className="font-medium text-yellow-700 mb-1">Baby Care:</h5>
-                    <ul className="text-yellow-600 space-y-1">
+                    <h5 className="font-medium text-primary mb-1">Baby Care:</h5>
+                    <ul className="text-gray-600 space-y-1">
                       <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>White noise app (sleep routine)</span></li>
                       <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>First aid app (emergency guidance)</span></li>
                       <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Formula calculator (local measurements)</span></li>
@@ -410,8 +410,8 @@ export default function VakantiePage() {
               
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-white rounded-lg p-4 border border-gray-200">
-                  <h3 className="font-medium text-primary mb-3">☀️ Zomer Vakanties (Juni-Augustus)</h3>
-                  <div className="text-sm text-primary space-y-2">
+                  <h3 className="font-medium text-primary mb-3">Zomer Vakanties (Juni-Augustus)</h3>
+                  <div className="text-sm text-gray-600 space-y-2">
                     <div><strong>Uitdagingen:</strong> Formula storage temperature, spoilage risk</div>
                     <div><strong>Oplossingen:</strong> Insulated bags, ice pack rotation, shaded areas</div>
                     <div><strong>Extra behoeften:</strong> Verhoogde hydratatie, cooling backup</div>
@@ -420,8 +420,8 @@ export default function VakantiePage() {
                 </div>
                 
                 <div className="bg-white rounded-lg p-4 border border-gray-200">
-                  <h3 className="font-medium text-primary mb-3">❄️ Winter Vakanties (December-Februari)</h3>
-                  <div className="text-sm text-primary space-y-2">
+                  <h3 className="font-medium text-primary mb-3">Winter Vakanties (December-Februari)</h3>
+                  <div className="text-sm text-gray-600 space-y-2">
                     <div><strong>Uitdagingen:</strong> Formula freezing, heating reliability</div>
                     <div><strong>Oplossingen:</strong> Thermos equipment, indoor feeding areas</div>
                     <div><strong>Voordelen:</strong> No spoilage concerns, cozy indoor routines</div>
@@ -438,7 +438,7 @@ export default function VakantiePage() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h3 className="font-medium text-primary mb-3">24 Uur Voor Vertrek:</h3>
-                  <div className="space-y-2 text-sm text-primary">
+                  <div className="space-y-2 text-sm text-gray-600">
                     <div className="flex items-center space-x-2">
                       <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
                       <span>Weather forecast check bestemming</span>
@@ -459,7 +459,7 @@ export default function VakantiePage() {
                 </div>
                 <div>
                   <h3 className="font-medium text-primary mb-3">Vertrek Dag:</h3>
-                  <div className="space-y-2 text-sm text-primary">
+                  <div className="space-y-2 text-sm text-gray-600">
                     <div className="flex items-center space-x-2">
                       <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
                       <span>Normal feeding schedule maintain</span>
@@ -487,19 +487,19 @@ export default function VakantiePage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/hygiene-bereiding/flesvoeding-bewaren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Flesvoeding bewaren </div>
-                  <div className="text-sm text-primary">Reis veiligheid en opslag tips</div>
+                  <div className="text-sm text-gray-600">Reis veiligheid en opslag tips</div>
                 </Link>
                 <Link href="/kennisbank/praktische-tips/voedingsritme-opbouwen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Voedingsritme opbouwen </div>
-                  <div className="text-sm text-primary">Vakantie schema aanpassingen</div>
+                  <div className="text-sm text-gray-600">Vakantie schema aanpassingen</div>
                 </Link>
                 <Link href="/kennisbank/praktische-tips/nachtvoeding-optimaliseren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Nachtvoeding optimaliseren </div>
-                  <div className="text-sm text-primary">Hotel en reis optimalisatie</div>
+                  <div className="text-sm text-gray-600">Hotel en reis optimalisatie</div>
                 </Link>
                 <Link href="/kennisbank/praktische-tips" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Alle praktische tips </div>
-                  <div className="text-sm text-primary">Meer handige ouder tips</div>
+                  <div className="text-sm text-gray-600">Meer handige ouder tips</div>
                 </Link>
               </div>
             </div>
