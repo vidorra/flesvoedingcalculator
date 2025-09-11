@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import Layout from '../../components/Layout'
 import Link from 'next/link'
-import { BookOpen, Search, Info, ArrowRight, Package, Clock, Baby, Shield, Wrench, AlertCircle, Refrigerator, Lightbulb, AlertTriangle } from 'lucide-react'
+import { BookOpen, Search, Info, ArrowRight, Milk, Clock, Baby, Droplets, Wrench, AlertCircle, Refrigerator, Lightbulb, ShieldCheck } from 'lucide-react'
 
 export default function KennisbankPage() {
   const [selectedCategory, setSelectedCategory] = useState('all')
@@ -373,7 +373,7 @@ export default function KennisbankPage() {
       id: 'soorten-flesvoeding',
       title: 'Soorten Flesvoeding',
       description: 'Startmelk, opvolgmelk en peutermelk uitgelegd',
-      icon: Package,
+      icon: Milk,
       color: 'purple'
     },
     {
@@ -394,14 +394,14 @@ export default function KennisbankPage() {
       id: 'hygiene-bereiding',
       title: 'Hygiëne & Bereiding',
       description: 'Veilig bereiden en bewaren van flesvoeding',
-      icon: Shield,
+      icon: Droplets,
       color: 'teal'
     },
     {
       id: 'veiligheid',
       title: 'Veiligheidsrichtlijnen',
       description: 'Belangrijke veiligheidsinformatie',
-      icon: AlertTriangle,
+      icon: ShieldCheck,
       color: 'red'
     },
     {
@@ -656,35 +656,35 @@ export default function KennisbankPage() {
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="font-semibold text-primary mb-4">Meest Gestelde Vragen</h2>
           <div className="space-y-4">
-            <div className="border-l-4 border-primary pl-4">
+            <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white">
               <h3 className="font-medium text-primary mb-2">Welk merk flesvoeding is het beste?</h3>
               <p className="text-sm text-gray-600">
                 Alle Nederlandse merken voldoen aan dezelfde strenge EU-eisen. Kruidvat huismerk is even veilig als Nutrilon of Hero Baby, maar wel goedkoper. Kies op basis van budget en beschikbaarheid.
               </p>
             </div>
             
-            <div className="border-l-4 border-primary pl-4">
+            <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white">
               <h3 className="font-medium text-primary mb-2">Hoeveel kost flesvoeding per maand?</h3>
               <p className="text-sm text-gray-600">
                 Budget variant (Kruidvat): €35-50/maand. Middenklasse (Hero Baby): €50-70/maand. Premium (Nutrilon): €70-90/maand. Eerste jaar totaal: €400-1000 afhankelijk van merkkeuze.
               </p>
             </div>
             
-            <div className="border-l-4 border-primary pl-4">
+            <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white">
               <h3 className="font-medium text-primary mb-2">Wanneer overstappen van nummer 1 naar 2?</h3>
               <p className="text-sm text-gray-600">
                 Pas vanaf 6 maanden én wanneer baby vaste voeding krijgt. Nummer 1 mag tot 12 maanden gebruikt worden. Overstappen is dus optioneel, niet verplicht.
               </p>
             </div>
             
-            <div className="border-l-4 border-primary pl-4">
+            <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white">
               <h3 className="font-medium text-primary mb-2">Kan ik van borstvoeding overstappen naar flesvoeding?</h3>
               <p className="text-sm text-gray-600">
                 Ja, dit kan op elke leeftijd. Geleidelijke overgang over 1-2 weken voorkomt borstontsteking. Combivoeiding (borstvoeding + flesvoeding) is ook mogelijk.
               </p>
             </div>
             
-            <div className="border-l-4 border-primary pl-4">
+            <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white">
               <h3 className="font-medium text-primary mb-2">Mijn baby weigert de fles, wat nu?</h3>
               <p className="text-sm text-gray-600">
                 Check temperatuur (37°C), probeer andere speen, laat partner proberen, gebruik afgekolfde melk eerst. Geduld is belangrijk - sommige baby's hebben tijd nodig.
