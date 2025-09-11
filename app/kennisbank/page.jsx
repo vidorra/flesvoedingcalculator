@@ -502,10 +502,10 @@ export default function KennisbankPage() {
                     <div className="flex items-start space-x-3">
                       <Icon className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                       <div>
-                        <div className="flex items-center justify-between mb-1">
+                        <div className="flex items-center justify-start gap-3 mb-1">
                           <h4 className="font-medium text-gray-700">{article.title}</h4>
                           {article.duration && (
-                            <span className="text-xs text-gray-500 bg-white px-2 py-1 rounded">{article.duration}</span>
+                            <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">{article.duration}</span>
                           )}
                         </div>
                         <p className="text-sm text-gray-600">{article.description}</p>
