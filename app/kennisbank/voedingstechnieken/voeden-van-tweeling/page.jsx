@@ -323,7 +323,7 @@ export default function TweelingVoedenPage() {
                     <ul className="text-xs text-gray-600 space-y-1">
                       {item.details.map((detail, detailIndex) => (
                         <li key={detailIndex} className="flex items-center space-x-2">
-                          <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span>{detail}</span>
                         </li>
                       ))}

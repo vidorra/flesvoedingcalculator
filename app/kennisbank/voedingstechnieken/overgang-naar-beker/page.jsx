@@ -678,15 +678,15 @@ export default function OvergangNaarBekerPage() {
                             <h5 className="text-sm font-medium text-gray-700 mb-1">Doelen:</h5>
                             <ul className="space-y-1">
                               <li className="flex items-center space-x-2">
-                                <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                                 <span className="text-gray-600 text-sm">Nieuwe beker introduceren</span>
                               </li>
                               <li className="flex items-center space-x-2">
-                                <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                                 <span className="text-gray-600 text-sm">1-2 sessions per dag (5-10 min)</span>
                               </li>
                               <li className="flex items-center space-x-2">
-                                <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                                 <span className="text-gray-600 text-sm">Positieve associatie opbouwen</span>
                               </li>
                             </ul>
@@ -713,15 +713,15 @@ export default function OvergangNaarBekerPage() {
                             <h5 className="text-sm font-medium text-gray-700 mb-1">Doelen:</h5>
                             <ul className="space-y-1">
                               <li className="flex items-center space-x-2">
-                                <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                                 <span className="text-gray-600 text-sm">Volume verhogen (60-120ml)</span>
                               </li>
                               <li className="flex items-center space-x-2">
-                                <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                                 <span className="text-gray-600 text-sm">Langere sessions (10-15 min)</span>
                               </li>
                               <li className="flex items-center space-x-2">
-                                <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                                 <span className="text-gray-600 text-sm">Begin routine integratie</span>
                               </li>
                             </ul>
@@ -748,15 +748,15 @@ export default function OvergangNaarBekerPage() {
                             <h5 className="text-sm font-medium text-gray-700 mb-1">Doelen:</h5>
                             <ul className="space-y-1">
                               <li className="flex items-center space-x-2">
-                                <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                                 <span className="text-gray-600 text-sm">Meer onafhankelijk vasthouden</span>
                               </li>
                               <li className="flex items-center space-x-2">
-                                <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                                 <span className="text-gray-600 text-sm">Volume target 120-180ml</span>
                               </li>
                               <li className="flex items-center space-x-2">
-                                <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                                 <span className="text-gray-600 text-sm">Consistente dagelijkse routine</span>
                               </li>
                             </ul>
