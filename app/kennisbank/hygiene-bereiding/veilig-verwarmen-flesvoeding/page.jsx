@@ -175,9 +175,18 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                       <div className="bg-white rounded-lg p-3">
                         <p className="text-sm text-gray-700 mb-2">Magnetron verwarmt:</p>
                         <ul className="space-y-1">
-                          <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Buitenkant fles: 25°C (koud)</span></li>
-                          <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Midden van melk: 80°C (brandend heet)</span></li>
-                          <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Resultaat: Schijnbaar koude fles met kokende kernen</span></li>
+                          <li className="flex items-start space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                            <span className="text-gray-600 text-sm">Buitenkant fles: 25°C (koud)</span>
+                          </li>
+                          <li className="flex items-start space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                            <span className="text-gray-600 text-sm">Midden van melk: 80°C (brandend heet)</span>
+                          </li>
+                          <li className="flex items-start space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                            <span className="text-gray-600 text-sm">Resultaat: Schijnbaar koude fles met kokende kernen</span>
+                          </li>
                         </ul>
                       </div>
                     </div>
@@ -185,10 +194,10 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                     <div className="border-l-4 border-red-300 pl-4">
                       <h4 className="font-medium text-gray-700 mb-2">2. "Hot Spots" probleem</h4>
                       <ul className="space-y-1">
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Microscopische hete plekken ontstaan willekeurig</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Ondetecteerbaar bij gewone temperatuurtests</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Extreme temperaturen tot 90°C mogelijk</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Ernstige mond/keelbrandwonden geregistreerd</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Microscopische hete plekken ontstaan willekeurig</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Ondetecteerbaar bij gewone temperatuurtests</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Extreme temperaturen tot 90°C mogelijk</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Ernstige mond/keelbrandwonden geregistreerd</span></li>
                       </ul>
                     </div>
                     
@@ -198,19 +207,28 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                         <div>
                           <p className="text-sm text-gray-600 mb-1">Magnetron vernietigheid:</p>
                           <ul className="space-y-1">
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Vitamine B1: 40% verlies</span></li>
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Vitamine B12: 30% verlies</span></li>
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Lysine: 50% verlies</span></li>
-                            <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Antioxidanten: 60% verlies</span></li>
+                            <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Vitamine B1: 40% verlies</span></li>
+                            <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Vitamine B12: 30% verlies</span></li>
+                            <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Lysine: 50% verlies</span></li>
+                            <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Antioxidanten: 60% verlies</span></li>
                           </ul>
                         </div>
                         
                         <div className="bg-amber-50 rounded-lg p-3">
                           <p className="text-sm text-amber-700 mb-1">Nederlandse ziekenhuis data:</p>
                           <ul className="space-y-1">
-                            <li className="text-amber-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>85% brandwonden magnetron gerelateerd</span></li>
-                            <li className="text-amber-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Gemiddelde opname: 3-7 dagen</span></li>
-                            <li className="text-amber-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Kosten per incident: €8.000-€15.000</span></li>
+                            <li className="flex items-start space-x-2">
+                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                              <span className="text-amber-700 text-sm">85% brandwonden magnetron gerelateerd</span>
+                            </li>
+                            <li className="flex items-start space-x-2">
+                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                              <span className="text-amber-700 text-sm">Gemiddelde opname: 3-7 dagen</span>
+                            </li>
+                            <li className="flex items-start space-x-2">
+                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                              <span className="text-amber-700 text-sm">Kosten per incident: €8.000-€15.000</span>
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -371,10 +389,10 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                     <div>
                       <h4 className="font-medium text-gray-700 mb-2">Hoe het werkt:</h4>
                       <ul className="space-y-1">
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Stoom- of waterbadprincipe</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Thermostaatregeling</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Automatische uitschakeling</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Ook 12V modellen voor auto</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Stoom- of waterbadprincipe</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Thermostaatregeling</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Automatische uitschakeling</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Ook 12V modellen voor auto</span></li>
                       </ul>
                     </div>
                     
@@ -408,27 +426,27 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                     <div className="bg-white rounded-lg p-4">
                       <h4 className="font-medium text-gray-700 mb-2">Philips AVENT (€35-45)</h4>
                       <ul className="space-y-1">
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Nederlandse garantie</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Compatibel alle flesmerken</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Auto-uitschakeling</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Nederlandse garantie</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Compatibel alle flesmerken</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Auto-uitschakeling</span></li>
                       </ul>
                     </div>
                     
                     <div className="bg-white rounded-lg p-4">
                       <h4 className="font-medium text-gray-700 mb-2">Tommee Tippee (€25-35)</h4>
                       <ul className="space-y-1">
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Snelle opwarming (3-4 min)</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>LED indicatoren</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Compact design</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Snelle opwarming (3-4 min)</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">LED indicatoren</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Compact design</span></li>
                       </ul>
                     </div>
                     
                     <div className="bg-white rounded-lg p-4">
                       <h4 className="font-medium text-gray-700 mb-2">MAM (€30-40)</h4>
                       <ul className="space-y-1">
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Extra stil (nachtgebruik)</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Energiezuinig</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Nederlands merkservice</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Extra stil (nachtgebruik)</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Energiezuinig</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Nederlands merkservice</span></li>
                       </ul>
                     </div>
                   </div>
@@ -594,9 +612,9 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                 <div className="bg-white rounded-lg p-4">
                   <h4 className="font-medium text-gray-700 mb-2">Nederlandse ER statistieken:</h4>
                   <ul className="space-y-1">
-                    <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>67% brandwonden: onvoldoende getest</span></li>
-                    <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>23% brandwonden: verkeerde testmethode</span></li>
-                    <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>10% brandwonden: technische falen apparatuur</span></li>
+                    <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">67% brandwonden: onvoldoende getest</span></li>
+                    <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">23% brandwonden: verkeerde testmethode</span></li>
+                    <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">10% brandwonden: technische falen apparatuur</span></li>
                   </ul>
                 </div>
               </div>
