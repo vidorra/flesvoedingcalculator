@@ -36,7 +36,7 @@ export default function FlessenSteriligerenPage() {
                 <Shield className="w-6 h-6 mr-3 text-primary" />
                 Flessen steriliseren: Complete gids voor veilige hygiëne
               </h1>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-500 leading-relaxed">
                 Alles over het steriliseren van babyflessen en spenen - methoden, timing en praktische tips
               </p>
             </div>
@@ -139,27 +139,54 @@ export default function FlessenSteriligerenPage() {
                     <div>
                       <h4 className="font-medium text-gray-700 mb-2">0-6 maanden:</h4>
                       <ul className="space-y-1">
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Na elke voeding steriliseren</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Dagelijks: alle gebruikte items</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Wekelijks: doseerschepjes en accessoires</span></li>
+                        <li className="flex items-start space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                          <span className="text-gray-600 text-sm">Na elke voeding steriliseren</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                          <span className="text-gray-600 text-sm">Dagelijks: alle gebruikte items</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                          <span className="text-gray-600 text-sm">Wekelijks: doseerschepjes en accessoires</span>
+                        </li>
                       </ul>
                     </div>
                     
                     <div>
                       <h4 className="font-medium text-gray-700 mb-2">6-12 maanden:</h4>
                       <ul className="space-y-1">
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Dagelijks of na elke gebruik</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Bij ziekte: terug naar elke voeding</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Spenen: altijd na gebruik</span></li>
+                        <li className="flex items-start space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                          <span className="text-gray-600 text-sm">Dagelijks of na elke gebruik</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                          <span className="text-gray-600 text-sm">Bij ziekte: terug naar elke voeding</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                          <span className="text-gray-600 text-sm">Spenen: altijd na gebruik</span>
+                        </li>
                       </ul>
                     </div>
                     
                     <div>
                       <h4 className="font-medium text-gray-700 mb-2">12+ maanden:</h4>
                       <ul className="space-y-1">
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Wekelijks of bij ziekte</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Nieuwe items: altijd eerst</span></li>
-                        <li className="text-gray-600 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Goede was meestal voldoende</span></li>
+                        <li className="flex items-start space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                          <span className="text-gray-600 text-sm">Wekelijks of bij ziekte</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                          <span className="text-gray-600 text-sm">Nieuwe items: altijd eerst</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                          <span className="text-gray-600 text-sm">Goede was meestal voldoende</span>
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -291,27 +318,51 @@ export default function FlessenSteriligerenPage() {
                     </div>
                   </div>
 
-                  <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
-                    <h3 className="font-medium text-purple-800 mb-3">Methode 4: Sterilisatie tabletten</h3>
+                  <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                    <h3 className="font-medium text-primary mb-3">Methode 4: Sterilisatie tabletten</h3>
                     
                     <div className="space-y-2">
                       <div>
-                        <h4 className="font-medium text-purple-700 mb-1">Voordelen:</h4>
+                        <h4 className="font-medium text-gray-700 mb-1">Voordelen:</h4>
                         <ul className="space-y-1">
-                          <li className="text-purple-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Makkelijk onderweg</span></li>
-                          <li className="text-purple-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Geen apparaat nodig</span></li>
-                          <li className="text-purple-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Koude sterilisatie mogelijk</span></li>
-                          <li className="text-purple-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Lange houdbaarheid tabletten</span></li>
+                          <li className="flex items-start space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                            <span className="text-gray-600 text-sm">Makkelijk onderweg</span>
+                          </li>
+                          <li className="flex items-start space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                            <span className="text-gray-600 text-sm">Geen apparaat nodig</span>
+                          </li>
+                          <li className="flex items-start space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                            <span className="text-gray-600 text-sm">Koude sterilisatie mogelijk</span>
+                          </li>
+                          <li className="flex items-start space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                            <span className="text-gray-600 text-sm">Lange houdbaarheid tabletten</span>
+                          </li>
                         </ul>
                       </div>
                       
                       <div>
-                        <h4 className="font-medium text-purple-700 mb-1">Nadelen:</h4>
+                        <h4 className="font-medium text-gray-700 mb-1">Nadelen:</h4>
                         <ul className="space-y-1">
-                          <li className="text-purple-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Chemische methode</span></li>
-                          <li className="text-purple-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Langere wachttijd (30 minuten)</span></li>
-                          <li className="text-purple-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Kosten per gebruik</span></li>
-                          <li className="text-purple-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Moet goed afspoelen</span></li>
+                          <li className="flex items-start space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                            <span className="text-gray-600 text-sm">Chemische methode</span>
+                          </li>
+                          <li className="flex items-start space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                            <span className="text-gray-600 text-sm">Langere wachttijd (30 minuten)</span>
+                          </li>
+                          <li className="flex items-start space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                            <span className="text-gray-600 text-sm">Kosten per gebruik</span>
+                          </li>
+                          <li className="flex items-start space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                            <span className="text-gray-600 text-sm">Moet goed afspoelen</span>
+                          </li>
                         </ul>
                       </div>
                     </div>
@@ -601,19 +652,19 @@ export default function FlessenSteriligerenPage() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Fles bereiden stap voor stap </div>
+                  <div className="font-medium text-primary">Fles bereiden stap voor stap →</div>
                   <div className="text-sm text-gray-600">Veilige bereiding na sterilisatie</div>
                 </Link>
                 <Link href="/kennisbank/hygiene-bereiding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Hygiëne & Bereiding overzicht </div>
+                  <div className="font-medium text-primary">Hygiëne & Bereiding overzicht →</div>
                   <div className="text-sm text-gray-600">Alle hygiëne aspecten</div>
                 </Link>
                 <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Eerste keer flesvoeding </div>
+                  <div className="font-medium text-primary">Eerste keer flesvoeding →</div>
                   <div className="text-sm text-gray-600">Complete beginnersgids</div>
                 </Link>
                 <Link href="/kennisbank/veiligheid" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Veiligheidsrichtlijnen </div>
+                  <div className="font-medium text-primary">Veiligheidsrichtlijnen →</div>
                   <div className="text-sm text-gray-600">Alle veiligheidsaspecten</div>
                 </Link>
               </div>

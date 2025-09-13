@@ -227,7 +227,10 @@ export default function FlesvoedingWerkPage() {
                         <h4 className="font-medium text-gray-600 mb-2">Voordelen:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           {type.pros.map((pro, idx) => (
-                            <li key={idx}><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>{pro}</span></li>
+                            <li key={idx} className="flex items-start space-x-2">
+                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                              <span>{pro}</span>
+                            </li>
                           ))}
                         </ul>
                       </div>
@@ -235,7 +238,10 @@ export default function FlesvoedingWerkPage() {
                         <h4 className="font-medium text-gray-600 mb-2">Aandachtspunten:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           {type.cons.map((con, idx) => (
-                            <li key={idx}><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>{con}</span></li>
+                            <li key={idx} className="flex items-start space-x-2">
+                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                              <span>{con}</span>
+                            </li>
                           ))}
                         </ul>
                       </div>
