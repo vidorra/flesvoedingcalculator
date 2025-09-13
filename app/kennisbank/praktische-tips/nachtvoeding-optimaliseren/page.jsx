@@ -398,7 +398,7 @@ export default function NachtvoedingOptimaliserenPage() {
                     <ul className="space-y-1">
                       {phase.tips.map((tip, tipIndex) => (
                         <li key={tipIndex} className="text-sm text-gray-600 flex items-start space-x-2">
-                          <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                           <span>{tip}</span>
                         </li>
                       ))}

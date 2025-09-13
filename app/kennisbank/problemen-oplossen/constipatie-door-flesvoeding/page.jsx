@@ -133,15 +133,15 @@ export default function ConstipatieFlespagePage() {
                       <h4 className="font-medium text-gray-700 mb-2">Flesvoeding eigenschappen</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Hogere eiwitgehalte: moeilijker verteerbaar</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Koemelkeiwitten: anders gestructureerd</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">IJzer toevoeging: kan verstoppend werken</span>
                         </li>
                       </ul>
@@ -151,15 +151,15 @@ export default function ConstipatieFlespagePage() {
                       <h4 className="font-medium text-gray-700 mb-2">Spijsvertering impact</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Langzamere doorvoer in darmen</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Andere darmflora samenstelling</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Harder eindproduct door structuur</span>
                         </li>
                       </ul>
@@ -312,15 +312,15 @@ export default function ConstipatieFlespagePage() {
                       <h4 className="font-medium text-gray-700 mb-2">Verwachtingen:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Meer gevoelig voor constipatie</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Frequent pooping nog normaal</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Spijsverteringssysteem ontwikkelt nog</span>
                         </li>
                       </ul>
@@ -330,15 +330,15 @@ export default function ConstipatieFlespagePage() {
                       <h4 className="font-medium text-gray-700 mb-2">Strategieën:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Dagelijks zachte buik massage</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Minimale aanpassingen concentratie</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Sneller contact bij zorgen</span>
                         </li>
                       </ul>
@@ -354,15 +354,15 @@ export default function ConstipatieFlespagePage() {
                       <h4 className="font-medium text-gray-700 mb-2">Grote veranderingen:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Solid food introduction</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Water needs increase</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Sitting development helpt</span>
                         </li>
                       </ul>
@@ -372,15 +372,15 @@ export default function ConstipatieFlespagePage() {
                       <h4 className="font-medium text-gray-700 mb-2">Strategieën:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">High fiber foods: pruimen, peren</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Increased water: 100-200ml per dag</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <div className="w-1 h-1 bg-primary rounded-full flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Activity promotion: crawling stimuleert</span>
                         </li>
                       </ul>
