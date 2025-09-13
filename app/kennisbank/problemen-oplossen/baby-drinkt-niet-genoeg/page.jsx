@@ -329,9 +329,9 @@ export default function BabyDrinktNietGenoegPage() {
                     <div className="mt-3">
                       <p className="text-gray-700 text-sm font-medium mb-2">Bijhouden wat werkt:</p>
                       <ul className="space-y-1">
-                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Welke speen: merk, maat, materiaal</span></li>
-                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Welke positie: zittend, staand, in beweging</span></li>
-                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Welke timing: interval tussen voedingen</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-700 text-sm">Welke speen: merk, maat, materiaal</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-700 text-sm">Welke positie: zittend, staand, in beweging</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-700 text-sm">Welke timing: interval tussen voedingen</span></li>
                       </ul>
                     </div>
                   </div>
@@ -357,9 +357,9 @@ export default function BabyDrinktNietGenoegPage() {
                     <div>
                       <p className="text-gray-700 text-sm font-medium mb-2">Patronen zoeken:</p>
                       <ul className="space-y-1">
-                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Tijden van dag: drinkt baby beter 's ochtends/avonds?</span></li>
-                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Dagen van week: weekend vs doordeweeks verschil?</span></li>
-                        <li className="text-gray-700 text-sm"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Na activiteiten: na bad, wandeling, spelen?</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-700 text-sm">Tijden van dag: drinkt baby beter 's ochtends/avonds?</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-700 text-sm">Dagen van week: weekend vs doordeweeks verschil?</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-700 text-sm">Na activiteiten: na bad, wandeling, spelen?</span></li>
                       </ul>
                     </div>
                   </div>
