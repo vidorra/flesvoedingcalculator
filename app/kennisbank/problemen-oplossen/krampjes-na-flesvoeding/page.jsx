@@ -260,7 +260,7 @@ export default function KrampjesNaFlesvoedingPage() {
     {
       urgency: 'DIRECT MEDISCHE HULP (Binnen 24 uur)',
       icon: AlertTriangle,
-      color: 'text-red-600',
+      color: 'text-amber-600',
       symptoms: [
         'Projectielspugen + krampjes',
         'Koorts (>38°C rectaal)',
@@ -273,7 +273,7 @@ export default function KrampjesNaFlesvoedingPage() {
     {
       urgency: 'REGULIERE CONSULTATIE (Binnen week)',
       icon: Clock,
-      color: 'text-orange-600',
+      color: 'text-primary',
       symptoms: [
         '>3 uur huilen per dag voor 3+ weken',
         'Geen verbetering na 2 weken anti-koliek maatregelen',
@@ -284,7 +284,7 @@ export default function KrampjesNaFlesvoedingPage() {
     {
       urgency: 'ZELF BEHANDELING VOORTZETTEN',
       icon: Heart,
-      color: 'text-green-600',
+      color: 'text-primary',
       symptoms: [
         'Krampjes <2 uur per dag gemiddeld',
         'Verbetering zichtbaar week op week',
@@ -696,7 +696,7 @@ export default function KrampjesNaFlesvoedingPage() {
                         <ul className="space-y-1">
                           {age.improvements.map((improvement, impIndex) => (
                             <li key={impIndex} className="flex items-start space-x-2">
-                              <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                               <span className="text-sm text-gray-700">{improvement}</span>
                             </li>
                           ))}
@@ -751,8 +751,7 @@ export default function KrampjesNaFlesvoedingPage() {
                       {help.symptoms.map((symptom, symptomIndex) => (
                         <li key={symptomIndex} className="flex items-start space-x-2">
                           <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
-                            help.color === 'text-red-600' ? 'bg-red-400' : 
-                            help.color === 'text-orange-600' ? 'bg-orange-400' : 'bg-green-400'
+                            help.color === 'text-amber-600' ? 'bg-amber-400' : 'bg-primary'
                           }`}></div>
                           <span className="text-sm text-gray-700">{symptom}</span>
                         </li>
@@ -815,7 +814,7 @@ export default function KrampjesNaFlesvoedingPage() {
                 {myths.map((myth, index) => (
                   <div key={index} className="p-4">
                     <div className="mb-2">
-                      <span className="text-red-600 font-medium"> "{myth.myth}"</span>
+                      <span className="text-primary font-medium"> "{myth.myth}"</span>
                     </div>
                     <p className="text-sm text-gray-700">
                       <strong>Feit:</strong> {myth.fact}
@@ -862,14 +861,14 @@ export default function KrampjesNaFlesvoedingPage() {
                   href="/kennisbank/problemen-oplossen"
                   className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
-                  <div className="font-medium text-gray-700">Problemen Oplossen </div>
+                  <div className="font-medium text-primary">Problemen Oplossen →</div>
                   <div className="text-sm text-gray-600">Alle oplossingen voor flesvoeding problemen</div>
                 </Link>
                 <Link 
                   href="/kennisbank/voedingstechnieken/verschillende-spenen-uitproberen"
                   className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
-                  <div className="font-medium text-gray-700">Spenen Uitproberen </div>
+                  <div className="font-medium text-primary">Spenen Uitproberen →</div>
                   <div className="text-sm text-gray-600">Anti-koliek spenen voor minder krampjes</div>
                 </Link>
               </div>
