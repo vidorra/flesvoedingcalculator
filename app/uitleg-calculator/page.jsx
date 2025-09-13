@@ -43,34 +43,46 @@ export default function UitlegCalculatorPage() {
 
   const ageAdjustments = [
     {
-      age: '0-2 weken',
-      multiplier: '0.8x',
-      frequency: '8-12x per dag',
-      reason: 'Kleine maagcapaciteit, frequent voeden'
+      age: '0-1 maanden',
+      multiplier: '150ml/kg',
+      frequency: '7-10x per dag',
+      reason: 'Basis formule voor pasgeborenen'
     },
     {
-      age: '2-8 weken', 
-      multiplier: '0.9x',
+      age: '1-2 maanden', 
+      multiplier: '150ml/kg',
       frequency: '6-8x per dag',
-      reason: 'Groeiende maag, stabielere patronen'
+      reason: 'Stabiele groeiperiode'
     },
     {
-      age: '2-4 maanden',
-      multiplier: '1.0x',
+      age: '2-3 maanden',
+      multiplier: '140ml/kg',
+      frequency: '5-7x per dag',
+      reason: 'Efficiëntere vertering, minder frequent'
+    },
+    {
+      age: '3-4 maanden',
+      multiplier: '130ml/kg',
       frequency: '5-6x per dag',
-      reason: 'Volledige basis formule'
+      reason: 'Voorbereiding op vaste voeding introductie'
     },
     {
-      age: '4-6 maanden',
-      multiplier: '1.1x',
+      age: '4-5 maanden',
+      multiplier: '120ml/kg',
+      frequency: '4-6x per dag',
+      reason: 'Groeivertraging, voorbereid op bijvoeding'
+    },
+    {
+      age: '5-6 maanden',
+      multiplier: '110ml/kg',
       frequency: '4-5x per dag',
-      reason: 'Groei spurt, voorbereid op vaste voeding'
+      reason: 'Begin van bijvoeding introductie'
     },
     {
       age: '6+ maanden',
-      multiplier: '0.8x',
+      multiplier: '100ml/kg',
       frequency: '3-4x per dag',
-      reason: 'Bijvoeding start, minder afhankelijk van melk'
+      reason: 'Bijvoeding wordt hoofdvoeding'
     }
   ]
 
@@ -217,7 +229,7 @@ export default function UitlegCalculatorPage() {
               <thead>
                 <tr className="border-b border-gray-200">
                   <th className="text-left py-3 font-medium text-gray-700">Leeftijd</th>
-                  <th className="text-left py-3 font-medium text-gray-700">Aanpassing</th>
+                  <th className="text-left py-3 font-medium text-gray-700">ml per kg/dag</th>
                   <th className="text-left py-3 font-medium text-gray-700">Frequentie</th>
                   <th className="text-left py-3 font-medium text-gray-700">Reden</th>
                 </tr>
