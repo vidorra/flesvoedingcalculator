@@ -131,7 +131,7 @@ export default function HomePage() {
     }
 
     const weightKg = parseFloat(weight)
-    let age = parseInt(ageMonths)
+    let age = ageMonths === '0-2weeks' || ageMonths === '2-4weeks' ? ageMonths : parseInt(ageMonths)
     let mlPerKg = 150
     let isPrematureCalculation = false
     let specialNotes = []
@@ -181,16 +181,23 @@ export default function HomePage() {
         specialNotes.push('Overweeg speciale prematurenvoeding zoals Nutrilon Nenatal of Aptamil Prematil')
       }
     } else {
-      // Standard age-based adjustment
-      // NIEUWE LOGICA: Speciale behandeling voor zeer jonge baby's (0-1 maand)
-      if (age === 0) {  // 0-1 maand categorie
-        mlPerKg = 90;  // Veilige conservatieve waarde voor pasgeborenen
-        specialNotes.push("⚠️ Voor baby's jonger dan 2 weken: begin met kleinere hoeveelheden dan geadviseerd");
-        specialNotes.push("📞 Raadpleeg uw verloskundige of consultatiebureau bij twijfel over voeding");
-        specialNotes.push("👀 Let goed op verzadigingssignalen van uw baby (wegduwen fles, hoofdje wegdraaien)");
-        specialNotes.push("🍼 Pas aan op basis van baby's reactie - elke baby is anders");
+      // Standard age-based adjustment with granular newborn categories
+      if (age === '0-2weeks') {
+        mlPerKg = 75;  // Very conservative for first 2 weeks
+        specialNotes.push("⚠️ Eerste 2 weken: Begin met 10-20ml per voeding, bouw langzaam op");
+        specialNotes.push("📞 Raadpleeg uw verloskundige of consultatiebureau bij vragen");
+        specialNotes.push("👀 Let goed op verzadigingssignalen: baby duwt fles weg = vol");
+        specialNotes.push("🍼 Voeding om de 2-3 uur, 8-12x per dag");
+        specialNotes.push("💧 Als baby veel spuugt: geef minder per voeding, vaker voeden");
+      } else if (age === '2-4weeks') {
+        mlPerKg = 115;  // Transition period to full feeding
+        specialNotes.push("⚠️ Opbouwperiode: Geleidelijk verhogen naar 30-60ml per voeding");
+        specialNotes.push("📞 Bij twijfel over gewichtstoename: raadpleeg consultatiebureau");
+        specialNotes.push("👀 Baby's maag is nog klein - respecteer verzadigingssignalen");
+        specialNotes.push("🍼 7-10 voedingen per dag, om de 2,5-3 uur");
       } else {
-        // Bestaande logica voor oudere baby's
+        // Bestaande logica voor oudere baby's (1+ maanden)
+        if (age >= 1) mlPerKg = 150
         if (age >= 2) mlPerKg = 140
         if (age >= 3) mlPerKg = 130
         if (age >= 4) mlPerKg = 120
@@ -324,7 +331,8 @@ export default function HomePage() {
                     className="w-full px-4 py-3 pr-10 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none appearance-none bg-white text-gray-800"
                   >
                   <option value="premature">Prematuur geboren</option>
-                  <option value="0">0-1 maand</option>
+                  <option value="0-2weeks">0-2 weken</option>
+                  <option value="2-4weeks">2-4 weken</option>
                   <option value="1">1-2 maanden</option>
                   <option value="2">2-3 maanden</option>
                   <option value="3">3-4 maanden</option>

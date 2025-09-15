@@ -43,10 +43,16 @@ export default function UitlegCalculatorPage() {
 
   const ageAdjustments = [
     {
-      age: '0-1 maanden',
-      multiplier: '150ml/kg',
+      age: '0-2 weken',
+      multiplier: '75ml/kg',
+      frequency: '8-12x per dag',
+      reason: 'Zeer voorzichtig voor pasgeborenen, kleine maag'
+    },
+    {
+      age: '2-4 weken',
+      multiplier: '115ml/kg',
       frequency: '7-10x per dag',
-      reason: 'Basis formule voor pasgeborenen'
+      reason: 'Opbouwperiode naar volledige voeding'
     },
     {
       age: '1-2 maanden', 
