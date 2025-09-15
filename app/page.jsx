@@ -182,11 +182,21 @@ export default function HomePage() {
       }
     } else {
       // Standard age-based adjustment
-      if (age >= 2) mlPerKg = 140
-      if (age >= 3) mlPerKg = 130
-      if (age >= 4) mlPerKg = 120
-      if (age >= 5) mlPerKg = 110
-      if (age >= 6) mlPerKg = 100
+      // NIEUWE LOGICA: Speciale behandeling voor zeer jonge baby's (0-1 maand)
+      if (age === 0) {  // 0-1 maand categorie
+        mlPerKg = 90;  // Veilige conservatieve waarde voor pasgeborenen
+        specialNotes.push("⚠️ Voor baby's jonger dan 2 weken: begin met kleinere hoeveelheden dan geadviseerd");
+        specialNotes.push("📞 Raadpleeg uw verloskundige of consultatiebureau bij twijfel over voeding");
+        specialNotes.push("👀 Let goed op verzadigingssignalen van uw baby (wegduwen fles, hoofdje wegdraaien)");
+        specialNotes.push("🍼 Pas aan op basis van baby's reactie - elke baby is anders");
+      } else {
+        // Bestaande logica voor oudere baby's
+        if (age >= 2) mlPerKg = 140
+        if (age >= 3) mlPerKg = 130
+        if (age >= 4) mlPerKg = 120
+        if (age >= 5) mlPerKg = 110
+        if (age >= 6) mlPerKg = 100
+      }
     }
 
     // Calculate daily amount with premature maximum
@@ -616,6 +626,47 @@ export default function HomePage() {
           {/* Results */}
           {results && (
             <div className="space-y-6">
+              {/* Newborn Safety Warning */}
+              {ageMonths === '0' && (
+                <div className="bg-red-50 border border-red-200 rounded-xl p-6">
+                  <div className="flex items-start space-x-3">
+                    <AlertCircle className="w-6 h-6 text-red-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h3 className="font-semibold text-red-800 mb-3">
+                        Belangrijke Waarschuwing voor Pasgeborenen
+                      </h3>
+                      
+                      <div className="space-y-3 text-sm text-red-700">
+                        <div className="bg-white rounded-lg p-3">
+                          <h4 className="font-medium mb-2">⚠️ Medische Richtlijnen:</h4>
+                          <ul className="space-y-1 text-xs">
+                            <li>• <strong>0-3 dagen:</strong> Begin met 10-20ml per voeding</li>
+                            <li>• <strong>4-7 dagen:</strong> Opbouw naar 20-40ml per voeding</li>
+                            <li>• <strong>1-2 weken:</strong> Geleidelijk naar 30-60ml per voeding</li>
+                          </ul>
+                        </div>
+                        
+                        <div className="bg-white rounded-lg p-3">
+                          <h4 className="font-medium mb-2">👀 Let Op Deze Signalen:</h4>
+                          <ul className="space-y-1 text-xs">
+                            <li>• Baby duwt fles weg = vol (niet koppig)</li>
+                            <li>• Veel spugen = te veel gekregen</li>
+                            <li>• Onrust na voeding = overvol gevoel</li>
+                            <li>• Slaapt niet na voeding = mogelijk overvoeding</li>
+                          </ul>
+                        </div>
+                        
+                        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
+                          <p className="text-yellow-800 font-medium text-center">
+                            📞 Bij twijfel: Bel uw verloskundige of consultatiebureau
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+              
               {/* Main Results */}
               <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
                 <h3 className="text-lg font-semibold mb-4 flex items-center">
@@ -797,6 +848,21 @@ export default function HomePage() {
                       </li>
                     ))}
                   </ul>
+                </div>
+              )}
+              
+              {/* Newborn Feeding Tips */}
+              {ageMonths === '0' && (
+                <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                  <h4 className="font-medium text-blue-800 mb-2">
+                    💡 Tips Voor Pasgeborenen
+                  </h4>
+                  <div className="text-sm text-blue-700 space-y-2">
+                    <p><strong>Start voorzichtig:</strong> Begin met de helft van de aanbevolen hoeveelheid</p>
+                    <p><strong>Frequentie:</strong> Kleinere hoeveelheden, vaker (8-12x per dag)</p>
+                    <p><strong>Tempo:</strong> Laat uw baby pauzes nemen tijdens de voeding</p>
+                    <p><strong>Signalen:</strong> Stop als baby de fles wegduwt of zijn hoofdje wegdraait</p>
+                  </div>
                 </div>
               )}
               
