@@ -61,15 +61,6 @@ export default function OverOnsPage() {
                 </div>
               </div>
               
-              <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 bg-default rounded-lg flex items-center justify-center flex-shrink-0">
-                  <span className="text-primary font-bold">✓</span>
-                </div>
-                <div>
-                  <h3 className="font-medium text-gray-800">Expert Team</h3>
-                  <p className="text-sm text-gray-600">Ontwikkeld door kinderartsen, verloskundigen en voedingsspecialisten met jarenlange ervaring.</p>
-                </div>
-              </div>
               
               <div className="flex items-start space-x-3">
                 <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
