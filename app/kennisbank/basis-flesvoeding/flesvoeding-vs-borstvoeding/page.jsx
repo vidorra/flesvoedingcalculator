@@ -138,7 +138,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
               <h3 className="font-semibold text-primary mb-4">Nederlandse statistieken</h3>
               <ul className="space-y-2">
                 {nederlandseStats.map((stat, index) => (
-                  <li key={tipIndex} className="flex items-center space-x-2">
+                  <li key={index} className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                     <span className="text-gray-700">{stat}</span>
                   </li>
@@ -178,7 +178,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
                   </thead>
                   <tbody>
                     {voedingswaarden.map((row, index) => (
-                      <tr key={tipIndex} className="border-b border-gray-100">
+                      <tr key={index} className="border-b border-gray-100">
                         <td className="py-3 px-2 font-medium text-gray-700">{row.component}</td>
                         <td className="py-3 px-2 text-gray-700">{row.borst}</td>
                         <td className="py-3 px-2 text-gray-700">{row.fles}</td>
@@ -305,7 +305,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 <h3 className="font-semibold text-primary mb-4">Borstvoeding kosten</h3>
                 <ul className="space-y-3">
                   {kostenvergelijking.borstvoeding.map((item, index) => (
-                    <li key={tipIndex} className="flex justify-between items-center">
+                    <li key={index} className="flex justify-between items-center">
                       <span className="text-gray-700">{item.item}</span>
                       <span className="font-medium text-gray-700">{item.kosten}</span>
                     </li>
@@ -321,7 +321,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 <h3 className="font-semibold text-primary mb-4">Flesvoeding kosten</h3>
                 <ul className="space-y-3">
                   {kostenvergelijking.flesvoeding.map((item, index) => (
-                    <li key={tipIndex} className="flex justify-between items-center">
+                    <li key={index} className="flex justify-between items-center">
                       <span className="text-gray-700">{item.item}</span>
                       <span className="font-medium text-gray-700">{item.kosten}</span>
                     </li>
@@ -500,11 +500,11 @@ export default function FlesvoedingVsBorstvoedingPage() {
             
             <div className="space-y-6">
               {decisionFactors.map((factor, index) => (
-                <div key={tipIndex} className="p-6">
+                <div key={index} className="p-6">
                   <h3 className="font-semibold text-primary mb-4">{factor.factor}</h3>
                   <ul className="space-y-2">
                     {factor.criteria.map((criterion, criterionIndex) => (
-                      <li key={tipIndex} className="flex items-center space-x-2">
+                      <li key={index} className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                         <span className="text-gray-700">{criterion}</span>
                       </li>

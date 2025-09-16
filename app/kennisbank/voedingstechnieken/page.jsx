@@ -72,7 +72,7 @@ function VoedingstechniekenPage() {
           <h2 className="text-lg font-semibold text-primary mb-4">Fles klaarmaken - Stap voor stap</h2>
           <div className="space-y-3">
             {preparationSteps.map((step, index) => (
-              <div key={tipIndex} className="flex items-start space-x-3">
+              <div key={index} className="flex items-start space-x-3">
                 <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 mt-0.5">
                   {index + 1}
                 </div>
@@ -88,7 +88,7 @@ function VoedingstechniekenPage() {
             <h2 className="text-lg font-semibold text-primary mb-4">De juiste houding - Voor de baby</h2>
             <div className="space-y-2">
               {babyPosition.map((position, index) => (
-                <div key={tipIndex} className="flex items-start space-x-2">
+                <div key={index} className="flex items-start space-x-2">
                   <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                   <span className="text-gray-600 text-sm">{position}</span>
                 </div>
@@ -101,7 +101,7 @@ function VoedingstechniekenPage() {
             <h2 className="text-lg font-semibold text-primary mb-4">De juiste houding - Voor de fles</h2>
             <div className="space-y-2">
               {bottlePosition.map((position, index) => (
-                <div key={tipIndex} className="flex items-start space-x-2">
+                <div key={index} className="flex items-start space-x-2">
                   <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                   <span className="text-gray-600 text-sm">{position}</span>
                 </div>
@@ -119,7 +119,7 @@ function VoedingstechniekenPage() {
           <p className="text-gray-700 mb-4">Responsive feeding betekent dat je op de signalen van je baby let:</p>
           <div className="space-y-2">
             {responsiveFeeding.map((tip, index) => (
-              <div key={tipIndex} className="flex items-start space-x-2">
+              <div key={index} className="flex items-start space-x-2">
                 <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-gray-600 text-sm">{tip}</span>
               </div>
@@ -186,7 +186,7 @@ function VoedingstechniekenPage() {
           <p className="text-gray-700 mb-4">Flesvoeding is ook een moment van verbinding met je baby:</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {bondingTips.map((tip, index) => (
-              <div key={tipIndex} className="flex items-start space-x-2">
+              <div key={index} className="flex items-start space-x-2">
                 <Heart className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-gray-600 text-sm">{tip}</span>
               </div>

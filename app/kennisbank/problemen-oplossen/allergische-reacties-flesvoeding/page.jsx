@@ -146,7 +146,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
                     <h4 className="font-medium text-primary mb-3">Symptomen Patronen:</h4>
                     <ul className="space-y-2">
                       {symptomenTypes.map((symptom, index) => (
-                        <li key={tipIndex} className="flex items-start space-x-2">
+                        <li key={index} className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                           <span className="text-gray-700 text-sm">{symptom}</span>
                         </li>
@@ -158,7 +158,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
                     <h4 className="font-medium text-primary mb-3">Nederlandse Risicofactoren:</h4>
                     <ul className="space-y-2">
                       {risicofactoren.map((factor, index) => (
-                        <li key={tipIndex} className="flex items-start space-x-2">
+                        <li key={index} className="flex items-start space-x-2">
                           <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                           <span className="text-gray-700 text-sm">{factor}</span>
                         </li>
@@ -216,7 +216,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
                   </p>
                   <ul className="space-y-2">
                     {noodprotocol.map((stap, index) => (
-                      <li key={tipIndex} className="flex items-start space-x-2">
+                      <li key={index} className="flex items-start space-x-2">
                         <span className="bg-amber-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                           {index + 1}
                         </span>
@@ -240,7 +240,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
                 <h3 className="font-medium text-primary mb-4">Nederlandse Behandelingsopties</h3>
                 <ul className="space-y-3">
                   {alternatieveOpties.map((optie, index) => (
-                    <li key={tipIndex} className="flex items-start space-x-2">
+                    <li key={index} className="flex items-start space-x-2">
                       <Heart className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
                       <span className="text-gray-700">{optie}</span>
                     </li>

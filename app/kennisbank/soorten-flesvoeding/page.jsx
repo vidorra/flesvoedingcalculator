@@ -74,7 +74,7 @@ export default function SoortenFlesvoedingPage() {
                 <h3 className="font-medium text-primary mb-3">Populaire merken in Nederland:</h3>
                 <div className="grid grid-cols-2 gap-2">
                   {formula1Brands.map((brand, index) => (
-                    <div key={tipIndex} className="bg-default px-3 py-2 rounded-lg text-sm text-primary">
+                    <div key={index} className="bg-default px-3 py-2 rounded-lg text-sm text-primary">
                       {brand}
                     </div>
                   ))}
@@ -210,7 +210,7 @@ export default function SoortenFlesvoedingPage() {
               </thead>
               <tbody>
                 {formulaComparison.map((item, index) => (
-                  <tr key={tipIndex} className="border-b border-gray-100">
+                  <tr key={index} className="border-b border-gray-100">
                     <td className="py-2 font-medium text-gray-700">{item.type}</td>
                     <td className="py-2 text-gray-700">{item.protein}</td>
                     <td className="py-2 text-gray-700">{item.iron}</td>

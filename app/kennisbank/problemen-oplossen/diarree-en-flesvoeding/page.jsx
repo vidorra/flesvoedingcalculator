@@ -169,7 +169,7 @@ export default function DiarreeEnFlesvoedingPage() {
                     <h4 className="font-medium text-primary mb-3">Diarree Waarschuwingssignalen:</h4>
                     <ul className="space-y-2">
                       {diarreeKenmerken.map((kenmerk, index) => (
-                        <li key={tipIndex} className="flex items-start space-x-2">
+                        <li key={index} className="flex items-start space-x-2">
                           <AlertTriangle className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
                           <span className="text-gray-700 text-sm">{kenmerk}</span>
                         </li>
@@ -191,7 +191,7 @@ export default function DiarreeEnFlesvoedingPage() {
                 </p>
                 <ul className="space-y-3 mb-6">
                   {voedingGerelateerdeOorzaken.map((oorzaak, index) => (
-                    <li key={tipIndex} className="flex items-center space-x-2">
+                    <li key={index} className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                       <span className="text-gray-700">{oorzaak}</span>
                     </li>
@@ -290,7 +290,7 @@ export default function DiarreeEnFlesvoedingPage() {
               
               <div className="space-y-4">
                 {dehydratieSignalen.map((stadium, index) => (
-                  <div key={tipIndex} className="bg-white rounded-lg p-4">
+                  <div key={index} className="bg-white rounded-lg p-4">
                     <h3 className="font-medium text-primary mb-2">{stadium.ernst}</h3>
                     <p className="text-gray-700 text-sm">{stadium.symptomen}</p>
                   </div>
@@ -317,7 +317,7 @@ export default function DiarreeEnFlesvoedingPage() {
               
               <div className="space-y-4">
                 {medischeHulpCriteria.map((criterium, index) => (
-                  <div key={tipIndex} className="bg-white rounded-lg p-4">
+                  <div key={index} className="bg-white rounded-lg p-4">
                     <h3 className="font-medium text-primary mb-2">{criterium.urgentie}</h3>
                     <p className="text-gray-700 text-sm">{criterium.symptomen}</p>
                   </div>
@@ -350,7 +350,7 @@ export default function DiarreeEnFlesvoedingPage() {
                 <h3 className="font-medium text-primary mb-4">Eerste 24 Uur Actieplan</h3>
                 <ul className="space-y-3">
                   {behandelingsProtocol.map((stap, index) => (
-                    <li key={tipIndex} className="flex items-start space-x-2">
+                    <li key={index} className="flex items-start space-x-2">
                       <span className="bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                         {index + 1}
                       </span>
@@ -384,7 +384,7 @@ export default function DiarreeEnFlesvoedingPage() {
               
               <ul className="space-y-3 mb-6">
                 {preventiestrategieen.map((strategie, index) => (
-                  <li key={tipIndex} className="flex items-start space-x-2">
+                  <li key={index} className="flex items-start space-x-2">
                     <Shield className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
                     <span className="text-gray-700">{strategie}</span>
                   </li>
