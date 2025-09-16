@@ -139,7 +139,7 @@ export default function BabyLerenZelfDrinkenPage() {
               </p>
               
               <div className="mt-4 p-4 bg-white rounded-lg">
-                <p className="text-sm text-gray-700">
+                <p className="text-gray-700">
                   <strong>Nederlandse statistiek:</strong> 95% van Nederlandse baby's kan zelfstandig drinken op 15 maanden, 
                   met kinderopvang baby's gemiddeld 2 maanden eerder door peer learning.
                 </p>
@@ -161,7 +161,7 @@ export default function BabyLerenZelfDrinkenPage() {
                 
                 <ul className="space-y-3 mb-6">
                   {readinessSignals.map((signal, index) => (
-                    <li key={index} className="flex items-start space-x-2">
+                    <li key={tipIndex} className="flex items-start space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                       <span className="text-gray-700">{signal}</span>
                     </li>
@@ -173,7 +173,7 @@ export default function BabyLerenZelfDrinkenPage() {
                 <h3 className="font-medium text-primary mb-4">Nederlandse Consultatiebureau Mijlpalen</h3>
                 <ul className="space-y-3">
                   {nederlandseTimingRichtlijnen.map((timing, index) => (
-                    <li key={index} className="flex items-start space-x-2">
+                    <li key={tipIndex} className="flex items-start space-x-2">
                       <Calendar className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
                       <span className="text-gray-700">{timing}</span>
                     </li>
@@ -200,7 +200,7 @@ export default function BabyLerenZelfDrinkenPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {ontwikkelingsStadia.map((stadium, index) => (
-                  <div key={index} className="bg-white rounded-lg p-4">
+                  <div key={tipIndex} className="bg-white rounded-lg p-4">
                     <h3 className="font-medium text-primary mb-3">{stadium.fase}</h3>
                     <p className="text-gray-700 text-sm mb-3"><strong>Kenmerken:</strong> {stadium.kenmerken}</p>
                     <p className="text-gray-700 text-sm"><strong>Activiteiten:</strong> {stadium.activiteiten}</p>
@@ -221,7 +221,7 @@ export default function BabyLerenZelfDrinkenPage() {
               
               <div className="space-y-4">
                 {topProducten.map((product, index) => (
-                  <div key={index} className="bg-white rounded-lg p-4">
+                  <div key={tipIndex} className="bg-white rounded-lg p-4">
                     <div className="flex justify-between items-start mb-2">
                       <h3 className="font-medium text-gray-700">{product.naam}</h3>
                       <span className="text-sm text-gray-600 font-medium">{product.prijs}</span>
@@ -288,7 +288,7 @@ export default function BabyLerenZelfDrinkenPage() {
               
               <div className="space-y-4">
                 {veelvoorkomendeProblemen.map((item, index) => (
-                  <div key={index} className="bg-white rounded-lg p-4">
+                  <div key={tipIndex} className="bg-white rounded-lg p-4">
                     <h3 className="font-medium text-primary mb-2">{item.probleem}</h3>
                     <p className="text-gray-700 text-sm mb-2"><strong>Mogelijke oorzaak:</strong> {item.oorzaak}</p>
                     <p className="text-gray-700 text-sm"><strong>Oplossing:</strong> {item.oplossing}</p>
@@ -328,7 +328,7 @@ export default function BabyLerenZelfDrinkenPage() {
                 >
                   <div className="text-center">
                     <div className="font-medium text-gray-700">Bereken optimale drink volumes </div>
-                    <div className="text-sm text-gray-600">Gebruik onze calculator voor leeftijd-specifiek advies</div>
+                    <div className="text-gray-600">Gebruik onze calculator voor leeftijd-specifiek advies</div>
                   </div>
                 </Link>
               </div>
@@ -343,19 +343,19 @@ export default function BabyLerenZelfDrinkenPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/voedingstechnieken/overgang-naar-beker" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Overgang naar beker </div>
-                  <div className="text-sm text-gray-600">Van fles naar open beker: complete gids</div>
+                  <div className="text-gray-600">Van fles naar open beker: complete gids</div>
                 </Link>
                 <Link href="/kennisbank/voedingstechnieken/juiste-houding-bij-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Juiste houding bij flesvoeding </div>
-                  <div className="text-sm text-gray-600">Optimale posities voor comfortabel drinken</div>
+                  <div className="text-gray-600">Optimale posities voor comfortabel drinken</div>
                 </Link>
                 <Link href="/kennisbank/voedingstechnieken/verschillende-spenen-uitproberen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Verschillende spenen uitproberen </div>
-                  <div className="text-sm text-gray-600">Vind de perfecte speen voor jouw baby</div>
+                  <div className="text-gray-600">Vind de perfecte speen voor jouw baby</div>
                 </Link>
                 <Link href="/kennisbank/praktische-tips" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Alle praktische tips </div>
-                  <div className="text-sm text-gray-600">Meer handige tips voor de flesvoeding</div>
+                  <div className="text-gray-600">Meer handige tips voor de flesvoeding</div>
                 </Link>
               </div>
             </section>

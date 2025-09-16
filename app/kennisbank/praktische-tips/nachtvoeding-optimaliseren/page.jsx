@@ -194,7 +194,7 @@ export default function NachtvoedingOptimaliserenPage() {
             <div>
               <div className="border border-gray-200 bg-white rounded-xl p-4 mb-4">
                 <h3 className="font-medium text-gray-600 mb-3">Zonder optimalisatie:</h3>
-                <ul className="space-y-2 text-sm text-gray-600">
+                <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center space-x-2">
                     <Coffee className="w-4 h-4" />
                     <span>30-45 minuten per nachtvoeding</span>
@@ -216,7 +216,7 @@ export default function NachtvoedingOptimaliserenPage() {
               
               <div className="border border-gray-200 bg-white rounded-xl p-4">
                 <h3 className="font-medium text-gray-600 mb-3">Nederlandse slaapstatistieken ouders:</h3>
-                <ul className="space-y-1 text-sm text-gray-600">
+                <ul className="space-y-1 text-gray-600">
                   <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>73% ouders slaapt minder dan 6u per nacht eerste 3 maanden</span></li>
                   <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>41% voelt zich chronisch uitgeput</span></li>
                   <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>28% heeft nachtvoeding-gerelateerde stress</span></li>
@@ -227,7 +227,7 @@ export default function NachtvoedingOptimaliserenPage() {
             <div>
               <div className="border border-gray-200 bg-white rounded-xl p-4">
                 <h3 className="font-medium text-gray-600 mb-3">Met optimalisatie:</h3>
-                <ul className="space-y-2 text-sm text-gray-600">
+                <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center space-x-2">
                     <Zap className="w-4 h-4" />
                     <span>10-15 minuten per nachtvoeding</span>
@@ -248,7 +248,7 @@ export default function NachtvoedingOptimaliserenPage() {
                 
                 <div className="mt-4 p-3 bg-white rounded-lg">
                   <div className="text-primary font-bold text-lg">Besparing: 1.5-2 uur slaap per nacht!</div>
-                  <div className="text-sm text-gray-600">= 10-14 uur meer slaap per week</div>
+                  <div className="text-gray-600">= 10-14 uur meer slaap per week</div>
                 </div>
               </div>
             </div>
@@ -264,14 +264,14 @@ export default function NachtvoedingOptimaliserenPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {timeComparison.map((method, index) => (
-              <div key={index} className="rounded-xl p-4 border border-gray-200 bg-white">
+              <div key={tipIndex} className="rounded-xl p-4 border border-gray-200 bg-white">
                 <h3 className="font-medium mb-3 text-primary">
                   {method.method} Methode
                 </h3>
                 
                 <div className="space-y-2 mb-4">
                   {method.steps.map((step, stepIndex) => (
-                    <div key={stepIndex} className="flex justify-between items-center text-sm">
+                    <div key={tipIndex} className="flex justify-between items-center text-sm">
                       <span className={method.method === 'Traditioneel' ? 'text-gray-700' : 'text-gray-700'}>
                         {step.action}
                       </span>
@@ -286,7 +286,7 @@ export default function NachtvoedingOptimaliserenPage() {
                   <div className="font-bold text-lg text-primary">
                     Totaal: {method.total}
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-gray-600">
                     Status: {method.wakefulness}
                   </div>
                 </div>
@@ -304,7 +304,7 @@ export default function NachtvoedingOptimaliserenPage() {
           
           <div className="space-y-4">
             {optimizationStrategies.map((strategy, index) => (
-              <div key={index} className="bg-white rounded-xl p-4">
+              <div key={tipIndex} className="bg-white rounded-xl p-4">
                 <div className="flex justify-between items-start mb-3">
                   <h3 className="font-medium text-gray-600">{strategy.strategy}</h3>
                   <div className="text-right">
@@ -318,7 +318,7 @@ export default function NachtvoedingOptimaliserenPage() {
                     <h4 className="font-medium text-gray-600 mb-2">Implementatie stappen:</h4>
                     <ul className="space-y-1">
                       {strategy.steps.map((step, stepIndex) => (
-                        <li key={stepIndex} className="text-sm text-gray-600 flex items-start space-x-2">
+                        <li key={tipIndex} className="text-gray-600 flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                           <span>{step}</span>
                         </li>
@@ -336,16 +336,16 @@ export default function NachtvoedingOptimaliserenPage() {
           <h2 className="text-lg font-semibold text-gray-700 mb-4">Nachtvoeding Equipment</h2>
           
           {equipmentEssentials.map((category, index) => (
-            <div key={index} className="mb-6">
+            <div key={tipIndex} className="mb-6">
               <h3 className="font-medium text-gray-600 mb-3">{category.category}</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {category.items.map((item, itemIndex) => (
-                  <div key={itemIndex} className="p-3 bg-white border border-gray-200 rounded-lg">
+                  <div key={tipIndex} className="p-3 bg-white border border-gray-200 rounded-lg">
                     <div className="flex justify-between items-start mb-2">
                       <h4 className="font-medium text-gray-600">{item.name}</h4>
                       <span className="text-primary font-medium text-sm">{item.price}</span>
                     </div>
-                    <p className="text-sm text-gray-600">{item.benefit}</p>
+                    <p className="text-gray-600">{item.benefit}</p>
                   </div>
                 ))}
               </div>
@@ -383,7 +383,7 @@ export default function NachtvoedingOptimaliserenPage() {
           
           <div className="space-y-4">
             {ageBasedStrategies.map((phase, index) => (
-              <div key={index} className="p-4">
+              <div key={tipIndex} className="p-4">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
                     <h3 className="font-bold text-primary text-lg">{phase.age}</h3>
@@ -397,7 +397,7 @@ export default function NachtvoedingOptimaliserenPage() {
                     <h4 className="font-medium text-gray-600 mb-2">{phase.strategy}</h4>
                     <ul className="space-y-1">
                       {phase.tips.map((tip, tipIndex) => (
-                        <li key={tipIndex} className="text-sm text-gray-600 flex items-start space-x-2">
+                        <li key={tipIndex} className="text-gray-600 flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                           <span>{tip}</span>
                         </li>
@@ -416,17 +416,17 @@ export default function NachtvoedingOptimaliserenPage() {
           
           <div className="space-y-4">
             {commonChallenges.map((item, index) => (
-              <div key={index} className="p-4">
+              <div key={tipIndex} className="p-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <h3 className="font-medium text-gray-600 mb-2">Probleem:</h3>
-                    <p className="text-sm text-gray-600">{item.challenge}</p>
+                    <p className="text-gray-600">{item.challenge}</p>
                   </div>
                   <div>
                     <h3 className="font-medium text-gray-600 mb-2">Oplossing: {item.solution}</h3>
                     <ul className="text-sm text-gray-600 space-y-1">
                       {item.steps.map((step, stepIndex) => (
-                        <li key={stepIndex} className="flex items-start space-x-2">
+                        <li key={tipIndex} className="flex items-start space-x-2">
                           <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                           <span>{step}</span>
                         </li>
@@ -446,7 +446,7 @@ export default function NachtvoedingOptimaliserenPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <h3 className="font-medium text-gray-600 mb-3"> Wel doen:</h3>
-              <ul className="space-y-2 text-sm text-gray-600">
+              <ul className="space-y-2 text-gray-600">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full"></div>
                   <span>Alles binnen handbereik klaarzetten</span>
@@ -472,7 +472,7 @@ export default function NachtvoedingOptimaliserenPage() {
             
             <div>
               <h3 className="font-medium text-gray-600 mb-3"> Niet doen:</h3>
-              <ul className="space-y-2 text-sm text-gray-600">
+              <ul className="space-y-2 text-gray-600">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full"></div>
                   <span>Felle verlichting aandoen</span>
@@ -505,7 +505,7 @@ export default function NachtvoedingOptimaliserenPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-white rounded-lg p-4">
               <h3 className="font-medium text-gray-600 mb-2">"Van 45 naar 12 minuten!" - Michelle, Den Haag</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-gray-600">
                 "Thermosfles naast bed + pre-made flessen was game-changer. Dream feeding werkt perfect bij Lotte. 
                 Ik word nauwelijks meer wakker."
               </p>
@@ -513,7 +513,7 @@ export default function NachtvoedingOptimaliserenPage() {
             
             <div className="bg-white rounded-lg p-4">
               <h3 className="font-medium text-gray-600 mb-2">"Tag-team redde ons huwelijk" - Jeroen & Sara, Eindhoven</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-gray-600">
                 "Ik doe maandag/woensdag/vrijdag nachten, Sara di/do/zat. Zondag samen. 
                 We slapen nu echt weer en zijn veel gelukkiger."
               </p>
@@ -559,14 +559,14 @@ export default function NachtvoedingOptimaliserenPage() {
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-gray-600">Praktische Tips </div>
-              <div className="text-sm text-gray-600">Alle handige tips voor flesvoeding</div>
+              <div className="text-gray-600">Alle handige tips voor flesvoeding</div>
             </Link>
             <Link 
               href="/kennisbank/voedingstechnieken"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-gray-600">Voedingstechnieken </div>
-              <div className="text-sm text-gray-600">Juiste technieken voor flesvoeding</div>
+              <div className="text-gray-600">Juiste technieken voor flesvoeding</div>
             </Link>
           </div>
         </div>

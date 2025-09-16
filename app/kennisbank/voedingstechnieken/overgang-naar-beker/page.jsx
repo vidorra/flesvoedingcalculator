@@ -882,7 +882,7 @@ export default function OvergangNaarBekerPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-amber-800 mb-2">Let op</h3>
-                      <p className="text-sm text-amber-700 leading-relaxed">Bij &gt;20% reductie vloeistofinname, gewichtsverlies, dehydratie symptomen, of afwijzing van alle vloeistoffen meerdere dagen: consulteer het consultatiebureau.</p>
+                      <p className="text-amber-700 leading-relaxed">Bij &gt;20% reductie vloeistofinname, gewichtsverlies, dehydratie symptomen, of afwijzing van alle vloeistoffen meerdere dagen: consulteer het consultatiebureau.</p>
                     </div>
                   </div>
                 </div>
@@ -1043,7 +1043,7 @@ export default function OvergangNaarBekerPage() {
                 >
                   <div className="text-center">
                     <div className="font-medium text-gray-700">Bereken overgang hoeveelheden </div>
-                    <div className="text-sm text-gray-600">Aanpassing volumes tijdens beker overgang</div>
+                    <div className="text-gray-600">Aanpassing volumes tijdens beker overgang</div>
                   </div>
                 </Link>
               </div>
@@ -1058,19 +1058,19 @@ export default function OvergangNaarBekerPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/voedingstechnieken/juiste-houding-bij-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Juiste houding bij flesvoeding </div>
-                  <div className="text-sm text-gray-600">Optimale posities voor baby en ouder</div>
+                  <div className="text-gray-600">Optimale posities voor baby en ouder</div>
                 </Link>
                 <Link href="/kennisbank/voedingstechnieken/verschillende-spenen-uitproberen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Verschillende spenen uitproberen </div>
-                  <div className="text-sm text-gray-600">Vinden van de perfecte speen</div>
+                  <div className="text-gray-600">Vinden van de perfecte speen</div>
                 </Link>
                 <Link href="/kennisbank/soorten-flesvoeding/wanneer-overstappen-opvolgmelk" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Overstappen naar opvolgmelk </div>
-                  <div className="text-sm text-gray-600">Timing en voorbereiding opvolgmelk</div>
+                  <div className="text-gray-600">Timing en voorbereiding opvolgmelk</div>
                 </Link>
                 <Link href="/kennisbank/praktische-tips/voedingsritme-opbouwen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Voedingsritme opbouwen </div>
-                  <div className="text-sm text-gray-600">Structuur in voeding ontwikkelen</div>
+                  <div className="text-gray-600">Structuur in voeding ontwikkelen</div>
                 </Link>
               </div>
             </div>

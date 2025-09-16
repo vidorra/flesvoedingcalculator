@@ -463,7 +463,7 @@ export default function KennisbankPage() {
               const Icon = category.icon
               return (
                 <button
-                  key={category.id}
+                  key={tipIndex}
                   onClick={() => setSelectedCategory(category.id)}
                   className={`text-left p-4 rounded-xl transition-colors ${
                     selectedCategory === category.id
@@ -495,7 +495,7 @@ export default function KennisbankPage() {
                 const Icon = category?.icon || Info
                 return (
                   <Link
-                    key={article.id}
+                    key={tipIndex}
                     href={article.href || `/kennisbank/${article.category}`}
                     className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white"
                   >
@@ -508,7 +508,7 @@ export default function KennisbankPage() {
                             <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">{article.duration}</span>
                           )}
                         </div>
-                        <p className="text-sm text-gray-600">{article.description}</p>
+                        <p className="text-gray-600">{article.description}</p>
                       </div>
                     </div>
                   </Link>
@@ -535,7 +535,7 @@ export default function KennisbankPage() {
               }
               return (
                 <Link
-                  key={category.id}
+                  key={tipIndex}
                   href={`/kennisbank/${category.id}`}
                   className={`p-4 rounded-xl border transition-all block ${colorClasses[category.color]}`}
                 >
@@ -601,7 +601,7 @@ export default function KennisbankPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
               <h3 className="font-medium text-gray-600 mb-3">Regelgeving & Veiligheid:</h3>
-              <ul className="space-y-2 text-sm text-gray-700">
+              <ul className="space-y-2 text-gray-700">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span>Alle merken voldoen aan EU-verordening 2016/127</span>
@@ -626,7 +626,7 @@ export default function KennisbankPage() {
             </div>
             <div>
               <h3 className="font-medium text-gray-600 mb-3">Beschikbaarheid & Kosten:</h3>
-              <ul className="space-y-2 text-sm text-gray-700">
+              <ul className="space-y-2 text-gray-700">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span>Breed assortiment in alle supermarkten</span>
@@ -658,35 +658,35 @@ export default function KennisbankPage() {
           <div className="space-y-4">
             <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white">
               <h3 className="font-medium text-primary mb-2">Welk merk flesvoeding is het beste?</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-gray-600">
                 Alle Nederlandse merken voldoen aan dezelfde strenge EU-eisen. Kruidvat huismerk is even veilig als Nutrilon of Hero Baby, maar wel goedkoper. Kies op basis van budget en beschikbaarheid.
               </p>
             </div>
             
             <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white">
               <h3 className="font-medium text-primary mb-2">Hoeveel kost flesvoeding per maand?</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-gray-600">
                 Budget variant (Kruidvat): €35-50/maand. Middenklasse (Hero Baby): €50-70/maand. Premium (Nutrilon): €70-90/maand. Eerste jaar totaal: €400-1000 afhankelijk van merkkeuze.
               </p>
             </div>
             
             <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white">
               <h3 className="font-medium text-primary mb-2">Wanneer overstappen van nummer 1 naar 2?</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-gray-600">
                 Pas vanaf 6 maanden én wanneer baby vaste voeding krijgt. Nummer 1 mag tot 12 maanden gebruikt worden. Overstappen is dus optioneel, niet verplicht.
               </p>
             </div>
             
             <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white">
               <h3 className="font-medium text-primary mb-2">Kan ik van borstvoeding overstappen naar flesvoeding?</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-gray-600">
                 Ja, dit kan op elke leeftijd. Geleidelijke overgang over 1-2 weken voorkomt borstontsteking. Combivoeiding (borstvoeding + flesvoeding) is ook mogelijk.
               </p>
             </div>
             
             <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white">
               <h3 className="font-medium text-primary mb-2">Mijn baby weigert de fles, wat nu?</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-gray-600">
                 Check temperatuur (37°C), probeer andere speen, laat partner proberen, gebruik afgekolfde melk eerst. Geduld is belangrijk - sommige baby's hebben tijd nodig.
               </p>
             </div>

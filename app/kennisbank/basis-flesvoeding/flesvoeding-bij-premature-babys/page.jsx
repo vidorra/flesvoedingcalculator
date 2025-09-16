@@ -241,7 +241,7 @@ export default function FlesvoedingPrematurePage() {
               </thead>
               <tbody>
                 {prematureCategories.map((cat, index) => (
-                  <tr key={index} className="border-b border-gray-100">
+                  <tr key={tipIndex} className="border-b border-gray-100">
                     <td className="py-3 px-2 font-medium text-gray-700">{cat.category}</td>
                     <td className="py-3 px-2 text-primary">{cat.weeks}</td>
                     <td className="py-3 px-2 text-primary font-medium">{cat.feeding}</td>
@@ -264,7 +264,7 @@ export default function FlesvoedingPrematurePage() {
               </div>
               <div>
                 <h3 className="font-semibold text-gray-700 mb-2">Let op</h3>
-                <p className="text-sm text-amber-700 leading-relaxed">
+                <p className="text-amber-700 leading-relaxed">
                   Deze waarden zijn richtlijnen. De exacte behoefte verschilt per baby en moet altijd in overleg met het medische team bepaald worden.
                 </p>
               </div>
@@ -282,7 +282,7 @@ export default function FlesvoedingPrematurePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {specialFormulas.map((formula, index) => (
-              <div key={index} className="bg-white rounded-xl p-4">
+              <div key={tipIndex} className="bg-white rounded-xl p-4">
                 <h3 className="font-medium text-primary mb-2">{formula.name}</h3>
                 <div className="space-y-2 text-sm">
                   <div>
@@ -330,9 +330,9 @@ export default function FlesvoedingPrematurePage() {
               <h3 className="font-medium text-primary mb-3">Standaard follow-up programma:</h3>
               <div className="space-y-2">
                 {nicu_protocols.map((protocol, index) => (
-                  <div key={index} className="flex items-start space-x-2">
+                  <div key={tipIndex} className="flex items-start space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
-                    <span className="text-sm text-gray-600">{protocol}</span>
+                    <span className="text-gray-600">{protocol}</span>
                   </div>
                 ))}
               </div>
@@ -350,7 +350,7 @@ export default function FlesvoedingPrematurePage() {
               </div>
               
               <div className="mt-4 p-3 border border-gray-200 bg-white rounded-lg">
-                <p className="text-sm text-gray-600">
+                <p className="text-gray-600">
                   <strong>Care4Neo:</strong> Nederlandse oudervereniging biedt ondersteuning 
                   en informatie voor ouders van premature baby's.
                 </p>
@@ -369,15 +369,15 @@ export default function FlesvoedingPrematurePage() {
               <div className="bg-white rounded-xl p-4 space-y-3">
                 <div>
                   <h4 className="font-medium text-gray-700">Voedingstijden</h4>
-                  <p className="text-sm text-gray-600">Elke 2-3 uur, ook 's nachts. Volg baby's signalen, maar houd minimum frequentie aan.</p>
+                  <p className="text-gray-600">Elke 2-3 uur, ook 's nachts. Volg baby's signalen, maar houd minimum frequentie aan.</p>
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-700">Bereiding</h4>
-                  <p className="text-sm text-gray-600">Extra hygiëne belangrijk. Steriliseren tot 6 maanden gecorrigeerde leeftijd.</p>
+                  <p className="text-gray-600">Extra hygiëne belangrijk. Steriliseren tot 6 maanden gecorrigeerde leeftijd.</p>
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-700">Temperatuur</h4>
-                  <p className="text-sm text-gray-600">37°C - premature baby's zijn gevoeliger voor temperatuurverschillen.</p>
+                  <p className="text-gray-600">37°C - premature baby's zijn gevoeliger voor temperatuurverschillen.</p>
                 </div>
               </div>
             </div>
@@ -387,15 +387,15 @@ export default function FlesvoedingPrematurePage() {
               <div className="space-y-3">
                 <div className="p-3 border border-gray-200 bg-white rounded-lg">
                   <h4 className="font-medium text-gray-700">Voedingsproblemen</h4>
-                  <p className="text-sm text-gray-600">Premature baby's kunnen moeite hebben met zuigen, slikken en ademhalen tegelijk.</p>
+                  <p className="text-gray-600">Premature baby's kunnen moeite hebben met zuigen, slikken en ademhalen tegelijk.</p>
                 </div>
                 <div className="p-3 border border-gray-200 bg-white rounded-lg">
                   <h4 className="font-medium text-gray-700">Reflux</h4>
-                  <p className="text-sm text-gray-600">Komt vaker voor. Houd baby rechtop na voeding, kleine porties vaker.</p>
+                  <p className="text-gray-600">Komt vaker voor. Houd baby rechtop na voeding, kleine porties vaker.</p>
                 </div>
                 <div className="p-3 border border-gray-200 bg-white rounded-lg">
                   <h4 className="font-medium text-gray-700">Gewichtstoename</h4>
-                  <p className="text-sm text-gray-600">15-30g per dag is normaal. Wekelijks wegen tot stabiele groei.</p>
+                  <p className="text-gray-600">15-30g per dag is normaal. Wekelijks wegen tot stabiele groei.</p>
                 </div>
               </div>
             </div>
@@ -415,9 +415,9 @@ export default function FlesvoedingPrematurePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {warningSigns.map((sign, index) => (
-              <div key={index} className="flex items-start space-x-2">
+              <div key={tipIndex} className="flex items-start space-x-2">
                 <AlertCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm text-gray-600">{sign}</span>
+                <span className="text-gray-600">{sign}</span>
               </div>
             ))}
           </div>

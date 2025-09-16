@@ -291,7 +291,7 @@ export default function LactosevrijeFlesvoedingPage() {
 
               <div className="space-y-6">
                 {needIndicators.map((indicator, index) => (
-                  <div key={index} className="p-4">
+                  <div key={tipIndex} className="p-4">
                     <div className="flex justify-between items-start mb-3">
                       <h3 className="font-medium text-gray-700">{indicator.category}</h3>
                       <span className="text-sm bg-white text-gray-700 px-2 py-1 rounded">
@@ -300,7 +300,7 @@ export default function LactosevrijeFlesvoedingPage() {
                     </div>
                     <ul className="space-y-2">
                       {indicator.symptoms.map((symptom, symIndex) => (
-                        <li key={symIndex} className="flex items-center space-x-2">
+                        <li key={tipIndex} className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-700 text-sm">{symptom}</span>
                         </li>
@@ -323,7 +323,7 @@ export default function LactosevrijeFlesvoedingPage() {
               
               <div className="space-y-8">
                 {premiumOptions.map((option, index) => (
-                  <div key={index} className="p-4">
+                  <div key={tipIndex} className="p-4">
                     <div className="flex justify-between items-start mb-4">
                       <div>
                         <h3 className="font-medium text-primary text-lg mb-1">{option.name}</h3>
@@ -340,7 +340,7 @@ export default function LactosevrijeFlesvoedingPage() {
 
                     <div className="bg-white rounded-lg p-3 mb-4">
                       <h4 className="font-medium text-gray-700 mb-1"> Uniek kenmerk:</h4>
-                      <p className="text-sm text-gray-600">{option.unique}</p>
+                      <p className="text-gray-600">{option.unique}</p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
@@ -348,7 +348,7 @@ export default function LactosevrijeFlesvoedingPage() {
                         <h4 className="font-medium text-primary mb-2"> Voordelen:</h4>
                         <ul className="space-y-1">
                           {option.pros.map((pro, proIndex) => (
-                            <li key={proIndex} className="flex items-start space-x-2">
+                            <li key={tipIndex} className="flex items-start space-x-2">
                               <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                               <span className="text-gray-700 text-sm">{pro}</span>
                             </li>
@@ -359,7 +359,7 @@ export default function LactosevrijeFlesvoedingPage() {
                         <h4 className="font-medium text-primary mb-2"> Nadelen:</h4>
                         <ul className="space-y-1">
                           {option.cons.map((con, conIndex) => (
-                            <li key={conIndex} className="flex items-start space-x-2">
+                            <li key={tipIndex} className="flex items-start space-x-2">
                               <AlertCircle className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" />
                               <span className="text-gray-700 text-sm">{con}</span>
                             </li>
@@ -372,7 +372,7 @@ export default function LactosevrijeFlesvoedingPage() {
                       <h4 className="font-medium text-gray-700 mb-2">Samenstelling highlights:</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-600">
                         {Object.entries(option.composition).map(([key, value]) => (
-                          <div key={key}>
+                          <div key={tipIndex}>
                             <strong>{key.charAt(0).toUpperCase() + key.slice(1)}:</strong> {value}
                           </div>
                         ))}
@@ -396,11 +396,11 @@ export default function LactosevrijeFlesvoedingPage() {
               
               <div className="space-y-6">
                 {transitionSteps.map((step, index) => (
-                  <div key={index} className="p-4">
+                  <div key={tipIndex} className="p-4">
                     <h3 className="font-medium text-primary mb-3">{step.step}</h3>
                     <ul className="space-y-2">
                       {step.tasks.map((task, taskIndex) => (
-                        <li key={taskIndex} className="flex items-start space-x-2">
+                        <li key={tipIndex} className="flex items-start space-x-2">
                           <span className="bg-primary text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold mt-0.5">
                             {taskIndex + 1}
                           </span>
@@ -436,8 +436,8 @@ export default function LactosevrijeFlesvoedingPage() {
                   </thead>
                   <tbody>
                     {costComparison.map((cost, index) => (
-                      <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-white"}>
-                        <td className="p-3 font-medium text-gray-900">{cost.brand}</td>
+                      <tr key={tipIndex}>
+                        <td className="p-3 font-medium text-gray-700">{cost.brand}</td>
                         <td className="p-3 text-gray-700">{cost.costPerTin}</td>
                         <td className="p-3 text-gray-700">{cost.monthlyCost}</td>
                         <td className="p-3 font-medium text-gray-700">{cost.yearlyTotal}</td>
@@ -470,7 +470,7 @@ export default function LactosevrijeFlesvoedingPage() {
               
               <div className="space-y-4">
                 {commonMistakes.map((mistake, index) => (
-                  <div key={index} className="p-4">
+                  <div key={tipIndex} className="p-4">
                     <h3 className="font-medium text-primary mb-2"> {mistake.mistake}</h3>
                     <p className="text-gray-700 text-sm mb-2">
                       <strong>Waarom problematisch:</strong> {mistake.why}
@@ -514,9 +514,9 @@ export default function LactosevrijeFlesvoedingPage() {
               
               <div className="space-y-4">
                 {faqData.map((item, index) => (
-                  <div key={index}>
-                    <h3 className="font-medium text-gray-900 mb-2">{item.question}</h3>
-                    <p className="text-sm text-gray-700">{item.answer}</p>
+                  <div key={tipIndex}>
+                    <h3 className="font-medium text-gray-700 mb-2">{item.question}</h3>
+                    <p className="text-gray-700">{item.answer}</p>
                     {index < faqData.length - 1 && (
                       <div className="border-b border-gray-200 mt-4"></div>
                     )}
@@ -534,7 +534,7 @@ export default function LactosevrijeFlesvoedingPage() {
                 >
                   <div className="text-center">
                     <div className="font-medium text-gray-700">Bereken juiste hoeveelheden </div>
-                    <div className="text-sm text-gray-600">Ook voor lactosevrije flesvoeding</div>
+                    <div className="text-gray-600">Ook voor lactosevrije flesvoeding</div>
                   </div>
                 </Link>
               </div>
@@ -549,19 +549,19 @@ export default function LactosevrijeFlesvoedingPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/soorten-flesvoeding/hypoallergene-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Hypoallergene flesvoeding </div>
-                  <div className="text-sm text-gray-600">Voor baby's met koemelkallergie</div>
+                  <div className="text-gray-600">Voor baby's met koemelkallergie</div>
                 </Link>
                 <Link href="/kennisbank/problemen-oplossen/constipatie-door-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Constipatie door flesvoeding </div>
-                  <div className="text-sm text-gray-600">Oorzaken en oplossingen</div>
+                  <div className="text-gray-600">Oorzaken en oplossingen</div>
                 </Link>
                 <Link href="/kennisbank/soorten-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Alle soorten flesvoeding </div>
-                  <div className="text-sm text-gray-600">Overzicht van alle flesvoeding types</div>
+                  <div className="text-gray-600">Overzicht van alle flesvoeding types</div>
                 </Link>
                 <Link href="/kennisbank/problemen-oplossen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Problemen oplossen </div>
-                  <div className="text-sm text-gray-600">Hulp bij flesvoeding problemen</div>
+                  <div className="text-gray-600">Hulp bij flesvoeding problemen</div>
                 </Link>
               </div>
             </section>

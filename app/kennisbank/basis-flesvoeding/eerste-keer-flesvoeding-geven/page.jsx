@@ -131,7 +131,7 @@ export default function EersteKeerFlesvoedingPage() {
                 </h3>
                 <ul className="space-y-2">
                   {essentialItems.map((item, index) => (
-                    <li key={index} className="flex items-center space-x-2">
+                    <li key={tipIndex} className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                       <span className="text-gray-700">{item}</span>
                     </li>
@@ -146,7 +146,7 @@ export default function EersteKeerFlesvoedingPage() {
                 </h3>
                 <ul className="space-y-2">
                   {handigItems.map((item, index) => (
-                    <li key={index} className="flex items-center space-x-2">
+                    <li key={tipIndex} className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                       <span className="text-gray-700">{item}</span>
                     </li>
@@ -185,7 +185,7 @@ export default function EersteKeerFlesvoedingPage() {
               <h3 className="font-semibold text-primary mb-4">Watervoorbereiding per leeftijd</h3>
               <div className="space-y-3">
                 {waterPreparation.map((item, index) => (
-                  <div key={index} className="flex items-start space-x-3 py-2 px-3">
+                  <div key={tipIndex} className="flex items-start space-x-3 py-2 px-3">
                     <div className="font-medium text-primary min-w-24">{item.age}:</div>
                     <div className="text-gray-700">{item.instruction}</div>
                   </div>
@@ -302,7 +302,7 @@ export default function EersteKeerFlesvoedingPage() {
                 </thead>
                 <tbody>
                   {feedingGuide.map((row, index) => (
-                    <tr key={index} className="border-b border-gray-100">
+                    <tr key={tipIndex} className="border-b border-gray-100">
                       <td className="py-3 px-2 font-medium text-gray-700">{row.age}</td>
                       <td className="py-3 px-2 text-gray-700">{row.perFeeding}</td>
                       <td className="py-3 px-2 text-gray-700">{row.frequency}</td>
@@ -325,7 +325,7 @@ export default function EersteKeerFlesvoedingPage() {
             <h3 className="font-medium text-primary mb-4">Geleidelijke overstap (aanbevolen)</h3>
             <div className="space-y-3 mb-6">
               {transitionSchedule.map((item, index) => (
-                <div key={index} className="flex items-center space-x-3 py-2">
+                <div key={tipIndex} className="flex items-center space-x-3 py-2">
                   <div className="font-medium text-primary min-w-20">{item.week}:</div>
                   <div className="text-gray-700">{item.action}</div>
                 </div>
@@ -412,7 +412,7 @@ export default function EersteKeerFlesvoedingPage() {
                 </ul>
                 
                 <div className="mt-4 py-2 px-3">
-                  <p className="text-sm text-gray-600">
+                  <p className="text-gray-600">
                     <strong>Vermijd:</strong> Voeden tijdens huilbui, wanneer baby te moe is, of bij koorts.
                   </p>
                 </div>

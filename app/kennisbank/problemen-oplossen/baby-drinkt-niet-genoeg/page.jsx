@@ -441,7 +441,7 @@ export default function BabyDrinktNietGenoegPage() {
                 >
                   <div className="text-center">
                     <div className="font-medium text-gray-700">Hulp nodig bij bepalen of je baby genoeg drinkt? </div>
-                    <div className="text-sm text-gray-600">Gebruik onze flesvoeding calculator voor gepersonaliseerd advies op basis van leeftijd en gewicht</div>
+                    <div className="text-gray-600">Gebruik onze flesvoeding calculator voor gepersonaliseerd advies op basis van leeftijd en gewicht</div>
                   </div>
                 </Link>
               </div>
@@ -456,19 +456,19 @@ export default function BabyDrinktNietGenoegPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/basis-flesvoeding/baby-weigert-de-fles" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Baby weigert de fles </div>
-                  <div className="text-sm text-gray-600">Als baby helemaal niet wil drinken</div>
+                  <div className="text-gray-600">Als baby helemaal niet wil drinken</div>
                 </Link>
                 <Link href="/kennisbank/voedingstechnieken/juiste-houding-bij-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Juiste houding bij flesvoeding </div>
-                  <div className="text-sm text-gray-600">Optimale positionering voor betere intake</div>
+                  <div className="text-gray-600">Optimale positionering voor betere intake</div>
                 </Link>
                 <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Eerste keer flesvoeding </div>
-                  <div className="text-sm text-gray-600">Basis technieken perfectioneren</div>
+                  <div className="text-gray-600">Basis technieken perfectioneren</div>
                 </Link>
                 <Link href="/kennisbank/problemen-oplossen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Meer probleemoplossing </div>
-                  <div className="text-sm text-gray-600">Overzicht alle voedingsproblemen</div>
+                  <div className="text-gray-600">Overzicht alle voedingsproblemen</div>
                 </Link>
               </div>
             </div>

@@ -63,7 +63,7 @@ export default function VeiligheidPage() {
           </p>
           <div className="space-y-3">
             {emergencyContacts.map((contact, index) => (
-              <div key={index} className="flex items-start space-x-3">
+              <div key={tipIndex} className="flex items-start space-x-3">
                 <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">
                   !
                 </div>
@@ -87,7 +87,7 @@ export default function VeiligheidPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {neverDo.map((item, index) => (
-              <div key={index} className="flex items-start space-x-2 p-3 bg-white rounded-lg">
+              <div key={tipIndex} className="flex items-start space-x-2 p-3 bg-white rounded-lg">
                 <X className="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
                 <span className="text-gray-700 text-sm font-medium">{item}</span>
               </div>
@@ -104,7 +104,7 @@ export default function VeiligheidPage() {
             </h2>
             <div className="space-y-3">
               {allergySignals.map((signal, index) => (
-                <div key={index} className="flex items-start space-x-2">
+                <div key={tipIndex} className="flex items-start space-x-2">
                   <AlertTriangle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700 text-sm">{signal}</span>
                 </div>
@@ -116,7 +116,7 @@ export default function VeiligheidPage() {
             <h2 className="text-lg font-semibold text-primary mb-4">Bij vermoeden allergie:</h2>
             <div className="space-y-3">
               {allergyActions.map((action, index) => (
-                <div key={index} className="flex items-start space-x-2">
+                <div key={tipIndex} className="flex items-start space-x-2">
                   <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">
                     {index + 1}
                   </div>
@@ -184,14 +184,14 @@ export default function VeiligheidPage() {
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-gray-700">Problemen Oplossen </div>
-              <div className="text-sm text-gray-600">Hulp bij veelvoorkomende problemen</div>
+              <div className="text-gray-600">Hulp bij veelvoorkomende problemen</div>
             </Link>
             <Link 
               href="/faq"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-gray-700">Veelgestelde Vragen </div>
-              <div className="text-sm text-gray-600">Antwoorden op veel gestelde vragen</div>
+              <div className="text-gray-600">Antwoorden op veel gestelde vragen</div>
             </Link>
           </div>
         </div>

@@ -242,27 +242,27 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                     <div className="text-center bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">Flessen klaarmaken</div>
-                      <div className="text-sm text-gray-600">Wie, wanneer, hoeveel</div>
+                      <div className="text-gray-600">Wie, wanneer, hoeveel</div>
                     </div>
                     <div className="text-center bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">Steriliseren</div>
-                      <div className="text-sm text-gray-600">Dagelijkse routine</div>
+                      <div className="text-gray-600">Dagelijkse routine</div>
                     </div>
                     <div className="text-center bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">Boodschappen</div>
-                      <div className="text-sm text-gray-600">Melkpoeder + supplies</div>
+                      <div className="text-gray-600">Melkpoeder + supplies</div>
                     </div>
                     <div className="text-center bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">Tracking</div>
-                      <div className="text-sm text-gray-600">Volumes, tijden bijhouden</div>
+                      <div className="text-gray-600">Volumes, tijden bijhouden</div>
                     </div>
                     <div className="text-center bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">Temperatuur check</div>
-                      <div className="text-sm text-gray-600">Veiligheids controle</div>
+                      <div className="text-gray-600">Veiligheids controle</div>
                     </div>
                     <div className="text-center bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">Voorraad</div>
-                      <div className="text-sm text-gray-600">Management systeem</div>
+                      <div className="text-gray-600">Management systeem</div>
                     </div>
                   </div>
                 </div>
@@ -626,17 +626,17 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                         <div>
                           <h5 className="text-sm font-medium text-amber-700 mb-1">Preventive measures:</h5>
                           <ul className="space-y-1">
-                            <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700 text-sm">Clear expectations: Geschreven agreements</span></li>
-                            <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700 text-sm">Flexible timelines: Ruimte voor aanpassingen</span></li>
-                            <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700 text-sm">Backup plans: Wat als ziekte/stress</span></li>
+                            <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700">Clear expectations: Geschreven agreements</span></li>
+                            <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700">Flexible timelines: Ruimte voor aanpassingen</span></li>
+                            <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700">Backup plans: Wat als ziekte/stress</span></li>
                           </ul>
                         </div>
                         <div>
                           <h5 className="text-sm font-medium text-amber-700 mb-1">Team mindset:</h5>
                           <ul className="space-y-1">
-                            <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700 text-sm">Regular check-ins: Wekelijkse evaluaties</span></li>
-                            <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700 text-sm">Appreciation rituals: Elkaar waarderen</span></li>
-                            <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700 text-sm">'Wij tegen de wereld' mentaliteit</span></li>
+                            <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700">Regular check-ins: Wekelijkse evaluaties</span></li>
+                            <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700">Appreciation rituals: Elkaar waarderen</span></li>
+                            <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700">'Wij tegen de wereld' mentaliteit</span></li>
                           </ul>
                         </div>
                       </div>
@@ -673,7 +673,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-amber-800 mb-2">Let op</h3>
-                          <p className="text-sm text-amber-700 leading-relaxed">Zoek professionele hulp bij constant fighting, relatie lijden, extreme uitputting, of safety concerns. Nederlandse resources: consultatiebureau, kraamzorg, relatietherapeuten.</p>
+                          <p className="text-amber-700 leading-relaxed">Zoek professionele hulp bij constant fighting, relatie lijden, extreme uitputting, of safety concerns. Nederlandse resources: consultatiebureau, kraamzorg, relatietherapeuten.</p>
                         </div>
                       </div>
                     </div>
@@ -742,11 +742,11 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                     <div className="bg-amber-50 rounded-lg p-3">
                       <h4 className="font-medium text-amber-800 mb-2">Oud denken:</h4>
                       <ul className="space-y-1">
-                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700 text-sm">"Mama weet beter"</span></li>
-                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700 text-sm">"Vader helpt mama"</span></li>
-                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700 text-sm">"Borstvoeding is natuurlijker"</span></li>
-                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700 text-sm">"Mama doet nachten"</span></li>
-                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700 text-sm">"Vader werkt, mama zorgt"</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700">"Mama weet beter"</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700">"Vader helpt mama"</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700">"Borstvoeding is natuurlijker"</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700">"Mama doet nachten"</span></li>
+                        <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700">"Vader werkt, mama zorgt"</span></li>
                       </ul>
                     </div>
                     
@@ -768,27 +768,27 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                     <div className="text-center bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">"Bakfiets papa"</div>
-                      <div className="text-sm text-gray-600">Actieve vader met kinderen</div>
+                      <div className="text-gray-600">Actieve vader met kinderen</div>
                     </div>
                     <div className="text-center bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">"Baby wearing"</div>
-                      <div className="text-sm text-gray-600">Draagdoek + flesvoeding</div>
+                      <div className="text-gray-600">Draagdoek + flesvoeding</div>
                     </div>
                     <div className="text-center bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">"Café dates"</div>
-                      <div className="text-sm text-gray-600">Vader-baby uitjes</div>
+                      <div className="text-gray-600">Vader-baby uitjes</div>
                     </div>
                     <div className="text-center bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">"Play group dad"</div>
-                      <div className="text-sm text-gray-600">Enige vader bij activiteiten</div>
+                      <div className="text-gray-600">Enige vader bij activiteiten</div>
                     </div>
                     <div className="text-center bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">Papa WhatsApp</div>
-                      <div className="text-sm text-gray-600">Lokale vader groepen</div>
+                      <div className="text-gray-600">Lokale vader groepen</div>
                     </div>
                     <div className="text-center bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">Buggy Boot Camp</div>
-                      <div className="text-sm text-gray-600">Sport met baby</div>
+                      <div className="text-gray-600">Sport met baby</div>
                     </div>
                   </div>
                 </div>
@@ -847,7 +847,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                 >
                   <div className="text-center">
                     <div className="font-medium text-gray-700">Bereken gedeelde voeding schema </div>
-                    <div className="text-sm text-gray-600">Plan samen de perfect flesvoeding routine</div>
+                    <div className="text-gray-600">Plan samen de perfect flesvoeding routine</div>
                   </div>
                 </Link>
               </div>
@@ -862,19 +862,19 @@ export default function PartnerBetrekkenFlesvoedingPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/praktische-tips/nachtvoeding-optimaliseren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Nachtvoeding optimaliseren </div>
-                  <div className="text-sm text-gray-600">Efficiënte nachtvoedingen strategieën</div>
+                  <div className="text-gray-600">Efficiënte nachtvoedingen strategieën</div>
                 </Link>
                 <Link href="/kennisbank/praktische-tips/flesvoeding-werk-combineren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Flesvoeding en werk combineren </div>
-                  <div className="text-sm text-gray-600">Balans tussen carrière en ouderschap</div>
+                  <div className="text-gray-600">Balans tussen carrière en ouderschap</div>
                 </Link>
                 <Link href="/kennisbank/praktische-tips/voedingsritme-opbouwen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Voedingsritme opbouwen </div>
-                  <div className="text-sm text-gray-600">Structuur voor het hele gezin</div>
+                  <div className="text-gray-600">Structuur voor het hele gezin</div>
                 </Link>
                 <Link href="/kennisbank/basis-flesvoeding/overstappen-van-borst-naar-fles" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Overstappen van borst naar fles </div>
-                  <div className="text-sm text-gray-600">Stapsgewijze overgang voor partners</div>
+                  <div className="text-gray-600">Stapsgewijze overgang voor partners</div>
                 </Link>
               </div>
             </div>

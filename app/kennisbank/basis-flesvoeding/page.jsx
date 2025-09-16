@@ -80,7 +80,7 @@ export default function BasisFlesvoedingPage() {
             <h2 className="text-lg font-semibold text-primary mb-4">Wanneer kies je voor flesvoeding?</h2>
             <div className="space-y-2">
               {reasons.map((reason, index) => (
-                <div key={index} className="flex items-start space-x-2">
+                <div key={tipIndex} className="flex items-start space-x-2">
                   <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                   <span className="text-gray-600 text-sm">{reason}</span>
                 </div>
@@ -94,7 +94,7 @@ export default function BasisFlesvoedingPage() {
           <h2 className="text-lg font-semibold text-primary mb-4">Voordelen van flesvoeding</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-start space-x-2">
+              <div key={tipIndex} className="flex items-start space-x-2">
                 <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-gray-600 text-sm">{benefit}</span>
               </div>
@@ -110,7 +110,7 @@ export default function BasisFlesvoedingPage() {
           </p>
           <div className="space-y-3">
             {guidelines.map((guideline, index) => (
-              <div key={index} className="flex items-start space-x-2">
+              <div key={tipIndex} className="flex items-start space-x-2">
                 <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-gray-700 text-sm font-medium">{guideline}</span>
               </div>
@@ -124,7 +124,7 @@ export default function BasisFlesvoedingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
               <h3 className="font-medium text-gray-700 mb-3">EU-verordening 2016/127:</h3>
-              <div className="space-y-2 text-sm text-gray-700">
+              <div className="space-y-2 text-gray-700">
                 <div className="flex items-start space-x-2">
                   <CheckCircle className="w-4 h-4 text-gray-600 mt-0.5 flex-shrink-0" />
                   <span>Alle Nederlandse flesvoeding voldoet aan strenge EU-eisen</span>
@@ -146,7 +146,7 @@ export default function BasisFlesvoedingPage() {
             
             <div>
               <h3 className="font-medium text-gray-700 mb-3">Nederlandse context:</h3>
-              <div className="space-y-2 text-sm text-gray-700">
+              <div className="space-y-2 text-gray-700">
                 <div className="flex items-start space-x-2">
                   <CheckCircle className="w-4 h-4 text-gray-600 mt-0.5 flex-shrink-0" />
                   <span>Kraanwater is veilig voor bereiding flesvoeding</span>
@@ -174,7 +174,7 @@ export default function BasisFlesvoedingPage() {
           <div className="space-y-4">
             <div className="bg-white p-4 rounded-lg">
               <h3 className="font-medium text-gray-600 mb-2"> Mythe: "Flesvoeding is minder gezond dan borstvoeding"</h3>
-              <p className="text-sm text-gray-700">
+              <p className="text-gray-700">
                  Feit: Moderne flesvoeding bevat alle essentiële voedingsstoffen. 
                 Elk kind dat goed groeit en gezond is, krijgt de juiste voeding.
               </p>
@@ -182,7 +182,7 @@ export default function BasisFlesvoedingPage() {
             
             <div className="bg-white p-4 rounded-lg">
               <h3 className="font-medium text-gray-600 mb-2"> Mythe: "Dure merken zijn beter"</h3>
-              <p className="text-sm text-gray-700">
+              <p className="text-gray-700">
                  Feit: Alle merken voldoen aan dezelfde EU-richtlijnen. 
                 Kruidvat huismerk is even veilig als premium merken.
               </p>
@@ -190,7 +190,7 @@ export default function BasisFlesvoedingPage() {
             
             <div className="bg-white p-4 rounded-lg">
               <h3 className="font-medium text-gray-600 mb-2"> Mythe: "Baby's worden minder slim van flesvoeding"</h3>
-              <p className="text-sm text-gray-700">
+              <p className="text-gray-700">
                  Feit: DHA (voor hersenontwikkeling) is verplicht in alle flesvoeding sinds 2020. 
                 Liefde en aandacht zijn belangrijker dan voedingstype.
               </p>
@@ -198,7 +198,7 @@ export default function BasisFlesvoedingPage() {
             
             <div className="bg-white p-4 rounded-lg">
               <h3 className="font-medium text-gray-600 mb-2"> Mythe: "Flesvoeding baby's worden vaker ziek"</h3>
-              <p className="text-sm text-gray-700">
+              <p className="text-gray-700">
                  Feit: Goede hygiëne bij bereiding is belangrijker dan voedingstype. 
                 Veel factoren beïnvloeden weerstand (slaap, stress, genetica).
               </p>
@@ -212,7 +212,7 @@ export default function BasisFlesvoedingPage() {
           <div className="space-y-4">
             <div>
               <h3 className="font-medium text-primary mb-2">Kan ik van borstvoeding overstappen naar flesvoeding?</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-gray-600">
                 Ja, dit kan altijd en op elke leeftijd. Een geleidelijke overgang over 1-2 weken 
                 wordt aangeraden om borstontsteking te voorkomen. Raadpleeg het consultatiebureau voor persoonlijk advies.
               </p>
@@ -220,7 +220,7 @@ export default function BasisFlesvoedingPage() {
             
             <div>
               <h3 className="font-medium text-primary mb-2">Welk merk flesvoeding is het beste?</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-gray-600">
                 Alle Nederlandse merken voldoen aan dezelfde strenge EU-eisen en zijn even veilig. 
                 Kies op basis van prijs, beschikbaarheid en voorkeur van je baby.
               </p>
@@ -228,7 +228,7 @@ export default function BasisFlesvoedingPage() {
             
             <div>
               <h3 className="font-medium text-primary mb-2">Vanaf welke leeftijd kan mijn baby flesvoeding krijgen?</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-gray-600">
                 Flesvoeding is veilig vanaf de geboorte. Startvoeding (nummer 1) is geschikt 
                 voor baby's van 0-12 maanden als volledig alternatief voor borstvoeding.
               </p>
@@ -236,7 +236,7 @@ export default function BasisFlesvoedingPage() {
             
             <div>
               <h3 className="font-medium text-primary mb-2">Hoeveel ml heeft mijn baby precies nodig?</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-gray-600">
                 Elke baby is anders. De Nederlandse richtlijn is 150ml per kg lichaamsgewicht per dag. 
                 <Link href="/" className="text-primary hover:underline font-medium">
                   Bereken met onze calculator
@@ -246,7 +246,7 @@ export default function BasisFlesvoedingPage() {
             
             <div>
               <h3 className="font-medium text-primary mb-2">Kan ik borstvoeding en flesvoeding combineren?</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-gray-600">
                 Ja, combivoeiding is mogelijk. Start met flesvoeding als aanvulling en bouw 
                 geleidelijk op. Let wel op dat melkproductie kan afnemen.
               </p>
@@ -280,7 +280,7 @@ export default function BasisFlesvoedingPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="bg-white p-4 rounded-lg">
                   <h4 className="font-medium text-gray-700 mb-2">Gemiddelde kosten per maand:</h4>
-                  <div className="space-y-1 text-sm text-gray-700">
+                  <div className="space-y-1 text-gray-700">
                     <div> Startvoeding (0-6 mnd): €15-25</div>
                     <div> Opvolgmelk (6+ mnd): €20-30</div>
                     <div> Totaal eerste jaar: circa €250-350</div>
@@ -288,7 +288,7 @@ export default function BasisFlesvoedingPage() {
                 </div>
                 <div className="bg-white p-4 rounded-lg">
                   <h4 className="font-medium text-gray-600 mb-2">Geld besparen tips:</h4>
-                  <div className="space-y-1 text-sm text-gray-700">
+                  <div className="space-y-1 text-gray-700">
                     <div> Huismerken even goed als A-merken</div>
                     <div> Grotere verpakkingen goedkoper</div>
                     <div> Let op aanbiedingen</div>
@@ -308,11 +308,11 @@ export default function BasisFlesvoedingPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="bg-white p-3 rounded-lg">
                   <div className="font-medium text-gray-700 mb-1">Voorbereiding:</div>
-                  <div className="text-sm text-gray-700">Start vroeg met wennen aan fles, laat partner oefenen, stock voorraad op</div>
+                  <div className="text-gray-700">Start vroeg met wennen aan fles, laat partner oefenen, stock voorraad op</div>
                 </div>
                 <div className="bg-white p-3 rounded-lg">
                   <div className="font-medium text-gray-700 mb-1">Praktisch:</div>
-                  <div className="text-sm text-gray-700">Instructies voor oppas, noodvoorraad, backup plan maken</div>
+                  <div className="text-gray-700">Instructies voor oppas, noodvoorraad, backup plan maken</div>
                 </div>
               </div>
             </div>
@@ -326,7 +326,7 @@ export default function BasisFlesvoedingPage() {
               </p>
               <div className="bg-white p-4 rounded-lg">
                 <h4 className="font-medium text-gray-700 mb-2">Praktische tips:</h4>
-                <div className="space-y-1 text-sm text-gray-700">
+                <div className="space-y-1 text-gray-700">
                   <div> Verdeel voedingen: bijvoorbeeld mama overdag, papa 's avonds</div>
                   <div> Laat partner nachtvoeding overnemen voor mama's rust</div>
                   <div> Creëer eigen rituelen: papa's liedjes, mama's verhalen</div>
@@ -560,21 +560,21 @@ export default function BasisFlesvoedingPage() {
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-gray-700">Soorten Flesvoeding </div>
-              <div className="text-sm text-gray-600">Nummer 1, 2, 3 uitgelegd</div>
+              <div className="text-gray-600">Nummer 1, 2, 3 uitgelegd</div>
             </Link>
             <Link 
               href="/kennisbank/voedingstechnieken"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-gray-700">Voedingstechnieken </div>
-              <div className="text-sm text-gray-600">Bereiden en geven van fles</div>
+              <div className="text-gray-600">Bereiden en geven van fles</div>
             </Link>
             <Link 
               href="/"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-gray-700">Flesvoeding Calculator </div>
-              <div className="text-sm text-gray-600">Bereken hoeveelheden</div>
+              <div className="text-gray-600">Bereken hoeveelheden</div>
             </Link>
           </div>
         </div>

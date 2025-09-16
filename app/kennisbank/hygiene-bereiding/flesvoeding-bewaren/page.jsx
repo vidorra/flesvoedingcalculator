@@ -301,16 +301,16 @@ export default function FlesvoedingBewarenPage() {
                 <h3 className="font-medium text-primary mb-3">Risico's van Verkeerd Bewaren:</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {storageRisks.map((risk, index) => (
-                    <div key={index} className="flex items-start space-x-2">
+                    <div key={tipIndex} className="flex items-start space-x-2">
                       <AlertTriangle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-gray-700">{risk}</span>
+                      <span className="text-gray-700">{risk}</span>
                     </div>
                   ))}
                 </div>
               </div>
               
               <div className="p-4 border border-gray-200 bg-white rounded-xl">
-                <p className="text-sm text-gray-700">
+                <p className="text-gray-700">
                   <strong>Het RIVM rapporteert</strong> jaarlijks 50+ ziekenhuisopnames door verkeerd bewaarde babyvoeding in Nederland.
                 </p>
               </div>
@@ -322,8 +322,8 @@ export default function FlesvoedingBewarenPage() {
               
               <div className="space-y-6">
                 {powderStorage.map((item, index) => (
-                  <div key={index}>
-                    <h3 className="font-medium text-gray-900 mb-3">{item.type}</h3>
+                  <div key={tipIndex}>
+                    <h3 className="font-medium text-gray-700 mb-3">{item.type}</h3>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                       <div className="space-y-3">
@@ -347,7 +347,7 @@ export default function FlesvoedingBewarenPage() {
                           {item.tips.map((tip, tipIndex) => (
                             <li key={tipIndex} className="flex items-start space-x-2">
                               <CheckCircle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
-                              <span className="text-sm text-gray-700">{tip}</span>
+                              <span className="text-gray-700">{tip}</span>
                             </li>
                           ))}
                         </ul>
@@ -368,8 +368,8 @@ export default function FlesvoedingBewarenPage() {
               
               <div className="space-y-6">
                 {readyMadeStorage.map((section, index) => (
-                  <div key={index}>
-                    <h3 className="font-medium text-gray-900 mb-3">{section.condition}</h3>
+                  <div key={tipIndex}>
+                    <h3 className="font-medium text-gray-700 mb-3">{section.condition}</h3>
                     
                     {section.condition === 'Kamertemperatuur (20°C)' ? (
                       <div className="overflow-x-auto">
@@ -383,7 +383,7 @@ export default function FlesvoedingBewarenPage() {
                           </thead>
                           <tbody>
                             {section.items.map((item, itemIndex) => (
-                              <tr key={itemIndex} className="border-b border-gray-200">
+                              <tr key={tipIndex} className="border-b border-gray-200">
                                 <td className="py-2 text-sm text-gray-700">{item.situation}</td>
                                 <td className="py-2 text-sm font-medium text-gray-700">{item.maxTime}</td>
                                 <td className="py-2 text-sm text-gray-600">{item.warning}</td>
@@ -395,9 +395,9 @@ export default function FlesvoedingBewarenPage() {
                     ) : (
                       <ul className="space-y-2">
                         {section.items.map((item, itemIndex) => (
-                          <li key={itemIndex} className="flex items-start space-x-2">
+                          <li key={tipIndex} className="flex items-start space-x-2">
                             <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-sm text-gray-700">
+                            <span className="text-gray-700">
                               <strong>{item.situation}:</strong> {item.maxTime} - {item.warning}
                             </span>
                           </li>
@@ -425,9 +425,9 @@ export default function FlesvoedingBewarenPage() {
                   </h3>
                   <ol className="space-y-2">
                     {safePreparationSteps.map((step, index) => (
-                      <li key={index} className="flex items-start space-x-2">
+                      <li key={tipIndex} className="flex items-start space-x-2">
                         <span className="text-gray-600 font-medium text-sm">{index + 1}.</span>
-                        <span className="text-sm text-gray-700">{step}</span>
+                        <span className="text-gray-700">{step}</span>
                       </li>
                     ))}
                   </ol>
@@ -437,9 +437,9 @@ export default function FlesvoedingBewarenPage() {
                   <h3 className="font-medium text-primary mb-3">Voor Bewaring in Koelkast</h3>
                   <ol className="space-y-2">
                     {fridgeStorageSteps.map((step, index) => (
-                      <li key={index} className="flex items-start space-x-2">
+                      <li key={tipIndex} className="flex items-start space-x-2">
                         <span className="text-gray-600 font-medium text-sm">{index + 1}.</span>
-                        <span className="text-sm text-gray-700">{step}</span>
+                        <span className="text-gray-700">{step}</span>
                       </li>
                     ))}
                   </ol>
@@ -458,9 +458,9 @@ export default function FlesvoedingBewarenPage() {
                 <h3 className="font-medium text-primary mb-3">Veilige Opwarmmethoden</h3>
                 <div className="space-y-4">
                   {heatingMethods.map((method, index) => (
-                    <div key={index}>
+                    <div key={tipIndex}>
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-medium text-gray-900">{method.method}</h4>
+                        <h4 className="font-medium text-gray-700">{method.method}</h4>
                         {method.rating && (
                           <span className="text-xs bg-white text-gray-700 px-2 py-1 rounded-full">
                             {method.rating}
@@ -471,16 +471,16 @@ export default function FlesvoedingBewarenPage() {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <ul className="space-y-1">
                           {method.benefits.map((benefit, benefitIndex) => (
-                            <li key={benefitIndex} className="flex items-start space-x-2">
+                            <li key={tipIndex} className="flex items-start space-x-2">
                               <CheckCircle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
-                              <span className="text-sm text-gray-700">{benefit}</span>
+                              <span className="text-gray-700">{benefit}</span>
                             </li>
                           ))}
                         </ul>
                         
                         <div>
                           <span className="text-sm font-medium text-gray-600">Tijd: </span>
-                          <span className="text-sm text-gray-700">{method.time}</span>
+                          <span className="text-gray-700">{method.time}</span>
                         </div>
                       </div>
                       
@@ -505,8 +505,8 @@ export default function FlesvoedingBewarenPage() {
                     </thead>
                     <tbody>
                       {dangerousMethods.map((item, index) => (
-                        <tr key={index} className="border-b border-gray-200">
-                          <td className="py-2 text-sm font-medium text-gray-900">{item.method}</td>
+                        <tr key={tipIndex} className="border-b border-gray-200">
+                          <td className="py-2 text-sm font-medium text-gray-700">{item.method}</td>
                           <td className="py-2 text-sm text-gray-700">{item.reason}</td>
                           <td className="py-2 text-sm text-gray-600">{item.consequence}</td>
                         </tr>
@@ -523,13 +523,13 @@ export default function FlesvoedingBewarenPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {travelTips.map((section, index) => (
-                  <div key={index}>
-                    <h3 className="font-medium text-gray-900 mb-3">{section.situation}</h3>
+                  <div key={tipIndex}>
+                    <h3 className="font-medium text-gray-700 mb-3">{section.situation}</h3>
                     <ul className="space-y-2">
                       {section.tips.map((tip, tipIndex) => (
                         <li key={tipIndex} className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="text-sm text-gray-700">{tip}</span>
+                          <span className="text-gray-700">{tip}</span>
                         </li>
                       ))}
                     </ul>
@@ -547,7 +547,7 @@ export default function FlesvoedingBewarenPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {nightPreparation.map((method, index) => (
-                  <div key={index}>
+                  <div key={tipIndex}>
                     <h3 className="font-medium text-primary mb-3">{method.method}</h3>
                     
                     <div className="p-4 border border-gray-200 bg-white rounded-lg">
@@ -556,9 +556,9 @@ export default function FlesvoedingBewarenPage() {
                       )}
                       <ul className="space-y-2">
                         {method.steps.map((step, stepIndex) => (
-                          <li key={stepIndex} className="flex items-start space-x-2">
+                          <li key={tipIndex} className="flex items-start space-x-2">
                             <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-sm text-gray-700">{step}</span>
+                            <span className="text-gray-700">{step}</span>
                           </li>
                         ))}
                       </ul>
@@ -574,13 +574,13 @@ export default function FlesvoedingBewarenPage() {
               
               <div className="space-y-6">
                 {seasonalTips.map((season, index) => (
-                  <div key={index}>
-                    <h3 className="font-medium text-gray-900 mb-3">{season.season}</h3>
+                  <div key={tipIndex}>
+                    <h3 className="font-medium text-gray-700 mb-3">{season.season}</h3>
                     <ul className="space-y-2">
                       {season.tips.map((tip, tipIndex) => (
                         <li key={tipIndex} className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="text-sm text-gray-700">{tip}</span>
+                          <span className="text-gray-700">{tip}</span>
                         </li>
                       ))}
                     </ul>
@@ -602,9 +602,9 @@ export default function FlesvoedingBewarenPage() {
                   <h3 className="font-medium text-primary mb-3">Daily Safety Check</h3>
                   <ul className="space-y-2">
                     {safetyChecklist.map((item, index) => (
-                      <li key={index} className="flex items-start space-x-2">
+                      <li key={tipIndex} className="flex items-start space-x-2">
                         <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-gray-700">{item}</span>
+                        <span className="text-gray-700">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -614,9 +614,9 @@ export default function FlesvoedingBewarenPage() {
                   <h3 className="font-medium text-primary mb-3">Red Flags - Gooi Weg Bij:</h3>
                   <ul className="space-y-2">
                     {redFlags.map((flag, index) => (
-                      <li key={index} className="flex items-start space-x-2">
+                      <li key={tipIndex} className="flex items-start space-x-2">
                         <AlertTriangle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-gray-700">{flag}</span>
+                        <span className="text-gray-700">{flag}</span>
                       </li>
                     ))}
                   </ul>
@@ -630,17 +630,17 @@ export default function FlesvoedingBewarenPage() {
               
               <div className="space-y-6">
                 {commonMistakes.map((mistake, index) => (
-                  <div key={index}>
-                    <h3 className="font-medium text-gray-900 mb-2">Fout: "{mistake.mistake}"</h3>
+                  <div key={tipIndex}>
+                    <h3 className="font-medium text-gray-700 mb-2">Fout: "{mistake.mistake}"</h3>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <span className="text-sm font-medium text-gray-600">Probleem: </span>
-                        <span className="text-sm text-gray-700">{mistake.problem}</span>
+                        <span className="text-gray-700">{mistake.problem}</span>
                       </div>
                       <div>
                         <span className="text-sm font-medium text-gray-600">Oplossing: </span>
-                        <span className="text-sm text-gray-700">{mistake.solution}</span>
+                        <span className="text-gray-700">{mistake.solution}</span>
                       </div>
                     </div>
                     
@@ -658,9 +658,9 @@ export default function FlesvoedingBewarenPage() {
               
               <div className="space-y-4">
                 {faqData.map((item, index) => (
-                  <div key={index}>
-                    <h3 className="font-medium text-gray-900 mb-2">{item.question}</h3>
-                    <p className="text-sm text-gray-700">{item.answer}</p>
+                  <div key={tipIndex}>
+                    <h3 className="font-medium text-gray-700 mb-2">{item.question}</h3>
+                    <p className="text-gray-700">{item.answer}</p>
                     {index < faqData.length - 1 && (
                       <div className="border-b border-gray-200 mt-4"></div>
                     )}
@@ -697,14 +697,14 @@ export default function FlesvoedingBewarenPage() {
                   className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
                   <div className="font-medium text-gray-700">Hygiëne & Bereiding </div>
-                  <div className="text-sm text-gray-600">Alle hygiëne richtlijnen</div>
+                  <div className="text-gray-600">Alle hygiëne richtlijnen</div>
                 </Link>
                 <Link 
                   href="/kennisbank/voedingstechnieken"
                   className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
                   <div className="font-medium text-gray-700">Voedingstechnieken </div>
-                  <div className="text-sm text-gray-600">Technieken voor veilig voeden</div>
+                  <div className="text-gray-600">Technieken voor veilig voeden</div>
                 </Link>
               </div>
             </div>

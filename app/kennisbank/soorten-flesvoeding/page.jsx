@@ -39,14 +39,14 @@ export default function SoortenFlesvoedingPage() {
               <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold">1</div>
               <div>
                 <h2 className="text-lg font-semibold text-primary">Startvoeding (Nummer 1)</h2>
-                <p className="text-sm text-gray-600">0 tot 6 maanden</p>
+                <p className="text-gray-600">0 tot 6 maanden</p>
               </div>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div>
                 <h3 className="font-medium text-primary mb-3">Kenmerken:</h3>
-                <ul className="space-y-2 text-sm text-gray-600">
+                <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span>Volledige zuigelingenvoeding vanaf geboorte</span>
@@ -74,7 +74,7 @@ export default function SoortenFlesvoedingPage() {
                 <h3 className="font-medium text-primary mb-3">Populaire merken in Nederland:</h3>
                 <div className="grid grid-cols-2 gap-2">
                   {formula1Brands.map((brand, index) => (
-                    <div key={index} className="bg-default px-3 py-2 rounded-lg text-sm text-primary">
+                    <div key={tipIndex} className="bg-default px-3 py-2 rounded-lg text-sm text-primary">
                       {brand}
                     </div>
                   ))}
@@ -89,14 +89,14 @@ export default function SoortenFlesvoedingPage() {
               <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold">2</div>
               <div>
                 <h2 className="text-lg font-semibold text-primary">Opvolgmelk (Nummer 2)</h2>
-                <p className="text-sm text-gray-600">6 tot 12 maanden</p>
+                <p className="text-gray-600">6 tot 12 maanden</p>
               </div>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div>
                 <h3 className="font-medium text-primary mb-3">Kenmerken:</h3>
-                <ul className="space-y-2 text-sm text-gray-600">
+                <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span>Vanaf 6 maanden naast vaste voeding</span>
@@ -122,7 +122,7 @@ export default function SoortenFlesvoedingPage() {
               
               <div>
                 <h3 className="font-medium text-primary mb-3">Wanneer overstappen:</h3>
-                <ul className="space-y-2 text-sm text-gray-600">
+                <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span>Baby is 6 maanden oud</span>
@@ -146,14 +146,14 @@ export default function SoortenFlesvoedingPage() {
               <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold">3</div>
               <div>
                 <h2 className="text-lg font-semibold text-primary">Peutermelk (Nummer 3)</h2>
-                <p className="text-sm text-gray-600">12+ maanden</p>
+                <p className="text-gray-600">12+ maanden</p>
               </div>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div>
                 <h3 className="font-medium text-primary mb-3">Kenmerken:</h3>
-                <ul className="space-y-2 text-sm text-gray-600">
+                <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span>Vanaf 1 jaar als aanvulling</span>
@@ -175,7 +175,7 @@ export default function SoortenFlesvoedingPage() {
               
               <div>
                 <h3 className="font-medium text-primary mb-3">Afweging maken:</h3>
-                <ul className="space-y-2 text-sm text-gray-600">
+                <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span>Gewone volle melk is vanaf 1 jaar prima</span>
@@ -210,7 +210,7 @@ export default function SoortenFlesvoedingPage() {
               </thead>
               <tbody>
                 {formulaComparison.map((item, index) => (
-                  <tr key={index} className="border-b border-gray-100">
+                  <tr key={tipIndex} className="border-b border-gray-100">
                     <td className="py-2 font-medium text-gray-700">{item.type}</td>
                     <td className="py-2 text-gray-700">{item.protein}</td>
                     <td className="py-2 text-gray-700">{item.iron}</td>
@@ -232,15 +232,15 @@ export default function SoortenFlesvoedingPage() {
               <div className="space-y-2">
                 <div className="bg-white p-3 rounded-lg">
                   <div className="font-medium text-gray-700">Nutrilon</div>
-                  <div className="text-sm text-gray-600">Nederlandse ontwikkeling, marktleider</div>
+                  <div className="text-gray-600">Nederlandse ontwikkeling, marktleider</div>
                 </div>
                 <div className="bg-white p-3 rounded-lg">
                   <div className="font-medium text-gray-700">Hero Baby</div>
-                  <div className="text-sm text-gray-600">Swiss kwaliteit, goede prijs-kwaliteit</div>
+                  <div className="text-gray-600">Swiss kwaliteit, goede prijs-kwaliteit</div>
                 </div>
                 <div className="bg-white p-3 rounded-lg">
                   <div className="font-medium text-gray-700">Kruidvat</div>
-                  <div className="text-sm text-gray-600">Budget optie, zelfde EU-standaarden</div>
+                  <div className="text-gray-600">Budget optie, zelfde EU-standaarden</div>
                 </div>
               </div>
             </div>
@@ -250,11 +250,11 @@ export default function SoortenFlesvoedingPage() {
               <div className="space-y-2">
                 <div className="bg-white p-3 rounded-lg">
                   <div className="font-medium text-gray-700">HIPP Bio</div>
-                  <div className="text-sm text-gray-600">100% biologisch, Europese kwaliteit</div>
+                  <div className="text-gray-600">100% biologisch, Europese kwaliteit</div>
                 </div>
                 <div className="bg-white p-3 rounded-lg">
                   <div className="font-medium text-gray-700">Aptamil</div>
-                  <div className="text-sm text-gray-600">Focus op hersensontwikkeling</div>
+                  <div className="text-gray-600">Focus op hersensontwikkeling</div>
                 </div>
               </div>
               <p className="text-xs text-gray-500 mt-3">
@@ -346,7 +346,7 @@ export default function SoortenFlesvoedingPage() {
           <div className="space-y-4">
             <div>
               <h3 className="font-medium text-primary mb-2">Wanneer overstappen van nummer 1 naar 2?</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-gray-600">
                 Pas vanaf 6 maanden en alleen wanneer je baby ook vaste voeding krijgt. 
                 Nummer 1 mag je tot 12 maanden blijven gebruiken.
               </p>
@@ -354,7 +354,7 @@ export default function SoortenFlesvoedingPage() {
             
             <div>
               <h3 className="font-medium text-primary mb-2">Is peutermelk (nummer 3) nodig?</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-gray-600">
                 Nee, vanaf 12 maanden kan je baby gewone volle melk drinken. 
                 Peutermelk is alleen nuttig bij zeer selectieve eters.
               </p>
@@ -362,7 +362,7 @@ export default function SoortenFlesvoedingPage() {
             
             <div>
               <h3 className="font-medium text-primary mb-2">Kan ik tussen merken wisselen?</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-gray-600">
                 Ja, alle merken voldoen aan dezelfde EU-richtlijnen. 
                 Wissel geleidelijk over 3-5 dagen om maagklachten te voorkomen.
               </p>
@@ -370,7 +370,7 @@ export default function SoortenFlesvoedingPage() {
             
             <div>
               <h3 className="font-medium text-primary mb-2">Wat betekenen de cijfers precies?</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-gray-600">
                 Nummer 1: 0-6 maanden (startvoeding), Nummer 2: 6-12 maanden (opvolgmelk), 
                 Nummer 3: 12+ maanden (peutermelk, optioneel).
               </p>
@@ -378,7 +378,7 @@ export default function SoortenFlesvoedingPage() {
             
             <div>
               <h3 className="font-medium text-primary mb-2">Hoeveel ml van elk type per voeding?</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-gray-600">
                 De hoeveelheid hangt af van gewicht en leeftijd van je baby. 
                 <Link href="/" className="text-primary hover:underline font-medium">
                   Gebruik onze gratis calculator
@@ -399,7 +399,7 @@ export default function SoortenFlesvoedingPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="bg-white p-4 rounded-lg">
                   <h4 className="font-medium text-gray-600 mb-2">Van 1 naar 2 (6+ maanden):</h4>
-                  <div className="space-y-1 text-sm text-gray-700">
+                  <div className="space-y-1 text-gray-700">
                     <div> Hoger ijzergehalte voor groei</div>
                     <div> Aangepast aan groeiende behoefte</div>
                     <div> Meer vitaminen voor ontwikkeling</div>
@@ -408,7 +408,7 @@ export default function SoortenFlesvoedingPage() {
                 </div>
                 <div className="bg-white p-4 rounded-lg">
                   <h4 className="font-medium text-gray-600 mb-2">Van 2 naar gewone melk (12+ maanden):</h4>
-                  <div className="space-y-1 text-sm text-gray-700">
+                  <div className="space-y-1 text-gray-700">
                     <div> Volle koemelk is vanaf 12 maanden prima</div>
                     <div> Peutermelk alleen bij slecht eten</div>
                     <div> Goedkoper dan peutermelk</div>
@@ -427,21 +427,21 @@ export default function SoortenFlesvoedingPage() {
                     <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-gray-600 font-bold text-sm">1</div>
                     <div>
                       <div className="font-medium text-gray-700">Week 1: Geleidelijk introduceren</div>
-                      <div className="text-sm text-gray-600">Mix 75% oude voeding + 25% nieuwe voeding</div>
+                      <div className="text-gray-600">Mix 75% oude voeding + 25% nieuwe voeding</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-gray-600 font-bold text-sm">2</div>
                     <div>
                       <div className="font-medium text-gray-700">Week 2: Verhogen naar 50/50</div>
-                      <div className="text-sm text-gray-600">Baby went aan nieuwe smaak en samenstelling</div>
+                      <div className="text-gray-600">Baby went aan nieuwe smaak en samenstelling</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-gray-600 font-bold text-sm">3</div>
                     <div>
                       <div className="font-medium text-gray-700">Week 3: Volledig overstappen</div>
-                      <div className="text-sm text-gray-600">100% nieuwe voeding, oude pot bewaren als backup</div>
+                      <div className="text-gray-600">100% nieuwe voeding, oude pot bewaren als backup</div>
                     </div>
                   </div>
                 </div>
@@ -474,21 +474,21 @@ export default function SoortenFlesvoedingPage() {
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-gray-700">Basis Flesvoeding </div>
-              <div className="text-sm text-gray-600">Beginnen met flesvoeding</div>
+              <div className="text-gray-600">Beginnen met flesvoeding</div>
             </Link>
             <Link 
               href="/kennisbank/voedingstechnieken"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-gray-700">Voedingstechnieken </div>
-              <div className="text-sm text-gray-600">Hoe bereid je flesvoeding?</div>
+              <div className="text-gray-600">Hoe bereid je flesvoeding?</div>
             </Link>
             <Link 
               href="/kennisbank/problemen-oplossen"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-gray-700">Problemen Oplossen </div>
-              <div className="text-sm text-gray-600">Hulp bij veelvoorkomende problemen</div>
+              <div className="text-gray-600">Hulp bij veelvoorkomende problemen</div>
             </Link>
           </div>
         </div>

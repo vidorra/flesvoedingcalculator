@@ -638,7 +638,7 @@ export default function FlessenSteriligerenPage() {
                 >
                   <div className="text-center">
                     <div className="font-medium text-gray-700">Hulp nodig bij het organiseren van je flesvoeding routine? </div>
-                    <div className="text-sm text-gray-600">Gebruik onze flesvoeding calculator voor een gepersonaliseerd voedingsschema</div>
+                    <div className="text-gray-600">Gebruik onze flesvoeding calculator voor een gepersonaliseerd voedingsschema</div>
                   </div>
                 </Link>
               </div>
@@ -653,19 +653,19 @@ export default function FlessenSteriligerenPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Fles bereiden stap voor stap →</div>
-                  <div className="text-sm text-gray-600">Veilige bereiding na sterilisatie</div>
+                  <div className="text-gray-600">Veilige bereiding na sterilisatie</div>
                 </Link>
                 <Link href="/kennisbank/hygiene-bereiding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Hygiëne & Bereiding overzicht →</div>
-                  <div className="text-sm text-gray-600">Alle hygiëne aspecten</div>
+                  <div className="text-gray-600">Alle hygiëne aspecten</div>
                 </Link>
                 <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Eerste keer flesvoeding →</div>
-                  <div className="text-sm text-gray-600">Complete beginnersgids</div>
+                  <div className="text-gray-600">Complete beginnersgids</div>
                 </Link>
                 <Link href="/kennisbank/veiligheid" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-primary">Veiligheidsrichtlijnen →</div>
-                  <div className="text-sm text-gray-600">Alle veiligheidsaspecten</div>
+                  <div className="text-gray-600">Alle veiligheidsaspecten</div>
                 </Link>
               </div>
             </div>

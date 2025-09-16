@@ -70,7 +70,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-amber-800 mb-2">Let op - Kritieke veiligheidsrisico's</h3>
-                      <p className="text-sm text-amber-700 leading-relaxed">Baby's mondje is extreem gevoelig. Temperaturen boven 40°C kunnen brandwonden veroorzaken, terwijl boven 60°C tweede-graads brandwonden en permanente schade aan smaakpapillen mogelijk zijn.</p>
+                      <p className="text-amber-700 leading-relaxed">Baby's mondje is extreem gevoelig. Temperaturen boven 40°C kunnen brandwonden veroorzaken, terwijl boven 60°C tweede-graads brandwonden en permanente schade aan smaakpapillen mogelijk zijn.</p>
                     </div>
                   </div>
                 </div>
@@ -161,7 +161,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-amber-800 mb-2">Nederlandse veiligheidswaarschuwing</h3>
-                      <p className="text-sm text-amber-700 leading-relaxed">De Nederlandse Vereniging voor Kindergeneeskunde en het Voedingscentrum raden het gebruik van magnetrons voor flesvoeding ten strengste af.</p>
+                      <p className="text-amber-700 leading-relaxed">De Nederlandse Vereniging voor Kindergeneeskunde en het Voedingscentrum raden het gebruik van magnetrons voor flesvoeding ten strengste af.</p>
                     </div>
                   </div>
                 </div>
@@ -219,15 +219,15 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                           <ul className="space-y-1">
                             <li className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                              <span className="text-amber-700 text-sm">85% brandwonden magnetron gerelateerd</span>
+                              <span className="text-amber-700">85% brandwonden magnetron gerelateerd</span>
                             </li>
                             <li className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                              <span className="text-amber-700 text-sm">Gemiddelde opname: 3-7 dagen</span>
+                              <span className="text-amber-700">Gemiddelde opname: 3-7 dagen</span>
                             </li>
                             <li className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                              <span className="text-amber-700 text-sm">Kosten per incident: €8.000-€15.000</span>
+                              <span className="text-amber-700">Kosten per incident: €8.000-€15.000</span>
                             </li>
                           </ul>
                         </div>
@@ -361,15 +361,15 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                     <ul className="space-y-1">
                       <li className="flex items-center space-x-2">
                         <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0" />
-                        <span className="text-amber-700 text-sm">Langzamer (2-6 minuten)</span>
+                        <span className="text-amber-700">Langzamer (2-6 minuten)</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0" />
-                        <span className="text-amber-700 text-sm">Handmatig werk - toezicht nodig</span>
+                        <span className="text-amber-700">Handmatig werk - toezicht nodig</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0" />
-                        <span className="text-amber-700 text-sm">Water ververser per fles</span>
+                        <span className="text-amber-700">Water ververser per fles</span>
                       </li>
                     </ul>
                   </div>
@@ -400,7 +400,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                       <h4 className="font-medium text-gray-700 mb-2">Voor- en nadelen:</h4>
                       <div className="space-y-2">
                         <div>
-                          <p className="text-sm text-gray-700">Voordelen:</p>
+                          <p className="text-gray-700">Voordelen:</p>
                           <ul className="text-sm space-y-1">
                             <li className="text-gray-700"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Constante temperatuur (±2°C)</span></li>
                             <li className="text-gray-700"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Automatisch proces</span></li>
@@ -564,7 +564,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                           <div className="font-medium text-gray-700">Perfect</div>
                         </div>
                         <div className="text-center">
-                          <div className="text-sm text-blue-600">30-34°C</div>
+                          <div className="text-sm text-primary">30-34°C</div>
                           <div className="font-medium text-gray-700">Iets te koel</div>
                         </div>
                         <div className="text-center">
@@ -587,23 +587,23 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                     <ul className="space-y-1">
                       <li className="flex items-center space-x-2">
                         <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0" />
-                        <span className="text-amber-700 text-sm">Testen met eigen mond/tong</span>
+                        <span className="text-amber-700">Testen met eigen mond/tong</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0" />
-                        <span className="text-amber-700 text-sm">Alleen buitenkant fles voelen</span>
+                        <span className="text-amber-700">Alleen buitenkant fles voelen</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0" />
-                        <span className="text-amber-700 text-sm">Baby laten "proeven" eerst</span>
+                        <span className="text-amber-700">Baby laten "proeven" eerst</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0" />
-                        <span className="text-amber-700 text-sm">Gokken op basis van verwarmtijd</span>
+                        <span className="text-amber-700">Gokken op basis van verwarmtijd</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0" />
-                        <span className="text-amber-700 text-sm">Test overslaan bij tijdnood</span>
+                        <span className="text-amber-700">Test overslaan bij tijdnood</span>
                       </li>
                     </ul>
                   </div>
@@ -631,37 +631,37 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                   <div className="space-y-4">
                     <div className="border-l-4 border-red-300 pl-4">
                       <h4 className="font-medium text-gray-700 mb-1">1. Magnetron gebruik</h4>
-                      <p className="text-gray-600 text-sm mb-1">Fout: "Magnetron is sneller en makkelijker"</p>
-                      <p className="text-gray-700 text-sm mb-1">Correct: Waterpad of flessenwarmer gebruiken</p>
-                      <p className="text-amber-700 text-sm">Risico: Ernstige brandwonden door hot spots</p>
+                      <p className="text-gray-600 mb-1">Fout: "Magnetron is sneller en makkelijker"</p>
+                      <p className="text-gray-700 mb-1">Correct: Waterpad of flessenwarmer gebruiken</p>
+                      <p className="text-amber-700">Risico: Ernstige brandwonden door hot spots</p>
                     </div>
                     
                     <div className="border-l-4 border-red-300 pl-4">
                       <h4 className="font-medium text-gray-700 mb-1">2. Fles niet schudden voor test</h4>
-                      <p className="text-gray-600 text-sm mb-1">Fout: Direct testen na verwarming</p>
-                      <p className="text-gray-700 text-sm mb-1">Correct: Altijd eerst goed schudden</p>
-                      <p className="text-amber-700 text-sm">Risico: Koude buitenkant, hete binnenkant</p>
+                      <p className="text-gray-600 mb-1">Fout: Direct testen na verwarming</p>
+                      <p className="text-gray-700 mb-1">Correct: Altijd eerst goed schudden</p>
+                      <p className="text-amber-700">Risico: Koude buitenkant, hete binnenkant</p>
                     </div>
                     
                     <div className="border-l-4 border-red-300 pl-4">
                       <h4 className="font-medium text-gray-700 mb-1">3. Alleen buitenkant fles voelen</h4>
-                      <p className="text-gray-600 text-sm mb-1">Fout: "Fles voelt goed aan"</p>
-                      <p className="text-gray-700 text-sm mb-1">Correct: Melk zelf testen op pols</p>
-                      <p className="text-amber-700 text-sm">Risico: Verborgen hete plekken in melk</p>
+                      <p className="text-gray-600 mb-1">Fout: "Fles voelt goed aan"</p>
+                      <p className="text-gray-700 mb-1">Correct: Melk zelf testen op pols</p>
+                      <p className="text-amber-700">Risico: Verborgen hete plekken in melk</p>
                     </div>
                     
                     <div className="border-l-4 border-red-300 pl-4">
                       <h4 className="font-medium text-gray-700 mb-1">4. Herverwarmen van overgebleven melk</h4>
-                      <p className="text-gray-600 text-sm mb-1">Fout: Restje melk later opnieuw verwarmen</p>
-                      <p className="text-gray-700 text-sm mb-1">Correct: Overgebleven melk weggooien (max 1 uur)</p>
-                      <p className="text-amber-700 text-sm">Risico: Bacteriële groei, voedselvergiftiging</p>
+                      <p className="text-gray-600 mb-1">Fout: Restje melk later opnieuw verwarmen</p>
+                      <p className="text-gray-700 mb-1">Correct: Overgebleven melk weggooien (max 1 uur)</p>
+                      <p className="text-amber-700">Risico: Bacteriële groei, voedselvergiftiging</p>
                     </div>
                     
                     <div className="border-l-4 border-red-300 pl-4">
                       <h4 className="font-medium text-gray-700 mb-1">5. Temperatuur raden</h4>
-                      <p className="text-gray-600 text-sm mb-1">Fout: "Het zal wel goed zijn na X minuten"</p>
-                      <p className="text-gray-700 text-sm mb-1">Correct: Altijd temperatuur controleren</p>
-                      <p className="text-amber-700 text-sm">Risico: Brandwonden of te koude voeding</p>
+                      <p className="text-gray-600 mb-1">Fout: "Het zal wel goed zijn na X minuten"</p>
+                      <p className="text-gray-700 mb-1">Correct: Altijd temperatuur controleren</p>
+                      <p className="text-amber-700">Risico: Brandwonden of te koude voeding</p>
                     </div>
                   </div>
                 </div>
@@ -757,7 +757,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                 >
                   <div className="text-center">
                     <div className="font-medium text-gray-700">Bereken de juiste hoeveelheid flesvoeding </div>
-                    <div className="text-sm text-gray-600">Precies de juiste temperatuur en hoeveelheid</div>
+                    <div className="text-gray-600">Precies de juiste temperatuur en hoeveelheid</div>
                   </div>
                 </Link>
               </div>
@@ -772,19 +772,19 @@ export default function VeiligVerwarmenFlesvoedingPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/hygiene-bereiding/houdbaarheid-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Houdbaarheid flesvoeding </div>
-                  <div className="text-sm text-gray-600">Veilige bewaring en tijdslimieten</div>
+                  <div className="text-gray-600">Veilige bewaring en tijdslimieten</div>
                 </Link>
                 <Link href="/kennisbank/voedingstechnieken/juiste-temperatuur-controleren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Juiste temperatuur controleren </div>
-                  <div className="text-sm text-gray-600">Temperatuur testen en controleren</div>
+                  <div className="text-gray-600">Temperatuur testen en controleren</div>
                 </Link>
                 <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Fles bereiden stap voor stap </div>
-                  <div className="text-sm text-gray-600">Complete bereiding handleiding</div>
+                  <div className="text-gray-600">Complete bereiding handleiding</div>
                 </Link>
                 <Link href="/kennisbank/hygiene-bereiding/flessen-steriliseren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Flessen steriliseren </div>
-                  <div className="text-sm text-gray-600">Hygiënische fles voorbereiding</div>
+                  <div className="text-gray-600">Hygiënische fles voorbereiding</div>
                 </Link>
               </div>
             </div>

@@ -366,7 +366,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
               </div>
               
               <div className="mt-4 p-3 border border-gray-200 bg-white rounded-lg">
-                <p className="text-sm text-gray-700">
+                <p className="text-gray-700">
                   <strong>Voedingscentrum Onderzoek:</strong> 60% van ouders stapt te vroeg of onnodig over naar opvolgmelk.
                 </p>
               </div>
@@ -380,7 +380,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                 <table className="w-full border-collapse">
                   <thead>
                     <tr className="border-b border-gray-200">
-                      <th className="text-left py-3 px-4 font-medium text-gray-900">Component</th>
+                      <th className="text-left py-3 px-4 font-medium text-gray-700">Component</th>
                       <th className="text-left py-3 px-4 font-medium text-gray-700">Startvoeding (1)</th>
                       <th className="text-left py-3 px-4 font-medium text-gray-700">Opvolgmelk (2)</th>
                       <th className="text-left py-3 px-4 font-medium text-gray-700">Verschil</th>
@@ -388,8 +388,8 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                   </thead>
                   <tbody>
                     {nutritionComparison.map((item, index) => (
-                      <tr key={index} className="border-b border-gray-200">
-                        <td className="py-3 px-4 font-medium text-gray-900">{item.component}</td>
+                      <tr key={tipIndex} className="border-b border-gray-200">
+                        <td className="py-3 px-4 font-medium text-gray-700">{item.component}</td>
                         <td className="py-3 px-4 text-gray-700">{item.startvoeding}</td>
                         <td className="py-3 px-4 text-gray-700">{item.opvolgmelk}</td>
                         <td className="py-3 px-4 text-gray-700 font-medium">
@@ -435,11 +435,11 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
               
               <div className="space-y-8">
                 {brandComparison.map((category, categoryIndex) => (
-                  <div key={categoryIndex}>
-                    <h3 className="font-medium text-gray-900 mb-4">{category.category}</h3>
+                  <div key={tipIndex}>
+                    <h3 className="font-medium text-gray-700 mb-4">{category.category}</h3>
                     <div className="space-y-4">
                       {category.brands.map((brand, brandIndex) => (
-                        <div key={brandIndex} className="p-4">
+                        <div key={tipIndex} className="p-4">
                           <div className="flex items-center justify-between mb-3">
                             <h4 className="font-medium text-gray-700">{brand.name}</h4>
                             <div className="text-sm text-primary font-medium">
@@ -470,9 +470,9 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                             <span className="font-medium text-gray-700">Unique Selling Points:</span>
                             <ul className="mt-1 space-y-1">
                               {brand.features.map((feature, featureIndex) => (
-                                <li key={featureIndex} className="flex items-start space-x-2">
+                                <li key={tipIndex} className="flex items-start space-x-2">
                                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                                  <span className="text-sm text-gray-700">{feature}</span>
+                                  <span className="text-gray-700">{feature}</span>
                                 </li>
                               ))}
                             </ul>
@@ -494,7 +494,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
               
               <div className="space-y-6">
                 {switchDecision.map((decision, index) => (
-                  <div key={index}>
+                  <div key={tipIndex}>
                     <div className="flex items-center mb-4">
                       <decision.icon className={`w-5 h-5 mr-2 ${decision.color}`} />
                       <h3 className={`font-medium ${decision.color}`}>{decision.category}</h3>
@@ -502,15 +502,15 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                     
                     <div className="space-y-4">
                       {decision.reasons.map((reason, reasonIndex) => (
-                        <div key={reasonIndex}>
+                        <div key={tipIndex}>
                           <h4 className="font-medium text-primary mb-2">{reason.type}:</h4>
                           <ul className="space-y-1">
                             {reason.items.map((item, itemIndex) => (
-                              <li key={itemIndex} className="flex items-start space-x-2">
+                              <li key={tipIndex} className="flex items-start space-x-2">
                                 <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
                                   decision.color === 'text-primary' ? 'bg-primary' : 'bg-gray-400'
                                 }`}></div>
-                                <span className="text-sm text-gray-700">{item}</span>
+                                <span className="text-gray-700">{item}</span>
                               </li>
                             ))}
                           </ul>
@@ -536,9 +536,9 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                     'Budget/voorkeur bepaalt keuze',
                     'Partner meningsverschil over timing'
                   ].map((situation, index) => (
-                    <div key={index} className="flex items-center space-x-2">
+                    <div key={tipIndex} className="flex items-center space-x-2">
                       <span className="text-gray-600">□</span>
-                      <span className="text-sm text-gray-700">{situation}</span>
+                      <span className="text-gray-700">{situation}</span>
                     </div>
                   ))}
                 </div>
@@ -553,14 +553,14 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
               </h2>
               
               <div className="mb-6">
-                <h3 className="font-medium text-gray-900 mb-3">Geleidelijke Overgang (Aanbevolen)</h3>
+                <h3 className="font-medium text-gray-700 mb-3">Geleidelijke Overgang (Aanbevolen)</h3>
                 <div className="space-y-4">
                   {transitionProcess.map((week, index) => (
-                    <div key={index} className="p-4 mb-4">
+                    <div key={tipIndex} className="p-4 mb-4">
                       <h4 className="font-medium text-primary mb-3">{week.week}</h4>
                       <div className="space-y-2 mb-3">
                         {week.days.map((day, dayIndex) => (
-                          <div key={dayIndex} className="text-sm text-gray-700 font-mono p-2 bg-white rounded">
+                          <div key={tipIndex} className="text-sm text-gray-700 font-mono p-2 bg-white rounded">
                             {day}
                           </div>
                         ))}
@@ -573,7 +573,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
               
               <div className="p-4 border border-gray-200 bg-white rounded-xl">
                 <h3 className="font-medium text-primary mb-2">Beste Momenten voor Overstap:</h3>
-                <ul className="space-y-1 text-sm text-gray-700">
+                <ul className="space-y-1 text-gray-700">
                   <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>6-7 maanden: Ideale leeftijd, vaste voeding gestart</span></li>
                   <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Niet tijdens ziekte: Wacht tot baby weer gezond is</span></li>
                   <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Weekend start: Meer tijd om aanpassingen te observeren</span></li>
@@ -591,17 +591,17 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
               
               <div className="space-y-6">
                 {commonProblems.map((problem, index) => (
-                  <div key={index}>
-                    <h3 className="font-medium text-gray-900 mb-3">"{problem.problem}"</h3>
+                  <div key={tipIndex}>
+                    <h3 className="font-medium text-gray-700 mb-3">"{problem.problem}"</h3>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <h4 className="font-medium text-primary mb-2">Oorzaken:</h4>
                         <ul className="space-y-1">
                           {problem.causes.map((cause, causeIndex) => (
-                            <li key={causeIndex} className="flex items-start space-x-2">
+                            <li key={tipIndex} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                              <span className="text-sm text-gray-700">{cause}</span>
+                              <span className="text-gray-700">{cause}</span>
                             </li>
                           ))}
                         </ul>
@@ -611,7 +611,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                         <h4 className="font-medium text-primary mb-2">Stapsgewijze Oplossingen:</h4>
                         <ul className="space-y-1">
                           {problem.solutions.map((solution, solutionIndex) => (
-                            <li key={solutionIndex} className="text-sm text-gray-700 p-2 border border-gray-200 bg-white rounded font-mono">
+                            <li key={tipIndex} className="text-sm text-gray-700 p-2 border border-gray-200 bg-white rounded font-mono">
                               {solution}
                             </li>
                           ))}
@@ -636,12 +636,12 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
               
               <div className="space-y-6">
                 {costComparison.map((scenario, index) => (
-                  <div key={index} className="bg-white border border-gray-200 rounded-lg p-4">
-                    <h3 className="font-medium text-gray-900 mb-2">{scenario.scenario}</h3>
+                  <div key={tipIndex} className="bg-white border border-gray-200 rounded-lg p-4">
+                    <h3 className="font-medium text-gray-700 mb-2">{scenario.scenario}</h3>
                     <p className="text-sm text-gray-600 mb-3">{scenario.calculation}</p>
                     <div className="space-y-1">
                       {scenario.costs.map((cost, costIndex) => (
-                        <div key={costIndex} className="text-sm text-gray-700 p-2 bg-white rounded font-mono">
+                        <div key={tipIndex} className="text-sm text-gray-700 p-2 bg-white rounded font-mono">
                           {cost}
                         </div>
                       ))}
@@ -657,7 +657,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
               
               <div className="space-y-4">
                 {expertRecommendations.map((expert, index) => (
-                  <div key={index} className="p-4 mb-4">
+                  <div key={tipIndex} className="p-4 mb-4">
                     <h3 className="font-medium text-primary mb-2">{expert.organization}</h3>
                     <p className="text-sm text-gray-700 italic">"{expert.recommendation}"</p>
                   </div>
@@ -671,9 +671,9 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
               
               <div className="space-y-4">
                 {faqData.map((item, index) => (
-                  <div key={index}>
-                    <h3 className="font-medium text-gray-900 mb-2">{item.question}</h3>
-                    <p className="text-sm text-gray-700">{item.answer}</p>
+                  <div key={tipIndex}>
+                    <h3 className="font-medium text-gray-700 mb-2">{item.question}</h3>
+                    <p className="text-gray-700">{item.answer}</p>
                     {index < faqData.length - 1 && (
                       <div className="border-b border-gray-200 mt-4"></div>
                     )}
@@ -688,11 +688,11 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
               
               <div className="space-y-4">
                 {myths.map((myth, index) => (
-                  <div key={index} className="p-4 mb-4">
+                  <div key={tipIndex} className="p-4 mb-4">
                     <div className="mb-2">
                       <span className="text-gray-700 font-medium">Mythe: "{myth.myth}"</span>
                     </div>
-                    <p className="text-sm text-gray-700">
+                    <p className="text-gray-700">
                       <strong>Feit:</strong> {myth.fact}
                     </p>
                   </div>
@@ -720,7 +720,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                   </ol>
                 </div>
                 <div className="p-4 border border-gray-200 bg-white rounded-xl">
-                  <p className="text-sm text-gray-700">
+                  <p className="text-gray-700">
                     <strong>Onthoud:</strong> Er is <strong>geen verkeerde keuze</strong> tussen nummer 1 en 2. 
                     Beide zijn veilig, voedzaam, en geschikt voor gezonde baby's. Het belangrijkste is een 
                     <strong>gelukkige, groeiende baby</strong> op welke melk dan ook.
@@ -738,14 +738,14 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                   className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
                   <div className="font-medium text-gray-700">Soorten Flesvoeding </div>
-                  <div className="text-sm text-gray-600">Complete overzicht van alle flesvoeding types</div>
+                  <div className="text-gray-600">Complete overzicht van alle flesvoeding types</div>
                 </Link>
                 <Link 
                   href="/kennisbank/financiele-aspecten/kosten-van-flesvoeding"
                   className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
                   <div className="font-medium text-gray-700">Kosten van Flesvoeding </div>
-                  <div className="text-sm text-gray-600">Budgettering en kostenvergelijking</div>
+                  <div className="text-gray-600">Budgettering en kostenvergelijking</div>
                 </Link>
               </div>
             </div>

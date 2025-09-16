@@ -149,7 +149,7 @@ export default function BioOrganischeFlesvoedingPage() {
               </p>
               
               <div className="mt-4 p-4 bg-white rounded-lg">
-                <p className="text-sm text-gray-700">
+                <p className="text-gray-700">
                   <strong>Nederlandse markt 2025:</strong> €95 miljoen jaarlijkse omzet, 95% supermarkt beschikbaarheid, 
                   gemiddelde kosten €18-35 per week vs €12-22 regulier.
                 </p>
@@ -169,7 +169,7 @@ export default function BioOrganischeFlesvoedingPage() {
                 
                 <ul className="space-y-2 mb-6">
                   {euBioVereisten.map((vereiste, index) => (
-                    <li key={index} className="flex items-start space-x-2">
+                    <li key={tipIndex} className="flex items-start space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                       <span className="text-gray-700">{vereiste}</span>
                     </li>
@@ -232,7 +232,7 @@ export default function BioOrganischeFlesvoedingPage() {
               
               <div className="space-y-4">
                 {nederlandseBioMerken.map((merk, index) => (
-                  <div key={index} className="bg-white rounded-lg p-4">
+                  <div key={tipIndex} className="bg-white rounded-lg p-4">
                     <div className="flex justify-between items-start mb-2">
                       <h3 className="font-medium text-gray-700">{merk.merk}</h3>
                       <span className="text-sm text-gray-600 font-medium">{merk.prijs}</span>
@@ -269,7 +269,7 @@ export default function BioOrganischeFlesvoedingPage() {
                 <h3 className="font-medium text-primary mb-4">RIVM Onderzoek 2023 - 2.400 Nederlandse Baby's</h3>
                 <ul className="space-y-3 mb-6">
                   {wetenschappelijkeVoordelen.map((voordeel, index) => (
-                    <li key={index} className="flex items-start space-x-2">
+                    <li key={tipIndex} className="flex items-start space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                       <span className="text-gray-700">{voordeel}</span>
                     </li>
@@ -307,7 +307,7 @@ export default function BioOrganischeFlesvoedingPage() {
                     </thead>
                     <tbody>
                       {kostenVergelijking.map((item, index) => (
-                        <tr key={index} className="border-b border-gray-100">
+                        <tr key={tipIndex} className="border-b border-gray-100">
                           <td className="py-2 text-gray-700">{item.periode}</td>
                           <td className="py-2 text-right text-gray-700">{item.bio}</td>
                           <td className="py-2 text-right text-gray-700">{item.regulier}</td>
@@ -325,7 +325,7 @@ export default function BioOrganischeFlesvoedingPage() {
                   <p className="text-gray-700 text-sm mb-3">
                     <strong>Gezondheidszorg besparingen:</strong> Families met bio kinderen bezoeken gemiddeld 30% minder vaak de dokter.
                   </p>
-                  <ul className="space-y-1 text-sm text-gray-700">
+                  <ul className="space-y-1 text-gray-700">
                     <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Minder doktersbezoeken: €150-300/jaar</span></li>
                     <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Minder allergie medicatie: €100-400/jaar</span></li>
                     <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Mogelijk IQ voordelen: Levenslange waarde</span></li>
@@ -364,7 +364,7 @@ export default function BioOrganischeFlesvoedingPage() {
                   <h4 className="font-medium text-primary mb-3">Belangrijke Overstap Tips:</h4>
                   <ul className="space-y-2">
                     {overstapTips.map((tip, index) => (
-                      <li key={index} className="flex items-start space-x-2">
+                      <li key={tipIndex} className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                         <span className="text-gray-700 text-sm">{tip}</span>
                       </li>
@@ -388,7 +388,7 @@ export default function BioOrganischeFlesvoedingPage() {
                   
                   <div className="space-y-3">
                     {veelgemaktefouten.map((fout, index) => (
-                      <div key={index} className="bg-amber-100/50 rounded-lg p-3">
+                      <div key={tipIndex} className="bg-amber-100/50 rounded-lg p-3">
                         <h4 className="font-medium text-amber-800 text-sm mb-1">{fout.fout}</h4>
                         <p className="text-xs text-amber-700 mb-1"><strong>Impact:</strong> {fout.impact}</p>
                         <p className="text-xs text-amber-700"><strong>Tip:</strong> {fout.tip}</p>
@@ -408,7 +408,7 @@ export default function BioOrganischeFlesvoedingPage() {
                 >
                   <div className="text-center">
                     <div className="font-medium text-gray-700">Bereken bio voeding kosten </div>
-                    <div className="text-sm text-gray-600">Gebruik onze calculator voor kostenvergelijking</div>
+                    <div className="text-gray-600">Gebruik onze calculator voor kostenvergelijking</div>
                   </div>
                 </Link>
               </div>
@@ -423,19 +423,19 @@ export default function BioOrganischeFlesvoedingPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Verschil startvoeding opvolgmelk </div>
-                  <div className="text-sm text-gray-600">Ook beschikbaar in biologische varianten</div>
+                  <div className="text-gray-600">Ook beschikbaar in biologische varianten</div>
                 </Link>
                 <Link href="/kennisbank/financiele-aspecten/kosten-van-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Kosten van flesvoeding </div>
-                  <div className="text-sm text-gray-600">Complete kostenanalyse inclusief bio opties</div>
+                  <div className="text-gray-600">Complete kostenanalyse inclusief bio opties</div>
                 </Link>
                 <Link href="/kennisbank/soorten-flesvoeding/hypoallergene-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Hypoallergene flesvoeding </div>
-                  <div className="text-sm text-gray-600">Ook in biologische uitvoeringen verkrijgbaar</div>
+                  <div className="text-gray-600">Ook in biologische uitvoeringen verkrijgbaar</div>
                 </Link>
                 <Link href="/kennisbank/soorten-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Alle soorten flesvoeding </div>
-                  <div className="text-sm text-gray-600">Complete overzicht van alle flesvoeding types</div>
+                  <div className="text-gray-600">Complete overzicht van alle flesvoeding types</div>
                 </Link>
               </div>
             </section>

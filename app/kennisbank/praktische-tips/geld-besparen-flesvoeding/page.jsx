@@ -169,7 +169,7 @@ export default function GeldBesparenPage() {
               
               <div className="space-y-6">
                 {costComparison.map((category, index) => (
-                  <div key={index}>
+                  <div key={tipIndex}>
                     <h3 className="font-semibold text-primary mb-3">{category.category}</h3>
                     <div className="overflow-x-auto">
                       <table className="w-full text-sm bg-white border border-gray-200 rounded-lg">
@@ -183,7 +183,7 @@ export default function GeldBesparenPage() {
                         </thead>
                         <tbody>
                           {category.brands.map((brand, idx) => (
-                            <tr key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-white"}>
+                            <tr key={tipIndex}>
                               <td className="p-3 font-medium">{brand.name}</td>
                               <td className="p-3">{brand.price}</td>
                               <td className="p-3">{brand.monthly}</td>
@@ -216,7 +216,7 @@ export default function GeldBesparenPage() {
               
               <div className="space-y-6">
                 {savingStrategies.map((strategy, index) => (
-                  <div key={index} className="p-4">
+                  <div key={tipIndex} className="p-4">
                     <div className="flex justify-between items-start mb-3">
                       <h3 className="font-semibold text-primary">{strategy.strategy}</h3>
                       <span className="bg-white text-primary px-2 py-1 rounded text-sm font-medium">
@@ -229,7 +229,7 @@ export default function GeldBesparenPage() {
                         <h4 className="font-medium text-gray-600 mb-2">Methoden:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           {strategy.methods.map((method, idx) => (
-                            <li key={idx} className="flex items-center space-x-2">
+                            <li key={tipIndex} className="flex items-center space-x-2">
                               <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
                               <span>{method}</span>
                             </li>
@@ -238,7 +238,7 @@ export default function GeldBesparenPage() {
                       </div>
                       <div>
                         <h4 className="font-medium text-gray-600 mb-2">Pro Tip:</h4>
-                        <p className="text-sm text-gray-600">{strategy.tips}</p>
+                        <p className="text-gray-600">{strategy.tips}</p>
                       </div>
                     </div>
                   </div>
@@ -297,14 +297,14 @@ export default function GeldBesparenPage() {
               
               <div className="space-y-4">
                 {smartHacks.map((hack, index) => (
-                  <div key={index} className="border-l-4 border-primary pl-4">
+                  <div key={tipIndex} className="border-l-4 border-primary pl-4">
                     <div className="flex justify-between items-start mb-2">
                       <h3 className="font-semibold text-primary">{hack.hack}</h3>
                       <span className="bg-primary text-white px-2 py-1 rounded text-sm">
                         {hack.savings}
                       </span>
                     </div>
-                    <p className="text-gray-700 text-sm mb-1">{hack.description}</p>
+                    <p className="text-gray-700 mb-1">{hack.description}</p>
                     <p className="text-gray-700 text-sm">{hack.method}</p>
                   </div>
                 ))}
@@ -339,7 +339,7 @@ export default function GeldBesparenPage() {
               
               <div className="space-y-4">
                 {budgetBreakdown.map((budget, index) => (
-                  <div key={index} className={`border rounded-lg p-4 ${budget.realistic ? 'border-gray-200 bg-gray-50' : 'border-gray-200 bg-white'}`}>
+                  <div key={tipIndex}>
                     <div className="flex justify-between items-start mb-3">
                       <h3 className="font-semibold text-primary">{budget.scenario}</h3>
                       <div className="text-right">
@@ -349,9 +349,9 @@ export default function GeldBesparenPage() {
                     </div>
                     <div className="grid md:grid-cols-2 gap-3">
                       {budget.strategies.map((strategy, idx) => (
-                        <div key={idx} className="flex items-center space-x-2">
+                        <div key={tipIndex} className="flex items-center space-x-2">
                           <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
-                          <span className="text-sm text-gray-600">{strategy}</span>
+                          <span className="text-gray-600">{strategy}</span>
                         </div>
                       ))}
                     </div>
@@ -371,9 +371,9 @@ export default function GeldBesparenPage() {
                 <h3 className="font-medium text-gray-600 mb-3">Nooit Doen voor Geld Besparen:</h3>
                 <div className="space-y-2">
                   {dangerousSavings.map((danger, index) => (
-                    <div key={index} className="flex items-start space-x-2">
+                    <div key={tipIndex} className="flex items-start space-x-2">
                       <AlertTriangle className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm text-gray-600">{danger}</span>
+                      <span className="text-gray-600">{danger}</span>
                     </div>
                   ))}
                 </div>
@@ -381,7 +381,7 @@ export default function GeldBesparenPage() {
 
               <div className="p-4 bg-white rounded-lg">
                 <h4 className="font-medium text-gray-600 mb-2"> Health Impact van Foute Besparingen</h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-gray-600">
                   Malnutrition, infection susceptibility, groei retardation, verteringsproblemen. 
                   Medische kosten zijn veel hoger dan besparingen!
                 </p>
@@ -394,19 +394,19 @@ export default function GeldBesparenPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/praktische-tips/flesvoeding-werk-combineren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-600">Werk combineren </div>
-                  <div className="text-sm text-gray-600">Kinderopvang kosten optimaliseren</div>
+                  <div className="text-gray-600">Kinderopvang kosten optimaliseren</div>
                 </Link>
                 <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-600">Startvoeding vs opvolgmelk </div>
-                  <div className="text-sm text-gray-600">Prijs vergelijking verschillende types</div>
+                  <div className="text-gray-600">Prijs vergelijking verschillende types</div>
                 </Link>
                 <Link href="/kennisbank/hygiene-bereiding/flesvoeding-bewaren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-600">Flesvoeding bewaren </div>
-                  <div className="text-sm text-gray-600">Verspilling voorkomen tips</div>
+                  <div className="text-gray-600">Verspilling voorkomen tips</div>
                 </Link>
                 <Link href="/kennisbank/praktische-tips" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-600">Alle praktische tips </div>
-                  <div className="text-sm text-gray-600">Meer handige ouder tips</div>
+                  <div className="text-gray-600">Meer handige ouder tips</div>
                 </Link>
               </div>
             </div>

@@ -673,7 +673,7 @@ export default function OverstappenBorstNaarFlesPage() {
                 >
                   <div className="text-center">
                     <div className="font-medium text-gray-700">Hulp nodig bij bepalen van juiste hoeveelheden na overstap? </div>
-                    <div className="text-sm text-gray-600">Gebruik onze flesvoeding calculator voor gepersonaliseerd advies</div>
+                    <div className="text-gray-600">Gebruik onze flesvoeding calculator voor gepersonaliseerd advies</div>
                   </div>
                 </Link>
               </div>
@@ -688,19 +688,19 @@ export default function OverstappenBorstNaarFlesPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/basis-flesvoeding/baby-weigert-de-fles" className="p-3 ">
                   <div className="font-medium text-gray-700">Baby weigert de fles </div>
-                  <div className="text-sm text-gray-600">Als baby geen fles wil accepteren</div>
+                  <div className="text-gray-600">Als baby geen fles wil accepteren</div>
                 </Link>
                 <Link href="/kennisbank/basis-flesvoeding/flesvoeding-vs-borstvoeding" className="p-3 ">
                   <div className="font-medium text-gray-700">Flesvoeding vs borstvoeding </div>
-                  <div className="text-sm text-gray-600">Eerlijke vergelijking beide methoden</div>
+                  <div className="text-gray-600">Eerlijke vergelijking beide methoden</div>
                 </Link>
                 <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 ">
                   <div className="font-medium text-gray-700">Eerste keer flesvoeding </div>
-                  <div className="text-sm text-gray-600">Complete beginnersgids</div>
+                  <div className="text-gray-600">Complete beginnersgids</div>
                 </Link>
                 <Link href="/kennisbank/praktische-tips/nachtvoeding-optimaliseren" className="p-3 ">
                   <div className="font-medium text-gray-700">Nachtvoeding optimaliseren </div>
-                  <div className="text-sm text-gray-600">Efficiënte nachtvoedingen</div>
+                  <div className="text-gray-600">Efficiënte nachtvoedingen</div>
                 </Link>
               </div>
             </div>

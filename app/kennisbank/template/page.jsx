@@ -87,7 +87,7 @@ export default function KennisbankTemplatePage() {
               </p>
               
               <div className="mt-4 p-4 bg-white rounded-lg">
-                <p className="text-sm text-gray-700">
+                <p className="text-gray-700">
                   <strong>Gebaseerd op:</strong> overstappen-van-borst-naar-fles (beste artikel structuur)  
                   <strong>Versie:</strong> 2.0  
                   <strong>Status:</strong> Approved Template
@@ -108,7 +108,7 @@ export default function KennisbankTemplatePage() {
                   <h3 className="font-medium text-primary mb-3">Goedgekeurde Kleuren:</h3>
                   <ul className="space-y-2">
                     {approvedColors.map((color, index) => (
-                      <li key={index} className="flex items-center space-x-2">
+                      <li key={tipIndex} className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                         <span className="text-gray-700 text-sm">{color}</span>
                       </li>
@@ -120,7 +120,7 @@ export default function KennisbankTemplatePage() {
                   <h3 className="font-medium text-primary mb-3">Styling Richtlijnen:</h3>
                   <ul className="space-y-2">
                     {stylingPrinciples.map((principle, index) => (
-                      <li key={index} className="flex items-center space-x-2">
+                      <li key={tipIndex} className="flex items-center space-x-2">
                         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
                         <span className="text-gray-700 text-sm">{principle}</span>
                       </li>
@@ -144,7 +144,7 @@ export default function KennisbankTemplatePage() {
                 
                 <ul className="space-y-2">
                   {forbiddenElements.map((element, index) => (
-                    <li key={index} className="flex items-start space-x-2">
+                    <li key={tipIndex} className="flex items-start space-x-2">
                       <AlertTriangle className="w-4 h-4 text-gray-600 flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700 text-sm">{element}</span>
                     </li>
@@ -161,7 +161,7 @@ export default function KennisbankTemplatePage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-700 mb-2">Belangrijk voor Ontwikkelaars</h3>
-                  <p className="text-sm text-amber-700 leading-relaxed">
+                  <p className="text-amber-700 leading-relaxed">
                     Dit is het enige goedgekeurde gebruik van gekleurde achtergronden (amber) - alleen voor waarschuwingen en belangrijke mededelingen. 
                     Alle andere content moet neutrale kleuren gebruiken.
                   </p>
@@ -277,7 +277,7 @@ export default function KennisbankTemplatePage() {
                 >
                   <div className="text-center">
                     <div className="font-medium text-gray-700">Hulp nodig met flesvoeding berekeningen? </div>
-                    <div className="text-sm text-gray-600">Gebruik onze calculator voor gepersonaliseerd advies</div>
+                    <div className="text-gray-600">Gebruik onze calculator voor gepersonaliseerd advies</div>
                   </div>
                 </Link>
               </div>
@@ -292,19 +292,19 @@ export default function KennisbankTemplatePage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/basis-flesvoeding/overstappen-van-borst-naar-fles" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Overstappen van borst naar fles </div>
-                  <div className="text-sm text-gray-600">Het originele artikel waar deze template op gebaseerd is</div>
+                  <div className="text-gray-600">Het originele artikel waar deze template op gebaseerd is</div>
                 </Link>
                 <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Eerste keer flesvoeding </div>
-                  <div className="text-sm text-gray-600">Compleet aangepast met template patronen</div>
+                  <div className="text-gray-600">Compleet aangepast met template patronen</div>
                 </Link>
                 <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Startvoeding vs Opvolgmelk </div>
-                  <div className="text-sm text-gray-600">Voorbeeld van fixes toegepast op complex artikel</div>
+                  <div className="text-gray-600">Voorbeeld van fixes toegepast op complex artikel</div>
                 </Link>
                 <Link href="/kennisbank/basis-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Alle Basis Flesvoeding </div>
-                  <div className="text-sm text-gray-600">Overzicht van alle basis artikelen</div>
+                  <div className="text-gray-600">Overzicht van alle basis artikelen</div>
                 </Link>
               </div>
             </section>
