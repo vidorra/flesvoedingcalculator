@@ -152,7 +152,7 @@ export default function FlesvoedingEnSlapenPage() {
                 </p>
                 <ul className="space-y-3 mb-6">
                   {flesvoedingVoordelen.map((voordeel, index) => (
-                    <li key={tipIndex} className="flex items-center space-x-2">
+                    <li key={index} className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                       <span className="text-gray-700">{voordeel}</span>
                     </li>
@@ -185,7 +185,7 @@ export default function FlesvoedingEnSlapenPage() {
               
               <div className="space-y-4">
                 {leeftijdSpecifiekeSchemas.map((schema, index) => (
-                  <div key={tipIndex} className="bg-white rounded-lg p-4">
+                  <div key={index} className="bg-white rounded-lg p-4">
                     <h3 className="font-medium text-primary mb-3">{schema.leeftijd}</h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                       <div>
@@ -235,7 +235,7 @@ export default function FlesvoedingEnSlapenPage() {
                 <h3 className="font-medium text-primary mb-4">Geleidelijke Afbouw Strategie</h3>
                 <ul className="space-y-3">
                   {nachtvoedingAfbouwStappen.map((stap, index) => (
-                    <li key={tipIndex} className="flex items-start space-x-2">
+                    <li key={index} className="flex items-start space-x-2">
                       <span className="bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                         {index + 1}
                       </span>
@@ -255,7 +255,7 @@ export default function FlesvoedingEnSlapenPage() {
               
               <ul className="space-y-3 mb-6">
                 {slaapinducerendeTechnieken.map((techniek, index) => (
-                  <li key={tipIndex} className="flex items-start space-x-2">
+                  <li key={index} className="flex items-start space-x-2">
                     <Moon className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
                     <span className="text-gray-700">{techniek}</span>
                   </li>
@@ -289,7 +289,7 @@ export default function FlesvoedingEnSlapenPage() {
               
               <div className="space-y-4">
                 {veelvoorkomendeProblemen.map((item, index) => (
-                  <div key={tipIndex} className="bg-white rounded-lg p-4">
+                  <div key={index} className="bg-white rounded-lg p-4">
                     <h3 className="font-medium text-primary mb-2">{item.probleem}</h3>
                     <p className="text-gray-700 text-sm mb-2"><strong>Mogelijke oorzaak:</strong> {item.oorzaak}</p>
                     <p className="text-gray-700 text-sm"><strong>Oplossing:</strong> {item.oplossing}</p>
@@ -358,7 +358,7 @@ export default function FlesvoedingEnSlapenPage() {
                   </p>
                   <ul className="space-y-2">
                     {nederlandseSlaapCultuur.map((aspect, index) => (
-                      <li key={tipIndex} className="flex items-center space-x-2">
+                      <li key={index} className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-amber-600 rounded-full flex-shrink-0"></div>
                         <span className="text-amber-700">{aspect}</span>
                       </li>

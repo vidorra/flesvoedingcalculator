@@ -331,7 +331,7 @@ export default function VerschillendeSpenenUitproberenPage() {
                       'Verkeerde vorm: Slechte mondafsluiting, lucht inslikken',
                       'Onjuist materiaal: Allergische reacties, smaakproblemen'
                     ].map((impact, index) => (
-                      <li key={tipIndex} className="flex items-start space-x-2">
+                      <li key={index} className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-gray-700">{impact}</span>
                       </li>
@@ -353,11 +353,11 @@ export default function VerschillendeSpenenUitproberenPage() {
               
               <div className="space-y-8">
                 {speenTypes.map((category, categoryIndex) => (
-                  <div key={tipIndex}>
+                  <div key={categoryIndex}>
                     <h3 className="font-medium text-gray-700 mb-4">{category.category}</h3>
                     <div className="space-y-4">
                       {category.types.map((type, typeIndex) => (
-                        <div key={tipIndex} className="p-4">
+                        <div key={typeIndex} className="p-4">
                           <h4 className="font-medium text-primary mb-2">{type.name}</h4>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
                             <div>
@@ -394,7 +394,7 @@ export default function VerschillendeSpenenUitproberenPage() {
               
               <div className="space-y-6">
                 {selectionSteps.map((step, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <div className="flex items-center mb-4">
                       <step.icon className="w-5 h-5 text-primary mr-2" />
                       <h3 className="font-medium text-gray-700">{step.step}</h3>
@@ -403,11 +403,11 @@ export default function VerschillendeSpenenUitproberenPage() {
                     {step.problems && (
                       <div className="space-y-3">
                         {step.problems.map((problem, problemIndex) => (
-                          <div key={tipIndex} className="border border-gray-200 bg-white rounded-lg p-3">
+                          <div key={problemIndex} className="border border-gray-200 bg-white rounded-lg p-3">
                             <h4 className="font-medium text-primary mb-2">{problem.issue}:</h4>
                             <ul className="space-y-1">
                               {problem.solutions.map((solution, solutionIndex) => (
-                                <li key={tipIndex} className="flex items-start space-x-2">
+                                <li key={solutionIndex} className="flex items-start space-x-2">
                                   <span className="text-gray-600"></span>
                                   <span className="text-gray-700">{solution}</span>
                                 </li>
@@ -421,7 +421,7 @@ export default function VerschillendeSpenenUitproberenPage() {
                     {step.protocol && (
                       <div className="space-y-2">
                         {step.protocol.map((item, itemIndex) => (
-                          <div key={tipIndex} className="p-3 border border-gray-200 bg-white rounded font-mono text-sm">
+                          <div key={itemIndex} className="p-3 border border-gray-200 bg-white rounded font-mono text-sm">
                             {item}
                           </div>
                         ))}
@@ -433,7 +433,7 @@ export default function VerschillendeSpenenUitproberenPage() {
                         <h4 className="font-medium text-primary mb-2">Overstap Strategie:</h4>
                         <ul className="space-y-1">
                           {step.strategies.map((strategy, strategyIndex) => (
-                            <li key={tipIndex} className="flex items-start space-x-2">
+                            <li key={strategyIndex} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                               <span className="text-gray-700">{strategy}</span>
                             </li>
@@ -456,12 +456,12 @@ export default function VerschillendeSpenenUitproberenPage() {
               
               <div className="space-y-4">
                 {brandComparison.map((brand, index) => (
-                  <div key={tipIndex} className="p-4">
+                  <div key={index} className="p-4">
                     <div className="flex items-center justify-between mb-3">
                       <h3 className="font-medium text-gray-700">{brand.brand}</h3>
                       <div className="flex">
                         {[...Array(5)].map((_, i) => (
-                          <div key={tipIndex}>
+                          <div key={i}>
                             
                           </div>
                         ))}
@@ -500,7 +500,7 @@ export default function VerschillendeSpenenUitproberenPage() {
               
               <div className="space-y-6">
                 {specificProblems.map((problem, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <h3 className="font-medium text-gray-700 mb-3">{problem.problem}</h3>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
@@ -508,7 +508,7 @@ export default function VerschillendeSpenenUitproberenPage() {
                         <h4 className="font-medium text-primary mb-2">Mogelijke oorzaken:</h4>
                         <ul className="space-y-1">
                           {problem.causes.map((cause, causeIndex) => (
-                            <li key={tipIndex} className="flex items-start space-x-2">
+                            <li key={causeIndex} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                               <span className="text-gray-700">{cause}</span>
                             </li>
@@ -520,7 +520,7 @@ export default function VerschillendeSpenenUitproberenPage() {
                         <h4 className="font-medium text-primary mb-2">Bewezen oplossingen:</h4>
                         <ul className="space-y-1">
                           {problem.solutions.map((solution, solutionIndex) => (
-                            <li key={tipIndex} className="text-sm text-gray-700 p-2 border border-gray-200 bg-white rounded font-mono">
+                            <li key={solutionIndex} className="text-sm text-gray-700 p-2 border border-gray-200 bg-white rounded font-mono">
                               {solution}
                             </li>
                           ))}
@@ -542,7 +542,7 @@ export default function VerschillendeSpenenUitproberenPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {ageRecommendations.map((age, index) => (
-                  <div key={tipIndex} className="bg-white border border-gray-200 rounded-lg p-4">
+                  <div key={index} className="bg-white border border-gray-200 rounded-lg p-4">
                     <h3 className="font-medium text-gray-700 mb-3">{age.age}</h3>
                     <div className="space-y-2 text-sm">
                       <div>
@@ -576,11 +576,11 @@ export default function VerschillendeSpenenUitproberenPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {shoppingTips.map((tip, index) => (
-                  <div key={tipIndex} className="p-4">
+                  <div key={index} className="p-4">
                     <h3 className="font-medium text-primary mb-3">{tip.package}</h3>
                     <ul className="space-y-1">
                       {tip.items.map((item, itemIndex) => (
-                        <li key={tipIndex} className="flex items-start space-x-2">
+                        <li key={itemIndex} className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                           <span className="text-gray-700">{item}</span>
                         </li>
@@ -599,7 +599,7 @@ export default function VerschillendeSpenenUitproberenPage() {
                     'Store brands: Voor backup/testing',
                     'Sales: Stock up tijdens acties'
                   ].map((tip, index) => (
-                    <div key={tipIndex} className="text-sm text-gray-700 p-2 border border-gray-200 bg-white rounded">
+                    <div key={index} className="text-sm text-gray-700 p-2 border border-gray-200 bg-white rounded">
                       {tip}
                     </div>
                   ))}
@@ -616,7 +616,7 @@ export default function VerschillendeSpenenUitproberenPage() {
               
               <div className="space-y-6">
                 {troubleshootingGuide.map((guide, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <h3 className="font-medium text-gray-700 mb-3">{guide.problem}</h3>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -624,7 +624,7 @@ export default function VerschillendeSpenenUitproberenPage() {
                         <h4 className="font-medium text-primary mb-2">Quick Fixes:</h4>
                         <ul className="space-y-1">
                           {guide.quickFix.map((fix, fixIndex) => (
-                            <li key={tipIndex} className="flex items-start space-x-2">
+                            <li key={fixIndex} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                               <span className="text-gray-700">{fix}</span>
                             </li>
@@ -636,7 +636,7 @@ export default function VerschillendeSpenenUitproberenPage() {
                         <h4 className="font-medium text-primary mb-2">Permanente Oplossing:</h4>
                         <ul className="space-y-1">
                           {guide.permanentSolution.map((solution, solutionIndex) => (
-                            <li key={tipIndex} className="flex items-start space-x-2">
+                            <li key={solutionIndex} className="flex items-start space-x-2">
                               <span className="text-gray-600"></span>
                               <span className="text-gray-700">{solution}</span>
                             </li>
@@ -659,7 +659,7 @@ export default function VerschillendeSpenenUitproberenPage() {
               
               <div className="space-y-4">
                 {faqData.map((item, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <h3 className="font-medium text-gray-700 mb-2">{item.question}</h3>
                     <p className="text-gray-700">{item.answer}</p>
                     {index < faqData.length - 1 && (

@@ -361,7 +361,7 @@ export default function SpugenNaDeFlesPage() {
                 <h3 className="font-medium text-primary mb-3">Cijfers die Geruststellen:</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {reassuringStats.map((stat, index) => (
-                    <div key={tipIndex} className="flex justify-between items-center p-3 border border-gray-200 bg-white rounded-lg">
+                    <div key={index} className="flex justify-between items-center p-3 border border-gray-200 bg-white rounded-lg">
                       <span className="font-bold text-primary">{stat.stat}</span>
                       <span className="text-gray-700">{stat.description}</span>
                     </div>
@@ -392,7 +392,7 @@ export default function SpugenNaDeFlesPage() {
                     <h4 className="font-medium text-gray-700 mb-2">Kenmerken:</h4>
                     <ul className="space-y-1">
                       {normalSpitting.characteristics.map((char, index) => (
-                        <li key={tipIndex} className="flex items-start space-x-2">
+                        <li key={index} className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                           <span className="text-gray-700">{char}</span>
                         </li>
@@ -404,7 +404,7 @@ export default function SpugenNaDeFlesPage() {
                     <h4 className="font-medium text-gray-700 mb-2">Waarom het Gebeurt:</h4>
                     <ol className="space-y-1">
                       {normalSpitting.reasons.map((reason, index) => (
-                        <li key={tipIndex} className="flex items-start space-x-2">
+                        <li key={index} className="flex items-start space-x-2">
                           <span className="text-primary font-medium text-sm">{index + 1}.</span>
                           <span className="text-gray-700">{reason}</span>
                         </li>
@@ -422,7 +422,7 @@ export default function SpugenNaDeFlesPage() {
                   <h4 className="font-medium text-gray-700 mb-2">Rode Vlaggen:</h4>
                   <ul className="space-y-2">
                     {warningSignsReflux.map((sign, index) => (
-                      <li key={tipIndex} className="flex items-start space-x-2">
+                      <li key={index} className="flex items-start space-x-2">
                         <AlertTriangle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                         <span className="text-gray-700">{sign}</span>
                       </li>
@@ -438,7 +438,7 @@ export default function SpugenNaDeFlesPage() {
               
               <div className="space-y-6">
                 {feedingTechniques.map((technique, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <div className="flex items-center justify-between mb-3">
                       <h3 className="font-medium text-gray-700">{technique.technique}</h3>
                       {technique.effectiveness && (
@@ -450,7 +450,7 @@ export default function SpugenNaDeFlesPage() {
                     
                     <ul className="space-y-2">
                       {technique.methods.map((method, methodIndex) => (
-                        <li key={tipIndex} className="flex items-start space-x-2">
+                        <li key={index} className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                           <span className="text-gray-700">{method}</span>
                         </li>
@@ -480,7 +480,7 @@ export default function SpugenNaDeFlesPage() {
                   </thead>
                   <tbody>
                     {speenSelection.map((speen, index) => (
-                      <tr key={tipIndex} className="border-b border-gray-200">
+                      <tr key={index} className="border-b border-gray-200">
                         <td className="py-2 text-sm font-medium text-gray-700">{speen.type}</td>
                         <td className="py-2 text-sm text-gray-700">{speen.benefit}</td>
                         <td className="py-2 text-sm text-gray-600">{speen.brand}</td>
@@ -500,7 +500,7 @@ export default function SpugenNaDeFlesPage() {
               
               <div className="space-y-6">
                 {ageExpectations.map((age, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <div className="flex items-center justify-between mb-3">
                       <h3 className="font-medium text-gray-700">{age.age}</h3>
                       <span className="text-xs bg-white text-gray-700 px-2 py-1 rounded-full">
@@ -545,7 +545,7 @@ export default function SpugenNaDeFlesPage() {
               
               <div className="space-y-6">
                 {medicalConditions.map((condition, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <h3 className="font-medium text-gray-700 mb-3">{condition.condition}</h3>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -553,7 +553,7 @@ export default function SpugenNaDeFlesPage() {
                         <h4 className="font-medium text-primary mb-2">Symptomen:</h4>
                         <ul className="space-y-1">
                           {condition.symptoms.map((symptom, symptomIndex) => (
-                            <li key={tipIndex} className="flex items-start space-x-2">
+                            <li key={index} className="flex items-start space-x-2">
                               <AlertTriangle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
                               <span className="text-gray-700">{symptom}</span>
                             </li>
@@ -566,7 +566,7 @@ export default function SpugenNaDeFlesPage() {
                           <h4 className="font-medium text-primary mb-2">Behandeling:</h4>
                           <ul className="space-y-1">
                             {condition.treatment.map((treatment, treatmentIndex) => (
-                              <li key={tipIndex} className="flex items-start space-x-2">
+                              <li key={index} className="flex items-start space-x-2">
                                 <CheckCircle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
                                 <span className="text-gray-700">{treatment}</span>
                               </li>
@@ -596,7 +596,7 @@ export default function SpugenNaDeFlesPage() {
                   <h3 className="font-medium text-primary mb-3">DIRECT CONTACT (Binnen 24 uur)</h3>
                   <ul className="space-y-2">
                     {whenToCallDoctor.immediate.map((item, index) => (
-                      <li key={tipIndex} className="flex items-start space-x-2">
+                      <li key={index} className="flex items-start space-x-2">
                         <AlertTriangle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                         <span className="text-gray-700">{item}</span>
                       </li>
@@ -608,7 +608,7 @@ export default function SpugenNaDeFlesPage() {
                   <h3 className="font-medium text-primary mb-3">REGULIER CONSULT (Binnen week)</h3>
                   <ul className="space-y-2">
                     {whenToCallDoctor.regular.map((item, index) => (
-                      <li key={tipIndex} className="flex items-start space-x-2">
+                      <li key={index} className="flex items-start space-x-2">
                         <Clock className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                         <span className="text-gray-700">{item}</span>
                       </li>
@@ -620,7 +620,7 @@ export default function SpugenNaDeFlesPage() {
                   <h3 className="font-medium text-primary mb-3">THUIS MONITOREN</h3>
                   <ul className="space-y-2">
                     {whenToCallDoctor.monitor.map((item, index) => (
-                      <li key={tipIndex} className="flex items-start space-x-2">
+                      <li key={index} className="flex items-start space-x-2">
                         <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                         <span className="text-gray-700">{item}</span>
                       </li>
@@ -636,13 +636,13 @@ export default function SpugenNaDeFlesPage() {
               
               <div className="space-y-6">
                 {practicalTips.map((section, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <h3 className="font-medium text-gray-700 mb-2">{section.category}</h3>
                     <h4 className="font-medium text-primary mb-3">{section.subcategory}</h4>
                     
                     <ul className="space-y-2">
-                      {section.tips.map((tip, tipIndex) => (
-                        <li key={tipIndex} className="flex items-start space-x-2">
+                      {section.tips.map((tip, index) => (
+                        <li key={index} className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                           <span className="text-gray-700">{tip}</span>
                         </li>
@@ -670,7 +670,7 @@ export default function SpugenNaDeFlesPage() {
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {arFormula.map((formula, index) => (
-                    <div key={tipIndex} className="p-4 border border-gray-200 bg-white rounded-lg">
+                    <div key={index} className="p-4 border border-gray-200 bg-white rounded-lg">
                       <h4 className="font-medium text-gray-700 mb-1">{formula.brand}</h4>
                       <p className="text-gray-700">{formula.description}</p>
                       {formula.indication && (
@@ -709,7 +709,7 @@ export default function SpugenNaDeFlesPage() {
                   <h3 className="font-medium text-primary mb-3">Wekelijkse Check:</h3>
                   <ul className="space-y-2">
                     {monitoringGuide.weekly.map((item, index) => (
-                      <li key={tipIndex} className="flex items-start space-x-2">
+                      <li key={index} className="flex items-start space-x-2">
                         <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                         <span className="text-gray-700">{item}</span>
                       </li>
@@ -721,7 +721,7 @@ export default function SpugenNaDeFlesPage() {
                   <h3 className="font-medium text-primary mb-3">Normale Groei Tekenen:</h3>
                   <ul className="space-y-2">
                     {monitoringGuide.growthSigns.map((sign, index) => (
-                      <li key={tipIndex} className="flex items-start space-x-2">
+                      <li key={index} className="flex items-start space-x-2">
                         <TrendingUp className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                         <span className="text-gray-700">{sign}</span>
                       </li>
@@ -737,7 +737,7 @@ export default function SpugenNaDeFlesPage() {
               
               <div className="space-y-4">
                 {myths.map((myth, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <h3 className="font-medium text-gray-700 mb-2">"{myth.myth}"</h3>
                     <p className="text-gray-700">
                       <strong>Feit:</strong> {myth.fact}
@@ -756,11 +756,11 @@ export default function SpugenNaDeFlesPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {emotionalSupport.map((category, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <h3 className="font-medium text-primary mb-3">{category.category}</h3>
                     <ul className="space-y-2">
                       {(category.feelings || category.support || category.strategies).map((item, itemIndex) => (
-                        <li key={tipIndex} className="flex items-start space-x-2">
+                        <li key={index} className="flex items-start space-x-2">
                           <Heart className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                           <span className="text-gray-700">{item}</span>
                         </li>
@@ -777,7 +777,7 @@ export default function SpugenNaDeFlesPage() {
               
               <div className="space-y-4">
                 {faqData.map((item, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <h3 className="font-medium text-gray-700 mb-2">{item.question}</h3>
                     <p className="text-gray-700">{item.answer}</p>
                     {index < faqData.length - 1 && (

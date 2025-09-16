@@ -108,7 +108,7 @@ export default function KennisbankTemplatePage() {
                   <h3 className="font-medium text-primary mb-3">Goedgekeurde Kleuren:</h3>
                   <ul className="space-y-2">
                     {approvedColors.map((color, index) => (
-                      <li key={tipIndex} className="flex items-center space-x-2">
+                      <li key={index} className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                         <span className="text-gray-700 text-sm">{color}</span>
                       </li>
@@ -120,7 +120,7 @@ export default function KennisbankTemplatePage() {
                   <h3 className="font-medium text-primary mb-3">Styling Richtlijnen:</h3>
                   <ul className="space-y-2">
                     {stylingPrinciples.map((principle, index) => (
-                      <li key={tipIndex} className="flex items-center space-x-2">
+                      <li key={index} className="flex items-center space-x-2">
                         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
                         <span className="text-gray-700 text-sm">{principle}</span>
                       </li>
@@ -144,7 +144,7 @@ export default function KennisbankTemplatePage() {
                 
                 <ul className="space-y-2">
                   {forbiddenElements.map((element, index) => (
-                    <li key={tipIndex} className="flex items-start space-x-2">
+                    <li key={index} className="flex items-start space-x-2">
                       <AlertTriangle className="w-4 h-4 text-gray-600 flex-shrink-0 mt-0.5" />
                       <span className="text-gray-700 text-sm">{element}</span>
                     </li>

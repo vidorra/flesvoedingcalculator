@@ -256,7 +256,7 @@ export default function BoertjeLatenPage() {
               
               <div className="space-y-6">
                 {techniques.map((technique, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <div className="flex items-center justify-between mb-3">
                       <h3 className="font-medium text-gray-700">{technique.name}</h3>
                       <span className="text-xs bg-white text-gray-700 px-2 py-1 rounded-full">
@@ -269,7 +269,7 @@ export default function BoertjeLatenPage() {
                         <h4 className="font-medium text-primary mb-2">Stappen:</h4>
                         <ol className="space-y-1 text-gray-700">
                           {technique.steps.map((step, stepIndex) => (
-                            <li key={tipIndex} className="flex items-start space-x-2">
+                            <li key={index} className="flex items-start space-x-2">
                               <span className="text-primary font-medium">{stepIndex + 1}.</span>
                               <span>{step}</span>
                             </li>
@@ -281,7 +281,7 @@ export default function BoertjeLatenPage() {
                         <h4 className="font-medium text-primary mb-2">Voordelen:</h4>
                         <ul className="space-y-1 text-gray-700">
                           {technique.benefits.map((benefit, benefitIndex) => (
-                            <li key={tipIndex} className="flex items-start space-x-2">
+                            <li key={index} className="flex items-start space-x-2">
                               <CheckCircle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
                               <span>{benefit}</span>
                             </li>
@@ -334,7 +334,7 @@ export default function BoertjeLatenPage() {
                     </thead>
                     <tbody>
                       {timingGuide.map((item, index) => (
-                        <tr key={tipIndex} className="border-b border-gray-200">
+                        <tr key={index} className="border-b border-gray-200">
                           <td className="py-2 text-sm text-gray-700">{item.age}</td>
                           <td className="py-2 text-sm text-gray-700">{item.interval}</td>
                           <td className="py-2 text-sm text-gray-700">{item.reason}</td>
@@ -370,11 +370,11 @@ export default function BoertjeLatenPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {practicalTips.map((section, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <h3 className="font-medium text-primary mb-3">{section.category}</h3>
                     <ul className="space-y-2">
-                      {section.tips.map((tip, tipIndex) => (
-                        <li key={tipIndex} className="text-sm text-gray-700 flex items-start space-x-2">
+                      {section.tips.map((tip, index) => (
+                        <li key={index} className="text-sm text-gray-700 flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                           <span>{tip}</span>
                         </li>
@@ -391,7 +391,7 @@ export default function BoertjeLatenPage() {
               
               <div className="space-y-6">
                 {commonProblems.map((item, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <h3 className="font-medium text-gray-700 mb-3">{item.problem}</h3>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -399,7 +399,7 @@ export default function BoertjeLatenPage() {
                         <h4 className="font-medium text-gray-700 mb-2">Normale oorzaken:</h4>
                         <ul className="space-y-1 text-gray-700">
                           {item.causes.map((cause, causeIndex) => (
-                            <li key={tipIndex} className="flex items-start space-x-2">
+                            <li key={index} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                               <span>{cause}</span>
                             </li>
@@ -411,7 +411,7 @@ export default function BoertjeLatenPage() {
                         <h4 className="font-medium text-gray-700 mb-2">Oplossingen:</h4>
                         <ul className="space-y-1 text-gray-700">
                           {item.solutions.map((solution, solutionIndex) => (
-                            <li key={tipIndex} className="flex items-start space-x-2">
+                            <li key={index} className="flex items-start space-x-2">
                               <CheckCircle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
                               <span>{solution}</span>
                             </li>
@@ -434,7 +434,7 @@ export default function BoertjeLatenPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {speenTypes.map((item, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <h3 className="font-medium text-gray-700 mb-3">{item.type}</h3>
                     
                     {item.brands && (
@@ -442,7 +442,7 @@ export default function BoertjeLatenPage() {
                         <h4 className="font-medium text-primary mb-2">Populaire merken:</h4>
                         <ul className="space-y-1 text-gray-700">
                           {item.brands.map((brand, brandIndex) => (
-                            <li key={tipIndex} className="flex items-start space-x-2">
+                            <li key={index} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                               <span>{brand}</span>
                             </li>
@@ -456,7 +456,7 @@ export default function BoertjeLatenPage() {
                         <h4 className="font-medium text-primary mb-2">Voordelen:</h4>
                         <ul className="space-y-1 text-gray-700">
                           {item.benefits.map((benefit, benefitIndex) => (
-                            <li key={tipIndex} className="flex items-start space-x-2">
+                            <li key={index} className="flex items-start space-x-2">
                               <CheckCircle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
                               <span>{benefit}</span>
                             </li>
@@ -470,7 +470,7 @@ export default function BoertjeLatenPage() {
                         <h4 className="font-medium text-gray-700 mb-2">Extra aandacht voor:</h4>
                         <ul className="space-y-1 text-gray-700">
                           {item.attention.map((point, pointIndex) => (
-                            <li key={tipIndex} className="flex items-start space-x-2">
+                            <li key={index} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                               <span>{point}</span>
                             </li>
@@ -496,7 +496,7 @@ export default function BoertjeLatenPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {warningSignsDoctor.map((sign, index) => (
-                  <div key={tipIndex} className="flex items-start space-x-2">
+                  <div key={index} className="flex items-start space-x-2">
                     <AlertTriangle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700">{sign}</span>
                   </div>
@@ -516,7 +516,7 @@ export default function BoertjeLatenPage() {
               
               <div className="space-y-4">
                 {faqData.map((item, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <h3 className="font-medium text-gray-700 mb-2">{item.question}</h3>
                     <p className="text-gray-700">{item.answer}</p>
                     {index < faqData.length - 1 && (

@@ -463,7 +463,7 @@ export default function KennisbankPage() {
               const Icon = category.icon
               return (
                 <button
-                  key={tipIndex}
+                  key={category.id}
                   onClick={() => setSelectedCategory(category.id)}
                   className={`text-left p-4 rounded-xl transition-colors ${
                     selectedCategory === category.id
@@ -495,7 +495,7 @@ export default function KennisbankPage() {
                 const Icon = category?.icon || Info
                 return (
                   <Link
-                    key={tipIndex}
+                    key={article.id}
                     href={article.href || `/kennisbank/${article.category}`}
                     className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white"
                   >
@@ -535,7 +535,7 @@ export default function KennisbankPage() {
               }
               return (
                 <Link
-                  key={tipIndex}
+                  key={category.id}
                   href={`/kennisbank/${category.id}`}
                   className={`p-4 rounded-xl border transition-all block ${colorClasses[category.color]}`}
                 >

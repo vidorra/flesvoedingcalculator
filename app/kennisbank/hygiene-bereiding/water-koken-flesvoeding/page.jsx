@@ -170,7 +170,7 @@ export default function WaterKokenFlesvoedingPage() {
               <h3 className="font-medium text-primary mb-3">Hoofdredenen voor Water Koken:</h3>
               <ul className="space-y-2">
                 {waaromKokenRedenen.map((reden, index) => (
-                  <li key={tipIndex} className="flex items-start space-x-2">
+                  <li key={index} className="flex items-start space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                     <span className="text-gray-700">{reden}</span>
                   </li>
@@ -200,7 +200,7 @@ export default function WaterKokenFlesvoedingPage() {
                   </thead>
                   <tbody>
                     {veiligheidsLeeftijden.map((item, index) => (
-                      <tr key={tipIndex} className="border-b border-gray-100">
+                      <tr key={index} className="border-b border-gray-100">
                         <td className="p-3 text-gray-700 font-medium">{item.leeftijd}</td>
                         <td className="p-3 text-gray-600">{item.risico}</td>
                         <td className="p-3 text-gray-600">{item.advies}</td>
@@ -225,7 +225,7 @@ export default function WaterKokenFlesvoedingPage() {
               
               <div className="space-y-3">
                 {kookStappen.map((stap, index) => (
-                  <div key={tipIndex} className="flex items-start space-x-3">
+                  <div key={index} className="flex items-start space-x-3">
                     <div className="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-medium flex-shrink-0">
                       {index + 1}
                     </div>
@@ -268,7 +268,7 @@ export default function WaterKokenFlesvoedingPage() {
               <h3 className="font-medium text-primary mb-3">Voordelen Nederlands Kraanwater:</h3>
               <ul className="space-y-2 mb-6">
                 {kraanwaterVoordelen.map((voordeel, index) => (
-                  <li key={tipIndex} className="flex items-start space-x-2">
+                  <li key={index} className="flex items-start space-x-2">
                     <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700">{voordeel}</span>
                   </li>
@@ -307,7 +307,7 @@ export default function WaterKokenFlesvoedingPage() {
               
               <div className="space-y-4">
                 {veelgemaakteFouten.map((item, index) => (
-                  <div key={tipIndex} className="border-l-4 border-primary pl-4">
+                  <div key={index} className="border-l-4 border-primary pl-4">
                     <h3 className="font-medium text-gray-700 mb-1">Fout: {item.fout}</h3>
                     <p className="text-gray-600 mb-1">Correct: {item.correct}</p>
                     <p className="text-gray-500 text-sm">Waarom gevaarlijk: {item.gevaar}</p>
@@ -326,7 +326,7 @@ export default function WaterKokenFlesvoedingPage() {
               
               <div className="space-y-4">
                 {alternatieven.map((alt, index) => (
-                  <div key={tipIndex} className="border border-gray-200 rounded-lg p-4">
+                  <div key={index} className="border border-gray-200 rounded-lg p-4">
                     <h3 className="font-medium text-primary mb-2">{alt.methode}</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                       <div>

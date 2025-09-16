@@ -166,7 +166,7 @@ export default function VakantiePage() {
                   <h3 className="font-medium text-primary mb-3">Flesvoeding Travel Advantages</h3>
                   <div className="space-y-2">
                     {travelAdvantages.map((advantage, index) => (
-                      <div key={tipIndex} className="flex items-start space-x-2">
+                      <div key={index} className="flex items-start space-x-2">
                         <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                         <span className="text-gray-600">{advantage}</span>
                       </div>
@@ -199,7 +199,7 @@ export default function VakantiePage() {
               
               <div className="space-y-6">
                 {transportTypes.map((transport, index) => (
-                  <div key={tipIndex} className="p-4">
+                  <div key={index} className="p-4">
                     <h3 className="font-semibold text-primary mb-3 flex items-center">
                       <span className="text-xl mr-2">{transport.icon}</span>
                       {transport.type}
@@ -209,7 +209,7 @@ export default function VakantiePage() {
                         <h4 className="font-medium text-primary mb-2">Voordelen:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           {transport.pros.map((pro, idx) => (
-                            <li key={tipIndex} className="flex items-start space-x-2">
+                            <li key={index} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                               <span>{pro}</span>
                             </li>
@@ -220,7 +220,7 @@ export default function VakantiePage() {
                         <h4 className="font-medium text-primary mb-2">Uitdagingen:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           {transport.cons.map((con, idx) => (
-                            <li key={tipIndex} className="flex items-start space-x-2">
+                            <li key={index} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                               <span>{con}</span>
                             </li>
@@ -245,14 +245,14 @@ export default function VakantiePage() {
               
               <div className="space-y-6">
                 {accommodationTypes.map((accommodation, index) => (
-                  <div key={tipIndex} className="p-4">
+                  <div key={index} className="p-4">
                     <h3 className="font-semibold text-primary mb-3">{accommodation.type}</h3>
                     <div className="grid md:grid-cols-2 gap-4 mb-3">
                       <div>
                         <h4 className="font-medium text-primary mb-2">Features:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           {accommodation.features.map((feature, idx) => (
-                            <li key={tipIndex} className="flex items-center space-x-2">
+                            <li key={index} className="flex items-center space-x-2">
                               <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
                               <span>{feature}</span>
                             </li>
@@ -263,7 +263,7 @@ export default function VakantiePage() {
                         <h4 className="font-medium text-primary mb-2">Setup Tips:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           {accommodation.setup.map((tip, idx) => (
-                            <li key={tipIndex} className="flex items-center space-x-2">
+                            <li key={index} className="flex items-center space-x-2">
                               <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
                               <span>{tip}</span>
                             </li>
@@ -285,7 +285,7 @@ export default function VakantiePage() {
               
               <div className="space-y-4">
                 {internationalTips.map((region, index) => (
-                  <div key={tipIndex} className="p-4">
+                  <div key={index} className="p-4">
                     <div className="flex justify-between items-start mb-3">
                       <h3 className="font-semibold text-primary">{region.region}</h3>
                       <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-sm">
@@ -297,7 +297,7 @@ export default function VakantiePage() {
                         <h4 className="font-medium text-primary mb-2">Considerations:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           {region.considerations.map((consideration, idx) => (
-                            <li key={tipIndex} className="flex items-start space-x-2">
+                            <li key={index} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                               <span>{consideration}</span>
                             </li>
@@ -308,7 +308,7 @@ export default function VakantiePage() {
                         <h4 className="font-medium text-primary mb-2">Solutions:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           {region.solutions.map((solution, idx) => (
-                            <li key={tipIndex} className="flex items-start space-x-2">
+                            <li key={index} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                               <span>{solution}</span>
                             </li>
@@ -330,14 +330,14 @@ export default function VakantiePage() {
               
               <div className="space-y-6">
                 {emergencyProtocols.map((protocol, index) => (
-                  <div key={tipIndex} className="border-l-4 border-primary pl-4">
+                  <div key={index} className="border-l-4 border-primary pl-4">
                     <h3 className="font-semibold text-primary mb-3">{protocol.scenario}</h3>
                     <div className="grid md:grid-cols-2 gap-4 mb-3">
                       <div>
                         <h4 className="font-medium text-primary mb-2">Immediate Response:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           {protocol.immediate.map((action, idx) => (
-                            <li key={tipIndex} className="flex items-start space-x-2">
+                            <li key={index} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                               <span>{action}</span>
                             </li>
@@ -348,7 +348,7 @@ export default function VakantiePage() {
                         <h4 className="font-medium text-primary mb-2">Backup Plan:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           {protocol.backup.map((plan, idx) => (
-                            <li key={tipIndex} className="flex items-start space-x-2">
+                            <li key={index} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                               <span>{plan}</span>
                             </li>
@@ -373,7 +373,7 @@ export default function VakantiePage() {
                   <h3 className="font-medium text-primary mb-3">Hand Luggage Essentials</h3>
                   <div className="space-y-2">
                     {packingEssentials.handLuggage.map((item, index) => (
-                      <div key={tipIndex} className="flex items-center space-x-2">
+                      <div key={index} className="flex items-center space-x-2">
                         <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
                         <span className="text-gray-600">{item}</span>
                       </div>
@@ -385,7 +385,7 @@ export default function VakantiePage() {
                   <h3 className="font-medium text-primary mb-3">Checked Luggage Must-Haves</h3>
                   <div className="space-y-2">
                     {packingEssentials.checkedLuggage.map((item, index) => (
-                      <div key={tipIndex} className="flex items-center space-x-2">
+                      <div key={index} className="flex items-center space-x-2">
                         <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
                         <span className="text-gray-600">{item}</span>
                       </div>

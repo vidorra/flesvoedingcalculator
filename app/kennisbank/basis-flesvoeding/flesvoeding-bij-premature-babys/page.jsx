@@ -241,7 +241,7 @@ export default function FlesvoedingPrematurePage() {
               </thead>
               <tbody>
                 {prematureCategories.map((cat, index) => (
-                  <tr key={tipIndex} className="border-b border-gray-100">
+                  <tr key={index} className="border-b border-gray-100">
                     <td className="py-3 px-2 font-medium text-gray-700">{cat.category}</td>
                     <td className="py-3 px-2 text-primary">{cat.weeks}</td>
                     <td className="py-3 px-2 text-primary font-medium">{cat.feeding}</td>
@@ -282,7 +282,7 @@ export default function FlesvoedingPrematurePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {specialFormulas.map((formula, index) => (
-              <div key={tipIndex} className="bg-white rounded-xl p-4">
+              <div key={index} className="bg-white rounded-xl p-4">
                 <h3 className="font-medium text-primary mb-2">{formula.name}</h3>
                 <div className="space-y-2 text-sm">
                   <div>
@@ -330,7 +330,7 @@ export default function FlesvoedingPrematurePage() {
               <h3 className="font-medium text-primary mb-3">Standaard follow-up programma:</h3>
               <div className="space-y-2">
                 {nicu_protocols.map((protocol, index) => (
-                  <div key={tipIndex} className="flex items-start space-x-2">
+                  <div key={index} className="flex items-start space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <span className="text-gray-600">{protocol}</span>
                   </div>
@@ -415,7 +415,7 @@ export default function FlesvoedingPrematurePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {warningSigns.map((sign, index) => (
-              <div key={tipIndex} className="flex items-start space-x-2">
+              <div key={index} className="flex items-start space-x-2">
                 <AlertCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-gray-600">{sign}</span>
               </div>

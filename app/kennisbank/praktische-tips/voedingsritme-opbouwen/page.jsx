@@ -590,8 +590,8 @@ export default function VoedingsritmeOpbouwenPage() {
                       <div className="mb-4">
                         <h4 className="font-medium text-primary mb-2">Praktische Aanpak:</h4>
                         <ul className="space-y-1">
-                          {step.tips.map((tip, tipIndex) => (
-                            <li key={tipIndex} className="flex items-start space-x-2">
+                          {step.tips.map((tip, index) => (
+                            <li key={index} className="flex items-start space-x-2">
                               <span className="text-gray-600 font-medium text-sm"></span>
                               <span className="text-sm text-gray-700">{tip}</span>
                             </li>
@@ -749,8 +749,8 @@ export default function VoedingsritmeOpbouwenPage() {
                       <div className="mb-4">
                         <h4 className="font-medium text-primary mb-2">Communicatie Tips:</h4>
                         <ul className="space-y-1">
-                          {challenge.communicationTips.map((tip, tipIndex) => (
-                            <li key={tipIndex} className="flex items-start space-x-2">
+                          {challenge.communicationTips.map((tip, index) => (
+                            <li key={index} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                               <span className="text-sm text-gray-700">{tip}</span>
                             </li>

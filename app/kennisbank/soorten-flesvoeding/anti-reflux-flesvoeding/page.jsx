@@ -193,7 +193,7 @@ export default function AntiRefluxPage() {
               }
               
               return (
-                <div key={tipIndex}>
+                <div key={index}>
                   <div className="flex items-start justify-between">
                     <div>
                       <h3 className="font-medium mb-1">{item.sign}</h3>
@@ -229,7 +229,7 @@ export default function AntiRefluxPage() {
           
           <div className="space-y-6">
             {arFormulas.map((formula, index) => (
-              <div key={tipIndex} className="">
+              <div key={index} className="">
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="font-bold text-lg text-primary">{formula.brand}</h3>
                   <div className="text-right">
@@ -248,7 +248,7 @@ export default function AntiRefluxPage() {
                     <h4 className="font-medium text-primary mb-2">Voordelen:</h4>
                     <ul className="text-sm text-gray-600 space-y-1">
                       {formula.pros.map((pro, proIndex) => (
-                        <li key={tipIndex} className="flex items-start space-x-2">
+                        <li key={index} className="flex items-start space-x-2">
                           <CheckCircle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
                           <span>{pro}</span>
                         </li>
@@ -260,7 +260,7 @@ export default function AntiRefluxPage() {
                     <h4 className="font-medium text-primary mb-2">Aandachtspunten:</h4>
                     <ul className="text-sm text-gray-600 space-y-1">
                       {formula.cons.map((con, conIndex) => (
-                        <li key={tipIndex} className="flex items-start space-x-2">
+                        <li key={index} className="flex items-start space-x-2">
                           <AlertTriangle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
                           <span>{con}</span>
                         </li>
@@ -304,7 +304,7 @@ export default function AntiRefluxPage() {
           
           <div className="space-y-6">
             {feedingTechniques.map((technique, index) => (
-              <div key={tipIndex} className="">
+              <div key={index} className="">
                 <div className="flex justify-between items-start mb-3">
                   <h3 className="font-medium text-gray-700">{technique.technique}</h3>
                   <span className="text-sm bg-white text-gray-600 px-2 py-1 rounded-full">
@@ -313,8 +313,8 @@ export default function AntiRefluxPage() {
                 </div>
                 <p className="text-gray-700 mb-4">{technique.description}</p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                  {technique.tips.map((tip, tipIndex) => (
-                    <div key={tipIndex} className="flex items-start space-x-2">
+                  {technique.tips.map((tip, index) => (
+                    <div key={index} className="flex items-start space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-gray-600">{tip}</span>
                     </div>
@@ -335,11 +335,11 @@ export default function AntiRefluxPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {practicalTips.map((section, index) => (
-              <div key={tipIndex}>
+              <div key={index}>
                 <h3 className="font-medium text-primary mb-3">{section.category}</h3>
                 <ul className="space-y-2">
-                  {section.tips.map((tip, tipIndex) => (
-                    <li key={tipIndex} className="text-gray-600 flex items-start space-x-2">
+                  {section.tips.map((tip, index) => (
+                    <li key={index} className="text-gray-600 flex items-start space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                       <span>{tip}</span>
                     </li>
@@ -416,7 +416,7 @@ export default function AntiRefluxPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {warningSignsDoctor.map((sign, index) => (
-              <div key={tipIndex} className="flex items-start space-x-2">
+              <div key={index} className="flex items-start space-x-2">
                 <AlertTriangle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-gray-700">{sign}</span>
               </div>
