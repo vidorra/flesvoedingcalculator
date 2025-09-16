@@ -1,6 +1,6 @@
 import Layout from '../../components/Layout'
 import Link from 'next/link'
-import { Calculator, AlertCircle, Baby, Scale, Clock, Zap, BookOpen, ChevronRight } from 'lucide-react'
+import { Calculator, AlertCircle, Baby, Scale, Clock, Zap, BookOpen, ChevronRight, Shield } from 'lucide-react'
 
 export const metadata = {
   title: 'Hoe Werkt de Flesvoeding Calculator? | Complete Uitleg 2025',
@@ -24,14 +24,14 @@ export default function UitlegCalculatorPage() {
     {
       step: 3,
       title: 'Basis Berekening',
-      description: 'Toepassing van 150ml per kg lichaamsgewicht per dag',
-      details: 'Gebaseerd op Nederlandse richtlijnen van het Voedingscentrum en NCJ'
+      description: 'Leeftijdsspecifieke toepassing van ml per kg lichaamsgewicht per dag',
+      details: 'Variërend van 75ml/kg (0-2 weken) tot 150ml/kg (1+ maanden) voor medische veiligheid'
     },
     {
       step: 4,
       title: 'Leeftijd Correctie',
       description: 'Automatische aanpassing voor verschillende leeftijdsgroepen',
-      details: 'Jongere baby\'s hebben andere concentraties en frequenties nodig'
+      details: 'Speciale nadruk op veiligheid voor pasgeborenen (0-2 weken)'
     },
     {
       step: 5,
@@ -220,6 +220,49 @@ export default function UitlegCalculatorPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Safety Improvements & New Features */}
+        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+            <Shield className="w-5 h-5 mr-2" />
+            Veiligheidsupdates & Nieuwe Functies
+          </h2>
+          
+          <div className="space-y-4">
+            <div className="border-t border-gray-200 pt-4">
+              <h3 className="font-medium text-gray-700 mb-2">🎯 Nieuwe Standaardleeftijd: 2-4 Weken</h3>
+              <p className="text-gray-600 text-sm mb-2">
+                De calculator start nu standaard met "2-4 weken" in plaats van "0-1 maand" voor betere gebruikerservaring.
+              </p>
+              <p className="text-gray-500 text-sm italic">
+                Dit helpt ouders van jonge baby's om direct de juiste leeftijdscategorie te zien.
+              </p>
+            </div>
+            
+            <div className="border-t border-gray-200 pt-4">
+              <h3 className="font-medium text-gray-700 mb-2">ℹ️ Interactieve Tooltips voor 0-2 Weken</h3>
+              <p className="text-gray-600 text-sm mb-2">
+                Bij selectie van "0-2 weken" verschijnt een informatietooltip bij "Aanbevolen per voeding" die uitlegt waarom de berekening anders is.
+              </p>
+              <div className="bg-gray-50 rounded-lg p-3 text-sm">
+                <div className="font-medium text-gray-700 mb-1">Tooltip bevat:</div>
+                <ul className="text-gray-600 space-y-1">
+                  <li>• Gebruik van 75ml/kg in plaats van 150ml/kg</li>
+                  <li>• 50% reductie voor medische veiligheid</li>
+                  <li>• Advies om klein te beginnen en geleidelijk op te bouwen</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div className="border-t border-gray-200 pt-4">
+              <h3 className="font-medium text-gray-700 mb-2">🔒 Verbeterde Medische Veiligheid</h3>
+              <p className="text-gray-600 text-sm">
+                Granulaire leeftijdscategorieën (0-2 weken, 2-4 weken) zorgen voor medisch verantwoorde voedingsadviezen 
+                voor de meest kwetsbare leeftijdsgroep.
+              </p>
+            </div>
           </div>
         </div>
 

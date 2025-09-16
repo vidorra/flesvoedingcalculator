@@ -64,7 +64,7 @@ const calculateCorrectedAge = (birthDate, gestationalAge) => {
 
 export default function HomePage() {
   const [weight, setWeight] = useState('')
-  const [ageMonths, setAgeMonths] = useState('0')
+  const [ageMonths, setAgeMonths] = useState('2-4weeks')
   const [feedingsPerDay, setFeedingsPerDay] = useState('7')
   const [results, setResults] = useState(null)
   const [showDetails, setShowDetails] = useState(false)
@@ -725,7 +725,22 @@ export default function HomePage() {
                     </div>
                     
                     <div className="bg-white/20 backdrop-blur rounded-xl p-4">
-                      <div className="text-white/70 text-sm mb-1">Aanbevolen per voeding</div>
+                      <div className="flex items-center gap-2 text-white/70 text-sm mb-1">
+                        <span>Aanbevolen per voeding</span>
+                        {ageMonths === '0-2weeks' && (
+                          <div className="relative group">
+                            <Info className="w-4 h-4 text-white/60 hover:text-white cursor-help" />
+                            <div className="absolute left-6 top-0 bg-gray-900 text-white text-xs rounded-lg p-3 w-64 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
+                              <div className="font-medium mb-1">Speciale berekening voor 0-2 weken:</div>
+                              <div className="text-gray-300">
+                                • Gebruik 75ml/kg in plaats van 150ml/kg<br/>
+                                • 50% minder voor medische veiligheid<br/>
+                                • Begin klein, bouw geleidelijk op
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
                       <div className="text-xl font-bold">{results.recommendedAmount} ml</div>
                       <div className="text-xs text-white/60 mt-1">Bij groeispurt: tot {results.maxAmount} ml</div>
                     </div>

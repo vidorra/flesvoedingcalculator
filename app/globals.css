@@ -118,6 +118,11 @@ html, body {
   background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--primary-dark)));
 }
 
+/* Global h2 styling - ensure all h2 elements use primary color */
+h2 {
+  color: rgb(var(--text-primary)) !important;
+}
+
 /* Enhanced mobile input support */
 input, select, textarea {
   color: rgb(31, 41, 55); /* text-gray-800 */
