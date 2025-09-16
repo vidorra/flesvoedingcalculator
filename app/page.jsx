@@ -184,25 +184,22 @@ export default function HomePage() {
       // Standard age-based adjustment with granular newborn categories
       if (age === '0-2weeks') {
         mlPerKg = 75;  // Very conservative for first 2 weeks
-        specialNotes.push("⚠️ Eerste 2 weken: Begin met 10-20ml per voeding, bouw langzaam op");
-        specialNotes.push("📞 Raadpleeg uw verloskundige of consultatiebureau bij vragen");
-        specialNotes.push("👀 Let goed op verzadigingssignalen: baby duwt fles weg = vol");
-        specialNotes.push("🍼 Voeding om de 2-3 uur, 8-12x per dag");
-        specialNotes.push("💧 Als baby veel spuugt: geef minder per voeding, vaker voeden");
+        specialNotes.push("Eerste 2 weken: Begin met 10-20ml per voeding, bouw langzaam op");
+        specialNotes.push("Raadpleeg uw verloskundige of consultatiebureau bij vragen");
+        specialNotes.push("Let goed op verzadigingssignalen: baby duwt fles weg = vol");
+        specialNotes.push("Voeding om de 2-3 uur, 8-12x per dag");
+        specialNotes.push("Als baby veel spuugt: geef minder per voeding, vaker voeden");
       } else if (age === '2-4weeks') {
         mlPerKg = 115;  // Transition period to full feeding
-        specialNotes.push("⚠️ Opbouwperiode: Geleidelijk verhogen naar 30-60ml per voeding");
-        specialNotes.push("📞 Bij twijfel over gewichtstoename: raadpleeg consultatiebureau");
-        specialNotes.push("👀 Baby's maag is nog klein - respecteer verzadigingssignalen");
-        specialNotes.push("🍼 7-10 voedingen per dag, om de 2,5-3 uur");
+        specialNotes.push("Opbouwperiode: Geleidelijk verhogen naar 30-60ml per voeding");
+        specialNotes.push("Bij twijfel over gewichtstoename: raadpleeg consultatiebureau");
+        specialNotes.push("Baby's maag is nog klein - respecteer verzadigingssignalen");
+        specialNotes.push("7-10 voedingen per dag, om de 2,5-3 uur");
       } else {
-        // Bestaande logica voor oudere baby's (1+ maanden)
-        if (age >= 1) mlPerKg = 150
-        if (age >= 2) mlPerKg = 140
-        if (age >= 3) mlPerKg = 130
-        if (age >= 4) mlPerKg = 120
-        if (age >= 5) mlPerKg = 110
-        if (age >= 6) mlPerKg = 100
+        // Simplified age categories - larger ranges with meaningful differences
+        if (age >= 1) mlPerKg = 150  // 1-3 months
+        if (age >= 3) mlPerKg = 125  // 3-6 months (significant 25ml/kg drop)
+        if (age >= 6) mlPerKg = 100  // 6+ months (solid food introduction)
       }
     }
 
@@ -333,11 +330,8 @@ export default function HomePage() {
                   <option value="premature">Prematuur geboren</option>
                   <option value="0-2weeks">0-2 weken</option>
                   <option value="2-4weeks">2-4 weken</option>
-                  <option value="1">1-2 maanden</option>
-                  <option value="2">2-3 maanden</option>
-                  <option value="3">3-4 maanden</option>
-                  <option value="4">4-5 maanden</option>
-                  <option value="5">5-6 maanden</option>
+                  <option value="1">1-3 maanden</option>
+                  <option value="3">3-6 maanden</option>
                   <option value="6">6+ maanden</option>
                   </select>
                   <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-primary pointer-events-none" />
@@ -866,7 +860,7 @@ export default function HomePage() {
                   <ul className="space-y-1">
                     {results.specialNotes.map((note, index) => (
                       <li key={index} className="text-sm text-amber-800 flex items-start">
-                        <span className="mr-2">•</span>
+                        <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 mr-2 flex-shrink-0"></div>
                         <span>{note}</span>
                       </li>
                     ))}
