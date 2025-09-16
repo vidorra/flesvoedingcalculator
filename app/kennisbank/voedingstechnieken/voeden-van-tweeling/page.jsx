@@ -173,12 +173,12 @@ export default function TweelingVoedenPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {practicalHacks.map((hack, index) => (
-              <div key={tipIndex} className="bg-white rounded-xl p-4">
+              <div key={index} className="bg-white rounded-xl p-4">
                 <h3 className="font-medium text-primary mb-2">{hack.title}</h3>
                 <p className="text-sm text-gray-600 font-medium mb-3">{hack.description}</p>
                 <ul className="space-y-2">
-                  {hack.tips.map((tip, tipIndex) => (
-                    <li key={tipIndex} className="flex items-center space-x-2">
+                  {hack.tips.map((tip, index) => (
+                    <li key={index} className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                       <span className="text-gray-600">{tip}</span>
                     </li>
@@ -229,11 +229,11 @@ export default function TweelingVoedenPage() {
           </h2>
           
           {equipmentEssentials.map((category, index) => (
-            <div key={tipIndex} className="mb-6">
+            <div key={index} className="mb-6">
               <h3 className="font-medium text-primary mb-3">{category.category}</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {category.items.map((item, itemIndex) => (
-                  <div key={tipIndex} className="p-3">
+                  <div key={index} className="p-3">
                     <div className="flex justify-between items-start mb-1">
                       <h4 className="font-medium text-gray-700">{item.name}</h4>
                       <span className="text-gray-600 font-medium text-sm">{item.price}</span>
@@ -287,7 +287,7 @@ export default function TweelingVoedenPage() {
               </thead>
               <tbody>
                 {scheduleExample.map((entry, index) => (
-                  <tr key={tipIndex} className="border-b border-gray-100">
+                  <tr key={index} className="border-b border-gray-100">
                     <td className="py-3 px-2 font-medium text-gray-700">{entry.time}</td>
                     <td className="py-3 px-2 text-gray-700">{entry.activity}</td>
                     <td className="py-3 px-2 text-gray-700">{entry.amount}</td>
@@ -311,7 +311,7 @@ export default function TweelingVoedenPage() {
           
           <div className="space-y-4">
             {commonProblems.map((item, index) => (
-              <div key={tipIndex} className="p-4">
+              <div key={index} className="p-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <h3 className="font-medium text-primary mb-2">Probleem:</h3>
@@ -322,7 +322,7 @@ export default function TweelingVoedenPage() {
                     <p className="text-sm text-gray-700 mb-2">{item.solution}</p>
                     <ul className="text-xs text-gray-600 space-y-1">
                       {item.details.map((detail, detailIndex) => (
-                        <li key={tipIndex} className="flex items-center space-x-2">
+                        <li key={index} className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span>{detail}</span>
                         </li>
@@ -344,11 +344,11 @@ export default function TweelingVoedenPage() {
           
           <div className="space-y-6">
             {budgetBreakdown.map((budget, index) => (
-              <div key={tipIndex} className="p-4">
+              <div key={index} className="p-4">
                 <h3 className="font-medium text-primary mb-3">{budget.category}</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
                   {budget.periods.map((period, periodIndex) => (
-                    <div key={tipIndex} className="bg-white rounded-lg p-3">
+                    <div key={index} className="bg-white rounded-lg p-3">
                       <div className="font-medium text-gray-700">{period.age}</div>
                       <div className="text-gray-700 font-medium">{period.cost}</div>
                       <div className="text-xs text-gray-600">{period.details}</div>

@@ -264,14 +264,14 @@ export default function NachtvoedingOptimaliserenPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {timeComparison.map((method, index) => (
-              <div key={tipIndex} className="rounded-xl p-4 border border-gray-200 bg-white">
+              <div key={index} className="rounded-xl p-4 border border-gray-200 bg-white">
                 <h3 className="font-medium mb-3 text-primary">
                   {method.method} Methode
                 </h3>
                 
                 <div className="space-y-2 mb-4">
                   {method.steps.map((step, stepIndex) => (
-                    <div key={tipIndex} className="flex justify-between items-center text-sm">
+                    <div key={index} className="flex justify-between items-center text-sm">
                       <span className={method.method === 'Traditioneel' ? 'text-gray-700' : 'text-gray-700'}>
                         {step.action}
                       </span>
@@ -304,7 +304,7 @@ export default function NachtvoedingOptimaliserenPage() {
           
           <div className="space-y-4">
             {optimizationStrategies.map((strategy, index) => (
-              <div key={tipIndex} className="bg-white rounded-xl p-4">
+              <div key={index} className="bg-white rounded-xl p-4">
                 <div className="flex justify-between items-start mb-3">
                   <h3 className="font-medium text-gray-600">{strategy.strategy}</h3>
                   <div className="text-right">
@@ -318,7 +318,7 @@ export default function NachtvoedingOptimaliserenPage() {
                     <h4 className="font-medium text-gray-600 mb-2">Implementatie stappen:</h4>
                     <ul className="space-y-1">
                       {strategy.steps.map((step, stepIndex) => (
-                        <li key={tipIndex} className="text-gray-600 flex items-start space-x-2">
+                        <li key={index} className="text-gray-600 flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                           <span>{step}</span>
                         </li>
@@ -336,11 +336,11 @@ export default function NachtvoedingOptimaliserenPage() {
           <h2 className="text-lg font-semibold text-gray-700 mb-4">Nachtvoeding Equipment</h2>
           
           {equipmentEssentials.map((category, index) => (
-            <div key={tipIndex} className="mb-6">
+            <div key={index} className="mb-6">
               <h3 className="font-medium text-gray-600 mb-3">{category.category}</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {category.items.map((item, itemIndex) => (
-                  <div key={tipIndex} className="p-3 bg-white border border-gray-200 rounded-lg">
+                  <div key={index} className="p-3 bg-white border border-gray-200 rounded-lg">
                     <div className="flex justify-between items-start mb-2">
                       <h4 className="font-medium text-gray-600">{item.name}</h4>
                       <span className="text-primary font-medium text-sm">{item.price}</span>
@@ -383,7 +383,7 @@ export default function NachtvoedingOptimaliserenPage() {
           
           <div className="space-y-4">
             {ageBasedStrategies.map((phase, index) => (
-              <div key={tipIndex} className="p-4">
+              <div key={index} className="p-4">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
                     <h3 className="font-bold text-primary text-lg">{phase.age}</h3>
@@ -396,8 +396,8 @@ export default function NachtvoedingOptimaliserenPage() {
                   <div>
                     <h4 className="font-medium text-gray-600 mb-2">{phase.strategy}</h4>
                     <ul className="space-y-1">
-                      {phase.tips.map((tip, tipIndex) => (
-                        <li key={tipIndex} className="text-gray-600 flex items-start space-x-2">
+                      {phase.tips.map((tip, index) => (
+                        <li key={index} className="text-gray-600 flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                           <span>{tip}</span>
                         </li>
@@ -416,7 +416,7 @@ export default function NachtvoedingOptimaliserenPage() {
           
           <div className="space-y-4">
             {commonChallenges.map((item, index) => (
-              <div key={tipIndex} className="p-4">
+              <div key={index} className="p-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <h3 className="font-medium text-gray-600 mb-2">Probleem:</h3>
@@ -426,7 +426,7 @@ export default function NachtvoedingOptimaliserenPage() {
                     <h3 className="font-medium text-gray-600 mb-2">Oplossing: {item.solution}</h3>
                     <ul className="text-sm text-gray-600 space-y-1">
                       {item.steps.map((step, stepIndex) => (
-                        <li key={tipIndex} className="flex items-start space-x-2">
+                        <li key={index} className="flex items-start space-x-2">
                           <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                           <span>{step}</span>
                         </li>

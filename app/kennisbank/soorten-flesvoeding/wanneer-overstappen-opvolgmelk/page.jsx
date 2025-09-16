@@ -302,7 +302,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                       'Bij grote veranderingen: Te veel tegelijk',
                       'Te abrupt: 85% verhoogd weigergedrag'
                     ].map((consequence, index) => (
-                      <li key={tipIndex} className="flex items-start space-x-2">
+                      <li key={index} className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-gray-700">{consequence}</span>
                       </li>
@@ -324,7 +324,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
               
               <div className="space-y-8">
                 {timingFactors.map((factor, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <div className="flex items-center mb-4">
                       <factor.icon className="w-5 h-5 text-primary mr-2" />
                       <h3 className="font-medium text-gray-700">{factor.factor}</h3>
@@ -337,7 +337,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                           <p className="text-sm text-gray-700 mb-2">WAAROM 6 MAANDEN MINIMUM:</p>
                           <ul className="space-y-1">
                             {factor.reasons.map((reason, reasonIndex) => (
-                              <li key={tipIndex} className="flex items-start space-x-2">
+                              <li key={index} className="flex items-start space-x-2">
                                 <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                                 <span className="text-gray-700">{reason}</span>
                               </li>
@@ -352,7 +352,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                         <h4 className="font-medium text-primary mb-2">Optimale Vensters per Leeftijd:</h4>
                         <ul className="space-y-1">
                           {factor.optimalWindows.map((window, windowIndex) => (
-                            <li key={tipIndex} className="flex items-start space-x-2">
+                            <li key={index} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                               <span className="text-gray-700">{window}</span>
                             </li>
@@ -366,7 +366,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                         <h4 className="font-medium text-primary mb-2">Klaar voor Overstap:</h4>
                         <div className="space-y-1">
                           {factor.checklist.map((item, itemIndex) => (
-                            <div key={tipIndex} className="flex items-center space-x-2">
+                            <div key={index} className="flex items-center space-x-2">
                               <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
                               <span className="text-gray-700">{item}</span>
                             </div>
@@ -380,7 +380,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                         <h4 className="font-medium text-primary mb-2">Nog Niet Klaar:</h4>
                         <ul className="space-y-1">
                           {factor.notReady.map((item, itemIndex) => (
-                            <li key={tipIndex} className="flex items-start space-x-2">
+                            <li key={index} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                               <span className="text-gray-700">{item}</span>
                             </li>
@@ -403,7 +403,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                             </thead>
                             <tbody>
                               {factor.indicators.map((indicator, indIndex) => (
-                                <tr key={tipIndex} className="border-b border-gray-200">
+                                <tr key={index} className="border-b border-gray-200">
                                   <td className="py-2 font-medium">{indicator.condition}</td>
                                   <td className="py-2 text-gray-700">{indicator.action}</td>
                                   <td className="py-2 text-gray-700">{indicator.timing}</td>
@@ -422,7 +422,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                           <p className="text-sm font-medium text-gray-700 mb-2">FYSIEKE GEREEDHEID:</p>
                           <ul className="space-y-1">
                             {factor.milestones.map((milestone, milestoneIndex) => (
-                              <li key={tipIndex} className="flex items-start space-x-2">
+                              <li key={index} className="flex items-start space-x-2">
                                 <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                                 <span className="text-gray-700">{milestone}</span>
                               </li>
@@ -446,11 +446,11 @@ export default function WanneerOverstappenOpvolgmelkPage() {
               
               <div className="space-y-6">
                 {medicalConsiderations.map((consideration, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <h3 className="font-medium text-gray-700 mb-3">{consideration.category}</h3>
                     <ul className="space-y-2">
                       {consideration.items.map((item, itemIndex) => (
-                        <li key={tipIndex} className="flex items-start space-x-2">
+                        <li key={index} className="flex items-start space-x-2">
                           <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
                             consideration.category.includes('Indicaties') ? 'bg-green-400' : 'bg-red-400'
                           }`}></div>
@@ -472,14 +472,14 @@ export default function WanneerOverstappenOpvolgmelkPage() {
               
               <div className="space-y-6">
                 {familySituations.map((situation, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <div className="flex items-center mb-3">
                       <situation.icon className={`w-5 h-5 mr-2 ${situation.color}`} />
                       <h3 className={`font-medium ${situation.color}`}>{situation.situation}</h3>
                     </div>
                     <ul className="space-y-1">
                       {situation.conditions.map((condition, conditionIndex) => (
-                        <li key={tipIndex} className="flex items-start space-x-2">
+                        <li key={index} className="flex items-start space-x-2">
                           <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
                             situation.color === 'text-primary' ? 'bg-primary' : 'bg-gray-400'
                           }`}></div>
@@ -501,11 +501,11 @@ export default function WanneerOverstappenOpvolgmelkPage() {
               
               <div className="space-y-6">
                 {signalsFromBaby.map((category, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <h3 className={`font-medium mb-3 ${category.color}`}>{category.category}</h3>
                     <ul className="space-y-2">
                       {category.signals.map((signal, signalIndex) => (
-                        <li key={tipIndex} className="flex items-start space-x-2">
+                        <li key={index} className="flex items-start space-x-2">
                           <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
                             'bg-primary'
                           }`}></div>
@@ -530,11 +530,11 @@ export default function WanneerOverstappenOpvolgmelkPage() {
               
               <div className="space-y-4">
                 {timingCalendar.map((timeframe, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <h3 className="font-medium text-primary mb-3">{timeframe.timeframe}</h3>
                     <ul className="space-y-1">
                       {timeframe.activities.map((activity, activityIndex) => (
-                        <li key={tipIndex} className="flex items-start space-x-2">
+                        <li key={index} className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                           <span className="text-gray-700">{activity}</span>
                         </li>
@@ -554,14 +554,14 @@ export default function WanneerOverstappenOpvolgmelkPage() {
               
               <div className="space-y-6">
                 {commonMistakes.map((mistake, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <h3 className="font-medium text-gray-700 mb-2">"{mistake.mistake}"</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
                       <div>
                         <h4 className="font-medium text-primary mb-2">Gevolgen:</h4>
                         <ul className="space-y-1">
                           {mistake.consequences.map((consequence, consIndex) => (
-                            <li key={tipIndex} className="flex items-start space-x-2">
+                            <li key={index} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                               <span className="text-gray-700">{consequence}</span>
                             </li>
@@ -589,7 +589,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
               
               <div className="space-y-4">
                 {faqData.map((item, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <h3 className="font-medium text-gray-700 mb-2">{item.question}</h3>
                     <p className="text-gray-700">{item.answer}</p>
                     {index < faqData.length - 1 && (
@@ -606,7 +606,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
               
               <div className="space-y-4">
                 {expertTiming.map((expert, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
                       <div>
                         <span className="font-medium text-gray-700">Expert: </span>

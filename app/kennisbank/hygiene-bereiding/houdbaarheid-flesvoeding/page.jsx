@@ -268,7 +268,7 @@ export default function HoudbaarheidFlesvoedingPage() {
                   </thead>
                   <tbody>
                     {dangerBacteria.map((bacteria, index) => (
-                      <tr key={tipIndex}>
+                      <tr key={index}>
                         <td className="p-3 font-medium text-gray-700">{bacteria.name}</td>
                         <td className="p-3 text-gray-700">{bacteria.symptoms}</td>
                         <td className="p-3">
@@ -297,7 +297,7 @@ export default function HoudbaarheidFlesvoedingPage() {
               
               <div className="space-y-6">
                 {timeLimits.map((limit, index) => (
-                  <div key={tipIndex} className="p-4">
+                  <div key={index} className="p-4">
                     <h3 className="font-medium text-primary mb-3">{limit.situation}</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
@@ -339,11 +339,11 @@ export default function HoudbaarheidFlesvoedingPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {spoilageSigns.map((category, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <h3 className="font-medium text-primary mb-3">{category.category}</h3>
                     <ul className="space-y-2">
                       {category.signs.map((sign, signIndex) => (
-                        <li key={tipIndex} className="flex items-start space-x-2">
+                        <li key={index} className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                           <span className="text-gray-700 text-sm">{sign}</span>
                         </li>
@@ -373,7 +373,7 @@ export default function HoudbaarheidFlesvoedingPage() {
                   <h3 className="font-medium text-primary mb-3">Essentiële Regels:</h3>
                   <ul className="space-y-2">
                     {storageTips.map((tip, index) => (
-                      <li key={tipIndex} className="flex items-start space-x-2">
+                      <li key={index} className="flex items-start space-x-2">
                         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                         <span className="text-gray-700 text-sm">{tip}</span>
                       </li>
@@ -406,7 +406,7 @@ export default function HoudbaarheidFlesvoedingPage() {
               
               <div className="space-y-4">
                 {commonMistakes.map((mistake, index) => (
-                  <div key={tipIndex} className="p-4">
+                  <div key={index} className="p-4">
                     <h3 className="font-medium text-primary mb-2"> {mistake.mistake}</h3>
                     <p className="text-gray-700 text-sm mb-2">
                       <strong>Waarom gevaarlijk:</strong> {mistake.why}
@@ -450,7 +450,7 @@ export default function HoudbaarheidFlesvoedingPage() {
               
               <div className="space-y-4">
                 {faqData.map((item, index) => (
-                  <div key={tipIndex}>
+                  <div key={index}>
                     <h3 className="font-medium text-gray-700 mb-2">{item.question}</h3>
                     <p className="text-gray-700">{item.answer}</p>
                     {index < faqData.length - 1 && (
