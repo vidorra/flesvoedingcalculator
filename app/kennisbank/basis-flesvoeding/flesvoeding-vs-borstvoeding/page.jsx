@@ -118,7 +118,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
             
             <div className="mt-4 p-4 bg-white rounded-lg">
               <h3 className="font-semibold text-primary mb-2">Belangrijke waarheid vooraf:</h3>
-              <ul className="space-y-1 text-sm text-gray-700">
+              <ul className="space-y-1 text-gray-700">
                 <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span><strong>95% van baby's</strong> groeit gezond op met flesvoeding</span></li>
                 <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span><strong>Borstvoeding is ideaal</strong> maar niet altijd mogelijk of gewenst</span></li>
                 <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span><strong>Geen perfecte keuze</strong> - beide hebben voor- en nadelen</span></li>
@@ -138,7 +138,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
               <h3 className="font-semibold text-primary mb-4">Nederlandse statistieken</h3>
               <ul className="space-y-2">
                 {nederlandseStats.map((stat, index) => (
-                  <li key={index} className="flex items-center space-x-2">
+                  <li key={tipIndex} className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                     <span className="text-gray-700">{stat}</span>
                   </li>
@@ -146,7 +146,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
               </ul>
               
               <div className="mt-6 p-4 bg-default rounded-lg">
-                <p className="text-sm text-gray-600">
+                <p className="text-gray-600">
                   <strong>Gemiddelde duur exclusieve borstvoeding:</strong> 3.2 maanden
                 </p>
                 <p className="text-sm text-gray-600 mt-2">
@@ -178,7 +178,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
                   </thead>
                   <tbody>
                     {voedingswaarden.map((row, index) => (
-                      <tr key={index} className="border-b border-gray-100">
+                      <tr key={tipIndex} className="border-b border-gray-100">
                         <td className="py-3 px-2 font-medium text-gray-700">{row.component}</td>
                         <td className="py-3 px-2 text-gray-700">{row.borst}</td>
                         <td className="py-3 px-2 text-gray-700">{row.fles}</td>
@@ -207,19 +207,19 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 <ul className="space-y-1 mb-4">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Antistoffen en immuunfactoren</span>
+                    <span className="text-gray-700">Antistoffen en immuunfactoren</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Perfecte samenstelling</span>
+                    <span className="text-gray-700">Perfecte samenstelling</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Altijd beschikbaar en goedkoop</span>
+                    <span className="text-gray-700">Altijd beschikbaar en goedkoop</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Milieuvriendelijk</span>
+                    <span className="text-gray-700">Milieuvriendelijk</span>
                   </li>
                 </ul>
                 
@@ -227,19 +227,19 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 <ul className="space-y-1">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Tijdrovend (8-12x per dag)</span>
+                    <span className="text-gray-700">Tijdrovend (8-12x per dag)</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Beperkte vrijheid moeder</span>
+                    <span className="text-gray-700">Beperkte vrijheid moeder</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Onzekerheid over hoeveelheid</span>
+                    <span className="text-gray-700">Onzekerheid over hoeveelheid</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Mogelijk pijnlijke tepels/infecties</span>
+                    <span className="text-gray-700">Mogelijk pijnlijke tepels/infecties</span>
                   </li>
                 </ul>
               </div>
@@ -254,19 +254,19 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 <ul className="space-y-1 mb-4">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Flexibiliteit en voorspelbaarheid</span>
+                    <span className="text-gray-700">Flexibiliteit en voorspelbaarheid</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Partner kan voeden</span>
+                    <span className="text-gray-700">Partner kan voeden</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Meetbare hoeveelheden</span>
+                    <span className="text-gray-700">Meetbare hoeveelheden</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Hoger ijzer- en vitamine D gehalte</span>
+                    <span className="text-gray-700">Hoger ijzer- en vitamine D gehalte</span>
                   </li>
                 </ul>
                 
@@ -274,19 +274,19 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 <ul className="space-y-1">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Geen antistoffen</span>
+                    <span className="text-gray-700">Geen antistoffen</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Voorbereidingstijd en kosten</span>
+                    <span className="text-gray-700">Voorbereidingstijd en kosten</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Iets hoger risico infecties</span>
+                    <span className="text-gray-700">Iets hoger risico infecties</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Organisatie en afwas</span>
+                    <span className="text-gray-700">Organisatie en afwas</span>
                   </li>
                 </ul>
               </div>
@@ -305,7 +305,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 <h3 className="font-semibold text-primary mb-4">Borstvoeding kosten</h3>
                 <ul className="space-y-3">
                   {kostenvergelijking.borstvoeding.map((item, index) => (
-                    <li key={index} className="flex justify-between items-center">
+                    <li key={tipIndex} className="flex justify-between items-center">
                       <span className="text-gray-700">{item.item}</span>
                       <span className="font-medium text-gray-700">{item.kosten}</span>
                     </li>
@@ -321,7 +321,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 <h3 className="font-semibold text-primary mb-4">Flesvoeding kosten</h3>
                 <ul className="space-y-3">
                   {kostenvergelijking.flesvoeding.map((item, index) => (
-                    <li key={index} className="flex justify-between items-center">
+                    <li key={tipIndex} className="flex justify-between items-center">
                       <span className="text-gray-700">{item.item}</span>
                       <span className="font-medium text-gray-700">{item.kosten}</span>
                     </li>
@@ -338,7 +338,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
               <p className="font-medium text-gray-700 mb-2">
                 <strong>Verschil: €200-280 duurder voor flesvoeding</strong>
               </p>
-              <p className="text-sm text-gray-600">
+              <p className="text-gray-600">
                 Gebruik onze <Link href="/" className="text-primary hover:underline">flesvoeding calculator</Link> om je specifieke kosten te berekenen.
               </p>
             </div>
@@ -357,15 +357,15 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 <ul className="space-y-2 mb-4">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Fysieke pijn: tepelkloven, borstontsteking (10-15%)</span>
+                    <span className="text-gray-700">Fysieke pijn: tepelkloven, borstontsteking (10-15%)</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Mentale belasting: constante beschikbaarheid</span>
+                    <span className="text-gray-700">Mentale belasting: constante beschikbaarheid</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Sociale isolatie: moeilijker om huis te verlaten</span>
+                    <span className="text-gray-700">Sociale isolatie: moeilijker om huis te verlaten</span>
                   </li>
                 </ul>
                 
@@ -373,15 +373,15 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 <ul className="space-y-2">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Gedeelde verantwoordelijkheid met partner</span>
+                    <span className="text-gray-700">Gedeelde verantwoordelijkheid met partner</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Beter slaappatroon door afwisseling</span>
+                    <span className="text-gray-700">Beter slaappatroon door afwisseling</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Meer sociale vrijheid</span>
+                    <span className="text-gray-700">Meer sociale vrijheid</span>
                   </li>
                 </ul>
               </div>
@@ -394,15 +394,15 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 <ul className="space-y-2 mb-4">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Beperkte rol bij voedingen</span>
+                    <span className="text-gray-700">Beperkte rol bij voedingen</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Andere ondersteuning: luiers, boertjes, troost</span>
+                    <span className="text-gray-700">Andere ondersteuning: luiers, boertjes, troost</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Kan frustratie opleveren door machteloosheid</span>
+                    <span className="text-gray-700">Kan frustratie opleveren door machteloosheid</span>
                   </li>
                 </ul>
                 
@@ -410,15 +410,15 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 <ul className="space-y-2">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Gelijkwaardige rol beide ouders</span>
+                    <span className="text-gray-700">Gelijkwaardige rol beide ouders</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Bonding mogelijkheden voor beide</span>
+                    <span className="text-gray-700">Bonding mogelijkheden voor beide</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-sm text-gray-700">Betere verdeling nachtelijke taken</span>
+                    <span className="text-gray-700">Betere verdeling nachtelijke taken</span>
                   </li>
                 </ul>
               </div>
@@ -462,28 +462,28 @@ export default function FlesvoedingVsBorstvoedingPage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="text-center">
                   <h4 className="font-medium text-gray-700 mb-2">Cognitieve ontwikkeling (5 jaar)</h4>
-                  <p className="text-sm text-gray-600">Borstvoeding 6+ maanden: IQ 101.2</p>
-                  <p className="text-sm text-gray-600">Flesvoeding vanaf geboorte: IQ 100.8</p>
+                  <p className="text-gray-600">Borstvoeding 6+ maanden: IQ 101.2</p>
+                  <p className="text-gray-600">Flesvoeding vanaf geboorte: IQ 100.8</p>
                   <p className="text-xs font-medium text-gray-700 mt-2">Verschil: 0.4 punt (niet significant)</p>
                 </div>
                 
                 <div className="text-center">
                   <h4 className="font-medium text-gray-700 mb-2">Sociale-emotionele ontwikkeling</h4>
-                  <p className="text-sm text-gray-600">Geen verschil in gehechtheid op 2 jaar</p>
-                  <p className="text-sm text-gray-600">Geen verschil in gedragsproblemen</p>
+                  <p className="text-gray-600">Geen verschil in gehechtheid op 2 jaar</p>
+                  <p className="text-gray-600">Geen verschil in gedragsproblemen</p>
                   <p className="text-xs font-medium text-gray-700 mt-2">Geen significant verschil</p>
                 </div>
                 
                 <div className="text-center">
                   <h4 className="font-medium text-gray-700 mb-2">Fysieke gezondheid</h4>
-                  <p className="text-sm text-gray-600">Infecties eerste 2 jaar: 15% meer bij flesvoeding</p>
-                  <p className="text-sm text-gray-600">Allergieën: 8% hoger bij flesvoeding</p>
+                  <p className="text-gray-600">Infecties eerste 2 jaar: 15% meer bij flesvoeding</p>
+                  <p className="text-gray-600">Allergieën: 8% hoger bij flesvoeding</p>
                   <p className="text-xs font-medium text-gray-700 mt-2">Kleine maar meetbare verschillen</p>
                 </div>
               </div>
               
               <div className="mt-6 p-4">
-                <p className="text-sm text-gray-600">
+                <p className="text-gray-600">
                   <strong>Onderzoek conclusie:</strong> Langetermijn verschillen zijn kleiner dan vaak gedacht. 
                   Sociaal-economische factoren hebben meer invloed dan voedingsmethode.
                 </p>
@@ -500,11 +500,11 @@ export default function FlesvoedingVsBorstvoedingPage() {
             
             <div className="space-y-6">
               {decisionFactors.map((factor, index) => (
-                <div key={index} className="p-6">
+                <div key={tipIndex} className="p-6">
                   <h3 className="font-semibold text-primary mb-4">{factor.factor}</h3>
                   <ul className="space-y-2">
                     {factor.criteria.map((criterion, criterionIndex) => (
-                      <li key={criterionIndex} className="flex items-center space-x-2">
+                      <li key={tipIndex} className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                         <span className="text-gray-700">{criterion}</span>
                       </li>
