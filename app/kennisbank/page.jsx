@@ -155,7 +155,7 @@ export default function KennisbankPage() {
     { 
       id: 16, 
       title: 'Voedingsritme opbouwen', 
-      category: 'voedingstechnieken', 
+      category: 'praktische-tips', 
       description: 'Structuur aanbrengen', 
       duration: '12 min',
       href: '/kennisbank/praktische-tips/voedingsritme-opbouwen'
@@ -325,6 +325,16 @@ export default function KennisbankPage() {
       description: 'Samen verantwoordelijkheid delen', 
       duration: '6 min',
       href: '/kennisbank/praktische-tips/partner-betrekken-flesvoeding'
+    },
+
+    // VEILIGHEID - 1 comprehensive guide
+    { 
+      id: 40, 
+      title: 'Belangrijke Veiligheidsrichtlijnen', 
+      category: 'veiligheid', 
+      description: 'Cruciale veiligheidsinformatie, noodsituaties en allergieën', 
+      duration: '10 min',
+      href: '/kennisbank/veiligheid'
     },
 
     // FINANCIËLE ASPECTEN - 1 actual article
