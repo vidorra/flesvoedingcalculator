@@ -95,7 +95,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
               </p>
               
               <div className="mt-4 p-4 bg-white rounded-lg">
-                <p className="text-sm text-gray-700">
+                <p className="text-gray-700">
                   <strong>Belangrijk:</strong> Dit artikel vervangt geen medisch advies. Neem altijd contact op met je huisarts of consultatiebureau bij verdenking van allergie.
                 </p>
               </div>
@@ -146,7 +146,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
                     <h4 className="font-medium text-primary mb-3">Symptomen Patronen:</h4>
                     <ul className="space-y-2">
                       {symptomenTypes.map((symptom, index) => (
-                        <li key={index} className="flex items-start space-x-2">
+                        <li key={tipIndex} className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                           <span className="text-gray-700 text-sm">{symptom}</span>
                         </li>
@@ -158,7 +158,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
                     <h4 className="font-medium text-primary mb-3">Nederlandse Risicofactoren:</h4>
                     <ul className="space-y-2">
                       {risicofactoren.map((factor, index) => (
-                        <li key={index} className="flex items-start space-x-2">
+                        <li key={tipIndex} className="flex items-start space-x-2">
                           <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                           <span className="text-gray-700 text-sm">{factor}</span>
                         </li>
@@ -216,11 +216,11 @@ export default function AllergischeReactiesFlesvoedingPage() {
                   </p>
                   <ul className="space-y-2">
                     {noodprotocol.map((stap, index) => (
-                      <li key={index} className="flex items-start space-x-2">
+                      <li key={tipIndex} className="flex items-start space-x-2">
                         <span className="bg-amber-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                           {index + 1}
                         </span>
-                        <span className="text-amber-700 text-sm">{stap}</span>
+                        <span className="text-amber-700">{stap}</span>
                       </li>
                     ))}
                   </ul>
@@ -240,7 +240,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
                 <h3 className="font-medium text-primary mb-4">Nederlandse Behandelingsopties</h3>
                 <ul className="space-y-3">
                   {alternatieveOpties.map((optie, index) => (
-                    <li key={index} className="flex items-start space-x-2">
+                    <li key={tipIndex} className="flex items-start space-x-2">
                       <Heart className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
                       <span className="text-gray-700">{optie}</span>
                     </li>
@@ -309,7 +309,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
                 >
                   <div className="text-center">
                     <div className="font-medium text-gray-700">Bereken veilige voeding hoeveelheden </div>
-                    <div className="text-sm text-gray-600">Gebruik onze calculator voor gepersonaliseerd advies</div>
+                    <div className="text-gray-600">Gebruik onze calculator voor gepersonaliseerd advies</div>
                   </div>
                 </Link>
               </div>
@@ -324,19 +324,19 @@ export default function AllergischeReactiesFlesvoedingPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/soorten-flesvoeding/hypoallergene-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Hypoallergene flesvoeding </div>
-                  <div className="text-sm text-gray-600">Speciaal ontwikkeld voor allergische baby's</div>
+                  <div className="text-gray-600">Speciaal ontwikkeld voor allergische baby's</div>
                 </Link>
                 <Link href="/kennisbank/problemen-oplossen/krampjes-na-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Krampjes na flesvoeding </div>
-                  <div className="text-sm text-gray-600">Herkennen en behandelen van voedingsgerelateerde krampjes</div>
+                  <div className="text-gray-600">Herkennen en behandelen van voedingsgerelateerde krampjes</div>
                 </Link>
                 <Link href="/kennisbank/problemen-oplossen/spugen-na-de-fles" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Spugen na de fles </div>
-                  <div className="text-sm text-gray-600">Wanneer spugen normaal is en wanneer niet</div>
+                  <div className="text-gray-600">Wanneer spugen normaal is en wanneer niet</div>
                 </Link>
                 <Link href="/kennisbank/veiligheid" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Veiligheid algemeen </div>
-                  <div className="text-sm text-gray-600">Alle aspecten van veilige flesvoeding</div>
+                  <div className="text-gray-600">Alle aspecten van veilige flesvoeding</div>
                 </Link>
               </div>
             </section>

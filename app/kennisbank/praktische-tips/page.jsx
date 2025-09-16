@@ -91,7 +91,7 @@ export default function PraktischeTipsPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {moneySavingTips.map((tip, index) => (
-              <div key={index} className="flex items-start space-x-2 p-3 bg-white rounded-lg">
+              <div key={tipIndex} className="flex items-start space-x-2 p-3 bg-white rounded-lg">
                 <ShoppingCart className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-gray-700 text-sm">{tip}</span>
               </div>
@@ -114,7 +114,7 @@ export default function PraktischeTipsPage() {
           </h2>
           <div className="space-y-3">
             {nightFeedingTips.map((tip, index) => (
-              <div key={index} className="flex items-start space-x-2">
+              <div key={tipIndex} className="flex items-start space-x-2">
                 <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">
                   {index + 1}
                 </div>
@@ -142,7 +142,7 @@ export default function PraktischeTipsPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {bondingTips.map((tip, index) => (
-              <div key={index} className="flex items-start space-x-2">
+              <div key={tipIndex} className="flex items-start space-x-2">
                 <Heart className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-gray-700 text-sm">{tip}</span>
               </div>
@@ -156,7 +156,7 @@ export default function PraktischeTipsPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {organizationTips.map((section, index) => (
-              <div key={index} className="p-4">
+              <div key={tipIndex} className="p-4">
                 <h3 className="font-medium text-primary mb-3">{section.title}:</h3>
                 <div className="space-y-2">
                   {section.tips.map((tip, tipIndex) => (
@@ -177,7 +177,7 @@ export default function PraktischeTipsPage() {
           
           <div className="space-y-4">
             {developmentTips.map((ageGroup, index) => (
-              <div key={index} className="border-l-4 border-primary pl-4 py-2">
+              <div key={tipIndex} className="border-l-4 border-primary pl-4 py-2">
                 <h3 className="font-medium text-primary mb-2">{ageGroup.age}:</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                   {ageGroup.tips.map((tip, tipIndex) => (
@@ -198,7 +198,7 @@ export default function PraktischeTipsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <h3 className="font-medium text-primary mb-3">Bij problemen eerst checken:</h3>
-              <ul className="space-y-1 text-sm text-gray-700">
+              <ul className="space-y-1 text-gray-700">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span>Temperatuur flesvoeding (lauw op pols)</span>
@@ -220,7 +220,7 @@ export default function PraktischeTipsPage() {
             
             <div>
               <h3 className="font-medium text-primary mb-3">Altijd bij de hand hebben:</h3>
-              <ul className="space-y-1 text-sm text-gray-700">
+              <ul className="space-y-1 text-gray-700">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                   <span>Reserve fles en spenen</span>
@@ -251,14 +251,14 @@ export default function PraktischeTipsPage() {
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-gray-700">Voedingsschema&apos;s </div>
-              <div className="text-sm text-gray-600">Interactieve schema&apos;s per leeftijd</div>
+              <div className="text-gray-600">Interactieve schema&apos;s per leeftijd</div>
             </Link>
             <Link 
               href="/"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-gray-700">Calculator </div>
-              <div className="text-sm text-gray-600">Bereken persoonlijke hoeveelheden</div>
+              <div className="text-gray-600">Bereken persoonlijke hoeveelheden</div>
             </Link>
           </div>
         </div>

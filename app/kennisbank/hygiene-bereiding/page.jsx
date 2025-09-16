@@ -102,7 +102,7 @@ function HygieneBereidingPage() {
             </h2>
             <div className="space-y-2">
               {alwaysDo.map((item, index) => (
-                <div key={index} className="flex items-start space-x-2">
+                <div key={tipIndex} className="flex items-start space-x-2">
                   <CheckCircle className="w-4 h-4 text-gray-600 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700 text-sm">{item}</span>
                 </div>
@@ -117,7 +117,7 @@ function HygieneBereidingPage() {
             </h2>
             <div className="space-y-2">
               {neverDo.map((item, index) => (
-                <div key={index} className="flex items-start space-x-2">
+                <div key={tipIndex} className="flex items-start space-x-2">
                   <X className="w-4 h-4 text-gray-600 mt-0.5 flex-shrink-0" />
                   <span className="text-gray-700 text-sm">{item}</span>
                 </div>
@@ -135,7 +135,7 @@ function HygieneBereidingPage() {
               <h3 className="font-medium text-primary mb-3">Kraanwater in Nederland:</h3>
               <div className="space-y-2">
                 {waterTips.map((tip, index) => (
-                  <div key={index} className="flex items-start space-x-2">
+                  <div key={tipIndex} className="flex items-start space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span className="text-gray-700 text-sm">{tip}</span>
                   </div>
@@ -147,7 +147,7 @@ function HygieneBereidingPage() {
               <h3 className="font-medium text-gray-700 mb-3">Flessenwater:</h3>
               <div className="space-y-2">
                 {bottleWaterTips.map((tip, index) => (
-                  <div key={index} className="flex items-start space-x-2">
+                  <div key={tipIndex} className="flex items-start space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span className="text-gray-700 text-sm">{tip}</span>
                   </div>
@@ -163,7 +163,7 @@ function HygieneBereidingPage() {
             <h2 className="text-lg font-semibold text-primary mb-4">Poeder bewaren:</h2>
             <div className="space-y-2">
               {powderStorage.map((tip, index) => (
-                <div key={index} className="flex items-start space-x-2">
+                <div key={tipIndex} className="flex items-start space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <span className="text-gray-700 text-sm">{tip}</span>
                 </div>
@@ -178,7 +178,7 @@ function HygieneBereidingPage() {
             </h2>
             <div className="space-y-2">
               {preparedFormulaStorage.map((tip, index) => (
-                <div key={index} className="flex items-start space-x-2">
+                <div key={tipIndex} className="flex items-start space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <span className="text-gray-700 text-sm">{tip}</span>
                 </div>
@@ -196,7 +196,7 @@ function HygieneBereidingPage() {
               <h3 className="font-medium text-gray-700 mb-3">Koud water methode (aanbevolen):</h3>
               <div className="space-y-2">
                 {travelTipsCold.map((tip, index) => (
-                  <div key={index} className="flex items-start space-x-2">
+                  <div key={tipIndex} className="flex items-start space-x-2">
                     <CheckCircle className="w-4 h-4 text-gray-600 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700 text-sm">{tip}</span>
                   </div>
@@ -208,9 +208,9 @@ function HygieneBereidingPage() {
               <h3 className="font-medium text-gray-700 mb-3">Vooraf bereiden:</h3>
               <div className="space-y-2">
                 {travelTipsPrepared.map((tip, index) => (
-                  <div key={index} className="flex items-start space-x-2">
+                  <div key={tipIndex} className="flex items-start space-x-2">
                     <div className="w-2 h-2 bg-amber-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-amber-700 text-sm">{tip}</span>
+                    <span className="text-amber-700">{tip}</span>
                   </div>
                 ))}
               </div>
@@ -230,7 +230,7 @@ function HygieneBereidingPage() {
               <h3 className="font-medium text-gray-700 mb-3">Flessenwarmer voordelen:</h3>
               <div className="space-y-2">
                 {bottleWarmerAdvantages.map((advantage, index) => (
-                  <div key={index} className="flex items-start space-x-2">
+                  <div key={tipIndex} className="flex items-start space-x-2">
                     <CheckCircle className="w-4 h-4 text-gray-600 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700 text-sm">{advantage}</span>
                   </div>
@@ -242,7 +242,7 @@ function HygieneBereidingPage() {
               <h3 className="font-medium text-gray-700 mb-3">Magnetron nadelen:</h3>
               <div className="space-y-2">
                 {microwaveDisadvantages.map((disadvantage, index) => (
-                  <div key={index} className="flex items-start space-x-2">
+                  <div key={tipIndex} className="flex items-start space-x-2">
                     <X className="w-4 h-4 text-gray-600 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700 text-sm">{disadvantage}</span>
                   </div>
@@ -254,9 +254,9 @@ function HygieneBereidingPage() {
               <h3 className="font-medium text-gray-700 mb-3">Als magnetron nodig:</h3>
               <div className="space-y-2">
                 {microwaveTips.map((tip, index) => (
-                  <div key={index} className="flex items-start space-x-2">
+                  <div key={tipIndex} className="flex items-start space-x-2">
                     <div className="w-2 h-2 bg-amber-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-amber-700 text-sm">{tip}</span>
+                    <span className="text-amber-700">{tip}</span>
                   </div>
                 ))}
               </div>
@@ -486,21 +486,21 @@ function HygieneBereidingPage() {
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-gray-700">Water koken voor flesvoeding </div>
-              <div className="text-sm text-gray-600">Complete veiligheidsgids</div>
+              <div className="text-gray-600">Complete veiligheidsgids</div>
             </Link>
             <Link 
               href="/kennisbank/veiligheid"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-gray-700">Veiligheidsrichtlijnen </div>
-              <div className="text-sm text-gray-600">Belangrijke veiligheidstips</div>
+              <div className="text-gray-600">Belangrijke veiligheidstips</div>
             </Link>
             <Link 
               href="/kennisbank/praktische-tips"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
               <div className="font-medium text-gray-700">Praktische Tips </div>
-              <div className="text-sm text-gray-600">Handige tips voor ouders</div>
+              <div className="text-gray-600">Handige tips voor ouders</div>
             </Link>
           </div>
           </div>

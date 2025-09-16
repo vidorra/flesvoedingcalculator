@@ -377,7 +377,7 @@ export default function BabyWeigertFlespagePage() {
                 >
                   <div className="text-center">
                     <div className="font-medium text-gray-700">Hulp nodig bij het berekenen van de juiste hoeveelheden? </div>
-                    <div className="text-sm text-gray-600">Gebruik onze flesvoeding calculator voor gepersonaliseerd advies</div>
+                    <div className="text-gray-600">Gebruik onze flesvoeding calculator voor gepersonaliseerd advies</div>
                   </div>
                 </Link>
               </div>
@@ -392,19 +392,19 @@ export default function BabyWeigertFlespagePage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Eerste keer flesvoeding geven </div>
-                  <div className="text-sm text-gray-600">Complete beginnersgids</div>
+                  <div className="text-gray-600">Complete beginnersgids</div>
                 </Link>
                 <Link href="/kennisbank/voedingstechnieken/juiste-houding-bij-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Juiste houding bij flesvoeding </div>
-                  <div className="text-sm text-gray-600">Optimale positionering</div>
+                  <div className="text-gray-600">Optimale positionering</div>
                 </Link>
                 <Link href="/kennisbank/basis-flesvoeding/flesvoeding-vs-borstvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Flesvoeding vs borstvoeding </div>
-                  <div className="text-sm text-gray-600">Eerlijke vergelijking</div>
+                  <div className="text-gray-600">Eerlijke vergelijking</div>
                 </Link>
                 <Link href="/kennisbank/problemen-oplossen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Meer probleemoplossing </div>
-                  <div className="text-sm text-gray-600">Overzicht alle problemen</div>
+                  <div className="text-gray-600">Overzicht alle problemen</div>
                 </Link>
               </div>
             </div>

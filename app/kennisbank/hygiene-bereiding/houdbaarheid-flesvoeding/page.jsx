@@ -268,8 +268,8 @@ export default function HoudbaarheidFlesvoedingPage() {
                   </thead>
                   <tbody>
                     {dangerBacteria.map((bacteria, index) => (
-                      <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-white"}>
-                        <td className="p-3 font-medium text-gray-900">{bacteria.name}</td>
+                      <tr key={tipIndex}>
+                        <td className="p-3 font-medium text-gray-700">{bacteria.name}</td>
                         <td className="p-3 text-gray-700">{bacteria.symptoms}</td>
                         <td className="p-3">
                           <span className={`text-sm font-medium ${
@@ -297,7 +297,7 @@ export default function HoudbaarheidFlesvoedingPage() {
               
               <div className="space-y-6">
                 {timeLimits.map((limit, index) => (
-                  <div key={index} className="p-4">
+                  <div key={tipIndex} className="p-4">
                     <h3 className="font-medium text-primary mb-3">{limit.situation}</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
@@ -339,11 +339,11 @@ export default function HoudbaarheidFlesvoedingPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {spoilageSigns.map((category, index) => (
-                  <div key={index}>
+                  <div key={tipIndex}>
                     <h3 className="font-medium text-primary mb-3">{category.category}</h3>
                     <ul className="space-y-2">
                       {category.signs.map((sign, signIndex) => (
-                        <li key={signIndex} className="flex items-start space-x-2">
+                        <li key={tipIndex} className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                           <span className="text-gray-700 text-sm">{sign}</span>
                         </li>
@@ -373,7 +373,7 @@ export default function HoudbaarheidFlesvoedingPage() {
                   <h3 className="font-medium text-primary mb-3">Essentiële Regels:</h3>
                   <ul className="space-y-2">
                     {storageTips.map((tip, index) => (
-                      <li key={index} className="flex items-start space-x-2">
+                      <li key={tipIndex} className="flex items-start space-x-2">
                         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                         <span className="text-gray-700 text-sm">{tip}</span>
                       </li>
@@ -385,15 +385,15 @@ export default function HoudbaarheidFlesvoedingPage() {
                   <div className="space-y-3">
                     <div className="p-3 bg-white rounded-lg">
                       <h4 className="font-medium text-gray-700 mb-1">Koelkast:</h4>
-                      <p className="text-sm text-gray-600">2-4°C - Controleer met thermometer</p>
+                      <p className="text-gray-600">2-4°C - Controleer met thermometer</p>
                     </div>
                     <div className="p-3 bg-amber-50 rounded-lg">
                       <h4 className="font-medium text-gray-700 mb-1">Kamertemperatuur:</h4>
-                      <p className="text-sm text-gray-600">18-22°C - Maximum 1 uur</p>
+                      <p className="text-gray-600">18-22°C - Maximum 1 uur</p>
                     </div>
                     <div className="p-3 bg-amber-50 rounded-lg">
                       <h4 className="font-medium text-gray-700 mb-1">Warm weer:</h4>
-                      <p className="text-sm text-gray-600">25°C+ - Maximum 30 minuten</p>
+                      <p className="text-gray-600">25°C+ - Maximum 30 minuten</p>
                     </div>
                   </div>
                 </div>
@@ -406,7 +406,7 @@ export default function HoudbaarheidFlesvoedingPage() {
               
               <div className="space-y-4">
                 {commonMistakes.map((mistake, index) => (
-                  <div key={index} className="p-4">
+                  <div key={tipIndex} className="p-4">
                     <h3 className="font-medium text-primary mb-2"> {mistake.mistake}</h3>
                     <p className="text-gray-700 text-sm mb-2">
                       <strong>Waarom gevaarlijk:</strong> {mistake.why}
@@ -450,9 +450,9 @@ export default function HoudbaarheidFlesvoedingPage() {
               
               <div className="space-y-4">
                 {faqData.map((item, index) => (
-                  <div key={index}>
-                    <h3 className="font-medium text-gray-900 mb-2">{item.question}</h3>
-                    <p className="text-sm text-gray-700">{item.answer}</p>
+                  <div key={tipIndex}>
+                    <h3 className="font-medium text-gray-700 mb-2">{item.question}</h3>
+                    <p className="text-gray-700">{item.answer}</p>
                     {index < faqData.length - 1 && (
                       <div className="border-b border-gray-200 mt-4"></div>
                     )}
@@ -470,7 +470,7 @@ export default function HoudbaarheidFlesvoedingPage() {
                 >
                   <div className="text-center">
                     <div className="font-medium text-gray-700">Bereken de juiste hoeveelheden </div>
-                    <div className="text-sm text-gray-600">Gebruik onze calculator voor veilige voedingsschemas</div>
+                    <div className="text-gray-600">Gebruik onze calculator voor veilige voedingsschemas</div>
                   </div>
                 </Link>
               </div>
@@ -485,19 +485,19 @@ export default function HoudbaarheidFlesvoedingPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/hygiene-bereiding/flessen-steriliseren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Flessen steriliseren </div>
-                  <div className="text-sm text-gray-600">Complete gids voor veilige fles reiniging</div>
+                  <div className="text-gray-600">Complete gids voor veilige fles reiniging</div>
                 </Link>
                 <Link href="/kennisbank/hygiene-bereiding/flesvoeding-bewaren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Flesvoeding bewaren </div>
-                  <div className="text-sm text-gray-600">Alle bewaar en opwarming tips</div>
+                  <div className="text-gray-600">Alle bewaar en opwarming tips</div>
                 </Link>
                 <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Fles bereiden stap voor stap </div>
-                  <div className="text-sm text-gray-600">Veilige bereiding van A tot Z</div>
+                  <div className="text-gray-600">Veilige bereiding van A tot Z</div>
                 </Link>
                 <Link href="/kennisbank/problemen-oplossen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-700">Problemen oplossen </div>
-                  <div className="text-sm text-gray-600">Hulp bij veelvoorkomende problemen</div>
+                  <div className="text-gray-600">Hulp bij veelvoorkomende problemen</div>
                 </Link>
               </div>
             </section>

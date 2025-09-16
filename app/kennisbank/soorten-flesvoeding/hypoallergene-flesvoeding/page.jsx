@@ -111,11 +111,11 @@ export default function HypoallergeneVoedingPage() {
                   <h4 className="font-medium text-primary mb-3">Medische Indicaties</h4>
                   <div className="space-y-3">
                     {allergySigns.slice(0, 3).map((sign, index) => (
-                      <div key={index} className="flex items-start space-x-3">
+                      <div key={tipIndex} className="flex items-start space-x-3">
                         <AlertTriangle className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
                         <div>
                           <div className="font-medium text-gray-700">{sign.sign}</div>
-                          <div className="text-sm text-gray-600">{sign.description}</div>
+                          <div className="text-gray-600">{sign.description}</div>
                         </div>
                       </div>
                     ))}
@@ -126,9 +126,9 @@ export default function HypoallergeneVoedingPage() {
                   <h4 className="font-medium text-primary mb-3">Hoog Risico Groepen</h4>
                   <div className="space-y-2">
                     {riskFactors.slice(0, 4).map((factor, index) => (
-                      <div key={index} className="flex items-center space-x-2">
+                      <div key={tipIndex} className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-sm text-gray-700">{factor}</span>
+                        <span className="text-gray-700">{factor}</span>
                       </div>
                     ))}
                   </div>
@@ -155,15 +155,15 @@ export default function HypoallergeneVoedingPage() {
               
               <div className="space-y-4 mb-6">
                 {haFormulas.map((formula, index) => (
-                  <div key={index}>
+                  <div key={tipIndex}>
                     <div className="flex justify-between items-start mb-3">
                       <div>
                         <h3 className="font-semibold text-primary">{formula.brand}</h3>
-                        <span className="text-sm text-gray-600">{formula.type}</span>
+                        <span className="text-gray-600">{formula.type}</span>
                       </div>
                       <div className="text-right">
                         <div className="font-medium text-gray-700">{formula.price}</div>
-                        <div className="text-sm text-gray-600">{formula.effectiveness}</div>
+                        <div className="text-gray-600">{formula.effectiveness}</div>
                       </div>
                     </div>
                     
@@ -172,7 +172,7 @@ export default function HypoallergeneVoedingPage() {
                         <h4 className="font-medium text-primary mb-2">Voordelen:</h4>
                         <ul className="text-sm text-gray-700 space-y-1">
                           {formula.pros.map((pro, idx) => (
-                            <li key={idx} className="flex items-center space-x-2">
+                            <li key={tipIndex} className="flex items-center space-x-2">
                               <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
                               <span>{pro}</span>
                             </li>
@@ -183,7 +183,7 @@ export default function HypoallergeneVoedingPage() {
                         <h4 className="font-medium text-primary mb-2">Nadelen:</h4>
                         <ul className="text-sm text-gray-700 space-y-1">
                           {formula.cons.map((con, idx) => (
-                            <li key={idx} className="flex items-center space-x-2">
+                            <li key={tipIndex} className="flex items-center space-x-2">
                               <AlertTriangle className="w-3 h-3 text-primary flex-shrink-0" />
                               <span>{con}</span>
                             </li>
@@ -245,13 +245,13 @@ export default function HypoallergeneVoedingPage() {
               
               <div className="space-y-6">
                 {implementationSteps.map((step, index) => (
-                  <div key={index} className="border-l-4 border-primary pl-4">
+                  <div key={tipIndex} className="border-l-4 border-primary pl-4">
                     <h3 className="font-semibold text-primary mb-2">{step.week}: {step.focus}</h3>
                     <div className="grid md:grid-cols-2 gap-3">
                       {step.actions.map((action, idx) => (
-                        <div key={idx} className="flex items-center space-x-2">
+                        <div key={tipIndex} className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                          <span className="text-sm text-gray-700">{action}</span>
+                          <span className="text-gray-700">{action}</span>
                         </div>
                       ))}
                     </div>
@@ -345,19 +345,19 @@ export default function HypoallergeneVoedingPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/problemen-oplossen/krampjes-na-flesvoeding" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors bg-default">
                   <div className="font-medium text-gray-700">Krampjes na flesvoeding </div>
-                  <div className="text-sm text-gray-600">HA-voeding als oplossing voor krampen</div>
+                  <div className="text-gray-600">HA-voeding als oplossing voor krampen</div>
                 </Link>
                 <Link href="/kennisbank/soorten-flesvoeding/anti-reflux-flesvoeding" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors bg-default">
                   <div className="font-medium text-gray-700">Anti-reflux flesvoeding </div>
-                  <div className="text-sm text-gray-600">Specialistische voeding voor reflux</div>
+                  <div className="text-gray-600">Specialistische voeding voor reflux</div>
                 </Link>
                 <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors bg-default">
                   <div className="font-medium text-gray-700">Verschil startvoeding/opvolgmelk </div>
-                  <div className="text-sm text-gray-600">HA-voeding door verschillende leeftijden</div>
+                  <div className="text-gray-600">HA-voeding door verschillende leeftijden</div>
                 </Link>
                 <Link href="/kennisbank/soorten-flesvoeding" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors bg-default">
                   <div className="font-medium text-gray-700">Alle soorten flesvoeding </div>
-                  <div className="text-sm text-gray-600">Overzicht alle flesvoeding types</div>
+                  <div className="text-gray-600">Overzicht alle flesvoeding types</div>
                 </Link>
               </div>
             </div>

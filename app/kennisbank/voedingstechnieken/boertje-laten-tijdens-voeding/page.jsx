@@ -244,7 +244,7 @@ export default function BoertjeLatenPage() {
               </div>
               
               <div className="mt-4 p-4 border border-gray-200 bg-white rounded-xl">
-                <p className="text-sm text-gray-700">
+                <p className="text-gray-700">
                   <strong>Onderzoek toont aan</strong> dat baby's die regelmatig een boertje laten tot 40% minder last hebben van koliekklachten.
                 </p>
               </div>
@@ -256,9 +256,9 @@ export default function BoertjeLatenPage() {
               
               <div className="space-y-6">
                 {techniques.map((technique, index) => (
-                  <div key={index}>
+                  <div key={tipIndex}>
                     <div className="flex items-center justify-between mb-3">
-                      <h3 className="font-medium text-gray-900">{technique.name}</h3>
+                      <h3 className="font-medium text-gray-700">{technique.name}</h3>
                       <span className="text-xs bg-white text-gray-700 px-2 py-1 rounded-full">
                         {technique.popularity}
                       </span>
@@ -267,9 +267,9 @@ export default function BoertjeLatenPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                       <div>
                         <h4 className="font-medium text-primary mb-2">Stappen:</h4>
-                        <ol className="space-y-1 text-sm text-gray-700">
+                        <ol className="space-y-1 text-gray-700">
                           {technique.steps.map((step, stepIndex) => (
-                            <li key={stepIndex} className="flex items-start space-x-2">
+                            <li key={tipIndex} className="flex items-start space-x-2">
                               <span className="text-primary font-medium">{stepIndex + 1}.</span>
                               <span>{step}</span>
                             </li>
@@ -279,9 +279,9 @@ export default function BoertjeLatenPage() {
                       
                       <div>
                         <h4 className="font-medium text-primary mb-2">Voordelen:</h4>
-                        <ul className="space-y-1 text-sm text-gray-700">
+                        <ul className="space-y-1 text-gray-700">
                           {technique.benefits.map((benefit, benefitIndex) => (
-                            <li key={benefitIndex} className="flex items-start space-x-2">
+                            <li key={tipIndex} className="flex items-start space-x-2">
                               <CheckCircle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
                               <span>{benefit}</span>
                             </li>
@@ -292,7 +292,7 @@ export default function BoertjeLatenPage() {
                     
                     {technique.tip && (
                       <div className="p-3 border border-gray-200 bg-white rounded-lg">
-                        <p className="text-sm text-gray-700">
+                        <p className="text-gray-700">
                           <strong>Tip:</strong> {technique.tip}
                         </p>
                       </div>
@@ -300,7 +300,7 @@ export default function BoertjeLatenPage() {
                     
                     {technique.warning && (
                       <div className="p-3 border border-gray-200 bg-white rounded-lg">
-                        <p className="text-sm text-gray-700">
+                        <p className="text-gray-700">
                           <strong>Let op:</strong> {technique.warning}
                         </p>
                       </div>
@@ -334,7 +334,7 @@ export default function BoertjeLatenPage() {
                     </thead>
                     <tbody>
                       {timingGuide.map((item, index) => (
-                        <tr key={index} className="border-b border-gray-200">
+                        <tr key={tipIndex} className="border-b border-gray-200">
                           <td className="py-2 text-sm text-gray-700">{item.age}</td>
                           <td className="py-2 text-sm text-gray-700">{item.interval}</td>
                           <td className="py-2 text-sm text-gray-700">{item.reason}</td>
@@ -347,7 +347,7 @@ export default function BoertjeLatenPage() {
               
               <div>
                 <h3 className="font-medium text-primary mb-3">Na de Voeding (Altijd)</h3>
-                <ul className="space-y-2 text-sm text-gray-700">
+                <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span><strong>Minimaal 5-10 minuten</strong> proberen</span>
@@ -370,7 +370,7 @@ export default function BoertjeLatenPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {practicalTips.map((section, index) => (
-                  <div key={index}>
+                  <div key={tipIndex}>
                     <h3 className="font-medium text-primary mb-3">{section.category}</h3>
                     <ul className="space-y-2">
                       {section.tips.map((tip, tipIndex) => (
@@ -391,15 +391,15 @@ export default function BoertjeLatenPage() {
               
               <div className="space-y-6">
                 {commonProblems.map((item, index) => (
-                  <div key={index}>
-                    <h3 className="font-medium text-gray-900 mb-3">{item.problem}</h3>
+                  <div key={tipIndex}>
+                    <h3 className="font-medium text-gray-700 mb-3">{item.problem}</h3>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <h4 className="font-medium text-gray-700 mb-2">Normale oorzaken:</h4>
-                        <ul className="space-y-1 text-sm text-gray-700">
+                        <ul className="space-y-1 text-gray-700">
                           {item.causes.map((cause, causeIndex) => (
-                            <li key={causeIndex} className="flex items-start space-x-2">
+                            <li key={tipIndex} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                               <span>{cause}</span>
                             </li>
@@ -409,9 +409,9 @@ export default function BoertjeLatenPage() {
                       
                       <div>
                         <h4 className="font-medium text-gray-700 mb-2">Oplossingen:</h4>
-                        <ul className="space-y-1 text-sm text-gray-700">
+                        <ul className="space-y-1 text-gray-700">
                           {item.solutions.map((solution, solutionIndex) => (
-                            <li key={solutionIndex} className="flex items-start space-x-2">
+                            <li key={tipIndex} className="flex items-start space-x-2">
                               <CheckCircle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
                               <span>{solution}</span>
                             </li>
@@ -434,15 +434,15 @@ export default function BoertjeLatenPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {speenTypes.map((item, index) => (
-                  <div key={index}>
-                    <h3 className="font-medium text-gray-900 mb-3">{item.type}</h3>
+                  <div key={tipIndex}>
+                    <h3 className="font-medium text-gray-700 mb-3">{item.type}</h3>
                     
                     {item.brands && (
                       <div className="mb-3">
                         <h4 className="font-medium text-primary mb-2">Populaire merken:</h4>
-                        <ul className="space-y-1 text-sm text-gray-700">
+                        <ul className="space-y-1 text-gray-700">
                           {item.brands.map((brand, brandIndex) => (
-                            <li key={brandIndex} className="flex items-start space-x-2">
+                            <li key={tipIndex} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                               <span>{brand}</span>
                             </li>
@@ -454,9 +454,9 @@ export default function BoertjeLatenPage() {
                     {item.benefits && (
                       <div>
                         <h4 className="font-medium text-primary mb-2">Voordelen:</h4>
-                        <ul className="space-y-1 text-sm text-gray-700">
+                        <ul className="space-y-1 text-gray-700">
                           {item.benefits.map((benefit, benefitIndex) => (
-                            <li key={benefitIndex} className="flex items-start space-x-2">
+                            <li key={tipIndex} className="flex items-start space-x-2">
                               <CheckCircle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
                               <span>{benefit}</span>
                             </li>
@@ -468,9 +468,9 @@ export default function BoertjeLatenPage() {
                     {item.attention && (
                       <div>
                         <h4 className="font-medium text-gray-700 mb-2">Extra aandacht voor:</h4>
-                        <ul className="space-y-1 text-sm text-gray-700">
+                        <ul className="space-y-1 text-gray-700">
                           {item.attention.map((point, pointIndex) => (
-                            <li key={pointIndex} className="flex items-start space-x-2">
+                            <li key={tipIndex} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                               <span>{point}</span>
                             </li>
@@ -496,15 +496,15 @@ export default function BoertjeLatenPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {warningSignsDoctor.map((sign, index) => (
-                  <div key={index} className="flex items-start space-x-2">
+                  <div key={tipIndex} className="flex items-start space-x-2">
                     <AlertTriangle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-gray-700">{sign}</span>
+                    <span className="text-gray-700">{sign}</span>
                   </div>
                 ))}
               </div>
               
               <div className="mt-4 p-4 border border-gray-200 bg-white rounded-lg">
-                <p className="text-sm text-gray-700">
+                <p className="text-gray-700">
                   <strong>Vertrouw altijd op je ouderinstinct</strong> - je kent je baby het beste.
                 </p>
               </div>
@@ -516,9 +516,9 @@ export default function BoertjeLatenPage() {
               
               <div className="space-y-4">
                 {faqData.map((item, index) => (
-                  <div key={index}>
-                    <h3 className="font-medium text-gray-900 mb-2">{item.question}</h3>
-                    <p className="text-sm text-gray-700">{item.answer}</p>
+                  <div key={tipIndex}>
+                    <h3 className="font-medium text-gray-700 mb-2">{item.question}</h3>
+                    <p className="text-gray-700">{item.answer}</p>
                     {index < faqData.length - 1 && (
                       <div className="border-b border-gray-200 mt-4"></div>
                     )}
@@ -554,14 +554,14 @@ export default function BoertjeLatenPage() {
                   className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
                   <div className="font-medium text-gray-700">Voedingstechnieken </div>
-                  <div className="text-sm text-gray-600">Alle technieken voor flesvoeding</div>
+                  <div className="text-gray-600">Alle technieken voor flesvoeding</div>
                 </Link>
                 <Link 
                   href="/kennisbank/problemen-oplossen"
                   className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
                 >
                   <div className="font-medium text-gray-700">Problemen Oplossen </div>
-                  <div className="text-sm text-gray-600">Hulp bij voedingsproblemen</div>
+                  <div className="text-gray-600">Hulp bij voedingsproblemen</div>
                 </Link>
               </div>
             </div>
