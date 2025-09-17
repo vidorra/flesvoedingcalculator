@@ -38,7 +38,7 @@ export default function TweelingVoedenPage() {
       ]
     },
     {
-      category: 'Handige extra's',
+      category: 'Handige extras',
       items: [
         { name: 'Twin Z Pillow', price: '€85', description: 'Ergonomisch voeden' },
         { name: 'Bottle Buddy', price: '€25', description: 'Fleshouder per baby' },

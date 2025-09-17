@@ -56,7 +56,7 @@ export default function NachtvoedingOptimaliserenPage() {
       ]
     },
     {
-      category: 'Handige extra's (€40-100)',
+      category: 'Handige extras (€40-100)',
       items: [
         { name: 'Baby Perfect Prep bereidingsmachine', price: '€180', benefit: 'Perfect temperatuur in 2 minuten' },
         { name: 'Draadloze thermometer', price: '€30', benefit: 'Temperatuur checken zonder bewegen' },

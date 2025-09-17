@@ -310,10 +310,10 @@ export default function BabyLerenZelfDrinkenPage() {
                     Start de training 2-3 maanden voor opvang begint.
                   </p>
                   <ul className="space-y-1 text-sm text-amber-700">
-                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Independent drinking gedurende de dag</span></li>
-                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Redelijke spill control</span></li>
-                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Can signal thirst/needs</span></li>
-                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Follows daycare routine</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Zelfstandig drinken gedurende de dag</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Redelijke morsen controle</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Kan dorst/behoefte aangeven</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Volgt opvang routine</span></li>
                   </ul>
                 </div>
               </div>
