@@ -133,6 +133,11 @@ h2 {
   color: rgb(146, 64, 14) !important; /* text-amber-800 */
 }
 
+/* Exception: h2 elements in bg-primary should use white color for proper contrast */
+.bg-primary h2 {
+  color: white !important;
+}
+
 /* Enhanced mobile input support */
 input, select, textarea {
   color: rgb(31, 41, 55); /* text-gray-800 */
