@@ -236,15 +236,15 @@ export default function HoudbaarheidFlesvoedingPage() {
                       <span className="text-gray-700 text-sm">0-1 uur: Veilig niveau</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <AlertTriangle className="w-4 h-4 text-amber-500 flex-shrink-0" />
+                      <AlertTriangle className="w-4 h-4 text-gray-500 flex-shrink-0" />
                       <span className="text-gray-700 text-sm">1-2 uur: Verhoogd risico</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <XCircle className="w-4 h-4 text-amber-700 flex-shrink-0" />
+                      <XCircle className="w-4 h-4 text-gray-700 flex-shrink-0" />
                       <span className="text-gray-700 text-sm">2-4 uur: Gevaarlijk niveau</span>
                     </li>
                     <li className="flex items-center space-x-2">
-                      <XCircle className="w-4 h-4 text-amber-700 flex-shrink-0" />
+                      <XCircle className="w-4 h-4 text-gray-700 flex-shrink-0" />
                       <span className="text-gray-700 text-sm">4+ uur: Zeer gevaarlijk</span>
                     </li>
                   </ul>
@@ -273,9 +273,9 @@ export default function HoudbaarheidFlesvoedingPage() {
                         <td className="p-3 text-gray-700">{bacteria.symptoms}</td>
                         <td className="p-3">
                           <span className={`text-sm font-medium ${
-                            bacteria.severity === 'Levensbedreigend' ? 'text-amber-700' :
-                            bacteria.severity === 'Zeer hoog' ? 'text-orange-600' :
-                            'text-amber-600'
+                            bacteria.severity === 'Levensbedreigend' ? 'text-gray-800' :
+                            bacteria.severity === 'Zeer hoog' ? 'text-gray-700' :
+                            'text-gray-600'
                           }`}>
                             {bacteria.severity}
                           </span>
@@ -429,7 +429,7 @@ export default function HoudbaarheidFlesvoedingPage() {
                   <AlertTriangle className="w-5 h-5 text-amber-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-700 mb-2">Wanneer Direct Medische Hulp Zoeken</h3>
+                  <h3 className="font-semibold text-amber-800 mb-2">Wanneer Direct Medische Hulp Zoeken</h3>
                   <p className="text-sm text-amber-700 leading-relaxed mb-3">
                     Contact opnemen met huisarts of spoedeisende hulp bij deze symptomen na mogelijk bedorven voeding:
                   </p>
