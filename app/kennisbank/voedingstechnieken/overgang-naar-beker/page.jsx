@@ -99,7 +99,7 @@ const premiumBrands = [
     brand: "Philips AVENT Overgang Serie",
     price: "€10-18 per cup",
     rating: "4.7/5", 
-    availability: "Premium baby stores + online",
+    availability: "Hoogwaardige baby stores + online",
     pros: [
       "Highest quality materials",
       "Extensive research backing",
@@ -107,7 +107,7 @@ const premiumBrands = [
       "Excellent Nederlandse service"
     ],
     cons: [
-      "Premium pricing",
+      "Hoogwaardige prijsstelling",
       "Limited discount availability"
     ]
   },
@@ -227,7 +227,7 @@ const commonProblems = [
       "Rejecting all liquids multiple days"
     ],
     solutions: [
-      "Backup bottle: Keep 1-2 fles feedings",
+      "Reserve fles: Bewaar 1-2 fles voedingen",
       "Multiple opportunities: More frequent offers",
       "Liquid variety: Water, milk, diluted sap",
       "Close monitoring: Daily intake tracking"
@@ -624,7 +624,7 @@ export default function OvergangNaarBekerPage() {
                         <div>
                           <p className="text-sm text-gray-600 mb-1">Nadelen:</p>
                           <ul className="text-sm space-y-1">
-                            <li className="text-gray-600"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Premium prijzen</span></li>
+                            <li className="text-gray-600"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Hoogwaardige prijzen</span></li>
                             <li className="text-gray-600"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Beperkte kortingen beschikbaar</span></li>
                           </ul>
                         </div>
@@ -943,7 +943,7 @@ export default function OvergangNaarBekerPage() {
                         <ul className="space-y-1">
                           <li className="flex items-center space-x-2">
                             <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                            <span className="text-gray-600 text-sm">Backup fles behouden</span>
+                            <span className="text-gray-600 text-sm">Reserve fles behouden</span>
                           </li>
                           <li className="flex items-center space-x-2">
                             <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />

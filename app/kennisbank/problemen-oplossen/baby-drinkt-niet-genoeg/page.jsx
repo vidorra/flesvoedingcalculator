@@ -427,7 +427,7 @@ export default function BabyDrinktNietGenoegPage() {
               
               <div className="mt-6 p-4 bg-white border border-gray-200 rounded-lg">
                 <p className="text-gray-700 text-sm text-center italic">
-                  Baby's die weinig drinken zijn meestal gewoon efficient drinkers of hebben minder nodig. Met patience, systematische aanpak en professionele ondersteuning wanneer nodig, lost dit probleem zich meestal binnen enkele weken op.
+                  Baby's die weinig drinken zijn meestal gewoon efficiënte drinkers of hebben minder nodig. Met geduld, systematische aanpak en professionele ondersteuning wanneer nodig, lost dit probleem zich meestal binnen enkele weken op.
                 </p>
               </div>
             </div>

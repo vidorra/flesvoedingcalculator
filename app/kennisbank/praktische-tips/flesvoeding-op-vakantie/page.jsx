@@ -31,14 +31,14 @@ export default function VakantiePage() {
       icon: '',
       pros: ['Volledige controle over voorzieningen', 'Flexibele stops schema', 'Onbeperkte bagage ruimte'],
       cons: ['Koeling management uitdaging', 'Weather dependent', 'Long travel times baby'],
-      tips: '12V koelbox, stops elke 2-3 uur, backup routes plannen'
+      tips: '12V koelbox, stops elke 2-3 uur, reserve routes plannen'
     },
     {
       type: 'Trein Reizen',
       icon: '',
       pros: ['More space movement', 'Onboard facilities', 'Less security restrictions'],
       cons: ['Limited hot water NS', 'Crowded during peak', 'Connection timing critical'],
-      tips: 'Family carriages reserveren, thermos meenemen, flexible tickets'
+      tips: 'Family carriages reserveren, thermos meenemen, flexibele tickets'
     }
   ]
 
@@ -58,7 +58,7 @@ export default function VakantiePage() {
     {
       type: 'Camping',
       features: ['High-quality cooler essential', 'Portable heating options', 'Weather protection', 'Emergency communication'],
-      setup: ['Water source verification', 'Backup power systems', 'Medical facility distance', 'Emergency evacuation plan'],
+      setup: ['Water source verification', 'Reserve stroomsystemen', 'Medical facility distance', 'Emergency evacuation plan'],
       advantages: 'Adventure experience, nature connection, budget friendly'
     }
   ]
@@ -88,19 +88,19 @@ export default function VakantiePage() {
     {
       scenario: 'Lost/Damaged Formula',
       immediate: ['Assess remaining supply', 'Locate nearest pharmacy', 'Contact local pediatrician'],
-      backup: ['Research local brands safety', 'Embassy assistance', 'Insurance documentation'],
+      noodplan: ['Research local brands safety', 'Embassy assistance', 'Insurance documentation'],
       prevention: '25% extra supply always, multiple storage locations'
     },
     {
       scenario: 'Baby Illness During Travel',
       immediate: ['Temperature monitoring', 'Hydration maintenance', 'Medical consultation'],
-      backup: ['Hospital preparation', 'Travel insurance activation', 'Family support coordination'],
+      noodplan: ['Hospital preparation', 'Travel insurance activation', 'Family support coordination'],
       prevention: 'Comprehensive medical kit, local pediatrician contacts, emergency protocols'
     },
     {
       scenario: 'Formula Rejection New Environment',
       immediate: ['Different temperature try', 'Other caregiver attempt', 'Familiar routine restore'],
-      backup: ['Medical consultation', 'Gradual environment adaptation', 'Comfort items utilization'],
+      noodplan: ['Medical consultation', 'Gradual environment adaptation', 'Comfort items utilization'],
       prevention: 'Practice changes at home, bring comfort items, gradual transitions'
     }
   ]
@@ -121,7 +121,7 @@ export default function VakantiePage() {
       'Sterilizing equipment portable',
       'Extra bottles/sippy cups',
       'Cleaning supplies bulk',
-      'Backup clothing spills',
+      'Reserve kleding voor spills',
       'Comfort items (blankets/toys)',
       'Medical kit comprehensive',
       'Local pharmacy research'
@@ -345,9 +345,9 @@ export default function VakantiePage() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-medium text-primary mb-2">Backup Plan:</h4>
+                        <h4 className="font-medium text-primary mb-2">Noodplan:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
-                          {protocol.backup.map((plan, idx) => (
+                          {protocol.noodplan.map((plan, idx) => (
                             <li key={index} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                               <span>{plan}</span>
@@ -456,7 +456,7 @@ export default function VakantiePage() {
                   <div className="text-sm text-gray-600 space-y-2">
                     <div><strong>Uitdagingen:</strong> Formula storage temperature, spoilage risk</div>
                     <div><strong>Oplossingen:</strong> Insulated bags, ice pack rotation, shaded areas</div>
-                    <div><strong>Extra behoeften:</strong> Verhoogde hydratatie, cooling backup</div>
+                    <div><strong>Extra behoeften:</strong> Verhoogde hydratatie, cooling reserve</div>
                     <div><strong>Planning:</strong> Climate-controlled accommodation essentieel</div>
                   </div>
                 </div>
@@ -467,7 +467,7 @@ export default function VakantiePage() {
                     <div><strong>Uitdagingen:</strong> Formula freezing, heating reliability</div>
                     <div><strong>Oplossingen:</strong> Thermos equipment, indoor feeding areas</div>
                     <div><strong>Voordelen:</strong> No spoilage concerns, cozy indoor routines</div>
-                    <div><strong>Planning:</strong> Backup heating sources, weather monitoring</div>
+                    <div><strong>Planning:</strong> Reserve verwarmingsbronnen, weather monitoring</div>
                   </div>
                 </div>
               </div>

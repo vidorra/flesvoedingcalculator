@@ -59,7 +59,7 @@ export default function GeldBesparenPage() {
     {
       scenario: 'Comfortabel Budget',
       monthly: '€50-70',
-      strategies: ['Mid-range merken (Hero Baby)', 'Quality-price balancing', 'Convenience factor', 'Flexible shopping'],
+      strategies: ['Mid-range merken (Hero Baby)', 'Quality-price balancing', 'Convenience factor', 'Flexibel winkelen'],
       realistic: true
     },
     {
