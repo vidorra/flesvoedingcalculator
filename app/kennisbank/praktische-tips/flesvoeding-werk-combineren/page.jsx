@@ -275,7 +275,7 @@ export default function FlesvoedingWerkPage() {
                         </div>
                       </div>
                       <div>
-                        <h4 className="font-medium text-gray-600 mb-2">Kinderopvang</h4>
+                        <h4 className="font-medium text-primary mb-2">Kinderopvang</h4>
                         <div className="text-sm text-gray-600 space-y-1">
                           {schedule.daycare.map((item, idx) => (
                             <div key={idx}>{item}</div>
@@ -283,7 +283,7 @@ export default function FlesvoedingWerkPage() {
                         </div>
                       </div>
                       <div>
-                        <h4 className="font-medium text-gray-600 mb-2">Avond</h4>
+                        <h4 className="font-medium text-primary mb-2">Avond</h4>
                         <div className="text-sm text-gray-600 space-y-1">
                           {schedule.evening.map((item, idx) => (
                             <div key={idx}>{item}</div>
@@ -305,7 +305,7 @@ export default function FlesvoedingWerkPage() {
               
               <div className="space-y-4">
                 {stressManagement.map((item, index) => (
-                  <div key={index} className="border-l-4 border-primary pl-4 py-2">
+                  <div key={index} className="p-4">
                     <h3 className="font-medium text-gray-600 mb-1">"{item.concern}"</h3>
                     <p className="text-sm text-gray-600">{item.solution}</p>
                   </div>
