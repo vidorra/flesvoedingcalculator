@@ -419,7 +419,7 @@ export default function KostenVanFlesvoeding() {
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                      <span className="text-gray-700"><strong>Huismerk kiezen</strong>: 40% goedkoper dan A-merken</span>
+                      <span className="text-gray-700"><strong>Huismerk kiezen</strong>: 40% goedkoper dan bekende merken</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -558,7 +558,7 @@ export default function KostenVanFlesvoeding() {
 
                 <div>
                   <h4 className="font-semibold text-primary mb-2">Hoeveel bespaar ik als ik huismerk koop?</h4>
-                  <p className="text-gray-700">Gemiddeld 40-50% besparing ten opzichte van A-merken. Voor een jaar kan dit €200-300 schelen.</p>
+                  <p className="text-gray-700">Gemiddeld 40-50% besparing ten opzichte van bekende merken. Voor een jaar kan dit €200-300 schelen.</p>
                 </div>
 
                 <div>

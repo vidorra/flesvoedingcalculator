@@ -29,7 +29,7 @@ export default function TweelingVoedenPage() {
 
   const equipmentEssentials = [
     {
-      category: 'Must-Haves (Eerste 6 Maanden)',
+      category: 'Essentiële items (Eerste 6 Maanden)',
       items: [
         { name: 'Philips Avent Anti-Colic', price: '€6 per stuk', description: 'Vermindert spugen' },
         { name: 'MAM Easy Start', price: '€5 per stuk', description: 'Makkelijk vast te houden' },
@@ -38,7 +38,7 @@ export default function TweelingVoedenPage() {
       ]
     },
     {
-      category: 'Nice-to-Haves',
+      category: 'Handige extra's',
       items: [
         { name: 'Twin Z Pillow', price: '€85', description: 'Ergonomisch voeden' },
         { name: 'Bottle Buddy', price: '€25', description: 'Fleshouder per baby' },
@@ -71,8 +71,8 @@ export default function TweelingVoedenPage() {
     },
     {
       problem: 'Beide baby\'s wakker houden elkaar wakker',
-      solution: 'Tag-team en white noise',
-      details: ['Separate kamers indien mogelijk', 'White noise machines (€25)', 'Dream feeding: voeden zonder volledig wakker maken']
+      solution: 'Tag-team en witte ruis',
+      details: ['Separate kamers indien mogelijk', 'Witte ruis machines (€25)', 'Dream feeding: voeden zonder volledig wakker maken']
     }
   ]
 

@@ -279,7 +279,7 @@ export default function BioOrganischeFlesvoedingPage() {
                 <div className="bg-white rounded-lg p-4">
                   <h4 className="font-medium text-gray-700 mb-2">Lange Termijn Impact</h4>
                   <p className="text-gray-700 text-sm">
-                    Wageningen University 5-jaar follow-up studie: Bio groep had 19% minder antibiotica gebruik, 
+                    Wageningen University 5-jaar vervolgafspraken studie: Bio groep had 19% minder antibiotica gebruik, 
                     14% minder ziekenhuisopnames, en sterkere immuunrespons op vaccinaties.
                   </p>
                 </div>

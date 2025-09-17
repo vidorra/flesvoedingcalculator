@@ -324,7 +324,7 @@ export default function VakantiePage() {
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
                 <AlertTriangle className="w-5 h-5 mr-2" />
-                Emergency Preparedness & Crisis Management
+                Emergency Preparedness & Crisis Beheer
               </h2>
               
               <div className="space-y-6">
@@ -381,7 +381,7 @@ export default function VakantiePage() {
                 </div>
 
                 <div className="bg-white rounded-lg p-4 border border-gray-200">
-                  <h3 className="font-medium text-primary mb-3">Checked Luggage Must-Haves</h3>
+                  <h3 className="font-medium text-primary mb-3">Checked Luggage Essentiële items</h3>
                   <div className="space-y-2">
                     {packingEssentials.checkedLuggage.map((item, index) => (
                       <div key={index} className="flex items-center space-x-2">
@@ -422,7 +422,7 @@ export default function VakantiePage() {
                     <ul className="text-gray-600 space-y-1">
                       <li className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                        <span>White noise app (sleep routine)</span>
+                        <span>Witte ruis app (sleep routine)</span>
                       </li>
                       <li className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>

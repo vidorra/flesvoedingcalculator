@@ -65,7 +65,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
     "Nutrilon Pepti Allergy - Nederlandse marktleider",
     "Neocate LCP - voor complexe gevallen",
     "Volledig vergoed op kinderarts recept",
-    "Professional monitoring en follow-up vereist"
+    "Professional monitoring en vervolgafspraken vereist"
   ]
 
   return (

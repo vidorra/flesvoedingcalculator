@@ -165,7 +165,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
       ]
     },
     {
-      timeframe: 'Weekend: Consolidatie',
+      timeframe: 'Weekend: Stabilisatie',
       activities: [
         'Meer tijd voor geduldig aanbieden',
         'Partner kan verschillende momenten proberen',

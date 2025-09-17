@@ -171,7 +171,7 @@ const weeklyPlan = [
       "More independent holding",
       "Meal time integration",
       "Volume target 120-180ml",
-      "Spill management improving",
+      "Morsen beheer improving",
       "Consistent daily routine"
     ],
     tips: [
@@ -976,7 +976,7 @@ export default function OvergangNaarBekerPage() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-medium text-gray-700 mb-2">Regressie management:</h4>
+                        <h4 className="font-medium text-gray-700 mb-2">Regressie beheer:</h4>
                         <ul className="space-y-1">
                           <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Geduld - tijdelijke terugval</span></li>
                           <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Terug naar basics</span></li>
@@ -1023,7 +1023,7 @@ export default function OvergangNaarBekerPage() {
 
                 <div>
                   <h3 className="font-medium text-gray-700 mb-2">Kan ik de overgang versnellen voor kinderdagverblijf?</h3>
-                  <p className="text-gray-600 text-sm">Ja, maar idealiter start je 4-6 weken van tevoren. Overleg met leidsters over hun aanpak en zorg voor consistentie tussen thuis en opvang. Backup plan altijd handig.</p>
+                  <p className="text-gray-600 text-sm">Ja, maar idealiter start je 4-6 weken van tevoren. Overleg met leidsters over hun aanpak en zorg voor consistentie tussen thuis en opvang. Reserveplan altijd handig.</p>
                 </div>
               </div>
             </div>

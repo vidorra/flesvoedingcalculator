@@ -110,7 +110,7 @@ export default function KrampjesNaFlesvoedingPage() {
           cause: 'Microbioom Ontwikkeling',
           percentage: '20%',
           description: 'Darmflora stabiliseert rond 2-3 maanden',
-          solution: 'Overweeg infant probiotics'
+          solution: 'Overweeg baby probiotica'
         }
       ]
     }
@@ -119,24 +119,24 @@ export default function KrampjesNaFlesvoedingPage() {
   const solutions = [
     {
       category: 'Anti-Koliek Speen Upgrade',
-      effectiveness: 'MEEST EFFECTIEF',
+      effectiviteit: 'MEEST EFFECTIEF',
       options: [
         {
           name: 'Dr. Brown\'s Options',
           features: 'Volledig vacuum eliminatie systeem',
-          effectiveness: '85% minder lucht inslikken',
+          effectiviteit: '85% minder lucht inslikken',
           price: '€6-8 per speen'
         },
         {
           name: 'MAM Easy Start',
           features: 'Zelf-steriliserend systeem, Silk-texture',
-          effectiveness: 'Breed geaccepteerd door baby\'s',
+          effectiviteit: 'Breed geaccepteerd door baby\'s',
           price: '€4-6 per speen'
         },
         {
           name: 'Tommee Tippee Anti-Colic',
           features: 'Star valve technologie',
-          effectiveness: 'Goede prijs/kwaliteit',
+          effectiviteit: 'Goede prijs/kwaliteit',
           price: '€3-5 per speen'
         }
       ]
@@ -175,7 +175,7 @@ export default function KrampjesNaFlesvoedingPage() {
   const physicalComfort = [
     {
       technique: 'Buikmassage Protocol',
-      effectiveness: 'DIRECT EFFECT',
+      effectiviteit: 'DIRECT EFFECT',
       steps: [
         'Start rechtsonder (appendix gebied)',
         'Massage met klok mee omhoog (5 cirkels)',
@@ -192,15 +192,15 @@ export default function KrampjesNaFlesvoedingPage() {
     },
     {
       technique: 'Positie Therapie',
-      effectiveness: 'COMFORT',
+      effectiviteit: 'COMFORT',
       positions: [
         {
-          name: 'Colic Carry',
+          name: 'Koliek-draaghouding',
           description: 'Baby op buik langs onderarm, hoofd bij elleboog',
           duration: 'Max 10-15 minuten'
         },
         {
-          name: 'Bicycle Legs',
+          name: 'Fietsbeweging met benen',
           description: 'Voorzichtig benen bewegen alsof fietsen',
           duration: '30 seconden per richting'
         }
@@ -210,19 +210,19 @@ export default function KrampjesNaFlesvoedingPage() {
 
   const ageSpecificApproach = [
     {
-      age: '0-6 Weken: Survival Mode',
+      age: '0-6 Weken: Overlevingsmodus',
       expectations: [
-        'Peak periode: Krampjes zijn normaal en frequent',
+        'Piekperiode: Krampjes zijn normaal en frequent',
         'Duur: Kan 3-4 uur per dag zijn',
-        'Timing: Vooral \'s avonds (purple crying period)',
+        'Timing: Vooral \'s avonds (periode van intens avondhuilen)',
         'Focus: Comfort en overleven, niet "oplossen"'
       ],
-      toolkit: [
+      gereedschapskist: [
         'Anti-koliek spenen (2-3 verschillende)',
-        'Infant gas drops (Infacol/Espumisan)',
+        'Anti-windje druppels (Infacol/Espumisan)',
         'Draagzak voor hands-free troost',
-        'White noise app',
-        'Support netwerk (familie/vrienden)',
+        'Witte ruis app',
+        'Ondersteuningsnetwerk (familie/vrienden)',
         'Professionele backup (consultatiebureau nummer)'
       ]
     },
@@ -318,11 +318,11 @@ export default function KrampjesNaFlesvoedingPage() {
     {
       timeframe: 'Avond Routine (17:00-22:00)',
       tasks: [
-        'Extra langzame voeding (prime krampje tijd)',
+        'Extra langzame voeding (piek-krampjes tijd)',
         'Dimmer licht (vermindert overstimulatie)',
         'Langere boertje sessies',
         'Comfort maatregelen ready',
-        'Partner support organiseren'
+        'Partner ondersteuning organiseren'
       ]
     }
   ]
@@ -342,7 +342,7 @@ export default function KrampjesNaFlesvoedingPage() {
     },
     {
       question: 'Kunnen probiotics helpen?',
-      answer: 'Ja, specifieke infant probiotics (Lactobacillus reuteri) tonen 50% verbetering in studies. Altijd eerst arts raadplegen.'
+      answer: 'Ja, specifieke baby probiotica (Lactobacillus reuteri) tonen 50% verbetering in studies. Altijd eerst arts raadplegen.'
     },
     {
       question: 'Wanneer worden krampjes zorgelijk?',
@@ -546,7 +546,7 @@ export default function KrampjesNaFlesvoedingPage() {
                         <span className="text-sm text-gray-600">{option.price}</span>
                       </div>
                       <p className="text-sm text-gray-700 mb-1">{option.features}</p>
-                      <p className="text-sm font-medium text-gray-900">{option.effectiveness}</p>
+                      <p className="text-sm font-medium text-gray-900">{option.effectiviteit}</p>
                     </div>
                   ))}
                 </div>
@@ -583,7 +583,7 @@ export default function KrampjesNaFlesvoedingPage() {
                     <div className="flex items-center justify-between mb-4">
                       <h3 className="font-medium text-gray-900">{comfort.technique}</h3>
                       <span className="text-sm font-medium bg-primary text-white px-2 py-1 rounded">
-                        {comfort.effectiveness}
+                        {comfort.effectiviteit}
                       </span>
                     </div>
                     
@@ -665,7 +665,7 @@ export default function KrampjesNaFlesvoedingPage() {
                     
                     {age.toolkit && (
                       <div className="mb-4">
-                        <h4 className="font-medium text-primary mb-2">Essential Toolkit:</h4>
+                        <h4 className="font-medium text-primary mb-2">Essential Gereedschapskist:</h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                           {age.toolkit.map((tool, toolIndex) => (
                             <div key={toolIndex} className="flex items-center space-x-2">

@@ -513,7 +513,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                   <h3 className="font-medium text-primary mb-3">Nachtstrategie optimalisatie</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <h4 className="font-medium text-gray-700 mb-2">Efficiency maximalisatie:</h4>
+                      <h4 className="font-medium text-gray-700 mb-2">Efficiëntie maximalisatie:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
@@ -628,7 +628,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                           <ul className="space-y-1">
                             <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700">Clear expectations: Geschreven agreements</span></li>
                             <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700">Flexibele tijdslijnen: Ruimte voor aanpassingen</span></li>
-                            <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700">Backup plans: Wat als ziekte/stress</span></li>
+                            <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700">Reserveplannen: Wat als ziekte/stress</span></li>
                           </ul>
                         </div>
                         <div>
@@ -822,12 +822,12 @@ export default function PartnerBetrekkenFlesvoedingPage() {
 
                 <div>
                   <h3 className="font-medium text-gray-700 mb-2">We vechten constant over flesvoeding. Is dit normaal?</h3>
-                  <p className="text-gray-600 text-sm">Sleep deprivatie verergert alles: eerste 3 maanden zijn survival mode, conflict is normaal maar niet houdbaar. Zoek hulp bij consultatiebureau, kraamzorg, of relatietherapeut als het escaleert.</p>
+                  <p className="text-gray-600 text-sm">Sleep deprivatie verergert alles: eerste 3 maanden zijn overlevingsmodus, conflict is normaal maar niet houdbaar. Zoek hulp bij consultatiebureau, kraamzorg, of relatietherapeut als het escaleert.</p>
                 </div>
 
                 <div>
                   <h3 className="font-medium text-gray-700 mb-2">Hoe combineren we flesvoeding met beide carrières?</h3>
-                  <p className="text-gray-600 text-sm">Nederlandse flexibiliteit benutten: gebruik vaderschapsverlof strategisch, vraag flexibele werkuren, investeer in efficient equipment, plan childcare met flesvoeding ervaring.</p>
+                  <p className="text-gray-600 text-sm">Nederlandse flexibiliteit benutten: gebruik vaderschapsverlof strategisch, vraag flexibele werkuren, investeer in efficiënt equipment, plan childcare met flesvoeding ervaring.</p>
                 </div>
               </div>
             </div>

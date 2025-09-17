@@ -43,7 +43,7 @@ export default function FlesvoedingPrematurePage() {
   const nicu_protocols = [
     'Wekelijkse gewichtscontroles (2x per week eerste maand)',
     'Maandelijkse bloedcontroles (ijzer, calcium, fosfor, vitamines)',
-    'NICU follow-up polikliniek controles',
+    'NICU vervolgafspraken polikliniek controles',
     'Diëtist begeleiding voor optimale voeding',
     'Groei- en ontwikkelingsmonitoring',
     'Vaccinatieschema aanpassingen'
@@ -164,7 +164,7 @@ export default function FlesvoedingPrematurePage() {
                 </li>
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <span><strong>Lange termijn:</strong> Follow-up tot schoolleeftijd</span>
+                  <span><strong>Lange termijn:</strong> Vervolgafspraken tot schoolleeftijd</span>
                 </li>
               </ul>
             </div>
@@ -323,11 +323,11 @@ export default function FlesvoedingPrematurePage() {
 
         {/* NICU Protocols */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Nederlandse NICU Protocollen en Follow-up</h2>
+          <h2 className="text-lg font-semibold text-primary mb-4">Nederlandse NICU Protocollen en Vervolgafspraken</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <h3 className="font-medium text-primary mb-3">Standaard follow-up programma:</h3>
+              <h3 className="font-medium text-primary mb-3">Standaard vervolgafspraken programma:</h3>
               <div className="space-y-2">
                 {nicu_protocols.map((protocol, index) => (
                   <div key={index} className="flex items-start space-x-2">
@@ -482,7 +482,7 @@ export default function FlesvoedingPrematurePage() {
             <div>
               <h3 className="font-medium text-primary mb-3">Nederlandse protocollen:</h3>
               <div className="space-y-2 text-sm text-primary">
-                <div> <strong>NVK 2023:</strong> Richtlijn Follow-up van Prematuren</div>
+                <div> <strong>NVK 2023:</strong> Richtlijn Vervolgafspraken van Prematuren</div>
                 <div> <strong>Landelijke Neonatologie Richtlijnen (LNR)</strong></div>
                 <div> <strong>NICU protocollen:</strong> AMC, Erasmus MC, UMCU</div>
                 <div> <strong>Voedingscentrum:</strong> Advies premature baby voeding</div>
