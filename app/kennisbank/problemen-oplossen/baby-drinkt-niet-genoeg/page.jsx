@@ -37,7 +37,7 @@ export default function BabyDrinktNietGenoegPage() {
                 Baby drinkt niet genoeg: Oorzaken, signalen en praktische oplossingen
               </h1>
               <p className="text-gray-600 leading-relaxed">
-                Complete troubleshooting gids voor ouders met een baby die weinig drinkt
+                Volledige probleemoplossings-gids voor ouders met een baby die weinig drinkt
               </p>
             </div>
 
@@ -395,7 +395,7 @@ export default function BabyDrinktNietGenoegPage() {
 
             {/* Key reminders */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Remember: Belangrijke punten</h2>
+              <h2 className="text-lg font-semibold text-primary mb-4">Onthoud: Belangrijke punten</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -415,11 +415,11 @@ export default function BabyDrinktNietGenoegPage() {
                   <ul className="space-y-3">
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700 text-sm"><strong>Patience is key</strong> - voedingsproblemen lossen meestal zichzelf op</span>
+                      <span className="text-gray-700 text-sm"><strong>Geduld is een schone zaak</strong> - voedingsproblemen lossen meestal zichzelf op</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700 text-sm"><strong>Professional help is er</strong> - schroom niet om hulp te vragen</span>
+                      <span className="text-gray-700 text-sm"><strong>Professionele hulp is beschikbaar</strong> - schroom niet om hulp te vragen</span>
                     </li>
                   </ul>
                 </div>

@@ -20,7 +20,7 @@ export default function VoedingsritmeOpbouwenPage() {
   const ageSpecificSchedules = [
     {
       age: '0-6 Weken',
-      phase: 'Foundation Building',
+      phase: 'Basis leggen',
       frequency: 'Elke 2-3 uur (8-12x per dag)',
       amount: '50-90ml per voeding',
       flexibility: 'Volg baby\'s signalen, begin met basis',
@@ -56,7 +56,7 @@ export default function VoedingsritmeOpbouwenPage() {
     },
     {
       age: '3-6 Maanden',
-      phase: 'Consolidatie',
+      phase: 'Stabilisatie',
       frequency: 'Elke 4 uur (5-6x per dag)',
       amount: '150-200ml per voeding',
       flexibility: 'Doorslapen wordt mogelijk',
@@ -117,7 +117,7 @@ export default function VoedingsritmeOpbouwenPage() {
         'Kies 3 vaste tijden (bijv. 7:00, 13:00, 19:00)',
         'Werk naar deze tijden toe (±30 minuten flexibiliteit)',
         'Behoud responsive feeding tussen vaste momenten',
-        'Introduceer bedtime routine'
+        'Introduceer bedtijdroutine'
       ],
       tips: [
         'Te vroeg honger? Afleiden met speeltje/wandeling',
@@ -126,7 +126,7 @@ export default function VoedingsritmeOpbouwenPage() {
       ],
       progression: [
         'Week 3: Introduceer 3 vaste voedingstijden',
-        'Week 4: Verfijn bedtime routine en interval timing'
+        'Week 4: Verfijn bedtijdroutine en interval timing'
       ]
     },
     {
@@ -302,7 +302,7 @@ export default function VoedingsritmeOpbouwenPage() {
 
   const growthAdjustments = [
     {
-      phase: 'Growth Spurts (Groeispurts)',
+      phase: 'Groeispurts (Groeispurts)',
       timing: [
         '2-3 weken: Extra voedingen 2-3 dagen',
         '6 weken: Langere periode (4-5 dagen)',
@@ -357,7 +357,7 @@ export default function VoedingsritmeOpbouwenPage() {
         'Nachtvoedingen: Beurten maken',
         'Weekend: Een ouder slaapt uit, andere vroege shift',
         'Schema communicatie: Beide ouders moeten routine kennen',
-        'Backup plannen: Voor wanneer een ouder weg is'
+        'Reserveplannen: Voor wanneer een ouder weg is'
       ],
       conflictPrevention: [
         'Schriftelijk schema voorkomt miscommunicatie',

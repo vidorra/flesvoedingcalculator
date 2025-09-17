@@ -44,7 +44,7 @@ export default function GeldBesparenPage() {
     {
       strategy: 'Merkenvergelijking',
       savings: '25-50%',
-      methods: ['Budget vs Premium analyse', 'EU-standaarden zijn identiek', 'Store brands kwaliteit', 'Blind taste tests'],
+      methods: ['Budget versus premium analyse', 'EU-standaarden zijn identiek', 'Huismerken kwaliteit', 'Blind taste tests'],
       tips: '85% baby\'s accepteert budget merken even goed'
     }
   ]
@@ -53,7 +53,7 @@ export default function GeldBesparenPage() {
     {
       scenario: 'Strak Budget',
       monthly: '€30-40',
-      strategies: ['Store brands exclusively', 'Bulk buying maximization', 'Cashback optimization', 'DIY preparation'],
+      strategies: ['Huismerken exclusively', 'Grootverpakingen kopen maximization', 'Cashback optimalisatie', 'DIY preparation'],
       realistic: true
     },
     {
@@ -95,7 +95,7 @@ export default function GeldBesparenPage() {
       hack: 'Bulk Preparation',
       description: 'Weekend batch prep systeem',
       savings: '15% + tijd',
-      method: 'Pre-measured containers + efficiency gains'
+      method: 'Pre-measured containers + efficiëntie gains'
     }
   ]
 

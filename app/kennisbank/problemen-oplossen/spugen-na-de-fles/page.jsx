@@ -48,7 +48,7 @@ export default function SpugenNaDeFlesPage() {
   const feedingTechniques = [
     {
       technique: 'Langzamer Voeden',
-      effectiveness: 'MEEST EFFECTIEF',
+      effectiviteit: 'MEEST EFFECTIEF',
       methods: [
         'Pauzes elke 30-40ml',
         'Laat baby zelf het tempo bepalen',
@@ -137,7 +137,7 @@ export default function SpugenNaDeFlesPage() {
 
   const medicalConditions = [
     {
-      condition: 'GERD (Gastro-Esofageale Reflux)',
+      condition: 'GORD (Gastro-Oesofageale Reflux Disease)',
       symptoms: [
         'Pijnlijk huilen tijdens/na voeding',
         'Boogrug maken tijdens drinken',
@@ -191,7 +191,7 @@ export default function SpugenNaDeFlesPage() {
   const practicalTips = [
     {
       category: 'Schoonmaak & Voorbereiding',
-      subcategory: 'Spuugluiers Strategie',
+      subcategory: 'Spuuglappenstrategie',
       tips: [
         'Minimum 10 stuks altijd voorradig',
         'Verschillende locaties: Elke kamer een luier',
@@ -289,12 +289,12 @@ export default function SpugenNaDeFlesPage() {
       support: [
         'Deel zorgen met partner/familie',
         'Consultatiebureaudokter voor geruststelling',
-        'Online communities van Nederlandse ouders',
+        'Online gemeenschappen van Nederlandse ouders',
         'Praktische hulp bij schoonmaken accepteren'
       ]
     },
     {
-      category: 'Stress Management',
+      category: 'Stressbeheersing',
       strategies: [
         'Normaliseer dat het tijdelijk is',
         'Focus op baby\'s algemene welzijn',
@@ -385,7 +385,7 @@ export default function SpugenNaDeFlesPage() {
                 <div>
                   <h3 className="font-medium text-primary mb-3 flex items-center">
                     <CheckCircle className="w-4 h-4 mr-2" />
-                    NORMAAL SPUGEN (Posseting)
+                    NORMAAL SPUGEN (Licht spugen)
                   </h3>
                   
                   <div className="mb-4">
@@ -441,9 +441,9 @@ export default function SpugenNaDeFlesPage() {
                   <div key={index}>
                     <div className="flex items-center justify-between mb-3">
                       <h3 className="font-medium text-gray-700">{technique.technique}</h3>
-                      {technique.effectiveness && (
+                      {technique.effectiviteit && (
                         <span className="text-xs bg-white text-gray-700 px-2 py-1 rounded-full">
-                          {technique.effectiveness}
+                          {technique.effectiviteit}
                         </span>
                       )}
                     </div>
