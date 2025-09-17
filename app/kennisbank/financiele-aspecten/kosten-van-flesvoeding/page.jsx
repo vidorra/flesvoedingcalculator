@@ -70,7 +70,7 @@ export default function KostenVanFlesvoeding() {
                       <th className="border border-gray-300 px-4 py-2 text-left">Categorie</th>
                       <th className="border border-gray-300 px-4 py-2 text-left">Budget optie</th>
                       <th className="border border-gray-300 px-4 py-2 text-left">Gemiddeld</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Premium</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Hoogwaardig</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -266,7 +266,7 @@ export default function KostenVanFlesvoeding() {
                 </div>
 
                 <div>
-                  <h3 className="font-medium text-primary mb-4">Premium/Biologisch (€25-35 per 600-800g blik)</h3>
+                  <h3 className="font-medium text-primary mb-4">Hoogwaardig/Biologisch (€25-35 per 600-800g blik)</h3>
                   
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
@@ -335,7 +335,7 @@ export default function KostenVanFlesvoeding() {
                     </li>
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-700"><strong>Premium</strong>: €15-20 per fles (Tommee Tippee Advanced)</span>
+                      <span className="text-gray-700"><strong>Hoogwaardig</strong>: €15-20 per fles (Tommee Tippee Advanced)</span>
                     </li>
                   </ul>
                 </div>
@@ -619,7 +619,7 @@ export default function KostenVanFlesvoeding() {
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700"><strong>Premium keuzes</strong>: €1270-1580 eerste jaar</span>
+                    <span className="text-gray-700"><strong>Hoogwaardige keuzes</strong>: €1270-1580 eerste jaar</span>
                   </li>
                 </ul>
               </div>

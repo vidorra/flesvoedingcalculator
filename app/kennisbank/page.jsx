@@ -647,7 +647,7 @@ export default function KennisbankPage() {
                 </li>
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <span>Premium merken tot €90/maand (Nutrilon)</span>
+                  <span>Hoogwaardige merken tot €90/maand (Nutrilon)</span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -676,7 +676,7 @@ export default function KennisbankPage() {
             <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white">
               <h3 className="font-medium text-primary mb-2">Hoeveel kost flesvoeding per maand?</h3>
               <p className="text-gray-600">
-                Budget variant (Kruidvat): €35-50/maand. Middenklasse (Hero Baby): €50-70/maand. Premium (Nutrilon): €70-90/maand. Eerste jaar totaal: €400-1000 afhankelijk van merkkeuze.
+                Budget variant (Kruidvat): €35-50/maand. Middenklasse (Hero Baby): €50-70/maand. Hoogwaardig (Nutrilon): €70-90/maand. Eerste jaar totaal: €400-1000 afhankelijk van merkkeuze.
               </p>
             </div>
             

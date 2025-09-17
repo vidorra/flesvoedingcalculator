@@ -189,7 +189,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
                 <div className="bg-white rounded-lg p-4 mb-4">
                   <h4 className="font-medium text-gray-700 mb-2">Stap 2: Elimination Diet</h4>
                   <p className="text-gray-700 text-sm mb-2">
-                    2-4 weken trial met extensively hydrolyzed formula onder medische supervisie.
+                    2-4 weken proefperiode met extensively hydrolyzed formula onder medische supervisie.
                   </p>
                 </div>
                 

@@ -75,7 +75,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                         </li>
                         <li className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                          <span className="text-gray-700 text-sm">Bonding gelegenheid beide ouders</span>
+                          <span className="text-gray-700 text-sm">Hechting gelegenheid beide ouders</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
@@ -627,7 +627,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                           <h5 className="text-sm font-medium text-amber-700 mb-1">Preventive measures:</h5>
                           <ul className="space-y-1">
                             <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700">Clear expectations: Geschreven agreements</span></li>
-                            <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700">Flexible timelines: Ruimte voor aanpassingen</span></li>
+                            <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700">Flexibele tijdslijnen: Ruimte voor aanpassingen</span></li>
                             <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700">Backup plans: Wat als ziekte/stress</span></li>
                           </ul>
                         </div>
@@ -817,7 +817,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                 
                 <div>
                   <h3 className="font-medium text-gray-700 mb-2">Mijn partner vindt flesvoeding te duur. Hoe overtuigen?</h3>
-                  <p className="text-gray-600 text-sm">Focus op total cost of ownership: berekend inclusief tijd, energie, flexibiliteit, en partner welzijn. Nederlandse gemiddeld: €800/jaar voor formule vs €2000+ aan verloren productiviteit/stress. Gedeelde zorg = investment in relatie.</p>
+                  <p className="text-gray-600 text-sm">Focus op totale eigendomskosten: berekend inclusief tijd, energie, flexibiliteit, en partner welzijn. Nederlandse gemiddeld: €800/jaar voor formule vs €2000+ aan verloren productiviteit/stress. Gedeelde zorg = investering in relatie.</p>
                 </div>
 
                 <div>
