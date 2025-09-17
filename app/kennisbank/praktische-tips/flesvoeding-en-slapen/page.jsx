@@ -298,7 +298,7 @@ export default function FlesvoedingEnSlapenPage() {
               </div>
               
               <div className="mt-6 p-4 bg-white rounded-lg">
-                <h4 className="font-medium text-gray-700 mb-2">Gas/Boertjes Verstoren Slaap</h4>
+                <h4 className="font-medium text-primary mb-2">Gas/Boertjes Verstoren Slaap</h4>
                 <p className="text-gray-700 text-sm">
                   <strong>Preventie:</strong> Anti-colic flessen, juiste temperatuur (37°C), pauzes tijdens voeding, 45° angle  
                   <strong>Behandeling:</strong> 3x burp tijdens voeding, tummy massage, bicycles legs
