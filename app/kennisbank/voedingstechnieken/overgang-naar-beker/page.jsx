@@ -892,10 +892,10 @@ export default function OvergangNaarBekerPage() {
                     <h3 className="font-medium text-primary mb-3">Probleem 1: Volledige weigering beker</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <h4 className="font-medium text-gray-700 mb-2">Waarom baby weigert:</h4>
+                        <h4 className="font-medium text-amber-800 mb-2">Waarom baby weigert:</h4>
                         <ul className="space-y-1">
-                          <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Overweldigende verandering</span></li>
-                          <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Sterke fles voorkeur</span></li>
+                          <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700 text-sm">Overweldigende verandering</span></li>
+                          <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-amber-700 text-sm">Sterke fles voorkeur</span></li>
                           <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Onbekende mond sensatie</span></li>
                           <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Verkeerde timing</span></li>
                           <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Te veel druk ouders</span></li>

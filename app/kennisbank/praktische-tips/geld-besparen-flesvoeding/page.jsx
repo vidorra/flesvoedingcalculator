@@ -368,19 +368,19 @@ export default function GeldBesparenPage() {
               </h2>
               
               <div className="bg-amber-50 rounded-lg p-4 border border-amber-200 mb-4">
-                <h3 className="font-medium text-gray-600 mb-3">Nooit Doen voor Geld Besparen:</h3>
+                <h3 className="font-medium text-amber-800 mb-3">Nooit Doen voor Geld Besparen:</h3>
                 <div className="space-y-2">
                   {dangerousSavings.map((danger, index) => (
                     <div key={index} className="flex items-start space-x-2">
                       <AlertTriangle className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-600">{danger}</span>
+                      <span className="text-amber-700">{danger}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div className="p-4 bg-white rounded-lg">
-                <h4 className="font-medium text-gray-600 mb-2"> Health Impact van Foute Besparingen</h4>
+                <h4 className="font-medium text-amber-800 mb-2"> Health Impact van Foute Besparingen</h4>
                 <p className="text-gray-600">
                   Malnutrition, infection susceptibility, groei retardation, verteringsproblemen. 
                   Medische kosten zijn veel hoger dan besparingen!

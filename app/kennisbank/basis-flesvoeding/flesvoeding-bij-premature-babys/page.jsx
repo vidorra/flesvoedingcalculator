@@ -119,7 +119,7 @@ export default function FlesvoedingPrematurePage() {
         {/* What makes premature feeding different */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-primary mb-4">Waarom is voeding anders bij premature baby's?</h2>
-          <p className="text-gray-600 leading-relaxed mb-4">
+          <p className="text-amber-700 leading-relaxed mb-4">
             Premature baby's hebben fundamenteel andere voedingsbehoeften dan baby's die op termijn geboren zijn. 
             Hun spijsverteringssysteem, zuigreflex en temperatuurregulatie zijn nog niet volledig ontwikkeld.
           </p>
@@ -263,7 +263,7 @@ export default function FlesvoedingPrematurePage() {
                 </svg>
               </div>
               <div>
-                <h3 className="font-semibold text-gray-700 mb-2">Let op</h3>
+                <h3 className="font-semibold text-amber-800 mb-2">Let op</h3>
                 <p className="text-amber-700 leading-relaxed">
                   Deze waarden zijn richtlijnen. De exacte behoefte verschilt per baby en moet altijd in overleg met het medische team bepaald worden.
                 </p>

@@ -227,7 +227,7 @@ function HygieneBereidingPage() {
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="bg-white rounded-lg p-4">
-              <h3 className="font-medium text-gray-700 mb-3">Flessenwarmer voordelen:</h3>
+              <h3 className="font-medium text-amber-800 mb-3">Flessenwarmer voordelen:</h3>
               <div className="space-y-2">
                 {bottleWarmerAdvantages.map((advantage, index) => (
                   <div key={index} className="flex items-start space-x-2">
@@ -251,7 +251,7 @@ function HygieneBereidingPage() {
             </div>
             
             <div className="bg-amber-50 rounded-lg p-4">
-              <h3 className="font-medium text-gray-700 mb-3">Als magnetron nodig:</h3>
+              <h3 className="font-medium text-amber-800 mb-3">Als magnetron nodig:</h3>
               <div className="space-y-2">
                 {microwaveTips.map((tip, index) => (
                   <div key={index} className="flex items-start space-x-2">
