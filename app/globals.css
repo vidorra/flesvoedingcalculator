@@ -123,6 +123,11 @@ h2 {
   color: rgb(var(--text-primary)) !important;
 }
 
+/* Exception: h2 elements in bg-primary-gradient should use white text for proper contrast */
+.bg-primary-gradient h2 {
+  color: white !important;
+}
+
 /* Enhanced mobile input support */
 input, select, textarea {
   color: rgb(31, 41, 55); /* text-gray-800 */
