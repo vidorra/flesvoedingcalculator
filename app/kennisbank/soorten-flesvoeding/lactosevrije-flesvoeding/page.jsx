@@ -172,7 +172,7 @@ export default function LactosevrijeFlesvoedingPage() {
       ]
     },
     {
-      step: "Week 4+: Stabilisatie & Follow-up",
+      step: "Week 4+: Stabilisatie & Vervolgafspraken",
       tasks: [
         "Regelmatige check-ups consultatiebureau",
         "Monitoren groei en ontwikkeling",

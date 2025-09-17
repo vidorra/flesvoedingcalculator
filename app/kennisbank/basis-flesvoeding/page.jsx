@@ -289,7 +289,7 @@ export default function BasisFlesvoedingPage() {
                 <div className="bg-white p-4 rounded-lg">
                   <h4 className="font-medium text-gray-600 mb-2">Geld besparen tips:</h4>
                   <div className="space-y-1 text-gray-700">
-                    <div> Huismerken even goed als A-merken</div>
+                    <div> Huismerken even goed als bekende merken</div>
                     <div> Grotere verpakkingen goedkoper</div>
                     <div> Let op aanbiedingen</div>
                     <div> Vergelijk prijzen online</div>
@@ -433,7 +433,7 @@ export default function BasisFlesvoedingPage() {
                 </li>
                   <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <span>Zachte muziek/white noise</span>
+                  <span>Zachte muziek/witte ruis</span>
                 </li>
                   <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>

@@ -5,7 +5,7 @@ import { Briefcase, ArrowRight, Home, Clock, CheckCircle, AlertTriangle, Calcula
 
 export const metadata = {
   title: 'Flesvoeding en Werk Combineren: Complete Gids 2025 | Nederlandse Ouders',
-  description: 'Alles over terugkeer naar werk met flesvoeding baby. Van kinderopvang instrueren tot schema\'s, work-life balance en praktische tips voor werkende ouders in Nederland.',
+  description: 'Alles over terugkeer naar werk met flesvoeding baby. Van kinderopvang instrueren tot schema\'s, werk-privé balance en praktische tips voor werkende ouders in Nederland.',
 }
 
 export default function FlesvoedingWerkPage() {
@@ -33,7 +33,7 @@ export default function FlesvoedingWerkPage() {
     {
       type: 'Thuiswerk Hybride',
       timeline: '2 dagen kantoor, 3 thuis',
-      prep: 'Flexibele work-life integratie',
+      prep: 'Flexibele werk-privé integratie',
       advantage: 'Meer controle over voeding, lagere opvang kosten'
     }
   ]
@@ -41,14 +41,14 @@ export default function FlesvoedingWerkPage() {
   const childcareTypes = [
     {
       type: 'Kinderdagverblijf',
-      pros: ['Professionele keuken', 'Strikte hygiëne protocollen', 'Schema\'s geïntegreerd', 'Backup voeding beschikbaar'],
+      pros: ['Professionele keuken', 'Strikte hygiëne protocollen', 'Schema\'s geïntegreerd', 'Reserve voeding beschikbaar'],
       cons: ['Duurder', 'Minder flexibiliteit', 'Groepsetting'],
       tips: 'Eigen voeding meebrengen vs verstrekking bespreken'
     },
     {
       type: 'Gastouder',
       pros: ['Persoonlijke aandacht', 'Flexibeler schema', 'Huiselijke omgeving', 'Goedkoper'],
-      cons: ['Meer training nodig', 'Minder backup opties', 'Afhankelijk van één persoon'],
+      cons: ['Meer training nodig', 'Minder reserve opties', 'Afhankelijk van één persoon'],
       tips: 'Gedetailleerde instructies en regelmatige check-ins'
     },
     {
@@ -65,7 +65,7 @@ export default function FlesvoedingWerkPage() {
       morning: ['06:00 - Ochtendvoeding (200ml)', '07:30 - Overdracht kinderopvang'],
       daycare: ['10:30 - Voeding (180ml)', '13:00 - Lunch voeding (190ml)', '15:30 - Middag (170ml)'],
       evening: ['18:30 - Thuis avondvoeding (200ml)', '21:00 - Bedtijd (180ml)'],
-      tips: 'Avond voorbereiding cruciaal, backup fles in auto'
+      tips: 'Avond voorbereiding cruciaal, reserve fles in auto'
     },
     {
       type: 'Parttime (3 dagen, 9:00-15:00)',
@@ -76,22 +76,22 @@ export default function FlesvoedingWerkPage() {
     }
   ]
 
-  const stressManagement = [
+  const stressBeheer = [
     {
       concern: 'Heeft baby genoeg gedronken?',
       solution: 'Dagboek app delen met opvang, foto\'s lege flessen ontvangen, vertrouwen opbouwen'
     },
     {
       concern: 'Schema werkt niet meer',
-      solution: 'Flexibiliteit oefenen, backup tijden, partner rol uitbreiden, perfectie loslaten'
+      solution: 'Flexibiliteit oefenen, reserve tijden, partner rol uitbreiden, perfectie loslaten'
     },
     {
       concern: 'Geen tijd voor voorbereiding',
-      solution: 'Batch prep weekend, pre-portioned containers, dubbele flessenset, efficiency'
+      solution: 'Batch prep weekend, pre-portioned containers, dubbele flessenset, efficiëntie'
     },
     {
       concern: 'Schuldgevoel over werken',
-      solution: 'Focus kwaliteitstijd, financiële stabiliteit, work modeling belangrijk'
+      solution: 'Focus kwaliteitstijd, financiële stabiliteit, werkvoorbeeld geven belangrijk'
     }
   ]
 
@@ -299,12 +299,12 @@ export default function FlesvoedingWerkPage() {
               </div>
             </div>
 
-            {/* Stress management */}
+            {/* Stressbeheer */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Stress Management & Praktische Oplossingen</h2>
+              <h2 className="text-lg font-semibold text-primary mb-4">Stressbeheersing & Praktische Oplossingen</h2>
               
               <div className="space-y-4">
-                {stressManagement.map((item, index) => (
+                {stressBeheer.map((item, index) => (
                   <div key={index} className="p-4">
                     <h3 className="font-medium text-gray-600 mb-1">"{item.concern}"</h3>
                     <p className="text-sm text-gray-600">{item.solution}</p>
@@ -321,11 +321,11 @@ export default function FlesvoedingWerkPage() {
                   </div>
                   <div>
                     <h5 className="font-medium text-gray-600 mb-1">Week 3-6: Routine</h5>
-                    <p className="text-gray-600">Schema optimaliseren, vertrouwen opbouwen, efficiency terugwinnen</p>
+                    <p className="text-gray-600">Schema optimaliseren, vertrouwen opbouwen, efficiëntie terugwinnen</p>
                   </div>
                   <div>
                     <h5 className="font-medium text-gray-600 mb-1">Week 7+: Mastery</h5>
-                    <p className="text-gray-600">Automatische routine, crisis management, work-life balance</p>
+                    <p className="text-gray-600">Automatische routine, crisis management, werk-privé balance</p>
                   </div>
                 </div>
               </div>
@@ -335,17 +335,17 @@ export default function FlesvoedingWerkPage() {
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
                 <AlertTriangle className="w-5 h-5 mr-2" />
-                Crisis Management: Noodplannen
+                Crisis Beheer: Noodplannen
               </h2>
               
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-white rounded-lg p-4 border border-gray-200">
                   <h3 className="font-medium text-gray-600 mb-3">Kinderopvang Ziek/Gesloten</h3>
                   <div className="text-sm text-gray-600 space-y-2">
-                    <div><strong>Backup Plan A:</strong> Partner thuisblijven (afwisselen)</div>
-                    <div><strong>Backup Plan B:</strong> Familie/vrienden emergency hulp</div>
+                    <div><strong>Reserveplan A:</strong> Partner thuisblijven (afwisselen)</div>
+                    <div><strong>Reserveplan B:</strong> Familie/vrienden noodhulp</div>
                     <div><strong>Werkgever:</strong> Thuiswerk dag, flexibele eindtijd</div>
-                    <div><strong>Voorbereiding:</strong> Emergency contacten, backup opvang</div>
+                    <div><strong>Voorbereiding:</strong> Noodcontacten, reserve opvang</div>
                   </div>
                 </div>
                 

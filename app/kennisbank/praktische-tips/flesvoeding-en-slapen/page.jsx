@@ -88,12 +88,12 @@ export default function FlesvoedingEnSlapenPage() {
     },
     {
       probleem: "Kan alleen slapen na voeding",
-      oorzaak: "Sterke feed-sleep associatie",
+      oorzaak: "Sterke voeding-slaap koppeling",
       oplossing: "Geleidelijk ontkoppelen - voeding 15-30 min voor slaap"
     },
     {
       probleem: "Frequent nachtwakker voor voeding", 
-      oorzaak: "Te kleine dag volumes, verkeerde last feed timing",
+      oorzaak: "Te kleine dag volumes, verkeerde laatste voeding timing",
       oplossing: "Increase dag intake +30-50ml, last feed 30 min later"
     }
   ]
@@ -101,7 +101,7 @@ export default function FlesvoedingEnSlapenPage() {
   const nederlandseSlaapCultuur = [
     "Vroeg naar bed - 19:00-20:00 bedtijd standaard",
     "Eigen kamer eerder - 3-6 maanden vs internationale norm",
-    "Zachte sleep training - voorkeur voor gentle methoden",
+    "Zachte slaaptraining - voorkeur voor zachte methoden",
     "Partner gelijkheid - beide ouders delen nacht duties",
     "Consultatiebureau support - excellent professional guidance",
     "Routine emphasis - sterke nadruk op consistentie"
@@ -314,7 +314,7 @@ export default function FlesvoedingEnSlapenPage() {
               </h2>
               
               <div className="border-t border-gray-200 pt-6">
-                <h3 className="font-medium text-primary mb-4">0-8 Weken: Survival Mode</h3>
+                <h3 className="font-medium text-primary mb-4">0-8 Weken: Overlevingsmodus</h3>
                 <div className="bg-white rounded-lg p-4 mb-6">
                   <p className="text-gray-700 text-sm mb-2"><strong>Realistische verwachtingen:</strong></p>
                   <p className="text-gray-700 text-sm mb-2">16-20 uur slaap/dag, max 2-4 uur aaneengesloten, 2-4x nachtvoeding normaal</p>
@@ -323,9 +323,9 @@ export default function FlesvoedingEnSlapenPage() {
               </div>
 
               <div className="border-t border-gray-200 pt-6">
-                <h3 className="font-medium text-primary mb-4">4-6 Maanden: Sleep Training Window</h3>
+                <h3 className="font-medium text-primary mb-4">4-6 Maanden: Slaaptraining Periode</h3>
                 <div className="bg-white rounded-lg p-4 mb-6">
-                  <p className="text-gray-700 text-sm mb-2"><strong>Nederlandse sleep training voorkeur:</strong></p>
+                  <p className="text-gray-700 text-sm mb-2"><strong>Nederlandse slaaptraining voorkeur:</strong></p>
                   <ul className="space-y-1 text-gray-700">
                     <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Chair Method: Stoel naast bed, elke 3 dagen verder (2-3 weken)</span></li>
                     <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Pickup/Putdown: Oppakken bij huilen, neerleggen als rustig</span></li>

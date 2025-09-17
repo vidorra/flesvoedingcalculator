@@ -23,7 +23,7 @@ export default function AntiRefluxPage() {
       brand: 'Nutrilon AR',
       price: '€16-18/blik (400g)',
       ingredients: 'Johannesbroodpitmeel als verdikkingsmiddel',
-      effectiveness: '85% vermindering spugen',
+      effectiviteit: '85% vermindering spugen',
       pros: ['Meest verkochte AR in Nederland', 'Beschikbaar in alle supermarkten', 'Goede effectiviteit'],
       cons: ['Duurder dan gewone voeding', 'Kan harder ontlasting geven']
     },
@@ -31,7 +31,7 @@ export default function AntiRefluxPage() {
       brand: 'Hero Baby AR',
       price: '€14-16/blik (400g)', 
       ingredients: 'Rijstzetmeel + johannesbroodpitmeel',
-      effectiveness: '80% vermindering spugen',
+      effectiviteit: '80% vermindering spugen',
       pros: ['Goede prijs-kwaliteit', 'Zachter voor maag', 'Minder constipatie'],
       cons: ['Minder breed verkrijgbaar', 'Kan klontering geven']
     },
@@ -39,7 +39,7 @@ export default function AntiRefluxPage() {
       brand: 'Aptamil AR',
       price: '€17-19/blik (400g)',
       ingredients: 'Gemodificeerd zetmeel',
-      effectiveness: '78% vermindering spugen',
+      effectiviteit: '78% vermindering spugen',
       pros: ['Makkelijk oplosbaar', 'Goede smaak', 'DHA/ARA toegevoegd'],
       cons: ['Duurste optie', 'Alleen bij drogist verkrijgbaar']
     }
@@ -49,19 +49,19 @@ export default function AntiRefluxPage() {
     {
       technique: 'Kleinere, frequentere voedingen',
       description: 'In plaats van 6×120ml  8×90ml',
-      effectiveness: '70% verbetering',
+      effectiviteit: '70% verbetering',
       tips: ['Elke 2-2.5 uur voeden', 'Maximaal 100ml per keer bij reflux', 'Baby\'s signalen volgen']
     },
     {
       technique: 'Langzamer voeden',
       description: '15-20 minuten per voeding',
-      effectiveness: '60% verbetering', 
+      effectiviteit: '60% verbetering', 
       tips: ['Pauzes maken tijdens voeding', 'Speen met kleine gaatjes gebruiken', 'Baby laten bepalen tempo']
     },
     {
       technique: 'Rechtop houden na voeding',
       description: 'Minimaal 20-30 minuten verticaal',
-      effectiveness: '80% verbetering',
+      effectiviteit: '80% verbetering',
       tips: ['Baby tegen schouder houden', 'In autostoel/wipstoel zetten', 'Niet direct neerleggen']
     }
   ]
@@ -234,7 +234,7 @@ export default function AntiRefluxPage() {
                   <h3 className="font-bold text-lg text-primary">{formula.brand}</h3>
                   <div className="text-right">
                     <div className="text-gray-700 font-bold">{formula.price}</div>
-                    <div className="text-sm text-gray-600 font-medium">{formula.effectiveness}</div>
+                    <div className="text-sm text-gray-600 font-medium">{formula.effectiviteit}</div>
                   </div>
                 </div>
                 
@@ -308,7 +308,7 @@ export default function AntiRefluxPage() {
                 <div className="flex justify-between items-start mb-3">
                   <h3 className="font-medium text-gray-700">{technique.technique}</h3>
                   <span className="text-sm bg-white text-gray-600 px-2 py-1 rounded-full">
-                    {technique.effectiveness}
+                    {technique.effectiviteit}
                   </span>
                 </div>
                 <p className="text-gray-700 mb-4">{technique.description}</p>

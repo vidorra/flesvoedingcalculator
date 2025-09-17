@@ -801,7 +801,7 @@ export default function JuisteTemperatuurControleren() {
                     </div>
 
                     <div className="p-6">
-                      <h4 className="font-semibold text-primary mb-3">Efficiency tips:</h4>
+                      <h4 className="font-semibold text-primary mb-3">Efficiëntie tips:</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -817,7 +817,7 @@ export default function JuisteTemperatuurControleren() {
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700"><strong>Backup plan</strong>: Voor als thermometer stuk is, etc.</span>
+                          <span className="text-gray-700"><strong>Reserveplan</strong>: Voor als thermometer stuk is, etc.</span>
                         </li>
                       </ul>
                     </div>

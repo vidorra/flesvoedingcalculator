@@ -119,7 +119,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
           rating: 3,
           price: '€6.50-7.50 per 800g',
           costPerLiter: '€0.65',
-          features: ['40% goedkoper dan A-merken', 'Zelfde EU-vereisten', 'Basis ijzer/vitamin supplementatie'],
+          features: ['40% goedkoper dan bekende merken', 'Zelfde EU-vereisten', 'Basis ijzer/vitamin supplementatie'],
           availability: 'Budget Winner',
           marketShare: 'Groeisegment'
         }

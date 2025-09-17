@@ -422,15 +422,15 @@ export default function ConstipatieFlespagePage() {
                 </div>
 
                 <div>
-                  <h3 className="font-medium text-gray-700 mb-2">Routine medical consultation:</h3>
+                  <h3 className="font-medium text-gray-700 mb-2">Regulier medisch consult:</h3>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-700 text-sm">Persistent constipatie {'>'}2 weken ondanks aanpassingen</span>
+                      <span className="text-gray-700 text-sm">Aanhoudende constipatie {'>'}2 weken ondanks aanpassingen</span>
                     </li>
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-700 text-sm">Growth concerns gecombineerd met constipatie</span>
+                      <span className="text-gray-700 text-sm">Groeizorgen gecombineerd met constipatie</span>
                     </li>
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>

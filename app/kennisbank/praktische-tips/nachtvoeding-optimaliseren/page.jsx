@@ -19,7 +19,7 @@ export default function NachtvoedingOptimaliserenPage() {
         'Minimaal licht gebruiken',
         'Geen luier verschonen tenzij nodig'
       ],
-      effectiveness: '85% tijdsbesparing'
+      effectiviteit: '85% tijdsbesparing'
     },
     {
       strategy: 'Batch Nachtbereiding',
@@ -30,7 +30,7 @@ export default function NachtvoedingOptimaliserenPage() {
         'Flessenwarmer naast bed',
         'Timer voor opwarmen'
       ],
-      effectiveness: '75% minder nachtwerk'
+      effectiviteit: '75% minder nachtwerk'
     },
     {
       strategy: 'Partner Tag-Team',
@@ -41,13 +41,13 @@ export default function NachtvoedingOptimaliserenPage() {
         'Wisseling elke 2-3 nachten',
         'Weekend = gezamenlijk'
       ],
-      effectiveness: '50% meer slaap per ouder'
+      effectiviteit: '50% meer slaap per ouder'
     }
   ]
 
   const equipmentEssentials = [
     {
-      category: 'Must-Haves (€50-80)',
+      category: 'Essentiële items (€50-80)',
       items: [
         { name: 'Rode nachtlamp', price: '€15', benefit: 'Melatonine productie behouden' },
         { name: 'Thermosfles dubbelwandig', price: '€25', benefit: '6u warm water beschikbaar' },
@@ -56,12 +56,12 @@ export default function NachtvoedingOptimaliserenPage() {
       ]
     },
     {
-      category: 'Nice-to-Haves (€40-100)',
+      category: 'Handige extra's (€40-100)',
       items: [
-        { name: 'Baby Perfect Prep machine', price: '€180', benefit: 'Perfect temperatuur in 2 minuten' },
+        { name: 'Baby Perfect Prep bereidingsmachine', price: '€180', benefit: 'Perfect temperatuur in 2 minuten' },
         { name: 'Draadloze thermometer', price: '€30', benefit: 'Temperatuur checken zonder bewegen' },
         { name: 'Voeding station op wielen', price: '€60', benefit: 'Mobiele nachtvoeding setup' },
-        { name: 'White noise machine', price: '€40', benefit: 'Baby slaapt beter door' }
+        { name: 'Witte ruis machine', price: '€40', benefit: 'Baby slaapt beter door' }
       ]
     }
   ]
@@ -74,7 +74,7 @@ export default function NachtvoedingOptimaliserenPage() {
       tips: [
         'Accepteer dat nachten zwaar zijn',
         'Elk 2-3 uur voeden normaal',
-        'Focus op efficiency, niet perfectie',
+        'Focus op efficiëntie, niet perfectie',
         'Dream feeding proberen na 6 weken'
       ],
       sleepExpectation: '4-6u onderbrokken slaap'
@@ -309,7 +309,7 @@ export default function NachtvoedingOptimaliserenPage() {
                   <h3 className="font-medium text-gray-600">{strategy.strategy}</h3>
                   <div className="text-right">
                     <div className="text-primary font-bold text-sm">{strategy.timeReduction}</div>
-                    <div className="text-primary text-xs">{strategy.effectiveness}</div>
+                    <div className="text-primary text-xs">{strategy.effectiviteit}</div>
                   </div>
                 </div>
                 
@@ -369,7 +369,7 @@ export default function NachtvoedingOptimaliserenPage() {
                 <ul className="space-y-1 mt-1">
                   <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Stille flessenwarmer</span></li>
                   <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Extra speen en luiers</span></li>
-                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>White noise machine</span></li>
+                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Witte ruis machine</span></li>
                   <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Comfortabele stoel</span></li>
                 </ul>
               </div>
@@ -491,7 +491,7 @@ export default function NachtvoedingOptimaliserenPage() {
                 </li>
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full"></div>
-                  <span>Perfectie nastreven - efficiency is key</span>
+                  <span>Perfectie nastreven - efficiëntie is key</span>
                 </li>
               </ul>
             </div>

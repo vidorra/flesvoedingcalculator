@@ -112,7 +112,7 @@ export default function VerschillendeSpenenUitproberenPage() {
       ]
     },
     {
-      step: 'Stap 3: Transitie Management',
+      step: 'Stap 3: Transitie Beheer',
       icon: Target,
       strategies: [
         'Intro tijdens hongerige momenten (niet te hongerig)',
@@ -220,7 +220,7 @@ export default function VerschillendeSpenenUitproberenPage() {
       notes: 'Test indien problemen'
     },
     {
-      age: '3-6 Maanden: Efficiency Phase',
+      age: '3-6 Maanden: Efficiëntie Fase',
       primary: 'Size 2 of 3 overwegen',
       backup: 'Anti-koliek nog belangrijk',
       duration: '15-20 minuten ideaal',
@@ -596,7 +596,7 @@ export default function VerschillendeSpenenUitproberenPage() {
                   {[
                     'Multi-packs: Goedkoper per stuk',
                     'Online: Vaak 20-30% goedkoper',
-                    'Store brands: Voor backup/testing',
+                    'Huismerken: Voor backup/testing',
                     'Sales: Stock up tijdens acties'
                   ].map((tip, index) => (
                     <div key={index} className="text-sm text-gray-700 p-2 border border-gray-200 bg-white rounded">

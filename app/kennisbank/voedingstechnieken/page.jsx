@@ -370,7 +370,7 @@ function VoedingstechniekenPage() {
                   <div> Focus op wat WEL goed ging</div>
                   <div> Wat leerde je voor volgende keer?</div>
                   <div> Hoe reageerde baby (zonder oordeel)?</div>
-                  <div> Remember: eerste keer is nooit perfect</div>
+                  <div> Onthoud: eerste keer is nooit perfect</div>
                   <div> Elke voeding wordt beter</div>
                   <div> Baby en jij leren samen</div>
                 </div>
