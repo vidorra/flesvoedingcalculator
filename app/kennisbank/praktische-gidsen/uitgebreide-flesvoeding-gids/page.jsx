@@ -28,7 +28,7 @@ export default function UitgebreideFlesvoedingGids() {
           
           {/* Header */}
           <div className="mb-8">
-            <div className="text-sm text-gray-500 mb-2">Kennisbank  Praktische Gidsen</div>
+            <div className="text-sm text-gray-500 mb-2">Kennisbank • Praktische Gidsen</div>
             <h1 className="text-2xl font-bold text-primary mb-4 flex items-center">
               <BookOpen className="w-6 h-6 mr-3 text-primary" />
               Uitgebreide Flesvoeding Gids 2025
@@ -68,7 +68,7 @@ export default function UitgebreideFlesvoedingGids() {
 
           {/* Blog 1: Geld Besparen */}
           <section id="geld-besparen" className="mb-16">
-            <div className="border-l-4 border-primary pl-6 mb-8">
+            <div className="mb-8">
               <h2 className="text-lg font-semibold text-primary mb-2">
                 1. Geld Besparen op Flesvoeding - Volledige Gids 2025
               </h2>
@@ -255,7 +255,7 @@ export default function UitgebreideFlesvoedingGids() {
 
           {/* Blog 2: Kosten Analyse */}
           <section id="kosten-analyse" className="mb-16">
-            <div className="border-l-4 border-primary pl-6 mb-8">
+            <div className="mb-8">
               <h2 className="text-lg font-semibold text-primary mb-2">
                 2. Kosten van Flesvoeding - Volledige Kostenanalyse 2025
               </h2>
@@ -273,7 +273,7 @@ export default function UitgebreideFlesvoedingGids() {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
                 <div className="p-4">
-                  <h5 className="font-bold text-gray-700">Budget opties:</h5>
+                  <h5 className="font-bold text-primary">Budget opties:</h5>
                   <ul className="text-sm">
                     <li>Kruidvat: €7,99 × 4,5 = <strong>€36/maand</strong></li>
                     <li>Etos: €8,49 × 4,5 = <strong>€38/maand</strong></li>
@@ -282,7 +282,7 @@ export default function UitgebreideFlesvoedingGids() {
                 </div>
                 
                 <div className="p-4">
-                  <h5 className="font-bold text-gray-600">Middensegment:</h5>
+                  <h5 className="font-bold text-primary">Middensegment:</h5>
                   <ul className="text-sm">
                     <li>Hero Baby: €11,99 × 4,5 = <strong>€54/maand</strong></li>
                     <li>Aptamil: €13,49 × 4,5 = <strong>€61/maand</strong></li>
@@ -335,7 +335,7 @@ export default function UitgebreideFlesvoedingGids() {
 
           {/* Blog 3: Overstappen van Borst naar Fles */}
           <section id="borst-naar-fles" className="mb-16">
-            <div className="border-l-4 border-primary pl-6 mb-8">
+            <div className="mb-8">
               <h2 className="text-lg font-semibold text-primary mb-2">
                 3. Overstappen van Borst naar Fles - Volledige Overgang Gids
               </h2>
@@ -397,7 +397,7 @@ export default function UitgebreideFlesvoedingGids() {
 
               <div className="space-y-6 my-6">
                 <div className="p-4">
-                  <h4 className="font-bold text-gray-600">Week 1: Kennismaking Fase</h4>
+                  <h4 className="font-bold text-primary">Week 1: Kennismaking Fase</h4>
                   <p><strong>Doel:</strong> Baby wennen aan fles zonder druk</p>
                   <ul>
                     <li>Kies rustig moment tussen voedingen</li>
@@ -408,7 +408,7 @@ export default function UitgebreideFlesvoedingGids() {
                 </div>
 
                 <div className="p-4">
-                  <h4 className="font-bold text-gray-600">Week 2: Routine Opbouwen</h4>
+                  <h4 className="font-bold text-primary">Week 2: Routine Opbouwen</h4>
                   <p><strong>Doel:</strong> Vestig 1-2 betrouwbare fles voedingen</p>
                   <ul>
                     <li>Vervang 1 consistente dagelijkse voeding</li>
@@ -418,7 +418,7 @@ export default function UitgebreideFlesvoedingGids() {
                 </div>
 
                 <div className="p-4">
-                  <h4 className="font-bold text-gray-600">Week 3-4: Opschalen</h4>
+                  <h4 className="font-bold text-primary">Week 3-4: Opschalen</h4>
                   <p><strong>Doel:</strong> Verhoog naar 3-4 fles voedingen per dag</p>
                   <ul>
                     <li>Week 3: Ochtend borst, 3 flessen, avond borst</li>
@@ -463,7 +463,7 @@ export default function UitgebreideFlesvoedingGids() {
 
           {/* Blog 4: Flesvoeding en Werk */}
           <section id="werk-combineren" className="mb-16">
-            <div className="border-l-4 border-primary pl-6 mb-8">
+            <div className="mb-8">
               <h2 className="text-lg font-semibold text-primary mb-2">
                 4. Flesvoeding en Werk Combineren - Praktische Gids voor Werkende Ouders
               </h2>
@@ -605,7 +605,7 @@ export default function UitgebreideFlesvoedingGids() {
 
           {/* Blog 5: Baby Weigert de Fles */}
           <section id="fles-weigering" className="mb-16">
-            <div className="border-l-4 border-primary pl-6 mb-8">
+            <div className="mb-8">
               <h2 className="text-lg font-semibold text-primary mb-2">
                 5. Baby Weigert de Fles - Volledige Probleemoplossende Gids
               </h2>
@@ -638,7 +638,7 @@ export default function UitgebreideFlesvoedingGids() {
                 </div>
 
                 <div className="p-4">
-                  <h4 className="font-bold text-gray-600">2. Speen Incompatibiliteit (28%)</h4>
+                  <h4 className="font-bold text-primary">2. Speen Incompatibiliteit (28%)</h4>
                   <p className="text-sm">Verkeerde doorstroomsnelheid, vorm, of materiaal.</p>
                   <ul className="text-sm">
                     <li>Test verschillende doorstroomsnelheden</li>
@@ -658,7 +658,7 @@ export default function UitgebreideFlesvoedingGids() {
                 </div>
 
                 <div className="p-4">
-                  <h4 className="font-bold text-gray-700">4. Overmoeide Baby (10%)</h4>
+                  <h4 className="font-bold text-primary">4. Overmoeide Baby (10%)</h4>
                   <p className="text-sm">Timing is cruciaal voor successvolle voeding.</p>
                   <ul className="text-sm">
                     <li>Alert maar kalme staat</li>
