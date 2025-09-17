@@ -87,7 +87,7 @@ export default function TweelingVoedenPage() {
       yearly: '€900-1100'
     },
     {
-      category: 'Premium variant (Nutrilon)',
+      category: 'Hoogwaardige variant (Nutrilon)',
       periods: [
         { age: '0-3 maanden', cost: '€130-160/maand', details: '10-12 blikken' },
         { age: '3-6 maanden', cost: '€160-200/maand', details: '12-14 blikken' },
@@ -217,7 +217,7 @@ export default function TweelingVoedenPage() {
           
           <div className="mt-4 p-4 bg-primary text-white rounded-xl text-center">
             <div className="text-2xl font-bold">Tijdsbesparing: 7 uur per dag!</div>
-            <p className="text-sm text-white/90 mt-1">Meer tijd voor rust, jezelf en quality time met de baby's</p>
+            <p className="text-sm text-white/90 mt-1">Meer tijd voor rust, jezelf en aandachtstijd met de baby's</p>
           </div>
         </div>
 
@@ -257,7 +257,7 @@ export default function TweelingVoedenPage() {
               </ul>
             </div>
             <div className="border border-gray-200 bg-white rounded-lg p-4">
-              <h4 className="font-medium text-primary mb-2">Premium pakket (€400-600):</h4>
+              <h4 className="font-medium text-primary mb-2">Hoogwaardig pakket (€400-600):</h4>
               <ul className="text-sm text-gray-600 space-y-1">
                 <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Hoogwaardige flessen: €120</span></li>
                 <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Elektrische sterilisator: €80</span></li>

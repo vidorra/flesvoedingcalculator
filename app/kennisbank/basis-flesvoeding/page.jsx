@@ -308,11 +308,11 @@ export default function BasisFlesvoedingPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="bg-white p-3 rounded-lg">
                   <div className="font-medium text-gray-700 mb-1">Voorbereiding:</div>
-                  <div className="text-gray-700">Start vroeg met wennen aan fles, laat partner oefenen, stock voorraad op</div>
+                  <div className="text-gray-700">Start vroeg met wennen aan fles, laat partner oefenen, voorraad opstapelen</div>
                 </div>
                 <div className="bg-white p-3 rounded-lg">
                   <div className="font-medium text-gray-700 mb-1">Praktisch:</div>
-                  <div className="text-gray-700">Instructies voor oppas, noodvoorraad, backup plan maken</div>
+                  <div className="text-gray-700">Instructies voor oppas, noodvoorraad, reserveplan maken</div>
                 </div>
               </div>
             </div>

@@ -414,7 +414,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700">Bonding mogelijkheden voor beide</span>
+                    <span className="text-gray-700">Hechting mogelijkheden voor beide</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -442,7 +442,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
               
               <div className="p-6">
                 <h3 className="font-semibold text-primary mb-2">Mythe: "Flesvoeding verstoort moeder-baby band"</h3>
-                <p className="text-gray-700 mb-3"><strong>Realiteit:</strong> Bonding gebeurt door liefdevol contact, niet voedingsmethode. Veel factoren beïnvloeden hechting.</p>
+                <p className="text-gray-700 mb-3"><strong>Realiteit:</strong> Hechting gebeurt door liefdevol contact, niet voedingsmethode. Veel factoren beïnvloeden hechting.</p>
               </div>
               
               <div className="p-6">

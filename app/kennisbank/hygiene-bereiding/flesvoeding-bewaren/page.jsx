@@ -135,7 +135,7 @@ export default function FlesvoedingBewarenPage() {
       situation: 'In de Auto - Lange Ritten',
       tips: [
         'Elektrische koelbox (12V aansluiting)',
-        'Extra ijspacks als backup',
+        'Extra ijspacks als reserve',
         'Plan stops voor verse bereiding',
         'Neem extra poedermelk mee'
       ]

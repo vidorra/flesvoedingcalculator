@@ -149,7 +149,7 @@ export default function SpugenNaDeFlesPage() {
         'Medicatie: Protonpompremmers (op recept)',
         'Voedingsaanpassingen: Kleinere, frequentere voedingen',
         'Verdikte voeding: Speciaal AR-voeding',
-        'Follow-up: Regelmatige controles kinderarts'
+        'Vervolgafspraken: Regelmatige controles kinderarts'
       ]
     },
     {
