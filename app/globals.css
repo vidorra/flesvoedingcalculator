@@ -128,6 +128,11 @@ h2 {
   color: white !important;
 }
 
+/* Exception: h2 elements in bg-amber-50 should use amber-800 color for proper contrast */
+.bg-amber-50 h2 {
+  color: rgb(146, 64, 14) !important; /* text-amber-800 */
+}
+
 /* Enhanced mobile input support */
 input, select, textarea {
   color: rgb(31, 41, 55); /* text-gray-800 */

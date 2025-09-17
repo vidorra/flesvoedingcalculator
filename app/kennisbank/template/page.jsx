@@ -160,7 +160,7 @@ export default function KennisbankTemplatePage() {
                   <AlertTriangle className="w-5 h-5 text-amber-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-700 mb-2">Belangrijk voor Ontwikkelaars</h3>
+                  <h3 className="font-semibold text-amber-800 mb-2">Belangrijk voor Ontwikkelaars</h3>
                   <p className="text-amber-700 leading-relaxed">
                     Dit is het enige goedgekeurde gebruik van gekleurde achtergronden (amber) - alleen voor waarschuwingen en belangrijke mededelingen. 
                     Alle andere content moet neutrale kleuren gebruiken.
