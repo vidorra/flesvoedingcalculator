@@ -94,10 +94,16 @@ export default function AllergischeReactiesFlesvoedingPage() {
                 Vroege herkenning en juiste behandeling zijn cruciaal voor het welzijn van je baby.
               </p>
               
-              <div className="mt-4 p-4 bg-white rounded-lg">
-                <p className="text-gray-700">
-                  <strong>Belangrijk:</strong> Dit artikel vervangt geen medisch advies. Neem altijd contact op met je huisarts of consultatiebureau bij verdenking van allergie.
-                </p>
+              <div className="bg-amber-50 rounded-2xl border border-amber-200 p-6">
+                <div className="flex items-start space-x-3">
+                  <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <AlertTriangle className="w-5 h-5 text-amber-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-amber-800 mb-1">Medische Disclaimer</h3>
+                    <p className="text-sm text-amber-700">Dit artikel vervangt geen medisch advies. Neem altijd contact op met je huisarts of consultatiebureau bij verdenking van allergie.</p>
+                  </div>
+                </div>
               </div>
             </section>
 
