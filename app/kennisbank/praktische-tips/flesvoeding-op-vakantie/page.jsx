@@ -136,7 +136,7 @@ export default function VakantiePage() {
 
             {/* Header */}
             <div className="mb-6">
-              <div className="text-sm text-gray-500 mb-2">Praktische Tips  Vakantie</div>
+              <div className="text-sm text-gray-500 mb-2">Praktische Tips • Vakantie</div>
               <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
                 <Plane className="w-6 h-6 mr-3 text-primary" />
                 Flesvoeding op Vakantie: Complete Reis Gids
@@ -200,8 +200,7 @@ export default function VakantiePage() {
               <div className="space-y-6">
                 {transportTypes.map((transport, index) => (
                   <div key={index} className="p-4">
-                    <h3 className="font-semibold text-primary mb-3 flex items-center">
-                      <span className="text-xl mr-2">{transport.icon}</span>
+                    <h3 className="font-semibold text-primary mb-3">
                       {transport.type}
                     </h3>
                     <div className="grid md:grid-cols-2 gap-4 mb-3">
@@ -330,7 +329,7 @@ export default function VakantiePage() {
               
               <div className="space-y-6">
                 {emergencyProtocols.map((protocol, index) => (
-                  <div key={index} className="border-l-4 border-primary pl-4">
+                  <div key={index} className="p-4">
                     <h3 className="font-semibold text-primary mb-3">{protocol.scenario}</h3>
                     <div className="grid md:grid-cols-2 gap-4 mb-3">
                       <div>
