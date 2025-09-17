@@ -177,7 +177,7 @@ export default function PraktischeTipsPage() {
           
           <div className="space-y-4">
             {developmentTips.map((ageGroup, index) => (
-              <div key={index} className="border-l-4 border-primary pl-4 py-2">
+              <div key={index}>
                 <h3 className="font-medium text-primary mb-2">{ageGroup.age}:</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                   {ageGroup.tips.map((tip, index) => (

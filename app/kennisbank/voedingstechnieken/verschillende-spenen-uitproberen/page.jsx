@@ -357,7 +357,7 @@ export default function VerschillendeSpenenUitproberenPage() {
                     <h3 className="font-medium text-gray-700 mb-4">{category.category}</h3>
                     <div className="space-y-4">
                       {category.types.map((type, typeIndex) => (
-                        <div key={typeIndex} className="p-4">
+                        <div key={typeIndex}>
                           <h4 className="font-medium text-primary mb-2">{type.name}</h4>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
                             <div>
@@ -456,7 +456,7 @@ export default function VerschillendeSpenenUitproberenPage() {
               
               <div className="space-y-4">
                 {brandComparison.map((brand, index) => (
-                  <div key={index} className="p-4">
+                  <div key={index}>
                     <div className="flex items-center justify-between mb-3">
                       <h3 className="font-medium text-gray-700">{brand.brand}</h3>
                       <div className="flex">
@@ -576,7 +576,7 @@ export default function VerschillendeSpenenUitproberenPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {shoppingTips.map((tip, index) => (
-                  <div key={index} className="p-4">
+                  <div key={index}>
                     <h3 className="font-medium text-primary mb-3">{tip.package}</h3>
                     <ul className="space-y-1">
                       {tip.items.map((item, itemIndex) => (

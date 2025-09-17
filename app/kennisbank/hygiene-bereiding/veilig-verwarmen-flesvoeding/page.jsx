@@ -170,7 +170,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                   <h3 className="font-medium text-primary mb-3">Waarom magnetron gevaarlijk is</h3>
                   
                   <div className="space-y-4">
-                    <div className="p-4">
+                    <div>
                       <h4 className="font-medium text-primary mb-2">1. Ongelijkmatige verhitting</h4>
                       <div className="bg-white rounded-lg p-3">
                         <p className="text-sm text-gray-700 mb-2">Magnetron verwarmt:</p>
@@ -632,7 +632,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                   <h3 className="font-medium text-primary mb-3">Top 5 gevaarlijke verwarmingsfouten</h3>
                   
                   <div className="space-y-4">
-                    <div className="p-4">
+                    <div>
                       <h4 className="font-medium text-gray-700 mb-1">1. Magnetron gebruik</h4>
                       <p className="text-gray-600 mb-1">Fout: "Magnetron is sneller en makkelijker"</p>
                       <p className="text-gray-700 mb-1">Correct: Waterpad of flessenwarmer gebruiken</p>
