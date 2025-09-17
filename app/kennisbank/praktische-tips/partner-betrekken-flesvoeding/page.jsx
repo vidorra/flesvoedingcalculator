@@ -271,7 +271,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                   <h3 className="font-medium text-primary mb-3">Sample verdeling scenarios</h3>
                   
                   <div className="space-y-4">
-                    <div className="border-l-4 border-primary pl-4">
+                    <div>
                       <h4 className="font-medium text-gray-700 mb-2">Scenario 1: Beide fulltime werk - Gelijke verdeling (50/50)</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
@@ -327,7 +327,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                       </div>
                     </div>
                     
-                    <div className="border-l-4 border-gray-300 pl-4">
+                    <div>
                       <h4 className="font-medium text-gray-700 mb-2">Scenario 2: Eén parttime/thuisblijver - Capaciteit gebaseerd (70/30)</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
@@ -651,15 +651,15 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                     <div>
                       <h4 className="font-medium text-gray-700 mb-2">Top 5 flesvoeding conflicten:</h4>
                       <div className="space-y-3">
-                        <div className="border-l-4 border-red-300 pl-3">
+                        <div>
                           <h5 className="font-medium text-gray-700">"Ik doe meer dan jij"</h5>
                           <p className="text-gray-600 text-sm">Oplossing: Objective tracking 1 week, define 'equal', rotate responsibilities</p>
                         </div>
-                        <div className="border-l-4 border-red-300 pl-3">
+                        <div>
                           <h5 className="font-medium text-gray-700">"Je doet het verkeerd"</h5>
                           <p className="text-gray-600 text-sm">Oplossing: Learn together, different but valid approaches, celebrate success</p>
                         </div>
-                        <div className="border-l-4 border-red-300 pl-3">
+                        <div>
                           <h5 className="font-medium text-gray-700">"Baby houdt meer van jou"</h5>
                           <p className="text-gray-600 text-sm">Oplossing: Equal opportunity, role switching, skill building voor minder ervaren partner</p>
                         </div>

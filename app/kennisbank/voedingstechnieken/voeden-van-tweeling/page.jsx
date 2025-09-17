@@ -311,7 +311,7 @@ export default function TweelingVoedenPage() {
           
           <div className="space-y-4">
             {commonProblems.map((item, index) => (
-              <div key={index} className="p-4">
+              <div key={index}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <h3 className="font-medium text-primary mb-2">Probleem:</h3>
@@ -344,7 +344,7 @@ export default function TweelingVoedenPage() {
           
           <div className="space-y-6">
             {budgetBreakdown.map((budget, index) => (
-              <div key={index} className="p-4">
+              <div key={index}>
                 <h3 className="font-medium text-primary mb-3">{budget.category}</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
                   {budget.periods.map((period, periodIndex) => (
