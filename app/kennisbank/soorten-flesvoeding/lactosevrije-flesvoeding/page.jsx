@@ -493,7 +493,7 @@ export default function LactosevrijeFlesvoedingPage() {
                   <AlertCircle className="w-5 h-5 text-amber-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-700 mb-2">Belangrijk: Medische Begeleiding</h3>
+                  <h3 className="font-semibold text-amber-800 mb-2">Belangrijk: Medische Begeleiding</h3>
                   <p className="text-sm text-amber-700 leading-relaxed mb-3">
                     Ga nooit zelfstandig over op lactosevrije voeding zonder medisch advies. 
                     Symptomen die lijken op lactose-intolerantie kunnen andere oorzaken hebben:

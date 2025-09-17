@@ -388,12 +388,12 @@ export default function HoudbaarheidFlesvoedingPage() {
                       <p className="text-gray-600">2-4°C - Controleer met thermometer</p>
                     </div>
                     <div className="p-3 bg-amber-50 rounded-lg">
-                      <h4 className="font-medium text-gray-700 mb-1">Kamertemperatuur:</h4>
-                      <p className="text-gray-600">18-22°C - Maximum 1 uur</p>
+                      <h4 className="font-medium text-amber-800 mb-1">Kamertemperatuur:</h4>
+                      <p className="text-amber-700">18-22°C - Maximum 1 uur</p>
                     </div>
                     <div className="p-3 bg-amber-50 rounded-lg">
-                      <h4 className="font-medium text-gray-700 mb-1">Warm weer:</h4>
-                      <p className="text-gray-600">25°C+ - Maximum 30 minuten</p>
+                      <h4 className="font-medium text-amber-800 mb-1">Warm weer:</h4>
+                      <p className="text-amber-700">25°C+ - Maximum 30 minuten</p>
                     </div>
                   </div>
                 </div>
