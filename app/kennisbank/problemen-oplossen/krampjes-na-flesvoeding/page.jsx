@@ -504,7 +504,7 @@ export default function KrampjesNaFlesvoedingPage() {
                     <h3 className="font-medium text-gray-900 mb-4">{category.category}</h3>
                     <div className="space-y-4">
                       {category.causes.map((cause, causeIndex) => (
-                        <div key={causeIndex} className="p-4">
+                        <div key={causeIndex}>
                           <div className="flex items-center justify-between mb-2">
                             <h4 className="font-medium text-gray-700">{cause.cause}</h4>
                             <span className="text-sm font-medium bg-white text-gray-700 px-2 py-1 rounded">
@@ -774,7 +774,7 @@ export default function KrampjesNaFlesvoedingPage() {
               
               <div className="space-y-4">
                 {dailyRoutine.map((routine, index) => (
-                  <div key={index} className="p-4">
+                  <div key={index}>
                     <h3 className="font-medium text-primary mb-3">{routine.timeframe}</h3>
                     <div className="space-y-2">
                       {routine.tasks.map((task, taskIndex) => (
@@ -812,7 +812,7 @@ export default function KrampjesNaFlesvoedingPage() {
               
               <div className="space-y-4">
                 {myths.map((myth, index) => (
-                  <div key={index} className="p-4">
+                  <div key={index}>
                     <div className="mb-2">
                       <span className="text-primary font-medium"> "{myth.myth}"</span>
                     </div>

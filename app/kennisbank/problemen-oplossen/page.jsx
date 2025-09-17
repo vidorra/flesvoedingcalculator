@@ -87,7 +87,7 @@ export default function ProblemenOplossenPage() {
             {bottleRefusalCauses.map((item, index) => {
               const Icon = item.icon
               return (
-                <div key={index} className="p-4">
+                <div key={index}>
                   <div className="flex items-center space-x-2 mb-2">
                     <Icon className="w-5 h-5 text-primary" />
                     <h3 className="font-medium text-gray-700">{item.cause}:</h3>

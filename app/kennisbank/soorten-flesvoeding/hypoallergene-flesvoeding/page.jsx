@@ -245,7 +245,7 @@ export default function HypoallergeneVoedingPage() {
               
               <div className="space-y-6">
                 {implementationSteps.map((step, index) => (
-                  <div key={index} className="border-l-4 border-primary pl-4">
+                  <div key={index}>
                     <h3 className="font-semibold text-primary mb-2">{step.week}: {step.focus}</h3>
                     <div className="grid md:grid-cols-2 gap-3">
                       {step.actions.map((action, idx) => (

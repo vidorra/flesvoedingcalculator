@@ -307,7 +307,7 @@ export default function WaterKokenFlesvoedingPage() {
               
               <div className="space-y-4">
                 {veelgemaakteFouten.map((item, index) => (
-                  <div key={index} className="p-4">
+                  <div key={index}>
                     <h3 className="font-medium text-gray-700 mb-1">Fout: {item.fout}</h3>
                     <p className="text-gray-600 mb-1">Correct: {item.correct}</p>
                     <p className="text-gray-500 text-sm">Waarom gevaarlijk: {item.gevaar}</p>
