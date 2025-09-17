@@ -79,7 +79,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                   <h3 className="font-medium text-primary mb-3">Veiligheidsrisico's bij verkeerd verwarmen</h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
-                      <h4 className="font-medium text-gray-700 mb-2">Brandwonden voorkomen:</h4>
+                      <h4 className="font-medium text-primary mb-2">Brandwonden voorkomen:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
@@ -101,7 +101,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                     </div>
                     
                     <div>
-                      <h4 className="font-medium text-gray-700 mb-2">Voedingsstoffen behouden:</h4>
+                      <h4 className="font-medium text-primary mb-2">Voedingsstoffen behouden:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
@@ -123,7 +123,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                     </div>
                     
                     <div>
-                      <h4 className="font-medium text-gray-700 mb-2">Bacteriële veiligheid:</h4>
+                      <h4 className="font-medium text-primary mb-2">Bacteriële veiligheid:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
@@ -170,8 +170,8 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                   <h3 className="font-medium text-primary mb-3">Waarom magnetron gevaarlijk is</h3>
                   
                   <div className="space-y-4">
-                    <div className="border-l-4 border-red-300 pl-4">
-                      <h4 className="font-medium text-gray-700 mb-2">1. Ongelijkmatige verhitting</h4>
+                    <div className="p-4">
+                      <h4 className="font-medium text-primary mb-2">1. Ongelijkmatige verhitting</h4>
                       <div className="bg-white rounded-lg p-3">
                         <p className="text-sm text-gray-700 mb-2">Magnetron verwarmt:</p>
                         <ul className="space-y-1">
@@ -191,8 +191,8 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                       </div>
                     </div>
                     
-                    <div className="border-l-4 border-red-300 pl-4">
-                      <h4 className="font-medium text-gray-700 mb-2">2. "Hot Spots" probleem</h4>
+                    <div className="p-4">
+                      <h4 className="font-medium text-primary mb-2">2. "Hot Spots" probleem</h4>
                       <ul className="space-y-1">
                         <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Microscopische hete plekken ontstaan willekeurig</span></li>
                         <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Ondetecteerbaar bij gewone temperatuurtests</span></li>
@@ -201,8 +201,8 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                       </ul>
                     </div>
                     
-                    <div className="border-l-4 border-red-300 pl-4">
-                      <h4 className="font-medium text-gray-700 mb-2">3. Voedingswaarde verlies</h4>
+                    <div className="p-4">
+                      <h4 className="font-medium text-primary mb-2">3. Voedingswaarde verlies</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         <div>
                           <p className="text-sm text-gray-600 mb-1">Magnetron vernietigheid:</p>
@@ -248,7 +248,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <h4 className="font-medium text-gray-700 mb-2">Benodigdheden:</h4>
+                      <h4 className="font-medium text-primary mb-2">Benodigdheden:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
@@ -274,7 +274,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                     </div>
                     
                     <div>
-                      <h4 className="font-medium text-gray-700 mb-2">Perfecte waterpad methode:</h4>
+                      <h4 className="font-medium text-primary mb-2">Perfecte waterpad methode:</h4>
                       <div className="space-y-2">
                         <div className="flex items-start space-x-3">
                           <div className="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-medium">1</div>
@@ -387,7 +387,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <h4 className="font-medium text-gray-700 mb-2">Hoe het werkt:</h4>
+                      <h4 className="font-medium text-primary mb-2">Hoe het werkt:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Stoom- of waterbadprincipe</span></li>
                         <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Thermostaatregeling</span></li>
@@ -397,7 +397,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                     </div>
                     
                     <div>
-                      <h4 className="font-medium text-gray-700 mb-2">Voor- en nadelen:</h4>
+                      <h4 className="font-medium text-primary mb-2">Voor- en nadelen:</h4>
                       <div className="space-y-2">
                         <div>
                           <p className="text-gray-700">Voordelen:</p>
@@ -424,7 +424,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                   <h3 className="font-medium text-primary mb-3">Beste elektrische flessenwarmer modellen</h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="bg-white rounded-lg p-4">
-                      <h4 className="font-medium text-gray-700 mb-2">Philips AVENT (€35-45)</h4>
+                      <h4 className="font-medium text-primary mb-2">Philips AVENT (€35-45)</h4>
                       <ul className="space-y-1">
                         <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Nederlandse garantie</span></li>
                         <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Compatibel alle flesmerken</span></li>
@@ -433,7 +433,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                     </div>
                     
                     <div className="bg-white rounded-lg p-4">
-                      <h4 className="font-medium text-gray-700 mb-2">Tommee Tippee (€25-35)</h4>
+                      <h4 className="font-medium text-primary mb-2">Tommee Tippee (€25-35)</h4>
                       <ul className="space-y-1">
                         <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Snelle opwarming (3-4 min)</span></li>
                         <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">LED indicatoren</span></li>
@@ -442,7 +442,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                     </div>
                     
                     <div className="bg-white rounded-lg p-4">
-                      <h4 className="font-medium text-gray-700 mb-2">MAM (€30-40)</h4>
+                      <h4 className="font-medium text-primary mb-2">MAM (€30-40)</h4>
                       <ul className="space-y-1">
                         <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Extra stil (nachtgebruik)</span></li>
                         <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Energiezuinig</span></li>
@@ -454,69 +454,72 @@ export default function VeiligVerwarmenFlesvoedingPage() {
 
                 <div>
                   <h3 className="font-medium text-primary mb-3">Complete vergelijkingstabel</h3>
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-sm">
-                      <thead>
-                        <tr className="border-b border-gray-200">
-                          <th className="text-left py-2">Methode</th>
-                          <th className="text-left py-2">Snelheid</th>
-                          <th className="text-left py-2">Veiligheid</th>
-                          <th className="text-left py-2">Kosten</th>
-                          <th className="text-left py-2">Gemak</th>
-                          <th className="text-left py-2">Voedingsstoffen</th>
-                        </tr>
-                      </thead>
-                      <tbody className="space-y-1">
-                        <tr className="border-b border-gray-100">
-                          <td className="py-2 font-medium">Waterpad</td>
-                          <td className="py-2"></td>
-                          <td className="py-2"></td>
-                          <td className="py-2"></td>
-                          <td className="py-2"></td>
-                          <td className="py-2"></td>
-                        </tr>
-                        <tr className="border-b border-gray-100">
-                          <td className="py-2 font-medium">Flessenwarmer</td>
-                          <td className="py-2"></td>
-                          <td className="py-2"></td>
-                          <td className="py-2"></td>
-                          <td className="py-2"></td>
-                          <td className="py-2"></td>
-                        </tr>
-                        <tr className="border-b border-gray-100">
-                          <td className="py-2 font-medium">Stromend water</td>
-                          <td className="py-2"></td>
-                          <td className="py-2"></td>
-                          <td className="py-2"></td>
-                          <td className="py-2"></td>
-                          <td className="py-2"></td>
-                        </tr>
-                        <tr className="border-b border-gray-100">
-                          <td className="py-2 font-medium">Thermosfles</td>
-                          <td className="py-2"></td>
-                          <td className="py-2"></td>
-                          <td className="py-2"></td>
-                          <td className="py-2"></td>
-                          <td className="py-2"></td>
-                        </tr>
-                        <tr className="border-b border-gray-100 bg-white">
-                          <td className="py-2 font-medium">Magnetron</td>
-                          <td className="py-2"></td>
-                          <td className="py-2"></td>
-                          <td className="py-2"></td>
-                          <td className="py-2"></td>
-                          <td className="py-2"></td>
-                        </tr>
-                        <tr>
-                          <td className="py-2 font-medium">Auto 12V</td>
-                          <td className="py-2"></td>
-                          <td className="py-2"></td>
-                          <td className="py-2"></td>
-                          <td className="py-2"></td>
-                          <td className="py-2"></td>
-                        </tr>
-                      </tbody>
-                    </table>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div className="bg-white rounded-lg p-4">
+                      <h4 className="font-medium text-primary mb-3">Waterpad</h4>
+                      <div className="space-y-2 text-sm">
+                        <div><span className="text-gray-600">Snelheid:</span> <span className="text-gray-700">Gemiddeld (2-6 min)</span></div>
+                        <div><span className="text-gray-600">Veiligheid:</span> <span className="text-gray-700">Excellent (Perfect)</span></div>
+                        <div><span className="text-gray-600">Kosten:</span> <span className="text-gray-700">Excellent (Gratis)</span></div>
+                        <div><span className="text-gray-600">Gemak:</span> <span className="text-gray-700">Gemiddeld (Handmatig)</span></div>
+                        <div><span className="text-gray-600">Voedingsstoffen:</span> <span className="text-gray-700">Excellent (Behouden)</span></div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-white rounded-lg p-4">
+                      <h4 className="font-medium text-primary mb-3">Flessenwarmer</h4>
+                      <div className="space-y-2 text-sm">
+                        <div><span className="text-gray-600">Snelheid:</span> <span className="text-gray-700">Gemiddeld (3-8 min)</span></div>
+                        <div><span className="text-gray-600">Veiligheid:</span> <span className="text-gray-700">Excellent (Excellent)</span></div>
+                        <div><span className="text-gray-600">Kosten:</span> <span className="text-gray-700">Gemiddeld (€25-80)</span></div>
+                        <div><span className="text-gray-600">Gemak:</span> <span className="text-gray-700">Excellent (Automatisch)</span></div>
+                        <div><span className="text-gray-600">Voedingsstoffen:</span> <span className="text-gray-700">Excellent (Behouden)</span></div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-white rounded-lg p-4">
+                      <h4 className="font-medium text-primary mb-3">Stromend water</h4>
+                      <div className="space-y-2 text-sm">
+                        <div><span className="text-gray-600">Snelheid:</span> <span className="text-gray-700">Goed (1-3 min)</span></div>
+                        <div><span className="text-gray-600">Veiligheid:</span> <span className="text-gray-700">Goed (Goed)</span></div>
+                        <div><span className="text-gray-600">Kosten:</span> <span className="text-gray-700">Goed (Water)</span></div>
+                        <div><span className="text-gray-600">Gemak:</span> <span className="text-gray-700">Goed (Eenvoudig)</span></div>
+                        <div><span className="text-gray-600">Voedingsstoffen:</span> <span className="text-gray-700">Goed (Goed)</span></div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-white rounded-lg p-4">
+                      <h4 className="font-medium text-primary mb-3">Thermosfles</h4>
+                      <div className="space-y-2 text-sm">
+                        <div><span className="text-gray-600">Snelheid:</span> <span className="text-gray-700">Excellent (30 sec)</span></div>
+                        <div><span className="text-gray-600">Veiligheid:</span> <span className="text-gray-700">Goed (Goed)</span></div>
+                        <div><span className="text-gray-600">Kosten:</span> <span className="text-gray-700">Goed (€15-30)</span></div>
+                        <div><span className="text-gray-600">Gemak:</span> <span className="text-gray-700">Excellent (Onderweg)</span></div>
+                        <div><span className="text-gray-600">Voedingsstoffen:</span> <span className="text-gray-700">Goed (Goed)</span></div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-amber-50 rounded-lg p-4">
+                      <h4 className="font-medium text-amber-800 mb-3">Magnetron</h4>
+                      <div className="space-y-2 text-sm">
+                        <div><span className="text-amber-700">Snelheid:</span> <span className="text-amber-800">Excellent (30 sec)</span></div>
+                        <div><span className="text-amber-700">Veiligheid:</span> <span className="text-red-700">❌ GEVAARLIJK</span></div>
+                        <div><span className="text-amber-700">Kosten:</span> <span className="text-amber-800">Excellent (Gratis)</span></div>
+                        <div><span className="text-amber-700">Gemak:</span> <span className="text-amber-800">Excellent (1 knop)</span></div>
+                        <div><span className="text-amber-700">Voedingsstoffen:</span> <span className="text-red-700">❌ VERNIETIGD</span></div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-white rounded-lg p-4">
+                      <h4 className="font-medium text-primary mb-3">Auto 12V</h4>
+                      <div className="space-y-2 text-sm">
+                        <div><span className="text-gray-600">Snelheid:</span> <span className="text-gray-700">Traag (5-10 min)</span></div>
+                        <div><span className="text-gray-600">Veiligheid:</span> <span className="text-gray-700">Goed (Goed)</span></div>
+                        <div><span className="text-gray-600">Kosten:</span> <span className="text-gray-700">Gemiddeld (€40-60)</span></div>
+                        <div><span className="text-gray-600">Gemak:</span> <span className="text-gray-700">Excellent (Onderweg)</span></div>
+                        <div><span className="text-gray-600">Voedingsstoffen:</span> <span className="text-gray-700">Goed (Goed)</span></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -629,35 +632,35 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                   <h3 className="font-medium text-primary mb-3">Top 5 gevaarlijke verwarmingsfouten</h3>
                   
                   <div className="space-y-4">
-                    <div className="border-l-4 border-red-300 pl-4">
+                    <div className="p-4">
                       <h4 className="font-medium text-gray-700 mb-1">1. Magnetron gebruik</h4>
                       <p className="text-gray-600 mb-1">Fout: "Magnetron is sneller en makkelijker"</p>
                       <p className="text-gray-700 mb-1">Correct: Waterpad of flessenwarmer gebruiken</p>
                       <p className="text-amber-700">Risico: Ernstige brandwonden door hot spots</p>
                     </div>
                     
-                    <div className="border-l-4 border-red-300 pl-4">
+                    <div className="p-4">
                       <h4 className="font-medium text-gray-700 mb-1">2. Fles niet schudden voor test</h4>
                       <p className="text-gray-600 mb-1">Fout: Direct testen na verwarming</p>
                       <p className="text-gray-700 mb-1">Correct: Altijd eerst goed schudden</p>
                       <p className="text-amber-700">Risico: Koude buitenkant, hete binnenkant</p>
                     </div>
                     
-                    <div className="border-l-4 border-red-300 pl-4">
+                    <div className="p-4">
                       <h4 className="font-medium text-gray-700 mb-1">3. Alleen buitenkant fles voelen</h4>
                       <p className="text-gray-600 mb-1">Fout: "Fles voelt goed aan"</p>
                       <p className="text-gray-700 mb-1">Correct: Melk zelf testen op pols</p>
                       <p className="text-amber-700">Risico: Verborgen hete plekken in melk</p>
                     </div>
                     
-                    <div className="border-l-4 border-red-300 pl-4">
+                    <div className="p-4">
                       <h4 className="font-medium text-gray-700 mb-1">4. Herverwarmen van overgebleven melk</h4>
                       <p className="text-gray-600 mb-1">Fout: Restje melk later opnieuw verwarmen</p>
                       <p className="text-gray-700 mb-1">Correct: Overgebleven melk weggooien (max 1 uur)</p>
                       <p className="text-amber-700">Risico: Bacteriële groei, voedselvergiftiging</p>
                     </div>
                     
-                    <div className="border-l-4 border-red-300 pl-4">
+                    <div className="p-4">
                       <h4 className="font-medium text-gray-700 mb-1">5. Temperatuur raden</h4>
                       <p className="text-gray-600 mb-1">Fout: "Het zal wel goed zijn na X minuten"</p>
                       <p className="text-gray-700 mb-1">Correct: Altijd temperatuur controleren</p>
