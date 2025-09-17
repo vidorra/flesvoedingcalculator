@@ -1,7 +1,7 @@
 'use client'
 import Layout from '../../../components/Layout'
 import Link from 'next/link'
-import { AlertTriangle, ArrowRight, Home, Phone, X, Eye } from 'lucide-react'
+import { AlertTriangle, ArrowRight, Home, Phone, X, Eye, AlertCircle } from 'lucide-react'
 
 export default function VeiligheidPage() {
   const emergencyContacts = [
@@ -74,7 +74,7 @@ export default function VeiligheidPage() {
           
           <div className="mt-4 p-4 bg-white rounded-lg">
             <p className="text-gray-700 font-bold text-center">
-              📞 Bij levensbedreigende situaties: bel direct 112
+              Bij levensbedreigende situaties: bel direct 112
             </p>
           </div>
         </div>
@@ -152,26 +152,16 @@ export default function VeiligheidPage() {
           </div>
         </div>
 
-        {/* Warning about online information */}
+        {/* Medical disclaimer */}
         <div className="bg-amber-50 rounded-2xl border border-amber-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-3 flex items-center">
-            <AlertTriangle className="w-5 h-5 mr-2" />
-            Belangrijk: Medische disclaimer
-          </h2>
-          <div className="space-y-3 text-gray-700">
-            <p>
-              <strong>Deze kennisbank is alleen voor informatieve doeleinden.</strong> De informatie 
-              vervangt geen professioneel medisch advies, diagnose of behandeling.
-            </p>
-            <p>
-              Raadpleeg altijd uw kinderarts, huisarts of consultatiebureau bij:
-            </p>
-            <ul className="list-disc pl-6 space-y-1 text-sm">
-              <li>Zorgen over de gezondheid of ontwikkeling van uw baby</li>
-              <li>Vragen over voeding die specifiek zijn voor uw situatie</li>
-              <li>Veranderingen in eet- of drinkpatroon</li>
-              <li>Alle signalen die u zorgen baren</li>
-            </ul>
+          <div className="flex items-start space-x-3">
+            <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+            <div>
+              <h3 className="font-semibold text-amber-800 mb-1">Medische Disclaimer</h3>
+              <p className="text-sm text-amber-700">
+                De informatie op deze pagina is alleen voor informatieve doeleinden en vervangt geen professioneel medisch advies. Raadpleeg altijd uw kinderarts of een gekwalificeerde zorgverlener voor specifieke medische vragen.
+              </p>
+            </div>
           </div>
         </div>
 
