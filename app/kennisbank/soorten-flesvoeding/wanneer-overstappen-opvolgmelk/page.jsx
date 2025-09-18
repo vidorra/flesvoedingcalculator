@@ -99,7 +99,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
     {
       situation: 'Ongunstige Omstandigheden',
       icon: XCircle,
-      color: 'text-red-600',
+      color: 'text-primary',
       conditions: [
         'Verhuizing gepland: Te veel veranderingen tegelijk',
         'Vakantie periode: Nieuwe omgeving al stressvol',
@@ -124,7 +124,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
     },
     {
       category: 'Baby Signalen: Nog Niet Klaar',
-      color: 'text-red-600',
+      color: 'text-primary',
       signals: [
         'Weigert elke vaste voeding consistentie',
         'Heeft moeite met zitten/balans',
@@ -452,7 +452,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                       {consideration.items.map((item, itemIndex) => (
                         <li key={index} className="flex items-start space-x-2">
                           <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
-                            consideration.category.includes('Indicaties') ? 'bg-green-400' : 'bg-red-400'
+                            'bg-primary'
                           }`}></div>
                           <span className="text-gray-700">{item}</span>
                         </li>

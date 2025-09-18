@@ -487,7 +487,7 @@ export default function KostenVanFlesvoeding() {
             </section>
 
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-6">🛒 Waar het goedkoopst winkelen?</h2>
+              <h2 className="text-lg font-semibold text-primary mb-6">Waar het goedkoopst winkelen?</h2>
               
               <h3 className="font-medium text-primary mb-4">Prijs vergelijking Nederlandse retailers</h3>
               <div className="overflow-x-auto mb-6">
