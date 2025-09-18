@@ -13,15 +13,15 @@ export default function TweelingVoedenPage() {
     {
       title: 'De Gelijktijdige Voeding',
       description: '60% van ouders gebruikt deze methode',
-      tips: ['Beide baby\'s tegelijk voeden', 'Bespaart 4-6 uur per dag', 'Twin feeding pillow gebruiken', 'V-houding of parallelle houding']
+      tips: ['Beide baby\'s tegelijk voeden', 'Bespaart 4-6 uur per dag', 'Tweelingvoedingskussen gebruiken', 'V-houding of parallelle houding']
     },
     {
       title: 'De Productielijn Methode', 
       description: '75% tijdsbesparing op bereiding',
-      tips: ['6-8 flessen tegelijk maken', 'Bewaren in koelkast (24u houdbaar)', 'Label met naam en tijd', 'Batch-bereiding voeding']
+      tips: ['6-8 flessen tegelijk maken', 'Bewaren in koelkast (24u houdbaar)', 'Label met naam en tijd', 'Voorraad bereiden voeding']
     },
     {
-      title: 'Het Tag-Team Systeem',
+      title: 'Het Afwisselingssysteem',
       description: 'Beide ouders krijgen 4-5 uur slaap',
       tips: ['Nachtvoeding verdelen', 'Ouder 1: 22:00 en 02:00', 'Ouder 2: 06:00 en 10:00', 'Wisseling per week mogelijk']
     }
@@ -40,7 +40,7 @@ export default function TweelingVoedenPage() {
     {
       category: 'Handige extras',
       items: [
-        { name: 'Twin Z Pillow', price: '€85', description: 'Ergonomisch voeden' },
+        { name: 'Twin Z Kussen', price: '€85', description: 'Ergonomisch voeden' },
         { name: 'Bottle Buddy', price: '€25', description: 'Fleshouder per baby' },
         { name: 'Baby gym met fleshouders', price: '€60', description: 'Entertainment tijdens voeden' }
       ]
@@ -78,7 +78,7 @@ export default function TweelingVoedenPage() {
 
   const budgetBreakdown = [
     {
-      category: 'Budget variant (Kruidvat)',
+      category: 'Voordelige variant (Kruidvat)',
       periods: [
         { age: '0-3 maanden', cost: '€70-90/maand', details: '6-8 blikken' },
         { age: '3-6 maanden', cost: '€90-120/maand', details: '8-10 blikken' },
@@ -252,7 +252,7 @@ export default function TweelingVoedenPage() {
                 <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>16 flessen: €60-80</span></li>
                 <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Sterilisator: €40-80</span></li>
                 <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Flessenwarmer: €35-45</span></li>
-                <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Twin pillow: €85</span></li>
+                <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Tweelingkussen: €85</span></li>
                 <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Accessoires: €30-50</span></li>
               </ul>
             </div>
@@ -366,7 +366,7 @@ export default function TweelingVoedenPage() {
             <h3 className="font-medium text-primary mb-3">Bespaartips:</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600">
               <div>
-                <h4 className="font-medium">Bulk inkopen:</h4>
+                <h4 className="font-medium">Grootverpakingen kopen:</h4>
                 <ul className="space-y-1 mt-1">
                   <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Action/Kruidvat: 2e gratis acties</span></li>
                   <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Albert Heijn: Bonusbox kortingen</span></li>
@@ -377,7 +377,7 @@ export default function TweelingVoedenPage() {
                 <h4 className="font-medium">Tweede hands:</h4>
                 <ul className="space-y-1 mt-1">
                   <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Equipment via Marktplaats</span></li>
-                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Twin pillows tweedehands</span></li>
+                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Tweelingkussens tweedehands</span></li>
                   <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Besparing: 30-50% op startkosten</span></li>
                 </ul>
               </div>
@@ -402,7 +402,7 @@ export default function TweelingVoedenPage() {
             </div>
             
             <div className="bg-white rounded-lg p-4">
-              <h3 className="font-medium text-primary mb-2">"Twin pillow = game changer" - Patrick, Utrecht</h3>
+              <h3 className="font-medium text-primary mb-2">"Tweelingkussen = grote verbetering" - Patrick, Utrecht</h3>
               <p className="text-gray-600">
                 "€85 beste investering ooit. Beide baby's tegelijk voeden terwijl ik koffie drink. 
                 Mijn rug doet niet meer zeer en baby's zijn rustiger."
@@ -477,7 +477,7 @@ export default function TweelingVoedenPage() {
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full"></div>
-                <span>Batch-bereiding elimineert stress</span>
+                <span>Voorraad bereiden elimineert stress</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full"></div>

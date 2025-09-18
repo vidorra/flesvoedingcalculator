@@ -11,31 +11,31 @@ export const metadata = {
 export default function VerschillendeSpenenUitproberenPage() {
   const speenTypes = [
     {
-      category: 'Flow Speeds',
+      category: 'Doorstroomsnelheden',
       types: [
         {
-          name: 'Size 0/Newborn (0-1 maand)',
+          name: 'Maat 0/Pasgeborene (0-1 maand)',
           flow: '1-2 druppels per seconde',
           ideal: 'Premature baby\'s, pasgeborenen',
           duration: '20-30 minuten normaal',
           brands: 'Philips Avent 0, MAM 0, NUK Newborn'
         },
         {
-          name: 'Size 1/Slow (0-3 maanden)',
+          name: 'Maat 1/Langzaam (0-3 maanden)',
           flow: '2-3 druppels per seconde',
           ideal: 'Meeste nieuwe baby\'s',
           duration: '15-25 minuten',
           brands: 'Tommee Tippee Size 1, Hero Baby Slow'
         },
         {
-          name: 'Size 2/Medium (3-6 maanden)',
+          name: 'Maat 2/Medium (3-6 maanden)',
           flow: '3-4 druppels per seconde',
           ideal: 'Groeiende baby\'s, betere zuigkracht',
           duration: '10-20 minuten',
           brands: 'Overstap wanneer voeding >30 min duurt'
         },
         {
-          name: 'Size 3/Fast (6+ maanden)',
+          name: 'Maat 3/Snel (6+ maanden)',
           flow: '4-6 druppels per seconde',
           ideal: 'Oudere baby\'s, dikke voeding',
           duration: '8-15 minuten',
@@ -72,7 +72,7 @@ export default function VerschillendeSpenenUitproberenPage() {
           form: 'Speciaal ventilatie systeem',
           benefit: 'Voorkomt vacuüm, minder lucht',
           suitable: 'Baby\'s met koliekklachten',
-          brands: 'MAM Easy Start, Dr. Brown\'s Options'
+          brands: 'MAM Easy Start, Dr. Brown\'s Opties'
         }
       ]
     }
@@ -129,8 +129,8 @@ export default function VerschillendeSpenenUitproberenPage() {
       brand: 'Philips Avent',
       rating: 5,
       strengths: 'Betrouwbaar, breed assortiment',
-      flows: '0, 1, 2, 3, 4, Variable',
-      types: 'Natural, Classic, Anti-colic',
+      flows: '0, 1, 2, 3, 4, Verstelbaar',
+      types: 'Natuurlijk, Klassiek, Anti-koliek',
       price: '€3-6 per speen',
       availability: 'Overal (Etos, Kruidvat, online)'
     },
@@ -148,7 +148,7 @@ export default function VerschillendeSpenenUitproberenPage() {
       rating: 4,
       strengths: 'Orthodontisch design',
       flows: 'Duitse precisie engineering',
-      types: 'Eerste Choice, Perfect Match',
+      types: 'Eerste Choice, Perfecte Match',
       price: '€3-5 per speen',
       availability: 'Natuurlijke mondpositie focus'
     },
@@ -187,7 +187,7 @@ export default function VerschillendeSpenenUitproberenPage() {
       problem: 'Overmatig Spugen/Reflux',
       causes: ['Te snelle flow', 'Lucht inslikken', 'Verkeerde positie'],
       solutions: [
-        'Dr. Brown\'s Options: Beste vacuum preventie',
+        'Dr. Brown\'s Opties: Beste vacuum preventie',
         'MAM Easy Start: Goede lucht controle',
         'Langzamere flow: Size 0 of 1 gebruiken langer',
         'Orthodontische vorm: Betere afsluiting'
@@ -207,7 +207,7 @@ export default function VerschillendeSpenenUitproberenPage() {
   const ageRecommendations = [
     {
       age: '0-6 Weken: Getting Started',
-      primary: 'Philips Avent Natural Size 1',
+      primary: 'Philips Avent Natuurlijk Maat 1',
       backup: 'MAM Easy Start Size 0',
       duration: '20-30 minuten normaal',
       notes: 'Breed geaccepteerd + anti-koliek optie'
@@ -238,11 +238,11 @@ export default function VerschillendeSpenenUitproberenPage() {
   const shoppingTips = [
     {
       package: 'BASIS PAKKET (€25-35)',
-      items: ['3x Philips Avent Natural Size 1', '2x MAM Easy Start Size 1', '1x NUK First Choice Size 1']
+      items: ['3x Philips Avent Natuurlijk Maat 1', '2x MAM Easy Start Size 1', '1x NUK First Choice Size 1']
     },
     {
-      package: 'TESTING PAKKET (€15-20)',
-      items: ['1x Dr. Brown\'s Options Size 1', '1x Tommee Tippee Size 1', '1x Variable flow speen']
+      package: 'TESTPAKKET (€15-20)',
+      items: ['1x Dr. Brown\'s Opties Size 1', '1x Tommee Tippee Size 1', '1x Verstelbare doorstroom speen']
     },
     {
       package: 'BACKUP PAKKET (€10-15)',
@@ -254,7 +254,7 @@ export default function VerschillendeSpenenUitproberenPage() {
     {
       problem: 'Speen Gaat Te Snel',
       quickFix: ['Fles meer horizontaal houden', 'Pauzes maken tijdens voeding', 'Kleinere porties geven'],
-      permanentSolution: ['Langzamere flow speen kopen', 'Variable flow proberen', 'Orthodontische vorm testen']
+      permanentSolution: ['Langzamere flow speen kopen', 'Verstelbare doorstroom proberen', 'Orthodontische vorm testen']
     },
     {
       problem: 'Speen Gaat Te Langzaam',
@@ -361,7 +361,7 @@ export default function VerschillendeSpenenUitproberenPage() {
                           <h4 className="font-medium text-primary mb-2">{type.name}</h4>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
                             <div>
-                              <span className="font-medium text-gray-700">Flow/Vorm: </span>
+                              <span className="font-medium text-gray-700">Doorstroom/Vorm: </span>
                               <span className="text-gray-600">{type.flow || type.form}</span>
                             </div>
                             <div>
@@ -571,7 +571,7 @@ export default function VerschillendeSpenenUitproberenPage() {
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
                 <ShoppingCart className="w-5 h-5 mr-2" />
-                Smart Shopping Strategy
+                Slimme boodschappenstrategie
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -591,7 +591,7 @@ export default function VerschillendeSpenenUitproberenPage() {
               </div>
               
               <div className="mt-4">
-                <h3 className="font-medium text-primary mb-2">Cost-Effective Tips:</h3>
+                <h3 className="font-medium text-primary mb-2">Kostenbesparende tips:</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {[
                     'Multi-packs: Goedkoper per stuk',
@@ -611,7 +611,7 @@ export default function VerschillendeSpenenUitproberenPage() {
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
                 <AlertCircle className="w-5 h-5 mr-2" />
-                Troubleshooting Guide
+                Probleemoplossingshandleiding
               </h2>
               
               <div className="space-y-6">
@@ -621,7 +621,7 @@ export default function VerschillendeSpenenUitproberenPage() {
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <h4 className="font-medium text-primary mb-2">Quick Fixes:</h4>
+                        <h4 className="font-medium text-primary mb-2">Snelle oplossingen:</h4>
                         <ul className="space-y-1">
                           {guide.quickFix.map((fix, fixIndex) => (
                             <li key={fixIndex} className="flex items-start space-x-2">
@@ -633,7 +633,7 @@ export default function VerschillendeSpenenUitproberenPage() {
                       </div>
                       
                       <div>
-                        <h4 className="font-medium text-primary mb-2">Permanente Oplossing:</h4>
+                        <h4 className="font-medium text-primary mb-2">Permanente oplossing:</h4>
                         <ul className="space-y-1">
                           {guide.permanentSolution.map((solution, solutionIndex) => (
                             <li key={solutionIndex} className="flex items-start space-x-2">

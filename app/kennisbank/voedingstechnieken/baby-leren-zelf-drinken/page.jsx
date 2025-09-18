@@ -59,7 +59,7 @@ export default function BabyLerenZelfDrinkenPage() {
     {
       fase: "Eerste Pogingen (6-8 maanden)", 
       kenmerken: "Bilateral control, betere mondcoördinatie",
-      activiteiten: "Sippy cup met handvatten, hand-over-hand guidance"
+      activiteiten: "Tuitmondbekers met handvatten, hand-in-hand begeleiding"
     },
     {
       fase: "Ontwikkeling (8-10 maanden)",
@@ -69,7 +69,7 @@ export default function BabyLerenZelfDrinkenPage() {
     {
       fase: "Mastery (10-15 maanden)",
       kenmerken: "Accurate targeting, volume control, een-handig gebruik",
-      activiteities: "Sociale context drinken, meal integration"
+      activiteities: "Sociale context drinken, maaltijd integratie"
     }
   ]
 
@@ -87,7 +87,7 @@ export default function BabyLerenZelfDrinkenPage() {
       geschikt: "8+ maanden"
     },
     {
-      naam: "Oxo Tot Straw Cup",
+      naam: "Oxo Tot Rietjesbeker",
       prijs: "€14-18", 
       voordelen: "Completely leak-proof, promotes proper swallowing",
       geschikt: "10+ maanden"
@@ -255,7 +255,7 @@ export default function BabyLerenZelfDrinkenPage() {
               </div>
 
               <div className="border-t border-gray-200 pt-6">
-                <h3 className="font-medium text-primary mb-4">Week 3-4: Skill Building</h3>
+                <h3 className="font-medium text-primary mb-4">Week 3-4: Vaardigheid Ontwikkelen</h3>
                 <div className="bg-white rounded-lg p-4 mb-4">
                   <p className="text-gray-700 text-sm mb-2"><strong>Doelen:</strong> Cup naar mond brengen, 60-120ml per sessie, minder hand-over-hand</p>
                   <p className="text-gray-700 text-sm"><strong>Activiteiten:</strong> Verschillende shapes proberen, reward system, 3x per dag</p>
@@ -266,7 +266,7 @@ export default function BabyLerenZelfDrinkenPage() {
                 <h3 className="font-medium text-primary mb-4">Week 5-8: Competentie Ontwikkeling</h3>
                 <div className="bg-white rounded-lg p-4 mb-4">
                   <p className="text-gray-700 text-sm mb-2"><strong>Doelen:</strong> 150-200ml zelfstandig, minimaal morsen, routine integration</p>
-                  <p className="text-gray-700 text-sm"><strong>Challenges:</strong> Multiple cup types, meal integration, sociale context</p>
+                  <p className="text-gray-700 text-sm"><strong>Challenges:</strong> Multiple cup types, maaltijd integratie, sociale context</p>
                 </div>
               </div>
 

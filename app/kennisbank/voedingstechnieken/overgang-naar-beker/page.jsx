@@ -25,7 +25,7 @@ const nlGuidelines = [
   { age: "10-12 maanden", activity: "Introductie training cups" },
   { age: "12-15 maanden", activity: "Hoofddrank methode overgang" },
   { age: "15-18 maanden", activity: "Volledige beker competentie" },
-  { age: "18-24 maanden", activity: "Refinement + alle dranken" },
+  { age: "18-24 maanden", activity: "Verfijning + alle dranken" },
   { age: "24+ maanden", activity: "Adult-like drinking skills" }
 ];
 
@@ -149,7 +149,7 @@ const weeklyPlan = [
     ]
   },
   {
-    week: "Week 2: Skill Building & Volume",
+    week: "Week 2: Vaardigheid ontwikkelen & Volume",
     goals: [
       "Volume verhogen (60-120ml)",
       "Targeting mouth accuracy",
@@ -183,7 +183,7 @@ const weeklyPlan = [
     ]
   },
   {
-    week: "Week 4: Mastery & Confidence",
+    week: "Week 4: Beheersing & Zelfvertrouwen",
     goals: [
       "Confident independent use",
       "Volume 180-250ml sessions", 
@@ -707,7 +707,7 @@ export default function OvergangNaarBekerPage() {
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-medium">2</div>
                       <div className="flex-1">
-                        <h4 className="font-medium text-gray-700 mb-2">Week 2: Skill Building & Volume</h4>
+                        <h4 className="font-medium text-gray-700 mb-2">Week 2: Vaardigheid ontwikkelen & Volume</h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div>
                             <h5 className="text-sm font-medium text-gray-700 mb-1">Doelen:</h5>
@@ -777,7 +777,7 @@ export default function OvergangNaarBekerPage() {
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-medium">4</div>
                       <div className="flex-1">
-                        <h4 className="font-medium text-gray-700 mb-2">Week 4: Mastery & Confidence</h4>
+                        <h4 className="font-medium text-gray-700 mb-2">Week 4: Beheersing & Zelfvertrouwen</h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div>
                             <h5 className="text-sm font-medium text-gray-700 mb-1">Success metrics:</h5>
