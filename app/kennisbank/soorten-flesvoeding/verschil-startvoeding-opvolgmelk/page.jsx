@@ -439,7 +439,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                     <h3 className="font-medium text-gray-700 mb-4">{category.category}</h3>
                     <div className="space-y-4">
                       {category.brands.map((brand, brandIndex) => (
-                        <div key={brandIndex} className="p-4">
+                        <div key={brandIndex}>
                           <div className="flex items-center justify-between mb-3">
                             <h4 className="font-medium text-gray-700">{brand.name}</h4>
                             <div className="text-sm text-primary font-medium">

@@ -291,7 +291,7 @@ export default function LactosevrijeFlesvoedingPage() {
 
               <div className="space-y-6">
                 {needIndicators.map((indicator, index) => (
-                  <div key={index} className="p-4">
+                  <div key={index}>
                     <div className="flex justify-between items-start mb-3">
                       <h3 className="font-medium text-gray-700">{indicator.category}</h3>
                       <span className="text-sm bg-white text-gray-700 px-2 py-1 rounded">
@@ -323,7 +323,7 @@ export default function LactosevrijeFlesvoedingPage() {
               
               <div className="space-y-8">
                 {premiumOptions.map((option, index) => (
-                  <div key={index} className="p-4">
+                  <div key={index}>
                     <div className="flex justify-between items-start mb-4">
                       <div>
                         <h3 className="font-medium text-primary text-lg mb-1">{option.name}</h3>
@@ -396,7 +396,7 @@ export default function LactosevrijeFlesvoedingPage() {
               
               <div className="space-y-6">
                 {transitionSteps.map((step, index) => (
-                  <div key={index} className="p-4">
+                  <div key={index}>
                     <h3 className="font-medium text-primary mb-3">{step.step}</h3>
                     <ul className="space-y-2">
                       {step.tasks.map((task, taskIndex) => (
@@ -470,7 +470,7 @@ export default function LactosevrijeFlesvoedingPage() {
               
               <div className="space-y-4">
                 {commonMistakes.map((mistake, index) => (
-                  <div key={index} className="p-4">
+                  <div key={index}>
                     <h3 className="font-medium text-primary mb-2"> {mistake.mistake}</h3>
                     <p className="text-gray-700 text-sm mb-2">
                       <strong>Waarom problematisch:</strong> {mistake.why}

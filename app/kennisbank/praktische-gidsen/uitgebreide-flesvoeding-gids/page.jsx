@@ -272,7 +272,7 @@ export default function UitgebreideFlesvoedingGids() {
               <p><strong>Gemiddeld verbruik:</strong> 4-5 blikken van 800g per maand</p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
-                <div className="p-4">
+                <div>
                   <h5 className="font-bold text-primary">Budget opties:</h5>
                   <ul className="text-sm">
                     <li>Kruidvat: €7,99 × 4,5 = <strong>€36/maand</strong></li>
@@ -281,7 +281,7 @@ export default function UitgebreideFlesvoedingGids() {
                   </ul>
                 </div>
                 
-                <div className="p-4">
+                <div>
                   <h5 className="font-bold text-primary">Middensegment:</h5>
                   <ul className="text-sm">
                     <li>Hero Baby: €11,99 × 4,5 = <strong>€54/maand</strong></li>
@@ -396,7 +396,7 @@ export default function UitgebreideFlesvoedingGids() {
               <h3>De Technische Overgang: Stap-voor-Stap</h3>
 
               <div className="space-y-6 my-6">
-                <div className="p-4">
+                <div>
                   <h4 className="font-bold text-primary">Week 1: Kennismaking Fase</h4>
                   <p><strong>Doel:</strong> Baby wennen aan fles zonder druk</p>
                   <ul>
@@ -407,7 +407,7 @@ export default function UitgebreideFlesvoedingGids() {
                   </ul>
                 </div>
 
-                <div className="p-4">
+                <div>
                   <h4 className="font-bold text-primary">Week 2: Routine Opbouwen</h4>
                   <p><strong>Doel:</strong> Vestig 1-2 betrouwbare fles voedingen</p>
                   <ul>
@@ -417,7 +417,7 @@ export default function UitgebreideFlesvoedingGids() {
                   </ul>
                 </div>
 
-                <div className="p-4">
+                <div>
                   <h4 className="font-bold text-primary">Week 3-4: Opschalen</h4>
                   <p><strong>Doel:</strong> Verhoog naar 3-4 fles voedingen per dag</p>
                   <ul>
@@ -485,7 +485,7 @@ export default function UitgebreideFlesvoedingGids() {
               <h3>Pre-Werk Planning: 4 Weken Voor Start</h3>
               
               <div className="space-y-4 my-6">
-                <div className="p-4">
+                <div>
                   <h4 className="font-bold">Week 4: Beoordeling & Onderzoek</h4>
                   <ul className="space-y-2 mt-2">
                     <li className="flex items-center space-x-2">
@@ -507,7 +507,7 @@ export default function UitgebreideFlesvoedingGids() {
                   </ul>
                 </div>
 
-                <div className="p-4">
+                <div>
                   <h4 className="font-bold">Week 3: Uitrusting & Systemen Opzet</h4>
                   <ul className="space-y-2 mt-2">
                     <li className="flex items-center space-x-2">
@@ -627,7 +627,7 @@ export default function UitgebreideFlesvoedingGids() {
               <h3>Waarom Baby's de Fles Weigeren: De 8 Hoofdoorzaken</h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-                <div className="p-4">
+                <div>
                   <h4 className="font-bold text-primary">1. Temperatuur Problemen (35%)</h4>
                   <p className="text-sm">Baby's zijn gevoeliger voor temperatuurverschillen dan we denken.</p>
                   <ul className="text-sm">
@@ -637,7 +637,7 @@ export default function UitgebreideFlesvoedingGids() {
                   </ul>
                 </div>
 
-                <div className="p-4">
+                <div>
                   <h4 className="font-bold text-primary">2. Speen Incompatibiliteit (28%)</h4>
                   <p className="text-sm">Verkeerde doorstroomsnelheid, vorm, of materiaal.</p>
                   <ul className="text-sm">
@@ -657,7 +657,7 @@ export default function UitgebreideFlesvoedingGids() {
                   </ul>
                 </div>
 
-                <div className="p-4">
+                <div>
                   <h4 className="font-bold text-primary">4. Overmoeide Baby (10%)</h4>
                   <p className="text-sm">Timing is cruciaal voor successvolle voeding.</p>
                   <ul className="text-sm">
@@ -671,7 +671,7 @@ export default function UitgebreideFlesvoedingGids() {
               <h3>Stap-voor-Stap Probleemoplossing Protocol</h3>
 
               <div className="space-y-4 my-6">
-                <div className="p-4">
+                <div>
                   <h4 className="font-bold">Fase 1: Directe Beoordeling (Dag 1)</h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
@@ -695,7 +695,7 @@ export default function UitgebreideFlesvoedingGids() {
                   </div>
                 </div>
 
-                <div className="p-4">
+                <div>
                   <h4 className="font-bold">Fase 2: Systematisch Testen (Dag 2-4)</h4>
                   <ul>
                     <li><strong>Dag 2:</strong> Probeer langzame doorstroom speen</li>

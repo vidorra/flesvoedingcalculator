@@ -125,7 +125,7 @@ export default function FlesvoedingPrematurePage() {
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-4">
+            <div>
               <h3 className="font-medium text-primary mb-3">Verschillen met normale baby's:</h3>
               <ul className="space-y-2">
                 <li className="flex items-center space-x-2">
@@ -147,7 +147,7 @@ export default function FlesvoedingPrematurePage() {
               </ul>
             </div>
             
-            <div className="p-4">
+            <div>
               <h3 className="font-medium text-primary mb-3">Extra aandacht voor:</h3>
               <ul className="space-y-2">
                 <li className="flex items-center space-x-2">

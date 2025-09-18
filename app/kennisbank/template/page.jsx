@@ -195,7 +195,7 @@ export default function KennisbankTemplatePage() {
                 <div className="bg-white rounded-lg p-4 mb-4">
                   <pre className="text-sm text-gray-800 overflow-x-auto">
 {`{/*  CORRECT: Borders WITH background colors */}
-<div className="p-4">
+<div>
   Content with proper visual context
 </div>
 
@@ -205,7 +205,7 @@ export default function KennisbankTemplatePage() {
 </div>
 
 {/*  CORRECT: Clean content flow */}
-<div className="p-4">
+<div>
   Clean content without visual clutter
 </div>`}
                   </pre>

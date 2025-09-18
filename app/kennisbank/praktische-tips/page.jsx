@@ -156,7 +156,7 @@ export default function PraktischeTipsPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {organizationTips.map((section, index) => (
-              <div key={index} className="p-4">
+              <div key={index}>
                 <h3 className="font-medium text-primary mb-3">{section.title}:</h3>
                 <div className="space-y-2">
                   {section.tips.map((tip, index) => (
