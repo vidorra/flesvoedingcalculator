@@ -297,7 +297,7 @@ export default function HoudbaarheidFlesvoedingPage() {
               
               <div className="space-y-6">
                 {timeLimits.map((limit, index) => (
-                  <div key={index} className="p-4">
+                  <div key={index}>
                     <h3 className="font-medium text-primary mb-3">{limit.situation}</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
@@ -406,7 +406,7 @@ export default function HoudbaarheidFlesvoedingPage() {
               
               <div className="space-y-4">
                 {commonMistakes.map((mistake, index) => (
-                  <div key={index} className="p-4">
+                  <div key={index}>
                     <h3 className="font-medium text-primary mb-2"> {mistake.mistake}</h3>
                     <p className="text-gray-700 text-sm mb-2">
                       <strong>Waarom gevaarlijk:</strong> {mistake.why}

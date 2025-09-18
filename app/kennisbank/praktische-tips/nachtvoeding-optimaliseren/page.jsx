@@ -383,7 +383,7 @@ export default function NachtvoedingOptimaliserenPage() {
           
           <div className="space-y-4">
             {ageBasedStrategies.map((phase, index) => (
-              <div key={index} className="p-4">
+              <div key={index}>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
                     <h3 className="font-bold text-primary text-lg">{phase.age}</h3>
@@ -416,7 +416,7 @@ export default function NachtvoedingOptimaliserenPage() {
           
           <div className="space-y-4">
             {commonChallenges.map((item, index) => (
-              <div key={index} className="p-4">
+              <div key={index}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <h3 className="font-medium text-gray-600 mb-2">Probleem:</h3>

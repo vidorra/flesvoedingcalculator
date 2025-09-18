@@ -191,7 +191,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                       </div>
                     </div>
                     
-                    <div className="p-4">
+                    <div>
                       <h4 className="font-medium text-primary mb-2">2. "Hot Spots" probleem</h4>
                       <ul className="space-y-1">
                         <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Microscopische hete plekken ontstaan willekeurig</span></li>
@@ -201,7 +201,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                       </ul>
                     </div>
                     
-                    <div className="p-4">
+                    <div>
                       <h4 className="font-medium text-primary mb-2">3. Voedingswaarde verlies</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         <div>
@@ -639,28 +639,28 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                       <p className="text-amber-700">Risico: Ernstige brandwonden door hot spots</p>
                     </div>
                     
-                    <div className="p-4">
+                    <div>
                       <h4 className="font-medium text-gray-700 mb-1">2. Fles niet schudden voor test</h4>
                       <p className="text-gray-600 mb-1">Fout: Direct testen na verwarming</p>
                       <p className="text-gray-700 mb-1">Correct: Altijd eerst goed schudden</p>
                       <p className="text-amber-700">Risico: Koude buitenkant, hete binnenkant</p>
                     </div>
                     
-                    <div className="p-4">
+                    <div>
                       <h4 className="font-medium text-gray-700 mb-1">3. Alleen buitenkant fles voelen</h4>
                       <p className="text-gray-600 mb-1">Fout: "Fles voelt goed aan"</p>
                       <p className="text-gray-700 mb-1">Correct: Melk zelf testen op pols</p>
                       <p className="text-amber-700">Risico: Verborgen hete plekken in melk</p>
                     </div>
                     
-                    <div className="p-4">
+                    <div>
                       <h4 className="font-medium text-gray-700 mb-1">4. Herverwarmen van overgebleven melk</h4>
                       <p className="text-gray-600 mb-1">Fout: Restje melk later opnieuw verwarmen</p>
                       <p className="text-gray-700 mb-1">Correct: Overgebleven melk weggooien (max 1 uur)</p>
                       <p className="text-amber-700">Risico: Bacteriële groei, voedselvergiftiging</p>
                     </div>
                     
-                    <div className="p-4">
+                    <div>
                       <h4 className="font-medium text-gray-700 mb-1">5. Temperatuur raden</h4>
                       <p className="text-gray-600 mb-1">Fout: "Het zal wel goed zijn na X minuten"</p>
                       <p className="text-gray-700 mb-1">Correct: Altijd temperatuur controleren</p>

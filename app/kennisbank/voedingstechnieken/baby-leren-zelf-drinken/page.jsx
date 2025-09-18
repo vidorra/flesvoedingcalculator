@@ -161,8 +161,8 @@ export default function BabyLerenZelfDrinkenPage() {
                 
                 <ul className="space-y-3 mb-6">
                   {readinessSignals.map((signal, index) => (
-                    <li key={index} className="flex items-start space-x-2">
-                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                    <li key={index} className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                       <span className="text-gray-700">{signal}</span>
                     </li>
                   ))}
