@@ -297,9 +297,10 @@ export default function FlesBerenStapVoorStap() {
                     </div>
                   </div>
                 </div>
+            </div>
 
-                <div>
-                  <h3 className="text-2xl font-semibold text-primary mb-4">Stap 2: Poeder toevoegen - De kritieke fase</h3>
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+                  <h2 className="text-lg font-semibold text-primary mb-4">Stap 2: Poeder toevoegen - De kritieke fase</h2>
                   
                   <div className="mb-6">
                     <h4 className="font-semibold text-primary mb-3">Poeder afmeten - Nauwkeurigheid is cruciaal </h4>
@@ -373,9 +374,10 @@ export default function FlesBerenStapVoorStap() {
                     </ul>
                   </div>
                 </div>
+            </div>
 
-                <div>
-                  <h3 className="text-2xl font-semibold text-primary mb-4">Stap 3: Mengen tot perfecte oplossing</h3>
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+                  <h2 className="text-lg font-semibold text-primary mb-4">Stap 3: Mengen tot perfecte oplossing</h2>
                   
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
@@ -423,9 +425,10 @@ export default function FlesBerenStapVoorStap() {
                     </div>
                   </div>
                 </div>
+            </div>
 
-                <div>
-                  <h3 className="text-2xl font-semibold text-primary mb-4">Stap 4: Temperatuur finale controle</h3>
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+                  <h2 className="text-lg font-semibold text-primary mb-4">Stap 4: Temperatuur finale controle</h2>
                   
                   <div className="mb-6">
                     <h4 className="font-semibold text-primary mb-3">Eindtemperatuur: 37°C (lichaamstemperatuur) </h4>
