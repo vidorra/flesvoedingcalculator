@@ -1,7 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
-import { BookOpen, ArrowRight, Home, Users, Clock, Package, Calculator, Heart, Euro } from 'lucide-react'
+import { BookOpen, ArrowRight, Home, Users, Clock, Package, Heart, Euro } from 'lucide-react'
 
 export const metadata = {
   title: 'Flesvoeding voor Tweeling: Complete Survival Gids 2025 | Nederlandse Ouders',
@@ -221,11 +221,11 @@ export default function TweelingVoedenPage() {
           </div>
         </div>
 
-        {/* Equipment Essentials */}
+        {/* Benodigde Apparatuur */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
             <Package className="w-5 h-5 mr-2" />
-            Equipment Essentials
+            Benodigde Apparatuur
           </h2>
           
           {equipmentEssentials.map((category, index) => (
@@ -233,7 +233,7 @@ export default function TweelingVoedenPage() {
               <h3 className="font-medium text-primary mb-3">{category.category}</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {category.items.map((item, itemIndex) => (
-                  <div key={index} className="p-3">
+                  <div key={index}>
                     <div className="flex justify-between items-start mb-1">
                       <h4 className="font-medium text-gray-700">{item.name}</h4>
                       <span className="text-gray-600 font-medium text-sm">{item.price}</span>
@@ -426,24 +426,6 @@ export default function TweelingVoedenPage() {
           </div>
         </div>
 
-        {/* Calculator Link */}
-        <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
-          <h2 className="text-lg font-semibold text-white mb-3 flex items-center">
-            <Calculator className="w-5 h-5 mr-2" />
-            Bereken Voedingshoeveelheden voor Uw Tweeling
-          </h2>
-          <p className="text-white/90 mb-4">
-            Gebruik onze speciale tweeling-modus in de calculator om de exacte hoeveelheden 
-            per baby te berekenen en een gepersonaliseerd voedingsschema te maken.
-          </p>
-          <Link 
-            href="/"
-            className="inline-flex items-center space-x-2 bg-white text-gray-700 px-4 py-2 rounded-lg hover:bg-white transition-colors font-medium"
-          >
-            <Calculator className="w-4 h-4" />
-            <span>Naar Tweeling Calculator</span>
-          </Link>
-        </div>
 
         {/* Next Steps */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
