@@ -120,7 +120,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
           price: '€6.50-7.50 per 800g',
           costPerLiter: '€0.65',
           features: ['40% goedkoper dan bekende merken', 'Zelfde EU-vereisten', 'Basis ijzer/vitamin supplementatie'],
-          availability: 'Budget Winner',
+          availability: 'Beste koop',
           marketShare: 'Groeisegment'
         }
       ]
@@ -467,7 +467,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                           </div>
                           
                           <div>
-                            <span className="font-medium text-gray-700">Unique Selling Points:</span>
+                            <span className="font-medium text-gray-700">Unieke eigenschappen:</span>
                             <ul className="mt-1 space-y-1">
                               {brand.features.map((feature, featureIndex) => (
                                 <li key={featureIndex} className="flex items-start space-x-2">
