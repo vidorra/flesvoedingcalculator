@@ -309,7 +309,7 @@ export default function FlesvoedingBewarenPage() {
                 </div>
               </div>
               
-              <div className="p-4 border border-gray-200 bg-white rounded-xl">
+              <div className="border-t border-gray-200 pt-6 mt-6">
                 <p className="text-gray-700">
                   <strong>Het RIVM rapporteert</strong> jaarlijks 50+ ziekenhuisopnames door verkeerd bewaarde babyvoeding in Nederland.
                 </p>
@@ -550,7 +550,7 @@ export default function FlesvoedingBewarenPage() {
                   <div key={index}>
                     <h3 className="font-medium text-primary mb-3">{method.method}</h3>
                     
-                    <div className="p-4 border border-gray-200 bg-white rounded-lg">
+                    <div className="border-t border-gray-200 pt-4 mt-4">
                       {method.method === 'Koelkast Voorbereiding' && (
                         <p className="text-sm text-gray-700 mb-3">Voor het slapen:</p>
                       )}
@@ -680,7 +680,7 @@ export default function FlesvoedingBewarenPage() {
                 terug door verspilling te voorkomen.
               </p>
               
-              <div className="p-4 border border-gray-200 bg-white rounded-xl">
+              <div className="border-t border-gray-200 pt-6 mt-6">
                 <p className="text-gray-700">
                   <strong>Onthoud de gouden regel:</strong> Als je twijfelt over de bewaartijd of -methode, 
                   maak een verse fles. De gezondheid van je baby is belangrijker dan de kosten van weggegooid voeding.

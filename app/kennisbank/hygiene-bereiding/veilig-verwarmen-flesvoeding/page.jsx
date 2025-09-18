@@ -503,10 +503,10 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                       <h4 className="font-medium text-amber-800 mb-3">Magnetron</h4>
                       <div className="space-y-2 text-sm">
                         <div><span className="text-amber-700">Snelheid:</span> <span className="text-amber-800">Excellent (30 sec)</span></div>
-                        <div><span className="text-amber-700">Veiligheid:</span> <span className="text-red-700">❌ GEVAARLIJK</span></div>
+                        <div><span className="text-amber-700">Veiligheid:</span> <span className="text-gray-700">GEVAARLIJK</span></div>
                         <div><span className="text-amber-700">Kosten:</span> <span className="text-amber-800">Excellent (Gratis)</span></div>
                         <div><span className="text-amber-700">Gemak:</span> <span className="text-amber-800">Excellent (1 knop)</span></div>
-                        <div><span className="text-amber-700">Voedingsstoffen:</span> <span className="text-red-700">❌ VERNIETIGD</span></div>
+                        <div><span className="text-amber-700">Voedingsstoffen:</span> <span className="text-gray-700">VERNIETIGD</span></div>
                       </div>
                     </div>
                     

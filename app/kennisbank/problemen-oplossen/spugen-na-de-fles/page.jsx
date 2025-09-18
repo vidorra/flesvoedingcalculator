@@ -361,7 +361,7 @@ export default function SpugenNaDeFlesPage() {
                 <h3 className="font-medium text-primary mb-3">Cijfers die Geruststellen:</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {reassuringStats.map((stat, index) => (
-                    <div key={index} className="flex justify-between items-center p-3 border border-gray-200 bg-white rounded-lg">
+                    <div key={index} className="flex justify-between items-center py-3">
                       <span className="font-bold text-primary">{stat.stat}</span>
                       <span className="text-gray-700">{stat.description}</span>
                     </div>
@@ -369,7 +369,7 @@ export default function SpugenNaDeFlesPage() {
                 </div>
               </div>
               
-              <div className="p-4 border border-gray-200 bg-white rounded-xl">
+              <div className="border-t border-gray-200 pt-6 mt-6">
                 <p className="text-gray-700">
                   <strong>Onderzoek van het Sophia Kinderziekenhuis</strong> toont aan dat slechts 3% 
                   van spugende baby's daadwerkelijk medische interventie nodig heeft.
@@ -668,9 +668,9 @@ export default function SpugenNaDeFlesPage() {
                   Alleen gebruiken op advies van arts/consultatiebureaudokter.
                 </p>
                 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {arFormula.map((formula, index) => (
-                    <div key={index} className="p-4 border border-gray-200 bg-white rounded-lg">
+                    <div key={index}>
                       <h4 className="font-medium text-gray-700 mb-1">{formula.brand}</h4>
                       <p className="text-gray-700">{formula.description}</p>
                       {formula.indication && (
@@ -681,7 +681,7 @@ export default function SpugenNaDeFlesPage() {
                 </div>
               </div>
               
-              <div className="p-4 border border-gray-200 bg-white rounded-xl">
+              <div className="border-t border-gray-200 pt-6 mt-6">
                 <h4 className="font-medium text-primary mb-2">Wanneer Overwegen:</h4>
                 <ul className="space-y-1 text-gray-700">
                   <li className="flex items-start space-x-2">
@@ -798,18 +798,20 @@ export default function SpugenNaDeFlesPage() {
                 en toe spuugt heeft waarschijnlijk niets om je zorgen over te maken.
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="p-4 border border-gray-200 bg-white rounded-xl">
-                  <p className="text-gray-700">
-                    <strong>Vertrouw op je ouderinstinct:</strong> Als iets niet goed voelt, aarzel niet om 
-                    medische hulp te zoeken.
-                  </p>
-                </div>
-                <div className="p-4 border border-gray-200 bg-white rounded-xl">
-                  <p className="text-gray-700">
-                    <strong>Onthoud:</strong> Deze fase gaat voorbij. De meeste ouders kijken er later op 
-                    terug als een kleine hindernis in de mooie reis van het ouderschap.
-                  </p>
+              <div className="border-t border-gray-200 pt-6 mt-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <p className="text-gray-700">
+                      <strong>Vertrouw op je ouderinstinct:</strong> Als iets niet goed voelt, aarzel niet om 
+                      medische hulp te zoeken.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-gray-700">
+                      <strong>Onthoud:</strong> Deze fase gaat voorbij. De meeste ouders kijken er later op 
+                      terug als een kleine hindernis in de mooie reis van het ouderschap.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
