@@ -23,13 +23,13 @@ export default function BioOrganischeFlesvoedingPage() {
     },
     {
       src: "/difrax-fles-kunstvoeding.webp",
-      alt: "Premium flesvoeding keuzes",
+      alt: "Hoogwaardige flesvoeding keuzes",
       caption: "Complete kosten-baten analyse"
     }
   ]
 
   // Ad targeting keywords
-  const adTopics = ["Bio Voeding", "Duurzame Keuzes", "Premium Baby Nutrition"]
+  const adTopics = ["Bio Voeding", "Duurzame Keuzes", "Hoogwaardige Babyvoeding"]
 
   // Data arrays
   const euBioVereisten = [
@@ -247,9 +247,9 @@ export default function BioOrganischeFlesvoedingPage() {
               <div className="mt-6 p-4 bg-white rounded-lg">
                 <h4 className="font-medium text-gray-700 mb-2">Nederlandse Top 3 Aanbevelingen</h4>
                 <p className="text-gray-700 text-sm">
-                  <strong>Premium:</strong> HiPP (beste overall kwaliteit)  
-                  <strong>Mainstream:</strong> Nutrilon Bio (Nederlandse traditie)  
-                  <strong>Budget:</strong> Babylove Bio (beste prijs-kwaliteit)
+                  <strong>Hoogwaardig:</strong> HiPP (beste overall kwaliteit)  
+                  <strong>Regulier:</strong> Nutrilon Bio (Nederlandse traditie)  
+                  <strong>Voordelig:</strong> Babylove Bio (beste prijs-kwaliteit)
                 </p>
               </div>
             </section>
@@ -320,7 +320,7 @@ export default function BioOrganischeFlesvoedingPage() {
               </div>
 
               <div className="border-t border-gray-200 pt-6">
-                <h3 className="font-medium text-primary mb-4">Potentiële Besparingen & ROI</h3>
+                <h3 className="font-medium text-primary mb-4">Potentiële Besparingen & Rendement</h3>
                 <div className="bg-white rounded-lg p-4">
                   <p className="text-gray-700 text-sm mb-3">
                     <strong>Gezondheidszorg besparingen:</strong> Families met bio kinderen bezoeken gemiddeld 30% minder vaak de dokter.

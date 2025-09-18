@@ -292,7 +292,7 @@ export default function AntiRefluxPage() {
               <div className="text-center">
                 <div className="font-bold text-primary">Aptamil AR</div>
                 <div className="text-gray-700">€68-76/maand</div>
-                <div className="text-xs text-gray-600">(Premium optie)</div>
+                <div className="text-xs text-gray-600">(Hoogwaardige optie)</div>
               </div>
             </div>
           </div>

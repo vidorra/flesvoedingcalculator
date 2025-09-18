@@ -21,7 +21,7 @@ export default function HypoallergeneVoedingPage() {
   const haFormulas = [
     {
       brand: 'Nutrilon HA',
-      type: 'Preventief (pHA)',
+      type: 'Preventieve HA',
       price: '€16-18/800g',
       effectiviteit: '50% minder allergie risico',
       pros: ['Nederlandse ontwikkeling', 'PronutriPlus prebiotica', 'Breed verkrijgbaar'],
@@ -29,7 +29,7 @@ export default function HypoallergeneVoedingPage() {
     },
     {
       brand: 'Hero Baby HA',
-      type: 'Preventief (pHA)',
+      type: 'Preventieve HA',
       price: '€14-16/800g',
       effectiviteit: 'Bewezen allergie preventie',
       pros: ['Beste prijs-kwaliteit', 'Milde smaak', 'Swiss kwaliteit'],
@@ -37,7 +37,7 @@ export default function HypoallergeneVoedingPage() {
     },
     {
       brand: 'Nutricia Pepti',
-      type: 'Therapeutisch (eHA)',
+      type: 'Therapeutische HA',
       price: '€25-30/400g',
       effectiviteit: '90% symptoom verlichting',
       pros: ['Op recept vergoed', 'Bewezen allergie', 'Medische begeleiding'],

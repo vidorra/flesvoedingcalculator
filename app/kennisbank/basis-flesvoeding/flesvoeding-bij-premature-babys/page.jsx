@@ -473,9 +473,9 @@ export default function FlesvoedingPrematurePage() {
               <h3 className="font-medium text-primary mb-3">Internationale richtlijnen:</h3>
               <div className="space-y-2 text-sm text-primary">
                 <div> <strong>ESPGHAN 2022:</strong> "Enteral Nutrition Supply for Preterm Infants"</div>
-                <div> <strong>AAP 2021:</strong> Nutritional Care of Preterm Infants</div>
+                <div> <strong>American Academy of Pediatrics (AAP) 2021:</strong> Nutritional Care of Preterm Infants</div>
                 <div> <strong>WHO 2020:</strong> Growth Standards for Preterm Infants</div>
-                <div> <strong>Cochrane 2023:</strong> Formula feeding for preterm infants</div>
+                <div> <strong>Cochrane Review 2023:</strong> Formula feeding for preterm infants</div>
               </div>
             </div>
             
