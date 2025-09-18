@@ -434,11 +434,11 @@ export default function HoudbaarheidFlesvoedingPage() {
                     Contact opnemen met huisarts of spoedeisende hulp bij deze symptomen na mogelijk bedorven voeding:
                   </p>
                   <ul className="space-y-1 text-sm text-amber-700">
-                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Koorts hoger dan 38°C</span></li>
-                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Aanhoudend braken (meer dan 6 uur)</span></li>
-                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Bloedige diarree</span></li>
-                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Tekenen van uitdroging (droge luier, slapheid)</span></li>
-                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Ongewoon veel huilen of slapheid</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-amber-600 rounded-full flex-shrink-0"></div><span>Koorts hoger dan 38°C</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-amber-600 rounded-full flex-shrink-0"></div><span>Aanhoudend braken (meer dan 6 uur)</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-amber-600 rounded-full flex-shrink-0"></div><span>Bloedige diarree</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-amber-600 rounded-full flex-shrink-0"></div><span>Tekenen van uitdroging (droge luier, slapheid)</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-amber-600 rounded-full flex-shrink-0"></div><span>Ongewoon veel huilen of slapheid</span></li>
                   </ul>
                 </div>
               </div>
