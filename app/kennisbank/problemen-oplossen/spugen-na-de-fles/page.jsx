@@ -470,20 +470,20 @@ export default function SpugenNaDeFlesPage() {
               <h2 className="text-lg font-semibold text-primary mb-4">Speen Selectie</h2>
               
               <div className="overflow-x-auto">
-                <table className="w-full">
+                <table className="w-full border-collapse border border-gray-300">
                   <thead>
-                    <tr className="border-b border-gray-200">
-                      <th className="text-left py-2 text-sm font-medium text-gray-700">Speentype</th>
-                      <th className="text-left py-2 text-sm font-medium text-gray-700">Voordeel tegen Spugen</th>
-                      <th className="text-left py-2 text-sm font-medium text-gray-700">Aanbevolen Merk</th>
+                    <tr className="bg-white">
+                      <th className="border border-gray-300 px-4 py-2 text-left">Speentype</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Voordeel tegen Spugen</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Aanbevolen Merk</th>
                     </tr>
                   </thead>
                   <tbody>
                     {speenSelection.map((speen, index) => (
-                      <tr key={index} className="border-b border-gray-200">
-                        <td className="py-2 text-sm font-medium text-gray-700">{speen.type}</td>
-                        <td className="py-2 text-sm text-gray-700">{speen.benefit}</td>
-                        <td className="py-2 text-sm text-gray-600">{speen.brand}</td>
+                      <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
+                        <td className="border border-gray-300 px-4 py-2 font-semibold">{speen.type}</td>
+                        <td className="border border-gray-300 px-4 py-2">{speen.benefit}</td>
+                        <td className="border border-gray-300 px-4 py-2">{speen.brand}</td>
                       </tr>
                     ))}
                   </tbody>

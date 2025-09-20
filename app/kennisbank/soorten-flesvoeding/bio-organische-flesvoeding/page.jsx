@@ -296,22 +296,22 @@ export default function BioOrganischeFlesvoedingPage() {
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Complete Kosten Vergelijking</h3>
                 <div className="overflow-x-auto">
-                  <table className="w-full">
+                  <table className="w-full border-collapse border border-gray-300">
                     <thead>
-                      <tr className="border-b border-gray-200">
-                        <th className="text-left py-2 text-gray-700 font-medium">Periode</th>
-                        <th className="text-right py-2 text-gray-700 font-medium">Bio</th>
-                        <th className="text-right py-2 text-gray-700 font-medium">Regulier</th>
-                        <th className="text-right py-2 text-gray-700 font-medium">Verschil</th>
+                      <tr className="bg-white">
+                        <th className="border border-gray-300 px-4 py-2 text-left">Periode</th>
+                        <th className="border border-gray-300 px-4 py-2 text-left">Bio</th>
+                        <th className="border border-gray-300 px-4 py-2 text-left">Regulier</th>
+                        <th className="border border-gray-300 px-4 py-2 text-left">Verschil</th>
                       </tr>
                     </thead>
                     <tbody>
                       {kostenVergelijking.map((item, index) => (
-                        <tr key={index} className="border-b border-gray-100">
-                          <td className="py-2 text-gray-700">{item.periode}</td>
-                          <td className="py-2 text-right text-gray-700">{item.bio}</td>
-                          <td className="py-2 text-right text-gray-700">{item.regulier}</td>
-                          <td className="py-2 text-right text-gray-700 font-medium">{item.verschil}</td>
+                        <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
+                          <td className="border border-gray-300 px-4 py-2 font-semibold">{item.periode}</td>
+                          <td className="border border-gray-300 px-4 py-2">{item.bio}</td>
+                          <td className="border border-gray-300 px-4 py-2">{item.regulier}</td>
+                          <td className="border border-gray-300 px-4 py-2">{item.verschil}</td>
                         </tr>
                       ))}
                     </tbody>

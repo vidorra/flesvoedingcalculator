@@ -373,20 +373,20 @@ export default function FlesvoedingBewarenPage() {
                     
                     {section.condition === 'Kamertemperatuur (20°C)' ? (
                       <div className="overflow-x-auto">
-                        <table className="w-full">
+                        <table className="w-full border-collapse border border-gray-300">
                           <thead>
-                            <tr className="border-b border-gray-200">
-                              <th className="text-left py-2 text-sm font-medium text-gray-700">Situatie</th>
-                              <th className="text-left py-2 text-sm font-medium text-gray-700">Maximum Tijd</th>
-                              <th className="text-left py-2 text-sm font-medium text-gray-700">Waarschuwing</th>
+                            <tr className="bg-white">
+                              <th className="border border-gray-300 px-4 py-2 text-left">Situatie</th>
+                              <th className="border border-gray-300 px-4 py-2 text-left">Maximum Tijd</th>
+                              <th className="border border-gray-300 px-4 py-2 text-left">Waarschuwing</th>
                             </tr>
                           </thead>
                           <tbody>
                             {section.items.map((item, itemIndex) => (
-                              <tr key={index} className="border-b border-gray-200">
-                                <td className="py-2 text-sm text-gray-700">{item.situation}</td>
-                                <td className="py-2 text-sm font-medium text-gray-700">{item.maxTime}</td>
-                                <td className="py-2 text-sm text-gray-600">{item.warning}</td>
+                              <tr key={itemIndex} className={itemIndex % 2 === 1 ? "bg-white" : ""}>
+                                <td className="border border-gray-300 px-4 py-2 font-semibold">{item.situation}</td>
+                                <td className="border border-gray-300 px-4 py-2">{item.maxTime}</td>
+                                <td className="border border-gray-300 px-4 py-2">{item.warning}</td>
                               </tr>
                             ))}
                           </tbody>
@@ -495,20 +495,20 @@ export default function FlesvoedingBewarenPage() {
               <div>
                 <h3 className="font-medium text-primary mb-3">NOOIT Opwarmen Met:</h3>
                 <div className="overflow-x-auto">
-                  <table className="w-full">
+                  <table className="w-full border-collapse border border-gray-300">
                     <thead>
-                      <tr className="border-b border-gray-200">
-                        <th className="text-left py-2 text-sm font-medium text-gray-700">Methode</th>
-                        <th className="text-left py-2 text-sm font-medium text-gray-700">Waarom Gevaarlijk</th>
-                        <th className="text-left py-2 text-sm font-medium text-gray-700">Gevolg</th>
+                      <tr className="bg-white">
+                        <th className="border border-gray-300 px-4 py-2 text-left">Methode</th>
+                        <th className="border border-gray-300 px-4 py-2 text-left">Waarom Gevaarlijk</th>
+                        <th className="border border-gray-300 px-4 py-2 text-left">Gevolg</th>
                       </tr>
                     </thead>
                     <tbody>
                       {dangerousMethods.map((item, index) => (
-                        <tr key={index} className="border-b border-gray-200">
-                          <td className="py-2 text-sm font-medium text-gray-700">{item.method}</td>
-                          <td className="py-2 text-sm text-gray-700">{item.reason}</td>
-                          <td className="py-2 text-sm text-gray-600">{item.consequence}</td>
+                        <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
+                          <td className="border border-gray-300 px-4 py-2 font-semibold">{item.method}</td>
+                          <td className="border border-gray-300 px-4 py-2">{item.reason}</td>
+                          <td className="border border-gray-300 px-4 py-2">{item.consequence}</td>
                         </tr>
                       ))}
                     </tbody>

@@ -377,22 +377,22 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
               <h2 className="text-lg font-semibold text-primary mb-4">Complete Vergelijking: Nummer 1 vs Nummer 2</h2>
               
               <div className="overflow-x-auto">
-                <table className="w-full border-collapse">
+                <table className="w-full border-collapse border border-gray-300">
                   <thead>
-                    <tr className="border-b border-gray-200">
-                      <th className="text-left py-3 px-4 font-medium text-gray-700">Component</th>
-                      <th className="text-left py-3 px-4 font-medium text-gray-700">Startvoeding (1)</th>
-                      <th className="text-left py-3 px-4 font-medium text-gray-700">Opvolgmelk (2)</th>
-                      <th className="text-left py-3 px-4 font-medium text-gray-700">Verschil</th>
+                    <tr className="bg-white">
+                      <th className="border border-gray-300 px-4 py-2 text-left">Component</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Startvoeding (1)</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Opvolgmelk (2)</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Verschil</th>
                     </tr>
                   </thead>
                   <tbody>
                     {nutritionComparison.map((item, index) => (
-                      <tr key={index} className="border-b border-gray-200">
-                        <td className="py-3 px-4 font-medium text-gray-700">{item.component}</td>
-                        <td className="py-3 px-4 text-gray-700">{item.startvoeding}</td>
-                        <td className="py-3 px-4 text-gray-700">{item.opvolgmelk}</td>
-                        <td className="py-3 px-4 text-gray-700 font-medium">
+                      <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
+                        <td className="border border-gray-300 px-4 py-2 font-semibold">{item.component}</td>
+                        <td className="border border-gray-300 px-4 py-2">{item.startvoeding}</td>
+                        <td className="border border-gray-300 px-4 py-2">{item.opvolgmelk}</td>
+                        <td className="border border-gray-300 px-4 py-2">
                           {item.verschil.includes('meer') && item.verschil.includes('6x') ? (
                             <span className="text-gray-700 font-bold">{item.verschil}</span>
                           ) : item.verschil.includes('goedkoper') ? (

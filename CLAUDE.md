@@ -999,6 +999,57 @@ Before publishing any article, verify:
     - Use `border-b border-gray-200` dividers between content sections
     - Prefer grid layouts over nested card structures
 
+## 🔢 Table Standards
+
+### Required Table Structure
+
+**ALL TABLES must use this standardized pattern with alternating row colors and proper borders:**
+
+```jsx
+<div className="overflow-x-auto">
+  <table className="w-full border-collapse border border-gray-300">
+    <thead>
+      <tr className="bg-white">
+        <th className="border border-gray-300 px-4 py-2 text-left">Header 1</th>
+        <th className="border border-gray-300 px-4 py-2 text-left">Header 2</th>
+        <th className="border border-gray-300 px-4 py-2 text-left">Header 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td className="border border-gray-300 px-4 py-2 font-semibold">First column data</td>
+        <td className="border border-gray-300 px-4 py-2">Data</td>
+        <td className="border border-gray-300 px-4 py-2">Data</td>
+      </tr>
+      <tr className="bg-white">
+        <td className="border border-gray-300 px-4 py-2 font-semibold">First column data</td>
+        <td className="border border-gray-300 px-4 py-2">Data</td>
+        <td className="border border-gray-300 px-4 py-2">Data</td>
+      </tr>
+      <!-- Continue alternating pattern -->
+    </tbody>
+  </table>
+</div>
+```
+
+### Table Styling Rules
+
+1. **Border Pattern**: `border border-gray-300` on table, all th, and all td elements
+2. **Alternating Rows**: Even rows get `bg-white`, odd rows have no background (transparent)
+3. **Header Row**: Always `bg-white` for consistency
+4. **First Column**: Always `font-semibold` for row headers/labels
+5. **Padding**: Consistent `px-4 py-2` for all cells
+6. **Responsive**: Wrap in `overflow-x-auto` div for mobile scrolling
+7. **Border Radius**: Apply `rounded-lg` to individual rows for modern look (optional enhancement)
+
+### Examples of Proper Table Usage
+
+- Price comparison tables
+- Feature comparison matrices
+- Symptom diagnosis tables
+- Timeline/schedule tables
+- Product specification tables
+
 ## 📚 Examples
 
 See these articles as reference implementations:

@@ -167,22 +167,22 @@ export default function FlesvoedingVsBorstvoedingPage() {
             <div className="p-6">
               <h3 className="font-semibold text-primary mb-4">Voedingswaarde vergelijking</h3>
               <div className="overflow-x-auto">
-                <table className="w-full">
+                <table className="w-full border-collapse border border-gray-300">
                   <thead>
-                    <tr className="border-b border-gray-200">
-                      <th className="text-left py-3 px-2 font-semibold text-primary">Component</th>
-                      <th className="text-left py-3 px-2 font-semibold text-primary">Borstvoeding</th>
-                      <th className="text-left py-3 px-2 font-semibold text-primary">Flesvoeding</th>
-                      <th className="text-left py-3 px-2 font-semibold text-primary">Opmerking</th>
+                    <tr className="bg-white">
+                      <th className="border border-gray-300 px-4 py-2 text-left">Component</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Borstvoeding</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Flesvoeding</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Opmerking</th>
                     </tr>
                   </thead>
                   <tbody>
                     {voedingswaarden.map((row, index) => (
-                      <tr key={index} className="border-b border-gray-100">
-                        <td className="py-3 px-2 font-medium text-gray-700">{row.component}</td>
-                        <td className="py-3 px-2 text-gray-700">{row.borst}</td>
-                        <td className="py-3 px-2 text-gray-700">{row.fles}</td>
-                        <td className="py-3 px-2 text-sm text-gray-600">{row.opmerking}</td>
+                      <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
+                        <td className="border border-gray-300 px-4 py-2 font-semibold">{row.component}</td>
+                        <td className="border border-gray-300 px-4 py-2">{row.borst}</td>
+                        <td className="border border-gray-300 px-4 py-2">{row.fles}</td>
+                        <td className="border border-gray-300 px-4 py-2">{row.opmerking}</td>
                       </tr>
                     ))}
                   </tbody>
