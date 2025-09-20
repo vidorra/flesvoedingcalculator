@@ -257,21 +257,21 @@ export default function HoudbaarheidFlesvoedingPage() {
               <h2 className="text-lg font-semibold text-primary mb-4">Gevaarlijke Bacteriën in Bedorven Melk</h2>
               
               <div className="overflow-x-auto">
-                <table className="w-full text-sm bg-white border border-gray-200 rounded-lg">
+                <table className="w-full border-collapse border border-gray-300">
                   <thead>
                     <tr className="bg-white">
-                      <th className="text-left p-3 font-medium">Bacterie</th>
-                      <th className="text-left p-3 font-medium">Symptomen</th>
-                      <th className="text-left p-3 font-medium">Ernstgraad</th>
-                      <th className="text-left p-3 font-medium">Opnameduur</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Bacterie</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Symptomen</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Ernstgraad</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Opnameduur</th>
                     </tr>
                   </thead>
                   <tbody>
                     {dangerBacteria.map((bacteria, index) => (
-                      <tr key={index}>
-                        <td className="p-3 font-medium text-gray-700">{bacteria.name}</td>
-                        <td className="p-3 text-gray-700">{bacteria.symptoms}</td>
-                        <td className="p-3">
+                      <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
+                        <td className="border border-gray-300 px-4 py-2 font-semibold">{bacteria.name}</td>
+                        <td className="border border-gray-300 px-4 py-2">{bacteria.symptoms}</td>
+                        <td className="border border-gray-300 px-4 py-2">
                           <span className={`text-sm font-medium ${
                             bacteria.severity === 'Levensbedreigend' ? 'text-gray-800' :
                             bacteria.severity === 'Zeer hoog' ? 'text-gray-700' :
@@ -280,7 +280,7 @@ export default function HoudbaarheidFlesvoedingPage() {
                             {bacteria.severity}
                           </span>
                         </td>
-                        <td className="p-3 text-gray-700">{bacteria.duration}</td>
+                        <td className="border border-gray-300 px-4 py-2">{bacteria.duration}</td>
                       </tr>
                     ))}
                   </tbody>

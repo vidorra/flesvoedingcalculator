@@ -291,22 +291,22 @@ export default function EersteKeerFlesvoedingPage() {
             <h2 className="text-lg font-semibold text-primary mb-4">Juiste hoeveelheden per leeftijd</h2>
             
             <div className="overflow-x-auto">
-              <table className="w-full">
+              <table className="w-full border-collapse border border-gray-300">
                 <thead>
-                  <tr className="border-b border-gray-200">
-                    <th className="text-left py-3 px-2 font-semibold text-primary">Leeftijd</th>
-                    <th className="text-left py-3 px-2 font-semibold text-primary">Per voeding</th>
-                    <th className="text-left py-3 px-2 font-semibold text-primary">Voedingen/dag</th>
-                    <th className="text-left py-3 px-2 font-semibold text-primary">Totaal/dag</th>
+                  <tr className="bg-white">
+                    <th className="border border-gray-300 px-4 py-2 text-left">Leeftijd</th>
+                    <th className="border border-gray-300 px-4 py-2 text-left">Per voeding</th>
+                    <th className="border border-gray-300 px-4 py-2 text-left">Voedingen/dag</th>
+                    <th className="border border-gray-300 px-4 py-2 text-left">Totaal/dag</th>
                   </tr>
                 </thead>
                 <tbody>
                   {feedingGuide.map((row, index) => (
-                    <tr key={index} className="border-b border-gray-100">
-                      <td className="py-3 px-2 font-medium text-gray-700">{row.age}</td>
-                      <td className="py-3 px-2 text-gray-700">{row.perFeeding}</td>
-                      <td className="py-3 px-2 text-gray-700">{row.frequency}</td>
-                      <td className="py-3 px-2 text-gray-700">{row.total}</td>
+                    <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
+                      <td className="border border-gray-300 px-4 py-2 font-semibold">{row.age}</td>
+                      <td className="border border-gray-300 px-4 py-2">{row.perFeeding}</td>
+                      <td className="border border-gray-300 px-4 py-2">{row.frequency}</td>
+                      <td className="border border-gray-300 px-4 py-2">{row.total}</td>
                     </tr>
                   ))}
                 </tbody>

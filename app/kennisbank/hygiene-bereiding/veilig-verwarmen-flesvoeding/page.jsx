@@ -304,29 +304,29 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                 <div>
                   <h3 className="font-medium text-primary mb-3">Timing overzicht</h3>
                   <div className="overflow-x-auto">
-                    <table className="w-full text-sm">
+                    <table className="w-full border-collapse border border-gray-300">
                       <thead>
-                        <tr className="border-b border-gray-200">
-                          <th className="text-left py-2">Start Temperatuur</th>
-                          <th className="text-left py-2">Eindtemperatuur</th>
-                          <th className="text-left py-2">Benodigde Tijd</th>
+                        <tr className="bg-white">
+                          <th className="border border-gray-300 px-4 py-2 text-left">Start Temperatuur</th>
+                          <th className="border border-gray-300 px-4 py-2 text-left">Eindtemperatuur</th>
+                          <th className="border border-gray-300 px-4 py-2 text-left">Benodigde Tijd</th>
                         </tr>
                       </thead>
-                      <tbody className="space-y-1">
-                        <tr className="border-b border-gray-100">
-                          <td className="py-2">Koelkast (4°C)</td>
-                          <td className="py-2">Drinkklaar (37°C)</td>
-                          <td className="py-2">4-6 minuten</td>
+                      <tbody>
+                        <tr>
+                          <td className="border border-gray-300 px-4 py-2 font-semibold">Koelkast (4°C)</td>
+                          <td className="border border-gray-300 px-4 py-2">Drinkklaar (37°C)</td>
+                          <td className="border border-gray-300 px-4 py-2">4-6 minuten</td>
                         </tr>
-                        <tr className="border-b border-gray-100">
-                          <td className="py-2">Kamertemp (20°C)</td>
-                          <td className="py-2">Drinkklaar (37°C)</td>
-                          <td className="py-2">2-3 minuten</td>
+                        <tr className="bg-white">
+                          <td className="border border-gray-300 px-4 py-2 font-semibold">Kamertemp (20°C)</td>
+                          <td className="border border-gray-300 px-4 py-2">Drinkklaar (37°C)</td>
+                          <td className="border border-gray-300 px-4 py-2">2-3 minuten</td>
                         </tr>
                         <tr>
-                          <td className="py-2">Te heet (50°C)</td>
-                          <td className="py-2">Drinkklaar (37°C)</td>
-                          <td className="py-2">1-2 min. afkoelen</td>
+                          <td className="border border-gray-300 px-4 py-2 font-semibold">Te heet (50°C)</td>
+                          <td className="border border-gray-300 px-4 py-2">Drinkklaar (37°C)</td>
+                          <td className="border border-gray-300 px-4 py-2">1-2 min. afkoelen</td>
                         </tr>
                       </tbody>
                     </table>
@@ -672,34 +672,34 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                 <div>
                   <h3 className="font-medium text-primary mb-3">Kostenfouten vermijden</h3>
                   <div className="overflow-x-auto">
-                    <table className="w-full text-sm">
+                    <table className="w-full border-collapse border border-gray-300">
                       <thead>
-                        <tr className="border-b border-gray-200">
-                          <th className="text-left py-2">Fout</th>
-                          <th className="text-left py-2">Extra Kosten/Jaar</th>
-                          <th className="text-left py-2">Gezondere Keuze</th>
+                        <tr className="bg-white">
+                          <th className="border border-gray-300 px-4 py-2 text-left">Fout</th>
+                          <th className="border border-gray-300 px-4 py-2 text-left">Extra Kosten/Jaar</th>
+                          <th className="border border-gray-300 px-4 py-2 text-left">Gezondere Keuze</th>
                         </tr>
                       </thead>
-                      <tbody className="space-y-1">
-                        <tr className="border-b border-gray-100">
-                          <td className="py-2">Alleen kant-en-klaar</td>
-                          <td className="py-2">€800-1200</td>
-                          <td className="py-2">Thermos + poeder</td>
+                      <tbody>
+                        <tr>
+                          <td className="border border-gray-300 px-4 py-2 font-semibold">Alleen kant-en-klaar</td>
+                          <td className="border border-gray-300 px-4 py-2">€800-1200</td>
+                          <td className="border border-gray-300 px-4 py-2">Thermos + poeder</td>
                         </tr>
-                        <tr className="border-b border-gray-100">
-                          <td className="py-2">Dure flessenwarmer</td>
-                          <td className="py-2">€150</td>
-                          <td className="py-2">Waterpad methode</td>
-                        </tr>
-                        <tr className="border-b border-gray-100">
-                          <td className="py-2">Energieverspilling</td>
-                          <td className="py-2">€50-80</td>
-                          <td className="py-2">Efficiënte apparaten</td>
+                        <tr className="bg-white">
+                          <td className="border border-gray-300 px-4 py-2 font-semibold">Dure flessenwarmer</td>
+                          <td className="border border-gray-300 px-4 py-2">€150</td>
+                          <td className="border border-gray-300 px-4 py-2">Waterpad methode</td>
                         </tr>
                         <tr>
-                          <td className="py-2">Vervangen gebarsten flessen</td>
-                          <td className="py-2">€30-60</td>
-                          <td className="py-2">Voorzichtig verwarmen</td>
+                          <td className="border border-gray-300 px-4 py-2 font-semibold">Energieverspilling</td>
+                          <td className="border border-gray-300 px-4 py-2">€50-80</td>
+                          <td className="border border-gray-300 px-4 py-2">Efficiënte apparaten</td>
+                        </tr>
+                        <tr className="bg-white">
+                          <td className="border border-gray-300 px-4 py-2 font-semibold">Vervangen gebarsten flessen</td>
+                          <td className="border border-gray-300 px-4 py-2">€30-60</td>
+                          <td className="border border-gray-300 px-4 py-2">Voorzichtig verwarmen</td>
                         </tr>
                       </tbody>
                     </table>

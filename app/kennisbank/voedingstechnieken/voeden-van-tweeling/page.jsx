@@ -277,20 +277,20 @@ export default function TweelingVoedenPage() {
           </h2>
           
           <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+            <table className="w-full border-collapse border border-gray-300">
               <thead>
-                <tr className="border-b border-gray-200">
-                  <th className="text-left py-3 px-2 font-medium text-gray-700">Tijd</th>
-                  <th className="text-left py-3 px-2 font-medium text-gray-700">Activiteit</th>
-                  <th className="text-left py-3 px-2 font-medium text-gray-700">Hoeveelheid</th>
+                <tr className="bg-white">
+                  <th className="border border-gray-300 px-4 py-2 text-left">Tijd</th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">Activiteit</th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">Hoeveelheid</th>
                 </tr>
               </thead>
               <tbody>
                 {scheduleExample.map((entry, index) => (
-                  <tr key={index} className="border-b border-gray-100">
-                    <td className="py-3 px-2 font-medium text-gray-700">{entry.time}</td>
-                    <td className="py-3 px-2 text-gray-700">{entry.activity}</td>
-                    <td className="py-3 px-2 text-gray-700">{entry.amount}</td>
+                  <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">{entry.time}</td>
+                    <td className="border border-gray-300 px-4 py-2">{entry.activity}</td>
+                    <td className="border border-gray-300 px-4 py-2">{entry.amount}</td>
                   </tr>
                 ))}
               </tbody>

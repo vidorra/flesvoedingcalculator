@@ -388,45 +388,45 @@ export default function OvergangNaarBekerPage() {
                 <div>
                   <h3 className="font-medium text-primary mb-3">Nederlandse overgang statistieken</h3>
                   <div className="overflow-x-auto">
-                    <table className="w-full text-sm">
+                    <table className="w-full border-collapse border border-gray-300">
                       <thead>
-                        <tr className="border-b border-gray-200">
-                          <th className="text-left py-2">Leeftijd</th>
-                          <th className="text-left py-2">Gestart</th>
-                          <th className="text-left py-2">Competent</th>
-                          <th className="text-left py-2">Volledig</th>
+                        <tr className="bg-white">
+                          <th className="border border-gray-300 px-4 py-2 text-left">Leeftijd</th>
+                          <th className="border border-gray-300 px-4 py-2 text-left">Gestart</th>
+                          <th className="border border-gray-300 px-4 py-2 text-left">Competent</th>
+                          <th className="border border-gray-300 px-4 py-2 text-left">Volledig</th>
                         </tr>
                       </thead>
-                      <tbody className="space-y-1">
-                        <tr className="border-b border-gray-100">
-                          <td className="py-2">10 maanden</td>
-                          <td className="py-2">15%</td>
-                          <td className="py-2">2%</td>
-                          <td className="py-2">0%</td>
+                      <tbody>
+                        <tr>
+                          <td className="border border-gray-300 px-4 py-2 font-semibold">10 maanden</td>
+                          <td className="border border-gray-300 px-4 py-2">15%</td>
+                          <td className="border border-gray-300 px-4 py-2">2%</td>
+                          <td className="border border-gray-300 px-4 py-2">0%</td>
                         </tr>
-                        <tr className="border-b border-gray-100">
-                          <td className="py-2">12 maanden</td>
-                          <td className="py-2">65%</td>
-                          <td className="py-2">25%</td>
-                          <td className="py-2">5%</td>
-                        </tr>
-                        <tr className="border-b border-gray-100">
-                          <td className="py-2">15 maanden</td>
-                          <td className="py-2">85%</td>
-                          <td className="py-2">70%</td>
-                          <td className="py-2">35%</td>
-                        </tr>
-                        <tr className="border-b border-gray-100">
-                          <td className="py-2">18 maanden</td>
-                          <td className="py-2">95%</td>
-                          <td className="py-2">90%</td>
-                          <td className="py-2">75%</td>
+                        <tr className="bg-white">
+                          <td className="border border-gray-300 px-4 py-2 font-semibold">12 maanden</td>
+                          <td className="border border-gray-300 px-4 py-2">65%</td>
+                          <td className="border border-gray-300 px-4 py-2">25%</td>
+                          <td className="border border-gray-300 px-4 py-2">5%</td>
                         </tr>
                         <tr>
-                          <td className="py-2">24 maanden</td>
-                          <td className="py-2">99%</td>
-                          <td className="py-2">98%</td>
-                          <td className="py-2">95%</td>
+                          <td className="border border-gray-300 px-4 py-2 font-semibold">15 maanden</td>
+                          <td className="border border-gray-300 px-4 py-2">85%</td>
+                          <td className="border border-gray-300 px-4 py-2">70%</td>
+                          <td className="border border-gray-300 px-4 py-2">35%</td>
+                        </tr>
+                        <tr className="bg-white">
+                          <td className="border border-gray-300 px-4 py-2 font-semibold">18 maanden</td>
+                          <td className="border border-gray-300 px-4 py-2">95%</td>
+                          <td className="border border-gray-300 px-4 py-2">90%</td>
+                          <td className="border border-gray-300 px-4 py-2">75%</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-gray-300 px-4 py-2 font-semibold">24 maanden</td>
+                          <td className="border border-gray-300 px-4 py-2">99%</td>
+                          <td className="border border-gray-300 px-4 py-2">98%</td>
+                          <td className="border border-gray-300 px-4 py-2">95%</td>
                         </tr>
                       </tbody>
                     </table>

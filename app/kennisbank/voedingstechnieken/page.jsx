@@ -480,27 +480,27 @@ function VoedingstechniekenPage() {
           <h3 className="font-medium text-primary mb-4">Juiste Meng Verhoudingen</h3>
           
           <div className="overflow-x-auto mb-6">
-            <table className="w-full text-sm bg-white border border-gray-200 rounded-lg">
+            <table className="w-full border-collapse border border-gray-300">
               <thead>
                 <tr className="bg-white">
-                  <th className="text-left p-3 font-medium">Merk</th>
-                  <th className="text-left p-3 font-medium">Ratio</th>
-                  <th className="text-left p-3 font-medium">Water</th>
-                  <th className="text-left p-3 font-medium">Poeder</th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">Merk</th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">Ratio</th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">Water</th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">Poeder</th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-t">
-                  <td className="p-3">Standaard (alle merken)</td>
-                  <td className="p-3">1:30</td>
-                  <td className="p-3">30ml</td>
-                  <td className="p-3">1 gestreepte maatlepel</td>
+                <tr>
+                  <td className="border border-gray-300 px-4 py-2 font-semibold">Standaard (alle merken)</td>
+                  <td className="border border-gray-300 px-4 py-2">1:30</td>
+                  <td className="border border-gray-300 px-4 py-2">30ml</td>
+                  <td className="border border-gray-300 px-4 py-2">1 gestreepte maatlepel</td>
                 </tr>
-                <tr className="border-t bg-white">
-                  <td className="p-3">Nutrilon, Hero Baby, Kruidvat</td>
-                  <td className="p-3">1:30</td>
-                  <td className="p-3">30ml</td>
-                  <td className="p-3">1 bijgeleverde maatlepel</td>
+                <tr className="bg-white">
+                  <td className="border border-gray-300 px-4 py-2 font-semibold">Nutrilon, Hero Baby, Kruidvat</td>
+                  <td className="border border-gray-300 px-4 py-2">1:30</td>
+                  <td className="border border-gray-300 px-4 py-2">30ml</td>
+                  <td className="border border-gray-300 px-4 py-2">1 bijgeleverde maatlepel</td>
                 </tr>
               </tbody>
             </table>

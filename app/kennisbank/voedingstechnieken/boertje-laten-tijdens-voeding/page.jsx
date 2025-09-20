@@ -324,20 +324,20 @@ export default function BoertjeLatenPage() {
               <div className="mb-6">
                 <h3 className="font-medium text-primary mb-3">Tijdens de Voeding (Preventief)</h3>
                 <div className="overflow-x-auto">
-                  <table className="w-full">
+                  <table className="w-full border-collapse border border-gray-300">
                     <thead>
-                      <tr className="border-b border-gray-200">
-                        <th className="text-left py-2 text-sm font-medium text-gray-700">Leeftijd Baby</th>
-                        <th className="text-left py-2 text-sm font-medium text-gray-700">Boertje Moment</th>
-                        <th className="text-left py-2 text-sm font-medium text-gray-700">Reden</th>
+                      <tr className="bg-white">
+                        <th className="border border-gray-300 px-4 py-2 text-left">Leeftijd Baby</th>
+                        <th className="border border-gray-300 px-4 py-2 text-left">Boertje Moment</th>
+                        <th className="border border-gray-300 px-4 py-2 text-left">Reden</th>
                       </tr>
                     </thead>
                     <tbody>
                       {timingGuide.map((item, index) => (
-                        <tr key={index} className="border-b border-gray-200">
-                          <td className="py-2 text-sm text-gray-700">{item.age}</td>
-                          <td className="py-2 text-sm text-gray-700">{item.interval}</td>
-                          <td className="py-2 text-sm text-gray-700">{item.reason}</td>
+                        <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
+                          <td className="border border-gray-300 px-4 py-2 font-semibold">{item.age}</td>
+                          <td className="border border-gray-300 px-4 py-2">{item.interval}</td>
+                          <td className="border border-gray-300 px-4 py-2">{item.reason}</td>
                         </tr>
                       ))}
                     </tbody>

@@ -469,24 +469,24 @@ export default function KrampjesNaFlesvoedingPage() {
               <h2 className="text-lg font-semibold text-primary mb-4">Verschil: Krampjes vs Andere Problemen</h2>
               
               <div className="overflow-x-auto">
-                <table className="w-full border-collapse">
+                <table className="w-full border-collapse border border-gray-300">
                   <thead>
-                    <tr className="border-b border-gray-200">
-                      <th className="text-left py-3 px-4 font-medium text-gray-900">Symptoom</th>
-                      <th className="text-left py-3 px-4 font-medium text-gray-700">Krampjes</th>
-                      <th className="text-left py-3 px-4 font-medium text-gray-700">Reflux</th>
-                      <th className="text-left py-3 px-4 font-medium text-gray-700">Honger</th>
-                      <th className="text-left py-3 px-4 font-medium text-gray-700">Overstimulatie</th>
+                    <tr className="bg-white">
+                      <th className="border border-gray-300 px-4 py-2 text-left">Symptoom</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Krampjes</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Reflux</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Honger</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Overstimulatie</th>
                     </tr>
                   </thead>
                   <tbody>
                     {differentialDiagnosis.map((item, index) => (
-                      <tr key={index} className="border-b border-gray-200">
-                        <td className="py-3 px-4 font-medium text-gray-900">{item.symptom}</td>
-                        <td className="py-3 px-4 text-gray-700 font-medium">{item.krampjes}</td>
-                        <td className="py-3 px-4 text-gray-700">{item.reflux}</td>
-                        <td className="py-3 px-4 text-gray-700">{item.honger}</td>
-                        <td className="py-3 px-4 text-gray-700">{item.overstimulatie}</td>
+                      <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
+                        <td className="border border-gray-300 px-4 py-2 font-semibold">{item.symptom}</td>
+                        <td className="border border-gray-300 px-4 py-2">{item.krampjes}</td>
+                        <td className="border border-gray-300 px-4 py-2">{item.reflux}</td>
+                        <td className="border border-gray-300 px-4 py-2">{item.honger}</td>
+                        <td className="border border-gray-300 px-4 py-2">{item.overstimulatie}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -742,7 +742,7 @@ export default function KrampjesNaFlesvoedingPage() {
               
               <div className="space-y-6">
                 {medicalHelp.map((help, index) => (
-                  <div key={index}>
+                  <div key={index} className={help.color === 'text-amber-600' ? 'bg-amber-50 rounded-2xl p-6 border border-amber-200' : ''}>
                     <div className="flex items-center mb-3">
                       <help.icon className={`w-5 h-5 mr-2 ${help.color}`} />
                       <h3 className={`font-medium ${help.color}`}>{help.urgency}</h3>
@@ -753,7 +753,7 @@ export default function KrampjesNaFlesvoedingPage() {
                           <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
                             help.color === 'text-amber-600' ? 'bg-amber-400' : 'bg-primary'
                           }`}></div>
-                          <span className="text-sm text-gray-700">{symptom}</span>
+                          <span className={`text-sm ${help.color === 'text-amber-600' ? 'text-amber-700' : 'text-gray-700'}`}>{symptom}</span>
                         </li>
                       ))}
                     </ul>

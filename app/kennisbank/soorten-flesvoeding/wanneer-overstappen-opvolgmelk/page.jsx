@@ -393,20 +393,20 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                       <div className="mb-4">
                         <h4 className="font-medium text-primary mb-2">Groeicurve Indicatoren:</h4>
                         <div className="overflow-x-auto">
-                          <table className="w-full text-sm">
+                          <table className="w-full border-collapse border border-gray-300">
                             <thead>
-                              <tr className="border-b border-gray-200">
-                                <th className="text-left py-2 font-medium text-gray-700">Indicatie</th>
-                                <th className="text-left py-2 font-medium text-gray-700">Actie</th>
-                                <th className="text-left py-2 font-medium text-gray-700">Timing</th>
+                              <tr className="bg-white">
+                                <th className="border border-gray-300 px-4 py-2 text-left">Indicatie</th>
+                                <th className="border border-gray-300 px-4 py-2 text-left">Actie</th>
+                                <th className="border border-gray-300 px-4 py-2 text-left">Timing</th>
                               </tr>
                             </thead>
                             <tbody>
                               {factor.indicators.map((indicator, indIndex) => (
-                                <tr key={index} className="border-b border-gray-200">
-                                  <td className="py-2 font-medium">{indicator.condition}</td>
-                                  <td className="py-2 text-gray-700">{indicator.action}</td>
-                                  <td className="py-2 text-gray-700">{indicator.timing}</td>
+                                <tr key={indIndex} className={indIndex % 2 === 1 ? "bg-white" : ""}>
+                                  <td className="border border-gray-300 px-4 py-2 font-semibold">{indicator.condition}</td>
+                                  <td className="border border-gray-300 px-4 py-2">{indicator.action}</td>
+                                  <td className="border border-gray-300 px-4 py-2">{indicator.timing}</td>
                                 </tr>
                               ))}
                             </tbody>

@@ -229,24 +229,24 @@ export default function FlesvoedingPrematurePage() {
           <h2 className="text-lg font-semibold text-primary mb-4">Voedingsrichtlijnen per Prematuriteitscategorie</h2>
           
           <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+            <table className="w-full border-collapse border border-gray-300">
               <thead>
-                <tr className="border-b border-gray-200">
-                  <th className="text-left py-3 px-2 font-medium text-gray-700">Categorie</th>
-                  <th className="text-left py-3 px-2 font-medium text-gray-700">Zwangerschap</th>
-                  <th className="text-left py-3 px-2 font-medium text-gray-700">Voedingsbehoefte</th>
-                  <th className="text-left py-3 px-2 font-medium text-gray-700">Frequentie</th>
-                  <th className="text-left py-3 px-2 font-medium text-gray-700">Speciale aandacht</th>
+                <tr className="bg-white">
+                  <th className="border border-gray-300 px-4 py-2 text-left">Categorie</th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">Zwangerschap</th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">Voedingsbehoefte</th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">Frequentie</th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">Speciale aandacht</th>
                 </tr>
               </thead>
               <tbody>
                 {prematureCategories.map((cat, index) => (
-                  <tr key={index} className="border-b border-gray-100">
-                    <td className="py-3 px-2 font-medium text-gray-700">{cat.category}</td>
-                    <td className="py-3 px-2 text-primary">{cat.weeks}</td>
-                    <td className="py-3 px-2 text-primary font-medium">{cat.feeding}</td>
-                    <td className="py-3 px-2 text-primary">{cat.frequency}</td>
-                    <td className="py-3 px-2 text-primary">{cat.special}</td>
+                  <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">{cat.category}</td>
+                    <td className="border border-gray-300 px-4 py-2">{cat.weeks}</td>
+                    <td className="border border-gray-300 px-4 py-2">{cat.feeding}</td>
+                    <td className="border border-gray-300 px-4 py-2">{cat.frequency}</td>
+                    <td className="border border-gray-300 px-4 py-2">{cat.special}</td>
                   </tr>
                 ))}
               </tbody>

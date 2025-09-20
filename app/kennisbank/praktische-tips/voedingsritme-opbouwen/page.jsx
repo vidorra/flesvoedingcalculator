@@ -645,20 +645,20 @@ export default function VoedingsritmeOpbouwenPage() {
                     
                     {technique.windows && Array.isArray(technique.windows) && technique.windows.length > 0 && (
                       <div className="overflow-x-auto">
-                        <table className="w-full">
+                        <table className="w-full border-collapse border border-gray-300">
                           <thead>
-                            <tr className="border-b border-gray-200">
-                              <th className="text-left py-2 text-sm font-medium text-gray-700">Leeftijd</th>
-                              <th className="text-left py-2 text-sm font-medium text-gray-700">Wakker Periode</th>
-                              <th className="text-left py-2 text-sm font-medium text-gray-700">Voor Volgende Slaap</th>
+                            <tr className="bg-white">
+                              <th className="border border-gray-300 px-4 py-2 text-left">Leeftijd</th>
+                              <th className="border border-gray-300 px-4 py-2 text-left">Wakker Periode</th>
+                              <th className="border border-gray-300 px-4 py-2 text-left">Voor Volgende Slaap</th>
                             </tr>
                           </thead>
                           <tbody>
                             {technique.windows.map((window, windowIndex) => (
-                              <tr key={windowIndex} className="border-b border-gray-200">
-                                <td className="py-2 text-sm text-gray-700">{window.age}</td>
-                                <td className="py-2 text-sm text-gray-700">{window.wakePeriod}</td>
-                                <td className="py-2 text-sm text-gray-700">{window.sequence}</td>
+                              <tr key={windowIndex} className={windowIndex % 2 === 1 ? "bg-white" : ""}>
+                                <td className="border border-gray-300 px-4 py-2 font-semibold">{window.age}</td>
+                                <td className="border border-gray-300 px-4 py-2">{window.wakePeriod}</td>
+                                <td className="border border-gray-300 px-4 py-2">{window.sequence}</td>
                               </tr>
                             ))}
                           </tbody>
