@@ -424,24 +424,24 @@ export default function LactosevrijeFlesvoedingPage() {
               </h2>
               
               <div className="overflow-x-auto">
-                <table className="w-full text-sm bg-white border border-gray-200 rounded-lg">
+                <table className="w-full border-collapse border border-gray-300">
                   <thead>
                     <tr className="bg-white">
-                      <th className="text-left p-3 font-medium">Merk</th>
-                      <th className="text-left p-3 font-medium">Per Blik</th>
-                      <th className="text-left p-3 font-medium">Per Maand</th>
-                      <th className="text-left p-3 font-medium">Per Jaar</th>
-                      <th className="text-left p-3 font-medium">Verzekering</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Merk</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Per Blik</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Per Maand</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Per Jaar</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Verzekering</th>
                     </tr>
                   </thead>
                   <tbody>
                     {costComparison.map((cost, index) => (
-                      <tr key={index}>
-                        <td className="p-3 font-medium text-gray-700">{cost.brand}</td>
-                        <td className="p-3 text-gray-700">{cost.costPerTin}</td>
-                        <td className="p-3 text-gray-700">{cost.monthlyCost}</td>
-                        <td className="p-3 font-medium text-gray-700">{cost.yearlyTotal}</td>
-                        <td className="p-3">
+                      <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
+                        <td className="border border-gray-300 px-4 py-2 font-semibold">{cost.brand}</td>
+                        <td className="border border-gray-300 px-4 py-2">{cost.costPerTin}</td>
+                        <td className="border border-gray-300 px-4 py-2">{cost.monthlyCost}</td>
+                        <td className="border border-gray-300 px-4 py-2">{cost.yearlyTotal}</td>
+                        <td className="border border-gray-300 px-4 py-2">
                           <span className={`text-xs px-2 py-1 rounded font-medium ${
                             cost.insurance === 'Vergoed op recept' ? 'bg-white text-primary' :
                             cost.insurance === 'Deels vergoed' ? 'bg-amber-100 text-amber-700' :

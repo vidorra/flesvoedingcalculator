@@ -190,20 +190,20 @@ export default function WaterKokenFlesvoedingPage() {
               </p>
               
               <div className="overflow-x-auto">
-                <table className="w-full border-collapse">
+                <table className="w-full border-collapse border border-gray-300">
                   <thead>
-                    <tr className="border-b border-gray-200">
-                      <th className="text-left p-3 font-medium text-gray-700">Leeftijd</th>
-                      <th className="text-left p-3 font-medium text-gray-700">Infectierisico</th>
-                      <th className="text-left p-3 font-medium text-gray-700">Advies Waterbereiding</th>
+                    <tr className="bg-white">
+                      <th className="border border-gray-300 px-4 py-2 text-left">Leeftijd</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Infectierisico</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Advies Waterbereiding</th>
                     </tr>
                   </thead>
                   <tbody>
                     {veiligheidsLeeftijden.map((item, index) => (
-                      <tr key={index} className="border-b border-gray-100">
-                        <td className="p-3 text-gray-700 font-medium">{item.leeftijd}</td>
-                        <td className="p-3 text-gray-600">{item.risico}</td>
-                        <td className="p-3 text-gray-600">{item.advies}</td>
+                      <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
+                        <td className="border border-gray-300 px-4 py-2 font-semibold">{item.leeftijd}</td>
+                        <td className="border border-gray-300 px-4 py-2">{item.risico}</td>
+                        <td className="border border-gray-300 px-4 py-2">{item.advies}</td>
                       </tr>
                     ))}
                   </tbody>

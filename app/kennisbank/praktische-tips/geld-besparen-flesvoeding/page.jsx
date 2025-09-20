@@ -172,22 +172,22 @@ export default function GeldBesparenPage() {
                   <div key={index}>
                     <h3 className="font-semibold text-primary mb-3">{category.category}</h3>
                     <div className="overflow-x-auto">
-                      <table className="w-full text-sm bg-white border border-gray-200 rounded-lg">
+                      <table className="w-full border-collapse border border-gray-300">
                         <thead>
                           <tr className="bg-white">
-                            <th className="text-left p-3 font-medium">Merk</th>
-                            <th className="text-left p-3 font-medium">Per 800g</th>
-                            <th className="text-left p-3 font-medium">Maandkosten</th>
-                            <th className="text-left p-3 font-medium">Jaar Totaal</th>
+                            <th className="border border-gray-300 px-4 py-2 text-left">Merk</th>
+                            <th className="border border-gray-300 px-4 py-2 text-left">Per 800g</th>
+                            <th className="border border-gray-300 px-4 py-2 text-left">Maandkosten</th>
+                            <th className="border border-gray-300 px-4 py-2 text-left">Jaar Totaal</th>
                           </tr>
                         </thead>
                         <tbody>
                           {category.brands.map((brand, idx) => (
-                            <tr key={index}>
-                              <td className="p-3 font-medium">{brand.name}</td>
-                              <td className="p-3">{brand.price}</td>
-                              <td className="p-3">{brand.monthly}</td>
-                              <td className="p-3 font-medium">{brand.yearly}</td>
+                            <tr key={idx} className={idx % 2 === 1 ? "bg-white" : ""}>
+                              <td className="border border-gray-300 px-4 py-2 font-semibold">{brand.name}</td>
+                              <td className="border border-gray-300 px-4 py-2">{brand.price}</td>
+                              <td className="border border-gray-300 px-4 py-2">{brand.monthly}</td>
+                              <td className="border border-gray-300 px-4 py-2">{brand.yearly}</td>
                             </tr>
                           ))}
                         </tbody>

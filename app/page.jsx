@@ -362,7 +362,7 @@ export default function HomePage() {
                             
                             {/* Tooltip */}
                             {showTooltip && (
-                              <div className="absolute bottom-full right-0 mb-2 w-80 z-10">
+                              <div className="absolute bottom-full right-0 mb-2 w-80 z-50">
                               <div className="bg-white border border-gray-200 rounded-xl shadow-lg p-4">
                                 <div className="tooltip-content">
                                   <h4 className="font-semibold mb-2">Prematurenberekening</h4>
@@ -737,6 +737,14 @@ export default function HomePage() {
                       </div>
                       <div className="text-xl font-bold">{results.recommendedAmount} ml</div>
                       <div className="text-xs text-white/60 mt-1">Bij groeispurt: tot {results.maxAmount} ml</div>
+                      {ageMonths === '0-2weeks' && (
+                        <div className="bg-amber-50 rounded-xl p-2 border border-amber-200 mt-2">
+                          <div className="text-xs text-amber-700 flex items-center">
+                            <Info className="w-4 h-4 mr-2 flex-shrink-0" />
+                            <span>Gebruik 75ml/kg in plaats van 150ml/kg</span>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                   

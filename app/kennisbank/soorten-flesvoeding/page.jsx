@@ -198,24 +198,24 @@ export default function SoortenFlesvoedingPage() {
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-primary mb-4">Flesvoeding Typen Vergelijking</h2>
           <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+            <table className="w-full border-collapse border border-gray-300">
               <thead>
-                <tr className="border-b border-gray-200">
-                  <th className="text-left py-2 font-medium text-gray-700">Type</th>
-                  <th className="text-left py-2 font-medium text-gray-700">Eiwitgehalte</th>
-                  <th className="text-left py-2 font-medium text-gray-700">IJzergehalte</th>
-                  <th className="text-left py-2 font-medium text-gray-700">Gebruik</th>
-                  <th className="text-left py-2 font-medium text-gray-700">Noodzakelijk</th>
+                <tr className="bg-white">
+                  <th className="border border-gray-300 px-4 py-2 text-left">Type</th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">Eiwitgehalte</th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">IJzergehalte</th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">Gebruik</th>
+                  <th className="border border-gray-300 px-4 py-2 text-left">Noodzakelijk</th>
                 </tr>
               </thead>
               <tbody>
                 {formulaComparison.map((item, index) => (
-                  <tr key={index} className="border-b border-gray-100">
-                    <td className="py-2 font-medium text-gray-700">{item.type}</td>
-                    <td className="py-2 text-gray-700">{item.protein}</td>
-                    <td className="py-2 text-gray-700">{item.iron}</td>
-                    <td className="py-2 text-gray-700">{item.usage}</td>
-                    <td className="py-2 text-gray-700">{item.required}</td>
+                  <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">{item.type}</td>
+                    <td className="border border-gray-300 px-4 py-2">{item.protein}</td>
+                    <td className="border border-gray-300 px-4 py-2">{item.iron}</td>
+                    <td className="border border-gray-300 px-4 py-2">{item.usage}</td>
+                    <td className="border border-gray-300 px-4 py-2">{item.required}</td>
                   </tr>
                 ))}
               </tbody>
