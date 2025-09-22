@@ -121,7 +121,7 @@ export default function RootLayout({ children }) {
           {`
             (async () => {
               try {
-                const { getCLS, getFCP, getLCP, getTTFB } = await import('web-vitals');
+                const { onCLS, onFCP, onLCP, onTTFB } = await import('web-vitals');
                 
                 function sendToAnalytics(metric) {
                   if (typeof window !== 'undefined' && window.gtag) {
@@ -142,10 +142,10 @@ export default function RootLayout({ children }) {
                   }
                 }
                 
-                getCLS(sendToAnalytics);
-                getFCP(sendToAnalytics);
-                getLCP(sendToAnalytics);
-                getTTFB(sendToAnalytics);
+                onCLS(sendToAnalytics);
+                onFCP(sendToAnalytics);
+                onLCP(sendToAnalytics);
+                onTTFB(sendToAnalytics);
               } catch (error) {
                 console.error('Failed to load web vitals:', error);
               }
