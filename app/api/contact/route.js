@@ -130,6 +130,7 @@ function validateInput(data) {
 async function sendEmail(formData, clientInfo) {
   const emailjsConfig = {
     PUBLIC_KEY: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
+    PRIVATE_KEY: process.env.EMAILJS_PRIVATE_KEY,
     SERVICE_ID: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
     TEMPLATE_ID: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
   }
@@ -137,15 +138,16 @@ async function sendEmail(formData, clientInfo) {
   // Log config for debugging
   console.log('EmailJS Config:', {
     hasPublicKey: !!emailjsConfig.PUBLIC_KEY,
+    hasPrivateKey: !!emailjsConfig.PRIVATE_KEY,
     hasServiceId: !!emailjsConfig.SERVICE_ID,
     hasTemplateId: !!emailjsConfig.TEMPLATE_ID,
     serviceId: emailjsConfig.SERVICE_ID
   })
   
   // Check if EmailJS is configured
-  if (!emailjsConfig.PUBLIC_KEY || !emailjsConfig.SERVICE_ID || !emailjsConfig.TEMPLATE_ID) {
+  if (!emailjsConfig.PRIVATE_KEY || !emailjsConfig.SERVICE_ID || !emailjsConfig.TEMPLATE_ID) {
     const missingConfig = []
-    if (!emailjsConfig.PUBLIC_KEY) missingConfig.push('PUBLIC_KEY')
+    if (!emailjsConfig.PRIVATE_KEY) missingConfig.push('PRIVATE_KEY')
     if (!emailjsConfig.SERVICE_ID) missingConfig.push('SERVICE_ID')
     if (!emailjsConfig.TEMPLATE_ID) missingConfig.push('TEMPLATE_ID')
     
@@ -183,8 +185,8 @@ async function sendEmail(formData, clientInfo) {
       fromEmail: templateParams.from_email
     })
     
-    // Initialize EmailJS
-    emailjs.init(emailjsConfig.PUBLIC_KEY)
+    // Initialize EmailJS with private key for server-side sending
+    emailjs.init(emailjsConfig.PRIVATE_KEY)
     
     const response = await emailjs.send(
       emailjsConfig.SERVICE_ID,
