@@ -161,7 +161,7 @@ async function sendEmail(formData, clientInfo) {
     subject: formData.subject || `${formData.type === 'feedback' ? 'Feedback' : 'Contact'} van ${formData.name}`,
     message: formData.message,
     message_type: formData.type,
-    to_email: 'info@flesvoedingcalculator.nl',
+    to_email: 'info@vidorra.nl',
     reply_to: formData.email,
     // Security info
     user_agent: clientInfo.userAgent,
