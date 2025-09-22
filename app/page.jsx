@@ -617,7 +617,7 @@ export default function HomePage() {
               {/* Calculate Button */}
               <button
                 onClick={calculateFeeding}
-                className="w-full bg-primary hover:bg-primary-hover text-white font-semibold py-3 px-6 rounded-xl transition-all shadow-sm flex items-center justify-center space-x-2"
+                className="w-full bg-primary hover:bg-primary-hover text-white font-medium py-3 px-6 rounded-xl transition-all shadow-sm flex items-center justify-center space-x-2"
               >
                 <Calculator className="w-5 h-5" />
                 <span>Bereken Voeding</span>
