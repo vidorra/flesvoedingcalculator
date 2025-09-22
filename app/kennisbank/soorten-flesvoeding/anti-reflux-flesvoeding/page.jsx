@@ -116,7 +116,7 @@ export default function AntiRefluxPage() {
         {/* Header */}
         <div className="mb-6">
           <div className="text-sm text-gray-500 mb-2">Soorten Flesvoeding  Anti-Reflux</div>
-          <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+          <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
             <Shield className="w-6 h-6 mr-3 text-primary" />
             Anti-Reflux Flesvoeding: Complete Gids tegen Spugen en Reflux
           </h1>
@@ -231,9 +231,9 @@ export default function AntiRefluxPage() {
             {arFormulas.map((formula, index) => (
               <div key={index} className="">
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="font-bold text-lg text-primary">{formula.brand}</h3>
+                  <h3 className="font-medium text-lg text-primary">{formula.brand}</h3>
                   <div className="text-right">
-                    <div className="text-gray-700 font-bold">{formula.price}</div>
+                    <div className="text-gray-700 font-medium">{formula.price}</div>
                     <div className="text-sm text-gray-600 font-medium">{formula.effectiviteit}</div>
                   </div>
                 </div>
@@ -280,17 +280,17 @@ export default function AntiRefluxPage() {
             <h4 className="font-medium text-primary mb-2">Kostenvergelijking per maand:</h4>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
               <div className="text-center">
-                <div className="font-bold text-primary">Hero Baby AR</div>
+                <div className="font-medium text-primary">Hero Baby AR</div>
                 <div className="text-gray-700">€56-64/maand</div>
                 <div className="text-xs text-gray-600">(Beste prijs-kwaliteit)</div>
               </div>
               <div className="text-center">
-                <div className="font-bold text-primary">Nutrilon AR</div>
+                <div className="font-medium text-primary">Nutrilon AR</div>
                 <div className="text-gray-700">€64-72/maand</div>
                 <div className="text-xs text-gray-600">(Meest verkocht)</div>
               </div>
               <div className="text-center">
-                <div className="font-bold text-primary">Aptamil AR</div>
+                <div className="font-medium text-primary">Aptamil AR</div>
                 <div className="text-gray-700">€68-76/maand</div>
                 <div className="text-xs text-gray-600">(Hoogwaardige optie)</div>
               </div>

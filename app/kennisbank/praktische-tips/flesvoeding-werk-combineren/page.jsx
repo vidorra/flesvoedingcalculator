@@ -104,7 +104,7 @@ export default function FlesvoedingWerkPage() {
             {/* Header */}
             <div className="mb-6">
               <div className="text-sm text-gray-500 mb-2">Praktische Tips • Werk Combineren</div>
-              <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+              <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Briefcase className="w-6 h-6 mr-3 text-primary" />
                 Flesvoeding en Werk Combineren: Complete Gids
               </h1>

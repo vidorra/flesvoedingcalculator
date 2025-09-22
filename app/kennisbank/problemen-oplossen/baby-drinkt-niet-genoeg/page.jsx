@@ -32,7 +32,7 @@ export default function BabyDrinktNietGenoegPage() {
             {/* Header */}
             <div>
               <div className="text-sm text-gray-500 mb-2">Problemen Oplossen  Voedingshoeveelheden</div>
-              <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+              <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Activity className="w-6 h-6 mr-3 text-primary" />
                 Baby drinkt niet genoeg: Oorzaken, signalen en praktische oplossingen
               </h1>

@@ -38,7 +38,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
             {/* Header */}
             <div>
               <div className="text-sm text-gray-500 mb-2">Praktische Tips • Partner Betrekken</div>
-              <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+              <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Users className="w-6 h-6 mr-3 text-primary" />
                 Partner betrekken bij flesvoeding: Nederlandse gids voor gedeelde zorg
               </h1>

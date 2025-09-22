@@ -326,7 +326,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
             {/* Header */}
             <div className="mb-6">
               <div className="text-sm text-gray-500 mb-2">Soorten Flesvoeding  Verschillen</div>
-              <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+              <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Scale className="w-6 h-6 mr-3 text-primary" />
                 Verschil tussen Startvoeding en Opvolgmelk: Complete Nederlandse Gids
               </h1>
@@ -394,7 +394,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                         <td className="border border-gray-300 px-4 py-2">{item.opvolgmelk}</td>
                         <td className="border border-gray-300 px-4 py-2">
                           {item.verschil.includes('meer') && item.verschil.includes('6x') ? (
-                            <span className="text-gray-700 font-bold">{item.verschil}</span>
+                            <span className="text-gray-700 font-medium">{item.verschil}</span>
                           ) : item.verschil.includes('goedkoper') ? (
                             <span className="text-gray-700 font-medium">{item.verschil}</span>
                           ) : (

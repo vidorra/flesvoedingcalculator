@@ -273,7 +273,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
             {/* Header */}
             <div className="mb-6">
               <div className="text-sm text-gray-500 mb-2">Soorten Flesvoeding  Opvolgmelk</div>
-              <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+              <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Clock className="w-6 h-6 mr-3 text-primary" />
                 Wanneer Overstappen naar Opvolgmelk: Complete Timing Gids
               </h1>

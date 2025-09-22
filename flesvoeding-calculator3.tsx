@@ -59,7 +59,7 @@ const FlesvoedingCalculator = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <Baby className="w-6 h-6 text-blue-500" />
-              <h1 className="text-xl font-bold text-gray-800">FlesvoedingCalculator.nl</h1>
+              <h1 className="text-xl font-medium text-gray-800">FlesvoedingCalculator.nl</h1>
             </div>
             <button
               onClick={() => setShowDisclaimer(!showDisclaimer)}
@@ -184,19 +184,19 @@ const FlesvoedingCalculator = () => {
                 <div className="bg-white/20 backdrop-blur rounded-xl p-4">
                   <div className="flex items-center justify-between">
                     <span className="text-blue-100">Totaal per dag</span>
-                    <span className="text-2xl font-bold">{results.dailyAmount} ml</span>
+                    <span className="text-2xl font-medium">{results.dailyAmount} ml</span>
                   </div>
                 </div>
                 
                 <div className="grid grid-cols-2 gap-3">
                   <div className="bg-white/20 backdrop-blur rounded-xl p-4">
                     <div className="text-blue-100 text-sm mb-1">Aantal voedingen</div>
-                    <div className="text-xl font-bold">{results.feedingsPerDay}x</div>
+                    <div className="text-xl font-medium">{results.feedingsPerDay}x</div>
                   </div>
                   
                   <div className="bg-white/20 backdrop-blur rounded-xl p-4">
                     <div className="text-blue-100 text-sm mb-1">Aanbevolen per voeding</div>
-                    <div className="text-xl font-bold">{results.recommendedAmount} ml</div>
+                    <div className="text-xl font-medium">{results.recommendedAmount} ml</div>
                     <div className="text-xs text-blue-200 mt-1">Bij groeispurt: tot {results.maxAmount} ml</div>
                   </div>
                 </div>

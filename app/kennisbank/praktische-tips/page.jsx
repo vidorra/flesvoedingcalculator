@@ -74,7 +74,7 @@ export default function PraktischeTipsPage() {
 
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+          <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
             <Lightbulb className="w-6 h-6 mr-3 text-primary" />
             Praktische Tips
           </h1>
@@ -115,7 +115,7 @@ export default function PraktischeTipsPage() {
           <div className="space-y-3">
             {nightFeedingTips.map((tip, index) => (
               <div key={index} className="flex items-start space-x-2">
-                <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">
+                <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-xs font-medium flex-shrink-0 mt-0.5">
                   {index + 1}
                 </div>
                 <span className="text-gray-700 text-sm">{tip}</span>

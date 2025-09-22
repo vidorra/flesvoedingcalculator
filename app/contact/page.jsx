@@ -53,7 +53,7 @@ export default function ContactPage() {
 
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+          <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
             <Mail className="w-6 h-6 mr-3 text-primary" />
             Contact
           </h1>
@@ -182,8 +182,7 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  disabled={isSubmitting}
-                  className="bg-primary hover:bg-primary-hover text-white font-medium py-3 px-6 rounded-lg transition-all inline-flex items-center disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="bg-primary hover:bg-primary-hover text-white font-medium py-3 px-6 rounded-lg transition-all inline-flex items-center"
                 >
                   {isSubmitting ? (
                     <>

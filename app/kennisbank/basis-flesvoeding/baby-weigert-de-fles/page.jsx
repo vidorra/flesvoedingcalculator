@@ -32,7 +32,7 @@ export default function BabyWeigertFlespagePage() {
             {/* Header */}
             <div>
               <div className="text-sm text-gray-500 mb-2">Basis Flesvoeding  Problemen Oplossen</div>
-              <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+              <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <AlertTriangle className="w-6 h-6 mr-3 text-primary" />
                 Baby weigert de fles: Oorzaken en praktische oplossingen
               </h1>

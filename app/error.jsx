@@ -16,7 +16,7 @@ export default function Error({ error, reset }) {
         <div className="text-center space-y-6 max-w-2xl mx-auto px-6">
           {/* Error Visual */}
           <div className="relative">
-            <div className="text-6xl md:text-8xl font-bold text-red-100 select-none">
+            <div className="text-6xl md:text-8xl font-medium text-red-100 select-none">
               500
             </div>
             <div className="absolute inset-0 flex items-center justify-center">
@@ -28,7 +28,7 @@ export default function Error({ error, reset }) {
 
           {/* Error Message */}
           <div className="space-y-3">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-800">
+            <h1 className="text-2xl md:text-3xl font-medium text-gray-800">
               Er is iets misgegaan
             </h1>
             <p className="text-gray-600 max-w-md mx-auto">
@@ -92,7 +92,7 @@ export default function Error({ error, reset }) {
 
           {/* Contact Support */}
           <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
-            <h3 className="font-bold text-lg mb-2">
+            <h3 className="font-medium text-lg mb-2">
               Probleem blijft bestaan?
             </h3>
             <p className="text-white/90 mb-4">

@@ -336,7 +336,7 @@ export default function SpugenNaDeFlesPage() {
             {/* Header */}
             <div className="mb-6">
               <div className="text-sm text-gray-500 mb-2">Problemen Oplossen  Spugen</div>
-              <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+              <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Heart className="w-6 h-6 mr-3 text-primary" />
                 Spugen na de Fles: Wanneer Normaal en Wanneer Zorgen?
               </h1>
@@ -362,7 +362,7 @@ export default function SpugenNaDeFlesPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {reassuringStats.map((stat, index) => (
                     <div key={index} className="flex justify-between items-center py-3">
-                      <span className="font-bold text-primary">{stat.stat}</span>
+                      <span className="font-medium text-primary">{stat.stat}</span>
                       <span className="text-gray-700">{stat.description}</span>
                     </div>
                   ))}

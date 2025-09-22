@@ -47,7 +47,7 @@ export default function ArticleNamePage() {
             {/* Header - ALWAYS outside of card containers */}
             <div>
               <div className="text-sm text-gray-500 mb-2">Category • Subcategory</div>
-              <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+              <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <IconName className="w-6 h-6 mr-3 text-primary" />
                 Article Title: Clear and Descriptive Heading
               </h1>

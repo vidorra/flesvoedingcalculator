@@ -75,7 +75,7 @@ export default function SchepjesCalculatorPage() {
 
           {/* Header */}
           <div className="mb-6">
-            <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+            <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
               <Calculator className="w-6 h-6 mr-3 text-primary" />
               Kunstvoeding Schepjes Calculator
             </h1>
@@ -141,21 +141,21 @@ export default function SchepjesCalculatorPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="bg-white/20 backdrop-blur rounded-xl p-4 text-center">
-                  <div className="text-2xl font-bold text-white">
+                  <div className="text-2xl font-medium text-white">
                     {results.scoopsNeeded}
                   </div>
                   <div className="text-sm text-white/70">Aantal schepjes</div>
                 </div>
                 
                 <div className="bg-white/20 backdrop-blur rounded-xl p-4 text-center">
-                  <div className="text-2xl font-bold text-white">
+                  <div className="text-2xl font-medium text-white">
                     {results.waterNeeded}ml
                   </div>
                   <div className="text-sm text-white/70">Water</div>
                 </div>
                 
                 <div className="bg-white/20 backdrop-blur rounded-xl p-4 text-center">
-                  <div className="text-2xl font-bold text-white">
+                  <div className="text-2xl font-medium text-white">
                     {results.actualVolume}ml
                   </div>
                   <div className="text-sm text-white/70">Totaal volume</div>

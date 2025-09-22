@@ -68,7 +68,7 @@ export default function KennisbankTemplatePage() {
             {/* Header - ALWAYS outside of card containers */}
             <div>
               <div className="text-sm text-gray-500 mb-2">Kennisbank  Template</div>
-              <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+              <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <BookOpen className="w-6 h-6 mr-3 text-primary" />
                 Perfect Article Template: Complete Styling Guide
               </h1>
@@ -180,7 +180,7 @@ export default function KennisbankTemplatePage() {
 {`{/*  CORRECT: Clean header outside cards */}
 <div>
   <div className="text-sm text-gray-500 mb-2">Category  Subcategory</div>
-  <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+  <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
     <Icon className="w-6 h-6 mr-3 text-primary" />
     Article Title
   </h1>

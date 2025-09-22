@@ -63,7 +63,7 @@ export default function FormulaMixingCalculator() {
           <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto">
             <Calculator className="w-8 h-8 text-blue-600" />
           </div>
-          <h1 className="text-3xl font-bold text-gray-800">Kunstvoeding Mengverhouding Calculator</h1>
+          <h1 className="text-3xl font-medium text-gray-800">Kunstvoeding Mengverhouding Calculator</h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Bereken de exacte verhouding van water en poeder voor uw gewenste hoeveelheid kunstvoeding. 
             Perfect voor wanneer de standaard verhoudingen niet uitkomen.
@@ -124,21 +124,21 @@ export default function FormulaMixingCalculator() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
               <div className="bg-blue-50 rounded-xl p-4 text-center">
-                <div className="text-2xl font-bold text-blue-600">
+                <div className="text-2xl font-medium text-blue-600">
                   {results.scoopsNeeded}
                 </div>
                 <div className="text-sm text-blue-700">Schepjes poeder</div>
               </div>
               
               <div className="bg-green-50 rounded-xl p-4 text-center">
-                <div className="text-2xl font-bold text-green-600">
+                <div className="text-2xl font-medium text-green-600">
                   {results.waterNeeded}ml
                 </div>
                 <div className="text-sm text-green-700">Water</div>
               </div>
               
               <div className="bg-purple-50 rounded-xl p-4 text-center">
-                <div className="text-2xl font-bold text-purple-600">
+                <div className="text-2xl font-medium text-purple-600">
                   {results.actualVolume}ml
                 </div>
                 <div className="text-sm text-purple-700">Totaal volume</div>

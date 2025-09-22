@@ -708,14 +708,14 @@ export default function HomePage() {
                   <div className="bg-white/20 backdrop-blur rounded-xl p-4">
                     <div className="flex items-center justify-between">
                       <span className="text-white/70">Totaal per dag</span>
-                      <span className="text-2xl font-bold">{results.dailyAmount} ml</span>
+                      <span className="text-2xl font-medium">{results.dailyAmount} ml</span>
                     </div>
                   </div>
                   
                   <div className="grid grid-cols-2 gap-3">
                     <div className="bg-white/20 backdrop-blur rounded-xl p-4">
                       <div className="text-white/70 text-sm mb-1">Aantal voedingen</div>
-                      <div className="text-xl font-bold">{results.feedingsPerDay}x</div>
+                      <div className="text-xl font-medium">{results.feedingsPerDay}x</div>
                     </div>
                     
                     <div className="bg-white/20 backdrop-blur rounded-xl p-4">
@@ -735,7 +735,7 @@ export default function HomePage() {
                           </div>
                         )}
                       </div>
-                      <div className="text-xl font-bold">{results.recommendedAmount} ml</div>
+                      <div className="text-xl font-medium">{results.recommendedAmount} ml</div>
                       <div className="text-xs text-white/60 mt-1">Bij groeispurt: tot {results.maxAmount} ml</div>
                       {ageMonths === '0-2weeks' && (
                         <div className="bg-amber-50 rounded-xl p-2 border border-amber-200 mt-2">
@@ -816,7 +816,7 @@ export default function HomePage() {
                         )}
                       </div>
                     </div>
-                    <div className="text-xl font-bold">
+                    <div className="text-xl font-medium">
                       {customSchepjes !== null ? customSchepjes : Math.round((results.recommendedAmount / 30) * 10) / 10}
                     </div>
                     <div className="text-xs text-white/60 mt-1">30ml water per schepje poeder</div>

@@ -25,7 +25,7 @@ export default function InfographicsPage() {
 
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+          <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
             <BookOpen className="w-6 h-6 mr-3 text-primary" />
             Visuele Guides
           </h1>
@@ -144,7 +144,7 @@ const BereidingInfographic = () => {
           >
             {/* Step Header */}
             <div className="flex items-start mb-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg">
+              <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-medium text-lg">
                 {step.number}
               </div>
               <div className="ml-4 flex-1">
@@ -184,7 +184,7 @@ const BereidingInfographic = () => {
 
       {/* Important Notes */}
       <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
-        <h3 className="font-bold text-lg mb-4">
+        <h3 className="font-medium text-lg mb-4">
           Belangrijke Hygiëneregels
         </h3>
         <div className="grid md:grid-cols-2 gap-4">
@@ -341,12 +341,12 @@ const VoedingsschemaInfographic = () => {
                 <div className={`${group.color} p-4 text-white`}>
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="font-bold text-xl">{group.age}</h3>
+                      <h3 className="font-medium text-xl">{group.age}</h3>
                       <p className="text-white/90 text-sm">Gem. gewicht: {group.avgWeight}</p>
                       <p className="text-white/90 text-xs">{group.mlPerKg} ml per kg</p>
                     </div>
                     <div className="text-right">
-                      <p className="font-bold text-lg">{group.total}</p>
+                      <p className="font-medium text-lg">{group.total}</p>
                       <p className="text-white/90 text-sm">per dag</p>
                     </div>
                   </div>
@@ -406,7 +406,7 @@ const VoedingsschemaInfographic = () => {
 
       {/* Formula Reference Card */}
       <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
-        <h3 className="font-bold text-lg mb-4 flex items-center">
+        <h3 className="font-medium text-lg mb-4 flex items-center">
           <Info className="w-5 h-5 mr-2" />
           Berekeningsformule
         </h3>

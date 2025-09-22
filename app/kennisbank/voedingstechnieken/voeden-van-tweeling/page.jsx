@@ -107,7 +107,7 @@ export default function TweelingVoedenPage() {
         {/* Header */}
         <div className="mb-6">
           <div className="text-sm text-gray-500 mb-2">Voedingstechnieken  Tweeling</div>
-          <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+          <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
             <Users className="w-6 h-6 mr-3 text-primary" />
             Flesvoeding voor Tweeling: Complete Survival Gids 2025
           </h1>
@@ -200,7 +200,7 @@ export default function TweelingVoedenPage() {
                 <div>Voeding klaarmaken: 10 min × 16 = <strong>160 min</strong></div>
                 <div>Voeden zelf: 30 min × 16 = <strong>480 min</strong></div>
                 <div>Opruimen: 5 min × 16 = <strong>80 min</strong></div>
-                <div className="border-t pt-2 font-bold">Totaal: 12 uur per dag</div>
+                <div className="border-t pt-2 font-medium">Totaal: 12 uur per dag</div>
               </div>
             </div>
             
@@ -210,13 +210,13 @@ export default function TweelingVoedenPage() {
                 <div>Batch klaarmaken: <strong>45 min</strong> per dag</div>
                 <div>Gelijktijdig voeden: 30 min × 8 = <strong>240 min</strong></div>
                 <div>Opruimen: 3 min × 8 = <strong>24 min</strong></div>
-                <div className="border-t pt-2 font-bold">Totaal: 5 uur per dag</div>
+                <div className="border-t pt-2 font-medium">Totaal: 5 uur per dag</div>
               </div>
             </div>
           </div>
           
           <div className="mt-4 p-4 bg-primary text-white rounded-xl text-center">
-            <div className="text-2xl font-bold">Tijdsbesparing: 7 uur per dag!</div>
+            <div className="text-2xl font-medium">Tijdsbesparing: 7 uur per dag!</div>
             <p className="text-sm text-white/90 mt-1">Meer tijd voor rust, jezelf en aandachtstijd met de baby's</p>
           </div>
         </div>
@@ -356,7 +356,7 @@ export default function TweelingVoedenPage() {
                   ))}
                 </div>
                 <div className="text-right">
-                  <span className="text-lg font-bold text-gray-700">Jaarkosten: {budget.yearly}</span>
+                  <span className="text-lg font-medium text-gray-700">Jaarkosten: {budget.yearly}</span>
                 </div>
               </div>
             ))}

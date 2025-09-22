@@ -131,7 +131,7 @@ export default function BioOrganischeFlesvoedingPage() {
             {/* Header - ALWAYS outside of card containers */}
             <div>
               <div className="text-sm text-gray-500 mb-2">Kennisbank  Soorten Flesvoeding</div>
-              <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+              <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Leaf className="w-6 h-6 mr-3 text-primary" />
                 Bio en Organische Flesvoeding: Complete Nederlandse Gids 2025
               </h1>

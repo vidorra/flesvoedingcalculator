@@ -396,8 +396,7 @@ const ContactModal = ({ isOpen, onClose }) => {
             </button>
             <button
               type="submit"
-              disabled={isSubmitting}
-              className="flex-1 bg-primary hover:bg-primary/90 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-medium py-3 px-6 rounded-xl transition-all flex items-center justify-center space-x-2"
+              className="flex-1 bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-xl transition-all flex items-center justify-center space-x-2"
             >
               {isSubmitting ? (
                 <>

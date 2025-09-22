@@ -23,7 +23,7 @@ export default function PrivacyBeleidPage() {
 
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+          <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
             <Shield className="w-6 h-6 mr-3 text-primary" />
             Privacy Beleid
           </h1>
@@ -343,7 +343,7 @@ export default function PrivacyBeleidPage() {
 
         {/* Contact */}
         <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
-          <h2 className="font-bold text-lg mb-4 flex items-center">
+          <h2 className="font-medium text-lg mb-4 flex items-center">
             <Mail className="w-5 h-5 mr-2" />
             Vragen over privacy?
           </h2>
