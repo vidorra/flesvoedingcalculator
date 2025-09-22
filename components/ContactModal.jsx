@@ -380,7 +380,7 @@ const ContactModal = ({ isOpen, onClose }) => {
             <div className="flex items-center space-x-2 text-red-600 bg-red-50 p-3 rounded-xl">
               <AlertCircle className="w-5 h-5" />
               <span className="text-sm font-medium">
-                {errorMessage || 'Er ging iets mis. Probeer het opnieuw of mail naar info@flesvoedingcalculator.nl'}
+                {errorMessage || 'Er ging iets mis. Probeer het opnieuw of mail naar info@vidorra.nl'}
               </span>
             </div>
           )}
