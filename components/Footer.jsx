@@ -44,7 +44,7 @@ export default function Footer() {
             <div className="md:col-span-1">
               <div className="flex items-center space-x-2 mb-4">
                 <Baby className="w-5 h-5 text-primary" />
-                <span className="font-bold text-gray-800">FlesvoedingCalculator.nl</span>
+                <span className="font-medium text-gray-800">FlesvoedingCalculator.nl</span>
               </div>
               <p className="text-sm text-gray-600 leading-relaxed">
                 Betrouwbare informatie en tools voor flesvoeding, gebaseerd op Nederlandse richtlijnen.

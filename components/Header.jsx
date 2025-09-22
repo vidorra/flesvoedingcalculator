@@ -24,7 +24,7 @@ export default function Header() {
             <Baby className="w-6 h-6 text-primary" />
             <Link 
               href="/"
-              className="text-xl font-bold text-gray-800 hover:text-primary transition-colors"
+              className="text-xl font-medium text-gray-800 hover:text-primary transition-colors"
             >
               FlesvoedingCalculator.nl
             </Link>

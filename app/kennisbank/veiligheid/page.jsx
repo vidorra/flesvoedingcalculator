@@ -43,7 +43,7 @@ export default function VeiligheidPage() {
 
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+          <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
             <AlertTriangle className="w-6 h-6 mr-3 text-primary" />
             Belangrijke Veiligheidsrichtlijnen
           </h1>
@@ -64,7 +64,7 @@ export default function VeiligheidPage() {
           <div className="space-y-3">
             {emergencyContacts.map((contact, index) => (
               <div key={index} className="flex items-start space-x-3">
-                <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">
+                <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-xs font-medium flex-shrink-0 mt-0.5">
                   !
                 </div>
                 <span className="text-gray-700 font-medium">{contact}</span>
@@ -73,7 +73,7 @@ export default function VeiligheidPage() {
           </div>
           
           <div className="mt-4 p-4 bg-white rounded-lg">
-            <p className="text-gray-700 font-bold text-center">
+            <p className="text-gray-700 font-medium text-center">
               Bij levensbedreigende situaties: bel direct 112
             </p>
           </div>
@@ -117,7 +117,7 @@ export default function VeiligheidPage() {
             <div className="space-y-3">
               {allergyActions.map((action, index) => (
                 <div key={index} className="flex items-start space-x-2">
-                  <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0 mt-0.5">
+                  <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white text-xs font-medium flex-shrink-0 mt-0.5">
                     {index + 1}
                   </div>
                   <span className="text-gray-700 text-sm">{action}</span>
@@ -133,20 +133,20 @@ export default function VeiligheidPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="p-4 bg-white rounded-lg text-center">
-              <h3 className="font-bold text-gray-700 mb-2">Spoedeisende hulp</h3>
-              <p className="text-2xl font-bold text-gray-600">112</p>
+              <h3 className="font-medium text-gray-700 mb-2">Spoedeisende hulp</h3>
+              <p className="text-2xl font-medium text-gray-600">112</p>
               <p className="text-xs text-gray-700">Bij levensbedreigende situaties</p>
             </div>
             
             <div className="p-4 bg-default rounded-lg text-center">
-              <h3 className="font-bold text-primary mb-2">Huisartsenpraktijk</h3>
-              <p className="text-lg font-bold text-gray-700">Uw eigen nummer</p>
+              <h3 className="font-medium text-primary mb-2">Huisartsenpraktijk</h3>
+              <p className="text-lg font-medium text-gray-700">Uw eigen nummer</p>
               <p className="text-xs text-gray-600">Voor advies en afspraken</p>
             </div>
             
             <div className="p-4 bg-white rounded-lg text-center">
-              <h3 className="font-bold text-gray-700 mb-2">Consultatiebureau</h3>
-              <p className="text-lg font-bold text-gray-600">Lokaal nummer</p>
+              <h3 className="font-medium text-gray-700 mb-2">Consultatiebureau</h3>
+              <p className="text-lg font-medium text-gray-600">Lokaal nummer</p>
               <p className="text-xs text-gray-700">Voor ontwikkelingsvragen</p>
             </div>
           </div>

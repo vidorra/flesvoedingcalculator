@@ -55,7 +55,7 @@ export default function BasisFlesvoedingPage() {
 
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+          <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
             <BookOpen className="w-6 h-6 mr-3 text-primary" />
             Complete Gids Flesvoeding voor Nederlandse Ouders
           </h1>

@@ -101,7 +101,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
         {/* Header */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6 mb-6">
             <div className="text-sm text-gray-500 mb-2">Basis Flesvoeding  Objectieve Vergelijking</div>
-            <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+            <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
               <BookOpen className="w-6 h-6 mr-3 text-primary" />
               Flesvoeding vs Borstvoeding: Objectieve Gids
             </h1>
@@ -129,7 +129,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
 
         {/* Nederlandse statistieken */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-2xl font-bold text-primary mb-6 flex items-center">
+            <h2 className="text-2xl font-medium text-primary mb-6 flex items-center">
               <TrendingUp className="w-6 h-6 mr-3 text-primary" />
               Feiten en cijfers Nederland 2025
             </h2>
@@ -310,7 +310,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
                       <span className="font-medium text-gray-700">{item.kosten}</span>
                     </li>
                   ))}
-                  <li className="border-t border-gray-200 pt-3 flex justify-between items-center font-bold">
+                  <li className="border-t border-gray-200 pt-3 flex justify-between items-center font-medium">
                     <span className="text-gray-700">Totaal</span>
                     <span className="text-gray-700">€560-980</span>
                   </li>
@@ -326,7 +326,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
                       <span className="font-medium text-gray-700">{item.kosten}</span>
                     </li>
                   ))}
-                  <li className="border-t border-gray-200 pt-3 flex justify-between items-center font-bold">
+                  <li className="border-t border-gray-200 pt-3 flex justify-between items-center font-medium">
                     <span className="text-gray-700">Totaal</span>
                     <span className="text-gray-700">€760-1260</span>
                   </li>
@@ -548,15 +548,15 @@ export default function FlesvoedingVsBorstvoedingPage() {
                 <h3 className="font-semibold text-primary mb-3">Volgende stappen:</h3>
                 <ol className="space-y-2">
                   <li className="flex items-center space-x-2">
-                    <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">1</span>
+                    <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium">1</span>
                     <span className="text-gray-700">Bespreek overwegingen met partner en zorgverleners</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">2</span>
+                    <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium">2</span>
                     <span className="text-gray-700">Probeer de methode die bij je voelt</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">3</span>
+                    <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium">3</span>
                     <span className="text-gray-700">Blijf flexibel - aanpassingen zijn altijd mogelijk</span>
                   </li>
                 </ol>

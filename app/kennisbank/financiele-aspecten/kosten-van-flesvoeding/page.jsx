@@ -42,7 +42,7 @@ export default function KostenVanFlesvoeding() {
           <div className="space-y-6">
             
             <div className="text-sm text-gray-500 mb-2">Financiële Aspecten  Kosten</div>
-            <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+            <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
               <Euro className="w-6 h-6 mr-3 text-primary" />
               Kosten van Flesvoeding: Complete Budgetgids Nederland 2025
             </h1>
@@ -99,10 +99,10 @@ export default function KostenVanFlesvoeding() {
                       <td className="border border-gray-300 px-4 py-2">€150-200</td>
                     </tr>
                     <tr className="bg-primary/10">
-                      <td className="border border-gray-300 px-4 py-2 font-bold">TOTAAL JAAR 1</td>
-                      <td className="border border-gray-300 px-4 py-2 font-bold">€575-750</td>
-                      <td className="border border-gray-300 px-4 py-2 font-bold">€860-1120</td>
-                      <td className="border border-gray-300 px-4 py-2 font-bold">€1270-1580</td>
+                      <td className="border border-gray-300 px-4 py-2 font-medium">TOTAAL JAAR 1</td>
+                      <td className="border border-gray-300 px-4 py-2 font-medium">€575-750</td>
+                      <td className="border border-gray-300 px-4 py-2 font-medium">€860-1120</td>
+                      <td className="border border-gray-300 px-4 py-2 font-medium">€1270-1580</td>
                     </tr>
                   </tbody>
                 </table>

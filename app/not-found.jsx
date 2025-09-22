@@ -10,7 +10,7 @@ export default function NotFound() {
         <div className="text-center space-y-6 max-w-2xl mx-auto px-6">
           {/* 404 Visual */}
           <div className="relative">
-            <div className="text-6xl md:text-8xl font-bold text-primary/20 select-none">
+            <div className="text-6xl md:text-8xl font-medium text-primary/20 select-none">
               404
             </div>
             <div className="absolute inset-0 flex items-center justify-center">
@@ -22,7 +22,7 @@ export default function NotFound() {
 
           {/* Error Message */}
           <div className="space-y-3">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-800">
+            <h1 className="text-2xl md:text-3xl font-medium text-gray-800">
               Pagina niet gevonden
             </h1>
             <p className="text-gray-600 max-w-md mx-auto">
@@ -97,7 +97,7 @@ export default function NotFound() {
 
           {/* Contact */}
           <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
-            <h3 className="font-bold text-lg mb-2">
+            <h3 className="font-medium text-lg mb-2">
               Hulp nodig?
             </h3>
             <p className="text-white/90 mb-4">

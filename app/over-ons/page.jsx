@@ -32,7 +32,7 @@ export default function OverOnsPage() {
     <Layout>
       <div className="space-y-6">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+          <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
             <Users className="w-6 h-6 mr-3 text-primary" />
             Over Ons
           </h1>
@@ -53,7 +53,7 @@ export default function OverOnsPage() {
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <span className="text-green-600 font-bold">✓</span>
+                  <span className="text-green-600 font-medium">✓</span>
                 </div>
                 <div>
                   <h3 className="font-medium text-gray-800">Evidence-Based</h3>
@@ -64,7 +64,7 @@ export default function OverOnsPage() {
               
               <div className="flex items-start space-x-3">
                 <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <span className="text-purple-600 font-bold">✓</span>
+                  <span className="text-purple-600 font-medium">✓</span>
                 </div>
                 <div>
                   <h3 className="font-medium text-gray-800">Regelmatig Geüpdatet</h3>
@@ -76,7 +76,7 @@ export default function OverOnsPage() {
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <span className="text-orange-600 font-bold">✓</span>
+                  <span className="text-orange-600 font-medium">✓</span>
                 </div>
                 <div>
                   <h3 className="font-medium text-gray-800">Privacy Gewaarborgd</h3>
@@ -86,7 +86,7 @@ export default function OverOnsPage() {
               
               <div className="flex items-start space-x-3">
                 <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <span className="text-red-600 font-bold">✓</span>
+                  <span className="text-red-600 font-medium">✓</span>
                 </div>
                 <div>
                   <h3 className="font-medium text-gray-800">Gratis Toegankelijk</h3>
@@ -96,7 +96,7 @@ export default function OverOnsPage() {
               
               <div className="flex items-start space-x-3">
                 <div className="w-8 h-8 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <span className="text-teal-600 font-bold">✓</span>
+                  <span className="text-teal-600 font-medium">✓</span>
                 </div>
                 <div>
                   <h3 className="font-medium text-gray-800">Gebruiksvriendelijk</h3>

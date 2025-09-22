@@ -23,7 +23,7 @@ export default function GebruiksvoorwaardenPage() {
 
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+          <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
             <FileText className="w-6 h-6 mr-3 text-primary" />
             Gebruiksvoorwaarden
           </h1>
@@ -348,7 +348,7 @@ export default function GebruiksvoorwaardenPage() {
 
         {/* Contact */}
         <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
-          <h2 className="font-bold text-lg mb-4">
+          <h2 className="font-medium text-lg mb-4">
             Vragen over deze voorwaarden?
           </h2>
           <p className="text-white/90 mb-4">

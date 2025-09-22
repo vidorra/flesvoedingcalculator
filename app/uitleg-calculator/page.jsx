@@ -167,7 +167,7 @@ export default function UitlegCalculatorPage() {
       <div className="space-y-6">
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+          <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
             <Calculator className="w-6 h-6 mr-3 text-primary" />
             Hoe Werkt de Flesvoeding Calculator?
           </h1>
@@ -186,15 +186,15 @@ export default function UitlegCalculatorPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="text-center p-4">
-              <div className="text-2xl font-bold text-primary mb-2">150ml</div>
+              <div className="text-2xl font-medium text-primary mb-2">150ml</div>
               <div className="text-sm text-gray-600">per kg lichaamsgewicht per dag</div>
             </div>
             <div className="text-center p-4">
-              <div className="text-2xl font-bold text-primary mb-2">5-8x</div>
+              <div className="text-2xl font-medium text-primary mb-2">5-8x</div>
               <div className="text-sm text-gray-600">voedingen per dag (gemiddeld)</div>
             </div>
             <div className="text-center p-4">
-              <div className="text-2xl font-bold text-primary mb-2">1:30</div>
+              <div className="text-2xl font-medium text-primary mb-2">1:30</div>
               <div className="text-sm text-gray-600">schepje:ml water ratio</div>
             </div>
           </div>
@@ -210,7 +210,7 @@ export default function UitlegCalculatorPage() {
           <div className="space-y-6">
             {calculationSteps.map((step, index) => (
               <div key={index} className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-medium">
                   {step.step}
                 </div>
                 <div className="flex-1">

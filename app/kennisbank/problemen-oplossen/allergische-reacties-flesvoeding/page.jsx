@@ -77,7 +77,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
             {/* Header - ALWAYS outside of card containers */}
             <div>
               <div className="text-sm text-gray-500 mb-2">Kennisbank  Problemen Oplossen</div>
-              <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+              <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <AlertTriangle className="w-6 h-6 mr-3 text-primary" />
                 Allergische Reacties Flesvoeding: Nederlandse Herkenning & Behandeling Gids
               </h1>

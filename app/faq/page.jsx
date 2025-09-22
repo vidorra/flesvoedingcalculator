@@ -81,7 +81,7 @@ export default function FAQPage() {
     <Layout>
       <div className="space-y-6">
         <div className="mb-6">
-          <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+          <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
             <Info className="w-6 h-6 mr-3 text-primary" />
             Veelgestelde Vragen
           </h1>

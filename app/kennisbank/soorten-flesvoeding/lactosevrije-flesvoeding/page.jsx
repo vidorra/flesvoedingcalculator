@@ -267,7 +267,7 @@ export default function LactosevrijeFlesvoedingPage() {
             {/* Header */}
             <div>
               <div className="text-sm text-gray-500 mb-2">Kennisbank  Soorten Flesvoeding</div>
-              <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+              <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Milk className="w-6 h-6 mr-3 text-primary" />
                 Lactosevrije Flesvoeding: Complete Nederlandse Gids
               </h1>
@@ -401,7 +401,7 @@ export default function LactosevrijeFlesvoedingPage() {
                     <ul className="space-y-2">
                       {step.tasks.map((task, taskIndex) => (
                         <li key={index} className="flex items-start space-x-2">
-                          <span className="bg-primary text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold mt-0.5">
+                          <span className="bg-primary text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-medium mt-0.5">
                             {taskIndex + 1}
                           </span>
                           <span className="text-gray-700 text-sm">{task}</span>

@@ -200,7 +200,7 @@ export default function BoertjeLatenPage() {
             {/* Header */}
             <div className="mb-6">
               <div className="text-sm text-gray-500 mb-2">Voedingstechnieken  Boertje Laten</div>
-              <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+              <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Wind className="w-6 h-6 mr-3 text-primary" />
                 Boertje Laten Tijdens Voeding: Complete Gids voor Nederlandse Ouders
               </h1>

@@ -78,7 +78,7 @@ export default function EersteKeerFlesvoedingPage() {
           {/* Header */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <div className="text-sm text-gray-500 mb-2">Basis Flesvoeding  Beginners Gids</div>
-            <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+            <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
               <Baby className="w-6 h-6 mr-3 text-primary" />
               Eerste keer flesvoeding geven
             </h1>
@@ -211,7 +211,7 @@ export default function EersteKeerFlesvoedingPage() {
             <div className="space-y-6">
               <div>
                 <h3 className="font-semibold text-primary mb-4 flex items-center">
-                  <span className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">1</span>
+                  <span className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-medium mr-3">1</span>
                   Voorbereiding (5 minuten)
                 </h3>
                 <ol className="space-y-2">
@@ -236,7 +236,7 @@ export default function EersteKeerFlesvoedingPage() {
 
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-semibold text-primary mb-4 flex items-center">
-                  <span className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">2</span>
+                  <span className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-medium mr-3">2</span>
                   Poeder toevoegen (2 minuten)
                 </h3>
                 <ol className="space-y-2">
@@ -261,7 +261,7 @@ export default function EersteKeerFlesvoedingPage() {
 
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-semibold text-primary mb-4 flex items-center">
-                  <span className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">3</span>
+                  <span className="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-medium mr-3">3</span>
                   Mengen en temperatuur checken (3 minuten)
                 </h3>
                 <ol className="space-y-2">
@@ -453,19 +453,19 @@ export default function EersteKeerFlesvoedingPage() {
                 <h3 className="font-semibold text-primary mb-4">De fles introduceren</h3>
                 <ol className="space-y-2">
                   <li className="flex items-center space-x-2">
-                    <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">1</span>
+                    <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium">1</span>
                     <span className="text-gray-700">Laat baby de speen met lippen verkennen</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">2</span>
+                    <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium">2</span>
                     <span className="text-gray-700">Raak zachtjes onderlip aan met speen</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">3</span>
+                    <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium">3</span>
                     <span className="text-gray-700">Wacht tot baby mond opent</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">4</span>
+                    <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium">4</span>
                     <span className="text-gray-700">Plaats speen zachtjes in mond (niet forceren)</span>
                   </li>
                 </ol>
@@ -539,23 +539,23 @@ export default function EersteKeerFlesvoedingPage() {
             <h2 className="text-lg font-semibold text-primary mb-4">Belangrijkste tips</h2>
             <ol className="space-y-2">
               <li className="flex items-center space-x-2">
-                <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">1</span>
+                <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium">1</span>
                 <span className="text-gray-700"><strong>Bereid goed voor</strong> - juiste spullen en kennis</span>
               </li>
               <li className="flex items-center space-x-2">
-                <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">2</span>
+                <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium">2</span>
                 <span className="text-gray-700"><strong>Start rustig</strong> - forceer niets</span>
               </li>
               <li className="flex items-center space-x-2">
-                <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">3</span>
+                <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium">3</span>
                 <span className="text-gray-700"><strong>Volg je baby</strong> - signalen zijn belangrijker dan schema's</span>
               </li>
               <li className="flex items-center space-x-2">
-                <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">4</span>
+                <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium">4</span>
                 <span className="text-gray-700"><strong>Zoek hulp</strong> bij twijfels</span>
               </li>
               <li className="flex items-center space-x-2">
-                <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">5</span>
+                <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium">5</span>
                 <span className="text-gray-700"><strong>Heb geduld</strong> - routine komt vanzelf</span>
               </li>
             </ol>

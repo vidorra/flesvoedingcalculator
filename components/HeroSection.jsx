@@ -10,7 +10,7 @@ export default function HeroSection() {
       {/* Main content container */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         {/* Main Headline */}
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-4 lg:mb-6 leading-tight sm:leading-tight lg:leading-tight" style={{
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium text-gray-900 mb-4 lg:mb-6 leading-tight sm:leading-tight lg:leading-tight" style={{
           letterSpacing: '-0.02em'
         }}>
           Bereken de{' '}

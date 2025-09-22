@@ -307,7 +307,7 @@ export default function OvergangNaarBekerPage() {
             {/* Header - ALWAYS outside of card containers */}
             <div>
               <div className="text-sm text-gray-500 mb-2">Voedingstechnieken • Overgang naar Beker</div>
-              <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+              <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Target className="w-6 h-6 mr-3 text-primary" />
                 Overgang naar Beker: Nederlandse Gids voor de Volgende Stap
               </h1>

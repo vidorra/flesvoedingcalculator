@@ -176,7 +176,7 @@ export default function NachtvoedingOptimaliserenPage() {
         {/* Header */}
         <div className="mb-6">
           <div className="text-sm text-gray-500 mb-2">Praktische Tips • Nachtvoeding</div>
-          <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
+          <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
             <Moon className="w-6 h-6 mr-3 text-primary" />
             Nachtvoeding Optimaliseren: Efficiënt Voeden in het Donker
           </h1>
@@ -247,7 +247,7 @@ export default function NachtvoedingOptimaliserenPage() {
                 </ul>
                 
                 <div className="mt-4 p-3 bg-white rounded-lg">
-                  <div className="text-primary font-bold text-lg">Besparing: 1.5-2 uur slaap per nacht!</div>
+                  <div className="text-primary font-medium text-lg">Besparing: 1.5-2 uur slaap per nacht!</div>
                   <div className="text-gray-600">= 10-14 uur meer slaap per week</div>
                 </div>
               </div>
@@ -283,7 +283,7 @@ export default function NachtvoedingOptimaliserenPage() {
                 </div>
                 
                 <div className="border-t pt-3 border-gray-200">
-                  <div className="font-bold text-lg text-primary">
+                  <div className="font-medium text-lg text-primary">
                     Totaal: {method.total}
                   </div>
                   <div className="text-gray-600">
@@ -308,7 +308,7 @@ export default function NachtvoedingOptimaliserenPage() {
                 <div className="flex justify-between items-start mb-3">
                   <h3 className="font-medium text-gray-600">{strategy.strategy}</h3>
                   <div className="text-right">
-                    <div className="text-primary font-bold text-sm">{strategy.timeReduction}</div>
+                    <div className="text-primary font-medium text-sm">{strategy.timeReduction}</div>
                     <div className="text-primary text-xs">{strategy.effectiviteit}</div>
                   </div>
                 </div>
@@ -386,7 +386,7 @@ export default function NachtvoedingOptimaliserenPage() {
               <div key={index}>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
-                    <h3 className="font-bold text-primary text-lg">{phase.age}</h3>
+                    <h3 className="font-medium text-primary text-lg">{phase.age}</h3>
                     <div className="text-sm text-gray-600 mt-1">
                       <div>Frequentie: {phase.frequency}</div>
                       <div>Verwachting: {phase.sleepExpectation}</div>
