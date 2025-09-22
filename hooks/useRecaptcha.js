@@ -9,9 +9,20 @@ export const useRecaptcha = () => {
   useEffect(() => {
     const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
     
+    // Don't spam console with warnings
     if (!siteKey || siteKey === 'your_recaptcha_site_key_here') {
-      console.warn('reCAPTCHA site key not configured')
+      // Only log once instead of repeatedly
+      if (!window.recaptchaWarningLogged) {
+        console.warn('reCAPTCHA site key not configured, form will work without it')
+        window.recaptchaWarningLogged = true
+      }
       setIsReady(false)
+      setIsLoaded(false)
+      return
+    }
+
+    // Check if script is already being loaded
+    if (window.recaptchaLoading) {
       return
     }
 
@@ -24,6 +35,9 @@ export const useRecaptcha = () => {
       return
     }
 
+    // Prevent multiple script loads
+    window.recaptchaLoading = true
+
     // Load reCAPTCHA script
     const script = document.createElement('script')
     script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`
@@ -32,23 +46,30 @@ export const useRecaptcha = () => {
     
     script.onload = () => {
       setIsLoaded(true)
-      window.grecaptcha.ready(() => {
-        setIsReady(true)
-      })
+      window.recaptchaLoading = false
+      if (window.grecaptcha && window.grecaptcha.ready) {
+        window.grecaptcha.ready(() => {
+          setIsReady(true)
+        })
+      }
     }
 
     script.onerror = () => {
-      console.error('Failed to load reCAPTCHA script')
+      console.warn('reCAPTCHA script blocked or failed to load (form will still work)')
+      window.recaptchaLoading = false
+      setIsLoaded(false)
+      setIsReady(false)
     }
 
-    document.head.appendChild(script)
+    // Only append if not already present
+    const existingScript = document.querySelector(`script[src*="recaptcha"]`)
+    if (!existingScript) {
+      document.head.appendChild(script)
+    }
 
     return () => {
-      // Cleanup script if component unmounts
-      const existingScript = document.querySelector(`script[src*="recaptcha"]`)
-      if (existingScript) {
-        document.head.removeChild(existingScript)
-      }
+      // Cleanup
+      window.recaptchaLoading = false
     }
   }, [])
 
