@@ -21,7 +21,7 @@ export default function HeroSection() {
         </h1>
 
         {/* Subtitle */}
-        <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 lg:mb-8 max-w-3xl mx-auto leading-normal sm:leading-relaxed">
+        <p className="text-base lg:text-lg text-gray-500 mb-6 lg:mb-8 max-w-3xl mx-auto leading-normal sm:leading-relaxed">
           Professionele calculator gebaseerd op Nederlandse richtlijnen van het Voedingscentrum. 
           Krijg direct de aanbevolen hoeveelheid per voeding voor gezonde groei.
         </p>
