@@ -428,7 +428,7 @@ const VoedingsschemaInfographic = () => {
       <div className="text-center">
         <Link 
           href="/"
-          className="bg-primary hover:bg-primary-hover text-white font-semibold py-3 px-8 rounded-xl transition-all inline-flex items-center shadow-lg"
+          className="bg-primary hover:bg-primary-hover text-white font-medium py-3 px-8 rounded-xl transition-all inline-flex items-center shadow-lg"
         >
           <ArrowRight className="w-5 h-5 mr-2" />
           Bereken Persoonlijke Hoeveelheden
