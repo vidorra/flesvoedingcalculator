@@ -9,8 +9,9 @@ export const useRecaptcha = () => {
   useEffect(() => {
     const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
     
-    if (!siteKey) {
+    if (!siteKey || siteKey === 'your_recaptcha_site_key_here') {
       console.warn('reCAPTCHA site key not configured')
+      setIsReady(false)
       return
     }
 

@@ -15,13 +15,56 @@ const ContactModal = ({ isOpen, onClose }) => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState(null) // 'success', 'error', 'ratelimit'
   const [errorMessage, setErrorMessage] = useState('')
+  const [fieldErrors, setFieldErrors] = useState({})
+  const [touchedFields, setTouchedFields] = useState({})
   const { isReady: recaptchaReady, executeRecaptcha } = useRecaptcha()
 
-  // Reset error when modal opens
+  // Validate individual fields
+  const validateField = (name, value) => {
+    switch (name) {
+      case 'name':
+        if (!value.trim()) return 'Naam is verplicht'
+        if (value.trim().length < 2) return 'Naam moet minimaal 2 karakters bevatten'
+        if (value.trim().length > 100) return 'Naam mag maximaal 100 karakters bevatten'
+        return ''
+      
+      case 'email':
+        if (!value.trim()) return 'Email is verplicht'
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        if (!emailRegex.test(value.trim())) return 'Voer een geldig emailadres in'
+        if (value.trim().length > 254) return 'Email mag maximaal 254 karakters bevatten'
+        return ''
+      
+      case 'message':
+        if (!value.trim()) return 'Bericht is verplicht'
+        if (value.trim().length < 10) return 'Bericht moet minimaal 10 karakters bevatten'
+        if (value.trim().length > 5000) return 'Bericht mag maximaal 5000 karakters bevatten'
+        return ''
+      
+      default:
+        return ''
+    }
+  }
+
+  // Update field errors when form data changes
+  useEffect(() => {
+    const errors = {}
+    Object.keys(formData).forEach(field => {
+      if (touchedFields[field]) {
+        const error = validateField(field, formData[field])
+        if (error) errors[field] = error
+      }
+    })
+    setFieldErrors(errors)
+  }, [formData, touchedFields])
+
+  // Reset errors when modal opens
   useEffect(() => {
     if (isOpen) {
       setSubmitStatus(null)
       setErrorMessage('')
+      setFieldErrors({})
+      setTouchedFields({})
     }
   }, [isOpen])
 
@@ -33,20 +76,61 @@ const ContactModal = ({ isOpen, onClose }) => {
     }))
   }
 
+  const handleInputBlur = (e) => {
+    const { name } = e.target
+    setTouchedFields(prev => ({
+      ...prev,
+      [name]: true
+    }))
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitStatus(null)
     setErrorMessage('')
 
+    // Validate all fields and mark them as touched
+    const allTouched = {
+      name: true,
+      email: true,
+      message: true
+    }
+    setTouchedFields(allTouched)
+
+    // Check if form is valid
+    const nameError = validateField('name', formData.name)
+    const emailError = validateField('email', formData.email)
+    const messageError = validateField('message', formData.message)
+    
+    const hasErrors = nameError || emailError || messageError
+    
+    if (hasErrors) {
+      setFieldErrors({
+        ...(nameError && { name: nameError }),
+        ...(emailError && { email: emailError }),
+        ...(messageError && { message: messageError })
+      })
+      setSubmitStatus('error')
+      setErrorMessage('Vul alle verplichte velden correct in voordat u het formulier verstuurt.')
+      setIsSubmitting(false)
+      return
+    }
+
     try {
-      // Get reCAPTCHA token
+      // Get reCAPTCHA token (optional)
       let recaptchaToken = null
       if (recaptchaReady) {
-        recaptchaToken = await executeRecaptcha('contact_form')
-        if (!recaptchaToken) {
-          throw new Error('reCAPTCHA verification failed')
+        try {
+          recaptchaToken = await executeRecaptcha('contact_form')
+          if (!recaptchaToken) {
+            console.warn('reCAPTCHA token generation failed, proceeding without it')
+          }
+        } catch (error) {
+          console.warn('reCAPTCHA execution failed:', error)
         }
+      } else {
+        console.warn('reCAPTCHA not ready, proceeding without it')
       }
 
       // Submit to server-side API
@@ -87,6 +171,8 @@ const ContactModal = ({ isOpen, onClose }) => {
           })
           setSubmitStatus(null)
           setErrorMessage('')
+          setFieldErrors({})
+          setTouchedFields({})
           onClose()
         }, 2500)
       } else {
@@ -102,7 +188,7 @@ const ContactModal = ({ isOpen, onClose }) => {
     }
   }
 
-  const isFormValid = formData.name && formData.email && formData.message && formData.message.length >= 10
+  // Remove old validation check - button is always enabled now
 
   if (!isOpen) return null
 
@@ -181,12 +267,23 @@ const ContactModal = ({ isOpen, onClose }) => {
                 name="name"
                 value={formData.name}
                 onChange={handleInputChange}
+                onBlur={handleInputBlur}
                 placeholder="Uw naam"
                 required
-                className="w-full px-4 py-3 pl-11 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-gray-800 placeholder:text-gray-500"
+                className={`w-full px-4 py-3 pl-11 rounded-xl border transition-all outline-none text-gray-800 placeholder:text-gray-500 ${
+                  fieldErrors.name
+                    ? 'border-red-300 focus:border-red-500 focus:ring-2 focus:ring-red-100'
+                    : 'border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20'
+                }`}
               />
               <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
             </div>
+            {fieldErrors.name && (
+              <p className="mt-1 text-sm text-red-600 flex items-center">
+                <AlertCircle className="w-4 h-4 mr-1" />
+                {fieldErrors.name}
+              </p>
+            )}
           </div>
 
           {/* Email */}
@@ -200,12 +297,23 @@ const ContactModal = ({ isOpen, onClose }) => {
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
+                onBlur={handleInputBlur}
                 placeholder="uw.email@voorbeeld.nl"
                 required
-                className="w-full px-4 py-3 pl-11 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-gray-800 placeholder:text-gray-500"
+                className={`w-full px-4 py-3 pl-11 rounded-xl border transition-all outline-none text-gray-800 placeholder:text-gray-500 ${
+                  fieldErrors.email
+                    ? 'border-red-300 focus:border-red-500 focus:ring-2 focus:ring-red-100'
+                    : 'border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20'
+                }`}
               />
               <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
             </div>
+            {fieldErrors.email && (
+              <p className="mt-1 text-sm text-red-600 flex items-center">
+                <AlertCircle className="w-4 h-4 mr-1" />
+                {fieldErrors.email}
+              </p>
+            )}
           </div>
 
           {/* Subject */}
@@ -227,13 +335,14 @@ const ContactModal = ({ isOpen, onClose }) => {
           {/* Message */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Bericht *
+              Bericht * <span className="text-gray-500 text-xs">({formData.message.trim().length}/10 minimum)</span>
             </label>
             <div className="relative">
               <textarea
                 name="message"
                 value={formData.message}
                 onChange={handleInputChange}
+                onBlur={handleInputBlur}
                 placeholder={formData.type === 'feedback' 
                   ? 'Deel uw feedback, suggesties of ervaringen met ons...' 
                   : 'Beschrijf uw bericht zo duidelijk mogelijk...'
@@ -241,10 +350,20 @@ const ContactModal = ({ isOpen, onClose }) => {
                 required
                 minLength={10}
                 rows={4}
-                className="w-full px-4 py-3 pl-11 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none resize-none text-gray-800 placeholder:text-gray-500"
+                className={`w-full px-4 py-3 pl-11 rounded-xl border transition-all outline-none resize-none text-gray-800 placeholder:text-gray-500 ${
+                  fieldErrors.message
+                    ? 'border-red-300 focus:border-red-500 focus:ring-2 focus:ring-red-100'
+                    : 'border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20'
+                }`}
               />
               <MessageSquare className="absolute left-3 top-4 w-5 h-5 text-gray-400" />
             </div>
+            {fieldErrors.message && (
+              <p className="mt-1 text-sm text-red-600 flex items-center">
+                <AlertCircle className="w-4 h-4 mr-1" />
+                {fieldErrors.message}
+              </p>
+            )}
           </div>
 
           {/* Submit Status */}
@@ -277,7 +396,7 @@ const ContactModal = ({ isOpen, onClose }) => {
             </button>
             <button
               type="submit"
-              disabled={!isFormValid || isSubmitting}
+              disabled={isSubmitting}
               className="flex-1 bg-primary hover:bg-primary/90 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-medium py-3 px-6 rounded-xl transition-all flex items-center justify-center space-x-2"
             >
               {isSubmitting ? (
