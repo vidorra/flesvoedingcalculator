@@ -133,51 +133,56 @@ const ContactModal = ({ isOpen, onClose }) => {
         console.warn('reCAPTCHA not ready, proceeding without it')
       }
 
-      // Submit to server-side API
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...formData,
-          recaptchaToken
+      // Send email directly via EmailJS client-side
+      const { default: emailjs } = await import('@emailjs/browser')
+      
+      // Initialize EmailJS
+      emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
+      
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject || `${formData.type === 'feedback' ? 'Feedback' : 'Contact'} van ${formData.name}`,
+        message: formData.message,
+        message_type: formData.type,
+        to_email: 'info@vidorra.nl',
+        reply_to: formData.email,
+        timestamp: new Date().toLocaleString('nl-NL', { 
+          timeZone: 'Europe/Amsterdam',
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit'
         })
-      })
-
-      const result = await response.json()
-      
-      if (!response.ok) {
-        if (response.status === 429) {
-          setSubmitStatus('ratelimit')
-          setErrorMessage('Te veel aanvragen. Probeer over 15 minuten opnieuw.')
-        } else {
-          throw new Error(result.error || 'Submission failed')
-        }
-        return
       }
       
-      if (result.success) {
-        setSubmitStatus('success')
-        
-        // Reset form after successful submission
-        setTimeout(() => {
-          setFormData({
-            name: '',
-            email: '',
-            subject: '',
-            message: '',
-            type: 'feedback'
-          })
-          setSubmitStatus(null)
-          setErrorMessage('')
-          setFieldErrors({})
-          setTouchedFields({})
-          onClose()
-        }, 2500)
-      } else {
-        throw new Error(result.error || 'Failed to send message')
-      }
+      console.log('Sending email via client-side EmailJS...')
+      
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        templateParams
+      )
+      
+      console.log('Email sent successfully!')
+      setSubmitStatus('success')
+      
+      // Reset form after successful submission
+      setTimeout(() => {
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+          type: 'feedback'
+        })
+        setSubmitStatus(null)
+        setErrorMessage('')
+        setFieldErrors({})
+        setTouchedFields({})
+        onClose()
+      }, 2500)
       
     } catch (error) {
       console.error('Error sending message:', error)
