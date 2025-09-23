@@ -288,7 +288,7 @@ export default function VoedingsschemasPage() {
     doc.setFontSize(16)
     doc.setFont('helvetica', 'bold')
     doc.text('Ontwikkelingsmijlpalen', margin, yPosition)
-    yPosition += 15
+    yPosition += 10
     
     currentAgeSchema.milestones.forEach((milestone) => {
       doc.setTextColor(darkGray[0], darkGray[1], darkGray[2])
@@ -305,21 +305,21 @@ export default function VoedingsschemasPage() {
       yPosition += splitText.length * 5 + 3
     })
     
-    yPosition += 10
+    yPosition += 8
     
     // Next Phase Section
     doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2])
     doc.setFontSize(16)
     doc.setFont('helvetica', 'bold')
     doc.text('Volgende Fase', margin, yPosition)
-    yPosition += 15
+    yPosition += 10
     
     doc.setTextColor(darkGray[0], darkGray[1], darkGray[2])
     doc.setFontSize(11)
     doc.setFont('helvetica', 'normal')
     const splitNextPhase = doc.splitTextToSize(currentAgeSchema.nextPhase, contentWidth)
     doc.text(splitNextPhase, margin, yPosition)
-    yPosition += splitNextPhase.length * 5 + 15
+    yPosition += splitNextPhase.length * 5 + 10
     
     // Footer
     const footerY = doc.internal.pageSize.height - 20
@@ -431,7 +431,7 @@ export default function VoedingsschemasPage() {
           {/* Schema Overview */}
           <div className="lg:col-span-2 space-y-6">
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="font-semibold text-gray-800 mb-4 flex items-center">
+              <h2 className="font-medium text-gray-800 mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2 text-primary" />
                 Schema Overzicht
               </h2>
@@ -464,7 +464,7 @@ export default function VoedingsschemasPage() {
 
             {/* Development Milestones */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="font-semibold text-gray-800 mb-4 flex items-center">
+              <h2 className="font-medium text-gray-800 mb-4 flex items-center">
                 <Target className="w-5 h-5 mr-2 text-primary" />
                 Ontwikkelingsmijlpalen
               </h2>
@@ -483,7 +483,7 @@ export default function VoedingsschemasPage() {
           <div className="space-y-6">
             {/* Next Phase */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h3 className="font-semibold text-gray-800 mb-3 flex items-center">
+              <h3 className="font-medium text-gray-800 mb-3 flex items-center">
                 <ArrowRight className="w-5 h-5 mr-2 text-primary" />
                 Volgende Fase
               </h3>
@@ -492,7 +492,7 @@ export default function VoedingsschemasPage() {
 
             {/* Download Options */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h3 className="font-semibold text-gray-800 mb-3 flex items-center">
+              <h3 className="font-medium text-gray-800 mb-3 flex items-center">
                 <Download className="w-5 h-5 mr-2 text-primary" />
                 Downloads
               </h3>
@@ -516,7 +516,7 @@ export default function VoedingsschemasPage() {
 
             {/* Quick Calculator */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h3 className="font-semibold text-gray-800 mb-3 flex items-center">
+              <h3 className="font-medium text-gray-800 mb-3 flex items-center">
                 <Calculator className="w-5 h-5 mr-2 text-primary" />
                 Snelle Berekening
               </h3>
