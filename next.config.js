@@ -19,6 +19,23 @@ const nextConfig = {
         destination: '/api/sitemap'
       }
     ]
+  },
+  async headers() {
+    return [
+      {
+        source: '/robots.txt',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'text/plain'
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400'
+          }
+        ]
+      }
+    ]
   }
 }
 
