@@ -3,94 +3,390 @@
   <!-- Homepage -->
   <url>
     <loc>https://flesvoedingcalculator.nl</loc>
-    <lastmod>2025-08-17</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <!-- Main Tools -->
   <url>
+    <loc>https://flesvoedingcalculator.nl/schepjes-calculator</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
     <loc>https://flesvoedingcalculator.nl/voedingsschemas</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://flesvoedingcalculator.nl/infographics</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- Knowledge Base -->
+  <!-- Knowledge Base Main -->
   <url>
     <loc>https://flesvoedingcalculator.nl/kennisbank</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
+  <!-- Knowledge Base Categories -->
   <url>
     <loc>https://flesvoedingcalculator.nl/kennisbank/basis-flesvoeding</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://flesvoedingcalculator.nl/kennisbank/soorten-flesvoeding</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://flesvoedingcalculator.nl/kennisbank/voedingstechnieken</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://flesvoedingcalculator.nl/kennisbank/hygiene-bereiding</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://flesvoedingcalculator.nl/kennisbank/veiligheid</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://flesvoedingcalculator.nl/kennisbank/praktische-tips</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://flesvoedingcalculator.nl/kennisbank/problemen-oplossen</loc>
-    <lastmod>2025-08-18</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  
+  <!-- Basis Flesvoeding Articles -->
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/basis-flesvoeding/baby-weigert-de-fles</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/basis-flesvoeding/flesvoeding-bij-premature-babys</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/basis-flesvoeding/flesvoeding-vs-borstvoeding</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/basis-flesvoeding/oversten-van-borst-naar-fles</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Soorten Flesvoeding Articles -->
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/soorten-flesvoeding/anti-reflux-flesvoeding</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/soorten-flesvoeding/bio-organische-flesvoeding</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/soorten-flesvoeding/hypoallergene-flesvoeding</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/soorten-flesvoeding/lactosevrije-flesvoeding</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/soorten-flesvoeding/wanneer-oversten-opvolgmelk</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Voedingstechnieken Articles -->
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/voedingstechnieken/baby-leren-zelf-drinken</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/voedingstechnieken/boertje-laten-tijdens-voeding</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/voedingstechnieken/juiste-houding-bij-flesvoeding</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/voedingstechnieken/juiste-temperatuur-controleren</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/voedingstechnieken/overgang-naar-beker</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/voedingstechnieken/verschillende-spenen-uitproberen</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/voedingstechnieken/voeden-van-tweeling</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Hygiene & Bereiding Articles -->
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/hygiene-bereiding/flessen-steriliseren</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/hygiene-bereiding/flesvoeding-bewaren</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/hygiene-bereiding/houdbaarheid-flesvoeding</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/hygiene-bereiding/veilig-verwarmen-flesvoeding</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/hygiene-bereiding/water-koken-flesvoeding</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Praktische Tips Articles -->
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/praktische-tips/flesvoeding-en-slapen</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/praktische-tips/flesvoeding-op-vakantie</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/praktische-tips/flesvoeding-werk-combineren</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/praktische-tips/geld-besparen-flesvoeding</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/praktische-tips/nachtvoeding-optimaliseren</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/praktische-tips/partner-betrekken-flesvoeding</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/praktische-tips/voedingsritme-opbouwen</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Problemen Oplossen Articles -->
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/problemen-oplossen/allergische-reacties-flesvoeding</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/problemen-oplossen/baby-drinkt-niet-genoeg</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/problemen-oplossen/constipatie-door-flesvoeding</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/problemen-oplossen/diarree-en-flesvoeding</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/problemen-oplossen/krampjes-na-flesvoeding</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/problemen-oplossen/spugen-na-de-fles</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Comprehensive Guides -->
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/praktische-gidsen/uitgebreide-flesvoeding-gids</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Financial Aspects -->
+  <url>
+    <loc>https://flesvoedingcalculator.nl/kennisbank/financiele-aspecten/kosten-van-flesvoeding</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <!-- Support Pages -->
   <url>
     <loc>https://flesvoedingcalculator.nl/faq</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://flesvoedingcalculator.nl/contact</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/uitleg-calculator</loc>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -98,50 +394,64 @@
   <!-- Information Pages -->
   <url>
     <loc>https://flesvoedingcalculator.nl/informatie</loc>
-    <lastmod>2025-08-18</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://flesvoedingcalculator.nl/medische-disclaimer</loc>
-    <lastmod>2025-08-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://flesvoedingcalculator.nl/over-ons</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://flesvoedingcalculator.nl/partners</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://flesvoedingcalculator.nl/disclaimer</loc>
-    <lastmod>2025-08-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
   </url>
   
   <!-- Legal Pages -->
   <url>
     <loc>https://flesvoedingcalculator.nl/privacy-beleid</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/privacy</loc>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   
   <url>
     <loc>https://flesvoedingcalculator.nl/gebruiksvoorwaarden</loc>
-    <lastmod>2025-08-17</lastmod>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/voorwaarden</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/medische-disclaimer</loc>
+    <lastmod>2025-09-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  
+  <url>
+    <loc>https://flesvoedingcalculator.nl/disclaimer</loc>
+    <lastmod>2025-09-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
