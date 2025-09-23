@@ -176,7 +176,7 @@ const ContactModal = ({ isOpen, onClose }) => {
         })
       }
       
-      console.log('Sending email via client-side EmailJS...')
+      console.log('Sending email via client-side EmailJS with environment variables...')
       
       await emailjs.send(
         serviceId,
