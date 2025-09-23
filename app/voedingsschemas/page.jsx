@@ -281,7 +281,7 @@ export default function VoedingsschemasPage() {
       yPosition += 10
     })
     
-    yPosition += 15
+    yPosition += 8
     
     // Development Milestones Section
     doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2])
