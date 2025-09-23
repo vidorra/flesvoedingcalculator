@@ -2,7 +2,8 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Layout from '../../components/Layout'
-import { Calendar, Clock, Target, ArrowRight, Download, Calculator, Baby, Moon, Utensils, Milk } from 'lucide-react'
+import { Calendar, Clock, Target, ArrowRight, Download, Calculator, Baby, Moon, Utensils, Milk, ChevronDown } from 'lucide-react'
+import jsPDF from 'jspdf'
 
 export default function VoedingsschemasPage() {
   const [selectedAge, setSelectedAge] = useState('0-3m')
@@ -191,46 +192,158 @@ export default function VoedingsschemasPage() {
   const currentSchema = currentAgeSchema[feedingFrequency] || currentAgeSchema.default
 
   const downloadPDF = () => {
-    // Create PDF content
-    const content = `
-FLESVOEDING SCHEMA - ${ageGroups.find(g => g.id === selectedAge)?.name}
-
-Aantal voedingen: ${currentSchema.feeds}
-Hoeveelheid: ${currentSchema.amount}
-Interval: ${currentSchema.interval}
-
-SCHEMA:
-${currentSchema.examples.map(example => `• ${example}`).join('\n')}
-
-ONTWIKKELINGSMIJLPALEN:
-${currentAgeSchema.milestones.map(milestone => `• ${milestone}`).join('\n')}
-
-VOLGENDE FASE:
-${currentAgeSchema.nextPhase}
-
-FlesvoedingCalculator.nl - Betrouwbare informatie voor flesvoeding
-    `.trim()
-
-    // Create and download file
-    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement('a')
-    a.href = url
-    a.download = `voedingsschema-${selectedAge}-${feedingFrequency}.txt`
-    document.body.appendChild(a)
-    a.click()
-    document.body.removeChild(a)
-    URL.revokeObjectURL(url)
+    const doc = new jsPDF()
+    const ageGroupName = ageGroups.find(g => g.id === selectedAge)?.name
+    const primaryColor = [16, 148, 174] // Website primary color
+    const lightGray = [107, 114, 128] // gray-500
+    const darkGray = [55, 65, 81] // gray-700
+    
+    let yPosition = 20
+    const pageWidth = doc.internal.pageSize.width
+    const margin = 20
+    const contentWidth = pageWidth - (margin * 2)
+    
+    // Header with gradient background effect
+    doc.setFillColor(primaryColor[0], primaryColor[1], primaryColor[2])
+    doc.rect(0, 0, pageWidth, 40, 'F')
+    
+    // Title
+    doc.setTextColor(255, 255, 255)
+    doc.setFontSize(20)
+    doc.setFont('helvetica', 'bold')
+    doc.text('FLESVOEDING SCHEMA', pageWidth/2, 15, { align: 'center' })
+    
+    // Subtitle with age group
+    doc.setFontSize(14)
+    doc.setFont('helvetica', 'normal')
+    doc.text(ageGroupName, pageWidth/2, 25, { align: 'center' })
+    
+    // Website logo/name
+    doc.setFontSize(10)
+    doc.text('FlesvoedingCalculator.nl', pageWidth/2, 35, { align: 'center' })
+    
+    yPosition = 55
+    
+    // Schema Overview Section
+    doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2])
+    doc.setFontSize(16)
+    doc.setFont('helvetica', 'bold')
+    doc.text('Schema Overzicht', margin, yPosition)
+    yPosition += 15
+    
+    // Add light background for info boxes
+    doc.setFillColor(248, 250, 252) // bg-gray-50
+    doc.rect(margin, yPosition - 5, contentWidth, 30, 'F')
+    
+    doc.setTextColor(darkGray[0], darkGray[1], darkGray[2])
+    doc.setFontSize(12)
+    doc.setFont('helvetica', 'bold')
+    doc.text('Aantal voedingen:', margin + 5, yPosition + 5)
+    doc.setFont('helvetica', 'normal')
+    doc.text(currentSchema.feeds, margin + 60, yPosition + 5)
+    
+    doc.setFont('helvetica', 'bold')
+    doc.text('Hoeveelheid:', margin + 5, yPosition + 15)
+    doc.setFont('helvetica', 'normal')
+    doc.text(currentSchema.amount, margin + 60, yPosition + 15)
+    
+    doc.setFont('helvetica', 'bold')
+    doc.text('Interval:', margin + 5, yPosition + 25)
+    doc.setFont('helvetica', 'normal')
+    doc.text(currentSchema.interval, margin + 60, yPosition + 25)
+    
+    yPosition += 45
+    
+    // Feeding Schedule Section
+    doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2])
+    doc.setFontSize(16)
+    doc.setFont('helvetica', 'bold')
+    doc.text('Voedingsschema', margin, yPosition)
+    yPosition += 15
+    
+    // Schedule table
+    currentSchema.examples.forEach((example, index) => {
+      const [time, amount] = example.split(' - ')
+      
+      // Alternating row colors
+      if (index % 2 === 0) {
+        doc.setFillColor(248, 250, 252) // Light gray for even rows
+        doc.rect(margin, yPosition - 3, contentWidth, 10, 'F')
+      }
+      
+      doc.setTextColor(darkGray[0], darkGray[1], darkGray[2])
+      doc.setFontSize(11)
+      doc.setFont('helvetica', 'normal')
+      doc.text(time, margin + 5, yPosition + 3)
+      doc.setFont('helvetica', 'bold')
+      doc.text(amount, margin + 40, yPosition + 3)
+      
+      yPosition += 10
+    })
+    
+    yPosition += 15
+    
+    // Development Milestones Section
+    doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2])
+    doc.setFontSize(16)
+    doc.setFont('helvetica', 'bold')
+    doc.text('Ontwikkelingsmijlpalen', margin, yPosition)
+    yPosition += 15
+    
+    currentAgeSchema.milestones.forEach((milestone) => {
+      doc.setTextColor(darkGray[0], darkGray[1], darkGray[2])
+      doc.setFontSize(11)
+      doc.setFont('helvetica', 'normal')
+      
+      // Add bullet point
+      doc.setFillColor(primaryColor[0], primaryColor[1], primaryColor[2])
+      doc.circle(margin + 3, yPosition - 1, 1, 'F')
+      
+      // Wrap text if too long
+      const splitText = doc.splitTextToSize(milestone, contentWidth - 15)
+      doc.text(splitText, margin + 8, yPosition)
+      yPosition += splitText.length * 5 + 3
+    })
+    
+    yPosition += 10
+    
+    // Next Phase Section
+    doc.setTextColor(primaryColor[0], primaryColor[1], primaryColor[2])
+    doc.setFontSize(16)
+    doc.setFont('helvetica', 'bold')
+    doc.text('Volgende Fase', margin, yPosition)
+    yPosition += 15
+    
+    doc.setTextColor(darkGray[0], darkGray[1], darkGray[2])
+    doc.setFontSize(11)
+    doc.setFont('helvetica', 'normal')
+    const splitNextPhase = doc.splitTextToSize(currentAgeSchema.nextPhase, contentWidth)
+    doc.text(splitNextPhase, margin, yPosition)
+    yPosition += splitNextPhase.length * 5 + 15
+    
+    // Footer
+    const footerY = doc.internal.pageSize.height - 20
+    doc.setFillColor(primaryColor[0], primaryColor[1], primaryColor[2])
+    doc.rect(0, footerY - 5, pageWidth, 25, 'F')
+    
+    doc.setTextColor(255, 255, 255)
+    doc.setFontSize(10)
+    doc.setFont('helvetica', 'normal')
+    doc.text('FlesvoedingCalculator.nl - Betrouwbare informatie voor flesvoeding', pageWidth/2, footerY + 5, { align: 'center' })
+    doc.text(`Gegenereerd op: ${new Date().toLocaleDateString('nl-NL')}`, pageWidth/2, footerY + 12, { align: 'center' })
+    
+    // Save the PDF
+    doc.save(`voedingsschema-${selectedAge}-${feedingFrequency}.pdf`)
   }
 
   const addToCalendar = () => {
     const ageGroupName = ageGroups.find(g => g.id === selectedAge)?.name
-    const title = `Voedingsschema ${ageGroupName}`
     
-    // Create calendar events for each feeding time
-    const events = currentSchema.examples.map(example => {
+    // Create individual calendar events for each feeding time
+    currentSchema.examples.forEach((example, index) => {
       const [time, amount] = example.split(' - ')
-      const description = `Flesvoeding: ${amount}\\n\\nSchema: ${currentSchema.feeds}\\nInterval: ${currentSchema.interval}`
+      const title = `Flesvoeding - ${amount}`
+      const description = `Voedingsschema: ${ageGroupName}\\n\\nHoeveelheid: ${amount}\\nTotaal aantal voedingen: ${currentSchema.feeds}\\nInterval: ${currentSchema.interval}\\n\\nBron: FlesvoedingCalculator.nl`
       
       // Create a date for today with the feeding time
       const now = new Date()
@@ -241,19 +354,17 @@ FlesvoedingCalculator.nl - Betrouwbare informatie voor flesvoeding
       const startTime = feedingDate.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z'
       const endTime = new Date(feedingDate.getTime() + 30 * 60 * 1000).toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z'
       
-      return {
-        title: `${title} - ${amount}`,
-        start: startTime,
-        end: endTime,
-        description: description
-      }
+      // Create calendar URL with daily recurrence for each feeding time
+      const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${startTime}/${endTime}&details=${encodeURIComponent(description)}&recur=RRULE:FREQ=DAILY;INTERVAL=1`
+      
+      // Small delay between opening multiple calendar tabs
+      setTimeout(() => {
+        window.open(calendarUrl, '_blank')
+      }, index * 500) // 500ms delay between each
     })
-
-    // For simplicity, create one recurring event
-    const mainEvent = events[0]
-    const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(mainEvent.title)}&dates=${mainEvent.start}/${mainEvent.end}&details=${encodeURIComponent(mainEvent.description)}&recur=RRULE:FREQ=DAILY`
     
-    window.open(calendarUrl, '_blank')
+    // Show user notification
+    alert(`${currentSchema.examples.length} voedingsmomenten worden toegevoegd aan je agenda. Elk voedingsmoment wordt dagelijks herhaald.`)
   }
 
   return (
@@ -299,17 +410,20 @@ FlesvoedingCalculator.nl - Betrouwbare informatie voor flesvoeding
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Aantal voedingen per dag
           </label>
-          <select
-            value={feedingFrequency}
-            onChange={(e) => setFeedingFrequency(e.target.value)}
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none appearance-none bg-white text-gray-800"
-          >
-            {feedingOptions.map((option) => (
-              <option key={option.id} value={option.id}>
-                {option.name}
-              </option>
-            ))}
-          </select>
+          <div className="relative max-w-[370px]">
+            <select
+              value={feedingFrequency}
+              onChange={(e) => setFeedingFrequency(e.target.value)}
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary transition-all outline-none appearance-none bg-white text-gray-800"
+            >
+              {feedingOptions.map((option) => (
+                <option key={option.id} value={option.id}>
+                  {option.name}
+                </option>
+              ))}
+            </select>
+            <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-primary pointer-events-none" />
+          </div>
         </div>
 
         {/* Schema Details */}
@@ -388,7 +502,7 @@ FlesvoedingCalculator.nl - Betrouwbare informatie voor flesvoeding
                   className="w-full bg-primary hover:bg-primary/90 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center space-x-2"
                 >
                   <Download className="w-4 h-4" />
-                  <span>PDF Schema</span>
+  <span>Download PDF</span>
                 </button>
                 <button 
                   onClick={addToCalendar}

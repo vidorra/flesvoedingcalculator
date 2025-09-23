@@ -53,7 +53,7 @@ export default function Footer() {
 
             {/* Navigation */}
             <div>
-              <h3 className="font-medium text-gray-600 mb-3">Navigatie</h3>
+              <h3 className="font-medium text-gray-500 mb-3">Navigatie</h3>
               <div className="space-y-2">
                 {navigation.map((item) => (
                   <Link
@@ -69,7 +69,7 @@ export default function Footer() {
 
             {/* Informatie */}
             <div>
-              <h3 className="font-medium text-gray-600 mb-3">Informatie</h3>
+              <h3 className="font-medium text-gray-500 mb-3">Informatie</h3>
               <div className="space-y-2 text-sm text-gray-600">
                 <Link href="/uitleg-calculator" className="block hover:text-primary transition-colors">Hoe werkt de calculator?</Link>
                 <Link href="/informatie" className="block hover:text-primary transition-colors">Informatie</Link>
@@ -87,7 +87,7 @@ export default function Footer() {
 
             {/* Bronnen */}
             <div>
-              <h3 className="font-medium text-gray-600 mb-3">Bronnen</h3>
+              <h3 className="font-medium text-gray-500 mb-3">Bronnen</h3>
               <div className="space-y-2 text-sm text-gray-600">
                 <a href="https://www.voedingscentrum.nl" target="_blank" rel="noopener noreferrer" className="block hover:text-primary transition-colors">
                   Voedingscentrum

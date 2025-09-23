@@ -12,16 +12,7 @@ export default function InfographicsPage() {
     <Layout>
       <div className="space-y-6">
         {/* Breadcrumb */}
-        <div className="flex items-center space-x-2 text-sm text-gray-600">
-          <Link href="/" className="hover:text-primary flex items-center">
-            <Home className="w-4 h-4 mr-1" />
-            Home
-          </Link>
-          <ArrowRight className="w-4 h-4" />
-          <Link href="/kennisbank" className="hover:text-primary">Kennisbank</Link>
-          <ArrowRight className="w-4 h-4" />
-          <span className="text-primary">Visuele Guides</span>
-        </div>
+        <div className="text-sm text-gray-500 mb-2">Home • Infographics</div>
 
         {/* Header */}
         <div className="mb-6">
