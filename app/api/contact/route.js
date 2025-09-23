@@ -134,14 +134,14 @@ async function sendEmail(formData, clientInfo) {
     TEMPLATE_ID: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
   }
   
-  // Log config for debugging
-  console.log('EmailJS Config:', {
-    hasPublicKey: !!emailjsConfig.PUBLIC_KEY,
-    hasPrivateKey: !!emailjsConfig.PRIVATE_KEY,
-    hasServiceId: !!emailjsConfig.SERVICE_ID,
-    hasTemplateId: !!emailjsConfig.TEMPLATE_ID,
-    serviceId: emailjsConfig.SERVICE_ID
-  })
+  // Log config for debugging with last 3 characters
+  console.log('=== SERVER ENVIRONMENT DEBUG ===')
+  console.log('EmailJS Public Key:', emailjsConfig.PUBLIC_KEY ? `...${emailjsConfig.PUBLIC_KEY.slice(-3)}` : 'NOT SET')
+  console.log('EmailJS Private Key:', emailjsConfig.PRIVATE_KEY ? `...${emailjsConfig.PRIVATE_KEY.slice(-3)}` : 'NOT SET')
+  console.log('EmailJS Service ID:', emailjsConfig.SERVICE_ID ? `...${emailjsConfig.SERVICE_ID.slice(-3)}` : 'NOT SET')
+  console.log('EmailJS Template ID:', emailjsConfig.TEMPLATE_ID ? `...${emailjsConfig.TEMPLATE_ID.slice(-3)}` : 'NOT SET')
+  console.log('reCAPTCHA Secret Key:', process.env.RECAPTCHA_SECRET_KEY ? `...${process.env.RECAPTCHA_SECRET_KEY.slice(-3)}` : 'NOT SET')
+  console.log('================================')
   
   // Check if EmailJS is configured
   if (!emailjsConfig.PRIVATE_KEY || !emailjsConfig.SERVICE_ID || !emailjsConfig.TEMPLATE_ID) {

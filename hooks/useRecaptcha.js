@@ -9,6 +9,14 @@ export const useRecaptcha = () => {
   useEffect(() => {
     const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
     
+    // DEBUG: Log environment variables with last 3 characters
+    console.log('=== ENVIRONMENT DEBUG ===')
+    console.log('reCAPTCHA site key:', siteKey ? `...${siteKey.slice(-3)}` : 'NOT SET')
+    console.log('EmailJS public key:', process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ? `...${process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY.slice(-3)}` : 'NOT SET')
+    console.log('EmailJS service ID:', process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ? `...${process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID.slice(-3)}` : 'NOT SET')
+    console.log('EmailJS template ID:', process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ? `...${process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID.slice(-3)}` : 'NOT SET')
+    console.log('========================')
+    
     // Don't spam console with warnings
     if (!siteKey || siteKey === 'your_recaptcha_site_key_here') {
       // Only log once instead of repeatedly
