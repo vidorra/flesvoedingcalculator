@@ -13,6 +13,7 @@ export const useRecaptcha = () => {
     console.log('=== COMPREHENSIVE ENVIRONMENT DEBUG ===')
     console.log('🌍 All available NEXT_PUBLIC_ variables:')
     const nextPublicVars = Object.keys(process.env).filter(key => key.startsWith('NEXT_PUBLIC_'))
+    console.log('Raw process.env keys:', Object.keys(process.env).slice(0, 10)) // Debug first 10 keys
     nextPublicVars.forEach(key => {
       const value = process.env[key]
       console.log(`  - ${key}: ${value ? `${value.substring(0, 10)}...${value.slice(-3)} (length: ${value.length})` : 'NOT SET'}`)
