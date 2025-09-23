@@ -259,7 +259,7 @@ export default function VoedingsschemasPage() {
     doc.setFontSize(16)
     doc.setFont('helvetica', 'bold')
     doc.text('Voedingsschema', margin, yPosition)
-    yPosition += 15
+    yPosition += 8
     
     // Schedule table
     currentSchema.examples.forEach((example, index) => {
