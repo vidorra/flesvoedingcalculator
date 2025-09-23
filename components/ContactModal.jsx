@@ -136,8 +136,27 @@ const ContactModal = ({ isOpen, onClose }) => {
       // Send email directly via EmailJS client-side
       const { default: emailjs } = await import('@emailjs/browser')
       
+      // Check if environment variables are available
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+      
+      console.log('=== CLIENT EMAILJS DEBUG ===')
+      console.log('Public Key:', publicKey ? `...${publicKey.slice(-3)}` : 'NOT SET')
+      console.log('Service ID:', serviceId ? `...${serviceId.slice(-3)}` : 'NOT SET')
+      console.log('Template ID:', templateId ? `...${templateId.slice(-3)}` : 'NOT SET')
+      console.log('============================')
+      
+      if (!publicKey || !serviceId || !templateId) {
+        throw new Error(`EmailJS not configured. Missing: ${[
+          !publicKey && 'PUBLIC_KEY',
+          !serviceId && 'SERVICE_ID', 
+          !templateId && 'TEMPLATE_ID'
+        ].filter(Boolean).join(', ')}`)
+      }
+      
       // Initialize EmailJS
-      emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
+      emailjs.init(publicKey)
       
       const templateParams = {
         from_name: formData.name,
@@ -160,8 +179,8 @@ const ContactModal = ({ isOpen, onClose }) => {
       console.log('Sending email via client-side EmailJS...')
       
       await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        serviceId,
+        templateId,
         templateParams
       )
       
