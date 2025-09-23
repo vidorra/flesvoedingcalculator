@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server'
 import { headers } from 'next/headers'
-import emailjs from '@emailjs/browser'
 
 // Rate limiting store (in production, use Redis)
 const rateLimitStore = new Map()
@@ -126,7 +125,7 @@ function validateInput(data) {
   }
 }
 
-// Send email via EmailJS
+// Send email via fetch API (server-side EmailJS)
 async function sendEmail(formData, clientInfo) {
   const emailjsConfig = {
     PUBLIC_KEY: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
@@ -177,7 +176,7 @@ async function sendEmail(formData, clientInfo) {
   }
   
   try {
-    // EmailJS server-side sending
+    // EmailJS server-side sending via REST API
     console.log('Attempting to send email with params:', {
       serviceId: emailjsConfig.SERVICE_ID,
       templateId: emailjsConfig.TEMPLATE_ID,
@@ -185,22 +184,32 @@ async function sendEmail(formData, clientInfo) {
       fromEmail: templateParams.from_email
     })
     
-    // Initialize EmailJS with private key for server-side sending
-    emailjs.init(emailjsConfig.PRIVATE_KEY)
+    const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        service_id: emailjsConfig.SERVICE_ID,
+        template_id: emailjsConfig.TEMPLATE_ID,
+        user_id: emailjsConfig.PUBLIC_KEY,
+        accessToken: emailjsConfig.PRIVATE_KEY,
+        template_params: templateParams
+      })
+    })
     
-    const response = await emailjs.send(
-      emailjsConfig.SERVICE_ID,
-      emailjsConfig.TEMPLATE_ID,
-      templateParams
-    )
+    if (!response.ok) {
+      const errorText = await response.text()
+      throw new Error(`EmailJS API error: ${response.status} - ${errorText}`)
+    }
     
-    console.log('EmailJS response:', response)
-    return { success: true, response }
+    const result = await response.text()
+    console.log('EmailJS response:', result)
+    return { success: true, response: result }
   } catch (error) {
     console.error('EmailJS send failed:', {
       error: error.message,
-      stack: error.stack,
-      config: emailjsConfig
+      stack: error.stack
     })
     throw error
   }
