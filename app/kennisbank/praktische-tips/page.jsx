@@ -85,7 +85,7 @@ export default function PraktischeTipsPage() {
 
         {/* Money saving tips */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <DollarSign className="w-5 h-5 mr-2" />
             Geld besparen
           </h2>
@@ -108,7 +108,7 @@ export default function PraktischeTipsPage() {
 
         {/* Night feeding tips */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Moon className="w-5 h-5 mr-2" />
             Nachtvoedingtips
           </h2>
@@ -133,7 +133,7 @@ export default function PraktischeTipsPage() {
 
         {/* Bonding tips */}
         <div className="bg-white rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Heart className="w-5 h-5 mr-2" />
             Binding tijdens flesvoeding
           </h2>
@@ -152,7 +152,7 @@ export default function PraktischeTipsPage() {
 
         {/* Organization tips */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Organisatie & Efficiëntie</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Organisatie & Efficiëntie</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {organizationTips.map((section, index) => (
@@ -173,7 +173,7 @@ export default function PraktischeTipsPage() {
 
         {/* Age-specific tips */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Tips per Leeftijd</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Tips per Leeftijd</h2>
           
           <div className="space-y-4">
             {developmentTips.map((ageGroup, index) => (
@@ -193,7 +193,7 @@ export default function PraktischeTipsPage() {
 
         {/* Quick reference */}
         <div className="bg-white rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Snelle Referentie</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Snelle Referentie</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -244,7 +244,7 @@ export default function PraktischeTipsPage() {
 
         {/* Navigation */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Meer informatie</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Meer informatie</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 
               href="/voedingsschemas"

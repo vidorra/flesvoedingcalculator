@@ -119,7 +119,7 @@ export default function DiarreeEnFlesvoedingPage() {
 
             {/* Introduction Section */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Inleiding</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Diarree komt voor bij 15-20% van Nederlandse baby's op flesvoeding in de eerste 6 maanden. 
                 Vroege herkenning en juiste behandeling zijn essentieel voor het welzijn van je baby en het voorkomen van dehydratie.
@@ -135,7 +135,7 @@ export default function DiarreeEnFlesvoedingPage() {
 
             {/* Diarree Herkennen */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <AlertTriangle className="w-5 h-5 mr-2" />
                 Diarree Herkennen Bij Flesvoeding Baby's
               </h2>
@@ -182,7 +182,7 @@ export default function DiarreeEnFlesvoedingPage() {
 
             {/* Oorzaken van Diarree */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Oorzaken van Diarree Bij Flesvoeding</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Oorzaken van Diarree Bij Flesvoeding</h2>
               
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Voeding Gerelateerde Oorzaken</h3>
@@ -248,7 +248,7 @@ export default function DiarreeEnFlesvoedingPage() {
                   <AlertTriangle className="w-5 h-5 text-amber-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-amber-800 mb-2">Wanneer Stoppen Met Flesvoeding?</h3>
+                  <h3 className="font-medium text-amber-800 mb-2">Wanneer Stoppen Met Flesvoeding?</h3>
                   <p className="text-sm text-amber-700 leading-relaxed mb-4">
                     Nederlandse richtlijnen adviseren continue voeding tijdens diarree, maar er zijn situaties waarbij tijdelijk stoppen noodzakelijk is:
                   </p>
@@ -280,7 +280,7 @@ export default function DiarreeEnFlesvoedingPage() {
 
             {/* Dehydratie Herkenning */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Droplets className="w-5 h-5 mr-2" />
                 Dehydratie Herkenning en Behandeling
               </h2>
@@ -310,7 +310,7 @@ export default function DiarreeEnFlesvoedingPage() {
 
             {/* Wanneer Medische Hulp */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Phone className="w-5 h-5 mr-2" />
                 Wanneer Medische Hulp Zoeken
               </h2>
@@ -341,7 +341,7 @@ export default function DiarreeEnFlesvoedingPage() {
 
             {/* Behandeling en Thuiszorg */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Shield className="w-5 h-5 mr-2" />
                 Behandeling en Thuiszorg Protocol
               </h2>
@@ -377,7 +377,7 @@ export default function DiarreeEnFlesvoedingPage() {
 
             {/* Preventie Strategieën */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Preventie Strategieën</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Preventie Strategieën</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Strikte hygiëne en juiste bereiding kunnen 80% van voeding-gerelateerde diarree voorkomen:
               </p>
@@ -419,7 +419,7 @@ export default function DiarreeEnFlesvoedingPage() {
 
             {/* Related Articles */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <ArrowRight className="w-5 h-5 mr-2" />
                 Gerelateerde Artikelen
               </h2>

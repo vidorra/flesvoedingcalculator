@@ -64,7 +64,7 @@ export default function ContactPage() {
 
         {/* Important Notice */}
         <div className="bg-amber-50 rounded-2xl border border-amber-200 p-6">
-          <h2 className="text-lg font-semibold text-amber-800 mb-3 flex items-center">
+          <h2 className="text-lg font-medium text-amber-800 mb-3 flex items-center">
             <AlertCircle className="w-5 h-5 mr-2" />
             Belangrijk: Medische vragen
           </h2>
@@ -87,7 +87,7 @@ export default function ContactPage() {
           {/* Contact Form */}
           <div className="lg:col-span-2">
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-gray-800 mb-4 flex items-center">
                 <MessageCircle className="w-5 h-5 mr-2 text-primary" />
                 Stuur ons een bericht
               </h2>
@@ -213,7 +213,7 @@ export default function ContactPage() {
           <div className="space-y-6">
             {/* Email */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h3 className="font-semibold text-gray-800 mb-4 flex items-center">
+              <h3 className="font-medium text-gray-800 mb-4 flex items-center">
                 <Mail className="w-5 h-5 mr-2 text-primary" />
                 E-mail contact
               </h3>
@@ -235,7 +235,7 @@ export default function ContactPage() {
 
             {/* Response Times */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h3 className="font-semibold text-gray-800 mb-4 flex items-center">
+              <h3 className="font-medium text-gray-800 mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2 text-primary" />
                 Reactietijd
               </h3>
@@ -248,7 +248,7 @@ export default function ContactPage() {
 
             {/* FAQ Link */}
             <div className="bg-blue-50 rounded-2xl border border-blue-200 p-6">
-              <h3 className="font-semibold text-blue-800 mb-3">Veelgestelde vragen</h3>
+              <h3 className="font-medium text-blue-800 mb-3">Veelgestelde vragen</h3>
               <p className="text-sm text-blue-700 mb-4">
                 Misschien staat uw vraag al beantwoord in onze FAQ sectie.
               </p>
@@ -263,7 +263,7 @@ export default function ContactPage() {
 
             {/* Support Hours */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h3 className="font-semibold text-gray-800 mb-4">
+              <h3 className="font-medium text-gray-800 mb-4">
                 Wanneer zijn wij bereikbaar?
               </h3>
               <div className="space-y-2 text-sm text-gray-600">
@@ -282,7 +282,7 @@ export default function ContactPage() {
 
         {/* Professional Resources */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">
+          <h2 className="text-lg font-medium text-gray-800 mb-4">
             Professionele hulp bij flesvoeding
           </h2>
           <div className="grid md:grid-cols-3 gap-6">

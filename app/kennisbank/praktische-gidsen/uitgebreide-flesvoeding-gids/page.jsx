@@ -46,7 +46,7 @@ export default function UitgebreideFlesvoedingGids() {
 
           {/* Table of Contents */}
           <div className="mb-12 bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-primary mb-4">Inhoudsopgave</h2>
+            <h2 className="text-lg font-medium text-primary mb-4">Inhoudsopgave</h2>
             <nav className="space-y-2">
               <a href="#geld-besparen" className="block text-gray-600 hover:text-gray-700 font-medium">
                 1. Geld Besparen op Flesvoeding - Bespaar tot €500 per jaar
@@ -69,7 +69,7 @@ export default function UitgebreideFlesvoedingGids() {
           {/* Blog 1: Geld Besparen */}
           <section id="geld-besparen" className="mb-16">
             <div className="mb-8">
-              <h2 className="text-lg font-semibold text-primary mb-2">
+              <h2 className="text-lg font-medium text-primary mb-2">
                 1. Geld Besparen op Flesvoeding - Volledige Gids 2025
               </h2>
               <p className="text-gray-600">
@@ -256,7 +256,7 @@ export default function UitgebreideFlesvoedingGids() {
           {/* Blog 2: Kosten Analyse */}
           <section id="kosten-analyse" className="mb-16">
             <div className="mb-8">
-              <h2 className="text-lg font-semibold text-primary mb-2">
+              <h2 className="text-lg font-medium text-primary mb-2">
                 2. Kosten van Flesvoeding - Volledige Kostenanalyse 2025
               </h2>
               <p className="text-gray-600">
@@ -336,7 +336,7 @@ export default function UitgebreideFlesvoedingGids() {
           {/* Blog 3: Overstappen van Borst naar Fles */}
           <section id="borst-naar-fles" className="mb-16">
             <div className="mb-8">
-              <h2 className="text-lg font-semibold text-primary mb-2">
+              <h2 className="text-lg font-medium text-primary mb-2">
                 3. Overstappen van Borst naar Fles - Volledige Overgang Gids
               </h2>
               <p className="text-gray-600">
@@ -464,7 +464,7 @@ export default function UitgebreideFlesvoedingGids() {
           {/* Blog 4: Flesvoeding en Werk */}
           <section id="werk-combineren" className="mb-16">
             <div className="mb-8">
-              <h2 className="text-lg font-semibold text-primary mb-2">
+              <h2 className="text-lg font-medium text-primary mb-2">
                 4. Flesvoeding en Werk Combineren - Praktische Gids voor Werkende Ouders
               </h2>
               <p className="text-gray-600">
@@ -606,7 +606,7 @@ export default function UitgebreideFlesvoedingGids() {
           {/* Blog 5: Baby Weigert de Fles */}
           <section id="fles-weigering" className="mb-16">
             <div className="mb-8">
-              <h2 className="text-lg font-semibold text-primary mb-2">
+              <h2 className="text-lg font-medium text-primary mb-2">
                 5. Baby Weigert de Fles - Volledige Probleemoplossende Gids
               </h2>
               <p className="text-gray-600">

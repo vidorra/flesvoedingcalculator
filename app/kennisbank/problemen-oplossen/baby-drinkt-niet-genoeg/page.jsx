@@ -43,7 +43,7 @@ export default function BabyDrinktNietGenoegPage() {
 
             {/* Hoeveel is genoeg */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Hoeveel is "genoeg"? Realistische verwachtingen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Hoeveel is "genoeg"? Realistische verwachtingen</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Voor je in paniek raakt, is het belangrijk te weten wat normale voedingshoeveelheden zijn. Baby's verschillen enorm in hun voedingsbehoeften, en deze veranderen constant tijdens groeiperiodes.
               </p>
@@ -85,7 +85,7 @@ export default function BabyDrinktNietGenoegPage() {
 
             {/* Waarschuwingssignalen */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Waarschuwingssignalen: Wanneer zorgen maken?</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Waarschuwingssignalen: Wanneer zorgen maken?</h2>
               
               <div className="space-y-4">
                 <div>
@@ -171,7 +171,7 @@ export default function BabyDrinktNietGenoegPage() {
 
             {/* Veelvoorkomende oorzaken */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelvoorkomende oorzaken en oplossingen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelvoorkomende oorzaken en oplossingen</h2>
               
               <div className="space-y-6">
                 <div className="mb-4">
@@ -276,7 +276,7 @@ export default function BabyDrinktNietGenoegPage() {
 
             {/* Stap-voor-stap probleemoplossing */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 Stap-voor-stap probleemoplossing
               </h2>
@@ -395,7 +395,7 @@ export default function BabyDrinktNietGenoegPage() {
 
             {/* Key reminders */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Onthoud: Belangrijke punten</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Onthoud: Belangrijke punten</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -449,7 +449,7 @@ export default function BabyDrinktNietGenoegPage() {
 
             {/* Related articles */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Users className="w-5 h-5 mr-2" />
                 Gerelateerde artikelen
               </h2>

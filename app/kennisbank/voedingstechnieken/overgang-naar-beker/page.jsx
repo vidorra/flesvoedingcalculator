@@ -318,7 +318,7 @@ export default function OvergangNaarBekerPage() {
 
             {/* Introduction */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Inleiding</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed">
                 De overgang naar beker is een belangrijke mijlpaal die meestal tussen 10-18 maanden plaatsvindt. Het Nederlandse consultatiebureau adviseert starten rond 12 maanden. Deze overgang ontwikkelt motorische vaardigheden, stimuleert mondhygiëne en bereidt je baby voor op zelfstandiger eten en drinken.
               </p>
@@ -326,7 +326,7 @@ export default function OvergangNaarBekerPage() {
 
             {/* Wanneer overstappen */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 Wanneer overstappen naar beker?
               </h2>
@@ -399,31 +399,31 @@ export default function OvergangNaarBekerPage() {
                       </thead>
                       <tbody>
                         <tr>
-                          <td className="border border-gray-300 px-4 py-2 font-semibold">10 maanden</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium">10 maanden</td>
                           <td className="border border-gray-300 px-4 py-2">15%</td>
                           <td className="border border-gray-300 px-4 py-2">2%</td>
                           <td className="border border-gray-300 px-4 py-2">0%</td>
                         </tr>
                         <tr className="bg-white">
-                          <td className="border border-gray-300 px-4 py-2 font-semibold">12 maanden</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium">12 maanden</td>
                           <td className="border border-gray-300 px-4 py-2">65%</td>
                           <td className="border border-gray-300 px-4 py-2">25%</td>
                           <td className="border border-gray-300 px-4 py-2">5%</td>
                         </tr>
                         <tr>
-                          <td className="border border-gray-300 px-4 py-2 font-semibold">15 maanden</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium">15 maanden</td>
                           <td className="border border-gray-300 px-4 py-2">85%</td>
                           <td className="border border-gray-300 px-4 py-2">70%</td>
                           <td className="border border-gray-300 px-4 py-2">35%</td>
                         </tr>
                         <tr className="bg-white">
-                          <td className="border border-gray-300 px-4 py-2 font-semibold">18 maanden</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium">18 maanden</td>
                           <td className="border border-gray-300 px-4 py-2">95%</td>
                           <td className="border border-gray-300 px-4 py-2">90%</td>
                           <td className="border border-gray-300 px-4 py-2">75%</td>
                         </tr>
                         <tr>
-                          <td className="border border-gray-300 px-4 py-2 font-semibold">24 maanden</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium">24 maanden</td>
                           <td className="border border-gray-300 px-4 py-2">99%</td>
                           <td className="border border-gray-300 px-4 py-2">98%</td>
                           <td className="border border-gray-300 px-4 py-2">95%</td>
@@ -486,7 +486,7 @@ export default function OvergangNaarBekerPage() {
 
             {/* Soorten bekers */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Soorten bekers voor verschillende leeftijden</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Soorten bekers voor verschillende leeftijden</h2>
               
               <div className="space-y-6">
                 <div>
@@ -659,7 +659,7 @@ export default function OvergangNaarBekerPage() {
 
             {/* Geleidelijke overgang */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Target className="w-5 h-5 mr-2" />
                 Geleidelijke overgang strategieën
               </h2>
@@ -872,7 +872,7 @@ export default function OvergangNaarBekerPage() {
 
             {/* Veelvoorkomende problemen */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelvoorkomende overgangsproblemen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelvoorkomende overgangsproblemen</h2>
               
               <div className="space-y-6">
                 <div className="bg-amber-50 rounded-2xl shadow-sm border border-amber-200 p-6">
@@ -881,7 +881,7 @@ export default function OvergangNaarBekerPage() {
                       <AlertTriangle className="w-5 h-5 text-amber-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-amber-800 mb-2">Let op</h3>
+                      <h3 className="font-medium text-amber-800 mb-2">Let op</h3>
                       <p className="text-amber-700 leading-relaxed">Bij &gt;20% reductie vloeistofinname, gewichtsverlies, dehydratie symptomen, of afwijzing van alle vloeistoffen meerdere dagen: consulteer het consultatiebureau.</p>
                     </div>
                   </div>
@@ -993,7 +993,7 @@ export default function OvergangNaarBekerPage() {
 
             {/* Veelgestelde vragen */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde vragen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde vragen</h2>
               
               <div className="space-y-4">
                 <div>
@@ -1051,7 +1051,7 @@ export default function OvergangNaarBekerPage() {
 
             {/* Related articles */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <RefreshCw className="w-5 h-5 mr-2" />
                 Gerelateerde artikelen
               </h2>

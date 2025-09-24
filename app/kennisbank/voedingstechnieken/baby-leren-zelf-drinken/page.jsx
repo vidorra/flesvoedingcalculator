@@ -132,7 +132,7 @@ export default function BabyLerenZelfDrinkenPage() {
 
             {/* Introduction Section */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Inleiding</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Het leren zelfstandig drinken is een cruciale vaardigheid die baby's tussen 6-18 maanden ontwikkelen. 
                 Deze milestone bevordert niet alleen zelfstandigheid, maar ook fijne motoriek en cognitieve ontwikkeling.
@@ -148,7 +148,7 @@ export default function BabyLerenZelfDrinkenPage() {
 
             {/* Wanneer Kan Baby Zelf Drinken */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Target className="w-5 h-5 mr-2" />
                 Wanneer Kan Baby Zelf Drinken Leren?
               </h2>
@@ -193,7 +193,7 @@ export default function BabyLerenZelfDrinkenPage() {
 
             {/* Ontwikkelingsstadia */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Ontwikkelingsstadia en Motoriek</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Ontwikkelingsstadia en Motoriek</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Zelfstandig drinken leren gebeurt in vier duidelijke fasen, elk met eigen kenmerken en stimulatie activiteiten:
               </p>
@@ -211,7 +211,7 @@ export default function BabyLerenZelfDrinkenPage() {
 
             {/* Beste Producten */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <ShoppingCart className="w-5 h-5 mr-2" />
                 Beste Producten voor Zelfstandig Drinken
               </h2>
@@ -244,7 +244,7 @@ export default function BabyLerenZelfDrinkenPage() {
 
             {/* Stap-voor-Stap Leerplan */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">12-Weken Stap-voor-Stap Leerplan</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">12-Weken Stap-voor-Stap Leerplan</h2>
               
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Week 1-2: Introductie Fase</h3>
@@ -281,7 +281,7 @@ export default function BabyLerenZelfDrinkenPage() {
 
             {/* Problemen Oplossen */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelvoorkomende Problemen Oplossen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelvoorkomende Problemen Oplossen</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Deze problemen komen vaak voor tijdens het leerproces. Met de juiste aanpak zijn ze goed op te lossen:
               </p>
@@ -304,7 +304,7 @@ export default function BabyLerenZelfDrinkenPage() {
                   <AlertTriangle className="w-5 h-5 text-amber-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-amber-800 mb-2">Nederlandse Kinderopvang Verwachtingen</h3>
+                  <h3 className="font-medium text-amber-800 mb-2">Nederlandse Kinderopvang Verwachtingen</h3>
                   <p className="text-sm text-amber-700 leading-relaxed mb-4">
                     De meeste Nederlandse kinderopvang verwacht dat kinderen redelijk zelfstandig kunnen drinken. 
                     Start de training 2-3 maanden voor opvang begint.
@@ -336,7 +336,7 @@ export default function BabyLerenZelfDrinkenPage() {
 
             {/* Related Articles */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <ArrowRight className="w-5 h-5 mr-2" />
                 Gerelateerde Artikelen
               </h2>

@@ -4,7 +4,7 @@ import GoogleAdSlot from './GoogleAdSlot'
 const KennisbankSidebar = ({ 
   images = [
     {
-      src: "/mother_and_baby.png",
+      src: "/mother_and_baby.webp",
       alt: "Flesvoeding informatie",
       caption: "Praktische flesvoeding tips"
     },

@@ -179,7 +179,7 @@ export default function UitlegCalculatorPage() {
 
         {/* Quick Overview */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Zap className="w-5 h-5 mr-2" />
             Snelle Samenvatting
           </h2>
@@ -202,7 +202,7 @@ export default function UitlegCalculatorPage() {
 
         {/* How It Works - Step by Step */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Clock className="w-5 h-5 mr-2" />
             Stap-voor-Stap Berekening
           </h2>
@@ -225,7 +225,7 @@ export default function UitlegCalculatorPage() {
 
         {/* Safety Improvements & New Features */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Shield className="w-5 h-5 mr-2" />
             Veiligheidsupdates & Nieuwe Functies
           </h2>
@@ -268,7 +268,7 @@ export default function UitlegCalculatorPage() {
 
         {/* Age Adjustments */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Baby className="w-5 h-5 mr-2" />
             Leeftijd-Specifieke Aanpassingen
           </h2>
@@ -299,7 +299,7 @@ export default function UitlegCalculatorPage() {
 
         {/* Premature Baby Calculations */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Scale className="w-5 h-5 mr-2" />
             Premature Baby Berekeningen
           </h2>
@@ -331,7 +331,7 @@ export default function UitlegCalculatorPage() {
 
         {/* Powder-Water Ratios */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Schepje-Water Ratio Uitleg</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Schepje-Water Ratio Uitleg</h2>
           
           <div className="space-y-4">
             {ratioExplanation.map((ratio, index) => (
@@ -380,7 +380,7 @@ export default function UitlegCalculatorPage() {
 
         {/* Scientific Basis */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <BookOpen className="w-5 h-5 mr-2" />
             Wetenschappelijke Basis
           </h2>
@@ -404,7 +404,7 @@ export default function UitlegCalculatorPage() {
 
         {/* Limitations */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Beperkingen & Overwegingen</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Beperkingen & Overwegingen</h2>
           
           <div className="space-y-2">
             {limitations.map((limitation, index) => (
@@ -421,7 +421,7 @@ export default function UitlegCalculatorPage() {
           <div className="flex items-start space-x-3">
             <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
             <div>
-              <h3 className="font-semibold text-amber-800 mb-2">Medische Disclaimer</h3>
+              <h3 className="font-medium text-amber-800 mb-2">Medische Disclaimer</h3>
               <p className="text-sm text-amber-700 leading-relaxed">
                 De informatie en berekeningen op deze pagina zijn alleen voor informatieve doeleinden en vervangen geen 
                 professioneel medisch advies, diagnose of behandeling. Raadpleeg altijd uw kinderarts, consultatiebureau 
@@ -434,7 +434,7 @@ export default function UitlegCalculatorPage() {
 
         {/* Call to Action */}
         <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
-          <h2 className="text-lg font-semibold text-white mb-4">Calculator Proberen?</h2>
+          <h2 className="text-lg font-medium text-white mb-4">Calculator Proberen?</h2>
           <p className="text-white/90 mb-4">
             Nu u weet hoe onze calculator werkt, kunt u hem gebruiken om gepersonaliseerde 
             voedingsaanbevelingen voor uw baby te krijgen.

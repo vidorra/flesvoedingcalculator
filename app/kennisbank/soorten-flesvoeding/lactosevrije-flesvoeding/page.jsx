@@ -279,7 +279,7 @@ export default function LactosevrijeFlesvoedingPage() {
 
             {/* When needed */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <AlertCircle className="w-5 h-5 mr-2" />
                 Wanneer is Lactosevrije Flesvoeding Nodig?
               </h2>
@@ -316,7 +316,7 @@ export default function LactosevrijeFlesvoedingPage() {
 
             {/* Premium options */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Star className="w-5 h-5 mr-2" />
                 Beste Lactosevrije Flesvoeding Merken Nederland
               </h2>
@@ -389,7 +389,7 @@ export default function LactosevrijeFlesvoedingPage() {
 
             {/* Transition steps */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Heart className="w-5 h-5 mr-2" />
                 Stap-voor-Stap Overstappen naar Lactosevrije Voeding
               </h2>
@@ -418,7 +418,7 @@ export default function LactosevrijeFlesvoedingPage() {
 
             {/* Cost comparison */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Euro className="w-5 h-5 mr-2" />
                 Kosten Vergelijking Lactosevrije Flesvoeding
               </h2>
@@ -437,7 +437,7 @@ export default function LactosevrijeFlesvoedingPage() {
                   <tbody>
                     {costComparison.map((cost, index) => (
                       <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
-                        <td className="border border-gray-300 px-4 py-2 font-semibold">{cost.brand}</td>
+                        <td className="border border-gray-300 px-4 py-2 font-medium">{cost.brand}</td>
                         <td className="border border-gray-300 px-4 py-2">{cost.costPerTin}</td>
                         <td className="border border-gray-300 px-4 py-2">{cost.monthlyCost}</td>
                         <td className="border border-gray-300 px-4 py-2">{cost.yearlyTotal}</td>
@@ -466,7 +466,7 @@ export default function LactosevrijeFlesvoedingPage() {
 
             {/* Common mistakes */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelgemaakte Fouten Vermijden</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelgemaakte Fouten Vermijden</h2>
               
               <div className="space-y-4">
                 {commonMistakes.map((mistake, index) => (
@@ -493,7 +493,7 @@ export default function LactosevrijeFlesvoedingPage() {
                   <AlertCircle className="w-5 h-5 text-amber-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-amber-800 mb-2">Belangrijk: Medische Begeleiding</h3>
+                  <h3 className="font-medium text-amber-800 mb-2">Belangrijk: Medische Begeleiding</h3>
                   <p className="text-sm text-amber-700 leading-relaxed mb-3">
                     Ga nooit zelfstandig over op lactosevrije voeding zonder medisch advies. 
                     Symptomen die lijken op lactose-intolerantie kunnen andere oorzaken hebben:
@@ -510,7 +510,7 @@ export default function LactosevrijeFlesvoedingPage() {
 
             {/* FAQ */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde Vragen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen</h2>
               
               <div className="space-y-4">
                 {faqData.map((item, index) => (
@@ -542,7 +542,7 @@ export default function LactosevrijeFlesvoedingPage() {
 
             {/* Related articles */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Users className="w-5 h-5 mr-2" />
                 Gerelateerde Artikelen
               </h2>

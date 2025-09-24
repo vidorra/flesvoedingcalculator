@@ -160,7 +160,7 @@ export default function WaterKokenFlesvoedingPage() {
 
             {/* Introduction */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Waarom Water Koken Essentieel Is</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Waarom Water Koken Essentieel Is</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Water koken voor flesvoeding heeft twee belangrijke veiligheidsdoelen: het elimineren van gevaarlijke bacteriën 
                 en het steriliseren van flesvoeding. Baby's onder 3 maanden hebben nog geen volledig ontwikkeld immuunsysteem 
@@ -180,7 +180,7 @@ export default function WaterKokenFlesvoedingPage() {
 
             {/* Nederlandse Richtlijnen */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Shield className="w-5 h-5 mr-2" />
                 Nederlandse Richtlijnen per Leeftijd
               </h2>
@@ -201,7 +201,7 @@ export default function WaterKokenFlesvoedingPage() {
                   <tbody>
                     {veiligheidsLeeftijden.map((item, index) => (
                       <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
-                        <td className="border border-gray-300 px-4 py-2 font-semibold">{item.leeftijd}</td>
+                        <td className="border border-gray-300 px-4 py-2 font-medium">{item.leeftijd}</td>
                         <td className="border border-gray-300 px-4 py-2">{item.risico}</td>
                         <td className="border border-gray-300 px-4 py-2">{item.advies}</td>
                       </tr>
@@ -213,7 +213,7 @@ export default function WaterKokenFlesvoedingPage() {
 
             {/* Stap-voor-Stap Guide */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Thermometer className="w-5 h-5 mr-2" />
                 Stap-voor-Stap: Water Koken voor Flesvoeding
               </h2>
@@ -259,7 +259,7 @@ export default function WaterKokenFlesvoedingPage() {
 
             {/* Kraanwater vs Flessenwater */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Nederlands Kraanwater: Uitstekende Kwaliteit</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Nederlands Kraanwater: Uitstekende Kwaliteit</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Nederlands kraanwater voldoet aan strenge EU-kwaliteitsstandaarden en wordt dagelijks gecontroleerd. 
                 Voor flesvoeding is het vaak een betere keuze dan duur flessenwater.
@@ -296,7 +296,7 @@ export default function WaterKokenFlesvoedingPage() {
 
             {/* Veelgemaakte Fouten */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <AlertTriangle className="w-5 h-5 mr-2" />
                 Veelgemaakte Fouten Vermijden
               </h2>
@@ -318,7 +318,7 @@ export default function WaterKokenFlesvoedingPage() {
 
             {/* Alternatieven */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Alternatieven voor Traditioneel Koken</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Alternatieven voor Traditioneel Koken</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Voor ouders die regelmatig flesvoeding geven, zijn er praktische alternatieven 
                 die tijd besparen zonder de veiligheid in gevaar te brengen.
@@ -350,7 +350,7 @@ export default function WaterKokenFlesvoedingPage() {
                   <AlertTriangle className="w-5 h-5 text-amber-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-amber-800 mb-2">Let op: Belangrijke Veiligheidsrichtlijnen</h3>
+                  <h3 className="font-medium text-amber-800 mb-2">Let op: Belangrijke Veiligheidsrichtlijnen</h3>
                   <div className="text-sm text-amber-700 leading-relaxed space-y-2">
                     <p>Water moet altijd eerst volledig gekookt hebben voordat je het laat afkoelen tot 70°C. 
                     Alleen verwarmen tot 70°C is onvoldoende om alle bacteriën te doden.</p>
@@ -364,7 +364,7 @@ export default function WaterKokenFlesvoedingPage() {
 
             {/* FAQ Section */}
             <section className="bg-white rounded-2xl border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde Vragen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen</h2>
               
               <div className="space-y-4">
                 <div>
@@ -406,7 +406,7 @@ export default function WaterKokenFlesvoedingPage() {
 
             {/* Related Articles */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Home className="w-5 h-5 mr-2" />
                 Gerelateerde Artikelen
               </h2>

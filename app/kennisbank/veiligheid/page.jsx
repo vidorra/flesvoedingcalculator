@@ -54,7 +54,7 @@ export default function VeiligheidPage() {
 
         {/* Emergency contacts */}
         <div className="bg-white rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Phone className="w-5 h-5 mr-2" />
             Wanneer direct arts contacteren
           </h2>
@@ -81,7 +81,7 @@ export default function VeiligheidPage() {
 
         {/* Never do */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <X className="w-5 h-5 mr-2" />
             Voedingsveiligheid - Nooit doen:
           </h2>
@@ -98,7 +98,7 @@ export default function VeiligheidPage() {
         {/* Allergy signals */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+            <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
               <Eye className="w-5 h-5 mr-2" />
               Allergiesignalen - Let op:
             </h2>
@@ -113,7 +113,7 @@ export default function VeiligheidPage() {
           </div>
 
           <div className="bg-default rounded-2xl border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-primary mb-4">Bij vermoeden allergie:</h2>
+            <h2 className="text-lg font-medium text-primary mb-4">Bij vermoeden allergie:</h2>
             <div className="space-y-3">
               {allergyActions.map((action, index) => (
                 <div key={index} className="flex items-start space-x-2">
@@ -129,7 +129,7 @@ export default function VeiligheidPage() {
 
         {/* Important phone numbers */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Belangrijke telefoonnummers</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Belangrijke telefoonnummers</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="p-4 bg-white rounded-lg text-center">
@@ -157,7 +157,7 @@ export default function VeiligheidPage() {
           <div className="flex items-start space-x-3">
             <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
             <div>
-              <h3 className="font-semibold text-amber-800 mb-1">Medische Disclaimer</h3>
+              <h3 className="font-medium text-amber-800 mb-1">Medische Disclaimer</h3>
               <p className="text-sm text-amber-700">
                 De informatie op deze pagina is alleen voor informatieve doeleinden en vervangt geen professioneel medisch advies. Raadpleeg altijd uw kinderarts of een gekwalificeerde zorgverlener voor specifieke medische vragen.
               </p>
@@ -167,7 +167,7 @@ export default function VeiligheidPage() {
 
         {/* Navigation */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Meer hulp nodig?</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Meer hulp nodig?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 
               href="/kennisbank/problemen-oplossen"

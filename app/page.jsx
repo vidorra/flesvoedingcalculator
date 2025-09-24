@@ -302,7 +302,7 @@ export default function HomePage() {
         <div className="col-span-12 lg:col-span-7">
           {/* Calculator Card */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6 mb-6">
-            <h2 className="text-lg font-semibold text-primary mb-4">Calculator</h2>
+            <h2 className="text-lg font-medium text-primary mb-4">Calculator</h2>
             <div className="space-y-5">
 
               {/* Age Input */}
@@ -365,7 +365,7 @@ export default function HomePage() {
                               <div className="absolute bottom-full right-0 mb-2 w-80 z-50">
                               <div className="bg-white border border-gray-200 rounded-xl shadow-lg p-4">
                                 <div className="tooltip-content">
-                                  <h4 className="font-semibold mb-2">Prematurenberekening</h4>
+                                  <h4 className="font-medium mb-2">Prematurenberekening</h4>
                                   <p className="text-sm mb-2">
                                     Voor te vroeg geboren baby's gebruiken we een aangepaste berekeningsmethode op basis van:
                                   </p>
@@ -404,7 +404,7 @@ export default function HomePage() {
                                         <div className="absolute bottom-full right-0 mb-2 w-96 z-30">
                                           <div className="bg-white border border-gray-200 rounded-xl shadow-lg p-4">
                                             <div className="scientific-sources-tooltip">
-                                              <h4 className="font-semibold mb-2">Wetenschappelijke Verantwoording</h4>
+                                              <h4 className="font-medium mb-2">Wetenschappelijke Verantwoording</h4>
                                               
                                               <div className="sources text-xs space-y-2">
                                                 <div className="primary-sources">
@@ -548,7 +548,7 @@ export default function HomePage() {
                         <div className="flex items-center justify-between">
                           <div className="flex-1">
                             <div className="text-sm text-gray-600">Gecorrigeerde leeftijd:</div>
-                            <div className="font-semibold text-primary">
+                            <div className="font-medium text-primary">
                               {correctedAge.correctedWeeks < 0 
                                 ? `${correctedAge.correctedWeeks} weken (nog ${Math.abs(correctedAge.correctedWeeks)} weken voor termijn)` 
                                 : correctedAge.correctedWeeks < 4 
@@ -634,7 +634,7 @@ export default function HomePage() {
                   <div className="flex items-start space-x-3">
                     <AlertCircle className="w-6 h-6 text-red-600 flex-shrink-0 mt-0.5" />
                     <div>
-                      <h3 className="font-semibold text-red-800 mb-3">
+                      <h3 className="font-medium text-red-800 mb-3">
                         Belangrijke Waarschuwing voor Pasgeborenen
                       </h3>
                       
@@ -671,7 +671,7 @@ export default function HomePage() {
               
               {/* Main Results */}
               <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
-                <h3 className="text-lg font-semibold mb-4 flex items-center">
+                <h3 className="text-lg font-medium mb-4 flex items-center">
                   <Baby className="w-5 h-5 mr-2" />
                   Aanbevolen Hoeveelheden
                 </h3>
@@ -682,7 +682,7 @@ export default function HomePage() {
                     <div className="flex items-start space-x-2">
                       <AlertCircle className="w-5 h-5 text-primary mt-0.5" />
                       <div>
-                        <h4 className="font-semibold text-primary mb-1">
+                        <h4 className="font-medium text-primary mb-1">
                           Premature Baby Berekening
                         </h4>
                         <p className="text-sm text-primary">
@@ -786,7 +786,7 @@ export default function HomePage() {
                           <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-72 z-10">
                             <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-4">
                               <div className="space-y-2 text-xs text-gray-700">
-                                <p className="font-semibold text-gray-800">Nederlandse Standaard Verhoudingen:</p>
+                                <p className="font-medium text-gray-800">Nederlandse Standaard Verhoudingen:</p>
                                 <ul className="space-y-1">
                                   <li className="flex items-center space-x-2">
                                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -841,7 +841,7 @@ export default function HomePage() {
                   <div className="flex items-start space-x-3">
                     <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="font-semibold text-amber-800 mb-1">Premature Baby Voeding - Speciale Berekening</h4>
+                      <h4 className="font-medium text-amber-800 mb-1">Premature Baby Voeding - Speciale Berekening</h4>
                       <p className="text-sm text-amber-700 mb-3">
                         Deze berekening is gebaseerd op de gecorrigeerde leeftijd van uw premature baby volgens Nederlandse richtlijnen.
                         Premature baby's hebben verhoogde voedingsbehoeften voor optimale groei en ontwikkeling.
@@ -861,7 +861,7 @@ export default function HomePage() {
               {/* Special Notes for Premature */}
               {results.specialNotes && results.specialNotes.length > 0 && (
                 <div className="bg-amber-50 rounded-xl p-4 border border-amber-200">
-                  <h4 className="font-semibold text-amber-900 mb-2 flex items-center">
+                  <h4 className="font-medium text-amber-900 mb-2 flex items-center">
                     <Info className="w-5 h-5 mr-2" />
                     Belangrijke Aandachtspunten
                   </h4>
@@ -916,7 +916,7 @@ export default function HomePage() {
                         <div className="absolute bottom-full right-0 mb-2 w-96 z-20">
                           <div className="bg-white border border-gray-200 rounded-xl shadow-lg p-4">
                             <div className="medical-disclaimer-tooltip">
-                              <h4 className="font-semibold mb-2 text-red-700">Medische Begeleiding Vereist</h4>
+                              <h4 className="font-medium mb-2 text-red-700">Medische Begeleiding Vereist</h4>
                               
                               <div className="disclaimer-content text-sm space-y-2">
                                 <p className="text-red-800">
@@ -1038,7 +1038,7 @@ export default function HomePage() {
               {/* Detailed Schedule */}
               {showDetails && (
                 <div className="bg-white/80 backdrop-blur rounded-bottom-2xl mb-8 shadow-sm border border-gray-200 p-6 border-t-0 schedule-content">
-                  <h4 className="font-semibold text-gray-800 mb-4 flex items-center">
+                  <h4 className="font-medium text-gray-800 mb-4 flex items-center">
                     <Clock className="w-5 h-5 mr-2 text-primary" />
                     Voorbeeldschema (flexibel aan te passen)
                   </h4>
@@ -1067,27 +1067,27 @@ export default function HomePage() {
           {/* Information Cards */}
           <div className="space-y-6">
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200  p-6">
-              <h3 className="font-semibold text-gray-800 mb-3 flex items-center">
+              <h3 className="font-medium text-gray-800 mb-3 flex items-center">
                 <Info className="w-5 h-5 mr-2 text-primary" />
                 Soorten Flesvoeding
               </h3>
               <div className="space-y-3 text-sm text-gray-600">
                 <div className="flex items-start space-x-3">
-                  <span className="font-semibold text-primary mt-0.5">1</span>
+                  <span className="font-medium text-primary mt-0.5">1</span>
                   <div>
                     <p className="font-medium text-gray-700">Startvoeding (0-6 maanden)</p>
                     <p>Volledige zuigelingenvoeding, geschikt vanaf geboorte</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <span className="font-semibold text-primary mt-0.5">2</span>
+                  <span className="font-medium text-primary mt-0.5">2</span>
                   <div>
                     <p className="font-medium text-gray-700">Opvolgmelk (6-12 maanden)</p>
                     <p>Vanaf 6 maanden, naast vaste voeding</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <span className="font-semibold text-primary mt-0.5">3</span>
+                  <span className="font-medium text-primary mt-0.5">3</span>
                   <div>
                     <p className="font-medium text-gray-700">Peutermelk (12+ maanden)</p>
                     <p>Optioneel vanaf 1 jaar, gewone melk kan ook</p>
@@ -1099,7 +1099,7 @@ export default function HomePage() {
 
             {/* FAQ Section - Schema optimized */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6 mt-8">
-            <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde Vragen</h2>
+            <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen</h2>
             <div className="space-y-4">
               <div>
                 <h3 className="font-medium text-gray-800 mb-2">Hoeveel ml flesvoeding heeft een baby van 3 maanden nodig?</h3>
@@ -1144,7 +1144,7 @@ export default function HomePage() {
             {/* Mother and Baby Image */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
               <Image
-                src="/mother_and_baby.png"
+                src="/mother_and_baby.webp"
                 alt="Moeder en baby"
                 width={300}
                 height={200}
@@ -1167,7 +1167,7 @@ export default function HomePage() {
             {/* Baby Image */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
               <Image
-                src="/baby.png"
+                src="/baby.webp"
                 alt="Baby"
                 width={300}
                 height={200}

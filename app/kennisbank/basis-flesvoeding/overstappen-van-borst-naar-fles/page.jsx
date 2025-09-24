@@ -43,7 +43,7 @@ export default function OverstappenBorstNaarFlesPage() {
 
             {/* Wanneer en waarom overstappen */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Wanneer en waarom overstappen?</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Wanneer en waarom overstappen?</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 De beslissing om over te stappen van borst naar fles is persoonlijk en kan verschillende redenen hebben. Belangrijk is dat je dit op je eigen tempo doet en je geen schuld voelt over deze keuze.
               </p>
@@ -105,7 +105,7 @@ export default function OverstappenBorstNaarFlesPage() {
 
             {/* Overstap strategieën */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Overstap strategieën: 3 verschillende benaderingen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Overstap strategieën: 3 verschillende benaderingen</h2>
               
               <div className="space-y-6">
                 <div>
@@ -199,7 +199,7 @@ export default function OverstappenBorstNaarFlesPage() {
 
             {/* Stap-voor-stap uitvoering */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 Stap-voor-stap uitvoering
               </h2>
@@ -369,7 +369,7 @@ export default function OverstappenBorstNaarFlesPage() {
 
             {/* Uitdagingen en oplossingen */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Uitdagingen en oplossingen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Uitdagingen en oplossingen</h2>
               
               <div className="space-y-6">
                 <div>
@@ -534,7 +534,7 @@ export default function OverstappenBorstNaarFlesPage() {
 
             {/* Timeline en hoeveelheden */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Timeline en hoeveelheden</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Timeline en hoeveelheden</h2>
               
               <div className="space-y-6">
                 <div>
@@ -628,7 +628,7 @@ export default function OverstappenBorstNaarFlesPage() {
 
             {/* Veelgestelde vragen */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde vragen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde vragen</h2>
               
               <div className="space-y-4">
                 <div>
@@ -681,7 +681,7 @@ export default function OverstappenBorstNaarFlesPage() {
 
             {/* Related articles */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Users className="w-5 h-5 mr-2" />
                 Gerelateerde artikelen
               </h2>

@@ -118,7 +118,7 @@ const BereidingInfographic = () => {
     <div className="space-y-6">
       {/* Title Card */}
       <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-        <h2 className="text-lg font-semibold text-gray-800 mb-3">
+        <h2 className="text-lg font-medium text-gray-800 mb-3">
           Flesvoeding Bereiden in 6 Stappen
         </h2>
         <p className="text-gray-600">
@@ -139,7 +139,7 @@ const BereidingInfographic = () => {
                 {step.number}
               </div>
               <div className="ml-4 flex-1">
-                <h3 className="font-semibold text-gray-800 text-lg flex items-center">
+                <h3 className="font-medium text-gray-800 text-lg flex items-center">
                   <step.icon className="w-5 h-5 mr-2 text-primary" />
                   {step.title}
                 </h3>
@@ -306,7 +306,7 @@ const VoedingsschemaInfographic = () => {
     <div className="space-y-6">
       {/* Title Card */}
       <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-        <h2 className="text-lg font-semibold text-gray-800 mb-3">
+        <h2 className="text-lg font-medium text-gray-800 mb-3">
           Voedingsschema per Leeftijd
         </h2>
         <p className="text-gray-600">
@@ -348,7 +348,7 @@ const VoedingsschemaInfographic = () => {
                   <div className="grid md:grid-cols-2 gap-6">
                     {/* Left Column - Feeding Details */}
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-3 flex items-center">
+                      <h4 className="font-medium text-gray-800 mb-3 flex items-center">
                         <Package className="w-4 h-4 mr-2 text-gray-600" />
                         Voedingsdetails
                       </h4>
@@ -374,7 +374,7 @@ const VoedingsschemaInfographic = () => {
 
                     {/* Right Column - Development & Tips */}
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-3 flex items-center">
+                      <h4 className="font-medium text-gray-800 mb-3 flex items-center">
                         <Baby className="w-4 h-4 mr-2 text-gray-600" />
                         Ontwikkeling & Tips
                       </h4>

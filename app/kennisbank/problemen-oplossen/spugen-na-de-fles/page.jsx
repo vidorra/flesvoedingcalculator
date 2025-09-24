@@ -349,7 +349,7 @@ export default function SpugenNaDeFlesPage() {
 
             {/* Why Such a Big Concern */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Waarom Spugen Zo'n Grote Zorg Is</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Waarom Spugen Zo'n Grote Zorg Is</h2>
               
               <p className="text-gray-700 mb-4">
                 Spugen na de fles komt voor bij <strong>70% van alle baby's</strong> in de eerste maanden. 
@@ -379,7 +379,7 @@ export default function SpugenNaDeFlesPage() {
 
             {/* Normal vs Medical Problems */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Normaal Spugen vs. Medische Problemen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Normaal Spugen vs. Medische Problemen</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -434,7 +434,7 @@ export default function SpugenNaDeFlesPage() {
 
             {/* Practical Solutions */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Praktische Oplossingen om Spugen te Verminderen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Praktische Oplossingen om Spugen te Verminderen</h2>
               
               <div className="space-y-6">
                 {feedingTechniques.map((technique, index) => (
@@ -467,7 +467,7 @@ export default function SpugenNaDeFlesPage() {
 
             {/* Speen Selection */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Speen Selectie</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Speen Selectie</h2>
               
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse border border-gray-300">
@@ -481,7 +481,7 @@ export default function SpugenNaDeFlesPage() {
                   <tbody>
                     {speenSelection.map((speen, index) => (
                       <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
-                        <td className="border border-gray-300 px-4 py-2 font-semibold">{speen.type}</td>
+                        <td className="border border-gray-300 px-4 py-2 font-medium">{speen.type}</td>
                         <td className="border border-gray-300 px-4 py-2">{speen.benefit}</td>
                         <td className="border border-gray-300 px-4 py-2">{speen.brand}</td>
                       </tr>
@@ -493,7 +493,7 @@ export default function SpugenNaDeFlesPage() {
 
             {/* Age Expectations */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <TrendingUp className="w-5 h-5 mr-2" />
                 Leeftijd-Specifieke Verwachtingen
               </h2>
@@ -541,7 +541,7 @@ export default function SpugenNaDeFlesPage() {
 
             {/* Medical Conditions */}
             <div className="bg-white rounded-2xl border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Medische Aandoeningen: Wanneer Zorgen?</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Medische Aandoeningen: Wanneer Zorgen?</h2>
               
               <div className="space-y-6">
                 {medicalConditions.map((condition, index) => (
@@ -586,7 +586,7 @@ export default function SpugenNaDeFlesPage() {
 
             {/* When to Call Doctor */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Phone className="w-5 h-5 mr-2" />
                 Wanneer Bellen met Huisarts?
               </h2>
@@ -632,7 +632,7 @@ export default function SpugenNaDeFlesPage() {
 
             {/* Practical Daily Life Tips */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Praktische Tips voor het Dagelijks Leven</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Praktische Tips voor het Dagelijks Leven</h2>
               
               <div className="space-y-6">
                 {practicalTips.map((section, index) => (
@@ -659,7 +659,7 @@ export default function SpugenNaDeFlesPage() {
 
             {/* AR Formula */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Voedingsalternatieven bij Veel Spugen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Voedingsalternatieven bij Veel Spugen</h2>
               
               <div className="mb-4">
                 <h3 className="font-medium text-primary mb-3">AR-Voeding (Anti-Reflux)</h3>
@@ -702,7 +702,7 @@ export default function SpugenNaDeFlesPage() {
 
             {/* Monitoring */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Spugen en Gewichtstoename Monitoren</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Spugen en Gewichtstoename Monitoren</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -733,7 +733,7 @@ export default function SpugenNaDeFlesPage() {
 
             {/* Myths */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Mythes over Spugen Ontkracht</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Mythes over Spugen Ontkracht</h2>
               
               <div className="space-y-4">
                 {myths.map((myth, index) => (
@@ -752,7 +752,7 @@ export default function SpugenNaDeFlesPage() {
 
             {/* Emotional Support */}
             <div className="bg-white rounded-2xl border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Emotionele Impact op Ouders</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Emotionele Impact op Ouders</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {emotionalSupport.map((category, index) => (
@@ -773,7 +773,7 @@ export default function SpugenNaDeFlesPage() {
 
             {/* FAQ */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde Vragen (FAQ)</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen (FAQ)</h2>
               
               <div className="space-y-4">
                 {faqData.map((item, index) => (
@@ -790,7 +790,7 @@ export default function SpugenNaDeFlesPage() {
 
             {/* Conclusion */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Conclusie: Geduld en Observatie</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Conclusie: Geduld en Observatie</h2>
               
               <p className="text-gray-700 mb-4">
                 Spugen na de fles is voor de meeste baby's een normale ontwikkelingsfase die vanzelf overgaat. 
@@ -818,7 +818,7 @@ export default function SpugenNaDeFlesPage() {
 
             {/* Navigation */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde Artikelen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <Link 
                   href="/kennisbank/problemen-oplossen"

@@ -236,7 +236,7 @@ const ContactModal = ({ isOpen, onClose }) => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <Mail className="w-6 h-6" />
-              <h2 className="text-xl font-semibold">Contact & Feedback</h2>
+              <h2 className="text-xl font-medium">Contact & Feedback</h2>
             </div>
             <button
               onClick={onClose}

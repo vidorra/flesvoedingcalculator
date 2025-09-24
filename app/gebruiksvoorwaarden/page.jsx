@@ -34,7 +34,7 @@ export default function GebruiksvoorwaardenPage() {
 
         {/* Belangrijke disclaimer */}
         <div className="bg-amber-50 rounded-2xl border border-amber-200 p-6">
-          <h2 className="text-lg font-semibold text-amber-800 mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-amber-800 mb-4 flex items-center">
             <AlertTriangle className="w-5 h-5 mr-2" />
             Belangrijke medische disclaimer
           </h2>
@@ -73,7 +73,7 @@ export default function GebruiksvoorwaardenPage() {
 
         {/* Diensten */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">
+          <h2 className="text-lg font-medium text-gray-800 mb-4">
             Onze diensten
           </h2>
           
@@ -130,7 +130,7 @@ export default function GebruiksvoorwaardenPage() {
 
         {/* Gebruik van de website */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-gray-800 mb-4 flex items-center">
             <Scale className="w-5 h-5 mr-2 text-primary" />
             Gebruik van de website
           </h2>
@@ -188,7 +188,7 @@ export default function GebruiksvoorwaardenPage() {
 
         {/* Intellectueel eigendom */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">
+          <h2 className="text-lg font-medium text-gray-800 mb-4">
             Intellectueel eigendom
           </h2>
           
@@ -212,7 +212,7 @@ export default function GebruiksvoorwaardenPage() {
 
         {/* Betrouwbaarheid informatie */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-gray-800 mb-4 flex items-center">
             <Info className="w-5 h-5 mr-2 text-primary" />
             Betrouwbaarheid van informatie
           </h2>
@@ -266,7 +266,7 @@ export default function GebruiksvoorwaardenPage() {
 
         {/* Aansprakelijkheid */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">
+          <h2 className="text-lg font-medium text-gray-800 mb-4">
             Beperking van aansprakelijkheid
           </h2>
           
@@ -306,7 +306,7 @@ export default function GebruiksvoorwaardenPage() {
 
         {/* Privacy */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-gray-800 mb-4 flex items-center">
             <Shield className="w-5 h-5 mr-2 text-primary" />
             Privacy en gegevens
           </h2>
@@ -327,7 +327,7 @@ export default function GebruiksvoorwaardenPage() {
 
         {/* Wijzigingen */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">
+          <h2 className="text-lg font-medium text-gray-800 mb-4">
             Wijzigingen in voorwaarden
           </h2>
           

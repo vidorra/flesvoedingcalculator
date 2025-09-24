@@ -67,7 +67,7 @@ export default function BasisFlesvoedingPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* What is bottle feeding */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-primary mb-4">Wat is flesvoeding?</h2>
+            <h2 className="text-lg font-medium text-primary mb-4">Wat is flesvoeding?</h2>
             <p className="text-gray-600 leading-relaxed">
               Flesvoeding is speciaal samengestelde babymelk die alle voedingsstoffen bevat die een baby nodig heeft 
               voor gezonde groei en ontwikkeling. In Nederland moet alle flesvoeding voldoen aan strenge Europese 
@@ -77,7 +77,7 @@ export default function BasisFlesvoedingPage() {
 
           {/* When to choose bottle feeding */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-primary mb-4">Wanneer kies je voor flesvoeding?</h2>
+            <h2 className="text-lg font-medium text-primary mb-4">Wanneer kies je voor flesvoeding?</h2>
             <div className="space-y-2">
               {reasons.map((reason, index) => (
                 <div key={index} className="flex items-start space-x-2">
@@ -91,7 +91,7 @@ export default function BasisFlesvoedingPage() {
 
         {/* Benefits */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Voordelen van flesvoeding</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Voordelen van flesvoeding</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {benefits.map((benefit, index) => (
               <div key={index} className="flex items-start space-x-2">
@@ -104,7 +104,7 @@ export default function BasisFlesvoedingPage() {
 
         {/* Dutch Guidelines */}
         <div className="bg-default rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Nederlandse Richtlijnen</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Nederlandse Richtlijnen</h2>
           <p className="text-gray-700 mb-4">
             Het Voedingscentrum en consultatiebureau hanteren deze basisregels:
           </p>
@@ -120,7 +120,7 @@ export default function BasisFlesvoedingPage() {
 
         {/* EU Regulations & Safety */}
         <div className="bg-white rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Veiligheid & Regelgeving in Nederland</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Veiligheid & Regelgeving in Nederland</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
               <h3 className="font-medium text-gray-700 mb-3">EU-verordening 2016/127:</h3>
@@ -170,7 +170,7 @@ export default function BasisFlesvoedingPage() {
 
         {/* Myth Busting */}
         <div className="bg-white rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Veelgehoorde Mythes over Flesvoeding</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Veelgehoorde Mythes over Flesvoeding</h2>
           <div className="space-y-4">
             <div className="bg-white p-4 rounded-lg">
               <h3 className="font-medium text-gray-600 mb-2"> Mythe: "Flesvoeding is minder gezond dan borstvoeding"</h3>
@@ -208,7 +208,7 @@ export default function BasisFlesvoedingPage() {
 
         {/* FAQ Section */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde Vragen</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen</h2>
           <div className="space-y-4">
             <div>
               <h3 className="font-medium text-primary mb-2">Kan ik van borstvoeding overstappen naar flesvoeding?</h3>
@@ -256,7 +256,7 @@ export default function BasisFlesvoedingPage() {
 
         {/* Comprehensive Guide Section */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Complete Flesvoeding Gids</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Complete Flesvoeding Gids</h2>
           
           <div className="space-y-6">
             {/* What is bottle feeding - expanded */}
@@ -339,7 +339,7 @@ export default function BasisFlesvoedingPage() {
 
         {/* Baby Weigert de Fles Section */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Baby Weigert de Fles: Praktische Oplossingen</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Baby Weigert de Fles: Praktische Oplossingen</h2>
           
           <p className="text-gray-600 leading-relaxed mb-4">
             Ongeveer 30% van alle baby's weigert op enig moment de fles. Dit is één van de meest frustrerende 
@@ -401,7 +401,7 @@ export default function BasisFlesvoedingPage() {
           </div>
 
           <div className="bg-white rounded-xl p-4 border border-gray-200 mb-6">
-            <h3 className="text-primary font-semibold mb-3">7-Dagen Actieplan bij Flesweigering:</h3>
+            <h3 className="text-primary font-medium mb-3">7-Dagen Actieplan bij Flesweigering:</h3>
             <div className="grid md:grid-cols-3 gap-4">
               <div className="bg-white rounded-lg p-3">
                 <h4 className="font-medium text-primary mb-2">Dag 1-2: Diagnostiek</h4>
@@ -470,7 +470,7 @@ export default function BasisFlesvoedingPage() {
           </div>
 
           <div className="bg-white rounded-xl p-4 border border-gray-200">
-            <h3 className="text-gray-700 font-semibold mb-2"> Wanneer hulp zoeken:</h3>
+            <h3 className="text-gray-700 font-medium mb-2"> Wanneer hulp zoeken:</h3>
             <p className="text-gray-700 text-sm mb-2">
               Als baby 48 uur geen significante hoeveelheden drinkt, of tekenen van uitdroging toont 
               (minder natte luiers, droge mond, verminderde energie), neem direct contact op met het consultatiebureau.
@@ -480,7 +480,7 @@ export default function BasisFlesvoedingPage() {
 
         {/* Eerste Keer Flesvoeding Section */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Eerste Keer Flesvoeding Geven</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Eerste Keer Flesvoeding Geven</h2>
           
           <p className="text-gray-600 leading-relaxed mb-4">
             De eerste keer flesvoeding geven kan spannend zijn. Met de juiste voorbereiding en aanpak 
@@ -553,7 +553,7 @@ export default function BasisFlesvoedingPage() {
 
         {/* Navigation to other pages */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Verder lezen</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Verder lezen</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <Link 
               href="/kennisbank/soorten-flesvoeding"

@@ -43,7 +43,7 @@ export default function FlessenSteriligerenPage() {
 
             {/* Waarom steriliseren belangrijk is */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Waarom steriliseren belangrijk is</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Waarom steriliseren belangrijk is</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Baby's hebben een nog ontwikkelend immuunsysteem dat kwetsbaar is voor bacteriën, virussen en schimmels. Steriliseren van flessen en spenen elimineert gevaarlijke micro-organismen die kunnen leiden tot ernstige infecties zoals gastro-enteritis.
               </p>
@@ -100,7 +100,7 @@ export default function FlessenSteriligerenPage() {
 
             {/* Wanneer en hoe vaak */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 Wanneer en hoe vaak steriliseren
               </h2>
@@ -196,7 +196,7 @@ export default function FlessenSteriligerenPage() {
 
             {/* Sterilisatie methoden vergelijking */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Sterilisatie methoden vergelijking</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Sterilisatie methoden vergelijking</h2>
               
               <div className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -373,7 +373,7 @@ export default function FlessenSteriligerenPage() {
 
             {/* Stap-voor-stap elektrische sterilisator */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Stap-voor-stap: Elektrische sterilisator (meest gebruikt)</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Stap-voor-stap: Elektrische sterilisator (meest gebruikt)</h2>
               
               <div className="space-y-6">
                 <div className="mb-4">
@@ -530,7 +530,7 @@ export default function FlessenSteriligerenPage() {
 
             {/* Kostenberekening */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <DollarSign className="w-5 h-5 mr-2" />
                 Kostenberekening verschillende methoden
               </h2>
@@ -593,7 +593,7 @@ export default function FlessenSteriligerenPage() {
 
             {/* Veelgestelde vragen */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde vragen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde vragen</h2>
               
               <div className="space-y-4">
                 <div>
@@ -646,7 +646,7 @@ export default function FlessenSteriligerenPage() {
 
             {/* Related articles */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Users className="w-5 h-5 mr-2" />
                 Gerelateerde artikelen
               </h2>

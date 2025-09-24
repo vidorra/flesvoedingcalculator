@@ -188,7 +188,7 @@ export default function NachtvoedingOptimaliserenPage() {
 
         {/* Reality Check */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">De Nachtvoeding Realiteit</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">De Nachtvoeding Realiteit</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -257,7 +257,7 @@ export default function NachtvoedingOptimaliserenPage() {
 
         {/* Time Comparison */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Clock className="w-5 h-5 mr-2" />
             Tijd Vergelijking: Voor & Na Optimalisatie
           </h2>
@@ -297,7 +297,7 @@ export default function NachtvoedingOptimaliserenPage() {
 
         {/* Optimization Strategies */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Lightbulb className="w-5 h-5 mr-2" />
             Top 3 Optimalisatie Strategieën
           </h2>
@@ -333,7 +333,7 @@ export default function NachtvoedingOptimaliserenPage() {
 
         {/* Equipment Essentials */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Nachtvoeding Equipment</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Nachtvoeding Equipment</h2>
           
           {equipmentEssentials.map((category, index) => (
             <div key={index} className="mb-6">
@@ -379,7 +379,7 @@ export default function NachtvoedingOptimaliserenPage() {
 
         {/* Age-Based Strategies */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Strategieën per Leeftijd</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Strategieën per Leeftijd</h2>
           
           <div className="space-y-4">
             {ageBasedStrategies.map((phase, index) => (
@@ -412,7 +412,7 @@ export default function NachtvoedingOptimaliserenPage() {
 
         {/* Common Challenges */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Veelvoorkomende Uitdagingen</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Veelvoorkomende Uitdagingen</h2>
           
           <div className="space-y-4">
             {commonChallenges.map((item, index) => (
@@ -441,7 +441,7 @@ export default function NachtvoedingOptimaliserenPage() {
 
         {/* Quick Reference Guide */}
         <div className="bg-white rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Quick Reference: Perfect Nachtvoeding</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Quick Reference: Perfect Nachtvoeding</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -500,7 +500,7 @@ export default function NachtvoedingOptimaliserenPage() {
 
         {/* Success Stories */}
         <div className="border border-gray-200 bg-white rounded-2xl p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Success Stories</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Success Stories</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-white rounded-lg p-4">
@@ -533,7 +533,7 @@ export default function NachtvoedingOptimaliserenPage() {
 
         {/* Calculator Link */}
         <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
-          <h2 className="text-lg font-semibold text-white mb-3 flex items-center">
+          <h2 className="text-lg font-medium text-white mb-3 flex items-center">
             <Calculator className="w-5 h-5 mr-2" />
             Bereken Uw Nachtvoeding Schema
           </h2>
@@ -552,7 +552,7 @@ export default function NachtvoedingOptimaliserenPage() {
 
         {/* Navigation */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde Artikelen</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 
               href="/kennisbank/praktische-tips"

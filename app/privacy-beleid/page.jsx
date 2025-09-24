@@ -43,7 +43,7 @@ export default function PrivacyBeleidPage() {
 
         {/* Gegevens die wij verzamelen */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-gray-800 mb-4 flex items-center">
             <Eye className="w-5 h-5 mr-2 text-primary" />
             Welke gegevens verzamelen wij?
           </h2>
@@ -93,7 +93,7 @@ export default function PrivacyBeleidPage() {
 
         {/* Hoe wij gegevens gebruiken */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">
+          <h2 className="text-lg font-medium text-gray-800 mb-4">
             Hoe gebruiken wij uw gegevens?
           </h2>
           
@@ -123,7 +123,7 @@ export default function PrivacyBeleidPage() {
 
         {/* Cookies */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-gray-800 mb-4 flex items-center">
             <Cookie className="w-5 h-5 mr-2 text-primary" />
             Cookies en tracking
           </h2>
@@ -173,7 +173,7 @@ export default function PrivacyBeleidPage() {
 
         {/* Microsoft Clarity */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">
+          <h2 className="text-lg font-medium text-gray-800 mb-4">
             Microsoft Clarity
           </h2>
           
@@ -211,7 +211,7 @@ export default function PrivacyBeleidPage() {
 
         {/* Gegevens delen */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">
+          <h2 className="text-lg font-medium text-gray-800 mb-4">
             Delen wij uw gegevens?
           </h2>
           
@@ -239,7 +239,7 @@ export default function PrivacyBeleidPage() {
 
         {/* Uw rechten */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-gray-800 mb-4 flex items-center">
             <Lock className="w-5 h-5 mr-2 text-primary" />
             Uw rechten (AVG)
           </h2>
@@ -290,7 +290,7 @@ export default function PrivacyBeleidPage() {
 
         {/* Beveiliging */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">
+          <h2 className="text-lg font-medium text-gray-800 mb-4">
             Hoe beveiligen wij uw gegevens?
           </h2>
           
@@ -317,7 +317,7 @@ export default function PrivacyBeleidPage() {
 
         {/* Bewaarperiode */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">
+          <h2 className="text-lg font-medium text-gray-800 mb-4">
             Hoe lang bewaren wij uw gegevens?
           </h2>
           

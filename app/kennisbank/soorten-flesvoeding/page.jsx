@@ -38,7 +38,7 @@ export default function SoortenFlesvoedingPage() {
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-medium">1</div>
               <div>
-                <h2 className="text-lg font-semibold text-primary">Startvoeding (Nummer 1)</h2>
+                <h2 className="text-lg font-medium text-primary">Startvoeding (Nummer 1)</h2>
                 <p className="text-gray-600">0 tot 6 maanden</p>
               </div>
             </div>
@@ -88,7 +88,7 @@ export default function SoortenFlesvoedingPage() {
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-medium">2</div>
               <div>
-                <h2 className="text-lg font-semibold text-primary">Opvolgmelk (Nummer 2)</h2>
+                <h2 className="text-lg font-medium text-primary">Opvolgmelk (Nummer 2)</h2>
                 <p className="text-gray-600">6 tot 12 maanden</p>
               </div>
             </div>
@@ -145,7 +145,7 @@ export default function SoortenFlesvoedingPage() {
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-medium">3</div>
               <div>
-                <h2 className="text-lg font-semibold text-primary">Peutermelk (Nummer 3)</h2>
+                <h2 className="text-lg font-medium text-primary">Peutermelk (Nummer 3)</h2>
                 <p className="text-gray-600">12+ maanden</p>
               </div>
             </div>
@@ -196,7 +196,7 @@ export default function SoortenFlesvoedingPage() {
 
         {/* Comparison Table */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Flesvoeding Typen Vergelijking</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Flesvoeding Typen Vergelijking</h2>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse border border-gray-300">
               <thead>
@@ -211,7 +211,7 @@ export default function SoortenFlesvoedingPage() {
               <tbody>
                 {formulaComparison.map((item, index) => (
                   <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
-                    <td className="border border-gray-300 px-4 py-2 font-semibold">{item.type}</td>
+                    <td className="border border-gray-300 px-4 py-2 font-medium">{item.type}</td>
                     <td className="border border-gray-300 px-4 py-2">{item.protein}</td>
                     <td className="border border-gray-300 px-4 py-2">{item.iron}</td>
                     <td className="border border-gray-300 px-4 py-2">{item.usage}</td>
@@ -225,7 +225,7 @@ export default function SoortenFlesvoedingPage() {
 
         {/* Nederlandse Merken */}
         <div className="bg-default rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Populaire Nederlandse Merken</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Populaire Nederlandse Merken</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
               <h3 className="font-medium text-primary mb-3">Breed verkrijgbaar:</h3>
@@ -266,7 +266,7 @@ export default function SoortenFlesvoedingPage() {
 
         {/* Special Formula */}
         <div className="bg-amber-50 rounded-2xl border border-amber-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <AlertCircle className="w-5 h-5 mr-2" />
             Speciale voeding (op medisch advies)
           </h2>
@@ -342,7 +342,7 @@ export default function SoortenFlesvoedingPage() {
 
         {/* FAQ Section */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde Vragen</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen</h2>
           <div className="space-y-4">
             <div>
               <h3 className="font-medium text-primary mb-2">Wanneer overstappen van nummer 1 naar 2?</h3>
@@ -390,7 +390,7 @@ export default function SoortenFlesvoedingPage() {
 
         {/* Complete switching guide */}
         <div className="bg-white rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Complete Overstap Gids</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Complete Overstap Gids</h2>
           
           <div className="space-y-6">
             {/* Why switch */}
@@ -452,7 +452,7 @@ export default function SoortenFlesvoedingPage() {
 
         {/* Schema Infographic Highlight */}
         <div className="bg-white rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Voedingsschema Overzicht</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Voedingsschema Overzicht</h2>
           <p className="text-gray-700 mb-4">
             Bekijk onze visuele tijdlijn met alle voedingsschema's per leeftijd en flesvoeding type.
           </p>
@@ -467,7 +467,7 @@ export default function SoortenFlesvoedingPage() {
 
         {/* Navigation */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Meer informatie</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Meer informatie</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <Link 
               href="/kennisbank/basis-flesvoeding"

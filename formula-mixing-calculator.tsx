@@ -72,7 +72,7 @@ export default function FormulaMixingCalculator() {
 
         {/* Calculator Form */}
         <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
-          <h2 className="font-semibold text-lg mb-4 flex items-center">
+          <h2 className="font-medium text-lg mb-4 flex items-center">
             <Calculator className="w-5 h-5 mr-2 text-blue-600" />
             Bereken Mengverhouding
           </h2>
@@ -103,7 +103,7 @@ export default function FormulaMixingCalculator() {
 
           <button
             onClick={calculateMixing}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors flex items-center justify-center"
           >
             <Calculator className="w-5 h-5 mr-2" />
             Bereken Mengverhouding
@@ -113,7 +113,7 @@ export default function FormulaMixingCalculator() {
         {/* Results */}
         {results && (
           <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
-            <h3 className="font-semibold text-lg mb-4 flex items-center">
+            <h3 className="font-medium text-lg mb-4 flex items-center">
               {results.isExact ? (
                 <Check className="w-5 h-5 mr-2 text-green-600" />
               ) : (
@@ -193,7 +193,7 @@ export default function FormulaMixingCalculator() {
         {/* Information Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-blue-50 rounded-2xl p-6">
-            <h3 className="font-semibold text-blue-800 mb-3 flex items-center">
+            <h3 className="font-medium text-blue-800 mb-3 flex items-center">
               <Info className="w-5 h-5 mr-2" />
               Nederlandse Standaard
             </h3>
@@ -213,7 +213,7 @@ export default function FormulaMixingCalculator() {
           </div>
 
           <div className="bg-green-50 rounded-2xl p-6">
-            <h3 className="font-semibold text-green-800 mb-3 flex items-center">
+            <h3 className="font-medium text-green-800 mb-3 flex items-center">
               <Calculator className="w-5 h-5 mr-2" />
               Bereidingstips
             </h3>
@@ -232,7 +232,7 @@ export default function FormulaMixingCalculator() {
           <div className="flex items-start">
             <AlertCircle className="w-6 h-6 text-red-600 mt-0.5 mr-3 flex-shrink-0" />
             <div>
-              <h3 className="font-semibold text-red-800 mb-2">Veiligheid voorop</h3>
+              <h3 className="font-medium text-red-800 mb-2">Veiligheid voorop</h3>
               <p className="text-sm text-red-700">
                 Deze calculator is een hulpmiddel. Volg altijd de instructies op de verpakking van uw kunstvoeding. 
                 Bij twijfel of vragen over voeding, raadpleeg uw consultatiebureau of huisarts.

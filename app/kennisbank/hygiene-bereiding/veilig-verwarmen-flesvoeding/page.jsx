@@ -49,7 +49,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
 
             {/* Introduction */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Inleiding</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed">
                 Correct verwarmen van flesvoeding is cruciaal voor de veiligheid van je baby. Verkeerd verwarmen kan leiden tot ernstige brandwonden, terwijl oververhitting waardevolle voedingsstoffen vernietigt. Deze gids helpt je de veiligste methodes te kiezen en gevaarlijke fouten te vermijden.
               </p>
@@ -57,7 +57,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
 
             {/* Waarom juist verwarmen cruciaal is */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <AlertTriangle className="w-5 h-5 mr-2" />
                 Waarom juist verwarmen cruciaal is
               </h2>
@@ -69,7 +69,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                       <AlertTriangle className="w-5 h-5 text-amber-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-amber-800 mb-2">Let op - Kritieke veiligheidsrisico's</h3>
+                      <h3 className="font-medium text-amber-800 mb-2">Let op - Kritieke veiligheidsrisico's</h3>
                       <p className="text-amber-700 leading-relaxed">Baby's mondje is extreem gevoelig. Temperaturen boven 40°C kunnen brandwonden veroorzaken, terwijl boven 60°C tweede-graads brandwonden en permanente schade aan smaakpapillen mogelijk zijn.</p>
                     </div>
                   </div>
@@ -151,7 +151,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
 
             {/* Magnetron gevaren */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Magnetron: gevaren en waarom experts afraden</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Magnetron: gevaren en waarom experts afraden</h2>
               
               <div className="space-y-6">
                 <div className="bg-amber-50 rounded-2xl shadow-sm border border-amber-200 p-6">
@@ -160,7 +160,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                       <AlertTriangle className="w-5 h-5 text-amber-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-amber-800 mb-2">Nederlandse veiligheidswaarschuwing</h3>
+                      <h3 className="font-medium text-amber-800 mb-2">Nederlandse veiligheidswaarschuwing</h3>
                       <p className="text-amber-700 leading-relaxed">De Nederlandse Vereniging voor Kindergeneeskunde en het Voedingscentrum raden het gebruik van magnetrons voor flesvoeding ten strengste af.</p>
                     </div>
                   </div>
@@ -240,7 +240,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
 
             {/* Waterpad verwarming */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Waterpad verwarming: de veiligste methode</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Waterpad verwarming: de veiligste methode</h2>
               
               <div className="space-y-6">
                 <div>
@@ -314,17 +314,17 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                       </thead>
                       <tbody>
                         <tr>
-                          <td className="border border-gray-300 px-4 py-2 font-semibold">Koelkast (4°C)</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium">Koelkast (4°C)</td>
                           <td className="border border-gray-300 px-4 py-2">Drinkklaar (37°C)</td>
                           <td className="border border-gray-300 px-4 py-2">4-6 minuten</td>
                         </tr>
                         <tr className="bg-white">
-                          <td className="border border-gray-300 px-4 py-2 font-semibold">Kamertemp (20°C)</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium">Kamertemp (20°C)</td>
                           <td className="border border-gray-300 px-4 py-2">Drinkklaar (37°C)</td>
                           <td className="border border-gray-300 px-4 py-2">2-3 minuten</td>
                         </tr>
                         <tr>
-                          <td className="border border-gray-300 px-4 py-2 font-semibold">Te heet (50°C)</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium">Te heet (50°C)</td>
                           <td className="border border-gray-300 px-4 py-2">Drinkklaar (37°C)</td>
                           <td className="border border-gray-300 px-4 py-2">1-2 min. afkoelen</td>
                         </tr>
@@ -379,7 +379,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
 
             {/* Alle verwarmingsmethodes vergeleken */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Alle verwarmingsmethodes vergeleken</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Alle verwarmingsmethodes vergeleken</h2>
               
               <div className="space-y-6">
                 <div>
@@ -527,7 +527,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
 
             {/* Temperatuur testen */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Thermometer className="w-5 h-5 mr-2" />
                 Temperatuur testen: hoe doe je dat veilig?
               </h2>
@@ -625,7 +625,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
 
             {/* Veelgemaakte fouten */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelgemaakte fouten vermijden</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelgemaakte fouten vermijden</h2>
               
               <div className="space-y-6">
                 <div>
@@ -682,22 +682,22 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                       </thead>
                       <tbody>
                         <tr>
-                          <td className="border border-gray-300 px-4 py-2 font-semibold">Alleen kant-en-klaar</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium">Alleen kant-en-klaar</td>
                           <td className="border border-gray-300 px-4 py-2">€800-1200</td>
                           <td className="border border-gray-300 px-4 py-2">Thermos + poeder</td>
                         </tr>
                         <tr className="bg-white">
-                          <td className="border border-gray-300 px-4 py-2 font-semibold">Dure flessenwarmer</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium">Dure flessenwarmer</td>
                           <td className="border border-gray-300 px-4 py-2">€150</td>
                           <td className="border border-gray-300 px-4 py-2">Waterpad methode</td>
                         </tr>
                         <tr>
-                          <td className="border border-gray-300 px-4 py-2 font-semibold">Energieverspilling</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium">Energieverspilling</td>
                           <td className="border border-gray-300 px-4 py-2">€50-80</td>
                           <td className="border border-gray-300 px-4 py-2">Efficiënte apparaten</td>
                         </tr>
                         <tr className="bg-white">
-                          <td className="border border-gray-300 px-4 py-2 font-semibold">Vervangen gebarsten flessen</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium">Vervangen gebarsten flessen</td>
                           <td className="border border-gray-300 px-4 py-2">€30-60</td>
                           <td className="border border-gray-300 px-4 py-2">Voorzichtig verwarmen</td>
                         </tr>
@@ -710,7 +710,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
 
             {/* Veelgestelde vragen */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde vragen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde vragen</h2>
               
               <div className="space-y-4">
                 <div>
@@ -768,7 +768,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
 
             {/* Related articles */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <RefreshCw className="w-5 h-5 mr-2" />
                 Gerelateerde artikelen
               </h2>

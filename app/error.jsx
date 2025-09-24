@@ -40,7 +40,7 @@ export default function Error({ error, reset }) {
           {/* Error Details (Development only) */}
           {process.env.NODE_ENV === 'development' && error && (
             <div className="bg-red-50 rounded-2xl border border-red-200 p-6 text-left">
-              <h3 className="font-semibold text-red-800 mb-2">Ontwikkeling - Foutdetails:</h3>
+              <h3 className="font-medium text-red-800 mb-2">Ontwikkeling - Foutdetails:</h3>
               <pre className="text-sm text-red-700 overflow-auto max-h-32">
                 {error.message}
               </pre>
@@ -68,7 +68,7 @@ export default function Error({ error, reset }) {
 
           {/* Helpful Actions */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-gray-800 mb-4">
+            <h2 className="text-lg font-medium text-gray-800 mb-4">
               Wat kunt u doen?
             </h2>
             

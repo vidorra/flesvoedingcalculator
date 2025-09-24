@@ -195,7 +195,7 @@ export default function HoudbaarheidFlesvoedingPage() {
 
             {/* Why crucial section */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Shield className="w-5 h-5 mr-2" />
                 Waarom Houdbaarheid Cruciaal is voor Baby's
               </h2>
@@ -254,7 +254,7 @@ export default function HoudbaarheidFlesvoedingPage() {
 
             {/* Danger bacteria table */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Gevaarlijke Bacteriën in Bedorven Melk</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Gevaarlijke Bacteriën in Bedorven Melk</h2>
               
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse border border-gray-300">
@@ -269,7 +269,7 @@ export default function HoudbaarheidFlesvoedingPage() {
                   <tbody>
                     {dangerBacteria.map((bacteria, index) => (
                       <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
-                        <td className="border border-gray-300 px-4 py-2 font-semibold">{bacteria.name}</td>
+                        <td className="border border-gray-300 px-4 py-2 font-medium">{bacteria.name}</td>
                         <td className="border border-gray-300 px-4 py-2">{bacteria.symptoms}</td>
                         <td className="border border-gray-300 px-4 py-2">
                           <span className={`text-sm font-medium ${
@@ -290,7 +290,7 @@ export default function HoudbaarheidFlesvoedingPage() {
 
             {/* Time limits */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 Exacte Tijdslimieten per Situatie
               </h2>
@@ -332,7 +332,7 @@ export default function HoudbaarheidFlesvoedingPage() {
 
             {/* Signs of spoilage */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <AlertTriangle className="w-5 h-5 mr-2" />
                 Herkennen van Bedorven Flesvoeding
               </h2>
@@ -363,7 +363,7 @@ export default function HoudbaarheidFlesvoedingPage() {
 
             {/* Storage tips */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Thermometer className="w-5 h-5 mr-2" />
                 Praktische Bewaartips
               </h2>
@@ -402,7 +402,7 @@ export default function HoudbaarheidFlesvoedingPage() {
 
             {/* Common mistakes */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelgemaakte Houdbaarheidsfouten</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelgemaakte Houdbaarheidsfouten</h2>
               
               <div className="space-y-4">
                 {commonMistakes.map((mistake, index) => (
@@ -429,7 +429,7 @@ export default function HoudbaarheidFlesvoedingPage() {
                   <AlertTriangle className="w-5 h-5 text-amber-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-amber-800 mb-2">Wanneer Direct Medische Hulp Zoeken</h3>
+                  <h3 className="font-medium text-amber-800 mb-2">Wanneer Direct Medische Hulp Zoeken</h3>
                   <p className="text-sm text-amber-700 leading-relaxed mb-3">
                     Contact opnemen met huisarts of spoedeisende hulp bij deze symptomen na mogelijk bedorven voeding:
                   </p>
@@ -446,7 +446,7 @@ export default function HoudbaarheidFlesvoedingPage() {
 
             {/* FAQ */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde Vragen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen</h2>
               
               <div className="space-y-4">
                 {faqData.map((item, index) => (
@@ -478,7 +478,7 @@ export default function HoudbaarheidFlesvoedingPage() {
 
             {/* Related articles */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <CheckCircle className="w-5 h-5 mr-2" />
                 Gerelateerde Artikelen
               </h2>

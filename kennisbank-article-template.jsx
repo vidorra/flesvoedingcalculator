@@ -58,7 +58,7 @@ export default function ArticleNamePage() {
 
             {/* Introduction Section - REQUIRED */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Inleiding</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Detailed introduction explaining the article's purpose, scope, and what parents will gain from reading.
                 Use text-gray-600 for body text to maintain proper hierarchy.
@@ -67,7 +67,7 @@ export default function ArticleNamePage() {
 
             {/* Main Content Section 1 */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Main Section Title</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Main Section Title</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Section content with proper text hierarchy. Always use text-gray-600 for body paragraphs.
               </p>
@@ -104,7 +104,7 @@ export default function ArticleNamePage() {
 
             {/* Section with Visual Separator - Alternative to card-within-card */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Section with Subsections</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Section with Subsections</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Main section content goes here first.
               </p>
@@ -130,7 +130,7 @@ export default function ArticleNamePage() {
                   <AlertTriangle className="w-5 h-5 text-amber-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-700 mb-2">Let op</h3>
+                  <h3 className="font-medium text-gray-700 mb-2">Let op</h3>
                   <p className="text-sm text-amber-700 leading-relaxed">
                     Important warning or note that requires special attention. Only use amber colors for warnings.
                   </p>
@@ -140,15 +140,15 @@ export default function ArticleNamePage() {
 
             {/* Table Example - if needed */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Reference Table</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Reference Table</h2>
               
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
                     <tr className="border-b border-gray-200">
-                      <th className="text-left py-3 px-2 font-semibold text-primary">Column 1</th>
-                      <th className="text-left py-3 px-2 font-semibold text-primary">Column 2</th>
-                      <th className="text-left py-3 px-2 font-semibold text-primary">Column 3</th>
+                      <th className="text-left py-3 px-2 font-medium text-primary">Column 1</th>
+                      <th className="text-left py-3 px-2 font-medium text-primary">Column 2</th>
+                      <th className="text-left py-3 px-2 font-medium text-primary">Column 3</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -164,7 +164,7 @@ export default function ArticleNamePage() {
 
             {/* FAQ Section Example */}
             <section className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde Vragen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen</h2>
               
               <div className="space-y-4">
                 <div>
@@ -203,7 +203,7 @@ export default function ArticleNamePage() {
 
             {/* Related Articles - APPROVED card-within-card exception */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Users className="w-5 h-5 mr-2" />
                 Gerelateerde artikelen
               </h2>
