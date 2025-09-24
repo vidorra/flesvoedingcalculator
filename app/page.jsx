@@ -1,4 +1,5 @@
 'use client'
+// Force rebuild after server space cleanup
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
