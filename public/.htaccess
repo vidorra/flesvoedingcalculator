@@ -17,6 +17,12 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
     Header set Cache-Control "public, max-age=3600"
 </Files>
 
+# Ensure ads.txt is served with correct content type
+<Files "ads.txt">
+    Header set Content-Type "text/plain"
+    Header set Cache-Control "public, max-age=86400"
+</Files>
+
 # Redirect non-www to www (but preserve static files)
 RewriteCond %{HTTP_HOST} !^www\. [NC]
 RewriteCond %{REQUEST_URI} !\.(txt|xml|ico|png|jpg|jpeg|gif|css|js|woff|woff2|ttf|eot|svg)$ [NC]
@@ -24,4 +30,4 @@ RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Serve static files directly without redirect
 RewriteCond %{REQUEST_FILENAME} -f
-RewriteRule ^(robots\.txt|sitemap\.xml|favicon\.ico)$ - [L]
+RewriteRule ^(robots\.txt|sitemap\.xml|ads\.txt|favicon\.ico)$ - [L]
