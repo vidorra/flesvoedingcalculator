@@ -818,7 +818,10 @@ export default function HomePage() {
                       </div>
                     </div>
                     <div className="text-xl font-medium">
-                      {customSchepjes !== null ? customSchepjes : Math.round((results.recommendedAmount / 30) * 10) / 10}
+                      {customSchepjes !== null ? 
+                        `${customSchepjes} schepjes (${customAmount}ml)` : 
+                        `${Math.round((results.recommendedAmount / 30) * 10) / 10} schepjes (${results.recommendedAmount}ml)`
+                      }
                     </div>
                     <div className="text-xs text-white/60 mt-1">30ml water per schepje poeder</div>
                     
