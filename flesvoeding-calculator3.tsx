@@ -77,7 +77,7 @@ const FlesvoedingCalculator = () => {
           <div className="container mx-auto flex items-start space-x-2">
             <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
             <div className="text-sm text-amber-800">
-              <p className="font-semibold mb-1">Medische Disclaimer</p>
+              <p className="font-medium mb-1">Medische Disclaimer</p>
               <p>Deze calculator is alleen voor informatieve doeleinden. Raadpleeg altijd uw kinderarts of consultatiebureau voor persoonlijk advies over de voeding van uw baby.</p>
             </div>
           </div>
@@ -88,7 +88,7 @@ const FlesvoedingCalculator = () => {
       <main className="container mx-auto px-4 py-6 pb-20">
         {/* Introduction Card */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6 mb-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+          <h2 className="text-lg font-medium text-gray-800 mb-3 flex items-center">
             <Baby className="w-5 h-5 mr-2 text-blue-500" />
             Bereken de juiste hoeveelheid flesvoeding
           </h2>
@@ -162,7 +162,7 @@ const FlesvoedingCalculator = () => {
             {/* Calculate Button */}
             <button
               onClick={calculateFeeding}
-              className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-xl transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-sm flex items-center justify-center space-x-2"
+              className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-xl transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-sm flex items-center justify-center space-x-2"
             >
               <Calculator className="w-5 h-5" />
               <span>Bereken Voeding</span>
@@ -175,7 +175,7 @@ const FlesvoedingCalculator = () => {
           <div className="space-y-4 animate-in slide-in-from-bottom duration-300">
             {/* Main Results */}
             <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl shadow-lg p-6 text-white">
-              <h3 className="text-lg font-semibold mb-4 flex items-center">
+              <h3 className="text-lg font-medium mb-4 flex items-center">
                 <Baby className="w-5 h-5 mr-2" />
                 Aanbevolen Hoeveelheden
               </h3>
@@ -215,7 +215,7 @@ const FlesvoedingCalculator = () => {
             {/* Detailed Schedule */}
             {showDetails && (
               <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6 animate-in slide-in-from-top duration-300">
-                <h4 className="font-semibold text-gray-800 mb-4 flex items-center">
+                <h4 className="font-medium text-gray-800 mb-4 flex items-center">
                   <Clock className="w-5 h-5 mr-2 text-blue-500" />
                   Voorbeeldschema (flexibel aan te passen)
                 </h4>
@@ -278,27 +278,27 @@ const FlesvoedingCalculator = () => {
         {/* Information Cards */}
         <div className="mt-8 space-y-4">
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-blue-100 p-6">
-            <h3 className="font-semibold text-gray-800 mb-3 flex items-center">
+            <h3 className="font-medium text-gray-800 mb-3 flex items-center">
               <Info className="w-5 h-5 mr-2 text-blue-500" />
               Soorten Flesvoeding
             </h3>
             <div className="space-y-3 text-sm text-gray-600">
               <div className="flex items-start space-x-3">
-                <span className="font-semibold text-blue-500 mt-0.5">1</span>
+                <span className="font-medium text-blue-500 mt-0.5">1</span>
                 <div>
                   <p className="font-medium text-gray-700">Startvoeding (0-6 maanden)</p>
                   <p>Volledige zuigelingenvoeding, geschikt vanaf geboorte</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <span className="font-semibold text-blue-500 mt-0.5">2</span>
+                <span className="font-medium text-blue-500 mt-0.5">2</span>
                 <div>
                   <p className="font-medium text-gray-700">Opvolgmelk (6-12 maanden)</p>
                   <p>Vanaf 6 maanden, naast vaste voeding</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <span className="font-semibold text-blue-500 mt-0.5">3</span>
+                <span className="font-medium text-blue-500 mt-0.5">3</span>
                 <div>
                   <p className="font-medium text-gray-700">Peutermelk (12+ maanden)</p>
                   <p>Optioneel vanaf 1 jaar, gewone melk kan ook</p>

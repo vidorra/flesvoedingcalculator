@@ -313,7 +313,7 @@ export default function VerschillendeSpenenUitproberenPage() {
 
             {/* Why Critical */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Waarom de Juiste Speen Cruciaal Is</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Waarom de Juiste Speen Cruciaal Is</h2>
               
               <p className="text-gray-700 mb-4">
                 De speen is het enige contact tussen je baby en de flesvoeding. Een verkeerde speen kan leiden tot 
@@ -349,7 +349,7 @@ export default function VerschillendeSpenenUitproberenPage() {
 
             {/* Speen Types */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Complete Speen Types & Wanneer Gebruiken</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Complete Speen Types & Wanneer Gebruiken</h2>
               
               <div className="space-y-8">
                 {speenTypes.map((category, categoryIndex) => (
@@ -390,7 +390,7 @@ export default function VerschillendeSpenenUitproberenPage() {
 
             {/* Selection Process */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Stap-voor-Stap Speen Selectie Proces</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Stap-voor-Stap Speen Selectie Proces</h2>
               
               <div className="space-y-6">
                 {selectionSteps.map((step, index) => (
@@ -452,7 +452,7 @@ export default function VerschillendeSpenenUitproberenPage() {
 
             {/* Brand Comparison */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Nederlandse Merk Vergelijking</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Nederlandse Merk Vergelijking</h2>
               
               <div className="space-y-4">
                 {brandComparison.map((brand, index) => (
@@ -496,7 +496,7 @@ export default function VerschillendeSpenenUitproberenPage() {
 
             {/* Specific Problems */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Specifieke Problemen & Speen Oplossingen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Specifieke Problemen & Speen Oplossingen</h2>
               
               <div className="space-y-6">
                 {specificProblems.map((problem, index) => (
@@ -538,7 +538,7 @@ export default function VerschillendeSpenenUitproberenPage() {
 
             {/* Age Recommendations */}
             <div className="bg-white rounded-2xl border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Leeftijd-Specifieke Aanbevelingen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Leeftijd-Specifieke Aanbevelingen</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {ageRecommendations.map((age, index) => (
@@ -569,7 +569,7 @@ export default function VerschillendeSpenenUitproberenPage() {
 
             {/* Shopping Strategy */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <ShoppingCart className="w-5 h-5 mr-2" />
                 Slimme boodschappenstrategie
               </h2>
@@ -609,7 +609,7 @@ export default function VerschillendeSpenenUitproberenPage() {
 
             {/* Troubleshooting */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <AlertCircle className="w-5 h-5 mr-2" />
                 Probleemoplossingshandleiding
               </h2>
@@ -655,7 +655,7 @@ export default function VerschillendeSpenenUitproberenPage() {
 
             {/* FAQ */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde Vragen (FAQ)</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen (FAQ)</h2>
               
               <div className="space-y-4">
                 {faqData.map((item, index) => (
@@ -672,7 +672,7 @@ export default function VerschillendeSpenenUitproberenPage() {
 
             {/* Conclusion */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Conclusie: Geduld Loont</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Conclusie: Geduld Loont</h2>
               
               <p className="text-gray-700 mb-4">
                 Het vinden van de perfecte speen is een <strong>proces van eliminatie en observatie</strong>. 
@@ -701,7 +701,7 @@ export default function VerschillendeSpenenUitproberenPage() {
 
             {/* Navigation */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde Artikelen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <Link 
                   href="/kennisbank/voedingstechnieken"

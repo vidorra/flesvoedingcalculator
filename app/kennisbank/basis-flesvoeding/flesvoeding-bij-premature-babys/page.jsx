@@ -107,7 +107,7 @@ export default function FlesvoedingPrematurePage() {
           <div className="flex items-start space-x-3">
             <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
             <div>
-              <h3 className="font-semibold text-amber-800 mb-1">Medische Begeleiding Vereist</h3>
+              <h3 className="font-medium text-amber-800 mb-1">Medische Begeleiding Vereist</h3>
               <p className="text-sm text-amber-700">
                 Voor premature baby's is professionele begeleiding door kinderarts, diëtist en jeugdverpleegkundige 
                 essentieel. Deze informatie is ter ondersteuning en vervangt geen medisch advies.
@@ -118,7 +118,7 @@ export default function FlesvoedingPrematurePage() {
 
         {/* What makes premature feeding different */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Waarom is voeding anders bij premature baby's?</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Waarom is voeding anders bij premature baby's?</h2>
           <p className="text-amber-700 leading-relaxed mb-4">
             Premature baby's hebben fundamenteel andere voedingsbehoeften dan baby's die op termijn geboren zijn. 
             Hun spijsverteringssysteem, zuigreflex en temperatuurregulatie zijn nog niet volledig ontwikkeld.
@@ -173,7 +173,7 @@ export default function FlesvoedingPrematurePage() {
 
         {/* Corrected Age Explanation */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Gecorrigeerde Leeftijd Uitgelegd</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Gecorrigeerde Leeftijd Uitgelegd</h2>
           
           <div className="p-4 mb-4">
             <h3 className="font-medium text-primary mb-2">Wat is gecorrigeerde leeftijd?</h3>
@@ -226,7 +226,7 @@ export default function FlesvoedingPrematurePage() {
 
         {/* Feeding Categories Table */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Voedingsrichtlijnen per Prematuriteitscategorie</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Voedingsrichtlijnen per Prematuriteitscategorie</h2>
           
           <div className="overflow-x-auto">
             <table className="w-full border-collapse border border-gray-300">
@@ -242,7 +242,7 @@ export default function FlesvoedingPrematurePage() {
               <tbody>
                 {prematureCategories.map((cat, index) => (
                   <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
-                    <td className="border border-gray-300 px-4 py-2 font-semibold">{cat.category}</td>
+                    <td className="border border-gray-300 px-4 py-2 font-medium">{cat.category}</td>
                     <td className="border border-gray-300 px-4 py-2">{cat.weeks}</td>
                     <td className="border border-gray-300 px-4 py-2">{cat.feeding}</td>
                     <td className="border border-gray-300 px-4 py-2">{cat.frequency}</td>
@@ -263,7 +263,7 @@ export default function FlesvoedingPrematurePage() {
                 </svg>
               </div>
               <div>
-                <h3 className="font-semibold text-amber-800 mb-2">Let op</h3>
+                <h3 className="font-medium text-amber-800 mb-2">Let op</h3>
                 <p className="text-amber-700 leading-relaxed">
                   Deze waarden zijn richtlijnen. De exacte behoefte verschilt per baby en moet altijd in overleg met het medische team bepaald worden.
                 </p>
@@ -274,7 +274,7 @@ export default function FlesvoedingPrematurePage() {
 
         {/* Special Formulas */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Speciale Prematurenvoeding</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Speciale Prematurenvoeding</h2>
           
           <p className="text-gray-700 mb-4">
             Voor premature baby's zijn speciale voedingen beschikbaar die aangepast zijn aan hun verhoogde voedingsbehoeften.
@@ -323,7 +323,7 @@ export default function FlesvoedingPrematurePage() {
 
         {/* NICU Protocols */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Nederlandse NICU Protocollen en Vervolgafspraken</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Nederlandse NICU Protocollen en Vervolgafspraken</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -361,7 +361,7 @@ export default function FlesvoedingPrematurePage() {
 
         {/* Practical Feeding Guide */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Praktische Voedingsrichtlijnen Thuis</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Praktische Voedingsrichtlijnen Thuis</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -404,7 +404,7 @@ export default function FlesvoedingPrematurePage() {
 
         {/* Warning Signs */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <AlertCircle className="w-5 h-5 mr-2" />
             Waarschuwingssignalen - Direct Contact Opnemen
           </h2>
@@ -447,7 +447,7 @@ export default function FlesvoedingPrematurePage() {
 
         {/* Calculator Link */}
         <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
-          <h2 className="text-lg font-semibold text-white mb-3 flex items-center">
+          <h2 className="text-lg font-medium text-white mb-3 flex items-center">
             <Calculator className="w-5 h-5 mr-2" />
             Bereken Voedingshoeveelheden voor Uw Premature Baby
           </h2>
@@ -466,7 +466,7 @@ export default function FlesvoedingPrematurePage() {
 
         {/* Scientific Sources */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Wetenschappelijke Bronnen</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Wetenschappelijke Bronnen</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -500,7 +500,7 @@ export default function FlesvoedingPrematurePage() {
 
         {/* Navigation */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde Artikelen</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 
               href="/kennisbank/basis-flesvoeding"
@@ -525,7 +525,7 @@ export default function FlesvoedingPrematurePage() {
         <KennisbankSidebar 
           images={[
             {
-              src: "/mother_and_baby.png",
+              src: "/mother_and_baby.webp",
               alt: "Premature baby zorg",
               caption: "Specialistische zorg voor premature baby's"
             },
@@ -535,7 +535,7 @@ export default function FlesvoedingPrematurePage() {
               caption: "Professionele begeleiding bij premature voeding"
             },
             {
-              src: "/baby.png",
+              src: "/baby.webp",
               alt: "Kleine baby",
               caption: "Extra zorg voor premature baby's"
             }

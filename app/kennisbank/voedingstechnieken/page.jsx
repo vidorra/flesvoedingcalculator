@@ -69,7 +69,7 @@ function VoedingstechniekenPage() {
 
         {/* Preparation Steps */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Fles klaarmaken - Stap voor stap</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Fles klaarmaken - Stap voor stap</h2>
           <div className="space-y-3">
             {preparationSteps.map((step, index) => (
               <div key={index} className="flex items-start space-x-3">
@@ -85,7 +85,7 @@ function VoedingstechniekenPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Baby Position */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-primary mb-4">De juiste houding - Voor de baby</h2>
+            <h2 className="text-lg font-medium text-primary mb-4">De juiste houding - Voor de baby</h2>
             <div className="space-y-2">
               {babyPosition.map((position, index) => (
                 <div key={index} className="flex items-start space-x-2">
@@ -98,7 +98,7 @@ function VoedingstechniekenPage() {
 
           {/* Bottle Position */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-primary mb-4">De juiste houding - Voor de fles</h2>
+            <h2 className="text-lg font-medium text-primary mb-4">De juiste houding - Voor de fles</h2>
             <div className="space-y-2">
               {bottlePosition.map((position, index) => (
                 <div key={index} className="flex items-start space-x-2">
@@ -112,7 +112,7 @@ function VoedingstechniekenPage() {
 
         {/* Responsive Feeding */}
         <div className="bg-white rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Heart className="w-5 h-5 mr-2" />
             Responsive Feeding
           </h2>
@@ -129,7 +129,7 @@ function VoedingstechniekenPage() {
 
         {/* Sterilization */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Steriliseren van flessen</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Steriliseren van flessen</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
@@ -179,7 +179,7 @@ function VoedingstechniekenPage() {
 
         {/* Binding during feeding */}
         <div className="bg-white rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Heart className="w-5 h-5 mr-2" />
             Binding tijdens flesvoeding
           </h2>
@@ -196,7 +196,7 @@ function VoedingstechniekenPage() {
 
         {/* Temperature Control */}
         <div className="bg-white rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <AlertTriangle className="w-5 h-5 mr-2" />
             Temperatuur Controle - Belangrijk!
           </h2>
@@ -237,7 +237,7 @@ function VoedingstechniekenPage() {
 
         {/* FAQ Section */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde Vragen over Voedingstechnieken</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen over Voedingstechnieken</h2>
           <div className="space-y-4">
             <div>
               <h3 className="font-medium text-primary mb-2">Hoelang duurt een voeding normaal?</h3>
@@ -283,7 +283,7 @@ function VoedingstechniekenPage() {
 
         {/* First Time Feeding Guide */}
         <div className="bg-white rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Je Eerste Fles: Stap-voor-Stap voor Beginners</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Je Eerste Fles: Stap-voor-Stap voor Beginners</h2>
           
           <div className="space-y-6">
             {/* Mental preparation */}
@@ -381,7 +381,7 @@ function VoedingstechniekenPage() {
 
         {/* Fles Bereiden Section */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Fles Bereiden Stap voor Stap: Van Poeder tot Klare Fles</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Fles Bereiden Stap voor Stap: Van Poeder tot Klare Fles</h2>
           
           <p className="text-gray-700 leading-relaxed mb-4">
             Perfect voeding keer op keer maken. Met de juiste techniek voor veilige fles bereiding volgens 
@@ -389,7 +389,7 @@ function VoedingstechniekenPage() {
           </p>
 
           <div className="bg-white rounded-xl p-4 border border-gray-200 mb-6">
-            <h3 className="text-primary font-semibold mb-3">🔄 Snelle stappen overzicht:</h3>
+            <h3 className="text-primary font-medium mb-3">🔄 Snelle stappen overzicht:</h3>
             <div className="grid md:grid-cols-3 gap-4">
               <div className="bg-white rounded-lg p-3">
                 <h4 className="font-medium text-primary mb-1">1. Water voorbereiden</h4>
@@ -430,7 +430,7 @@ function VoedingstechniekenPage() {
           </div>
 
           <div className="bg-white rounded-xl p-4 border border-gray-200 mb-6">
-            <h3 className="text-primary font-semibold mb-3"> Belangrijke Nederlandse Context</h3>
+            <h3 className="text-primary font-medium mb-3"> Belangrijke Nederlandse Context</h3>
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <h4 className="font-medium text-primary mb-2"> Nederlands Kraanwater:</h4>
@@ -491,13 +491,13 @@ function VoedingstechniekenPage() {
               </thead>
               <tbody>
                 <tr>
-                  <td className="border border-gray-300 px-4 py-2 font-semibold">Standaard (alle merken)</td>
+                  <td className="border border-gray-300 px-4 py-2 font-medium">Standaard (alle merken)</td>
                   <td className="border border-gray-300 px-4 py-2">1:30</td>
                   <td className="border border-gray-300 px-4 py-2">30ml</td>
                   <td className="border border-gray-300 px-4 py-2">1 gestreepte maatlepel</td>
                 </tr>
                 <tr className="bg-white">
-                  <td className="border border-gray-300 px-4 py-2 font-semibold">Nutrilon, Hero Baby, Kruidvat</td>
+                  <td className="border border-gray-300 px-4 py-2 font-medium">Nutrilon, Hero Baby, Kruidvat</td>
                   <td className="border border-gray-300 px-4 py-2">1:30</td>
                   <td className="border border-gray-300 px-4 py-2">30ml</td>
                   <td className="border border-gray-300 px-4 py-2">1 bijgeleverde maatlepel</td>
@@ -563,7 +563,7 @@ function VoedingstechniekenPage() {
 
         {/* Visual Guide Highlight */}
         <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
-          <h2 className="text-lg font-semibold text-white mb-4">Visuele Stap-voor-Stap Guide</h2>
+          <h2 className="text-lg font-medium text-white mb-4">Visuele Stap-voor-Stap Guide</h2>
           <p className="text-white/90 mb-4">
             Wil je een visuele guide met alle bereidingsstappen? Bekijk onze handige infographic!
           </p>
@@ -578,7 +578,7 @@ function VoedingstechniekenPage() {
 
         {/* Navigation */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde informatie</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde informatie</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <Link 
               href="/kennisbank/hygiene-bereiding"

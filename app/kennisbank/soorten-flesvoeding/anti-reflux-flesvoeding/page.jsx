@@ -128,7 +128,7 @@ export default function AntiRefluxPage() {
 
         {/* What is Reflux */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Wat is Reflux bij Baby's?</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Wat is Reflux bij Baby's?</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -182,7 +182,7 @@ export default function AntiRefluxPage() {
 
         {/* Recognizing Reflux */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Reflux Herkennen: Signalen & Symptomen</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Reflux Herkennen: Signalen & Symptomen</h2>
           
           <div className="space-y-3">
             {refluxSigns.map((item, index) => {
@@ -222,7 +222,7 @@ export default function AntiRefluxPage() {
 
         {/* AR Formula Comparison */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Package className="w-5 h-5 mr-2" />
             Anti-Reflux Voeding in Nederland: Vergelijking
           </h2>
@@ -300,7 +300,7 @@ export default function AntiRefluxPage() {
 
         {/* Feeding Techniques */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Voedingstechnieken bij Reflux</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Voedingstechnieken bij Reflux</h2>
           
           <div className="space-y-6">
             {feedingTechniques.map((technique, index) => (
@@ -331,7 +331,7 @@ export default function AntiRefluxPage() {
 
         {/* Practical Tips */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Praktische Tips voor Thuis</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Praktische Tips voor Thuis</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {practicalTips.map((section, index) => (
@@ -405,7 +405,7 @@ export default function AntiRefluxPage() {
 
         {/* When to See Doctor */}
         <div className="bg-white rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <AlertTriangle className="w-5 h-5 mr-2" />
             Wanneer naar de Dokter?
           </h2>
@@ -471,7 +471,7 @@ export default function AntiRefluxPage() {
 
         {/* Timeline Expectation */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Verwachtingen: Wanneer Verbetering?</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Verwachtingen: Wanneer Verbetering?</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="border border-gray-200 bg-white rounded-lg p-4">
@@ -504,7 +504,7 @@ export default function AntiRefluxPage() {
 
         {/* Calculator Link */}
         <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
-          <h2 className="text-lg font-semibold text-white mb-3 flex items-center">
+          <h2 className="text-lg font-medium text-white mb-3 flex items-center">
             <Calculator className="w-5 h-5 mr-2" />
             Bereken Voedingshoeveelheden bij Reflux
           </h2>
@@ -523,7 +523,7 @@ export default function AntiRefluxPage() {
 
         {/* Success Stories */}
         <div className="bg-white rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Success Stories van Ouders</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Success Stories van Ouders</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -568,7 +568,7 @@ export default function AntiRefluxPage() {
 
         {/* Navigation */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde Artikelen</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 
               href="/kennisbank/soorten-flesvoeding"

@@ -88,7 +88,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
 
             {/* Introduction Section */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Inleiding</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Flesvoeding allergieën treffen 2-7% van Nederlandse baby's en kunnen ernstige gevolgen hebben voor gezondheid en ontwikkeling. 
                 Vroege herkenning en juiste behandeling zijn cruciaal voor het welzijn van je baby.
@@ -100,7 +100,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
                     <AlertTriangle className="w-5 h-5 text-amber-600" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-amber-800 mb-1">Medische Disclaimer</h3>
+                    <h3 className="font-medium text-amber-800 mb-1">Medische Disclaimer</h3>
                     <p className="text-sm text-amber-700">Dit artikel vervangt geen medisch advies. Neem altijd contact op met je huisarts of consultatiebureau bij verdenking van allergie.</p>
                   </div>
                 </div>
@@ -109,7 +109,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
 
             {/* Soorten Allergische Reacties */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Shield className="w-5 h-5 mr-2" />
                 Soorten Allergische Reacties
               </h2>
@@ -177,7 +177,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
 
             {/* Koemelk Eiwit Allergie */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Koemelk Eiwit Allergie (CMPA)</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Koemelk Eiwit Allergie (CMPA)</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 CMPA is de meest voorkomende flesvoeding allergie in Nederland, treffende 2-7% van baby's in het eerste jaar. 
                 Het betreft een reactie op caseïne en/of whey eiwitten in koemelk.
@@ -215,7 +215,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
                   <Phone className="w-5 h-5 text-amber-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-amber-800 mb-2">Nederlands Anafylaxie Noodprotocol</h3>
+                  <h3 className="font-medium text-amber-800 mb-2">Nederlands Anafylaxie Noodprotocol</h3>
                   <p className="text-sm text-amber-700 leading-relaxed mb-4">
                     Bij verdenking van anafylaxie: onmiddellijke actie kan levensreddend zijn. 
                     Volg deze stappen precies en aarzel nooit om 112 te bellen.
@@ -236,7 +236,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
 
             {/* Alternatieve Flesvoeding */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Alternatieve Flesvoeding Opties</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Alternatieve Flesvoeding Opties</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Bij bewezen allergie zijn er effectieve alternatieven beschikbaar in Nederland. 
                 Alle gespecialiseerde formules zijn volledig vergoed door de zorgverzekering op recept.
@@ -265,7 +265,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
 
             {/* Nederlandse Zorg */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Nederlandse Medische Zorg</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Nederlandse Medische Zorg</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -323,7 +323,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
 
             {/* Related Articles */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <ArrowRight className="w-5 h-5 mr-2" />
                 Gerelateerde Artikelen
               </h2>

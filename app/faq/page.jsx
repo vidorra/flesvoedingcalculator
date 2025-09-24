@@ -93,7 +93,7 @@ export default function FAQPage() {
 
         {/* Categories */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-semibold text-gray-800 mb-4">Categorieën</h2>
+          <h2 className="font-medium text-gray-800 mb-4">Categorieën</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
             {categories.map((category) => {
               const Icon = category.icon
@@ -117,7 +117,7 @@ export default function FAQPage() {
 
         {/* FAQ Items */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-semibold text-gray-800 mb-4">
+          <h2 className="font-medium text-gray-800 mb-4">
             {categories.find(c => c.id === selectedCategory)?.name}
           </h2>
           
@@ -143,7 +143,7 @@ export default function FAQPage() {
 
         {/* Contact CTA */}
         <div className="bg-primary rounded-2xl shadow-lg p-6 text-white">
-          <h2 className="font-semibold mb-2">Vraag niet gevonden?</h2>
+          <h2 className="font-medium mb-2">Vraag niet gevonden?</h2>
           <p className="text-gray-100 mb-4">
             Neem contact met ons op voor persoonlijke ondersteuning bij uw vragen over flesvoeding.
           </p>
@@ -160,7 +160,7 @@ export default function FAQPage() {
           <div className="flex items-start space-x-3">
             <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
             <div>
-              <h3 className="font-semibold text-amber-800 mb-1">Medische Disclaimer</h3>
+              <h3 className="font-medium text-amber-800 mb-1">Medische Disclaimer</h3>
               <p className="text-sm text-amber-700">
                 De informatie op deze pagina is alleen voor informatieve doeleinden en vervangt geen professioneel medisch advies. 
                 Raadpleeg altijd uw kinderarts of een gekwalificeerde zorgverlener voor specifieke medische vragen.

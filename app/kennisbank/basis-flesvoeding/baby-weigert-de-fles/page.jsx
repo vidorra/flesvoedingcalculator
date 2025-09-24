@@ -43,7 +43,7 @@ export default function BabyWeigertFlespagePage() {
 
             {/* Waarom weigert je baby de fles */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Waarom weigert je baby de fles?</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Waarom weigert je baby de fles?</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Een baby die de fles weigert kan frustrerend en zorgwekkend zijn. Of je nu net begint met flesvoeding of je baby plotseling stopt met drinken - er zijn altijd concrete oorzaken en effectieve oplossingen.
               </p>
@@ -73,7 +73,7 @@ export default function BabyWeigertFlespagePage() {
 
             {/* Hoofdoorzaken */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Hoofdoorzaken van flesweigering</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Hoofdoorzaken van flesweigering</h2>
               
               <div className="space-y-4">
                 <div>
@@ -162,7 +162,7 @@ export default function BabyWeigertFlespagePage() {
 
             {/* Stap-voor-stap oplossingsplan */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 Stap-voor-stap oplossingsplan
               </h2>
@@ -270,7 +270,7 @@ export default function BabyWeigertFlespagePage() {
 
             {/* Wanneer professionele hulp */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Wanneer professionele hulp zoeken?</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Wanneer professionele hulp zoeken?</h2>
               
               <div className="space-y-4">
                 <div>
@@ -317,7 +317,7 @@ export default function BabyWeigertFlespagePage() {
 
             {/* Praktische tips */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Heart className="w-5 h-5 mr-2" />
                 Praktische tips voor volharding
               </h2>
@@ -385,7 +385,7 @@ export default function BabyWeigertFlespagePage() {
 
             {/* Related articles */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Users className="w-5 h-5 mr-2" />
                 Gerelateerde artikelen
               </h2>

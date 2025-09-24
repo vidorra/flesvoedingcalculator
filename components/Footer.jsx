@@ -24,7 +24,7 @@ export default function Footer() {
           <div className="container mx-auto flex items-start space-x-2">
             <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
             <div className="text-sm text-amber-800">
-              <p className="font-semibold mb-1">Medische Disclaimer</p>
+              <p className="font-medium mb-1">Medische Disclaimer</p>
               <p>Deze calculator is alleen voor informatieve doeleinden. Raadpleeg altijd uw kinderarts of consultatiebureau voor persoonlijk advies over de voeding van uw baby.</p>
             </div>
             <button 

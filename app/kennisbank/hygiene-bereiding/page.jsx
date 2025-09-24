@@ -96,7 +96,7 @@ function HygieneBereidingPage() {
         {/* Basic hygiene rules */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="bg-white rounded-2xl border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+            <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
               <CheckCircle className="w-5 h-5 mr-2" />
               Altijd doen:
             </h2>
@@ -111,7 +111,7 @@ function HygieneBereidingPage() {
           </div>
 
           <div className="bg-white rounded-2xl border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+            <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
               <X className="w-5 h-5 mr-2" />
               Nooit doen:
             </h2>
@@ -128,7 +128,7 @@ function HygieneBereidingPage() {
 
         {/* Water for formula */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Water voor flesvoeding</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Water voor flesvoeding</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
@@ -160,7 +160,7 @@ function HygieneBereidingPage() {
         {/* Storage */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-primary mb-4">Poeder bewaren:</h2>
+            <h2 className="text-lg font-medium text-primary mb-4">Poeder bewaren:</h2>
             <div className="space-y-2">
               {powderStorage.map((tip, index) => (
                 <div key={index} className="flex items-start space-x-2">
@@ -172,7 +172,7 @@ function HygieneBereidingPage() {
           </div>
 
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+            <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
               <Refrigerator className="w-5 h-5 mr-2" />
               Bereide flesvoeding:
             </h2>
@@ -189,7 +189,7 @@ function HygieneBereidingPage() {
 
         {/* Travel feeding */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Onderweg flesvoeding</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Onderweg flesvoeding</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
@@ -220,7 +220,7 @@ function HygieneBereidingPage() {
 
         {/* Bottle warmer vs microwave */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Thermometer className="w-5 h-5 mr-2" />
             Flessenwarmer vs Magnetron
           </h2>
@@ -266,10 +266,10 @@ function HygieneBereidingPage() {
 
         {/* Flessen Steriliseren Section */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Flessen Steriliseren: Complete Gids</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Flessen Steriliseren: Complete Gids</h2>
           
           <div className="bg-white rounded-xl p-4 border border-gray-200 mb-6">
-            <h3 className="text-primary font-semibold mb-2"> Tot wanneer steriliseren?</h3>
+            <h3 className="text-primary font-medium mb-2"> Tot wanneer steriliseren?</h3>
             <p className="text-gray-600 text-sm mb-2">
               <strong>Tot 6 maanden verplicht</strong> - Baby's immuunsysteem is dan voldoende ontwikkeld
             </p>
@@ -346,7 +346,7 @@ function HygieneBereidingPage() {
           </div>
 
           <div className="bg-amber-50 rounded-xl p-4 border border-amber-200 mb-6">
-            <h3 className="text-amber-900 font-semibold mb-3">Vaatwasser Sterilisatie</h3>
+            <h3 className="text-amber-900 font-medium mb-3">Vaatwasser Sterilisatie</h3>
             <p className="text-amber-800 text-sm mb-2">
               Nederlandse vaatwassers kunnen effectieve sterilisatie bieden op 65°C+ programma's
             </p>
@@ -439,7 +439,7 @@ function HygieneBereidingPage() {
           </div>
 
           <div className="bg-white rounded-xl p-4 border border-gray-200">
-            <h3 className="text-gray-800 font-semibold mb-2"> Nederlandse Klimaat Impact</h3>
+            <h3 className="text-gray-800 font-medium mb-2"> Nederlandse Klimaat Impact</h3>
             <p className="text-gray-700 text-sm mb-2">
               Nederland's hoge luchtvochtigheid en gematigde temperaturen creëren ideale omstandigheden 
               voor bacteriegroei. Extra voorzichtigheid is daarom essentieel.
@@ -479,7 +479,7 @@ function HygieneBereidingPage() {
 
         {/* Navigation */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Meer informatie</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Meer informatie</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <Link 
               href="/kennisbank/hygiene-bereiding/water-koken-flesvoeding"

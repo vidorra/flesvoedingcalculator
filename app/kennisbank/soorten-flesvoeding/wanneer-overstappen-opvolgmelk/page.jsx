@@ -285,7 +285,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
 
             {/* Why Timing Important */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Waarom Timing Zo Belangrijk Is</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Waarom Timing Zo Belangrijk Is</h2>
               
               <p className="text-gray-700 mb-4">
                 <strong>Het moment van overstappen</strong> bepaalt vaak het succes van de transitie. Te vroeg en je baby weigert de nieuwe smaak. 
@@ -320,7 +320,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
 
             {/* 5 Important Factors */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">De Perfecte Timing: 5 Belangrijke Factoren</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">De Perfecte Timing: 5 Belangrijke Factoren</h2>
               
               <div className="space-y-8">
                 {timingFactors.map((factor, index) => (
@@ -404,7 +404,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                             <tbody>
                               {factor.indicators.map((indicator, indIndex) => (
                                 <tr key={indIndex} className={indIndex % 2 === 1 ? "bg-white" : ""}>
-                                  <td className="border border-gray-300 px-4 py-2 font-semibold">{indicator.condition}</td>
+                                  <td className="border border-gray-300 px-4 py-2 font-medium">{indicator.condition}</td>
                                   <td className="border border-gray-300 px-4 py-2">{indicator.action}</td>
                                   <td className="border border-gray-300 px-4 py-2">{indicator.timing}</td>
                                 </tr>
@@ -442,7 +442,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
 
             {/* Medical Considerations */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Gezondheid & Medische Overwegingen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Gezondheid & Medische Overwegingen</h2>
               
               <div className="space-y-6">
                 {medicalConsiderations.map((consideration, index) => (
@@ -468,7 +468,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
 
             {/* Family Situation */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Familie Situatie</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Familie Situatie</h2>
               
               <div className="space-y-6">
                 {familySituations.map((situation, index) => (
@@ -497,7 +497,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
 
             {/* Baby Signals */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Signalen van Je Baby</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Signalen van Je Baby</h2>
               
               <div className="space-y-6">
                 {signalsFromBaby.map((category, index) => (
@@ -523,7 +523,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
 
             {/* Timing Calendar */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Calendar className="w-5 h-5 mr-2" />
                 Optimale Week Planning
               </h2>
@@ -550,7 +550,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
 
             {/* Common Mistakes */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelgemaakte Fouten Vermijden</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelgemaakte Fouten Vermijden</h2>
               
               <div className="space-y-6">
                 {commonMistakes.map((mistake, index) => (
@@ -585,7 +585,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
 
             {/* FAQ */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde Vragen (FAQ)</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen (FAQ)</h2>
               
               <div className="space-y-4">
                 {faqData.map((item, index) => (
@@ -602,7 +602,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
 
             {/* Expert Opinions */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Expert Timing Aanbevelingen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Expert Timing Aanbevelingen</h2>
               
               <div className="space-y-4">
                 {expertTiming.map((expert, index) => (
@@ -631,7 +631,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
 
             {/* Navigation */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde Artikelen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <Link 
                   href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk"

@@ -49,7 +49,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
 
             {/* Introduction */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Inleiding</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed">
                 Gedeelde flesvoeding versterkt niet alleen de partnerrelatie, maar biedt ook belangrijke voordelen voor baby's ontwikkeling. Nederlands onderzoek toont aan dat 73% van families met gedeelde flesvoeding een sterkere partnerschap rapporteert, terwijl baby's profiteren van diverse stimuli en stabiele gehechtheid aan beide ouders.
               </p>
@@ -57,7 +57,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
 
             {/* Voordelen van gedeelde flesvoeding */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Heart className="w-5 h-5 mr-2" />
                 Voordelen van gedeelde flesvoeding
               </h2>
@@ -234,7 +234,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
 
             {/* Taken eerlijk verdelen */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Taken eerlijk verdelen: praktische tips</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Taken eerlijk verdelen: praktische tips</h2>
               
               <div className="space-y-6">
                 <div>
@@ -430,7 +430,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
 
             {/* Nachtvoedingen strategisch verdelen */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 Nachtvoedingen strategisch verdelen
               </h2>
@@ -562,7 +562,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
 
             {/* Communicatie en verwachtingen */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Communicatie en verwachtingen
               </h2>
@@ -672,7 +672,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
                           <AlertTriangle className="w-5 h-5 text-amber-600" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-amber-800 mb-2">Let op</h3>
+                          <h3 className="font-medium text-amber-800 mb-2">Let op</h3>
                           <p className="text-amber-700 leading-relaxed">Zoek professionele hulp bij constant fighting, relatie lijden, extreme uitputting, of safety concerns. Nederlandse resources: consultatiebureau, kraamzorg, relatietherapeuten.</p>
                         </div>
                       </div>
@@ -684,7 +684,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
 
             {/* Nederlandse vaderrol */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Nederlandse vaderrol en flesvoeding</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Nederlandse vaderrol en flesvoeding</h2>
               
               <div className="space-y-6">
                 <div>
@@ -797,7 +797,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
 
             {/* Veelgestelde vragen */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde vragen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde vragen</h2>
               
               <div className="space-y-4">
                 <div>
@@ -855,7 +855,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
 
             {/* Related articles */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <RefreshCw className="w-5 h-5 mr-2" />
                 Gerelateerde artikelen
               </h2>

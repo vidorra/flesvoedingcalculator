@@ -142,7 +142,7 @@ export default function BioOrganischeFlesvoedingPage() {
 
             {/* Introduction Section */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Inleiding</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Biologische flesvoeding heeft nu 28% marktaandeel in Nederland (stijging van 18% in 2020). 
                 Met 280.000 Nederlandse baby's die bio voeding krijgen, is het belangrijk om de juiste keuze te maken.
@@ -158,7 +158,7 @@ export default function BioOrganischeFlesvoedingPage() {
 
             {/* Wat is Bio Flesvoeding */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Wat is Bio Flesvoeding Precies?</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Wat is Bio Flesvoeding Precies?</h2>
               
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Officiële EU Bio Certificering</h3>
@@ -221,7 +221,7 @@ export default function BioOrganischeFlesvoedingPage() {
 
             {/* Nederlandse Bio Merken */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <ShoppingCart className="w-5 h-5 mr-2" />
                 Nederlandse Bio Merken Vergeleken
               </h2>
@@ -256,7 +256,7 @@ export default function BioOrganischeFlesvoedingPage() {
 
             {/* Wetenschappelijke Voordelen */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <BarChart3 className="w-5 h-5 mr-2" />
                 Wetenschappelijke Voordelen Bio Flesvoeding
               </h2>
@@ -288,7 +288,7 @@ export default function BioOrganischeFlesvoedingPage() {
 
             {/* Kosten vs Waarde */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Euro className="w-5 h-5 mr-2" />
                 Kosten vs Waarde: Is Bio Het Waard?
               </h2>
@@ -308,7 +308,7 @@ export default function BioOrganischeFlesvoedingPage() {
                     <tbody>
                       {kostenVergelijking.map((item, index) => (
                         <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
-                          <td className="border border-gray-300 px-4 py-2 font-semibold">{item.periode}</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium">{item.periode}</td>
                           <td className="border border-gray-300 px-4 py-2">{item.bio}</td>
                           <td className="border border-gray-300 px-4 py-2">{item.regulier}</td>
                           <td className="border border-gray-300 px-4 py-2">{item.verschil}</td>
@@ -337,7 +337,7 @@ export default function BioOrganischeFlesvoedingPage() {
 
             {/* Overstappen naar Bio */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Overstappen Naar Bio: Praktische Tips</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Overstappen Naar Bio: Praktische Tips</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Een succesvolle overgang naar bio flesvoeding vereist planning en geduld. 
                 Volg deze bewezen strategie voor optimale resultaten:
@@ -381,7 +381,7 @@ export default function BioOrganischeFlesvoedingPage() {
                   <AlertTriangle className="w-5 h-5 text-amber-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-amber-800 mb-2">Veelgemaakte Bio-Keuze Fouten</h3>
+                  <h3 className="font-medium text-amber-800 mb-2">Veelgemaakte Bio-Keuze Fouten</h3>
                   <p className="text-sm text-amber-700 leading-relaxed mb-4">
                     Vermijd deze kostbare fouten bij de keuze voor bio flesvoeding:
                   </p>
@@ -416,7 +416,7 @@ export default function BioOrganischeFlesvoedingPage() {
 
             {/* Related Articles */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <ArrowRight className="w-5 h-5 mr-2" />
                 Gerelateerde Artikelen
               </h2>

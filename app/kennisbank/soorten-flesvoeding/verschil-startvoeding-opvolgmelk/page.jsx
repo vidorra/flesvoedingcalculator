@@ -339,7 +339,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
 
             {/* Why Confusion */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Waarom Deze Verwarring Zo Groot Is</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Waarom Deze Verwarring Zo Groot Is</h2>
               
               <p className="text-gray-700 mb-4">
                 <strong>78% van Nederlandse ouders</strong> is onzeker over het verschil tussen startvoeding (nummer 1) 
@@ -374,7 +374,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
 
             {/* Nutrition Comparison */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Complete Vergelijking: Nummer 1 vs Nummer 2</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Complete Vergelijking: Nummer 1 vs Nummer 2</h2>
               
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse border border-gray-300">
@@ -389,7 +389,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                   <tbody>
                     {nutritionComparison.map((item, index) => (
                       <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
-                        <td className="border border-gray-300 px-4 py-2 font-semibold">{item.component}</td>
+                        <td className="border border-gray-300 px-4 py-2 font-medium">{item.component}</td>
                         <td className="border border-gray-300 px-4 py-2">{item.startvoeding}</td>
                         <td className="border border-gray-300 px-4 py-2">{item.opvolgmelk}</td>
                         <td className="border border-gray-300 px-4 py-2">
@@ -431,7 +431,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
 
             {/* Brand Comparison */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Nederlandse Merken Vergelijking</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Nederlandse Merken Vergelijking</h2>
               
               <div className="space-y-8">
                 {brandComparison.map((category, categoryIndex) => (
@@ -490,7 +490,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
 
             {/* When to Switch */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Wanneer Overstappen? Beslissingshulp</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Wanneer Overstappen? Beslissingshulp</h2>
               
               <div className="space-y-6">
                 {switchDecision.map((decision, index) => (
@@ -547,7 +547,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
 
             {/* Transition Process */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Calendar className="w-5 h-5 mr-2" />
                 Overstap Proces: Stap-voor-Stap
               </h2>
@@ -584,7 +584,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
 
             {/* Common Problems */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <AlertCircle className="w-5 h-5 mr-2" />
                 Veelvoorkomende Problemen & Oplossingen
               </h2>
@@ -629,7 +629,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
 
             {/* Cost Comparison */}
             <div className="bg-white rounded-2xl border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Euro className="w-5 h-5 mr-2" />
                 Kosten Vergelijking: Financiële Impact
               </h2>
@@ -653,7 +653,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
 
             {/* Expert Recommendations */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Expert Aanbevelingen Nederlandse Professionals</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Expert Aanbevelingen Nederlandse Professionals</h2>
               
               <div className="space-y-4">
                 {expertRecommendations.map((expert, index) => (
@@ -667,7 +667,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
 
             {/* FAQ */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde Vragen (FAQ)</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen (FAQ)</h2>
               
               <div className="space-y-4">
                 {faqData.map((item, index) => (
@@ -684,7 +684,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
 
             {/* Myths Debunked */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Mythen Ontkracht</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Mythen Ontkracht</h2>
               
               <div className="space-y-4">
                 {myths.map((myth, index) => (
@@ -702,7 +702,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
 
             {/* Conclusion */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Conclusie: Informed Choice, Not Pressure</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Conclusie: Informed Choice, Not Pressure</h2>
               
               <p className="text-gray-700 mb-4">
                 Het verschil tussen startvoeding en opvolgmelk is <strong>minder groot dan marketing doet geloven</strong>. 
@@ -731,7 +731,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
 
             {/* Navigation */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde Artikelen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <Link 
                   href="/kennisbank/soorten-flesvoeding"

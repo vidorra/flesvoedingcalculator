@@ -33,7 +33,7 @@ export default function NotFound() {
 
           {/* Quick Actions */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-lg font-semibold text-gray-800 mb-4">
+            <h2 className="text-lg font-medium text-gray-800 mb-4">
               Waar wilt u naartoe?
             </h2>
             

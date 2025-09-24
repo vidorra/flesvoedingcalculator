@@ -43,7 +43,7 @@ export default function ConstipatieFlespagePage() {
 
             {/* Wat is constipatie */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Wat is constipatie bij baby's?</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Wat is constipatie bij baby's?</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Constipatie bij baby's is anders dan bij volwassenen en wordt vaak verkeerd geïnterpreteerd door ouders. Het gaat niet alleen om frequentie, maar vooral om consistentie en moeite met poepen.
               </p>
@@ -123,7 +123,7 @@ export default function ConstipatieFlespagePage() {
 
             {/* Waarom flesvoeding vaker constipatie veroorzaakt */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Waarom flesvoeding vaker constipatie veroorzaakt</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Waarom flesvoeding vaker constipatie veroorzaakt</h2>
               
               <div className="space-y-4">
                 <div>
@@ -192,7 +192,7 @@ export default function ConstipatieFlespagePage() {
 
             {/* Onmiddellijke oplossingen */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Heart className="w-5 h-5 mr-2" />
                 Onmiddellijke oplossingen
               </h2>
@@ -298,7 +298,7 @@ export default function ConstipatieFlespagePage() {
 
             {/* Leeftijd-specifieke strategieën */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 Leeftijd-specifieke strategieën
               </h2>
@@ -392,7 +392,7 @@ export default function ConstipatieFlespagePage() {
 
             {/* Wanneer medisch advies */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Wanneer medisch advies zoeken</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Wanneer medisch advies zoeken</h2>
               
               <div className="space-y-4">
                 <div>
@@ -443,7 +443,7 @@ export default function ConstipatieFlespagePage() {
 
             {/* Actieplan */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Samenvatting: Stap-voor-stap actieplan</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Samenvatting: Stap-voor-stap actieplan</h2>
               
               <div className="space-y-4">
                 <div className="mb-4">
@@ -531,7 +531,7 @@ export default function ConstipatieFlespagePage() {
 
             {/* Related articles */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Users className="w-5 h-5 mr-2" />
                 Gerelateerde artikelen
               </h2>

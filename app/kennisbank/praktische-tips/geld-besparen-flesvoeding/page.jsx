@@ -120,7 +120,7 @@ export default function GeldBesparenPage() {
 
             {/* Why budget optimization matters */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <TrendingDown className="w-5 h-5 mr-2" />
                 Waarom Budget Optimalisatie Cruciaal Is
               </h2>
@@ -165,12 +165,12 @@ export default function GeldBesparenPage() {
 
             {/* Cost breakdown comparison */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Complete Kosten Vergelijking (2025)</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Complete Kosten Vergelijking (2025)</h2>
               
               <div className="space-y-6">
                 {costComparison.map((category, index) => (
                   <div key={index}>
-                    <h3 className="font-semibold text-primary mb-3">{category.category}</h3>
+                    <h3 className="font-medium text-primary mb-3">{category.category}</h3>
                     <div className="overflow-x-auto">
                       <table className="w-full border-collapse border border-gray-300">
                         <thead>
@@ -184,7 +184,7 @@ export default function GeldBesparenPage() {
                         <tbody>
                           {category.brands.map((brand, idx) => (
                             <tr key={idx} className={idx % 2 === 1 ? "bg-white" : ""}>
-                              <td className="border border-gray-300 px-4 py-2 font-semibold">{brand.name}</td>
+                              <td className="border border-gray-300 px-4 py-2 font-medium">{brand.name}</td>
                               <td className="border border-gray-300 px-4 py-2">{brand.price}</td>
                               <td className="border border-gray-300 px-4 py-2">{brand.monthly}</td>
                               <td className="border border-gray-300 px-4 py-2">{brand.yearly}</td>
@@ -209,7 +209,7 @@ export default function GeldBesparenPage() {
 
             {/* Saving strategies */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <ShoppingCart className="w-5 h-5 mr-2" />
                 Smart Shopping Strategieën
               </h2>
@@ -218,7 +218,7 @@ export default function GeldBesparenPage() {
                 {savingStrategies.map((strategy, index) => (
                   <div key={index}>
                     <div className="flex justify-between items-start mb-3">
-                      <h3 className="font-semibold text-primary">{strategy.strategy}</h3>
+                      <h3 className="font-medium text-primary">{strategy.strategy}</h3>
                       <span className="bg-white text-primary px-2 py-1 rounded text-sm font-medium">
                         {strategy.savings} besparing
                       </span>
@@ -248,7 +248,7 @@ export default function GeldBesparenPage() {
 
             {/* Quality vs price analysis */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Kwaliteit vs Prijs: EU Regulatie Reality Check</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Kwaliteit vs Prijs: EU Regulatie Reality Check</h2>
               
               <div className="mb-6">
                 <div className="bg-white rounded-lg p-4 border border-gray-200">
@@ -293,13 +293,13 @@ export default function GeldBesparenPage() {
 
             {/* Advanced hacks */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Advanced Budget Hacks</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Advanced Budget Hacks</h2>
               
               <div className="space-y-4">
                 {smartHacks.map((hack, index) => (
                   <div key={index}>
                     <div className="flex justify-between items-start mb-2">
-                      <h3 className="font-semibold text-primary">{hack.hack}</h3>
+                      <h3 className="font-medium text-primary">{hack.hack}</h3>
                       <span className="bg-primary text-white px-2 py-1 rounded text-sm">
                         {hack.savings}
                       </span>
@@ -335,13 +335,13 @@ export default function GeldBesparenPage() {
 
             {/* Budget allocation */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Familie Budget Integratie</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Familie Budget Integratie</h2>
               
               <div className="space-y-4">
                 {budgetBreakdown.map((budget, index) => (
                   <div key={index}>
                     <div className="flex justify-between items-start mb-3">
-                      <h3 className="font-semibold text-primary">{budget.scenario}</h3>
+                      <h3 className="font-medium text-primary">{budget.scenario}</h3>
                       <div className="text-right">
                         <div className="font-medium text-gray-600">{budget.monthly}/maand</div>
                         {budget.realistic && <span className="text-xs text-gray-600">Realistisch</span>}
@@ -362,7 +362,7 @@ export default function GeldBesparenPage() {
 
             {/* Dangerous savings to avoid */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <AlertTriangle className="w-5 h-5 mr-2" />
                 Gevaarlijke Besparingsmethoden - NOOIT DOEN
               </h2>
@@ -390,7 +390,7 @@ export default function GeldBesparenPage() {
 
             {/* Navigation */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde artikelen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/praktische-tips/flesvoeding-werk-combineren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-600">Werk combineren </div>
@@ -413,7 +413,7 @@ export default function GeldBesparenPage() {
 
             {/* Calculator CTA */}
             <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
-              <h2 className="text-lg font-semibold text-white mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-white mb-4 flex items-center">
                 <Calculator className="w-5 h-5 mr-2" />
                 Bereken je Exacte Besparingen
               </h2>

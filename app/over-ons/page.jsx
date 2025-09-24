@@ -44,7 +44,7 @@ export default function OverOnsPage() {
 
         {/* Why Trust Us */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-semibold text-gray-800 mb-4 flex items-center">
+          <h2 className="font-medium text-gray-800 mb-4 flex items-center">
             <Star className="w-5 h-5 mr-2 text-primary" />
             Waarom FlesvoedingCalculator.nl vertrouwen?
           </h2>
@@ -109,7 +109,7 @@ export default function OverOnsPage() {
 
         {/* Our Method */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-semibold text-gray-800 mb-4 flex items-center">
+          <h2 className="font-medium text-gray-800 mb-4 flex items-center">
             <Calculator className="w-5 h-5 mr-2 text-primary" />
             Onze Methode
           </h2>
@@ -144,7 +144,7 @@ export default function OverOnsPage() {
 
         {/* Sources */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-semibold text-gray-800 mb-4 flex items-center">
+          <h2 className="font-medium text-gray-800 mb-4 flex items-center">
             <BookOpen className="w-5 h-5 mr-2 text-primary" />
             Bronnen & Expertise
           </h2>
@@ -175,7 +175,7 @@ export default function OverOnsPage() {
 
         {/* Contact CTA */}
         <div className="bg-primary rounded-2xl shadow-lg p-6 text-white">
-          <h2 className="font-semibold mb-2">Vragen of feedback?</h2>
+          <h2 className="font-medium mb-2">Vragen of feedback?</h2>
           <p className="text-gray-100 mb-4">
             We horen graag van je! Neem contact met ons op voor vragen, suggesties of als je meer wilt weten over onze aanpak.
           </p>

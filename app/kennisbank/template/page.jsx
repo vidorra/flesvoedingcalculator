@@ -80,7 +80,7 @@ export default function KennisbankTemplatePage() {
 
             {/* Introduction Section - REQUIRED */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Template Overzicht</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Template Overzicht</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Deze template toont de perfecte implementatie van alle goedgekeurde styling patronen voor kennisbank artikelen. 
                 Gebruik deze structuur als basis voor alle nieuwe artikelen om consistentie en kwaliteit te waarborgen.
@@ -97,7 +97,7 @@ export default function KennisbankTemplatePage() {
 
             {/* Styling Principles */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Kern Styling Principes</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Kern Styling Principes</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Deze principes vormen de basis voor alle kennisbank artikelen en zorgen voor consistente, toegankelijke content.
               </p>
@@ -132,7 +132,7 @@ export default function KennisbankTemplatePage() {
 
             {/* Section with Visual Separator - Alternative to card-within-card */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Layout Structuur</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Layout Structuur</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Gebruik schone grid layouts en border separators in plaats van geneste containers voor optimale leesbaarheid.
               </p>
@@ -160,7 +160,7 @@ export default function KennisbankTemplatePage() {
                   <AlertTriangle className="w-5 h-5 text-amber-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-amber-800 mb-2">Belangrijk voor Ontwikkelaars</h3>
+                  <h3 className="font-medium text-amber-800 mb-2">Belangrijk voor Ontwikkelaars</h3>
                   <p className="text-amber-700 leading-relaxed">
                     Dit is het enige goedgekeurde gebruik van gekleurde achtergronden (amber) - alleen voor waarschuwingen en belangrijke mededelingen. 
                     Alle andere content moet neutrale kleuren gebruiken.
@@ -171,7 +171,7 @@ export default function KennisbankTemplatePage() {
 
             {/* Code Example Section */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Code Voorbeelden</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Code Voorbeelden</h2>
               
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Juiste Header Structuur</h3>
@@ -228,7 +228,7 @@ export default function KennisbankTemplatePage() {
 
             {/* FAQ Section Example */}
             <section className="bg-white rounded-2xl border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde Vragen over Template</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen over Template</h2>
               
               <div className="space-y-4">
                 <div>
@@ -285,7 +285,7 @@ export default function KennisbankTemplatePage() {
 
             {/* Related Articles - APPROVED card-within-card exception */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Users className="w-5 h-5 mr-2" />
                 Gerelateerde Artikelen
               </h2>

@@ -88,7 +88,7 @@ export default function PartnersPage() {
 
         {/* Important Note */}
         <div className="bg-blue-50 rounded-2xl border border-blue-200 p-6">
-          <h2 className="text-lg font-semibold text-blue-800 mb-3 flex items-center">
+          <h2 className="text-lg font-medium text-blue-800 mb-3 flex items-center">
             <Shield className="w-5 h-5 mr-2" />
             Onafhankelijke informatie
           </h2>
@@ -101,7 +101,7 @@ export default function PartnersPage() {
 
         {/* Trusted Brands */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-gray-800 mb-4 flex items-center">
             <Award className="w-5 h-5 mr-2 text-primary" />
             Betrouwbare Merken in Nederland
           </h2>
@@ -114,7 +114,7 @@ export default function PartnersPage() {
             {brands.map((brand, index) => (
               <div key={index} className="border border-gray-200 rounded-xl p-4 hover:border-primary transition-colors">
                 <div className="flex items-start justify-between mb-3">
-                  <h3 className="font-semibold text-gray-800">{brand.name}</h3>
+                  <h3 className="font-medium text-gray-800">{brand.name}</h3>
                   <a 
                     href={brand.website} 
                     target="_blank" 
@@ -148,7 +148,7 @@ export default function PartnersPage() {
 
         {/* Official Sources */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">
+          <h2 className="text-lg font-medium text-gray-800 mb-4">
             Onze Bronnen & Autoriteiten
           </h2>
           
@@ -156,7 +156,7 @@ export default function PartnersPage() {
             {sources.map((source, index) => (
               <div key={index} className="border border-gray-200 rounded-xl p-4">
                 <div className="flex items-start justify-between mb-3">
-                  <h3 className="font-semibold text-gray-800">{source.name}</h3>
+                  <h3 className="font-medium text-gray-800">{source.name}</h3>
                   <a 
                     href={source.website} 
                     target="_blank" 
@@ -176,7 +176,7 @@ export default function PartnersPage() {
 
         {/* EU Regulation */}
         <div className="bg-green-50 rounded-2xl border border-green-200 p-6">
-          <h2 className="text-lg font-semibold text-green-800 mb-4">
+          <h2 className="text-lg font-medium text-green-800 mb-4">
             EU-Verordening 2016/127
           </h2>
           
@@ -229,7 +229,7 @@ export default function PartnersPage() {
 
         {/* No Partnerships */}
         <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">
+          <h2 className="text-lg font-medium text-gray-800 mb-4">
             Waarom geen commerciële partnerships?
           </h2>
           

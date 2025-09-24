@@ -213,7 +213,7 @@ export default function BoertjeLatenPage() {
 
             {/* Why Important */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Waarom is Boertje Laten Zo Belangrijk?</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Waarom is Boertje Laten Zo Belangrijk?</h2>
               
               <p className="text-gray-500 mb-4">
                 Tijdens het drinken van flesvoeding slikt je baby onvermijdelijk lucht mee. 
@@ -252,7 +252,7 @@ export default function BoertjeLatenPage() {
 
             {/* Best Techniques */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">De Beste Technieken voor Boertje Laten</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">De Beste Technieken voor Boertje Laten</h2>
               
               <div className="space-y-6">
                 {techniques.map((technique, index) => (
@@ -316,7 +316,7 @@ export default function BoertjeLatenPage() {
 
             {/* Timing Guide */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 Timing: Wanneer Boertje Laten?
               </h2>
@@ -335,7 +335,7 @@ export default function BoertjeLatenPage() {
                     <tbody>
                       {timingGuide.map((item, index) => (
                         <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
-                          <td className="border border-gray-300 px-4 py-2 font-semibold">{item.age}</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium">{item.age}</td>
                           <td className="border border-gray-300 px-4 py-2">{item.interval}</td>
                           <td className="border border-gray-300 px-4 py-2">{item.reason}</td>
                         </tr>
@@ -366,7 +366,7 @@ export default function BoertjeLatenPage() {
 
             {/* Practical Tips */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Praktische Tips van Ervaren Ouders</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Praktische Tips van Ervaren Ouders</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {practicalTips.map((section, index) => (
@@ -387,7 +387,7 @@ export default function BoertjeLatenPage() {
 
             {/* Common Problems */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelvoorkomende Problemen & Oplossingen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelvoorkomende Problemen & Oplossingen</h2>
               
               <div className="space-y-6">
                 {commonProblems.map((item, index) => (
@@ -430,7 +430,7 @@ export default function BoertjeLatenPage() {
 
             {/* Speen Types */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Boertje Laten en Verschillende Spenen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Boertje Laten en Verschillende Spenen</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {speenTypes.map((item, index) => (
@@ -485,7 +485,7 @@ export default function BoertjeLatenPage() {
 
             {/* When to See Doctor */}
             <div className="bg-white rounded-2xl border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <AlertTriangle className="w-5 h-5 mr-2" />
                 Wanneer Naar de Huisarts?
               </h2>
@@ -512,7 +512,7 @@ export default function BoertjeLatenPage() {
 
             {/* FAQ */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde Vragen (FAQ)</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen (FAQ)</h2>
               
               <div className="space-y-4">
                 {faqData.map((item, index) => (
@@ -529,7 +529,7 @@ export default function BoertjeLatenPage() {
 
             {/* Conclusion */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Conclusie: Geduld en Oefening</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Conclusie: Geduld en Oefening</h2>
               
               <p className="text-gray-700 mb-4">
                 Boertje laten is een vaardigheid die je als ouder ontwikkelt. Elke baby is anders - 
@@ -547,7 +547,7 @@ export default function BoertjeLatenPage() {
 
             {/* Navigation */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde Artikelen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <Link 
                   href="/kennisbank/voedingstechnieken"

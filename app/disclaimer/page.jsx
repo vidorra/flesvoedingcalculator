@@ -34,7 +34,7 @@ export default function DisclaimerPage() {
 
         {/* Important Warning */}
         <div className="bg-red-50 rounded-2xl border border-red-200 p-6">
-          <h2 className="text-lg font-semibold text-red-800 mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-red-800 mb-4 flex items-center">
             <AlertTriangle className="w-5 h-5 mr-2" />
             Belangrijk: Dit is geen medisch advies
           </h2>
@@ -65,7 +65,7 @@ export default function DisclaimerPage() {
 
         {/* What we provide */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">
+          <h2 className="text-lg font-medium text-gray-800 mb-4">
             Wat bieden wij?
           </h2>
           
@@ -124,7 +124,7 @@ export default function DisclaimerPage() {
 
         {/* What we are NOT */}
         <div className="bg-amber-50 rounded-2xl border border-amber-200 p-6">
-          <h2 className="text-lg font-semibold text-amber-800 mb-4">
+          <h2 className="text-lg font-medium text-amber-800 mb-4">
             Wat zijn wij NIET?
           </h2>
           
@@ -157,7 +157,7 @@ export default function DisclaimerPage() {
 
         {/* When to seek help */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-gray-800 mb-4 flex items-center">
             <Phone className="w-5 h-5 mr-2 text-primary" />
             Wanneer professionele hulp zoeken?
           </h2>
@@ -223,7 +223,7 @@ export default function DisclaimerPage() {
 
         {/* Liability */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">
+          <h2 className="text-lg font-medium text-gray-800 mb-4">
             Aansprakelijkheid
           </h2>
           
@@ -263,7 +263,7 @@ export default function DisclaimerPage() {
 
         {/* Professional help */}
         <div className="bg-blue-50 rounded-2xl border border-blue-200 p-6">
-          <h2 className="text-lg font-semibold text-blue-800 mb-4">
+          <h2 className="text-lg font-medium text-blue-800 mb-4">
             Waar kunt u terecht voor professionele hulp?
           </h2>
           

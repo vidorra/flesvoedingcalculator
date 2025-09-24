@@ -289,7 +289,7 @@ export default function FlesvoedingBewarenPage() {
 
             {/* Why Important */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Waarom Correct Bewaren Levensbelangrijk Is</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Waarom Correct Bewaren Levensbelangrijk Is</h2>
               
               <p className="text-gray-700 mb-4">
                 Verkeerd bewaarde flesvoeding kan binnen uren gevaarlijke bacteriën ontwikkelen die 
@@ -318,7 +318,7 @@ export default function FlesvoedingBewarenPage() {
 
             {/* Powder Storage */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Poedermelk Bewaren</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Poedermelk Bewaren</h2>
               
               <div className="space-y-6">
                 {powderStorage.map((item, index) => (
@@ -364,7 +364,7 @@ export default function FlesvoedingBewarenPage() {
 
             {/* Ready Made Storage */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Klaar gemaakte Flesvoeding</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Klaar gemaakte Flesvoeding</h2>
               
               <div className="space-y-6">
                 {readyMadeStorage.map((section, index) => (
@@ -384,7 +384,7 @@ export default function FlesvoedingBewarenPage() {
                           <tbody>
                             {section.items.map((item, itemIndex) => (
                               <tr key={itemIndex} className={itemIndex % 2 === 1 ? "bg-white" : ""}>
-                                <td className="border border-gray-300 px-4 py-2 font-semibold">{item.situation}</td>
+                                <td className="border border-gray-300 px-4 py-2 font-medium">{item.situation}</td>
                                 <td className="border border-gray-300 px-4 py-2">{item.maxTime}</td>
                                 <td className="border border-gray-300 px-4 py-2">{item.warning}</td>
                               </tr>
@@ -415,7 +415,7 @@ export default function FlesvoedingBewarenPage() {
 
             {/* Safe Preparation */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Stap-voor-Stap Veilige Bereiding</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Stap-voor-Stap Veilige Bereiding</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -449,7 +449,7 @@ export default function FlesvoedingBewarenPage() {
 
             {/* Heating Methods */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Thermometer className="w-5 h-5 mr-2" />
                 Opwarmen: Veilig en Effectief
               </h2>
@@ -506,7 +506,7 @@ export default function FlesvoedingBewarenPage() {
                     <tbody>
                       {dangerousMethods.map((item, index) => (
                         <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
-                          <td className="border border-gray-300 px-4 py-2 font-semibold">{item.method}</td>
+                          <td className="border border-gray-300 px-4 py-2 font-medium">{item.method}</td>
                           <td className="border border-gray-300 px-4 py-2">{item.reason}</td>
                           <td className="border border-gray-300 px-4 py-2">{item.consequence}</td>
                         </tr>
@@ -519,7 +519,7 @@ export default function FlesvoedingBewarenPage() {
 
             {/* Travel Tips */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Onderweg: Veilig Bewaren Buiten Huis</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Onderweg: Veilig Bewaren Buiten Huis</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {travelTips.map((section, index) => (
@@ -540,7 +540,7 @@ export default function FlesvoedingBewarenPage() {
 
             {/* Night Preparation */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 Nachtvoeding Voorbereiden
               </h2>
@@ -570,7 +570,7 @@ export default function FlesvoedingBewarenPage() {
 
             {/* Seasonal Tips */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Seizoensgebonden Bewaartips</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Seizoensgebonden Bewaartips</h2>
               
               <div className="space-y-6">
                 {seasonalTips.map((season, index) => (
@@ -595,7 +595,7 @@ export default function FlesvoedingBewarenPage() {
 
             {/* Safety Checklist */}
             <div className="bg-white rounded-2xl border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Voedselveiligheid Checklist</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Voedselveiligheid Checklist</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -626,7 +626,7 @@ export default function FlesvoedingBewarenPage() {
 
             {/* Common Mistakes */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelgemaakte Fouten & Oplossingen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelgemaakte Fouten & Oplossingen</h2>
               
               <div className="space-y-6">
                 {commonMistakes.map((mistake, index) => (
@@ -654,7 +654,7 @@ export default function FlesvoedingBewarenPage() {
 
             {/* FAQ */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde Vragen (FAQ)</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen (FAQ)</h2>
               
               <div className="space-y-4">
                 {faqData.map((item, index) => (
@@ -671,7 +671,7 @@ export default function FlesvoedingBewarenPage() {
 
             {/* Conclusion */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Conclusie: Veiligheid Staat Voorop</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Conclusie: Veiligheid Staat Voorop</h2>
               
               <p className="text-gray-700 mb-4">
                 Correct bewaren van flesvoeding is een van de belangrijkste vaardigheden voor elke ouder. 
@@ -690,7 +690,7 @@ export default function FlesvoedingBewarenPage() {
 
             {/* Navigation */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde Artikelen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <Link 
                   href="/kennisbank/hygiene-bereiding"

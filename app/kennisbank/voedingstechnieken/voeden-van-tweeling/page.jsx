@@ -119,7 +119,7 @@ export default function TweelingVoedenPage() {
 
         {/* Reality Check */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">De Realiteit: Dubbele Uitdaging</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">De Realiteit: Dubbele Uitdaging</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -169,7 +169,7 @@ export default function TweelingVoedenPage() {
 
         {/* Practical Hacks */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Praktische Hacks die Werken</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Praktische Hacks die Werken</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {practicalHacks.map((hack, index) => (
@@ -191,7 +191,7 @@ export default function TweelingVoedenPage() {
 
         {/* Time Saving */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Tijdsbesparing: Van 12 naar 5 Uur per Dag</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Tijdsbesparing: Van 12 naar 5 Uur per Dag</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="border border-gray-200 bg-white rounded-xl p-4">
@@ -223,7 +223,7 @@ export default function TweelingVoedenPage() {
 
         {/* Benodigde Apparatuur */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Package className="w-5 h-5 mr-2" />
             Benodigde Apparatuur
           </h2>
@@ -271,7 +271,7 @@ export default function TweelingVoedenPage() {
 
         {/* Schema Example */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Clock className="w-5 h-5 mr-2" />
             Basis Schema Tweeling (0-2 maanden)
           </h2>
@@ -288,7 +288,7 @@ export default function TweelingVoedenPage() {
               <tbody>
                 {scheduleExample.map((entry, index) => (
                   <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
-                    <td className="border border-gray-300 px-4 py-2 font-semibold">{entry.time}</td>
+                    <td className="border border-gray-300 px-4 py-2 font-medium">{entry.time}</td>
                     <td className="border border-gray-300 px-4 py-2">{entry.activity}</td>
                     <td className="border border-gray-300 px-4 py-2">{entry.amount}</td>
                   </tr>
@@ -307,7 +307,7 @@ export default function TweelingVoedenPage() {
 
         {/* Common Problems */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Veelvoorkomende Problemen</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Veelvoorkomende Problemen</h2>
           
           <div className="space-y-4">
             {commonProblems.map((item, index) => (
@@ -337,7 +337,7 @@ export default function TweelingVoedenPage() {
 
         {/* Cost Overview */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Euro className="w-5 h-5 mr-2" />
             Kosten Overzicht Tweeling
           </h2>
@@ -387,7 +387,7 @@ export default function TweelingVoedenPage() {
 
         {/* Success Stories */}
         <div className="border border-gray-200 bg-white rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Heart className="w-5 h-5 mr-2" />
             Ervaringen van Ouders
           </h2>
@@ -429,7 +429,7 @@ export default function TweelingVoedenPage() {
 
         {/* Next Steps */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Jouw Tweeling Succes Plan</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Jouw Tweeling Succes Plan</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="border border-gray-200 bg-white rounded-lg p-4">
@@ -475,7 +475,7 @@ export default function TweelingVoedenPage() {
 
         {/* Navigation */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde Artikelen</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 
               href="/kennisbank/voedingstechnieken"

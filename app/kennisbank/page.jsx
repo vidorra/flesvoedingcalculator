@@ -453,7 +453,7 @@ export default function KennisbankPage() {
 
         {/* Categories Filter */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-semibold text-primary mb-4">Categorieën</h2>
+          <h2 className="font-medium text-primary mb-4">Categorieën</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
             {/* All Categories */}
             <button
@@ -495,7 +495,7 @@ export default function KennisbankPage() {
         {/* Filtered Articles Display */}
         {getFilteredArticles().length > 0 && (
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h3 className="font-semibold text-primary mb-4">
+            <h3 className="font-medium text-primary mb-4">
               {selectedCategory === 'all' ? 'Alle artikelen' : knowledgeCategories.find(c => c.id === selectedCategory)?.title}
               <span className="text-sm font-normal text-gray-500 ml-2">({getFilteredArticles().length} {getFilteredArticles().length === 1 ? 'artikel' : 'artikelen'})</span>
             </h3>
@@ -530,7 +530,7 @@ export default function KennisbankPage() {
 
         {/* Knowledge Base Categories */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-semibold text-primary mb-4">Kennisbank Onderwerpen</h2>
+          <h2 className="font-medium text-primary mb-4">Kennisbank Onderwerpen</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {knowledgeCategories.map((category) => {
               const Icon = category.icon
@@ -564,7 +564,7 @@ export default function KennisbankPage() {
 
         {/* Quick Access */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-semibold text-primary mb-4">Snelle toegang</h2>
+          <h2 className="font-medium text-primary mb-4">Snelle toegang</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Link 
               href="/voedingsschemas"
@@ -607,7 +607,7 @@ export default function KennisbankPage() {
 
         {/* Nederlandse Context */}
         <div className="bg-white rounded-2xl border border-gray-200 p-6">
-          <h2 className="font-semibold text-gray-600 mb-4">Flesvoeding in Nederland</h2>
+          <h2 className="font-medium text-gray-600 mb-4">Flesvoeding in Nederland</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
               <h3 className="font-medium text-gray-600 mb-3">Regelgeving & Veiligheid:</h3>
@@ -664,7 +664,7 @@ export default function KennisbankPage() {
 
         {/* FAQ Section */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-semibold text-primary mb-4">Meest Gestelde Vragen</h2>
+          <h2 className="font-medium text-primary mb-4">Meest Gestelde Vragen</h2>
           <div className="space-y-4">
             <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white">
               <h3 className="font-medium text-primary mb-2">Welk merk flesvoeding is het beste?</h3>
@@ -705,7 +705,7 @@ export default function KennisbankPage() {
 
         {/* Quick Tools */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-semibold text-primary mb-4 flex items-center">
+          <h2 className="font-medium text-primary mb-4 flex items-center">
             <Info className="w-5 h-5 mr-2 text-primary" />
             Handige Tools
           </h2>

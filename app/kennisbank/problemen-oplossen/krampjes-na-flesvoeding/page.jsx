@@ -391,7 +391,7 @@ export default function KrampjesNaFlesvoedingPage() {
 
             {/* Why So Common */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Waarom Krampjes zo Veelvoorkomend Zijn</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Waarom Krampjes zo Veelvoorkomend Zijn</h2>
               
               <p className="text-gray-700 mb-4">
                 <strong>65% van flesvoeding baby's</strong> ervaart regelmatig krampjes in de eerste 4 maanden. 
@@ -428,7 +428,7 @@ export default function KrampjesNaFlesvoedingPage() {
 
             {/* Recognition Signals */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Search className="w-5 h-5 mr-2" />
                 Krampjes Herkennen: Signalen & Symptomen
               </h2>
@@ -466,7 +466,7 @@ export default function KrampjesNaFlesvoedingPage() {
 
             {/* Differential Diagnosis */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Verschil: Krampjes vs Andere Problemen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Verschil: Krampjes vs Andere Problemen</h2>
               
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse border border-gray-300">
@@ -482,7 +482,7 @@ export default function KrampjesNaFlesvoedingPage() {
                   <tbody>
                     {differentialDiagnosis.map((item, index) => (
                       <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
-                        <td className="border border-gray-300 px-4 py-2 font-semibold">{item.symptom}</td>
+                        <td className="border border-gray-300 px-4 py-2 font-medium">{item.symptom}</td>
                         <td className="border border-gray-300 px-4 py-2">{item.krampjes}</td>
                         <td className="border border-gray-300 px-4 py-2">{item.reflux}</td>
                         <td className="border border-gray-300 px-4 py-2">{item.honger}</td>
@@ -496,7 +496,7 @@ export default function KrampjesNaFlesvoedingPage() {
 
             {/* Causes */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Oorzaken van Krampjes na Flesvoeding</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Oorzaken van Krampjes na Flesvoeding</h2>
               
               <div className="space-y-6">
                 {causes.map((category, categoryIndex) => (
@@ -528,7 +528,7 @@ export default function KrampjesNaFlesvoedingPage() {
 
             {/* Solutions */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Effectieve Oplossingen per Oorzaak</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Effectieve Oplossingen per Oorzaak</h2>
               
               <div className="mb-6">
                 <div className="flex items-center justify-between mb-4">
@@ -575,7 +575,7 @@ export default function KrampjesNaFlesvoedingPage() {
 
             {/* Physical Comfort */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Fysieke Comfort Technieken</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Fysieke Comfort Technieken</h2>
               
               <div className="space-y-6">
                 {physicalComfort.map((comfort, index) => (
@@ -642,7 +642,7 @@ export default function KrampjesNaFlesvoedingPage() {
 
             {/* Age Specific Approach */}
             <div className="bg-white rounded-2xl border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Leeftijd-Specifieke Aanpak</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Leeftijd-Specifieke Aanpak</h2>
               
               <div className="space-y-6">
                 {ageSpecificApproach.map((age, index) => (
@@ -738,7 +738,7 @@ export default function KrampjesNaFlesvoedingPage() {
 
             {/* Medical Help */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Wanneer Professionele Hulp Zoeken</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Wanneer Professionele Hulp Zoeken</h2>
               
               <div className="space-y-6">
                 {medicalHelp.map((help, index) => (
@@ -767,7 +767,7 @@ export default function KrampjesNaFlesvoedingPage() {
 
             {/* Daily Routine */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 Dagelijkse Routine Anti-Krampjes
               </h2>
@@ -791,7 +791,7 @@ export default function KrampjesNaFlesvoedingPage() {
 
             {/* FAQ */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde Vragen (FAQ)</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen (FAQ)</h2>
               
               <div className="space-y-4">
                 {faqData.map((item, index) => (
@@ -808,7 +808,7 @@ export default function KrampjesNaFlesvoedingPage() {
 
             {/* Myths Debunked */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Mythen Ontkracht</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Mythen Ontkracht</h2>
               
               <div className="space-y-4">
                 {myths.map((myth, index) => (
@@ -826,7 +826,7 @@ export default function KrampjesNaFlesvoedingPage() {
 
             {/* Conclusion */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Conclusie: Geduld, Systematiek en Steun</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Conclusie: Geduld, Systematiek en Steun</h2>
               
               <p className="text-gray-700 mb-4">
                 Krampjes na flesvoeding zijn een <strong>tijdelijke maar intense fase</strong> in het ouderschap. 
@@ -855,7 +855,7 @@ export default function KrampjesNaFlesvoedingPage() {
 
             {/* Navigation */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde Artikelen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <Link 
                   href="/kennisbank/problemen-oplossen"

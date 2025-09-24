@@ -116,7 +116,7 @@ export default function FlesvoedingWerkPage() {
 
             {/* Advantages of bottle feeding for work */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Briefcase className="w-5 h-5 mr-2" />
                 Waarom Flesvoeding Voordelig is voor Werkende Ouders
               </h2>
@@ -162,12 +162,12 @@ export default function FlesvoedingWerkPage() {
 
             {/* Dutch work scenarios */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Nederlandse Werkhervatting Scenario's</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Nederlandse Werkhervatting Scenario's</h2>
               
               <div className="space-y-4">
                 {dutchScenarios.map((scenario, index) => (
                   <div key={index}>
-                    <h3 className="font-semibold text-primary mb-2">{scenario.type}</h3>
+                    <h3 className="font-medium text-primary mb-2">{scenario.type}</h3>
                     <div className="grid md:grid-cols-3 gap-4">
                       <div>
                         <h4 className="font-medium text-gray-600 text-sm mb-1">Timeline</h4>
@@ -189,7 +189,7 @@ export default function FlesvoedingWerkPage() {
 
             {/* Childcare instruction guide */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Users className="w-5 h-5 mr-2" />
                 Kinderopvang Instrueren: Complete Gids
               </h2>
@@ -221,7 +221,7 @@ export default function FlesvoedingWerkPage() {
               <div className="space-y-4">
                 {childcareTypes.map((type, index) => (
                   <div key={index}>
-                    <h3 className="font-semibold text-primary mb-3">{type.type}</h3>
+                    <h3 className="font-medium text-primary mb-3">{type.type}</h3>
                     <div className="grid md:grid-cols-2 gap-4 mb-3">
                       <div>
                         <h4 className="font-medium text-gray-600 mb-2">Voordelen:</h4>
@@ -256,7 +256,7 @@ export default function FlesvoedingWerkPage() {
 
             {/* Schedule examples */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 Praktische Werkdag Schema's
               </h2>
@@ -264,7 +264,7 @@ export default function FlesvoedingWerkPage() {
               <div className="space-y-6">
                 {scheduleExamples.map((schedule, index) => (
                   <div key={index}>
-                    <h3 className="font-semibold text-gray-700 mb-4">{schedule.type}</h3>
+                    <h3 className="font-medium text-gray-700 mb-4">{schedule.type}</h3>
                     <div className="grid md:grid-cols-3 gap-4 mb-3">
                       <div>
                         <h4 className="font-medium text-primary mb-2">Ochtend</h4>
@@ -301,7 +301,7 @@ export default function FlesvoedingWerkPage() {
 
             {/* Stressbeheer */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Stressbeheersing & Praktische Oplossingen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Stressbeheersing & Praktische Oplossingen</h2>
               
               <div className="space-y-4">
                 {stressBeheer.map((item, index) => (
@@ -333,7 +333,7 @@ export default function FlesvoedingWerkPage() {
 
             {/* Emergency planning */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <AlertTriangle className="w-5 h-5 mr-2" />
                 Crisis Beheer: Noodplannen
               </h2>
@@ -371,7 +371,7 @@ export default function FlesvoedingWerkPage() {
 
             {/* Financial planning */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Financiële Planning: Kosten & Besparingen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Financiële Planning: Kosten & Besparingen</h2>
               
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -399,7 +399,7 @@ export default function FlesvoedingWerkPage() {
 
             {/* Navigation */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde artikelen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/praktische-tips/voedingsritme-opbouwen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
                   <div className="font-medium text-gray-600">Voedingsritme opbouwen </div>
@@ -422,7 +422,7 @@ export default function FlesvoedingWerkPage() {
 
             {/* Calculator CTA */}
             <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
-              <h2 className="text-lg font-semibold text-white mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-white mb-4 flex items-center">
                 <Calculator className="w-5 h-5 mr-2" />
                 Optimaliseer je Werk-Schema
               </h2>

@@ -87,7 +87,7 @@ export default function SchepjesCalculatorPage() {
 
         {/* Calculator Form */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-semibold text-lg mb-4 flex items-center">
+          <h2 className="font-medium text-lg mb-4 flex items-center">
             <Calculator className="w-5 h-5 mr-2 text-primary" />
             Bereken Mengverhouding
           </h2>
@@ -130,7 +130,7 @@ export default function SchepjesCalculatorPage() {
           <div className="space-y-6">
             {/* Main Results */}
             <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
-              <h3 className="font-semibold text-lg mb-4 flex items-center">
+              <h3 className="font-medium text-lg mb-4 flex items-center">
                 {results.isExact ? (
                   <Check className="w-5 h-5 mr-2" />
                 ) : (
@@ -180,7 +180,7 @@ export default function SchepjesCalculatorPage() {
 
             {/* Alternatives */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h4 className="font-semibold text-gray-800 mb-4">Alternatieve verhoudingen:</h4>
+              <h4 className="font-medium text-gray-800 mb-4">Alternatieve verhoudingen:</h4>
               <div className="space-y-3">
                 {results.alternatives.map((alt, index) => (
                   <div 
@@ -211,7 +211,7 @@ export default function SchepjesCalculatorPage() {
         {/* Information Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h3 className="font-semibold text-gray-800 mb-3 flex items-center">
+            <h3 className="font-medium text-gray-800 mb-3 flex items-center">
               <Info className="w-5 h-5 mr-2 text-primary" />
               Nederlandse Standaard
             </h3>
@@ -246,7 +246,7 @@ export default function SchepjesCalculatorPage() {
           </div>
 
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h3 className="font-semibold text-gray-800 mb-3 flex items-center">
+            <h3 className="font-medium text-gray-800 mb-3 flex items-center">
               <Baby className="w-5 h-5 mr-2 text-primary" />
               Bereidingstips
             </h3>
@@ -280,7 +280,7 @@ export default function SchepjesCalculatorPage() {
           <div className="flex items-start">
             <AlertCircle className="w-6 h-6 text-red-600 mt-0.5 mr-3 flex-shrink-0" />
             <div>
-              <h3 className="font-semibold text-red-800 mb-2">Veiligheid voorop</h3>
+              <h3 className="font-medium text-red-800 mb-2">Veiligheid voorop</h3>
               <p className="text-sm text-red-700">
                 Deze calculator is een hulpmiddel. Volg altijd de instructies op de verpakking van uw kunstvoeding. 
                 Bij twijfel of vragen over voeding, raadpleeg uw consultatiebureau of huisarts.
@@ -291,7 +291,7 @@ export default function SchepjesCalculatorPage() {
 
           {/* Back to Calculator */}
           <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h3 className="font-semibold text-gray-800 mb-3">Terug naar hoofdcalculator</h3>
+            <h3 className="font-medium text-gray-800 mb-3">Terug naar hoofdcalculator</h3>
             <Link 
               href="/"
               className="inline-flex items-center space-x-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-hover transition-colors font-medium"
@@ -309,7 +309,7 @@ export default function SchepjesCalculatorPage() {
             {/* Mother and Baby Image */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
               <Image
-                src="/mother_and_baby.png"
+                src="/mother_and_baby.webp"
                 alt="Moeder en baby"
                 width={300}
                 height={200}
@@ -331,7 +331,7 @@ export default function SchepjesCalculatorPage() {
             {/* Baby Image */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
               <Image
-                src="/baby.png"
+                src="/baby.webp"
                 alt="Baby"
                 width={300}
                 height={200}

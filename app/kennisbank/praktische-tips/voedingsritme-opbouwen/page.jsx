@@ -454,7 +454,7 @@ export default function VoedingsritmeOpbouwenPage() {
 
             {/* Why Life Changing */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Waarom een Voedingsritme Levensveranderend Is</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Waarom een Voedingsritme Levensveranderend Is</h2>
               
               <p className="text-gray-700 mb-4">
                 Een consistent voedingsritme biedt <strong>voorspelbaarheid</strong> voor je baby en 
@@ -484,7 +484,7 @@ export default function VoedingsritmeOpbouwenPage() {
 
             {/* Age Specific Schedules */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <TrendingUp className="w-5 h-5 mr-2" />
                 Leeftijd-Specifieke Voedingsschema's
               </h2>
@@ -552,7 +552,7 @@ export default function VoedingsritmeOpbouwenPage() {
 
             {/* Step by Step Implementation */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Target className="w-5 h-5 mr-2" />
                 Stap-voor-Stap Ritme Opbouwen
               </h2>
@@ -624,7 +624,7 @@ export default function VoedingsritmeOpbouwenPage() {
 
             {/* Implementation Techniques */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Praktische Implementatie Strategieën</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Praktische Implementatie Strategieën</h2>
               
               <div className="space-y-6">
                 {techniques.map((technique, index) => (
@@ -656,7 +656,7 @@ export default function VoedingsritmeOpbouwenPage() {
                           <tbody>
                             {technique.windows.map((window, windowIndex) => (
                               <tr key={windowIndex} className={windowIndex % 2 === 1 ? "bg-white" : ""}>
-                                <td className="border border-gray-300 px-4 py-2 font-semibold">{window.age}</td>
+                                <td className="border border-gray-300 px-4 py-2 font-medium">{window.age}</td>
                                 <td className="border border-gray-300 px-4 py-2">{window.wakePeriod}</td>
                                 <td className="border border-gray-300 px-4 py-2">{window.sequence}</td>
                               </tr>
@@ -698,7 +698,7 @@ export default function VoedingsritmeOpbouwenPage() {
 
             {/* Common Challenges */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelvoorkomende Uitdagingen & Oplossingen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelvoorkomende Uitdagingen & Oplossingen</h2>
               
               <div className="space-y-6">
                 {commonChallenges.map((challenge, index) => (
@@ -783,7 +783,7 @@ export default function VoedingsritmeOpbouwenPage() {
 
             {/* Special Situations */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Schema's voor Speciale Situaties</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Schema's voor Speciale Situaties</h2>
               
               <div className="space-y-6">
                 {specialSituations.map((situation, index) => (
@@ -850,7 +850,7 @@ export default function VoedingsritmeOpbouwenPage() {
 
             {/* Growth Adjustments */}
             <div className="bg-white rounded-2xl border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Schema Aanpassingen per Ontwikkelingsfase</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Schema Aanpassingen per Ontwikkelingsfase</h2>
               
               <div className="space-y-6">
                 {growthAdjustments.map((adjustment, index) => (
@@ -920,7 +920,7 @@ export default function VoedingsritmeOpbouwenPage() {
 
             {/* Family Social Aspects */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Users className="w-5 h-5 mr-2" />
                 Familie & Sociale Aspecten
               </h2>
@@ -995,7 +995,7 @@ export default function VoedingsritmeOpbouwenPage() {
 
             {/* Long Term Perspective */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Calendar className="w-5 h-5 mr-2" />
                 Lange Termijn Perspectief
               </h2>
@@ -1040,7 +1040,7 @@ export default function VoedingsritmeOpbouwenPage() {
 
             {/* FAQ */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelgestelde Vragen (FAQ)</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen (FAQ)</h2>
               
               <div className="space-y-4">
                 {faqData.map((item, index) => (
@@ -1057,7 +1057,7 @@ export default function VoedingsritmeOpbouwenPage() {
 
             {/* Conclusion */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Conclusie: Geduld en Consistentie</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Conclusie: Geduld en Consistentie</h2>
               
               <p className="text-gray-700 mb-4">
                 Een voedingsritme opbouwen is <strong>een proces, geen bestemming</strong>. Het vereist 
@@ -1084,7 +1084,7 @@ export default function VoedingsritmeOpbouwenPage() {
 
             {/* Navigation */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde Artikelen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <Link 
                   href="/kennisbank/praktische-tips"

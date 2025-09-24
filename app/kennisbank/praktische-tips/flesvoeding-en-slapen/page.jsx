@@ -127,7 +127,7 @@ export default function FlesvoedingEnSlapenPage() {
 
             {/* Introduction Section */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Inleiding</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Flesvoeding kan significante voordelen bieden voor baby's slaappatronen. Nederlandse onderzoek toont dat flesvoeding baby's 
                 gemiddeld vanaf 3-4 maanden 6+ uur aaneengesloten slapen versus 4-5 uur bij borstvoeding.
@@ -143,7 +143,7 @@ export default function FlesvoedingEnSlapenPage() {
 
             {/* Hoe Flesvoeding Slaap Beïnvloedt */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Hoe Flesvoeding Slaap Beïnvloedt</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Hoe Flesvoeding Slaap Beïnvloedt</h2>
               
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Wetenschappelijke Basis</h3>
@@ -178,7 +178,7 @@ export default function FlesvoedingEnSlapenPage() {
 
             {/* Optimale Voedingstiming */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 Optimale Voedingstiming voor Slaap
               </h2>
@@ -217,7 +217,7 @@ export default function FlesvoedingEnSlapenPage() {
 
             {/* Nachtvoedingen Stoppen */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Nachtvoedingen: Wanneer en Hoe Stoppen?</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Nachtvoedingen: Wanneer en Hoe Stoppen?</h2>
               
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Fysiologische Readiness Signalen</h3>
@@ -248,7 +248,7 @@ export default function FlesvoedingEnSlapenPage() {
 
             {/* Slaapinducerende Technieken */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Slaapinducerende Voeding Technieken</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Slaapinducerende Voeding Technieken</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 De juiste omgeving en technieken kunnen flesvoeding optimaal inzetten voor betere slaap:
               </p>
@@ -285,7 +285,7 @@ export default function FlesvoedingEnSlapenPage() {
 
             {/* Veelvoorkomende Problemen */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4">Veelvoorkomende Slaap-Voeding Problemen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelvoorkomende Slaap-Voeding Problemen</h2>
               
               <div className="space-y-4">
                 {veelvoorkomendeProblemen.map((item, index) => (
@@ -308,7 +308,7 @@ export default function FlesvoedingEnSlapenPage() {
 
             {/* Leeftijd-Specifieke Strategieën */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Baby className="w-5 h-5 mr-2" />
                 Leeftijd-Specifieke Slaap Strategieën
               </h2>
@@ -352,7 +352,7 @@ export default function FlesvoedingEnSlapenPage() {
                   <Thermometer className="w-5 h-5 text-amber-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-amber-800 mb-2">Nederlandse Slaap Cultuur</h3>
+                  <h3 className="font-medium text-amber-800 mb-2">Nederlandse Slaap Cultuur</h3>
                   <p className="text-sm text-amber-700 leading-relaxed mb-4">
                     Nederland heeft een unieke slaap cultuur die flesvoeding ouders kan helpen:
                   </p>
@@ -385,7 +385,7 @@ export default function FlesvoedingEnSlapenPage() {
 
             {/* Related Articles */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-semibold text-primary mb-4 flex items-center">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <ArrowRight className="w-5 h-5 mr-2" />
                 Gerelateerde Artikelen
               </h2>

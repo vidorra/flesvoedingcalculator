@@ -64,7 +64,7 @@ export default function InformatiePage() {
                   <section.icon className={`w-5 h-5 text-${section.color}-600`} />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-800 mb-2">{section.title}</h3>
+                  <h3 className="font-medium text-gray-800 mb-2">{section.title}</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">{section.content}</p>
                 </div>
               </div>
@@ -74,7 +74,7 @@ export default function InformatiePage() {
 
         {/* Age Guidelines */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-semibold text-gray-800 mb-4 flex items-center">
+          <h2 className="font-medium text-gray-800 mb-4 flex items-center">
             <BookOpen className="w-5 h-5 mr-2 text-primary" />
             Richtlijnen per Leeftijd
           </h2>
@@ -110,7 +110,7 @@ export default function InformatiePage() {
 
         {/* When to Contact Healthcare */}
         <div className="bg-red-50 rounded-2xl shadow-sm border border-red-200 p-6">
-          <h2 className="font-semibold text-red-800 mb-4 flex items-center">
+          <h2 className="font-medium text-red-800 mb-4 flex items-center">
             <AlertTriangle className="w-5 h-5 mr-2 text-red-600" />
             Wanneer Contact Opnemen met Zorgverlener
           </h2>
@@ -141,7 +141,7 @@ export default function InformatiePage() {
 
         {/* Contact CTA */}
         <div className="bg-primary rounded-2xl shadow-lg p-6 text-white">
-          <h2 className="font-semibold mb-2">Nog vragen?</h2>
+          <h2 className="font-medium mb-2">Nog vragen?</h2>
           <p className="text-gray-100 mb-4">
             Heeft u na het lezen van deze informatie nog vragen over flesvoeding? 
             Neem gerust contact met ons op voor aanvullende informatie.
