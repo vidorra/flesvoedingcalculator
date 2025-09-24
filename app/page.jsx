@@ -719,7 +719,7 @@ export default function HomePage() {
                       <div className="text-xl font-medium">{results.feedingsPerDay}x</div>
                     </div>
                     
-                    <div className="bg-white/20 backdrop-blur rounded-xl p-4">
+                    <div className="bg-white/20 backdrop-blur rounded-xl p-6">
                       <div className="flex items-center gap-2 text-white/70 text-sm mb-1">
                         <span>Aanbevolen per voeding</span>
                         {ageMonths === '0-2weeks' && (
@@ -819,8 +819,8 @@ export default function HomePage() {
                     </div>
                     <div className="text-xl font-medium">
                       {customSchepjes !== null ? 
-                        `${customSchepjes} schepjes (${customAmount}ml)` : 
-                        `${Math.round((results.recommendedAmount / 30) * 10) / 10} schepjes (${results.recommendedAmount}ml)`
+                        `${customSchepjes} schepjes + ${customAmount}ml water` : 
+                        `${Math.round((results.recommendedAmount / 30) * 10) / 10} schepjes + ${results.recommendedAmount}ml water`
                       }
                     </div>
                     <div className="text-xs text-white/60 mt-1">30ml water per schepje poeder</div>
