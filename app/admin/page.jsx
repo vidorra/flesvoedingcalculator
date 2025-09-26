@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import Layout from '../../components/Layout'
+import AdminAuth from '../../components/AdminAuth'
 import { Download, Database, Search, RefreshCw, CheckCircle, XCircle, Clock, Info } from 'lucide-react'
 
 export default function AdminPage() {
@@ -92,7 +93,8 @@ export default function AdminPage() {
   }
 
   return (
-    <Layout>
+    <AdminAuth>
+      <Layout>
       <div className="max-w-6xl mx-auto p-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-8">
           Bol.com Product Feed Admin
@@ -271,6 +273,7 @@ export default function AdminPage() {
           </div>
         </div>
       </div>
-    </Layout>
+      </Layout>
+    </AdminAuth>
   )
 }
