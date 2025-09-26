@@ -12,6 +12,7 @@ export default function AdminPage() {
   const [searchResults, setSearchResults] = useState([])
   const [searchLoading, setSearchLoading] = useState(false)
   const [message, setMessage] = useState('')
+  const [testResult, setTestResult] = useState(null)
 
   // Load stats on component mount
   useEffect(() => {
@@ -84,6 +85,23 @@ export default function AdminPage() {
       setSearchResults([])
     } finally {
       setSearchLoading(false)
+    }
+  }
+
+  const testConnection = async () => {
+    setMessage('Testing connection to Bol.com feed...')
+    try {
+      const response = await fetch('/api/bol-feed?action=test')
+      const data = await response.json()
+      
+      if (data.success) {
+        setTestResult(data.test)
+        setMessage('Connection test completed - check results below')
+      } else {
+        setMessage(`Test failed: ${data.error}`)
+      }
+    } catch (error) {
+      setMessage(`Test error: ${error.message}`)
     }
   }
 
@@ -181,6 +199,14 @@ export default function AdminPage() {
               <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
               <span>Refresh Stats</span>
             </button>
+
+            <button
+              onClick={testConnection}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg flex items-center space-x-2 transition-colors"
+            >
+              <CheckCircle className="w-4 h-4" />
+              <span>Test Connection</span>
+            </button>
           </div>
           
           {stats?.needsUpdate && (
@@ -191,6 +217,71 @@ export default function AdminPage() {
             </div>
           )}
         </div>
+
+        {/* Connection Test Results */}
+        {testResult && (
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">Connection Test Results</h2>
+            
+            <div className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className={`p-4 rounded-lg ${testResult.hasCredentials ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}>
+                  <div className="flex items-center space-x-2">
+                    {testResult.hasCredentials ? (
+                      <CheckCircle className="w-5 h-5 text-green-600" />
+                    ) : (
+                      <XCircle className="w-5 h-5 text-red-600" />
+                    )}
+                    <span className="font-medium">Credentials</span>
+                  </div>
+                  <div className="text-sm mt-2">
+                    <div>Username: {testResult.username}</div>
+                    <div>Password: {testResult.password}</div>
+                  </div>
+                </div>
+
+                {testResult.connectionTest && (
+                  <div className={`p-4 rounded-lg ${testResult.connectionTest.success ? 'bg-green-50 border border-green-200' : 'bg-red-50 border border-red-200'}`}>
+                    <div className="flex items-center space-x-2">
+                      {testResult.connectionTest.success ? (
+                        <CheckCircle className="w-5 h-5 text-green-600" />
+                      ) : (
+                        <XCircle className="w-5 h-5 text-red-600" />
+                      )}
+                      <span className="font-medium">Connection</span>
+                    </div>
+                    <div className="text-sm mt-2">
+                      <div>Status: {testResult.connectionTest.status}</div>
+                      <div>Response: {testResult.connectionTest.statusText}</div>
+                      {testResult.connectionTest.error && (
+                        <div className="text-red-600 mt-1">Error: {testResult.connectionTest.error}</div>
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                  <div className="flex items-center space-x-2">
+                    <Info className="w-5 h-5 text-blue-600" />
+                    <span className="font-medium">Feed URL</span>
+                  </div>
+                  <div className="text-sm mt-2">
+                    <div className="break-all">{testResult.feedUrl}</div>
+                  </div>
+                </div>
+              </div>
+
+              {testResult.connectionTest?.headers && (
+                <details className="bg-gray-50 rounded-lg p-4">
+                  <summary className="cursor-pointer font-medium">Response Headers</summary>
+                  <pre className="mt-2 text-xs bg-white p-2 rounded border overflow-auto">
+                    {JSON.stringify(testResult.connectionTest.headers, null, 2)}
+                  </pre>
+                </details>
+              )}
+            </div>
+          </div>
+        )}
 
         {/* Search Section */}
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
