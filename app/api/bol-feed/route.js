@@ -29,30 +29,96 @@ export async function GET(request) {
           }
           
           if (hasCredentials) {
-            // Try a quick test request
+            // Try multiple diagnostic tests
+            const tests = []
+            
+            // Test 1: DNS Resolution
+            try {
+              const dnsTest = await fetch('https://publicfeeds.bol.com/', {
+                method: 'HEAD',
+                signal: AbortSignal.timeout(5000)
+              })
+              tests.push({
+                name: 'DNS Resolution',
+                success: true,
+                status: dnsTest.status,
+                message: 'Can resolve publicfeeds.bol.com'
+              })
+            } catch (dnsError) {
+              tests.push({
+                name: 'DNS Resolution',
+                success: false,
+                error: dnsError.message,
+                message: 'Cannot resolve or connect to publicfeeds.bol.com'
+              })
+            }
+            
+            // Test 2: Main Feed URL with Auth
             try {
               const auth = Buffer.from(`${process.env.BOL_PRODUCT_FEED_USERNAME}:${process.env.BOL_PRODUCT_FEED_PASSWORD}`).toString('base64')
               const testResponse = await fetch('https://publicfeeds.bol.com/products', {
-                method: 'HEAD', // Just check headers, don't download
+                method: 'HEAD',
                 headers: {
                   'Authorization': `Basic ${auth}`,
                   'User-Agent': 'FlesvoedingCalculator/1.0 (https://flesvoedingcalculator.nl)'
                 },
-                signal: AbortSignal.timeout(10000) // 10 second timeout
+                signal: AbortSignal.timeout(10000)
               })
               
-              testResult.connectionTest = {
+              tests.push({
+                name: 'Authenticated Request',
                 success: testResponse.ok,
                 status: testResponse.status,
                 statusText: testResponse.statusText,
-                headers: Object.fromEntries(testResponse.headers.entries())
-              }
-            } catch (testError) {
-              testResult.connectionTest = {
+                headers: Object.fromEntries(testResponse.headers.entries()),
+                message: testResponse.ok ? 'Authentication successful' : 'Authentication failed'
+              })
+              
+            } catch (authError) {
+              tests.push({
+                name: 'Authenticated Request',
                 success: false,
-                error: testError.message,
-                errorType: testError.name
-              }
+                error: authError.message,
+                errorType: authError.name,
+                message: 'Network or SSL error during authentication'
+              })
+            }
+            
+            // Test 3: Alternative User Agent
+            try {
+              const auth = Buffer.from(`${process.env.BOL_PRODUCT_FEED_USERNAME}:${process.env.BOL_PRODUCT_FEED_PASSWORD}`).toString('base64')
+              const altResponse = await fetch('https://publicfeeds.bol.com/products', {
+                method: 'HEAD',
+                headers: {
+                  'Authorization': `Basic ${auth}`,
+                  'User-Agent': 'Mozilla/5.0 (compatible; ProductFeedBot/1.0)'
+                },
+                signal: AbortSignal.timeout(10000)
+              })
+              
+              tests.push({
+                name: 'Alternative User Agent',
+                success: altResponse.ok,
+                status: altResponse.status,
+                message: altResponse.ok ? 'Alternative User-Agent works' : 'User-Agent not the issue'
+              })
+              
+            } catch (altError) {
+              tests.push({
+                name: 'Alternative User Agent',
+                success: false,
+                error: altError.message,
+                message: 'Same network error with different User-Agent'
+              })
+            }
+            
+            testResult.diagnosticTests = tests
+            testResult.connectionTest = {
+              success: tests.some(test => test.success),
+              overallStatus: tests.some(test => test.success) ? 'Some tests passed' : 'All tests failed',
+              recommendation: tests.some(test => test.success) 
+                ? 'Network connection possible, check authentication'
+                : 'Network connectivity issue - contact hosting provider'
             }
           }
           

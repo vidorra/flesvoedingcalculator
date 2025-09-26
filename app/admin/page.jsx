@@ -271,6 +271,54 @@ export default function AdminPage() {
                 </div>
               </div>
 
+              {testResult.diagnosticTests && (
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <h3 className="font-medium mb-3">Diagnostic Tests</h3>
+                  <div className="space-y-3">
+                    {testResult.diagnosticTests.map((test, index) => (
+                      <div key={index} className={`p-3 rounded-lg border ${
+                        test.success 
+                          ? 'bg-green-50 border-green-200' 
+                          : 'bg-red-50 border-red-200'
+                      }`}>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center space-x-2">
+                            {test.success ? (
+                              <CheckCircle className="w-4 h-4 text-green-600" />
+                            ) : (
+                              <XCircle className="w-4 h-4 text-red-600" />
+                            )}
+                            <span className="font-medium">{test.name}</span>
+                          </div>
+                          {test.status && (
+                            <span className="text-sm bg-white px-2 py-1 rounded">
+                              {test.status}
+                            </span>
+                          )}
+                        </div>
+                        <div className="text-sm mt-2">
+                          <div>{test.message}</div>
+                          {test.error && (
+                            <div className="text-red-600 mt-1 font-mono text-xs">
+                              {test.errorType}: {test.error}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {testResult.connectionTest?.recommendation && (
+                    <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+                      <div className="font-medium text-blue-900">Recommendation:</div>
+                      <div className="text-sm text-blue-800 mt-1">
+                        {testResult.connectionTest.recommendation}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+
               {testResult.connectionTest?.headers && (
                 <details className="bg-gray-50 rounded-lg p-4">
                   <summary className="cursor-pointer font-medium">Response Headers</summary>
