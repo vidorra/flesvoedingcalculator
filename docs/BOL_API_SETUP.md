@@ -15,6 +15,8 @@ Add these environment variables to your CapRover app:
 ```
 BOL_API_CLIENT_ID=8c2d47c1-3b50-4dcb-9167-d656a785bcaf
 BOL_API_CLIENT_SECRET=dA7u6Z+S+m?LgFN)cFygE6K3zMY84KdsreweAAT0DOB3bfoB2vsGE?ViDtWycQrP
+BOL_PRODUCT_FEED_USERNAME=53f32149-2ddd-4974-a4da-8e26c6b98db5
+BOL_PRODUCT_FEED_PASSWORD=j!Wk3Y=3XB{Rv#Nm
 ```
 
 ### Security Notes
@@ -23,6 +25,34 @@ BOL_API_CLIENT_SECRET=dA7u6Z+S+m?LgFN)cFygE6K3zMY84KdsreweAAT0DOB3bfoB2vsGE?ViDt
 - ✅ These credentials are safely stored in CapRover environment
 - ✅ The `.env.example` file shows the structure without real values
 - ✅ API calls are made server-side only (not exposed to client)
+
+## 📦 Bol.com Product Feed (Enhanced Search)
+
+### What is the Product Feed?
+
+The Bol.com Product Feed is a comprehensive CSV file containing the entire Bol.com catalog. This provides several advantages:
+
+- **Faster Search**: Local database search instead of API calls
+- **Better Matching**: Full text search across all product fields
+- **Offline Capability**: Works even when API is down
+- **Enhanced Filtering**: Custom relevance scoring for baby products
+- **Cost Effective**: Reduces API call limits
+
+### Product Feed Features
+
+- **Daily Updates**: Automatic feed refresh with latest products and prices
+- **Baby Product Focus**: Filtered for ~20,000+ baby-related products
+- **Smart Scoring**: Relevance algorithm prioritizes feeding products
+- **Local Caching**: Fast search without network requests
+- **Admin Interface**: Easy management via `/admin` page
+
+### Admin Interface
+
+Visit `/admin` to:
+- View product feed statistics
+- Update feed manually
+- Search local product database
+- Monitor cache status
 
 ## 📦 Bol.com Partner Program Setup
 
@@ -113,6 +143,55 @@ const babyProducts = await searchBabyProducts('startvoeding')
 - Just product name with bol.com tag
 - Perfect for inline text mentions
 - Non-intrusive design
+
+## 🎛️ Product Feed Management
+
+### API Endpoints
+
+**Get Feed Statistics:**
+```bash
+GET /api/bol-feed?action=stats
+```
+
+**Search Local Products:**
+```bash
+GET /api/bol-feed?action=search&query=nutrilon&limit=10
+```
+
+**Update Product Feed:**
+```bash
+POST /api/bol-feed
+Content-Type: application/json
+{
+  "action": "update"
+}
+```
+
+### Automated Updates
+
+The system automatically:
+- Checks for updates daily
+- Downloads ~500MB compressed feed
+- Processes ~20,000 baby products
+- Updates local cache in `/cache/bol-products/`
+
+### Search Enhancement
+
+Product searches now use a **hybrid approach**:
+
+1. **Primary**: Local feed search (fast, comprehensive)
+2. **Fallback**: Live API search (if local fails)
+3. **Best of Both**: Maximum product coverage
+
+### Cache Management
+
+- **Location**: `/cache/bol-products/`
+- **Files**: 
+  - `products.csv.gz` - Raw feed
+  - `products-processed.json` - Filtered products
+  - `last-update.json` - Update metadata
+- **Size**: ~50MB processed cache
+- **Refresh**: Daily automatic + manual via admin
 
 ## 🔧 Component Props
 
