@@ -1158,13 +1158,18 @@ export default function HomePage() {
 
             {/* Google Ad 1 */}
             <div className="text-center space-y-2">
-              <div className="text-gray-500 text-xs font-medium">Google Advertentie</div>
+              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938"
+                   crossorigin="anonymous"></script>
+              {/* sidebar-right-ad1 */}
               <ins className="adsbygoogle"
                    style={{display: 'block'}}
                    data-ad-client="ca-pub-5215838917916938"
-                   data-ad-slot="1234567890"
+                   data-ad-slot="5691109362"
                    data-ad-format="auto"
                    data-full-width-responsive="true"></ins>
+              <script dangerouslySetInnerHTML={{
+                __html: '(adsbygoogle = window.adsbygoogle || []).push({});'
+              }}></script>
             </div>
     
             
