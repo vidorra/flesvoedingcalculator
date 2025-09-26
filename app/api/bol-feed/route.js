@@ -16,6 +16,56 @@ export async function GET(request) {
           success: true,
           stats
         })
+
+      case 'test':
+        // Test credentials and connection
+        try {
+          const hasCredentials = bolProductFeed.hasCredentials()
+          const testResult = {
+            hasCredentials,
+            username: process.env.BOL_PRODUCT_FEED_USERNAME ? 'configured' : 'missing',
+            password: process.env.BOL_PRODUCT_FEED_PASSWORD ? 'configured' : 'missing',
+            feedUrl: 'https://publicfeeds.bol.com/products'
+          }
+          
+          if (hasCredentials) {
+            // Try a quick test request
+            try {
+              const auth = Buffer.from(`${process.env.BOL_PRODUCT_FEED_USERNAME}:${process.env.BOL_PRODUCT_FEED_PASSWORD}`).toString('base64')
+              const testResponse = await fetch('https://publicfeeds.bol.com/products', {
+                method: 'HEAD', // Just check headers, don't download
+                headers: {
+                  'Authorization': `Basic ${auth}`,
+                  'User-Agent': 'FlesvoedingCalculator/1.0 (https://flesvoedingcalculator.nl)'
+                },
+                signal: AbortSignal.timeout(10000) // 10 second timeout
+              })
+              
+              testResult.connectionTest = {
+                success: testResponse.ok,
+                status: testResponse.status,
+                statusText: testResponse.statusText,
+                headers: Object.fromEntries(testResponse.headers.entries())
+              }
+            } catch (testError) {
+              testResult.connectionTest = {
+                success: false,
+                error: testError.message,
+                errorType: testError.name
+              }
+            }
+          }
+          
+          return NextResponse.json({
+            success: true,
+            test: testResult
+          })
+        } catch (error) {
+          return NextResponse.json({
+            success: false,
+            error: error.message
+          }, { status: 500 })
+        }
         
       case 'search':
         const query = searchParams.get('query')
