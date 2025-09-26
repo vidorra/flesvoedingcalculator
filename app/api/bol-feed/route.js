@@ -21,11 +21,25 @@ export async function GET(request) {
         // Test credentials and connection
         try {
           const hasCredentials = bolProductFeed.hasCredentials()
+          
+          // Get server's public IP address
+          let serverIP = 'Unknown'
+          try {
+            const ipResponse = await fetch('https://api.ipify.org?format=json', {
+              signal: AbortSignal.timeout(5000)
+            })
+            const ipData = await ipResponse.json()
+            serverIP = ipData.ip
+          } catch (ipError) {
+            console.warn('Could not determine server IP:', ipError.message)
+          }
+          
           const testResult = {
             hasCredentials,
             username: process.env.BOL_PRODUCT_FEED_USERNAME ? 'configured' : 'missing',
             password: process.env.BOL_PRODUCT_FEED_PASSWORD ? 'configured' : 'missing',
-            feedUrl: 'https://publicfeeds.bol.com/products'
+            feedUrl: 'https://publicfeeds.bol.com/products',
+            serverIP: serverIP
           }
           
           if (hasCredentials) {

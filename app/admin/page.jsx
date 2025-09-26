@@ -263,10 +263,20 @@ export default function AdminPage() {
                 <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
                   <div className="flex items-center space-x-2">
                     <Info className="w-5 h-5 text-blue-600" />
-                    <span className="font-medium">Feed URL</span>
+                    <span className="font-medium">Server Info</span>
                   </div>
                   <div className="text-sm mt-2">
-                    <div className="break-all">{testResult.feedUrl}</div>
+                    <div><strong>Feed URL:</strong> {testResult.feedUrl}</div>
+                    <div className="mt-2"><strong>Server IP:</strong> 
+                      <span className="font-mono bg-white px-2 py-1 rounded ml-2">
+                        {testResult.serverIP}
+                      </span>
+                    </div>
+                    {testResult.serverIP !== 'Unknown' && (
+                      <div className="mt-2 p-2 bg-amber-50 border border-amber-200 rounded text-amber-800">
+                        💡 Add this IP to your Bol.com Partner Dashboard whitelist
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
