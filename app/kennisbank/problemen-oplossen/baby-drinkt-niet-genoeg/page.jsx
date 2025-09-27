@@ -2,6 +2,7 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { Activity, AlertTriangle, Clock, Users, CheckCircle } from 'lucide-react'
+import BolProductSection from '../../../../components/BolProductLink'
 
 export default function BabyDrinktNietGenoegPage() {
   const sidebarImages = [
@@ -476,6 +477,21 @@ export default function BabyDrinktNietGenoegPage() {
         </div>
         
         <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />
+
+          {/* Affiliate Product Recommendations - Auto-generated */}
+          <BolProductSection
+            productNames={[
+    'baby weegschaal',
+    'voedingstracker',
+    'anti colic fles',
+    'verschillende speen maten',
+    'baby comfort fles',
+    'voeding stimulatie speelgoed'
+            ]}
+            title="Hulpmiddelen bij Voedingsproblemen"
+            variant="card"
+            maxProducts={6}
+          />
       </div>
     </Layout>
   )

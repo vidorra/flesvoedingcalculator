@@ -2,6 +2,7 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { Milk, Heart, AlertCircle, CheckCircle, Star, Euro, Users } from 'lucide-react'
+import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
   title: 'Lactosevrije Flesvoeding: Complete Nederlandse Gids 2025 - Wanneer Nodig & Beste Merken',
@@ -570,6 +571,19 @@ export default function LactosevrijeFlesvoedingPage() {
         </div>
         
         <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />
+
+          {/* Affiliate Product Recommendations - Auto-generated */}
+          <BolProductSection
+            productNames={[
+    'lactosevrije baby voeding',
+    'Nutrilon lactosevrij',
+    'lactose intolerantie voeding',
+    'speciale baby formule'
+            ]}
+            title="Lactosevrije Voeding Opties"
+            variant="card"
+            maxProducts={4}
+          />
       </div>
     </Layout>
   )

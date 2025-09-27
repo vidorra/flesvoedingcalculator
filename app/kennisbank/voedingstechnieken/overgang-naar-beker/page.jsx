@@ -2,6 +2,7 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { AlertTriangle, Clock, TrendingUp, Users, Calendar, CheckCircle, XCircle, Target, ChevronRight, Star, Banknote, Heart, RefreshCw } from 'lucide-react';
+import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
   title: 'Overgang naar Beker: Nederlandse Gids voor de Volgende Stap | Flesvoeding Calculator',
@@ -1079,6 +1080,19 @@ export default function OvergangNaarBekerPage() {
         </div>
         
         <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />
+
+          {/* Affiliate Product Recommendations - Auto-generated */}
+          <BolProductSection
+            productNames={[
+    'baby drinkbeker',
+    'sippy cup',
+    'anti-lek drinkbeker',
+    '360 graden drinkbeker'
+            ]}
+            title="Overgang naar Zelfstandig Drinken"
+            variant="card"
+            maxProducts={4}
+          />
       </div>
     </Layout>
   )
