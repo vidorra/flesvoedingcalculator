@@ -2,7 +2,7 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { TestTube, Clock, Target, Search, ShoppingCart, AlertCircle } from 'lucide-react'
-import BolProductSection from '../../../components/BolProductLink'
+import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
   title: 'Verschillende Spenen Uitproberen: Complete Gids voor Nederlandse Ouders 2025',
