@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { User } from 'lucide-react'
+import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
   title: 'Juiste Houding bij Flesvoeding: Veilig en Comfortabel Voeden',
@@ -648,6 +649,19 @@ export default function JuisteHoudingBijFlesvoeding() {
         </div>
         
         <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />
+
+          {/* Affiliate Product Recommendations - Auto-generated */}
+          <BolProductSection
+            productNames={[
+    'voeding kussen baby',
+    'baby ondersteuning kussen',
+    'spuugdoekjes',
+    'comfortabele baby stoel'
+            ]}
+            title="Producten voor Juiste Voedingshouding"
+            variant="card"
+            maxProducts={4}
+          />
       </div>
     </Layout>
   )

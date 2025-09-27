@@ -2,6 +2,7 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { Leaf, ShoppingCart, BarChart3, AlertTriangle, Euro, ArrowRight } from 'lucide-react'
+import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
   title: 'Bio en Organische Flesvoeding: Complete Nederlandse Gids 2025',
@@ -444,6 +445,19 @@ export default function BioOrganischeFlesvoedingPage() {
         </div>
         
         <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />
+
+          {/* Affiliate Product Recommendations - Auto-generated */}
+          <BolProductSection
+            productNames={[
+    'biologische baby voeding',
+    'Holle bio voeding',
+    'HiPP biologisch',
+    'eco baby fles'
+            ]}
+            title="Biologische Baby Voeding"
+            variant="card"
+            maxProducts={4}
+          />
       </div>
     </Layout>
   )

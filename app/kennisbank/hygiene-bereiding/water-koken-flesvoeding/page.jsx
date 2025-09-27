@@ -2,6 +2,7 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { Droplets, Thermometer, Clock, Shield, AlertTriangle, CheckCircle, Home, Coffee } from 'lucide-react'
+import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
   title: 'Water Koken voor Flesvoeding: Complete Veiligheidsgids 2025',
@@ -434,6 +435,19 @@ export default function WaterKokenFlesvoedingPage() {
         </div>
         
         <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />
+
+          {/* Affiliate Product Recommendations - Auto-generated */}
+          <BolProductSection
+            productNames={[
+    'baby water koker',
+    'water filter baby',
+    'gekookt baby water',
+    'water thermometer'
+            ]}
+            title="Water Voorbereiding Producten"
+            variant="card"
+            maxProducts={4}
+          />
       </div>
     </Layout>
   )

@@ -2,6 +2,7 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { Plane, ArrowRight, Home, MapPin, CheckCircle, AlertTriangle, Calculator, Thermometer } from 'lucide-react'
+import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
   title: 'Flesvoeding op Vakantie: Complete Reis Gids Nederlandse Ouders 2025',
@@ -593,6 +594,21 @@ export default function VakantiePage() {
             ]}
           />
         </div>
+
+          {/* Affiliate Product Recommendations - Auto-generated */}
+          <BolProductSection
+            productNames={[
+    'draagbare flessenwarmer',
+    'reis sterilisator',
+    'geïsoleerde baby tas',
+    'koelbox baby',
+    'reis formule container',
+    'baby reis accessoires'
+            ]}
+            title="Reis Essentials voor Flesvoeding"
+            variant="card"
+            maxProducts={6}
+          />
       </div>
     </Layout>
   )

@@ -2,6 +2,7 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { BookOpen, ArrowRight, Home, Shield, AlertTriangle, CheckCircle, Package, Calculator } from 'lucide-react'
+import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
   title: 'Anti-Reflux Flesvoeding: Complete Gids tegen Spugen en Reflux 2025',
@@ -610,6 +611,21 @@ export default function AntiRefluxPage() {
           ]}
           adTopics={["Anti-Reflux Producten", "Baby Comfort"]}
         />
+
+          {/* Affiliate Product Recommendations - Auto-generated */}
+          <BolProductSection
+            productNames={[
+    'anti reflux flesvoeding',
+    'Nutrilon AR',
+    'Hero Baby AR',
+    'anti reflux fles',
+    'langzame flow speen',
+    'baby positionering kussen'
+            ]}
+            title="Anti-Reflux Producten"
+            variant="card"
+            maxProducts={6}
+          />
       </div>
     </Layout>
   )
