@@ -2,6 +2,7 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { TestTube, Clock, Target, Search, ShoppingCart, AlertCircle } from 'lucide-react'
+import BolProductSection from '../../../components/BolProductLink'
 
 export const metadata = {
   title: 'Verschillende Spenen Uitproberen: Complete Gids voor Nederlandse Ouders 2025',
@@ -743,6 +744,21 @@ export default function VerschillendeSpenenUitproberenPage() {
           ]}
           adTopics={["Baby Uitrusting", "Voeding Accessoires"]}
         />
+
+          {/* Affiliate Product Recommendations - Auto-generated */}
+          <BolProductSection
+            productNames={[
+    'Philips Avent speen',
+    'MAM anti colic speen',
+    'NUK baby speen',
+    'Tommee Tippee speen',
+    'Dr Browns speen',
+    'baby speen variatie set'
+            ]}
+            title="Verschillende Spenen om te Testen"
+            variant="card"
+            maxProducts={6}
+          />
       </div>
     </Layout>
   )
