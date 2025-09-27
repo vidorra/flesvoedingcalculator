@@ -1,7 +1,7 @@
 import Layout from '../../../../components/Layout'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { Baby } from 'lucide-react'
-import BolProductSection from '../../../components/BolProductLink'
+import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
   title: 'Fles Bereiden Stap voor Stap: Perfect Flesvoeding Elke Keer',

@@ -2,7 +2,7 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { Shield, Clock, DollarSign, Users, CheckCircle, AlertTriangle } from 'lucide-react'
-import BolProductSection from '../../../components/BolProductLink'
+import BolProductSection from '../../../../components/BolProductLink'
 
 export default function FlessenSteriligerenPage() {
   const sidebarImages = [

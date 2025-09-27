@@ -2,7 +2,7 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { Heart, ArrowRight, Home, Shield, AlertTriangle, CheckCircle, Package, Calculator, Stethoscope } from 'lucide-react'
-import BolProductSection from '../../../components/BolProductLink'
+import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
   title: 'Hypoallergene Flesvoeding: Complete Gids voor Nederlandse Ouders 2025',
