@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { Baby } from 'lucide-react'
+import BolProductSection from '../../../components/BolProductLink'
 
 export const metadata = {
   title: 'Fles Bereiden Stap voor Stap: Perfect Flesvoeding Elke Keer',
@@ -736,6 +737,21 @@ export default function FlesBerenStapVoorStap() {
               </div>
         
         <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />
+
+          {/* Affiliate Product Recommendations - Auto-generated */}
+          <BolProductSection
+            productNames={[
+    'baby fles maatbeker',
+    'fles reinigingsborstel',
+    'baby thermometer',
+    'flessenwarmer',
+    'formule dispenser',
+    'baby handdoeken'
+            ]}
+            title="Benodigdheden voor Fles Bereiding"
+            variant="card"
+            maxProducts={6}
+          />
       </div>
     </Layout>
   )

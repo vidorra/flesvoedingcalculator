@@ -13,11 +13,33 @@ export default function AdminPage() {
   const [searchLoading, setSearchLoading] = useState(false)
   const [message, setMessage] = useState('')
   const [testResult, setTestResult] = useState(null)
+  const [affiliateStats, setAffiliateStats] = useState(null)
+  const [affiliateArticles, setAffiliateArticles] = useState([])
+  const [automationLoading, setAutomationLoading] = useState(false)
 
   // Load stats on component mount
   useEffect(() => {
     loadStats()
+    loadAffiliateStats()
   }, [])
+
+  const loadAffiliateStats = async () => {
+    try {
+      const response = await fetch('/api/affiliate-automation?action=stats')
+      const data = await response.json()
+      if (data.success) {
+        setAffiliateStats(data.stats)
+      }
+      
+      const articlesResponse = await fetch('/api/affiliate-automation?action=list')
+      const articlesData = await articlesResponse.json()
+      if (articlesData.success) {
+        setAffiliateArticles(articlesData.articles)
+      }
+    } catch (error) {
+      console.error('Error loading affiliate stats:', error)
+    }
+  }
 
   const loadStats = async () => {
     setLoading(true)
@@ -102,6 +124,68 @@ export default function AdminPage() {
       }
     } catch (error) {
       setMessage(`Test error: ${error.message}`)
+    }
+  }
+
+  const processAffiliatesByPriority = async (priority) => {
+    setAutomationLoading(true)
+    setMessage(`Processing ${priority} priority articles...`)
+    
+    try {
+      const response = await fetch('/api/affiliate-automation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          action: 'process-priority',
+          priority: priority
+        })
+      })
+      
+      const data = await response.json()
+      
+      if (data.success) {
+        setMessage(`✅ Successfully processed ${data.summary.successful}/${data.summary.total} articles. Added ${data.summary.totalProducts} product links!`)
+        await loadAffiliateStats() // Refresh stats
+      } else {
+        setMessage(`❌ Processing failed: ${data.error}`)
+      }
+    } catch (error) {
+      setMessage(`❌ Processing error: ${error.message}`)
+    } finally {
+      setAutomationLoading(false)
+    }
+  }
+
+  const processAllAffiliates = async () => {
+    setAutomationLoading(true)
+    setMessage('Processing ALL articles with affiliate links...')
+    
+    try {
+      const response = await fetch('/api/affiliate-automation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          action: 'process-all'
+        })
+      })
+      
+      const data = await response.json()
+      
+      if (data.success) {
+        const summary = data.summary
+        setMessage(`🚀 COMPLETE! Processed ${summary.successful}/${summary.total} articles. Added ${summary.totalProducts} total product links across all priority levels!`)
+        await loadAffiliateStats() // Refresh stats
+      } else {
+        setMessage(`❌ Full processing failed: ${data.error}`)
+      }
+    } catch (error) {
+      setMessage(`❌ Processing error: ${error.message}`)
+    } finally {
+      setAutomationLoading(false)
     }
   }
 
@@ -340,6 +424,127 @@ export default function AdminPage() {
             </div>
           </div>
         )}
+
+        {/* Affiliate Automation Section */}
+        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-8">
+          <h2 className="text-xl font-semibold text-gray-900 mb-4">Affiliate Link Automation</h2>
+          
+          {/* Automation Stats */}
+          {affiliateStats && (
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+              <div className="bg-blue-50 p-4 rounded-lg">
+                <div className="text-2xl font-bold text-blue-900">{affiliateStats.total}</div>
+                <div className="text-sm text-blue-700">Total Articles</div>
+              </div>
+              <div className="bg-green-50 p-4 rounded-lg">
+                <div className="text-2xl font-bold text-green-900">{affiliateStats.byPriority?.high || 0}</div>
+                <div className="text-sm text-green-700">High Priority</div>
+              </div>
+              <div className="bg-yellow-50 p-4 rounded-lg">
+                <div className="text-2xl font-bold text-yellow-900">{affiliateStats.byPriority?.['medium-high'] || 0}</div>
+                <div className="text-sm text-yellow-700">Medium-High</div>
+              </div>
+              <div className="bg-purple-50 p-4 rounded-lg">
+                <div className="text-2xl font-bold text-purple-900">{affiliateStats.totalProducts}</div>
+                <div className="text-sm text-purple-700">Total Products</div>
+              </div>
+            </div>
+          )}
+
+          {/* Automation Controls */}
+          <div className="space-y-4">
+            <div>
+              <h3 className="font-medium text-gray-900 mb-3">Quick Actions</h3>
+              <div className="flex flex-wrap gap-3">
+                <button
+                  onClick={() => processAffiliatesByPriority('high')}
+                  disabled={automationLoading}
+                  className="bg-red-600 hover:bg-red-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors"
+                >
+                  <span>🔥</span>
+                  <span>Process High Priority (5 articles)</span>
+                </button>
+
+                <button
+                  onClick={() => processAffiliatesByPriority('medium-high')}
+                  disabled={automationLoading}
+                  className="bg-orange-600 hover:bg-orange-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors"
+                >
+                  <span>📈</span>
+                  <span>Process Medium-High (3 articles)</span>
+                </button>
+
+                <button
+                  onClick={() => processAffiliatesByPriority('medium')}
+                  disabled={automationLoading}
+                  className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors"
+                >
+                  <span>📊</span>
+                  <span>Process Medium Priority</span>
+                </button>
+
+                <button
+                  onClick={processAllAffiliates}
+                  disabled={automationLoading}
+                  className="bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white px-4 py-2 rounded-lg flex items-center space-x-2 transition-colors font-semibold"
+                >
+                  <span>🚀</span>
+                  <span>{automationLoading ? 'Processing...' : 'Process ALL Articles'}</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Article List Preview */}
+            {affiliateArticles.length > 0 && (
+              <div>
+                <h3 className="font-medium text-gray-900 mb-3">
+                  Articles Ready for Processing ({affiliateArticles.length})
+                </h3>
+                <div className="max-h-64 overflow-y-auto bg-gray-50 rounded-lg p-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {affiliateArticles.map((article, index) => (
+                      <div key={index} className="bg-white p-3 rounded border">
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <div className="font-medium text-sm text-gray-900">
+                              {article.title}
+                            </div>
+                            <div className="text-xs text-gray-500 mt-1">
+                              {article.path} • {article.productCount} products
+                            </div>
+                          </div>
+                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                            article.priority === 'high' ? 'bg-red-100 text-red-800' :
+                            article.priority === 'medium-high' ? 'bg-orange-100 text-orange-800' :
+                            'bg-blue-100 text-blue-800'
+                          }`}>
+                            {article.priority}
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Warning */}
+            <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+              <div className="flex items-start space-x-3">
+                <div className="text-amber-600">⚠️</div>
+                <div>
+                  <div className="font-medium text-amber-800">Important Notes:</div>
+                  <ul className="text-sm text-amber-700 mt-2 space-y-1">
+                    <li>• This will automatically add BolProductSection components to articles</li>
+                    <li>• Only articles without existing affiliate sections will be processed</li>
+                    <li>• High priority articles have the best revenue potential</li>
+                    <li>• Changes are made directly to article files - backup recommended</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* Search Section */}
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
