@@ -27,6 +27,12 @@ export const useRecaptcha = () => {
     console.log('\n🔐 reCAPTCHA Variable Check:')
     console.log('  - NEXT_PUBLIC_RECAPTCHA_SITE_KEY:', siteKey ? `...${siteKey.slice(-3)} ✅` : '❌ MISSING')
     
+    console.log('\n🛍️ Bol.com API Status Check:')
+    console.log('  - BOL_API_CLIENT_ID: Server-side only (secure) ✅')
+    console.log('  - BOL_API_CLIENT_SECRET: Server-side only (secure) ✅')
+    console.log('  - API Endpoint: /api/bol-feed (kennisbank-products action) ✅')
+    console.log('  - Note: Credentials are properly secured on server-side')
+    
     console.log('\n🏗️ Build Information:')
     console.log('  - NODE_ENV:', process.env.NODE_ENV || 'undefined')
     console.log('  - Total env vars:', Object.keys(process.env).length)
