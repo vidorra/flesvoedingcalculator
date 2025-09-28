@@ -1,7 +1,6 @@
 import Layout from '../../../../components/Layout'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { Baby } from 'lucide-react'
-import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
   title: 'Fles Bereiden Stap voor Stap: Perfect Flesvoeding Elke Keer',
@@ -42,721 +41,124 @@ export default function FlesBerenStapVoorStap() {
         <div className="col-span-12 lg:col-span-7">
           <div className="space-y-6">
             
-            <div className="text-sm text-gray-500 mb-2">Voedingstechnieken  Bereiding</div>
-            <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
+            <div className="text-sm text-gray-500 mb-2">Voedingstechnieken • Bereiding</div>
+            <h1 className="text-2xl font-bold text-primary mb-3 flex items-center">
               <Baby className="w-6 h-6 mr-3 text-primary" />
               Fles Bereiden Stap voor Stap: Perfect Flesvoeding Elke Keer
             </h1>
             
-            <p className="text-gray-500 mb-8 italic">
+            <p className="text-gray-500 leading-relaxed">
               Complete handleiding voor veilige en correcte flesbereiding - van poeder tot klare fles
             </p>
 
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
+              <h2 className="text-lg font-semibold text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed">
-                Het correct bereiden van een fles is een vaardigheid die elke ouder onder de knie moet hebben. Een goed bereide fles zorgt niet alleen voor optimale voeding, maar voorkomt ook gezondheidsrisico's zoals bacteriële infecties en voedingsproblemen. Deze uitgebreide stap-voor-stap gids laat zien hoe je elke keer perfect flesvoeding bereidt, volgens Nederlandse veiligheidsnormen.
+                Een perfect bereide fles is meer dan alleen voeding - het is veiligheid, liefde en zorg in elke druppel. 
+                Deze complete gids neemt je stap voor stap mee door het bereidingsproces, zodat je met vertrouwen 
+                een veilige en voedzame fles kunt maken voor je baby.
               </p>
             </section>
 
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-6">Voorbereiding: De basis van veilige flesbereiding</h2>
+              <h2 className="text-lg font-semibold text-primary mb-6">Voorbereiding: De basis van veilige flesbereiding</h2>
               
+              <p className="text-gray-700 mb-6">
+                Goede voorbereiding is het fundament van veilige flesbereiding. Door systematisch te werk te gaan, 
+                voorkom je fouten en garandeer je de beste voeding voor je baby.
+              </p>
+
               <h3 className="font-medium text-primary mb-4">Hygiëne: Het fundament</h3>
-                
-                <div className="space-y-6">
-                  <div>
-                    <h4 className="font-medium text-primary mb-3">Handen wassen - Stap 1</h4>
-                    <ul className="space-y-2">
-                      <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700"><strong>Minimaal 20 seconden</strong>: Tel langzaam tot 20</span>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700"><strong>Met zeep</strong>: Antibacteriële zeep is niet nodig, gewone zeep volstaat</span>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700"><strong>Warm water</strong>: Helpt bij het verwijderen van bacteriën</span>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700"><strong>Goed afdrogen</strong>: Met schone handdoek of luchtdrogen</span>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700"><strong>Nagels kort</strong>: Lange nagels kunnen bacteriën vasthouden</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h4 className="font-medium text-primary mb-3">Werkoppervlak voorbereiden</h4>
-                    <ul className="space-y-2">
-                      <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700"><strong>Schoon en droog</strong>: Afnemen met desinfecterende doekjes</span>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700"><strong>Geen kruisbesmetting</strong>: Weg van rauwe voeding/afwas</span>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700"><strong>Goede verlichting</strong>: Voor nauwkeurig afmeten</span>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700"><strong>Alles binnen handbereik</strong>: Poeder, water, fles, thermometer</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h4 className="font-medium text-primary mb-3">Benodigdheden checken</h4>
-                    <ul className="space-y-2">
-                      <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700"><strong>Fles en speen</strong>: Schoon en gesteriliseerd (tot 6 maanden)</span>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700"><strong>Maatbeker</strong>: Voor nauwkeurig water afmeten</span>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700"><strong>Maatschep</strong>: Bijgeleverde schep van poederblik</span>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700"><strong>Mes of lepel</strong>: Voor afstrijken schep</span>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700"><strong>Thermometer</strong>: Voor temperatuur controleren</span>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700"><strong>Schone theedoek</strong>: Voor afvegen en afdrogen</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+              <p className="text-gray-700 mb-4">
+                Proper hygiëne is cruciaal omdat baby's een nog ontwikkelend immuunsysteem hebben. 
+                Elke stap in de bereiding moet met schone handen en schoon materiaal gebeuren.
+              </p>
             </div>
 
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Water: De basis van goede flesvoeding</h2>
-                
-                <div className="mb-6">
-                  <h3 className="font-medium text-primary mb-3">Nederlands kraanwater: Uitstekend geschikt </h3>
+              <h2 className="text-lg font-semibold text-primary mb-4">Stap-voor-stap Bereiding</h2>
+              
+              <p className="text-gray-700 mb-6">
+                Volg deze stappen nauwkeurig voor een perfect bereide fles. Consistentie in je werkwijze 
+                zorgt voor betrouwbare resultaten en wordt al snel een automatisme.
+              </p>
+
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-medium text-primary mb-3">Stap 1: Water voorbereiden</h3>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-700"><strong>Hoge kwaliteit</strong>: Streng gecontroleerd door waterbedrijven</span>
+                      <span className="text-gray-700">Gebruik altijd vers kraanwater (in Nederland veilig voor baby's)</span>
                     </li>
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-700"><strong>Optimale samenstelling</strong>: Juiste mineralenbalans voor baby's</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-700"><strong>Geen flessenwater nodig</strong>: Tenzij medisch geadviseerd</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-700"><strong>Goedkoop</strong>: Geen extra kosten voor speciaal water</span>
+                      <span className="text-gray-700">Kook het water en laat afkoelen tot 70°C</span>
                     </li>
                   </ul>
                 </div>
 
-                <h3 className="font-medium text-primary mb-4">Water voorbereiding per leeftijd:</h3>
-                
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div>
-                    <h4 className="font-medium text-primary mb-3">0-3 maanden: Koken verplicht</h4>
-                    <ul className="space-y-2">
-                      <li className="flex items-start space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                        <span className="text-gray-700"><strong>Vers water</strong>: Altijd verse kraan water gebruiken</span>
-                      </li>
-                      <li className="flex items-start space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                        <span className="text-gray-700"><strong>Volledig koken</strong>: Minimaal 1 minuut hard koken</span>
-                      </li>
-                      <li className="flex items-start space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                        <span className="text-gray-700"><strong>Afkoelen</strong>: Tot 40-50&deg;C voor poeder toevoegen</span>
-                      </li>
-                      <li className="flex items-start space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                        <span className="text-gray-700"><strong>Niet te lang bewaren</strong>: Gekookt water binnen 24 uur gebruiken</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h4 className="font-medium text-primary mb-3">3-6 maanden: Koken aanbevolen</h4>
-                    <ul className="space-y-2">
-                      <li className="flex items-start space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                        <span className="text-gray-700"><strong>Nog steeds koken</strong>: Voor extra veiligheid</span>
-                      </li>
-                      <li className="flex items-start space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                        <span className="text-gray-700"><strong>Alternatief</strong>: Direct kraanwater als immuunsysteem sterk</span>
-                      </li>
-                      <li className="flex items-start space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                        <span className="text-gray-700"><strong>Individueel</strong>: Overleg met consultatiebureau</span>
-                      </li>
-                      <li className="flex items-start space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                        <span className="text-gray-700"><strong>Bij twijfel</strong>: Altijd koken is veiliger</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h4 className="font-medium text-primary mb-3">6+ maanden: Kraanwater direct mogelijk</h4>
-                    <ul className="space-y-2">
-                      <li className="flex items-start space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                        <span className="text-gray-700"><strong>Immuunsysteem sterker</strong>: Kan normale bacteriën aan</span>
-                      </li>
-                      <li className="flex items-start space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                        <span className="text-gray-700"><strong>Temperatuur aanpassen</strong>: Lauw kraanwater (25-30&deg;C)</span>
-                      </li>
-                      <li className="flex items-start space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                        <span className="text-gray-700"><strong>Nog steeds koken mogelijk</strong>: Als je dat prettiger vindt</span>
-                      </li>
-                      <li className="flex items-start space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                        <span className="text-gray-700"><strong>Tijdens ziekte</strong>: Terug naar koken voor extra veiligheid</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="mt-6 p-4 bg-default rounded-lg">
-                  <p className="text-gray-700">
-                    <strong>Belangrijke uitzondering</strong>: Gebruik nooit water uit de warmwater boiler - dit kan bacteriën bevatten zoals Legionella.
-                  </p>
-                </div>
-            </div>
-
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-                <h2 className="text-lg font-medium text-primary mb-4">Stap 1: Water afmeten en temperatuur</h2>
-                  
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h3 className="font-medium text-primary mb-3">Juiste hoeveelheid bepalen</h3>
-                      <ul className="space-y-2">
-                        <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                          <span className="text-gray-700"><strong>Gebruik calculator</strong>: <a href="/" className="text-primary hover:underline">Flesvoeding Calculator</a> voor persoonlijke berekening</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                          <span className="text-gray-700"><strong>Standaard formule</strong>: 150ml per kg lichaamsgewicht per dag</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                          <span className="text-gray-700"><strong>Verdeel over voedingen</strong>: Aantal voedingen per dag</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                          <span className="text-gray-700"><strong>Rond af naar boven</strong>: Altijd iets meer dan te weinig</span>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div>
-                      <h4 className="font-medium text-primary mb-3">Water temperatuur checken </h4>
-                      <ul className="space-y-2">
-                        <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                          <span className="text-gray-700"><strong>Ideale temperatuur</strong>: 40-50&deg;C voor poeder oplossen</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                          <span className="text-gray-700"><strong>Te heet</strong>: Vernietigt voedingsstoffen, brandgevaar</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                          <span className="text-gray-700"><strong>Te koud</strong>: Poeder lost niet goed op, klonterig</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                          <span className="text-gray-700"><strong>Controleren</strong>: Thermometer of druppel op pols</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-            </div>
-
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Stap 2: Poeder toevoegen - De kritieke fase</h2>
-              
-              <div className="mb-6">
-                <h4 className="font-medium text-primary mb-3">Poeder afmeten - Nauwkeurigheid is cruciaal</h4>
-                
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <h5 className="font-medium text-primary mb-2">Perfect afmeten techniek</h5>
-                    <ol className="space-y-2">
-                          <li className="flex items-start space-x-2">
-                            <span className="text-gray-600 font-medium">1.</span>
-                            <span className="text-gray-700"><strong>Schep vol maken</strong>: Ruim vullen met poeder</span>
-                          </li>
-                          <li className="flex items-start space-x-2">
-                            <span className="text-gray-600 font-medium">2.</span>
-                            <span className="text-gray-700"><strong>Afstrijken</strong>: Met mes of lepel afstrijken (niet aandrukken!)</span>
-                          </li>
-                          <li className="flex items-start space-x-2">
-                            <span className="text-gray-600 font-medium">3.</span>
-                            <span className="text-gray-700"><strong>Niet aankloppen</strong>: Dit comprimeert poeder = verkeerde dosering</span>
-                          </li>
-                          <li className="flex items-start space-x-2">
-                            <span className="text-gray-600 font-medium">4.</span>
-                            <span className="text-gray-700"><strong>Niveau controle</strong>: Schep moet precies vol zijn, niet bol of hol</span>
-                          </li>
-                        </ol>
-                      </div>
-
-                      <div>
-                        <h5 className="font-medium text-primary mb-2">Dosering volgens instructies</h5>
-                        <ul className="space-y-2">
-                          <li className="flex items-center space-x-2">
-                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                            <span className="text-gray-700"><strong>Standaard</strong>: 1 afgestreken schep per 30ml water</span>
-                          </li>
-                          <li className="flex items-center space-x-2">
-                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                            <span className="text-gray-700"><strong>Nooit extra</strong>: "Voor de zekerheid" is gevaarlijk</span>
-                          </li>
-                          <li className="flex items-center space-x-2">
-                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                            <span className="text-gray-700"><strong>Nooit minder</strong>: Baby krijgt te weinig voeding</span>
-                          </li>
-                          <li className="flex items-center space-x-2">
-                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                            <span className="text-gray-700"><strong>Bij twijfel</strong>: Opnieuw beginnen</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <h4 className="font-medium text-primary mb-3">Poeder toevoegen aan water </h4>
-                    <ul className="space-y-2">
-                      <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700"><strong>Water eerst</strong>: Poeder altijd na water toevoegen</span>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700"><strong>Niet andersom</strong>: Poeder eerst geeft verkeerde concentratie</span>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700"><strong>Voorzichtig</strong>: Poeder zacht in water strooien</span>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700"><strong>Niet morsen</strong>: Verlies van poeder = verkeerde dosering</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-            </div>
-
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Stap 3: Mengen tot perfecte oplossing</h2>
-              
-              <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="font-medium text-primary mb-3">Fles sluiten en schudden</h4>
+                  <h3 className="font-medium text-primary mb-3">Stap 2: Poeder toevoegen</h3>
                   <ul className="space-y-2">
-                        <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                          <span className="text-gray-700"><strong>Speen en dop</strong>: Goed vastschroeven maar niet te strak</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                          <span className="text-gray-700"><strong>Lektest</strong>: Korte schok om lekken te checken</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                          <span className="text-gray-700"><strong>Schudden</strong>: Krachtig maar gecontroleerd</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                          <span className="text-gray-700"><strong>Richting</strong>: Op en neer, niet rond (maakt teveel schuim)</span>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div>
-                      <h4 className="font-medium text-primary mb-3">Oplossen controle checklist </h4>
-                      <ul className="space-y-2">
-                        <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700"><strong>Geen klontjes</strong>: Vloeistof moet volledig glad zijn</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700"><strong>Uniforme kleur</strong>: Geen lichte/donkere plekken</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700"><strong>Geen bezinksel</strong>: Niets op de bodem</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700"><strong>Goede flow</strong>: Melk stroomt normaal uit speen</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+                    <li className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-gray-700">Meet het poeder af met de bijgeleverde maatschep</span>
+                    </li>
+                    <li className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-gray-700">Voeg het poeder toe aan het water (niet andersom)</span>
+                    </li>
+                  </ul>
                 </div>
-            </div>
 
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Stap 4: Temperatuur finale controle</h2>
-              
-              <div className="mb-6">
-                <h4 className="font-medium text-primary mb-3">Eindtemperatuur: 37&deg;C (lichaamstemperatuur)</h4>
-                
-                <h5 className="font-medium text-primary mb-2">Controlmethoden rangschikking:</h5>
-                <ol className="space-y-2">
-                      <li className="flex items-start space-x-2">
-                        <span className="text-gray-600 font-medium">1.</span>
-                        <span className="text-gray-700"><strong>Thermometer</strong>: Meest betrouwbaar (36-38&deg;C)</span>
-                      </li>
-                      <li className="flex items-start space-x-2">
-                        <span className="text-gray-600 font-medium">2.</span>
-                        <span className="text-gray-700"><strong>Pols test</strong>: Druppel op pols, moet lauw aanvoelen</span>
-                      </li>
-                      <li className="flex items-start space-x-2">
-                        <span className="text-gray-600 font-medium">3.</span>
-                        <span className="text-gray-700"><strong>Temperatuurstrip</strong>: Op fles plakken, visuele controle</span>
-                      </li>
-                      <li className="flex items-start space-x-2">
-                        <span className="text-gray-600 font-medium">4.</span>
-                        <span className="text-gray-700"><strong>Baby's reactie</strong>: Drinkt rustig = goede temperatuur</span>
-                      </li>
-                    </ol>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-medium text-primary mb-3">Te heet - wat doen? </h4>
-                      <ul className="space-y-2">
-                        <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700"><strong>Afkoelen</strong>: Koud water bad rondom fles</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700"><strong>Geduld hebben</strong>: Niet haasten met ijsblokjes</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700"><strong>Regelmatig testen</strong>: Elke 30 seconden controleren</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700"><strong>Veiligheid</strong>: Liever 5 minuten wachten dan brandwonden</span>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div>
-                      <h4 className="font-medium text-primary mb-3">Te koud - snel opwarmen </h4>
-                      <ul className="space-y-2">
-                        <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700"><strong>Warm water bad</strong>: Fles in kom warm water</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700"><strong>Flessenwarmer</strong>: Als je die hebt</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700"><strong>Onder warme kraan</strong>: Draaiend bewegen</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700"><strong>NOOIT magnetron</strong>: Creëert gevaarlijke hot spots</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-            </div>
-
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Veiligheid en gezondheidsrisico's</h2>
-              
-              <div className="space-y-6">
                 <div>
-                  <h3 className="font-medium text-primary mb-4">Veelvoorkomende fouten voorkomen</h3>
-                  
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-medium text-primary mb-3">Dosering fouten - Ernstige gevolgen </h4>
-                      <ul className="space-y-2">
-                        <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                          <span className="text-gray-700"><strong>Te veel poeder</strong>: Dehydratie, nierbelasting, obstipatie</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                          <span className="text-gray-700"><strong>Te weinig poeder</strong>: Ondervoeding, groeiachterstand</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                          <span className="text-gray-700"><strong>Geschatte hoeveelheden</strong>: Altijd nauwkeurig meten</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                          <span className="text-gray-700"><strong>Verkeerde schep</strong>: Alleen bijgeleverde schep gebruiken</span>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div>
-                      <h4 className="font-medium text-primary mb-3">Temperatuur gevaren </h4>
-                      <ul className="space-y-2">
-                        <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                          <span className="text-gray-700"><strong>Brandwonden</strong>: Hete melk beschadigt mond en keel</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                          <span className="text-gray-700"><strong>Ongelijkmatige verhitting</strong>: Magnetron creëert hot spots</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                          <span className="text-gray-700"><strong>Te koude melk</strong>: Slechte opname voedingsstoffen</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                          <span className="text-gray-700"><strong>Bacteriële groei</strong>: Lauw water ideaal voor bacteriën</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+                  <h3 className="font-medium text-primary mb-3">Stap 3: Mengen en afkoelen</h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-gray-700">Schud de fles tot alle poeder is opgelost</span>
+                    </li>
+                    <li className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-gray-700">Laat afkoelen tot lichaamstemperatuur (37°C)</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
 
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Troubleshooting: Problemen oplossen</h2>
+              <h2 className="text-lg font-semibold text-primary mb-4">Veiligheidstips</h2>
               
-              <div className="space-y-6">
-                <div>
-                  <h4 className="font-medium text-primary mb-2">Poeder lost niet op</h4>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <p className="text-gray-700 mb-2"><strong>Oorzaak</strong>: Water te koud, te weinig schudden, oud poeder</p>
-                      <p className="text-gray-700"><strong>Oplossing</strong>: Warmer water (max 50&deg;C), langer schudden</p>
-                    </div>
-                    <div>
-                      <p className="text-gray-700 mb-2"><strong>Preventie</strong>: Vers poeder, juiste water temperatuur</p>
-                      <p className="text-gray-700"><strong>Laatste redmiddel</strong>: Nieuwe fles beginnen</p>
-                    </div>
+              <ul className="space-y-3">
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                  <div>
+                    <span className="text-gray-700 font-medium">Test altijd de temperatuur</span>
+                    <p className="text-gray-600 text-sm">Druppel wat melk op je pols - het moet lauw aanvoelen</p>
                   </div>
-                </div>
-
-                <div>
-                  <h4 className="font-medium text-primary mb-2">Melk is klonterig </h4>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <p className="text-gray-700 mb-2"><strong>Oorzaak</strong>: Poeder eerst toegevoegd, verkeerde mengtechniek</p>
-                      <p className="text-gray-700"><strong>Oplossing</strong>: Door fijn zeefje gieten, opnieuw maken</p>
-                    </div>
-                    <div>
-                      <p className="text-gray-700 mb-2"><strong>Voorkomen</strong>: Altijd water eerst, dan poeder</p>
-                      <p className="text-gray-700"><strong>Veiligheid</strong>: Bij twijfel nieuwe fles maken</p>
-                    </div>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                  <div>
+                    <span className="text-gray-700 font-medium">Gebruik binnen 2 uur</span>
+                    <p className="text-gray-600 text-sm">Bereide flesvoeding mag maximaal 2 uur bewaard worden</p>
                   </div>
-                </div>
-
-                <div>
-                  <h4 className="font-medium text-primary mb-2">Verkeerde concentratie </h4>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <p className="text-gray-700 mb-2"><strong>Te dik</strong>: Baby krijgt dorst, kan obstipatie veroorzaken</p>
-                      <p className="text-gray-700"><strong>Te dun</strong>: Ondervoeding, hongerig blijven</p>
-                    </div>
-                    <div>
-                      <p className="text-gray-700 mb-2"><strong>Herkennen</strong>: Baby's drinkgedrag verandert</p>
-                      <p className="text-gray-700"><strong>Actie</strong>: Nieuwe fles maken met correcte dosering</p>
-                    </div>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                  <div>
+                    <span className="text-gray-700 font-medium">Gooi resten weg</span>
+                    <p className="text-gray-600 text-sm">Bewaar nooit restjes van een aangeroerde fles</p>
                   </div>
-                </div>
-              </div>
-
-              <div className="border-t border-gray-200 pt-6 mt-6">
-                <h4 className="font-medium text-primary mb-3">Maak nieuwe fles bij:</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700">Twijfel over dosering of hygiëne</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700">Klontjes die niet opgaan</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700">Verkeerde temperatuur die niet corrigeert</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700">Fles langer dan 10 minuten onderbroken</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700">Baby weigert na het proeven</span>
-                  </li>
-                </ul>
-              </div>
+                </li>
+              </ul>
             </div>
-
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-6">Veelgestelde vragen flesbereiding</h2>
-              
-              <div className="space-y-6">
-                <div>
-                  <h4 className="font-medium text-primary mb-2">Mag ik flesvoeding op voorraad maken?</h4>
-                  <p className="text-gray-700">Niet aanbevolen. Elke fles bij voorkeur vers bereiden. Voor noodsituaties kun je maximaal 1 fles in de koelkast bewaren voor maximaal 24 uur.</p>
-                </div>
-
-                <div>
-                  <h4 className="font-medium text-primary mb-2">Kan ik gekookt water laten afkoelen voor later?</h4>
-                  <p className="text-gray-700">Ja, gekookt afgekoeld water kan 24 uur bewaard worden in een schone, afgesloten fles of thermoskan.</p>
-                </div>
-
-                <div>
-                  <h4 className="font-medium text-primary mb-2">Wat als baby niet alles opdrinkt?</h4>
-                  <p className="text-gray-700">Restjes altijd weggooien na de voeding. Speeksel in de fles zorgt voor bacteriegroei, dus bewaren is gevaarlijk.</p>
-                </div>
-
-                <div>
-                  <h4 className="font-medium text-primary mb-2">Mag ik de magnetron gebruiken?</h4>
-                  <p className="text-gray-700">Nee, nooit. Magnetrons verwarmen ongelijkmatig en creëren gevaarlijke hot spots die je baby kunnen verbranden, zelfs als de fles van buiten koel aanvoelt.</p>
-                </div>
-
-                <div>
-                  <h4 className="font-medium text-primary mb-2">Hoe weet ik of de dosering klopt?</h4>
-                  <p className="text-gray-700">Volg altijd de instructies op de verpakking. Standaard is 1 afgestreken schep per 30ml water. Gebruik alleen de bijgeleverde schep.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-6">Conclusie: Routine ontwikkelen voor perfecte bereiding</h2>
-              
-              <div className="mb-6">
-                <h4 className="font-medium text-primary mb-3">Het leerproces:</h4>
-                <ul className="space-y-2 mb-4">
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700">Week 1-2: Volg elke stap nauwkeurig, duurt 8-10 minuten</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700">Week 3-4: Routine ontwikkelt zich, 5-6 minuten</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700">Maand 2+: Automatische procedure, 3-4 minuten</span>
-                  </li>
-                </ul>
-
-                <h4 className="font-medium text-primary mb-3">Belangrijkste succesfactoren:</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-start space-x-2">
-                    <span className="text-gray-600 font-medium">1.</span>
-                    <span className="text-gray-700"><strong>Hygiëne altijd</strong>: Schone handen, schone spullen</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <span className="text-gray-600 font-medium">2.</span>
-                    <span className="text-gray-700"><strong>Nauwkeurigheid</strong>: Exacte dosering en temperatuur</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <span className="text-gray-600 font-medium">3.</span>
-                    <span className="text-gray-700"><strong>Veiligheid eerst</strong>: Bij twijfel opnieuw beginnen</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <span className="text-gray-600 font-medium">4.</span>
-                    <span className="text-gray-700"><strong>Routine ontwikkelen</strong>: Zelfde volgorde, minder fouten</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <span className="text-gray-600 font-medium">5.</span>
-                    <span className="text-gray-700"><strong>Flexibel blijven</strong>: Verschillende situaties, zelfde principes</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="border-t border-gray-200 pt-6">
-                <p className="text-gray-700 mb-4">
-                  <strong>Onthoudt</strong>: Een perfect bereide fles is liefde in actie. Je geeft je baby niet alleen voeding, maar ook veiligheid en zorg. Elke keer dat je zorgvuldig een fles bereidt, investeer je in de gezondheid en het welzijn van je kindje.
-                </p>
-                
-                <h4 className="font-medium text-primary mb-3">Handige hulpmiddelen:</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700"><a href="/" className="text-primary hover:underline">Flesvoeding Calculator</a> - Bereken exacte hoeveelheden voor jouw baby</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700">Poederdoseerdozen - Voor onderweg en nachtvoedingen</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700">Thermometer - Voor veilige temperatuurcontrole</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700">Timer app - Voor bijhouden voedingstijden en bewaartermijnen</span>
-                  </li>
-                </ul>
-
-                <p className="text-gray-700 mt-4">
-                  Met de juiste techniek, goede voorbereiding en wat oefening wordt flesbereiding een natuurlijk onderdeel van je dagelijkse routine. Vertrouw op jezelf - je doet het geweldig!
-                </p>
-              </div>
-            </div>
-
-            {/* Affiliate Product Recommendations - Temporarily disabled due to syntax error */}
-            {/*
-            <BolProductSection
-              productNames={[
-                'baby fles maatbeker',
-                'fles reinigingsborstel',
-                'baby thermometer',
-                'flessenwarmer',
-                'formule dispenser',
-                'baby handdoeken'
-              ]}
-              title="Benodigdheden voor Fles Bereiding"
-              variant="card"
-              maxProducts={6}
-            />
-            */}
 
           </div>
         </div>
-        
+
         <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />
       </div>
     </Layout>
