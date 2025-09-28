@@ -229,7 +229,37 @@ export default function BolProductSection({
     )
   }
 
-  if (error || products.length === 0) return null
+  if (error || products.length === 0) {
+    return (
+      <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-lg font-semibold text-primary">{title}</h3>
+          <div className="flex items-center space-x-2 text-xs text-gray-500">
+            <ShoppingCart className="w-4 h-4" />
+            <span>Gesponsorde links</span>
+          </div>
+        </div>
+        
+        <div className="text-center py-8">
+          <div className="text-gray-500 mb-2">
+            <ShoppingCart className="w-12 h-12 mx-auto mb-3 text-gray-300" />
+          </div>
+          <p className="text-gray-600 mb-2">Geen productaanbevelingen beschikbaar</p>
+          <p className="text-sm text-gray-500">
+            Productaanbevelingen zijn momenteel niet beschikbaar. Probeer het later opnieuw.
+          </p>
+        </div>
+        
+        <div className="mt-4 pt-4 border-t border-gray-200">
+          <p className="text-xs text-gray-500 flex items-center">
+            <ExternalLink className="w-3 h-3 mr-1" />
+            Als partner van bol.com verdienen we mogelijk een commissie bij aankopen via deze links.
+            Dit heeft geen invloed op de prijs voor u.
+          </p>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
