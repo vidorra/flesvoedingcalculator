@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ExternalLink, Star, Euro, ShoppingCart } from 'lucide-react'
-import { getKennisbankProductLinks } from '../lib/bol-api'
+// Note: We use API routes to access Bol.com API server-side for security
 
 /**
  * Single product link component
@@ -176,8 +176,28 @@ export default function BolProductSection({
       setError(null)
       
       try {
-        const foundProducts = await getKennisbankProductLinks(productNames.slice(0, maxProducts))
-        setProducts(foundProducts)
+        // Use API route to fetch products server-side for security
+        const response = await fetch('/api/bol-feed', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            action: 'kennisbank-products',
+            productNames: productNames.slice(0, maxProducts)
+          })
+        })
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`)
+        }
+        
+        const data = await response.json()
+        if (data.success && data.products) {
+          setProducts(data.products)
+        } else {
+          throw new Error(data.error || 'Failed to fetch products')
+        }
       } catch (err) {
         console.error('Error fetching Bol.com products:', err)
         setError('Producten konden niet worden geladen')
@@ -262,9 +282,23 @@ export function BolProductMention({ productName, children }) {
     const fetchProduct = async () => {
       setLoading(true)
       try {
-        const products = await getKennisbankProductLinks([productName])
-        if (products.length > 0) {
-          setProduct(products[0])
+        // Use API route to fetch products server-side for security
+        const response = await fetch('/api/bol-feed', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            action: 'kennisbank-products',
+            productNames: [productName]
+          })
+        })
+        
+        if (response.ok) {
+          const data = await response.json()
+          if (data.success && data.products && data.products.length > 0) {
+            setProduct(data.products[0])
+          }
         }
       } catch (error) {
         console.error('Error fetching product mention:', error)

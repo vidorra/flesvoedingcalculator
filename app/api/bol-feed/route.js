@@ -191,7 +191,7 @@ export async function GET(request) {
  */
 export async function POST(request) {
   try {
-    const { action } = await request.json()
+    const { action, productNames } = await request.json()
     
     switch (action) {
       case 'update':
@@ -204,15 +204,40 @@ export async function POST(request) {
           error: result.error || null,
           timestamp: new Date().toISOString()
         })
+      
+      case 'kennisbank-products':
+        // Import server-side bol-api functions
+        const { getKennisbankProductLinks } = await import('../../../lib/bol-api')
+        
+        if (!productNames || !Array.isArray(productNames)) {
+          return NextResponse.json({
+            success: false,
+            error: 'productNames array is required'
+          }, { status: 400 })
+        }
+        
+        try {
+          const products = await getKennisbankProductLinks(productNames)
+          return NextResponse.json({
+            success: true,
+            products
+          })
+        } catch (error) {
+          console.error('Error fetching kennisbank products:', error)
+          return NextResponse.json({
+            success: false,
+            error: error.message
+          }, { status: 500 })
+        }
         
       default:
         return NextResponse.json({
           success: false,
-          error: 'Invalid action. Use "update" to refresh the product feed.'
+          error: 'Invalid action. Use "update" to refresh the product feed or "kennisbank-products" to fetch products.'
         }, { status: 400 })
     }
   } catch (error) {
-    console.error('Product feed update error:', error)
+    console.error('API error:', error)
     return NextResponse.json({
       success: false,
       error: error.message
