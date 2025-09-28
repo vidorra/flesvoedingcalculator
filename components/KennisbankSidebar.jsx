@@ -94,9 +94,8 @@ const KennisbankSidebar = ({
             return (
               <GoogleAdSlot 
                 key={item.key}
-                slot={item.data.slot} 
-                topic={item.data.topic} 
-                isPlaceholder={true} 
+                slot={item.key === 'ad-0' ? '5691109362' : '5863882645'} // Use real ad slot IDs
+                topic={item.data.topic}
               />
             )
           }
@@ -107,15 +106,13 @@ const KennisbankSidebar = ({
       {/* Mobile Ads - Visible only on mobile */}
       <div className="lg:hidden space-y-6">
         <GoogleAdSlot 
-          slot="320x250" 
-          topic={adTopics[0] || "Flesvoeding Producten"} 
-          isPlaceholder={true} 
+          slot="5691109362" 
+          topic={adTopics[0] || "Flesvoeding Producten"}
         />
         
         <GoogleAdSlot 
-          slot="320x250" 
-          topic={adTopics[1] || "Baby Verzorging"} 
-          isPlaceholder={true} 
+          slot="5863882645" 
+          topic={adTopics[1] || "Baby Verzorging"}
         />
       </div>
     </div>
