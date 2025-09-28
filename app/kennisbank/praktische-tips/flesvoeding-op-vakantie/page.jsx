@@ -545,6 +545,21 @@ export default function VakantiePage() {
               </div>
             </div>
 
+            {/* Affiliate Product Recommendations */}
+            <BolProductSection
+              productNames={[
+                'draagbare flessenwarmer',
+                'reis sterilisator',
+                'geïsoleerde baby tas',
+                'koelbox baby',
+                'reis formule container',
+                'baby reis accessoires'
+              ]}
+              title="Reis Essentials voor Flesvoeding"
+              variant="card"
+              maxProducts={6}
+            />
+
             {/* Navigation */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde artikelen</h2>
@@ -616,21 +631,6 @@ export default function VakantiePage() {
             ]}
           />
         </div>
-
-          {/* Affiliate Product Recommendations - Auto-generated */}
-          <BolProductSection
-            productNames={[
-    'draagbare flessenwarmer',
-    'reis sterilisator',
-    'geïsoleerde baby tas',
-    'koelbox baby',
-    'reis formule container',
-    'baby reis accessoires'
-            ]}
-            title="Reis Essentials voor Flesvoeding"
-            variant="card"
-            maxProducts={6}
-          />
       </div>
     </Layout>
   )

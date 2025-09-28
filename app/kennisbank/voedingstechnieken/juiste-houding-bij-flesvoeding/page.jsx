@@ -640,6 +640,19 @@ export default function JuisteHoudingBijFlesvoeding() {
               </div>
             </section>
 
+            {/* Affiliate Product Recommendations */}
+            <BolProductSection
+              productNames={[
+                'voeding kussen baby',
+                'baby ondersteuning kussen',
+                'spuugdoekjes',
+                'comfortabele baby stoel'
+              ]}
+              title="Producten voor Juiste Voedingshouding"
+              variant="card"
+              maxProducts={4}
+            />
+
             <div className="bg-white p-6 text-center">
               <p className="text-gray-700">
                 <strong>Hulpmiddelen:</strong> <a href="/" className="text-primary hover:underline">Flesvoeding Calculator</a> - Bereken optimale hoeveelheden | Consultatiebureau - Advies bij voedingsproblemen | Kraamverzorgster - Praktische begeleiding eerste weken
@@ -649,19 +662,6 @@ export default function JuisteHoudingBijFlesvoeding() {
         </div>
         
         <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />
-
-          {/* Affiliate Product Recommendations - Auto-generated */}
-          <BolProductSection
-            productNames={[
-    'voeding kussen baby',
-    'baby ondersteuning kussen',
-    'spuugdoekjes',
-    'comfortabele baby stoel'
-            ]}
-            title="Producten voor Juiste Voedingshouding"
-            variant="card"
-            maxProducts={4}
-          />
       </div>
     </Layout>
   )

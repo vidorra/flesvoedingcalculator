@@ -448,6 +448,21 @@ export default function BabyDrinktNietGenoegPage() {
               </div>
             </div>
 
+            {/* Affiliate Product Recommendations */}
+            <BolProductSection
+              productNames={[
+                'baby weegschaal',
+                'voedingstracker',
+                'anti colic fles',
+                'verschillende speen maten',
+                'baby comfort fles',
+                'voeding stimulatie speelgoed'
+              ]}
+              title="Hulpmiddelen bij Voedingsproblemen"
+              variant="card"
+              maxProducts={6}
+            />
+
             {/* Related articles */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
@@ -477,21 +492,6 @@ export default function BabyDrinktNietGenoegPage() {
         </div>
         
         <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />
-
-          {/* Affiliate Product Recommendations - Auto-generated */}
-          <BolProductSection
-            productNames={[
-    'baby weegschaal',
-    'voedingstracker',
-    'anti colic fles',
-    'verschillende speen maten',
-    'baby comfort fles',
-    'voeding stimulatie speelgoed'
-            ]}
-            title="Hulpmiddelen bij Voedingsproblemen"
-            variant="card"
-            maxProducts={6}
-          />
       </div>
     </Layout>
   )

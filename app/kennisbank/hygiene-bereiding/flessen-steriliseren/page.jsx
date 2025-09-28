@@ -645,6 +645,21 @@ export default function FlessenSteriligerenPage() {
               </div>
             </div>
 
+            {/* Affiliate Product Recommendations */}
+            <BolProductSection
+              productNames={[
+                'Philips Avent sterilisator',
+                'MAM elektrische sterilisator',
+                'Chicco sterilisator',
+                'magnetron sterilisator',
+                'sterilisatie zakjes',
+                'baby fles tangen'
+              ]}
+              title="Aanbevolen Sterilisatoren en Accessoires"
+              variant="card"
+              maxProducts={6}
+            />
+
             {/* Related articles */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">

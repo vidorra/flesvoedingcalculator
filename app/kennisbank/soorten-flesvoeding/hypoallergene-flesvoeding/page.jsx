@@ -362,6 +362,21 @@ export default function HypoallergeneVoedingPage() {
               </div>
             </div>
 
+            {/* Affiliate Product Recommendations */}
+            <BolProductSection
+              productNames={[
+                'Nutrilon HA',
+                'Hero Baby HA',
+                'Nutricia Pepti',
+                'hypoallergene baby fles',
+                'medische sterilisator',
+                'allergie vrije speen'
+              ]}
+              title="Hypoallergene Voeding en Producten"
+              variant="card"
+              maxProducts={6}
+            />
+
             {/* Navigation */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde artikelen</h2>
@@ -433,21 +448,6 @@ export default function HypoallergeneVoedingPage() {
             ]}
           />
         </div>
-
-          {/* Affiliate Product Recommendations - Auto-generated */}
-          <BolProductSection
-            productNames={[
-    'Nutrilon HA',
-    'Hero Baby HA',
-    'Nutricia Pepti',
-    'hypoallergene baby fles',
-    'medische sterilisator',
-    'allergie vrije speen'
-            ]}
-            title="Hypoallergene Voeding en Producten"
-            variant="card"
-            maxProducts={6}
-          />
       </div>
     </Layout>
   )
