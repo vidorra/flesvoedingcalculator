@@ -1,7 +1,7 @@
 const GoogleAdSlot = ({ 
-  slot = "320x250", 
+  slot = "5691109362", // Default to sidebar-right-ad1 
   topic = "Flesvoeding Producten",
-  isPlaceholder = true 
+  isPlaceholder = false // Now default to real ads
 }) => {
   if (isPlaceholder) {
     return (
@@ -17,16 +17,26 @@ const GoogleAdSlot = ({
     )
   }
 
-  // When ready to implement real Google Ads, this would be replaced with:
+  // Real Google AdSense implementation
   return (
-    <div className="bg-white rounded-2xl p-4 text-center">
-      {/* Google AdSense code would go here */}
-      <div 
-        className="google-ad"
-        data-ad-client="ca-pub-YOUR-PUBLISHER-ID"
-        data-ad-slot="YOUR-AD-SLOT-ID"
+    <div className="text-center space-y-2">
+      <script 
+        async 
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938"
+        crossOrigin="anonymous"
+      />
+      <ins 
+        className="adsbygoogle"
+        style={{ display: 'block' }}
+        data-ad-client="ca-pub-5215838917916938"
+        data-ad-slot={slot}
         data-ad-format="auto"
         data-full-width-responsive="true"
+      />
+      <script 
+        dangerouslySetInnerHTML={{
+          __html: '(adsbygoogle = window.adsbygoogle || []).push({});'
+        }}
       />
     </div>
   )
