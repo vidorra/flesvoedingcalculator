@@ -415,6 +415,19 @@ export default function BioOrganischeFlesvoedingPage() {
               </div>
             </section>
 
+            {/* Affiliate Product Recommendations */}
+            <BolProductSection
+              productNames={[
+                'biologische baby voeding',
+                'Holle bio voeding',
+                'HiPP biologisch',
+                'eco baby fles'
+              ]}
+              title="Biologische Baby Voeding"
+              variant="card"
+              maxProducts={4}
+            />
+
             {/* Related Articles */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
@@ -445,19 +458,6 @@ export default function BioOrganischeFlesvoedingPage() {
         </div>
         
         <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />
-
-          {/* Affiliate Product Recommendations - Auto-generated */}
-          <BolProductSection
-            productNames={[
-    'biologische baby voeding',
-    'Holle bio voeding',
-    'HiPP biologisch',
-    'eco baby fles'
-            ]}
-            title="Biologische Baby Voeding"
-            variant="card"
-            maxProducts={4}
-          />
       </div>
     </Layout>
   )

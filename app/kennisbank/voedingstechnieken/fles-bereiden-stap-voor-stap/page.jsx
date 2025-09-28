@@ -735,23 +735,26 @@ export default function FlesBerenStapVoorStap() {
                   Met de juiste techniek, goede voorbereiding en wat oefening wordt flesbereiding een natuurlijk onderdeel van je dagelijkse routine. Vertrouw op jezelf - je doet het geweldig!
                 </p>
               </div>
+
+            {/* Affiliate Product Recommendations */}
+            <BolProductSection
+              productNames={[
+                'baby fles maatbeker',
+                'fles reinigingsborstel',
+                'baby thermometer',
+                'flessenwarmer',
+                'formule dispenser',
+                'baby handdoeken'
+              ]}
+              title="Benodigdheden voor Fles Bereiding"
+              variant="card"
+              maxProducts={6}
+            />
+
+          </div>
+        </div>
         
         <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />
-
-          {/* Affiliate Product Recommendations - Auto-generated */}
-          <BolProductSection
-            productNames={[
-    'baby fles maatbeker',
-    'fles reinigingsborstel',
-    'baby thermometer',
-    'flessenwarmer',
-    'formule dispenser',
-    'baby handdoeken'
-            ]}
-            title="Benodigdheden voor Fles Bereiding"
-            variant="card"
-            maxProducts={6}
-          />
       </div>
     </Layout>
   )

@@ -1050,6 +1050,19 @@ export default function OvergangNaarBekerPage() {
               </div>
             </div>
 
+            {/* Affiliate Product Recommendations */}
+            <BolProductSection
+              productNames={[
+                'baby drinkbeker',
+                'sippy cup',
+                'anti-lek drinkbeker',
+                '360 graden drinkbeker'
+              ]}
+              title="Overgang naar Zelfstandig Drinken"
+              variant="card"
+              maxProducts={4}
+            />
+
             {/* Related articles */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
@@ -1080,19 +1093,6 @@ export default function OvergangNaarBekerPage() {
         </div>
         
         <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />
-
-          {/* Affiliate Product Recommendations - Auto-generated */}
-          <BolProductSection
-            productNames={[
-    'baby drinkbeker',
-    'sippy cup',
-    'anti-lek drinkbeker',
-    '360 graden drinkbeker'
-            ]}
-            title="Overgang naar Zelfstandig Drinken"
-            variant="card"
-            maxProducts={4}
-          />
       </div>
     </Layout>
   )

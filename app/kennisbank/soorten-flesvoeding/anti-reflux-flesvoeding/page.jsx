@@ -589,6 +589,21 @@ export default function AntiRefluxPage() {
           </div>
         </div>
 
+        {/* Affiliate Product Recommendations */}
+        <BolProductSection
+          productNames={[
+            'anti reflux flesvoeding',
+            'Nutrilon AR',
+            'Hero Baby AR',
+            'anti reflux fles',
+            'langzame flow speen',
+            'baby positionering kussen'
+          ]}
+          title="Anti-Reflux Producten"
+          variant="card"
+          maxProducts={6}
+        />
+
         {/* Navigation */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
@@ -614,21 +629,6 @@ export default function AntiRefluxPage() {
 
         {/* Sidebar */}
         <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />
-
-          {/* Affiliate Product Recommendations - Auto-generated */}
-          <BolProductSection
-            productNames={[
-    'anti reflux flesvoeding',
-    'Nutrilon AR',
-    'Hero Baby AR',
-    'anti reflux fles',
-    'langzame flow speen',
-    'baby positionering kussen'
-            ]}
-            title="Anti-Reflux Producten"
-            variant="card"
-            maxProducts={6}
-          />
       </div>
     </Layout>
   )

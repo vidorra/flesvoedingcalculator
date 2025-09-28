@@ -405,6 +405,19 @@ export default function WaterKokenFlesvoedingPage() {
               </div>
             </section>
 
+            {/* Affiliate Product Recommendations */}
+            <BolProductSection
+              productNames={[
+                'baby water koker',
+                'water filter baby',
+                'gekookt baby water',
+                'water thermometer'
+              ]}
+              title="Water Voorbereiding Producten"
+              variant="card"
+              maxProducts={4}
+            />
+
             {/* Related Articles */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
@@ -435,19 +448,6 @@ export default function WaterKokenFlesvoedingPage() {
         </div>
         
         <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />
-
-          {/* Affiliate Product Recommendations - Auto-generated */}
-          <BolProductSection
-            productNames={[
-    'baby water koker',
-    'water filter baby',
-    'gekookt baby water',
-    'water thermometer'
-            ]}
-            title="Water Voorbereiding Producten"
-            variant="card"
-            maxProducts={4}
-          />
       </div>
     </Layout>
   )

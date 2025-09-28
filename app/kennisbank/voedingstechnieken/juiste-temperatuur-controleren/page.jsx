@@ -879,6 +879,19 @@ export default function JuisteTemperatuurControleren() {
               </div>
             </section>
 
+            {/* Affiliate Product Recommendations */}
+            <BolProductSection
+              productNames={[
+                'baby thermometer',
+                'melk temperatuur tester',
+                'digitale baby thermometer',
+                'infrarood thermometer baby'
+              ]}
+              title="Temperatuur Meet Apparatuur"
+              variant="card"
+              maxProducts={4}
+            />
+
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6 text-center">
               <p className="text-gray-700">
                 <strong>Hulpbronnen:</strong> <a href="/" className="text-primary hover:underline">Flesvoeding Calculator</a> - Bereken optimale hoeveelheden | Thermometers verkrijgbaar bij drogisterijen en online | Bij vragen over temperatuur altijd contact opnemen met consultatiebureau
@@ -888,19 +901,6 @@ export default function JuisteTemperatuurControleren() {
         </div>
         
         <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />
-
-          {/* Affiliate Product Recommendations - Auto-generated */}
-          <BolProductSection
-            productNames={[
-    'baby thermometer',
-    'melk temperatuur tester',
-    'digitale baby thermometer',
-    'infrarood thermometer baby'
-            ]}
-            title="Temperatuur Meet Apparatuur"
-            variant="card"
-            maxProducts={4}
-          />
       </div>
     </Layout>
   )
