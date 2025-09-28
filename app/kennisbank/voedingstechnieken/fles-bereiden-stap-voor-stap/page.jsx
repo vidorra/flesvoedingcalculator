@@ -735,8 +735,10 @@ export default function FlesBerenStapVoorStap() {
                   Met de juiste techniek, goede voorbereiding en wat oefening wordt flesbereiding een natuurlijk onderdeel van je dagelijkse routine. Vertrouw op jezelf - je doet het geweldig!
                 </p>
               </div>
+            </div>
 
-            {/* Affiliate Product Recommendations */}
+            {/* Affiliate Product Recommendations - Temporarily disabled due to syntax error */}
+            {/*
             <BolProductSection
               productNames={[
                 'baby fles maatbeker',
@@ -750,6 +752,7 @@ export default function FlesBerenStapVoorStap() {
               variant="card"
               maxProducts={6}
             />
+            */}
 
           </div>
         </div>
