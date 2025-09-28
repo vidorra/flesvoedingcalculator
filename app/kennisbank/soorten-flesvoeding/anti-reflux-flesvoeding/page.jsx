@@ -9,6 +9,28 @@ export const metadata = {
   description: 'Alles over anti-reflux flesvoeding in Nederland. Van herkenning reflux tot beste merken, voedingstechnieken en wanneer naar de dokter. Complete praktische gids voor ouders.',
 }
 
+
+  // Sidebar configuration
+  const sidebarImages = [
+    {
+      src: "/flesvoeding.webp",
+      alt: "Anti-reflux flesvoeding formule",
+      caption: "Speciale voeding tegen reflux"
+    },
+    {
+      src: "/mother_and_baby.webp",
+      alt: "Baby met reflux krijgt speciale zorg",
+      caption: "Extra aandacht en de juiste voeding"
+    },
+    {
+      src: "/baby.webp",
+      alt: "Comfortabele baby na anti-reflux voeding",
+      caption: "Rust en comfort na de juiste voeding"
+    }
+  ]
+
+  const adTopics = ["Anti-Reflux Voeding", "Reflux Baby", "Speciale Formule", "Medische Voeding"]
+
 export default function AntiRefluxPage() {
   const refluxSigns = [
     { sign: 'Frequent spugen (>5x per dag)', severity: 'mild', description: 'Vooral na voedingen' },
@@ -591,26 +613,7 @@ export default function AntiRefluxPage() {
         </div>
 
         {/* Sidebar */}
-        <KennisbankSidebar 
-          images={[
-            {
-              src: "/kunstvoeding.webp",
-              alt: "Anti-reflux flesvoeding voeding",
-              caption: "Speciale voeding tegen reflux en spugen"
-            },
-            {
-              src: "/slapende-baby-2.webp", 
-              alt: "Baby comfort na anti-reflux voeding",
-              caption: "Rust na de juiste anti-reflux voeding"
-            },
-            {
-              src: "/baby-met-fopspeen.webp",
-              alt: "Baby comfort bij reflux problemen",
-              caption: "Comfort maatregelen bij reflux"
-            }
-          ]}
-          adTopics={["Anti-Reflux Producten", "Baby Comfort"]}
-        />
+        <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />
 
           {/* Affiliate Product Recommendations - Auto-generated */}
           <BolProductSection

@@ -8,6 +8,28 @@ export const metadata = {
   description: 'Wat is het verschil tussen flesvoeding nummer 1 en 2? Wanneer moet je overstappen? Deze complete vergelijking legt uit welke melk wanneer te gebruiken, inclusief kosten, voedingswaarden en Nederlandse merkenvergelijking.',
 }
 
+
+  // Sidebar configuration
+  const sidebarImages = [
+    {
+      src: "/flesvoeding.webp",
+      alt: "Verschillende flesvoeding stadia",
+      caption: "Van startvoeding naar opvolgmelk"
+    },
+    {
+      src: "/baby.webp",
+      alt: "Baby groeit met aangepaste voeding",
+      caption: "Groei-gerichte voedingskeuzes"
+    },
+    {
+      src: "/mother_and_baby.webp",
+      alt: "Moeder kiest juiste voeding voor leeftijd",
+      caption: "Bewuste keuzes per levensfase"
+    }
+  ]
+
+  const adTopics = ["Startvoeding", "Opvolgmelk", "Baby Ontwikkeling", "Voeding Stadia"]
+
 export default function VerschilStartvoedingOpvolgmelkPage() {
   const nutritionComparison = [
     {

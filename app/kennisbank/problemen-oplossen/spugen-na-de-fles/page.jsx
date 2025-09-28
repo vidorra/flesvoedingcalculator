@@ -8,6 +8,28 @@ export const metadata = {
   description: 'Spugen na flesvoeding is de #1 zorg van Nederlandse ouders. Leer het verschil tussen normaal spugen en reflux, praktische oplossingen om spugen te verminderen, en wanneer je de huisarts moet bellen.',
 }
 
+
+  // Sidebar configuration
+  const sidebarImages = [
+    {
+      src: "/baby.webp",
+      alt: "Baby spuugt na flesvoeding",
+      caption: "Normale ontwikkeling herkennen"
+    },
+    {
+      src: "/mother_and_baby.webp",
+      alt: "Moeder houdt spuugdoekje bij baby",
+      caption: "Voorbereid zijn op spugen"
+    },
+    {
+      src: "/flesvoeding-door-mama.webp",
+      alt: "Voorzichtige voeding tegen spugen",
+      caption: "Technieken om spugen te verminderen"
+    }
+  ]
+
+  const adTopics = ["Baby Spugen", "Reflux Baby", "Spuugdoekjes", "Voeding Problemen"]
+
 export default function SpugenNaDeFlesPage() {
   const reassuringStats = [
     { stat: '70% van baby\'s', description: 'spuugt regelmatig de eerste 6 maanden' },

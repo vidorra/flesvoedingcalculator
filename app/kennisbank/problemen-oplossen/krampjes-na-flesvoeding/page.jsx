@@ -8,6 +8,28 @@ export const metadata = {
   description: 'Krampjes na flesvoeding zijn de #2 zorg van Nederlandse ouders na spugen. Leer de oorzaken herkennen, effectieve oplossingen toepassen, en wanneer je medische hulp moet zoeken. Praktische tips die echt werken.',
 }
 
+
+  // Sidebar configuration
+  const sidebarImages = [
+    {
+      src: "/mother_and_baby.webp",
+      alt: "Moeder troost baby met krampjes",
+      caption: "Liefdevol comfort bij ongemak"
+    },
+    {
+      src: "/baby.webp",
+      alt: "Baby met buikpijn na flesvoeding",
+      caption: "Herkenning van signalen"
+    },
+    {
+      src: "/flesvoeding.webp",
+      alt: "Anti-kramp flesvoeding opties",
+      caption: "Zachte voeding voor gevoelige buikjes"
+    }
+  ]
+
+  const adTopics = ["Baby Krampjes", "Buikpijn Baby", "Anti-Kramp Voeding", "Baby Comfort"]
+
 export default function KrampjesNaFlesvoedingPage() {
   const recognitionSignals = [
     {

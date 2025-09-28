@@ -8,6 +8,28 @@ export const metadata = {
   description: 'Veilig bewaren van flesvoeding voorkomt voedselinfecties en voorkomt verspilling. Leer alle regels voor koelkast, vriezer en kamertemperatuur bewaring, plus praktische tips voor onderweg en nachtvoeding.',
 }
 
+
+  // Sidebar configuration
+  const sidebarImages = [
+    {
+      src: "/flesvoeding.webp",
+      alt: "Proper flesvoeding bewaring",
+      caption: "Veilige bewaring van flesvoeding"
+    },
+    {
+      src: "/mother_and_baby.webp",
+      alt: "Moeder bereidt flesvoeding hygiënisch voor",
+      caption: "Hygiëne en veiligheid voorop"
+    },
+    {
+      src: "/baby.webp",
+      alt: "Baby krijgt veilig bewaarde flesvoeding",
+      caption: "Verse en veilige voeding"
+    }
+  ]
+
+  const adTopics = ["Voeding Bewaring", "Baby Veiligheid", "Hygiëne", "Flesvoeding Accessoires"]
+
 export default function FlesvoedingBewarenPage() {
   const storageRisks = [
     'Salmonella infectie - Koorts, braken, diarree',

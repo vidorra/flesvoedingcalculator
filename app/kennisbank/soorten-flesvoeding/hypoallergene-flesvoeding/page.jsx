@@ -9,6 +9,28 @@ export const metadata = {
   description: 'Alles over hypoallergene (HA) flesvoeding. Van koemelkallergie herkenning tot beste Nederlandse merken, medische begeleiding en praktische tips. Expert advies voor allergie-veilige voeding.',
 }
 
+
+  // Sidebar configuration
+  const sidebarImages = [
+    {
+      src: "/flesvoeding.webp",
+      alt: "Hypoallergene baby formule",
+      caption: "Veilige voeding voor allergische baby's"
+    },
+    {
+      src: "/mother_and_baby.webp",
+      alt: "Zorgvuldige voeding voor allergische baby",
+      caption: "Extra zorg bij allergieën"
+    },
+    {
+      src: "/baby.webp",
+      alt: "Gelukkige baby met hypoallergene voeding",
+      caption: "Gezonde groei zonder allergische reacties"
+    }
+  ]
+
+  const adTopics = ["Hypoallergene Voeding", "Baby Allergieën", "Speciale Formule", "Allergievrije Voeding"]
+
 export default function HypoallergeneVoedingPage() {
   const allergySigns = [
     { sign: 'Eczeem en huiduitslag', severity: 'mild', description: 'Rode, jeukende plekken huid' },

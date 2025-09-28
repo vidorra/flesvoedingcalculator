@@ -8,6 +8,28 @@ export const metadata = {
   description: 'Tot 50% besparen op flesvoeding kosten zonder kwaliteit in te leveren. Alle budget tricks, merkenvergelijkingen, online deals en praktische besparingstips die echt werken.',
 }
 
+
+  // Sidebar configuration
+  const sidebarImages = [
+    {
+      src: "/flesvoeding.webp",
+      alt: "Budgetvriendelijke flesvoeding opties",
+      caption: "Kwaliteit hoeft niet duur te zijn"
+    },
+    {
+      src: "/mother_and_baby.webp",
+      alt: "Bewuste keuzes in flesvoeding",
+      caption: "Slim besparen zonder kwaliteitsverlies"
+    },
+    {
+      src: "/baby.webp",
+      alt: "Tevreden baby met budgetvriendelijke voeding",
+      caption: "Gezonde groei binnen budget"
+    }
+  ]
+
+  const adTopics = ["Budget Flesvoeding", "Besparen Baby", "Voordelige Voeding", "Geld Besparen"]
+
 export default function GeldBesparenPage() {
   const costComparison = [
     {
