@@ -8,6 +8,28 @@ export const metadata = {
   description: 'Het juiste moment voor overstappen naar opvolgmelk is cruciaal voor je baby\'s acceptatie en welzijn. Leer de perfecte timing, herken de signalen van je baby, en voer een soepele overgang uit met deze stap-voor-stap gids.',
 }
 
+
+  // Sidebar configuration
+  const sidebarImages = [
+    {
+      src: "/baby.webp",
+      alt: "Baby klaar voor opvolgmelk",
+      caption: "Tekenen van ontwikkeling herkennen"
+    },
+    {
+      src: "/flesvoeding.webp",
+      alt: "Overgang naar opvolgmelk",
+      caption: "Geleidelijke overgang naar nieuwe voeding"
+    },
+    {
+      src: "/mother_and_baby.webp",
+      alt: "Moeder kiest timing voor opvolgmelk",
+      caption: "Juiste moment voor de overgang"
+    }
+  ]
+
+  const adTopics = ["Opvolgmelk Timing", "Baby Ontwikkeling", "Voeding Overgang", "6 Maanden Baby"]
+
 export default function WanneerOverstappenOpvolgmelkPage() {
   const timingFactors = [
     {

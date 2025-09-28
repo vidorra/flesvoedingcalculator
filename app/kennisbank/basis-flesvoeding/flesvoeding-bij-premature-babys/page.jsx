@@ -8,6 +8,28 @@ export const metadata = {
   description: 'Speciale aandachtspunten, NICU ervaring en evidence-based advies voor Nederlandse ouders. Van gecorrigeerde leeftijd tot lange termijn ontwikkeling.',
 }
 
+
+  // Sidebar configuration
+  const sidebarImages = [
+    {
+      src: "/baby.webp",
+      alt: "Premature baby in speciale zorg",
+      caption: "Zorgvuldige voeding voor premature baby's"
+    },
+    {
+      src: "/mother_and_baby.webp",
+      alt: "Moeder zorgt voor premature baby",
+      caption: "Extra aandacht en liefde"
+    },
+    {
+      src: "/flesvoeding.webp",
+      alt: "Speciale premature baby voeding",
+      caption: "Aangepaste voeding voor vroeggeboren baby's"
+    }
+  ]
+
+  const adTopics = ["Premature Baby Voeding", "Speciale Zorg", "NICU Voeding", "Vroeggeboren Baby's"]
+
 export default function FlesvoedingPrematurePage() {
   const prematureCategories = [
     {

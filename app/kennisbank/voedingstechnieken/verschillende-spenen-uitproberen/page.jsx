@@ -9,6 +9,28 @@ export const metadata = {
   description: 'De juiste speen kan het verschil maken tussen een tevreden baby en urenlang gefrustreerd huilen. Leer welke spenen het beste werken voor verschillende problemen, hoe je de perfecte match vindt, en wanneer je moet overstappen.',
 }
 
+
+  // Sidebar configuration
+  const sidebarImages = [
+    {
+      src: "/flesvoeding.webp",
+      alt: "Verschillende baby spenen types",
+      caption: "Vind de perfecte speen voor je baby"
+    },
+    {
+      src: "/baby.webp",
+      alt: "Baby test verschillende spenen",
+      caption: "Comfort en voorkeur ontdekken"
+    },
+    {
+      src: "/mother_and_baby.webp",
+      alt: "Moeder helpt baby met speen keuze",
+      caption: "Geduld bij het vinden van de juiste speen"
+    }
+  ]
+
+  const adTopics = ["Baby Spenen", "Fles Accessoires", "Speen Keuze", "Baby Comfort"]
+
 export default function VerschillendeSpenenUitproberenPage() {
   const speenTypes = [
     {

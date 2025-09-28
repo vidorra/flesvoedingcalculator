@@ -16,39 +16,108 @@ const KennisbankSidebar = ({
   ],
   adTopics = ["Flesvoeding Producten", "Baby Verzorging"]
 }) => {
+  
+  // Create dynamic content array: image → ad → image → ad → remaining images
+  const createDynamicContent = () => {
+    const content = []
+    const adTopicsToUse = [...adTopics]
+    
+    // Add first image if available
+    if (images[0]) {
+      content.push({ type: 'image', data: images[0], key: 'image-0' })
+    }
+    
+    // Add first ad if available
+    if (adTopicsToUse[0]) {
+      content.push({ 
+        type: 'ad', 
+        data: { topic: adTopicsToUse[0], slot: '320x250' }, 
+        key: 'ad-0' 
+      })
+    }
+    
+    // Add second image if available
+    if (images[1]) {
+      content.push({ type: 'image', data: images[1], key: 'image-1' })
+    }
+    
+    // Add second ad if available
+    if (adTopicsToUse[1]) {
+      content.push({ 
+        type: 'ad', 
+        data: { topic: adTopicsToUse[1], slot: '320x250' }, 
+        key: 'ad-1' 
+      })
+    }
+    
+    // Add remaining images if any (3rd, 4th, etc.)
+    for (let i = 2; i < images.length; i++) {
+      content.push({ type: 'image', data: images[i], key: `image-${i}` })
+    }
+    
+    // Add additional ads if we have more ad topics than the first 2
+    for (let i = 2; i < adTopicsToUse.length; i++) {
+      content.push({ 
+        type: 'ad', 
+        data: { topic: adTopicsToUse[i], slot: '320x250' }, 
+        key: `ad-${i}` 
+      })
+    }
+    
+    return content
+  }
+
+  const dynamicContent = createDynamicContent()
+
   return (
     <div className="col-span-12 lg:col-span-5 space-y-6">
-      {/* Images - Hidden on mobile, visible on desktop */}
+      {/* Dynamic Content - Hidden on mobile, visible on desktop */}
       <div className="hidden lg:block space-y-6">
-        {images.map((image, index) => (
-          <div key={index} className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
-            <Image
-              src={image.src}
-              alt={image.alt}
-              width={300}
-              height={200}
-              className="w-full h-auto rounded-xl"
-              priority={false}
-            />
-            <p className="text-sm text-gray-600 mt-2 text-center">
-              {image.caption}
-            </p>
-          </div>
-        ))}
+        {dynamicContent.map((item) => {
+          if (item.type === 'image') {
+            return (
+              <div key={item.key} className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+                <Image
+                  src={item.data.src}
+                  alt={item.data.alt}
+                  width={300}
+                  height={200}
+                  className="w-full h-auto rounded-xl"
+                  priority={false}
+                />
+                <p className="text-sm text-gray-600 mt-2 text-center">
+                  {item.data.caption}
+                </p>
+              </div>
+            )
+          } else if (item.type === 'ad') {
+            return (
+              <GoogleAdSlot 
+                key={item.key}
+                slot={item.data.slot} 
+                topic={item.data.topic} 
+                isPlaceholder={true} 
+              />
+            )
+          }
+          return null
+        })}
       </div>
 
-      {/* Google Ads - Visible on all devices */}
-      <GoogleAdSlot 
-        slot="320x250" 
-        topic={adTopics[0]} 
-        isPlaceholder={true} 
-      />
-
-      <GoogleAdSlot 
-        slot="320x250" 
-        topic={adTopics[1]} 
-        isPlaceholder={true} 
-      />
+      {/* Mobile Ads - Visible only on mobile */}
+      <div className="lg:hidden space-y-6">
+        <GoogleAdSlot 
+          slot="320x250" 
+          topic={adTopics[0] || "Flesvoeding Producten"} 
+          isPlaceholder={true} 
+        />
+        
+        <GoogleAdSlot 
+          slot="320x250" 
+          topic={adTopics[1] || "Baby Verzorging"} 
+          isPlaceholder={true} 
+        />
+      </div>
     </div>
   )
 }

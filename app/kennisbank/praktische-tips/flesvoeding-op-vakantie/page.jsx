@@ -9,6 +9,28 @@ export const metadata = {
   description: 'Stress-vrij reizen met baby en flesvoeding. Alle praktische tips voor vliegtuig, auto, internationale reizen. Van packing lists tot noodplannen voor zorgeloze vakantie.',
 }
 
+
+  // Sidebar configuration
+  const sidebarImages = [
+    {
+      src: "/flesvoeding-door-mama.webp",
+      alt: "Flesvoeding geven tijdens vakantie",
+      caption: "Ontspannen voeden, ook op vakantie"
+    },
+    {
+      src: "/baby.webp",
+      alt: "Baby geniet van fles op vakantie",
+      caption: "Vertrouwde routine, nieuwe omgeving"
+    },
+    {
+      src: "/mother_and_baby.webp",
+      alt: "Reizen met baby en flesvoeding",
+      caption: "Goed voorbereid op reis"
+    }
+  ]
+
+  const adTopics = ["Reizen met Baby", "Vakantie Voeding", "Baby Reisartikelen", "Onderweg Voeden"]
+
 export default function VakantiePage() {
   const travelAdvantages = [
     'Geen kolf equipment nodig (ruimte besparing)',

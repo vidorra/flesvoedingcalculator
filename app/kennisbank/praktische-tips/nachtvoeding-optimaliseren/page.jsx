@@ -8,6 +8,28 @@ export const metadata = {
   description: 'Praktische tips voor nachtvoeding bij flesvoeding. Van 30 naar 10 minuten per nachtvoeding. Complete gids voor uitgeruste Nederlandse ouders.',
 }
 
+
+  // Sidebar configuration
+  const sidebarImages = [
+    {
+      src: "/mother_and_baby.webp",
+      alt: "Rustige nachtvoeding moment",
+      caption: "Serene nachten met goede routine"
+    },
+    {
+      src: "/baby.webp",
+      alt: "Baby slaapt goed na nachtvoeding",
+      caption: "Tevreden en uitgerust"
+    },
+    {
+      src: "/flesvoeding-door-mama.webp",
+      alt: "Efficiënte nachtvoeding routine",
+      caption: "Snelle voeding, snelle rust"
+    }
+  ]
+
+  const adTopics = ["Nachtvoeding", "Baby Slaap", "Nacht Routine", "Slaap Optimalisatie"]
+
 export default function NachtvoedingOptimaliserenPage() {
   const optimizationStrategies = [
     {
