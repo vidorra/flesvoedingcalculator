@@ -81,23 +81,14 @@ function scanKennisbankPages() {
   return pages.sort((a, b) => a.path.localeCompare(b.path))
 }
 
-// GET - List all kennisbank pages
+// GET - Disabled in favor of /api/admin-pages/ (production-safe)
 export async function GET(request) {
-  try {
-    verifyAdmin(request)
-    
-    const pages = scanKennisbankPages()
-    
-    return NextResponse.json({
-      success: true,
-      pages
-    })
-
-  } catch (error) {
-    console.error('Failed to load pages:', error)
-    return NextResponse.json(
-      { message: 'Unauthorized or failed to load pages' },
-      { status: error.message.includes('token') ? 401 : 500 }
-    )
-  }
+  return NextResponse.json(
+    { 
+      message: 'This endpoint is disabled due to performance issues. Use /api/admin-pages/ instead.',
+      redirect: '/api/admin-pages/',
+      reason: 'File system scanning causes 504 timeouts in production'
+    },
+    { status: 301 }
+  )
 }

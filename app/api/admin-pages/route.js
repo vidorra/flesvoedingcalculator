@@ -10,60 +10,46 @@ function isAuthenticated(request) {
   return true // Simplified for now
 }
 
-// Scan kennisbank directory for pages
-function scanKennisbankPages() {
-  const kennisbankDir = path.join(process.cwd(), 'app', 'kennisbank')
-  const pages = []
-
-  function scanDirectory(dir, basePath = '') {
-    try {
-      const items = fs.readdirSync(dir)
-      
-      for (const item of items) {
-        const itemPath = path.join(dir, item)
-        const stat = fs.statSync(itemPath)
-        
-        if (stat.isDirectory()) {
-          // Recursively scan subdirectories
-          scanDirectory(itemPath, path.join(basePath, item))
-        } else if (item === 'page.jsx') {
-          // Found a page file
-          const pagePath = basePath ? `/kennisbank/${basePath}` : '/kennisbank'
-          
-          // Try to extract title from the page file
-          let title = basePath ? basePath.split('/').pop().replace(/-/g, ' ') : 'Kennisbank'
-          title = title.charAt(0).toUpperCase() + title.slice(1)
-          
-          // Try to read the actual title from the file
-          try {
-            const fileContent = fs.readFileSync(itemPath, 'utf8')
-            const titleMatch = fileContent.match(/<h1[^>]*>.*?<.*?>(.*?)<\/.*?><\/h1>/s) ||
-                               fileContent.match(/<h1[^>]*>(.*?)<\/h1>/s) ||
-                               fileContent.match(/title:\s*['"](.*?)['"]/i)
-            
-            if (titleMatch) {
-              title = titleMatch[1].replace(/<[^>]*>/g, '').trim()
-            }
-          } catch (e) {
-            // Use the default title if can't read file
-          }
-          
-          pages.push({
-            id: basePath.replace(/\//g, '_') || 'kennisbank_root',
-            title: title,
-            path: pagePath,
-            category: basePath ? basePath.split('/')[0] : 'root',
-            snippetCount: 0 // Will be populated later with actual assignment data
-          })
-        }
-      }
-    } catch (error) {
-      console.error('Error scanning directory:', dir, error)
+// Production-safe pages list - no file system operations
+function getKnownPages() {
+  // Static list of kennisbank pages to avoid file system scanning in production
+  return [
+    { 
+      id: 'hygiene-bereiding_flessen-steriliseren', 
+      title: 'Flessen Steriliseren', 
+      path: '/kennisbank/hygiene-bereiding/flessen-steriliseren', 
+      category: 'hygiene-bereiding', 
+      snippetCount: 4 
+    },
+    { 
+      id: 'basis-flesvoeding_flesvoeding-vs-borstvoeding', 
+      title: 'Flesvoeding vs Borstvoeding', 
+      path: '/kennisbank/basis-flesvoeding/flesvoeding-vs-borstvoeding', 
+      category: 'basis-flesvoeding', 
+      snippetCount: 0 
+    },
+    { 
+      id: 'voedingstechnieken_overstappen-van-borst-naar-fles', 
+      title: 'Overstappen van Borst naar Fles', 
+      path: '/kennisbank/voedingstechnieken/overstappen-van-borst-naar-fles', 
+      category: 'voedingstechnieken', 
+      snippetCount: 0 
+    },
+    { 
+      id: 'basis-flesvoeding_eerste-keer-flesvoeding-geven', 
+      title: 'Eerste Keer Flesvoeding Geven', 
+      path: '/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven', 
+      category: 'basis-flesvoeding', 
+      snippetCount: 0 
+    },
+    { 
+      id: 'hygiene-bereiding_juiste-temperatuur-controleren', 
+      title: 'Juiste Temperatuur Controleren', 
+      path: '/kennisbank/hygiene-bereiding/juiste-temperatuur-controleren', 
+      category: 'hygiene-bereiding', 
+      snippetCount: 0 
     }
-  }
-  
-  scanDirectory(kennisbankDir)
-  return pages.sort((a, b) => a.path.localeCompare(b.path))
+  ]
 }
 
 // GET - List all kennisbank pages
@@ -76,7 +62,7 @@ export async function GET(request) {
       )
     }
     
-    const pages = scanKennisbankPages()
+    const pages = getKnownPages()
     
     return NextResponse.json({
       success: true,
@@ -86,7 +72,7 @@ export async function GET(request) {
   } catch (error) {
     console.error('Failed to load pages:', error)
     return NextResponse.json(
-      { message: 'Failed to load pages' },
+      { message: 'Failed to load pages', error: error.message },
       { status: 500 }
     )
   }

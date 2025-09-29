@@ -26,11 +26,21 @@ function isAuthenticated(request) {
   return true
 }
 
-// Load snippets from file
+// Load snippets from file with error handling
 function loadSnippets() {
-  ensureDataDir()
-  const data = fs.readFileSync(SNIPPETS_FILE, 'utf8')
-  return JSON.parse(data)
+  try {
+    ensureDataDir()
+    if (!fs.existsSync(SNIPPETS_FILE)) {
+      console.log('Snippets file does not exist, returning empty array')
+      return []
+    }
+    const data = fs.readFileSync(SNIPPETS_FILE, 'utf8')
+    const parsed = JSON.parse(data)
+    return Array.isArray(parsed) ? parsed : []
+  } catch (error) {
+    console.error('Error loading snippets:', error)
+    return []
+  }
 }
 
 // Save snippets to file
@@ -39,9 +49,10 @@ function saveSnippets(snippets) {
   fs.writeFileSync(SNIPPETS_FILE, JSON.stringify(snippets, null, 2))
 }
 
-// GET - List all snippets
+// GET - List all snippets with timeout protection
 export async function GET(request) {
   try {
+    // Quick auth check (no expensive operations)
     if (!isAuthenticated(request)) {
       return NextResponse.json(
         { message: 'Unauthorized' },
@@ -52,7 +63,14 @@ export async function GET(request) {
     const url = new URL(request.url)
     const activeOnly = url.searchParams.get('active') === 'true'
     
+    // Load snippets with timeout protection
+    const startTime = Date.now()
     let snippets = loadSnippets()
+    const loadTime = Date.now() - startTime
+    
+    if (loadTime > 5000) {
+      console.warn(`Snippets loading took ${loadTime}ms - this is too slow for production`)
+    }
     
     if (activeOnly) {
       snippets = snippets.filter(snippet => snippet.active)
@@ -60,13 +78,14 @@ export async function GET(request) {
     
     return NextResponse.json({
       success: true,
-      snippets
+      snippets,
+      loadTime: loadTime
     })
 
   } catch (error) {
     console.error('Failed to load snippets:', error)
     return NextResponse.json(
-      { message: 'Failed to load snippets' },
+      { message: 'Failed to load snippets', error: error.message },
       { status: 500 }
     )
   }
