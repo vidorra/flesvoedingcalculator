@@ -23,7 +23,7 @@ export default function AffiliateProductWidget({
     ? getProductsByIds(productIds)
     : getProductsByCategory(category)
   
-  // Debug log for deployment verification - v2 force redeploy
+  // Debug log for deployment verification - v3 script execution approach
   if (typeof window !== 'undefined' && products.length > 0) {
     console.log(`🛍️ AffiliateProductWidget loaded ${products.length} products for category "${category}" - deployment v2`)
   }
@@ -31,13 +31,47 @@ export default function AffiliateProductWidget({
   const displayProducts = products.slice(0, maxProducts)
 
   useEffect(() => {
-    // Handle Bol.com snippet injection
+    // Handle Bol.com snippet injection with proper script execution
     displayProducts.forEach(product => {
       if (product.type === 'bol_snippet') {
         console.log(`🔧 Setting up Bol.com snippet for ${product.id}`)
         
-        // The HTML snippet will be injected via dangerouslySetInnerHTML
-        // No additional script loading needed here as it's included in the snippet
+        // Use a timeout to ensure the DOM element is rendered
+        setTimeout(() => {
+          const container = document.querySelector(`[data-widget-id="${product.id}"]`)
+          if (container) {
+            // Clear any existing content
+            container.innerHTML = ''
+            
+            // Create a temporary div to parse the HTML
+            const tempDiv = document.createElement('div')
+            tempDiv.innerHTML = product.data.html
+            
+            // Extract and execute scripts manually
+            const scripts = tempDiv.querySelectorAll('script')
+            const targetDiv = tempDiv.querySelector('div')
+            
+            if (targetDiv) {
+              // Add the target div first
+              container.appendChild(targetDiv.cloneNode(true))
+              
+              // Execute scripts in order
+              scripts.forEach((script, index) => {
+                const newScript = document.createElement('script')
+                if (script.src) {
+                  newScript.src = script.src
+                  newScript.id = script.id || `${product.id}_script_${index}`
+                } else {
+                  newScript.textContent = script.textContent
+                }
+                document.head.appendChild(newScript)
+                console.log(`📝 Executed script ${index + 1} for ${product.id}`)
+              })
+              
+              console.log(`✅ Bol.com widget setup complete for ${product.id}`)
+            }
+          }
+        }, 100)
       }
     })
   }, [displayProducts])
@@ -78,9 +112,13 @@ export default function AffiliateProductWidget({
             {product.type === 'bol_snippet' && (
               <div className="bg-white rounded-xl border border-gray-200 p-4">
                 <div 
-                  dangerouslySetInnerHTML={{ __html: product.data.html }}
-                  className="min-h-[200px]"
-                />
+                  data-widget-id={product.id}
+                  className="min-h-[200px] flex items-center justify-center"
+                >
+                  <div className="text-gray-400 text-sm">
+                    Loading product...
+                  </div>
+                </div>
               </div>
             )}
             
