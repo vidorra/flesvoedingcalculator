@@ -1,31 +1,65 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { getProductsByCategory, getProductsByIds } from './affiliate-products.js'
 
 /**
  * Renders real Bol.com widgets and Amazon affiliate links
  * @param {Object} props
- * @param {string} props.category - Product category (sterilisatoren, babyflessen, etc.)
- * @param {Array<string>} props.productIds - Specific product IDs to show
+ * @param {string} props.pageId - Page ID to load admin-managed snippets (preferred)
+ * @param {string} props.category - Product category (sterilisatoren, babyflessen, etc.) - fallback
+ * @param {Array<string>} props.productIds - Specific product IDs to show - fallback
  * @param {string} props.title - Section title
  * @param {number} props.maxProducts - Maximum number of products to show
  */
 export default function AffiliateProductWidget({ 
+  pageId = null,
   category = null, 
   productIds = null,
   title = "Aanbevolen Producten",
   maxProducts = 6 
 }) {
   const containerRef = useRef(null)
+  const [products, setProducts] = useState([])
+  const [loading, setLoading] = useState(true)
 
-  // Get products based on category or specific IDs
-  const products = productIds 
-    ? getProductsByIds(productIds)
-    : getProductsByCategory(category)
+  // Load products from admin system or fallback to static data
+  useEffect(() => {
+    async function loadProducts() {
+      setLoading(true)
+      
+      if (pageId) {
+        // Load from admin system
+        try {
+          const response = await fetch(`/api/affiliates/page/${pageId}`)
+          if (response.ok) {
+            const data = await response.json()
+            if (data.success && data.snippets.length > 0) {
+              setProducts(data.snippets)
+              setLoading(false)
+              return
+            }
+          }
+        } catch (error) {
+          console.warn('Failed to load admin snippets, falling back to static data:', error)
+        }
+      }
+      
+      // Fallback to static data
+      const staticProducts = productIds 
+        ? getProductsByIds(productIds)
+        : getProductsByCategory(category)
+      
+      setProducts(staticProducts)
+      setLoading(false)
+    }
+    
+    loadProducts()
+  }, [pageId, category, productIds])
   
-  // Debug log for deployment verification - v4 iframe approach to bypass adblockers
-  if (typeof window !== 'undefined' && products.length > 0) {
-    console.log(`🛍️ AffiliateProductWidget loaded ${products.length} products for category "${category}" - deployment v2`)
+  // Debug log for deployment verification - v5 admin system integration
+  if (typeof window !== 'undefined' && products.length > 0 && !loading) {
+    const source = pageId ? `page "${pageId}"` : `category "${category}"`
+    console.log(`🛍️ AffiliateProductWidget loaded ${products.length} products from ${source} - admin integration v5`)
   }
 
   const displayProducts = products.slice(0, maxProducts)
@@ -41,12 +75,28 @@ export default function AffiliateProductWidget({
     })
   }, [displayProducts])
 
+  if (loading) {
+    return (
+      <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <h3 className="text-lg font-semibold text-primary mb-4">{title}</h3>
+        <div className="text-center py-8">
+          <p className="text-gray-600">Laden van productaanbevelingen...</p>
+        </div>
+      </div>
+    )
+  }
+  
   if (displayProducts.length === 0) {
     return (
       <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
         <h3 className="text-lg font-semibold text-primary mb-4">{title}</h3>
         <div className="text-center py-8">
           <p className="text-gray-600">Geen productaanbevelingen beschikbaar</p>
+          {pageId && (
+            <p className="text-gray-500 text-sm mt-2">
+              Voeg producten toe via het admin paneel
+            </p>
+          )}
         </div>
       </div>
     )

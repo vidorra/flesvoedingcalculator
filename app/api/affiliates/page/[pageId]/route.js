@@ -1,0 +1,103 @@
+import { NextResponse } from 'next/server'
+import fs from 'fs'
+import path from 'path'
+
+const DATA_DIR = path.join(process.cwd(), 'data', 'admin')
+const PAGE_SNIPPETS_FILE = path.join(DATA_DIR, 'page-snippets.json')
+const SNIPPETS_FILE = path.join(DATA_DIR, 'snippets.json')
+
+// Load page snippets
+function loadPageSnippets() {
+  if (!fs.existsSync(PAGE_SNIPPETS_FILE)) {
+    return {}
+  }
+  const data = fs.readFileSync(PAGE_SNIPPETS_FILE, 'utf8')
+  return JSON.parse(data)
+}
+
+// Load snippets
+function loadSnippets() {
+  if (!fs.existsSync(SNIPPETS_FILE)) {
+    return []
+  }
+  const data = fs.readFileSync(SNIPPETS_FILE, 'utf8')
+  return JSON.parse(data)
+}
+
+// GET - Get affiliate snippets for a specific page
+export async function GET(request, { params }) {
+  try {
+    const pageId = params.pageId
+    const pageSnippets = loadPageSnippets()
+    const allSnippets = loadSnippets()
+    
+    const pageSnippetList = pageSnippets[pageId] || []
+    
+    // Get active snippets for this page, sorted by order
+    const activeSnippets = pageSnippetList
+      .filter(ps => ps.active)
+      .map(ps => ({
+        ...ps,
+        snippet: allSnippets.find(s => s.id === ps.snippetId)
+      }))
+      .filter(ps => ps.snippet && ps.snippet.active) // Only active snippets
+      .sort((a, b) => (a.order || 0) - (b.order || 0))
+      .map(ps => ps.snippet) // Return just the snippet data
+    
+    // Convert admin format to frontend format
+    const frontendSnippets = activeSnippets.map(snippet => {
+      if (snippet.type === 'amazon') {
+        return {
+          id: snippet.id,
+          name: snippet.name,
+          tag: snippet.tag,
+          type: 'amazon_image', // Convert to frontend format
+          data: {
+            url: extractAffiliateUrl(snippet.generatedHtml),
+            imageUrl: extractImageUrl(snippet.generatedHtml),
+            alt: snippet.name,
+            width: 300
+          }
+        }
+      } else if (snippet.type === 'bol') {
+        return {
+          id: snippet.id,
+          name: snippet.name,
+          tag: snippet.tag,
+          type: 'bol_iframe', // Convert to frontend format
+          data: {
+            title: snippet.name,
+            fallbackImage: extractImageUrl(snippet.generatedHtml) || 'https://via.placeholder.com/200x200?text=Product',
+            productUrl: extractAffiliateUrl(snippet.generatedHtml) || '#'
+          }
+        }
+      }
+      
+      return null
+    }).filter(Boolean)
+    
+    return NextResponse.json({
+      success: true,
+      snippets: frontendSnippets
+    })
+
+  } catch (error) {
+    console.error('Failed to load page affiliates:', error)
+    return NextResponse.json(
+      { success: false, snippets: [] },
+      { status: 200 } // Return 200 with empty array to prevent frontend errors
+    )
+  }
+}
+
+// Helper function to extract affiliate URL from HTML
+function extractAffiliateUrl(html) {
+  const match = html.match(/href=["'](.*?)["']/i)
+  return match ? match[1] : null
+}
+
+// Helper function to extract image URL from HTML  
+function extractImageUrl(html) {
+  const match = html.match(/src=["'](.*?)["']/i)
+  return match ? match[1] : null
+}
