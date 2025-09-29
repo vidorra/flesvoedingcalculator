@@ -91,9 +91,10 @@ export async function GET(request) {
   }
 }
 
-// POST - Create new snippet
+// POST - Create new snippet with production-safe error handling
 export async function POST(request) {
   try {
+    // Simple auth check for creating snippets
     if (!isAuthenticated(request)) {
       return NextResponse.json(
         { message: 'Unauthorized' },
@@ -102,15 +103,24 @@ export async function POST(request) {
     }
     
     const snippetData = await request.json()
+    
+    // Validate required fields
+    if (!snippetData.name || !snippetData.type) {
+      return NextResponse.json(
+        { message: 'Name and type are required' },
+        { status: 400 }
+      )
+    }
+    
     const snippets = loadSnippets()
     
     const newSnippet = {
-      id: snippetData.id || Date.now().toString(),
+      id: snippetData.id || `${snippetData.type}-${Date.now()}`,
       name: snippetData.name,
       type: snippetData.type,
-      url: snippetData.url,
+      url: snippetData.url || '',
       tag: snippetData.tag || null,
-      generatedHtml: snippetData.generatedHtml,
+      generatedHtml: snippetData.generatedHtml || '',
       active: snippetData.active ?? true,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString()
@@ -118,6 +128,8 @@ export async function POST(request) {
     
     snippets.push(newSnippet)
     saveSnippets(snippets)
+    
+    console.log('Created new snippet:', newSnippet.id)
     
     return NextResponse.json({
       success: true,
@@ -127,7 +139,7 @@ export async function POST(request) {
   } catch (error) {
     console.error('Failed to create snippet:', error)
     return NextResponse.json(
-      { message: 'Failed to create snippet' },
+      { message: 'Failed to create snippet', error: error.message },
       { status: 500 }
     )
   }
