@@ -23,7 +23,7 @@ export default function AffiliateProductWidget({
     ? getProductsByIds(productIds)
     : getProductsByCategory(category)
   
-  // Debug log for deployment verification - v3 script execution approach
+  // Debug log for deployment verification - v4 iframe approach to bypass adblockers
   if (typeof window !== 'undefined' && products.length > 0) {
     console.log(`🛍️ AffiliateProductWidget loaded ${products.length} products for category "${category}" - deployment v2`)
   }
@@ -31,47 +31,12 @@ export default function AffiliateProductWidget({
   const displayProducts = products.slice(0, maxProducts)
 
   useEffect(() => {
-    // Handle Bol.com snippet injection with proper script execution
+    // Handle Bol.com iframe widgets (no script execution needed)
     displayProducts.forEach(product => {
-      if (product.type === 'bol_snippet') {
-        console.log(`🔧 Setting up Bol.com snippet for ${product.id}`)
-        
-        // Use a timeout to ensure the DOM element is rendered
-        setTimeout(() => {
-          const container = document.querySelector(`[data-widget-id="${product.id}"]`)
-          if (container) {
-            // Clear any existing content
-            container.innerHTML = ''
-            
-            // Create a temporary div to parse the HTML
-            const tempDiv = document.createElement('div')
-            tempDiv.innerHTML = product.data.html
-            
-            // Extract and execute scripts manually
-            const scripts = tempDiv.querySelectorAll('script')
-            const targetDiv = tempDiv.querySelector('div')
-            
-            if (targetDiv) {
-              // Add the target div first
-              container.appendChild(targetDiv.cloneNode(true))
-              
-              // Execute scripts in order
-              scripts.forEach((script, index) => {
-                const newScript = document.createElement('script')
-                if (script.src) {
-                  newScript.src = script.src
-                  newScript.id = script.id || `${product.id}_script_${index}`
-                } else {
-                  newScript.textContent = script.textContent
-                }
-                document.head.appendChild(newScript)
-                console.log(`📝 Executed script ${index + 1} for ${product.id}`)
-              })
-              
-              console.log(`✅ Bol.com widget setup complete for ${product.id}`)
-            }
-          }
-        }, 100)
+      if (product.type === 'bol_iframe') {
+        console.log(`🔧 Setting up Bol.com iframe widget for ${product.id}`)
+      } else if (product.type === 'bol_snippet') {
+        console.log(`🔧 Setting up Bol.com snippet for ${product.id} (deprecated)`)
       }
     })
   }, [displayProducts])
@@ -108,7 +73,39 @@ export default function AffiliateProductWidget({
               </div>
             )}
             
-            {/* Bol.com Widget Snippet */}
+            {/* Bol.com Iframe Widget */}
+            {product.type === 'bol_iframe' && (
+              <div className="bg-white rounded-xl border border-gray-200 p-4">
+                <div className="text-center">
+                  <a 
+                    href={product.data.productUrl}
+                    target="_blank"
+                    rel="nofollow noopener"
+                    className="block hover:opacity-90 transition-opacity"
+                  >
+                    <div className="mb-3">
+                      <img
+                        src={product.data.fallbackImage}
+                        alt={product.data.title}
+                        className="mx-auto rounded-lg max-w-full h-auto"
+                        style={{ maxHeight: '200px' }}
+                        onError={(e) => {
+                          e.target.src = 'https://via.placeholder.com/200x200?text=Product+Image'
+                        }}
+                      />
+                    </div>
+                    <h4 className="font-medium text-primary text-sm mb-2 line-clamp-2">
+                      {product.data.title}
+                    </h4>
+                    <div className="bg-primary text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors inline-block">
+                      Bekijk op bol.com →
+                    </div>
+                  </a>
+                </div>
+              </div>
+            )}
+            
+            {/* Bol.com Widget Snippet (deprecated - blocked by adblockers) */}
             {product.type === 'bol_snippet' && (
               <div className="bg-white rounded-xl border border-gray-200 p-4">
                 <div 
@@ -116,7 +113,7 @@ export default function AffiliateProductWidget({
                   className="min-h-[200px] flex items-center justify-center"
                 >
                   <div className="text-gray-400 text-sm">
-                    Loading product...
+                    Widget blocked by browser security
                   </div>
                 </div>
               </div>
