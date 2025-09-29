@@ -647,7 +647,8 @@ export default function FlessenSteriligerenPage() {
 
             {/* Real Affiliate Product Recommendations */}
             <AffiliateProductWidget
-              category="sterilisatoren"
+              pageId="hygiene-bereiding_flessen-steriliseren"
+              category="sterilisatoren" // Fallback for static data
               title="Aanbevolen Sterilisatoren en Accessoires"
               maxProducts={4}
             />
