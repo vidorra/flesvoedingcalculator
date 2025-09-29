@@ -31,58 +31,13 @@ export default function AffiliateProductWidget({
   const displayProducts = products.slice(0, maxProducts)
 
   useEffect(() => {
-    // Load Bol.com widgets after component mounts
-    const cleanup = []
-    
+    // Generate direct Bol.com affiliate links since script loading fails
     displayProducts.forEach(product => {
       if (product.type === 'bol_widget') {
-        console.log(`🔧 Setting up Bol.com widget for ${product.data.id}:`, product.data)
-        
-        // Set up Bol.com widget configuration with correct property name
-        window[`bol_sitebar_v2_${product.data.id}`] = product.data
-        
-        // Verify the configuration was set
-        console.log(`🔍 Widget config set:`, window[`bol_sitebar_v2_${product.data.id}`])
-        
-        // Check if script already exists
-        const existingScript = document.getElementById(`bol-script-${product.data.id}`)
-        if (!existingScript) {
-          // Load the Bol.com widget script
-          const script = document.createElement('script')
-          script.src = 'https://partner.bol.com/promotion/static/js/partnerProductlinkV2.js'
-          script.id = `bol-script-${product.data.id}`
-          script.async = true
-          
-          // Add debug logging
-          script.onload = () => {
-            console.log(`✅ Bol.com widget script loaded for ${product.data.id}`)
-            // Check if DOM element exists
-            const targetElement = document.getElementById(product.data.id)
-            console.log(`🎯 Target element found:`, targetElement)
-          }
-          script.onerror = () => {
-            console.error(`❌ Failed to load Bol.com widget script for ${product.data.id}`)
-          }
-          
-          document.head.appendChild(script)
-          
-          cleanup.push(() => {
-            const scriptElement = document.getElementById(`bol-script-${product.data.id}`)
-            if (scriptElement) {
-              document.head.removeChild(scriptElement)
-            }
-            delete window[`bol_sitebar_v2_${product.data.id}`]
-          })
-        } else {
-          console.log(`🔄 Bol.com script already exists for ${product.data.id}`)
-        }
+        console.log(`🔧 Setting up Bol.com product link for ${product.data.id}:`, product.data)
+        // No external script loading needed for direct links
       }
     })
-
-    // Return cleanup function
-    return () => {
-      cleanup.forEach(fn => fn())
-    }
   }, [displayProducts])
 
   if (displayProducts.length === 0) {
@@ -117,15 +72,32 @@ export default function AffiliateProductWidget({
               </div>
             )}
             
-            {/* Bol.com Widget */}
+            {/* Bol.com Product Card */}
             {product.type === 'bol_widget' && (
-              <div className="bg-white rounded-xl border border-gray-200 p-4">
-                <div id={product.data.id} className="min-h-[200px] text-center">
-                  {/* Bol.com widget will load here */}
-                  <div className="text-sm text-gray-500 mt-8">
-                    Loading Bol.com product...
+              <div className="bg-white rounded-xl border border-gray-200 p-4 hover:border-primary transition-colors">
+                <a 
+                  href={`https://www.bol.com/nl/nl/p/${product.data.productId}/`}
+                  target="_blank"
+                  rel="nofollow noopener"
+                  className="block text-center"
+                >
+                  <div className="flex items-center justify-center h-32 mb-4">
+                    <img 
+                      src="https://partner.bol.com/promotion/assets/graphics/logo_sitebar.png"
+                      alt="Bol.com"
+                      className="max-h-16 opacity-60"
+                    />
                   </div>
-                </div>
+                  <h4 className="font-medium text-primary mb-2 text-sm leading-tight">
+                    {product.name}
+                  </h4>
+                  <p className="text-xs text-gray-600 mb-3">
+                    Bekijk op bol.com
+                  </p>
+                  <div className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">
+                    Bol.com Partner
+                  </div>
+                </a>
               </div>
             )}
             
