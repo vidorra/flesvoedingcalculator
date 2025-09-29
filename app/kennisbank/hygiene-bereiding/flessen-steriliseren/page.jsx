@@ -2,7 +2,7 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { Shield, Clock, DollarSign, Users, CheckCircle, AlertTriangle } from 'lucide-react'
-import BolProductSection from '../../../../components/BolProductLink'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 
 export default function FlessenSteriligerenPage() {
   const sidebarImages = [
@@ -645,19 +645,11 @@ export default function FlessenSteriligerenPage() {
               </div>
             </div>
 
-            {/* Affiliate Product Recommendations */}
-            <BolProductSection
-              productNames={[
-                'Philips Avent sterilisator',
-                'MAM elektrische sterilisator',
-                'Chicco sterilisator',
-                'magnetron sterilisator',
-                'sterilisatie zakjes',
-                'baby fles tangen'
-              ]}
+            {/* Real Affiliate Product Recommendations */}
+            <AffiliateProductWidget
+              category="sterilisatoren"
               title="Aanbevolen Sterilisatoren en Accessoires"
-              variant="card"
-              maxProducts={6}
+              maxProducts={4}
             />
 
             {/* Related articles */}
