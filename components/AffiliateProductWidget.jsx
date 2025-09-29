@@ -32,28 +32,57 @@ export default function AffiliateProductWidget({
 
   useEffect(() => {
     // Load Bol.com widgets after component mounts
+    const cleanup = []
+    
     displayProducts.forEach(product => {
       if (product.type === 'bol_widget') {
-        // Set up Bol.com widget configuration
+        console.log(`🔧 Setting up Bol.com widget for ${product.data.id}:`, product.data)
+        
+        // Set up Bol.com widget configuration with correct property name
         window[`bol_sitebar_v2_${product.data.id}`] = product.data
         
-        // Load the Bol.com widget script
-        const script = document.createElement('script')
-        script.src = 'https://partner.bol.com/promotion/static/js/partnerProductlinkV2.js'
-        script.id = product.data.id
-        script.async = true
-        document.head.appendChild(script)
-
-        // Cleanup function
-        return () => {
-          const existingScript = document.getElementById(product.data.id)
-          if (existingScript) {
-            document.head.removeChild(existingScript)
+        // Verify the configuration was set
+        console.log(`🔍 Widget config set:`, window[`bol_sitebar_v2_${product.data.id}`])
+        
+        // Check if script already exists
+        const existingScript = document.getElementById(`bol-script-${product.data.id}`)
+        if (!existingScript) {
+          // Load the Bol.com widget script
+          const script = document.createElement('script')
+          script.src = 'https://partner.bol.com/promotion/static/js/partnerProductlinkV2.js'
+          script.id = `bol-script-${product.data.id}`
+          script.async = true
+          
+          // Add debug logging
+          script.onload = () => {
+            console.log(`✅ Bol.com widget script loaded for ${product.data.id}`)
+            // Check if DOM element exists
+            const targetElement = document.getElementById(product.data.id)
+            console.log(`🎯 Target element found:`, targetElement)
           }
-          delete window[`bol_sitebar_v2_${product.data.id}`]
+          script.onerror = () => {
+            console.error(`❌ Failed to load Bol.com widget script for ${product.data.id}`)
+          }
+          
+          document.head.appendChild(script)
+          
+          cleanup.push(() => {
+            const scriptElement = document.getElementById(`bol-script-${product.data.id}`)
+            if (scriptElement) {
+              document.head.removeChild(scriptElement)
+            }
+            delete window[`bol_sitebar_v2_${product.data.id}`]
+          })
+        } else {
+          console.log(`🔄 Bol.com script already exists for ${product.data.id}`)
         }
       }
     })
+
+    // Return cleanup function
+    return () => {
+      cleanup.forEach(fn => fn())
+    }
   }, [displayProducts])
 
   if (displayProducts.length === 0) {
@@ -91,8 +120,11 @@ export default function AffiliateProductWidget({
             {/* Bol.com Widget */}
             {product.type === 'bol_widget' && (
               <div className="bg-white rounded-xl border border-gray-200 p-4">
-                <div id={product.data.id} className="min-h-[200px]">
+                <div id={product.data.id} className="min-h-[200px] text-center">
                   {/* Bol.com widget will load here */}
+                  <div className="text-sm text-gray-500 mt-8">
+                    Loading Bol.com product...
+                  </div>
                 </div>
               </div>
             )}
