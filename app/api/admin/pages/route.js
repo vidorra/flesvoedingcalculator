@@ -3,6 +3,9 @@ import jwt from 'jsonwebtoken'
 import fs from 'fs'
 import path from 'path'
 
+// Force dynamic route
+export const dynamic = 'force-dynamic'
+
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key-here'
 
 // Verify admin token

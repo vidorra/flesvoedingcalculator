@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server'
 import fs from 'fs'
 import path from 'path'
 
+// Force dynamic route
+export const dynamic = 'force-dynamic'
+
 const DATA_DIR = path.join(process.cwd(), 'data', 'admin')
 const SNIPPETS_FILE = path.join(DATA_DIR, 'snippets.json')
 

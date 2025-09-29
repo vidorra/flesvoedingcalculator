@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server'
 import fs from 'fs'
 import path from 'path'
 
+// Force dynamic route
+export const dynamic = 'force-dynamic'
+
 // Simple session check
 function isAuthenticated(request) {
   return true // Simplified for now
