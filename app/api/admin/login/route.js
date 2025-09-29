@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server'
-import * as jwt from 'jsonwebtoken'
+
+// Force dynamic route
+export const dynamic = 'force-dynamic'
 
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin123'
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key-here'
