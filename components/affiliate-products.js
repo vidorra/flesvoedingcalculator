@@ -10,30 +10,39 @@ export const affiliateProducts = {
       id: 'philips-avent-sterilisator',
       name: 'Philips Avent Flessterilisator',
       tag: 'Aanbevolen',
-      type: 'bol_snippet',
+      type: 'bol_iframe',
       data: {
-        html: `<div id="bol_1759144687079"></div><script type="text/javascript">var bol_sitebar_v2={"id":"bol_1759144687079", "baseUrl":"partner.bol.com","productId":"9300000062682298","familyId":"","siteId":"1472968","target":true,"rating":true,"price":true,"deliveryDescription":true,"button":true,"linkName":"Philips%20Avent%20Flessterilisator%20Damp%20Droger%20-%20D...","linkSubId":""};</script><script type="text/javascript" src="https://partner.bol.com/promotion/static/js/partnerProductlinkV2.js" id="bol_1759144687079_script"></script>`,
-        productUrl: "https://www.bol.com/nl/nl/p/philips-avent-flessterilisator-damp-droger/9300000062682298/"
+        iframeUrl: 'https://partner.bol.com/click/click?p=2&t=iframe&s=1472968&f=TXL&url=https%3A//www.bol.com/nl/nl/p/philips-avent-flessterilisator-damp-droger-9300000062682298/&name=Philips%20Avent%20Flessterilisator',
+        productUrl: "https://www.bol.com/nl/nl/p/philips-avent-flessterilisator-damp-droger/9300000062682298/",
+        productId: "9300000062682298",
+        title: "Philips Avent Flessterilisator Damp & Droger",
+        fallbackImage: "https://media.s-bol.com/9kOWJZrzZ8qO/blok/550x550.jpg"
       }
     },
     {
       id: 'mam-sterilisator',
       name: 'MAM Sterilisator',
       tag: 'Beste prijs/kwaliteit',
-      type: 'bol_snippet',
+      type: 'bol_iframe',
       data: {
-        html: `<div id="bol_1759143809186"></div><script type="text/javascript">var bol_sitebar_v2={"id":"bol_1759143809186", "baseUrl":"partner.bol.com","productId":"9300000050911914","familyId":"","siteId":"1472968","target":true,"rating":true,"price":true,"deliveryDescription":true,"button":true,"linkName":"MAM%20Sterilisator%20Grijs%20BPA-vrij","linkSubId":""};</script><script type="text/javascript" src="https://partner.bol.com/promotion/static/js/partnerProductlinkV2.js" id="bol_1759143809186_script"></script>`,
-        productUrl: "https://www.bol.com/nl/nl/p/mam-sterilisator-grijs-bpa-vrij/9300000050911914/"
+        iframeUrl: 'https://partner.bol.com/click/click?p=2&t=iframe&s=1472968&f=TXL&url=https%3A//www.bol.com/nl/nl/p/mam-sterilisator-grijs-bpa-vrij-9300000050911914/&name=MAM%20Sterilisator',
+        productUrl: "https://www.bol.com/nl/nl/p/mam-sterilisator-grijs-bpa-vrij/9300000050911914/",
+        productId: "9300000050911914",
+        title: "MAM Sterilisator Grijs BPA-vrij",
+        fallbackImage: "https://media.s-bol.com/vL8ExJJlqBDp/blok/550x550.jpg"
       }
     },
     {
       id: 'chicco-sterilisator',
       name: 'Chicco 3-in-1 Sterilisator',
       tag: null, // No tag
-      type: 'bol_snippet',
+      type: 'bol_iframe',
       data: {
-        html: `<div id="bol_1759133338598"></div><script type="text/javascript">var bol_sitebar_v2={"id":"bol_1759133338598", "baseUrl":"partner.bol.com","productId":"9300000013318604","familyId":"","siteId":"1472968","target":true,"rating":true,"price":true,"deliveryDescription":true,"button":true,"linkName":"Chicco%203%20In%201%20Sterilisator%20Sterilnatural","linkSubId":""};</script><script type="text/javascript" src="https://partner.bol.com/promotion/static/js/partnerProductlinkV2.js" id="bol_1759133338598_script"></script>`,
-        productUrl: "https://www.bol.com/nl/nl/p/chicco-3-in-1-sterilisator-sterilnatural/9300000013318604/"
+        iframeUrl: 'https://partner.bol.com/click/click?p=2&t=iframe&s=1472968&f=TXL&url=https%3A//www.bol.com/nl/nl/p/chicco-3-in-1-sterilisator-sterilnatural-9300000013318604/&name=Chicco%20Sterilisator',
+        productUrl: "https://www.bol.com/nl/nl/p/chicco-3-in-1-sterilisator-sterilnatural/9300000013318604/",
+        productId: "9300000013318604",
+        title: "Chicco 3 In 1 Sterilisator Sterilnatural",
+        fallbackImage: "https://media.s-bol.com/NgL4BvqWvrgL/blok/550x550.jpg"
       }
     },
     {
