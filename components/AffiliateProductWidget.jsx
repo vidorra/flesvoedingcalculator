@@ -94,7 +94,7 @@ export default function AffiliateProductWidget({
                         }}
                       />
                     </div>
-                    <h4 className="font-medium text-primary text-sm mb-2 line-clamp-2">
+                    <h4 className="font-medium text-primary text-sm mb-2 line-clamp-2 min-h-[40px] flex items-center">
                       {product.data.title}
                     </h4>
                     <div className="bg-primary text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors inline-block">
@@ -140,7 +140,7 @@ export default function AffiliateProductWidget({
                         }}
                       />
                     </div>
-                    <h4 className="font-medium text-primary text-sm mb-2 line-clamp-2">
+                    <h4 className="font-medium text-primary text-sm mb-2 line-clamp-2 min-h-[40px] flex items-center">
                       {product.name}
                     </h4>
                     <div className="bg-orange-500 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors inline-block">
