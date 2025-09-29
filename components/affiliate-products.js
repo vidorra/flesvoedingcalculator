@@ -16,7 +16,7 @@ export const affiliateProducts = {
         productUrl: "https://www.bol.com/nl/nl/p/philips-avent-flessterilisator-damp-droger/9300000062682298/",
         productId: "9300000062682298",
         title: "Philips Avent Flessterilisator Damp & Droger",
-        fallbackImage: "https://media.s-bol.com/9kOWJZrzZ8qO/blok/550x550.jpg"
+fallbackImage: "https://media.s-bol.com/imgbase0/imagebase3/extralarge/FC/2/9/8/2/9300000062682298.jpg"
       }
     },
     {
@@ -29,7 +29,7 @@ export const affiliateProducts = {
         productUrl: "https://www.bol.com/nl/nl/p/mam-sterilisator-grijs-bpa-vrij/9300000050911914/",
         productId: "9300000050911914",
         title: "MAM Sterilisator Grijs BPA-vrij",
-        fallbackImage: "https://media.s-bol.com/vL8ExJJlqBDp/blok/550x550.jpg"
+fallbackImage: "https://media.s-bol.com/imgbase0/imagebase3/extralarge/4/1/9/1/9300000050911914.jpg"
       }
     },
     {
@@ -42,7 +42,7 @@ export const affiliateProducts = {
         productUrl: "https://www.bol.com/nl/nl/p/chicco-3-in-1-sterilisator-sterilnatural/9300000013318604/",
         productId: "9300000013318604",
         title: "Chicco 3 In 1 Sterilisator Sterilnatural",
-        fallbackImage: "https://media.s-bol.com/NgL4BvqWvrgL/blok/550x550.jpg"
+fallbackImage: "https://media.s-bol.com/imgbase0/imagebase3/extralarge/4/0/6/8/9300000013318604.jpg"
       }
     },
     {

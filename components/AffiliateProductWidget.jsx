@@ -127,22 +127,26 @@ export default function AffiliateProductWidget({
                     href={product.data.url}
                     target="_blank"
                     rel="nofollow noopener"
-                    className="block hover:opacity-80 transition-opacity"
+                    className="block hover:opacity-90 transition-opacity"
                   >
-                    <img
-                      src={product.data.imageUrl}
-                      alt={product.data.alt}
-                      width={product.data.width}
-                      height="auto"
-                      className="mx-auto rounded-lg"
-                      style={{ maxWidth: '100%', height: 'auto' }}
-                    />
+                    <div className="mb-3">
+                      <img
+                        src={product.data.imageUrl}
+                        alt={product.data.alt}
+                        className="mx-auto rounded-lg max-w-full h-auto"
+                        style={{ maxHeight: '200px' }}
+                        onError={(e) => {
+                          e.target.src = 'https://via.placeholder.com/200x200?text=Product+Image'
+                        }}
+                      />
+                    </div>
+                    <h4 className="font-medium text-primary text-sm mb-2 line-clamp-2">
+                      {product.name}
+                    </h4>
+                    <div className="bg-orange-500 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors inline-block">
+                      Bekijk op Amazon →
+                    </div>
                   </a>
-                  <div className="mt-3 text-sm text-gray-600">
-                    <span className="bg-orange-100 text-orange-700 px-2 py-1 rounded-full font-medium">
-                      Amazon
-                    </span>
-                  </div>
                 </div>
               </div>
             )}
