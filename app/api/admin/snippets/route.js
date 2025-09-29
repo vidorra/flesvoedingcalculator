@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import fs from 'fs'
 import path from 'path'
+import * as jwt from 'jsonwebtoken'
 
 // Force dynamic route
 export const dynamic = 'force-dynamic'
@@ -49,32 +50,16 @@ function saveSnippets(snippets) {
   fs.writeFileSync(SNIPPETS_FILE, JSON.stringify(snippets, null, 2))
 }
 
-// GET - List all snippets
+// GET - Disabled in favor of /api/admin-snippets/ (production-safe)
 export async function GET(request) {
-  try {
-    verifyAdmin(request)
-    
-    const url = new URL(request.url)
-    const activeOnly = url.searchParams.get('active') === 'true'
-    
-    let snippets = loadSnippets()
-    
-    if (activeOnly) {
-      snippets = snippets.filter(snippet => snippet.active)
-    }
-    
-    return NextResponse.json({
-      success: true,
-      snippets
-    })
-
-  } catch (error) {
-    console.error('Failed to load snippets:', error)
-    return NextResponse.json(
-      { message: 'Unauthorized or failed to load snippets' },
-      { status: error.message.includes('token') ? 401 : 500 }
-    )
-  }
+  return NextResponse.json(
+    { 
+      message: 'This endpoint is disabled. Use /api/admin-snippets/ instead.',
+      redirect: '/api/admin-snippets/',
+      reason: 'JWT authentication causes issues in production'
+    },
+    { status: 301 }
+  )
 }
 
 // POST - Create new snippet
