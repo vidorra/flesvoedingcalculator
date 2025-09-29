@@ -27,33 +27,33 @@ export default function AdminDashboard() {
 
   // Check authentication on mount
   useEffect(() => {
-    const token = localStorage.getItem('admin_token')
-    if (!token) {
+    const isAuth = localStorage.getItem('admin_authenticated')
+    const session = localStorage.getItem('admin_session')
+    
+    if (!isAuth || !session) {
       router.push('/admin')
       return
     }
     
-    // Verify token with server
-    fetch('/api/admin/verify', {
-      headers: { 'Authorization': `Bearer ${token}` }
-    })
-    .then(response => {
-      if (response.ok) {
-        setIsAuthenticated(true)
-      } else {
-        localStorage.removeItem('admin_token')
-        router.push('/admin')
-      }
-    })
-    .catch(() => {
-      localStorage.removeItem('admin_token')
+    // Check if session is expired (24 hours)
+    const sessionTime = parseInt(session)
+    const now = Date.now()
+    const twentyFourHours = 24 * 60 * 60 * 1000
+    
+    if (now - sessionTime > twentyFourHours) {
+      localStorage.removeItem('admin_authenticated')
+      localStorage.removeItem('admin_session')
       router.push('/admin')
-    })
-    .finally(() => setLoading(false))
+      return
+    }
+    
+    setIsAuthenticated(true)
+    setLoading(false)
   }, [router])
 
   const handleLogout = () => {
-    localStorage.removeItem('admin_token')
+    localStorage.removeItem('admin_authenticated')
+    localStorage.removeItem('admin_session')
     router.push('/admin')
   }
 
@@ -146,10 +146,7 @@ function AffiliateSnippetsTab() {
 
   const loadSnippets = async () => {
     try {
-      const token = localStorage.getItem('admin_token')
-      const response = await fetch('/api/admin/snippets', {
-        headers: { 'Authorization': `Bearer ${token}` }
-      })
+      const response = await fetch('/api/admin-snippets')
       if (response.ok) {
         const data = await response.json()
         setSnippets(data.snippets || [])
@@ -533,10 +530,7 @@ function PageAssignmentTab() {
 
   const loadPages = async () => {
     try {
-      const token = localStorage.getItem('admin_token')
-      const response = await fetch('/api/admin/pages', {
-        headers: { 'Authorization': `Bearer ${token}` }
-      })
+      const response = await fetch('/api/admin-pages')
       if (response.ok) {
         const data = await response.json()
         setPages(data.pages || [])
@@ -553,10 +547,7 @@ function PageAssignmentTab() {
 
   const loadAvailableSnippets = async () => {
     try {
-      const token = localStorage.getItem('admin_token')
-      const response = await fetch('/api/admin/snippets?active=true', {
-        headers: { 'Authorization': `Bearer ${token}` }
-      })
+      const response = await fetch('/api/admin-snippets?active=true')
       if (response.ok) {
         const data = await response.json()
         setAvailableSnippets(data.snippets || [])
