@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useRef } from 'react'
-import { getProductsByCategory, getProductsByIds } from '../data/affiliate-products.js'
+import { getProductsByCategory, getProductsByIds } from './affiliate-products.js'
 
 /**
  * Renders real Bol.com widgets and Amazon affiliate links
