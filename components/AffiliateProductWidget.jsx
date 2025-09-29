@@ -22,6 +22,11 @@ export default function AffiliateProductWidget({
   const products = productIds 
     ? getProductsByIds(productIds)
     : getProductsByCategory(category)
+  
+  // Debug log for deployment verification
+  if (typeof window !== 'undefined' && products.length > 0) {
+    console.log(`🛍️ AffiliateProductWidget loaded ${products.length} products for category "${category}"`)
+  }
 
   const displayProducts = products.slice(0, maxProducts)
 
