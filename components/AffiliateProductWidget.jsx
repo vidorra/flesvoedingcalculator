@@ -31,11 +31,13 @@ export default function AffiliateProductWidget({
   const displayProducts = products.slice(0, maxProducts)
 
   useEffect(() => {
-    // Generate direct Bol.com affiliate links since script loading fails
+    // Handle Bol.com snippet injection
     displayProducts.forEach(product => {
-      if (product.type === 'bol_widget') {
-        console.log(`🔧 Setting up Bol.com product link for ${product.data.id}:`, product.data)
-        // No external script loading needed for direct links
+      if (product.type === 'bol_snippet') {
+        console.log(`🔧 Setting up Bol.com snippet for ${product.id}`)
+        
+        // The HTML snippet will be injected via dangerouslySetInnerHTML
+        // No additional script loading needed here as it's included in the snippet
       }
     })
   }, [displayProducts])
@@ -72,32 +74,13 @@ export default function AffiliateProductWidget({
               </div>
             )}
             
-            {/* Bol.com Product Card */}
-            {product.type === 'bol_widget' && (
-              <div className="bg-white rounded-xl border border-gray-200 p-4 hover:border-primary transition-colors">
-                <a 
-                  href={`https://www.bol.com/nl/nl/p/${product.data.productId}/`}
-                  target="_blank"
-                  rel="nofollow noopener"
-                  className="block text-center"
-                >
-                  <div className="flex items-center justify-center h-32 mb-4">
-                    <img 
-                      src="https://partner.bol.com/promotion/assets/graphics/logo_sitebar.png"
-                      alt="Bol.com"
-                      className="max-h-16 opacity-60"
-                    />
-                  </div>
-                  <h4 className="font-medium text-primary mb-2 text-sm leading-tight">
-                    {product.name}
-                  </h4>
-                  <p className="text-xs text-gray-600 mb-3">
-                    Bekijk op bol.com
-                  </p>
-                  <div className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">
-                    Bol.com Partner
-                  </div>
-                </a>
+            {/* Bol.com Widget Snippet */}
+            {product.type === 'bol_snippet' && (
+              <div className="bg-white rounded-xl border border-gray-200 p-4">
+                <div 
+                  dangerouslySetInnerHTML={{ __html: product.data.html }}
+                  className="min-h-[200px]"
+                />
               </div>
             )}
             
