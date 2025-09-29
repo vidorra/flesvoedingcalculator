@@ -13,6 +13,15 @@ export default function SimpleAdminDashboard() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [activeTab, setActiveTab] = useState('overview') // 'overview' or 'assignment'
   const [loadError, setLoadError] = useState(null)
+  const [showAddForm, setShowAddForm] = useState(false)
+  const [newSnippet, setNewSnippet] = useState({
+    platform: 'bol',
+    name: '',
+    url: '',
+    code: '',
+    tag: ''
+  })
+  const [isGenerating, setIsGenerating] = useState(false)
   const router = useRouter()
 
   // Check authentication
@@ -145,6 +154,85 @@ export default function SimpleAdminDashboard() {
     loadPageSnippets(page.id)
   }
 
+  const generateAmazonSnippet = async () => {
+    if (!newSnippet.url) {
+      alert('Please enter an Amazon URL')
+      return
+    }
+
+    setIsGenerating(true)
+    try {
+      const response = await fetch('/api/admin/generate-snippet', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          url: newSnippet.url,
+          type: 'amazon'
+        })
+      })
+
+      if (response.ok) {
+        const data = await response.json()
+        setNewSnippet(prev => ({
+          ...prev,
+          name: data.productName || prev.name,
+          code: data.html
+        }))
+      } else {
+        alert('Failed to generate Amazon snippet')
+      }
+    } catch (error) {
+      console.error('Error generating snippet:', error)
+      alert('Error generating snippet: ' + error.message)
+    } finally {
+      setIsGenerating(false)
+    }
+  }
+
+  const saveNewSnippet = async () => {
+    try {
+      const snippetData = {
+        id: `${newSnippet.platform}-${Date.now()}`,
+        name: newSnippet.name,
+        type: newSnippet.platform,
+        url: newSnippet.url,
+        tag: newSnippet.tag || null,
+        generatedHtml: newSnippet.code,
+        active: true
+      }
+
+      const response = await fetch('/api/admin-snippets/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(snippetData)
+      })
+
+      if (response.ok) {
+        // Refresh the snippets list
+        loadData(true)
+        // Reset form
+        setNewSnippet({
+          platform: 'bol',
+          name: '',
+          url: '',
+          code: '',
+          tag: ''
+        })
+        setShowAddForm(false)
+        alert('Snippet saved successfully!')
+      } else {
+        alert('Failed to save snippet')
+      }
+    } catch (error) {
+      console.error('Error saving snippet:', error)
+      alert('Error saving snippet: ' + error.message)
+    }
+  }
+
   if (!isAuthenticated || loading) {
     return (
       <Layout>
@@ -269,14 +357,158 @@ export default function SimpleAdminDashboard() {
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-lg font-semibold text-gray-900">Affiliate Snippets</h2>
-                <div className="text-sm text-gray-500">
-                  Connected to frontend via pageId system
-                </div>
+                <button
+                  onClick={() => setShowAddForm(true)}
+                  className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center space-x-2"
+                >
+                  <Plus className="w-4 h-4" />
+                  <span>Add New Link</span>
+                </button>
               </div>
+
+              {/* Add New Snippet Form */}
+              {showAddForm && (
+                <div className="mb-6 p-6 border border-gray-200 rounded-lg bg-gray-50">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-lg font-medium text-gray-900">Add New Affiliate Link</h3>
+                    <button
+                      onClick={() => setShowAddForm(false)}
+                      className="text-gray-400 hover:text-gray-600"
+                    >
+                      ✕
+                    </button>
+                  </div>
+
+                  {/* Platform Radio Buttons */}
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Platform</label>
+                    <div className="flex space-x-4">
+                      <label className="flex items-center">
+                        <input
+                          type="radio"
+                          value="bol"
+                          checked={newSnippet.platform === 'bol'}
+                          onChange={(e) => setNewSnippet(prev => ({ ...prev, platform: e.target.value }))}
+                          className="mr-2"
+                        />
+                        <span>Bol.com</span>
+                      </label>
+                      <label className="flex items-center">
+                        <input
+                          type="radio"
+                          value="amazon"
+                          checked={newSnippet.platform === 'amazon'}
+                          onChange={(e) => setNewSnippet(prev => ({ ...prev, platform: e.target.value }))}
+                          className="mr-2"
+                        />
+                        <span>Amazon</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  {/* Product Name */}
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Product Name</label>
+                    <input
+                      type="text"
+                      value={newSnippet.name}
+                      onChange={(e) => setNewSnippet(prev => ({ ...prev, name: e.target.value }))}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                      placeholder="Enter product name"
+                    />
+                  </div>
+
+                  {/* Conditional Fields Based on Platform */}
+                  {newSnippet.platform === 'bol' && (
+                    <div className="mb-4">
+                      <label className="block text-sm font-medium text-gray-700 mb-2">Bol.com Code Snippet</label>
+                      <textarea
+                        value={newSnippet.code}
+                        onChange={(e) => setNewSnippet(prev => ({ ...prev, code: e.target.value }))}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary h-32"
+                        placeholder="Paste your Bol.com affiliate code snippet here..."
+                      />
+                    </div>
+                  )}
+
+                  {newSnippet.platform === 'amazon' && (
+                    <>
+                      <div className="mb-4">
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Amazon Short Link</label>
+                        <div className="flex space-x-2">
+                          <input
+                            type="text"
+                            value={newSnippet.url}
+                            onChange={(e) => setNewSnippet(prev => ({ ...prev, url: e.target.value }))}
+                            className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                            placeholder="https://amzn.to/3Krcb8W"
+                          />
+                          <button
+                            onClick={generateAmazonSnippet}
+                            disabled={isGenerating || !newSnippet.url}
+                            className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                          >
+                            {isGenerating ? 'Generating...' : 'Generate'}
+                          </button>
+                        </div>
+                      </div>
+                      
+                      {newSnippet.code && (
+                        <div className="mb-4">
+                          <label className="block text-sm font-medium text-gray-700 mb-2">Generated HTML</label>
+                          <textarea
+                            value={newSnippet.code}
+                            onChange={(e) => setNewSnippet(prev => ({ ...prev, code: e.target.value }))}
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary h-32"
+                            placeholder="Generated HTML will appear here..."
+                          />
+                        </div>
+                      )}
+                    </>
+                  )}
+
+                  {/* Tag (Optional) */}
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Tag (Optional)</label>
+                    <input
+                      type="text"
+                      value={newSnippet.tag}
+                      onChange={(e) => setNewSnippet(prev => ({ ...prev, tag: e.target.value }))}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                      placeholder="e.g., Aanbevolen, Budget, Beste prijs/kwaliteit"
+                    />
+                  </div>
+
+                  {/* Save/Cancel Buttons */}
+                  <div className="flex space-x-3">
+                    <button
+                      onClick={saveNewSnippet}
+                      disabled={!newSnippet.name || !newSnippet.code}
+                      className="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      Save Snippet
+                    </button>
+                    <button
+                      onClick={() => setShowAddForm(false)}
+                      className="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              )}
               
               {snippets.length === 0 ? (
                 <div className="text-center py-12 text-gray-500">
-                  No snippets found. Data should be migrated from static files.
+                  <Link className="w-12 h-12 mx-auto mb-4 text-gray-400" />
+                  <h3 className="text-lg font-medium mb-2">No affiliate snippets yet</h3>
+                  <p className="mb-4">Add your first one!</p>
+                  <button
+                    onClick={() => setShowAddForm(true)}
+                    className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors"
+                  >
+                    Add New Link
+                  </button>
                 </div>
               ) : (
                 <div className="space-y-4">
