@@ -66,7 +66,7 @@ export default function SimpleAdminDashboard() {
       // Load snippets
       console.log('Loading snippets from /api/admin-snippets/')
       try {
-        const snippetsResponse = await fetch('/api/admin-snippets/', {
+        const snippetsResponse = await fetch(`/api/admin-snippets/?t=${Date.now()}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -96,7 +96,7 @@ export default function SimpleAdminDashboard() {
       // Load pages
       console.log('Loading pages from /api/admin-pages/')
       try {
-        const pagesResponse = await fetch('/api/admin-pages/', {
+        const pagesResponse = await fetch(`/api/admin-pages/?t=${Date.now()}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
