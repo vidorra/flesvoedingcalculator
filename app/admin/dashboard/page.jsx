@@ -74,18 +74,21 @@ export default function SimpleAdminDashboard() {
           cache: 'no-cache'
         })
         console.log('Snippets response status:', snippetsResponse.status)
+        console.log('Snippets response headers:', [...snippetsResponse.headers.entries()])
         
         if (snippetsResponse.ok) {
           const snippetsData = await snippetsResponse.json()
-          console.log('Snippets data:', snippetsData)
+          console.log('Snippets data received:', snippetsData)
+          console.log('Number of snippets:', snippetsData.snippets?.length || 0)
           setSnippets(snippetsData.snippets || [])
+          console.log('✅ Snippets state updated successfully')
         } else {
           const errorText = await snippetsResponse.text()
-          console.error('Failed to load snippets. Status:', snippetsResponse.status, 'Error:', errorText)
+          console.error('❌ Failed to load snippets. Status:', snippetsResponse.status, 'Error:', errorText)
           setLoadError(`Failed to load snippets: ${snippetsResponse.status}`)
         }
       } catch (snippetsError) {
-        console.error('Error fetching snippets:', snippetsError)
+        console.error('❌ Error fetching snippets:', snippetsError)
         setLoadError(`Network error loading snippets: ${snippetsError.message}`)
         setSnippets([])
       }
@@ -498,7 +501,13 @@ export default function SimpleAdminDashboard() {
                 </div>
               )}
               
-              {snippets.length === 0 ? (
+              {loading ? (
+                <div className="text-center py-12 text-gray-500">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+                  <h3 className="text-lg font-medium mb-2">Loading affiliate snippets...</h3>
+                  <p>Please wait while we fetch your data.</p>
+                </div>
+              ) : snippets.length === 0 ? (
                 <div className="text-center py-12 text-gray-500">
                   <Link className="w-12 h-12 mx-auto mb-4 text-gray-400" />
                   <h3 className="text-lg font-medium mb-2">No affiliate snippets yet</h3>
