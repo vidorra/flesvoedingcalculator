@@ -30,7 +30,7 @@ export default function AffiliateProductWidget({
       if (pageId) {
         // Load from admin system
         try {
-          const response = await fetch(`/api/affiliates/page/${pageId}`)
+          const response = await fetch(`/api/affiliates/page/${pageId}/`)
           if (response.ok) {
             const data = await response.json()
             if (data.success && data.snippets.length > 0) {
