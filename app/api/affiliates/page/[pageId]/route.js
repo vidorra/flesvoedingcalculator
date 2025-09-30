@@ -96,6 +96,7 @@ export async function GET(request, { params }) {
           id: snippet.id,
           name: snippet.name,
           tag: snippet.tag,
+          active: snippet.active,
           type: 'amazon_image', // Convert to frontend format
           data: {
             url: extractAffiliateUrl(snippet.generatedHtml),
@@ -109,6 +110,7 @@ export async function GET(request, { params }) {
           id: snippet.id,
           name: snippet.name,
           tag: snippet.tag,
+          active: snippet.active,
           type: 'bol_iframe', // Convert to frontend format
           data: {
             title: snippet.name,
