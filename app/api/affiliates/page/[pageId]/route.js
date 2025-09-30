@@ -138,7 +138,16 @@ export async function GET(request, { params }) {
     
     return NextResponse.json({
       success: true,
-      snippets: frontendSnippets
+      snippets: frontendSnippets,
+      debug: {
+        requestedPageId: pageId,
+        availablePageKeys: Object.keys(pageSnippets),
+        pageIdExists: pageSnippets.hasOwnProperty(pageId),
+        pageSnippetCount: pageSnippetList.length,
+        allSnippetsCount: allSnippets.length,
+        activeSnippetCount: activeSnippets.length,
+        frontendSnippetCount: frontendSnippets.length
+      }
     })
 
   } catch (error) {
