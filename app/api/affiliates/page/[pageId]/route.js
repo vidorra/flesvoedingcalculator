@@ -11,9 +11,6 @@ const SNIPPETS_FILE = path.join(DATA_DIR, 'snippets.json')
 
 // Load page snippets
 function loadPageSnippets() {
-  console.log(`🔍 Loading page snippets from: ${PAGE_SNIPPETS_FILE}`)
-  console.log(`🔍 File exists: ${fs.existsSync(PAGE_SNIPPETS_FILE)}`)
-  
   if (!fs.existsSync(PAGE_SNIPPETS_FILE)) {
     console.error('❌ Page snippets file does not exist! Expected at:', PAGE_SNIPPETS_FILE)
     return {}
@@ -21,9 +18,7 @@ function loadPageSnippets() {
   
   try {
     const data = fs.readFileSync(PAGE_SNIPPETS_FILE, 'utf8')
-    const parsed = JSON.parse(data)
-    console.log(`✅ Successfully loaded page snippets. Keys:`, Object.keys(parsed))
-    return parsed
+    return JSON.parse(data)
   } catch (error) {
     console.error('❌ Error reading page snippets file:', error)
     return {}
@@ -32,9 +27,6 @@ function loadPageSnippets() {
 
 // Load snippets
 function loadSnippets() {
-  console.log(`🔍 Loading snippets from: ${SNIPPETS_FILE}`)
-  console.log(`🔍 File exists: ${fs.existsSync(SNIPPETS_FILE)}`)
-  
   if (!fs.existsSync(SNIPPETS_FILE)) {
     console.error('❌ Snippets file does not exist! Expected at:', SNIPPETS_FILE)
     return []
@@ -42,9 +34,7 @@ function loadSnippets() {
   
   try {
     const data = fs.readFileSync(SNIPPETS_FILE, 'utf8')
-    const parsed = JSON.parse(data)
-    console.log(`✅ Successfully loaded ${parsed.length} snippets`)
-    return parsed
+    return JSON.parse(data)
   } catch (error) {
     console.error('❌ Error reading snippets file:', error)
     return []
@@ -58,15 +48,7 @@ export async function GET(request, { params }) {
     const pageSnippets = loadPageSnippets()
     const allSnippets = loadSnippets()
     
-    console.log(`🔍 API Debug: Requested PageId="${pageId}"`)
-    console.log(`🔍 API Debug: Available page keys:`, Object.keys(pageSnippets))
-    console.log(`🔍 API Debug: PageId exists in data:`, pageSnippets.hasOwnProperty(pageId))
-    
     const pageSnippetList = pageSnippets[pageId] || []
-    
-    console.log(`🔍 API Debug: PageId=${pageId}, Found ${pageSnippetList.length} page snippets`)
-    console.log(`🔍 API Debug: Page snippet IDs:`, pageSnippetList.map(ps => ps.snippetId))
-    console.log(`🔍 API Debug: All snippets count: ${allSnippets.length}`)
     
     // Get active snippets for this page, sorted by order
     const activeSnippets = pageSnippetList
@@ -78,8 +60,6 @@ export async function GET(request, { params }) {
       .filter(ps => ps.snippet && ps.snippet.active) // Only active snippets
       .sort((a, b) => (a.order || 0) - (b.order || 0))
       .map(ps => ps.snippet) // Return just the snippet data
-    
-    console.log(`🔍 API Debug: Final active snippets count: ${activeSnippets.length}`)
     
     // Convert admin format to frontend format
     const frontendSnippets = activeSnippets.map(snippet => {
@@ -115,21 +95,9 @@ export async function GET(request, { params }) {
       return null
     }).filter(Boolean)
     
-    console.log(`🔍 API Debug: Frontend snippets count: ${frontendSnippets.length}`)
-    console.log(`🔍 API Debug: Frontend snippet types:`, frontendSnippets.map(s => `${s.id} (${s.type})`))
-    
     return NextResponse.json({
       success: true,
-      snippets: frontendSnippets,
-      debug: {
-        requestedPageId: pageId,
-        availablePageKeys: Object.keys(pageSnippets),
-        pageIdExists: pageSnippets.hasOwnProperty(pageId),
-        pageSnippetCount: pageSnippetList.length,
-        allSnippetsCount: allSnippets.length,
-        activeSnippetCount: activeSnippets.length,
-        frontendSnippetCount: frontendSnippets.length
-      }
+      snippets: frontendSnippets
     })
 
   } catch (error) {
