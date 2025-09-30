@@ -162,9 +162,9 @@ export default function SimpleAdminDashboard() {
     loadPageSnippets(page.id)
   }
 
-  const generateAmazonSnippet = async () => {
+  const generateSnippet = async () => {
     if (!newSnippet.url) {
-      alert('Please enter an Amazon URL')
+      alert(`Please enter a ${newSnippet.platform === 'amazon' ? 'Amazon' : 'Bol.com'} URL`)
       return
     }
 
@@ -177,19 +177,22 @@ export default function SimpleAdminDashboard() {
         },
         body: JSON.stringify({
           url: newSnippet.url,
-          type: 'amazon'
+          type: newSnippet.platform
         })
       })
 
       if (response.ok) {
         const data = await response.json()
+        console.log('Generated snippet data:', data)
         setNewSnippet(prev => ({
           ...prev,
           name: data.productName || prev.name,
+          url: data.productUrl || data.affiliateUrl || prev.url,
           code: data.html
         }))
       } else {
-        alert('Failed to generate Amazon snippet')
+        const errorData = await response.json()
+        alert(`Failed to generate ${newSnippet.platform} snippet: ${errorData.message}`)
       }
     } catch (error) {
       console.error('Error generating snippet:', error)
@@ -605,7 +608,7 @@ export default function SimpleAdminDashboard() {
                             placeholder="https://amzn.to/3Krcb8W"
                           />
                           <button
-                            onClick={generateAmazonSnippet}
+                            onClick={generateSnippet}
                             disabled={isGenerating || !newSnippet.url}
                             className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 disabled:opacity-50 disabled:cursor-not-allowed"
                           >
