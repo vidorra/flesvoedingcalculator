@@ -76,6 +76,10 @@ export async function GET(request, { params }) {
     const pageSnippets = loadPageSnippets()
     const allSnippets = loadSnippets()
     
+    console.log(`🔍 API Debug: Requested PageId="${pageId}"`)
+    console.log(`🔍 API Debug: Available page keys:`, Object.keys(pageSnippets))
+    console.log(`🔍 API Debug: PageId exists in data:`, pageSnippets.hasOwnProperty(pageId))
+    
     const pageSnippetList = pageSnippets[pageId] || []
     
     console.log(`🔍 API Debug: PageId=${pageId}, Found ${pageSnippetList.length} page snippets`)
@@ -84,23 +88,12 @@ export async function GET(request, { params }) {
     
     // Get active snippets for this page, sorted by order
     const activeSnippets = pageSnippetList
-      .filter(ps => {
-        console.log(`🔍 API Debug: Page snippet ${ps.snippetId} active: ${ps.active}`)
-        return ps.active
-      })
-      .map(ps => {
-        const snippet = allSnippets.find(s => s.id === ps.snippetId)
-        console.log(`🔍 API Debug: Found snippet for ${ps.snippetId}:`, snippet ? `${snippet.name} (active: ${snippet.active})` : 'NOT FOUND')
-        return {
-          ...ps,
-          snippet: snippet
-        }
-      })
-      .filter(ps => {
-        const isValid = ps.snippet && ps.snippet.active
-        console.log(`🔍 API Debug: Snippet ${ps.snippetId} passes final filter: ${isValid}`)
-        return isValid
-      })
+      .filter(ps => ps.active)
+      .map(ps => ({
+        ...ps,
+        snippet: allSnippets.find(s => s.id === ps.snippetId)
+      }))
+      .filter(ps => ps.snippet && ps.snippet.active) // Only active snippets
       .sort((a, b) => (a.order || 0) - (b.order || 0))
       .map(ps => ps.snippet) // Return just the snippet data
     
