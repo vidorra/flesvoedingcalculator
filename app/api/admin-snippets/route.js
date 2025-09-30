@@ -13,9 +13,7 @@ function ensureDataDir() {
   if (!fs.existsSync(DATA_DIR)) {
     fs.mkdirSync(DATA_DIR, { recursive: true })
   }
-  if (!fs.existsSync(SNIPPETS_FILE)) {
-    fs.writeFileSync(SNIPPETS_FILE, JSON.stringify([]))
-  }
+  // Don't create empty file here - let loadSnippets() handle default data
 }
 
 // Simple session check
