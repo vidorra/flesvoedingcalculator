@@ -2,30 +2,29 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Layout from '../../../components/Layout'
-import { 
-  Settings, 
-  Link, 
-  FileText, 
-  Plus, 
-  Edit3, 
-  Trash2, 
-  Eye, 
-  EyeOff,
-  ArrowUp,
-  ArrowDown,
-  ExternalLink,
-  Image,
-  Tag,
-  Save
-} from 'lucide-react'
+import { Settings, Link, Plus, Eye } from 'lucide-react'
 
-export default function AdminDashboard() {
-  const [activeTab, setActiveTab] = useState('snippets')
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
+export default function SimpleAdminDashboard() {
+  const [snippets, setSnippets] = useState([])
+  const [pages, setPages] = useState([])
+  const [selectedPage, setSelectedPage] = useState(null)
+  const [pageSnippets, setPageSnippets] = useState([])
   const [loading, setLoading] = useState(true)
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [activeTab, setActiveTab] = useState('overview') // 'overview' or 'assignment'
+  const [loadError, setLoadError] = useState(null)
+  const [showAddForm, setShowAddForm] = useState(false)
+  const [newSnippet, setNewSnippet] = useState({
+    platform: 'bol',
+    name: '',
+    url: '',
+    code: '',
+    tag: ''
+  })
+  const [isGenerating, setIsGenerating] = useState(false)
   const router = useRouter()
 
-  // Check authentication on mount
+  // Check authentication
   useEffect(() => {
     const isAuth = localStorage.getItem('admin_authenticated')
     const session = localStorage.getItem('admin_session')
@@ -48,8 +47,83 @@ export default function AdminDashboard() {
     }
     
     setIsAuthenticated(true)
-    setLoading(false)
+    // Add a small delay to ensure the API routes are ready
+    setTimeout(() => {
+      loadData()
+    }, 500)
   }, [router])
+
+  const loadData = async (manualRetry = false) => {
+    if (manualRetry) {
+      setLoading(true)
+      setLoadError(null)
+    }
+    
+    try {
+      console.log('Loading data from admin APIs')
+      setLoadError(null)
+      
+      // Load snippets
+      console.log('Loading snippets from /api/admin-snippets/')
+      try {
+        const snippetsResponse = await fetch('/api/admin-snippets/', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          cache: 'no-cache'
+        })
+        console.log('Snippets response status:', snippetsResponse.status)
+        
+        if (snippetsResponse.ok) {
+          const snippetsData = await snippetsResponse.json()
+          console.log('Snippets data:', snippetsData)
+          setSnippets(snippetsData.snippets || [])
+        } else {
+          const errorText = await snippetsResponse.text()
+          console.error('Failed to load snippets. Status:', snippetsResponse.status, 'Error:', errorText)
+          setLoadError(`Failed to load snippets: ${snippetsResponse.status}`)
+        }
+      } catch (snippetsError) {
+        console.error('Error fetching snippets:', snippetsError)
+        setLoadError(`Network error loading snippets: ${snippetsError.message}`)
+        setSnippets([])
+      }
+
+      // Load pages
+      console.log('Loading pages from /api/admin-pages/')
+      try {
+        const pagesResponse = await fetch('/api/admin-pages/', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          cache: 'no-cache'
+        })
+        console.log('Pages response status:', pagesResponse.status)
+        
+        if (pagesResponse.ok) {
+          const pagesData = await pagesResponse.json()
+          console.log('Pages data:', pagesData)
+          setPages(pagesData.pages || [])
+        } else {
+          const errorText = await pagesResponse.text()
+          console.error('Failed to load pages. Status:', pagesResponse.status, 'Error:', errorText)
+          setLoadError(`Failed to load pages: ${pagesResponse.status}`)
+        }
+      } catch (pagesError) {
+        console.error('Error fetching pages:', pagesError)
+        setLoadError(`Network error loading pages: ${pagesError.message}`)
+        setPages([])
+      }
+
+    } catch (error) {
+      console.error('Failed to load data:', error)
+      setLoadError(`General error: ${error.message}`)
+    } finally {
+      setLoading(false)
+    }
+  }
 
   const handleLogout = () => {
     localStorage.removeItem('admin_authenticated')
@@ -57,18 +131,116 @@ export default function AdminDashboard() {
     router.push('/admin')
   }
 
-  if (loading) {
+  const loadPageSnippets = async (pageId) => {
+    try {
+      console.log('Loading snippets for page:', pageId)
+      const response = await fetch(`/api/affiliates/page/${pageId}`)
+      if (response.ok) {
+        const data = await response.json()
+        console.log('Page snippets data:', data)
+        setPageSnippets(data.snippets || [])
+      } else {
+        console.log('No snippets found for page:', pageId)
+        setPageSnippets([])
+      }
+    } catch (error) {
+      console.error('Failed to load page snippets:', error)
+      setPageSnippets([])
+    }
+  }
+
+  const handlePageSelect = (page) => {
+    setSelectedPage(page)
+    loadPageSnippets(page.id)
+  }
+
+  const generateAmazonSnippet = async () => {
+    if (!newSnippet.url) {
+      alert('Please enter an Amazon URL')
+      return
+    }
+
+    setIsGenerating(true)
+    try {
+      const response = await fetch('/api/admin/generate-snippet', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          url: newSnippet.url,
+          type: 'amazon'
+        })
+      })
+
+      if (response.ok) {
+        const data = await response.json()
+        setNewSnippet(prev => ({
+          ...prev,
+          name: data.productName || prev.name,
+          code: data.html
+        }))
+      } else {
+        alert('Failed to generate Amazon snippet')
+      }
+    } catch (error) {
+      console.error('Error generating snippet:', error)
+      alert('Error generating snippet: ' + error.message)
+    } finally {
+      setIsGenerating(false)
+    }
+  }
+
+  const saveNewSnippet = async () => {
+    try {
+      const snippetData = {
+        id: `${newSnippet.platform}-${Date.now()}`,
+        name: newSnippet.name,
+        type: newSnippet.platform,
+        url: newSnippet.url,
+        tag: newSnippet.tag || null,
+        generatedHtml: newSnippet.code,
+        active: true
+      }
+
+      const response = await fetch('/api/admin-snippets/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(snippetData)
+      })
+
+      if (response.ok) {
+        // Refresh the snippets list
+        loadData(true)
+        // Reset form
+        setNewSnippet({
+          platform: 'bol',
+          name: '',
+          url: '',
+          code: '',
+          tag: ''
+        })
+        setShowAddForm(false)
+        alert('Snippet saved successfully!')
+      } else {
+        alert('Failed to save snippet')
+      }
+    } catch (error) {
+      console.error('Error saving snippet:', error)
+      alert('Error saving snippet: ' + error.message)
+    }
+  }
+
+  if (!isAuthenticated || loading) {
     return (
       <Layout>
         <div className="flex items-center justify-center min-h-screen">
-          <div className="text-gray-600">Loading...</div>
+          <div className="text-gray-600">{loading ? 'Loading...' : 'Redirecting...'}</div>
         </div>
       </Layout>
     )
-  }
-
-  if (!isAuthenticated) {
-    return null
   }
 
   return (
@@ -82,7 +254,7 @@ export default function AdminDashboard() {
               Affiliate Management System
             </h1>
             <p className="text-gray-600 mt-2">
-              Manage affiliate links and their placement across pages
+              Manage affiliate links and page assignments
             </p>
           </div>
           <button
@@ -93,759 +265,493 @@ export default function AdminDashboard() {
           </button>
         </div>
 
+        {/* Error Banner */}
+        {loadError && (
+          <div className="mb-8 bg-red-50 border border-red-200 rounded-lg p-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-start">
+                <div className="flex-shrink-0">
+                  <svg className="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div className="ml-3">
+                  <h3 className="text-sm font-medium text-red-800">Failed to load data</h3>
+                  <div className="mt-1 text-sm text-red-700">
+                    {loadError}
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={() => loadData(true)}
+                className="bg-red-100 text-red-700 px-3 py-1 rounded-md text-sm font-medium hover:bg-red-200 transition-colors"
+                disabled={loading}
+              >
+                {loading ? 'Retrying...' : 'Retry'}
+              </button>
+            </div>
+          </div>
+        )}
+
         {/* Tab Navigation */}
-        <div className="border-b border-gray-200 mb-8">
-          <nav className="-mb-px flex space-x-8">
+        <div className="mb-8">
+          <nav className="flex space-x-8" aria-label="Tabs">
             <button
-              onClick={() => setActiveTab('snippets')}
+              onClick={() => setActiveTab('overview')}
               className={`py-2 px-1 border-b-2 font-medium text-sm ${
-                activeTab === 'snippets'
+                activeTab === 'overview'
                   ? 'border-primary text-primary'
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
               }`}
             >
-              <Link className="w-4 h-4 mr-2 inline" />
-              Affiliate Links & Snippets
+              Overview & Snippets
             </button>
             <button
-              onClick={() => setActiveTab('pages')}
+              onClick={() => setActiveTab('assignment')}
               className={`py-2 px-1 border-b-2 font-medium text-sm ${
-                activeTab === 'pages'
+                activeTab === 'assignment'
                   ? 'border-primary text-primary'
                   : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
               }`}
             >
-              <FileText className="w-4 h-4 mr-2 inline" />
               Page Assignment
             </button>
           </nav>
         </div>
 
         {/* Tab Content */}
-        {activeTab === 'snippets' ? (
-          <AffiliateSnippetsTab />
-        ) : (
-          <PageAssignmentTab />
-        )}
-      </div>
-    </Layout>
-  )
-}
-
-// Tab 1: Affiliate Links & Snippets Management
-function AffiliateSnippetsTab() {
-  const [snippets, setSnippets] = useState([])
-  const [showAddForm, setShowAddForm] = useState(false)
-  const [editingSnippet, setEditingSnippet] = useState(null)
-  const [loading, setLoading] = useState(true)
-
-  // Load affiliate snippets on mount
-  useEffect(() => {
-    loadSnippets()
-  }, [])
-
-  const loadSnippets = async () => {
-    try {
-      const response = await fetch('/api/admin-snippets')
-      if (response.ok) {
-        const data = await response.json()
-        setSnippets(data.snippets || [])
-      }
-    } catch (error) {
-      console.error('Failed to load snippets:', error)
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  if (loading) {
-    return <div className="text-center py-8 text-gray-600">Loading snippets...</div>
-  }
-
-  return (
-    <div className="space-y-6">
-      {/* Add New Button */}
-      <div className="flex justify-between items-center">
-        <h2 className="text-lg font-semibold text-gray-900">
-          Manage Affiliate Links & Code Snippets
-        </h2>
-        <button
-          onClick={() => setShowAddForm(true)}
-          className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center"
-        >
-          <Plus className="w-4 h-4 mr-2" />
-          Add New Link
-        </button>
-      </div>
-
-      {/* Add/Edit Form */}
-      {(showAddForm || editingSnippet) && (
-        <AffiliateSnippetForm 
-          snippet={editingSnippet}
-          onSave={(snippet) => {
-            if (editingSnippet) {
-              setSnippets(snippets.map(s => s.id === snippet.id ? snippet : s))
-              setEditingSnippet(null)
-            } else {
-              setSnippets([...snippets, snippet])
-              setShowAddForm(false)
-            }
-          }}
-          onCancel={() => {
-            setShowAddForm(false)
-            setEditingSnippet(null)
-          }}
-        />
-      )}
-
-      {/* Snippets List */}
-      <div className="bg-white rounded-lg border border-gray-200">
-        {snippets.length === 0 ? (
-          <div className="text-center py-12 text-gray-500">
-            No affiliate snippets yet. Add your first one!
-          </div>
-        ) : (
-          <div className="divide-y divide-gray-200">
-            {snippets.map((snippet) => (
-              <SnippetListItem
-                key={snippet.id}
-                snippet={snippet}
-                onEdit={() => setEditingSnippet(snippet)}
-                onDelete={(id) => setSnippets(snippets.filter(s => s.id !== id))}
-                onToggleActive={(id, active) => 
-                  setSnippets(snippets.map(s => s.id === id ? {...s, active} : s))
-                }
-              />
-            ))}
-          </div>
-        )}
-      </div>
-    </div>
-  )
-}
-
-// Snippet Form Component
-function AffiliateSnippetForm({ snippet, onSave, onCancel }) {
-  const [formData, setFormData] = useState({
-    name: snippet?.name || '',
-    type: snippet?.type || 'amazon',
-    url: snippet?.url || '',
-    tag: snippet?.tag || '',
-    generatedHtml: snippet?.generatedHtml || '',
-    active: snippet?.active ?? true
-  })
-  const [generating, setGenerating] = useState(false)
-
-  const handleGenerateSnippet = async () => {
-    if (!formData.url) return
-    
-    setGenerating(true)
-    try {
-      const token = localStorage.getItem('admin_token')
-      const response = await fetch('/api/admin/generate-snippet', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          url: formData.url,
-          type: formData.type
-        })
-      })
-      
-      if (response.ok) {
-        const data = await response.json()
-        setFormData(prev => ({
-          ...prev,
-          generatedHtml: data.html,
-          name: prev.name || data.productName || 'Generated Product'
-        }))
-      }
-    } catch (error) {
-      console.error('Failed to generate snippet:', error)
-    } finally {
-      setGenerating(false)
-    }
-  }
-
-  const handleSave = async () => {
-    const token = localStorage.getItem('admin_token')
-    const method = snippet ? 'PUT' : 'POST'
-    const url = snippet ? `/api/admin/snippets/${snippet.id}` : '/api/admin/snippets'
-    
-    try {
-      const response = await fetch(url, {
-        method,
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          ...formData,
-          id: snippet?.id || Date.now().toString()
-        })
-      })
-      
-      if (response.ok) {
-        const data = await response.json()
-        onSave(data.snippet)
-      }
-    } catch (error) {
-      console.error('Failed to save snippet:', error)
-    }
-  }
-
-  return (
-    <div className="bg-white p-6 border border-gray-200 rounded-lg">
-      <h3 className="text-lg font-medium mb-4">
-        {snippet ? 'Edit' : 'Add New'} Affiliate Link
-      </h3>
-      
-      <div className="space-y-4">
-        {/* Name */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Product Name
-          </label>
-          <input
-            type="text"
-            value={formData.name}
-            onChange={(e) => setFormData(prev => ({...prev, name: e.target.value}))}
-            className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-primary"
-            placeholder="e.g., LIFEJXWEN 5-in-1 Electric Sterilizer"
-          />
-        </div>
-
-        {/* Type and Tag */}
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Platform
-            </label>
-            <select
-              value={formData.type}
-              onChange={(e) => setFormData(prev => ({...prev, type: e.target.value}))}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-primary"
-            >
-              <option value="amazon">Amazon</option>
-              <option value="bol">Bol.com</option>
-            </select>
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Tag (Optional)
-            </label>
-            <input
-              type="text"
-              value={formData.tag}
-              onChange={(e) => setFormData(prev => ({...prev, tag: e.target.value}))}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-primary"
-              placeholder="Aanbevolen, Budget, etc."
-            />
-          </div>
-        </div>
-
-        {/* URL Input */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Short URL
-          </label>
-          <div className="flex gap-2">
-            <input
-              type="text"
-              value={formData.url}
-              onChange={(e) => setFormData(prev => ({...prev, url: e.target.value}))}
-              className="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-primary"
-              placeholder="https://amzn.to/3Krcb8W"
-            />
-            <button
-              onClick={handleGenerateSnippet}
-              disabled={!formData.url || generating}
-              className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 disabled:opacity-50 transition-colors"
-            >
-              {generating ? 'Generating...' : 'Generate'}
-            </button>
-          </div>
-        </div>
-
-        {/* Generated HTML Preview */}
-        {formData.generatedHtml && (
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Generated HTML
-            </label>
-            <textarea
-              value={formData.generatedHtml}
-              onChange={(e) => setFormData(prev => ({...prev, generatedHtml: e.target.value}))}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-primary font-mono text-sm"
-              rows="6"
-            />
-          </div>
-        )}
-
-        {/* Actions */}
-        <div className="flex justify-end space-x-2 pt-4">
-          <button
-            onClick={onCancel}
-            className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
-          >
-            Cancel
-          </button>
-          <button
-            onClick={handleSave}
-            disabled={!formData.name || !formData.generatedHtml}
-            className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 disabled:opacity-50 transition-colors flex items-center"
-          >
-            <Save className="w-4 h-4 mr-2" />
-            {snippet ? 'Update' : 'Save'}
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-// Snippet List Item Component  
-function SnippetListItem({ snippet, onEdit, onDelete, onToggleActive }) {
-  const handleDelete = async () => {
-    if (!confirm('Are you sure you want to delete this snippet?')) return
-    
-    try {
-      const token = localStorage.getItem('admin_token')
-      const response = await fetch(`/api/admin/snippets/${snippet.id}`, {
-        method: 'DELETE',
-        headers: { 'Authorization': `Bearer ${token}` }
-      })
-      
-      if (response.ok) {
-        onDelete(snippet.id)
-      }
-    } catch (error) {
-      console.error('Failed to delete snippet:', error)
-    }
-  }
-
-  const handleToggleActive = async () => {
-    try {
-      const token = localStorage.getItem('admin_token')
-      const response = await fetch(`/api/admin/snippets/${snippet.id}/toggle`, {
-        method: 'PATCH',
-        headers: { 'Authorization': `Bearer ${token}` }
-      })
-      
-      if (response.ok) {
-        onToggleActive(snippet.id, !snippet.active)
-      }
-    } catch (error) {
-      console.error('Failed to toggle snippet status:', error)
-    }
-  }
-
-  return (
-    <div className="p-6 hover:bg-gray-50 transition-colors">
-      <div className="flex items-start justify-between">
-        <div className="flex-1">
-          <div className="flex items-center space-x-3 mb-2">
-            <h3 className="text-lg font-medium text-gray-900">{snippet.name}</h3>
-            {snippet.tag && (
-              <span className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium">
-                {snippet.tag}
-              </span>
-            )}
-            <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-              snippet.type === 'amazon' 
-                ? 'bg-orange-100 text-orange-700' 
-                : 'bg-blue-100 text-blue-700'
-            }`}>
-              {snippet.type === 'amazon' ? 'Amazon' : 'Bol.com'}
-            </span>
-          </div>
-          <div className="text-sm text-gray-600 space-y-1">
-            <div className="flex items-center">
-              <ExternalLink className="w-4 h-4 mr-2" />
-              {snippet.url}
-            </div>
-            {snippet.generatedHtml && (
-              <div className="flex items-start">
-                <Image className="w-4 h-4 mr-2 mt-0.5" />
-                <code className="text-xs bg-gray-100 px-2 py-1 rounded">
-                  {snippet.generatedHtml.substring(0, 100)}...
-                </code>
-              </div>
-            )}
-          </div>
-        </div>
-        
-        <div className="flex items-center space-x-2">
-          <button
-            onClick={handleToggleActive}
-            className={`p-2 rounded-lg transition-colors ${
-              snippet.active 
-                ? 'text-green-600 hover:bg-green-50' 
-                : 'text-gray-400 hover:bg-gray-50'
-            }`}
-            title={snippet.active ? 'Active' : 'Inactive'}
-          >
-            {snippet.active ? <Eye className="w-4 h-4" /> : <EyeOff className="w-4 h-4" />}
-          </button>
-          <button
-            onClick={onEdit}
-            className="p-2 text-gray-600 hover:bg-gray-50 rounded-lg transition-colors"
-            title="Edit"
-          >
-            <Edit3 className="w-4 h-4" />
-          </button>
-          <button
-            onClick={handleDelete}
-            className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
-            title="Delete"
-          >
-            <Trash2 className="w-4 h-4" />
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-// Tab 2: Page Assignment (Master-Detail View)
-function PageAssignmentTab() {
-  const [pages, setPages] = useState([])
-  const [selectedPage, setSelectedPage] = useState(null)
-  const [availableSnippets, setAvailableSnippets] = useState([])
-  const [pageSnippets, setPageSnippets] = useState([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    loadPages()
-    loadAvailableSnippets()
-  }, [])
-
-  useEffect(() => {
-    if (selectedPage) {
-      loadPageSnippets(selectedPage.id)
-    }
-  }, [selectedPage])
-
-  const loadPages = async () => {
-    try {
-      const response = await fetch('/api/admin-pages')
-      if (response.ok) {
-        const data = await response.json()
-        setPages(data.pages || [])
-        if (data.pages?.length > 0) {
-          setSelectedPage(data.pages[0])
-        }
-      }
-    } catch (error) {
-      console.error('Failed to load pages:', error)
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  const loadAvailableSnippets = async () => {
-    try {
-      const response = await fetch('/api/admin-snippets?active=true')
-      if (response.ok) {
-        const data = await response.json()
-        setAvailableSnippets(data.snippets || [])
-      }
-    } catch (error) {
-      console.error('Failed to load snippets:', error)
-    }
-  }
-
-  const loadPageSnippets = async (pageId) => {
-    try {
-      const token = localStorage.getItem('admin_token')
-      const response = await fetch(`/api/admin/pages/${pageId}/snippets`, {
-        headers: { 'Authorization': `Bearer ${token}` }
-      })
-      if (response.ok) {
-        const data = await response.json()
-        setPageSnippets(data.snippets || [])
-      }
-    } catch (error) {
-      console.error('Failed to load page snippets:', error)
-    }
-  }
-
-  if (loading) {
-    return <div className="text-center py-8 text-gray-600">Loading pages...</div>
-  }
-
-  return (
-    <div className="grid grid-cols-12 gap-6">
-      {/* Left Panel - Pages List */}
-      <div className="col-span-4">
-        <h2 className="text-lg font-semibold text-gray-900 mb-4">Article Pages</h2>
-        <div className="bg-white border border-gray-200 rounded-lg divide-y divide-gray-200 max-h-96 overflow-y-auto">
-          {pages.map((page) => (
-            <button
-              key={page.id}
-              onClick={() => setSelectedPage(page)}
-              className={`w-full text-left p-4 hover:bg-gray-50 transition-colors ${
-                selectedPage?.id === page.id ? 'bg-blue-50 border-r-2 border-r-primary' : ''
-              }`}
-            >
-              <div className="font-medium text-gray-900 truncate">{page.title}</div>
-              <div className="text-sm text-gray-600 truncate">{page.path}</div>
-              <div className="text-xs text-gray-500 mt-1">
-                {page.snippetCount || 0} affiliate links
-              </div>
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Right Panel - Page Details & Snippet Assignment */}
-      <div className="col-span-8">
-        {selectedPage ? (
-          <PageSnippetManager 
-            page={selectedPage}
-            availableSnippets={availableSnippets}
-            pageSnippets={pageSnippets}
-            onUpdatePageSnippets={setPageSnippets}
-          />
-        ) : (
-          <div className="text-center py-12 text-gray-500">
-            Select a page to manage its affiliate links
-          </div>
-        )}
-      </div>
-    </div>
-  )
-}
-
-// Page Snippet Manager Component
-function PageSnippetManager({ page, availableSnippets, pageSnippets, onUpdatePageSnippets }) {
-  const [showAddModal, setShowAddModal] = useState(false)
-
-  const handleAddSnippet = async (snippetId) => {
-    try {
-      const token = localStorage.getItem('admin_token')
-      const response = await fetch(`/api/admin/pages/${page.id}/snippets`, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ 
-          snippetId, 
-          order: pageSnippets.length 
-        })
-      })
-      
-      if (response.ok) {
-        const data = await response.json()
-        onUpdatePageSnippets([...pageSnippets, data.pageSnippet])
-        setShowAddModal(false)
-      }
-    } catch (error) {
-      console.error('Failed to add snippet to page:', error)
-    }
-  }
-
-  const handleRemoveSnippet = async (pageSnippetId) => {
-    try {
-      const token = localStorage.getItem('admin_token')
-      const response = await fetch(`/api/admin/pages/${page.id}/snippets/${pageSnippetId}`, {
-        method: 'DELETE',
-        headers: { 'Authorization': `Bearer ${token}` }
-      })
-      
-      if (response.ok) {
-        onUpdatePageSnippets(pageSnippets.filter(ps => ps.id !== pageSnippetId))
-      }
-    } catch (error) {
-      console.error('Failed to remove snippet from page:', error)
-    }
-  }
-
-  const handleToggleSnippet = async (pageSnippetId, active) => {
-    try {
-      const token = localStorage.getItem('admin_token')
-      const response = await fetch(`/api/admin/pages/${page.id}/snippets/${pageSnippetId}/toggle`, {
-        method: 'PATCH',
-        headers: { 'Authorization': `Bearer ${token}` }
-      })
-      
-      if (response.ok) {
-        onUpdatePageSnippets(pageSnippets.map(ps => 
-          ps.id === pageSnippetId ? {...ps, active: !ps.active} : ps
-        ))
-      }
-    } catch (error) {
-      console.error('Failed to toggle snippet status:', error)
-    }
-  }
-
-  const handleReorderSnippet = async (pageSnippetId, direction) => {
-    const currentIndex = pageSnippets.findIndex(ps => ps.id === pageSnippetId)
-    if (
-      (direction === 'up' && currentIndex === 0) ||
-      (direction === 'down' && currentIndex === pageSnippets.length - 1)
-    ) {
-      return
-    }
-
-    const newIndex = direction === 'up' ? currentIndex - 1 : currentIndex + 1
-    const reorderedSnippets = [...pageSnippets]
-    const [movedItem] = reorderedSnippets.splice(currentIndex, 1)
-    reorderedSnippets.splice(newIndex, 0, movedItem)
-
-    // Update order in backend
-    try {
-      const token = localStorage.getItem('admin_token')
-      await fetch(`/api/admin/pages/${page.id}/snippets/reorder`, {
-        method: 'PUT',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ 
-          snippets: reorderedSnippets.map((snippet, index) => ({
-            id: snippet.id,
-            order: index
-          }))
-        })
-      })
-      
-      onUpdatePageSnippets(reorderedSnippets)
-    } catch (error) {
-      console.error('Failed to reorder snippets:', error)
-    }
-  }
-
-  return (
-    <div className="space-y-6">
-      {/* Page Header */}
-      <div className="flex justify-between items-start">
-        <div>
-          <h2 className="text-lg font-semibold text-gray-900">{page.title}</h2>
-          <p className="text-gray-600 text-sm">{page.path}</p>
-        </div>
-        <button
-          onClick={() => setShowAddModal(true)}
-          className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center"
-        >
-          <Plus className="w-4 h-4 mr-2" />
-          Add Affiliate Link
-        </button>
-      </div>
-
-      {/* Current Page Snippets */}
-      <div className="bg-white border border-gray-200 rounded-lg">
-        <div className="p-4 border-b border-gray-200">
-          <h3 className="font-medium text-gray-900">
-            Affiliate Links on This Page ({pageSnippets.length})
-          </h3>
-        </div>
-        
-        {pageSnippets.length === 0 ? (
-          <div className="text-center py-8 text-gray-500">
-            No affiliate links added to this page yet.
-          </div>
-        ) : (
-          <div className="divide-y divide-gray-200">
-            {pageSnippets.map((pageSnippet, index) => (
-              <div key={pageSnippet.id} className="p-4 hover:bg-gray-50">
-                <div className="flex items-center justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center space-x-3">
-                      <span className="text-sm text-gray-500">#{index + 1}</span>
-                      <h4 className="font-medium text-gray-900">{pageSnippet.snippet?.name}</h4>
-                      {pageSnippet.snippet?.tag && (
-                        <span className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium">
-                          {pageSnippet.snippet.tag}
-                        </span>
-                      )}
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                        pageSnippet.active 
-                          ? 'bg-green-100 text-green-700' 
-                          : 'bg-gray-100 text-gray-600'
-                      }`}>
-                        {pageSnippet.active ? 'Active' : 'Inactive'}
-                      </span>
-                    </div>
-                    <p className="text-sm text-gray-600 mt-1">{pageSnippet.snippet?.url}</p>
-                  </div>
-                  
-                  <div className="flex items-center space-x-2">
-                    <button
-                      onClick={() => handleReorderSnippet(pageSnippet.id, 'up')}
-                      disabled={index === 0}
-                      className="p-1 text-gray-400 hover:text-gray-600 disabled:opacity-25"
-                      title="Move up"
-                    >
-                      <ArrowUp className="w-4 h-4" />
-                    </button>
-                    <button
-                      onClick={() => handleReorderSnippet(pageSnippet.id, 'down')}
-                      disabled={index === pageSnippets.length - 1}
-                      className="p-1 text-gray-400 hover:text-gray-600 disabled:opacity-25"
-                      title="Move down"
-                    >
-                      <ArrowDown className="w-4 h-4" />
-                    </button>
-                    <button
-                      onClick={() => handleToggleSnippet(pageSnippet.id, pageSnippet.active)}
-                      className={`p-1 rounded transition-colors ${
-                        pageSnippet.active 
-                          ? 'text-green-600 hover:bg-green-50' 
-                          : 'text-gray-400 hover:bg-gray-50'
-                      }`}
-                      title={pageSnippet.active ? 'Deactivate' : 'Activate'}
-                    >
-                      {pageSnippet.active ? <Eye className="w-4 h-4" /> : <EyeOff className="w-4 h-4" />}
-                    </button>
-                    <button
-                      onClick={() => handleRemoveSnippet(pageSnippet.id)}
-                      className="p-1 text-red-600 hover:bg-red-50 rounded transition-colors"
-                      title="Remove"
-                    >
-                      <Trash2 className="w-4 h-4" />
-                    </button>
+        {activeTab === 'overview' && (
+          <>
+            {/* Stats */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+                <div className="flex items-center">
+                  <Link className="w-8 h-8 text-primary" />
+                  <div className="ml-4">
+                    <h3 className="text-lg font-semibold text-gray-900">{snippets.length}</h3>
+                    <p className="text-gray-600">Total Snippets</p>
                   </div>
                 </div>
               </div>
-            ))}
+              <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+                <div className="flex items-center">
+                  <Eye className="w-8 h-8 text-green-600" />
+                  <div className="ml-4">
+                    <h3 className="text-lg font-semibold text-gray-900">{snippets.filter(s => s.active).length}</h3>
+                    <p className="text-gray-600">Active Snippets</p>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+                <div className="flex items-center">
+                  <Settings className="w-8 h-8 text-blue-600" />
+                  <div className="ml-4">
+                    <h3 className="text-lg font-semibold text-gray-900">{pages.length}</h3>
+                    <p className="text-gray-600">Available Pages</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Snippets List */}
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-lg font-semibold text-gray-900">Affiliate Snippets</h2>
+                <button
+                  onClick={() => setShowAddForm(true)}
+                  className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center space-x-2"
+                >
+                  <Plus className="w-4 h-4" />
+                  <span>Add New Link</span>
+                </button>
+              </div>
+
+              {/* Add New Snippet Form */}
+              {showAddForm && (
+                <div className="mb-6 p-6 border border-gray-200 rounded-lg bg-gray-50">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-lg font-medium text-gray-900">Add New Affiliate Link</h3>
+                    <button
+                      onClick={() => setShowAddForm(false)}
+                      className="text-gray-400 hover:text-gray-600"
+                    >
+                      ✕
+                    </button>
+                  </div>
+
+                  {/* Platform Radio Buttons */}
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Platform</label>
+                    <div className="flex space-x-4">
+                      <label className="flex items-center">
+                        <input
+                          type="radio"
+                          value="bol"
+                          checked={newSnippet.platform === 'bol'}
+                          onChange={(e) => setNewSnippet(prev => ({ ...prev, platform: e.target.value }))}
+                          className="mr-2"
+                        />
+                        <span>Bol.com</span>
+                      </label>
+                      <label className="flex items-center">
+                        <input
+                          type="radio"
+                          value="amazon"
+                          checked={newSnippet.platform === 'amazon'}
+                          onChange={(e) => setNewSnippet(prev => ({ ...prev, platform: e.target.value }))}
+                          className="mr-2"
+                        />
+                        <span>Amazon</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  {/* Product Name */}
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Product Name</label>
+                    <input
+                      type="text"
+                      value={newSnippet.name}
+                      onChange={(e) => setNewSnippet(prev => ({ ...prev, name: e.target.value }))}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                      placeholder="Enter product name"
+                    />
+                  </div>
+
+                  {/* Conditional Fields Based on Platform */}
+                  {newSnippet.platform === 'bol' && (
+                    <div className="mb-4">
+                      <label className="block text-sm font-medium text-gray-700 mb-2">Bol.com Code Snippet</label>
+                      <textarea
+                        value={newSnippet.code}
+                        onChange={(e) => setNewSnippet(prev => ({ ...prev, code: e.target.value }))}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary h-32"
+                        placeholder="Paste your Bol.com affiliate code snippet here..."
+                      />
+                    </div>
+                  )}
+
+                  {newSnippet.platform === 'amazon' && (
+                    <>
+                      <div className="mb-4">
+                        <label className="block text-sm font-medium text-gray-700 mb-2">Amazon Short Link</label>
+                        <div className="flex space-x-2">
+                          <input
+                            type="text"
+                            value={newSnippet.url}
+                            onChange={(e) => setNewSnippet(prev => ({ ...prev, url: e.target.value }))}
+                            className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                            placeholder="https://amzn.to/3Krcb8W"
+                          />
+                          <button
+                            onClick={generateAmazonSnippet}
+                            disabled={isGenerating || !newSnippet.url}
+                            className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 disabled:opacity-50 disabled:cursor-not-allowed"
+                          >
+                            {isGenerating ? 'Generating...' : 'Generate'}
+                          </button>
+                        </div>
+                      </div>
+                      
+                      {newSnippet.code && (
+                        <div className="mb-4">
+                          <label className="block text-sm font-medium text-gray-700 mb-2">Generated HTML</label>
+                          <textarea
+                            value={newSnippet.code}
+                            onChange={(e) => setNewSnippet(prev => ({ ...prev, code: e.target.value }))}
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary h-32"
+                            placeholder="Generated HTML will appear here..."
+                          />
+                        </div>
+                      )}
+                    </>
+                  )}
+
+                  {/* Tag (Optional) */}
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Tag (Optional)</label>
+                    <input
+                      type="text"
+                      value={newSnippet.tag}
+                      onChange={(e) => setNewSnippet(prev => ({ ...prev, tag: e.target.value }))}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                      placeholder="e.g., Aanbevolen, Budget, Beste prijs/kwaliteit"
+                    />
+                  </div>
+
+                  {/* Save/Cancel Buttons */}
+                  <div className="flex space-x-3">
+                    <button
+                      onClick={saveNewSnippet}
+                      disabled={!newSnippet.name || !newSnippet.code}
+                      className="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      Save Snippet
+                    </button>
+                    <button
+                      onClick={() => setShowAddForm(false)}
+                      className="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              )}
+              
+              {snippets.length === 0 ? (
+                <div className="text-center py-12 text-gray-500">
+                  <Link className="w-12 h-12 mx-auto mb-4 text-gray-400" />
+                  <h3 className="text-lg font-medium mb-2">No affiliate snippets yet</h3>
+                  <p className="mb-4">Add your first one!</p>
+                  <button
+                    onClick={() => setShowAddForm(true)}
+                    className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors"
+                  >
+                    Add New Link
+                  </button>
+                </div>
+              ) : (
+                <div className="space-y-4">
+                  {snippets.map((snippet) => (
+                    <div key={snippet.id} className="border border-gray-200 rounded-lg p-4 hover:bg-gray-50">
+                      <div className="flex items-start justify-between">
+                        <div className="flex-1">
+                          <div className="flex items-center space-x-3 mb-2">
+                            <h3 className="text-lg font-medium text-gray-900">{snippet.name}</h3>
+                            {snippet.tag && (
+                              <span className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium">
+                                {snippet.tag}
+                              </span>
+                            )}
+                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                              snippet.type === 'amazon' 
+                                ? 'bg-orange-100 text-orange-700' 
+                                : 'bg-blue-100 text-blue-700'
+                            }`}>
+                              {snippet.type === 'amazon' ? 'Amazon' : 'Bol.com'}
+                            </span>
+                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                              snippet.active 
+                                ? 'bg-green-100 text-green-700' 
+                                : 'bg-gray-100 text-gray-600'
+                            }`}>
+                              {snippet.active ? 'Active' : 'Inactive'}
+                            </span>
+                          </div>
+                          <div className="text-sm text-gray-600 space-y-1">
+                            <div>
+                              <strong>URL:</strong> {snippet.url}
+                            </div>
+                            <div>
+                              <strong>Created:</strong> {new Date(snippet.createdAt).toLocaleDateString()}
+                            </div>
+                            {snippet.generatedHtml && (
+                              <details className="mt-2">
+                                <summary className="cursor-pointer text-primary hover:text-primary/80">
+                                  View Generated HTML
+                                </summary>
+                                <div className="mt-2 p-3 bg-gray-50 rounded border">
+                                  <code className="text-xs text-gray-600 break-all">
+                                    {snippet.generatedHtml}
+                                  </code>
+                                </div>
+                              </details>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </>
+        )}
+
+        {activeTab === 'assignment' && (
+          <div className="grid grid-cols-12 gap-6">
+            {/* Left Panel - Pages */}
+            <div className="col-span-4">
+              <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+                <h2 className="text-lg font-semibold text-gray-900 mb-4">Kennisbank Pages</h2>
+                {pages.length === 0 ? (
+                  <div className="text-center py-8 text-gray-500">
+                    No pages found.
+                  </div>
+                ) : (
+                  <div className="space-y-2 max-h-96 overflow-y-auto">
+                    {pages.map((page) => (
+                      <button
+                        key={page.id}
+                        onClick={() => handlePageSelect(page)}
+                        className={`w-full text-left p-3 rounded-lg border transition-colors ${
+                          selectedPage?.id === page.id
+                            ? 'border-primary bg-primary/5 text-primary'
+                            : 'border-gray-200 hover:bg-gray-50'
+                        }`}
+                      >
+                        <h3 className="font-medium text-sm">{page.title}</h3>
+                        <p className="text-xs text-gray-500 mt-1">{page.path}</p>
+                        <div className="text-xs text-gray-400 mt-1">
+                          Snippets: {page.snippetCount}
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Right Panel - Snippet Configuration */}
+            <div className="col-span-8">
+              <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+                {!selectedPage ? (
+                  <div className="text-center py-12 text-gray-500">
+                    <Settings className="w-12 h-12 mx-auto mb-4 text-gray-400" />
+                    <h3 className="text-lg font-medium mb-2">Select a Page</h3>
+                    <p>Choose a page from the left panel to manage its affiliate snippets</p>
+                  </div>
+                ) : (
+                  <>
+                    <div className="flex items-center justify-between mb-6">
+                      <div>
+                        <h2 className="text-lg font-semibold text-gray-900">{selectedPage.title}</h2>
+                        <p className="text-sm text-gray-600">{selectedPage.path}</p>
+                      </div>
+                      <div className="text-sm text-gray-500">
+                        {pageSnippets.length} snippets assigned
+                      </div>
+                    </div>
+
+                    {/* Current Page Snippets */}
+                    <div className="mb-6">
+                      <h3 className="font-medium text-gray-900 mb-3">Current Affiliate Snippets</h3>
+                      {pageSnippets.length === 0 ? (
+                        <div className="text-center py-8 text-gray-500 border-2 border-dashed border-gray-300 rounded-lg">
+                          <Link className="w-8 h-8 mx-auto mb-2 text-gray-400" />
+                          <p>No affiliate snippets assigned to this page</p>
+                          <p className="text-sm">Add snippets from the available list below</p>
+                        </div>
+                      ) : (
+                        <div className="space-y-3">
+                          {pageSnippets.map((snippet, index) => (
+                            <div key={snippet.id} className="flex items-center justify-between p-3 border border-gray-200 rounded-lg bg-gray-50">
+                              <div className="flex items-center space-x-3">
+                                <div className="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs">
+                                  {index + 1}
+                                </div>
+                                <div>
+                                  <h4 className="font-medium text-gray-900">{snippet.name}</h4>
+                                  <p className="text-sm text-gray-600">{snippet.type === 'amazon' ? 'Amazon' : 'Bol.com'} • {snippet.tag}</p>
+                                </div>
+                              </div>
+                              <div className="flex items-center space-x-2">
+                                <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                                  snippet.active 
+                                    ? 'bg-green-100 text-green-700' 
+                                    : 'bg-gray-100 text-gray-600'
+                                }`}>
+                                  {snippet.active ? 'Active' : 'Inactive'}
+                                </span>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Available Snippets to Add */}
+                    <div>
+                      <h3 className="font-medium text-gray-900 mb-3">Available Snippets</h3>
+                      <p className="text-sm text-gray-600 mb-4">
+                        These snippets are available to add to this page. Click a snippet to assign it.
+                      </p>
+                      {snippets.length === 0 ? (
+                        <div className="text-center py-8 text-gray-500 border border-gray-200 rounded-lg">
+                          No snippets available
+                        </div>
+                      ) : (
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-64 overflow-y-auto">
+                          {snippets.filter(snippet => 
+                            !pageSnippets.some(ps => ps.id === snippet.id)
+                          ).map((snippet) => (
+                            <button
+                              key={snippet.id}
+                              className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-primary/5 transition-colors text-left"
+                            >
+                              <div className="flex items-start justify-between">
+                                <div className="flex-1">
+                                  <h4 className="font-medium text-gray-900 text-sm">{snippet.name}</h4>
+                                  <div className="flex items-center space-x-2 mt-1">
+                                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                                      snippet.type === 'amazon' 
+                                        ? 'bg-orange-100 text-orange-700' 
+                                        : 'bg-blue-100 text-blue-700'
+                                    }`}>
+                                      {snippet.type === 'amazon' ? 'Amazon' : 'Bol.com'}
+                                    </span>
+                                    {snippet.tag && (
+                                      <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded-full text-xs">
+                                        {snippet.tag}
+                                      </span>
+                                    )}
+                                  </div>
+                                </div>
+                                <Plus className="w-4 h-4 text-gray-400" />
+                              </div>
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
           </div>
         )}
-      </div>
 
-      {/* Add Snippet Modal */}
-      {showAddModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4">
-            <h3 className="text-lg font-medium mb-4">Add Affiliate Link</h3>
-            <div className="space-y-3 max-h-60 overflow-y-auto">
-              {availableSnippets
-                .filter(snippet => !pageSnippets.some(ps => ps.snippetId === snippet.id))
-                .map((snippet) => (
-                <button
-                  key={snippet.id}
-                  onClick={() => handleAddSnippet(snippet.id)}
-                  className="w-full text-left p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
-                >
-                  <div className="font-medium text-gray-900">{snippet.name}</div>
-                  <div className="text-sm text-gray-600">{snippet.url}</div>
-                </button>
-              ))}
+        {/* Instructions */}
+        {activeTab === 'overview' && (
+          <>
+            <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
+              <h3 className="text-lg font-medium text-blue-900 mb-3">How the System Works</h3>
+              <div className="text-sm text-blue-800 space-y-2">
+                <p>• <strong>Frontend Integration:</strong> Pages use <code>pageId</code> prop to load snippets from admin system</p>
+                <p>• <strong>Example:</strong> <code>&lt;AffiliateProductWidget pageId="hygiene-bereiding_flessen-steriliseren" /&gt;</code></p>
+                <p>• <strong>Data Flow:</strong> Admin snippets → API endpoint → Frontend widget</p>
+                <p>• <strong>Current Status:</strong> {snippets.filter(s => s.active).length} active snippets ready for display</p>
+              </div>
             </div>
-            <div className="flex justify-end space-x-2 mt-4">
+
+            {/* Debug Info */}
+            <div className="mt-8 bg-gray-50 border border-gray-200 rounded-lg p-6">
+              <h3 className="text-lg font-medium text-gray-900 mb-3">Debug Information</h3>
+              <div className="text-sm text-gray-600 space-y-2">
+                <p>• <strong>Snippets loaded:</strong> {snippets.length}</p>
+                <p>• <strong>Pages loaded:</strong> {pages.length}</p>
+                <p>• <strong>Loading state:</strong> {loading ? 'Loading...' : 'Complete'}</p>
+                <p>• <strong>Current URL:</strong> {typeof window !== 'undefined' ? window.location.href : 'Server-side'}</p>
+                <p>• <strong>API Endpoints:</strong></p>
+                <div className="ml-4 text-xs">
+                  <p>- Snippets: <code>/api/admin-snippets/</code></p>
+                  <p>- Pages: <code>/api/admin-pages/</code></p>
+                </div>
+                {loadError && (
+                  <p>• <strong>Last Error:</strong> <span className="text-red-600">{loadError}</span></p>
+                )}
+              </div>
               <button
-                onClick={() => setShowAddModal(false)}
-                className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
+                onClick={() => loadData(true)}
+                className="mt-4 bg-gray-200 text-gray-700 px-3 py-1 rounded-md text-sm font-medium hover:bg-gray-300 transition-colors"
+                disabled={loading}
               >
-                Cancel
+                {loading ? 'Loading...' : 'Refresh Data'}
               </button>
             </div>
-          </div>
-        </div>
-      )}
-    </div>
+          </>
+        )}
+      </div>
+    </Layout>
   )
 }
