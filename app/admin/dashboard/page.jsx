@@ -708,7 +708,7 @@ export default function SimpleAdminDashboard() {
                                 </div>
                                 <div>
                                   <h4 className="font-medium text-gray-900">{snippet.name}</h4>
-                                  <p className="text-sm text-gray-600">{snippet.type === 'amazon' ? 'Amazon' : 'Bol.com'} • {snippet.tag}</p>
+                                  <p className="text-sm text-gray-600">{snippet.type === 'amazon' || snippet.type === 'amazon_image' ? 'Amazon' : 'Bol.com'} • {snippet.tag}</p>
                                 </div>
                               </div>
                               <div className="flex items-center space-x-2">
