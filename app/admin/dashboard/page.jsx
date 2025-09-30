@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Layout from '../../../components/Layout'
-import { Settings, Link, Plus, Eye } from 'lucide-react'
+import { Settings, Link, Plus, Eye, X } from 'lucide-react'
 
 export default function SimpleAdminDashboard() {
   const [snippets, setSnippets] = useState([])
@@ -236,6 +236,54 @@ export default function SimpleAdminDashboard() {
     } catch (error) {
       console.error('Error saving snippet:', error)
       alert('Error saving snippet: ' + error.message)
+    }
+  }
+
+  const assignSnippetToPage = async (pageId, snippetId) => {
+    try {
+      const response = await fetch('/api/admin-page-snippets/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ pageId, snippetId })
+      })
+
+      if (response.ok) {
+        // Refresh page snippets
+        loadPageSnippets(pageId)
+        alert('Snippet assigned successfully!')
+      } else {
+        const errorData = await response.json()
+        alert(`Failed to assign snippet: ${errorData.message}`)
+      }
+    } catch (error) {
+      console.error('Error assigning snippet:', error)
+      alert('Error assigning snippet: ' + error.message)
+    }
+  }
+
+  const unassignSnippetFromPage = async (pageId, snippetId) => {
+    try {
+      const response = await fetch('/api/admin-page-snippets/', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ pageId, snippetId })
+      })
+
+      if (response.ok) {
+        // Refresh page snippets
+        loadPageSnippets(pageId)
+        alert('Snippet unassigned successfully!')
+      } else {
+        const errorData = await response.json()
+        alert(`Failed to unassign snippet: ${errorData.message}`)
+      }
+    } catch (error) {
+      console.error('Error unassigning snippet:', error)
+      alert('Error unassigning snippet: ' + error.message)
     }
   }
 
@@ -671,6 +719,13 @@ export default function SimpleAdminDashboard() {
                                 }`}>
                                   {snippet.active ? 'Active' : 'Inactive'}
                                 </span>
+                                <button
+                                  onClick={() => unassignSnippetFromPage(selectedPage.id, snippet.id)}
+                                  className="p-1 text-red-600 hover:bg-red-50 rounded transition-colors"
+                                  title="Unassign snippet"
+                                >
+                                  <X className="w-4 h-4" />
+                                </button>
                               </div>
                             </div>
                           ))}
@@ -695,6 +750,7 @@ export default function SimpleAdminDashboard() {
                           ).map((snippet) => (
                             <button
                               key={snippet.id}
+                              onClick={() => assignSnippetToPage(selectedPage.id, snippet.id)}
                               className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-primary/5 transition-colors text-left"
                             >
                               <div className="flex items-start justify-between">
