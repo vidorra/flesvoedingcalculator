@@ -32,5 +32,67 @@
       "active": true,
       "createdAt": "2025-09-29T13:07:58.392Z"
     }
+  ],
+  "hygiene-bereiding_flessen-steriliseren_methoden": [
+    {
+      "id": "ps_methods_0",
+      "pageId": "hygiene-bereiding_flessen-steriliseren_methoden",
+      "snippetId": "philips-avent-sterilisator",
+      "order": 0,
+      "active": true,
+      "createdAt": "2025-09-30T05:00:00.000Z"
+    },
+    {
+      "id": "ps_methods_1",
+      "pageId": "hygiene-bereiding_flessen-steriliseren_methoden",
+      "snippetId": "mam-sterilisator",
+      "order": 1,
+      "active": true,
+      "createdAt": "2025-09-30T05:00:00.000Z"
+    },
+    {
+      "id": "ps_methods_2",
+      "pageId": "hygiene-bereiding_flessen-steriliseren_methoden",
+      "snippetId": "chicco-sterilisator",
+      "order": 2,
+      "active": true,
+      "createdAt": "2025-09-30T05:00:00.000Z"
+    }
+  ],
+  "hygiene-bereiding_flessen-steriliseren_alternatief": [
+    {
+      "id": "ps_alt_0",
+      "pageId": "hygiene-bereiding_flessen-steriliseren_alternatief",
+      "snippetId": "microwave-sterilizer-bags",
+      "order": 0,
+      "active": true,
+      "createdAt": "2025-09-30T05:00:00.000Z"
+    },
+    {
+      "id": "ps_alt_1",
+      "pageId": "hygiene-bereiding_flessen-steriliseren_alternatief",
+      "snippetId": "sterilizing-tablets",
+      "order": 1,
+      "active": true,
+      "createdAt": "2025-09-30T05:00:00.000Z"
+    }
+  ],
+  "hygiene-bereiding_flessen-steriliseren_accessoires": [
+    {
+      "id": "ps_acc_0",
+      "pageId": "hygiene-bereiding_flessen-steriliseren_accessoires",
+      "snippetId": "bottle-brush",
+      "order": 0,
+      "active": true,
+      "createdAt": "2025-09-30T05:00:00.000Z"
+    },
+    {
+      "id": "ps_acc_1",
+      "pageId": "hygiene-bereiding_flessen-steriliseren_accessoires",
+      "snippetId": "premium-sterilizer-dryer",
+      "order": 1,
+      "active": true,
+      "createdAt": "2025-09-30T05:00:00.000Z"
+    }
   ]
 }
