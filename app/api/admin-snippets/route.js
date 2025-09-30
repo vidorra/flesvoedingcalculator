@@ -234,3 +234,108 @@ export async function POST(request) {
     )
   }
 }
+
+// PUT - Update existing snippet
+export async function PUT(request) {
+  try {
+    if (!isAuthenticated(request)) {
+      return NextResponse.json(
+        { message: 'Unauthorized' },
+        { status: 401 }
+      )
+    }
+    
+    const updateData = await request.json()
+    
+    if (!updateData.id) {
+      return NextResponse.json(
+        { message: 'Snippet ID is required' },
+        { status: 400 }
+      )
+    }
+    
+    const snippets = loadSnippets()
+    const snippetIndex = snippets.findIndex(s => s.id === updateData.id)
+    
+    if (snippetIndex === -1) {
+      return NextResponse.json(
+        { message: 'Snippet not found' },
+        { status: 404 }
+      )
+    }
+    
+    // Update the snippet with new data
+    const updatedSnippet = {
+      ...snippets[snippetIndex],
+      ...updateData,
+      updatedAt: new Date().toISOString()
+    }
+    
+    snippets[snippetIndex] = updatedSnippet
+    saveSnippets(snippets)
+    
+    console.log('Updated snippet:', updatedSnippet.id)
+    
+    return NextResponse.json({
+      success: true,
+      snippet: updatedSnippet
+    })
+
+  } catch (error) {
+    console.error('Failed to update snippet:', error)
+    return NextResponse.json(
+      { message: 'Failed to update snippet', error: error.message },
+      { status: 500 }
+    )
+  }
+}
+
+// DELETE - Delete snippet
+export async function DELETE(request) {
+  try {
+    if (!isAuthenticated(request)) {
+      return NextResponse.json(
+        { message: 'Unauthorized' },
+        { status: 401 }
+      )
+    }
+    
+    const { id } = await request.json()
+    
+    if (!id) {
+      return NextResponse.json(
+        { message: 'Snippet ID is required' },
+        { status: 400 }
+      )
+    }
+    
+    const snippets = loadSnippets()
+    const snippetIndex = snippets.findIndex(s => s.id === id)
+    
+    if (snippetIndex === -1) {
+      return NextResponse.json(
+        { message: 'Snippet not found' },
+        { status: 404 }
+      )
+    }
+    
+    // Remove the snippet
+    const deletedSnippet = snippets.splice(snippetIndex, 1)[0]
+    saveSnippets(snippets)
+    
+    console.log('Deleted snippet:', deletedSnippet.id)
+    
+    return NextResponse.json({
+      success: true,
+      message: 'Snippet deleted successfully',
+      snippet: deletedSnippet
+    })
+
+  } catch (error) {
+    console.error('Failed to delete snippet:', error)
+    return NextResponse.json(
+      { message: 'Failed to delete snippet', error: error.message },
+      { status: 500 }
+    )
+  }
+}

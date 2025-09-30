@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Layout from '../../../components/Layout'
-import { Settings, Link, Plus, Eye, X } from 'lucide-react'
+import { Settings, Link, Plus, Eye, X, Edit, Trash2, ToggleLeft, ToggleRight } from 'lucide-react'
 
 export default function SimpleAdminDashboard() {
   const [snippets, setSnippets] = useState([])
@@ -23,6 +23,8 @@ export default function SimpleAdminDashboard() {
     tag: ''
   })
   const [isGenerating, setIsGenerating] = useState(false)
+  const [editingSnippet, setEditingSnippet] = useState(null)
+  const [editFormData, setEditFormData] = useState({})
   const router = useRouter()
 
   // Check authentication
@@ -284,6 +286,105 @@ export default function SimpleAdminDashboard() {
     } catch (error) {
       console.error('Error unassigning snippet:', error)
       alert('Error unassigning snippet: ' + error.message)
+    }
+  }
+
+  const toggleSnippetActive = async (snippetId, currentActive) => {
+    try {
+      const response = await fetch('/api/admin-snippets/', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          id: snippetId, 
+          active: !currentActive 
+        })
+      })
+
+      if (response.ok) {
+        // Refresh snippets
+        loadData(true)
+        alert(`Snippet ${!currentActive ? 'activated' : 'deactivated'} successfully!`)
+      } else {
+        const errorData = await response.json()
+        alert(`Failed to update snippet: ${errorData.message}`)
+      }
+    } catch (error) {
+      console.error('Error toggling snippet:', error)
+      alert('Error toggling snippet: ' + error.message)
+    }
+  }
+
+  const startEditSnippet = (snippet) => {
+    setEditingSnippet(snippet.id)
+    setEditFormData({
+      name: snippet.name,
+      url: snippet.url,
+      tag: snippet.tag || '',
+      generatedHtml: snippet.generatedHtml || ''
+    })
+  }
+
+  const cancelEdit = () => {
+    setEditingSnippet(null)
+    setEditFormData({})
+  }
+
+  const saveEditSnippet = async (snippetId) => {
+    try {
+      const response = await fetch('/api/admin-snippets/', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          id: snippetId,
+          ...editFormData
+        })
+      })
+
+      if (response.ok) {
+        // Refresh snippets
+        loadData(true)
+        setEditingSnippet(null)
+        setEditFormData({})
+        alert('Snippet updated successfully!')
+      } else {
+        const errorData = await response.json()
+        alert(`Failed to update snippet: ${errorData.message}`)
+      }
+    } catch (error) {
+      console.error('Error updating snippet:', error)
+      alert('Error updating snippet: ' + error.message)
+    }
+  }
+
+  const deleteSnippet = async (snippetId, snippetName) => {
+    if (!confirm(`Are you sure you want to delete "${snippetName}"? This action cannot be undone.`)) {
+      return
+    }
+
+    try {
+      const response = await fetch('/api/admin-snippets/', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id: snippetId })
+      })
+
+      if (response.ok) {
+        // Refresh snippets
+        loadData(true)
+        alert('Snippet deleted successfully!')
+      } else {
+        const errorData = await response.json()
+        alert(`Failed to delete snippet: ${errorData.message}`)
+      }
+    } catch (error) {
+      console.error('Error deleting snippet:', error)
+      alert('Error deleting snippet: ' + error.message)
     }
   }
 
@@ -580,52 +681,145 @@ export default function SimpleAdminDashboard() {
                 <div className="space-y-4">
                   {snippets.map((snippet) => (
                     <div key={snippet.id} className="border border-gray-200 rounded-lg p-4 hover:bg-gray-50">
-                      <div className="flex items-start justify-between">
-                        <div className="flex-1">
-                          <div className="flex items-center space-x-3 mb-2">
-                            <h3 className="text-lg font-medium text-gray-900">{snippet.name}</h3>
-                            {snippet.tag && (
-                              <span className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium">
-                                {snippet.tag}
-                              </span>
-                            )}
-                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                              snippet.type === 'amazon' 
-                                ? 'bg-orange-100 text-orange-700' 
-                                : 'bg-blue-100 text-blue-700'
-                            }`}>
-                              {snippet.type === 'amazon' ? 'Amazon' : 'Bol.com'}
-                            </span>
-                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                              snippet.active 
-                                ? 'bg-green-100 text-green-700' 
-                                : 'bg-gray-100 text-gray-600'
-                            }`}>
-                              {snippet.active ? 'Active' : 'Inactive'}
-                            </span>
+                      {editingSnippet === snippet.id ? (
+                        // Edit mode
+                        <div className="space-y-4">
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                            <input
+                              type="text"
+                              value={editFormData.name}
+                              onChange={(e) => setEditFormData(prev => ({ ...prev, name: e.target.value }))}
+                              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                            />
                           </div>
-                          <div className="text-sm text-gray-600 space-y-1">
-                            <div>
-                              <strong>URL:</strong> {snippet.url}
-                            </div>
-                            <div>
-                              <strong>Created:</strong> {new Date(snippet.createdAt).toLocaleDateString()}
-                            </div>
-                            {snippet.generatedHtml && (
-                              <details className="mt-2">
-                                <summary className="cursor-pointer text-primary hover:text-primary/80">
-                                  View Generated HTML
-                                </summary>
-                                <div className="mt-2 p-3 bg-gray-50 rounded border">
-                                  <code className="text-xs text-gray-600 break-all">
-                                    {snippet.generatedHtml}
-                                  </code>
-                                </div>
-                              </details>
-                            )}
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-2">URL</label>
+                            <input
+                              type="url"
+                              value={editFormData.url}
+                              onChange={(e) => setEditFormData(prev => ({ ...prev, url: e.target.value }))}
+                              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-2">Tag (Optional)</label>
+                            <input
+                              type="text"
+                              value={editFormData.tag}
+                              onChange={(e) => setEditFormData(prev => ({ ...prev, tag: e.target.value }))}
+                              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                              placeholder="e.g., Aanbevolen, Budget, Beste prijs/kwaliteit"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-2">Generated HTML</label>
+                            <textarea
+                              value={editFormData.generatedHtml}
+                              onChange={(e) => setEditFormData(prev => ({ ...prev, generatedHtml: e.target.value }))}
+                              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary h-32"
+                            />
+                          </div>
+                          <div className="flex space-x-3">
+                            <button
+                              onClick={() => saveEditSnippet(snippet.id)}
+                              className="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary/90"
+                            >
+                              Save Changes
+                            </button>
+                            <button
+                              onClick={cancelEdit}
+                              className="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600"
+                            >
+                              Cancel
+                            </button>
                           </div>
                         </div>
-                      </div>
+                      ) : (
+                        // View mode
+                        <div className="flex items-start justify-between">
+                          <div className="flex-1">
+                            <div className="flex items-center space-x-3 mb-2">
+                              <h3 className="text-lg font-medium text-gray-900">{snippet.name}</h3>
+                              {snippet.tag && (
+                                <span className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium">
+                                  {snippet.tag}
+                                </span>
+                              )}
+                              <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                                snippet.type === 'amazon' 
+                                  ? 'bg-orange-100 text-orange-700' 
+                                  : 'bg-blue-100 text-blue-700'
+                              }`}>
+                                {snippet.type === 'amazon' ? 'Amazon' : 'Bol.com'}
+                              </span>
+                              <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                                snippet.active 
+                                  ? 'bg-green-100 text-green-700' 
+                                  : 'bg-gray-100 text-gray-600'
+                              }`}>
+                                {snippet.active ? 'Active' : 'Inactive'}
+                              </span>
+                            </div>
+                            <div className="text-sm text-gray-600 space-y-1">
+                              <div>
+                                <strong>URL:</strong> {snippet.url}
+                              </div>
+                              <div>
+                                <strong>Created:</strong> {new Date(snippet.createdAt).toLocaleDateString()}
+                              </div>
+                              {snippet.generatedHtml && (
+                                <details className="mt-2">
+                                  <summary className="cursor-pointer text-primary hover:text-primary/80">
+                                    View Generated HTML
+                                  </summary>
+                                  <div className="mt-2 p-3 bg-gray-50 rounded border">
+                                    <code className="text-xs text-gray-600 break-all">
+                                      {snippet.generatedHtml}
+                                    </code>
+                                  </div>
+                                </details>
+                              )}
+                            </div>
+                          </div>
+                          <div className="flex items-center space-x-2 ml-4">
+                            {/* Toggle Active/Inactive */}
+                            <button
+                              onClick={() => toggleSnippetActive(snippet.id, snippet.active)}
+                              className={`p-2 rounded-md transition-colors ${
+                                snippet.active 
+                                  ? 'bg-green-100 text-green-700 hover:bg-green-200' 
+                                  : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                              }`}
+                              title={snippet.active ? 'Deactivate' : 'Activate'}
+                            >
+                              {snippet.active ? (
+                                <ToggleRight className="w-5 h-5" />
+                              ) : (
+                                <ToggleLeft className="w-5 h-5" />
+                              )}
+                            </button>
+                            
+                            {/* Edit Button */}
+                            <button
+                              onClick={() => startEditSnippet(snippet)}
+                              className="p-2 bg-blue-100 text-blue-700 rounded-md hover:bg-blue-200 transition-colors"
+                              title="Edit snippet"
+                            >
+                              <Edit className="w-5 h-5" />
+                            </button>
+                            
+                            {/* Delete Button */}
+                            <button
+                              onClick={() => deleteSnippet(snippet.id, snippet.name)}
+                              className="p-2 bg-red-100 text-red-700 rounded-md hover:bg-red-200 transition-colors"
+                              title="Delete snippet"
+                            >
+                              <Trash2 className="w-5 h-5" />
+                            </button>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
