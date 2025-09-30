@@ -73,10 +73,12 @@ export default function AffiliateProductWidget({
   }, [pageId, category, productIds])
   
   // Debug log for deployment verification - v5 admin system integration
-  if (typeof window !== 'undefined' && products.length > 0 && !loading) {
-    const source = pageId ? `page "${pageId}"` : `category "${category}"`
-    console.log(`🛍️ AffiliateProductWidget loaded ${products.length} products from ${source} - admin integration v5`)
-  }
+  useEffect(() => {
+    if (typeof window !== 'undefined' && products.length > 0 && !loading) {
+      const source = pageId ? `page "${pageId}"` : `category "${category}"`
+      console.log(`🛍️ AffiliateProductWidget loaded ${products.length} products from ${source} - admin integration v5`)
+    }
+  }, [products, loading, pageId, category])
 
   const displayProducts = products.slice(0, maxProducts)
 
