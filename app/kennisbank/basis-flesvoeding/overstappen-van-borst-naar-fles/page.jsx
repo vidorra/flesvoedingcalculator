@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { ArrowRight, Clock, Heart, Users, CheckCircle, AlertTriangle } from 'lucide-react'
 
 export default function OverstappenBorstNaarFlesPage() {
@@ -196,6 +197,13 @@ export default function OverstappenBorstNaarFlesPage() {
                 </div>
               </div>
             </div>
+
+            {/* Affiliate Products */}
+            <AffiliateProductWidget 
+              pageId="voedingstechnieken_overstappen-van-borst-naar-fles"
+              title="Overstap Essentials"
+              description="Handige producten die de overstap van borst naar fles vergemakkelijken"
+            />
 
             {/* Stap-voor-stap uitvoering */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
