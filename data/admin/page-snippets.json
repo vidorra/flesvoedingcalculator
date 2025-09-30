@@ -35,18 +35,10 @@
     {
       "id": "ps_1759151278392_4",
       "pageId": "hygiene-bereiding_flessen-steriliseren",
-      "snippetId": "premium-sterilizer-dryer",
+      "snippetId": "sterilizing-tablets",
       "order": 4,
       "active": true,
       "createdAt": "2025-09-30T13:11:58.392Z"
-    },
-    {
-      "id": "ps_1759151278392_5",
-      "pageId": "hygiene-bereiding_flessen-steriliseren",
-      "snippetId": "bottle-brush",
-      "order": 5,
-      "active": true,
-      "createdAt": "2025-09-30T13:12:58.392Z"
     }
   ],
   "hygiene-bereiding_flessen-steriliseren_methoden": [
