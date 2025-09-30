@@ -28,10 +28,18 @@ export default function AffiliateProductWidget({
       setLoading(true)
       
       if (pageId) {
-        // Load from admin system
+        // Load from admin system with timeout
         try {
           console.log(`🔍 AffiliateProductWidget: Loading admin data for pageId: ${pageId}`)
-          const response = await fetch(`/api/affiliates/page/${pageId}/`)
+          
+          // Create timeout promise (3 seconds)
+          const timeoutPromise = new Promise((_, reject) => 
+            setTimeout(() => reject(new Error('API timeout')), 3000)
+          )
+          
+          const fetchPromise = fetch(`/api/affiliates/page/${pageId}/`)
+          
+          const response = await Promise.race([fetchPromise, timeoutPromise])
           console.log(`🔍 AffiliateProductWidget: API response status: ${response.status}`)
           
           if (response.ok) {
@@ -40,19 +48,17 @@ export default function AffiliateProductWidget({
             
             if (data.success && data.snippets && data.snippets.length > 0) {
               console.log(`✅ AffiliateProductWidget: Successfully loaded ${data.snippets.length} admin snippets`)
-              console.log(`✅ AffiliateProductWidget: Snippet details:`, data.snippets.map(s => ({id: s.id, name: s.name, type: s.type})))
               setProducts(data.snippets)
               setLoading(false)
               return
             } else {
-              console.warn(`⚠️ AffiliateProductWidget: Admin API returned no snippets. Success: ${data.success}, Snippets: ${data.snippets?.length || 0}`)
-              console.warn(`⚠️ AffiliateProductWidget: Full response data:`, data)
+              console.warn(`⚠️ AffiliateProductWidget: Admin API returned no snippets. Falling back to static data.`)
             }
           } else {
             console.warn(`⚠️ AffiliateProductWidget: API request failed with status: ${response.status}`)
           }
         } catch (error) {
-          console.error('❌ AffiliateProductWidget: Failed to load admin snippets, falling back to static data:', error)
+          console.error('❌ AffiliateProductWidget: Failed to load admin snippets (timeout or connection error), falling back to static data:', error.message)
         }
       }
       
