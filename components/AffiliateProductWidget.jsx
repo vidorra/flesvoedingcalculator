@@ -30,25 +30,37 @@ export default function AffiliateProductWidget({
       if (pageId) {
         // Load from admin system
         try {
+          console.log(`🔍 AffiliateProductWidget: Loading admin data for pageId: ${pageId}`)
           const response = await fetch(`/api/affiliates/page/${pageId}/`)
+          console.log(`🔍 AffiliateProductWidget: API response status: ${response.status}`)
+          
           if (response.ok) {
             const data = await response.json()
-            if (data.success && data.snippets.length > 0) {
+            console.log(`🔍 AffiliateProductWidget: API response data:`, data)
+            
+            if (data.success && data.snippets && data.snippets.length > 0) {
+              console.log(`✅ AffiliateProductWidget: Successfully loaded ${data.snippets.length} admin snippets`)
               setProducts(data.snippets)
               setLoading(false)
               return
+            } else {
+              console.warn(`⚠️ AffiliateProductWidget: Admin API returned no snippets. Success: ${data.success}, Snippets: ${data.snippets?.length || 0}`)
             }
+          } else {
+            console.warn(`⚠️ AffiliateProductWidget: API request failed with status: ${response.status}`)
           }
         } catch (error) {
-          console.warn('Failed to load admin snippets, falling back to static data:', error)
+          console.error('❌ AffiliateProductWidget: Failed to load admin snippets, falling back to static data:', error)
         }
       }
       
       // Fallback to static data
+      console.log(`📦 AffiliateProductWidget: Falling back to static data. Category: ${category}, ProductIds: ${productIds}`)
       const staticProducts = productIds 
         ? getProductsByIds(productIds)
         : getProductsByCategory(category)
       
+      console.log(`📦 AffiliateProductWidget: Static products loaded: ${staticProducts.length}`)
       setProducts(staticProducts)
       setLoading(false)
     }
