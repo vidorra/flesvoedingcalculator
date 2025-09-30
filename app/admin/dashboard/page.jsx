@@ -940,7 +940,7 @@ export default function SimpleAdminDashboard() {
                       ) : (
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-64 overflow-y-auto">
                           {snippets.filter(snippet => 
-                            !pageSnippets.some(ps => ps.snippet && ps.snippet.id === snippet.id)
+                            !pageSnippets.some(ps => ps.id === snippet.id)
                           ).map((snippet) => (
                             <button
                               key={snippet.id}
