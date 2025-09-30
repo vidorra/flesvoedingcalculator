@@ -372,12 +372,12 @@ export default function FlessenSteriligerenPage() {
               </div>
             </div>
 
-            {/* Popular Electric Sterilizers Comparison */}
+            {/* Popular Sterilizers and Accessories */}
             <AffiliateProductWidget
-              pageId="hygiene-bereiding_flessen-steriliseren_methoden"
+              pageId="hygiene-bereiding_flessen-steriliseren"
               category="sterilisatoren"
-              title="Populaire Elektrische Sterilisatoren"
-              maxProducts={3}
+              title="Populaire Sterilisatoren en Accessoires"
+              maxProducts={4}
             />
 
             {/* Stap-voor-stap elektrische sterilisator */}
@@ -537,14 +537,6 @@ export default function FlessenSteriligerenPage() {
               </div>
             </div>
 
-            {/* Alternative Sterilization Methods */}
-            <AffiliateProductWidget
-              pageId="hygiene-bereiding_flessen-steriliseren_alternatief"
-              category="magnetron-sterilisatie"
-              title="Alternatieve Sterilisatie Methoden"
-              maxProducts={2}
-            />
-
             {/* Kostenberekening */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
@@ -646,14 +638,6 @@ export default function FlessenSteriligerenPage() {
               </p>
             </div>
 
-            {/* Essential Accessories */}
-            <AffiliateProductWidget
-              pageId="hygiene-bereiding_flessen-steriliseren_accessoires"
-              category="accessoires"
-              title="Essentiële Schoonmaak Accessoires"
-              maxProducts={2}
-            />
-
             {/* Call to action */}
             <div className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
@@ -668,14 +652,6 @@ export default function FlessenSteriligerenPage() {
                 </Link>
               </div>
             </div>
-
-            {/* Real Affiliate Product Recommendations */}
-            <AffiliateProductWidget
-              pageId="hygiene-bereiding_flessen-steriliseren"
-              category="sterilisatoren" // Fallback for static data
-              title="Aanbevolen Sterilisatoren en Accessoires"
-              maxProducts={4}
-            />
 
             {/* Related articles */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
