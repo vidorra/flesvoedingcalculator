@@ -40,11 +40,13 @@ export default function AffiliateProductWidget({
             
             if (data.success && data.snippets && data.snippets.length > 0) {
               console.log(`✅ AffiliateProductWidget: Successfully loaded ${data.snippets.length} admin snippets`)
+              console.log(`✅ AffiliateProductWidget: Snippet details:`, data.snippets.map(s => ({id: s.id, name: s.name, type: s.type})))
               setProducts(data.snippets)
               setLoading(false)
               return
             } else {
               console.warn(`⚠️ AffiliateProductWidget: Admin API returned no snippets. Success: ${data.success}, Snippets: ${data.snippets?.length || 0}`)
+              console.warn(`⚠️ AffiliateProductWidget: Full response data:`, data)
             }
           } else {
             console.warn(`⚠️ AffiliateProductWidget: API request failed with status: ${response.status}`)
@@ -61,8 +63,10 @@ export default function AffiliateProductWidget({
         : getProductsByCategory(category)
       
       console.log(`📦 AffiliateProductWidget: Static products loaded: ${staticProducts.length}`)
+      console.log(`📦 AffiliateProductWidget: Static product details:`, staticProducts.map(s => ({id: s.id, name: s.name, type: s.type})))
       setProducts(staticProducts)
       setLoading(false)
+      console.log(`🏁 AffiliateProductWidget: Component loading complete. Final state - Loading: false, Products: ${staticProducts.length}`)
     }
     
     loadProducts()
