@@ -13,6 +13,7 @@ export default function SimpleAdminDashboard() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [activeTab, setActiveTab] = useState('overview') // 'overview' or 'assignment'
   const [loadError, setLoadError] = useState(null)
+  const [debugInfo, setDebugInfo] = useState('Not started')
   const [showAddForm, setShowAddForm] = useState(false)
   const [newSnippet, setNewSnippet] = useState({
     platform: 'bol',
@@ -61,6 +62,7 @@ export default function SimpleAdminDashboard() {
     
     try {
       console.log('Loading data from admin APIs')
+      setDebugInfo('Starting API calls...')
       setLoadError(null)
       
       // Load snippets
@@ -81,6 +83,7 @@ export default function SimpleAdminDashboard() {
           console.log('Snippets data received:', snippetsData)
           console.log('Number of snippets:', snippetsData.snippets?.length || 0)
           setSnippets(snippetsData.snippets || [])
+          setDebugInfo(`✅ Loaded ${snippetsData.snippets?.length || 0} snippets`)
           console.log('✅ Snippets state updated successfully')
         } else {
           const errorText = await snippetsResponse.text()
@@ -367,6 +370,12 @@ export default function SimpleAdminDashboard() {
                   <Plus className="w-4 h-4" />
                   <span>Add New Link</span>
                 </button>
+              </div>
+              
+              <div className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+                <p className="text-blue-800 text-sm">
+                  <strong>Debug:</strong> {debugInfo} | Snippets: {snippets.length} | Loading: {loading ? 'Yes' : 'No'}
+                </p>
               </div>
 
               {/* Add New Snippet Form */}
