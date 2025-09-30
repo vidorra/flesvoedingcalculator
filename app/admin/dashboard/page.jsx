@@ -140,7 +140,7 @@ export default function SimpleAdminDashboard() {
   const loadPageSnippets = async (pageId) => {
     try {
       console.log('Loading snippets for page:', pageId)
-      const response = await fetch(`/api/affiliates/page/${pageId}`)
+      const response = await fetch(`/api/affiliates/page/${pageId}/`)
       if (response.ok) {
         const data = await response.json()
         console.log('Page snippets data:', data)
