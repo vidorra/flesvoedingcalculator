@@ -2,71 +2,53 @@ import { NextResponse } from 'next/server'
 import fs from 'fs'
 import path from 'path'
 
+// Force dynamic route - prevent caching issues
+export const dynamic = 'force-dynamic'
+
 const DATA_DIR = path.join(process.cwd(), 'data', 'admin')
 const PAGE_SNIPPETS_FILE = path.join(DATA_DIR, 'page-snippets.json')
 const SNIPPETS_FILE = path.join(DATA_DIR, 'snippets.json')
 
 // Load page snippets
 function loadPageSnippets() {
+  console.log(`🔍 Loading page snippets from: ${PAGE_SNIPPETS_FILE}`)
+  console.log(`🔍 File exists: ${fs.existsSync(PAGE_SNIPPETS_FILE)}`)
+  
   if (!fs.existsSync(PAGE_SNIPPETS_FILE)) {
-    console.log('Page snippets file does not exist, creating with default data')
-    // Initialize with default page-snippet mappings
-    const defaultPageSnippets = {
-      "hygiene-bereiding_flessen-steriliseren": [
-        {
-          "id": "ps_1759151278392_0",
-          "pageId": "hygiene-bereiding_flessen-steriliseren",
-          "snippetId": "philips-avent-sterilisator",
-          "order": 0,
-          "active": true,
-          "createdAt": "2025-09-29T13:07:58.392Z"
-        },
-        {
-          "id": "ps_1759151278392_1",
-          "pageId": "hygiene-bereiding_flessen-steriliseren",
-          "snippetId": "mam-sterilisator",
-          "order": 1,
-          "active": true,
-          "createdAt": "2025-09-29T13:07:58.392Z"
-        },
-        {
-          "id": "ps_1759151278392_2",
-          "pageId": "hygiene-bereiding_flessen-steriliseren",
-          "snippetId": "chicco-sterilisator",
-          "order": 2,
-          "active": true,
-          "createdAt": "2025-09-29T13:07:58.392Z"
-        },
-        {
-          "id": "ps_1759151278392_3",
-          "pageId": "hygiene-bereiding_flessen-steriliseren",
-          "snippetId": "lifejxwen-sterilizer",
-          "order": 3,
-          "active": true,
-          "createdAt": "2025-09-29T13:07:58.392Z"
-        }
-      ]
-    }
-    
-    // Ensure data directory exists
-    if (!fs.existsSync(DATA_DIR)) {
-      fs.mkdirSync(DATA_DIR, { recursive: true })
-    }
-    
-    fs.writeFileSync(PAGE_SNIPPETS_FILE, JSON.stringify(defaultPageSnippets, null, 2))
-    return defaultPageSnippets
+    console.error('❌ Page snippets file does not exist! Expected at:', PAGE_SNIPPETS_FILE)
+    return {}
   }
-  const data = fs.readFileSync(PAGE_SNIPPETS_FILE, 'utf8')
-  return JSON.parse(data)
+  
+  try {
+    const data = fs.readFileSync(PAGE_SNIPPETS_FILE, 'utf8')
+    const parsed = JSON.parse(data)
+    console.log(`✅ Successfully loaded page snippets. Keys:`, Object.keys(parsed))
+    return parsed
+  } catch (error) {
+    console.error('❌ Error reading page snippets file:', error)
+    return {}
+  }
 }
 
 // Load snippets
 function loadSnippets() {
+  console.log(`🔍 Loading snippets from: ${SNIPPETS_FILE}`)
+  console.log(`🔍 File exists: ${fs.existsSync(SNIPPETS_FILE)}`)
+  
   if (!fs.existsSync(SNIPPETS_FILE)) {
+    console.error('❌ Snippets file does not exist! Expected at:', SNIPPETS_FILE)
     return []
   }
-  const data = fs.readFileSync(SNIPPETS_FILE, 'utf8')
-  return JSON.parse(data)
+  
+  try {
+    const data = fs.readFileSync(SNIPPETS_FILE, 'utf8')
+    const parsed = JSON.parse(data)
+    console.log(`✅ Successfully loaded ${parsed.length} snippets`)
+    return parsed
+  } catch (error) {
+    console.error('❌ Error reading snippets file:', error)
+    return []
+  }
 }
 
 // GET - Get affiliate snippets for a specific page
