@@ -940,7 +940,7 @@ export default function SimpleAdminDashboard() {
                       ) : (
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-64 overflow-y-auto">
                           {snippets.filter(snippet => 
-                            !pageSnippets.some(ps => ps.id === snippet.id)
+                            !pageSnippets.some(ps => ps.snippet && ps.snippet.id === snippet.id)
                           ).map((snippet) => (
                             <button
                               key={snippet.id}
@@ -957,6 +957,13 @@ export default function SimpleAdminDashboard() {
                                         : 'bg-blue-100 text-blue-700'
                                     }`}>
                                       {snippet.type === 'amazon' ? 'Amazon' : 'Bol.com'}
+                                    </span>
+                                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                                      snippet.active 
+                                        ? 'bg-green-100 text-green-700' 
+                                        : 'bg-gray-100 text-gray-600'
+                                    }`}>
+                                      {snippet.active ? 'Active' : 'Inactive'}
                                     </span>
                                     {snippet.tag && (
                                       <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded-full text-xs">
