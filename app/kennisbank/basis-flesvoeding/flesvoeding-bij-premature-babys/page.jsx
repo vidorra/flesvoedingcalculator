@@ -2,6 +2,7 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { BookOpen, AlertCircle, ArrowRight, Home, Info, Heart, Calculator, Clock } from 'lucide-react'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 
 export const metadata = {
   title: 'Flesvoeding bij Premature Baby\'s: Complete Medische Gids 2025',
@@ -342,6 +343,13 @@ export default function FlesvoedingPrematurePage() {
             </ul>
           </div>
         </div>
+
+        {/* Speciale Prematurenvoeding Producten */}
+        <AffiliateProductWidget 
+          pageId="basis-flesvoeding_flesvoeding-bij-premature-babys"
+          title="Speciale Prematurenvoeding Producten"
+          description="Aangepaste voeding en accessoires voor premature baby's"
+        />
 
         {/* NICU Protocols */}
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
