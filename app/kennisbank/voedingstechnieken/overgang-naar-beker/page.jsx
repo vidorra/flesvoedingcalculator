@@ -594,17 +594,35 @@ export default function OvergangNaarBekerPage() {
                         <div>
                           <p className="text-sm text-gray-600 mb-1">Voordelen:</p>
                           <ul className="text-sm space-y-1">
-                            <li className="text-gray-600"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Complete overgang serie</span></li>
-                            <li className="text-gray-600"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Breed verkrijgbaar (Kruidvat, Etos)</span></li>
-                            <li className="text-gray-600"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>BPA-vrij + vaatwasserbestendig</span></li>
-                            <li className="text-gray-600"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Nederlandse customer service</span></li>
+                            <li className="flex items-center space-x-2">
+                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                              <span className="text-gray-600">Complete overgang serie</span>
+                            </li>
+                            <li className="flex items-center space-x-2">
+                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                              <span className="text-gray-600">Breed verkrijgbaar (Kruidvat, Etos)</span>
+                            </li>
+                            <li className="flex items-center space-x-2">
+                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                              <span className="text-gray-600">BPA-vrij + vaatwasserbestendig</span>
+                            </li>
+                            <li className="flex items-center space-x-2">
+                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                              <span className="text-gray-600">Nederlandse customer service</span>
+                            </li>
                           </ul>
                         </div>
                         <div>
                           <p className="text-sm text-gray-600 mb-1">Nadelen:</p>
                           <ul className="text-sm space-y-1">
-                            <li className="text-gray-600"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Alleen plastic constructie</span></li>
-                            <li className="text-gray-600"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Kleppen kunnen complex zijn om te reinigen</span></li>
+                            <li className="flex items-center space-x-2">
+                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                              <span className="text-gray-600">Alleen plastic constructie</span>
+                            </li>
+                            <li className="flex items-center space-x-2">
+                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                              <span className="text-gray-600">Kleppen kunnen complex zijn om te reinigen</span>
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -616,17 +634,35 @@ export default function OvergangNaarBekerPage() {
                         <div>
                           <p className="text-sm text-gray-600 mb-1">Voordelen:</p>
                           <ul className="text-sm space-y-1">
-                            <li className="text-gray-600"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Naadloze fles-naar-beker overgang</span></li>
-                            <li className="text-gray-600"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Medische kwaliteit materialen</span></li>
-                            <li className="text-gray-600"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Compatible met AVENT systeem</span></li>
-                            <li className="text-gray-600"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Nederlandse merk + support</span></li>
+                            <li className="flex items-center space-x-2">
+                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                              <span className="text-gray-600">Naadloze fles-naar-beker overgang</span>
+                            </li>
+                            <li className="flex items-center space-x-2">
+                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                              <span className="text-gray-600">Medische kwaliteit materialen</span>
+                            </li>
+                            <li className="flex items-center space-x-2">
+                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                              <span className="text-gray-600">Compatible met AVENT systeem</span>
+                            </li>
+                            <li className="flex items-center space-x-2">
+                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                              <span className="text-gray-600">Nederlandse merk + support</span>
+                            </li>
                           </ul>
                         </div>
                         <div>
                           <p className="text-sm text-gray-600 mb-1">Nadelen:</p>
                           <ul className="text-sm space-y-1">
-                            <li className="text-gray-600"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Hoogwaardige prijzen</span></li>
-                            <li className="text-gray-600"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Beperkte kortingen beschikbaar</span></li>
+                            <li className="flex items-center space-x-2">
+                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                              <span className="text-gray-600">Hoogwaardige prijzen</span>
+                            </li>
+                            <li className="flex items-center space-x-2">
+                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                              <span className="text-gray-600">Beperkte kortingen beschikbaar</span>
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -638,17 +674,35 @@ export default function OvergangNaarBekerPage() {
                         <div>
                           <p className="text-sm text-gray-600 mb-1">Voordelen:</p>
                           <ul className="text-sm space-y-1">
-                            <li className="text-gray-600"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Uitstekende prijs-kwaliteit verhouding</span></li>
-                            <li className="text-gray-600"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Duurzame materialen focus</span></li>
-                            <li className="text-gray-600"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Scandinavisch design</span></li>
-                            <li className="text-gray-600"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Breed beschikbaar Nederland</span></li>
+                            <li className="flex items-center space-x-2">
+                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                              <span className="text-gray-600">Uitstekende prijs-kwaliteit verhouding</span>
+                            </li>
+                            <li className="flex items-center space-x-2">
+                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                              <span className="text-gray-600">Duurzame materialen focus</span>
+                            </li>
+                            <li className="flex items-center space-x-2">
+                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                              <span className="text-gray-600">Scandinavisch design</span>
+                            </li>
+                            <li className="flex items-center space-x-2">
+                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                              <span className="text-gray-600">Breed beschikbaar Nederland</span>
+                            </li>
                           </ul>
                         </div>
                         <div>
                           <p className="text-sm text-gray-600 mb-1">Nadelen:</p>
                           <ul className="text-sm space-y-1">
-                            <li className="text-gray-600"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Basisfuncties alleen</span></li>
-                            <li className="text-gray-600"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Beperkte anti-mors technologie</span></li>
+                            <li className="flex items-center space-x-2">
+                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                              <span className="text-gray-600">Basisfuncties alleen</span>
+                            </li>
+                            <li className="flex items-center space-x-2">
+                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                              <span className="text-gray-600">Beperkte anti-mors technologie</span>
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -695,10 +749,22 @@ export default function OvergangNaarBekerPage() {
                           <div>
                             <h5 className="text-sm font-medium text-gray-700 mb-1">Tips:</h5>
                             <ul className="space-y-1">
-                              <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Geen druk - pure exploratie</span></li>
-                              <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Laat baby beker vasthouden tijdens fles</span></li>
-                              <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Model drinking behavior</span></li>
-                              <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Vier kleine interacties</span></li>
+                              <li className="flex items-center space-x-2">
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                <span className="text-gray-600 text-sm">Geen druk - pure exploratie</span>
+                              </li>
+                              <li className="flex items-center space-x-2">
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                <span className="text-gray-600 text-sm">Laat baby beker vasthouden tijdens fles</span>
+                              </li>
+                              <li className="flex items-center space-x-2">
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                <span className="text-gray-600 text-sm">Model drinking behavior</span>
+                              </li>
+                              <li className="flex items-center space-x-2">
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                <span className="text-gray-600 text-sm">Vier kleine interacties</span>
+                              </li>
                             </ul>
                           </div>
                         </div>
@@ -730,10 +796,22 @@ export default function OvergangNaarBekerPage() {
                           <div>
                             <h5 className="text-sm font-medium text-gray-700 mb-1">Activiteiten:</h5>
                             <ul className="space-y-1">
-                              <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Meerdere keren per dag gebruik</span></li>
-                              <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Verschillende vloeistoffen proberen</span></li>
-                              <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Maak er spel van</span></li>
-                              <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Beloon succesvolle slokjes</span></li>
+                              <li className="flex items-center space-x-2">
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                <span className="text-gray-600 text-sm">Meerdere keren per dag gebruik</span>
+                              </li>
+                              <li className="flex items-center space-x-2">
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                <span className="text-gray-600 text-sm">Verschillende vloeistoffen proberen</span>
+                              </li>
+                              <li className="flex items-center space-x-2">
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                <span className="text-gray-600 text-sm">Maak er spel van</span>
+                              </li>
+                              <li className="flex items-center space-x-2">
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                <span className="text-gray-600 text-sm">Beloon succesvolle slokjes</span>
+                              </li>
                             </ul>
                           </div>
                         </div>
@@ -765,10 +843,22 @@ export default function OvergangNaarBekerPage() {
                           <div>
                             <h5 className="text-sm font-medium text-gray-700 mb-1">Strategieën:</h5>
                             <ul className="space-y-1">
-                              <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Beker bij elke maaltijd</span></li>
-                              <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Vervang 1 dagelijkse fles</span></li>
-                              <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Sociaal drinken (familie maaltijden)</span></li>
-                              <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Focus op techniek verfijning</span></li>
+                              <li className="flex items-center space-x-2">
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                <span className="text-gray-600 text-sm">Beker bij elke maaltijd</span>
+                              </li>
+                              <li className="flex items-center space-x-2">
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                <span className="text-gray-600 text-sm">Vervang 1 dagelijkse fles</span>
+                              </li>
+                              <li className="flex items-center space-x-2">
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                <span className="text-gray-600 text-sm">Sociaal drinken (familie maaltijden)</span>
+                              </li>
+                              <li className="flex items-center space-x-2">
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                <span className="text-gray-600 text-sm">Focus op techniek verfijning</span>
+                              </li>
                             </ul>
                           </div>
                         </div>
@@ -804,10 +894,22 @@ export default function OvergangNaarBekerPage() {
                           <div>
                             <h5 className="text-sm font-medium text-gray-700 mb-1">Ontwikkelingen:</h5>
                             <ul className="space-y-1">
-                              <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Meerdere beker types proberen</span></li>
-                              <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Verschillende locaties</span></li>
-                              <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Sociale situaties oefenen</span></li>
-                              <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Zelfstandig probleem oplossen</span></li>
+                              <li className="flex items-center space-x-2">
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                <span className="text-gray-600 text-sm">Meerdere beker types proberen</span>
+                              </li>
+                              <li className="flex items-center space-x-2">
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                <span className="text-gray-600 text-sm">Verschillende locaties</span>
+                              </li>
+                              <li className="flex items-center space-x-2">
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                <span className="text-gray-600 text-sm">Sociale situaties oefenen</span>
+                              </li>
+                              <li className="flex items-center space-x-2">
+                                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                                <span className="text-gray-600 text-sm">Zelfstandig probleem oplossen</span>
+                              </li>
                             </ul>
                           </div>
                         </div>
@@ -895,21 +997,51 @@ export default function OvergangNaarBekerPage() {
                       <div>
                         <h4 className="font-medium text-amber-800 mb-2">Waarom baby weigert:</h4>
                         <ul className="space-y-1">
-                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-amber-700 text-sm">Overweldigende verandering</span></li>
-                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-amber-700 text-sm">Sterke fles voorkeur</span></li>
-                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Onbekende mond sensatie</span></li>
-                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Verkeerde timing</span></li>
-                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Te veel druk ouders</span></li>
+                          <li className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                            <span className="text-amber-700 text-sm">Overweldigende verandering</span>
+                          </li>
+                          <li className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                            <span className="text-amber-700 text-sm">Sterke fles voorkeur</span>
+                          </li>
+                          <li className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                            <span className="text-gray-600 text-sm">Onbekende mond sensatie</span>
+                          </li>
+                          <li className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                            <span className="text-gray-600 text-sm">Verkeerde timing</span>
+                          </li>
+                          <li className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                            <span className="text-gray-600 text-sm">Te veel druk ouders</span>
+                          </li>
                         </ul>
                       </div>
                       <div>
                         <h4 className="font-medium text-gray-700 mb-2">Strategische interventies:</h4>
                         <ul className="space-y-1">
-                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Langzamere introductie</span></li>
-                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Spel-gebaseerde benadering</span></li>
-                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Hybride methode (beker + fles)</span></li>
-                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Peer modeling</span></li>
-                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Druk verminderen</span></li>
+                          <li className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                            <span className="text-gray-600 text-sm">Langzamere introductie</span>
+                          </li>
+                          <li className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                            <span className="text-gray-600 text-sm">Spel-gebaseerde benadering</span>
+                          </li>
+                          <li className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                            <span className="text-gray-600 text-sm">Hybride methode (beker + fles)</span>
+                          </li>
+                          <li className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                            <span className="text-gray-600 text-sm">Peer modeling</span>
+                          </li>
+                          <li className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                            <span className="text-gray-600 text-sm">Druk verminderen</span>
+                          </li>
                         </ul>
                       </div>
                     </div>
@@ -969,21 +1101,51 @@ export default function OvergangNaarBekerPage() {
                       <div>
                         <h4 className="font-medium text-gray-700 mb-2">Regressie triggers:</h4>
                         <ul className="space-y-1">
-                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Ziekte (tijdelijk comfort zoeken)</span></li>
-                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Tandjes doorkomen</span></li>
-                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Omgeving verandering</span></li>
-                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Ontwikkelingssprong</span></li>
-                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Slaap verstoring</span></li>
+                          <li className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                            <span className="text-gray-600 text-sm">Ziekte (tijdelijk comfort zoeken)</span>
+                          </li>
+                          <li className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                            <span className="text-gray-600 text-sm">Tandjes doorkomen</span>
+                          </li>
+                          <li className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                            <span className="text-gray-600 text-sm">Omgeving verandering</span>
+                          </li>
+                          <li className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                            <span className="text-gray-600 text-sm">Ontwikkelingssprong</span>
+                          </li>
+                          <li className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                            <span className="text-gray-600 text-sm">Slaap verstoring</span>
+                          </li>
                         </ul>
                       </div>
                       <div>
                         <h4 className="font-medium text-gray-700 mb-2">Regressie beheer:</h4>
                         <ul className="space-y-1">
-                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Geduld - tijdelijke terugval</span></li>
-                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Terug naar basics</span></li>
-                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Extra ondersteuning</span></li>
-                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Lagere verwachtingen</span></li>
-                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-600 text-sm">Focus op emotionele behoeften</span></li>
+                          <li className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                            <span className="text-gray-600 text-sm">Geduld - tijdelijke terugval</span>
+                          </li>
+                          <li className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                            <span className="text-gray-600 text-sm">Terug naar basics</span>
+                          </li>
+                          <li className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                            <span className="text-gray-600 text-sm">Extra ondersteuning</span>
+                          </li>
+                          <li className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                            <span className="text-gray-600 text-sm">Lagere verwachtingen</span>
+                          </li>
+                          <li className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                            <span className="text-gray-600 text-sm">Focus op emotionele behoeften</span>
+                          </li>
                         </ul>
                       </div>
                     </div>
