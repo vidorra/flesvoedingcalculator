@@ -9,11 +9,71 @@ const DATA_DIR = path.join(process.cwd(), 'data', 'admin')
 const PAGE_SNIPPETS_FILE = path.join(DATA_DIR, 'page-snippets.json')
 const SNIPPETS_FILE = path.join(DATA_DIR, 'snippets.json')
 
-// Load page snippets
+// Ensure data directory exists
+function ensureDataDir() {
+  if (!fs.existsSync(DATA_DIR)) {
+    fs.mkdirSync(DATA_DIR, { recursive: true })
+  }
+}
+
+// Load page snippets with auto-creation
 function loadPageSnippets() {
+  ensureDataDir()
   if (!fs.existsSync(PAGE_SNIPPETS_FILE)) {
-    console.error('❌ Page snippets file does not exist! Expected at:', PAGE_SNIPPETS_FILE)
-    return {}
+    console.log('Creating page-snippets.json with default data in production')
+    // Initialize with default page-snippet mappings
+    const defaultPageSnippets = {
+      "hygiene-bereiding_flessen-steriliseren": [
+        {
+          "id": "ps_1759151278392_0",
+          "pageId": "hygiene-bereiding_flessen-steriliseren",
+          "snippetId": "philips-avent-sterilisator",
+          "order": 0,
+          "active": true,
+          "createdAt": "2025-09-29T13:07:58.392Z"
+        },
+        {
+          "id": "ps_1759151278392_1",
+          "pageId": "hygiene-bereiding_flessen-steriliseren",
+          "snippetId": "mam-sterilisator",
+          "order": 1,
+          "active": true,
+          "createdAt": "2025-09-29T13:07:58.392Z"
+        },
+        {
+          "id": "ps_1759151278392_2",
+          "pageId": "hygiene-bereiding_flessen-steriliseren",
+          "snippetId": "chicco-sterilisator",
+          "order": 2,
+          "active": true,
+          "createdAt": "2025-09-29T13:07:58.392Z"
+        },
+        {
+          "id": "ps_1759151278392_3",
+          "pageId": "hygiene-bereiding_flessen-steriliseren",
+          "snippetId": "lifejxwen-sterilizer",
+          "order": 3,
+          "active": true,
+          "createdAt": "2025-09-29T13:07:58.392Z"
+        },
+        {
+          "id": "ps_1759151278392_4",
+          "pageId": "hygiene-bereiding_flessen-steriliseren",
+          "snippetId": "sterilizing-tablets",
+          "order": 4,
+          "active": true,
+          "createdAt": "2025-09-30T13:11:58.392Z"
+        }
+      ]
+    }
+    
+    try {
+      fs.writeFileSync(PAGE_SNIPPETS_FILE, JSON.stringify(defaultPageSnippets, null, 2))
+      return defaultPageSnippets
+    } catch (error) {
+      console.error('❌ Failed to create page-snippets.json:', error)
+      return {}
+    }
   }
   
   try {
@@ -25,11 +85,77 @@ function loadPageSnippets() {
   }
 }
 
-// Load snippets
+// Load snippets with auto-creation (matches admin-snippets logic)
 function loadSnippets() {
+  ensureDataDir()
   if (!fs.existsSync(SNIPPETS_FILE)) {
-    console.error('❌ Snippets file does not exist! Expected at:', SNIPPETS_FILE)
-    return []
+    console.log('Creating snippets.json with default data in production')
+    // Initialize with default snippets (same as admin-snippets route)
+    const defaultSnippets = [
+      {
+        "id": "philips-avent-sterilisator",
+        "name": "Philips Avent Flessterilisator",
+        "type": "bol",
+        "url": "https://www.bol.com/nl/nl/p/philips-avent-flessterilisator-damp-droger/9300000062682298/",
+        "tag": "Aanbevolen",
+        "generatedHtml": "<div style=\"text-align: center\"><a href=\"https://www.bol.com/nl/nl/p/philips-avent-flessterilisator-damp-droger/9300000062682298/\" target=\"_blank\" rel=\"nofollow\"><img src=\"https://media.s-bol.com/NKX9XZWN3RGL/0RNmv15/550x707.jpg\" alt=\"Philips Avent Flessterilisator Damp & Droger\" width=\"300\" height=\"auto\" style=\"border-radius: 8px;\"></a><br><strong>Philips Avent Flessterilisator Damp & Droger</strong></div>",
+        "active": true,
+        "createdAt": "2025-09-29T13:07:58.390Z",
+        "updatedAt": "2025-09-29T13:07:58.391Z"
+      },
+      {
+        "id": "mam-sterilisator",
+        "name": "MAM Sterilisator",
+        "type": "bol",
+        "url": "https://www.bol.com/nl/nl/p/mam-sterilisator-grijs-bpa-vrij/9300000050911914/",
+        "tag": "Beste prijs/kwaliteit",
+        "generatedHtml": "<div style=\"text-align: center\"><a href=\"https://www.bol.com/nl/nl/p/mam-sterilisator-grijs-bpa-vrij/9300000050911914/\" target=\"_blank\" rel=\"nofollow\"><img src=\"https://media.s-bol.com/N7353O6nX5Bm/pgx9EzV/550x698.jpg\" alt=\"MAM Sterilisator Grijs BPA-vrij\" width=\"300\" height=\"auto\" style=\"border-radius: 8px;\"></a><br><strong>MAM Sterilisator Grijs BPA-vrij</strong></div>",
+        "active": true,
+        "createdAt": "2025-09-29T13:07:58.391Z",
+        "updatedAt": "2025-09-29T13:07:58.391Z"
+      },
+      {
+        "id": "chicco-sterilisator",
+        "name": "Chicco 3-in-1 Sterilisator",
+        "type": "bol",
+        "url": "https://www.bol.com/nl/nl/p/chicco-3-in-1-sterilisator-sterilnatural/9300000013318604/",
+        "tag": null,
+        "generatedHtml": "<div style=\"text-align: center\"><a href=\"https://www.bol.com/nl/nl/p/chicco-3-in-1-sterilisator-sterilnatural/9300000013318604/\" target=\"_blank\" rel=\"nofollow\"><img src=\"https://media.s-bol.com/g4ZkAnyvBWwG/BgPjL0N/550x645.jpg\" alt=\"Chicco 3 In 1 Sterilisator Sterilnatural\" width=\"300\" height=\"auto\" style=\"border-radius: 8px;\"></a><br><strong>Chicco 3 In 1 Sterilisator Sterilnatural</strong></div>",
+        "active": true,
+        "createdAt": "2025-09-29T13:07:58.391Z",
+        "updatedAt": "2025-09-29T13:07:58.391Z"
+      },
+      {
+        "id": "lifejxwen-sterilizer",
+        "name": "LIFEJXWEN 5-in-1 Electric Sterilizer",
+        "type": "amazon",
+        "url": "https://www.amazon.nl/-/en/dp/B0FN47MMXK?tag=flesvoedingca-21",
+        "tag": "Budget",
+        "generatedHtml": "<div style=\"text-align: center\"><a href=\"https://www.amazon.nl/-/en/dp/B0FN47MMXK?tag=flesvoedingca-21\" target=\"_blank\" rel=\"nofollow\" align=\"center\"><img src=\"https://m.media-amazon.com/images/I/517904cDV3L._AC_SL1500_.jpg\" class=\"cg-img-1\" alt=\"LIFEJXWEN 5-in-1 Electric Sterilizer for Baby Bottles, Sterilizing, Drying, Auto-Sterilizing & Drying, Warming Food, Keeping Bottles Warm, Capacity 8 Bottles, 24 Hours Germination Protection\" width=\"300\" height=\"auto\"></a></div>",
+        "active": true,
+        "createdAt": "2025-09-29T13:07:58.391Z",
+        "updatedAt": "2025-09-29T13:07:58.391Z"
+      },
+      {
+        "id": "sterilizing-tablets",
+        "name": "Milton Sterilisatie Tabletten",
+        "type": "bol",
+        "url": "https://www.bol.com/nl/nl/p/milton-steriliseertabletten-28-stuks/9200000020075414/",
+        "tag": "Chemisch",
+        "generatedHtml": "<div style=\"text-align: center\"><a href=\"https://www.bol.com/nl/nl/p/milton-steriliseertabletten-28-stuks/9200000020075414/\" target=\"_blank\" rel=\"nofollow\"><img src=\"https://media.s-bol.com/pBnAOk7xvqmY/YlP2J6/550x733.jpg\" alt=\"Milton Steriliseertabletten\" width=\"300\" height=\"auto\" style=\"border-radius: 8px;\"></a><br><strong>Milton Steriliseertabletten</strong></div>",
+        "active": true,
+        "createdAt": "2025-09-30T05:00:00.000Z",
+        "updatedAt": "2025-09-30T05:00:00.000Z"
+      }
+    ]
+    
+    try {
+      fs.writeFileSync(SNIPPETS_FILE, JSON.stringify(defaultSnippets, null, 2))
+      return defaultSnippets
+    } catch (error) {
+      console.error('❌ Failed to create snippets.json:', error)
+      return []
+    }
   }
   
   try {

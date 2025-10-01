@@ -86,6 +86,73 @@ function savePageSnippets(pageSnippets) {
   fs.writeFileSync(PAGE_SNIPPETS_FILE, JSON.stringify(pageSnippets, null, 2))
 }
 
+// Load snippets to enhance page assignments
+function loadSnippets() {
+  const SNIPPETS_FILE = path.join(DATA_DIR, 'snippets.json')
+  if (!fs.existsSync(SNIPPETS_FILE)) {
+    return []
+  }
+  
+  try {
+    const data = fs.readFileSync(SNIPPETS_FILE, 'utf8')
+    return JSON.parse(data)
+  } catch (error) {
+    console.error('Error reading snippets file:', error)
+    return []
+  }
+}
+
+// GET - Get page snippet assignments
+export async function GET(request) {
+  try {
+    if (!isAuthenticated(request)) {
+      return NextResponse.json(
+        { message: 'Unauthorized' },
+        { status: 401 }
+      )
+    }
+    
+    const url = new URL(request.url)
+    const pageId = url.searchParams.get('pageId')
+    
+    const pageSnippets = loadPageSnippets()
+    const allSnippets = loadSnippets()
+    
+    if (pageId) {
+      // Return assignments for specific page
+      const pageAssignments = pageSnippets[pageId] || []
+      
+      // Enhance with snippet details
+      const enhancedAssignments = pageAssignments.map(assignment => {
+        const snippet = allSnippets.find(s => s.id === assignment.snippetId)
+        return {
+          ...assignment,
+          snippet: snippet || null
+        }
+      }).filter(assignment => assignment.snippet) // Only include if snippet exists
+      
+      return NextResponse.json({
+        success: true,
+        pageId,
+        assignments: enhancedAssignments
+      })
+    } else {
+      // Return all page assignments
+      return NextResponse.json({
+        success: true,
+        pageAssignments: pageSnippets
+      })
+    }
+
+  } catch (error) {
+    console.error('Failed to load page snippet assignments:', error)
+    return NextResponse.json(
+      { message: 'Failed to load page assignments', error: error.message },
+      { status: 500 }
+    )
+  }
+}
+
 // POST - Assign snippet to page
 export async function POST(request) {
   try {

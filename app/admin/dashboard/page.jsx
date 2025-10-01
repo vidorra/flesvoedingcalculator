@@ -141,18 +141,18 @@ export default function SimpleAdminDashboard() {
 
   const loadPageSnippets = async (pageId) => {
     try {
-      console.log('Loading snippets for page:', pageId)
-      const response = await fetch(`/api/affiliates/page/${pageId}/`)
+      console.log('Loading admin assignments for page:', pageId)
+      const response = await fetch(`/api/admin-page-snippets/?pageId=${pageId}`)
       if (response.ok) {
         const data = await response.json()
-        console.log('Page snippets data:', data)
-        setPageSnippets(data.snippets || [])
+        console.log('Admin page snippets data:', data)
+        setPageSnippets(data.assignments || [])
       } else {
-        console.log('No snippets found for page:', pageId)
+        console.log('No snippet assignments found for page:', pageId)
         setPageSnippets([])
       }
     } catch (error) {
-      console.error('Failed to load page snippets:', error)
+      console.error('Failed to load page snippet assignments:', error)
       setPageSnippets([])
     }
   }
@@ -170,7 +170,7 @@ export default function SimpleAdminDashboard() {
 
     setIsGenerating(true)
     try {
-      const response = await fetch('/api/admin/generate-snippet', {
+      const response = await fetch('/api/admin/generate-snippet/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -904,20 +904,20 @@ export default function SimpleAdminDashboard() {
                                   {index + 1}
                                 </div>
                                 <div>
-                                  <h4 className="font-medium text-gray-900">{snippet.name}</h4>
-                                  <p className="text-sm text-gray-600">{snippet.type === 'amazon' || snippet.type === 'amazon_image' ? 'Amazon' : 'Bol.com'} • {snippet.tag}</p>
+                                  <h4 className="font-medium text-gray-900">{snippet.snippet?.name || snippet.name}</h4>
+                                  <p className="text-sm text-gray-600">{(snippet.snippet?.type || snippet.type) === 'amazon' || (snippet.snippet?.type || snippet.type) === 'amazon_image' ? 'Amazon' : 'Bol.com'} • {snippet.snippet?.tag || snippet.tag}</p>
                                 </div>
                               </div>
                               <div className="flex items-center space-x-2">
                                 <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                                  snippet.active 
+                                  (snippet.snippet?.active ?? snippet.active)
                                     ? 'bg-green-100 text-green-700' 
                                     : 'bg-gray-100 text-gray-600'
                                 }`}>
-                                  {snippet.active ? 'Active' : 'Inactive'}
+                                  {(snippet.snippet?.active ?? snippet.active) ? 'Active' : 'Inactive'}
                                 </span>
                                 <button
-                                  onClick={() => unassignSnippetFromPage(selectedPage.id, snippet.id)}
+                                  onClick={() => unassignSnippetFromPage(selectedPage.id, snippet.snippet?.id || snippet.snippetId)}
                                   className="p-1 text-red-600 hover:bg-red-50 rounded transition-colors"
                                   title="Unassign snippet"
                                 >
@@ -943,7 +943,7 @@ export default function SimpleAdminDashboard() {
                       ) : (
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-64 overflow-y-auto">
                           {snippets.filter(snippet => 
-                            !pageSnippets.some(ps => ps.id === snippet.id)
+                            !pageSnippets.some(ps => (ps.snippet?.id || ps.snippetId) === snippet.id)
                           ).map((snippet) => (
                             <button
                               key={snippet.id}

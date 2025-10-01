@@ -32,15 +32,17 @@ export default function AffiliateProductWidget({
         try {
           console.log(`🔍 AffiliateProductWidget: Loading admin data for pageId: ${pageId}`)
           
-          // Create timeout promise (3 seconds)
+          // Create timeout promise (8 seconds for better production reliability)
           const timeoutPromise = new Promise((_, reject) => 
-            setTimeout(() => reject(new Error('API timeout')), 3000)
+            setTimeout(() => reject(new Error('API timeout')), 8000)
           )
           
-          const fetchPromise = fetch(`/api/affiliates/page/${pageId}/`)
+          const apiUrl = `/api/affiliates/page/${pageId}/`
+          console.log(`🔍 AffiliateProductWidget: Fetching from: ${apiUrl}`)
+          const fetchPromise = fetch(apiUrl)
           
           const response = await Promise.race([fetchPromise, timeoutPromise])
-          console.log(`🔍 AffiliateProductWidget: API response status: ${response.status}`)
+          console.log(`🔍 AffiliateProductWidget: API response status: ${response.status} for ${apiUrl}`)
           
           if (response.ok) {
             const data = await response.json()

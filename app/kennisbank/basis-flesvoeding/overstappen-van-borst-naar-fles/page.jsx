@@ -201,8 +201,8 @@ export default function OverstappenBorstNaarFlesPage() {
             {/* Affiliate Products */}
             <AffiliateProductWidget 
               pageId="voedingstechnieken_overstappen-van-borst-naar-fles"
-              title="Overstap Essentials"
-              description="Handige producten die de overstap van borst naar fles vergemakkelijken"
+              title="Aanbevolen Producten voor de Overstap"
+              description="Flessen, spenen en accessoires die de overgang van borstvoeding naar flesvoeding vergemakkelijken"
             />
 
             {/* Stap-voor-stap uitvoering */}
