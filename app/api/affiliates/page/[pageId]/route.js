@@ -90,7 +90,7 @@ function loadSnippets() {
   ensureDataDir()
   if (!fs.existsSync(SNIPPETS_FILE)) {
     console.log('Creating snippets.json with default data in production')
-    // Initialize with complete 8-snippet dataset (prevents data loss)
+    // Initialize with complete 9-snippet dataset (prevents data loss)
     const defaultSnippets = [
       {
         "id": "philips-avent-sterilisator",
@@ -179,6 +179,17 @@ function loadSnippets() {
         "active": true,
         "createdAt": "2025-09-30T05:00:00.000Z",
         "updatedAt": "2025-09-30T05:00:00.000Z"
+      },
+      {
+        "id": "amazon-1759328398760",
+        "name": "Dr. Browns Anti-Colic Brede Halsfles",
+        "type": "amazon",
+        "url": "https://amzn.to/4h01hmP",
+        "tag": "Anti-Colic",
+        "generatedHtml": "<div style=\"text-align: center\"><a href=\"https://www.amazon.nl/-/en/dp/B08QRDVX4S?tag=flesvoedingca-21\" target=\"_blank\" rel=\"nofollow\" align=\"center\"><img src=\"https://m.media-amazon.com/images/I/61uaq4Sp-XL._AC_SL1500_.jpg\" class=\"cg-img-1\" alt=\"Dr. Brown's Options+ Anti-Colic Wide Mouth Bottle, 270 ml, Blue, Forest Bottle, 0 Months\" width=\"300\" height=\"auto\"></a></div>",
+        "active": true,
+        "createdAt": "2025-10-01T14:19:58.760Z",
+        "updatedAt": "2025-10-01T14:19:58.761Z"
       }
     ]
     
