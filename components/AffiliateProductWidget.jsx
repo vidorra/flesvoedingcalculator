@@ -15,7 +15,7 @@ export default function AffiliateProductWidget({
   pageId = null,
   category = null, 
   productIds = null,
-  title = "Aanbevolen Producten",
+  title = "Aanbevolen Producten", 
   maxProducts = 6 
 }) {
   const containerRef = useRef(null)
