@@ -9,14 +9,14 @@ import { getProductsByCategory, getProductsByIds } from './affiliate-products.js
  * @param {string} props.category - Product category (sterilisatoren, babyflessen, etc.) - fallback
  * @param {Array<string>} props.productIds - Specific product IDs to show - fallback
  * @param {string} props.title - Section title
- * @param {number} props.maxProducts - Maximum number of products to show
+ * @param {number} props.maxProducts - Maximum number of products to show (only for static fallback)
  */
 export default function AffiliateProductWidget({ 
   pageId = null,
   category = null, 
   productIds = null,
   title = "Aanbevolen Producten", 
-  maxProducts = 6 
+  maxProducts = null 
 }) {
   const containerRef = useRef(null)
   const [products, setProducts] = useState([])
@@ -88,7 +88,8 @@ export default function AffiliateProductWidget({
     }
   }, [products, loading, pageId, category])
 
-  const displayProducts = products.slice(0, maxProducts)
+  // For admin-managed pages, show all products. For static fallback, limit if specified
+  const displayProducts = pageId ? products : (maxProducts ? products.slice(0, maxProducts) : products)
 
   useEffect(() => {
     // Debug logging for all products being rendered
