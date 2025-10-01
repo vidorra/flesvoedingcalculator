@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { fetchPrice, generatePriceHtml } from '../../../../lib/price-fetcher.js'
 
 // Force dynamic route
 export const dynamic = 'force-dynamic'
@@ -133,10 +134,11 @@ async function fetchAmazonProductDetails(asin, finalUrl) {
 }
 
 // Generate HTML snippet for Amazon product
-function generateAmazonSnippet(productData, affiliateUrl, width = 300) {
+function generateAmazonSnippet(productData, affiliateUrl, priceData = null, width = 300) {
   const { title, imageUrl } = productData
+  const priceHtml = priceData ? generatePriceHtml(priceData.price, priceData.originalPrice) : ''
   
-  return `<div style="text-align: center"><a href="${affiliateUrl}" target="_blank" rel="nofollow" align="center"><img src="${imageUrl}" class="cg-img-1" alt="${title}" width="${width}" height="auto"></a></div>`
+  return `<div style="text-align: center"><a href="${affiliateUrl}" target="_blank" rel="nofollow" align="center"><img src="${imageUrl}" class="cg-img-1" alt="${title}" width="${width}" height="auto"></a>${priceHtml}</div>`
 }
 
 // Extract product ID from Bol.com URL
@@ -159,8 +161,9 @@ function extractBolProductId(url) {
 }
 
 // Generate HTML snippet for Bol.com product
-function generateBolSnippet(title, imageUrl, productUrl, width = 300) {
-  return `<div style="text-align: center"><a href="${productUrl}" target="_blank" rel="nofollow"><img src="${imageUrl}" alt="${title}" width="${width}" height="auto" style="border-radius: 8px;"></a><br><strong>${title}</strong></div>`
+function generateBolSnippet(title, imageUrl, productUrl, priceData = null, width = 300) {
+  const priceHtml = priceData ? generatePriceHtml(priceData.price, priceData.originalPrice) : ''
+  return `<div style="text-align: center"><a href="${productUrl}" target="_blank" rel="nofollow"><img src="${imageUrl}" alt="${title}" width="${width}" height="auto" style="border-radius: 8px;"></a><br><strong>${title}</strong>${priceHtml}</div>`
 }
 
 // POST - Generate snippet from URL
@@ -207,32 +210,47 @@ export async function POST(request) {
         // Fetch product details by scraping
         const productData = await fetchAmazonProductDetails(asin, finalUrl)
         
+        // Fetch price information
+        let priceData = null
+        try {
+          priceData = await fetchPrice(finalUrl, 'amazon')
+          console.log('🛒 Amazon price fetched:', priceData)
+        } catch (priceError) {
+          console.warn('⚠️ Could not fetch Amazon price:', priceError.message)
+        }
+        
         if (!productData) {
           // Fallback with basic data
           const fallbackData = {
             title: `Amazon Product ${asin}`,
             imageUrl: `https://images-na.ssl-images-amazon.com/images/P/${asin}.01.L.jpg`
           }
-          const html = generateAmazonSnippet(fallbackData, affiliateUrl)
+          const html = generateAmazonSnippet(fallbackData, affiliateUrl, priceData)
           
           return NextResponse.json({
             success: true,
             html,
             productName: fallbackData.title,
             asin,
-            affiliateUrl
+            affiliateUrl,
+            price: priceData?.price,
+            originalPrice: priceData?.originalPrice,
+            currency: priceData?.currency
           })
         }
         
         // Generate the HTML snippet
-        const html = generateAmazonSnippet(productData, affiliateUrl)
+        const html = generateAmazonSnippet(productData, affiliateUrl, priceData)
         
         return NextResponse.json({
           success: true,
           html,
           productName: productData.title,
           asin,
-          affiliateUrl
+          affiliateUrl,
+          price: priceData?.price,
+          originalPrice: priceData?.originalPrice,
+          currency: priceData?.currency
         })
         
       } catch (error) {
@@ -257,6 +275,15 @@ export async function POST(request) {
         }
         
         console.log('Extracted Bol.com Product ID:', productId)
+        
+        // Fetch price information
+        let priceData = null
+        try {
+          priceData = await fetchPrice(url, 'bol')
+          console.log('🛒 Bol.com price fetched:', priceData)
+        } catch (priceError) {
+          console.warn('⚠️ Could not fetch Bol.com price:', priceError.message)
+        }
         
         // Try to fetch the page to extract title and image
         try {
@@ -283,7 +310,7 @@ export async function POST(request) {
               }
             }
             
-            const html_snippet = generateBolSnippet(title, imageUrl, url)
+            const html_snippet = generateBolSnippet(title, imageUrl, url, priceData)
             
             return NextResponse.json({
               success: true,
@@ -291,7 +318,10 @@ export async function POST(request) {
               productName: title,
               productId,
               productUrl: url,
-              imageUrl
+              imageUrl,
+              price: priceData?.price,
+              originalPrice: priceData?.originalPrice,
+              currency: priceData?.currency
             })
           }
         } catch (fetchError) {
@@ -301,7 +331,7 @@ export async function POST(request) {
         // Fallback with basic data
         const fallbackTitle = `Bol.com Product ${productId}`
         const fallbackImage = `https://media.s-bol.com/placeholder/${productId}/550x550.jpg`
-        const html_snippet = generateBolSnippet(fallbackTitle, fallbackImage, url)
+        const html_snippet = generateBolSnippet(fallbackTitle, fallbackImage, url, priceData)
         
         return NextResponse.json({
           success: true,
@@ -309,7 +339,10 @@ export async function POST(request) {
           productName: fallbackTitle,
           productId,
           productUrl: url,
-          imageUrl: fallbackImage
+          imageUrl: fallbackImage,
+          price: priceData?.price,
+          originalPrice: priceData?.originalPrice,
+          currency: priceData?.currency
         })
         
       } catch (error) {
