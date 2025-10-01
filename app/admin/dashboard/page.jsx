@@ -836,7 +836,9 @@ export default function SimpleAdminDashboard() {
             {/* Left Panel - Pages */}
             <div className="col-span-4">
               <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-                <h2 className="text-lg font-semibold text-gray-900 mb-4">Kennisbank Pages</h2>
+                <h2 className="text-lg font-semibold text-gray-900 mb-4">
+                  Kennisbank Pages ({pages.length})
+                </h2>
                 {pages.length === 0 ? (
                   <div className="text-center py-8 text-gray-500">
                     No pages found.
