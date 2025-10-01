@@ -3,6 +3,7 @@ import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { Leaf, ShoppingCart, BarChart3, AlertTriangle, Euro, ArrowRight } from 'lucide-react'
 import BolProductSection from '../../../../components/BolProductLink'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 
 export const metadata = {
   title: 'Bio en Organische Flesvoeding: Complete Nederlandse Gids 2025',
@@ -254,6 +255,13 @@ export default function BioOrganischeFlesvoedingPage() {
                 </p>
               </div>
             </section>
+
+            {/* Aanbevolen Bio Flesvoeding Producten */}
+            <AffiliateProductWidget 
+              pageId="soorten-flesvoeding_bio-organische-flesvoeding"
+              title="Aanbevolen Bio Flesvoeding Producten"
+              description="Hoogwaardige biologische flesvoeding opties voor uw baby"
+            />
 
             {/* Wetenschappelijke Voordelen */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
