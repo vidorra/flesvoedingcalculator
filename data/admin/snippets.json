@@ -44,45 +44,12 @@
     "updatedAt": "2025-09-29T13:07:58.391Z"
   },
   {
-    "id": "microwave-sterilizer-bags",
-    "name": "Medela Magnetron Sterilisatiezakken",
-    "type": "bol",
-    "url": "https://www.bol.com/nl/nl/p/medela-quick-clean-magnetronzakken-5-stuks/9200000027648944/",
-    "tag": "Onderweg",
-    "generatedHtml": "<div style=\"text-align: center\"><a href=\"https://www.bol.com/nl/nl/p/medela-quick-clean-magnetronzakken-5-stuks/9200000027648944/\" target=\"_blank\" rel=\"nofollow\"><img src=\"https://media.s-bol.com/W6W9N8Q9m1J1/PDNnlLr/550x550.jpg\" alt=\"Medela Quick Clean Magnetronzakken\" width=\"300\" height=\"auto\" style=\"border-radius: 8px;\"></a><br><strong>Medela Quick Clean Magnetronzakken</strong></div>",
-    "active": true,
-    "createdAt": "2025-09-30T05:00:00.000Z",
-    "updatedAt": "2025-09-30T05:00:00.000Z"
-  },
-  {
     "id": "sterilizing-tablets",
     "name": "Milton Sterilisatie Tabletten",
     "type": "bol",
     "url": "https://www.bol.com/nl/nl/p/milton-steriliseertabletten-28-stuks/9200000020075414/",
     "tag": "Chemisch",
     "generatedHtml": "<div style=\"text-align: center\"><a href=\"https://www.bol.com/nl/nl/p/milton-steriliseertabletten-28-stuks/9200000020075414/\" target=\"_blank\" rel=\"nofollow\"><img src=\"https://media.s-bol.com/pBnAOk7xvqmY/YlP2J6/550x733.jpg\" alt=\"Milton Steriliseertabletten\" width=\"300\" height=\"auto\" style=\"border-radius: 8px;\"></a><br><strong>Milton Steriliseertabletten</strong></div>",
-    "active": true,
-    "createdAt": "2025-09-30T05:00:00.000Z",
-    "updatedAt": "2025-09-30T05:00:00.000Z"
-  },
-  {
-    "id": "bottle-brush",
-    "name": "Philips Avent Flessenborstel Set",
-    "type": "bol",
-    "url": "https://www.bol.com/nl/nl/p/philips-avent-flessenborstel-set/9200000009372844/",
-    "tag": "Accessoire",
-    "generatedHtml": "<div style=\"text-align: center\"><a href=\"https://www.bol.com/nl/nl/p/philips-avent-flessenborstel-set/9200000009372844/\" target=\"_blank\" rel=\"nofollow\"><img src=\"https://media.s-bol.com/71Jx52yE3r6E/550x550.jpg\" alt=\"Philips Avent Flessenborstel Set\" width=\"300\" height=\"auto\" style=\"border-radius: 8px;\"></a><br><strong>Philips Avent Flessenborstel Set</strong></div>",
-    "active": true,
-    "createdAt": "2025-09-30T05:00:00.000Z",
-    "updatedAt": "2025-09-30T05:00:00.000Z"
-  },
-  {
-    "id": "premium-sterilizer-dryer",
-    "name": "Philips Avent 4-in-1 Sterilisator & Droger",
-    "type": "bol",
-    "url": "https://www.bol.com/nl/nl/p/philips-avent-4-in-1-elektrische-stoomsterilisator-en-droger/9300000082123414/",
-    "tag": "Premium",
-    "generatedHtml": "<div style=\"text-align: center\"><a href=\"https://www.bol.com/nl/nl/p/philips-avent-4-in-1-elektrische-stoomsterilisator-en-droger/9300000082123414/\" target=\"_blank\" rel=\"nofollow\"><img src=\"https://media.s-bol.com/mq9vPQNZ01Jr/YP6Qo8r/550x593.jpg\" alt=\"Philips Avent 4-in-1 Elektrische Stoomsterilisator en Droger\" width=\"300\" height=\"auto\" style=\"border-radius: 8px;\"></a><br><strong>Philips Avent 4-in-1 Elektrische Stoomsterilisator en Droger</strong></div>",
     "active": true,
     "createdAt": "2025-09-30T05:00:00.000Z",
     "updatedAt": "2025-09-30T05:00:00.000Z"
