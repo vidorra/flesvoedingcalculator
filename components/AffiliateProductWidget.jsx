@@ -91,12 +91,20 @@ export default function AffiliateProductWidget({
   const displayProducts = products.slice(0, maxProducts)
 
   useEffect(() => {
+    // Debug logging for all products being rendered
+    console.log(`🔍 AffiliateProductWidget: About to render ${displayProducts.length} products:`)
+    displayProducts.forEach((product, index) => {
+      console.log(`  ${index + 1}. ${product.id} (${product.name}) - Type: ${product.type}`)
+    })
+    
     // Handle Bol.com iframe widgets (no script execution needed)
     displayProducts.forEach(product => {
       if (product.type === 'bol_iframe') {
         console.log(`🔧 Setting up Bol.com iframe widget for ${product.id}`)
       } else if (product.type === 'bol_snippet') {
         console.log(`🔧 Setting up Bol.com snippet for ${product.id} (deprecated)`)
+      } else if (product.type === 'amazon_image') {
+        console.log(`🔧 Setting up Amazon image widget for ${product.id}`)
       }
     })
   }, [displayProducts])
@@ -138,7 +146,9 @@ export default function AffiliateProductWidget({
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {displayProducts.map((product) => (
+        {displayProducts.map((product, index) => {
+          console.log(`🎨 Rendering product ${index + 1}/${displayProducts.length}: ${product.id} (${product.type})`)
+          return (
           <div key={product.id} className="relative">
             {/* Product tag (Budget, Aanbevolen, etc.) */}
             {product.tag && (
@@ -148,6 +158,13 @@ export default function AffiliateProductWidget({
                 </span>
               </div>
             )}
+            
+            {/* Debug: Product counter */}
+            <div className="absolute top-2 right-2 z-10">
+              <span className="bg-gray-800 text-white text-xs w-6 h-6 rounded-full flex items-center justify-center font-bold">
+                {index + 1}
+              </span>
+            </div>
             
             {/* Bol.com Iframe Widget */}
             {product.type === 'bol_iframe' && (
@@ -227,7 +244,8 @@ export default function AffiliateProductWidget({
               </div>
             )}
           </div>
-        ))}
+          )
+        })}
       </div>
       
       <div className="mt-4 pt-4 border-t border-gray-200">
