@@ -50,6 +50,7 @@ export default function AffiliateProductWidget({
             
             if (data.success && data.snippets && data.snippets.length > 0) {
               console.log(`✅ AffiliateProductWidget: Successfully loaded ${data.snippets.length} admin snippets`)
+              console.log(`🔍 All loaded products:`, data.snippets.map(p => `${p.id} (${p.name}) - ${p.type} - active: ${p.active}`))
               setProducts(data.snippets)
               setLoading(false)
               return
@@ -90,6 +91,13 @@ export default function AffiliateProductWidget({
 
   // For admin-managed pages, show all products. For static fallback, limit if specified
   const displayProducts = pageId ? products : (maxProducts ? products.slice(0, maxProducts) : products)
+  
+  // Debug: Log the transition from products to displayProducts
+  if (products.length !== displayProducts.length) {
+    console.log(`⚠️ Product count changed: ${products.length} → ${displayProducts.length}`)
+    console.log(`📦 Original products:`, products.map(p => p.id))
+    console.log(`📋 Display products:`, displayProducts.map(p => p.id))
+  }
 
   useEffect(() => {
     // Debug logging for all products being rendered
