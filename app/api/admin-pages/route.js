@@ -63,6 +63,91 @@ function getKnownPages() {
       title: 'Juiste Temperatuur Controleren', 
       path: '/kennisbank/hygiene-bereiding/juiste-temperatuur-controleren', 
       category: 'hygiene-bereiding'
+    },
+    // New pages with affiliate widgets
+    { 
+      id: 'soorten-flesvoeding_bio-organische-flesvoeding', 
+      title: 'Bio en Organische Flesvoeding', 
+      path: '/kennisbank/soorten-flesvoeding/bio-organische-flesvoeding', 
+      category: 'soorten-flesvoeding'
+    },
+    { 
+      id: 'basis-flesvoeding_flesvoeding-bij-premature-babys', 
+      title: 'Flesvoeding bij Premature Baby\'s', 
+      path: '/kennisbank/basis-flesvoeding/flesvoeding-bij-premature-babys', 
+      category: 'basis-flesvoeding'
+    },
+    { 
+      id: 'soorten-flesvoeding_hypoallergene-flesvoeding', 
+      title: 'Hypoallergene Flesvoeding', 
+      path: '/kennisbank/soorten-flesvoeding/hypoallergene-flesvoeding', 
+      category: 'soorten-flesvoeding'
+    },
+    { 
+      id: 'soorten-flesvoeding_lactosevrije-flesvoeding', 
+      title: 'Lactosevrije Flesvoeding', 
+      path: '/kennisbank/soorten-flesvoeding/lactosevrije-flesvoeding', 
+      category: 'soorten-flesvoeding'
+    },
+    { 
+      id: 'soorten-flesvoeding_anti-reflux-flesvoeding', 
+      title: 'Anti-Reflux Flesvoeding', 
+      path: '/kennisbank/soorten-flesvoeding/anti-reflux-flesvoeding', 
+      category: 'soorten-flesvoeding'
+    },
+    { 
+      id: 'voedingstechnieken_overgang-naar-beker', 
+      title: 'Overgang naar Beker', 
+      path: '/kennisbank/voedingstechnieken/overgang-naar-beker', 
+      category: 'voedingstechnieken'
+    },
+    { 
+      id: 'voedingstechnieken_baby-leren-zelf-drinken', 
+      title: 'Baby Leren Zelf Drinken', 
+      path: '/kennisbank/voedingstechnieken/baby-leren-zelf-drinken', 
+      category: 'voedingstechnieken'
+    },
+    { 
+      id: 'problemen-oplossen_diarree-en-flesvoeding', 
+      title: 'Diarree en Flesvoeding', 
+      path: '/kennisbank/problemen-oplossen/diarree-en-flesvoeding', 
+      category: 'problemen-oplossen'
+    },
+    { 
+      id: 'problemen-oplossen_allergische-reacties-flesvoeding', 
+      title: 'Allergische Reacties Flesvoeding', 
+      path: '/kennisbank/problemen-oplossen/allergische-reacties-flesvoeding', 
+      category: 'problemen-oplossen'
+    },
+    { 
+      id: 'hygiene-bereiding_flesvoeding-bewaren', 
+      title: 'Flesvoeding Bewaren', 
+      path: '/kennisbank/hygiene-bereiding/flesvoeding-bewaren', 
+      category: 'hygiene-bereiding'
+    },
+    { 
+      id: 'praktische-tips_geld-besparen-flesvoeding', 
+      title: 'Geld Besparen Flesvoeding', 
+      path: '/kennisbank/praktische-tips/geld-besparen-flesvoeding', 
+      category: 'praktische-tips'
+    },
+    { 
+      id: 'hygiene-bereiding_veilig-verwarmen-flesvoeding', 
+      title: 'Veilig Verwarmen Flesvoeding', 
+      path: '/kennisbank/hygiene-bereiding/veilig-verwarmen-flesvoeding', 
+      category: 'hygiene-bereiding'
+    },
+    { 
+      id: 'praktische-tips_flesvoeding-op-vakantie', 
+      title: 'Flesvoeding op Vakantie', 
+      path: '/kennisbank/praktische-tips/flesvoeding-op-vakantie', 
+      category: 'praktische-tips'
+    },
+    { 
+      id: 'praktische-tips_flesvoeding-en-slapen', 
+      title: 'Flesvoeding en Slapen', 
+      path: '/kennisbank/praktische-tips/flesvoeding-en-slapen', 
+      category: 'praktische-tips'
     }
   ]
   
