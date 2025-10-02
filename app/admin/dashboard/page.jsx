@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Layout from '../../../components/Layout'
-import { Settings, Link, Plus, Eye, X, Edit, Trash2, ToggleLeft, ToggleRight } from 'lucide-react'
+import { Settings, Link, Plus, Eye, X, Edit, Trash2, ToggleLeft, ToggleRight, RefreshCw } from 'lucide-react'
 
 export default function SimpleAdminDashboard() {
   const [snippets, setSnippets] = useState([])
@@ -26,6 +26,8 @@ export default function SimpleAdminDashboard() {
     currency: 'EUR'
   })
   const [isGenerating, setIsGenerating] = useState(false)
+  const [isSyncing, setIsSyncing] = useState(false)
+  const [syncProgress, setSyncProgress] = useState('')
   const [editingSnippet, setEditingSnippet] = useState(null)
   const [editFormData, setEditFormData] = useState({})
   const router = useRouter()
@@ -403,6 +405,51 @@ export default function SimpleAdminDashboard() {
     }
   }
 
+  const syncAllPrices = async () => {
+    if (!confirm('This will update prices for all active snippets. This may take several minutes. Continue?')) {
+      return
+    }
+
+    setIsSyncing(true)
+    setSyncProgress('Starting price sync...')
+
+    try {
+      const response = await fetch('/api/admin-snippets/sync-prices', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      })
+
+      if (response.ok) {
+        const result = await response.json()
+        setSyncProgress(`Sync completed: ${result.stats.successful} successful, ${result.stats.errors} errors`)
+        
+        // Refresh the snippets list to show updated prices
+        loadData(true)
+        
+        // Show detailed results
+        if (result.stats.errors > 0) {
+          alert(`Price sync completed with some issues:\n\n✅ ${result.stats.successful} snippets updated successfully\n❌ ${result.stats.errors} snippets failed\n\nErrors:\n${result.stats.errorDetails.slice(0, 5).join('\n')}${result.stats.errorDetails.length > 5 ? '\n...and more' : ''}`)
+        } else {
+          alert(`🎉 Price sync completed successfully!\n\n✅ ${result.stats.successful} snippets updated with current prices`)
+        }
+      } else {
+        const errorData = await response.json()
+        setSyncProgress('Sync failed')
+        alert(`Failed to sync prices: ${errorData.message}`)
+      }
+    } catch (error) {
+      console.error('Error syncing prices:', error)
+      setSyncProgress('Sync failed')
+      alert('Error syncing prices: ' + error.message)
+    } finally {
+      setIsSyncing(false)
+      // Clear progress message after a delay
+      setTimeout(() => setSyncProgress(''), 3000)
+    }
+  }
+
   if (!isAuthenticated || loading) {
     return (
       <Layout>
@@ -527,18 +574,33 @@ export default function SimpleAdminDashboard() {
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-lg font-semibold text-gray-900">Affiliate Snippets</h2>
-                <button
-                  onClick={() => setShowAddForm(true)}
-                  className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center space-x-2"
-                >
-                  <Plus className="w-4 h-4" />
-                  <span>Add New Link</span>
-                </button>
+                <div className="flex items-center space-x-3">
+                  <button
+                    onClick={syncAllPrices}
+                    disabled={isSyncing || loading}
+                    className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center space-x-2"
+                  >
+                    <RefreshCw className={`w-4 h-4 ${isSyncing ? 'animate-spin' : ''}`} />
+                    <span>{isSyncing ? 'Syncing...' : 'Sync Prices'}</span>
+                  </button>
+                  <button
+                    onClick={() => setShowAddForm(true)}
+                    className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center space-x-2"
+                  >
+                    <Plus className="w-4 h-4" />
+                    <span>Add New Link</span>
+                  </button>
+                </div>
               </div>
               
               <div className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
                 <p className="text-blue-800 text-sm">
                   <strong>Debug:</strong> {debugInfo} | Snippets: {snippets.length} | Loading: {loading ? 'Yes' : 'No'}
+                  {syncProgress && (
+                    <span className="ml-4">
+                      <strong>Price Sync:</strong> {syncProgress}
+                    </span>
+                  )}
                 </p>
               </div>
 
