@@ -918,6 +918,17 @@ export default function SimpleAdminDashboard() {
                               placeholder="e.g., Aanbevolen, Budget, Beste prijs/kwaliteit"
                             />
                           </div>
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                              {snippet.type === 'amazon' ? 'Generated HTML' : 'Bol.com Code Snippet'}
+                            </label>
+                            <textarea
+                              value={editFormData.generatedHtml}
+                              onChange={(e) => setEditFormData(prev => ({ ...prev, generatedHtml: e.target.value }))}
+                              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary h-32"
+                              placeholder={snippet.type === 'amazon' ? 'Generated HTML will appear here...' : 'Paste your Bol.com affiliate code snippet here...'}
+                            />
+                          </div>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                               <label className="block text-sm font-medium text-gray-700 mb-2">Current Price</label>
@@ -939,17 +950,6 @@ export default function SimpleAdminDashboard() {
                                 placeholder="e.g., €29.99"
                               />
                             </div>
-                          </div>
-                          <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
-                              {snippet.type === 'amazon' ? 'Generated HTML' : 'Bol.com Code Snippet'}
-                            </label>
-                            <textarea
-                              value={editFormData.generatedHtml}
-                              onChange={(e) => setEditFormData(prev => ({ ...prev, generatedHtml: e.target.value }))}
-                              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary h-32"
-                              placeholder={snippet.type === 'amazon' ? 'Generated HTML will appear here...' : 'Paste your Bol.com affiliate code snippet here...'}
-                            />
                           </div>
                           <div className="flex space-x-3">
                             <button
