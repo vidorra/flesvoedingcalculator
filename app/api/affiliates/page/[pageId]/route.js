@@ -239,6 +239,10 @@ export async function GET(request, { params }) {
           name: snippet.name,
           tag: snippet.tag,
           active: snippet.active,
+          price: snippet.price,
+          originalPrice: snippet.originalPrice,
+          currency: snippet.currency,
+          priceLastUpdated: snippet.priceLastUpdated,
           type: 'amazon_image', // Convert to frontend format
           data: {
             url: extractAffiliateUrl(snippet.generatedHtml),
@@ -253,6 +257,10 @@ export async function GET(request, { params }) {
           name: snippet.name,
           tag: snippet.tag,
           active: snippet.active,
+          price: snippet.price,
+          originalPrice: snippet.originalPrice,
+          currency: snippet.currency,
+          priceLastUpdated: snippet.priceLastUpdated,
           type: 'bol_iframe', // Convert to frontend format
           data: {
             title: snippet.name,
