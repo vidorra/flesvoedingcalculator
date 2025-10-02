@@ -32,6 +32,7 @@ export default function SimpleAdminDashboard() {
   const [syncAlert, setSyncAlert] = useState(null) // { type: 'success' | 'error', message: '', details: [] }
   const [editingSnippet, setEditingSnippet] = useState(null)
   const [editFormData, setEditFormData] = useState({})
+  const [showOnlyPrice, setShowOnlyPrice] = useState(false) // Control visibility of elements
   const router = useRouter()
 
   // Check authentication
@@ -665,6 +666,24 @@ export default function SimpleAdminDashboard() {
         {/* Tab Content */}
         {activeTab === 'overview' && (
           <>
+            {/* View Controls */}
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4 mb-6">
+              <div className="flex items-center justify-between">
+                <h3 className="text-sm font-medium text-gray-700">Display Options</h3>
+                <div className="flex items-center space-x-4">
+                  <label className="flex items-center space-x-2">
+                    <input
+                      type="checkbox"
+                      checked={showOnlyPrice}
+                      onChange={(e) => setShowOnlyPrice(e.target.checked)}
+                      className="rounded border-gray-300 text-primary focus:ring-primary"
+                    />
+                    <span className="text-sm text-gray-600">Show only price info</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
             {/* Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
@@ -1121,18 +1140,20 @@ export default function SimpleAdminDashboard() {
                             <div className="flex-1">
                               <div className="flex items-center space-x-3 mb-2">
                                 <h3 className="text-lg font-medium text-gray-900">{snippet.name}</h3>
-                                {snippet.tag && (
+                                {!showOnlyPrice && snippet.tag && (
                                   <span className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium">
                                     {snippet.tag}
                                   </span>
                                 )}
-                                <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                                  snippet.type === 'amazon' 
-                                    ? 'bg-orange-100 text-orange-700' 
-                                    : 'bg-blue-100 text-blue-700'
-                                }`}>
-                                  {snippet.type === 'amazon' ? 'Amazon' : 'Bol.com'}
-                                </span>
+                                {!showOnlyPrice && (
+                                  <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                                    snippet.type === 'amazon' 
+                                      ? 'bg-orange-100 text-orange-700' 
+                                      : 'bg-blue-100 text-blue-700'
+                                  }`}>
+                                    {snippet.type === 'amazon' ? 'Amazon' : 'Bol.com'}
+                                  </span>
+                                )}
                                 {(snippet.price || snippet.originalPrice) && (
                                   <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs font-medium">
                                     {snippet.originalPrice && snippet.price !== snippet.originalPrice 
@@ -1141,18 +1162,22 @@ export default function SimpleAdminDashboard() {
                                     }
                                   </span>
                                 )}
-                                <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                                  snippet.active 
-                                    ? 'bg-green-100 text-green-700' 
-                                    : 'bg-gray-100 text-gray-600'
-                                }`}>
-                                  {snippet.active ? 'Active' : 'Inactive'}
-                                </span>
+                                {!showOnlyPrice && (
+                                  <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                                    snippet.active 
+                                      ? 'bg-green-100 text-green-700' 
+                                      : 'bg-gray-100 text-gray-600'
+                                  }`}>
+                                    {snippet.active ? 'Active' : 'Inactive'}
+                                  </span>
+                                )}
                               </div>
                               <div className="text-sm text-gray-600 space-y-1">
-                                <div>
-                                  <strong>URL:</strong> {snippet.url}
-                                </div>
+                                {!showOnlyPrice && (
+                                  <div>
+                                    <strong>URL:</strong> {snippet.url}
+                                  </div>
+                                )}
                                 {(snippet.price || snippet.originalPrice) && (
                                   <div>
                                     <strong>Price:</strong>{' '}
@@ -1162,17 +1187,30 @@ export default function SimpleAdminDashboard() {
                                     {snippet.originalPrice && snippet.originalPrice !== snippet.price && (
                                       <span className="text-gray-400 line-through ml-2">{snippet.originalPrice}</span>
                                     )}
-                                    {snippet.priceLastUpdated && (
+                                    {!showOnlyPrice && snippet.priceLastUpdated && (
                                       <span className="text-xs text-gray-400 ml-2">
                                         (Updated: {new Date(snippet.priceLastUpdated).toLocaleDateString()})
                                       </span>
                                     )}
                                   </div>
                                 )}
-                                <div>
-                                  <strong>Created:</strong> {new Date(snippet.createdAt).toLocaleDateString()}
-                                </div>
+                                {!showOnlyPrice && (
+                                  <div>
+                                    <strong>Created:</strong> {new Date(snippet.createdAt).toLocaleDateString()}
+                                  </div>
+                                )}
+                                {/* Snippet Preview */}
                                 {snippet.generatedHtml && (
+                                  <div className="mt-3">
+                                    <h4 className="text-sm font-medium text-gray-700 mb-2">Snippet Preview:</h4>
+                                    <div className="p-3 bg-gray-50 rounded border">
+                                      <div dangerouslySetInnerHTML={{ __html: snippet.generatedHtml }} />
+                                    </div>
+                                  </div>
+                                )}
+                                
+                                {/* Code View - only show when not hiding details */}
+                                {!showOnlyPrice && snippet.generatedHtml && (
                                   <details className="mt-2">
                                     <summary className="cursor-pointer text-primary hover:text-primary/80">
                                       View code snippet code
