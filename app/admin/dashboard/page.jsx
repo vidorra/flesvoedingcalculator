@@ -28,6 +28,7 @@ export default function SimpleAdminDashboard() {
   const [isGenerating, setIsGenerating] = useState(false)
   const [isSyncing, setIsSyncing] = useState(false)
   const [syncProgress, setSyncProgress] = useState('')
+  const [syncAlert, setSyncAlert] = useState(null) // { type: 'success' | 'error', message: '', details: [] }
   const [editingSnippet, setEditingSnippet] = useState(null)
   const [editFormData, setEditFormData] = useState({})
   const router = useRouter()
@@ -396,14 +397,26 @@ export default function SimpleAdminDashboard() {
       if (response.ok) {
         // Refresh snippets
         loadData(true)
-        alert('Snippet deleted successfully!')
+        setSyncAlert({
+          type: 'success',
+          message: 'Snippet deleted successfully!',
+          details: []
+        })
       } else {
         const errorData = await response.json()
-        alert(`Failed to delete snippet: ${errorData.message}`)
+        setSyncAlert({
+          type: 'error',
+          message: `Failed to delete snippet: ${errorData.message}`,
+          details: []
+        })
       }
     } catch (error) {
       console.error('Error deleting snippet:', error)
-      alert('Error deleting snippet: ' + error.message)
+      setSyncAlert({
+        type: 'error',
+        message: `Error deleting snippet: ${error.message}`,
+        details: []
+      })
     }
   }
 
@@ -414,6 +427,7 @@ export default function SimpleAdminDashboard() {
 
     setIsSyncing(true)
     setSyncProgress('Starting price sync...')
+    setSyncAlert(null) // Clear any previous alerts
 
     try {
       const response = await fetch('/api/admin-snippets/sync-prices', {
@@ -430,25 +444,45 @@ export default function SimpleAdminDashboard() {
         // Refresh the snippets list to show updated prices
         loadData(true)
         
-        // Show detailed results
+        // Show detailed results in custom alert
         if (result.stats.errors > 0) {
-          alert(`Price sync completed with some issues:\n\n✅ ${result.stats.successful} snippets updated successfully\n❌ ${result.stats.errors} snippets failed\n\nErrors:\n${result.stats.errorDetails.slice(0, 5).join('\n')}${result.stats.errorDetails.length > 5 ? '\n...and more' : ''}`)
+          setSyncAlert({
+            type: 'warning',
+            message: `Price sync completed with some issues: ${result.stats.successful} successful, ${result.stats.errors} failed`,
+            details: result.stats.errorDetails || []
+          })
         } else {
-          alert(`🎉 Price sync completed successfully!\n\n✅ ${result.stats.successful} snippets updated with current prices`)
+          setSyncAlert({
+            type: 'success',
+            message: `🎉 Price sync completed successfully! ${result.stats.successful} snippets updated with current prices`,
+            details: []
+          })
         }
       } else {
         const errorData = await response.json()
         setSyncProgress('Sync failed')
-        alert(`Failed to sync prices: ${errorData.message}`)
+        setSyncAlert({
+          type: 'error',
+          message: `Failed to sync prices: ${errorData.message}`,
+          details: []
+        })
       }
     } catch (error) {
       console.error('Error syncing prices:', error)
       setSyncProgress('Sync failed')
-      alert('Error syncing prices: ' + error.message)
+      setSyncAlert({
+        type: 'error',
+        message: `Error syncing prices: ${error.message}`,
+        details: []
+      })
     } finally {
       setIsSyncing(false)
       // Clear progress message after a delay
       setTimeout(() => setSyncProgress(''), 3000)
+      // Auto-dismiss alert after 10 seconds for success, keep error alerts
+      setTimeout(() => {
+        setSyncAlert(prev => prev?.type === 'success' ? null : prev)
+      }, 10000)
     }
   }
 
@@ -571,6 +605,99 @@ export default function SimpleAdminDashboard() {
                 </div>
               </div>
             </div>
+
+            {/* Sync Alert */}
+            {syncAlert && (
+              <div className={`mb-6 rounded-lg p-4 border ${
+                syncAlert.type === 'success' ? 'bg-green-50 border-green-200' :
+                syncAlert.type === 'warning' ? 'bg-amber-50 border-amber-200' :
+                'bg-red-50 border-red-200'
+              }`}>
+                <div className="flex items-start justify-between">
+                  <div className="flex items-start">
+                    <div className="flex-shrink-0">
+                      {syncAlert.type === 'success' && (
+                        <svg className="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                      )}
+                      {syncAlert.type === 'warning' && (
+                        <svg className="h-5 w-5 text-amber-400" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                        </svg>
+                      )}
+                      {syncAlert.type === 'error' && (
+                        <svg className="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                        </svg>
+                      )}
+                    </div>
+                    <div className="ml-3 flex-1">
+                      <h3 className={`text-sm font-medium ${
+                        syncAlert.type === 'success' ? 'text-green-800' :
+                        syncAlert.type === 'warning' ? 'text-amber-800' :
+                        'text-red-800'
+                      }`}>
+                        {syncAlert.type === 'success' ? 'Success' :
+                         syncAlert.type === 'warning' ? 'Partial Success' :
+                         'Error'}
+                      </h3>
+                      <div className={`mt-1 text-sm ${
+                        syncAlert.type === 'success' ? 'text-green-700' :
+                        syncAlert.type === 'warning' ? 'text-amber-700' :
+                        'text-red-700'
+                      }`}>
+                        {syncAlert.message}
+                      </div>
+                      {syncAlert.details && syncAlert.details.length > 0 && (
+                        <details className="mt-2">
+                          <summary className={`cursor-pointer text-sm font-medium ${
+                            syncAlert.type === 'success' ? 'text-green-800' :
+                            syncAlert.type === 'warning' ? 'text-amber-800' :
+                            'text-red-800'
+                          }`}>
+                            Show Details ({syncAlert.details.length} items)
+                          </summary>
+                          <div className="mt-2 space-y-1">
+                            {syncAlert.details.slice(0, 10).map((detail, index) => (
+                              <div key={index} className={`text-xs p-2 rounded border-l-2 ${
+                                syncAlert.type === 'success' ? 'bg-green-100 border-green-300 text-green-700' :
+                                syncAlert.type === 'warning' ? 'bg-amber-100 border-amber-300 text-amber-700' :
+                                'bg-red-100 border-red-300 text-red-700'
+                              }`}>
+                                {detail}
+                              </div>
+                            ))}
+                            {syncAlert.details.length > 10 && (
+                              <div className={`text-xs p-2 rounded ${
+                                syncAlert.type === 'success' ? 'text-green-600' :
+                                syncAlert.type === 'warning' ? 'text-amber-600' :
+                                'text-red-600'
+                              }`}>
+                                ... and {syncAlert.details.length - 10} more
+                              </div>
+                            )}
+                          </div>
+                        </details>
+                      )}
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => setSyncAlert(null)}
+                    className={`flex-shrink-0 ml-4 p-1 rounded-md hover:bg-opacity-20 ${
+                      syncAlert.type === 'success' ? 'text-green-500 hover:bg-green-600' :
+                      syncAlert.type === 'warning' ? 'text-amber-500 hover:bg-amber-600' :
+                      'text-red-500 hover:bg-red-600'
+                    }`}
+                  >
+                    <span className="sr-only">Dismiss</span>
+                    <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            )}
 
             {/* Snippets List */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
@@ -814,11 +941,14 @@ export default function SimpleAdminDashboard() {
                             </div>
                           </div>
                           <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">Generated HTML</label>
+                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                              {snippet.type === 'amazon' ? 'Generated HTML' : 'Bol.com Code Snippet'}
+                            </label>
                             <textarea
                               value={editFormData.generatedHtml}
                               onChange={(e) => setEditFormData(prev => ({ ...prev, generatedHtml: e.target.value }))}
                               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary h-32"
+                              placeholder={snippet.type === 'amazon' ? 'Generated HTML will appear here...' : 'Paste your Bol.com affiliate code snippet here...'}
                             />
                           </div>
                           <div className="flex space-x-3">

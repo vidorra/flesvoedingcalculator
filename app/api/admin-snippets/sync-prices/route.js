@@ -74,8 +74,8 @@ export async function POST(request) {
         console.log(`🌐 URL: ${snippet.url}`)
         console.log(`🏷️ Type: ${snippet.type}`)
         
-        // Fetch updated price information
-        const priceData = await fetchPrice(snippet.url, snippet.type)
+        // Fetch updated price information, passing snippet data for script-based extraction
+        const priceData = await fetchPrice(snippet.url, snippet.type, snippet)
         
         console.log(`📊 Price fetch result for "${snippet.name}":`, {
           success: !!(priceData && (priceData.price || priceData.originalPrice)),

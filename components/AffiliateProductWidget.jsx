@@ -106,12 +106,32 @@ export default function AffiliateProductWidget({
       console.log(`  ${index + 1}. ${product.id} (${product.name}) - Type: ${product.type}`)
     })
     
-    // Handle Bol.com iframe widgets (no script execution needed)
+    // Handle Bol.com widgets
     displayProducts.forEach(product => {
       if (product.type === 'bol_iframe') {
         console.log(`🔧 Setting up Bol.com iframe widget for ${product.id}`)
-      } else if (product.type === 'bol_snippet') {
-        console.log(`🔧 Setting up Bol.com snippet for ${product.id} (deprecated)`)
+      } else if (product.type === 'bol_snippet' || product.type === 'bol_script') {
+        console.log(`🔧 Setting up Bol.com script widget for ${product.id}`)
+        
+        // Set up price extraction after script loads
+        setTimeout(() => {
+          const container = document.querySelector(`[data-product-id="${product.id}"]`)
+          if (container) {
+            const priceElement = container.querySelector('.price-bol')
+            if (priceElement) {
+              const priceText = priceElement.textContent || priceElement.innerText
+              console.log(`💰 Extracted price for ${product.id}: ${priceText}`)
+              
+              // Optional: Send price back to admin system for caching
+              // This could be used to update the database with current prices
+              if (priceText && priceText.trim()) {
+                console.log(`📊 Live price available: ${priceText.trim()}`)
+              }
+            } else {
+              console.log(`⚠️ No .price-bol element found for ${product.id}`)
+            }
+          }
+        }, 3000) // Wait 3 seconds for Bol.com script to execute
       } else if (product.type === 'amazon_image') {
         console.log(`🔧 Setting up Amazon image widget for ${product.id}`)
       }
@@ -207,16 +227,68 @@ export default function AffiliateProductWidget({
               </div>
             )}
             
-            {/* Bol.com Widget Snippet (deprecated - blocked by adblockers) */}
-            {product.type === 'bol_snippet' && (
+            {/* Bol.com Script Widget with Price Extraction */}
+            {(product.type === 'bol_snippet' || product.type === 'bol_script') && (
               <div className="bg-white rounded-xl border border-gray-200 p-4">
-                <div 
-                  data-widget-id={product.id}
-                  className="min-h-[200px] flex items-center justify-center"
-                >
-                  <div className="text-gray-400 text-sm">
-                    Widget blocked by browser security
-                  </div>
+                <div className="bol-script-container" data-product-id={product.id}>
+                  {/* Container for Bol.com script execution */}
+                  <div 
+                    className="bol-widget-content"
+                    dangerouslySetInnerHTML={{ __html: product.generatedHtml || product.data?.html }}
+                  />
+                  
+                  {/* Custom CSS to style the Bol.com widget */}
+                  <style jsx>{`
+                    .bol-script-container {
+                      min-height: 200px;
+                    }
+                    
+                    /* Hide everything except image, title, and price */
+                    .bol-script-container .rating,
+                    .bol-script-container .product-delivery,
+                    .bol-script-container img[width="1"],
+                    .bol-script-container script {
+                      display: none !important;
+                    }
+                    
+                    /* Style the price prominently */
+                    .bol-script-container .price-bol {
+                      display: block;
+                      font-size: 1.25rem;
+                      font-weight: bold;
+                      color: #16a34a;
+                      margin: 8px 0;
+                      text-align: center;
+                    }
+                    
+                    /* Style the product title */
+                    .bol-script-container .product_title {
+                      display: block;
+                      font-weight: 500;
+                      color: #059669;
+                      text-decoration: none;
+                      margin-bottom: 8px;
+                      font-size: 0.875rem;
+                      line-height: 1.25rem;
+                    }
+                    
+                    /* Center the content */
+                    .bol-script-container .right-div-preview {
+                      text-align: center;
+                    }
+                    
+                    /* Style the image container */
+                    .bol-script-container .left-div {
+                      text-align: center;
+                      margin-bottom: 12px;
+                    }
+                    
+                    .bol-script-container img {
+                      max-width: 100%;
+                      height: auto;
+                      border-radius: 8px;
+                    }
+                  `}</style>
                 </div>
               </div>
             )}
