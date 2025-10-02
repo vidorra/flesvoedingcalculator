@@ -27,6 +27,7 @@ export default function SimpleAdminDashboard() {
   })
   const [isGenerating, setIsGenerating] = useState(false)
   const [isSyncing, setIsSyncing] = useState(false)
+  const [isSyncingSnippet, setIsSyncingSnippet] = useState(false)
   const [syncProgress, setSyncProgress] = useState('')
   const [syncAlert, setSyncAlert] = useState(null) // { type: 'success' | 'error', message: '', details: [] }
   const [editingSnippet, setEditingSnippet] = useState(null)
@@ -194,6 +195,7 @@ export default function SimpleAdminDashboard() {
           ...prev,
           name: data.productName || prev.name,
           url: data.productUrl || data.affiliateUrl || prev.url,
+          shortUrl: newSnippet.platform === 'amazon' ? newSnippet.url : prev.shortUrl,
           code: data.html,
           price: data.price,
           originalPrice: data.originalPrice,
@@ -218,6 +220,7 @@ export default function SimpleAdminDashboard() {
         name: newSnippet.name,
         type: newSnippet.platform,
         url: newSnippet.url,
+        shortUrl: newSnippet.shortUrl || '',
         tag: newSnippet.tag || null,
         generatedHtml: newSnippet.code,
         price: newSnippet.price,
@@ -339,6 +342,7 @@ export default function SimpleAdminDashboard() {
     setEditFormData({
       name: snippet.name,
       url: snippet.url,
+      shortUrl: snippet.shortUrl || '',
       tag: snippet.tag || '',
       generatedHtml: snippet.generatedHtml || '',
       codeSnippet: snippet.codeSnippet || '',
@@ -484,6 +488,87 @@ export default function SimpleAdminDashboard() {
       setTimeout(() => {
         setSyncAlert(prev => prev?.type === 'success' ? null : prev)
       }, 10000)
+    }
+  }
+
+  // Sync individual snippet data and price
+  const syncSnippetData = async (snippetId) => {
+    const snippet = snippets.find(s => s.id === snippetId)
+    if (!snippet || snippet.type !== 'amazon') {
+      setSyncAlert({
+        type: 'error',
+        message: 'Can only sync Amazon snippets',
+        details: []
+      })
+      return
+    }
+
+    const shortUrl = editFormData.shortUrl || snippet.shortUrl
+    if (!shortUrl) {
+      setSyncAlert({
+        type: 'error',
+        message: 'Short URL is required for syncing',
+        details: []
+      })
+      return
+    }
+
+    setIsSyncingSnippet(true)
+    setSyncAlert(null)
+
+    try {
+      // Use generate-snippet API to refetch data and price
+      const response = await fetch('/api/admin/generate-snippet/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          url: shortUrl,
+          type: 'amazon'
+        })
+      })
+
+      if (response.ok) {
+        const data = await response.json()
+        console.log('Synced snippet data:', data)
+        
+        // Update the edit form with new data
+        setEditFormData(prev => ({
+          ...prev,
+          name: data.productName || prev.name,
+          url: data.affiliateUrl || prev.url,
+          generatedHtml: data.html || prev.generatedHtml,
+          price: data.price || prev.price,
+          originalPrice: data.originalPrice || prev.originalPrice
+        }))
+
+        setSyncAlert({
+          type: 'success',
+          message: 'Snippet data and price synced successfully!',
+          details: []
+        })
+      } else {
+        const errorData = await response.json()
+        setSyncAlert({
+          type: 'error',
+          message: `Failed to sync snippet: ${errorData.message}`,
+          details: []
+        })
+      }
+    } catch (error) {
+      console.error('Error syncing snippet:', error)
+      setSyncAlert({
+        type: 'error',
+        message: `Error syncing snippet: ${error.message}`,
+        details: []
+      })
+    } finally {
+      setIsSyncingSnippet(false)
+      // Auto-dismiss alert after 5 seconds for success
+      setTimeout(() => {
+        setSyncAlert(prev => prev?.type === 'success' ? null : prev)
+      }, 5000)
     }
   }
 
@@ -909,6 +994,29 @@ export default function SimpleAdminDashboard() {
                               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                             />
                           </div>
+                          {(snippet.type === 'amazon' || snippet.type === 'amazon_image') && (
+                            <div>
+                              <label className="block text-sm font-medium text-gray-700 mb-2">Short URL</label>
+                              <div className="flex gap-2">
+                                <input
+                                  type="url"
+                                  value={editFormData.shortUrl}
+                                  onChange={(e) => setEditFormData(prev => ({ ...prev, shortUrl: e.target.value }))}
+                                  className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                                  placeholder="https://amzn.to/..."
+                                />
+                                <button
+                                  onClick={() => syncSnippetData(snippet.id)}
+                                  disabled={isSyncingSnippet || !editFormData.shortUrl}
+                                  className="px-3 py-2 bg-primary text-white rounded-md hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                                  title="Sync data and price"
+                                >
+                                  <RefreshCw className={`w-4 h-4 ${isSyncingSnippet ? 'animate-spin' : ''}`} />
+                                  Sync
+                                </button>
+                              </div>
+                            </div>
+                          )}
                           <div>
                             <label className="block text-sm font-medium text-gray-700 mb-2">Tag (Optional)</label>
                             <input
