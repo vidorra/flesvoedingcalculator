@@ -1102,8 +1102,11 @@ export default function SimpleAdminDashboard() {
                                     src={imageUrl} 
                                     alt={snippet.name}
                                     className="w-32 h-32 object-cover rounded-lg border border-gray-200"
+                                    style={{ display: 'block !important' }}
                                     onError={(e) => {
-                                      e.target.style.display = 'none';
+                                      // Show fallback instead of hiding completely
+                                      e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik00MCA0OEg4OFY4MEg0MFY0OFoiIGZpbGw9IiM5Q0EzQUYiLz4KPHBhdGggZD0iTTU2IDY0TDY0IDcyTDgwIDU2IiBzdHJva2U9IiM2QjczODAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=';
+                                      e.target.style.display = 'block';
                                     }}
                                   />
                                 </div>
