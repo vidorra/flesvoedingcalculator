@@ -20,7 +20,10 @@ export default function SimpleAdminDashboard() {
     name: '',
     url: '',
     code: '',
-    tag: ''
+    tag: '',
+    price: null,
+    originalPrice: null,
+    currency: 'EUR'
   })
   const [isGenerating, setIsGenerating] = useState(false)
   const [editingSnippet, setEditingSnippet] = useState(null)
@@ -188,7 +191,10 @@ export default function SimpleAdminDashboard() {
           ...prev,
           name: data.productName || prev.name,
           url: data.productUrl || data.affiliateUrl || prev.url,
-          code: data.html
+          code: data.html,
+          price: data.price,
+          originalPrice: data.originalPrice,
+          currency: data.currency
         }))
       } else {
         const errorData = await response.json()
@@ -211,6 +217,9 @@ export default function SimpleAdminDashboard() {
         url: newSnippet.url,
         tag: newSnippet.tag || null,
         generatedHtml: newSnippet.code,
+        price: newSnippet.price,
+        originalPrice: newSnippet.originalPrice,
+        currency: newSnippet.currency || 'EUR',
         active: true
       }
 
@@ -231,7 +240,10 @@ export default function SimpleAdminDashboard() {
           name: '',
           url: '',
           code: '',
-          tag: ''
+          tag: '',
+          price: null,
+          originalPrice: null,
+          currency: 'EUR'
         })
         setShowAddForm(false)
         alert('Snippet saved successfully!')
