@@ -1022,6 +1022,14 @@ export default function SimpleAdminDashboard() {
                                 <div>
                                   <h4 className="font-medium text-gray-900">{snippet.snippet?.name || snippet.name}</h4>
                                   <p className="text-sm text-gray-600">{(snippet.snippet?.type || snippet.type) === 'amazon' || (snippet.snippet?.type || snippet.type) === 'amazon_image' ? 'Amazon' : 'Bol.com'} • {snippet.snippet?.tag || snippet.tag}</p>
+                                  {((snippet.snippet?.price || snippet.price) || (snippet.snippet?.originalPrice || snippet.originalPrice)) && (
+                                    <p className="text-xs text-gray-500">
+                                      Price: {snippet.snippet?.price || snippet.price}
+                                      {((snippet.snippet?.originalPrice || snippet.originalPrice) && (snippet.snippet?.originalPrice || snippet.originalPrice) !== (snippet.snippet?.price || snippet.price)) && (
+                                        <span className="line-through ml-1">{snippet.snippet?.originalPrice || snippet.originalPrice}</span>
+                                      )}
+                                    </p>
+                                  )}
                                 </div>
                               </div>
                               <div className="flex items-center space-x-2">
@@ -1090,6 +1098,22 @@ export default function SimpleAdminDashboard() {
                                       </span>
                                     )}
                                   </div>
+                                  {(snippet.price || snippet.originalPrice) && (
+                                    <div className="text-xs text-gray-500 mt-1">
+                                      <strong>Price:</strong> 
+                                      {snippet.price && (
+                                        <span className="text-green-600 font-medium ml-1">{snippet.price}</span>
+                                      )}
+                                      {snippet.originalPrice && snippet.originalPrice !== snippet.price && (
+                                        <span className="text-gray-400 line-through ml-1">{snippet.originalPrice}</span>
+                                      )}
+                                      {snippet.priceLastUpdated && (
+                                        <span className="text-gray-400 ml-1">
+                                          (Updated: {new Date(snippet.priceLastUpdated).toLocaleDateString()})
+                                        </span>
+                                      )}
+                                    </div>
+                                  )}
                                 </div>
                                 <Plus className="w-4 h-4 text-gray-400" />
                               </div>

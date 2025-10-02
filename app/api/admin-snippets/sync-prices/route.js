@@ -71,15 +71,25 @@ export async function POST(request) {
       
       try {
         console.log(`🔄 Syncing prices for "${snippet.name}" (${i + 1}/${activeSnippets.length})`)
+        console.log(`🌐 URL: ${snippet.url}`)
+        console.log(`🏷️ Type: ${snippet.type}`)
         
         // Fetch updated price information
         const priceData = await fetchPrice(snippet.url, snippet.type)
+        
+        console.log(`📊 Price fetch result for "${snippet.name}":`, {
+          success: !!(priceData && (priceData.price || priceData.originalPrice)),
+          priceData: priceData,
+          hasPrice: !!priceData?.price,
+          hasOriginalPrice: !!priceData?.originalPrice,
+          currency: priceData?.currency
+        })
         
         if (priceData && (priceData.price || priceData.originalPrice)) {
           // Find the snippet in the full array and update it
           const snippetIndex = snippets.findIndex(s => s.id === snippet.id)
           if (snippetIndex !== -1) {
-            snippets[snippetIndex] = {
+            const updatedSnippet = {
               ...snippets[snippetIndex],
               price: priceData.price,
               originalPrice: priceData.originalPrice,
@@ -88,18 +98,36 @@ export async function POST(request) {
               updatedAt: new Date().toISOString()
             }
             
+            snippets[snippetIndex] = updatedSnippet
+            
             console.log(`✅ Updated prices for "${snippet.name}": ${priceData.price}${priceData.originalPrice ? ` (was ${priceData.originalPrice})` : ''}`)
+            console.log(`💾 Updated snippet data:`, {
+              id: updatedSnippet.id,
+              name: updatedSnippet.name,
+              price: updatedSnippet.price,
+              originalPrice: updatedSnippet.originalPrice,
+              priceLastUpdated: updatedSnippet.priceLastUpdated
+            })
             successCount++
+          } else {
+            console.log(`❌ Could not find snippet with ID ${snippet.id} in snippets array`)
+            errors.push(`Could not find snippet "${snippet.name}" in database for update`)
+            errorCount++
           }
         } else {
-          console.log(`⚠️ No price data found for "${snippet.name}"`)
-          errors.push(`No price data found for "${snippet.name}"`)
+          const errorDetail = priceData ? 
+            `Price data returned but no valid price found. Response: ${JSON.stringify(priceData)}` :
+            `No price data returned from fetcher`
+          
+          console.log(`⚠️ No price data found for "${snippet.name}": ${errorDetail}`)
+          errors.push(`No price data found for "${snippet.name}": ${errorDetail}`)
           errorCount++
         }
         
-        // Add small delay to avoid overwhelming the servers
+        // Add delay to avoid overwhelming the servers and reduce 403 errors
         if (i < activeSnippets.length - 1) {
-          await new Promise(resolve => setTimeout(resolve, 500))
+          console.log(`⏳ Waiting 3 seconds before next request...`)
+          await new Promise(resolve => setTimeout(resolve, 3000))
         }
         
       } catch (error) {
