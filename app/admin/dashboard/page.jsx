@@ -669,7 +669,7 @@ export default function SimpleAdminDashboard() {
             {/* View Controls */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4 mb-6">
               <div className="flex items-center justify-between">
-                <h3 className="text-sm font-medium text-gray-700">Display Options</h3>
+                <h3 className="text-sm font-medium text-gray-700">View Options</h3>
                 <div className="flex items-center space-x-4">
                   <label className="flex items-center space-x-2">
                     <input
