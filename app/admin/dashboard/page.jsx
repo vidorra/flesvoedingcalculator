@@ -341,6 +341,7 @@ export default function SimpleAdminDashboard() {
       url: snippet.url,
       tag: snippet.tag || '',
       generatedHtml: snippet.generatedHtml || '',
+      codeSnippet: snippet.codeSnippet || '',
       price: snippet.price || '',
       originalPrice: snippet.originalPrice || ''
     })
@@ -920,15 +921,28 @@ export default function SimpleAdminDashboard() {
                           </div>
                           <div>
                             <label className="block text-sm font-medium text-gray-700 mb-2">
-                              {(snippet.type === 'amazon' || snippet.type === 'amazon_image') ? 'Generated HTML' : 'Bol.com Code Snippet'}
+                              Image HTML
                             </label>
                             <textarea
                               value={editFormData.generatedHtml}
                               onChange={(e) => setEditFormData(prev => ({ ...prev, generatedHtml: e.target.value }))}
                               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary h-32"
-                              placeholder={(snippet.type === 'amazon' || snippet.type === 'amazon_image') ? 'Generated HTML will appear here...' : 'Paste your Bol.com affiliate code snippet here...'}
+                              placeholder="Static HTML with image and link..."
                             />
                           </div>
+                          {snippet.type !== 'amazon' && snippet.type !== 'amazon_image' && (
+                            <div>
+                              <label className="block text-sm font-medium text-gray-700 mb-2">
+                                Bol.com Code Snippet
+                              </label>
+                              <textarea
+                                value={editFormData.codeSnippet}
+                                onChange={(e) => setEditFormData(prev => ({ ...prev, codeSnippet: e.target.value }))}
+                                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary h-32"
+                                placeholder="Paste your Bol.com JavaScript snippet here..."
+                              />
+                            </div>
+                          )}
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                               <label className="block text-sm font-medium text-gray-700 mb-2">Current Price</label>
@@ -969,13 +983,13 @@ export default function SimpleAdminDashboard() {
                       ) : (
                         // View mode
                         <div className="flex items-start justify-between">
-                          <div className="flex-1">
-                            {/* Product Image from HTML (if available) */}
+                          <div className="flex flex-1">
+                            {/* Product Image from HTML (if available) - flex with fit-content */}
                             {snippet.generatedHtml && (() => {
                               const imageMatch = snippet.generatedHtml.match(/src=["'](.*?)["']/i);
                               const imageUrl = imageMatch ? imageMatch[1] : null;
                               return imageUrl ? (
-                                <div className="mb-4">
+                                <div className="flex-shrink-0 mr-4">
                                   <img 
                                     src={imageUrl} 
                                     alt={snippet.name}
@@ -988,71 +1002,74 @@ export default function SimpleAdminDashboard() {
                               ) : null;
                             })()}
                             
-                            <div className="flex items-center space-x-3 mb-2">
-                              <h3 className="text-lg font-medium text-gray-900">{snippet.name}</h3>
-                              {snippet.tag && (
-                                <span className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium">
-                                  {snippet.tag}
+                            {/* Content section - takes remaining flex space */}
+                            <div className="flex-1">
+                              <div className="flex items-center space-x-3 mb-2">
+                                <h3 className="text-lg font-medium text-gray-900">{snippet.name}</h3>
+                                {snippet.tag && (
+                                  <span className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium">
+                                    {snippet.tag}
+                                  </span>
+                                )}
+                                <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                                  snippet.type === 'amazon' 
+                                    ? 'bg-orange-100 text-orange-700' 
+                                    : 'bg-blue-100 text-blue-700'
+                                }`}>
+                                  {snippet.type === 'amazon' ? 'Amazon' : 'Bol.com'}
                                 </span>
-                              )}
-                              <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                                snippet.type === 'amazon' 
-                                  ? 'bg-orange-100 text-orange-700' 
-                                  : 'bg-blue-100 text-blue-700'
-                              }`}>
-                                {snippet.type === 'amazon' ? 'Amazon' : 'Bol.com'}
-                              </span>
-                              {(snippet.price || snippet.originalPrice) && (
-                                <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs font-medium">
-                                  {snippet.originalPrice && snippet.price !== snippet.originalPrice 
-                                    ? `${snippet.price} (was ${snippet.originalPrice})`
-                                    : snippet.price || snippet.originalPrice
-                                  }
+                                {(snippet.price || snippet.originalPrice) && (
+                                  <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs font-medium">
+                                    {snippet.originalPrice && snippet.price !== snippet.originalPrice 
+                                      ? `${snippet.price} (was ${snippet.originalPrice})`
+                                      : snippet.price || snippet.originalPrice
+                                    }
+                                  </span>
+                                )}
+                                <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                                  snippet.active 
+                                    ? 'bg-green-100 text-green-700' 
+                                    : 'bg-gray-100 text-gray-600'
+                                }`}>
+                                  {snippet.active ? 'Active' : 'Inactive'}
                                 </span>
-                              )}
-                              <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                                snippet.active 
-                                  ? 'bg-green-100 text-green-700' 
-                                  : 'bg-gray-100 text-gray-600'
-                              }`}>
-                                {snippet.active ? 'Active' : 'Inactive'}
-                              </span>
-                            </div>
-                            <div className="text-sm text-gray-600 space-y-1">
-                              <div>
-                                <strong>URL:</strong> {snippet.url}
                               </div>
-                              {(snippet.price || snippet.originalPrice) && (
+                              <div className="text-sm text-gray-600 space-y-1">
                                 <div>
-                                  <strong>Price:</strong>{' '}
-                                  {snippet.price && (
-                                    <span className="text-green-600 font-medium">{snippet.price}</span>
-                                  )}
-                                  {snippet.originalPrice && snippet.originalPrice !== snippet.price && (
-                                    <span className="text-gray-400 line-through ml-2">{snippet.originalPrice}</span>
-                                  )}
-                                  {snippet.priceLastUpdated && (
-                                    <span className="text-xs text-gray-400 ml-2">
-                                      (Updated: {new Date(snippet.priceLastUpdated).toLocaleDateString()})
-                                    </span>
-                                  )}
+                                  <strong>URL:</strong> {snippet.url}
                                 </div>
-                              )}
-                              <div>
-                                <strong>Created:</strong> {new Date(snippet.createdAt).toLocaleDateString()}
-                              </div>
-                              {snippet.generatedHtml && (
-                                <details className="mt-2">
-                                  <summary className="cursor-pointer text-primary hover:text-primary/80">
-                                    View code snippet code
-                                  </summary>
-                                  <div className="mt-2 p-3 bg-gray-50 rounded border">
-                                    <code className="text-xs text-gray-600 break-all">
-                                      {snippet.generatedHtml}
-                                    </code>
+                                {(snippet.price || snippet.originalPrice) && (
+                                  <div>
+                                    <strong>Price:</strong>{' '}
+                                    {snippet.price && (
+                                      <span className="text-green-600 font-medium">{snippet.price}</span>
+                                    )}
+                                    {snippet.originalPrice && snippet.originalPrice !== snippet.price && (
+                                      <span className="text-gray-400 line-through ml-2">{snippet.originalPrice}</span>
+                                    )}
+                                    {snippet.priceLastUpdated && (
+                                      <span className="text-xs text-gray-400 ml-2">
+                                        (Updated: {new Date(snippet.priceLastUpdated).toLocaleDateString()})
+                                      </span>
+                                    )}
                                   </div>
-                                </details>
-                              )}
+                                )}
+                                <div>
+                                  <strong>Created:</strong> {new Date(snippet.createdAt).toLocaleDateString()}
+                                </div>
+                                {snippet.generatedHtml && (
+                                  <details className="mt-2">
+                                    <summary className="cursor-pointer text-primary hover:text-primary/80">
+                                      View code snippet code
+                                    </summary>
+                                    <div className="mt-2 p-3 bg-gray-50 rounded border">
+                                      <code className="text-xs text-gray-600 break-all">
+                                        {snippet.generatedHtml}
+                                      </code>
+                                    </div>
+                                  </details>
+                                )}
+                              </div>
                             </div>
                           </div>
                           <div className="flex items-center space-x-2 ml-4">

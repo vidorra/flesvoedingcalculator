@@ -211,6 +211,7 @@ export async function POST(request) {
       url: snippetData.url || '',
       tag: snippetData.tag || null,
       generatedHtml: snippetData.generatedHtml || '',
+      codeSnippet: snippetData.codeSnippet || '',
       price: snippetData.price || null,
       originalPrice: snippetData.originalPrice || null,
       currency: snippetData.currency || 'EUR',
