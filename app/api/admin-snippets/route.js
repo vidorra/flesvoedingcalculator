@@ -211,6 +211,10 @@ export async function POST(request) {
       url: snippetData.url || '',
       tag: snippetData.tag || null,
       generatedHtml: snippetData.generatedHtml || '',
+      price: snippetData.price || null,
+      originalPrice: snippetData.originalPrice || null,
+      currency: snippetData.currency || 'EUR',
+      priceLastUpdated: snippetData.price ? new Date().toISOString() : null,
       active: snippetData.active ?? true,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString()
@@ -268,6 +272,8 @@ export async function PUT(request) {
     const updatedSnippet = {
       ...snippets[snippetIndex],
       ...updateData,
+      // Update priceLastUpdated if price fields are being updated
+      priceLastUpdated: (updateData.price || updateData.originalPrice) ? new Date().toISOString() : snippets[snippetIndex].priceLastUpdated,
       updatedAt: new Date().toISOString()
     }
     
