@@ -970,6 +970,24 @@ export default function SimpleAdminDashboard() {
                         // View mode
                         <div className="flex items-start justify-between">
                           <div className="flex-1">
+                            {/* Product Image from HTML (if available) */}
+                            {snippet.generatedHtml && (() => {
+                              const imageMatch = snippet.generatedHtml.match(/src=["'](.*?)["']/i);
+                              const imageUrl = imageMatch ? imageMatch[1] : null;
+                              return imageUrl ? (
+                                <div className="mb-4">
+                                  <img 
+                                    src={imageUrl} 
+                                    alt={snippet.name}
+                                    className="w-32 h-32 object-cover rounded-lg border border-gray-200"
+                                    onError={(e) => {
+                                      e.target.style.display = 'none';
+                                    }}
+                                  />
+                                </div>
+                              ) : null;
+                            })()}
+                            
                             <div className="flex items-center space-x-3 mb-2">
                               <h3 className="text-lg font-medium text-gray-900">{snippet.name}</h3>
                               {snippet.tag && (
@@ -1026,7 +1044,7 @@ export default function SimpleAdminDashboard() {
                               {snippet.generatedHtml && (
                                 <details className="mt-2">
                                   <summary className="cursor-pointer text-primary hover:text-primary/80">
-                                    View Generated HTML
+                                    View code snippet code
                                   </summary>
                                   <div className="mt-2 p-3 bg-gray-50 rounded border">
                                     <code className="text-xs text-gray-600 break-all">
