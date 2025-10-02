@@ -339,7 +339,9 @@ export default function SimpleAdminDashboard() {
       name: snippet.name,
       url: snippet.url,
       tag: snippet.tag || '',
-      generatedHtml: snippet.generatedHtml || ''
+      generatedHtml: snippet.generatedHtml || '',
+      price: snippet.price || '',
+      originalPrice: snippet.originalPrice || ''
     })
   }
 
@@ -789,6 +791,28 @@ export default function SimpleAdminDashboard() {
                               placeholder="e.g., Aanbevolen, Budget, Beste prijs/kwaliteit"
                             />
                           </div>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                              <label className="block text-sm font-medium text-gray-700 mb-2">Current Price</label>
+                              <input
+                                type="text"
+                                value={editFormData.price || ''}
+                                onChange={(e) => setEditFormData(prev => ({ ...prev, price: e.target.value || null }))}
+                                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                                placeholder="e.g., €24.99"
+                              />
+                            </div>
+                            <div>
+                              <label className="block text-sm font-medium text-gray-700 mb-2">Original Price (if discounted)</label>
+                              <input
+                                type="text"
+                                value={editFormData.originalPrice || ''}
+                                onChange={(e) => setEditFormData(prev => ({ ...prev, originalPrice: e.target.value || null }))}
+                                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                                placeholder="e.g., €29.99"
+                              />
+                            </div>
+                          </div>
                           <div>
                             <label className="block text-sm font-medium text-gray-700 mb-2">Generated HTML</label>
                             <textarea
@@ -842,6 +866,22 @@ export default function SimpleAdminDashboard() {
                               <div>
                                 <strong>URL:</strong> {snippet.url}
                               </div>
+                              {(snippet.price || snippet.originalPrice) && (
+                                <div>
+                                  <strong>Price:</strong>{' '}
+                                  {snippet.price && (
+                                    <span className="text-green-600 font-medium">{snippet.price}</span>
+                                  )}
+                                  {snippet.originalPrice && snippet.originalPrice !== snippet.price && (
+                                    <span className="text-gray-400 line-through ml-2">{snippet.originalPrice}</span>
+                                  )}
+                                  {snippet.priceLastUpdated && (
+                                    <span className="text-xs text-gray-400 ml-2">
+                                      (Updated: {new Date(snippet.priceLastUpdated).toLocaleDateString()})
+                                    </span>
+                                  )}
+                                </div>
+                              )}
                               <div>
                                 <strong>Created:</strong> {new Date(snippet.createdAt).toLocaleDateString()}
                               </div>
