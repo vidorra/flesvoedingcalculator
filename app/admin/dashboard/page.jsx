@@ -920,13 +920,13 @@ export default function SimpleAdminDashboard() {
                           </div>
                           <div>
                             <label className="block text-sm font-medium text-gray-700 mb-2">
-                              {snippet.type === 'amazon' ? 'Generated HTML' : 'Bol.com Code Snippet'}
+                              {(snippet.type === 'amazon' || snippet.type === 'amazon_image') ? 'Generated HTML' : 'Bol.com Code Snippet'}
                             </label>
                             <textarea
                               value={editFormData.generatedHtml}
                               onChange={(e) => setEditFormData(prev => ({ ...prev, generatedHtml: e.target.value }))}
                               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary h-32"
-                              placeholder={snippet.type === 'amazon' ? 'Generated HTML will appear here...' : 'Paste your Bol.com affiliate code snippet here...'}
+                              placeholder={(snippet.type === 'amazon' || snippet.type === 'amazon_image') ? 'Generated HTML will appear here...' : 'Paste your Bol.com affiliate code snippet here...'}
                             />
                           </div>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -984,6 +984,14 @@ export default function SimpleAdminDashboard() {
                               }`}>
                                 {snippet.type === 'amazon' ? 'Amazon' : 'Bol.com'}
                               </span>
+                              {(snippet.price || snippet.originalPrice) && (
+                                <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs font-medium">
+                                  {snippet.originalPrice && snippet.price !== snippet.originalPrice 
+                                    ? `${snippet.price} (was ${snippet.originalPrice})`
+                                    : snippet.price || snippet.originalPrice
+                                  }
+                                </span>
+                              )}
                               <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                                 snippet.active 
                                   ? 'bg-green-100 text-green-700' 
