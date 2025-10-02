@@ -8,7 +8,11 @@
     "generatedHtml": "<div style=\"text-align: center\"><a href=\"https://www.bol.com/nl/nl/p/philips-avent-flessterilisator-damp-droger/9300000062682298/\" target=\"_blank\" rel=\"nofollow\"><img src=\"https://media.s-bol.com/NKX9XZWN3RGL/0RNmv15/550x707.jpg\" alt=\"Philips Avent Flessterilisator Damp & Droger\" width=\"300\" height=\"auto\" style=\"border-radius: 8px;\"></a><br><strong>Philips Avent Flessterilisator Damp & Droger</strong></div>",
     "active": true,
     "createdAt": "2025-09-29T13:07:58.390Z",
-    "updatedAt": "2025-09-29T13:07:58.391Z"
+    "updatedAt": "2025-10-02T09:00:10.699Z",
+    "price": "€105,99",
+    "originalPrice": null,
+    "currency": "EUR",
+    "priceLastUpdated": "2025-10-02T09:00:10.699Z"
   },
   {
     "id": "mam-sterilisator",
@@ -19,7 +23,11 @@
     "generatedHtml": "<div style=\"text-align: center\"><a href=\"https://www.bol.com/nl/nl/p/mam-sterilisator-grijs-bpa-vrij/9300000050911914/\" target=\"_blank\" rel=\"nofollow\"><img src=\"https://media.s-bol.com/N7353O6nX5Bm/pgx9EzV/550x698.jpg\" alt=\"MAM Sterilisator Grijs BPA-vrij\" width=\"300\" height=\"auto\" style=\"border-radius: 8px;\"></a><br><strong>MAM Sterilisator Grijs BPA-vrij</strong></div>",
     "active": true,
     "createdAt": "2025-09-29T13:07:58.391Z",
-    "updatedAt": "2025-09-29T13:07:58.391Z"
+    "updatedAt": "2025-10-02T09:00:14.182Z",
+    "price": "€241,50",
+    "originalPrice": null,
+    "currency": "EUR",
+    "priceLastUpdated": "2025-10-02T09:00:14.182Z"
   },
   {
     "id": "chicco-sterilisator",
@@ -30,7 +38,11 @@
     "generatedHtml": "<div style=\"text-align: center\"><a href=\"https://www.bol.com/nl/nl/p/chicco-3-in-1-sterilisator-sterilnatural/9300000013318604/\" target=\"_blank\" rel=\"nofollow\"><img src=\"https://media.s-bol.com/g4ZkAnyvBWwG/BgPjL0N/550x645.jpg\" alt=\"Chicco 3 In 1 Sterilisator Sterilnatural\" width=\"300\" height=\"auto\" style=\"border-radius: 8px;\"></a><br><strong>Chicco 3 In 1 Sterilisator Sterilnatural</strong></div>",
     "active": true,
     "createdAt": "2025-09-29T13:07:58.391Z",
-    "updatedAt": "2025-09-29T13:07:58.391Z"
+    "updatedAt": "2025-10-02T09:00:17.781Z",
+    "price": "€57,90",
+    "originalPrice": null,
+    "currency": "EUR",
+    "priceLastUpdated": "2025-10-02T09:00:17.781Z"
   },
   {
     "id": "lifejxwen-sterilizer",
@@ -41,7 +53,11 @@
     "generatedHtml": "<div style=\"text-align: center\"><a href=\"https://www.amazon.nl/-/en/dp/B0FN47MMXK?tag=flesvoedingca-21\" target=\"_blank\" rel=\"nofollow\" align=\"center\"><img src=\"https://m.media-amazon.com/images/I/517904cDV3L._AC_SL1500_.jpg\" class=\"cg-img-1\" alt=\"LIFEJXWEN 5-in-1 Electric Sterilizer for Baby Bottles, Sterilizing, Drying, Auto-Sterilizing & Drying, Warming Food, Keeping Bottles Warm, Capacity 8 Bottles, 24 Hours Germination Protection\" width=\"300\" height=\"auto\"></a></div>",
     "active": true,
     "createdAt": "2025-09-29T13:07:58.391Z",
-    "updatedAt": "2025-09-29T13:07:58.391Z"
+    "updatedAt": "2025-10-02T09:00:22.756Z",
+    "price": "36.",
+    "originalPrice": null,
+    "currency": "EUR",
+    "priceLastUpdated": "2025-10-02T09:00:22.756Z"
   },
   {
     "id": "microwave-sterilizer-bags",
@@ -96,6 +112,10 @@
     "generatedHtml": "<div style=\"text-align: center\"><a href=\"https://www.amazon.nl/-/en/dp/B08QRDVX4S?tag=flesvoedingca-21\" target=\"_blank\" rel=\"nofollow\" align=\"center\"><img src=\"https://m.media-amazon.com/images/I/61uaq4Sp-XL._AC_SL1500_.jpg\" class=\"cg-img-1\" alt=\"Dr. Brown's Options+ Anti-Colic Wide Mouth Bottle, 270 ml, Blue, Forest Bottle, 0 Months\" width=\"300\" height=\"auto\"></a></div>",
     "active": true,
     "createdAt": "2025-10-01T14:19:58.760Z",
-    "updatedAt": "2025-10-01T14:19:58.761Z"
+    "updatedAt": "2025-10-02T09:00:40.776Z",
+    "price": "13.",
+    "originalPrice": null,
+    "currency": "EUR",
+    "priceLastUpdated": "2025-10-02T09:00:40.776Z"
   }
 ]
