@@ -125,8 +125,10 @@ function loadSnippets() {
       fs.writeFileSync(SNIPPETS_FILE, JSON.stringify(defaultSnippets, null, 2))
       return defaultSnippets
     }
+    console.log(`📖 Loading snippets from file: ${SNIPPETS_FILE}`)
     const data = fs.readFileSync(SNIPPETS_FILE, 'utf8')
     const parsed = JSON.parse(data)
+    console.log(`📊 Loaded ${parsed.length} snippets from file`)
     return Array.isArray(parsed) ? parsed : []
   } catch (error) {
     console.error('Error loading snippets:', error)
@@ -136,8 +138,15 @@ function loadSnippets() {
 
 // Save snippets to file
 function saveSnippets(snippets) {
-  ensureDataDir()
-  fs.writeFileSync(SNIPPETS_FILE, JSON.stringify(snippets, null, 2))
+  try {
+    ensureDataDir()
+    console.log(`💾 Saving ${snippets.length} snippets to file: ${SNIPPETS_FILE}`)
+    fs.writeFileSync(SNIPPETS_FILE, JSON.stringify(snippets, null, 2))
+    console.log('✅ File saved successfully')
+  } catch (error) {
+    console.error('❌ Error saving snippets file:', error)
+    throw error
+  }
 }
 
 // GET - List all snippets with timeout protection
@@ -330,9 +339,24 @@ export async function DELETE(request) {
     
     // Remove the snippet
     const deletedSnippet = snippets.splice(snippetIndex, 1)[0]
+    console.log('Before save - snippets count:', snippets.length)
+    console.log('Deleting snippet:', deletedSnippet.id)
+    
     saveSnippets(snippets)
     
-    console.log('Deleted snippet:', deletedSnippet.id)
+    // Verify the file was updated by reading it back
+    const verifySnippets = loadSnippets()
+    console.log('After save - snippets count:', verifySnippets.length)
+    const stillExists = verifySnippets.find(s => s.id === deletedSnippet.id)
+    if (stillExists) {
+      console.error('🚨 DELETION FAILED: Snippet still exists after save!')
+      return NextResponse.json(
+        { message: 'Failed to delete snippet - still exists after save' },
+        { status: 500 }
+      )
+    }
+    
+    console.log('✅ Snippet successfully deleted:', deletedSnippet.id)
     
     return NextResponse.json({
       success: true,
