@@ -164,6 +164,12 @@ function extractBolProductId(url) {
 function generateBolSnippet(title, imageUrl, productUrl, priceData = null, width = 300) {
   const priceHtml = priceData ? generatePriceHtml(priceData.price, priceData.originalPrice) : ''
   
+  // Extract product ID from URL for the code snippet
+  const productId = extractBolProductId(productUrl)
+  
+  // Generate Bol.com JavaScript code snippet
+  const codeSnippet = `<script src="https://partnerprogramma.bol.com/partner/productlinkjs/?id=${productId}&type=1&subid=&size=medium"></script>`
+  
   // Generate the new format with full code snippet after title
   return `<div class="bg-white rounded-xl border border-gray-200 p-4">
     <div class="text-center">
@@ -172,6 +178,10 @@ function generateBolSnippet(title, imageUrl, productUrl, priceData = null, width
           <img src="${imageUrl}" alt="${title}" class="mx-auto rounded-lg max-w-full h-auto" style="max-height: 200px;">
         </div>
         <h4 class="font-medium text-primary text-sm mb-2 line-clamp-2 min-h-[40px] flex items-center">${title}</h4>
+        <div class="mt-2 mb-3 p-3 bg-gray-100 rounded-lg text-left">
+          <h5 class="text-xs font-medium text-gray-700 mb-2">Bol.com Code Snippet:</h5>
+          <code class="text-xs text-gray-600 break-all block">${codeSnippet}</code>
+        </div>
         ${priceHtml}
         <div class="bg-primary text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors inline-block">Bekijk op bol.com →</div>
       </a>
