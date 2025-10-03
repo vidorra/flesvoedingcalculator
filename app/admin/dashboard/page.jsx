@@ -1210,14 +1210,14 @@ export default function SimpleAdminDashboard() {
                                 )}
                                 
                                 {/* Code View - only show when not hiding details */}
-                                {!showOnlyPrice && snippet.generatedHtml && (
+                                {!showOnlyPrice && (snippet.generatedHtml || snippet.codeSnippet) && (
                                   <details className="mt-2">
                                     <summary className="cursor-pointer text-primary hover:text-primary/80">
-                                      View code snippet code
+                                      {snippet.type === 'bol' && snippet.codeSnippet ? 'View Bol.com Code Snippet' : 'View HTML code snippet'}
                                     </summary>
                                     <div className="mt-2 p-3 bg-gray-50 rounded border">
                                       <code className="text-xs text-gray-600 break-all">
-                                        {snippet.generatedHtml}
+                                        {snippet.type === 'bol' && snippet.codeSnippet ? snippet.codeSnippet : snippet.generatedHtml}
                                       </code>
                                     </div>
                                   </details>
