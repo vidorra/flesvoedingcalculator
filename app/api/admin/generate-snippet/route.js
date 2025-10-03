@@ -168,7 +168,8 @@ function generateBolSnippet(title, imageUrl, productUrl, priceData = null, width
   const productId = extractBolProductId(productUrl)
   
   // Generate Bol.com JavaScript code snippet
-  const codeSnippet = `<script src="https://partnerprogramma.bol.com/partner/productlinkjs/?id=${productId}&type=1&subid=&size=medium"></script>`
+  const uniqueId = `bol_${Date.now()}`
+  const codeSnippet = `<script type="text/javascript">var bol_sitebar_v2={"id":"${uniqueId}", "baseUrl":"partner.bol.com","productId":"${productId}","familyId":"","siteId":"1472968","target":true,"rating":true,"price":true,"deliveryDescription":true,"button":false,"linkName":"${encodeURIComponent(title)}","linkSubId":""};</script><script type="text/javascript" src="https://partner.bol.com/promotion/static/js/partnerProductlinkV2.js" id="${uniqueId}"></script>`
   
   // Generate the new format with full code snippet after title
   return `<div class="bg-white rounded-xl border border-gray-200 p-4">
