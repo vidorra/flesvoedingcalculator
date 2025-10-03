@@ -163,7 +163,20 @@ function extractBolProductId(url) {
 // Generate HTML snippet for Bol.com product
 function generateBolSnippet(title, imageUrl, productUrl, priceData = null, width = 300) {
   const priceHtml = priceData ? generatePriceHtml(priceData.price, priceData.originalPrice) : ''
-  return `<div style="text-align: center"><a href="${productUrl}" target="_blank" rel="nofollow"><img src="${imageUrl}" alt="${title}" width="${width}" height="auto" style="border-radius: 8px;"></a><br><strong>${title}</strong>${priceHtml}</div>`
+  
+  // Generate the new format with full code snippet after title
+  return `<div class="bg-white rounded-xl border border-gray-200 p-4">
+    <div class="text-center">
+      <a href="${productUrl}" target="_blank" rel="nofollow noopener" class="block hover:opacity-90 transition-opacity">
+        <div class="mb-3">
+          <img src="${imageUrl}" alt="${title}" class="mx-auto rounded-lg max-w-full h-auto" style="max-height: 200px;">
+        </div>
+        <h4 class="font-medium text-primary text-sm mb-2 line-clamp-2 min-h-[40px] flex items-center">${title}</h4>
+        ${priceHtml}
+        <div class="bg-primary text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors inline-block">Bekijk op bol.com →</div>
+      </a>
+    </div>
+  </div>`
 }
 
 // POST - Generate snippet from URL
