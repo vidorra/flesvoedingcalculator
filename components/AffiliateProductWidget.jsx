@@ -81,7 +81,7 @@ export default function AffiliateProductWidget({
     loadProducts()
   }, [pageId, category, productIds])
   
-  // Debug log for deployment verification - v5 admin system integration
+  // Debug log for deployment verification - v6 admin system integration
   useEffect(() => {
     if (typeof window !== 'undefined' && products.length > 0 && !loading) {
       const source = pageId ? `page "${pageId}"` : `category "${category}"`
