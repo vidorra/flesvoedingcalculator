@@ -244,11 +244,20 @@ export default function AffiliateProductWidget({
                       min-height: 200px;
                     }
                     
-                    /* Hide everything except image, title, and price */
+                    /* Hide everything except price - more aggressive hiding */
                     .bol-script-container .rating,
                     .bol-script-container .product-delivery,
+                    .bol-script-container .delivery,
+                    .bol-script-container .deliverytext,
+                    .bol-script-container .addtocart,
+                    .bol-script-container .button,
+                    .bol-script-container .btn,
                     .bol-script-container img[width="1"],
-                    .bol-script-container script {
+                    .bol-script-container script,
+                    .bol-script-container .description,
+                    .bol-script-container .product-info,
+                    .bol-script-container .specs,
+                    .bol-script-container .features {
                       display: none !important;
                     }
                     
