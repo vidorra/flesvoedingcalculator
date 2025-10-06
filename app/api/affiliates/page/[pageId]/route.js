@@ -261,7 +261,8 @@ export async function GET(request, { params }) {
           originalPrice: snippet.originalPrice,
           currency: snippet.currency,
           priceLastUpdated: snippet.priceLastUpdated,
-          type: 'bol_iframe', // Convert to frontend format
+          type: 'bol_snippet', // Changed to show JavaScript code widget
+          generatedHtml: snippet.generatedHtml, // Include the HTML for the widget
           data: {
             title: snippet.name,
             fallbackImage: extractImageUrl(snippet.generatedHtml) || 'https://via.placeholder.com/200x200?text=Product',
