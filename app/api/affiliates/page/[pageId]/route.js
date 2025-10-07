@@ -4,6 +4,7 @@ import path from 'path'
 
 // Force dynamic route - prevent caching issues
 export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
 const DATA_DIR = path.join(process.cwd(), 'data', 'admin')
 const PAGE_SNIPPETS_FILE = path.join(DATA_DIR, 'page-snippets.json')
