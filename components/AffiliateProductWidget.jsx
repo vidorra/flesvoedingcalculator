@@ -240,6 +240,21 @@ export default function AffiliateProductWidget({
                     dangerouslySetInnerHTML={{ __html: `<!-- BOL.COM SNIPPET START for ${product.id} -->${product.generatedHtml || product.data?.html}<!-- BOL.COM SNIPPET END for ${product.id} -->` }}
                   />
                   
+                  {/* Fallback content with title and button (shown if Bol.com script doesn't load) */}
+                  <div className="fallback-content text-center">
+                    <h4 className="font-medium text-primary text-sm mb-2 line-clamp-2 min-h-[40px] flex items-center justify-center">
+                      {product.name || product.data?.title}
+                    </h4>
+                    <a 
+                      href={product.url || product.data?.productUrl}
+                      target="_blank"
+                      rel="nofollow noopener"
+                      className="bg-primary text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors inline-block"
+                    >
+                      Bekijk op bol.com →
+                    </a>
+                  </div>
+                  
                   {/* Custom CSS to style the Bol.com widget - enhanced for new format */}
                   <style jsx>{`
                     .bol-script-container {
@@ -327,6 +342,22 @@ export default function AffiliateProductWidget({
                     /* Ensure loader is hidden when content loads */
                     .bol-script-container div[id*="Bbol_"] {
                       display: none !important;
+                    }
+                    
+                    /* Fallback content styling */
+                    .bol-script-container .fallback-content {
+                      display: block;
+                      padding: 16px 0;
+                    }
+                    
+                    /* Hide fallback when Bol.com content loads successfully */
+                    .bol-script-container div[id*="PLbol_"]:not(:empty) ~ .fallback-content {
+                      display: none !important;
+                    }
+                    
+                    /* Show fallback when Bol.com content is empty */
+                    .bol-script-container div[id*="PLbol_"]:empty ~ .fallback-content {
+                      display: block !important;
                     }
                   `}</style>
                 </div>
