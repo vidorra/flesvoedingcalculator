@@ -109,8 +109,24 @@ function loadSnippets() {
   
   if (fs.existsSync(SNIPPETS_FILE)) {
     const fileStats = fs.statSync(SNIPPETS_FILE)
-    if (fileStats.mtime < forceRecreateAfter) {
-      console.log('🔄 Force recreating snippets.json - outdated file detected')
+    const isOutdated = fileStats.mtime < forceRecreateAfter
+    
+    // Also check if file contains old HTML instead of JavaScript widgets
+    try {
+      const fileContent = fs.readFileSync(SNIPPETS_FILE, 'utf8')
+      const data = JSON.parse(fileContent)
+      const hasJavaScriptWidgets = data.some(snippet => 
+        snippet.type === 'bol' && 
+        snippet.generatedHtml && 
+        snippet.generatedHtml.includes('bol_sitebar_v2')
+      )
+      
+      if (isOutdated || !hasJavaScriptWidgets) {
+        console.log('🔄 Force recreating snippets.json - outdated or missing JavaScript widgets')
+        fs.unlinkSync(SNIPPETS_FILE)
+      }
+    } catch (error) {
+      console.log('🔄 Force recreating snippets.json - corrupted file')
       fs.unlinkSync(SNIPPETS_FILE)
     }
   }
