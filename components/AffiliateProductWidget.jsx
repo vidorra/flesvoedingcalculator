@@ -240,14 +240,25 @@ export default function AffiliateProductWidget({
                     dangerouslySetInnerHTML={{ __html: `<!-- BOL.COM SNIPPET START for ${product.id} -->${product.generatedHtml || product.data?.html}<!-- BOL.COM SNIPPET END for ${product.id} -->` }}
                   />
                   
-                  {/* Custom CSS to style the Bol.com widget */}
+                  {/* Custom CSS to style the Bol.com widget - enhanced for new format */}
                   <style jsx>{`
                     .bol-script-container {
-                      min-height: 200px;
+                      min-height: 250px;
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
                     }
                     
-                    /* Hide everything except price - more aggressive hiding */
-                    .bol-script-container .rating,
+                    /* Style the media container */
+                    .bol-script-container .media {
+                      width: 100%;
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                      gap: 12px;
+                    }
+                    
+                    /* Hide delivery info and buttons - keep only essentials */
                     .bol-script-container .product-delivery,
                     .bol-script-container .delivery,
                     .bol-script-container .deliverytext,
@@ -255,50 +266,67 @@ export default function AffiliateProductWidget({
                     .bol-script-container .button,
                     .bol-script-container .btn,
                     .bol-script-container img[width="1"],
-                    .bol-script-container script,
-                    .bol-script-container .description,
-                    .bol-script-container .product-info,
-                    .bol-script-container .specs,
-                    .bol-script-container .features {
+                    .bol-script-container .rating {
                       display: none !important;
                     }
                     
-                    /* Style the price prominently */
-                    .bol-script-container .price-bol {
-                      display: block;
-                      font-size: 1.25rem;
-                      font-weight: bold;
-                      color: #16a34a;
-                      margin: 8px 0;
-                      text-align: center;
-                    }
-                    
-                    /* Style the product title */
-                    .bol-script-container .product_title {
-                      display: block;
-                      font-weight: 500;
-                      color: #059669;
-                      text-decoration: none;
-                      margin-bottom: 8px;
-                      font-size: 0.875rem;
-                      line-height: 1.25rem;
-                    }
-                    
-                    /* Center the content */
-                    .bol-script-container .right-div-preview {
-                      text-align: center;
-                    }
-                    
                     /* Style the image container */
+                    .bol-script-container .media__img,
                     .bol-script-container .left-div {
                       text-align: center;
                       margin-bottom: 12px;
                     }
                     
                     .bol-script-container img {
-                      max-width: 100%;
+                      max-width: 180px;
+                      max-height: 180px;
                       height: auto;
                       border-radius: 8px;
+                      object-fit: contain;
+                    }
+                    
+                    /* Style the content body */
+                    .bol-script-container .media__body,
+                    .bol-script-container .right-div-preview {
+                      text-align: center;
+                      width: 100%;
+                    }
+                    
+                    /* Style the product title */
+                    .bol-script-container .product_title {
+                      display: block !important;
+                      font-weight: 600;
+                      color: #0f766e;
+                      text-decoration: none;
+                      margin-bottom: 8px;
+                      font-size: 0.875rem;
+                      line-height: 1.25rem;
+                      text-align: center;
+                    }
+                    
+                    .bol-script-container .product_title:hover {
+                      color: #0d9488;
+                      text-decoration: underline;
+                    }
+                    
+                    /* Style the price prominently */
+                    .bol-script-container .price-bol {
+                      display: block !important;
+                      font-size: 1.5rem;
+                      font-weight: bold;
+                      color: #059669;
+                      margin: 12px 0;
+                      text-align: center;
+                    }
+                    
+                    .bol-script-container .price-fraction {
+                      font-size: 1rem;
+                      vertical-align: super;
+                    }
+                    
+                    /* Ensure loader is hidden when content loads */
+                    .bol-script-container div[id*="Bbol_"] {
+                      display: none !important;
                     }
                   `}</style>
                 </div>
