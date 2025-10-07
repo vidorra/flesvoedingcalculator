@@ -37,7 +37,7 @@ export default function AffiliateProductWidget({
             setTimeout(() => reject(new Error('API timeout')), 8000)
           )
           
-          const apiUrl = `/api/affiliates/page/${pageId}/`
+          const apiUrl = `/api/affiliates/page/${pageId}`
           console.log(`🔍 AffiliateProductWidget: Fetching from: ${apiUrl}`)
           const fetchPromise = fetch(apiUrl)
           
