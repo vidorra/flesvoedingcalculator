@@ -235,7 +235,7 @@ export default function AffiliateProductWidget({
                   {/* Container for Bol.com script execution */}
                   <div 
                     className="bol-widget-content"
-                    dangerouslySetInnerHTML={{ __html: product.generatedHtml || product.data?.html }}
+                    dangerouslySetInnerHTML={{ __html: `<!-- BOL.COM SNIPPET START for ${product.id} -->${product.generatedHtml || product.data?.html}<!-- BOL.COM SNIPPET END for ${product.id} -->` }}
                   />
                   
                   {/* Custom CSS to style the Bol.com widget */}
