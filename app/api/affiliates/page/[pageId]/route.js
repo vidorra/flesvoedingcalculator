@@ -20,6 +20,20 @@ function ensureDataDir() {
 // Load page snippets with auto-creation
 function loadPageSnippets() {
   ensureDataDir()
+  
+  // Force recreation if file is older than October 7, 2025 (today's deployment)
+  const forceRecreateAfter = new Date('2025-10-07T12:00:00Z')
+  let shouldRecreate = false
+  
+  if (fs.existsSync(PAGE_SNIPPETS_FILE)) {
+    const fileStats = fs.statSync(PAGE_SNIPPETS_FILE)
+    if (fileStats.mtime < forceRecreateAfter) {
+      console.log('🔄 Force recreating page-snippets.json - outdated file detected')
+      fs.unlinkSync(PAGE_SNIPPETS_FILE)
+      shouldRecreate = true
+    }
+  }
+  
   if (!fs.existsSync(PAGE_SNIPPETS_FILE)) {
     console.log('Creating page-snippets.json with default data in production')
     // Initialize with default page-snippet mappings
@@ -89,6 +103,18 @@ function loadPageSnippets() {
 // Load snippets with auto-creation (matches admin-snippets logic)
 function loadSnippets() {
   ensureDataDir()
+  
+  // Force recreation if file is older than October 7, 2025 (today's deployment)
+  const forceRecreateAfter = new Date('2025-10-07T12:00:00Z')
+  
+  if (fs.existsSync(SNIPPETS_FILE)) {
+    const fileStats = fs.statSync(SNIPPETS_FILE)
+    if (fileStats.mtime < forceRecreateAfter) {
+      console.log('🔄 Force recreating snippets.json - outdated file detected')
+      fs.unlinkSync(SNIPPETS_FILE)
+    }
+  }
+  
   if (!fs.existsSync(SNIPPETS_FILE)) {
     console.log('Creating snippets.json with default data in production')
     // Initialize with complete 9-snippet dataset (prevents data loss)
@@ -214,6 +240,13 @@ function loadSnippets() {
 
 // GET - Get affiliate snippets for a specific page
 export async function GET(request, { params }) {
+  // Force cache clear with headers
+  const headers = {
+    'Cache-Control': 'no-cache, no-store, must-revalidate',
+    'Pragma': 'no-cache',
+    'Expires': '0'
+  }
+  
   try {
     const pageId = params.pageId
     const pageSnippets = loadPageSnippets()
@@ -278,13 +311,13 @@ export async function GET(request, { params }) {
     return NextResponse.json({
       success: true,
       snippets: frontendSnippets
-    })
+    }, { headers })
 
   } catch (error) {
     console.error('Failed to load page affiliates:', error)
     return NextResponse.json(
       { success: false, snippets: [] },
-      { status: 200 } // Return 200 with empty array to prevent frontend errors
+      { status: 200, headers } // Return 200 with empty array to prevent frontend errors
     )
   }
 }
