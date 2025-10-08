@@ -385,33 +385,16 @@ export default function FlessenSteriligerenPage() {
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Test Bol.com Widget</h2>
               <div className="bg-white rounded-xl border border-gray-200 p-4">
-                <div id="bol_1759937475554"></div>
-                <Script
-                  id="bol-config-script"
-                  strategy="afterInteractive"
+                <div 
+                  id="bol_1759937475554"
                   dangerouslySetInnerHTML={{
                     __html: `
-                      var bol_sitebar_v2 = {
-                        "id": "bol_1759937475554",
-                        "baseUrl": "partner.bol.com",
-                        "productId": "9300000062682298",
-                        "familyId": "",
-                        "siteId": "1472968",
-                        "target": true,
-                        "rating": true,
-                        "price": true,
-                        "deliveryDescription": true,
-                        "button": true,
-                        "linkName": "Philips Avent Flessterilisator Damp Droger",
-                        "linkSubId": ""
-                      };
+                      <script type="text/javascript">
+                        var bol_sitebar_v2={"id":"bol_1759937475554", "baseUrl":"partner.bol.com","productId":"9300000062682298","familyId":"","siteId":"1472968","target":true,"rating":true,"price":true,"deliveryDescription":true,"button":false,"linkName":"Philips%20Avent%20Flessterilisator%20Damp%20Droger%20-%20D...","linkSubId":""};
+                      </script>
+                      <script type="text/javascript" src="https://partner.bol.com/promotion/static/js/partnerProductlinkV2.js" id="bol_1759937475554"></script>
                     `
                   }}
-                />
-                <Script
-                  id="bol-widget-script"
-                  src="https://partner.bol.com/promotion/static/js/partnerProductlinkV2.js"
-                  strategy="afterInteractive"
                 />
               </div>
             </div>
