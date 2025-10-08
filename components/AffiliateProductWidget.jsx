@@ -39,7 +39,7 @@ export default function AffiliateProductWidget({
           
           // Add cache-busting for production deployment propagation
           const timestamp = Date.now()
-          const apiUrl = `/api/affiliates/page/${pageId}?v=${timestamp}`
+          const apiUrl = `/api/affiliates/page/${pageId}/?v=${timestamp}`
           console.log(`🔍 AffiliateProductWidget: Fetching from: ${apiUrl}`)
           const fetchPromise = fetch(apiUrl)
           
