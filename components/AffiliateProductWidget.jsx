@@ -266,19 +266,9 @@ export default function AffiliateProductWidget({
             {(product.type === 'bol_snippet' || product.type === 'bol_script') && (
               <div className="bg-white rounded-xl border border-gray-200 p-4">
                 <div className="bol-script-container" data-product-id={product.id}>
-                  {/* Container for Bol.com script execution */}
-                  <div 
-                    className="bol-widget-content"
-                    dangerouslySetInnerHTML={{ __html: `<!-- BOL.COM SNIPPET START for ${product.id} -->${product.generatedHtml || product.data?.html}<!-- BOL.COM SNIPPET END for ${product.id} -->` }}
-                  />
-                  
-                  {/* Product title - Always shown */}
-                  <h4 className="font-medium text-primary text-sm mb-4 text-center">
-                    {product.name || product.data?.title}
-                  </h4>
-                  
-                  {/* Fallback content with image and button (shown if Bol.com script doesn't load) */}
+                  {/* Fallback content with image, title, Bol.com widget, and button */}
                   <div className="fallback-content text-center">
+                    {/* Product image */}
                     <div className="mb-3">
                       <img
                         src={product.data?.fallbackImage || 'https://media.s-bol.com/NKX9XZWN3RGL/0RNmv15/550x707.jpg'}
@@ -291,6 +281,19 @@ export default function AffiliateProductWidget({
                         }}
                       />
                     </div>
+                    
+                    {/* Product title */}
+                    <h4 className="font-medium text-primary text-sm mb-4 text-center">
+                      {product.name || product.data?.title}
+                    </h4>
+                    
+                    {/* Container for Bol.com script execution */}
+                    <div 
+                      className="bol-widget-content"
+                      dangerouslySetInnerHTML={{ __html: `<!-- BOL.COM SNIPPET START for ${product.id} -->${product.generatedHtml || product.data?.html}<!-- BOL.COM SNIPPET END for ${product.id} -->` }}
+                    />
+                    
+                    {/* Fallback button (shown if Bol.com script doesn't load) */}
                     <a 
                       href={product.url || product.data?.productUrl}
                       target="_blank"
