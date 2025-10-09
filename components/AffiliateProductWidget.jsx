@@ -32,7 +32,7 @@ export default function AffiliateProductWidget({
         try {
           console.log(`🔍 AffiliateProductWidget: Loading admin data for pageId: ${pageId}`)
           
-          // Create timeout promise (8 seconds for better production reliability)
+          // Create longer timeout (8 seconds) to prevent premature fallback
           const timeoutPromise = new Promise((_, reject) => 
             setTimeout(() => reject(new Error('API timeout')), 8000)
           )
