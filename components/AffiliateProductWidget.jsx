@@ -32,9 +32,9 @@ export default function AffiliateProductWidget({
         try {
           console.log(`🔍 AffiliateProductWidget: Loading admin data for pageId: ${pageId}`)
           
-          // Create longer timeout (8 seconds) to prevent premature fallback
+          // Create very long timeout (15 seconds) for production reliability
           const timeoutPromise = new Promise((_, reject) => 
-            setTimeout(() => reject(new Error('API timeout')), 8000)
+            setTimeout(() => reject(new Error('API timeout')), 15000)
           )
           
           // Add cache-busting for production deployment propagation
@@ -53,17 +53,49 @@ export default function AffiliateProductWidget({
             if (data.success && data.snippets && data.snippets.length > 0) {
               console.log(`✅ AffiliateProductWidget: Successfully loaded ${data.snippets.length} admin snippets`)
               console.log(`🔍 All loaded products:`, data.snippets.map(p => `${p.id} (${p.name}) - ${p.type} - active: ${p.active}`))
+              
+              // CRITICAL: Force load success even if response seems delayed
+              console.log(`🚀 PRODUCTION DEBUG: Setting products array and loading=false immediately`)
               setProducts(data.snippets)
               setLoading(false)
+              
+              // Additional debug for production
+              if (typeof window !== 'undefined') {
+                window.AFFILIATE_DEBUG = {
+                  pageId,
+                  apiUrl,
+                  loadedSnippets: data.snippets.length,
+                  timestamp: new Date().toISOString()
+                }
+                console.log(`🔧 PRODUCTION DEBUG: Set window.AFFILIATE_DEBUG`, window.AFFILIATE_DEBUG)
+              }
               return
             } else {
-              console.warn(`⚠️ AffiliateProductWidget: Admin API returned no snippets. Falling back to static data.`)
+              console.warn(`⚠️ AffiliateProductWidget: Admin API returned no snippets. Data:`, data)
+              console.warn(`⚠️ PRODUCTION DEBUG: Falling back to static data due to API response structure`)
             }
           } else {
             console.warn(`⚠️ AffiliateProductWidget: API request failed with status: ${response.status}`)
+            console.warn(`⚠️ PRODUCTION DEBUG: HTTP error - falling back to static data`)
           }
         } catch (error) {
-          console.error('❌ AffiliateProductWidget: Failed to load admin snippets (timeout or connection error), falling back to static data:', error.message)
+          console.error('❌ AffiliateProductWidget: Failed to load admin snippets, falling back to static data:', error.message)
+          console.error('❌ PRODUCTION DEBUG: Error details:', {
+            errorMessage: error.message,
+            errorType: error.constructor.name,
+            pageId,
+            apiUrl: `/api/affiliates/page/${pageId}/?v=${Date.now()}`,
+            timestamp: new Date().toISOString()
+          })
+          
+          // Set debug info on error too
+          if (typeof window !== 'undefined') {
+            window.AFFILIATE_ERROR = {
+              pageId,
+              error: error.message,
+              timestamp: new Date().toISOString()
+            }
+          }
         }
       }
       
