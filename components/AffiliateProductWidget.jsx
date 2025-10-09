@@ -327,37 +327,64 @@ export default function AffiliateProductWidget({
                       display: none !important;
                     }
                     
-                    /* Hide the image container completely */
+                    /* Hide ALL image containers - target specific Bol.com structure */
                     .bol-script-container .media__img,
                     .bol-script-container .left-div,
-                    .bol-script-container .imgwrap_tout {
+                    .bol-script-container .imgwrap_tout,
+                    .bol-script-container .left-div-id,
+                    .bol-script-container div[class*="left-div"],
+                    .bol-script-container div[id*="left-div"] {
                       display: none !important;
                     }
                     
-                    /* Hide images in general except rating stars */
-                    .bol-script-container img:not([class*="star"]) {
+                    /* Hide ALL images except rating stars - more aggressive */
+                    .bol-script-container img,
+                    .bol-script-container img[id="preview-image"],
+                    .bol-script-container img[class*="aspect-ratio"] {
+                      display: none !important;
+                    }
+                    
+                    /* Force hide any image links */
+                    .bol-script-container a[data-test*="_imageLink"],
+                    .bol-script-container a[title*="Philips"] img {
                       display: none !important;
                     }
                     
                     /* Style the content body */
                     .bol-script-container .media__body,
-                    .bol-script-container .right-div-preview {
+                    .bol-script-container .right-div-preview,
+                    .bol-script-container div[id*="right-div"] {
                       text-align: center;
                       width: 100%;
                     }
                     
-                    /* Hide the product title */
+                    /* Hide ALL product titles and links - more aggressive */
                     .bol-script-container .product_title,
-                    .bol-script-container .product_title a {
+                    .bol-script-container .product_title a,
+                    .bol-script-container span[class*="product_title"],
+                    .bol-script-container span[id*="productLinkTekst"],
+                    .bol-script-container a[data-test*="_clickLink"],
+                    .bol-script-container a[data-test*="_name"] {
                       display: none !important;
                     }
                     
-                    /* Show and style the rating */
+                    /* Show and style the rating - override image hiding for rating */
                     .bol-script-container .rating,
-                    .bol-script-container .star-rating {
+                    .bol-script-container .star-rating,
+                    .bol-script-container span[data-test*="_rating"],
+                    .bol-script-container div[class*="star-rating"] {
                       display: block !important;
                       text-align: center;
                       margin-bottom: 8px;
+                    }
+                    
+                    /* Allow rating star images to show */
+                    .bol-script-container .rating img,
+                    .bol-script-container .star-rating img,
+                    .bol-script-container span[data-test*="_rating"] img {
+                      display: inline !important;
+                      width: auto !important;
+                      height: 16px !important;
                     }
                     
                     /* Style the price prominently */
@@ -370,13 +397,26 @@ export default function AffiliateProductWidget({
                       text-align: center;
                     }
                     
-                    /* Show and style delivery info */
-                    .bol-script-container .product-delivery {
+                    /* Show and style delivery info - target specific selectors */
+                    .bol-script-container .product-delivery,
+                    .bol-script-container div[data-test*="_deliveryDescription"],
+                    .bol-script-container div[class*="product-delivery"] {
                       display: block !important;
                       font-size: 0.875rem;
                       color: #374151;
                       text-align: center;
                       margin-top: 8px;
+                    }
+                    
+                    /* Enhance price display with specific targeting */
+                    .bol-script-container span[data-test*="_price"],
+                    .bol-script-container span[class*="price-bol"] {
+                      display: block !important;
+                      font-size: 1.5rem;
+                      font-weight: bold;
+                      color: #059669;
+                      margin: 12px 0;
+                      text-align: center;
                     }
                     
                     .bol-script-container .price-fraction {
