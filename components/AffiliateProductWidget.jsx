@@ -272,7 +272,12 @@ export default function AffiliateProductWidget({
                     dangerouslySetInnerHTML={{ __html: `<!-- BOL.COM SNIPPET START for ${product.id} -->${product.generatedHtml || product.data?.html}<!-- BOL.COM SNIPPET END for ${product.id} -->` }}
                   />
                   
-                  {/* Fallback content with title, image and button (shown if Bol.com script doesn't load) */}
+                  {/* Product title - Always shown */}
+                  <h4 className="font-medium text-primary text-sm mb-4 text-center">
+                    {product.name || product.data?.title}
+                  </h4>
+                  
+                  {/* Fallback content with image and button (shown if Bol.com script doesn't load) */}
                   <div className="fallback-content text-center">
                     <div className="mb-3">
                       <img
@@ -286,9 +291,6 @@ export default function AffiliateProductWidget({
                         }}
                       />
                     </div>
-                    <h4 className="font-medium text-primary text-sm mb-2 line-clamp-2 min-h-[40px] flex items-center justify-center">
-                      {product.name || product.data?.title}
-                    </h4>
                     <a 
                       href={product.url || product.data?.productUrl}
                       target="_blank"
@@ -317,31 +319,24 @@ export default function AffiliateProductWidget({
                       gap: 12px;
                     }
                     
-                    /* Hide delivery info and buttons - keep only essentials */
-                    .bol-script-container .product-delivery,
-                    .bol-script-container .delivery,
-                    .bol-script-container .deliverytext,
+                    /* Hide elements we don't want - keep only rating, price, delivery */
                     .bol-script-container .addtocart,
                     .bol-script-container .button,
                     .bol-script-container .btn,
-                    .bol-script-container img[width="1"],
-                    .bol-script-container .rating {
+                    .bol-script-container img[width="1"] {
                       display: none !important;
                     }
                     
-                    /* Style the image container */
+                    /* Hide the image container completely */
                     .bol-script-container .media__img,
-                    .bol-script-container .left-div {
-                      text-align: center;
-                      margin-bottom: 12px;
+                    .bol-script-container .left-div,
+                    .bol-script-container .imgwrap_tout {
+                      display: none !important;
                     }
                     
-                    .bol-script-container img {
-                      max-width: 180px;
-                      max-height: 180px;
-                      height: auto;
-                      border-radius: 8px;
-                      object-fit: contain;
+                    /* Hide images in general except rating stars */
+                    .bol-script-container img:not([class*="star"]) {
+                      display: none !important;
                     }
                     
                     /* Style the content body */
@@ -351,21 +346,18 @@ export default function AffiliateProductWidget({
                       width: 100%;
                     }
                     
-                    /* Style the product title */
-                    .bol-script-container .product_title {
-                      display: block !important;
-                      font-weight: 600;
-                      color: #0f766e;
-                      text-decoration: none;
-                      margin-bottom: 8px;
-                      font-size: 0.875rem;
-                      line-height: 1.25rem;
-                      text-align: center;
+                    /* Hide the product title */
+                    .bol-script-container .product_title,
+                    .bol-script-container .product_title a {
+                      display: none !important;
                     }
                     
-                    .bol-script-container .product_title:hover {
-                      color: #0d9488;
-                      text-decoration: underline;
+                    /* Show and style the rating */
+                    .bol-script-container .rating,
+                    .bol-script-container .star-rating {
+                      display: block !important;
+                      text-align: center;
+                      margin-bottom: 8px;
                     }
                     
                     /* Style the price prominently */
@@ -376,6 +368,15 @@ export default function AffiliateProductWidget({
                       color: #059669;
                       margin: 12px 0;
                       text-align: center;
+                    }
+                    
+                    /* Show and style delivery info */
+                    .bol-script-container .product-delivery {
+                      display: block !important;
+                      font-size: 0.875rem;
+                      color: #374151;
+                      text-align: center;
+                      margin-top: 8px;
                     }
                     
                     .bol-script-container .price-fraction {
@@ -401,6 +402,13 @@ export default function AffiliateProductWidget({
                     
                     /* Show fallback when Bol.com content is empty */
                     .bol-script-container div[id*="PLbol_"]:empty ~ .fallback-content {
+                      display: block !important;
+                    }
+                    
+                    /* Ensure the product title is always visible above Bol.com content */
+                    .bol-script-container h4 {
+                      position: relative;
+                      z-index: 10;
                       display: block !important;
                     }
                   `}</style>
