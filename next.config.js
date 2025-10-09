@@ -17,6 +17,10 @@ const nextConfig = {
       {
         source: '/sitemap.xml',
         destination: '/api/sitemap'
+      },
+      {
+        source: '/bol-test.html',
+        destination: '/bol-test.html'
       }
     ]
   },
@@ -32,6 +36,19 @@ const nextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, max-age=86400'
+          }
+        ]
+      },
+      {
+        source: '/bol-test.html',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'text/html; charset=UTF-8'
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600'
           }
         ]
       }
