@@ -33,4 +33,10 @@ RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Serve static files directly without redirect
 RewriteCond %{REQUEST_FILENAME} -f
-RewriteRule ^(robots\.txt|sitemap\.xml|ads\.txt|favicon\.ico)$ - [L]
+RewriteRule ^(robots\.txt|sitemap\.xml|ads\.txt|favicon\.ico|bol-test\.html)$ - [L]
+
+# Ensure HTML files are served with correct content type
+<Files "*.html">
+    Header set Content-Type "text/html; charset=UTF-8"
+    Header set Cache-Control "public, max-age=3600"
+</Files>
