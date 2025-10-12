@@ -386,18 +386,9 @@ export default function FlessenSteriligerenPage() {
               <h2 className="text-lg font-medium text-primary mb-4">Test Bol.com Widget</h2>
               <div className="bg-white rounded-xl border border-gray-200 p-4">
                 <div className="bol-script-container" data-product-id="test-bol-widget">
-                  <div 
-                    className="bol-widget-content"
-                    dangerouslySetInnerHTML={{ 
-                      __html: `
-                        <script type="text/javascript">var bol_sitebar_v2={"id":"bol_1759937475554", "baseUrl":"partner.bol.com","productId":"9300000062682298","familyId":"","siteId":"1472968","target":true,"rating":true,"price":true,"deliveryDescription":true,"button":false,"linkName":"Philips%20Avent%20Flessterilisator%20Damp%20Droger%20-%20D...","linkSubId":""};</script>
-                        <script type="text/javascript" src="https://partner.bol.com/promotion/static/js/partnerProductlinkV2.js" id="bol_1759937475554"></script>
-                      `
-                    }}
-                  />
-                  
-                  {/* Fallback content with title, image and button */}
+                  {/* Fallback content with image, title, bol-widget-content, and button */}
                   <div className="fallback-content text-center">
+                    {/* Product image */}
                     <div className="mb-3">
                       <img
                         src="https://media.s-bol.com/NKX9XZWN3RGL/0RNmv15/550x707.jpg"
@@ -406,9 +397,24 @@ export default function FlessenSteriligerenPage() {
                         style={{ maxHeight: '200px' }}
                       />
                     </div>
+                    
+                    {/* Product title */}
                     <h4 className="font-medium text-primary text-sm mb-2 line-clamp-2 min-h-[40px] flex items-center justify-center">
                       Philips Avent Flessterilisator
                     </h4>
+                    
+                    {/* Bol.com script execution container */}
+                    <div 
+                      className="bol-widget-content"
+                      dangerouslySetInnerHTML={{ 
+                        __html: `
+                          <script type="text/javascript">var bol_sitebar_v2={"id":"bol_1759937475554", "baseUrl":"partner.bol.com","productId":"9300000062682298","familyId":"","siteId":"1472968","target":true,"rating":true,"price":true,"deliveryDescription":true,"button":false,"linkName":"Philips%20Avent%20Flessterilisator%20Damp%20Droger%20-%20D...","linkSubId":""};</script>
+                          <script type="text/javascript" src="https://partner.bol.com/promotion/static/js/partnerProductlinkV2.js" id="bol_1759937475554"></script>
+                        `
+                      }}
+                    />
+                    
+                    {/* Fallback button */}
                     <a 
                       href="https://www.bol.com/nl/p/philips-avent-flessterilisator/9300000062682298/"
                       target="_blank"
