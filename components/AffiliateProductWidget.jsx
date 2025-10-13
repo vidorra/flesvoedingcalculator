@@ -151,6 +151,13 @@ export default function AffiliateProductWidget({
         setTimeout(() => {
           const container = document.querySelector(`[data-product-id="${product.id}"]`)
           if (container) {
+            // Only manage fallback for widgets that have Bol.com scripts
+            const bolWidgetContent = container.querySelector('.bol-widget-content')
+            if (!bolWidgetContent) {
+              console.log(`ℹ️ ${product.id} has no Bol.com script - keeping regular fallback visible`)
+              return
+            }
+            
             // Check if Bol.com content loaded successfully
             const bolContent = container.querySelector('div[id*="PLbol_"]')
             const fallbackImage = container.querySelector('.fallback-content > div:first-child')
@@ -451,10 +458,16 @@ export default function AffiliateProductWidget({
                       padding: 16px 0;
                     }
                     
-                    /* Initially hide fallback image and button until we know if Bol.com loads */
-                    .bol-script-container .fallback-content > div:first-child,
-                    .bol-script-container .fallback-content > a:last-child {
+                    /* For widgets WITH Bol.com scripts: initially hide fallback image and button */
+                    .bol-script-container .fallback-content .bol-widget-content ~ div:first-child,
+                    .bol-script-container .fallback-content .bol-widget-content ~ a:last-child {
                       display: none;
+                    }
+                    
+                    /* For widgets WITHOUT Bol.com scripts: always show fallback content */
+                    .bol-script-container .fallback-content:not(:has(.bol-widget-content)) > div:first-child,
+                    .bol-script-container .fallback-content:not(:has(.bol-widget-content)) > a:last-child {
+                      display: block !important;
                     }
                     
                     /* Show fallback image and button when Bol.com content is empty or fails to load */
