@@ -388,8 +388,8 @@ export default function FlessenSteriligerenPage() {
                 <div className="bol-script-container" data-product-id="test-bol-widget">
                   {/* Fallback content with image, title, bol-widget-content, and button */}
                   <div className="fallback-content text-center">
-                    {/* Product image - initially hidden */}
-                    <div className="mb-3" style={{ display: 'none' }}>
+                    {/* Product image - always visible */}
+                    <div className="mb-3">
                       <img
                         src="https://media.s-bol.com/NKX9XZWN3RGL/0RNmv15/550x707.jpg"
                         alt="Philips Avent Flessterilisator"
@@ -420,7 +420,6 @@ export default function FlessenSteriligerenPage() {
                       target="_blank"
                       rel="nofollow noopener"
                       className="bg-primary text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors inline-block"
-                      style={{ display: 'none' }}
                     >
                       Bekijk op bol.com →
                     </a>
@@ -435,18 +434,7 @@ export default function FlessenSteriligerenPage() {
                       if (container) {
                         const bolContent = container.querySelector('div[id*="bol_1759937475554"]') || 
                                          container.querySelector('div[id*="PLbol_"]');
-                        const fallbackImage = container.querySelector('.fallback-content > div:first-child');
-                        const fallbackButton = container.querySelector('.fallback-content > a:last-child');
-                        
-                        if (bolContent && bolContent.innerHTML.trim()) {
-                          console.log('✅ Test widget: Bol.com content loaded - hiding fallback');
-                          if (fallbackImage) fallbackImage.style.display = 'none';
-                          if (fallbackButton) fallbackButton.style.display = 'none';
-                        } else {
-                          console.log('⚠️ Test widget: Bol.com content failed - showing fallback');
-                          if (fallbackImage) fallbackImage.style.display = 'block';
-                          if (fallbackButton) fallbackButton.style.display = 'inline-block';
-                        }
+                        console.log('ℹ️ Test widget: All content visible by default (image + title + Bol.com snippet + button)');
                       }
                     }, 3000);
                   `
