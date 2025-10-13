@@ -408,15 +408,15 @@ export default function FlessenSteriligerenPage() {
                       className="bol-widget-content"
                       dangerouslySetInnerHTML={{ 
                         __html: `
-                          <script type="text/javascript">var bol_sitebar_v2={"id":"bol_1759937475554", "baseUrl":"partner.bol.com","productId":"9300000062682298","familyId":"","siteId":"1472968","target":true,"rating":true,"price":true,"deliveryDescription":true,"button":false,"linkName":"Philips%20Avent%20Flessterilisator%20Damp%20Droger%20-%20D...","linkSubId":""};</script>
-                          <script type="text/javascript" src="https://partner.bol.com/promotion/static/js/partnerProductlinkV2.js" id="bol_1759937475554"></script>
+                          <script type="text/javascript">var bol_sitebar_v2={"id":"bol_1760347149289", "baseUrl":"partner.bol.com","productId":"9300000006206090","familyId":"","siteId":"1472968","target":true,"rating":true,"price":true,"deliveryDescription":true,"button":false,"linkName":"Philips%20Avent%20Flessen%20Sterilisator%20-%206%20Flessen...","linkSubId":""};</script>
+                          <script type="text/javascript" src="https://partner.bol.com/promotion/static/js/partnerProductlinkV2.js" id="bol_1760347149289"></script>
                         `
                       }}
                     />
                     
                     {/* Fallback button - initially hidden */}
                     <a 
-                      href="https://www.bol.com/nl/p/philips-avent-flessterilisator/9300000062682298/"
+                      href="https://www.bol.com/nl/p/philips-avent-flessterilisator/9300000006206090/"
                       target="_blank"
                       rel="nofollow noopener"
                       className="bg-primary text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors inline-block"
@@ -432,7 +432,7 @@ export default function FlessenSteriligerenPage() {
                     setTimeout(() => {
                       const container = document.querySelector('[data-product-id="test-bol-widget"]');
                       if (container) {
-                        const bolContent = container.querySelector('div[id*="bol_1759937475554"]') || 
+                        const bolContent = container.querySelector('div[id*="bol_1760347149289"]') || 
                                          container.querySelector('div[id*="PLbol_"]');
                         console.log('ℹ️ Test widget: All content visible by default (image + title + Bol.com snippet + button)');
                       }
