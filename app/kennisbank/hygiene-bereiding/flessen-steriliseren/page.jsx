@@ -375,7 +375,7 @@ export default function FlessenSteriligerenPage() {
 
             {/* Popular Sterilizers and Accessories */}
             <AffiliateProductWidget
-              pageId="hygiene-bereiding_flessen-steriliseren"
+              pageId="flessen-steriliseren"
               category="sterilisatoren"
               title="Populaire Sterilisatoren en Accessoires"
               maxProducts={4}
