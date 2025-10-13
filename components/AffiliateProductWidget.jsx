@@ -147,22 +147,35 @@ export default function AffiliateProductWidget({
       } else if (product.type === 'bol_snippet' || product.type === 'bol_script') {
         console.log(`🔧 Setting up Bol.com script widget for ${product.id}`)
         
-        // Set up price extraction after script loads
+        // Set up price extraction and fallback management after script loads
         setTimeout(() => {
           const container = document.querySelector(`[data-product-id="${product.id}"]`)
           if (container) {
-            const priceElement = container.querySelector('.price-bol')
-            if (priceElement) {
-              const priceText = priceElement.textContent || priceElement.innerText
-              console.log(`💰 Extracted price for ${product.id}: ${priceText}`)
+            // Check if Bol.com content loaded successfully
+            const bolContent = container.querySelector('div[id*="PLbol_"]')
+            const fallbackImage = container.querySelector('.fallback-content > div:first-child')
+            const fallbackButton = container.querySelector('.fallback-content > a:last-child')
+            
+            if (bolContent && bolContent.innerHTML.trim()) {
+              // Bol.com content loaded - hide fallback image and button
+              console.log(`✅ Bol.com content loaded for ${product.id} - hiding fallback`)
+              if (fallbackImage) fallbackImage.style.display = 'none'
+              if (fallbackButton) fallbackButton.style.display = 'none'
               
-              // Optional: Send price back to admin system for caching
-              // This could be used to update the database with current prices
-              if (priceText && priceText.trim()) {
-                console.log(`📊 Live price available: ${priceText.trim()}`)
+              // Extract price
+              const priceElement = container.querySelector('.price-bol')
+              if (priceElement) {
+                const priceText = priceElement.textContent || priceElement.innerText
+                console.log(`💰 Extracted price for ${product.id}: ${priceText}`)
+                if (priceText && priceText.trim()) {
+                  console.log(`📊 Live price available: ${priceText.trim()}`)
+                }
               }
             } else {
-              console.log(`⚠️ No .price-bol element found for ${product.id}`)
+              // Bol.com content failed to load - show fallback
+              console.log(`⚠️ Bol.com content failed to load for ${product.id} - showing fallback`)
+              if (fallbackImage) fallbackImage.style.display = 'block'
+              if (fallbackButton) fallbackButton.style.display = 'inline-block'
             }
           }
         }, 3000) // Wait 3 seconds for Bol.com script to execute
@@ -438,13 +451,26 @@ export default function AffiliateProductWidget({
                       padding: 16px 0;
                     }
                     
-                    /* Hide fallback when Bol.com content loads successfully */
-                    .bol-script-container div[id*="PLbol_"]:not(:empty) ~ .fallback-content {
+                    /* Initially hide fallback image and button until we know if Bol.com loads */
+                    .bol-script-container .fallback-content > div:first-child,
+                    .bol-script-container .fallback-content > a:last-child {
+                      display: none;
+                    }
+                    
+                    /* Show fallback image and button when Bol.com content is empty or fails to load */
+                    .bol-script-container .bol-widget-content:empty ~ div:first-child,
+                    .bol-script-container .bol-widget-content:empty ~ a:last-child {
+                      display: block !important;
+                    }
+                    
+                    /* Hide fallback image and button when Bol.com content loads */
+                    .bol-script-container div[id*="PLbol_"]:not(:empty) ~ div:first-child,
+                    .bol-script-container div[id*="PLbol_"]:not(:empty) ~ a:last-child {
                       display: none !important;
                     }
                     
-                    /* Show fallback when Bol.com content is empty */
-                    .bol-script-container div[id*="PLbol_"]:empty ~ .fallback-content {
+                    /* Title is always visible */
+                    .bol-script-container .fallback-content h4 {
                       display: block !important;
                     }
                     
