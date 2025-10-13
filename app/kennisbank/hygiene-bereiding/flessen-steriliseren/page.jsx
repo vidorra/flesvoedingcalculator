@@ -388,8 +388,8 @@ export default function FlessenSteriligerenPage() {
                 <div className="bol-script-container" data-product-id="test-bol-widget">
                   {/* Fallback content with image, title, bol-widget-content, and button */}
                   <div className="fallback-content text-center">
-                    {/* Product image */}
-                    <div className="mb-3">
+                    {/* Product image - initially hidden */}
+                    <div className="mb-3" style={{ display: 'none' }}>
                       <img
                         src="https://media.s-bol.com/NKX9XZWN3RGL/0RNmv15/550x707.jpg"
                         alt="Philips Avent Flessterilisator"
@@ -398,8 +398,8 @@ export default function FlessenSteriligerenPage() {
                       />
                     </div>
                     
-                    {/* Product title */}
-                    <h4 className="font-medium text-primary text-sm mb-2 line-clamp-2 min-h-[40px] flex items-center justify-center">
+                    {/* Product title - always visible */}
+                    <h4 className="font-medium text-primary text-sm mb-4 line-clamp-2 min-h-[40px] flex items-center justify-center">
                       Philips Avent Flessterilisator
                     </h4>
                     
@@ -414,17 +414,43 @@ export default function FlessenSteriligerenPage() {
                       }}
                     />
                     
-                    {/* Fallback button */}
+                    {/* Fallback button - initially hidden */}
                     <a 
                       href="https://www.bol.com/nl/p/philips-avent-flessterilisator/9300000062682298/"
                       target="_blank"
                       rel="nofollow noopener"
                       className="bg-primary text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors inline-block"
+                      style={{ display: 'none' }}
                     >
                       Bekijk op bol.com →
                     </a>
                   </div>
                 </div>
+                
+                {/* Test widget management script */}
+                <script dangerouslySetInnerHTML={{
+                  __html: `
+                    setTimeout(() => {
+                      const container = document.querySelector('[data-product-id="test-bol-widget"]');
+                      if (container) {
+                        const bolContent = container.querySelector('div[id*="bol_1759937475554"]') || 
+                                         container.querySelector('div[id*="PLbol_"]');
+                        const fallbackImage = container.querySelector('.fallback-content > div:first-child');
+                        const fallbackButton = container.querySelector('.fallback-content > a:last-child');
+                        
+                        if (bolContent && bolContent.innerHTML.trim()) {
+                          console.log('✅ Test widget: Bol.com content loaded - hiding fallback');
+                          if (fallbackImage) fallbackImage.style.display = 'none';
+                          if (fallbackButton) fallbackButton.style.display = 'none';
+                        } else {
+                          console.log('⚠️ Test widget: Bol.com content failed - showing fallback');
+                          if (fallbackImage) fallbackImage.style.display = 'block';
+                          if (fallbackButton) fallbackButton.style.display = 'inline-block';
+                        }
+                      }
+                    }, 3000);
+                  `
+                }} />
               </div>
             </div>
 
