@@ -33,6 +33,7 @@ export default function SimpleAdminDashboard() {
   const [editingSnippet, setEditingSnippet] = useState(null)
   const [editFormData, setEditFormData] = useState({})
   const [showOnlyPrice, setShowOnlyPrice] = useState(false) // Control visibility of elements
+  const [isExtractingImage, setIsExtractingImage] = useState(false) // For Bol.com image extraction
   const router = useRouter()
 
   // Check authentication
@@ -215,6 +216,118 @@ export default function SimpleAdminDashboard() {
     }
   }
 
+  // Function to extract Bol.com image from snippet
+  const extractBolImage = async (snippet) => {
+    if (!snippet) return
+
+    setIsExtractingImage(true)
+    try {
+      const response = await fetch('/api/admin/extract-bol-image/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ snippet })
+      })
+
+      if (response.ok) {
+        const data = await response.json()
+        console.log('Extracted Bol.com image data:', data)
+        
+        // Update the newSnippet with extracted data
+        setNewSnippet(prev => ({
+          ...prev,
+          name: data.title || prev.name,
+          url: data.productUrl || prev.url,
+          imageUrl: data.imageUrl || prev.imageUrl,
+          imageHtml: data.imageHtml // Store the generated image HTML
+        }))
+        
+        setSyncAlert({
+          type: 'success',
+          message: `✅ Image extracted successfully for: ${data.title}`,
+          details: []
+        })
+      } else {
+        const errorData = await response.json()
+        setSyncAlert({
+          type: 'error',
+          message: `Failed to extract image: ${errorData.message}`,
+          details: []
+        })
+      }
+    } catch (error) {
+      console.error('Error extracting Bol.com image:', error)
+      setSyncAlert({
+        type: 'error',
+        message: `Error extracting image: ${error.message}`,
+        details: []
+      })
+    } finally {
+      setIsExtractingImage(false)
+      // Auto-dismiss alert after 5 seconds for success
+      setTimeout(() => {
+        setSyncAlert(prev => prev?.type === 'success' ? null : prev)
+      }, 5000)
+    }
+  }
+
+  // Function to extract Bol.com image from snippet for edit form
+  const extractBolImageForEdit = async (snippet) => {
+    if (!snippet) return
+
+    setIsExtractingImage(true)
+    try {
+      const response = await fetch('/api/admin/extract-bol-image/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ snippet })
+      })
+
+      if (response.ok) {
+        const data = await response.json()
+        console.log('Extracted Bol.com image data for edit:', data)
+        
+        // Update the editFormData with extracted data
+        setEditFormData(prev => ({
+          ...prev,
+          name: data.title || prev.name,
+          url: data.productUrl || prev.url,
+          imageUrl: data.imageUrl || prev.imageUrl,
+          generatedHtml: data.imageHtml || prev.generatedHtml // Update the image HTML
+        }))
+        
+        setSyncAlert({
+          type: 'success',
+          message: `✅ Image extracted successfully for: ${data.title}`,
+          details: []
+        })
+      } else {
+        const errorData = await response.json()
+        setSyncAlert({
+          type: 'error',
+          message: `Failed to extract image: ${errorData.message}`,
+          details: []
+        })
+      }
+    } catch (error) {
+      console.error('Error extracting Bol.com image:', error)
+      setSyncAlert({
+        type: 'error',
+        message: `Error extracting image: ${error.message}`,
+        details: []
+      })
+    } finally {
+      setIsExtractingImage(false)
+      // Auto-dismiss alert after 5 seconds for success
+      setTimeout(() => {
+        setSyncAlert(prev => prev?.type === 'success' ? null : prev)
+      }, 5000)
+    }
+  }
+
   const saveNewSnippet = async () => {
     try {
       const snippetData = {
@@ -225,7 +338,8 @@ export default function SimpleAdminDashboard() {
         shortUrl: newSnippet.shortUrl || '',
         imageUrl: newSnippet.imageUrl || null,
         tag: newSnippet.tag || null,
-        generatedHtml: newSnippet.code,
+        generatedHtml: newSnippet.imageHtml || newSnippet.code, // Use imageHtml if available
+        codeSnippet: newSnippet.platform === 'bol' ? newSnippet.code : null, // Store original snippet for bol
         price: newSnippet.price,
         originalPrice: newSnippet.originalPrice,
         currency: newSnippet.currency || 'EUR',
@@ -898,12 +1012,40 @@ export default function SimpleAdminDashboard() {
                   {newSnippet.platform === 'bol' && (
                     <div className="mb-4">
                       <label className="block text-sm font-medium text-gray-700 mb-2">Bol.com Code Snippet</label>
-                      <textarea
-                        value={newSnippet.code}
-                        onChange={(e) => setNewSnippet(prev => ({ ...prev, code: e.target.value }))}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary h-32"
-                        placeholder="Paste your Bol.com affiliate code snippet here..."
-                      />
+                      <div className="flex gap-2">
+                        <textarea
+                          value={newSnippet.code}
+                          onChange={(e) => {
+                            const value = e.target.value
+                            setNewSnippet(prev => ({ ...prev, code: value }))
+                            
+                            // Auto-extract image if the snippet contains productId
+                            if (value && value.includes('productId') && value.includes('bol_sitebar')) {
+                              extractBolImage(value)
+                            }
+                          }}
+                          className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary h-32"
+                          placeholder="Paste your Bol.com affiliate code snippet here..."
+                        />
+                        <button
+                          type="button"
+                          onClick={() => extractBolImage(newSnippet.code)}
+                          disabled={isExtractingImage || !newSnippet.code}
+                          className="px-3 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 self-start"
+                          title="Extract image from Bol.com snippet"
+                        >
+                          {isExtractingImage ? (
+                            <>
+                              <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                              Extracting...
+                            </>
+                          ) : (
+                            <>
+                              📷 Extract Image
+                            </>
+                          )}
+                        </button>
+                      </div>
                     </div>
                   )}
 
@@ -941,6 +1083,19 @@ export default function SimpleAdminDashboard() {
                         </div>
                       )}
                     </>
+                  )}
+
+                  {/* Image HTML (auto-generated for Bol.com) */}
+                  {newSnippet.platform === 'bol' && newSnippet.imageHtml && (
+                    <div className="mb-4">
+                      <label className="block text-sm font-medium text-gray-700 mb-2">Generated Image HTML</label>
+                      <textarea
+                        value={newSnippet.imageHtml}
+                        onChange={(e) => setNewSnippet(prev => ({ ...prev, imageHtml: e.target.value }))}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary h-24"
+                        placeholder="Auto-generated image HTML will appear here..."
+                      />
+                    </div>
                   )}
 
                   {/* Tag (Optional) */}
@@ -1066,12 +1221,40 @@ export default function SimpleAdminDashboard() {
                               <label className="block text-sm font-medium text-gray-700 mb-2">
                                 Bol.com Code Snippet
                               </label>
-                              <textarea
-                                value={editFormData.codeSnippet}
-                                onChange={(e) => setEditFormData(prev => ({ ...prev, codeSnippet: e.target.value }))}
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary h-32"
-                                placeholder="Paste your Bol.com JavaScript snippet here..."
-                              />
+                              <div className="flex gap-2">
+                                <textarea
+                                  value={editFormData.codeSnippet}
+                                  onChange={(e) => {
+                                    const value = e.target.value
+                                    setEditFormData(prev => ({ ...prev, codeSnippet: value }))
+                                    
+                                    // Auto-extract image if the snippet contains productId
+                                    if (value && value.includes('productId') && value.includes('bol_sitebar')) {
+                                      extractBolImageForEdit(value)
+                                    }
+                                  }}
+                                  className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary h-32"
+                                  placeholder="Paste your Bol.com JavaScript snippet here..."
+                                />
+                                <button
+                                  type="button"
+                                  onClick={() => extractBolImageForEdit(editFormData.codeSnippet)}
+                                  disabled={isExtractingImage || !editFormData.codeSnippet}
+                                  className="px-3 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 self-start"
+                                  title="Extract image from Bol.com snippet"
+                                >
+                                  {isExtractingImage ? (
+                                    <>
+                                      <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                                      Extracting...
+                                    </>
+                                  ) : (
+                                    <>
+                                      📷 Extract Image
+                                    </>
+                                  )}
+                                </button>
+                              </div>
                             </div>
                           )}
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
