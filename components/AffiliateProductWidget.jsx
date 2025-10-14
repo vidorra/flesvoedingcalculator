@@ -133,41 +133,9 @@ export default function AffiliateProductWidget({
     console.log(`📋 Display products:`, displayProducts.map(p => p.id))
   }
 
+  // Simplified widget setup - no complex hide/show logic needed
   useEffect(() => {
-    // Debug logging for all products being rendered
-    console.log(`🔍 AffiliateProductWidget: About to render ${displayProducts.length} products:`)
-    displayProducts.forEach((product, index) => {
-      console.log(`  ${index + 1}. ${product.id} (${product.name}) - Type: ${product.type}`)
-    })
-    
-    // Handle Bol.com widgets
-    displayProducts.forEach(product => {
-      if (product.type === 'bol_iframe') {
-        console.log(`🔧 Setting up Bol.com iframe widget for ${product.id}`)
-      } else if (product.type === 'bol_snippet' || product.type === 'bol_script') {
-        console.log(`🔧 Setting up Bol.com script widget for ${product.id}`)
-        
-        // Set up price extraction - show all content by default
-        setTimeout(() => {
-          const container = document.querySelector(`[data-product-id="${product.id}"]`)
-          if (container) {
-            console.log(`ℹ️ ${product.id} - All content visible by default (image + title + Bol.com snippet + button)`)
-            
-            // Extract price for debugging
-            const priceElement = container.querySelector('.price-bol')
-            if (priceElement) {
-              const priceText = priceElement.textContent || priceElement.innerText
-              console.log(`💰 Extracted price for ${product.id}: ${priceText}`)
-              if (priceText && priceText.trim()) {
-                console.log(`📊 Live price available: ${priceText.trim()}`)
-              }
-            }
-          }
-        }, 3000) // Wait 3 seconds for Bol.com script to execute
-      } else if (product.type === 'amazon_image') {
-        console.log(`🔧 Setting up Amazon image widget for ${product.id}`)
-      }
-    })
+    console.log(`🔍 AffiliateProductWidget: Rendering ${displayProducts.length} products with simplified structure`)
   }, [displayProducts])
 
   if (loading) {
@@ -207,9 +175,7 @@ export default function AffiliateProductWidget({
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {displayProducts.map((product, index) => {
-          console.log(`🎨 Rendering product ${index + 1}/${displayProducts.length}: ${product.id} (${product.type})`)
-          return (
+        {displayProducts.map((product, index) => (
           <div key={product.id} className="relative">
             {/* Product tag (Budget, Aanbevolen, etc.) */}
             {product.tag && (
@@ -260,203 +226,62 @@ export default function AffiliateProductWidget({
               </div>
             )}
             
-            {/* Bol.com Script Widget with Price Extraction */}
+            {/* Bol.com Script Widget - Simplified Structure */}
             {(product.type === 'bol_snippet' || product.type === 'bol_script') && (
               <div className="bg-white rounded-xl border border-gray-200 p-4">
-                <div className="bol-script-container" data-product-id={product.id}>
-                  {/* Fallback content with image, title, Bol.com widget, and button */}
-                  <div className="fallback-content text-center">
-                    {/* Product image */}
-                    <div className="mb-3">
-                      <img
-                        src={product.data?.fallbackImage || 'https://media.s-bol.com/NKX9XZWN3RGL/0RNmv15/550x707.jpg'}
-                        alt={product.name || product.data?.title}
-                        className="mx-auto rounded-lg max-w-full h-auto"
-                        style={{ maxHeight: '200px' }}
-                        onError={(e) => {
-                          e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik04MCA4MEgxMjBWMTIwSDgwVjgwWiIgZmlsbD0iIzlDQTNBRiIvPgo8cGF0aCBkPSJNOTYgMTA0TDEwNCAxMTJMMTIwIDk2IiBzdHJva2U9IiM2QjczODAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo='
-                          e.target.style.display = 'block'
-                        }}
-                      />
-                    </div>
-                    
-                    {/* Product title */}
-                    <h4 className="font-medium text-primary text-sm mb-4 text-center">
-                      {product.name || product.data?.title}
-                    </h4>
-                    
-                    {/* Container for Bol.com script execution */}
-                    <div 
-                      className="bol-widget-content"
-                      dangerouslySetInnerHTML={{ __html: `<!-- BOL.COM SNIPPET START for ${product.id} -->${product.generatedHtml || product.data?.html}<!-- BOL.COM SNIPPET END for ${product.id} -->` }}
+                <div className="text-center space-y-4" data-product-id={product.id}>
+                  {/* 1. Product Image (from backend) */}
+                  <div className="mb-3">
+                    <img
+                      src={product.data?.fallbackImage || 'https://media.s-bol.com/NKX9XZWN3RGL/0RNmv15/550x707.jpg'}
+                      alt={product.name || product.data?.title}
+                      className="mx-auto rounded-lg max-w-full h-auto"
+                      style={{ maxHeight: '200px' }}
+                      onError={(e) => {
+                        e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik04MCA4MEgxMjBWMTIwSDgwVjgwWiIgZmlsbD0iIzlDQTNBRiIvPgo8cGF0aCBkPSJNOTYgMTA0TDEwNCAxMTJMMTIwIDk2IiBzdHJva2U9IiM2QjczODAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo='
+                        e.target.style.display = 'block'
+                      }}
                     />
-                    
-                    {/* Fallback button (shown if Bol.com script doesn't load) */}
-                    <a 
-                      href={product.url || product.data?.productUrl}
-                      target="_blank"
-                      rel="nofollow noopener"
-                      className="bg-primary text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors inline-block"
-                    >
-                      Bekijk op bol.com →
-                    </a>
                   </div>
                   
-                  {/* Custom CSS to style the Bol.com widget - enhanced for new format */}
-                  <style jsx>{`
-                    .bol-script-container {
-                      min-height: 250px;
-                      display: flex;
-                      flex-direction: column;
-                      align-items: center;
-                    }
-                    
-                    /* Style the media container */
-                    .bol-script-container .media {
-                      width: 100%;
-                      display: flex;
-                      flex-direction: column;
-                      align-items: center;
-                      gap: 12px;
-                    }
-                    
-                    /* Hide elements we don't want - keep only rating, price, delivery */
-                    .bol-script-container .addtocart,
-                    .bol-script-container .button,
-                    .bol-script-container .btn,
-                    .bol-script-container img[width="1"] {
-                      display: none !important;
-                    }
-                    
-                    /* Hide ALL image containers - target specific Bol.com structure */
-                    .bol-script-container .media__img,
-                    .bol-script-container .left-div,
-                    .bol-script-container .imgwrap_tout,
-                    .bol-script-container .left-div-id,
-                    .bol-script-container div[class*="left-div"],
-                    .bol-script-container div[id*="left-div"] {
-                      display: none !important;
-                    }
-                    
-                    /* Hide ALL images except rating stars - more aggressive */
-                    .bol-script-container img,
-                    .bol-script-container img[id="preview-image"],
-                    .bol-script-container img[class*="aspect-ratio"] {
-                      display: none !important;
-                    }
-                    
-                    /* Force hide any image links */
-                    .bol-script-container a[data-test*="_imageLink"],
-                    .bol-script-container a[title*="Philips"] img {
-                      display: none !important;
-                    }
-                    
-                    /* Style the content body */
-                    .bol-script-container .media__body,
-                    .bol-script-container .right-div-preview,
-                    .bol-script-container div[id*="right-div"] {
-                      text-align: center;
-                      width: 100%;
-                    }
-                    
-                    /* Hide ALL product titles and links - more aggressive */
-                    .bol-script-container .product_title,
-                    .bol-script-container .product_title a,
-                    .bol-script-container span[class*="product_title"],
-                    .bol-script-container span[id*="productLinkTekst"],
-                    .bol-script-container a[data-test*="_clickLink"],
-                    .bol-script-container a[data-test*="_name"] {
-                      display: none !important;
-                    }
-                    
-                    /* Show and style the rating - override image hiding for rating */
-                    .bol-script-container .rating,
-                    .bol-script-container .star-rating,
-                    .bol-script-container span[data-test*="_rating"],
-                    .bol-script-container div[class*="star-rating"] {
-                      display: block !important;
-                      text-align: center;
-                      margin-bottom: 8px;
-                    }
-                    
-                    /* Allow rating star images to show */
-                    .bol-script-container .rating img,
-                    .bol-script-container .star-rating img,
-                    .bol-script-container span[data-test*="_rating"] img {
-                      display: inline !important;
-                      width: auto !important;
-                      height: 16px !important;
-                    }
-                    
-                    /* Style the price prominently */
-                    .bol-script-container .price-bol {
-                      display: block !important;
-                      font-size: 1.5rem;
-                      font-weight: bold;
-                      color: #059669;
-                      margin: 12px 0;
-                      text-align: center;
-                    }
-                    
-                    /* Show and style delivery info - target specific selectors */
-                    .bol-script-container .product-delivery,
-                    .bol-script-container div[data-test*="_deliveryDescription"],
-                    .bol-script-container div[class*="product-delivery"] {
-                      display: block !important;
-                      font-size: 0.875rem;
-                      color: #374151;
-                      text-align: center;
-                      margin-top: 8px;
-                    }
-                    
-                    /* Enhance price display with specific targeting */
-                    .bol-script-container span[data-test*="_price"],
-                    .bol-script-container span[class*="price-bol"] {
-                      display: block !important;
-                      font-size: 1.5rem;
-                      font-weight: bold;
-                      color: #059669;
-                      margin: 12px 0;
-                      text-align: center;
-                    }
-                    
-                    .bol-script-container .price-fraction {
-                      font-size: 1rem;
-                      vertical-align: super;
-                    }
-                    
-                    /* Ensure loader is hidden when content loads */
-                    .bol-script-container div[id*="Bbol_"] {
-                      display: none !important;
-                    }
-                    
-                    /* Fallback content styling */
-                    .bol-script-container .fallback-content {
-                      display: block;
-                      padding: 16px 0;
-                    }
-                    
-                    /* Show all content by default - image, title, Bol.com snippet, button */
-                    .bol-script-container .fallback-content > div:first-child,
-                    .bol-script-container .fallback-content h4,
-                    .bol-script-container .fallback-content .bol-widget-content,
-                    .bol-script-container .fallback-content > a:last-child {
-                      display: block !important;
-                    }
-                    
-                    /* Title is always visible */
-                    .bol-script-container .fallback-content h4 {
-                      display: block !important;
-                    }
-                    
-                    /* Ensure the product title is always visible above Bol.com content */
-                    .bol-script-container h4 {
-                      position: relative;
-                      z-index: 10;
-                      display: block !important;
-                    }
-                  `}</style>
+                  {/* 2. Product Title */}
+                  <h4 className="font-medium text-primary text-sm">
+                    {product.name || product.data?.title}
+                  </h4>
+                  
+                  {/* 3. Bol.com Code Snippet */}
+                  <div 
+                    className="bol-widget-content"
+                    dangerouslySetInnerHTML={{ __html: `${product.generatedHtml || product.data?.html || ''}` }}
+                  />
+                  
+                  {/* 4. Button */}
+                  <a 
+                    href={product.url || product.data?.productUrl || '#'}
+                    target="_blank"
+                    rel="nofollow noopener"
+                    className="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors inline-block"
+                  >
+                    Bekijk op bol.com →
+                  </a>
                 </div>
+                
+                {/* Minimal CSS - Only hide Bol.com images, show price/rating */}
+                <style jsx>{`
+                  .bol-widget-content img {
+                    display: none !important;
+                  }
+                  
+                  .bol-widget-content .rating img,
+                  .bol-widget-content .star-rating img {
+                    display: inline !important;
+                    height: 16px !important;
+                  }
+                  
+                  .bol-widget-content {
+                    text-align: center;
+                  }
+                `}</style>
               </div>
             )}
             
@@ -493,8 +318,7 @@ export default function AffiliateProductWidget({
               </div>
             )}
           </div>
-          )
-        })}
+        ))}
       </div>
       
       <div className="mt-4 pt-4 border-t border-gray-200">
