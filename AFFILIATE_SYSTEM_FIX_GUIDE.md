@@ -77,14 +77,24 @@ Admin Dashboard
     └── Assign snippets to pages
 ```
 
-### Display Logic (SIMPLIFIED)
+### ✅ FINAL IMPLEMENTED STRUCTURE (October 14, 2025)
 ```
-For each affiliate widget:
-1. Show Image HTML (from admin - ALWAYS visible)
-2. Show Title (from admin - ALWAYS visible)
-3. Show Bol.com Script (if exists - additional content)
-4. Show Button (fallback action - ALWAYS visible)
+┌─────────────────────┐
+│ 1. Product Title    │ ← From admin backend (name field)
+├─────────────────────┤
+│ 2. Backend Image    │ ← From admin Image HTML field (proper src URLs)
+├─────────────────────┤  
+│ 3. Bol.com Snippet  │ ← From Bol.com Code Snippet field (dynamic content: price, rating)
+├─────────────────────┤
+│ 4. CTA Button       │ ← URL extracted from backend snippet data
+└─────────────────────┘
 ```
+
+**Simple Display Order:**
+1. **Title** (from admin - ALWAYS visible)
+2. **Backend Image** (from admin Image HTML - ALWAYS visible) 
+3. **Bol.com Snippet** (dynamic content - price/rating)
+4. **CTA Button** (URL from backend - ALWAYS visible)
 
 ---
 

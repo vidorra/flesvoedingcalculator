@@ -338,8 +338,8 @@ export default function SimpleAdminDashboard() {
         shortUrl: newSnippet.shortUrl || '',
         imageUrl: newSnippet.imageUrl || null,
         tag: newSnippet.tag || null,
-        generatedHtml: newSnippet.imageHtml || newSnippet.code, // Use imageHtml if available
-        codeSnippet: newSnippet.platform === 'bol' ? newSnippet.code : null, // Store original snippet for bol
+        generatedHtml: newSnippet.imageHtml || null, // Only use imageHtml (not Bol.com code)
+        codeSnippet: newSnippet.platform === 'bol' ? newSnippet.code : null, // Store Bol.com snippet separately
         price: newSnippet.price,
         originalPrice: newSnippet.originalPrice,
         currency: newSnippet.currency || 'EUR',
