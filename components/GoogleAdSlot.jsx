@@ -19,25 +19,27 @@ const GoogleAdSlot = ({
 
   // Real Google AdSense implementation
   return (
-    <div className="text-center space-y-2">
-      <script 
-        async 
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938"
-        crossOrigin="anonymous"
-      />
-      <ins 
-        className="adsbygoogle"
-        style={{ display: 'block' }}
-        data-ad-client="ca-pub-5215838917916938"
-        data-ad-slot={slot}
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      />
-      <script 
-        dangerouslySetInnerHTML={{
-          __html: '(adsbygoogle = window.adsbygoogle || []).push({});'
-        }}
-      />
+    <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+      <div className="text-center space-y-2">
+        <script 
+          async 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938"
+          crossOrigin="anonymous"
+        />
+        <ins 
+          className="adsbygoogle"
+          style={{ display: 'block' }}
+          data-ad-client="ca-pub-5215838917916938"
+          data-ad-slot={slot}
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        />
+        <script 
+          dangerouslySetInnerHTML={{
+            __html: '(adsbygoogle = window.adsbygoogle || []).push({});'
+          }}
+        />
+      </div>
     </div>
   )
 }

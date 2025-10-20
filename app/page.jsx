@@ -1157,19 +1157,21 @@ export default function HomePage() {
             </div>
 
             {/* Google Ad 1 */}
-            <div className="text-center space-y-2">
-              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938"
-                   crossorigin="anonymous"></script>
-              {/* sidebar-right-ad1 */}
-              <ins className="adsbygoogle"
-                   style={{display: 'block'}}
-                   data-ad-client="ca-pub-5215838917916938"
-                   data-ad-slot="5691109362"
-                   data-ad-format="auto"
-                   data-full-width-responsive="true"></ins>
-              <script dangerouslySetInnerHTML={{
-                __html: '(adsbygoogle = window.adsbygoogle || []).push({});'
-              }}></script>
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+              <div className="text-center space-y-2">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938"
+                     crossorigin="anonymous"></script>
+                {/* sidebar-right-ad1 */}
+                <ins className="adsbygoogle"
+                     style={{display: 'block'}}
+                     data-ad-client="ca-pub-5215838917916938"
+                     data-ad-slot="5691109362"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script dangerouslySetInnerHTML={{
+                  __html: '(adsbygoogle = window.adsbygoogle || []).push({});'
+                }}></script>
+              </div>
             </div>
     
             
@@ -1189,19 +1191,21 @@ export default function HomePage() {
           <div className="space-y-4">
             
             {/* Google Ad 2 */}
-            <div className="text-center space-y-2">
-              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938"
-                   crossorigin="anonymous"></script>
-              {/* sidebar-right-ad2 */}
-              <ins className="adsbygoogle"
-                   style={{display: 'block'}}
-                   data-ad-client="ca-pub-5215838917916938"
-                   data-ad-slot="5863882645"
-                   data-ad-format="auto"
-                   data-full-width-responsive="true"></ins>
-              <script dangerouslySetInnerHTML={{
-                __html: '(adsbygoogle = window.adsbygoogle || []).push({});'
-              }}></script>
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+              <div className="text-center space-y-2">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938"
+                     crossorigin="anonymous"></script>
+                {/* sidebar-right-ad2 */}
+                <ins className="adsbygoogle"
+                     style={{display: 'block'}}
+                     data-ad-client="ca-pub-5215838917916938"
+                     data-ad-slot="5863882645"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script dangerouslySetInnerHTML={{
+                  __html: '(adsbygoogle = window.adsbygoogle || []).push({});'
+                }}></script>
+              </div>
             </div>
          
           </div>
