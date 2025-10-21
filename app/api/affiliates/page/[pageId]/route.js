@@ -21,8 +21,8 @@ function ensureDataDir() {
 function loadPageSnippets() {
   ensureDataDir()
   
-  // Force recreation if file is older than October 7, 2025 (enhanced format deployment)
-  const forceRecreateAfter = new Date('2025-10-07T14:00:00Z')
+  // Force recreation if file is older than December 1, 2025 (enhanced format deployment)
+  const forceRecreateAfter = new Date('2025-12-01T14:00:00Z')
   let shouldRecreate = false
   
   if (fs.existsSync(PAGE_SNIPPETS_FILE)) {
@@ -104,8 +104,8 @@ function loadPageSnippets() {
 function loadSnippets() {
   ensureDataDir()
   
-  // Force recreation if file is older than October 7, 2025 (enhanced format deployment)
-  const forceRecreateAfter = new Date('2025-10-07T14:00:00Z')
+  // Force recreation if file is older than December 1, 2025 (enhanced format deployment)
+  const forceRecreateAfter = new Date('2025-12-01T14:00:00Z')
   
   if (fs.existsSync(SNIPPETS_FILE)) {
     const fileStats = fs.statSync(SNIPPETS_FILE)
