@@ -45,17 +45,35 @@ Over-engineered hide/show logic that breaks constantly with each change.
 
 ---
 
-## 📋 Current Issues (October 13, 2025)
+## 📋 Current Status Update (October 21, 2025)
 
-### Test Bol.com Widget
-✅ **WORKS**: Shows image, title, Bol.com snippet, button  
-❌ **PROBLEM**: Uses outdated product ID `9300000062682298` (product removed from bol.com)  
-✅ **SOLUTION PROVIDED**: New snippet with `bol_1760347149289` and product ID `9300000006206090`
+### ✅ What's Currently Working
+**Frontend Display:**
+- ✅ **Bol.com Snippet Loading**: On `eerste-keer-flesvoeding-geven` page → "Aanbevolen Producten voor de Eerste Fles" shows Bol.com snippet with dynamic content (price, rating)
+- ✅ **Basic Structure**: The 4-part widget structure is partially implemented
+- ✅ **Test Page**: On `flessen-steriliseren` → "Test Bol.com Widget" shows all components (title, image, snippet, button)
 
-### Main Widget List
-❌ **BROKEN**: "Laden van productaanbevelingen..." persists  
-❌ **IMAGES MISSING**: Empty `src=""` in all image tags  
-❌ **MIXED UP**: Image HTML and Bol.com snippets incorrectly combined  
+### 🚨 Critical Backend Issues (URGENT FIX NEEDED)
+
+**Backend Field Mapping Problem:**
+- ❌ **WRONG FIELD MAPPING**: When admin adds Bol.com snippet, it's being saved to "Image HTML" field instead of "Bol.com Code Snippet" field
+- ❌ **MISSING IMAGE EXTRACTION**: Backend should automatically fetch product image from Bol.com when snippet is added
+- ❌ **MISSING URL EXTRACTION**: Backend should automatically extract and save the product URL from the snippet
+
+**Real Example That Needs to Work:**
+```javascript
+// User adds this snippet in admin:
+<script type="text/javascript">var bol_sitebar_v2={"id":"bol_1761052302805", "baseUrl":"partner.bol.com","productId":"9300000042840603","familyId":"","siteId":"1472968","target":true,"rating":true,"price":true,"deliveryDescription":true,"button":false,"linkName":"Dr.%20Brown%27s%20stoomsterilisator%20met%20droogfunctie","linkSubId":""};</script><script type="text/javascript" src="https://partner.bol.com/promotion/static/js/partnerProductlinkV2.js" id="bol_1761052302805"></script>
+
+// Backend should automatically:
+// 1. Save snippet to "Bol.com Code Snippet" field (NOT Image HTML)
+// 2. Extract URL: https://partner.bol.com/click/click?p=2&t=url&s=1472968&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fdr-brown-s-stoomsterilisator-met-droogfunctie%2F9300000042840603%2F&name=Dr.%20Brown%27s%20stoomsterilisator%20met%20droogfunctie
+// 3. Fetch product image from Bol.com and save to "Image HTML" field
+```
+
+### 🔧 What's Missing in Frontend
+- ❌ **Backend Image Not Showing**: Admin-uploaded images from Image HTML field are not displayed
+- ❌ **Field Separation**: Frontend correctly expects separate fields, but backend isn't providing them correctly  
 
 ---
 
@@ -77,52 +95,63 @@ Admin Dashboard
     └── Assign snippets to pages
 ```
 
-### ✅ FINAL IMPLEMENTED STRUCTURE (October 14, 2025)
+### 🎯 TARGET STRUCTURE (Frontend Ready, Backend Needs Implementation)
 ```
 ┌─────────────────────┐
-│ 1. Product Title    │ ← From admin backend (name field)
+│ 1. Product Title    │ ← ✅ WORKING: From admin backend (name field)
 ├─────────────────────┤
-│ 2. Backend Image    │ ← From admin Image HTML field (proper src URLs)
+│ 2. Backend Image    │ ← ❌ NOT WORKING: From admin Image HTML field (backend saves snippet here instead)
 ├─────────────────────┤  
-│ 3. Bol.com Snippet  │ ← From Bol.com Code Snippet field (dynamic content: price, rating)
+│ 3. Bol.com Snippet  │ ← ✅ PARTIALLY WORKING: Shows on some pages, but backend field mapping is wrong
 ├─────────────────────┤
-│ 4. CTA Button       │ ← URL extracted from backend snippet data
+│ 4. CTA Button       │ ← ❌ NOT WORKING: URL extraction from snippet not implemented in backend
 └─────────────────────┘
 ```
 
-**Simple Display Order:**
-1. **Title** (from admin - ALWAYS visible)
-2. **Backend Image** (from admin Image HTML - ALWAYS visible) 
-3. **Bol.com Snippet** (dynamic content - price/rating)
-4. **CTA Button** (URL from backend - ALWAYS visible)
+**Current Status per Component:**
+1. **✅ Title**: Working correctly from admin name field
+2. **❌ Backend Image**: Backend incorrectly saves Bol.com snippet to Image HTML field  
+3. **🟡 Bol.com Snippet**: Shows dynamic content but backend field mapping is wrong
+4. **❌ CTA Button**: URL not extracted automatically from snippet
 
 ---
 
-## 🔧 Step-by-Step Fix Plan
+## 🔧 Priority Fix Plan (October 21, 2025)
 
-### Phase 1: Data Cleanup (CRITICAL)
+### 🚨 PHASE 1: Backend Field Mapping Fix (CRITICAL - DO THIS FIRST)
 
-#### Step 1.1: Fix Image HTML in Admin Data
-Current broken format:
-```html
-<img src="" class="h-fluid-img" id="preview-image">
+#### Step 1.1: Fix Admin Backend Field Assignment
+**PROBLEM**: When admin adds Bol.com snippet, it's saved to wrong field
+
+**REQUIRED BACKEND CHANGES:**
+```javascript
+// When admin pastes Bol.com snippet like:
+// <script type="text/javascript">var bol_sitebar_v2={"id":"bol_1761052302805"...
+
+// Backend should detect this is a Bol.com snippet and:
+// 1. Save snippet to "bolScript" field (NOT "imageHtml" field)
+// 2. Extract productId from snippet: "9300000042840603"
+// 3. Extract linkName from snippet: "Dr. Brown's stoomsterilisator met droogfunctie"
+// 4. Build Bol.com product URL and fetch image
+// 5. Save fetched image to "imageHtml" field
+// 6. Build click URL for "fallbackUrl" field
 ```
 
-Should be:
-```html
-<img src="https://media.s-bol.com/NKX9XZWN3RGL/0RNmv15/550x707.jpg" alt="Philips Avent Flessterilisator" class="h-fluid-img">
+#### Step 1.2: Implement Automatic Image Fetching
+**BACKEND REQUIREMENT**: When Bol.com snippet is detected, automatically:
+1. **Extract Product ID**: From `productId":"9300000042840603"`
+2. **Fetch Product Data**: Call Bol.com API or scrape product page  
+3. **Download Product Image**: Get high-quality product image
+4. **Save to Image HTML Field**: `<img src="[fetched_image_url]" alt="[product_name]" class="product-img">`
+
+#### Step 1.3: Implement URL Extraction
+**BACKEND REQUIREMENT**: Extract and build proper URLs:
+```javascript
+// From snippet data, build:
+const clickUrl = `https://partner.bol.com/click/click?p=2&t=url&s=1472968&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2F${linkName}%2F${productId}%2F&name=${linkName}`;
+
+// Save to fallbackUrl field for CTA button
 ```
-
-**IMMEDIATE ACTION REQUIRED:**
-1. ✅ Update `data/admin/snippets.json`
-2. ✅ Add proper `src` URLs to all image tags
-3. ✅ Separate Image HTML from Bol.com scripts
-
-#### Step 1.2: Update Test Widget
-Replace old product ID:
-- ❌ OLD: `productId":"9300000062682298"`
-- ✅ NEW: `productId":"9300000006206090"`
-- ✅ NEW: `id":"bol_1760347149289"`
 
 ### Phase 2: Component Simplification
 
@@ -222,25 +251,32 @@ Update admin interface to have **SEPARATE** fields:
 
 ---
 
-## ✅ Implementation Checklist
+## ✅ Implementation Checklist (October 21, 2025)
 
-### Immediate Fixes (Today)
-- [ ] **Fix empty image src attributes** in `data/admin/snippets.json`
-- [ ] **Update test widget** with new product ID `9300000006206090`
-- [ ] **Simplify display logic** to always show all elements
-- [ ] **Remove complex CSS** hide/show rules
+### 🚨 CRITICAL BACKEND FIXES (Do These First)
+- [ ] **Fix field mapping**: Stop saving Bol.com snippets to Image HTML field
+- [ ] **Implement snippet detection**: Auto-detect when user pastes Bol.com script
+- [ ] **Add automatic image fetching**: Fetch product images from Bol.com when snippet is added
+- [ ] **Add URL extraction**: Auto-extract and build click URLs from snippet data
+- [ ] **Test with real snippet**: Use Dr. Brown's sterilizer example to verify all parts work
 
-### Data Structure (This Week)
-- [ ] **Separate Image HTML from Bol.com Scripts** in admin data
-- [ ] **Update admin interface** to have separate fields
-- [ ] **Test on single product** before applying to all
-- [ ] **Backup working configuration** before major changes
+### Frontend Verification (After Backend Fix)
+- [ ] **Verify backend images show**: Check that Image HTML field displays correctly
+- [ ] **Verify Bol.com snippets work**: Check dynamic content (price, rating) loads
+- [ ] **Verify CTA buttons work**: Check that extracted URLs work correctly
+- [ ] **Test on both pages**: Verify on `eerste-keer-flesvoeding-geven` and `flessen-steriliseren`
 
-### Long-term Stability
-- [ ] **Document working configuration** in this guide
-- [ ] **Create admin interface validation** to prevent data corruption
-- [ ] **Add automated tests** for affiliate widget display
-- [ ] **Version control admin data** to prevent loss
+### Data Quality (This Week)
+- [ ] **Update existing products**: Fix any products with wrong field assignments
+- [ ] **Backup current working state**: Before making major backend changes
+- [ ] **Test with multiple products**: Ensure system works with various Bol.com products
+- [ ] **Validate all image URLs**: Ensure all fetched images load correctly
+
+### System Stability (Long-term)
+- [ ] **Add backend validation**: Prevent incorrect field assignments in future
+- [ ] **Create admin interface feedback**: Show what fields are populated when snippet is added
+- [ ] **Add error handling**: Handle cases where Bol.com images can't be fetched
+- [ ] **Document backend process**: Update this guide with exact backend implementation
 
 ---
 
@@ -280,31 +316,41 @@ If affiliate system breaks completely:
 
 ---
 
-## 🎯 Success Criteria
+## 🎯 Success Criteria (Updated October 21, 2025)
 
-### Test Widget Should Show:
-- ✅ Product image (from Image HTML)
-- ✅ Product title (from admin data)  
-- ✅ Bol.com dynamic content (price, rating, delivery)
-- ✅ Fallback button (always visible)
+### When Backend is Fixed, Test Widget Should Show:
+- ✅ **Product title** (from admin data - CURRENTLY WORKING)
+- ❌ **Product image** (from Image HTML field - NEEDS BACKEND FIX)
+- 🟡 **Bol.com dynamic content** (price, rating, delivery - PARTIALLY WORKING)
+- ❌ **CTA button with extracted URL** (NEEDS BACKEND IMPLEMENTATION)
 
-### Main Widget List Should Show:
-- ✅ 5 products with images
-- ✅ All images loaded (no empty src)
-- ✅ Proper titles and tags
-- ✅ Working Bol.com integration
-- ✅ No "Laden van..." messages
+### When Backend is Fixed, Main Widget List Should Show:
+- ✅ **Product titles and tags** (CURRENTLY WORKING)
+- ❌ **Backend-fetched images** (from auto-fetched Bol.com images)
+- 🟡 **Bol.com integration** (working but field mapping wrong)
+- ❌ **Proper CTA URLs** (extracted from snippets)
 
-### Admin System Should Allow:
-- ✅ Separate management of Image HTML and Bol.com Scripts
-- ✅ Easy updating of product images
-- ✅ Simple addition of new products
-- ✅ Preview of changes before saving
+### Admin System Must Be Enhanced To:
+- ❌ **Auto-detect Bol.com snippets** when pasted
+- ❌ **Auto-fetch product images** from Bol.com
+- ❌ **Auto-extract URLs** from snippet data
+- ❌ **Separate field assignment** (snippet → bolScript, image → imageHtml)
+- ❌ **Validation feedback** showing what was auto-populated
+
+### Test Case for Backend Validation:
+```
+INPUT: Admin pastes Dr. Brown's snippet (bol_1761052302805, productId: 9300000042840603)
+EXPECTED OUTPUT:
+- bolScript field: Contains the full script
+- imageHtml field: Contains fetched product image
+- fallbackUrl field: Contains built click URL
+- name field: Populated with "Dr. Brown's stoomsterilisator met droogfunctie"
+```
 
 ---
 
 **⚠️ CRITICAL RULE: Before making ANY affiliate system changes, update this guide first!**
 
-**Last Updated:** October 13, 2025  
-**Next Review:** After successful implementation  
-**Status:** 🚨 URGENT - System broken, needs immediate attention
+**Last Updated:** October 21, 2025  
+**Next Review:** After backend field mapping is implemented  
+**Status:** 🔧 BACKEND CRITICAL - Frontend working, backend field mapping needs urgent fix
