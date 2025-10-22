@@ -1,24 +1,13 @@
 import { NextResponse } from 'next/server'
-import fs from 'fs'
-import path from 'path'
 import * as jwt from 'jsonwebtoken'
+import { db } from '../../../../../lib/db/connection.js'
+import { snippets, pageSnippets } from '../../../../../lib/db/schema.js'
+import { eq, and } from 'drizzle-orm'
 
 // Force dynamic route
 export const dynamic = 'force-dynamic'
 
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key-here'
-const DATA_DIR = path.join(process.cwd(), 'data', 'admin')
-const PAGE_SNIPPETS_FILE = path.join(DATA_DIR, 'page-snippets.json')
-
-// Ensure data directory exists
-function ensureDataDir() {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true })
-  }
-  if (!fs.existsSync(PAGE_SNIPPETS_FILE)) {
-    fs.writeFileSync(PAGE_SNIPPETS_FILE, JSON.stringify({}))
-  }
-}
 
 // Verify admin token
 function verifyAdmin(request) {
@@ -37,48 +26,31 @@ function verifyAdmin(request) {
   return decoded
 }
 
-// Load page snippets
-function loadPageSnippets() {
-  ensureDataDir()
-  const data = fs.readFileSync(PAGE_SNIPPETS_FILE, 'utf8')
-  return JSON.parse(data)
-}
-
-// Save page snippets
-function savePageSnippets(pageSnippets) {
-  ensureDataDir()
-  fs.writeFileSync(PAGE_SNIPPETS_FILE, JSON.stringify(pageSnippets, null, 2))
-}
-
-// Load snippets
-function loadSnippets() {
-  const SNIPPETS_FILE = path.join(DATA_DIR, 'snippets.json')
-  if (!fs.existsSync(SNIPPETS_FILE)) {
-    return []
-  }
-  const data = fs.readFileSync(SNIPPETS_FILE, 'utf8')
-  return JSON.parse(data)
-}
-
-// GET - Get snippets for a specific page
+// GET - Get snippets for a specific page from database
 export async function GET(request, { params }) {
   try {
     verifyAdmin(request)
     
     const pageId = params.pageId
-    const pageSnippets = loadPageSnippets()
-    const snippets = loadSnippets()
     
-    const pageSnippetList = pageSnippets[pageId] || []
+    // Get page snippets with joined snippet data
+    const pageSnippetsList = await db
+      .select({
+        id: pageSnippets.id,
+        pageId: pageSnippets.pageId,
+        snippetId: pageSnippets.snippetId,
+        order: pageSnippets.order,
+        active: pageSnippets.active,
+        createdAt: pageSnippets.createdAt,
+        snippet: snippets
+      })
+      .from(pageSnippets)
+      .leftJoin(snippets, eq(pageSnippets.snippetId, snippets.id))
+      .where(eq(pageSnippets.pageId, pageId))
+      .orderBy(pageSnippets.order)
     
-    // Add snippet details to each page snippet
-    const enrichedSnippets = pageSnippetList
-      .map(ps => ({
-        ...ps,
-        snippet: snippets.find(s => s.id === ps.snippetId)
-      }))
-      .filter(ps => ps.snippet) // Remove orphaned references
-      .sort((a, b) => (a.order || 0) - (b.order || 0))
+    // Filter out orphaned references (where snippet was deleted)
+    const enrichedSnippets = pageSnippetsList.filter(ps => ps.snippet)
     
     return NextResponse.json({
       success: true,
@@ -94,7 +66,7 @@ export async function GET(request, { params }) {
   }
 }
 
-// POST - Add snippet to page
+// POST - Add snippet to page in database
 export async function POST(request, { params }) {
   try {
     verifyAdmin(request)
@@ -102,42 +74,98 @@ export async function POST(request, { params }) {
     const pageId = params.pageId
     const { snippetId, order } = await request.json()
     
-    const pageSnippets = loadPageSnippets()
-    
-    if (!pageSnippets[pageId]) {
-      pageSnippets[pageId] = []
-    }
-    
     // Check if snippet is already on this page
-    const existingIndex = pageSnippets[pageId].findIndex(ps => ps.snippetId === snippetId)
-    if (existingIndex !== -1) {
+    const existingPageSnippet = await db
+      .select()
+      .from(pageSnippets)
+      .where(and(
+        eq(pageSnippets.pageId, pageId),
+        eq(pageSnippets.snippetId, snippetId)
+      ))
+      .limit(1)
+    
+    if (existingPageSnippet.length > 0) {
       return NextResponse.json(
         { message: 'Snippet is already on this page' },
         { status: 400 }
       )
     }
     
+    // Get current count for default order
+    const currentCount = await db
+      .select({ count: 'count(*)' })
+      .from(pageSnippets)
+      .where(eq(pageSnippets.pageId, pageId))
+    
     const newPageSnippet = {
-      id: Date.now().toString(),
+      id: `ps-${Date.now()}`,
       pageId,
       snippetId,
-      order: order ?? pageSnippets[pageId].length,
+      order: order ?? (currentCount[0]?.count || 0),
       active: true,
-      createdAt: new Date().toISOString()
+      createdAt: new Date()
     }
     
-    pageSnippets[pageId].push(newPageSnippet)
-    savePageSnippets(pageSnippets)
+    const [insertedPageSnippet] = await db
+      .insert(pageSnippets)
+      .values(newPageSnippet)
+      .returning()
     
     return NextResponse.json({
       success: true,
-      pageSnippet: newPageSnippet
+      pageSnippet: insertedPageSnippet
     })
 
   } catch (error) {
     console.error('Failed to add snippet to page:', error)
     return NextResponse.json(
       { message: 'Unauthorized or failed to add snippet to page' },
+      { status: error.message.includes('token') ? 401 : 500 }
+    )
+  }
+}
+
+// DELETE - Remove snippet from page in database
+export async function DELETE(request, { params }) {
+  try {
+    verifyAdmin(request)
+    
+    const pageId = params.pageId
+    const { searchParams } = new URL(request.url)
+    const snippetId = searchParams.get('snippetId')
+    
+    if (!snippetId) {
+      return NextResponse.json(
+        { message: 'Snippet ID is required' },
+        { status: 400 }
+      )
+    }
+    
+    const [deletedPageSnippet] = await db
+      .delete(pageSnippets)
+      .where(and(
+        eq(pageSnippets.pageId, pageId),
+        eq(pageSnippets.snippetId, snippetId)
+      ))
+      .returning()
+    
+    if (!deletedPageSnippet) {
+      return NextResponse.json(
+        { message: 'Page snippet relationship not found' },
+        { status: 404 }
+      )
+    }
+    
+    return NextResponse.json({
+      success: true,
+      message: 'Snippet removed from page successfully',
+      pageSnippet: deletedPageSnippet
+    })
+
+  } catch (error) {
+    console.error('Failed to remove snippet from page:', error)
+    return NextResponse.json(
+      { message: 'Unauthorized or failed to remove snippet from page' },
       { status: error.message.includes('token') ? 401 : 500 }
     )
   }
