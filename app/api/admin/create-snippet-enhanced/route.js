@@ -1,35 +1,9 @@
 import { NextResponse } from 'next/server'
-import fs from 'fs'
-import path from 'path'
+import { db } from '../../../../lib/db/connection.js'
+import { snippets } from '../../../../lib/db/schema.js'
 
 // Force dynamic route
 export const dynamic = 'force-dynamic'
-
-const DATA_DIR = path.join(process.cwd(), 'data', 'admin')
-const SNIPPETS_FILE = path.join(DATA_DIR, 'snippets.json')
-
-// Ensure data directory exists
-function ensureDataDir() {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true })
-  }
-  if (!fs.existsSync(SNIPPETS_FILE)) {
-    fs.writeFileSync(SNIPPETS_FILE, JSON.stringify([]))
-  }
-}
-
-// Load snippets from file
-function loadSnippets() {
-  ensureDataDir()
-  const data = fs.readFileSync(SNIPPETS_FILE, 'utf8')
-  return JSON.parse(data)
-}
-
-// Save snippets to file
-function saveSnippets(snippets) {
-  ensureDataDir()
-  fs.writeFileSync(SNIPPETS_FILE, JSON.stringify(snippets, null, 2))
-}
 
 // Simple session check
 function isAuthenticated(request) {
@@ -272,36 +246,30 @@ export async function POST(request) {
       const finalName = name || productDetails.title || bolData.linkName
       const finalTag = tag || null
       
-      // Create the new snippet with proper field separation
-      const snippets = loadSnippets()
-      
+      // Create the new snippet with proper field separation using database
       const newSnippet = {
         id: `bol-${bolData.productId}-${Date.now()}`,
         name: finalName,
         type: 'bol_snippet',
+        url: clickUrl || productDetails.productUrl || '',
         tag: finalTag,
-        
-        // SEPARATE FIELDS - This is the key fix
-        imageHtml: imageHtml,           // Image goes to imageHtml field
-        bolScript: bolScript,           // Script goes to bolScript field  
-        fallbackUrl: clickUrl || productDetails.productUrl, // URL goes to fallbackUrl field
-        
-        // Metadata
-        productId: bolData.productId,
-        extractedTitle: productDetails.title,
-        extractedImageUrl: productDetails.imageUrl,
+        // Store the combined HTML in generatedHtml for compatibility
+        generatedHtml: `${imageHtml}\n${bolScript}`,
+        price: null,
+        originalPrice: null,
+        currency: 'EUR',
+        priceLastUpdated: null,
         active: true,
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString()
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
       
-      snippets.push(newSnippet)
-      saveSnippets(snippets)
+      const [insertedSnippet] = await db.insert(snippets).values(newSnippet).returning()
       
       return NextResponse.json({
         success: true,
         message: 'Bol.com snippet created with proper field separation',
-        snippet: newSnippet,
+        snippet: insertedSnippet,
         extractedData: {
           productId: bolData.productId,
           productName: productDetails.title,

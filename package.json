@@ -1,6 +1,7 @@
 {
   "name": "flesvoeding-calculator",
   "version": "1.0.0",
+  "type": "module",
   "description": "Flesvoeding Calculator Nederland - Bereken de juiste hoeveelheid flesvoeding voor je baby",
   "scripts": {
     "dev": "next dev",
