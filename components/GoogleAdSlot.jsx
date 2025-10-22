@@ -17,7 +17,7 @@ const GoogleAdSlot = ({
     )
   }
 
-  // Real Google AdSense implementation
+  // Real Google AdSense implementation with glassmorphism framing
   return (
     <div className="text-center space-y-2">
       <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4 min-h-[200px]">
