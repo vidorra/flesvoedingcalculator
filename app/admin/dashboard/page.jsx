@@ -330,13 +330,20 @@ export default function SimpleAdminDashboard() {
 
   const saveNewSnippet = async () => {
     try {
+      // Ensure imageUrl is extracted from imageHtml if not explicitly set
+      let imageUrl = newSnippet.imageUrl;
+      if (!imageUrl && newSnippet.imageHtml) {
+        const imageMatch = newSnippet.imageHtml.match(/src=["'](.*?)["']/i);
+        imageUrl = imageMatch ? imageMatch[1] : null;
+      }
+
       const snippetData = {
         id: `${newSnippet.platform}-${Date.now()}`,
         name: newSnippet.name,
         type: newSnippet.platform,
         url: newSnippet.url,
         shortUrl: newSnippet.shortUrl || '',
-        imageUrl: newSnippet.imageUrl || null,
+        imageUrl: imageUrl || null, // Save extracted imageUrl
         tag: newSnippet.tag || null,
         generatedHtml: newSnippet.imageHtml || null, // Only use imageHtml (not Bol.com code)
         codeSnippet: newSnippet.platform === 'bol' ? newSnippet.code : null, // Store Bol.com snippet separately
@@ -1298,14 +1305,21 @@ export default function SimpleAdminDashboard() {
                         // View mode
                         <div className="flex items-start justify-between">
                           <div className="flex flex-1">
-                            {/* Product Image from HTML (if available) - flex with fit-content */}
-                            {snippet.generatedHtml && (() => {
-                              const imageMatch = snippet.generatedHtml.match(/src=["'](.*?)["']/i);
-                              const imageUrl = imageMatch ? imageMatch[1] : null;
+                            {/* Product Image from imageUrl or extracted from HTML */}
+                            {(() => {
+                              // First try to use imageUrl if available
+                              let imageUrl = snippet.imageUrl;
+
+                              // If no imageUrl, try to extract from generatedHtml
+                              if (!imageUrl && snippet.generatedHtml) {
+                                const imageMatch = snippet.generatedHtml.match(/src=["'](.*?)["']/i);
+                                imageUrl = imageMatch ? imageMatch[1] : null;
+                              }
+
                               return imageUrl ? (
                                 <div className="flex-shrink-0 mr-4">
-                                  <img 
-                                    src={imageUrl} 
+                                  <img
+                                    src={imageUrl}
                                     alt={snippet.name}
                                     className="w-32 h-32 object-cover rounded-lg border border-gray-200"
                                     style={{ display: 'block !important' }}
