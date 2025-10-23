@@ -220,6 +220,7 @@ export async function POST(request) {
       type: snippetData.type,
       url: snippetData.url || '',
       shortUrl: snippetData.shortUrl || '',
+      imageUrl: snippetData.imageUrl || null, // Add imageUrl field
       tag: snippetData.tag || null,
       generatedHtml: snippetData.generatedHtml || '',
       codeSnippet: snippetData.codeSnippet || '',

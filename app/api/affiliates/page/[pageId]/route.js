@@ -315,8 +315,9 @@ export async function GET(request, { params }) {
           generatedHtml: snippet.generatedHtml, // Include the HTML for the widget
           data: {
             title: snippet.name,
-            fallbackImage: getFallbackImageForProduct(snippet.id),
-            productUrl: extractAffiliateUrl(snippet.generatedHtml) || '#'
+            // Use imageUrl if available, otherwise try to extract from generatedHtml, or use fallback
+            fallbackImage: snippet.imageUrl || extractImageUrl(snippet.generatedHtml) || getFallbackImageForProduct(snippet.id),
+            productUrl: extractAffiliateUrl(snippet.generatedHtml) || snippet.url || '#'
           }
         }
       }
