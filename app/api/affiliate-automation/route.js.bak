@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import affiliateAutomation from '../../../lib/affiliate-automation.js'
+const affiliateAutomation = require('../../../lib/affiliate-automation.js')
 
 /**
  * GET /api/affiliate-automation - Get automation status and preview
@@ -35,7 +35,7 @@ export async function GET(request) {
         
       case 'list':
         // List all articles that can be processed
-        const allMappings = Object.entries(affiliateAutomation.ARTICLE_PRODUCT_MAPPING || {})
+        const allMappings = Object.entries(require('../../../lib/affiliate-automation.js').ARTICLE_PRODUCT_MAPPING || {})
         const articles = allMappings.map(([path, config]) => ({
           path,
           title: config.title,
@@ -94,7 +94,7 @@ export async function POST(request) {
         
         const results = []
         for (const articlePath of articles) {
-          const config = affiliateAutomation.ARTICLE_PRODUCT_MAPPING[articlePath]
+          const config = require('../../../lib/affiliate-automation.js').ARTICLE_PRODUCT_MAPPING[articlePath]
           if (config) {
             const result = await affiliateAutomation.processArticle(articlePath, config)
             results.push({

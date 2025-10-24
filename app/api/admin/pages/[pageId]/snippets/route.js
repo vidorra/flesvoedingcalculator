@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import * as jwt from 'jsonwebtoken'
-import { db } from '../../../../../lib/db/connection.js'
-import { snippets, pageSnippets } from '../../../../../lib/db/schema.js'
+import { db } from '../../../../../../lib/db/connection.js'
+import { snippets, pageSnippets } from '../../../../../../lib/db/schema.js'
 import { eq, and } from 'drizzle-orm'
 
 // Force dynamic route

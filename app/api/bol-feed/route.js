@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-const bolProductFeed = require('../../../lib/bol-product-feed.js')
+import bolProductFeed from '../../../lib/bol-product-feed.js'
 
 /**
  * GET /api/bol-feed - Get product feed status and statistics
