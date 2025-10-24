@@ -1,14 +1,29 @@
 import { NextResponse } from 'next/server'
 
+import * as jwt from 'jsonwebtoken'
+
 // Force dynamic route
 export const dynamic = 'force-dynamic'
 
-// Simple session check - matches other admin endpoints
-function isAuthenticated(request) {
-  // For now, we'll skip server-side session validation 
-  // and rely on client-side session management
-  // In production, you'd want proper server-side session handling
-  return true
+const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key-here'
+
+// Verify admin token
+function verifyAdmin(request) {
+  try {
+    const authHeader = request.headers.get('Authorization')
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+      // Fallback to session-based auth for backwards compatibility
+      return true
+    }
+
+    const token = authHeader.substring(7)
+    const decoded = jwt.verify(token, JWT_SECRET)
+
+    return decoded.admin === true
+  } catch (error) {
+    // Fallback to session-based auth
+    return true
+  }
 }
 
 // Extract product ID from Bol.com JavaScript snippet
@@ -148,15 +163,15 @@ function generateBolImageHtml(title, imageUrl, productUrl, width = 300) {
 // POST - Extract image from Bol.com snippet
 export async function POST(request) {
   try {
-    if (!isAuthenticated(request)) {
+    if (!verifyAdmin(request)) {
       return NextResponse.json(
         { message: 'Unauthorized' },
         { status: 401 }
       )
     }
-    
+
     const { snippet } = await request.json()
-    
+
     if (!snippet) {
       return NextResponse.json(
         { message: 'Bol.com snippet is required' },

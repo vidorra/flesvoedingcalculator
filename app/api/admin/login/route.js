@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import * as jwt from 'jsonwebtoken'
 
 // Force dynamic route
 export const dynamic = 'force-dynamic'

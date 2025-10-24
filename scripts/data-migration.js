@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 
+// Load environment variables FIRST before any other imports
+import dotenv from 'dotenv'
+dotenv.config()
+
 import fs from 'fs'
 import path from 'path'
 import { db, checkDatabaseConnection, closeDatabaseConnection } from '../lib/db/connection.js'
