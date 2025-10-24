@@ -36,16 +36,6 @@ export default function SimpleAdminDashboard() {
   const [isExtractingImage, setIsExtractingImage] = useState(false) // For Bol.com image extraction
   const router = useRouter()
 
-  // Helper to get auth headers with JWT token
-  const getAuthHeaders = () => {
-    const token = localStorage.getItem('admin_token')
-    return {
-      'Content-Type': 'application/json',
-      ...(token ? { 'Authorization': `Bearer ${token}` } : {})
-    }
-  }
-
-
   // Check authentication
   useEffect(() => {
     const isAuth = localStorage.getItem('admin_authenticated')
@@ -89,9 +79,11 @@ export default function SimpleAdminDashboard() {
       // Load snippets
       console.log('Loading snippets from /api/admin-snippets/')
       try {
-        const snippetsResponse = await fetch(`/api/admin/snippets/?t=${Date.now()}`, {
+        const snippetsResponse = await fetch(`/api/admin-snippets/?t=${Date.now()}`, {
           method: 'GET',
-          headers: getAuthHeaders(),
+          headers: {
+            'Content-Type': 'application/json',
+          },
           cache: 'no-cache'
         })
         console.log('Snippets response status:', snippetsResponse.status)
@@ -120,7 +112,9 @@ export default function SimpleAdminDashboard() {
       try {
         const pagesResponse = await fetch(`/api/admin-pages/?t=${Date.now()}`, {
           method: 'GET',
-          headers: getAuthHeaders(),
+          headers: {
+            'Content-Type': 'application/json',
+          },
           cache: 'no-cache'
         })
         console.log('Pages response status:', pagesResponse.status)
@@ -157,9 +151,7 @@ export default function SimpleAdminDashboard() {
   const loadPageSnippets = async (pageId) => {
     try {
       console.log('Loading admin assignments for page:', pageId)
-      const response = await fetch(`/api/admin/pages/${pageId}/snippets/`, {
-      headers: getAuthHeaders()
-    })
+      const response = await fetch(`/api/admin-page-snippets/?pageId=${pageId}`)
       if (response.ok) {
         const data = await response.json()
         console.log('Admin page snippets data:', data)
@@ -189,7 +181,9 @@ export default function SimpleAdminDashboard() {
     try {
       const response = await fetch('/api/admin/generate-snippet/', {
         method: 'POST',
-        headers: getAuthHeaders(),
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({
           url: newSnippet.url,
           type: newSnippet.platform
@@ -230,7 +224,9 @@ export default function SimpleAdminDashboard() {
     try {
       const response = await fetch('/api/admin/extract-bol-image/', {
         method: 'POST',
-        headers: getAuthHeaders(),
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({ snippet })
       })
 
@@ -284,7 +280,9 @@ export default function SimpleAdminDashboard() {
     try {
       const response = await fetch('/api/admin/extract-bol-image/', {
         method: 'POST',
-        headers: getAuthHeaders(),
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({ snippet })
       })
 
@@ -347,17 +345,19 @@ export default function SimpleAdminDashboard() {
         shortUrl: newSnippet.shortUrl || '',
         imageUrl: imageUrl || null, // Save extracted imageUrl
         tag: newSnippet.tag || null,
-        imageHtml: newSnippet.imageHtml || null, // Separate image HTML field
-        bolScript: newSnippet.platform === 'bol' ? newSnippet.code : null, // Separate Bol.com script field
+        generatedHtml: newSnippet.imageHtml || null, // Only use imageHtml (not Bol.com code)
+        codeSnippet: newSnippet.platform === 'bol' ? newSnippet.code : null, // Store Bol.com snippet separately
         price: newSnippet.price,
         originalPrice: newSnippet.originalPrice,
         currency: newSnippet.currency || 'EUR',
         active: true
       }
 
-      const response = await fetch('/api/admin/snippets/', {
+      const response = await fetch('/api/admin-snippets/', {
         method: 'POST',
-        headers: getAuthHeaders(),
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify(snippetData)
       })
 
@@ -388,10 +388,12 @@ export default function SimpleAdminDashboard() {
 
   const assignSnippetToPage = async (pageId, snippetId) => {
     try {
-      const response = await fetch(`/api/admin/pages/${pageId}/snippets/`, {
-      method: 'POST',
-      headers: getAuthHeaders(),
-      body: JSON.stringify({ snippetId })
+      const response = await fetch('/api/admin-page-snippets/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ pageId, snippetId })
       })
 
       if (response.ok) {
@@ -410,9 +412,12 @@ export default function SimpleAdminDashboard() {
 
   const unassignSnippetFromPage = async (pageId, snippetId) => {
     try {
-      const response = await fetch(`/api/admin/pages/${pageId}/snippets/?snippetId=${snippetId}`, {
-      method: 'DELETE',
-      headers: getAuthHeaders()
+      const response = await fetch('/api/admin-page-snippets/', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ pageId, snippetId })
       })
 
       if (response.ok) {
@@ -431,9 +436,11 @@ export default function SimpleAdminDashboard() {
 
   const toggleSnippetActive = async (snippetId, currentActive) => {
     try {
-      const response = await fetch('/api/admin/snippets/', {
+      const response = await fetch('/api/admin-snippets/', {
         method: 'PUT',
-        headers: getAuthHeaders(),
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({ 
           id: snippetId, 
           active: !currentActive 
@@ -462,9 +469,8 @@ export default function SimpleAdminDashboard() {
       shortUrl: snippet.shortUrl || '',
       imageUrl: snippet.imageUrl || '',
       tag: snippet.tag || '',
-      generatedHtml: snippet.generatedHtml || snippet.imageHtml || '',
-      imageHtml: snippet.imageHtml || '',
-      bolScript: snippet.bolScript || snippet.codeSnippet || '',
+      generatedHtml: snippet.generatedHtml || '',
+      codeSnippet: snippet.codeSnippet || '',
       price: snippet.price || '',
       originalPrice: snippet.originalPrice || ''
     })
@@ -477,9 +483,11 @@ export default function SimpleAdminDashboard() {
 
   const saveEditSnippet = async (snippetId) => {
     try {
-      const response = await fetch('/api/admin/snippets/', {
+      const response = await fetch('/api/admin-snippets/', {
         method: 'PUT',
-        headers: getAuthHeaders(),
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({
           id: snippetId,
           ...editFormData
@@ -508,9 +516,12 @@ export default function SimpleAdminDashboard() {
     }
 
     try {
-      const response = await fetch(`/api/admin/snippets/?id=${snippetId}`, {
+      const response = await fetch('/api/admin-snippets/', {
         method: 'DELETE',
-        headers: getAuthHeaders()
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ id: snippetId })
       })
 
       if (response.ok) {
@@ -549,9 +560,11 @@ export default function SimpleAdminDashboard() {
     setSyncAlert(null) // Clear any previous alerts
 
     try {
-      const response = await fetch('/api/admin/snippets/sync-prices', {
+      const response = await fetch('/api/admin-snippets/sync-prices', {
         method: 'POST',
-        headers: getAuthHeaders()
+        headers: {
+          'Content-Type': 'application/json',
+        }
       })
 
       if (response.ok) {
@@ -632,7 +645,9 @@ export default function SimpleAdminDashboard() {
       // Use generate-snippet API to refetch data and price
       const response = await fetch('/api/admin/generate-snippet/', {
         method: 'POST',
-        headers: getAuthHeaders(),
+        headers: {
+          'Content-Type': 'application/json',
+        },
         body: JSON.stringify({
           url: shortUrl,
           type: 'amazon'
