@@ -3,8 +3,8 @@
  * Automatically adds BolProductSection components to kennisbank articles
  */
 
-import fs from 'fs'
-import path from 'path'
+const fs = require('fs')
+const path = require('path')
 
 // Article-to-products mapping based on our analysis
 const ARTICLE_PRODUCT_MAPPING = {
@@ -402,4 +402,4 @@ ${productsArray}
 const affiliateAutomation = new AffiliateAutomation()
 affiliateAutomation.ARTICLE_PRODUCT_MAPPING = ARTICLE_PRODUCT_MAPPING
 
-export default affiliateAutomation
+module.exports = affiliateAutomation
