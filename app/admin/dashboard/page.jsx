@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import Layout from '../../../components/Layout'
 import { Settings, Link, Plus, Eye, X, Edit, Trash2, ToggleLeft, ToggleRight, RefreshCw } from 'lucide-react'
 
+// Version: 2.0 - Using database APIs for persistence
 export default function SimpleAdminDashboard() {
   const [snippets, setSnippets] = useState([])
   const [pages, setPages] = useState([])
