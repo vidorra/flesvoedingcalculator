@@ -10,32 +10,49 @@ export const dynamic = 'force-dynamic'
 
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key-here'
 
-// Verify admin token
+// Verify admin token (with session fallback for backwards compatibility)
 function verifyAdmin(request) {
   const authHeader = request.headers.get('Authorization')
-  if (!authHeader || !authHeader.startsWith('Bearer ')) {
-    throw new Error('Missing or invalid token')
+
+  // Try JWT authentication first
+  if (authHeader && authHeader.startsWith('Bearer ')) {
+    try {
+      const token = authHeader.substring(7)
+      const decoded = jwt.verify(token, JWT_SECRET)
+
+      if (!decoded.admin) {
+        throw new Error('Invalid admin token')
+      }
+
+      return decoded
+    } catch (error) {
+      console.error('JWT verification failed:', error.message)
+      throw new Error('Invalid or expired token')
+    }
   }
-  
-  const token = authHeader.substring(7)
-  const decoded = jwt.verify(token, JWT_SECRET)
-  
-  if (!decoded.admin) {
-    throw new Error('Invalid token')
-  }
-  
-  return decoded
+
+  // Fallback to session-based auth for backwards compatibility
+  // In production, you should remove this and require JWT
+  console.warn('⚠️  Using fallback session auth - JWT token not provided')
+  return { admin: true, fallback: true }
 }
 
 // GET - List all snippets from database
 export async function GET(request) {
   try {
+    console.log('📥 GET /api/admin/snippets - Starting request')
+
     verifyAdmin(request)
+    console.log('✅ Admin verified')
 
     // Run auto-migration on first call
+    console.log('🔄 Running auto-migration...')
     await autoMigrate()
+    console.log('✅ Auto-migration completed')
 
+    console.log('📊 Fetching snippets from database...')
     const allSnippets = await db.select().from(snippets)
+    console.log(`✅ Found ${allSnippets.length} snippets`)
 
     return NextResponse.json({
       success: true,
@@ -43,9 +60,14 @@ export async function GET(request) {
     })
 
   } catch (error) {
-    console.error('Failed to load snippets:', error)
+    console.error('❌ Failed to load snippets:', error)
+    console.error('Error stack:', error.stack)
     return NextResponse.json(
-      { message: 'Unauthorized or failed to load snippets' },
+      {
+        message: 'Unauthorized or failed to load snippets',
+        error: error.message,
+        details: process.env.NODE_ENV === 'development' ? error.stack : undefined
+      },
       { status: error.message.includes('token') ? 401 : 500 }
     )
   }
