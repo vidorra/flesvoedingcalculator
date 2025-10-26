@@ -26,6 +26,7 @@ jobs:
       - run: npm ci
       - name: Create placeholder environment file for build
         run: |
+          echo "NEXT_PUBLIC_SITE_URL=https://flesvoedingcalculator.nl" >> .env.local
           echo "NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=placeholder" >> .env.local
           echo "NEXT_PUBLIC_EMAILJS_SERVICE_ID=placeholder" >> .env.local
           echo "NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=placeholder" >> .env.local
