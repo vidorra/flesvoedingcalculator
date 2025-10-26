@@ -52,4 +52,7 @@ EXPOSE 3000
 ENV HOSTNAME=0.0.0.0
 ENV PORT=3000
 
-CMD [ "npm", "start" ]
+# Copy and use startup script that runs migrations before starting
+RUN chmod +x /app/start.sh
+
+CMD [ "/app/start.sh" ]
