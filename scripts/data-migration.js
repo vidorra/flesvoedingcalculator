@@ -155,7 +155,7 @@ async function migrateData() {
         id: snippet.id,
         name: snippet.name,
         type: snippet.type,
-        url: snippet.url || '',
+        url: snippet.url || snippet.fallbackUrl || '',
         tag: snippet.tag || null,
         // Handle both old and new snippet formats
         generatedHtml: snippet.generatedHtml ||
@@ -164,7 +164,7 @@ async function migrateData() {
                         snippet.imageHtml || snippet.bolScript || null),
         imageHtml: snippet.imageHtml || null,
         bolScript: snippet.bolScript || null,
-        imageUrl: snippet.imageUrl || null,
+        imageUrl: snippet.imageUrl || snippet.extractedImageUrl || null,
         price: null, // Not tracked in JSON files
         originalPrice: null, // Not tracked in JSON files
         currency: 'EUR',
