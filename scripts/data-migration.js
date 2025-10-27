@@ -156,14 +156,17 @@ async function migrateData() {
         name: snippet.name,
         type: snippet.type,
         url: snippet.url || '',
-        tag: snippet.tag,
+        tag: snippet.tag || null,
         // Handle both old and new snippet formats
-        generatedHtml: snippet.generatedHtml || 
-                      (snippet.imageHtml && snippet.bolScript ? 
-                        `${snippet.imageHtml}\n${snippet.bolScript}` : 
-                        snippet.imageHtml || snippet.bolScript || ''),
+        generatedHtml: snippet.generatedHtml ||
+                      (snippet.imageHtml && snippet.bolScript ?
+                        `${snippet.imageHtml}\n${snippet.bolScript}` :
+                        snippet.imageHtml || snippet.bolScript || null),
+        imageHtml: snippet.imageHtml || null,
+        bolScript: snippet.bolScript || null,
+        imageUrl: snippet.imageUrl || null,
         price: null, // Not tracked in JSON files
-        originalPrice: null, // Not tracked in JSON files  
+        originalPrice: null, // Not tracked in JSON files
         currency: 'EUR',
         priceLastUpdated: null,
         active: snippet.active ?? true,
