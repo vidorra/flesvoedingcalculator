@@ -3,20 +3,12 @@ set -e
 
 echo "🚀 Starting application..."
 
-# Run database schema migrations
+# Run database schema migrations (ensures database structure is up-to-date)
 echo "📊 Running database schema migrations..."
 if npm run db:migrate; then
   echo "✅ Schema migrations completed successfully"
-
-  # Run data migration to import JSON data
-  echo "📦 Running data migration..."
-  if npm run db:migrate-data; then
-    echo "✅ Data migration completed successfully"
-  else
-    echo "⚠️  Data migration failed, but continuing to start app..."
-  fi
 else
-  echo "⚠️  Schema migration failed, skipping data migration..."
+  echo "⚠️  Schema migration failed, but continuing to start app..."
 fi
 
 # Start the Next.js application
