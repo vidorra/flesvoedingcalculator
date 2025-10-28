@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import * as jwt from 'jsonwebtoken'
 import { db } from '../../../../../../lib/db/connection.js'
 import { snippets, pageSnippets } from '../../../../../../lib/db/schema.js'
-import { eq, and } from 'drizzle-orm'
+import { eq, and, count } from 'drizzle-orm'
 
 // Force dynamic route
 export const dynamic = 'force-dynamic'
@@ -93,15 +93,15 @@ export async function POST(request, { params }) {
     
     // Get current count for default order
     const currentCount = await db
-      .select({ count: 'count(*)' })
+      .select({ count: count() })
       .from(pageSnippets)
       .where(eq(pageSnippets.pageId, pageId))
-    
+
     const newPageSnippet = {
       id: `ps-${Date.now()}`,
       pageId,
       snippetId,
-      order: order ?? (currentCount[0]?.count || 0),
+      order: order ?? Number(currentCount[0]?.count || 0),
       active: true,
       createdAt: new Date()
     }
