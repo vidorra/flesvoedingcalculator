@@ -49,6 +49,7 @@ jobs:
             .next
             captain-definition
             Dockerfile
+            start.sh
             package.json
             package-lock.json
             next.config.js
@@ -57,6 +58,9 @@ jobs:
             lib
             hooks
             public
+            scripts
+            migrations
+            data
             tailwind.config.js
             postcss.config.js
           outPath: deploy.tar
