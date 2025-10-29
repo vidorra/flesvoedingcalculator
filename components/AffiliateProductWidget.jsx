@@ -348,6 +348,15 @@ export default function AffiliateProductWidget({
                     <h4 className="font-medium text-primary text-sm mb-2 line-clamp-2 min-h-[40px] flex items-center justify-center">
                       {product.name}
                     </h4>
+                    {/* Price display */}
+                    {product.price && (
+                      <div className="my-2">
+                        <span className="text-lg font-bold text-gray-900">€{product.price}</span>
+                        {product.originalPrice && product.originalPrice > product.price && (
+                          <span className="ml-2 text-sm text-gray-500 line-through">€{product.originalPrice}</span>
+                        )}
+                      </div>
+                    )}
                     <div className="mt-auto">
                       <div className="text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors inline-block" style={{ backgroundColor: '#FF9900' }}>
                         Bekijk op Amazon →
