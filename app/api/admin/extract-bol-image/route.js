@@ -206,7 +206,10 @@ export async function POST(request) {
     const productData = await fetchBolProductImage(bolData.productId, bolData.productName)
 
     if (!productData.success) {
-      console.warn('Failed to fetch product details, using fallback')
+      console.error('⚠️ Failed to fetch product details:', productData.error || 'Unknown error')
+      console.error('Using fallback image:', productData.imageUrl)
+    } else {
+      console.log('✅ Successfully fetched product image:', productData.imageUrl)
     }
 
     // Use affiliate URL from snippet, fallback to regular URL
