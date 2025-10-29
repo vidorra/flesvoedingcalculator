@@ -26,130 +26,134 @@ function verifyAdmin(request) {
   }
 }
 
-// Extract product ID from Bol.com JavaScript snippet
-function extractProductIdFromSnippet(snippet) {
+// Extract all data from Bol.com JavaScript snippet
+function extractBolDataFromSnippet(snippet) {
   try {
-    // Look for productId in the JavaScript variable
+    const data = {
+      productId: null,
+      productName: null,
+      siteId: null,
+      affiliateUrl: null
+    }
+
+    // Extract productId
     const productIdMatch = snippet.match(/"productId":"([^"]+)"/i)
     if (productIdMatch && productIdMatch[1]) {
-      return productIdMatch[1]
+      data.productId = productIdMatch[1]
     }
-    
-    // Alternative pattern
-    const altMatch = snippet.match(/productId["']:\s*["']([^"']+)["']/i)
-    if (altMatch && altMatch[1]) {
-      return altMatch[1]
-    }
-    
-    return null
-  } catch (error) {
-    console.error('Error extracting product ID from snippet:', error)
-    return null
-  }
-}
 
-// Extract product name from Bol.com JavaScript snippet
-function extractProductNameFromSnippet(snippet) {
-  try {
-    // Look for linkName in the JavaScript variable
+    // Extract linkName (product name)
     const linkNameMatch = snippet.match(/"linkName":"([^"]+)"/i)
     if (linkNameMatch && linkNameMatch[1]) {
-      // Decode URI component
-      return decodeURIComponent(linkNameMatch[1])
+      data.productName = decodeURIComponent(linkNameMatch[1])
     }
-    
-    return null
+
+    // Extract siteId
+    const siteIdMatch = snippet.match(/"siteId":"([^"]+)"/i)
+    if (siteIdMatch && siteIdMatch[1]) {
+      data.siteId = siteIdMatch[1]
+    }
+
+    // Build affiliate URL
+    if (data.productId && data.productName && data.siteId) {
+      const encodedName = encodeURIComponent(data.productName)
+      const productSlug = data.productName.toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
+
+      data.affiliateUrl = `https://partner.bol.com/click/click?p=2&t=url&s=${data.siteId}&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2F${productSlug}%2F${data.productId}%2F&name=${encodedName}`
+    }
+
+    return data
   } catch (error) {
-    console.error('Error extracting product name from snippet:', error)
-    return null
+    console.error('Error extracting Bol.com data from snippet:', error)
+    return { productId: null, productName: null, siteId: null, affiliateUrl: null }
   }
 }
 
-// Fetch product image from Bol.com using product ID
+// Fetch product image from Bol.com using product ID and name
 async function fetchBolProductImage(productId, productName = null) {
   try {
-    // Try to construct Bol.com product URL and fetch the page
-    const productUrl = `https://www.bol.com/nl/nl/p/${productId}/`
-    
-    console.log('Fetching Bol.com product page:', productUrl)
-    
-    const response = await fetch(productUrl, {
+    // Create product slug from product name for the fetch URL
+    const productSlug = productName
+      ? productName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+      : 'product'
+
+    // Fetch from the actual product page (not affiliate URL)
+    const fetchUrl = `https://www.bol.com/nl/nl/p/${productSlug}/${productId}/`
+
+    console.log('Fetching Bol.com product page:', fetchUrl)
+
+    const response = await fetch(fetchUrl, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
         'Accept-Language': 'nl-NL,nl;q=0.9,en;q=0.8'
       }
     })
-    
+
     if (!response.ok) {
+      console.warn(`HTTP ${response.status} for ${fetchUrl}`)
       throw new Error(`HTTP ${response.status}`)
     }
-    
+
     const html = await response.text()
-    
+
     // Extract title if not provided
     let title = productName
     if (!title) {
       const titleMatch = html.match(/<title[^>]*>([^<]+)<\/title>/i)
       title = titleMatch ? titleMatch[1].replace(' | bol.com', '').trim() : `Product ${productId}`
     }
-    
-    // Extract image URL - try multiple patterns
-    let imageUrl = `https://media.s-bol.com/placeholder/${productId}/550x550.jpg`
-    
+
+    // Extract image URL - look for main product image
+    let imageUrl = null
+
+    // Try multiple patterns to find the product image
     const imagePatterns = [
+      // Main product image in structured data
+      /"image":\s*"(https:\/\/media\.s-bol\.com\/[^"]+)"/,
       // High-res product images
-      /"(https:\/\/media\.s-bol\.com\/[^"]*\/\d+x\d+\.jpg)"/g,
-      // Alternative image patterns
-      /src="(https:\/\/media\.s-bol\.com\/[^"]*\.jpg)"/g,
+      /"(https:\/\/media\.s-bol\.com\/[A-Za-z0-9]+\/[A-Za-z0-9]+\/\d+x\d+\.jpg)"/,
+      // Alternative patterns
+      /src="(https:\/\/media\.s-bol\.com\/[^"]+\/\d+x\d+\.jpg)"/,
       // General media patterns
-      /<img[^>]+src="([^"]*media\.s-bol\.com[^"]*\.jpg)"[^>]*>/gi
+      /<img[^>]+src="(https:\/\/media\.s-bol\.com\/[^"]+\.jpg)"[^>]*>/i
     ]
-    
+
     for (const pattern of imagePatterns) {
-      const matches = [...html.matchAll(pattern)]
-      if (matches.length > 0) {
-        // Find the largest image (highest resolution)
-        let bestImage = matches[0][1]
-        let maxRes = 0
-        
-        for (const match of matches) {
-          const img = match[1]
-          // Extract resolution from URL like .../300x300.jpg
-          const resMatch = img.match(/\/(\d+)x(\d+)\.jpg/)
-          if (resMatch) {
-            const res = parseInt(resMatch[1]) * parseInt(resMatch[2])
-            if (res > maxRes) {
-              maxRes = res
-              bestImage = img
-            }
-          }
-        }
-        
-        imageUrl = bestImage
+      const match = html.match(pattern)
+      if (match && match[1]) {
+        imageUrl = match[1]
+        console.log(`✅ Found image with pattern: ${imageUrl}`)
         break
       }
     }
-    
+
+    // If no image found, use placeholder
+    if (!imageUrl || imageUrl.includes('placeholder')) {
+      console.warn(`⚠️ No real image found, using placeholder for product ${productId}`)
+      imageUrl = `https://media.s-bol.com/placeholder/${productId}/550x550.jpg`
+    }
+
     console.log('Extracted Bol.com data:', { title, imageUrl, productId })
-    
+
     return {
       success: true,
       title,
       imageUrl,
-      productId,
-      productUrl
+      productId
     }
-    
+
   } catch (error) {
     console.error('Failed to fetch Bol.com product details:', error)
-    
-    // Return fallback data
+
+    // Return fallback data with placeholder
     return {
       success: false,
       title: productName || `Product ${productId}`,
       imageUrl: `https://media.s-bol.com/placeholder/${productId}/550x550.jpg`,
       productId,
-      productUrl: `https://www.bol.com/nl/nl/p/${productId}/`,
       error: error.message
     }
   }
@@ -178,50 +182,50 @@ export async function POST(request) {
         { status: 400 }
       )
     }
-    
+
     console.log('Processing Bol.com snippet for image extraction')
-    
-    // Extract product ID from the snippet
-    const productId = extractProductIdFromSnippet(snippet)
-    
-    if (!productId) {
+
+    // Extract all data from snippet
+    const bolData = extractBolDataFromSnippet(snippet)
+
+    if (!bolData.productId) {
       return NextResponse.json(
         { message: 'Could not extract product ID from Bol.com snippet' },
         { status: 400 }
       )
     }
-    
-    console.log('Extracted Product ID:', productId)
-    
-    // Extract product name from snippet (if available)
-    const productName = extractProductNameFromSnippet(snippet)
-    console.log('Extracted Product Name:', productName)
-    
-    // Fetch product details and image
-    const productData = await fetchBolProductImage(productId, productName)
-    
+
+    console.log('Extracted Bol.com data:', bolData)
+
+    // Fetch product image from Bol.com
+    const productData = await fetchBolProductImage(bolData.productId, bolData.productName)
+
     if (!productData.success) {
       console.warn('Failed to fetch product details, using fallback')
     }
-    
-    // Generate Image HTML
+
+    // Use affiliate URL from snippet, fallback to regular URL
+    const finalProductUrl = bolData.affiliateUrl || `https://www.bol.com/nl/nl/p/${bolData.productId}/`
+
+    // Generate Image HTML with affiliate URL
     const imageHtml = generateBolImageHtml(
-      productData.title, 
-      productData.imageUrl, 
-      productData.productUrl
+      productData.title,
+      productData.imageUrl,
+      finalProductUrl
     )
-    
+
     return NextResponse.json({
       success: true,
-      productId,
+      productId: bolData.productId,
       title: productData.title,
       imageUrl: productData.imageUrl,
-      productUrl: productData.productUrl,
+      productUrl: finalProductUrl, // Return affiliate URL
       imageHtml,
-      extractedName: productName,
+      extractedName: bolData.productName,
+      siteId: bolData.siteId,
       message: productData.success ? 'Image extracted successfully' : 'Using fallback image data'
     })
-    
+
   } catch (error) {
     console.error('Failed to extract Bol.com image:', error)
     return NextResponse.json(
