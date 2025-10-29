@@ -47,8 +47,8 @@ function BolScriptWidget({ product }) {
   }, [product.generatedHtml, product.id])
 
   return (
-    <div className="bg-white rounded-xl border border-gray-200 p-4" ref={containerRef}>
-      <div className="text-center space-y-4" data-product-id={product.id}>
+    <div className="bg-white rounded-xl border border-gray-200 p-4 flex flex-col w-full" ref={containerRef}>
+      <div className="text-center space-y-4 flex flex-col flex-grow" data-product-id={product.id}>
         {/* 1. Product Image (from backend) */}
         <div className="mb-3">
           <img
@@ -74,14 +74,16 @@ function BolScriptWidget({ product }) {
         </div>
 
         {/* 4. Button */}
-        <a
-          href={product.url || product.data?.productUrl || '#'}
-          target="_blank"
-          rel="nofollow noopener"
-          className="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors inline-block"
-        >
-          Bekijk op bol.com →
-        </a>
+        <div className="mt-auto">
+          <a
+            href={product.url || product.data?.productUrl || '#'}
+            target="_blank"
+            rel="nofollow noopener"
+            className="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors inline-block"
+          >
+            Bekijk op bol.com →
+          </a>
+        </div>
       </div>
     </div>
   )
@@ -261,7 +263,7 @@ export default function AffiliateProductWidget({
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {displayProducts.map((product, index) => (
-          <div key={product.id} className="relative">
+          <div key={product.id} className="relative flex">
             {/* Product tag (Budget, Aanbevolen, etc.) */}
             {product.tag && (
               <div className="absolute top-2 left-2 z-10">
@@ -280,8 +282,8 @@ export default function AffiliateProductWidget({
             
             {/* Bol.com Iframe Widget */}
             {product.type === 'bol_iframe' && (
-              <div className="bg-white rounded-xl border border-gray-200 p-4">
-                <div className="text-center">
+              <div className="bg-white rounded-xl border border-gray-200 p-4 flex flex-col w-full">
+                <div className="text-center flex flex-col flex-grow">
                   <a 
                     href={product.data.productUrl}
                     target="_blank"
@@ -300,11 +302,13 @@ export default function AffiliateProductWidget({
                         }}
                       />
                     </div>
-                    <h4 className="font-medium text-primary text-sm mb-2 line-clamp-2 min-h-[40px] flex items-center">
+                    <h4 className="font-medium text-primary text-sm mb-2 line-clamp-2 min-h-[40px] flex items-center justify-center">
                       {product.data.title}
                     </h4>
-                    <div className="bg-primary text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors inline-block">
-                      Bekijk op bol.com →
+                    <div className="mt-auto">
+                      <div className="bg-primary text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors inline-block">
+                        Bekijk op bol.com →
+                      </div>
                     </div>
                   </a>
                 </div>
@@ -321,13 +325,13 @@ export default function AffiliateProductWidget({
             
             {/* Amazon Affiliate Image */}
             {product.type === 'amazon_image' && (
-              <div className="bg-white rounded-xl border border-gray-200 p-4">
-                <div className="text-center">
-                  <a 
+              <div className="bg-white rounded-xl border border-gray-200 p-4 flex flex-col w-full">
+                <div className="text-center flex flex-col flex-grow">
+                  <a
                     href={product.data.url}
                     target="_blank"
                     rel="nofollow noopener"
-                    className="block hover:opacity-90 transition-opacity"
+                    className="block hover:opacity-90 transition-opacity flex flex-col flex-grow"
                   >
                     <div className="mb-3">
                       <img
@@ -341,11 +345,13 @@ export default function AffiliateProductWidget({
                         }}
                       />
                     </div>
-                    <h4 className="font-medium text-primary text-sm mb-2 line-clamp-2 min-h-[40px] flex items-center">
+                    <h4 className="font-medium text-primary text-sm mb-2 line-clamp-2 min-h-[40px] flex items-center justify-center">
                       {product.name}
                     </h4>
-                    <div className="bg-orange-500 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors inline-block">
-                      Bekijk op Amazon →
+                    <div className="mt-auto">
+                      <div className="text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors inline-block" style={{ backgroundColor: '#FF9900' }}>
+                        Bekijk op Amazon →
+                      </div>
                     </div>
                   </a>
                 </div>
