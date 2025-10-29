@@ -83,7 +83,7 @@ function BolScriptWidget({ product }) {
         </a>
       </div>
 
-      {/* Minimal CSS - Only hide Bol.com images, show price/rating */}
+      {/* Minimal CSS - Hide Bol.com images and duplicate elements */}
       <style jsx>{`
         .bol-widget-content img {
           display: none !important;
@@ -93,6 +93,14 @@ function BolScriptWidget({ product }) {
         .bol-widget-content .star-rating img {
           display: inline !important;
           height: 16px !important;
+        }
+
+        .bol-widget-content .imgwrap_tout {
+          display: none !important;
+        }
+
+        .bol-widget-content .product_title {
+          display: none !important;
         }
 
         .bol-widget-content {
