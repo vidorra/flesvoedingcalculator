@@ -70,9 +70,12 @@ export async function GET(request, { params }) {
 export async function POST(request, { params }) {
   try {
     verifyAdmin(request)
-    
+
     const pageId = params.pageId
-    const { snippetId, order } = await request.json()
+    const body = await request.json()
+    const { snippetId, order } = body
+
+    console.log(`📌 POST request to add snippet to page:`, { pageId, snippetId, order, body })
     
     // Check if snippet is already on this page
     const existingPageSnippet = await db
@@ -85,8 +88,14 @@ export async function POST(request, { params }) {
       .limit(1)
     
     if (existingPageSnippet.length > 0) {
+      console.log(`⚠️  Snippet ${snippetId} already exists on page ${pageId}`)
       return NextResponse.json(
-        { message: 'Snippet is already on this page' },
+        {
+          message: 'Snippet is already on this page',
+          error: 'SNIPPET_ALREADY_EXISTS',
+          snippetId,
+          pageId
+        },
         { status: 400 }
       )
     }
