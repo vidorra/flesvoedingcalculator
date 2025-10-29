@@ -61,6 +61,7 @@ jobs:
             scripts
             migrations
             data
+            styles
             tailwind.config.js
             postcss.config.js
           outPath: deploy.tar
