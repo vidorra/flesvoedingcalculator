@@ -1,0 +1,36 @@
+/**
+ * Bol.com Widget Styling
+ * Hides duplicate elements and styles the widget content
+ */
+
+/* Hide all images from Bol.com widget (we show our own) */
+.bol-widget-content img {
+  display: none !important;
+}
+
+/* Show rating star images */
+.bol-widget-content .rating img,
+.bol-widget-content .star-rating img {
+  display: inline !important;
+  height: 16px !important;
+}
+
+/* Hide Bol.com product image container */
+.bol-widget-content .imgwrap_tout {
+  display: none !important;
+}
+
+/* Hide Bol.com product title (we show our own) */
+.bol-widget-content .product_title {
+  display: none !important;
+}
+
+/* Allow content to flow naturally without height constraints */
+.bol-widget-content .media__body.right-div-preview {
+  height: auto;
+}
+
+/* Center align widget content */
+.bol-widget-content {
+  text-align: center;
+}

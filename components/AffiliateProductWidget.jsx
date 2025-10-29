@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
 import { getProductsByCategory, getProductsByIds } from './affiliate-products.js'
+import '../styles/bol-widget.css'
 
 /**
  * Component that properly executes Bol.com scripts
@@ -82,35 +83,6 @@ function BolScriptWidget({ product }) {
           Bekijk op bol.com →
         </a>
       </div>
-
-      {/* Minimal CSS - Hide Bol.com images and duplicate elements */}
-      <style jsx>{`
-        .bol-widget-content img {
-          display: none !important;
-        }
-
-        .bol-widget-content .rating img,
-        .bol-widget-content .star-rating img {
-          display: inline !important;
-          height: 16px !important;
-        }
-
-        .bol-widget-content .imgwrap_tout {
-          display: none !important;
-        }
-
-        .bol-widget-content .product_title {
-          display: none !important;
-        }
-
-        .bol-widget-content .media__body.right-div-preview {
-          height: auto;
-        }
-
-        .bol-widget-content {
-          text-align: center;
-        }
-      `}</style>
     </div>
   )
 }
