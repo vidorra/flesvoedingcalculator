@@ -64,8 +64,8 @@ export async function GET(request, { params }) {
           }
         }
       } else if (snippet.type === 'bol' || snippet.type === 'bol_snippet') {
-        // For Bol.com products - handle both old generatedHtml and new imageHtml+bolScript format
-        const html = snippet.generatedHtml || (snippet.imageHtml && snippet.bolScript ? `${snippet.imageHtml}\n${snippet.bolScript}` : snippet.imageHtml || snippet.bolScript || '')
+        // For Bol.com products - separate imageHtml and bolScript
+        // generatedHtml should ONLY contain bolScript (not imageHtml to avoid duplicate images)
 
         return {
           id: snippet.id,
@@ -77,14 +77,14 @@ export async function GET(request, { params }) {
           currency: snippet.currency,
           priceLastUpdated: snippet.priceLastUpdated,
           type: 'bol_snippet', // Changed to show JavaScript code widget
-          generatedHtml: html, // Include the HTML for the widget
+          generatedHtml: snippet.bolScript || snippet.generatedHtml || '', // ONLY the Bol.com script
           imageHtml: snippet.imageHtml,
           bolScript: snippet.bolScript,
+          url: snippet.url, // Add URL for affiliate link button
           data: {
             title: snippet.name,
-            // Use imageUrl if available, otherwise try to extract from generatedHtml, or use fallback
-            fallbackImage: snippet.imageUrl || extractImageUrl(html) || getFallbackImageForProduct(snippet.id),
-            productUrl: extractAffiliateUrl(html) || snippet.url || '#'
+            fallbackImage: snippet.imageUrl || getFallbackImageForProduct(snippet.id),
+            productUrl: snippet.url || '#'
           }
         }
       }
