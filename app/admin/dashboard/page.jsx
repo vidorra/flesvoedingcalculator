@@ -24,7 +24,8 @@ export default function SimpleAdminDashboard() {
     tag: '',
     price: null,
     originalPrice: null,
-    currency: 'EUR'
+    currency: 'EUR',
+    manualImageUrl: '' // For manual image URL input
   })
   const [isGenerating, setIsGenerating] = useState(false)
   const [isSyncing, setIsSyncing] = useState(false)
@@ -223,44 +224,55 @@ export default function SimpleAdminDashboard() {
     }
   }
 
-  // Helper function to scrape image URL from Bol.com page (client-side)
-  const scrapeBolImageFromClient = async (productId, productName) => {
-    try {
-      // Build URL from productId and productName
-      const productSlug = productName
-        ? productName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
-        : 'product'
+  // Helper function to generate image HTML from manual URL
+  const generateImageHtmlFromUrl = (imageUrl, productName, productUrl) => {
+    if (!imageUrl || !productUrl) return ''
 
-      const fetchUrl = `https://www.bol.com/nl/nl/p/${productSlug}/${productId}/`
+    const title = productName || 'Product'
+    return `<div style="text-align: center"><a href="${productUrl}"><img src="${imageUrl}" alt="${title}" width="300" height="auto" style="border-radius: 8px;"></a></div>`
+  }
 
-      console.log('Scraping Bol.com from client:', fetchUrl)
+  // Helper function to extract product data from Bol.com snippet
+  const extractBolDataFromSnippet = (snippet) => {
+    const productIdMatch = snippet.match(/"productId":"([^"]+)"/i)
+    const linkNameMatch = snippet.match(/"linkName":"([^"]+)"/i)
+    const siteIdMatch = snippet.match(/"siteId":"([^"]+)"/i)
 
-      // Fetch the page from the browser (not blocked!)
-      const response = await fetch(fetchUrl, {
-        mode: 'cors',
-        credentials: 'omit'
-      })
+    const productId = productIdMatch ? productIdMatch[1] : null
+    const productName = linkNameMatch ? decodeURIComponent(linkNameMatch[1]) : null
+    const siteId = siteIdMatch ? siteIdMatch[1] : null
 
-      if (!response.ok) {
-        console.warn(`Failed to fetch from client: HTTP ${response.status}`)
-        return null
-      }
+    // Build affiliate URL
+    let affiliateUrl = null
+    if (productId && productName && siteId) {
+      const encodedName = encodeURIComponent(productName)
+      const productSlug = productName.toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '')
 
-      const html = await response.text()
-
-      // Extract og:image from HTML
-      const ogImageMatch = html.match(/<meta property="og:image" content="([^"]+)"/)
-      if (ogImageMatch && ogImageMatch[1]) {
-        console.log('✅ Found image from client scraping:', ogImageMatch[1])
-        return ogImageMatch[1]
-      }
-
-      console.warn('⚠️ No og:image found in client scraping')
-      return null
-    } catch (error) {
-      console.error('Error scraping from client:', error)
-      return null
+      affiliateUrl = `https://partner.bol.com/click/click?p=2&t=url&s=${siteId}&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2F${productSlug}%2F${productId}%2F&name=${encodedName}`
     }
+
+    return { productId, productName, siteId, affiliateUrl }
+  }
+
+  // Auto-generate image HTML when manual image URL changes
+  const handleManualImageUrlChange = (imageUrl) => {
+    setNewSnippet(prev => {
+      const bolData = prev.code ? extractBolDataFromSnippet(prev.code) : {}
+      const imageHtml = generateImageHtmlFromUrl(
+        imageUrl,
+        prev.name || bolData.productName,
+        bolData.affiliateUrl || prev.url
+      )
+
+      return {
+        ...prev,
+        manualImageUrl: imageUrl,
+        imageUrl: imageUrl,
+        imageHtml: imageHtml
+      }
+    })
   }
 
   // Function to extract Bol.com image from snippet
@@ -545,7 +557,27 @@ export default function SimpleAdminDashboard() {
       imageHtml: snippet.imageHtml || '',
       bolScript: snippet.bolScript || snippet.codeSnippet || '',
       price: snippet.price || '',
-      originalPrice: snippet.originalPrice || ''
+      originalPrice: snippet.originalPrice || '',
+      manualImageUrl: snippet.imageUrl || '' // For manual image URL editing
+    })
+  }
+
+  // Auto-generate image HTML when manual image URL changes in edit form
+  const handleEditManualImageUrlChange = (imageUrl) => {
+    setEditFormData(prev => {
+      const bolData = prev.bolScript ? extractBolDataFromSnippet(prev.bolScript) : {}
+      const imageHtml = generateImageHtmlFromUrl(
+        imageUrl,
+        prev.name || bolData.productName,
+        prev.url || bolData.affiliateUrl
+      )
+
+      return {
+        ...prev,
+        manualImageUrl: imageUrl,
+        imageUrl: imageUrl,
+        generatedHtml: imageHtml
+      }
     })
   }
 
@@ -1083,40 +1115,25 @@ export default function SimpleAdminDashboard() {
                   {newSnippet.platform === 'bol' && (
                     <div className="mb-4">
                       <label className="block text-sm font-medium text-gray-700 mb-2">Bol.com Code Snippet</label>
-                      <div className="flex gap-2">
-                        <textarea
-                          value={newSnippet.code}
-                          onChange={(e) => {
-                            const value = e.target.value
-                            setNewSnippet(prev => ({ ...prev, code: value }))
-                            
-                            // Auto-extract image if the snippet contains productId
-                            if (value && value.includes('productId') && value.includes('bol_sitebar')) {
-                              extractBolImage(value)
-                            }
-                          }}
-                          className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary h-32"
-                          placeholder="Paste your Bol.com affiliate code snippet here..."
-                        />
-                        <button
-                          type="button"
-                          onClick={() => extractBolImage(newSnippet.code)}
-                          disabled={isExtractingImage || !newSnippet.code}
-                          className="px-3 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 self-start"
-                          title="Extract image from Bol.com snippet"
-                        >
-                          {isExtractingImage ? (
-                            <>
-                              <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                              Extracting...
-                            </>
-                          ) : (
-                            <>
-                              📷 Extract Image
-                            </>
-                          )}
-                        </button>
-                      </div>
+                      <textarea
+                        value={newSnippet.code}
+                        onChange={(e) => {
+                          const value = e.target.value
+                          setNewSnippet(prev => ({ ...prev, code: value }))
+
+                          // Auto-extract product data from snippet
+                          if (value && value.includes('productId') && value.includes('bol_sitebar')) {
+                            const bolData = extractBolDataFromSnippet(value)
+                            setNewSnippet(prev => ({
+                              ...prev,
+                              name: bolData.productName || prev.name,
+                              url: bolData.affiliateUrl || prev.url
+                            }))
+                          }
+                        }}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary h-32"
+                        placeholder="Paste your Bol.com affiliate code snippet here..."
+                      />
                     </div>
                   )}
 
@@ -1156,16 +1173,37 @@ export default function SimpleAdminDashboard() {
                     </>
                   )}
 
-                  {/* Image HTML (auto-generated for Bol.com) */}
-                  {newSnippet.platform === 'bol' && newSnippet.imageHtml && (
+                  {/* Manual Image URL Input for Bol.com */}
+                  {newSnippet.platform === 'bol' && (
                     <div className="mb-4">
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Generated Image HTML</label>
-                      <textarea
-                        value={newSnippet.imageHtml}
-                        onChange={(e) => setNewSnippet(prev => ({ ...prev, imageHtml: e.target.value }))}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary h-24"
-                        placeholder="Auto-generated image HTML will appear here..."
-                      />
+                      <label className="block text-sm font-medium text-gray-700 mb-2">Product Image</label>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {/* Left: Image URL Input */}
+                        <div>
+                          <label className="block text-xs text-gray-600 mb-1">Image URL</label>
+                          <input
+                            type="url"
+                            value={newSnippet.manualImageUrl}
+                            onChange={(e) => handleManualImageUrlChange(e.target.value)}
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                            placeholder="https://media.s-bol.com/.../550x645.jpg"
+                          />
+                          <p className="text-xs text-gray-500 mt-1">
+                            Paste the product image URL from Bol.com
+                          </p>
+                        </div>
+
+                        {/* Right: Generated HTML (read-only preview) */}
+                        <div>
+                          <label className="block text-xs text-gray-600 mb-1">Generated Image HTML</label>
+                          <textarea
+                            value={newSnippet.imageHtml || ''}
+                            readOnly
+                            className="w-full px-3 py-2 border border-gray-200 rounded-md bg-gray-50 text-gray-700 text-xs font-mono h-20"
+                            placeholder="HTML will be generated automatically..."
+                          />
+                        </div>
+                      </div>
                     </div>
                   )}
 
@@ -1276,55 +1314,61 @@ export default function SimpleAdminDashboard() {
                               placeholder="e.g., Aanbevolen, Budget, Beste prijs/kwaliteit"
                             />
                           </div>
-                          <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
-                              Image HTML
-                            </label>
-                            <textarea
-                              value={editFormData.generatedHtml}
-                              onChange={(e) => setEditFormData(prev => ({ ...prev, generatedHtml: e.target.value }))}
-                              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary h-32"
-                              placeholder="Static HTML with image and link..."
-                            />
-                          </div>
                           {snippet.type !== 'amazon' && snippet.type !== 'amazon_image' && (
                             <div>
                               <label className="block text-sm font-medium text-gray-700 mb-2">
                                 Bol.com Code Snippet
                               </label>
-                              <div className="flex gap-2">
-                                <textarea
-                                  value={editFormData.codeSnippet}
-                                  onChange={(e) => {
-                                    const value = e.target.value
-                                    setEditFormData(prev => ({ ...prev, codeSnippet: value }))
-                                    
-                                    // Auto-extract image if the snippet contains productId
-                                    if (value && value.includes('productId') && value.includes('bol_sitebar')) {
-                                      extractBolImageForEdit(value)
-                                    }
-                                  }}
-                                  className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary h-32"
-                                  placeholder="Paste your Bol.com JavaScript snippet here..."
-                                />
-                                <button
-                                  type="button"
-                                  onClick={() => extractBolImageForEdit(editFormData.codeSnippet)}
-                                  disabled={isExtractingImage || !editFormData.codeSnippet}
-                                  className="px-3 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 self-start"
-                                  title="Extract image from Bol.com snippet"
-                                >
-                                  {isExtractingImage ? (
-                                    <>
-                                      <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                                      Extracting...
-                                    </>
-                                  ) : (
-                                    <>
-                                      📷 Extract Image
-                                    </>
-                                  )}
-                                </button>
+                              <textarea
+                                value={editFormData.bolScript}
+                                onChange={(e) => {
+                                  const value = e.target.value
+                                  setEditFormData(prev => ({ ...prev, bolScript: value }))
+
+                                  // Auto-extract product data from snippet
+                                  if (value && value.includes('productId') && value.includes('bol_sitebar')) {
+                                    const bolData = extractBolDataFromSnippet(value)
+                                    setEditFormData(prev => ({
+                                      ...prev,
+                                      name: bolData.productName || prev.name,
+                                      url: bolData.affiliateUrl || prev.url
+                                    }))
+                                  }
+                                }}
+                                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary h-32"
+                                placeholder="Paste your Bol.com JavaScript snippet here..."
+                              />
+                            </div>
+                          )}
+                          {snippet.type !== 'amazon' && snippet.type !== 'amazon_image' && (
+                            <div>
+                              <label className="block text-sm font-medium text-gray-700 mb-2">Product Image</label>
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                {/* Left: Image URL Input */}
+                                <div>
+                                  <label className="block text-xs text-gray-600 mb-1">Image URL</label>
+                                  <input
+                                    type="url"
+                                    value={editFormData.manualImageUrl || ''}
+                                    onChange={(e) => handleEditManualImageUrlChange(e.target.value)}
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                                    placeholder="https://media.s-bol.com/.../550x645.jpg"
+                                  />
+                                  <p className="text-xs text-gray-500 mt-1">
+                                    Paste the product image URL from Bol.com
+                                  </p>
+                                </div>
+
+                                {/* Right: Generated HTML (read-only preview) */}
+                                <div>
+                                  <label className="block text-xs text-gray-600 mb-1">Generated Image HTML</label>
+                                  <textarea
+                                    value={editFormData.generatedHtml || ''}
+                                    readOnly
+                                    className="w-full px-3 py-2 border border-gray-200 rounded-md bg-gray-50 text-gray-700 text-xs font-mono h-20"
+                                    placeholder="HTML will be generated automatically..."
+                                  />
+                                </div>
                               </div>
                             </div>
                           )}
