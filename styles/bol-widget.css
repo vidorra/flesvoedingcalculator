@@ -30,3 +30,9 @@
 .bol-widget-content {
   text-align: center;
 }
+
+/* Set max-width and remove padding for Bol.com widget containers */
+[id^=PLbol_] {
+  max-width: 100%;
+  padding: 0px;
+}
