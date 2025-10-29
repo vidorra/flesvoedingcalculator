@@ -157,7 +157,7 @@ async function fetchBolProductImage(productId, productName = null) {
 
 // Generate Image HTML for Bol.com product
 function generateBolImageHtml(title, imageUrl, productUrl, width = 300) {
-  return `<div style="text-align: center"><a href="${productUrl}"><img src="${imageUrl}" alt="${title}" width="${width}" height="auto" style="border-radius: 8px;"></a><br><strong>${title}</strong></div>`
+  return `<div style="text-align: center"><a href="${productUrl}"><img src="${imageUrl}" alt="${title}" width="${width}" height="auto" style="border-radius: 8px;"></a></div>`
 }
 
 // POST - Extract image from Bol.com snippet
