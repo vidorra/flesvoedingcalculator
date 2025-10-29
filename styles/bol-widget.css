@@ -3,6 +3,12 @@
  * Hides duplicate elements and styles the widget content
  */
 
+/* Hide Bol.com product image and title (global) */
+.imgwrap_tout,
+.product_title {
+  display: none !important;
+}
+
 /* Hide all images from Bol.com widget (we show our own) */
 .bol-widget-content img {
   display: none !important;
@@ -13,16 +19,6 @@
 .bol-widget-content .star-rating img {
   display: inline !important;
   height: 16px !important;
-}
-
-/* Hide Bol.com product image container */
-.bol-widget-content .imgwrap_tout {
-  display: none !important;
-}
-
-/* Hide Bol.com product title (we show our own) */
-.bol-widget-content .product_title {
-  display: none !important;
 }
 
 /* Allow content to flow naturally without height constraints */
