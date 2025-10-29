@@ -106,27 +106,32 @@ async function fetchBolProductImage(productId, productName = null) {
       title = titleMatch ? titleMatch[1].replace(' | bol.com', '').trim() : `Product ${productId}`
     }
 
-    // Extract image URL - look for main product image
+    // Extract image URL - use og:image meta tag (most reliable)
     let imageUrl = null
 
-    // Try multiple patterns to find the product image
-    const imagePatterns = [
-      // Main product image in structured data
-      /"image":\s*"(https:\/\/media\.s-bol\.com\/[^"]+)"/,
-      // High-res product images
-      /"(https:\/\/media\.s-bol\.com\/[A-Za-z0-9]+\/[A-Za-z0-9]+\/\d+x\d+\.jpg)"/,
-      // Alternative patterns
-      /src="(https:\/\/media\.s-bol\.com\/[^"]+\/\d+x\d+\.jpg)"/,
-      // General media patterns
-      /<img[^>]+src="(https:\/\/media\.s-bol\.com\/[^"]+\.jpg)"[^>]*>/i
-    ]
+    // Method 1: og:image meta tag (primary method - always has correct product image)
+    const ogImageMatch = html.match(/<meta property="og:image" content="([^"]+)"/)
+    if (ogImageMatch && ogImageMatch[1]) {
+      imageUrl = ogImageMatch[1]
+      console.log(`✅ Found image from og:image: ${imageUrl}`)
+    }
 
-    for (const pattern of imagePatterns) {
-      const match = html.match(pattern)
-      if (match && match[1]) {
-        imageUrl = match[1]
-        console.log(`✅ Found image with pattern: ${imageUrl}`)
-        break
+    // Method 2: JSON-LD structured data (fallback)
+    if (!imageUrl) {
+      const jsonLdMatch = html.match(/"image":\s*\{\s*"@type":\s*"ImageObject",\s*"url":\s*"([^"]+)"/)
+      if (jsonLdMatch && jsonLdMatch[1]) {
+        imageUrl = jsonLdMatch[1]
+        console.log(`✅ Found image from JSON-LD: ${imageUrl}`)
+      }
+    }
+
+    // Method 3: First high-res product image (last resort)
+    if (!imageUrl) {
+      const imagePattern = /https:\/\/media\.s-bol\.com\/[A-Za-z0-9]+\/[A-Za-z0-9]+\/550x\d+\.jpg/
+      const match = html.match(imagePattern)
+      if (match && match[0]) {
+        imageUrl = match[0]
+        console.log(`✅ Found image from regex: ${imageUrl}`)
       }
     }
 
