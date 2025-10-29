@@ -3,6 +3,107 @@ import { useEffect, useRef, useState } from 'react'
 import { getProductsByCategory, getProductsByIds } from './affiliate-products.js'
 
 /**
+ * Component that properly executes Bol.com scripts
+ * React's dangerouslySetInnerHTML doesn't execute <script> tags by default,
+ * so we need to manually inject and execute them
+ */
+function BolScriptWidget({ product }) {
+  const containerRef = useRef(null)
+
+  useEffect(() => {
+    if (!containerRef.current || !product.generatedHtml) return
+
+    // Extract and execute scripts from HTML
+    const scriptContainer = containerRef.current.querySelector('.bol-widget-content')
+    if (!scriptContainer) return
+
+    const tempDiv = document.createElement('div')
+    tempDiv.innerHTML = product.generatedHtml
+
+    // Find all script tags
+    const scripts = tempDiv.querySelectorAll('script')
+
+    scripts.forEach((oldScript) => {
+      const newScript = document.createElement('script')
+
+      // Copy attributes
+      Array.from(oldScript.attributes).forEach(attr => {
+        newScript.setAttribute(attr.name, attr.value)
+      })
+
+      // Copy inline script content or src
+      if (oldScript.src) {
+        newScript.src = oldScript.src
+      } else {
+        newScript.textContent = oldScript.textContent
+      }
+
+      // Append to container to execute
+      scriptContainer.appendChild(newScript)
+    })
+
+    console.log(`✅ Bol.com scripts executed for product: ${product.id}`)
+  }, [product.generatedHtml, product.id])
+
+  return (
+    <div className="bg-white rounded-xl border border-gray-200 p-4" ref={containerRef}>
+      <div className="text-center space-y-4" data-product-id={product.id}>
+        {/* 1. Product Image (from backend) */}
+        <div className="mb-3">
+          <img
+            src={product.data?.fallbackImage || 'https://media.s-bol.com/NKX9XZWN3RGL/0RNmv15/550x707.jpg'}
+            alt={product.name || product.data?.title}
+            className="mx-auto rounded-lg max-w-full h-auto"
+            style={{ maxHeight: '200px' }}
+            onError={(e) => {
+              e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik04MCA4MEgxMjBWMTIwSDgwVjgwWiIgZmlsbD0iIzlDQTNBRiIvPgo8cGF0aCBkPSJNOTYgMTA0TDEwNCAxMTJMMTIwIDk2IiBzdHJva2U9IiM2QjczODAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo='
+              e.target.style.display = 'block'
+            }}
+          />
+        </div>
+
+        {/* 2. Product Title */}
+        <h4 className="font-medium text-primary text-sm">
+          {product.name || product.data?.title}
+        </h4>
+
+        {/* 3. Bol.com Script Execution Container */}
+        <div className="bol-widget-content">
+          {/* Scripts will be injected here by useEffect */}
+        </div>
+
+        {/* 4. Button */}
+        <a
+          href={product.url || product.data?.productUrl || '#'}
+          target="_blank"
+          rel="nofollow noopener"
+          className="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors inline-block"
+        >
+          Bekijk op bol.com →
+        </a>
+      </div>
+
+      {/* Minimal CSS - Only hide Bol.com images, show price/rating */}
+      <style jsx>{`
+        .bol-widget-content img {
+          display: none !important;
+        }
+
+        .bol-widget-content .rating img,
+        .bol-widget-content .star-rating img {
+          display: inline !important;
+          height: 16px !important;
+        }
+
+        .bol-widget-content {
+          text-align: center;
+        }
+      `}</style>
+    </div>
+  )
+}
+
+/**
  * Renders real Bol.com widgets and Amazon affiliate links
  * @param {Object} props
  * @param {string} props.pageId - Page ID to load admin-managed snippets (preferred)
@@ -226,63 +327,12 @@ export default function AffiliateProductWidget({
               </div>
             )}
             
-            {/* Bol.com Script Widget - Simplified Structure */}
+            {/* Bol.com Script Widget - With Script Execution */}
             {(product.type === 'bol_snippet' || product.type === 'bol_script') && (
-              <div className="bg-white rounded-xl border border-gray-200 p-4">
-                <div className="text-center space-y-4" data-product-id={product.id}>
-                  {/* 1. Product Image (from backend) */}
-                  <div className="mb-3">
-                    <img
-                      src={product.data?.fallbackImage || 'https://media.s-bol.com/NKX9XZWN3RGL/0RNmv15/550x707.jpg'}
-                      alt={product.name || product.data?.title}
-                      className="mx-auto rounded-lg max-w-full h-auto"
-                      style={{ maxHeight: '200px' }}
-                      onError={(e) => {
-                        e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik04MCA4MEgxMjBWMTIwSDgwVjgwWiIgZmlsbD0iIzlDQTNBRiIvPgo8cGF0aCBkPSJNOTYgMTA0TDEwNCAxMTJMMTIwIDk2IiBzdHJva2U9IiM2QjczODAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo='
-                        e.target.style.display = 'block'
-                      }}
-                    />
-                  </div>
-                  
-                  {/* 2. Product Title */}
-                  <h4 className="font-medium text-primary text-sm">
-                    {product.name || product.data?.title}
-                  </h4>
-                  
-                  {/* 3. Bol.com Code Snippet */}
-                  <div 
-                    className="bol-widget-content"
-                    dangerouslySetInnerHTML={{ __html: `${product.generatedHtml || product.data?.html || ''}` }}
-                  />
-                  
-                  {/* 4. Button */}
-                  <a 
-                    href={product.url || product.data?.productUrl || '#'}
-                    target="_blank"
-                    rel="nofollow noopener"
-                    className="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors inline-block"
-                  >
-                    Bekijk op bol.com →
-                  </a>
-                </div>
-                
-                {/* Minimal CSS - Only hide Bol.com images, show price/rating */}
-                <style jsx>{`
-                  .bol-widget-content img {
-                    display: none !important;
-                  }
-                  
-                  .bol-widget-content .rating img,
-                  .bol-widget-content .star-rating img {
-                    display: inline !important;
-                    height: 16px !important;
-                  }
-                  
-                  .bol-widget-content {
-                    text-align: center;
-                  }
-                `}</style>
-              </div>
+              <BolScriptWidget
+                product={product}
+                key={product.id}
+              />
             )}
             
             {/* Amazon Affiliate Image */}
