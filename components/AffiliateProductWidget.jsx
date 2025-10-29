@@ -103,6 +103,10 @@ function BolScriptWidget({ product }) {
           display: none !important;
         }
 
+        .bol-widget-content .media__body.right-div-preview {
+          height: auto;
+        }
+
         .bol-widget-content {
           text-align: center;
         }
