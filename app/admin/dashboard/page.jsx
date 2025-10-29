@@ -223,16 +223,75 @@ export default function SimpleAdminDashboard() {
     }
   }
 
+  // Helper function to scrape image URL from Bol.com page (client-side)
+  const scrapeBolImageFromClient = async (productId, productName) => {
+    try {
+      // Build URL from productId and productName
+      const productSlug = productName
+        ? productName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+        : 'product'
+
+      const fetchUrl = `https://www.bol.com/nl/nl/p/${productSlug}/${productId}/`
+
+      console.log('Scraping Bol.com from client:', fetchUrl)
+
+      // Fetch the page from the browser (not blocked!)
+      const response = await fetch(fetchUrl, {
+        mode: 'cors',
+        credentials: 'omit'
+      })
+
+      if (!response.ok) {
+        console.warn(`Failed to fetch from client: HTTP ${response.status}`)
+        return null
+      }
+
+      const html = await response.text()
+
+      // Extract og:image from HTML
+      const ogImageMatch = html.match(/<meta property="og:image" content="([^"]+)"/)
+      if (ogImageMatch && ogImageMatch[1]) {
+        console.log('✅ Found image from client scraping:', ogImageMatch[1])
+        return ogImageMatch[1]
+      }
+
+      console.warn('⚠️ No og:image found in client scraping')
+      return null
+    } catch (error) {
+      console.error('Error scraping from client:', error)
+      return null
+    }
+  }
+
   // Function to extract Bol.com image from snippet
   const extractBolImage = async (snippet) => {
     if (!snippet) return
 
     setIsExtractingImage(true)
     try {
+      // First, extract product data from snippet
+      const productIdMatch = snippet.match(/"productId":"([^"]+)"/i)
+      const linkNameMatch = snippet.match(/"linkName":"([^"]+)"/i)
+
+      const productId = productIdMatch ? productIdMatch[1] : null
+      const productName = linkNameMatch ? decodeURIComponent(linkNameMatch[1]) : null
+
+      console.log('Extracted from snippet:', { productId, productName })
+
+      // Scrape image URL from browser (bypasses server-side blocking)
+      let imageUrl = null
+      if (productId && productName) {
+        imageUrl = await scrapeBolImageFromClient(productId, productName)
+      }
+
+      // Send to API with scraped image URL
       const response = await fetch('/api/admin/extract-bol-image/', {
         method: 'POST',
         headers: getAuthHeaders(),
-        body: JSON.stringify({ snippet })
+        body: JSON.stringify({
+          snippet,
+          imageUrl // Pass the client-scraped image URL
+        })
       })
 
       if (response.ok) {
@@ -283,10 +342,29 @@ export default function SimpleAdminDashboard() {
 
     setIsExtractingImage(true)
     try {
+      // First, extract product data from snippet
+      const productIdMatch = snippet.match(/"productId":"([^"]+)"/i)
+      const linkNameMatch = snippet.match(/"linkName":"([^"]+)"/i)
+
+      const productId = productIdMatch ? productIdMatch[1] : null
+      const productName = linkNameMatch ? decodeURIComponent(linkNameMatch[1]) : null
+
+      console.log('Extracted from snippet (edit):', { productId, productName })
+
+      // Scrape image URL from browser (bypasses server-side blocking)
+      let imageUrl = null
+      if (productId && productName) {
+        imageUrl = await scrapeBolImageFromClient(productId, productName)
+      }
+
+      // Send to API with scraped image URL
       const response = await fetch('/api/admin/extract-bol-image/', {
         method: 'POST',
         headers: getAuthHeaders(),
-        body: JSON.stringify({ snippet })
+        body: JSON.stringify({
+          snippet,
+          imageUrl // Pass the client-scraped image URL
+        })
       })
 
       if (response.ok) {

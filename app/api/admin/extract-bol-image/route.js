@@ -189,7 +189,7 @@ export async function POST(request) {
       )
     }
 
-    const { snippet } = await request.json()
+    const { snippet, imageUrl: providedImageUrl } = await request.json()
 
     if (!snippet) {
       return NextResponse.json(
@@ -212,14 +212,30 @@ export async function POST(request) {
 
     console.log('Extracted Bol.com data:', bolData)
 
-    // Fetch product image from Bol.com
-    const productData = await fetchBolProductImage(bolData.productId, bolData.productName)
+    let productData
+    let fetchedFromServer = false
 
-    if (!productData.success) {
-      console.error('⚠️ Failed to fetch product details:', productData.error || 'Unknown error')
-      console.error('Using fallback image:', productData.imageUrl)
+    // If client provided an image URL (scraped from browser), use that
+    if (providedImageUrl && !providedImageUrl.includes('placeholder')) {
+      console.log('✅ Using client-provided image URL:', providedImageUrl)
+      productData = {
+        success: true,
+        title: bolData.productName || `Product ${bolData.productId}`,
+        imageUrl: providedImageUrl,
+        productId: bolData.productId
+      }
     } else {
-      console.log('✅ Successfully fetched product image:', productData.imageUrl)
+      // Fall back to server-side scraping (may be blocked by Bol.com)
+      console.log('⚠️ No valid client image URL provided, attempting server-side fetch...')
+      productData = await fetchBolProductImage(bolData.productId, bolData.productName)
+      fetchedFromServer = true
+
+      if (!productData.success) {
+        console.error('⚠️ Failed to fetch product details:', productData.error || 'Unknown error')
+        console.error('Using fallback image:', productData.imageUrl)
+      } else {
+        console.log('✅ Successfully fetched product image:', productData.imageUrl)
+      }
     }
 
     // Use affiliate URL from snippet, fallback to regular URL
@@ -241,7 +257,8 @@ export async function POST(request) {
       imageHtml,
       extractedName: bolData.productName,
       siteId: bolData.siteId,
-      message: productData.success ? 'Image extracted successfully' : 'Using fallback image data'
+      message: providedImageUrl ? 'Image extracted from client' : (productData.success ? 'Image extracted from server' : 'Using fallback image data'),
+      scrapedFromClient: !!providedImageUrl
     })
 
   } catch (error) {
