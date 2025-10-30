@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Shield, Calendar, CheckCircle } from 'lucide-react'
+import { Droplet, ShieldCheck, Calculator } from 'lucide-react'
 
 export default function HeroSection() {
   const [hoveredBadge, setHoveredBadge] = useState(null)
@@ -28,30 +28,30 @@ export default function HeroSection() {
 
         {/* Trust Badges */}
         <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6 lg:mb-10">
-          <div 
+          <div
             className="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1 sm:py-2 bg-primary/10 rounded-full text-primary-dark text-xs sm:text-sm font-medium transition-all hover:bg-primary/20"
             onMouseEnter={() => setHoveredBadge('medical')}
             onMouseLeave={() => setHoveredBadge(null)}
           >
-            <Shield className="w-5 h-5 text-primary" />
+            <Droplet className="w-5 h-5 text-primary" />
             <span>150ml per kg lichaamsgewicht</span>
           </div>
-          
-          <div 
+
+          <div
             className="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1 sm:py-2 bg-primary/10 rounded-full text-primary-dark text-xs sm:text-sm font-medium transition-all hover:bg-primary/20"
             onMouseEnter={() => setHoveredBadge('guidelines')}
             onMouseLeave={() => setHoveredBadge(null)}
           >
-            <Calendar className="w-5 h-5 text-primary" />
+            <ShieldCheck className="w-5 h-5 text-primary" />
             <span>Officiële Nederlandse richtlijnen</span>
           </div>
 
-          <div 
+          <div
             className="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1 sm:py-2 bg-primary/10 rounded-full text-primary-dark text-xs sm:text-sm font-medium transition-all hover:bg-primary/20"
             onMouseEnter={() => setHoveredBadge('gdpr')}
             onMouseLeave={() => setHoveredBadge(null)}
           >
-            <CheckCircle className="w-5 h-5 text-primary" />
+            <Calculator className="w-5 h-5 text-primary" />
             <span>Gratis te gebruiken</span>
           </div>
         </div>
