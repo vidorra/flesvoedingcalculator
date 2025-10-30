@@ -32,7 +32,7 @@
 }
 
 /* Set max-width and remove padding for Bol.com widget containers */
-[id^=PLbol_] {
+div[id^=PLbol_] {
   max-width: 100%;
-  padding: 0px;
+  padding: 0;
 }
