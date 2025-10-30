@@ -38,3 +38,9 @@ div[id^=PLbol_] {
   display: flex;
   justify-content: center;
 }
+
+/* Ensure buttons maintain hover effects */
+.bg-primary:hover {
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
