@@ -2,23 +2,18 @@
   <!-- Background circle -->
   <circle cx="50" cy="50" r="48" fill="#109cb0"/>
 
-  <!-- Baby bottle shape -->
-  <g fill="white">
-    <!-- Bottle neck -->
-    <rect x="42" y="25" width="16" height="8" rx="2"/>
+  <!-- Baby face (scaled up from 24x24 to 100x100) -->
+  <g stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Left eye -->
+    <circle cx="37.5" cy="50" r="2" fill="white"/>
 
-    <!-- Bottle body -->
-    <path d="M 38 33 Q 36 35 36 40 L 36 70 Q 36 75 40 75 L 60 75 Q 64 75 64 70 L 64 40 Q 64 35 62 33 Z" />
+    <!-- Right eye -->
+    <circle cx="62.5" cy="50" r="2" fill="white"/>
 
-    <!-- Milk level indicator -->
-    <rect x="38" y="50" width="24" height="20" fill="#E8F7FA" opacity="0.7" rx="1"/>
+    <!-- Smile -->
+    <path d="M 41.5 66.5 C 43.5 68 46 69 50 69 C 54 69 56.5 68 58.5 66.5" stroke="white" stroke-width="3"/>
 
-    <!-- Measurement marks -->
-    <line x1="36" y1="45" x2="32" y2="45" stroke="white" stroke-width="1.5"/>
-    <line x1="36" y1="55" x2="32" y2="55" stroke="white" stroke-width="1.5"/>
-    <line x1="36" y1="65" x2="32" y2="65" stroke="white" stroke-width="1.5"/>
+    <!-- Baby head outline -->
+    <path d="M 79 26 Q 87.5 35 87.5 50 C 87.5 72 71.5 87.5 50 87.5 C 28.5 87.5 12.5 72 12.5 50 C 12.5 35 21 26 50 12.5 C 58.5 12.5 64.5 16 64.5 22.5 C 64.5 29 60 35 54 35 C 50.5 35 47.5 33 47.5 30.5" stroke="white" stroke-width="4"/>
   </g>
-
-  <!-- ML text indicator -->
-  <text x="50" y="90" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">ML</text>
 </svg>
