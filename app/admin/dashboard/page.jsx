@@ -506,6 +506,12 @@ export default function SimpleAdminDashboard() {
         imageUrl = imageMatch ? imageMatch[1] : null;
       }
 
+      // Combine tag and category into single tag field
+      let combinedTag = newSnippet.tag || '';
+      if (newSnippet.category) {
+        combinedTag = combinedTag ? `${combinedTag}, ${newSnippet.category}` : newSnippet.category;
+      }
+
       const snippetData = {
         id: `${newSnippet.platform}-${Date.now()}`,
         name: newSnippet.name,
@@ -513,8 +519,9 @@ export default function SimpleAdminDashboard() {
         url: newSnippet.url,
         shortUrl: newSnippet.shortUrl || '',
         imageUrl: imageUrl || null, // Save extracted imageUrl
-        tag: newSnippet.tag || null,
+        tag: combinedTag || null,
         imageHtml: newSnippet.imageHtml || null, // Separate image HTML field
+        codeSnippet: newSnippet.platform === 'bol' ? newSnippet.code : null, // Bol.com code snippet
         bolScript: newSnippet.platform === 'bol' ? newSnippet.code : null, // Separate Bol.com script field
         price: newSnippet.price,
         originalPrice: newSnippet.originalPrice,
