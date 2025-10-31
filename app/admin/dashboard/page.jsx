@@ -75,9 +75,13 @@ export default function SimpleAdminDashboard() {
         return false
       }
 
-      // Category filter - check snippet.category field
-      if (filterCategory !== 'all' && snippet.category !== filterCategory) {
-        return false
+      // Category filter - check snippet.tag field for category keywords
+      if (filterCategory !== 'all') {
+        const snippetTag = snippet.tag?.toLowerCase() || ''
+        const snippetName = snippet.name?.toLowerCase() || ''
+        if (!snippetTag.includes(filterCategory) && !snippetName.includes(filterCategory)) {
+          return false
+        }
       }
 
       // Platform filter - check snippet.type field
