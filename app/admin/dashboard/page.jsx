@@ -497,7 +497,7 @@ export default function SimpleAdminDashboard() {
     }
   }
 
-  const saveNewSnippet = async () => {
+  const saveNewSnippet = async (keepFormOpen = false) => {
     try {
       // Ensure imageUrl is extracted from imageHtml if not explicitly set
       let imageUrl = newSnippet.imageUrl;
@@ -540,9 +540,15 @@ export default function SimpleAdminDashboard() {
           tag: '',
           price: null,
           originalPrice: null,
-          currency: 'EUR'
+          currency: 'EUR',
+          manualImageUrl: ''
         })
-        setShowAddForm(false)
+
+        // Close form only if keepFormOpen is false
+        if (!keepFormOpen) {
+          setShowAddForm(false)
+        }
+
         alert('Snippet saved successfully!')
       } else {
         alert('Failed to save snippet')
@@ -551,6 +557,10 @@ export default function SimpleAdminDashboard() {
       console.error('Error saving snippet:', error)
       alert('Error saving snippet: ' + error.message)
     }
+  }
+
+  const saveAndAddAnother = async () => {
+    await saveNewSnippet(true)
   }
 
   const assignSnippetToPage = async (pageId, snippetId) => {
@@ -1390,11 +1400,18 @@ export default function SimpleAdminDashboard() {
                   {/* Save/Cancel Buttons */}
                   <div className="flex space-x-3">
                     <button
-                      onClick={saveNewSnippet}
+                      onClick={() => saveNewSnippet(false)}
                       disabled={!newSnippet.name || !newSnippet.code}
                       className="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       Save Snippet
+                    </button>
+                    <button
+                      onClick={saveAndAddAnother}
+                      disabled={!newSnippet.name || !newSnippet.code}
+                      className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      Save & Add Another
                     </button>
                     <button
                       onClick={() => setShowAddForm(false)}
