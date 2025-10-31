@@ -36,7 +36,83 @@ export default function SimpleAdminDashboard() {
   const [editFormData, setEditFormData] = useState({})
   const [showOnlyPrice, setShowOnlyPrice] = useState(false) // Control visibility of elements
   const [isExtractingImage, setIsExtractingImage] = useState(false) // For Bol.com image extraction
+
+  // Filter states
+  const [searchQuery, setSearchQuery] = useState('')
+  const [filterCategory, setFilterCategory] = useState('all')
+  const [filterRating, setFilterRating] = useState('all')
+  const [filterPlatform, setFilterPlatform] = useState('all')
+  const [filterStatus, setFilterStatus] = useState('all')
+
   const router = useRouter()
+
+  // Product categories
+  const categories = [
+    { value: 'all', label: 'All Categories' },
+    { value: 'drinkbeker', label: 'Drinkbekers' },
+    { value: 'babyfles', label: 'Babyflessen' },
+    { value: 'flessenwarmer', label: 'Flessenwarmer' },
+    { value: 'sterilisator', label: 'Sterilisators' },
+    { value: 'borstkolf', label: 'Borstkolf' },
+    { value: 'voedingskussen', label: 'Voedingskussen' },
+    { value: 'speen', label: 'Spenen' },
+    { value: 'thermometer', label: 'Thermometers' },
+    { value: 'nachtlampje', label: 'Nachtlampjes' },
+    { value: 'weegschaal', label: 'Weegschalen' },
+    { value: 'waterkoker', label: 'Waterkokers' },
+    { value: 'verzorging', label: 'Verzorging' },
+    { value: 'melkpoeder', label: 'Melkpoeder' },
+    { value: 'accessoires', label: 'Accessoires' }
+  ]
+
+  // Filter snippets based on all active filters
+  const getFilteredSnippets = () => {
+    return snippets.filter(snippet => {
+      // Search filter
+      if (searchQuery && !snippet.name?.toLowerCase().includes(searchQuery.toLowerCase()) &&
+          !snippet.tag?.toLowerCase().includes(searchQuery.toLowerCase())) {
+        return false
+      }
+
+      // Category filter
+      if (filterCategory !== 'all') {
+        const snippetName = snippet.name?.toLowerCase() || ''
+        const snippetTag = snippet.tag?.toLowerCase() || ''
+        if (!snippetName.includes(filterCategory) && !snippetTag.includes(filterCategory)) {
+          return false
+        }
+      }
+
+      // Rating filter (if snippet has rating data)
+      if (filterRating !== 'all') {
+        // Rating would need to be stored in snippet data
+        // For now, skip if no rating available
+      }
+
+      // Platform filter
+      if (filterPlatform !== 'all' && snippet.platform !== filterPlatform) {
+        return false
+      }
+
+      // Status filter
+      if (filterStatus === 'active' && !snippet.active) {
+        return false
+      }
+      if (filterStatus === 'inactive' && snippet.active) {
+        return false
+      }
+      if (filterStatus === 'with-image' && !snippet.imageUrl) {
+        return false
+      }
+      if (filterStatus === 'without-image' && snippet.imageUrl) {
+        return false
+      }
+
+      return true
+    })
+  }
+
+  const filteredSnippets = getFilteredSnippets()
 
   // Helper to get auth headers with JWT token
   const getAuthHeaders = () => {
@@ -883,6 +959,89 @@ export default function SimpleAdminDashboard() {
         {/* Tab Content */}
         {activeTab === 'overview' && (
           <>
+            {/* Search and Filters */}
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6 mb-6">
+              <h3 className="text-sm font-medium text-gray-700 mb-4">Search & Filters</h3>
+
+              {/* Search Bar */}
+              <div className="mb-4">
+                <input
+                  type="text"
+                  placeholder="Search by product name or tag..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+                />
+              </div>
+
+              {/* Filter Dropdowns */}
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
+                {/* Category Filter */}
+                <div>
+                  <label className="block text-xs font-medium text-gray-600 mb-1">Category</label>
+                  <select
+                    value={filterCategory}
+                    onChange={(e) => setFilterCategory(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-sm"
+                  >
+                    {categories.map(cat => (
+                      <option key={cat.value} value={cat.value}>{cat.label}</option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Platform Filter */}
+                <div>
+                  <label className="block text-xs font-medium text-gray-600 mb-1">Platform</label>
+                  <select
+                    value={filterPlatform}
+                    onChange={(e) => setFilterPlatform(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-sm"
+                  >
+                    <option value="all">All Platforms</option>
+                    <option value="bol">Bol.com</option>
+                    <option value="amazon">Amazon</option>
+                  </select>
+                </div>
+
+                {/* Status Filter */}
+                <div>
+                  <label className="block text-xs font-medium text-gray-600 mb-1">Status</label>
+                  <select
+                    value={filterStatus}
+                    onChange={(e) => setFilterStatus(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-sm"
+                  >
+                    <option value="all">All Status</option>
+                    <option value="active">Active Only</option>
+                    <option value="inactive">Inactive Only</option>
+                    <option value="with-image">With Image</option>
+                    <option value="without-image">Without Image</option>
+                  </select>
+                </div>
+
+                {/* Clear Filters Button */}
+                <div className="flex items-end">
+                  <button
+                    onClick={() => {
+                      setSearchQuery('')
+                      setFilterCategory('all')
+                      setFilterPlatform('all')
+                      setFilterStatus('all')
+                    }}
+                    className="w-full px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg text-sm font-medium transition-colors"
+                  >
+                    Clear Filters
+                  </button>
+                </div>
+              </div>
+
+              {/* Results Count */}
+              <div className="text-sm text-gray-600">
+                Showing <span className="font-semibold text-gray-900">{filteredSnippets.length}</span> of <span className="font-semibold text-gray-900">{snippets.length}</span> products
+              </div>
+            </div>
+
             {/* View Controls */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4 mb-6">
               <div className="flex items-center justify-between">
@@ -1258,7 +1417,7 @@ export default function SimpleAdminDashboard() {
                 </div>
               ) : (
                 <div className="space-y-4">
-                  {snippets.map((snippet) => (
+                  {filteredSnippets.map((snippet) => (
                     <div key={snippet.id} className="border border-gray-200 rounded-lg p-4 hover:bg-gray-50">
                       {editingSnippet === snippet.id ? (
                         // Edit mode
