@@ -22,6 +22,7 @@ export default function SimpleAdminDashboard() {
     url: '',
     code: '',
     tag: '',
+    category: '',
     price: null,
     originalPrice: null,
     currency: 'EUR',
@@ -74,24 +75,19 @@ export default function SimpleAdminDashboard() {
         return false
       }
 
-      // Category filter
-      if (filterCategory !== 'all') {
-        const snippetName = snippet.name?.toLowerCase() || ''
-        const snippetTag = snippet.tag?.toLowerCase() || ''
-        if (!snippetName.includes(filterCategory) && !snippetTag.includes(filterCategory)) {
+      // Category filter - check snippet.category field
+      if (filterCategory !== 'all' && snippet.category !== filterCategory) {
+        return false
+      }
+
+      // Platform filter - check snippet.type field
+      if (filterPlatform !== 'all') {
+        if (filterPlatform === 'amazon' && snippet.type !== 'amazon' && snippet.type !== 'amazon_image') {
           return false
         }
-      }
-
-      // Rating filter (if snippet has rating data)
-      if (filterRating !== 'all') {
-        // Rating would need to be stored in snippet data
-        // For now, skip if no rating available
-      }
-
-      // Platform filter
-      if (filterPlatform !== 'all' && snippet.platform !== filterPlatform) {
-        return false
+        if (filterPlatform === 'bol' && snippet.type !== 'bol') {
+          return false
+        }
       }
 
       // Status filter
@@ -538,6 +534,7 @@ export default function SimpleAdminDashboard() {
           url: '',
           code: '',
           tag: '',
+          category: '',
           price: null,
           originalPrice: null,
           currency: 'EUR',
@@ -1385,6 +1382,24 @@ export default function SimpleAdminDashboard() {
                     </div>
                   )}
 
+                  {/* Category */}
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Category</label>
+                    <div className="relative">
+                      <select
+                        value={newSnippet.category}
+                        onChange={(e) => setNewSnippet(prev => ({ ...prev, category: e.target.value }))}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary appearance-none"
+                      >
+                        <option value="">Select a category</option>
+                        {categories.filter(cat => cat.value !== 'all').map(cat => (
+                          <option key={cat.value} value={cat.value}>{cat.label}</option>
+                        ))}
+                      </select>
+                      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-primary pointer-events-none" />
+                    </div>
+                  </div>
+
                   {/* Tag (Optional) */}
                   <div className="mb-4">
                     <label className="block text-sm font-medium text-gray-700 mb-2">Tag (Optional)</label>
@@ -1489,6 +1504,22 @@ export default function SimpleAdminDashboard() {
                               </div>
                             </div>
                           )}
+                          <div>
+                            <label className="block text-sm font-medium text-gray-700 mb-2">Category</label>
+                            <div className="relative">
+                              <select
+                                value={editFormData.category || ''}
+                                onChange={(e) => setEditFormData(prev => ({ ...prev, category: e.target.value }))}
+                                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary appearance-none"
+                              >
+                                <option value="">Select a category</option>
+                                {categories.filter(cat => cat.value !== 'all').map(cat => (
+                                  <option key={cat.value} value={cat.value}>{cat.label}</option>
+                                ))}
+                              </select>
+                              <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-primary pointer-events-none" />
+                            </div>
+                          </div>
                           <div>
                             <label className="block text-sm font-medium text-gray-700 mb-2">Tag (Optional)</label>
                             <input
