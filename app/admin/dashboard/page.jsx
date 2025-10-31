@@ -1689,16 +1689,7 @@ export default function SimpleAdminDashboard() {
                                     <strong>Created:</strong> {new Date(snippet.createdAt).toLocaleDateString()}
                                   </div>
                                 )}
-                                {/* Snippet Preview */}
-                                {snippet.generatedHtml && (
-                                  <div className="mt-3">
-                                    <h4 className="text-sm font-medium text-gray-700 mb-2">Snippet Preview:</h4>
-                                    <div className="p-3 bg-gray-50 rounded border">
-                                      <div dangerouslySetInnerHTML={{ __html: snippet.generatedHtml }} />
-                                    </div>
-                                  </div>
-                                )}
-                                
+
                                 {/* Code View - only show when not hiding details */}
                                 {!showOnlyPrice && (snippet.generatedHtml || snippet.codeSnippet) && (
                                   <details className="mt-2">
