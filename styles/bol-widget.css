@@ -44,3 +44,8 @@ div[id^=PLbol_] {
   opacity: 0.9;
   transition: opacity 0.2s ease;
 }
+
+/* reCAPTCHA badge z-index */
+.grecaptcha-badge {
+  z-index: 99;
+}
