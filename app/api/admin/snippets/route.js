@@ -145,6 +145,7 @@ export async function POST(request) {
       type: snippetData.type,
       url: productUrl,
       tag: snippetData.tag || null,
+      category: snippetData.category || null,
       // Separate fields for proper data structure
       imageHtml: imageHtml,
       bolScript: bolScript,
