@@ -969,6 +969,55 @@ export default function SimpleAdminDashboard() {
         {/* Tab Content */}
         {activeTab === 'overview' && (
           <>
+            {/* View Controls */}
+            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4 mb-6">
+              <div className="flex items-center justify-between">
+                <h3 className="text-sm font-medium text-gray-700">View Options</h3>
+                <div className="flex items-center space-x-4">
+                  <label className="flex items-center space-x-2">
+                    <input
+                      type="checkbox"
+                      checked={showOnlyPrice}
+                      onChange={(e) => setShowOnlyPrice(e.target.checked)}
+                      className="rounded border-gray-300 text-primary focus:ring-primary"
+                    />
+                    <span className="text-sm text-gray-600">Show only price info</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+                <div className="flex items-center">
+                  <Link className="w-8 h-8 text-primary" />
+                  <div className="ml-4">
+                    <h3 className="text-lg font-semibold text-gray-900">{snippets.length}</h3>
+                    <p className="text-gray-600">Total Snippets</p>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+                <div className="flex items-center">
+                  <Eye className="w-8 h-8 text-green-600" />
+                  <div className="ml-4">
+                    <h3 className="text-lg font-semibold text-gray-900">{snippets.filter(s => s.active).length}</h3>
+                    <p className="text-gray-600">Active Snippets</p>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+                <div className="flex items-center">
+                  <Settings className="w-8 h-8 text-blue-600" />
+                  <div className="ml-4">
+                    <h3 className="text-lg font-semibold text-gray-900">{pages.length}</h3>
+                    <p className="text-gray-600">Available Pages</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Search and Filters */}
             <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6 mb-6">
               <h3 className="text-sm font-medium text-gray-700 mb-4">Search & Filters</h3>
@@ -1058,55 +1107,6 @@ export default function SimpleAdminDashboard() {
               {/* Results Count */}
               <div className="text-sm text-gray-600">
                 Showing <span className="font-semibold text-gray-900">{filteredSnippets.length}</span> of <span className="font-semibold text-gray-900">{snippets.length}</span> products
-              </div>
-            </div>
-
-            {/* View Controls */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4 mb-6">
-              <div className="flex items-center justify-between">
-                <h3 className="text-sm font-medium text-gray-700">View Options</h3>
-                <div className="flex items-center space-x-4">
-                  <label className="flex items-center space-x-2">
-                    <input
-                      type="checkbox"
-                      checked={showOnlyPrice}
-                      onChange={(e) => setShowOnlyPrice(e.target.checked)}
-                      className="rounded border-gray-300 text-primary focus:ring-primary"
-                    />
-                    <span className="text-sm text-gray-600">Show only price info</span>
-                  </label>
-                </div>
-              </div>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-                <div className="flex items-center">
-                  <Link className="w-8 h-8 text-primary" />
-                  <div className="ml-4">
-                    <h3 className="text-lg font-semibold text-gray-900">{snippets.length}</h3>
-                    <p className="text-gray-600">Total Snippets</p>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-                <div className="flex items-center">
-                  <Eye className="w-8 h-8 text-green-600" />
-                  <div className="ml-4">
-                    <h3 className="text-lg font-semibold text-gray-900">{snippets.filter(s => s.active).length}</h3>
-                    <p className="text-gray-600">Active Snippets</p>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-                <div className="flex items-center">
-                  <Settings className="w-8 h-8 text-blue-600" />
-                  <div className="ml-4">
-                    <h3 className="text-lg font-semibold text-gray-900">{pages.length}</h3>
-                    <p className="text-gray-600">Available Pages</p>
-                  </div>
-                </div>
               </div>
             </div>
 
