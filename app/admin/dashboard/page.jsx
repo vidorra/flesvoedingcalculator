@@ -79,7 +79,17 @@ export default function SimpleAdminDashboard() {
       if (filterCategory !== 'all') {
         const snippetTag = snippet.tag?.toLowerCase() || ''
         const snippetName = snippet.name?.toLowerCase() || ''
-        if (!snippetTag.includes(filterCategory) && !snippetName.includes(filterCategory)) {
+        const categoryLower = filterCategory.toLowerCase()
+
+        // Debug logging
+        console.log('Filtering:', {
+          category: filterCategory,
+          snippetName: snippet.name,
+          snippetTag: snippet.tag,
+          matches: snippetTag.includes(categoryLower) || snippetName.includes(categoryLower)
+        })
+
+        if (!snippetTag.includes(categoryLower) && !snippetName.includes(categoryLower)) {
           return false
         }
       }
@@ -99,12 +109,6 @@ export default function SimpleAdminDashboard() {
         return false
       }
       if (filterStatus === 'inactive' && snippet.active) {
-        return false
-      }
-      if (filterStatus === 'with-image' && !snippet.imageUrl) {
-        return false
-      }
-      if (filterStatus === 'without-image' && snippet.imageUrl) {
         return false
       }
 
