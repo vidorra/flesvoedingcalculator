@@ -81,14 +81,6 @@ export default function SimpleAdminDashboard() {
         const snippetName = snippet.name?.toLowerCase() || ''
         const categoryLower = filterCategory.toLowerCase()
 
-        // Debug logging
-        console.log('Filtering:', {
-          category: filterCategory,
-          snippetName: snippet.name,
-          snippetTag: snippet.tag,
-          matches: snippetTag.includes(categoryLower) || snippetName.includes(categoryLower)
-        })
-
         if (!snippetTag.includes(categoryLower) && !snippetName.includes(categoryLower)) {
           return false
         }
