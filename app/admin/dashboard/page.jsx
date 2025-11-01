@@ -1089,8 +1089,6 @@ export default function SimpleAdminDashboard() {
                       <option value="all">All Status</option>
                       <option value="active">Active Only</option>
                       <option value="inactive">Inactive Only</option>
-                      <option value="with-image">With Image</option>
-                      <option value="without-image">Without Image</option>
                     </select>
                     <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-primary pointer-events-none" />
                   </div>
