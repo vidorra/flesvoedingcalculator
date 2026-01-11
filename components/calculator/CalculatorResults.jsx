@@ -72,7 +72,7 @@ export default function CalculatorResults({
                 <span>Aanbevolen per voeding</span>
               </div>
               <div className="text-xl font-medium">{results.recommendedAmount} ml</div>
-              <div className="text-xs text-white/60 mt-1">Bij groeispurt: tot {results.maxAmount} ml</div>
+              <div className="text-xs text-white/60 mt-1">Bij groeispurt: tot <span className="font-medium">{results.maxAmount} ml</span></div>
               {/* Newborn Alert - inline */}
               {results.isNewborn && (
                 <div className="bg-amber-50 rounded-lg p-2 border border-amber-200 mt-3">
