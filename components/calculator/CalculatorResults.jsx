@@ -73,6 +73,15 @@ export default function CalculatorResults({
               </div>
               <div className="text-xl font-medium">{results.recommendedAmount} ml</div>
               <div className="text-xs text-white/60 mt-1">Bij groeispurt: tot {results.maxAmount} ml</div>
+              {/* Newborn Alert - inline */}
+              {results.isNewborn && (
+                <div className="bg-amber-50 rounded-lg p-2 border border-amber-200 mt-3">
+                  <div className="text-xs text-amber-700 flex items-start">
+                    <AlertCircle className="w-4 h-4 mr-2 flex-shrink-0 mt-0.5 text-amber-600" />
+                    <span>Eerste dagen: Start met 10-15ml per voeding, verhoog dagelijks met ca. 10ml</span>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 
