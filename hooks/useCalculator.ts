@@ -313,11 +313,8 @@ export function useCalculator(): UseCalculatorReturn {
 
       if (age === '0-1') {
         // 0-1 month: 150ml/kg is the target, but newborns need gradual introduction
+        // Note: Detailed guidance shown via inline alert in CalculatorResults (isNewborn flag)
         isNewborn = true
-        specialNotes.push("Eerste dagen: Start met 10-15ml per voeding, verhoog dagelijks met ca. 10ml")
-        specialNotes.push("Let op verzadigingssignalen: baby duwt fles weg = vol")
-        specialNotes.push("Voeding om de 2-3 uur, 8-12x per dag in eerste weken")
-        specialNotes.push("Raadpleeg uw verloskundige of consultatiebureau bij vragen")
       } else if (typeof age === 'number' && age >= 6) {
         // After 6 months: solid food introduction reduces milk needs
         mlPerKg = ML_PER_KG_AFTER_SOLIDS

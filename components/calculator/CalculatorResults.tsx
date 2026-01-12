@@ -227,26 +227,6 @@ export default function CalculatorResults({
         </div>
       )}
 
-      {/* Newborn Feeding Alert - 0-1 month */}
-      {results.isNewborn && (
-        <div className="bg-amber-50 border border-amber-300 rounded-xl p-4">
-          <div className="flex items-start space-x-3">
-            <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
-            <div>
-              <h4 className="font-medium text-amber-800 mb-2">
-                Belangrijk voor pasgeborenen (0-1 maand)
-              </h4>
-              <div className="text-sm text-amber-700 space-y-2">
-                <p><strong>Eerste dagen:</strong> Start met 10-15ml per voeding, verhoog dagelijks met ca. 10ml tot de aanbevolen hoeveelheid is bereikt.</p>
-                <p><strong>Verzadigingssignalen:</strong> Baby duwt fles weg of draait hoofdje weg = vol. Dwing nooit door.</p>
-                <p><strong>Frequentie:</strong> Voeding om de 2-3 uur, 8-12x per dag in de eerste weken.</p>
-                <p><strong>Advies:</strong> Raadpleeg uw verloskundige of consultatiebureau bij vragen.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
       {/* Medical Disclaimer for Premature */}
       {results.isPremature && (
         <div className="bg-red-50 rounded-xl p-4 border border-red-200">
