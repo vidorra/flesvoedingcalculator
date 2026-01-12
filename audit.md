@@ -11,7 +11,7 @@
 
 The FlesvoedingCalculator.nl project is a well-structured Next.js application that provides baby feeding calculations based on Dutch (Nederlandse) guidelines. Since the last audit, several **critical issues have been resolved**, including a potentially dangerous incorrect formula for newborns.
 
-**Overall Score: 8.5/10** (improved from 7.5/10)
+**Overall Score: 9.0/10** (improved from 8.5/10)
 
 ---
 
@@ -23,20 +23,21 @@ The FlesvoedingCalculator.nl project is a well-structured Next.js application th
 |-------|--------|-------------|
 | Incorrect 75ml/kg newborn formula | **FIXED** | Was incorrectly using 75ml/kg for 0-2 weeks. Now correctly uses 150ml/kg (Voedingscentrum) |
 | Separate 0-2 weeks/2-4 weeks categories | **FIXED** | Merged into single "0-1 maand" category with proper Dutch guidance |
-| Plain text password authentication | **FIXED** | Implemented bcrypt password hashing with backwards compatibility |
+| Plain text password authentication | **FIXED** | Implemented bcrypt password hashing (active in production) |
 | Large page.jsx (1,217 lines) | **FIXED** | Refactored into modular components (now 260 lines) |
 | package-lock.json sync issue | **FIXED** | Updated to include bcryptjs dependency for CI builds |
+| No TypeScript | **FIXED** | Core calculator components now TypeScript with full type safety |
 
 ### New Components Created
 
 | Component | Location | Purpose |
 |-----------|----------|---------|
-| `useCalculator.js` | `hooks/` | All calculator logic extracted to custom hook (298 lines) |
-| `CalculatorResults.jsx` | `components/calculator/` | Results display with alerts |
-| `FeedingSchedule.jsx` | `components/calculator/` | Feeding schedule component |
+| `useCalculator.ts` | `hooks/` | All calculator logic with full TypeScript types (330 lines) |
+| `CalculatorResults.tsx` | `components/calculator/` | Results display with typed props |
+| `FeedingSchedule.tsx` | `components/calculator/` | Feeding schedule component (typed) |
+| `PrematureInputSection.tsx` | `components/calculator/` | Premature baby inputs (typed) |
 | `FAQSection.jsx` | `components/calculator/` | FAQ accordion |
 | `FeedingTypesInfo.jsx` | `components/calculator/` | Feeding types information |
-| `PrematureInputSection.jsx` | `components/calculator/` | Premature baby inputs |
 
 ---
 
@@ -142,7 +143,7 @@ When `isNewborn = true`, users now see:
 | Project structure | 8/10 | 8/10 | Clean Next.js App Router |
 | Component organization | 7/10 | **9/10** | Calculator split into 6 components |
 | Code reusability | 6/10 | **8/10** | Custom hook, barrel exports |
-| TypeScript adoption | 3/10 | 3/10 | Still JSX, no type safety |
+| TypeScript adoption | 3/10 | **8/10** | Core calculator components now TypeScript |
 
 ### 2.2 Component Structure (Current)
 
@@ -154,28 +155,51 @@ app/
 
 components/
 ├── calculator/
-│   ├── index.js (barrel export)
-│   ├── CalculatorResults.jsx (371 lines)
-│   ├── FeedingSchedule.jsx (51 lines)
+│   ├── index.ts (barrel export with type re-exports)
+│   ├── CalculatorResults.tsx (typed props)
+│   ├── FeedingSchedule.tsx (typed)
+│   ├── PrematureInputSection.tsx (typed)
 │   ├── FAQSection.jsx
-│   ├── FeedingTypesInfo.jsx
-│   └── PrematureInputSection.jsx
+│   └── FeedingTypesInfo.jsx
 └── ...
 
 hooks/
-└── useCalculator.js (298 lines)
+└── useCalculator.ts (330 lines, fully typed)
 ```
 
-### 2.3 Remaining Issues
+### 2.3 TypeScript Types Defined
+
+```typescript
+// Key types in useCalculator.ts
+interface CalculatorResults {
+  dailyAmount: number
+  feedingsPerDay: number
+  recommendedAmount: number
+  minAmount: number
+  maxAmount: number
+  mlPerKg: number
+  weightKg: number
+  isPremature: boolean
+  isNewborn: boolean
+  correctedAge: number | null
+  ageData: CorrectedAgeData | null
+  gestationalAge: string
+  specialNotes: string[]
+}
+
+type AgeCategory = 'premature' | '0-1' | '1' | '3' | '6'
+```
+
+### 2.4 Remaining Issues
 
 #### Medium Priority
-1. **No TypeScript** - Type safety important for medical apps
-2. **Duplicate info in alerts** - `specialNotes` and `isNewborn` alert show same info
-3. **Console.warn in production** - Should use proper logging
+1. **Duplicate info in alerts** - `specialNotes` and `isNewborn` alert show same info
+2. **Console.warn in production** - Should use proper logging
 
 #### Low Priority
-4. **Hardcoded feeding schedules** - Could be configurable
-5. **No unit tests** - Critical for calculation verification
+3. **Hardcoded feeding schedules** - Could be configurable
+4. **No unit tests** - Critical for calculation verification
+5. **Remaining JSX files** - FAQSection.jsx and FeedingTypesInfo.jsx could be converted
 
 ---
 
@@ -264,23 +288,23 @@ if (adminPasswordHash) {
 - [x] Fixed incorrect 75ml/kg formula for newborns
 - [x] Merged 0-2 weeks and 2-4 weeks into "0-1 maand"
 - [x] Added proper Dutch newborn alert with gradual introduction guidance
-- [x] Implemented bcrypt password hashing
+- [x] Implemented bcrypt password hashing (active in production)
 - [x] Refactored page.jsx into modular components
 - [x] Created useCalculator custom hook
 - [x] Fixed package-lock.json sync for CI
+- [x] **Migrated core calculator to TypeScript** (useCalculator.ts, CalculatorResults.tsx, FeedingSchedule.tsx, PrematureInputSection.tsx)
 
 ### Remaining Items
 
 #### High Priority
-- [ ] Generate and set `ADMIN_PASSWORD_HASH` in production
 - [ ] Add unit tests for calculation functions
 - [ ] Consider removing duplicate info in newborn alerts
 
 #### Medium Priority
-- [ ] Migrate to TypeScript for type safety
 - [ ] Implement proper logging (replace console.warn)
 - [ ] Add rate limiting to admin login
 - [ ] Consider JWT tokens for session management
+- [ ] Convert remaining JSX files to TypeScript
 
 #### Low Priority
 - [ ] Create configuration file for feeding formulas
@@ -324,18 +348,18 @@ if (adminPasswordHash) {
 
 ## 8. Conclusion
 
-FlesvoedingCalculator.nl has significantly improved since the last audit. The **critical formula issue has been resolved**, and the codebase is now properly modular with secure authentication ready.
+FlesvoedingCalculator.nl has significantly improved since the last audit. The **critical formula issue has been resolved**, and the codebase is now properly modular with TypeScript type safety and secure authentication.
 
 **Key Improvements:**
 - Correct 150ml/kg formula for all ages (Dutch guidelines compliant)
 - Proper newborn guidance with gradual introduction alerts
-- Bcrypt password hashing implemented
-- Code split into maintainable components
+- Bcrypt password hashing implemented and active in production
+- Code split into maintainable TypeScript components
+- Full type safety for all calculator logic and results
 
 **Remaining Focus Areas:**
-- Activate bcrypt in production
 - Add unit tests for calculations
-- Consider TypeScript migration
+- Remove duplicate alert information
 
 The calculator can now be **confidently trusted** for its intended purpose as a guideline tool, with appropriate medical disclaimers in place.
 

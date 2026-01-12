@@ -2,6 +2,16 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Info, ChevronDown } from 'lucide-react'
+import type { CorrectedAgeData } from '../../hooks/useCalculator'
+
+interface PrematureInputSectionProps {
+  gestationalAge: string
+  onGestationalAgeChange: (value: string) => void
+  birthDate: string
+  onBirthDateChange: (date: string) => void
+  correctedAge: CorrectedAgeData | null
+  prematureCategory: string
+}
 
 export default function PrematureInputSection({
   gestationalAge,
@@ -10,9 +20,9 @@ export default function PrematureInputSection({
   onBirthDateChange,
   correctedAge,
   prematureCategory
-}) {
-  const [showTooltip, setShowTooltip] = useState(false)
-  const [showSourcesTooltip, setShowSourcesTooltip] = useState(false)
+}: PrematureInputSectionProps) {
+  const [showTooltip, setShowTooltip] = useState<boolean>(false)
+  const [showSourcesTooltip, setShowSourcesTooltip] = useState<boolean>(false)
 
   return (
     <div className="space-y-5">
@@ -23,7 +33,7 @@ export default function PrematureInputSection({
           <div className="flex-1">
             <div className="flex items-center space-x-2">
               <p className="text-sm text-blue-800">
-                Voor premature baby's berekenen we de voeding op basis van gecorrigeerde leeftijd. Vul de onderstaande velden in.
+                Voor premature baby&apos;s berekenen we de voeding op basis van gecorrigeerde leeftijd. Vul de onderstaande velden in.
               </p>
               <div className="relative tooltip-container">
                 <button
@@ -43,7 +53,7 @@ export default function PrematureInputSection({
                       <div className="tooltip-content">
                         <h4 className="font-medium mb-2">Prematurenberekening</h4>
                         <p className="text-sm mb-2">
-                          Voor te vroeg geboren baby's gebruiken we een aangepaste berekeningsmethode op basis van:
+                          Voor te vroeg geboren baby&apos;s gebruiken we een aangepaste berekeningsmethode op basis van:
                         </p>
                         <ul className="text-sm space-y-1">
                           <li className="flex items-center space-x-2">
@@ -86,12 +96,12 @@ export default function PrematureInputSection({
                                       <div className="primary-sources">
                                         <p className="font-medium">Primaire bronnen:</p>
                                         <ol className="ml-3 space-y-1">
-                                          <li>1. ESPGHAN Committee on Nutrition (2022). "Enteral Nutrition Supply
-                                            for Preterm Infants" - J Pediatr Gastroenterol Nutr.</li>
+                                          <li>1. ESPGHAN Committee on Nutrition (2022). &quot;Enteral Nutrition Supply
+                                            for Preterm Infants&quot; - J Pediatr Gastroenterol Nutr.</li>
                                           <li>2. Nederlandse Vereniging voor Kindergeneeskunde (2023).
-                                            "Richtlijn Follow-up van Prematuren"</li>
-                                          <li>3. Agostoni et al. (2010). "Enteral Nutrient Supply for Preterm
-                                            Infants" - ESPGHAN Commentary</li>
+                                            &quot;Richtlijn Follow-up van Prematuren&quot;</li>
+                                          <li>3. Agostoni et al. (2010). &quot;Enteral Nutrient Supply for Preterm
+                                            Infants&quot; - ESPGHAN Commentary</li>
                                         </ol>
                                       </div>
 
@@ -116,7 +126,7 @@ export default function PrematureInputSection({
                                       <div className="validation bg-green-50 p-2 rounded">
                                         <p className="font-medium">Validatie:</p>
                                         <p>Berekeningen gevalideerd door kinderartsen-neonatologen
-                                          van Nederlandse NICU's (niveau 3 centra)</p>
+                                          van Nederlandse NICU&apos;s (niveau 3 centra)</p>
                                       </div>
 
                                       <p className="text-gray-600 mt-2">

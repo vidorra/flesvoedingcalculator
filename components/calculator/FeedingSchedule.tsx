@@ -1,10 +1,14 @@
 'use client'
 import { useState } from 'react'
 import { Clock, ChevronDown, ChevronUp } from 'lucide-react'
-import { generateFeedingSchedule } from '../../hooks/useCalculator'
+import { generateFeedingSchedule, type CalculatorResults } from '../../hooks/useCalculator'
 
-export default function FeedingSchedule({ results }) {
-  const [showDetails, setShowDetails] = useState(false)
+interface FeedingScheduleProps {
+  results: CalculatorResults | null
+}
+
+export default function FeedingSchedule({ results }: FeedingScheduleProps) {
+  const [showDetails, setShowDetails] = useState<boolean>(false)
 
   if (!results) return null
 
