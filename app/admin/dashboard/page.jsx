@@ -120,33 +120,58 @@ export default function SimpleAdminDashboard() {
   }
 
 
-  // Check authentication
+  // Check authentication via JWT token verification
   useEffect(() => {
-    const isAuth = localStorage.getItem('admin_authenticated')
-    const session = localStorage.getItem('admin_session')
-    
-    if (!isAuth || !session) {
-      router.push('/admin')
-      return
+    const verifyAuth = async () => {
+      const token = localStorage.getItem('admin_token')
+
+      if (!token) {
+        router.push('/admin')
+        return
+      }
+
+      try {
+        // Verify JWT token with API
+        const response = await fetch('/api/admin/verify', {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        })
+
+        if (!response.ok) {
+          // Token invalid or expired - clear storage and redirect
+          localStorage.removeItem('admin_token')
+          localStorage.removeItem('admin_authenticated')
+          localStorage.removeItem('admin_session')
+          router.push('/admin')
+          return
+        }
+
+        const data = await response.json()
+
+        if (data.success && data.admin) {
+          setIsAuthenticated(true)
+          // Add a small delay to ensure the API routes are ready
+          setTimeout(() => {
+            loadData()
+          }, 500)
+        } else {
+          localStorage.removeItem('admin_token')
+          localStorage.removeItem('admin_authenticated')
+          localStorage.removeItem('admin_session')
+          router.push('/admin')
+        }
+      } catch (error) {
+        console.error('Auth verification error:', error)
+        localStorage.removeItem('admin_token')
+        localStorage.removeItem('admin_authenticated')
+        localStorage.removeItem('admin_session')
+        router.push('/admin')
+      }
     }
-    
-    // Check if session is expired (24 hours)
-    const sessionTime = parseInt(session)
-    const now = Date.now()
-    const twentyFourHours = 24 * 60 * 60 * 1000
-    
-    if (now - sessionTime > twentyFourHours) {
-      localStorage.removeItem('admin_authenticated')
-      localStorage.removeItem('admin_session')
-      router.push('/admin')
-      return
-    }
-    
-    setIsAuthenticated(true)
-    // Add a small delay to ensure the API routes are ready
-    setTimeout(() => {
-      loadData()
-    }, 500)
+
+    verifyAuth()
   }, [router])
 
   const loadData = async (manualRetry = false) => {

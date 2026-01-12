@@ -11,7 +11,7 @@
 
 The FlesvoedingCalculator.nl project is a well-structured Next.js application that provides baby feeding calculations based on Dutch (Nederlandse) guidelines. Since the last audit, several **critical issues have been resolved**, including a potentially dangerous incorrect formula for newborns.
 
-**Overall Score: 9.0/10** (improved from 8.5/10)
+**Overall Score: 9.3/10** (improved from 9.0/10)
 
 ---
 
@@ -27,6 +27,8 @@ The FlesvoedingCalculator.nl project is a well-structured Next.js application th
 | Large page.jsx (1,217 lines) | **FIXED** | Refactored into modular components (now 260 lines) |
 | package-lock.json sync issue | **FIXED** | Updated to include bcryptjs dependency for CI builds |
 | No TypeScript | **FIXED** | Core calculator components now TypeScript with full type safety |
+| Duplicate newborn alerts | **FIXED** | Removed duplicate alerts, kept only inline alert |
+| Simple sessionStorage auth | **FIXED** | Implemented JWT token-based session management |
 
 ### New Components Created
 
@@ -117,20 +119,12 @@ if (age === '0-1') {
 3. Gradual introduction (10-15ml → increase 10ml/day) is the proper approach
 4. Parents using the old calculator could have underfed newborns
 
-### 1.3 Newborn Alert Implementation (NEW)
+### 1.3 Newborn Alert Implementation (UPDATED)
 
-When `isNewborn = true`, users now see:
+When `isNewborn = true`, users now see a single **inline alert** below "Bij groeispurt":
+> "Eerste dagen: Start met 10-15ml per voeding, verhoog dagelijks met ca. 10ml"
 
-1. **Inline alert** below "Aanbevolen per voeding":
-   > "Eerste dagen: Start met 10-15ml per voeding, verhoog dagelijks met ca. 10ml"
-
-2. **Detailed alert panel** with:
-   - Gradual introduction guidance
-   - Saturation signals (baby pushes bottle away = full)
-   - Feeding frequency (every 2-3 hours, 8-12x/day)
-   - Professional consultation advice
-
-3. **Special notes** in the "Belangrijke Aandachtspunten" section
+This concise alert provides essential guidance without cluttering the results with duplicate information.
 
 ---
 
@@ -150,7 +144,9 @@ When `isNewborn = true`, users now see:
 ```
 app/
 ├── page.jsx (260 lines, was 1,217)
-├── api/admin-auth/route.js (bcrypt implemented)
+├── api/admin/
+│   ├── login/route.js (bcrypt + JWT)
+│   └── verify/route.js (JWT verification)
 └── ...
 
 components/
@@ -193,13 +189,12 @@ type AgeCategory = 'premature' | '0-1' | '1' | '3' | '6'
 ### 2.4 Remaining Issues
 
 #### Medium Priority
-1. **Duplicate info in alerts** - `specialNotes` and `isNewborn` alert show same info
-2. **Console.warn in production** - Should use proper logging
+1. **Console.warn in production** - Should use proper logging
 
 #### Low Priority
-3. **Hardcoded feeding schedules** - Could be configurable
-4. **No unit tests** - Critical for calculation verification
-5. **Remaining JSX files** - FAQSection.jsx and FeedingTypesInfo.jsx could be converted
+2. **Hardcoded feeding schedules** - Could be configurable
+3. **No unit tests** - Critical for calculation verification
+4. **Remaining JSX files** - FAQSection.jsx and FeedingTypesInfo.jsx could be converted
 
 ---
 
@@ -210,37 +205,51 @@ type AgeCategory = 'premature' | '0-1' | '1' | '3' | '6'
 | Component | Previous | Current | Risk Level |
 |-----------|----------|---------|------------|
 | Password hashing | Plain text | **bcrypt** | LOW |
-| Session storage | Simple string | Simple string | MEDIUM |
+| Session storage | Simple string | **JWT tokens** | LOW |
 | Rate limiting | None | None | MEDIUM |
-| JWT tokens | Not implemented | Not implemented | - |
+| JWT tokens | Not implemented | **Implemented** | LOW |
 
-#### Bcrypt Implementation (NEW)
+#### JWT + Bcrypt Implementation (NEW)
 
 ```javascript
-// app/api/admin-auth/route.js
+// app/api/admin/login/route.js
 import bcrypt from 'bcryptjs'
+import * as jwt from 'jsonwebtoken'
 
-// Prefers hashed password, falls back to plain for migration
+// Bcrypt password verification
 if (adminPasswordHash) {
   isValid = await bcrypt.compare(password, adminPasswordHash)
-} else if (adminPasswordPlain) {
-  console.warn('Using plain text password comparison...')
-  isValid = password === adminPasswordPlain
 }
+
+// Issue JWT token (24h expiry)
+const token = jwt.sign(
+  { admin: true, iat: Math.floor(Date.now() / 1000) },
+  JWT_SECRET,
+  { expiresIn: '24h' }
+)
+
+// app/api/admin/verify/route.js
+// Verifies JWT token on each dashboard load
+const decoded = jwt.verify(token, JWT_SECRET)
 ```
 
-**To enable bcrypt in production:**
-1. Generate hash: `node -e "const bcrypt = require('bcryptjs'); console.log(bcrypt.hashSync('your-password', 10));"`
-2. Set `ADMIN_PASSWORD_HASH` environment variable
-3. Remove `ADMIN_PASSWORD` from production
+**Security improvements:**
+1. JWT tokens instead of simple sessionStorage strings
+2. Server-side token verification on each dashboard load
+3. 24-hour automatic token expiry
+4. Bcrypt password hashing with ADMIN_PASSWORD_HASH
+
+**Environment variables required:**
+- `JWT_SECRET` - Secret key for signing JWT tokens
+- `ADMIN_PASSWORD_HASH` - bcrypt hash of admin password
 
 ### 3.2 Security Score
 
 | Area | Score | Notes |
 |------|-------|-------|
-| Password handling | 7/10 | bcrypt ready, awaiting production hash |
+| Password handling | 9/10 | bcrypt implemented, hash in production |
 | Input validation | 8/10 | Good validation on forms |
-| Session management | 5/10 | Still uses sessionStorage |
+| Session management | 8/10 | JWT tokens with server verification |
 | CSRF protection | 6/10 | Next.js built-in only |
 
 ---
@@ -293,17 +302,17 @@ if (adminPasswordHash) {
 - [x] Created useCalculator custom hook
 - [x] Fixed package-lock.json sync for CI
 - [x] **Migrated core calculator to TypeScript** (useCalculator.ts, CalculatorResults.tsx, FeedingSchedule.tsx, PrematureInputSection.tsx)
+- [x] **Removed duplicate newborn alerts** - kept only inline alert
+- [x] **Implemented JWT token-based session management** - server-side token verification
 
 ### Remaining Items
 
 #### High Priority
 - [ ] Add unit tests for calculation functions
-- [ ] Consider removing duplicate info in newborn alerts
 
 #### Medium Priority
 - [ ] Implement proper logging (replace console.warn)
 - [ ] Add rate limiting to admin login
-- [ ] Consider JWT tokens for session management
 - [ ] Convert remaining JSX files to TypeScript
 
 #### Low Priority
@@ -348,20 +357,21 @@ if (adminPasswordHash) {
 
 ## 8. Conclusion
 
-FlesvoedingCalculator.nl has significantly improved since the last audit. The **critical formula issue has been resolved**, and the codebase is now properly modular with TypeScript type safety and secure authentication.
+FlesvoedingCalculator.nl has significantly improved since the last audit. The **critical formula issue has been resolved**, and the codebase is now properly modular with TypeScript type safety and secure JWT-based authentication.
 
 **Key Improvements:**
 - Correct 150ml/kg formula for all ages (Dutch guidelines compliant)
-- Proper newborn guidance with gradual introduction alerts
-- Bcrypt password hashing implemented and active in production
+- Proper newborn guidance with concise inline alert
+- Bcrypt password hashing + JWT token-based session management
 - Code split into maintainable TypeScript components
 - Full type safety for all calculator logic and results
+- Server-side JWT verification for admin dashboard
 
 **Remaining Focus Areas:**
 - Add unit tests for calculations
-- Remove duplicate alert information
+- Implement rate limiting for admin login
 
-The calculator can now be **confidently trusted** for its intended purpose as a guideline tool, with appropriate medical disclaimers in place.
+The calculator can now be **confidently trusted** for its intended purpose as a guideline tool, with appropriate medical disclaimers in place and secure admin authentication.
 
 ---
 
