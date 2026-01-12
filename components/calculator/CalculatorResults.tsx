@@ -1,6 +1,15 @@
 'use client'
 import { useState } from 'react'
 import { Baby, AlertCircle, Info } from 'lucide-react'
+import type { CalculatorResults as CalculatorResultsType } from '../../hooks/useCalculator'
+
+interface CalculatorResultsProps {
+  results: CalculatorResultsType | null
+  customAmount: string
+  setCustomAmount: (amount: string) => void
+  customSchepjes: number | null
+  calculateCustomSchepjes: () => void
+}
 
 export default function CalculatorResults({
   results,
@@ -8,10 +17,10 @@ export default function CalculatorResults({
   setCustomAmount,
   customSchepjes,
   calculateCustomSchepjes
-}) {
-  const [showCustomInput, setShowCustomInput] = useState(false)
-  const [showSchepjesTooltip, setShowSchepjesTooltip] = useState(false)
-  const [showMedicalTooltip, setShowMedicalTooltip] = useState(false)
+}: CalculatorResultsProps) {
+  const [showCustomInput, setShowCustomInput] = useState<boolean>(false)
+  const [showSchepjesTooltip, setShowSchepjesTooltip] = useState<boolean>(false)
+  const [showMedicalTooltip, setShowMedicalTooltip] = useState<boolean>(false)
 
   if (!results) return null
 
@@ -35,11 +44,13 @@ export default function CalculatorResults({
                   Premature Baby Berekening
                 </h4>
                 <p className="text-sm text-primary">
-                  Gecorrigeerde leeftijd: {results.correctedAge < 0
+                  Gecorrigeerde leeftijd: {results.correctedAge !== null && results.correctedAge < 0
                     ? `${results.correctedAge} weken (nog ${Math.abs(results.correctedAge)} weken voor termijn)`
-                    : results.correctedAge < 4
+                    : results.correctedAge !== null && results.correctedAge < 4
                       ? `${results.correctedAge} weken`
-                      : `${Math.floor(results.correctedAge / 4)} maanden`
+                      : results.correctedAge !== null
+                        ? `${Math.floor(results.correctedAge / 4)} maanden`
+                        : 'Onbekend'
                   }
                 </p>
                 <p className="text-sm text-primary mt-1">
@@ -184,10 +195,10 @@ export default function CalculatorResults({
               <h4 className="font-medium text-amber-800 mb-1">Premature Baby Voeding - Speciale Berekening</h4>
               <p className="text-sm text-amber-700 mb-3">
                 Deze berekening is gebaseerd op de gecorrigeerde leeftijd van uw premature baby volgens Nederlandse richtlijnen.
-                Premature baby's hebben verhoogde voedingsbehoeften voor optimale groei en ontwikkeling.
+                Premature baby&apos;s hebben verhoogde voedingsbehoeften voor optimale groei en ontwikkeling.
               </p>
               <p className="text-sm text-amber-700 mb-3">
-                <strong>Belangrijke informatie:</strong> Bij premature baby's wordt {results.mlPerKg}ml per kg lichaamsgewicht aangehouden
+                <strong>Belangrijke informatie:</strong> Bij premature baby&apos;s wordt {results.mlPerKg}ml per kg lichaamsgewicht aangehouden
                 (in plaats van de standaard 150ml/kg). Dit is nodig voor inhaalgroei en herstel.
               </p>
               <p className="text-sm text-amber-700">
@@ -241,7 +252,7 @@ export default function CalculatorResults({
         <div className="bg-red-50 rounded-xl p-4 border border-red-200">
           <div className="flex items-start justify-between">
             <p className="text-sm text-red-800 flex-1">
-              <strong>Medisch Advies Vereist:</strong> Voor premature baby's is begeleiding
+              <strong>Medisch Advies Vereist:</strong> Voor premature baby&apos;s is begeleiding
               door kinderarts en diëtist essentieel. Deze berekening is alleen een richtlijn.
             </p>
 
@@ -269,7 +280,7 @@ export default function CalculatorResults({
                         </p>
 
                         <div className="monitoring-required bg-amber-50 p-2 rounded">
-                          <p className="font-medium text-amber-900">Premature baby's hebben nodig:</p>
+                          <p className="font-medium text-amber-900">Premature baby&apos;s hebben nodig:</p>
                           <ul className="text-xs mt-1 space-y-1">
                             <li className="flex items-center space-x-2">
                               <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></div>
