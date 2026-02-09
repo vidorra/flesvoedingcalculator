@@ -4,12 +4,7 @@ import Layout from '../components/Layout'
 import Link from 'next/link'
 import { AlertTriangle, RefreshCcw, Home, RotateCcw } from 'lucide-react'
 
-interface ErrorPageProps {
-  error: Error & { digest?: string }
-  reset: () => void
-}
-
-export default function Error({ error, reset }: ErrorPageProps) {
+export default function Error({ error, reset }) {
   useEffect(() => {
     // Log the error to an error reporting service
     console.error('Application error:', error)
@@ -37,7 +32,7 @@ export default function Error({ error, reset }: ErrorPageProps) {
               Er is iets misgegaan
             </h1>
             <p className="text-gray-600 max-w-md mx-auto">
-              We hebben een onverwachte fout ondervonden.
+              We hebben een onverwachte fout ondervonden. 
               Onze excuses voor het ongemak. Probeer het opnieuw of ga terug naar de homepage.
             </p>
           </div>
@@ -61,7 +56,7 @@ export default function Error({ error, reset }: ErrorPageProps) {
               <RefreshCcw className="w-5 h-5 mr-2" />
               Probeer opnieuw
             </button>
-
+            
             <Link
               href="/"
               className="bg-white hover:bg-gray-50 text-gray-800 font-medium py-3 px-6 rounded-xl border border-gray-200 transition-all inline-flex items-center"
@@ -76,18 +71,18 @@ export default function Error({ error, reset }: ErrorPageProps) {
             <h2 className="text-lg font-medium text-gray-800 mb-4">
               Wat kunt u doen?
             </h2>
-
+            
             <div className="space-y-3 text-sm text-gray-600">
               <div className="flex items-start space-x-3">
                 <RotateCcw className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                 <span>Probeer de pagina opnieuw te laden</span>
               </div>
-
+              
               <div className="flex items-start space-x-3">
                 <AlertTriangle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                 <span>Controleer uw internetverbinding</span>
               </div>
-
+              
               <div className="flex items-start space-x-3">
                 <Home className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                 <span>Ga terug naar de homepage en probeer opnieuw</span>
@@ -101,10 +96,10 @@ export default function Error({ error, reset }: ErrorPageProps) {
               Probleem blijft bestaan?
             </h3>
             <p className="text-white/90 mb-4">
-              Als deze fout blijft optreden, neem dan contact met ons op.
+              Als deze fout blijft optreden, neem dan contact met ons op. 
               We helpen u graag verder.
             </p>
-            <Link
+            <Link 
               href="/contact"
               className="bg-white/20 hover:bg-white/30 backdrop-blur text-white font-medium py-3 px-6 rounded-xl transition-all inline-flex items-center"
             >
