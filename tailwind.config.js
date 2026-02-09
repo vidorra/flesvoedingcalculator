@@ -6,6 +6,22 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: {
+          DEFAULT: '#1094AE',
+          dark: '#117A8F',
+          light: '#14B8DA',
+          hover: '#117A8F',
+        },
+        accent: {
+          rose: '#D48596',
+          'rose-light': '#ED2CDC',
+          'rose-lighter': '#F5E6ED',
+        },
+        bg: {
+          warm: '#FFFBF7',
+        }
+      },
       animation: {
         'in': 'fadeIn 0.3s ease-in-out',
       },

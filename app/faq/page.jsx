@@ -107,8 +107,13 @@ export default function FAQPage() {
                       : 'bg-white border-gray-200 hover:border-primary text-gray-700'
                   }`}
                 >
-                  <Icon className="w-5 h-5 mb-2" />
-                  <div className="font-medium">{category.name}</div>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center">
+                      <Icon className="w-5 h-5 mr-2" />
+                      <div className="font-medium">{category.name}</div>
+                    </div>
+                    {selectedCategory === category.id && <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>}
+                  </div>
                 </button>
               )
             })}

@@ -389,7 +389,7 @@ export default function VoedingsschemasPage() {
                 <button
                   key={group.id}
                   onClick={() => setSelectedAge(group.id)}
-                  className={`p-3 rounded-xl transition-all text-center ${
+                  className={`p-3 rounded-xl transition-all text-center relative ${
                     selectedAge === group.id
                       ? 'bg-primary text-white shadow-lg'
                       : 'bg-gray-50 text-gray-700 hover:bg-default'
@@ -399,6 +399,7 @@ export default function VoedingsschemasPage() {
                     <Icon className="w-6 h-6 mx-auto" />
                   </div>
                   <div className="text-sm font-medium">{group.name}</div>
+                  {selectedAge === group.id && <div className="absolute top-2 right-2 w-2 h-2 bg-white rounded-full"></div>}
                 </button>
               )
             })}
