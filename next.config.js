@@ -2,7 +2,21 @@
 const nextConfig = {
   trailingSlash: true,
   images: {
-    unoptimized: true
+    formats: ['image/avif', 'image/webp'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.bol.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.cloudinary.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.example.com',
+      }
+    ]
   },
   // Optimize build for smaller size and better performance
   compress: true,

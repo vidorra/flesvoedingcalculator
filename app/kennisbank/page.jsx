@@ -464,7 +464,10 @@ export default function KennisbankPage() {
                   : 'bg-white hover:bg-white text-gray-700 border border-gray-200'
               }`}
             >
-              <div className="font-medium mb-1">Alle categorieën</div>
+              <div className="flex items-center justify-between mb-1">
+                <div className="font-medium">Alle categorieën</div>
+                {selectedCategory === 'all' && <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>}
+              </div>
               <div className="text-sm opacity-70">{getArticleCount('all')} artikelen</div>
             </button>
             
@@ -481,9 +484,12 @@ export default function KennisbankPage() {
                       : 'bg-white hover:bg-white text-gray-700 border border-gray-200'
                   }`}
                 >
-                  <div className="flex items-center mb-2">
-                    <Icon className="w-5 h-5 mr-2" />
-                    <span className="font-medium">{category.title}</span>
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center">
+                      <Icon className="w-5 h-5 mr-2" />
+                      <span className="font-medium">{category.title}</span>
+                    </div>
+                    {selectedCategory === category.id && <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>}
                   </div>
                   <div className="text-sm opacity-70">{getArticleCount(category.id)} artikel{getArticleCount(category.id) !== 1 ? 'en' : ''}</div>
                 </button>
@@ -507,7 +513,7 @@ export default function KennisbankPage() {
                   <Link
                     key={article.id}
                     href={article.href || `/kennisbank/${article.category}`}
-                    className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white"
+                    className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-accent-rose-lighter transition-colors bg-white"
                   >
                     <div className="flex items-start space-x-3">
                       <Icon className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
@@ -568,7 +574,7 @@ export default function KennisbankPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Link 
               href="/voedingsschemas"
-              className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white"
+              className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-accent-rose-lighter transition-colors bg-white"
             >
               <div className="flex items-center justify-between">
                 <div>
@@ -580,7 +586,7 @@ export default function KennisbankPage() {
             </Link>
             <Link 
               href="/"
-              className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white"
+              className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-accent-rose-lighter transition-colors bg-white"
             >
               <div className="flex items-center justify-between">
                 <div>
@@ -592,7 +598,7 @@ export default function KennisbankPage() {
             </Link>
             <Link 
               href="/faq"
-              className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white"
+              className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-accent-rose-lighter transition-colors bg-white"
             >
               <div className="flex items-center justify-between">
                 <div>
@@ -666,35 +672,35 @@ export default function KennisbankPage() {
         <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="font-medium text-primary mb-4">Meest Gestelde Vragen</h2>
           <div className="space-y-4">
-            <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white">
+            <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-accent-rose-lighter transition-colors bg-white">
               <h3 className="font-medium text-primary mb-2">Welk merk flesvoeding is het beste?</h3>
               <p className="text-gray-600">
                 Alle Nederlandse merken voldoen aan dezelfde strenge EU-eisen. Kruidvat huismerk is even veilig als Nutrilon of Hero Baby, maar wel goedkoper. Kies op basis van budget en beschikbaarheid.
               </p>
             </div>
             
-            <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white">
+            <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-accent-rose-lighter transition-colors bg-white">
               <h3 className="font-medium text-primary mb-2">Hoeveel kost flesvoeding per maand?</h3>
               <p className="text-gray-600">
                 Budget variant (Kruidvat): €35-50/maand. Middenklasse (Hero Baby): €50-70/maand. Hoogwaardig (Nutrilon): €70-90/maand. Eerste jaar totaal: €400-1000 afhankelijk van merkkeuze.
               </p>
             </div>
             
-            <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white">
+            <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-accent-rose-lighter transition-colors bg-white">
               <h3 className="font-medium text-primary mb-2">Wanneer overstappen van nummer 1 naar 2?</h3>
               <p className="text-gray-600">
                 Pas vanaf 6 maanden én wanneer baby vaste voeding krijgt. Nummer 1 mag tot 12 maanden gebruikt worden. Overstappen is dus optioneel, niet verplicht.
               </p>
             </div>
             
-            <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white">
+            <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-accent-rose-lighter transition-colors bg-white">
               <h3 className="font-medium text-primary mb-2">Kan ik van borstvoeding overstappen naar flesvoeding?</h3>
               <p className="text-gray-600">
                 Ja, dit kan op elke leeftijd. Geleidelijke overgang over 1-2 weken voorkomt borstontsteking. Combivoeiding (borstvoeding + flesvoeding) is ook mogelijk.
               </p>
             </div>
             
-            <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-default transition-colors bg-white">
+            <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-accent-rose-lighter transition-colors bg-white">
               <h3 className="font-medium text-primary mb-2">Mijn baby weigert de fles, wat nu?</h3>
               <p className="text-gray-600">
                 Check temperatuur (37°C), probeer andere speen, laat partner proberen, gebruik afgekolfde melk eerst. Geduld is belangrijk - sommige baby's hebben tijd nodig.
@@ -710,33 +716,33 @@ export default function KennisbankPage() {
             Handige Tools
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Link 
+            <Link
               href="/"
-              className="p-4 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 hover:border-primary transition-colors"
+              className="p-4 rounded-xl bg-gradient-to-br from-orange-50 to-orange-100 border border-gray-200 hover:border-primary transition-colors"
             >
               <h3 className="font-medium text-primary mb-2">Flesvoeding Calculator</h3>
               <p className="text-sm text-gray-600 mb-3">Bereken persoonlijke hoeveelheden per voeding</p>
-              <div className="text-gray-700 hover:text-gray-600 font-medium text-sm flex items-center">
+              <div className="text-primary hover:text-primary-dark font-medium text-sm flex items-center">
                 Bereken nu <ArrowRight className="w-4 h-4 ml-1" />
               </div>
             </Link>
-            <Link 
+            <Link
               href="/voedingsschemas"
-              className="p-4 rounded-xl bg-gradient-to-br from-green-50 to-green-100 border border-gray-200 hover:border-primary transition-colors"
+              className="p-4 rounded-xl bg-gradient-to-br from-rose-50 to-rose-100 border border-gray-200 hover:border-primary transition-colors"
             >
-              <h3 className="font-medium text-gray-700 mb-2">Voedingsschema's</h3>
+              <h3 className="font-medium text-primary mb-2">Voedingsschema's</h3>
               <p className="text-sm text-gray-600 mb-3">Interactieve schema's per leeftijdsgroep</p>
-              <div className="text-gray-600 hover:text-gray-700 font-medium text-sm flex items-center">
+              <div className="text-primary hover:text-primary-dark font-medium text-sm flex items-center">
                 Bekijk schema's <ArrowRight className="w-4 h-4 ml-1" />
               </div>
             </Link>
-            <Link 
+            <Link
               href="/infographics"
-              className="p-4 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 hover:border-primary transition-colors"
+              className="p-4 rounded-xl bg-gradient-to-br from-amber-50 to-amber-100 border border-gray-200 hover:border-primary transition-colors"
             >
-              <h3 className="font-medium text-gray-600 mb-2">Visuele Guides</h3>
+              <h3 className="font-medium text-primary mb-2">Visuele Guides</h3>
               <p className="text-sm text-gray-600 mb-3">Stap-voor-stap infographics en tijdlijnen</p>
-              <div className="text-gray-600 hover:text-gray-700 font-medium text-sm flex items-center">
+              <div className="text-primary hover:text-primary-dark font-medium text-sm flex items-center">
                 Bekijk guides <ArrowRight className="w-4 h-4 ml-1" />
               </div>
             </Link>

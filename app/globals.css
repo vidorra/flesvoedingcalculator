@@ -6,19 +6,21 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  
-  /* Custom color variables */
+  --background-start-rgb: 255, 251, 247;
+  --background-end-rgb: 255, 251, 247;
+
+  /* Custom color variables - Warm palette */
   --primary: 16, 148, 174;
   --primary-hover: 17, 122, 143;
-  --primary-dark: 12, 118, 142;
+  --primary-dark: 17, 122, 143;
   --primary-light: 20, 184, 218;
-  --bg-default: 244, 250, 252;
+  --bg-default: 255, 251, 247;
   --bg-primary: 16, 148, 174;
   --bg-primary-hover: 17, 122, 143;
   --text-primary: 16, 148, 174;
   --border-primary: 16, 148, 174;
+  --accent-rose: 212, 133, 150;
+  --accent-rose-lighter: 252, 247, 249;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -215,14 +217,31 @@ select {
   border-radius: 14px;
 }
 
-/* Custom background for active states - more pastel */
+/* Custom background for active states - rose accent */
 .bg-gradient-active {
-  background: rgba(200, 240, 245, 0.3);
+  background: rgb(var(--accent-rose-lighter));
+}
+
+.bg-accent-rose {
+  background-color: rgb(var(--accent-rose));
+}
+
+.bg-accent-rose-lighter {
+  background-color: rgb(var(--accent-rose-lighter));
+}
+
+/* Active menu item styling with rose accent */
+.nav-item-active {
+  background-color: rgb(var(--accent-rose-lighter));
+}
+
+.nav-item-active:hover {
+  background-color: rgb(var(--accent-rose-lighter));
 }
 
 /* Main element styling with gradient background */
 main {
-  background: radial-gradient(circle at center, rgb(220, 240, 250) 0%, rgb(200, 240, 245) 40%, rgb(244, 250, 252) 100%);
+  background: radial-gradient(circle at center, rgb(250, 242, 245) 0%, rgb(252, 247, 249) 40%, rgb(255, 251, 247) 100%);
   width: calc(100% - 48px);
   max-width: calc(100vw - 48px);
   margin: 0;
@@ -239,7 +258,7 @@ main::before {
   left: -10%;
   width: 120%;
   height: 120%;
-  background: radial-gradient(circle at 30% 30%, rgba(20, 184, 218, 0.1) 0%, rgba(16, 148, 174, 0.05) 40%, transparent 70%);
+  background: radial-gradient(circle at 30% 30%, rgba(212, 133, 150, 0.06) 0%, rgba(16, 148, 174, 0.04) 40%, transparent 70%);
   animation: gentleFloat 20s ease-in-out infinite;
   pointer-events: none;
   z-index: -1;

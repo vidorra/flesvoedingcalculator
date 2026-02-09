@@ -41,8 +41,8 @@ export default function Header() {
                   href={item.href}
                   className={`flex items-center space-x-1 px-6 py-4 rounded-nav transition-colors ${
                     isActive
-                      ? 'bg-default text-primary'
-                      : 'text-gray-600 hover:text-primary hover:bg-default'
+                      ? 'nav-item-active text-primary'
+                      : 'text-gray-600 hover:text-primary hover:bg-accent-rose/8'
                   }`}
                 >
                   <Icon className="w-4 h-4" />
@@ -76,8 +76,8 @@ export default function Header() {
                   onClick={() => setIsMenuOpen(false)}
                   className={`w-full flex items-center space-x-2 px-6 py-6 rounded-nav transition-colors ${
                     isActive
-                      ? 'bg-default text-primary'
-                      : 'text-gray-600 hover:text-primary hover:bg-default'
+                      ? 'nav-item-active text-primary'
+                      : 'text-gray-600 hover:text-primary hover:bg-accent-rose/8'
                   }`}
                 >
                   <Icon className="w-4 h-4" />
