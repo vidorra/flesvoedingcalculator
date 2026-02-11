@@ -1,5 +1,6 @@
 import Layout from '../../../../components/Layout'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { User } from 'lucide-react'
 import BolProductSection from '../../../../components/BolProductLink'
 
@@ -54,7 +55,7 @@ export default function JuisteHoudingBijFlesvoeding() {
               </p>
             </div>
 
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-500 leading-relaxed">
                 De juiste houding bij flesvoeding is cruciaal voor de veiligheid van je baby en jouw eigen comfort. Een goede voedingshouding voorkomt verslikking, oorontstekingen, rug- en nekklachten, en bevordert de band tussen jou en je baby. Deze uitgebreide gids legt uit hoe je ergonomisch en veilig voedt, welke houdingen het beste werken, en hoe je veelvoorkomende problemen voorkomt.
@@ -174,7 +175,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                 <h3 className="text-2xl font-medium text-primary mb-4">Verschillende baby houdingen</h3>
                 
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="p-6">
+                  <div>
                     <h4 className="text-lg font-medium text-primary mb-3">Klassieke wieghouding</h4>
                     <ul className="space-y-2">
                       <li className="flex items-start space-x-2">
@@ -196,7 +197,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                     </ul>
                   </div>
 
-                  <div className="p-6">
+                  <div>
                     <h4 className="text-lg font-medium text-primary mb-3">Voetbal houding</h4>
                     <ul className="space-y-2">
                       <li className="flex items-start space-x-2">
@@ -218,7 +219,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                     </ul>
                   </div>
 
-                  <div className="p-6">
+                  <div>
                     <h4 className="text-lg font-medium text-primary mb-3">Cross-cradle houding</h4>
                     <ul className="space-y-2">
                       <li className="flex items-start space-x-2">
@@ -240,7 +241,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                     </ul>
                   </div>
 
-                  <div className="p-6">
+                  <div>
                     <h4 className="text-lg font-medium text-primary mb-3">Rechtop zitten</h4>
                     <ul className="space-y-2">
                       <li className="flex items-start space-x-2">
@@ -300,7 +301,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                 <h3 className="text-2xl font-medium text-primary mb-4">De perfecte zithouding</h3>
                 
                 <div className="space-y-6">
-                  <div className="p-6">
+                  <div>
                     <h4 className="text-lg font-medium text-primary mb-3">Ruggengraat uitgelijnd</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
@@ -322,7 +323,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                     </ul>
                   </div>
 
-                  <div className="p-6">
+                  <div>
                     <h4 className="text-lg font-medium text-primary mb-3">Armondersteuning </h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
@@ -427,7 +428,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                   <h3 className="text-2xl font-medium text-primary mb-4">De fles correct vasthouden</h3>
                   
                   <div className="grid md:grid-cols-3 gap-6">
-                    <div className="p-6">
+                    <div>
                       <h4 className="font-medium text-primary mb-3">Fles positie</h4>
                       <ul className="space-y-2">
                         <li className="flex items-start space-x-2">
@@ -449,7 +450,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                       </ul>
                     </div>
 
-                    <div className="p-6">
+                    <div>
                       <h4 className="font-medium text-primary mb-3">Speen plaatsing</h4>
                       <ul className="space-y-2">
                         <li className="flex items-start space-x-2">
@@ -471,7 +472,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                       </ul>
                     </div>
 
-                    <div className="p-6">
+                    <div>
                       <h4 className="font-medium text-primary mb-3">Flow controle </h4>
                       <ul className="space-y-2">
                         <li className="flex items-start space-x-2">
@@ -651,6 +652,12 @@ export default function JuisteHoudingBijFlesvoeding() {
               title="Producten voor Juiste Voedingshouding"
               variant="card"
               maxProducts={4}
+            />
+
+            {/* Voedingshouding Producten */}
+            <AffiliateProductWidget
+              pageId="voedingstechnieken_juiste-houding-bij-flesvoeding"
+              title="Voedingshouding Producten"
             />
 
             <div className="bg-white p-6 text-center">
