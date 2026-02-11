@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Clock, Calendar, TrendingUp, Moon, Sun, Users, Target } from 'lucide-react'
 
 export const metadata = {
@@ -453,7 +454,7 @@ export default function VoedingsritmeOpbouwenPage() {
             </div>
 
             {/* Why Life Changing */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Waarom een Voedingsritme Levensveranderend Is</h2>
               
               <p className="text-gray-700 mb-4">
@@ -483,7 +484,7 @@ export default function VoedingsritmeOpbouwenPage() {
             </div>
 
             {/* Age Specific Schedules */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <TrendingUp className="w-5 h-5 mr-2" />
                 Leeftijd-Specifieke Voedingsschema's
@@ -551,7 +552,7 @@ export default function VoedingsritmeOpbouwenPage() {
             </div>
 
             {/* Step by Step Implementation */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Target className="w-5 h-5 mr-2" />
                 Stap-voor-Stap Ritme Opbouwen
@@ -623,7 +624,7 @@ export default function VoedingsritmeOpbouwenPage() {
             </div>
 
             {/* Implementation Techniques */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Praktische Implementatie Strategieën</h2>
               
               <div className="space-y-6">
@@ -697,7 +698,7 @@ export default function VoedingsritmeOpbouwenPage() {
             </div>
 
             {/* Common Challenges */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelvoorkomende Uitdagingen & Oplossingen</h2>
               
               <div className="space-y-6">
@@ -782,7 +783,7 @@ export default function VoedingsritmeOpbouwenPage() {
             </div>
 
             {/* Special Situations */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Schema's voor Speciale Situaties</h2>
               
               <div className="space-y-6">
@@ -919,7 +920,7 @@ export default function VoedingsritmeOpbouwenPage() {
             </div>
 
             {/* Family Social Aspects */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Users className="w-5 h-5 mr-2" />
                 Familie & Sociale Aspecten
@@ -994,7 +995,7 @@ export default function VoedingsritmeOpbouwenPage() {
             </div>
 
             {/* Long Term Perspective */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Calendar className="w-5 h-5 mr-2" />
                 Lange Termijn Perspectief
@@ -1038,8 +1039,14 @@ export default function VoedingsritmeOpbouwenPage() {
               </div>
             </div>
 
+            {/* Product Widget */}
+            <AffiliateProductWidget
+              pageId="praktische-tips_voedingsritme-opbouwen"
+              title="Voedingsritme Producten"
+            />
+
             {/* FAQ */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen (FAQ)</h2>
               
               <div className="space-y-4">
@@ -1056,7 +1063,7 @@ export default function VoedingsritmeOpbouwenPage() {
             </div>
 
             {/* Conclusion */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Conclusie: Geduld en Consistentie</h2>
               
               <p className="text-gray-700 mb-4">
@@ -1083,7 +1090,7 @@ export default function VoedingsritmeOpbouwenPage() {
             </div>
 
             {/* Navigation */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <Link 

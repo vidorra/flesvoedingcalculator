@@ -321,7 +321,7 @@ export default function CalculatorResults({
       )}
 
       {/* Feeding Information */}
-      <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+      <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
         <div className="bg-default rounded-xl p-4">
           <h5 className="font-medium text-gray-900 mb-3">Waarom variatie in hoeveelheid?</h5>
           <div className="space-y-2 text-sm text-gray-800">

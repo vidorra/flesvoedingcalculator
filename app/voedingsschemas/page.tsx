@@ -381,7 +381,7 @@ export default function VoedingsschemasPage() {
         </div>
 
         {/* Age Tabs */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
             {ageGroups.map((group) => {
               const Icon = group.icon
@@ -407,7 +407,7 @@ export default function VoedingsschemasPage() {
         </div>
 
         {/* Feeding Frequency Dropdown */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Aantal voedingen per dag
           </label>
@@ -431,7 +431,7 @@ export default function VoedingsschemasPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Schema Overview */}
           <div className="lg:col-span-2 space-y-6">
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="font-medium text-gray-800 mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2 text-primary" />
                 Schema Overzicht
@@ -464,7 +464,7 @@ export default function VoedingsschemasPage() {
             </div>
 
             {/* Development Milestones */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="font-medium text-gray-800 mb-4 flex items-center">
                 <Target className="w-5 h-5 mr-2 text-primary" />
                 Ontwikkelingsmijlpalen
@@ -483,7 +483,7 @@ export default function VoedingsschemasPage() {
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Next Phase */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h3 className="font-medium text-gray-800 mb-3 flex items-center">
                 <ArrowRight className="w-5 h-5 mr-2 text-primary" />
                 Volgende Fase
@@ -492,7 +492,7 @@ export default function VoedingsschemasPage() {
             </div>
 
             {/* Download Options */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h3 className="font-medium text-gray-800 mb-3 flex items-center">
                 <Download className="w-5 h-5 mr-2 text-primary" />
                 Downloads
@@ -507,7 +507,7 @@ export default function VoedingsschemasPage() {
             </div>
 
             {/* Quick Calculator */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h3 className="font-medium text-gray-800 mb-3 flex items-center">
                 <Calculator className="w-5 h-5 mr-2 text-primary" />
                 Snelle Berekening

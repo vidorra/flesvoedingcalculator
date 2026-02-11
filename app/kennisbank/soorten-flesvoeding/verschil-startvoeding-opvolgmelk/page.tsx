@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Scale, Euro, Calendar, AlertCircle, CheckCircle, XCircle } from 'lucide-react'
 
 export const metadata = {
@@ -360,7 +361,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
             </div>
 
             {/* Why Confusion */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Waarom Deze Verwarring Zo Groot Is</h2>
               
               <p className="text-gray-700 mb-4">
@@ -395,7 +396,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
             </div>
 
             {/* Nutrition Comparison */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Complete Vergelijking: Nummer 1 vs Nummer 2</h2>
               
               <div className="overflow-x-auto">
@@ -452,7 +453,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
             </div>
 
             {/* Brand Comparison */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Nederlandse Merken Vergelijking</h2>
               
               <div className="space-y-8">
@@ -511,7 +512,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
             </div>
 
             {/* When to Switch */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Wanneer Overstappen? Beslissingshulp</h2>
               
               <div className="space-y-6">
@@ -568,7 +569,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
             </div>
 
             {/* Transition Process */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Calendar className="w-5 h-5 mr-2" />
                 Overstap Proces: Stap-voor-Stap
@@ -605,7 +606,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
             </div>
 
             {/* Common Problems */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <AlertCircle className="w-5 h-5 mr-2" />
                 Veelvoorkomende Problemen & Oplossingen
@@ -674,7 +675,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
             </div>
 
             {/* Expert Recommendations */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Expert Aanbevelingen Nederlandse Professionals</h2>
               
               <div className="space-y-4">
@@ -688,7 +689,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
             </div>
 
             {/* FAQ */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen (FAQ)</h2>
               
               <div className="space-y-4">
@@ -705,7 +706,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
             </div>
 
             {/* Myths Debunked */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Mythen Ontkracht</h2>
               
               <div className="space-y-4">
@@ -723,7 +724,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
             </div>
 
             {/* Conclusion */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Conclusie: Informed Choice, Not Pressure</h2>
               
               <p className="text-gray-700 mb-4">
@@ -751,8 +752,14 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
               </div>
             </div>
 
+            {/* Startvoeding en Opvolgmelk Producten */}
+            <AffiliateProductWidget
+              pageId="soorten-flesvoeding_verschil-startvoeding-opvolgmelk"
+              title="Startvoeding en Opvolgmelk Producten"
+            />
+
             {/* Navigation */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <Link 

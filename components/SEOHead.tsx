@@ -1,14 +1,23 @@
 import Head from 'next/head'
 import { generateBreadcrumbSchema } from '../lib/structured-data'
 
-export default function SEOHead({ 
-  title, 
-  description, 
-  canonical, 
+interface SEOHeadProps {
+  title: string
+  description?: string
+  canonical?: string
+  structuredData?: Record<string, any>[]
+  breadcrumbs?: Record<string, any>[]
+  noIndex?: boolean
+}
+
+export default function SEOHead({
+  title,
+  description,
+  canonical,
   structuredData = [],
   breadcrumbs = [],
   noIndex = false
-}) {
+}: SEOHeadProps) {
   const fullTitle = title.includes('FlesvoedingCalculator.nl') 
     ? title 
     : `${title} | FlesvoedingCalculator.nl`
@@ -54,7 +63,7 @@ export default function SEOHead({
 }
 
 // Enhanced metadata generation for specific page types
-export function generatePageMetadata(pageType, data = {}) {
+export function generatePageMetadata(pageType: string, data: Record<string, string> = {}) {
   const baseUrl = 'https://flesvoedingcalculator.nl'
   
   const metadataTemplates = {

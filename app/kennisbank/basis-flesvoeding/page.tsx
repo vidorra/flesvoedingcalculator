@@ -66,7 +66,7 @@ export default function BasisFlesvoedingPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* What is bottle feeding */}
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-medium text-primary mb-4">Wat is flesvoeding?</h2>
             <p className="text-gray-600 leading-relaxed">
               Flesvoeding is speciaal samengestelde babymelk die alle voedingsstoffen bevat die een baby nodig heeft 
@@ -76,7 +76,7 @@ export default function BasisFlesvoedingPage() {
           </div>
 
           {/* When to choose bottle feeding */}
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-medium text-primary mb-4">Wanneer kies je voor flesvoeding?</h2>
             <div className="space-y-2">
               {reasons.map((reason, index) => (
@@ -90,7 +90,7 @@ export default function BasisFlesvoedingPage() {
         </div>
 
         {/* Benefits */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Voordelen van flesvoeding</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {benefits.map((benefit, index) => (
@@ -207,7 +207,7 @@ export default function BasisFlesvoedingPage() {
         </div>
 
         {/* FAQ Section */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen</h2>
           <div className="space-y-4">
             <div>
@@ -255,7 +255,7 @@ export default function BasisFlesvoedingPage() {
         </div>
 
         {/* Comprehensive Guide Section */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Complete Flesvoeding Gids</h2>
           
           <div className="space-y-6">
@@ -338,7 +338,7 @@ export default function BasisFlesvoedingPage() {
         </div>
 
         {/* Baby Weigert de Fles Section */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Baby Weigert de Fles: Praktische Oplossingen</h2>
           
           <p className="text-gray-600 leading-relaxed mb-4">
@@ -479,7 +479,7 @@ export default function BasisFlesvoedingPage() {
         </div>
 
         {/* Eerste Keer Flesvoeding Section */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Eerste Keer Flesvoeding Geven</h2>
           
           <p className="text-gray-600 leading-relaxed mb-4">
@@ -552,7 +552,7 @@ export default function BasisFlesvoedingPage() {
         </div>
 
         {/* Navigation to other pages */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Verder lezen</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <Link 

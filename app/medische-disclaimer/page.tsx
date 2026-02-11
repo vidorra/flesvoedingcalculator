@@ -87,7 +87,7 @@ export default function MedischeDisclaimerPage() {
         </div>
 
         {/* Limitations */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="font-medium text-gray-800 mb-4">Beperkingen van de Calculator</h2>
           <div className="space-y-3">
             {limitations.map((limitation, index) => (

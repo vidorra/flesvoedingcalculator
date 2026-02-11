@@ -58,7 +58,7 @@ export default function InformatiePage() {
         {/* Key Information Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {infoSections.map((section, index) => (
-            <div key={index} className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div key={index} className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <div className="flex items-start space-x-3">
                 <div className={`w-10 h-10 bg-${section.color}-100 rounded-lg flex items-center justify-center flex-shrink-0`}>
                   <section.icon className={`w-5 h-5 text-${section.color}-600`} />
@@ -73,7 +73,7 @@ export default function InformatiePage() {
         </div>
 
         {/* Age Guidelines */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="font-medium text-gray-800 mb-4 flex items-center">
             <BookOpen className="w-5 h-5 mr-2 text-primary" />
             Richtlijnen per Leeftijd

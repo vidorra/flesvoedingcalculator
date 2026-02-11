@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { BookOpen, ArrowRight, Home, Users, Clock, Package, Heart, Euro } from 'lucide-react'
 
 export const metadata = {
@@ -118,7 +119,7 @@ export default function TweelingVoedenPage() {
         </div>
 
         {/* Reality Check */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">De Realiteit: Dubbele Uitdaging</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -168,7 +169,7 @@ export default function TweelingVoedenPage() {
         </div>
 
         {/* Practical Hacks */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Praktische Hacks die Werken</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -190,7 +191,7 @@ export default function TweelingVoedenPage() {
         </div>
 
         {/* Time Saving */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Tijdsbesparing: Van 12 naar 5 Uur per Dag</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -222,7 +223,7 @@ export default function TweelingVoedenPage() {
         </div>
 
         {/* Benodigde Apparatuur */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Package className="w-5 h-5 mr-2" />
             Benodigde Apparatuur
@@ -270,7 +271,7 @@ export default function TweelingVoedenPage() {
         </div>
 
         {/* Schema Example */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Clock className="w-5 h-5 mr-2" />
             Basis Schema Tweeling (0-2 maanden)
@@ -306,7 +307,7 @@ export default function TweelingVoedenPage() {
         </div>
 
         {/* Common Problems */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Veelvoorkomende Problemen</h2>
           
           <div className="space-y-4">
@@ -336,7 +337,7 @@ export default function TweelingVoedenPage() {
         </div>
 
         {/* Cost Overview */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Euro className="w-5 h-5 mr-2" />
             Kosten Overzicht Tweeling
@@ -428,7 +429,7 @@ export default function TweelingVoedenPage() {
 
 
         {/* Next Steps */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Jouw Tweeling Succes Plan</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -473,8 +474,14 @@ export default function TweelingVoedenPage() {
           </div>
         </div>
 
+        {/* Tweeling Voeding Producten */}
+        <AffiliateProductWidget
+          pageId="voedingstechnieken_voeden-van-tweeling"
+          title="Tweeling Voeding Producten"
+        />
+
         {/* Navigation */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 

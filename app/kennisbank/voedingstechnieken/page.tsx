@@ -68,7 +68,7 @@ function VoedingstechniekenPage() {
         </div>
 
         {/* Preparation Steps */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Fles klaarmaken - Stap voor stap</h2>
           <div className="space-y-3">
             {preparationSteps.map((step, index) => (
@@ -84,7 +84,7 @@ function VoedingstechniekenPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Baby Position */}
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-medium text-primary mb-4">De juiste houding - Voor de baby</h2>
             <div className="space-y-2">
               {babyPosition.map((position, index) => (
@@ -97,7 +97,7 @@ function VoedingstechniekenPage() {
           </div>
 
           {/* Bottle Position */}
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-medium text-primary mb-4">De juiste houding - Voor de fles</h2>
             <div className="space-y-2">
               {bottlePosition.map((position, index) => (
@@ -128,7 +128,7 @@ function VoedingstechniekenPage() {
         </div>
 
         {/* Sterilization */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Steriliseren van flessen</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -236,7 +236,7 @@ function VoedingstechniekenPage() {
         </div>
 
         {/* FAQ Section */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen over Voedingstechnieken</h2>
           <div className="space-y-4">
             <div>
@@ -380,7 +380,7 @@ function VoedingstechniekenPage() {
         </div>
 
         {/* Fles Bereiden Section */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Fles Bereiden Stap voor Stap: Van Poeder tot Klare Fles</h2>
           
           <p className="text-gray-700 leading-relaxed mb-4">
@@ -577,7 +577,7 @@ function VoedingstechniekenPage() {
         </div>
 
         {/* Navigation */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde informatie</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <Link 
@@ -606,11 +606,11 @@ function VoedingstechniekenPage() {
         </div>
       </div>
         <div className="col-span-12 lg:col-span-5">
-          <KennisbankSidebar 
+          <KennisbankSidebar
             images={[
-              '/images/voedingstechnieken-1.jpg',
-              '/images/voedingstechnieken-2.jpg',
-              '/images/voedingstechnieken-3.jpg'
+              { src: '/images/voedingstechnieken-1.jpg', alt: 'Voedingstechnieken 1', caption: '' },
+              { src: '/images/voedingstechnieken-2.jpg', alt: 'Voedingstechnieken 2', caption: '' },
+              { src: '/images/voedingstechnieken-3.jpg', alt: 'Voedingstechnieken 3', caption: '' }
             ]}
             adTopics={[
               'Beste flessenwarmer kopen',

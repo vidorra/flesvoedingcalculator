@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Heart, ArrowRight, Home, Shield, AlertTriangle, CheckCircle, Package, Calculator, Stethoscope } from 'lucide-react'
 import BolProductSection from '../../../../components/BolProductLink'
 
@@ -115,7 +116,7 @@ export default function HypoallergeneVoedingPage() {
             </div>
 
             {/* When HA feeding is needed */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Stethoscope className="w-5 h-5 mr-2" />
                 Wanneer is Hypoallergene Voeding Nodig?
@@ -173,7 +174,7 @@ export default function HypoallergeneVoedingPage() {
             </div>
 
             {/* Types of HA formulas */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Nederlandse HA-Voeding Merken & Vergelijking</h2>
               
               <div className="space-y-4 mb-6">
@@ -262,8 +263,14 @@ export default function HypoallergeneVoedingPage() {
               </div>
             </div>
 
+            {/* Hypoallergene Voeding Producten */}
+            <AffiliateProductWidget
+              pageId="soorten-flesvoeding_hypoallergene-flesvoeding"
+              title="Hypoallergene Voeding Producten"
+            />
+
             {/* Implementation guide */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Overstap naar HA-Voeding: Stap voor Stap</h2>
               
               <div className="space-y-6">
@@ -313,7 +320,7 @@ export default function HypoallergeneVoedingPage() {
             </div>
 
             {/* Emergency protocol */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <AlertTriangle className="w-5 h-5 mr-2" />
                 Noodprotocol: Allergische Reacties
@@ -378,7 +385,7 @@ export default function HypoallergeneVoedingPage() {
             />
 
             {/* Navigation */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/problemen-oplossen/krampjes-na-flesvoeding" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors bg-default">

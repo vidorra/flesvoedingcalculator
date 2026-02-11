@@ -11,12 +11,11 @@ export default function SchepjesCalculatorPage() {
   const mlPerScoop = 30 // Nederlandse standaard voor alle populaire merken
 
   const calculateMixing = () => {
-    if (!targetVolume || targetVolume <= 0) {
+    const target = parseFloat(targetVolume)
+    if (!targetVolume || target <= 0) {
       alert('Vul een geldige gewenste hoeveelheid in')
       return
     }
-
-    const target = parseFloat(targetVolume)
     const mlPerScoopValue = mlPerScoop
     
     // Calculate scoops needed
@@ -86,7 +85,7 @@ export default function SchepjesCalculatorPage() {
           </div>
 
         {/* Calculator Form */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="font-medium text-lg mb-4 flex items-center">
             <Calculator className="w-5 h-5 mr-2 text-primary" />
             Bereken Mengverhouding
@@ -179,7 +178,7 @@ export default function SchepjesCalculatorPage() {
             )}
 
             {/* Alternatives */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h4 className="font-medium text-gray-800 mb-4">Alternatieve verhoudingen:</h4>
               <div className="space-y-3">
                 {results.alternatives.map((alt, index) => (
@@ -210,7 +209,7 @@ export default function SchepjesCalculatorPage() {
 
         {/* Information Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h3 className="font-medium text-gray-800 mb-3 flex items-center">
               <Info className="w-5 h-5 mr-2 text-primary" />
               Nederlandse Standaard
@@ -245,7 +244,7 @@ export default function SchepjesCalculatorPage() {
             </div>
           </div>
 
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h3 className="font-medium text-gray-800 mb-3 flex items-center">
               <Baby className="w-5 h-5 mr-2 text-primary" />
               Bereidingstips
@@ -290,7 +289,7 @@ export default function SchepjesCalculatorPage() {
         </div>
 
           {/* Back to Calculator */}
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h3 className="font-medium text-gray-800 mb-3">Terug naar hoofdcalculator</h3>
             <Link 
               href="/"
@@ -307,7 +306,7 @@ export default function SchepjesCalculatorPage() {
           {/* Images - Hidden on mobile, visible on desktop */}
           <div className="hidden lg:block space-y-6">
             {/* Mother and Baby Image */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
               <Image
                 src="/mother_and_baby.webp"
                 alt="Moeder en baby"
@@ -329,7 +328,7 @@ export default function SchepjesCalculatorPage() {
             </div>
             
             {/* Baby Image */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
               <Image
                 src="/baby.webp"
                 alt="Baby"
@@ -351,7 +350,7 @@ export default function SchepjesCalculatorPage() {
             </div>
             
             {/* Baby Bottle Image */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
               <Image
                 src="/baby_bottle.png"
                 alt="Babyfles"

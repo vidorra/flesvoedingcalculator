@@ -127,7 +127,7 @@ function HygieneBereidingPage() {
         </div>
 
         {/* Water for formula */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Water voor flesvoeding</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -159,7 +159,7 @@ function HygieneBereidingPage() {
 
         {/* Storage */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-medium text-primary mb-4">Poeder bewaren:</h2>
             <div className="space-y-2">
               {powderStorage.map((tip, index) => (
@@ -171,7 +171,7 @@ function HygieneBereidingPage() {
             </div>
           </div>
 
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
               <Refrigerator className="w-5 h-5 mr-2" />
               Bereide flesvoeding:
@@ -188,7 +188,7 @@ function HygieneBereidingPage() {
         </div>
 
         {/* Travel feeding */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Onderweg flesvoeding</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -219,7 +219,7 @@ function HygieneBereidingPage() {
         </div>
 
         {/* Bottle warmer vs microwave */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Thermometer className="w-5 h-5 mr-2" />
             Flessenwarmer vs Magnetron
@@ -265,7 +265,7 @@ function HygieneBereidingPage() {
         </div>
 
         {/* Flessen Steriliseren Section */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Flessen Steriliseren: Complete Gids</h2>
           
           <div className="bg-white rounded-xl p-4 border border-gray-200 mb-6">
@@ -478,7 +478,7 @@ function HygieneBereidingPage() {
         </div>
 
         {/* Navigation */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Meer informatie</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <Link 
@@ -507,11 +507,11 @@ function HygieneBereidingPage() {
         </div>
       </div>
         <div className="col-span-12 lg:col-span-5">
-          <KennisbankSidebar 
+          <KennisbankSidebar
             images={[
-              '/images/hygiene-bereiding-1.jpg',
-              '/images/hygiene-bereiding-2.jpg',
-              '/images/hygiene-bereiding-3.jpg'
+              { src: '/images/hygiene-bereiding-1.jpg', alt: 'Hygiene bereiding 1', caption: '' },
+              { src: '/images/hygiene-bereiding-2.jpg', alt: 'Hygiene bereiding 2', caption: '' },
+              { src: '/images/hygiene-bereiding-3.jpg', alt: 'Hygiene bereiding 3', caption: '' }
             ]}
             adTopics={[
               'Beste sterilisatoren kopen',

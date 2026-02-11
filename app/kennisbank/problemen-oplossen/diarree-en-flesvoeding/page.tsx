@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Droplets, AlertTriangle, Phone, Shield, Thermometer, ArrowRight } from 'lucide-react'
 
 export const metadata = {
@@ -118,7 +119,7 @@ export default function DiarreeEnFlesvoedingPage() {
             </div>
 
             {/* Introduction Section */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Diarree komt voor bij 15-20% van Nederlandse baby's op flesvoeding in de eerste 6 maanden. 
@@ -134,7 +135,7 @@ export default function DiarreeEnFlesvoedingPage() {
             </section>
 
             {/* Diarree Herkennen */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <AlertTriangle className="w-5 h-5 mr-2" />
                 Diarree Herkennen Bij Flesvoeding Baby's
@@ -181,7 +182,7 @@ export default function DiarreeEnFlesvoedingPage() {
             </section>
 
             {/* Oorzaken van Diarree */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Oorzaken van Diarree Bij Flesvoeding</h2>
               
               <div className="border-t border-gray-200 pt-6">
@@ -279,7 +280,7 @@ export default function DiarreeEnFlesvoedingPage() {
             </section>
 
             {/* Dehydratie Herkenning */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Droplets className="w-5 h-5 mr-2" />
                 Dehydratie Herkenning en Behandeling
@@ -309,7 +310,7 @@ export default function DiarreeEnFlesvoedingPage() {
             </section>
 
             {/* Wanneer Medische Hulp */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Phone className="w-5 h-5 mr-2" />
                 Wanneer Medische Hulp Zoeken
@@ -340,7 +341,7 @@ export default function DiarreeEnFlesvoedingPage() {
             </section>
 
             {/* Behandeling en Thuiszorg */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Shield className="w-5 h-5 mr-2" />
                 Behandeling en Thuiszorg Protocol
@@ -376,7 +377,7 @@ export default function DiarreeEnFlesvoedingPage() {
             </section>
 
             {/* Preventie Strategieën */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Preventie Strategieën</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Strikte hygiëne en juiste bereiding kunnen 80% van voeding-gerelateerde diarree voorkomen:
@@ -417,8 +418,14 @@ export default function DiarreeEnFlesvoedingPage() {
               </div>
             </section>
 
+            {/* Voeding tegen Diarree */}
+            <AffiliateProductWidget
+              pageId="problemen-oplossen_diarree-en-flesvoeding"
+              title="Voeding tegen Diarree"
+            />
+
             {/* Related Articles */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <ArrowRight className="w-5 h-5 mr-2" />
                 Gerelateerde Artikelen

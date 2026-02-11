@@ -1,8 +1,34 @@
 'use client'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
+import dynamic from 'next/dynamic'
 import Layout from '../../components/Layout'
 import Link from 'next/link'
 import { BookOpen, Search, Info, ArrowRight, Milk, Clock, Baby, Droplets, Wrench, AlertCircle, Refrigerator, Lightbulb, ShieldCheck } from 'lucide-react'
+
+/**
+ * Lazy load sections that are below the fold
+ * Reduces initial page load by deferring non-critical content
+ * Each section loads on-demand using dynamic imports with ssr: false
+ */
+const KnowledgeCategories = dynamic(
+  () => import('../../components/kennisbank/KnowledgeCategories'),
+  { loading: () => <div className="h-48 bg-white rounded-2xl animate-pulse" /> }
+)
+
+const FaqSection = dynamic(
+  () => import('../../components/kennisbank/FaqSection'),
+  { loading: () => <div className="h-48 bg-white rounded-2xl animate-pulse" /> }
+)
+
+const QuickTools = dynamic(
+  () => import('../../components/kennisbank/QuickTools'),
+  { loading: () => <div className="h-48 bg-white rounded-2xl animate-pulse" /> }
+)
+
+const NederlandseContext = dynamic(
+  () => import('../../components/kennisbank/NederlandseContext'),
+  { loading: () => <div className="h-48 bg-white rounded-2xl animate-pulse" /> }
+)
 
 export default function KennisbankPage() {
   const [selectedCategory, setSelectedCategory] = useState('all')
@@ -438,7 +464,7 @@ export default function KennisbankPage() {
         </div>
 
         {/* Search Bar */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
             <input
@@ -452,7 +478,7 @@ export default function KennisbankPage() {
         </div>
 
         {/* Categories Filter */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="font-medium text-primary mb-4">Categorieën</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
             {/* All Categories */}
@@ -500,7 +526,7 @@ export default function KennisbankPage() {
 
         {/* Filtered Articles Display */}
         {getFilteredArticles().length > 0 && (
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h3 className="font-medium text-primary mb-4">
               {selectedCategory === 'all' ? 'Alle artikelen' : knowledgeCategories.find(c => c.id === selectedCategory)?.title}
               <span className="text-sm font-normal text-gray-500 ml-2">({getFilteredArticles().length} {getFilteredArticles().length === 1 ? 'artikel' : 'artikelen'})</span>
@@ -534,220 +560,11 @@ export default function KennisbankPage() {
           </div>
         )}
 
-        {/* Knowledge Base Categories */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-medium text-primary mb-4">Kennisbank Onderwerpen</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {knowledgeCategories.map((category) => {
-              const Icon = category.icon
-              const colorClasses = {
-                blue: 'bg-white border-gray-200 text-primary hover:bg-white',
-                purple: 'bg-white border-gray-200 text-gray-700 hover:bg-white',
-                green: 'bg-white border-gray-200 text-gray-700 hover:bg-white',
-                orange: 'bg-white border-gray-200 text-gray-700 hover:bg-white',
-                teal: 'bg-white border-gray-200 text-gray-700 hover:bg-white',
-                red: 'bg-white border-gray-200 text-gray-700 hover:bg-white',
-                yellow: 'bg-white border-gray-200 text-gray-700 hover:bg-white'
-              }
-              return (
-                <Link
-                  key={category.id}
-                  href={`/kennisbank/${category.id}`}
-                  className={`p-4 rounded-xl border transition-all block ${colorClasses[category.color]}`}
-                >
-                  <div className="flex items-start space-x-3">
-                    <Icon className="w-6 h-6 flex-shrink-0 mt-0.5" />
-                    <div>
-                      <h3 className="font-medium mb-1">{category.title}</h3>
-                      <p className="text-sm opacity-80">{category.description}</p>
-                    </div>
-                  </div>
-                </Link>
-              )
-            })}
-          </div>
-        </div>
-
-        {/* Quick Access */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-medium text-primary mb-4">Snelle toegang</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Link 
-              href="/voedingsschemas"
-              className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-accent-rose-lighter transition-colors bg-white"
-            >
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="font-medium text-gray-700">Voedingsschema&apos;s</h3>
-                  <p className="text-sm text-gray-600 mt-1">Interactieve schema&apos;s per leeftijd</p>
-                </div>
-                <ArrowRight className="w-5 h-5 text-gray-400" />
-              </div>
-            </Link>
-            <Link 
-              href="/"
-              className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-accent-rose-lighter transition-colors bg-white"
-            >
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="font-medium text-gray-700">Flesvoeding Calculator</h3>
-                  <p className="text-sm text-gray-600 mt-1">Bereken persoonlijke hoeveelheden</p>
-                </div>
-                <ArrowRight className="w-5 h-5 text-gray-400" />
-              </div>
-            </Link>
-            <Link 
-              href="/faq"
-              className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-accent-rose-lighter transition-colors bg-white"
-            >
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="font-medium text-gray-700">Veelgestelde Vragen</h3>
-                  <p className="text-sm text-gray-600 mt-1">Antwoorden op veel gestelde vragen</p>
-                </div>
-                <ArrowRight className="w-5 h-5 text-gray-400" />
-              </div>
-            </Link>
-          </div>
-        </div>
-
-        {/* Nederlandse Context */}
-        <div className="bg-white rounded-2xl border border-gray-200 p-6">
-          <h2 className="font-medium text-gray-600 mb-4">Flesvoeding in Nederland</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div>
-              <h3 className="font-medium text-gray-600 mb-3">Regelgeving & Veiligheid:</h3>
-              <ul className="space-y-2 text-gray-700">
-                <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <span>Alle merken voldoen aan EU-verordening 2016/127</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <span>NVWA controleert regelmatig kwaliteit</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <span>DHA verplicht in alle flesvoeding sinds 2020</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <span>Nederlandse kraanwater is veilig voor bereiding</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <span>Gratis advies via consultatiebureau</span>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-medium text-gray-600 mb-3">Beschikbaarheid & Kosten:</h3>
-              <ul className="space-y-2 text-gray-700">
-                <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <span>Breed assortiment in alle supermarkten</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <span>Budget opties vanaf €35/maand (Kruidvat)</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <span>Hoogwaardige merken tot €90/maand (Nutrilon)</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <span>Biologische opties verkrijgbaar (HIPP, Holle)</span>
-                </li>
-                <li className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <span>Online bestelling met korting mogelijk</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* FAQ Section */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-medium text-primary mb-4">Meest Gestelde Vragen</h2>
-          <div className="space-y-4">
-            <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-accent-rose-lighter transition-colors bg-white">
-              <h3 className="font-medium text-primary mb-2">Welk merk flesvoeding is het beste?</h3>
-              <p className="text-gray-600">
-                Alle Nederlandse merken voldoen aan dezelfde strenge EU-eisen. Kruidvat huismerk is even veilig als Nutrilon of Hero Baby, maar wel goedkoper. Kies op basis van budget en beschikbaarheid.
-              </p>
-            </div>
-            
-            <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-accent-rose-lighter transition-colors bg-white">
-              <h3 className="font-medium text-primary mb-2">Hoeveel kost flesvoeding per maand?</h3>
-              <p className="text-gray-600">
-                Budget variant (Kruidvat): €35-50/maand. Middenklasse (Hero Baby): €50-70/maand. Hoogwaardig (Nutrilon): €70-90/maand. Eerste jaar totaal: €400-1000 afhankelijk van merkkeuze.
-              </p>
-            </div>
-            
-            <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-accent-rose-lighter transition-colors bg-white">
-              <h3 className="font-medium text-primary mb-2">Wanneer overstappen van nummer 1 naar 2?</h3>
-              <p className="text-gray-600">
-                Pas vanaf 6 maanden én wanneer baby vaste voeding krijgt. Nummer 1 mag tot 12 maanden gebruikt worden. Overstappen is dus optioneel, niet verplicht.
-              </p>
-            </div>
-            
-            <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-accent-rose-lighter transition-colors bg-white">
-              <h3 className="font-medium text-primary mb-2">Kan ik van borstvoeding overstappen naar flesvoeding?</h3>
-              <p className="text-gray-600">
-                Ja, dit kan op elke leeftijd. Geleidelijke overgang over 1-2 weken voorkomt borstontsteking. Combivoeiding (borstvoeding + flesvoeding) is ook mogelijk.
-              </p>
-            </div>
-            
-            <div className="p-4 rounded-xl border border-gray-200 hover:border-primary hover:bg-accent-rose-lighter transition-colors bg-white">
-              <h3 className="font-medium text-primary mb-2">Mijn baby weigert de fles, wat nu?</h3>
-              <p className="text-gray-600">
-                Check temperatuur (37°C), probeer andere speen, laat partner proberen, gebruik afgekolfde melk eerst. Geduld is belangrijk - sommige baby's hebben tijd nodig.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Quick Tools */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-medium text-primary mb-4 flex items-center">
-            <Info className="w-5 h-5 mr-2 text-primary" />
-            Handige Tools
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Link
-              href="/"
-              className="p-4 rounded-xl bg-gradient-to-br from-orange-50 to-orange-100 border border-gray-200 hover:border-primary transition-colors"
-            >
-              <h3 className="font-medium text-primary mb-2">Flesvoeding Calculator</h3>
-              <p className="text-sm text-gray-600 mb-3">Bereken persoonlijke hoeveelheden per voeding</p>
-              <div className="text-primary hover:text-primary-dark font-medium text-sm flex items-center">
-                Bereken nu <ArrowRight className="w-4 h-4 ml-1" />
-              </div>
-            </Link>
-            <Link
-              href="/voedingsschemas"
-              className="p-4 rounded-xl bg-gradient-to-br from-rose-50 to-rose-100 border border-gray-200 hover:border-primary transition-colors"
-            >
-              <h3 className="font-medium text-primary mb-2">Voedingsschema's</h3>
-              <p className="text-sm text-gray-600 mb-3">Interactieve schema's per leeftijdsgroep</p>
-              <div className="text-primary hover:text-primary-dark font-medium text-sm flex items-center">
-                Bekijk schema's <ArrowRight className="w-4 h-4 ml-1" />
-              </div>
-            </Link>
-            <Link
-              href="/infographics"
-              className="p-4 rounded-xl bg-gradient-to-br from-amber-50 to-amber-100 border border-gray-200 hover:border-primary transition-colors"
-            >
-              <h3 className="font-medium text-primary mb-2">Visuele Guides</h3>
-              <p className="text-sm text-gray-600 mb-3">Stap-voor-stap infographics en tijdlijnen</p>
-              <div className="text-primary hover:text-primary-dark font-medium text-sm flex items-center">
-                Bekijk guides <ArrowRight className="w-4 h-4 ml-1" />
-              </div>
-            </Link>
-          </div>
-        </div>
+        {/* Lazy-loaded sections - render below the fold */}
+        <NederlandseContext />
+        <KnowledgeCategories knowledgeCategories={knowledgeCategories} />
+        <FaqSection />
+        <QuickTools />
       </div>
     </Layout>
   )

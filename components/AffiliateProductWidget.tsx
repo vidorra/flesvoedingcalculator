@@ -56,7 +56,7 @@ function BolScriptWidget({ product }) {
             alt={product.name || product.data?.title}
             className="mx-auto rounded-lg max-w-full h-auto"
             style={{ maxHeight: '200px' }}
-            onError={(e) => {
+            onError={(e: any) => {
               e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik04MCA4MEgxMjBWMTIwSDgwVjgwWiIgZmlsbD0iIzlDQTNBRiIvPgo8cGF0aCBkPSJNOTYgMTA0TDEwNCAxMTJMMTIwIDk2IiBzdHJva2U9IiM2QjczODAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo='
               e.target.style.display = 'block'
             }}
@@ -130,9 +130,9 @@ export default function AffiliateProductWidget({
           console.log(`🔍 AffiliateProductWidget: Fetching from: ${apiUrl}`)
           const fetchPromise = fetch(apiUrl)
           
-          const response = await Promise.race([fetchPromise, timeoutPromise])
+          const response: any = await Promise.race([fetchPromise, timeoutPromise])
           console.log(`🔍 AffiliateProductWidget: API response status: ${response.status} for ${apiUrl}`)
-          
+
           if (response.ok) {
             const data = await response.json()
             console.log(`🔍 AffiliateProductWidget: API response data:`, data)
@@ -148,13 +148,13 @@ export default function AffiliateProductWidget({
               
               // Additional debug for production
               if (typeof window !== 'undefined') {
-                window.AFFILIATE_DEBUG = {
+                (window as any).AFFILIATE_DEBUG = {
                   pageId,
                   apiUrl,
                   loadedSnippets: data.snippets.length,
                   timestamp: new Date().toISOString()
                 }
-                console.log(`🔧 PRODUCTION DEBUG: Set window.AFFILIATE_DEBUG`, window.AFFILIATE_DEBUG)
+                console.log(`🔧 PRODUCTION DEBUG: Set window.AFFILIATE_DEBUG`, (window as any).AFFILIATE_DEBUG)
               }
               return
             } else {
@@ -177,7 +177,7 @@ export default function AffiliateProductWidget({
           
           // Set debug info on error too
           if (typeof window !== 'undefined') {
-            window.AFFILIATE_ERROR = {
+            (window as any).AFFILIATE_ERROR = {
               pageId,
               error: error.message,
               timestamp: new Date().toISOString()
@@ -227,7 +227,7 @@ export default function AffiliateProductWidget({
 
   if (loading) {
     return (
-      <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+      <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
         <h3 className="text-lg font-semibold text-primary mb-4">{title}</h3>
         <div className="text-center py-8">
           <p className="text-gray-600">Laden van productaanbevelingen...</p>
@@ -238,7 +238,7 @@ export default function AffiliateProductWidget({
   
   if (displayProducts.length === 0) {
     return (
-      <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+      <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
         <h3 className="text-lg font-semibold text-primary mb-4">{title}</h3>
         <div className="text-center py-8">
           <p className="text-gray-600">Geen productaanbevelingen beschikbaar</p>
@@ -253,7 +253,7 @@ export default function AffiliateProductWidget({
   }
 
   return (
-    <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6" ref={containerRef}>
+    <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6" ref={containerRef}>
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-semibold text-primary">{title}</h3>
         <div className="flex items-center space-x-2 text-xs text-gray-500">
@@ -296,7 +296,7 @@ export default function AffiliateProductWidget({
                         alt={product.data.title}
                         className="mx-auto rounded-lg max-w-full h-auto"
                         style={{ maxHeight: '200px' }}
-                        onError={(e) => {
+                        onError={(e: any) => {
                           e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik04MCA4MEgxMjBWMTIwSDgwVjgwWiIgZmlsbD0iIzlDQTNBRiIvPgo8cGF0aCBkPSJNOTYgMTA0TDEwNCAxMTJMMTIwIDk2IiBzdHJva2U9IiM2QjczODAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo='
                           e.target.style.display = 'block'
                         }}
@@ -339,7 +339,7 @@ export default function AffiliateProductWidget({
                         alt={product.data.alt}
                         className="mx-auto rounded-lg max-w-full h-auto"
                         style={{ maxHeight: '200px' }}
-                        onError={(e) => {
+                        onError={(e: any) => {
                           e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik04MCA4MEgxMjBWMTIwSDgwVjgwWiIgZmlsbD0iIzlDQTNBRiIvPgo8cGF0aCBkPSJNOTYgMTA0TDEwNCAxMTJMMTIwIDk2IiBzdHJva2U9IiM2QjczODAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo='
                           e.target.style.display = 'block'
                         }}

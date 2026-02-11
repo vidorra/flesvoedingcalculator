@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Clock, AlertTriangle, Thermometer, Shield, CheckCircle, XCircle } from 'lucide-react'
 
 export const metadata = {
@@ -194,7 +195,7 @@ export default function HoudbaarheidFlesvoedingPage() {
             </div>
 
             {/* Why crucial section */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Shield className="w-5 h-5 mr-2" />
                 Waarom Houdbaarheid Cruciaal is voor Baby's
@@ -253,7 +254,7 @@ export default function HoudbaarheidFlesvoedingPage() {
             </section>
 
             {/* Danger bacteria table */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Gevaarlijke Bacteriën in Bedorven Melk</h2>
               
               <div className="overflow-x-auto">
@@ -289,7 +290,7 @@ export default function HoudbaarheidFlesvoedingPage() {
             </section>
 
             {/* Time limits */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 Exacte Tijdslimieten per Situatie
@@ -331,7 +332,7 @@ export default function HoudbaarheidFlesvoedingPage() {
             </section>
 
             {/* Signs of spoilage */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <AlertTriangle className="w-5 h-5 mr-2" />
                 Herkennen van Bedorven Flesvoeding
@@ -362,7 +363,7 @@ export default function HoudbaarheidFlesvoedingPage() {
             </section>
 
             {/* Storage tips */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Thermometer className="w-5 h-5 mr-2" />
                 Praktische Bewaartips
@@ -401,7 +402,7 @@ export default function HoudbaarheidFlesvoedingPage() {
             </section>
 
             {/* Common mistakes */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelgemaakte Houdbaarheidsfouten</h2>
               
               <div className="space-y-4">
@@ -445,7 +446,7 @@ export default function HoudbaarheidFlesvoedingPage() {
             </section>
 
             {/* FAQ */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen</h2>
               
               <div className="space-y-4">
@@ -476,8 +477,14 @@ export default function HoudbaarheidFlesvoedingPage() {
               </div>
             </section>
 
+            {/* Houdbaarheid Voeding Producten */}
+            <AffiliateProductWidget
+              pageId="hygiene-bereiding_houdbaarheid-flesvoeding"
+              title="Houdbaarheid Voeding Producten"
+            />
+
             {/* Related articles */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <CheckCircle className="w-5 h-5 mr-2" />
                 Gerelateerde Artikelen

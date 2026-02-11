@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Droplets, Thermometer, Clock, Shield, AlertTriangle, CheckCircle, Home, Coffee } from 'lucide-react'
 import BolProductSection from '../../../../components/BolProductLink'
 
@@ -160,7 +161,7 @@ export default function WaterKokenFlesvoedingPage() {
             </div>
 
             {/* Introduction */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Waarom Water Koken Essentieel Is</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Water koken voor flesvoeding heeft twee belangrijke veiligheidsdoelen: het elimineren van gevaarlijke bacteriën 
@@ -180,7 +181,7 @@ export default function WaterKokenFlesvoedingPage() {
             </section>
 
             {/* Nederlandse Richtlijnen */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Shield className="w-5 h-5 mr-2" />
                 Nederlandse Richtlijnen per Leeftijd
@@ -213,7 +214,7 @@ export default function WaterKokenFlesvoedingPage() {
             </section>
 
             {/* Stap-voor-Stap Guide */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Thermometer className="w-5 h-5 mr-2" />
                 Stap-voor-Stap: Water Koken voor Flesvoeding
@@ -259,7 +260,7 @@ export default function WaterKokenFlesvoedingPage() {
             </section>
 
             {/* Kraanwater vs Flessenwater */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Nederlands Kraanwater: Uitstekende Kwaliteit</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Nederlands kraanwater voldoet aan strenge EU-kwaliteitsstandaarden en wordt dagelijks gecontroleerd. 
@@ -296,7 +297,7 @@ export default function WaterKokenFlesvoedingPage() {
             </section>
 
             {/* Veelgemaakte Fouten */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <AlertTriangle className="w-5 h-5 mr-2" />
                 Veelgemaakte Fouten Vermijden
@@ -318,7 +319,7 @@ export default function WaterKokenFlesvoedingPage() {
             </section>
 
             {/* Alternatieven */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Alternatieven voor Traditioneel Koken</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Voor ouders die regelmatig flesvoeding geven, zijn er praktische alternatieven 
@@ -418,8 +419,14 @@ export default function WaterKokenFlesvoedingPage() {
               maxProducts={4}
             />
 
+            {/* Water & Bereiding Producten */}
+            <AffiliateProductWidget
+              pageId="hygiene-bereiding_water-koken-flesvoeding"
+              title="Water & Bereiding Producten"
+            />
+
             {/* Related Articles */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Home className="w-5 h-5 mr-2" />
                 Gerelateerde Artikelen

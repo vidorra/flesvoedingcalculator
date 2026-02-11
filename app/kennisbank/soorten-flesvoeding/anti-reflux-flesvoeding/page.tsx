@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { BookOpen, ArrowRight, Home, Shield, AlertTriangle, CheckCircle, Package, Calculator } from 'lucide-react'
 import BolProductSection from '../../../../components/BolProductLink'
 
@@ -150,7 +151,7 @@ export default function AntiRefluxPage() {
         </div>
 
         {/* What is Reflux */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Wat is Reflux bij Baby's?</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -204,7 +205,7 @@ export default function AntiRefluxPage() {
         </div>
 
         {/* Recognizing Reflux */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Reflux Herkennen: Signalen & Symptomen</h2>
           
           <div className="space-y-3">
@@ -244,7 +245,7 @@ export default function AntiRefluxPage() {
         </div>
 
         {/* AR Formula Comparison */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Package className="w-5 h-5 mr-2" />
             Anti-Reflux Voeding in Nederland: Vergelijking
@@ -321,8 +322,14 @@ export default function AntiRefluxPage() {
           </div>
         </div>
 
+        {/* Anti-Reflux Flesvoeding Producten */}
+        <AffiliateProductWidget
+          pageId="soorten-flesvoeding_anti-reflux-flesvoeding"
+          title="Anti-Reflux Flesvoeding Producten"
+        />
+
         {/* Feeding Techniques */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Voedingstechnieken bij Reflux</h2>
           
           <div className="space-y-6">
@@ -353,7 +360,7 @@ export default function AntiRefluxPage() {
         </div>
 
         {/* Practical Tips */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Praktische Tips voor Thuis</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -493,7 +500,7 @@ export default function AntiRefluxPage() {
         </div>
 
         {/* Timeline Expectation */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Verwachtingen: Wanneer Verbetering?</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -605,7 +612,7 @@ export default function AntiRefluxPage() {
         />
 
         {/* Navigation */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 

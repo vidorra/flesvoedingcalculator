@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Baby, Target, ShoppingCart, Calendar, AlertTriangle, ArrowRight } from 'lucide-react'
 
 export const metadata = {
@@ -131,7 +132,7 @@ export default function BabyLerenZelfDrinkenPage() {
             </div>
 
             {/* Introduction Section */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Het leren zelfstandig drinken is een cruciale vaardigheid die baby's tussen 6-18 maanden ontwikkelen. 
@@ -147,7 +148,7 @@ export default function BabyLerenZelfDrinkenPage() {
             </section>
 
             {/* Wanneer Kan Baby Zelf Drinken */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Target className="w-5 h-5 mr-2" />
                 Wanneer Kan Baby Zelf Drinken Leren?
@@ -192,7 +193,7 @@ export default function BabyLerenZelfDrinkenPage() {
             </section>
 
             {/* Ontwikkelingsstadia */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Ontwikkelingsstadia en Motoriek</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Zelfstandig drinken leren gebeurt in vier duidelijke fasen, elk met eigen kenmerken en stimulatie activiteiten:
@@ -210,7 +211,7 @@ export default function BabyLerenZelfDrinkenPage() {
             </section>
 
             {/* Beste Producten */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <ShoppingCart className="w-5 h-5 mr-2" />
                 Beste Producten voor Zelfstandig Drinken
@@ -243,7 +244,7 @@ export default function BabyLerenZelfDrinkenPage() {
             </section>
 
             {/* Stap-voor-Stap Leerplan */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">12-Weken Stap-voor-Stap Leerplan</h2>
               
               <div className="border-t border-gray-200 pt-6">
@@ -280,7 +281,7 @@ export default function BabyLerenZelfDrinkenPage() {
             </section>
 
             {/* Problemen Oplossen */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelvoorkomende Problemen Oplossen</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Deze problemen komen vaak voor tijdens het leerproces. Met de juiste aanpak zijn ze goed op te lossen:
@@ -334,8 +335,14 @@ export default function BabyLerenZelfDrinkenPage() {
               </div>
             </section>
 
+            {/* Zelf Drinken Producten */}
+            <AffiliateProductWidget
+              pageId="voedingstechnieken_baby-leren-zelf-drinken"
+              title="Zelf Drinken Producten"
+            />
+
             {/* Related Articles */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <ArrowRight className="w-5 h-5 mr-2" />
                 Gerelateerde Artikelen

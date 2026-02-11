@@ -81,8 +81,9 @@ export async function POST(request: NextRequest): Promise<NextResponse<LoginResp
     }
 
     // Create JWT token valid for 24 hours
+    // Default to flesvoedingcalculator website for initial login
     const token = jwt.sign(
-      { admin: true, iat: Math.floor(Date.now() / 1000) },
+      { admin: true, website: 'flesvoedingcalculator', iat: Math.floor(Date.now() / 1000) },
       JWT_SECRET,
       { expiresIn: '24h' }
     )
@@ -93,6 +94,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<LoginResp
     return NextResponse.json({
       success: true,
       token,
+      website: 'flesvoedingcalculator',
       message: 'Login successful',
     })
   } catch (error) {

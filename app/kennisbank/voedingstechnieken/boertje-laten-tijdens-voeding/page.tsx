@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Wind, Clock, Heart, AlertTriangle, CheckCircle, ArrowRight } from 'lucide-react'
 
 export const metadata = {
@@ -212,7 +213,7 @@ export default function BoertjeLatenPage() {
             </div>
 
             {/* Why Important */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Waarom is Boertje Laten Zo Belangrijk?</h2>
               
               <p className="text-gray-500 mb-4">
@@ -251,7 +252,7 @@ export default function BoertjeLatenPage() {
             </div>
 
             {/* Best Techniques */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">De Beste Technieken voor Boertje Laten</h2>
               
               <div className="space-y-6">
@@ -315,7 +316,7 @@ export default function BoertjeLatenPage() {
             </div>
 
             {/* Timing Guide */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 Timing: Wanneer Boertje Laten?
@@ -365,7 +366,7 @@ export default function BoertjeLatenPage() {
             </div>
 
             {/* Practical Tips */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Praktische Tips van Ervaren Ouders</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -386,7 +387,7 @@ export default function BoertjeLatenPage() {
             </div>
 
             {/* Common Problems */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelvoorkomende Problemen & Oplossingen</h2>
               
               <div className="space-y-6">
@@ -429,7 +430,7 @@ export default function BoertjeLatenPage() {
             </div>
 
             {/* Speen Types */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Boertje Laten en Verschillende Spenen</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -511,7 +512,7 @@ export default function BoertjeLatenPage() {
             </div>
 
             {/* FAQ */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen (FAQ)</h2>
               
               <div className="space-y-4">
@@ -528,7 +529,7 @@ export default function BoertjeLatenPage() {
             </div>
 
             {/* Conclusion */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Conclusie: Geduld en Oefening</h2>
               
               <p className="text-gray-700 mb-4">
@@ -545,8 +546,14 @@ export default function BoertjeLatenPage() {
               </div>
             </div>
 
+            {/* Boertje Laten Producten */}
+            <AffiliateProductWidget
+              pageId="voedingstechnieken_boertje-laten-tijdens-voeding"
+              title="Boertje Laten Producten"
+            />
+
             {/* Navigation */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <Link 

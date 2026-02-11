@@ -1,8 +1,16 @@
-const GoogleAdSlot = ({ 
-  slot = "5691109362", // Default to sidebar-right-ad1 
+const GoogleAdSlot = ({
+  slot = "5691109362", // Default to sidebar-right-ad1
   topic = "Flesvoeding Producten",
   isPlaceholder = false // Now default to real ads
 }) => {
+  // Check if all ads are hidden globally (admin setting)
+  if (typeof window !== 'undefined') {
+    const hideAllAds = localStorage.getItem('admin_hide_all_ads') === 'true'
+    if (hideAllAds) {
+      return null // Hide entire ad card including wrapper
+    }
+  }
+
   if (isPlaceholder) {
     return (
       <div className="bg-gray-100 rounded-2xl p-8 text-center border-2 border-dashed border-gray-300">
@@ -20,7 +28,7 @@ const GoogleAdSlot = ({
   // Real Google AdSense implementation with glassmorphism framing
   return (
     <div className="text-center space-y-2">
-      <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4 min-h-[200px]">
+      <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4 min-h-[200px]">
         <script 
           async 
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938"

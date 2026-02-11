@@ -21,7 +21,7 @@ export default function SoortenFlesvoedingPage() {
       <div className="space-y-6">
 
         {/* Header */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
             <Package className="w-6 h-6 mr-3 text-primary" />
             Flesvoeding Nummer 1, 2, 3: Complete Gids voor Nederlandse Ouders
@@ -34,7 +34,7 @@ export default function SoortenFlesvoedingPage() {
         {/* Formula Types */}
         <div className="space-y-6">
           {/* Startvoeding (1) */}
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-medium">1</div>
               <div>
@@ -84,7 +84,7 @@ export default function SoortenFlesvoedingPage() {
           </div>
 
           {/* Opvolgmelk (2) */}
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-medium">2</div>
               <div>
@@ -141,7 +141,7 @@ export default function SoortenFlesvoedingPage() {
           </div>
 
           {/* Peutermelk (3) */}
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <div className="flex items-center space-x-3 mb-4">
               <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-medium">3</div>
               <div>
@@ -195,7 +195,7 @@ export default function SoortenFlesvoedingPage() {
         </div>
 
         {/* Comparison Table */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Flesvoeding Typen Vergelijking</h2>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse border border-gray-300">
@@ -341,7 +341,7 @@ export default function SoortenFlesvoedingPage() {
         </div>
 
         {/* FAQ Section */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen</h2>
           <div className="space-y-4">
             <div>
@@ -466,7 +466,7 @@ export default function SoortenFlesvoedingPage() {
         </div>
 
         {/* Navigation */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Meer informatie</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <Link 

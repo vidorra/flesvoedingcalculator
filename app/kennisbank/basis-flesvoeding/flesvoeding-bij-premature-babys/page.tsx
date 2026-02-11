@@ -140,7 +140,7 @@ export default function FlesvoedingPrematurePage() {
         </div>
 
         {/* What makes premature feeding different */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Waarom is voeding anders bij premature baby's?</h2>
           <p className="text-amber-700 leading-relaxed mb-4">
             Premature baby's hebben fundamenteel andere voedingsbehoeften dan baby's die op termijn geboren zijn. 
@@ -195,7 +195,7 @@ export default function FlesvoedingPrematurePage() {
         </div>
 
         {/* Corrected Age Explanation */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Gecorrigeerde Leeftijd Uitgelegd</h2>
           
           <div className="p-4 mb-4">
@@ -248,7 +248,7 @@ export default function FlesvoedingPrematurePage() {
         </div>
 
         {/* Feeding Categories Table */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Voedingsrichtlijnen per Prematuriteitscategorie</h2>
           
           <div className="overflow-x-auto">
@@ -296,7 +296,7 @@ export default function FlesvoedingPrematurePage() {
         </div>
 
         {/* Special Formulas */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Speciale Prematurenvoeding</h2>
           
           <p className="text-gray-700 mb-4">
@@ -345,14 +345,13 @@ export default function FlesvoedingPrematurePage() {
         </div>
 
         {/* Speciale Prematurenvoeding Producten */}
-        <AffiliateProductWidget 
+        <AffiliateProductWidget
           pageId="basis-flesvoeding_flesvoeding-bij-premature-babys"
           title="Speciale Prematurenvoeding Producten"
-          description="Aangepaste voeding en accessoires voor premature baby's"
         />
 
         {/* NICU Protocols */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Nederlandse NICU Protocollen en Vervolgafspraken</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -390,7 +389,7 @@ export default function FlesvoedingPrematurePage() {
         </div>
 
         {/* Practical Feeding Guide */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Praktische Voedingsrichtlijnen Thuis</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -433,7 +432,7 @@ export default function FlesvoedingPrematurePage() {
         </div>
 
         {/* Warning Signs */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <AlertCircle className="w-5 h-5 mr-2" />
             Waarschuwingssignalen - Direct Contact Opnemen
@@ -495,7 +494,7 @@ export default function FlesvoedingPrematurePage() {
         </div>
 
         {/* Scientific Sources */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Wetenschappelijke Bronnen</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -529,7 +528,7 @@ export default function FlesvoedingPrematurePage() {
         </div>
 
         {/* Navigation */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 

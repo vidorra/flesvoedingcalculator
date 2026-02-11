@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { AlertTriangle, Clock, TrendingUp, Users, Calendar, CheckCircle, XCircle, Target, ChevronRight, Star, Banknote, Heart, RefreshCw } from 'lucide-react';
 import BolProductSection from '../../../../components/BolProductLink'
 
@@ -318,7 +319,7 @@ export default function OvergangNaarBekerPage() {
             </div>
 
             {/* Introduction */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed">
                 De overgang naar beker is een belangrijke mijlpaal die meestal tussen 10-18 maanden plaatsvindt. Het Nederlandse consultatiebureau adviseert starten rond 12 maanden. Deze overgang ontwikkelt motorische vaardigheden, stimuleert mondhygiëne en bereidt je baby voor op zelfstandiger eten en drinken.
@@ -326,7 +327,7 @@ export default function OvergangNaarBekerPage() {
             </section>
 
             {/* Wanneer overstappen */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 Wanneer overstappen naar beker?
@@ -486,7 +487,7 @@ export default function OvergangNaarBekerPage() {
             </div>
 
             {/* Soorten bekers */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Soorten bekers voor verschillende leeftijden</h2>
               
               <div className="space-y-6">
@@ -713,7 +714,7 @@ export default function OvergangNaarBekerPage() {
             </div>
 
             {/* Geleidelijke overgang */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Target className="w-5 h-5 mr-2" />
                 Geleidelijke overgang strategieën
@@ -974,7 +975,7 @@ export default function OvergangNaarBekerPage() {
             </div>
 
             {/* Veelvoorkomende problemen */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelvoorkomende overgangsproblemen</h2>
               
               <div className="space-y-6">
@@ -1155,7 +1156,7 @@ export default function OvergangNaarBekerPage() {
             </div>
 
             {/* Veelgestelde vragen */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde vragen</h2>
               
               <div className="space-y-4">
@@ -1225,8 +1226,14 @@ export default function OvergangNaarBekerPage() {
               maxProducts={4}
             />
 
+            {/* Overgang naar Beker Producten */}
+            <AffiliateProductWidget
+              pageId="voedingstechnieken_overgang-naar-beker"
+              title="Overgang naar Beker Producten"
+            />
+
             {/* Related articles */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <RefreshCw className="w-5 h-5 mr-2" />
                 Gerelateerde artikelen

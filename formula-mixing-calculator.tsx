@@ -7,12 +7,11 @@ export default function FormulaMixingCalculator() {
   const mlPerScoop = 30; // Nederlandse standaard voor alle populaire merken
 
   const calculateMixing = () => {
-    if (!targetVolume || targetVolume <= 0) {
+    const target = parseFloat(targetVolume);
+    if (!targetVolume || target <= 0) {
       alert('Vul een geldige gewenste hoeveelheid in');
       return;
     }
-
-    const target = parseFloat(targetVolume);
     const mlPerScoopValue = mlPerScoop;
     
     // Calculate scoops needed

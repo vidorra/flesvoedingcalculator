@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { TestTube, Clock, Target, Search, ShoppingCart, AlertCircle } from 'lucide-react'
 import BolProductSection from '../../../../components/BolProductLink'
 
@@ -335,7 +336,7 @@ export default function VerschillendeSpenenUitproberenPage() {
             </div>
 
             {/* Why Critical */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Waarom de Juiste Speen Cruciaal Is</h2>
               
               <p className="text-gray-700 mb-4">
@@ -371,7 +372,7 @@ export default function VerschillendeSpenenUitproberenPage() {
             </div>
 
             {/* Speen Types */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Complete Speen Types & Wanneer Gebruiken</h2>
               
               <div className="space-y-8">
@@ -412,7 +413,7 @@ export default function VerschillendeSpenenUitproberenPage() {
             </div>
 
             {/* Selection Process */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Stap-voor-Stap Speen Selectie Proces</h2>
               
               <div className="space-y-6">
@@ -474,7 +475,7 @@ export default function VerschillendeSpenenUitproberenPage() {
             </div>
 
             {/* Brand Comparison */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Nederlandse Merk Vergelijking</h2>
               
               <div className="space-y-4">
@@ -518,7 +519,7 @@ export default function VerschillendeSpenenUitproberenPage() {
             </div>
 
             {/* Specific Problems */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Specifieke Problemen & Speen Oplossingen</h2>
               
               <div className="space-y-6">
@@ -591,7 +592,7 @@ export default function VerschillendeSpenenUitproberenPage() {
             </div>
 
             {/* Shopping Strategy */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <ShoppingCart className="w-5 h-5 mr-2" />
                 Slimme boodschappenstrategie
@@ -631,7 +632,7 @@ export default function VerschillendeSpenenUitproberenPage() {
             </div>
 
             {/* Troubleshooting */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <AlertCircle className="w-5 h-5 mr-2" />
                 Probleemoplossingshandleiding
@@ -677,7 +678,7 @@ export default function VerschillendeSpenenUitproberenPage() {
             </div>
 
             {/* FAQ */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen (FAQ)</h2>
               
               <div className="space-y-4">
@@ -694,7 +695,7 @@ export default function VerschillendeSpenenUitproberenPage() {
             </div>
 
             {/* Conclusion */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Conclusie: Geduld Loont</h2>
               
               <p className="text-gray-700 mb-4">
@@ -737,8 +738,14 @@ export default function VerschillendeSpenenUitproberenPage() {
               maxProducts={6}
             />
 
+            {/* Spenen Selectie Producten */}
+            <AffiliateProductWidget
+              pageId="voedingstechnieken_verschillende-spenen-uitproberen"
+              title="Spenen Selectie Producten"
+            />
+
             {/* Navigation */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <Link 

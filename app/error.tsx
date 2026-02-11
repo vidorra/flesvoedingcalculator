@@ -67,7 +67,7 @@ export default function Error({ error, reset }) {
           </div>
 
           {/* Helpful Actions */}
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-medium text-gray-800 mb-4">
               Wat kunt u doen?
             </h2>

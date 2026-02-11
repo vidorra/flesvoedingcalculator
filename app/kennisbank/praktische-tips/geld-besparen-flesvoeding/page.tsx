@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { DollarSign, ArrowRight, Home, TrendingDown, CheckCircle, AlertTriangle, Calculator, ShoppingCart } from 'lucide-react'
 
 export const metadata = {
@@ -141,7 +142,7 @@ export default function GeldBesparenPage() {
             </div>
 
             {/* Why budget optimization matters */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <TrendingDown className="w-5 h-5 mr-2" />
                 Waarom Budget Optimalisatie Cruciaal Is
@@ -186,7 +187,7 @@ export default function GeldBesparenPage() {
             </div>
 
             {/* Cost breakdown comparison */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Complete Kosten Vergelijking (2025)</h2>
               
               <div className="space-y-6">
@@ -230,7 +231,7 @@ export default function GeldBesparenPage() {
             </div>
 
             {/* Saving strategies */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <ShoppingCart className="w-5 h-5 mr-2" />
                 Smart Shopping Strategieën
@@ -269,7 +270,7 @@ export default function GeldBesparenPage() {
             </div>
 
             {/* Quality vs price analysis */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Kwaliteit vs Prijs: EU Regulatie Reality Check</h2>
               
               <div className="mb-6">
@@ -314,7 +315,7 @@ export default function GeldBesparenPage() {
             </div>
 
             {/* Advanced hacks */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Advanced Budget Hacks</h2>
               
               <div className="space-y-4">
@@ -356,7 +357,7 @@ export default function GeldBesparenPage() {
             </div>
 
             {/* Budget allocation */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Familie Budget Integratie</h2>
               
               <div className="space-y-4">
@@ -383,7 +384,7 @@ export default function GeldBesparenPage() {
             </div>
 
             {/* Dangerous savings to avoid */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <AlertTriangle className="w-5 h-5 mr-2" />
                 Gevaarlijke Besparingsmethoden - NOOIT DOEN
@@ -410,8 +411,14 @@ export default function GeldBesparenPage() {
               </div>
             </div>
 
+            {/* Budget Voeding Producten */}
+            <AffiliateProductWidget
+              pageId="praktische-tips_geld-besparen-flesvoeding"
+              title="Budget Voeding Producten"
+            />
+
             {/* Navigation */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/praktische-tips/flesvoeding-werk-combineren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
@@ -456,11 +463,11 @@ export default function GeldBesparenPage() {
         </div>
 
         <div className="col-span-12 lg:col-span-5">
-          <KennisbankSidebar 
+          <KennisbankSidebar
             images={[
-              '/images/budget-1.jpg',
-              '/images/budget-2.jpg',
-              '/images/budget-3.jpg'
+              { src: '/images/budget-1.jpg', alt: 'Budget tips 1', caption: '' },
+              { src: '/images/budget-2.jpg', alt: 'Budget tips 2', caption: '' },
+              { src: '/images/budget-3.jpg', alt: 'Budget tips 3', caption: '' }
             ]}
             adTopics={[
               'Goedkope flesvoeding merken',

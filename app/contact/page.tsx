@@ -86,7 +86,7 @@ export default function ContactPage() {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-gray-800 mb-4 flex items-center">
                 <MessageCircle className="w-5 h-5 mr-2 text-primary" />
                 Stuur ons een bericht
@@ -212,7 +212,7 @@ export default function ContactPage() {
           {/* Contact Info */}
           <div className="space-y-6">
             {/* Email */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h3 className="font-medium text-gray-800 mb-4 flex items-center">
                 <Mail className="w-5 h-5 mr-2 text-primary" />
                 E-mail contact
@@ -234,7 +234,7 @@ export default function ContactPage() {
             </div>
 
             {/* Response Times */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h3 className="font-medium text-gray-800 mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2 text-primary" />
                 Reactietijd
@@ -262,7 +262,7 @@ export default function ContactPage() {
             </div>
 
             {/* Support Hours */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h3 className="font-medium text-gray-800 mb-4">
                 Wanneer zijn wij bereikbaar?
               </h3>
@@ -281,7 +281,7 @@ export default function ContactPage() {
         </div>
 
         {/* Professional Resources */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-gray-800 mb-4">
             Professionele hulp bij flesvoeding
           </h2>

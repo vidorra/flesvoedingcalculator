@@ -26,7 +26,7 @@ export default function InfographicsPage() {
         </div>
 
         {/* Tab Navigation */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
           <div className="flex space-x-2 overflow-x-auto">
             <button
               onClick={() => setActiveInfographic('bereiding')}
@@ -117,7 +117,7 @@ const BereidingInfographic = () => {
   return (
     <div className="space-y-6">
       {/* Title Card */}
-      <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+      <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
         <h2 className="text-lg font-medium text-gray-800 mb-3">
           Flesvoeding Bereiden in 6 Stappen
         </h2>
@@ -131,7 +131,7 @@ const BereidingInfographic = () => {
         {steps.map((step) => (
           <div
             key={step.number}
-            className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6"
+            className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6"
           >
             {/* Step Header */}
             <div className="flex items-start mb-4">
@@ -305,7 +305,7 @@ const VoedingsschemaInfographic = () => {
   return (
     <div className="space-y-6">
       {/* Title Card */}
-      <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+      <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
         <h2 className="text-lg font-medium text-gray-800 mb-3">
           Voedingsschema per Leeftijd
         </h2>
@@ -327,7 +327,7 @@ const VoedingsschemaInfographic = () => {
               <div className={`hidden lg:block absolute left-6 w-5 h-5 ${group.color} rounded-full border-4 border-white shadow-lg`}></div>
               
               {/* Content Card */}
-              <div className="lg:ml-20 bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+              <div className="lg:ml-20 bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
                 {/* Header */}
                 <div className={`${group.color} p-4 text-white`}>
                   <div className="flex items-center justify-between">

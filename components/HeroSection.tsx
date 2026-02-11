@@ -58,7 +58,7 @@ export default function HeroSection() {
 
         {/* CTA Button */}
         <div className="mb-6 lg:mb-8">
-          <button 
+          <button
             onClick={() => {
               // Scroll to calculator section
               const calculator = document.querySelector('.col-span-12.lg\\:col-span-7');
@@ -68,9 +68,7 @@ export default function HeroSection() {
             }}
             className="inline-flex items-center gap-2 sm:gap-3 bg-primary hover:bg-primary-hover text-white font-medium px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-xl transition-all"
           >
-            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-            </svg>
+            <Calculator className="w-5 h-5" />
             <span>Start gratis berekening</span>
           </button>
           

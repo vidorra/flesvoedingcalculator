@@ -19,7 +19,7 @@ export const faqData = [
 
 export default function FAQSection() {
   return (
-    <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6 mt-8">
+    <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6 mt-8">
       <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen</h2>
       <div className="space-y-4">
         <div>

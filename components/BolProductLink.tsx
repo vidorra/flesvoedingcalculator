@@ -212,7 +212,7 @@ export default function BolProductSection({
   if (productNames.length === 0) return null
   if (loading) {
     return (
-      <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+      <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
         <h3 className="text-lg font-semibold text-primary mb-4">{title}</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {[...Array(3)].map((_, i) => (
@@ -231,7 +231,7 @@ export default function BolProductSection({
 
   if (error || products.length === 0) {
     return (
-      <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+      <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-lg font-semibold text-primary">{title}</h3>
           <div className="flex items-center space-x-2 text-xs text-gray-500">
@@ -262,7 +262,7 @@ export default function BolProductSection({
   }
 
   return (
-    <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+    <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-semibold text-primary">{title}</h3>
         <div className="flex items-center space-x-2 text-xs text-gray-500">

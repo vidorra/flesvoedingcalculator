@@ -25,6 +25,7 @@ export default function AdminLogin() {
       })
 
       const data = await response.json()
+      console.log('Login response:', { status: response.status, success: data.success, message: data.message })
 
       if (data.success && data.token) {
         // Store JWT token and admin session, then redirect to dashboard
@@ -33,9 +34,12 @@ export default function AdminLogin() {
         localStorage.setItem('admin_session', Date.now().toString())
         router.push('/admin/dashboard')
       } else {
-        setError(data.message || 'Invalid password')
+        const errorMessage = data.message || data.error || 'Invalid password'
+        console.error('Login failed:', errorMessage)
+        setError(errorMessage)
       }
     } catch (error) {
+      console.error('Login request error:', error)
       setError('Login failed. Please try again.')
     } finally {
       setIsLoading(false)
@@ -77,8 +81,8 @@ export default function AdminLogin() {
             </div>
 
             {error && (
-              <div className="text-red-600 text-sm text-center bg-red-50 p-3 rounded-lg">
-                {error}
+              <div className="rounded-lg border-2 border-red-500 bg-red-50 p-4 text-red-700 text-center font-medium" role="alert">
+                <span className="block text-sm">{error}</span>
               </div>
             )}
 

@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Users, Heart, Clock, MessageCircle, CheckCircle, AlertTriangle, RefreshCw } from 'lucide-react'
 
 export const metadata = {
@@ -48,7 +49,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
             </div>
 
             {/* Introduction */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed">
                 Gedeelde flesvoeding versterkt niet alleen de partnerrelatie, maar biedt ook belangrijke voordelen voor baby's ontwikkeling. Nederlands onderzoek toont aan dat 73% van families met gedeelde flesvoeding een sterkere partnerschap rapporteert, terwijl baby's profiteren van diverse stimuli en stabiele gehechtheid aan beide ouders.
@@ -56,7 +57,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
             </section>
 
             {/* Voordelen van gedeelde flesvoeding */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Heart className="w-5 h-5 mr-2" />
                 Voordelen van gedeelde flesvoeding
@@ -233,7 +234,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
             </div>
 
             {/* Taken eerlijk verdelen */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Taken eerlijk verdelen: praktische tips</h2>
               
               <div className="space-y-6">
@@ -429,7 +430,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
             </div>
 
             {/* Nachtvoedingen strategisch verdelen */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 Nachtvoedingen strategisch verdelen
@@ -561,7 +562,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
             </div>
 
             {/* Communicatie en verwachtingen */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Communicatie en verwachtingen
@@ -683,7 +684,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
             </div>
 
             {/* Nederlandse vaderrol */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Nederlandse vaderrol en flesvoeding</h2>
               
               <div className="space-y-6">
@@ -795,8 +796,14 @@ export default function PartnerBetrekkenFlesvoedingPage() {
               </div>
             </div>
 
+            {/* Product Widget */}
+            <AffiliateProductWidget
+              pageId="praktische-tips_partner-betrekken-flesvoeding"
+              title="Partner Voeding Producten"
+            />
+
             {/* Veelgestelde vragen */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde vragen</h2>
               
               <div className="space-y-4">
@@ -854,7 +861,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
             </div>
 
             {/* Related articles */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <RefreshCw className="w-5 h-5 mr-2" />
                 Gerelateerde artikelen

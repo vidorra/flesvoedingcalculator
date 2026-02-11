@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Calendar, Clock, CheckCircle, XCircle, Users } from 'lucide-react'
 
 export const metadata = {
@@ -306,7 +307,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
             </div>
 
             {/* Why Timing Important */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Waarom Timing Zo Belangrijk Is</h2>
               
               <p className="text-gray-700 mb-4">
@@ -341,7 +342,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
             </div>
 
             {/* 5 Important Factors */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">De Perfecte Timing: 5 Belangrijke Factoren</h2>
               
               <div className="space-y-8">
@@ -463,7 +464,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
             </div>
 
             {/* Medical Considerations */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Gezondheid & Medische Overwegingen</h2>
               
               <div className="space-y-6">
@@ -489,7 +490,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
             </div>
 
             {/* Family Situation */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Familie Situatie</h2>
               
               <div className="space-y-6">
@@ -518,7 +519,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
             </div>
 
             {/* Baby Signals */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Signalen van Je Baby</h2>
               
               <div className="space-y-6">
@@ -544,7 +545,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
             </div>
 
             {/* Timing Calendar */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Calendar className="w-5 h-5 mr-2" />
                 Optimale Week Planning
@@ -571,7 +572,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
             </div>
 
             {/* Common Mistakes */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelgemaakte Fouten Vermijden</h2>
               
               <div className="space-y-6">
@@ -606,7 +607,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
             </div>
 
             {/* FAQ */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen (FAQ)</h2>
               
               <div className="space-y-4">
@@ -623,7 +624,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
             </div>
 
             {/* Expert Opinions */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Expert Timing Aanbevelingen</h2>
               
               <div className="space-y-4">
@@ -651,8 +652,14 @@ export default function WanneerOverstappenOpvolgmelkPage() {
               </div>
             </div>
 
+            {/* Opvolgmelk Producten */}
+            <AffiliateProductWidget
+              pageId="soorten-flesvoeding_wanneer-overstappen-opvolgmelk"
+              title="Opvolgmelk Producten"
+            />
+
             {/* Navigation */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <Link 
