@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Calculator, AlertCircle, Baby, Scale, Clock, Zap, BookOpen, ChevronRight, Shield } from 'lucide-react'
 
 export const metadata = {
-  title: 'Hoe Werkt de Flesvoeding Calculator? | Complete Uitleg 2025',
+  title: 'Hoe Werkt de Flesvoeding Calculator? | Complete Uitleg 2026',
   description: 'Ontdek hoe onze flesvoeding calculator werkt. Uitleg over berekeningen, premature baby\'s, schepje-water ratio\'s en wetenschappelijke basis achter de aanbevelingen.',
 }
 

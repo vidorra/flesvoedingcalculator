@@ -52,8 +52,8 @@ export default function OverOnsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <span className="text-green-600 font-medium">✓</span>
+                <div className="w-8 h-8 bg-accent-rose-lighter rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-accent-rose font-medium">✓</span>
                 </div>
                 <div>
                   <h3 className="font-medium text-gray-800">Evidence-Based</h3>
@@ -63,8 +63,8 @@ export default function OverOnsPage() {
               
               
               <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <span className="text-purple-600 font-medium">✓</span>
+                <div className="w-8 h-8 bg-accent-rose-lighter rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-accent-rose font-medium">✓</span>
                 </div>
                 <div>
                   <h3 className="font-medium text-gray-800">Regelmatig Geüpdatet</h3>
@@ -75,8 +75,8 @@ export default function OverOnsPage() {
             
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <span className="text-orange-600 font-medium">✓</span>
+                <div className="w-8 h-8 bg-accent-rose-lighter rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-accent-rose font-medium">✓</span>
                 </div>
                 <div>
                   <h3 className="font-medium text-gray-800">Privacy Gewaarborgd</h3>
@@ -85,8 +85,8 @@ export default function OverOnsPage() {
               </div>
               
               <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <span className="text-red-600 font-medium">✓</span>
+                <div className="w-8 h-8 bg-accent-rose-lighter rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-accent-rose font-medium">✓</span>
                 </div>
                 <div>
                   <h3 className="font-medium text-gray-800">Gratis Toegankelijk</h3>
@@ -95,8 +95,8 @@ export default function OverOnsPage() {
               </div>
               
               <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <span className="text-teal-600 font-medium">✓</span>
+                <div className="w-8 h-8 bg-accent-rose-lighter rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-accent-rose font-medium">✓</span>
                 </div>
                 <div>
                   <h3 className="font-medium text-gray-800">Gebruiksvriendelijk</h3>
@@ -115,26 +115,29 @@ export default function OverOnsPage() {
           </h2>
           
           <div className="space-y-4">
-            <div className="bg-default rounded-xl p-4">
+            <div className="bg-accent-rose-lighter rounded-xl p-4">
               <h3 className="font-medium text-primary mb-2">Nederlandse Richtlijnen</h3>
               <p className="text-sm text-gray-700">
-                Onze calculator gebruikt de officiële Nederlandse norm van 150ml flesvoeding per kg lichaamsgewicht per dag, 
+                Onze calculator gebruikt de officiële Nederlandse norm van 150ml flesvoeding per kg lichaamsgewicht per dag,
                 aangepast voor leeftijd volgens de richtlijnen van het Voedingscentrum.
               </p>
             </div>
             
-            <div className="bg-green-50 rounded-xl p-4">
-              <h3 className="font-medium text-green-800 mb-2">Leeftijdsaanpassingen</h3>
-              <p className="text-sm text-green-700">
-                De berekening wordt automatisch aangepast op basis van de leeftijd van uw baby, omdat voedingsbehoeften 
+            <div className="bg-accent-rose-lighter rounded-xl p-4">
+              <h3 className="font-medium text-primary mb-2">Leeftijdsaanpassingen</h3>
+              <p className="text-sm text-gray-700">
+                De berekening wordt automatisch aangepast op basis van de leeftijd van uw baby, omdat voedingsbehoeften
                 veranderen naarmate baby&apos;s groeien en ontwikkelen.
               </p>
             </div>
             
-            <div className="bg-amber-50 rounded-xl p-4">
-              <h3 className="font-medium text-amber-800 mb-2">Individuele Variatie</h3>
-              <p className="text-sm text-amber-700">
-                We benadrukken altijd dat elke baby uniek is. Onze calculator geeft een richtlijn, maar het is belangrijk 
+            <div
+              className="rounded-xl p-4"
+              style={{ background: 'radial-gradient(circle at 30% 30%, rgba(200, 120, 140, .04) 0, rgba(16, 148, 174, .02) 40%, transparent 70%), linear-gradient(90deg, #fff7f7, #f8eeec)' }}
+            >
+              <h3 className="font-medium text-primary mb-2">Individuele Variatie</h3>
+              <p className="text-sm text-gray-700">
+                We benadrukken altijd dat elke baby uniek is. Onze calculator geeft een richtlijn, maar het is belangrijk
                 om ook naar de signalen van uw baby te luisteren en contact op te nemen met uw zorgverlener bij vragen.
               </p>
             </div>
