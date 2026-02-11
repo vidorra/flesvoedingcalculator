@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import BolProductSection from '../../../../components/BolProductLink'
 import { BookOpen, ArrowRight, Home, CheckCircle, AlertTriangle, Clock, Baby } from 'lucide-react'
 
@@ -77,7 +78,7 @@ export default function EersteKeerFlesvoedingPage() {
           
 
           {/* Header */}
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <div className="text-sm text-gray-500 mb-2">Basis Flesvoeding  Beginners Gids</div>
             <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
               <Baby className="w-6 h-6 mr-3 text-primary" />
@@ -112,7 +113,7 @@ export default function EersteKeerFlesvoedingPage() {
           </div>
 
           {/* Introduction */}
-          <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <p className="text-gray-600 leading-relaxed">
               Ben je klaar om je baby voor de eerste keer flesvoeding te geven? Dat kan spannend zijn! 
               Of je nu overstapt van borstvoeding, begint met combivoeeding, of direct start met flesvoeding - 
@@ -121,7 +122,7 @@ export default function EersteKeerFlesvoedingPage() {
           </section>
 
           {/* What you need */}
-          <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-medium text-primary mb-4">Wat heb je nodig?</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -173,7 +174,7 @@ export default function EersteKeerFlesvoedingPage() {
           />
 
           {/* Water preparation */}
-          <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-medium text-primary mb-4">Water: De basis van goede flesvoeding</h2>
             
             <h3 className="font-medium text-primary mb-3">Nederlands kraanwater: Veilig voor baby's</h3>
@@ -220,8 +221,14 @@ export default function EersteKeerFlesvoedingPage() {
             </div>
           </section>
 
+          {/* Starterset Producten voor Eerste Fles */}
+          <AffiliateProductWidget
+            pageId="basis-flesvoeding_eerste-keer-flesvoeding-geven"
+            title="Starterset Producten voor Eerste Fles"
+          />
+
           {/* Step by step guide */}
-          <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-medium text-primary mb-4">Stap-voor-stap: Je eerste fles klaarmaken</h2>
             
             <div className="space-y-6">
@@ -303,7 +310,7 @@ export default function EersteKeerFlesvoedingPage() {
           </section>
 
           {/* Feeding amounts table */}
-          <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-medium text-primary mb-4">Juiste hoeveelheden per leeftijd</h2>
             
             <div className="overflow-x-auto">
@@ -335,7 +342,7 @@ export default function EersteKeerFlesvoedingPage() {
           </section>
 
           {/* Transition from breastfeeding */}
-          <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-medium text-primary mb-4">Van borstvoeding naar flesvoeding</h2>
             
             <h3 className="font-medium text-primary mb-4">Geleidelijke overstap (aanbevolen)</h3>
@@ -372,7 +379,7 @@ export default function EersteKeerFlesvoedingPage() {
           </section>
 
           {/* Baby voorbereiden */}
-          <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-medium text-primary mb-4">Baby voorbereiden voor eerste fles</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -437,7 +444,7 @@ export default function EersteKeerFlesvoedingPage() {
           </section>
 
           {/* Voedingstechniek */}
-          <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-medium text-primary mb-4">De perfecte voedingstechniek</h2>
             
             <div className="space-y-6">
@@ -500,7 +507,7 @@ export default function EersteKeerFlesvoedingPage() {
           </section>
 
           {/* When to seek help */}
-          <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-medium text-primary mb-4">Wanneer hulp zoeken?</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -551,7 +558,7 @@ export default function EersteKeerFlesvoedingPage() {
           </section>
 
           {/* Conclusion */}
-          <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-medium text-primary mb-4">Belangrijkste tips</h2>
             <ol className="space-y-2">
               <li className="flex items-center space-x-2">

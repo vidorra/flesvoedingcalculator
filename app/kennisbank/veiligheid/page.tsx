@@ -80,7 +80,7 @@ export default function VeiligheidPage() {
         </div>
 
         {/* Never do */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <X className="w-5 h-5 mr-2" />
             Voedingsveiligheid - Nooit doen:
@@ -97,7 +97,7 @@ export default function VeiligheidPage() {
 
         {/* Allergy signals */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
               <Eye className="w-5 h-5 mr-2" />
               Allergiesignalen - Let op:
@@ -128,7 +128,7 @@ export default function VeiligheidPage() {
         </div>
 
         {/* Important phone numbers */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Belangrijke telefoonnummers</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -166,7 +166,7 @@ export default function VeiligheidPage() {
         </div>
 
         {/* Navigation */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Meer hulp nodig?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 

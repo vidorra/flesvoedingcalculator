@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { AlertTriangle, Shield, Heart, Phone, CheckCircle, ArrowRight } from 'lucide-react'
 
 export const metadata = {
@@ -87,7 +88,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
             </div>
 
             {/* Introduction Section */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Flesvoeding allergieën treffen 2-7% van Nederlandse baby's en kunnen ernstige gevolgen hebben voor gezondheid en ontwikkeling. 
@@ -107,8 +108,14 @@ export default function AllergischeReactiesFlesvoedingPage() {
               </div>
             </section>
 
+            {/* Product Widget */}
+            <AffiliateProductWidget
+              pageId="problemen-oplossen_allergische-reacties-flesvoeding"
+              title="Allergie Voeding Producten"
+            />
+
             {/* Soorten Allergische Reacties */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Shield className="w-5 h-5 mr-2" />
                 Soorten Allergische Reacties
@@ -176,7 +183,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
             </section>
 
             {/* Koemelk Eiwit Allergie */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Koemelk Eiwit Allergie (CMPA)</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 CMPA is de meest voorkomende flesvoeding allergie in Nederland, treffende 2-7% van baby's in het eerste jaar. 
@@ -235,7 +242,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
             </section>
 
             {/* Alternatieve Flesvoeding */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Alternatieve Flesvoeding Opties</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Bij bewezen allergie zijn er effectieve alternatieven beschikbaar in Nederland. 
@@ -264,7 +271,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
             </section>
 
             {/* Nederlandse Zorg */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Nederlandse Medische Zorg</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -322,7 +329,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
             </section>
 
             {/* Related Articles */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <ArrowRight className="w-5 h-5 mr-2" />
                 Gerelateerde Artikelen

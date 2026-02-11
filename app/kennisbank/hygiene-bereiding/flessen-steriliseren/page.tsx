@@ -44,7 +44,7 @@ export default function FlessenSteriligerenPage() {
             </div>
 
             {/* Waarom steriliseren belangrijk is */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Waarom steriliseren belangrijk is</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Baby's hebben een nog ontwikkelend immuunsysteem dat kwetsbaar is voor bacteriën, virussen en schimmels. Steriliseren van flessen en spenen elimineert gevaarlijke micro-organismen die kunnen leiden tot ernstige infecties zoals gastro-enteritis.
@@ -101,7 +101,7 @@ export default function FlessenSteriligerenPage() {
             </div>
 
             {/* Wanneer en hoe vaak */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 Wanneer en hoe vaak steriliseren
@@ -197,7 +197,7 @@ export default function FlessenSteriligerenPage() {
             </div>
 
             {/* Sterilisatie methoden vergelijking */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Sterilisatie methoden vergelijking</h2>
               
               <div className="space-y-6">
@@ -382,7 +382,7 @@ export default function FlessenSteriligerenPage() {
             />
 
             {/* Test Bol.com Script - Using direct injection */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Test Bol.com Widget</h2>
               <div className="bg-white rounded-xl border border-gray-200 p-4">
                 <div className="bol-script-container" data-product-id="test-bol-widget">
@@ -443,7 +443,7 @@ export default function FlessenSteriligerenPage() {
             </div>
 
             {/* Stap-voor-stap elektrische sterilisator */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Stap-voor-stap: Elektrische sterilisator (meest gebruikt)</h2>
               
               <div className="space-y-6">
@@ -600,7 +600,7 @@ export default function FlessenSteriligerenPage() {
             </div>
 
             {/* Kostenberekening */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <DollarSign className="w-5 h-5 mr-2" />
                 Kostenberekening verschillende methoden
@@ -663,7 +663,7 @@ export default function FlessenSteriligerenPage() {
             </div>
 
             {/* Veelgestelde vragen */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde vragen</h2>
               
               <div className="space-y-4">
@@ -716,7 +716,7 @@ export default function FlessenSteriligerenPage() {
             </div>
 
             {/* Related articles */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Users className="w-5 h-5 mr-2" />
                 Gerelateerde artikelen

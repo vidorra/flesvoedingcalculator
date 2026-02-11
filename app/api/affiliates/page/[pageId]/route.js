@@ -1,12 +1,30 @@
 import { NextResponse } from 'next/server'
 import { db } from '../../../../../lib/db/connection.js'
 import { snippets, pageSnippets } from '../../../../../lib/db/schema.js'
-import { eq } from 'drizzle-orm'
+import { eq, and } from 'drizzle-orm'
 
 // Force dynamic route - prevent caching issues
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
+/**
+ * Detect website from request hostname
+ * Maps domains to website identifiers
+ */
+function detectWebsiteFromHostname(request) {
+  const host = request.headers.get('host') || 'localhost'
+
+  // Extract domain from host (remove port if present)
+  const domain = host.split(':')[0].toLowerCase()
+
+  // Map domains to website identifiers
+  if (domain.includes('togwaarde')) {
+    return 'togwaarde'
+  }
+  // Default to flesvoedingcalculator for any other domain
+  // This includes localhost, flesvoedingcalculator.nl, and any development domains
+  return 'flesvoedingcalculator'
+}
 
 // GET - Get affiliate snippets for a specific page from database
 export async function GET(request, { params }) {
@@ -19,8 +37,10 @@ export async function GET(request, { params }) {
 
   try {
     const pageId = params.pageId
+    // CRITICAL: Detect website from hostname to filter results
+    const website = detectWebsiteFromHostname(request)
 
-    // Load from database
+    // Load from database - filtered by website
     const pageSnippetsList = await db
       .select({
         id: pageSnippets.id,
@@ -33,7 +53,8 @@ export async function GET(request, { params }) {
       })
       .from(pageSnippets)
       .leftJoin(snippets, eq(pageSnippets.snippetId, snippets.id))
-      .where(eq(pageSnippets.pageId, pageId))
+      // CRITICAL: Filter by both pageId and website
+      .where(and(eq(pageSnippets.pageId, pageId), eq(pageSnippets.website, website)))
       .orderBy(pageSnippets.order)
 
     // Filter out orphaned references and inactive snippets

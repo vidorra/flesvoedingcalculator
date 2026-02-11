@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Plane, ArrowRight, Home, MapPin, CheckCircle, AlertTriangle, Calculator, Thermometer } from 'lucide-react'
 import BolProductSection from '../../../../components/BolProductLink'
 
@@ -171,7 +172,7 @@ export default function VakantiePage() {
             </div>
 
             {/* Why bottle feeding is easier for travel */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Plane className="w-5 h-5 mr-2" />
                 Waarom Vakantie met Flesvoeding Makkelijker Is
@@ -217,7 +218,7 @@ export default function VakantiePage() {
             </div>
 
             {/* Transport-specific strategies */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Transport-Specifieke Strategieën</h2>
               
               <div className="space-y-6">
@@ -259,7 +260,7 @@ export default function VakantiePage() {
             </div>
 
             {/* Accommodation types */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <MapPin className="w-5 h-5 mr-2" />
                 Accommodatie Types & Flesvoeding Setup
@@ -302,7 +303,7 @@ export default function VakantiePage() {
             </div>
 
             {/* International travel tips */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Internationale Reizen: Land-Specifieke Tips</h2>
               
               <div className="space-y-4">
@@ -344,7 +345,7 @@ export default function VakantiePage() {
             </div>
 
             {/* Emergency preparedness */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <AlertTriangle className="w-5 h-5 mr-2" />
                 Emergency Preparedness & Crisis Beheer
@@ -387,7 +388,7 @@ export default function VakantiePage() {
             </div>
 
             {/* Packing strategies */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Packing Strategies: Complete Lists</h2>
               
               <div className="grid md:grid-cols-2 gap-6">
@@ -466,7 +467,7 @@ export default function VakantiePage() {
             </div>
 
             {/* Seasonal considerations */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Thermometer className="w-5 h-5 mr-2" />
                 Seizoensgebonden Vakantie Overwegingen
@@ -496,7 +497,7 @@ export default function VakantiePage() {
             </div>
 
             {/* Final checklist */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Reis Checklist: 48 Uur Voor Vertrek</h2>
               
               <div className="grid md:grid-cols-2 gap-6">
@@ -560,8 +561,14 @@ export default function VakantiePage() {
               maxProducts={6}
             />
 
+            {/* Vakantie Voeding Producten */}
+            <AffiliateProductWidget
+              pageId="praktische-tips_flesvoeding-op-vakantie"
+              title="Vakantie Voeding Producten"
+            />
+
             {/* Navigation */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/hygiene-bereiding/flesvoeding-bewaren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">

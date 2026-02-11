@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { AlertTriangle, Clock, Heart, Thermometer, Search, Shield } from 'lucide-react'
 
 export const metadata = {
@@ -412,7 +413,7 @@ export default function KrampjesNaFlesvoedingPage() {
             </div>
 
             {/* Why So Common */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Waarom Krampjes zo Veelvoorkomend Zijn</h2>
               
               <p className="text-gray-700 mb-4">
@@ -449,7 +450,7 @@ export default function KrampjesNaFlesvoedingPage() {
             </div>
 
             {/* Recognition Signals */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Search className="w-5 h-5 mr-2" />
                 Krampjes Herkennen: Signalen & Symptomen
@@ -487,7 +488,7 @@ export default function KrampjesNaFlesvoedingPage() {
             </div>
 
             {/* Differential Diagnosis */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Verschil: Krampjes vs Andere Problemen</h2>
               
               <div className="overflow-x-auto">
@@ -517,7 +518,7 @@ export default function KrampjesNaFlesvoedingPage() {
             </div>
 
             {/* Causes */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Oorzaken van Krampjes na Flesvoeding</h2>
               
               <div className="space-y-6">
@@ -549,7 +550,7 @@ export default function KrampjesNaFlesvoedingPage() {
             </div>
 
             {/* Solutions */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Effectieve Oplossingen per Oorzaak</h2>
               
               <div className="mb-6">
@@ -596,7 +597,7 @@ export default function KrampjesNaFlesvoedingPage() {
             </div>
 
             {/* Physical Comfort */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Fysieke Comfort Technieken</h2>
               
               <div className="space-y-6">
@@ -685,11 +686,11 @@ export default function KrampjesNaFlesvoedingPage() {
                       </div>
                     )}
                     
-                    {age.toolkit && (
+                    {age.gereedschapskist && (
                       <div className="mb-4">
                         <h4 className="font-medium text-primary mb-2">Essential Gereedschapskist:</h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                          {age.toolkit.map((tool, toolIndex) => (
+                          {age.gereedschapskist.map((tool, toolIndex) => (
                             <div key={toolIndex} className="flex items-center space-x-2">
                               <span className="text-gray-600">□</span>
                               <span className="text-sm text-gray-700">{tool}</span>
@@ -759,7 +760,7 @@ export default function KrampjesNaFlesvoedingPage() {
             </div>
 
             {/* Medical Help */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Wanneer Professionele Hulp Zoeken</h2>
               
               <div className="space-y-6">
@@ -788,7 +789,7 @@ export default function KrampjesNaFlesvoedingPage() {
             </div>
 
             {/* Daily Routine */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 Dagelijkse Routine Anti-Krampjes
@@ -812,7 +813,7 @@ export default function KrampjesNaFlesvoedingPage() {
             </div>
 
             {/* FAQ */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen (FAQ)</h2>
               
               <div className="space-y-4">
@@ -829,7 +830,7 @@ export default function KrampjesNaFlesvoedingPage() {
             </div>
 
             {/* Myths Debunked */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Mythen Ontkracht</h2>
               
               <div className="space-y-4">
@@ -847,7 +848,7 @@ export default function KrampjesNaFlesvoedingPage() {
             </div>
 
             {/* Conclusion */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Conclusie: Geduld, Systematiek en Steun</h2>
               
               <p className="text-gray-700 mb-4">
@@ -875,8 +876,14 @@ export default function KrampjesNaFlesvoedingPage() {
               </div>
             </div>
 
+            {/* Voeding tegen Krampjes */}
+            <AffiliateProductWidget
+              pageId="problemen-oplossen_krampjes-na-flesvoeding"
+              title="Voeding tegen Krampjes"
+            />
+
             {/* Navigation */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <Link 

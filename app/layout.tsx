@@ -1,6 +1,20 @@
 import './globals.css'
 import Script from 'next/script'
+import { Lexend_Deca } from 'next/font/google'
 import { initWebVitals } from '../lib/analytics'
+
+/**
+ * Lexend Deca font configuration
+ * Self-hosted font optimization for better performance
+ * Removes external dependency on Google Fonts CDN
+ * Supports all font weights (100-900) with swap display strategy
+ */
+const lexendDeca = Lexend_Deca({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  display: 'swap',
+  variable: '--font-lexend-deca',
+})
 
 export const viewport = {
   width: 'device-width',
@@ -41,7 +55,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="nl">
+    <html lang="nl" className={lexendDeca.variable}>
       <head>
         {/* Google AdSense */}
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938" crossOrigin="anonymous"></script>

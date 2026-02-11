@@ -46,7 +46,7 @@ export default function KennisbankTemplatePage() {
     "text-gray-500 - For breadcrumbs and intro text",
     "text-gray-600 - For body paragraphs and content",
     "text-gray-700 - For list items and secondary text",
-    "bg-white/80 - For main content cards",
+    "bg-white - For main content cards",
     "bg-white - For subtle backgrounds and related articles"
   ]
 
@@ -79,7 +79,7 @@ export default function KennisbankTemplatePage() {
             </div>
 
             {/* Introduction Section - REQUIRED */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Template Overzicht</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Deze template toont de perfecte implementatie van alle goedgekeurde styling patronen voor kennisbank artikelen. 
@@ -96,7 +96,7 @@ export default function KennisbankTemplatePage() {
             </section>
 
             {/* Styling Principles */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Kern Styling Principes</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Deze principes vormen de basis voor alle kennisbank artikelen en zorgen voor consistente, toegankelijke content.
@@ -131,7 +131,7 @@ export default function KennisbankTemplatePage() {
             </section>
 
             {/* Section with Visual Separator - Alternative to card-within-card */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Layout Structuur</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Gebruik schone grid layouts en border separators in plaats van geneste containers voor optimale leesbaarheid.
@@ -170,7 +170,7 @@ export default function KennisbankTemplatePage() {
             </section>
 
             {/* Code Example Section */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Code Voorbeelden</h2>
               
               <div className="border-t border-gray-200 pt-6">
@@ -284,7 +284,7 @@ export default function KennisbankTemplatePage() {
             </section>
 
             {/* Related Articles - APPROVED card-within-card exception */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Users className="w-5 h-5 mr-2" />
                 Gerelateerde Artikelen

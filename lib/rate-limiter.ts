@@ -37,11 +37,11 @@ class InMemoryRateLimiter {
     // Clean up old entries periodically
     setInterval(() => {
       const oneWindowAgo = Date.now() - this.config.windowMs
-      for (const [key, data] of this.store) {
+      this.store.forEach((data, key) => {
         if (data.lastAttempt < oneWindowAgo) {
           this.store.delete(key)
         }
-      }
+      })
     }, this.config.windowMs)
   }
 

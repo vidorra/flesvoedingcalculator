@@ -100,7 +100,7 @@ export default function PartnersPage() {
         </div>
 
         {/* Trusted Brands */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-gray-800 mb-4 flex items-center">
             <Award className="w-5 h-5 mr-2 text-primary" />
             Betrouwbare Merken in Nederland
@@ -147,7 +147,7 @@ export default function PartnersPage() {
         </div>
 
         {/* Official Sources */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-gray-800 mb-4">
             Onze Bronnen & Autoriteiten
           </h2>

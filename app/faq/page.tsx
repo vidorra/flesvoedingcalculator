@@ -92,7 +92,7 @@ export default function FAQPage() {
 
 
         {/* Categories */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="font-medium text-gray-800 mb-4">Categorieën</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
             {categories.map((category) => {
@@ -121,7 +121,7 @@ export default function FAQPage() {
         </div>
 
         {/* FAQ Items */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="font-medium text-gray-800 mb-4">
             {categories.find(c => c.id === selectedCategory)?.name}
           </h2>

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Layout from '../../../../components/Layout'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { BookOpen } from 'lucide-react'
 
 export default function UitgebreideFlesvoedingGids() {
@@ -45,7 +46,7 @@ export default function UitgebreideFlesvoedingGids() {
           </div>
 
           {/* Table of Contents */}
-          <div className="mb-12 bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <div className="mb-12 bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-medium text-primary mb-4">Inhoudsopgave</h2>
             <nav className="space-y-2">
               <a href="#geld-besparen" className="block text-gray-600 hover:text-gray-700 font-medium">
@@ -77,7 +78,7 @@ export default function UitgebreideFlesvoedingGids() {
               </p>
             </div>
 
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <div className="prose prose-lg max-w-none">
               <h3>Inleiding: De Werkelijke Kosten van Flesvoeding</h3>
               <p>
@@ -264,7 +265,7 @@ export default function UitgebreideFlesvoedingGids() {
               </p>
             </div>
 
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <div className="prose prose-lg max-w-none">
               <h3>Maandelijkse Kosten Uitsplitsing per Leeftijd</h3>
 
@@ -344,7 +345,7 @@ export default function UitgebreideFlesvoedingGids() {
               </p>
             </div>
 
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <div className="prose prose-lg max-w-none">
               <h3>Inleiding: Een Emotionele en Praktische Overgang</h3>
               <p>
@@ -472,7 +473,7 @@ export default function UitgebreideFlesvoedingGids() {
               </p>
             </div>
 
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <div className="prose prose-lg max-w-none">
               <h3>Inleiding: De Realiteit van Werkende Ouders</h3>
               <p>
@@ -614,7 +615,7 @@ export default function UitgebreideFlesvoedingGids() {
               </p>
             </div>
 
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <div className="prose prose-lg max-w-none">
               <h3>Inleiding: Een Universeel Ouder Drama</h3>
               <p>
@@ -736,6 +737,12 @@ export default function UitgebreideFlesvoedingGids() {
             </div>
             </div>
           </section>
+
+          {/* Product Widget */}
+          <AffiliateProductWidget
+            pageId="praktische-gidsen_uitgebreide-flesvoeding-gids"
+            title="Flesvoeding Gids Producten"
+          />
 
           {/* Final Call-to-Action */}
           <div className="bg-gradient-to-r from-gray-50 to-gray-100 border border-gray-200 rounded-xl p-8 text-center">

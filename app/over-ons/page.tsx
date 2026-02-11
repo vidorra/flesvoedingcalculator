@@ -43,7 +43,7 @@ export default function OverOnsPage() {
 
 
         {/* Why Trust Us */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="font-medium text-gray-800 mb-4 flex items-center">
             <Star className="w-5 h-5 mr-2 text-primary" />
             Waarom FlesvoedingCalculator.nl vertrouwen?
@@ -108,7 +108,7 @@ export default function OverOnsPage() {
         </div>
 
         {/* Our Method */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="font-medium text-gray-800 mb-4 flex items-center">
             <Calculator className="w-5 h-5 mr-2 text-primary" />
             Onze Methode
@@ -143,7 +143,7 @@ export default function OverOnsPage() {
 
 
         {/* Sources */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="font-medium text-gray-800 mb-4 flex items-center">
             <BookOpen className="w-5 h-5 mr-2 text-primary" />
             Bronnen & Expertise

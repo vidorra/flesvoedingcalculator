@@ -1,5 +1,6 @@
 import Layout from '../../../../components/Layout'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Baby } from 'lucide-react'
 
 export const metadata = {
@@ -51,7 +52,7 @@ export default function FlesBerenStapVoorStap() {
               Complete handleiding voor veilige en correcte flesbereiding - van poeder tot klare fles
             </p>
 
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed">
                 Een perfect bereide fles is meer dan alleen voeding - het is veiligheid, liefde en zorg in elke druppel. 
@@ -60,7 +61,7 @@ export default function FlesBerenStapVoorStap() {
               </p>
             </section>
 
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-6">Voorbereiding: De basis van veilige flesbereiding</h2>
               
               <p className="text-gray-700 mb-6">
@@ -75,7 +76,7 @@ export default function FlesBerenStapVoorStap() {
               </p>
             </div>
 
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4">Stap-voor-stap Bereiding</h2>
               
               <p className="text-gray-700 mb-6">
@@ -128,7 +129,7 @@ export default function FlesBerenStapVoorStap() {
               </div>
             </div>
 
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4">Veiligheidstips</h2>
               
               <ul className="space-y-3">
@@ -155,6 +156,12 @@ export default function FlesBerenStapVoorStap() {
                 </li>
               </ul>
             </div>
+
+            {/* Fles Bereiding Producten */}
+            <AffiliateProductWidget
+              pageId="voedingstechnieken_fles-bereiden-stap-voor-stap"
+              title="Fles Bereiding Producten"
+            />
 
           </div>
         </div>

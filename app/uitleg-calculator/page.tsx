@@ -178,7 +178,7 @@ export default function UitlegCalculatorPage() {
         </div>
 
         {/* Quick Overview */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Zap className="w-5 h-5 mr-2" />
             Snelle Samenvatting
@@ -201,7 +201,7 @@ export default function UitlegCalculatorPage() {
         </div>
 
         {/* How It Works - Step by Step */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Clock className="w-5 h-5 mr-2" />
             Stap-voor-Stap Berekening
@@ -224,7 +224,7 @@ export default function UitlegCalculatorPage() {
         </div>
 
         {/* Safety Improvements & New Features */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Shield className="w-5 h-5 mr-2" />
             Veiligheidsupdates & Nieuwe Functies
@@ -267,7 +267,7 @@ export default function UitlegCalculatorPage() {
         </div>
 
         {/* Age Adjustments */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Baby className="w-5 h-5 mr-2" />
             Leeftijd-Specifieke Aanpassingen
@@ -298,7 +298,7 @@ export default function UitlegCalculatorPage() {
         </div>
 
         {/* Premature Baby Calculations */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Scale className="w-5 h-5 mr-2" />
             Premature Baby Berekeningen
@@ -330,7 +330,7 @@ export default function UitlegCalculatorPage() {
         </div>
 
         {/* Powder-Water Ratios */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Schepje-Water Ratio Uitleg</h2>
           
           <div className="space-y-4">
@@ -379,7 +379,7 @@ export default function UitlegCalculatorPage() {
         </div>
 
         {/* Scientific Basis */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <BookOpen className="w-5 h-5 mr-2" />
             Wetenschappelijke Basis
@@ -403,7 +403,7 @@ export default function UitlegCalculatorPage() {
         </div>
 
         {/* Limitations */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Beperkingen & Overwegingen</h2>
           
           <div className="space-y-2">

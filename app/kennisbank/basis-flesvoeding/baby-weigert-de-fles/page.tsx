@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { AlertTriangle, Heart, Clock, Users } from 'lucide-react'
 
 export default function BabyWeigertFlespagePage() {
@@ -42,7 +43,7 @@ export default function BabyWeigertFlespagePage() {
             </div>
 
             {/* Waarom weigert je baby de fles */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Waarom weigert je baby de fles?</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Een baby die de fles weigert kan frustrerend en zorgwekkend zijn. Of je nu net begint met flesvoeding of je baby plotseling stopt met drinken - er zijn altijd concrete oorzaken en effectieve oplossingen.
@@ -72,7 +73,7 @@ export default function BabyWeigertFlespagePage() {
             </div>
 
             {/* Hoofdoorzaken */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Hoofdoorzaken van flesweigering</h2>
               
               <div className="space-y-4">
@@ -161,7 +162,7 @@ export default function BabyWeigertFlespagePage() {
             </div>
 
             {/* Stap-voor-stap oplossingsplan */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 Stap-voor-stap oplossingsplan
@@ -268,8 +269,14 @@ export default function BabyWeigertFlespagePage() {
               </div>
             </div>
 
+            {/* Aanbevolen Flessen & Spenen voor Moeilijke Baby's */}
+            <AffiliateProductWidget
+              pageId="basis-flesvoeding_baby-weigert-de-fles"
+              title="Aanbevolen Flessen & Spenen voor Moeilijke Baby's"
+            />
+
             {/* Wanneer professionele hulp */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Wanneer professionele hulp zoeken?</h2>
               
               <div className="space-y-4">
@@ -316,7 +323,7 @@ export default function BabyWeigertFlespagePage() {
             </div>
 
             {/* Praktische tips */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Heart className="w-5 h-5 mr-2" />
                 Praktische tips voor volharding
@@ -384,7 +391,7 @@ export default function BabyWeigertFlespagePage() {
             </div>
 
             {/* Related articles */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Users className="w-5 h-5 mr-2" />
                 Gerelateerde artikelen

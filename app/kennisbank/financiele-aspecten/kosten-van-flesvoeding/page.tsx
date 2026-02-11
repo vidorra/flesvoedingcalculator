@@ -1,5 +1,6 @@
 import Layout from '../../../../components/Layout'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Euro } from 'lucide-react'
 
 export const metadata = {
@@ -51,14 +52,14 @@ export default function KostenVanFlesvoeding() {
               Alle kosten op een rij + tips om geld te besparen zonder kwaliteit in te leveren
             </p>
 
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed">
                 Hoeveel kost flesvoeding nou eigenlijk? Deze vraag houdt veel aanstaande ouders bezig. Deze complete budgetgids geeft je alle Nederlandse prijzen van 2025, van goedkoopste tot duurste opties. Plus: praktische bespaartips die kunnen opleveren tot €300 per jaar, zonder in te leveren op kwaliteit of veiligheid.
               </p>
             </section>
 
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-6">Totaal overzicht kosten eerste jaar</h2>
               
               <h3 className="font-medium text-primary mb-4">Complete kosten flesvoeding (0-12 maanden)</h3>
@@ -117,7 +118,7 @@ export default function KostenVanFlesvoeding() {
               </p>
             </section>
 
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-6">Flesvoeding poeder: Prijsoverzicht per merk</h2>
               
               <div className="space-y-8">
@@ -317,7 +318,7 @@ export default function KostenVanFlesvoeding() {
               </div>
             </section>
 
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-6">Flessen en spenen: Wat heb je nodig?</h2>
               
               <div className="space-y-6">
@@ -402,7 +403,7 @@ export default function KostenVanFlesvoeding() {
               </div>
             </section>
 
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-6">25 Bespaartips zonder kwaliteitsverlies</h2>
               
               <div className="space-y-6">
@@ -486,7 +487,7 @@ export default function KostenVanFlesvoeding() {
               </div>
             </section>
 
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-6">Waar het goedkoopst winkelen?</h2>
               
               <h3 className="font-medium text-primary mb-4">Prijs vergelijking Nederlandse retailers</h3>
@@ -542,7 +543,7 @@ export default function KostenVanFlesvoeding() {
               </div>
             </section>
 
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-6">Veelgestelde vragen over kosten</h2>
               
               <div className="space-y-6">
@@ -573,7 +574,14 @@ export default function KostenVanFlesvoeding() {
               </div>
             </section>
 
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+              <AffiliateProductWidget
+                pageId="financiele-aspecten_kosten-van-flesvoeding"
+                title="Flesvoeding Budget Producten"
+              />
+            </section>
+
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-6">Conclusie: Slim budgetteren voor flesvoeding</h2>
               
               <div className="mb-6">

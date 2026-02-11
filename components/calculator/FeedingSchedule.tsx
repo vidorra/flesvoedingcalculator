@@ -19,7 +19,7 @@ export default function FeedingSchedule({ results }: FeedingScheduleProps) {
       {/* Details Toggle */}
       <button
         onClick={() => setShowDetails(!showDetails)}
-        className="w-full bg-white/80 backdrop-blur rounded-t-2xl shadow-sm border border-gray-200 border-b-0 p-4 flex items-center justify-between text-gray-700 hover:bg-white transition-colors"
+        className="w-full bg-white backdrop-blur rounded-t-2xl shadow-sm border border-gray-200 border-b-0 p-4 flex items-center justify-between text-gray-700 hover:bg-white transition-colors"
       >
         <span className="font-medium">Bekijk details & voedingsschema</span>
         {showDetails ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
@@ -27,7 +27,7 @@ export default function FeedingSchedule({ results }: FeedingScheduleProps) {
 
       {/* Detailed Schedule */}
       {showDetails && (
-        <div className="bg-white/80 backdrop-blur rounded-bottom-2xl mb-8 shadow-sm border border-gray-200 p-6 border-t-0 schedule-content">
+        <div className="bg-white backdrop-blur rounded-bottom-2xl mb-8 shadow-sm border border-gray-200 p-6 border-t-0 schedule-content">
           <h4 className="font-medium text-gray-800 mb-4 flex items-center">
             <Clock className="w-5 h-5 mr-2 text-primary" />
             Voorbeeldschema (flexibel aan te passen)

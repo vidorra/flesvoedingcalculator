@@ -1,62 +1,38 @@
 import { NextResponse } from 'next/server'
-import * as jwt from 'jsonwebtoken'
 import { db } from '../../../../lib/db/connection.js'
 import { snippets } from '../../../../lib/db/schema.js'
-import { eq } from 'drizzle-orm'
+import { eq, and } from 'drizzle-orm'
 import { autoMigrate } from '../../../../lib/db/auto-migrate.js'
+import { verifyAdminAndGetWebsite } from '../../../../lib/jwt-utils.js'
 
 // Force dynamic route
 export const dynamic = 'force-dynamic'
 
-const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key-here'
-
-// Verify admin token (with session fallback for backwards compatibility)
-function verifyAdmin(request) {
-  const authHeader = request.headers.get('Authorization')
-
-  // Try JWT authentication first
-  if (authHeader && authHeader.startsWith('Bearer ')) {
-    try {
-      const token = authHeader.substring(7)
-      const decoded = jwt.verify(token, JWT_SECRET)
-
-      if (!decoded.admin) {
-        throw new Error('Invalid admin token')
-      }
-
-      return decoded
-    } catch (error) {
-      console.error('JWT verification failed:', error.message)
-      throw new Error('Invalid or expired token')
-    }
-  }
-
-  // Fallback to session-based auth for backwards compatibility
-  // In production, you should remove this and require JWT
-  console.warn('⚠️  Using fallback session auth - JWT token not provided')
-  return { admin: true, fallback: true }
-}
-
-// GET - List all snippets from database
+// GET - List all snippets from database for current website
 export async function GET(request) {
   try {
     console.log('📥 GET /api/admin/snippets - Starting request')
 
-    verifyAdmin(request)
-    console.log('✅ Admin verified')
+    const { website } = verifyAdminAndGetWebsite(request)
+    console.log(`✅ Admin verified for website: ${website}`)
 
     // Run auto-migration on first call
     console.log('🔄 Running auto-migration...')
     await autoMigrate()
     console.log('✅ Auto-migration completed')
 
-    console.log('📊 Fetching snippets from database...')
-    const allSnippets = await db.select().from(snippets)
-    console.log(`✅ Found ${allSnippets.length} snippets`)
+    console.log(`📊 Fetching snippets for website: ${website}`)
+    // Filter snippets by website from JWT
+    const websiteSnippets = await db
+      .select()
+      .from(snippets)
+      .where(eq(snippets.website, website))
+    console.log(`✅ Found ${websiteSnippets.length} snippets for ${website}`)
 
     return NextResponse.json({
       success: true,
-      snippets: allSnippets
+      snippets: websiteSnippets,
+      website: website
     })
 
   } catch (error) {
@@ -100,7 +76,7 @@ function extractBolData(snippet) {
 // POST - Create new snippet in database with proper field separation
 export async function POST(request) {
   try {
-    verifyAdmin(request)
+    const { website } = verifyAdminAndGetWebsite(request)
 
     const snippetData = await request.json()
 
@@ -154,6 +130,7 @@ export async function POST(request) {
       originalPrice: snippetData.originalPrice || null,
       currency: snippetData.currency || 'EUR',
       priceLastUpdated: snippetData.price ? new Date() : null,
+      website: website, // CRITICAL: Force snippet to belong to current website
       active: snippetData.active ?? true,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -161,7 +138,7 @@ export async function POST(request) {
 
     const [insertedSnippet] = await db.insert(snippets).values(newSnippet).returning()
 
-    console.log('✅ Created snippet:', insertedSnippet.id, '- Type:', insertedSnippet.type)
+    console.log('✅ Created snippet:', insertedSnippet.id, '- Type:', insertedSnippet.type, '- Website:', website)
 
     return NextResponse.json({
       success: true,
@@ -180,34 +157,38 @@ export async function POST(request) {
 // PUT - Update existing snippet in database
 export async function PUT(request) {
   try {
-    verifyAdmin(request)
-    
+    const { website } = verifyAdminAndGetWebsite(request)
+
     const snippetData = await request.json()
     const { id, ...updateData } = snippetData
-    
+
     if (!id) {
       return NextResponse.json(
         { message: 'Snippet ID is required' },
         { status: 400 }
       )
     }
-    
+
+    // Remove website from updateData if present - can't change website of existing snippet
+    delete updateData.website
+
     const [updatedSnippet] = await db
       .update(snippets)
       .set({
         ...updateData,
         updatedAt: new Date()
       })
-      .where(eq(snippets.id, id))
+      // CRITICAL: Filter by both ID and website - can only update snippets for current website
+      .where(and(eq(snippets.id, id), eq(snippets.website, website)))
       .returning()
-    
+
     if (!updatedSnippet) {
       return NextResponse.json(
-        { message: 'Snippet not found' },
+        { message: 'Snippet not found or access denied' },
         { status: 404 }
       )
     }
-    
+
     return NextResponse.json({
       success: true,
       snippet: updatedSnippet
@@ -225,30 +206,31 @@ export async function PUT(request) {
 // DELETE - Remove snippet from database
 export async function DELETE(request) {
   try {
-    verifyAdmin(request)
-    
+    const { website } = verifyAdminAndGetWebsite(request)
+
     const { searchParams } = new URL(request.url)
     const id = searchParams.get('id')
-    
+
     if (!id) {
       return NextResponse.json(
         { message: 'Snippet ID is required' },
         { status: 400 }
       )
     }
-    
+
     const [deletedSnippet] = await db
       .delete(snippets)
-      .where(eq(snippets.id, id))
+      // CRITICAL: Filter by both ID and website - can only delete snippets for current website
+      .where(and(eq(snippets.id, id), eq(snippets.website, website)))
       .returning()
-    
+
     if (!deletedSnippet) {
       return NextResponse.json(
-        { message: 'Snippet not found' },
+        { message: 'Snippet not found or access denied' },
         { status: 404 }
       )
     }
-    
+
     return NextResponse.json({
       success: true,
       message: 'Snippet deleted successfully',

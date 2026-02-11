@@ -84,7 +84,7 @@ export default function PraktischeTipsPage() {
         </div>
 
         {/* Money saving tips */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <DollarSign className="w-5 h-5 mr-2" />
             Geld besparen
@@ -107,7 +107,7 @@ export default function PraktischeTipsPage() {
         </div>
 
         {/* Night feeding tips */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Moon className="w-5 h-5 mr-2" />
             Nachtvoedingtips
@@ -151,7 +151,7 @@ export default function PraktischeTipsPage() {
         </div>
 
         {/* Organization tips */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Organisatie & Efficiëntie</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -172,7 +172,7 @@ export default function PraktischeTipsPage() {
         </div>
 
         {/* Age-specific tips */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Tips per Leeftijd</h2>
           
           <div className="space-y-4">
@@ -243,7 +243,7 @@ export default function PraktischeTipsPage() {
         </div>
 
         {/* Navigation */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Meer informatie</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 

@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Moon, Clock, Baby, AlertTriangle, Thermometer, ArrowRight } from 'lucide-react'
 
 export const metadata = {
@@ -126,7 +127,7 @@ export default function FlesvoedingEnSlapenPage() {
             </div>
 
             {/* Introduction Section */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Flesvoeding kan significante voordelen bieden voor baby's slaappatronen. Nederlandse onderzoek toont dat flesvoeding baby's 
@@ -142,7 +143,7 @@ export default function FlesvoedingEnSlapenPage() {
             </section>
 
             {/* Hoe Flesvoeding Slaap Beïnvloedt */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Hoe Flesvoeding Slaap Beïnvloedt</h2>
               
               <div className="border-t border-gray-200 pt-6">
@@ -177,7 +178,7 @@ export default function FlesvoedingEnSlapenPage() {
             </section>
 
             {/* Optimale Voedingstiming */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 Optimale Voedingstiming voor Slaap
@@ -216,7 +217,7 @@ export default function FlesvoedingEnSlapenPage() {
             </section>
 
             {/* Nachtvoedingen Stoppen */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Nachtvoedingen: Wanneer en Hoe Stoppen?</h2>
               
               <div className="border-t border-gray-200 pt-6">
@@ -247,7 +248,7 @@ export default function FlesvoedingEnSlapenPage() {
             </section>
 
             {/* Slaapinducerende Technieken */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Slaapinducerende Voeding Technieken</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 De juiste omgeving en technieken kunnen flesvoeding optimaal inzetten voor betere slaap:
@@ -284,7 +285,7 @@ export default function FlesvoedingEnSlapenPage() {
             </section>
 
             {/* Veelvoorkomende Problemen */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelvoorkomende Slaap-Voeding Problemen</h2>
               
               <div className="space-y-4">
@@ -307,7 +308,7 @@ export default function FlesvoedingEnSlapenPage() {
             </section>
 
             {/* Leeftijd-Specifieke Strategieën */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Baby className="w-5 h-5 mr-2" />
                 Leeftijd-Specifieke Slaap Strategieën
@@ -383,8 +384,14 @@ export default function FlesvoedingEnSlapenPage() {
               </div>
             </section>
 
+            {/* Slapen Voeding Producten */}
+            <AffiliateProductWidget
+              pageId="praktische-tips_flesvoeding-en-slapen"
+              title="Slapen Voeding Producten"
+            />
+
             {/* Related Articles */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <ArrowRight className="w-5 h-5 mr-2" />
                 Gerelateerde Artikelen

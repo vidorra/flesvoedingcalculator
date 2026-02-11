@@ -143,7 +143,7 @@ export default function BioOrganischeFlesvoedingPage() {
             </div>
 
             {/* Introduction Section */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Biologische flesvoeding heeft nu 28% marktaandeel in Nederland (stijging van 18% in 2020). 
@@ -159,7 +159,7 @@ export default function BioOrganischeFlesvoedingPage() {
             </section>
 
             {/* Wat is Bio Flesvoeding */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Wat is Bio Flesvoeding Precies?</h2>
               
               <div className="border-t border-gray-200 pt-6">
@@ -222,7 +222,7 @@ export default function BioOrganischeFlesvoedingPage() {
             </section>
 
             {/* Nederlandse Bio Merken */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <ShoppingCart className="w-5 h-5 mr-2" />
                 Nederlandse Bio Merken Vergeleken
@@ -257,14 +257,13 @@ export default function BioOrganischeFlesvoedingPage() {
             </section>
 
             {/* Aanbevolen Bio Flesvoeding Producten */}
-            <AffiliateProductWidget 
+            <AffiliateProductWidget
               pageId="soorten-flesvoeding_bio-organische-flesvoeding"
               title="Aanbevolen Bio Flesvoeding Producten"
-              description="Hoogwaardige biologische flesvoeding opties voor uw baby"
             />
 
             {/* Wetenschappelijke Voordelen */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <BarChart3 className="w-5 h-5 mr-2" />
                 Wetenschappelijke Voordelen Bio Flesvoeding
@@ -296,7 +295,7 @@ export default function BioOrganischeFlesvoedingPage() {
             </section>
 
             {/* Kosten vs Waarde */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Euro className="w-5 h-5 mr-2" />
                 Kosten vs Waarde: Is Bio Het Waard?
@@ -345,7 +344,7 @@ export default function BioOrganischeFlesvoedingPage() {
             </section>
 
             {/* Overstappen naar Bio */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Overstappen Naar Bio: Praktische Tips</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Een succesvolle overgang naar bio flesvoeding vereist planning en geduld. 
@@ -437,7 +436,7 @@ export default function BioOrganischeFlesvoedingPage() {
             />
 
             {/* Related Articles */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <ArrowRight className="w-5 h-5 mr-2" />
                 Gerelateerde Artikelen

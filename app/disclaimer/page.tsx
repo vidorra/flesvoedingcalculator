@@ -64,7 +64,7 @@ export default function DisclaimerPage() {
         </div>
 
         {/* What we provide */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-gray-800 mb-4">
             Wat bieden wij?
           </h2>
@@ -156,7 +156,7 @@ export default function DisclaimerPage() {
         </div>
 
         {/* When to seek help */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-gray-800 mb-4 flex items-center">
             <Phone className="w-5 h-5 mr-2 text-primary" />
             Wanneer professionele hulp zoeken?
@@ -222,7 +222,7 @@ export default function DisclaimerPage() {
         </div>
 
         {/* Liability */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-gray-800 mb-4">
             Aansprakelijkheid
           </h2>

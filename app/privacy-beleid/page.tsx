@@ -33,7 +33,7 @@ export default function PrivacyBeleidPage() {
         </div>
 
         {/* Intro */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <p className="text-gray-700 leading-relaxed">
             Bij FlesvoedingCalculator.nl respecteren wij uw privacy en zijn wij transparant over hoe wij omgaan met uw persoonlijke gegevens. 
             Dit privacybeleid legt uit welke gegevens wij verzamelen, hoe wij deze gebruiken en welke rechten u heeft volgens de 
@@ -42,7 +42,7 @@ export default function PrivacyBeleidPage() {
         </div>
 
         {/* Gegevens die wij verzamelen */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-gray-800 mb-4 flex items-center">
             <Eye className="w-5 h-5 mr-2 text-primary" />
             Welke gegevens verzamelen wij?
@@ -92,7 +92,7 @@ export default function PrivacyBeleidPage() {
         </div>
 
         {/* Hoe wij gegevens gebruiken */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-gray-800 mb-4">
             Hoe gebruiken wij uw gegevens?
           </h2>
@@ -122,7 +122,7 @@ export default function PrivacyBeleidPage() {
         </div>
 
         {/* Cookies */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-gray-800 mb-4 flex items-center">
             <Cookie className="w-5 h-5 mr-2 text-primary" />
             Cookies en tracking
@@ -172,7 +172,7 @@ export default function PrivacyBeleidPage() {
         </div>
 
         {/* Microsoft Clarity */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-gray-800 mb-4">
             Microsoft Clarity
           </h2>
@@ -210,7 +210,7 @@ export default function PrivacyBeleidPage() {
         </div>
 
         {/* Gegevens delen */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-gray-800 mb-4">
             Delen wij uw gegevens?
           </h2>
@@ -238,7 +238,7 @@ export default function PrivacyBeleidPage() {
         </div>
 
         {/* Uw rechten */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-gray-800 mb-4 flex items-center">
             <Lock className="w-5 h-5 mr-2 text-primary" />
             Uw rechten (AVG)
@@ -289,7 +289,7 @@ export default function PrivacyBeleidPage() {
         </div>
 
         {/* Beveiliging */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-gray-800 mb-4">
             Hoe beveiligen wij uw gegevens?
           </h2>
@@ -316,7 +316,7 @@ export default function PrivacyBeleidPage() {
         </div>
 
         {/* Bewaarperiode */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-gray-800 mb-4">
             Hoe lang bewaren wij uw gegevens?
           </h2>

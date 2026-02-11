@@ -74,7 +74,7 @@ export default function HomePage() {
           {/* Main Calculator Content - 7 columns on desktop, full width on mobile */}
           <div className="col-span-12 lg:col-span-7">
             {/* Calculator Card */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6 mb-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6 mb-6">
               <h2 className="text-lg font-medium text-primary mb-4">Calculator</h2>
               <div className="space-y-5">
 
@@ -189,7 +189,7 @@ export default function HomePage() {
             {/* Images - Hidden on mobile, visible on desktop */}
             <div className="hidden lg:block space-y-6">
               {/* Mother and Baby Image */}
-              <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+              <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
                 <Image
                   src="/mother_and_baby.webp"
                   alt="Moeder en baby"
@@ -201,7 +201,7 @@ export default function HomePage() {
 
               {/* Google Ad 1 */}
               <div className="text-center space-y-2">
-                <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+                <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
                   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938"
                     crossOrigin="anonymous"></script>
                   {/* sidebar-right-ad1 */}
@@ -218,7 +218,7 @@ export default function HomePage() {
               </div>
 
               {/* Baby Image */}
-              <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+              <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
                 <Image
                   src="/baby.webp"
                   alt="Baby"
@@ -234,7 +234,7 @@ export default function HomePage() {
 
               {/* Google Ad 2 */}
               <div className="text-center space-y-2">
-                <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+                <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
                   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938"
                     crossOrigin="anonymous"></script>
                   {/* sidebar-right-ad2 */}

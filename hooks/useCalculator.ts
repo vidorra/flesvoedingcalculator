@@ -1,6 +1,12 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { trackCalculatorUsage } from '../lib/analytics'
+import {
+  FEEDING_AMOUNTS,
+  PREMATURE_FEEDING,
+  FEEDING_MEASUREMENTS,
+  AGE_CATEGORIES,
+} from '../lib/feeding-constants'
 
 // ============================================
 // TYPE DEFINITIONS
@@ -40,7 +46,7 @@ export type AgeCategory = 'premature' | '0-1' | '1' | '3' | '6'
 // CONSTANTS
 // ============================================
 
-// Feeding schedule times based on number of feedings
+// Feeding schedule times based on number of feedings (imported from feeding-constants)
 const FEEDING_SCHEDULES: Record<number, string[]> = {
   4: ['07:00', '12:00', '17:00', '22:00'],
   5: ['07:00', '11:00', '15:00', '19:00', '23:00'],
@@ -51,21 +57,22 @@ const FEEDING_SCHEDULES: Record<number, string[]> = {
   10: ['06:00', '08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00', '00:00']
 }
 
-// Dutch guideline: ml per kg per day
-const ML_PER_KG_STANDARD = 150  // Voedingscentrum guideline
-const ML_PER_KG_AFTER_SOLIDS = 100  // After 6 months with solid food
-
-// Premature baby ml/kg values (ESPGHAN/NVK guidelines)
-const PREMATURE_ML_PER_KG = {
-  BEFORE_TERM: 180,      // Negative corrected age
-  VERY_PREMATURE: 170,   // < 32 weeks
-  MODERATE_PREMATURE: 160, // 32-34 weeks
-  LATE_PREMATURE: 155    // 34+ weeks
-} as const
-
-// Maximum daily intake caps
-const MAX_DAILY_NORMAL = 1000
-const MAX_DAILY_PREMATURE = 1200
+// Note: All magic number constants are now imported from ../lib/feeding-constants.ts:
+// - FEEDING_AMOUNTS.ML_PER_KG_STANDARD (150)
+// - FEEDING_AMOUNTS.ML_PER_KG_AFTER_SOLIDS (100)
+// - FEEDING_AMOUNTS.MAX_DAILY_NORMAL (1000)
+// - FEEDING_AMOUNTS.MAX_DAILY_PREMATURE (1200)
+// - PREMATURE_FEEDING.ML_PER_KG_BEFORE_TERM (180)
+// - PREMATURE_FEEDING.ML_PER_KG_VERY_PREMATURE (170)
+// - PREMATURE_FEEDING.ML_PER_KG_MODERATE_PREMATURE (160)
+// - PREMATURE_FEEDING.ML_PER_KG_LATE_PREMATURE (155)
+// - PREMATURE_FEEDING.THRESHOLD_VERY_PREMATURE (32)
+// - PREMATURE_FEEDING.THRESHOLD_MODERATE_PREMATURE (34)
+// - PREMATURE_FEEDING.THRESHOLD_EARLY_PREMATURE (28)
+// - PREMATURE_FEEDING.TERM_LENGTH_WEEKS (40)
+// - FEEDING_MEASUREMENTS.SCOOP_SIZE_ML (30)
+// - FEEDING_MEASUREMENTS.ROUNDING_INCREMENT (5)
+// - AGE_CATEGORIES.WEEKS_PER_MONTH (4)
 
 // ============================================
 // HELPER FUNCTIONS
@@ -76,11 +83,11 @@ const MAX_DAILY_PREMATURE = 1200
  */
 export function getPrematureCategory(weeks: string): string {
   const weeksNum = parseInt(weeks)
-  if (weeksNum >= 34) {
+  if (weeksNum >= PREMATURE_FEEDING.THRESHOLD_MODERATE_PREMATURE) {
     return 'Laat prematuur (speciale startvoeding aanbevolen)'
-  } else if (weeksNum >= 32) {
+  } else if (weeksNum >= PREMATURE_FEEDING.THRESHOLD_VERY_PREMATURE) {
     return 'Matig prematuur (prematurenvoeding nodig)'
-  } else if (weeksNum >= 28) {
+  } else if (weeksNum >= PREMATURE_FEEDING.THRESHOLD_EARLY_PREMATURE) {
     return 'Zeer prematuur (NICU voeding vereist)'
   } else {
     return 'Extreem prematuur (gespecialiseerde NICU zorg)'
@@ -100,7 +107,7 @@ export function calculateCorrectedAge(birthDate: string, gestationalAge: string)
   const ageInWeeks = Math.floor(ageInDays / 7)
 
   // Corrected age = chronological age - weeks premature
-  const weeksPremature = 40 - parseInt(gestationalAge)
+  const weeksPremature = PREMATURE_FEEDING.TERM_LENGTH_WEEKS - parseInt(gestationalAge)
   const correctedAgeWeeks = ageInWeeks - weeksPremature
 
   return {
@@ -126,7 +133,7 @@ export function generateFeedingSchedule(feedingsPerDay: number, recommendedAmoun
  * Round to nearest 5ml for practical use
  */
 function roundToFive(num: number): number {
-  return Math.round(num / 5) * 5
+  return Math.round(num / FEEDING_MEASUREMENTS.ROUNDING_INCREMENT) * FEEDING_MEASUREMENTS.ROUNDING_INCREMENT
 }
 
 /**
@@ -135,28 +142,28 @@ function roundToFive(num: number): number {
 function getPrematureMlPerKg(gestationalAge: number, correctedAgeWeeks: number): { mlPerKg: number; note: string } {
   if (correctedAgeWeeks < 0) {
     return {
-      mlPerKg: PREMATURE_ML_PER_KG.BEFORE_TERM,
-      note: `Baby is nog niet op termijn (${Math.abs(correctedAgeWeeks)} weken te vroeg) - gebruikt ${PREMATURE_ML_PER_KG.BEFORE_TERM}ml/kg per dag`
+      mlPerKg: PREMATURE_FEEDING.ML_PER_KG_BEFORE_TERM,
+      note: `Baby is nog niet op termijn (${Math.abs(correctedAgeWeeks)} weken te vroeg) - gebruikt ${PREMATURE_FEEDING.ML_PER_KG_BEFORE_TERM}ml/kg per dag`
     }
   }
 
-  if (gestationalAge < 32) {
+  if (gestationalAge < PREMATURE_FEEDING.THRESHOLD_VERY_PREMATURE) {
     return {
-      mlPerKg: PREMATURE_ML_PER_KG.VERY_PREMATURE,
-      note: `Zeer premature baby - gebruikt ${PREMATURE_ML_PER_KG.VERY_PREMATURE}ml/kg per dag voor inhaalgroei`
+      mlPerKg: PREMATURE_FEEDING.ML_PER_KG_VERY_PREMATURE,
+      note: `Zeer premature baby - gebruikt ${PREMATURE_FEEDING.ML_PER_KG_VERY_PREMATURE}ml/kg per dag voor inhaalgroei`
     }
   }
 
-  if (gestationalAge < 34) {
+  if (gestationalAge < PREMATURE_FEEDING.THRESHOLD_MODERATE_PREMATURE) {
     return {
-      mlPerKg: PREMATURE_ML_PER_KG.MODERATE_PREMATURE,
-      note: `Matig premature baby - gebruikt ${PREMATURE_ML_PER_KG.MODERATE_PREMATURE}ml/kg per dag voor ontwikkeling`
+      mlPerKg: PREMATURE_FEEDING.ML_PER_KG_MODERATE_PREMATURE,
+      note: `Matig premature baby - gebruikt ${PREMATURE_FEEDING.ML_PER_KG_MODERATE_PREMATURE}ml/kg per dag voor ontwikkeling`
     }
   }
 
   return {
-    mlPerKg: PREMATURE_ML_PER_KG.LATE_PREMATURE,
-    note: `Laat premature baby - gebruikt ${PREMATURE_ML_PER_KG.LATE_PREMATURE}ml/kg per dag (licht verhoogd)`
+    mlPerKg: PREMATURE_FEEDING.ML_PER_KG_LATE_PREMATURE,
+    note: `Laat premature baby - gebruikt ${PREMATURE_FEEDING.ML_PER_KG_LATE_PREMATURE}ml/kg per dag (licht verhoogd)`
   }
 }
 
@@ -250,7 +257,7 @@ export function useCalculator(): UseCalculatorReturn {
       return
     }
     const amount = parseFloat(customAmount)
-    const schepjes = Math.round((amount / 30) * 10) / 10
+    const schepjes = Math.round((amount / FEEDING_MEASUREMENTS.SCOOP_SIZE_ML) * 10) / 10
     setCustomSchepjes(schepjes)
   }
 
@@ -263,7 +270,7 @@ export function useCalculator(): UseCalculatorReturn {
 
     const weightKg = parseFloat(weight)
     let age: AgeCategory | number = ageMonths === '0-1' ? ageMonths : parseInt(ageMonths)
-    let mlPerKg = ML_PER_KG_STANDARD
+    let mlPerKg: number = FEEDING_AMOUNTS.ML_PER_KG_STANDARD
     let isNewborn = false
     let isPrematureCalculation = false
     const specialNotes: string[] = []
@@ -300,38 +307,38 @@ export function useCalculator(): UseCalculatorReturn {
       if (correctedAgeWeeks < 0) {
         age = 0
       } else {
-        age = Math.max(0, Math.floor(correctedAgeWeeks / 4))
+        age = Math.max(0, Math.floor(correctedAgeWeeks / AGE_CATEGORIES.WEEKS_PER_MONTH))
       }
 
       // Add specific product recommendations for very premature
-      if (parseInt(gestationalAge) < 34) {
+      if (parseInt(gestationalAge) < PREMATURE_FEEDING.THRESHOLD_MODERATE_PREMATURE) {
         specialNotes.push('Overweeg speciale prematurenvoeding zoals Nutrilon Nenatal of Aptamil Prematil')
       }
     } else {
       // Standard Dutch guideline: 150ml/kg for all ages (Voedingscentrum)
-      mlPerKg = ML_PER_KG_STANDARD
+      mlPerKg = FEEDING_AMOUNTS.ML_PER_KG_STANDARD
 
       if (age === '0-1') {
         // 0-1 month: 150ml/kg is the target, but newborns need gradual introduction
         // Note: Detailed guidance shown via inline alert in CalculatorResults (isNewborn flag)
         isNewborn = true
-      } else if (typeof age === 'number' && age >= 6) {
+      } else if (typeof age === 'number' && age >= AGE_CATEGORIES.THRESHOLDS.SOLID_FOOD_INTRODUCTION) {
         // After 6 months: solid food introduction reduces milk needs
-        mlPerKg = ML_PER_KG_AFTER_SOLIDS
+        mlPerKg = FEEDING_AMOUNTS.ML_PER_KG_AFTER_SOLIDS
         specialNotes.push("Vanaf 6 maanden: Vaste voeding vervangt geleidelijk flesvoeding")
         specialNotes.push("Melk blijft belangrijk maar hoeveelheid neemt af")
       }
     }
 
     // Calculate daily amount with appropriate maximum cap
-    const maxDaily = isPrematureCalculation ? MAX_DAILY_PREMATURE : MAX_DAILY_NORMAL
+    const maxDaily = isPrematureCalculation ? FEEDING_AMOUNTS.MAX_DAILY_PREMATURE : FEEDING_AMOUNTS.MAX_DAILY_NORMAL
     const dailyAmount = Math.min(weightKg * mlPerKg, maxDaily)
 
     // Adjust feeding frequency for premature babies before term
     let feedings = parseInt(feedingsPerDay)
     if (isPrematureCalculation && correctedAgeWeeks !== null && correctedAgeWeeks < 0) {
-      feedings = Math.max(8, feedings) // Minimum 8 feedings for very premature
-      specialNotes.push('Minimaal 8 voedingen per dag aanbevolen')
+      feedings = Math.max(PREMATURE_FEEDING.MIN_FEEDINGS_BEFORE_TERM, feedings) // Minimum feedings for very premature
+      specialNotes.push(`Minimaal ${PREMATURE_FEEDING.MIN_FEEDINGS_BEFORE_TERM} voedingen per dag aanbevolen`)
     }
 
     const baseAmountPerFeeding = dailyAmount / feedings
@@ -339,7 +346,7 @@ export function useCalculator(): UseCalculatorReturn {
     // Calculate range (recommended and growth spurt maximum)
     const recommendedAmount = roundToFive(baseAmountPerFeeding)
     const minAmount = recommendedAmount
-    const maxAmount = roundToFive(baseAmountPerFeeding * 1.3)
+    const maxAmount = roundToFive(baseAmountPerFeeding * PREMATURE_FEEDING.GROWTH_SPURT_MULTIPLIER)
 
     // Track calculator usage for analytics
     if (isPrematureCalculation) {

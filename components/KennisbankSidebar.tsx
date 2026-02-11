@@ -76,7 +76,7 @@ const KennisbankSidebar = ({
         {dynamicContent.map((item) => {
           if (item.type === 'image') {
             return (
-              <div key={item.key} className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+              <div key={item.key} className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
                 <Image
                   src={item.data.src}
                   alt={item.data.alt}

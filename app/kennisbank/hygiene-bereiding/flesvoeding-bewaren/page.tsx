@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Refrigerator, Clock, AlertTriangle, CheckCircle, Thermometer, Shield } from 'lucide-react'
 
 export const metadata = {
@@ -310,7 +311,7 @@ export default function FlesvoedingBewarenPage() {
             </div>
 
             {/* Why Important */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Waarom Correct Bewaren Levensbelangrijk Is</h2>
               
               <p className="text-gray-700 mb-4">
@@ -339,7 +340,7 @@ export default function FlesvoedingBewarenPage() {
             </div>
 
             {/* Powder Storage */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Poedermelk Bewaren</h2>
               
               <div className="space-y-6">
@@ -385,7 +386,7 @@ export default function FlesvoedingBewarenPage() {
             </div>
 
             {/* Ready Made Storage */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Klaar gemaakte Flesvoeding</h2>
               
               <div className="space-y-6">
@@ -436,7 +437,7 @@ export default function FlesvoedingBewarenPage() {
             </div>
 
             {/* Safe Preparation */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Stap-voor-Stap Veilige Bereiding</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -470,7 +471,7 @@ export default function FlesvoedingBewarenPage() {
             </div>
 
             {/* Heating Methods */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Thermometer className="w-5 h-5 mr-2" />
                 Opwarmen: Veilig en Effectief
@@ -540,7 +541,7 @@ export default function FlesvoedingBewarenPage() {
             </div>
 
             {/* Travel Tips */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Onderweg: Veilig Bewaren Buiten Huis</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -561,7 +562,7 @@ export default function FlesvoedingBewarenPage() {
             </div>
 
             {/* Night Preparation */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 Nachtvoeding Voorbereiden
@@ -591,7 +592,7 @@ export default function FlesvoedingBewarenPage() {
             </div>
 
             {/* Seasonal Tips */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Seizoensgebonden Bewaartips</h2>
               
               <div className="space-y-6">
@@ -647,7 +648,7 @@ export default function FlesvoedingBewarenPage() {
             </div>
 
             {/* Common Mistakes */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelgemaakte Fouten & Oplossingen</h2>
               
               <div className="space-y-6">
@@ -675,7 +676,7 @@ export default function FlesvoedingBewarenPage() {
             </div>
 
             {/* FAQ */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen (FAQ)</h2>
               
               <div className="space-y-4">
@@ -692,7 +693,7 @@ export default function FlesvoedingBewarenPage() {
             </div>
 
             {/* Conclusion */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Conclusie: Veiligheid Staat Voorop</h2>
               
               <p className="text-gray-700 mb-4">
@@ -710,8 +711,14 @@ export default function FlesvoedingBewarenPage() {
               </div>
             </div>
 
+            {/* Flesvoeding Bewaar Producten */}
+            <AffiliateProductWidget
+              pageId="hygiene-bereiding_flesvoeding-bewaren"
+              title="Flesvoeding Bewaar Producten"
+            />
+
             {/* Navigation */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <Link 

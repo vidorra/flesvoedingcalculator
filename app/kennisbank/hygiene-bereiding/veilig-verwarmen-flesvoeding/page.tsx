@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Zap, AlertTriangle, Thermometer, CheckCircle, Clock, RefreshCw } from 'lucide-react'
 
 export const metadata = {
@@ -48,7 +49,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
             </div>
 
             {/* Introduction */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed">
                 Correct verwarmen van flesvoeding is cruciaal voor de veiligheid van je baby. Verkeerd verwarmen kan leiden tot ernstige brandwonden, terwijl oververhitting waardevolle voedingsstoffen vernietigt. Deze gids helpt je de veiligste methodes te kiezen en gevaarlijke fouten te vermijden.
@@ -56,7 +57,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
             </section>
 
             {/* Waarom juist verwarmen cruciaal is */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <AlertTriangle className="w-5 h-5 mr-2" />
                 Waarom juist verwarmen cruciaal is
@@ -150,7 +151,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
             </div>
 
             {/* Magnetron gevaren */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Magnetron: gevaren en waarom experts afraden</h2>
               
               <div className="space-y-6">
@@ -239,7 +240,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
             </div>
 
             {/* Waterpad verwarming */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Waterpad verwarming: de veiligste methode</h2>
               
               <div className="space-y-6">
@@ -378,7 +379,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
             </div>
 
             {/* Alle verwarmingsmethodes vergeleken */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Alle verwarmingsmethodes vergeleken</h2>
               
               <div className="space-y-6">
@@ -526,7 +527,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
             </div>
 
             {/* Temperatuur testen */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Thermometer className="w-5 h-5 mr-2" />
                 Temperatuur testen: hoe doe je dat veilig?
@@ -624,7 +625,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
             </div>
 
             {/* Veelgemaakte fouten */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelgemaakte fouten vermijden</h2>
               
               <div className="space-y-6">
@@ -709,7 +710,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
             </div>
 
             {/* Veelgestelde vragen */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde vragen</h2>
               
               <div className="space-y-4">
@@ -766,8 +767,14 @@ export default function VeiligVerwarmenFlesvoedingPage() {
               </div>
             </div>
 
+            {/* Verwarmen Voeding Producten */}
+            <AffiliateProductWidget
+              pageId="hygiene-bereiding_veilig-verwarmen-flesvoeding"
+              title="Verwarmen Voeding Producten"
+            />
+
             {/* Related articles */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <RefreshCw className="w-5 h-5 mr-2" />
                 Gerelateerde artikelen

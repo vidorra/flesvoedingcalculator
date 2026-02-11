@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Activity, AlertTriangle, Clock, Users, CheckCircle } from 'lucide-react'
 import BolProductSection from '../../../../components/BolProductLink'
 
@@ -43,7 +44,7 @@ export default function BabyDrinktNietGenoegPage() {
             </div>
 
             {/* Hoeveel is genoeg */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Hoeveel is "genoeg"? Realistische verwachtingen</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Voor je in paniek raakt, is het belangrijk te weten wat normale voedingshoeveelheden zijn. Baby's verschillen enorm in hun voedingsbehoeften, en deze veranderen constant tijdens groeiperiodes.
@@ -85,7 +86,7 @@ export default function BabyDrinktNietGenoegPage() {
             </div>
 
             {/* Waarschuwingssignalen */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Waarschuwingssignalen: Wanneer zorgen maken?</h2>
               
               <div className="space-y-4">
@@ -171,7 +172,7 @@ export default function BabyDrinktNietGenoegPage() {
             </div>
 
             {/* Veelvoorkomende oorzaken */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelvoorkomende oorzaken en oplossingen</h2>
               
               <div className="space-y-6">
@@ -276,7 +277,7 @@ export default function BabyDrinktNietGenoegPage() {
             </div>
 
             {/* Stap-voor-stap probleemoplossing */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
                 Stap-voor-stap probleemoplossing
@@ -395,7 +396,7 @@ export default function BabyDrinktNietGenoegPage() {
             </div>
 
             {/* Key reminders */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Onthoud: Belangrijke punten</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -463,8 +464,14 @@ export default function BabyDrinktNietGenoegPage() {
               maxProducts={6}
             />
 
+            {/* Voeding en Voedingsprodukten */}
+            <AffiliateProductWidget
+              pageId="problemen-oplossen_baby-drinkt-niet-genoeg"
+              title="Voeding en Voedingsprodukten"
+            />
+
             {/* Related articles */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Users className="w-5 h-5 mr-2" />
                 Gerelateerde artikelen

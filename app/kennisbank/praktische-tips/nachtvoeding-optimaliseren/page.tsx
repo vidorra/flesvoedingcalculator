@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { BookOpen, ArrowRight, Home, Moon, Clock, Lightbulb, Calculator, Coffee, Zap } from 'lucide-react'
 
 export const metadata = {
@@ -209,7 +210,7 @@ export default function NachtvoedingOptimaliserenPage() {
         </div>
 
         {/* Reality Check */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">De Nachtvoeding Realiteit</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -278,7 +279,7 @@ export default function NachtvoedingOptimaliserenPage() {
         </div>
 
         {/* Time Comparison */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Clock className="w-5 h-5 mr-2" />
             Tijd Vergelijking: Voor & Na Optimalisatie
@@ -318,7 +319,7 @@ export default function NachtvoedingOptimaliserenPage() {
         </div>
 
         {/* Optimization Strategies */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <Lightbulb className="w-5 h-5 mr-2" />
             Top 3 Optimalisatie Strategieën
@@ -354,7 +355,7 @@ export default function NachtvoedingOptimaliserenPage() {
         </div>
 
         {/* Equipment Essentials */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Nachtvoeding Equipment</h2>
           
           {equipmentEssentials.map((category, index) => (
@@ -400,7 +401,7 @@ export default function NachtvoedingOptimaliserenPage() {
         </div>
 
         {/* Age-Based Strategies */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Strategieën per Leeftijd</h2>
           
           <div className="space-y-4">
@@ -433,7 +434,7 @@ export default function NachtvoedingOptimaliserenPage() {
         </div>
 
         {/* Common Challenges */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Veelvoorkomende Uitdagingen</h2>
           
           <div className="space-y-4">
@@ -460,6 +461,12 @@ export default function NachtvoedingOptimaliserenPage() {
             ))}
           </div>
         </div>
+
+        {/* Product Widget */}
+        <AffiliateProductWidget
+          pageId="praktische-tips_nachtvoeding-optimaliseren"
+          title="Nachtvoeding Producten"
+        />
 
         {/* Quick Reference Guide */}
         <div className="bg-white rounded-2xl border border-gray-200 p-6">
@@ -573,7 +580,7 @@ export default function NachtvoedingOptimaliserenPage() {
         </div>
 
         {/* Navigation */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 

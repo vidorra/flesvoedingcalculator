@@ -12,12 +12,11 @@ const FlesvoedingCalculator = () => {
 
   // Calculate feeding amounts based on Dutch guidelines
   const calculateFeeding = () => {
-    if (!weight || weight <= 0) {
+    const weightKg = parseFloat(weight);
+    if (!weight || weightKg <= 0) {
       alert('Vul een geldig gewicht in');
       return;
     }
-
-    const weightKg = parseFloat(weight);
     const age = parseInt(ageMonths);
     const feedings = parseInt(feedingsPerDay);
     

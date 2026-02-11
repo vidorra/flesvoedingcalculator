@@ -20,10 +20,10 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
     type: 'feedback' // feedback or contact
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState(null) // 'success', 'error', 'ratelimit'
+  const [submitStatus, setSubmitStatus] = useState<string | null>(null) // 'success', 'error', 'ratelimit'
   const [errorMessage, setErrorMessage] = useState('')
-  const [fieldErrors, setFieldErrors] = useState({})
-  const [touchedFields, setTouchedFields] = useState({})
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({})
+  const [touchedFields, setTouchedFields] = useState<Record<string, boolean>>({})
   const { isReady: recaptchaReady, executeRecaptcha } = useRecaptcha()
 
   // Validate individual fields

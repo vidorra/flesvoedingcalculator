@@ -79,7 +79,7 @@ export default function ProblemenOplossenPage() {
         </div>
 
         {/* Baby refuses bottle */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Baby weigert de fles</h2>
           <p className="text-gray-600 mb-4">Mogelijke oorzaken & oplossingen:</p>
           
@@ -123,7 +123,7 @@ export default function ProblemenOplossenPage() {
 
         {/* Reflux */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
               <Droplets className="w-5 h-5 mr-2 text-primary" />
               Spugen en reflux
@@ -190,7 +190,7 @@ export default function ProblemenOplossenPage() {
         </div>
 
         {/* Constipation */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Constipatie bij flesvoeding</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -255,7 +255,7 @@ export default function ProblemenOplossenPage() {
         </div>
 
         {/* Navigation */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Meer informatie</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Link 

@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Milk, Heart, AlertCircle, CheckCircle, Star, Euro, Users } from 'lucide-react'
 import BolProductSection from '../../../../components/BolProductLink'
 
@@ -279,7 +280,7 @@ export default function LactosevrijeFlesvoedingPage() {
             </div>
 
             {/* When needed */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <AlertCircle className="w-5 h-5 mr-2" />
                 Wanneer is Lactosevrije Flesvoeding Nodig?
@@ -316,7 +317,7 @@ export default function LactosevrijeFlesvoedingPage() {
             </section>
 
             {/* Premium options */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Star className="w-5 h-5 mr-2" />
                 Beste Lactosevrije Flesvoeding Merken Nederland
@@ -389,7 +390,7 @@ export default function LactosevrijeFlesvoedingPage() {
             </section>
 
             {/* Transition steps */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Heart className="w-5 h-5 mr-2" />
                 Stap-voor-Stap Overstappen naar Lactosevrije Voeding
@@ -418,7 +419,7 @@ export default function LactosevrijeFlesvoedingPage() {
             </section>
 
             {/* Cost comparison */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Euro className="w-5 h-5 mr-2" />
                 Kosten Vergelijking Lactosevrije Flesvoeding
@@ -466,7 +467,7 @@ export default function LactosevrijeFlesvoedingPage() {
             </section>
 
             {/* Common mistakes */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelgemaakte Fouten Vermijden</h2>
               
               <div className="space-y-4">
@@ -510,7 +511,7 @@ export default function LactosevrijeFlesvoedingPage() {
             </section>
 
             {/* FAQ */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen</h2>
               
               <div className="space-y-4">
@@ -554,8 +555,14 @@ export default function LactosevrijeFlesvoedingPage() {
               maxProducts={4}
             />
 
+            {/* Lactosevrije Voeding Producten */}
+            <AffiliateProductWidget
+              pageId="soorten-flesvoeding_lactosevrije-flesvoeding"
+              title="Lactosevrije Voeding Producten"
+            />
+
             {/* Related articles */}
-            <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Users className="w-5 h-5 mr-2" />
                 Gerelateerde Artikelen

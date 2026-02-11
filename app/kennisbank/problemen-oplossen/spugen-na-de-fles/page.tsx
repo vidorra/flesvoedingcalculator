@@ -1,6 +1,7 @@
 import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
+import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Heart, AlertTriangle, CheckCircle, TrendingUp, Clock, Phone } from 'lucide-react'
 
 export const metadata = {
@@ -370,7 +371,7 @@ export default function SpugenNaDeFlesPage() {
             </div>
 
             {/* Why Such a Big Concern */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Waarom Spugen Zo'n Grote Zorg Is</h2>
               
               <p className="text-gray-700 mb-4">
@@ -400,7 +401,7 @@ export default function SpugenNaDeFlesPage() {
             </div>
 
             {/* Normal vs Medical Problems */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Normaal Spugen vs. Medische Problemen</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -455,7 +456,7 @@ export default function SpugenNaDeFlesPage() {
             </div>
 
             {/* Practical Solutions */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Praktische Oplossingen om Spugen te Verminderen</h2>
               
               <div className="space-y-6">
@@ -488,7 +489,7 @@ export default function SpugenNaDeFlesPage() {
             </div>
 
             {/* Speen Selection */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Speen Selectie</h2>
               
               <div className="overflow-x-auto">
@@ -514,7 +515,7 @@ export default function SpugenNaDeFlesPage() {
             </div>
 
             {/* Age Expectations */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <TrendingUp className="w-5 h-5 mr-2" />
                 Leeftijd-Specifieke Verwachtingen
@@ -607,7 +608,7 @@ export default function SpugenNaDeFlesPage() {
             </div>
 
             {/* When to Call Doctor */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Phone className="w-5 h-5 mr-2" />
                 Wanneer Bellen met Huisarts?
@@ -653,7 +654,7 @@ export default function SpugenNaDeFlesPage() {
             </div>
 
             {/* Practical Daily Life Tips */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Praktische Tips voor het Dagelijks Leven</h2>
               
               <div className="space-y-6">
@@ -680,7 +681,7 @@ export default function SpugenNaDeFlesPage() {
             </div>
 
             {/* AR Formula */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Voedingsalternatieven bij Veel Spugen</h2>
               
               <div className="mb-4">
@@ -723,7 +724,7 @@ export default function SpugenNaDeFlesPage() {
             </div>
 
             {/* Monitoring */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Spugen en Gewichtstoename Monitoren</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -754,7 +755,7 @@ export default function SpugenNaDeFlesPage() {
             </div>
 
             {/* Myths */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Mythes over Spugen Ontkracht</h2>
               
               <div className="space-y-4">
@@ -794,7 +795,7 @@ export default function SpugenNaDeFlesPage() {
             </div>
 
             {/* FAQ */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen (FAQ)</h2>
               
               <div className="space-y-4">
@@ -811,7 +812,7 @@ export default function SpugenNaDeFlesPage() {
             </div>
 
             {/* Conclusion */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Conclusie: Geduld en Observatie</h2>
               
               <p className="text-gray-700 mb-4">
@@ -838,8 +839,14 @@ export default function SpugenNaDeFlesPage() {
               </div>
             </div>
 
+            {/* Spugen Voeding Producten */}
+            <AffiliateProductWidget
+              pageId="problemen-oplossen_spugen-na-de-fles"
+              title="Spugen Voeding Producten"
+            />
+
             {/* Navigation */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <Link 

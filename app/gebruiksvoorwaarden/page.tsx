@@ -64,7 +64,7 @@ export default function GebruiksvoorwaardenPage() {
         </div>
 
         {/* Intro */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <p className="text-gray-700 leading-relaxed">
             Door gebruik te maken van FlesvoedingCalculator.nl stemt u in met deze gebruiksvoorwaarden. 
             Deze voorwaarden zijn van toepassing op alle diensten en informatie die wij aanbieden via onze website.
@@ -72,7 +72,7 @@ export default function GebruiksvoorwaardenPage() {
         </div>
 
         {/* Diensten */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-gray-800 mb-4">
             Onze diensten
           </h2>
@@ -129,7 +129,7 @@ export default function GebruiksvoorwaardenPage() {
         </div>
 
         {/* Gebruik van de website */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-gray-800 mb-4 flex items-center">
             <Scale className="w-5 h-5 mr-2 text-primary" />
             Gebruik van de website
@@ -187,7 +187,7 @@ export default function GebruiksvoorwaardenPage() {
         </div>
 
         {/* Intellectueel eigendom */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-gray-800 mb-4">
             Intellectueel eigendom
           </h2>
@@ -211,7 +211,7 @@ export default function GebruiksvoorwaardenPage() {
         </div>
 
         {/* Betrouwbaarheid informatie */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-gray-800 mb-4 flex items-center">
             <Info className="w-5 h-5 mr-2 text-primary" />
             Betrouwbaarheid van informatie
@@ -265,7 +265,7 @@ export default function GebruiksvoorwaardenPage() {
         </div>
 
         {/* Aansprakelijkheid */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-gray-800 mb-4">
             Beperking van aansprakelijkheid
           </h2>
@@ -305,7 +305,7 @@ export default function GebruiksvoorwaardenPage() {
         </div>
 
         {/* Privacy */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-gray-800 mb-4 flex items-center">
             <Shield className="w-5 h-5 mr-2 text-primary" />
             Privacy en gegevens
@@ -326,7 +326,7 @@ export default function GebruiksvoorwaardenPage() {
         </div>
 
         {/* Wijzigingen */}
-        <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-gray-800 mb-4">
             Wijzigingen in voorwaarden
           </h2>
