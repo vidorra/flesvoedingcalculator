@@ -179,11 +179,10 @@ export function clearCache(
     settingsCache.delete(cacheKey)
   } else {
     // Clear all cache for website
-    for (const [cacheKey] of settingsCache.entries()) {
-      if (cacheKey.startsWith(`${website}:`)) {
-        settingsCache.delete(cacheKey)
-      }
-    }
+    const keysToDelete = Array.from(settingsCache.keys()).filter(
+      (k) => k.startsWith(`${website}:`)
+    )
+    keysToDelete.forEach((k) => settingsCache.delete(k))
   }
 }
 
