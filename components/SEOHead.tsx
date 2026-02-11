@@ -68,7 +68,7 @@ export function generatePageMetadata(pageType: string, data: Record<string, stri
   
   const metadataTemplates = {
     homepage: {
-      title: 'Flesvoeding Calculator 2025 | Bereken Hoeveel ML Baby Nodig Heeft',
+      title: 'Flesvoeding Calculator 2026 | Bereken Hoeveel ML Baby Nodig Heeft',
       description: 'Gratis flesvoeding calculator op basis van Nederlandse richtlijnen. Bereken direct hoeveel ml jouw baby per voeding nodig heeft. ✓ 150ml/kg formule ✓ Per leeftijd',
       canonical: baseUrl,
       openGraph: {

@@ -1,14 +1,36 @@
-const GoogleAdSlot = ({
-  slot = "5691109362", // Default to sidebar-right-ad1
+import { getSetting } from '../lib/settings-service'
+
+/**
+ * GoogleAdSlot - Server Component for Google AdSense ads
+ *
+ * Now fetches the hide_all_ads setting from the server-side cache
+ * instead of checking localStorage. This ensures consistent ad hiding
+ * across all browsers and sessions.
+ *
+ * Props:
+ * - slot: Google Ad slot ID (default: "5691109362")
+ * - topic: Ad topic for targeting (default: "Flesvoeding Producten")
+ * - isPlaceholder: Show placeholder instead of real ads (default: false)
+ * - website: Website identifier for multi-site support (default: "flesvoedingcalculator")
+ */
+async function GoogleAdSlot({
+  slot = "5691109362",
   topic = "Flesvoeding Producten",
-  isPlaceholder = false // Now default to real ads
-}) => {
-  // Check if all ads are hidden globally (admin setting)
-  if (typeof window !== 'undefined') {
-    const hideAllAds = localStorage.getItem('admin_hide_all_ads') === 'true'
+  isPlaceholder = false,
+  website = "flesvoedingcalculator"
+}) {
+  try {
+    // Fetch hide_all_ads setting from server-side cache
+    const hideAllAdsValue = await getSetting('hide_all_ads', website, 'false')
+    const hideAllAds = hideAllAdsValue === 'true'
+
+    // If ads are hidden globally, return null (no rendering)
     if (hideAllAds) {
-      return null // Hide entire ad card including wrapper
+      return null
     }
+  } catch (error) {
+    // On error, show ads (safe default - don't hide on error)
+    console.error('Error checking ad visibility setting:', error)
   }
 
   if (isPlaceholder) {
@@ -29,12 +51,12 @@ const GoogleAdSlot = ({
   return (
     <div className="text-center space-y-2">
       <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4 min-h-[200px]">
-        <script 
-          async 
+        <script
+          async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938"
           crossOrigin="anonymous"
         />
-        <ins 
+        <ins
           className="adsbygoogle"
           style={{ display: 'block' }}
           data-ad-client="ca-pub-5215838917916938"
@@ -42,7 +64,7 @@ const GoogleAdSlot = ({
           data-ad-format="auto"
           data-full-width-responsive="true"
         />
-        <script 
+        <script
           dangerouslySetInnerHTML={{
             __html: '(adsbygoogle = window.adsbygoogle || []).push({});'
           }}

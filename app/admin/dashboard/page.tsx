@@ -128,15 +128,16 @@ export default function SimpleAdminDashboard() {
   }
 
 
-  // Load website from JWT token on mount
+  // Load website from JWT token and fetch ad settings on mount
   useEffect(() => {
+    let website = 'flesvoedingcalculator'
     const token = localStorage.getItem('admin_token')
     if (token) {
       try {
         // Decode JWT without verification (client-side, for display purposes)
         // In production, the server validates the token
         const decoded = JSON.parse(atob(token.split('.')[1]))
-        const website = decoded.website || 'flesvoedingcalculator'
+        website = decoded.website || 'flesvoedingcalculator'
         setCurrentWebsite(website)
       } catch (error) {
         console.error('Error decoding JWT:', error)
@@ -144,16 +145,66 @@ export default function SimpleAdminDashboard() {
       }
     }
 
-    // Load hideAllAds setting from localStorage
-    const hideAds = localStorage.getItem('admin_hide_all_ads') === 'true'
-    setHideAllAds(hideAds)
+    // Load hideAllAds setting from server-side API
+    const loadAdSettings = async () => {
+      try {
+        const response = await fetch(`/api/admin/settings`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+        if (response.ok) {
+          const data = await response.json()
+          const hideAds = data.settings?.hide_all_ads === 'true'
+          setHideAllAds(hideAds)
+        } else {
+          console.error('Failed to load ad settings')
+          setHideAllAds(false) // Default to showing ads
+        }
+      } catch (error) {
+        console.error('Error loading ad settings:', error)
+        setHideAllAds(false) // Default to showing ads
+      }
+    }
+
+    if (token) {
+      loadAdSettings()
+    }
   }, [])
 
-  // Toggle hide all ads setting
-  const toggleHideAllAds = (newValue) => {
-    setHideAllAds(newValue)
-    localStorage.setItem('admin_hide_all_ads', String(newValue))
-    console.log(`All ads ${newValue ? 'hidden' : 'shown'}`)
+  // Toggle hide all ads setting via API
+  const toggleHideAllAds = async (newValue) => {
+    try {
+      const token = localStorage.getItem('admin_token')
+      if (!token) {
+        console.error('No admin token found')
+        return
+      }
+
+      const response = await fetch('/api/admin/settings', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify({
+          key: 'hide_all_ads',
+          value: String(newValue)
+        })
+      })
+
+      if (response.ok) {
+        setHideAllAds(newValue)
+        console.log(`All ads ${newValue ? 'hidden' : 'shown'}`)
+      } else {
+        const error = await response.json()
+        console.error('Failed to update ad setting:', error.error)
+        alert(`Error: ${error.error}`)
+      }
+    } catch (error) {
+      console.error('Error toggling ads setting:', error)
+      alert('Failed to update ad setting')
+    }
   }
 
   // Switch website function

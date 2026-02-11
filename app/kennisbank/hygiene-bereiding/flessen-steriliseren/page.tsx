@@ -381,67 +381,6 @@ export default function FlessenSteriligerenPage() {
               maxProducts={4}
             />
 
-            {/* Test Bol.com Script - Using direct injection */}
-            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Test Bol.com Widget</h2>
-              <div className="bg-white rounded-xl border border-gray-200 p-4">
-                <div className="bol-script-container" data-product-id="test-bol-widget">
-                  {/* Fallback content with image, title, bol-widget-content, and button */}
-                  <div className="fallback-content text-center">
-                    {/* Product image - always visible */}
-                    <div className="mb-3">
-                      <img
-                        src="https://media.s-bol.com/NKX9XZWN3RGL/0RNmv15/550x707.jpg"
-                        alt="Philips Avent Flessterilisator"
-                        className="mx-auto rounded-lg max-w-full h-auto"
-                        style={{ maxHeight: '200px' }}
-                      />
-                    </div>
-                    
-                    {/* Product title - always visible */}
-                    <h4 className="font-medium text-primary text-sm mb-4 line-clamp-2 min-h-[40px] flex items-center justify-center">
-                      Philips Avent Flessterilisator
-                    </h4>
-                    
-                    {/* Bol.com script execution container */}
-                    <div 
-                      className="bol-widget-content"
-                      dangerouslySetInnerHTML={{ 
-                        __html: `
-                          <script type="text/javascript">var bol_sitebar_v2={"id":"bol_1760347149289", "baseUrl":"partner.bol.com","productId":"9300000006206090","familyId":"","siteId":"1472968","target":true,"rating":true,"price":true,"deliveryDescription":true,"button":false,"linkName":"Philips%20Avent%20Flessen%20Sterilisator%20-%206%20Flessen...","linkSubId":""};</script>
-                          <script type="text/javascript" src="https://partner.bol.com/promotion/static/js/partnerProductlinkV2.js" id="bol_1760347149289"></script>
-                        `
-                      }}
-                    />
-                    
-                    {/* Fallback button - initially hidden */}
-                    <a 
-                      href="https://www.bol.com/nl/p/philips-avent-flessterilisator/9300000006206090/"
-                      target="_blank"
-                      rel="nofollow noopener"
-                      className="bg-primary text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors inline-block"
-                    >
-                      Bekijk op bol.com →
-                    </a>
-                  </div>
-                </div>
-                
-                {/* Test widget management script */}
-                <script dangerouslySetInnerHTML={{
-                  __html: `
-                    setTimeout(() => {
-                      const container = document.querySelector('[data-product-id="test-bol-widget"]');
-                      if (container) {
-                        const bolContent = container.querySelector('div[id*="bol_1760347149289"]') || 
-                                         container.querySelector('div[id*="PLbol_"]');
-                        console.log('ℹ️ Test widget: All content visible by default (image + title + Bol.com snippet + button)');
-                      }
-                    }, 3000);
-                  `
-                }} />
-              </div>
-            </div>
-
             {/* Stap-voor-stap elektrische sterilisator */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Stap-voor-stap: Elektrische sterilisator (meest gebruikt)</h2>

@@ -19,7 +19,7 @@ export default function QuickTools() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Link
           href="/"
-          className="p-4 rounded-xl bg-gradient-to-br from-orange-50 to-orange-100 border border-gray-200 hover:border-primary transition-colors"
+          className="p-4 rounded-xl bg-accent-rose-lighter border border-gray-200 hover:border-primary transition-colors"
         >
           <h3 className="font-medium text-primary mb-2">Flesvoeding Calculator</h3>
           <p className="text-sm text-gray-600 mb-3">Bereken persoonlijke hoeveelheden per voeding</p>
@@ -29,7 +29,7 @@ export default function QuickTools() {
         </Link>
         <Link
           href="/voedingsschemas"
-          className="p-4 rounded-xl bg-gradient-to-br from-rose-50 to-rose-100 border border-gray-200 hover:border-primary transition-colors"
+          className="p-4 rounded-xl bg-accent-rose-lighter border border-gray-200 hover:border-primary transition-colors"
         >
           <h3 className="font-medium text-primary mb-2">Voedingsschema's</h3>
           <p className="text-sm text-gray-600 mb-3">Interactieve schema's per leeftijdsgroep</p>
@@ -39,7 +39,7 @@ export default function QuickTools() {
         </Link>
         <Link
           href="/infographics"
-          className="p-4 rounded-xl bg-gradient-to-br from-amber-50 to-amber-100 border border-gray-200 hover:border-primary transition-colors"
+          className="p-4 rounded-xl bg-accent-rose-lighter border border-gray-200 hover:border-primary transition-colors"
         >
           <h3 className="font-medium text-primary mb-2">Visuele Guides</h3>
           <p className="text-sm text-gray-600 mb-3">Stap-voor-stap infographics en tijdlijnen</p>
