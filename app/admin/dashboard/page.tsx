@@ -3,8 +3,9 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Layout from '../../../components/Layout'
 import { Settings, Link, Plus, Eye, X, Edit, Trash2, ToggleLeft, ToggleRight, RefreshCw, ChevronDown } from 'lucide-react'
+import jwt from 'jsonwebtoken'
 
-// Version: 2.2 - Database APIs with auto-migration fix
+// Version: 2.3 - Added website selector for shared database architecture
 export default function SimpleAdminDashboard() {
   const [snippets, setSnippets] = useState([])
   const [pages, setPages] = useState([])
@@ -15,18 +16,24 @@ export default function SimpleAdminDashboard() {
   const [activeTab, setActiveTab] = useState('overview') // 'overview' or 'assignment'
   const [loadError, setLoadError] = useState(null)
   const [debugInfo, setDebugInfo] = useState('Not started')
+  const [currentWebsite, setCurrentWebsite] = useState('flesvoedingcalculator')
+  const [isSwitchingWebsite, setIsSwitchingWebsite] = useState(false)
   const [showAddForm, setShowAddForm] = useState(false)
   const [newSnippet, setNewSnippet] = useState({
     platform: 'bol',
     name: '',
     url: '',
+    shortUrl: '',
+    imageUrl: '',
     code: '',
     tag: '',
     category: '',
     price: null,
     originalPrice: null,
     currency: 'EUR',
-    manualImageUrl: '' // For manual image URL input
+    manualImageUrl: '', // For manual image URL input
+    imageHtml: '',
+    generatedHtml: ''
   })
   const [isGenerating, setIsGenerating] = useState(false)
   const [isSyncing, setIsSyncing] = useState(false)
@@ -34,9 +41,10 @@ export default function SimpleAdminDashboard() {
   const [syncProgress, setSyncProgress] = useState('')
   const [syncAlert, setSyncAlert] = useState(null) // { type: 'success' | 'error', message: '', details: [] }
   const [editingSnippet, setEditingSnippet] = useState(null)
-  const [editFormData, setEditFormData] = useState({})
+  const [editFormData, setEditFormData] = useState<any>({})
   const [showOnlyPrice, setShowOnlyPrice] = useState(false) // Control visibility of elements
   const [isExtractingImage, setIsExtractingImage] = useState(false) // For Bol.com image extraction
+  const [hideAllAds, setHideAllAds] = useState(false) // Toggle to hide all Google Ads globally
 
   // Filter states
   const [searchQuery, setSearchQuery] = useState('')
@@ -120,6 +128,70 @@ export default function SimpleAdminDashboard() {
   }
 
 
+  // Load website from JWT token on mount
+  useEffect(() => {
+    const token = localStorage.getItem('admin_token')
+    if (token) {
+      try {
+        // Decode JWT without verification (client-side, for display purposes)
+        // In production, the server validates the token
+        const decoded = JSON.parse(atob(token.split('.')[1]))
+        const website = decoded.website || 'flesvoedingcalculator'
+        setCurrentWebsite(website)
+      } catch (error) {
+        console.error('Error decoding JWT:', error)
+        setCurrentWebsite('flesvoedingcalculator')
+      }
+    }
+
+    // Load hideAllAds setting from localStorage
+    const hideAds = localStorage.getItem('admin_hide_all_ads') === 'true'
+    setHideAllAds(hideAds)
+  }, [])
+
+  // Toggle hide all ads setting
+  const toggleHideAllAds = (newValue) => {
+    setHideAllAds(newValue)
+    localStorage.setItem('admin_hide_all_ads', String(newValue))
+    console.log(`All ads ${newValue ? 'hidden' : 'shown'}`)
+  }
+
+  // Switch website function
+  const switchWebsite = async (newWebsite) => {
+    if (newWebsite === currentWebsite) return
+
+    const confirmed = confirm(`Switch to ${newWebsite}?\n\nYou will only see pages and products for ${newWebsite}.`)
+    if (!confirmed) return
+
+    setIsSwitchingWebsite(true)
+    try {
+      const token = localStorage.getItem('admin_token')
+      const response = await fetch('/api/admin/switch-website', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({ newWebsite })
+      })
+
+      if (response.ok) {
+        const data = await response.json()
+        localStorage.setItem('admin_token', data.token)
+        setCurrentWebsite(newWebsite)
+        // Reload data for new website
+        loadData(true)
+      } else {
+        alert('Failed to switch website')
+      }
+    } catch (error) {
+      console.error('Error switching website:', error)
+      alert('Error switching website: ' + error.message)
+    } finally {
+      setIsSwitchingWebsite(false)
+    }
+  }
+
   // Check authentication via JWT token verification
   useEffect(() => {
     const verifyAuth = async () => {
@@ -194,7 +266,6 @@ export default function SimpleAdminDashboard() {
           cache: 'no-cache'
         })
         console.log('Snippets response status:', snippetsResponse.status)
-        console.log('Snippets response headers:', [...snippetsResponse.headers.entries()])
         
         if (snippetsResponse.ok) {
           const snippetsData = await snippetsResponse.json()
@@ -356,7 +427,7 @@ export default function SimpleAdminDashboard() {
   // Auto-generate image HTML when manual image URL changes
   const handleManualImageUrlChange = (imageUrl) => {
     setNewSnippet(prev => {
-      const bolData = prev.code ? extractBolDataFromSnippet(prev.code) : {}
+      const bolData: any = prev.code ? extractBolDataFromSnippet(prev.code) : {}
       const imageHtml = generateImageHtmlFromUrl(
         imageUrl,
         prev.name || bolData.productName,
@@ -389,9 +460,10 @@ export default function SimpleAdminDashboard() {
 
       // Scrape image URL from browser (bypasses server-side blocking)
       let imageUrl = null
-      if (productId && productName) {
-        imageUrl = await scrapeBolImageFromClient(productId, productName)
-      }
+      // TODO: Implement scrapeBolImageFromClient function
+      // if (productId && productName) {
+      //   imageUrl = await scrapeBolImageFromClient(productId, productName)
+      // }
 
       // Send to API with scraped image URL
       const response = await fetch('/api/admin/extract-bol-image/', {
@@ -462,9 +534,10 @@ export default function SimpleAdminDashboard() {
 
       // Scrape image URL from browser (bypasses server-side blocking)
       let imageUrl = null
-      if (productId && productName) {
-        imageUrl = await scrapeBolImageFromClient(productId, productName)
-      }
+      // TODO: Implement scrapeBolImageFromClient function
+      // if (productId && productName) {
+      //   imageUrl = await scrapeBolImageFromClient(productId, productName)
+      // }
 
       // Send to API with scraped image URL
       const response = await fetch('/api/admin/extract-bol-image/', {
@@ -481,7 +554,7 @@ export default function SimpleAdminDashboard() {
         console.log('Extracted Bol.com image data for edit:', data)
         
         // Update the editFormData with extracted data
-        setEditFormData(prev => ({
+        setEditFormData((prev: any) => ({
           ...prev,
           name: data.title || prev.name,
           url: data.productUrl || prev.url,
@@ -564,13 +637,17 @@ export default function SimpleAdminDashboard() {
           platform: 'bol',
           name: '',
           url: '',
+          shortUrl: '',
+          imageUrl: '',
           code: '',
           tag: '',
           category: '',
           price: null,
           originalPrice: null,
           currency: 'EUR',
-          manualImageUrl: ''
+          manualImageUrl: '',
+          imageHtml: '',
+          generatedHtml: ''
         })
 
         // Close form only if keepFormOpen is false
@@ -679,8 +756,8 @@ export default function SimpleAdminDashboard() {
 
   // Auto-generate image HTML when manual image URL changes in edit form
   const handleEditManualImageUrlChange = (imageUrl) => {
-    setEditFormData(prev => {
-      const bolData = prev.bolScript ? extractBolDataFromSnippet(prev.bolScript) : {}
+    setEditFormData((prev: any) => {
+      const bolData: any = prev.bolScript ? extractBolDataFromSnippet(prev.bolScript) : {}
       const imageHtml = generateImageHtmlFromUrl(
         imageUrl,
         prev.name || bolData.productName,
@@ -923,22 +1000,41 @@ export default function SimpleAdminDashboard() {
     <Layout>
       <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="mb-8 flex items-center justify-between">
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900 flex items-center">
-              <Settings className="w-6 h-6 mr-3 text-primary" />
-              Affiliate Management System
-            </h1>
-            <p className="text-gray-600 mt-2">
-              Manage affiliate links and page assignments
-            </p>
+        <div className="mb-8">
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900 flex items-center">
+                <Settings className="w-6 h-6 mr-3 text-primary" />
+                Affiliate Management System
+              </h1>
+              <p className="text-gray-600 mt-2">
+                Manage affiliate links and page assignments
+              </p>
+            </div>
+            <button
+              onClick={handleLogout}
+              className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors"
+            >
+              Logout
+            </button>
           </div>
-          <button
-            onClick={handleLogout}
-            className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors"
-          >
-            Logout
-          </button>
+
+          {/* Website Selector */}
+          <div className="flex items-center space-x-3 pt-4 border-t border-gray-200">
+            <label className="text-sm font-medium text-gray-700">Current Website:</label>
+            <select
+              value={currentWebsite}
+              onChange={(e) => switchWebsite(e.target.value)}
+              disabled={isSwitchingWebsite}
+              className="px-3 py-2 border border-gray-300 rounded-lg bg-white text-sm font-medium hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-primary disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <option value="flesvoedingcalculator">Flesvoedingcalculator.nl</option>
+              <option value="togwaarde">TOGWaarde.nl</option>
+            </select>
+            {isSwitchingWebsite && (
+              <span className="text-sm text-gray-500">Switching...</span>
+            )}
+          </div>
         </div>
 
         {/* Error Banner */}
@@ -999,10 +1095,10 @@ export default function SimpleAdminDashboard() {
         {activeTab === 'overview' && (
           <>
             {/* View Controls */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4 mb-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4 mb-6">
               <div className="flex items-center justify-between">
                 <h3 className="text-sm font-medium text-gray-700">View Options</h3>
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-6">
                   <label className="flex items-center space-x-2">
                     <input
                       type="checkbox"
@@ -1012,13 +1108,31 @@ export default function SimpleAdminDashboard() {
                     />
                     <span className="text-sm text-gray-600">Show only price info</span>
                   </label>
+                  <label className="flex items-center space-x-2">
+                    <div className="flex items-center">
+                      {hideAllAds ? (
+                        <ToggleRight className="w-5 h-5 text-red-500" />
+                      ) : (
+                        <ToggleLeft className="w-5 h-5 text-green-500" />
+                      )}
+                    </div>
+                    <input
+                      type="checkbox"
+                      checked={hideAllAds}
+                      onChange={(e) => toggleHideAllAds(e.target.checked)}
+                      className="rounded border-gray-300 text-primary focus:ring-primary"
+                    />
+                    <span className={`text-sm font-medium ${hideAllAds ? 'text-red-600' : 'text-green-600'}`}>
+                      {hideAllAds ? 'All Ads Hidden' : 'All Ads Visible'}
+                    </span>
+                  </label>
                 </div>
               </div>
             </div>
 
             {/* Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+              <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
                 <div className="flex items-center">
                   <Link className="w-8 h-8 text-primary" />
                   <div className="ml-4">
@@ -1027,7 +1141,7 @@ export default function SimpleAdminDashboard() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+              <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
                 <div className="flex items-center">
                   <Eye className="w-8 h-8 text-green-600" />
                   <div className="ml-4">
@@ -1036,7 +1150,7 @@ export default function SimpleAdminDashboard() {
                   </div>
                 </div>
               </div>
-              <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+              <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
                 <div className="flex items-center">
                   <Settings className="w-8 h-8 text-blue-600" />
                   <div className="ml-4">
@@ -1048,7 +1162,7 @@ export default function SimpleAdminDashboard() {
             </div>
 
             {/* Search and Filters */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6 mb-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6 mb-6">
               <h3 className="text-sm font-medium text-gray-700 mb-4">Search & Filters</h3>
 
               {/* Search Bar */}
@@ -1231,7 +1345,7 @@ export default function SimpleAdminDashboard() {
             )}
 
             {/* Snippets List */}
-            <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-lg font-semibold text-gray-900">Affiliate Snippets</h2>
                 <div className="flex items-center space-x-3">
@@ -1677,7 +1791,7 @@ export default function SimpleAdminDashboard() {
                                     alt={snippet.name}
                                     className="w-32 h-32 object-cover rounded-lg border border-gray-200"
                                     style={{ display: 'block !important' }}
-                                    onError={(e) => {
+                                    onError={(e: any) => {
                                       // Show fallback instead of hiding completely
                                       e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjgiIGhlaWdodD0iMTI4IiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik00MCA0OEg4OFY4MEg0MFY0OFoiIGZpbGw9IiM5Q0EzQUYiLz4KPHBhdGggZD0iTTU2IDY0TDY0IDcyTDgwIDU2IiBzdHJva2U9IiM2QjczODAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=';
                                       e.target.style.display = 'block';
@@ -1817,7 +1931,7 @@ export default function SimpleAdminDashboard() {
           <div className="grid grid-cols-12 gap-6">
             {/* Left Panel - Pages */}
             <div className="col-span-4">
-              <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+              <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
                 <h2 className="text-lg font-semibold text-gray-900 mb-4">
                   Kennisbank Pages ({pages.length})
                 </h2>
@@ -1851,7 +1965,7 @@ export default function SimpleAdminDashboard() {
 
             {/* Right Panel - Snippet Configuration */}
             <div className="col-span-8">
-              <div className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+              <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
                 {!selectedPage ? (
                   <div className="text-center py-12 text-gray-500">
                     <Settings className="w-12 h-12 mx-auto mb-4 text-gray-400" />
