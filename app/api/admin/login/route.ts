@@ -33,16 +33,13 @@ export async function POST(request: NextRequest): Promise<NextResponse<LoginResp
     const body = (await request.json()) as LoginRequest
     const { password } = body
 
-    // Get admin password hash from environment variable
+    // Get admin password from environment variables
+    // Support both bcrypt hash (ADMIN_PASSWORD_HASH) and plain text (ADMIN_PASSWORD) for compatibility
     const adminPasswordHash = process.env.ADMIN_PASSWORD_HASH
+    const adminPassword = process.env.ADMIN_PASSWORD
 
-    // Security: Plain text password support removed
-    if (!adminPasswordHash) {
-      console.error(
-        'ADMIN_PASSWORD_HASH environment variable not set. ' +
-        'For security, only bcrypt hashes are supported. ' +
-        'Generate one with: node -e "const bcrypt = require("bcryptjs"); console.log(bcrypt.hashSync("your-password", 10));"'
-      )
+    if (!adminPasswordHash && !adminPassword) {
+      console.error('No admin password configured. Set either ADMIN_PASSWORD_HASH or ADMIN_PASSWORD environment variable.')
       return NextResponse.json(
         { success: false, message: 'Authentication not configured' },
         { status: 500 }
@@ -57,18 +54,23 @@ export async function POST(request: NextRequest): Promise<NextResponse<LoginResp
       )
     }
 
-    // Compare password with bcrypt hash (constant-time comparison)
+    // Compare password - try bcrypt hash first, fall back to plain text
     let isValid = false
-    try {
-      isValid = await bcrypt.compare(password, adminPasswordHash)
-    } catch (compareError) {
-      console.error('Password comparison error:', compareError)
-      // Still log failed attempt but return generic error
-      logFailedLoginAttempt(request)
-      return NextResponse.json(
-        { success: false, message: 'Invalid credentials' },
-        { status: 401 }
-      )
+
+    if (adminPasswordHash) {
+      try {
+        isValid = await bcrypt.compare(password, adminPasswordHash)
+      } catch (compareError) {
+        console.error('Password comparison error:', compareError)
+        logFailedLoginAttempt(request)
+        return NextResponse.json(
+          { success: false, message: 'Invalid credentials' },
+          { status: 401 }
+        )
+      }
+    } else if (adminPassword) {
+      // Fall back to plain text comparison (less secure but needed for compatibility)
+      isValid = password === adminPassword
     }
 
     if (!isValid) {
