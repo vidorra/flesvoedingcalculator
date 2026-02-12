@@ -133,7 +133,7 @@ export default function OverOnsPage() {
             
             <div
               className="rounded-xl p-4"
-              style={{ background: 'radial-gradient(circle at 30% 30%, rgba(200, 120, 140, .04) 0, rgba(16, 148, 174, .02) 40%, transparent 70%), linear-gradient(90deg, #fff7f7, #f8eeec)' }}
+              style={{ background: 'radial-gradient(circle at 30% 30%, rgba(200, 120, 140, .12) 0, rgba(16, 148, 174, .06) 40%, transparent 70%), linear-gradient(90deg, #fff0f3, #f5e6ed)' }}
             >
               <h3 className="font-medium text-primary mb-2">Individuele Variatie</h3>
               <p className="text-sm text-gray-700">
