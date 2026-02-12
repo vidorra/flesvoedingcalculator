@@ -127,22 +127,9 @@ export default function SimpleAdminDashboard() {
   }
 
 
-  // Load website from JWT token and fetch ad settings on mount
+  // Load ad settings on mount
   useEffect(() => {
-    let website = 'flesvoedingcalculator'
     const token = localStorage.getItem('admin_token')
-    if (token) {
-      try {
-        // Decode JWT without verification (client-side, for display purposes)
-        // In production, the server validates the token
-        const decoded = JSON.parse(atob(token.split('.')[1]))
-        website = decoded.website || 'flesvoedingcalculator'
-        setCurrentWebsite(website)
-      } catch (error) {
-        console.error('Error decoding JWT:', error)
-        setCurrentWebsite('flesvoedingcalculator')
-      }
-    }
 
     // Load hideAllAds setting from server-side API
     const loadAdSettings = async () => {
