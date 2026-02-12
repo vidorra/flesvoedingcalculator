@@ -1,12 +1,9 @@
-import { useState } from 'react'
 import { Droplet, ShieldCheck, Calculator } from 'lucide-react'
 
 export default function HeroSection() {
-  const [hoveredBadge, setHoveredBadge] = useState(null)
-
   return (
     <section className="relative py-8 px-4">
-      
+
       {/* Main content container */}
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         {/* Main Headline */}
@@ -22,35 +19,23 @@ export default function HeroSection() {
 
         {/* Subtitle */}
         <p className="text-base lg:text-lg text-gray-500 mb-6 lg:mb-8 max-w-3xl mx-auto leading-normal sm:leading-relaxed">
-          Professionele calculator gebaseerd op Nederlandse richtlijnen van het Voedingscentrum. 
+          Professionele calculator gebaseerd op Nederlandse richtlijnen van het Voedingscentrum.
           Krijg direct de aanbevolen hoeveelheid per voeding voor gezonde groei.
         </p>
 
         {/* Trust Badges */}
         <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6 lg:mb-10">
-          <div
-            className="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1 sm:py-2 bg-primary/10 rounded-full text-primary-dark text-xs sm:text-sm font-medium transition-all hover:bg-primary/20"
-            onMouseEnter={() => setHoveredBadge('medical')}
-            onMouseLeave={() => setHoveredBadge(null)}
-          >
+          <div className="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1 sm:py-2 bg-primary/10 rounded-full text-primary-dark text-xs sm:text-sm font-medium">
             <Droplet className="w-5 h-5 text-primary" />
             <span>150ml per kg lichaamsgewicht</span>
           </div>
 
-          <div
-            className="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1 sm:py-2 bg-primary/10 rounded-full text-primary-dark text-xs sm:text-sm font-medium transition-all hover:bg-primary/20"
-            onMouseEnter={() => setHoveredBadge('guidelines')}
-            onMouseLeave={() => setHoveredBadge(null)}
-          >
+          <div className="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1 sm:py-2 bg-primary/10 rounded-full text-primary-dark text-xs sm:text-sm font-medium">
             <ShieldCheck className="w-5 h-5 text-primary" />
             <span>Officiële Nederlandse richtlijnen</span>
           </div>
 
-          <div
-            className="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1 sm:py-2 bg-primary/10 rounded-full text-primary-dark text-xs sm:text-sm font-medium transition-all hover:bg-primary/20"
-            onMouseEnter={() => setHoveredBadge('gdpr')}
-            onMouseLeave={() => setHoveredBadge(null)}
-          >
+          <div className="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1 sm:py-2 bg-primary/10 rounded-full text-primary-dark text-xs sm:text-sm font-medium">
             <Calculator className="w-5 h-5 text-primary" />
             <span>Gratis te gebruiken</span>
           </div>
