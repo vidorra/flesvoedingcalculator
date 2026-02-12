@@ -43,6 +43,9 @@ ENV BOL_PRODUCT_FEED_PASSWORD=$BOL_PRODUCT_FEED_PASSWORD
 ENV ADMIN_PASSWORD=$ADMIN_PASSWORD
 ENV DATABASE_URL=$DATABASE_URL
 
+# Limit Node.js memory to prevent OOM kills during build
+ENV NODE_OPTIONS="--max-old-space-size=1024"
+
 # build the Next.js app with environment variables available
 RUN npm run build
 
