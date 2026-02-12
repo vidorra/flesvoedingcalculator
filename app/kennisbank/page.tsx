@@ -353,14 +353,22 @@ export default function KennisbankPage() {
       href: '/kennisbank/praktische-tips/partner-betrekken-flesvoeding'
     },
 
-    // VEILIGHEID - 1 comprehensive guide
-    { 
-      id: 40, 
-      title: 'Belangrijke Veiligheidsrichtlijnen', 
-      category: 'veiligheid', 
-      description: 'Cruciale veiligheidsinformatie, noodsituaties en allergieën', 
+    // VEILIGHEID - 2 articles
+    {
+      id: 40,
+      title: 'Belangrijke Veiligheidsrichtlijnen',
+      category: 'veiligheid',
+      description: 'Cruciale veiligheidsinformatie, noodsituaties en allergieën',
       duration: '10 min',
       href: '/kennisbank/veiligheid'
+    },
+    {
+      id: 41,
+      title: 'Terugroepacties babyvoeding 2026',
+      category: 'veiligheid',
+      description: 'Cereulide-besmetting: welke merken zijn teruggeroepen en welke zijn veilig',
+      duration: '15 min',
+      href: '/kennisbank/veiligheid/terugroepacties-babyvoeding-2026'
     },
 
     // FINANCIËLE ASPECTEN - 1 actual article
