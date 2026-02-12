@@ -70,7 +70,10 @@ export default function SimpleAdminDashboard() {
     { value: 'waterkoker', label: 'Waterkokers' },
     { value: 'verzorging', label: 'Verzorging' },
     { value: 'melkpoeder', label: 'Melkpoeder' },
-    { value: 'accessoires', label: 'Accessoires' }
+    { value: 'accessoires', label: 'Accessoires' },
+    { value: 'deken', label: 'Deken' },
+    { value: 'pyjama', label: 'Pyjama' },
+    { value: 'slaapzak', label: 'Slaapzak' }
   ]
 
   // Filter snippets based on all active filters
