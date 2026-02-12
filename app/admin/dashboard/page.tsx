@@ -5,7 +5,7 @@ import Layout from '../../../components/Layout'
 import { Settings, Link, Plus, Eye, X, Edit, Trash2, ToggleLeft, ToggleRight, RefreshCw, ChevronDown } from 'lucide-react'
 import jwt from 'jsonwebtoken'
 
-// Version: 2.3 - Added website selector for shared database architecture
+// Version: 2.4 - Shared snippets library across websites
 export default function SimpleAdminDashboard() {
   const [snippets, setSnippets] = useState([])
   const [pages, setPages] = useState([])
@@ -16,8 +16,6 @@ export default function SimpleAdminDashboard() {
   const [activeTab, setActiveTab] = useState('overview') // 'overview' or 'assignment'
   const [loadError, setLoadError] = useState(null)
   const [debugInfo, setDebugInfo] = useState('Not started')
-  const [currentWebsite, setCurrentWebsite] = useState('flesvoedingcalculator')
-  const [isSwitchingWebsite, setIsSwitchingWebsite] = useState(false)
   const [showAddForm, setShowAddForm] = useState(false)
   const [newSnippet, setNewSnippet] = useState({
     platform: 'bol',
@@ -204,42 +202,6 @@ export default function SimpleAdminDashboard() {
     } catch (error) {
       console.error('Error toggling ads setting:', error)
       alert('Failed to update ad setting')
-    }
-  }
-
-  // Switch website function
-  const switchWebsite = async (newWebsite) => {
-    if (newWebsite === currentWebsite) return
-
-    const confirmed = confirm(`Switch to ${newWebsite}?\n\nYou will only see pages and products for ${newWebsite}.`)
-    if (!confirmed) return
-
-    setIsSwitchingWebsite(true)
-    try {
-      const token = localStorage.getItem('admin_token')
-      const response = await fetch('/api/admin/switch-website', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
-        },
-        body: JSON.stringify({ newWebsite })
-      })
-
-      if (response.ok) {
-        const data = await response.json()
-        localStorage.setItem('admin_token', data.token)
-        setCurrentWebsite(newWebsite)
-        // Reload data for new website
-        loadData(true)
-      } else {
-        alert('Failed to switch website')
-      }
-    } catch (error) {
-      console.error('Error switching website:', error)
-      alert('Error switching website: ' + error.message)
-    } finally {
-      setIsSwitchingWebsite(false)
     }
   }
 
@@ -1070,22 +1032,6 @@ export default function SimpleAdminDashboard() {
             </button>
           </div>
 
-          {/* Website Selector */}
-          <div className="flex items-center space-x-3 pt-4 border-t border-gray-200">
-            <label className="text-sm font-medium text-gray-700">Current Website:</label>
-            <select
-              value={currentWebsite}
-              onChange={(e) => switchWebsite(e.target.value)}
-              disabled={isSwitchingWebsite}
-              className="px-3 py-2 border border-gray-300 rounded-lg bg-white text-sm font-medium hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-primary disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <option value="flesvoedingcalculator">Flesvoedingcalculator.nl</option>
-              <option value="togwaarde">TOGWaarde.nl</option>
-            </select>
-            {isSwitchingWebsite && (
-              <span className="text-sm text-gray-500">Switching...</span>
-            )}
-          </div>
         </div>
 
         {/* Error Banner */}
