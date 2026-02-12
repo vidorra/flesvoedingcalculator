@@ -52,8 +52,8 @@ export default function OverOnsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 bg-accent-rose-lighter rounded-lg flex items-center justify-center flex-shrink-0">
-                  <span className="text-accent-rose font-medium">✓</span>
+                <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-primary-dark font-medium">✓</span>
                 </div>
                 <div>
                   <h3 className="font-medium text-gray-800">Evidence-Based</h3>
@@ -63,8 +63,8 @@ export default function OverOnsPage() {
               
               
               <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 bg-accent-rose-lighter rounded-lg flex items-center justify-center flex-shrink-0">
-                  <span className="text-accent-rose font-medium">✓</span>
+                <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-primary-dark font-medium">✓</span>
                 </div>
                 <div>
                   <h3 className="font-medium text-gray-800">Regelmatig Geüpdatet</h3>
@@ -75,8 +75,8 @@ export default function OverOnsPage() {
             
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 bg-accent-rose-lighter rounded-lg flex items-center justify-center flex-shrink-0">
-                  <span className="text-accent-rose font-medium">✓</span>
+                <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-primary-dark font-medium">✓</span>
                 </div>
                 <div>
                   <h3 className="font-medium text-gray-800">Privacy Gewaarborgd</h3>
@@ -85,8 +85,8 @@ export default function OverOnsPage() {
               </div>
               
               <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 bg-accent-rose-lighter rounded-lg flex items-center justify-center flex-shrink-0">
-                  <span className="text-accent-rose font-medium">✓</span>
+                <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-primary-dark font-medium">✓</span>
                 </div>
                 <div>
                   <h3 className="font-medium text-gray-800">Gratis Toegankelijk</h3>
@@ -95,8 +95,8 @@ export default function OverOnsPage() {
               </div>
               
               <div className="flex items-start space-x-3">
-                <div className="w-8 h-8 bg-accent-rose-lighter rounded-lg flex items-center justify-center flex-shrink-0">
-                  <span className="text-accent-rose font-medium">✓</span>
+                <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-primary-dark font-medium">✓</span>
                 </div>
                 <div>
                   <h3 className="font-medium text-gray-800">Gebruiksvriendelijk</h3>
