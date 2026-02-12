@@ -41,5 +41,9 @@ next-env.d.ts
 *.swo
 
 # OS
-Thumbs.db# Deployment trigger - Tue Oct 28 16:21:33 CET 2025
+Thumbs.db
+
+# Credentials & secrets
+DATABASE_CREDENTIALS.md
+ADMIN_SECURITY_SETUP.md
 
