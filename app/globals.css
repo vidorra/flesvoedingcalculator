@@ -193,6 +193,11 @@ select {
   }
 }
 
+/* Ensure reCAPTCHA badge floats above other elements */
+.grecaptcha-badge {
+  z-index: 9999 !important;
+}
+
 /* Override shadow-sm to have no shadow */
 .shadow-sm {
   box-shadow: none !important;
