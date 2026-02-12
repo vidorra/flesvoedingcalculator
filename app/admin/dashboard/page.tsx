@@ -16,6 +16,7 @@ export default function SimpleAdminDashboard() {
   const [activeTab, setActiveTab] = useState('overview') // 'overview' or 'assignment'
   const [loadError, setLoadError] = useState(null)
   const [debugInfo, setDebugInfo] = useState('Not started')
+  const [pageWebsiteFilter, setPageWebsiteFilter] = useState('flesvoedingcalculator') // Filter pages by website in assignment tab
   const [showAddForm, setShowAddForm] = useState(false)
   const [newSnippet, setNewSnippet] = useState({
     platform: 'bol',
@@ -1929,16 +1930,40 @@ export default function SimpleAdminDashboard() {
             {/* Left Panel - Pages */}
             <div className="col-span-4">
               <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+                {/* Website tabs */}
+                <div className="flex space-x-1 mb-4 bg-gray-100 rounded-lg p-1">
+                  <button
+                    onClick={() => { setPageWebsiteFilter('flesvoedingcalculator'); setSelectedPage(null) }}
+                    className={`flex-1 px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+                      pageWebsiteFilter === 'flesvoedingcalculator'
+                        ? 'bg-white text-primary shadow-sm'
+                        : 'text-gray-500 hover:text-gray-700'
+                    }`}
+                  >
+                    Flesvoeding ({pages.filter(p => p.website === 'flesvoedingcalculator' || !p.website).length})
+                  </button>
+                  <button
+                    onClick={() => { setPageWebsiteFilter('togwaarde'); setSelectedPage(null) }}
+                    className={`flex-1 px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+                      pageWebsiteFilter === 'togwaarde'
+                        ? 'bg-white text-primary shadow-sm'
+                        : 'text-gray-500 hover:text-gray-700'
+                    }`}
+                  >
+                    TOGWaarde ({pages.filter(p => p.website === 'togwaarde').length})
+                  </button>
+                </div>
+
                 <h2 className="text-lg font-semibold text-gray-900 mb-4">
-                  Kennisbank Pages ({pages.length})
+                  Kennisbank Pages ({pages.filter(p => (p.website || 'flesvoedingcalculator') === pageWebsiteFilter).length})
                 </h2>
-                {pages.length === 0 ? (
+                {pages.filter(p => (p.website || 'flesvoedingcalculator') === pageWebsiteFilter).length === 0 ? (
                   <div className="text-center py-8 text-gray-500">
                     No pages found.
                   </div>
                 ) : (
                   <div className="space-y-2 max-h-96 overflow-y-auto">
-                    {pages.map((page) => (
+                    {pages.filter(p => (p.website || 'flesvoedingcalculator') === pageWebsiteFilter).map((page) => (
                       <button
                         key={page.id}
                         onClick={() => handlePageSelect(page)}
