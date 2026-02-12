@@ -8,31 +8,26 @@ import { verifyAdminAndGetWebsite } from '../../../../lib/jwt-utils.js'
 // Force dynamic route
 export const dynamic = 'force-dynamic'
 
-// GET - List all snippets from database for current website
+// GET - List all snippets from database (shared library across websites)
 export async function GET(request) {
   try {
     console.log('📥 GET /api/admin/snippets - Starting request')
 
-    const { website } = verifyAdminAndGetWebsite(request)
-    console.log(`✅ Admin verified for website: ${website}`)
+    verifyAdminAndGetWebsite(request)
+    console.log('✅ Admin verified')
 
     // Run auto-migration on first call
-    console.log('🔄 Running auto-migration...')
     await autoMigrate()
-    console.log('✅ Auto-migration completed')
 
-    console.log(`📊 Fetching snippets for website: ${website}`)
-    // Filter snippets by website from JWT
-    const websiteSnippets = await db
+    // Load ALL snippets - shared library across both websites
+    const allSnippets = await db
       .select()
       .from(snippets)
-      .where(eq(snippets.website, website))
-    console.log(`✅ Found ${websiteSnippets.length} snippets for ${website}`)
+    console.log(`✅ Found ${allSnippets.length} snippets (shared library)`)
 
     return NextResponse.json({
       success: true,
-      snippets: websiteSnippets,
-      website: website
+      snippets: allSnippets
     })
 
   } catch (error) {
@@ -169,17 +164,13 @@ export async function PUT(request) {
       )
     }
 
-    // Remove website from updateData if present - can't change website of existing snippet
-    delete updateData.website
-
     const [updatedSnippet] = await db
       .update(snippets)
       .set({
         ...updateData,
         updatedAt: new Date()
       })
-      // CRITICAL: Filter by both ID and website - can only update snippets for current website
-      .where(and(eq(snippets.id, id), eq(snippets.website, website)))
+      .where(eq(snippets.id, id))
       .returning()
 
     if (!updatedSnippet) {
@@ -220,8 +211,7 @@ export async function DELETE(request) {
 
     const [deletedSnippet] = await db
       .delete(snippets)
-      // CRITICAL: Filter by both ID and website - can only delete snippets for current website
-      .where(and(eq(snippets.id, id), eq(snippets.website, website)))
+      .where(eq(snippets.id, id))
       .returning()
 
     if (!deletedSnippet) {
