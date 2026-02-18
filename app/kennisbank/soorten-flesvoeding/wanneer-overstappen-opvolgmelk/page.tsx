@@ -2,10 +2,10 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
-import { Calendar, Clock, CheckCircle, XCircle, Users } from 'lucide-react'
+import { Calendar, Clock, CheckCircle, XCircle, Users, ArrowRight, } from 'lucide-react'
 
 export const metadata = {
-  title: 'Wanneer Overstappen naar Opvolgmelk: Complete Timing Gids 2025',
+  title: 'Wanneer Overstappen naar Opvolgmelk: Complete Timing Gids 2026',
   description: 'Het juiste moment voor overstappen naar opvolgmelk is cruciaal voor je baby\'s acceptatie en welzijn. Leer de perfecte timing, herken de signalen van je baby, en voer een soepele overgang uit met deze stap-voor-stap gids.',
 }
 
@@ -201,7 +201,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
   const commonMistakes = [
     {
       mistake: 'Te Abrupte Overgang',
-      consequences: ['85% verhoogd weigergedrag', 'Stress voor baby en ouders', 'Mogelijk terugval naar oude patroon'],
+      consequences: ['Sterk verhoogd weigergedrag', 'Stress voor baby en ouders', 'Mogelijk terugval naar oude patroon'],
       solution: 'Geleidelijk introduceren over 1-2 weken'
     },
     {
@@ -252,12 +252,12 @@ export default function WanneerOverstappenOpvolgmelkPage() {
 
   const expertTiming = [
     {
-      expert: 'Consultatiebureau Nederland',
+      expert: 'GGD/JGZ Nederland',
       timing: '6-8 maanden optimaal',
       reasoning: 'Balans tussen ijzerbehoefte en spijsvertering rijpheid'
     },
     {
-      expert: 'Nederlandse Vereniging Kindergeneeskunde',
+      expert: 'Nederlandse Vereniging voor Kindergeneeskunde (NVK)',
       timing: 'Op medische indicatie',
       reasoning: 'Individuele beoordeling belangrijker dan standaard leeftijd'
     },
@@ -295,7 +295,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
           <div className="space-y-6">
             {/* Header */}
             <div className="mb-6">
-              <div className="text-sm text-gray-500 mb-2">Soorten Flesvoeding  Opvolgmelk</div>
+              <div className="text-sm text-gray-500 mb-2">Soorten Flesvoeding • Opvolgmelk</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Clock className="w-6 h-6 mr-3 text-primary" />
                 Wanneer Overstappen naar Opvolgmelk: Complete Timing Gids
@@ -311,8 +311,8 @@ export default function WanneerOverstappenOpvolgmelkPage() {
               <h2 className="text-lg font-medium text-primary mb-4">Waarom Timing Zo Belangrijk Is</h2>
               
               <p className="text-gray-700 mb-4">
-                <strong>Het moment van overstappen</strong> bepaalt vaak het succes van de transitie. Te vroeg en je baby weigert de nieuwe smaak. 
-                Te laat en je mist potentiële voordelen zoals ijzerverrijking. <strong>72% van succesvolle overstappen</strong> gebeurt op het ideale moment.
+                <strong>Het moment van overstappen</strong> bepaalt vaak het succes van de transitie. Te vroeg en je baby weigert de nieuwe smaak.
+                Te laat en je mist potentiële voordelen zoals ijzerverrijking. <strong>De meeste succesvolle overstappen</strong> gebeuren op het ideale moment. Lees eerst ons artikel over het <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="text-primary hover:underline font-medium">verschil tussen startvoeding en opvolgmelk</Link> om te begrijpen of overstappen wel nodig is.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -323,7 +323,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                       'Te vroeg: Baby\'s spijsvertering niet klaar',
                       'Tijdens ziekte: Immuunsysteem al belast',
                       'Bij grote veranderingen: Te veel tegelijk',
-                      'Te abrupt: 85% verhoogd weigergedrag'
+                      'Te abrupt: sterk verhoogd weigergedrag'
                     ].map((consequence, index) => (
                       <li key={index} className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
@@ -334,8 +334,8 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                 </div>
                 <div className="border-t border-gray-200 pt-6 mt-6">
                   <p className="text-gray-700">
-                    <strong>Sophia Kinderziekenhuis Onderzoek:</strong> Baby's die op het juiste moment overstappen 
-                    vertonen 3x minder weigergedrag.
+                    <strong>Uit de praktijk:</strong> Baby's die op het juiste moment overstappen
+                    vertonen aanzienlijk minder weigergedrag.
                   </p>
                 </div>
               </div>
@@ -395,6 +395,9 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                             </div>
                           ))}
                         </div>
+                        <p className="text-sm text-gray-600 mt-3">
+                          Een goede <Link href="/kennisbank/praktische-tips/voedingsritme-opbouwen" className="text-primary hover:underline font-medium">voedingsritme</Link> is essentieel voor een soepele overgang.
+                        </p>
                       </div>
                     )}
                     
@@ -481,6 +484,11 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                         </li>
                       ))}
                     </ul>
+                    {consideration.category.includes('Contra-Indicaties') && (
+                      <p className="text-sm text-gray-600 mt-3">
+                        Let op <Link href="/kennisbank/problemen-oplossen/constipatie-door-flesvoeding" className="text-primary hover:underline font-medium">constipatie</Link> of andere spijsverteringsproblemen tijdens de overgang.
+                      </p>
+                    )}
                     {index < medicalConsiderations.length - 1 && (
                       <div className="border-b border-gray-200 mt-4"></div>
                     )}
@@ -661,20 +669,34 @@ export default function WanneerOverstappenOpvolgmelkPage() {
             {/* Navigation */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <Link 
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Link
                   href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk"
-                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
-                  <div className="font-medium text-gray-700">Verschil Nummer 1 en 2 </div>
-                  <div className="text-gray-600">Complete vergelijking startvoeding vs opvolgmelk</div>
+                  <div className="font-medium text-primary">Verschil nummer 1 en 2 →</div>
+                  <div className="text-sm text-gray-600">Complete vergelijking startvoeding vs opvolgmelk</div>
                 </Link>
-                <Link 
-                  href="/kennisbank/soorten-flesvoeding"
-                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
+                <Link
+                  href="/kennisbank/praktische-tips/voedingsritme-opbouwen"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
-                  <div className="font-medium text-gray-700">Alle Flesvoeding Types </div>
-                  <div className="text-gray-600">Overzicht van alle beschikbare opties</div>
+                  <div className="font-medium text-primary">Voedingsritme opbouwen →</div>
+                  <div className="text-sm text-gray-600">Creëer een stabiel voedingspatroon</div>
+                </Link>
+                <Link
+                  href="/kennisbank/problemen-oplossen/constipatie-door-flesvoeding"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                >
+                  <div className="font-medium text-primary">Constipatie door flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Voorkom verstopping tijdens overstap</div>
+                </Link>
+                <Link
+                  href="/"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                >
+                  <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+                  <div className="text-sm text-gray-600">Bereken de juiste hoeveelheden opvolgmelk</div>
                 </Link>
               </div>
             </div>

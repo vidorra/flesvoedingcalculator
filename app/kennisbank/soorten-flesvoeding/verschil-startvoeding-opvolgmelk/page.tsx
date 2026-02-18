@@ -2,10 +2,10 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
-import { Scale, Euro, Calendar, AlertCircle, CheckCircle, XCircle } from 'lucide-react'
+import { Scale, Euro, Calendar, AlertCircle, CheckCircle, XCircle, ArrowRight, } from 'lucide-react'
 
 export const metadata = {
-  title: 'Verschil tussen Startvoeding en Opvolgmelk: Complete Nederlandse Gids 2025',
+  title: 'Verschil tussen Startvoeding en Opvolgmelk: Complete Nederlandse Gids 2026',
   description: 'Wat is het verschil tussen flesvoeding nummer 1 en 2? Wanneer moet je overstappen? Deze complete vergelijking legt uit welke melk wanneer te gebruiken, inclusief kosten, voedingswaarden en Nederlandse merkenvergelijking.',
 }
 
@@ -289,7 +289,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
       recommendation: 'Startvoeding voorziet in alle behoeften tot 12 maanden. Opvolgmelk kan voordelig zijn bij verhoogd ijzertekort risico, beperkte vaste voeding inname na 8 maanden, of specifieke groeicurve zorgen.'
     },
     {
-      organization: 'Kinderartsen Nederlandse Vereniging (NVK)',
+      organization: 'Nederlandse Vereniging voor Kindergeneeskunde (NVK)',
       recommendation: 'Medische indicaties voor overstap: IJzergebreksanemie, groeistoornissen, prematuriteit. NIET routinematig bij alle baby\'s van 6 maanden.'
     },
     {
@@ -348,7 +348,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
           <div className="space-y-6">
             {/* Header */}
             <div className="mb-6">
-              <div className="text-sm text-gray-500 mb-2">Soorten Flesvoeding  Verschillen</div>
+              <div className="text-sm text-gray-500 mb-2">Soorten Flesvoeding • Verschillen</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Scale className="w-6 h-6 mr-3 text-primary" />
                 Verschil tussen Startvoeding en Opvolgmelk: Complete Nederlandse Gids
@@ -365,9 +365,9 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
               <h2 className="text-lg font-medium text-primary mb-4">Waarom Deze Verwarring Zo Groot Is</h2>
               
               <p className="text-gray-700 mb-4">
-                <strong>78% van Nederlandse ouders</strong> is onzeker over het verschil tussen startvoeding (nummer 1) 
-                en opvolgmelk (nummer 2). Marketing en winkelschappen suggereren dat overstappen verplicht is, 
-                maar dat klopt niet altijd.
+                <strong>Veel Nederlandse ouders</strong> zijn onzeker over het verschil tussen startvoeding (nummer 1)
+                en opvolgmelk (nummer 2). Marketing en winkelschappen suggereren dat overstappen verplicht is,
+                maar dat klopt niet altijd. Lees ook onze complete gids over <Link href="/kennisbank/soorten-flesvoeding/wanneer-overstappen-opvolgmelk" className="text-primary hover:underline font-medium">wanneer overstappen naar opvolgmelk</Link>.
               </p>
               
               <div className="p-4 border border-gray-200 bg-white rounded-xl">
@@ -388,9 +388,9 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                 </div>
               </div>
               
-              <div className="mt-4 p-3 border border-gray-200 bg-white rounded-lg">
+              <div className="mt-4 p-3 border border-gray-200">
                 <p className="text-gray-700">
-                  <strong>Voedingscentrum Onderzoek:</strong> 60% van ouders stapt te vroeg of onnodig over naar opvolgmelk.
+                  <strong>Voedingscentrum:</strong> Veel ouders stappen te vroeg of onnodig over naar opvolgmelk.
                 </p>
               </div>
             </div>
@@ -728,8 +728,8 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
               <h2 className="text-lg font-medium text-primary mb-4">Conclusie: Informed Choice, Not Pressure</h2>
               
               <p className="text-gray-700 mb-4">
-                Het verschil tussen startvoeding en opvolgmelk is <strong>minder groot dan marketing doet geloven</strong>. 
-                Voor de meeste Nederlandse baby's is <strong>zowel nummer 1 als nummer 2 een prima keuze</strong> na 6 maanden.
+                Het verschil tussen startvoeding en opvolgmelk is <strong>minder groot dan marketing doet geloven</strong>.
+                Voor de meeste Nederlandse baby's is <strong>zowel nummer 1 als nummer 2 een prima keuze</strong> na 6 maanden. Vergelijk verschillende merken zoals <Link href="/kennisbank/basis-flesvoeding/flesvoeding-vs-borstvoeding" className="text-primary hover:underline font-medium">flesvoeding vs borstvoeding</Link> voor een compleet beeld. Voor baby's die de fles <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="text-primary hover:underline font-medium">voor het eerst krijgen</Link>, begin dan met nummer 1.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -761,20 +761,34 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
             {/* Navigation */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <Link 
-                  href="/kennisbank/soorten-flesvoeding"
-                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Link
+                  href="/kennisbank/soorten-flesvoeding/wanneer-overstappen-opvolgmelk"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
-                  <div className="font-medium text-gray-700">Soorten Flesvoeding </div>
-                  <div className="text-gray-600">Complete overzicht van alle flesvoeding types</div>
+                  <div className="font-medium text-primary">Wanneer overstappen opvolgmelk →</div>
+                  <div className="text-sm text-gray-600">Het juiste moment voor de overgang</div>
                 </Link>
-                <Link 
-                  href="/kennisbank/financiele-aspecten/kosten-van-flesvoeding"
-                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
+                <Link
+                  href="/kennisbank/basis-flesvoeding/flesvoeding-vs-borstvoeding"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
-                  <div className="font-medium text-gray-700">Kosten van Flesvoeding </div>
-                  <div className="text-gray-600">Budgettering en kostenvergelijking</div>
+                  <div className="font-medium text-primary">Flesvoeding vs borstvoeding →</div>
+                  <div className="text-sm text-gray-600">Complete vergelijking en combinatie tips</div>
+                </Link>
+                <Link
+                  href="/kennisbank/praktische-tips/voedingsritme-opbouwen"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                >
+                  <div className="font-medium text-primary">Voedingsritme opbouwen →</div>
+                  <div className="text-sm text-gray-600">Creëer een gezond voedingspatroon</div>
+                </Link>
+                <Link
+                  href="/"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                >
+                  <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+                  <div className="text-sm text-gray-600">Bereken de juiste hoeveelheden voor jouw baby</div>
                 </Link>
               </div>
             </div>

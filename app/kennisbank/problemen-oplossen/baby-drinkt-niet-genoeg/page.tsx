@@ -2,7 +2,7 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
-import { Activity, AlertTriangle, Clock, Users, CheckCircle } from 'lucide-react'
+import { Activity, AlertTriangle, Clock, Users, CheckCircle, ArrowRight, } from 'lucide-react'
 import BolProductSection from '../../../../components/BolProductLink'
 
 export default function BabyDrinktNietGenoegPage() {
@@ -33,7 +33,7 @@ export default function BabyDrinktNietGenoegPage() {
           <div className="space-y-6">
             {/* Header */}
             <div>
-              <div className="text-sm text-gray-500 mb-2">Problemen Oplossen  Voedingshoeveelheden</div>
+              <div className="text-sm text-gray-500 mb-2">Problemen Oplossen • Voedingshoeveelheden</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Activity className="w-6 h-6 mr-3 text-primary" />
                 Baby drinkt niet genoeg: Oorzaken, signalen en praktische oplossingen
@@ -206,7 +206,7 @@ export default function BabyDrinktNietGenoegPage() {
                           </li>
                           <li className="flex items-center space-x-2">
                             <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
-                            <span className="text-gray-700 text-sm">Wissel geleidelijk naar nieuwe speen</span>
+                            <span className="text-gray-700 text-sm">Wissel geleidelijk naar nieuwe speen - lees meer bij <Link href="/kennisbank/voedingstechnieken/verschillende-spenen-uitproberen" className="text-primary hover:underline font-medium">verschillende spenen uitproberen</Link></span>
                           </li>
                         </ul>
                       </div>
@@ -226,6 +226,10 @@ export default function BabyDrinktNietGenoegPage() {
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-600 text-sm">Ongewassen residuen: zeeprestanten kunnen afstoten</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Als baby de fles volledig weigert, zie <Link href="/kennisbank/basis-flesvoeding/baby-weigert-de-fles" className="text-primary hover:underline font-medium">baby weigert de fles</Link> voor meer strategieën</span>
                         </li>
                       </ul>
                     </div>
@@ -438,12 +442,12 @@ export default function BabyDrinktNietGenoegPage() {
             <div className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
                 <Link 
-                  href="/calculator"
+                  href="/"
                   className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
                   <div className="text-center">
-                    <div className="font-medium text-gray-700">Hulp nodig bij bepalen of je baby genoeg drinkt? </div>
-                    <div className="text-gray-600">Gebruik onze flesvoeding calculator voor gepersonaliseerd advies op basis van leeftijd en gewicht</div>
+                    <div className="font-medium text-primary">Hulp nodig bij bepalen of je baby genoeg drinkt?</div>
+                    <div className="flex items-center justify-between"><span className="text-gray-600">Gebruik onze flesvoeding calculator voor gepersonaliseerd advies op basis van leeftijd en gewicht</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
                   </div>
                 </Link>
               </div>
@@ -478,20 +482,20 @@ export default function BabyDrinktNietGenoegPage() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/basis-flesvoeding/baby-weigert-de-fles" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Baby weigert de fles </div>
-                  <div className="text-gray-600">Als baby helemaal niet wil drinken</div>
+                  <div className="font-medium text-primary">Baby weigert de fles</div>
+                  <div className="flex items-center justify-between"><span className="text-gray-600">Als baby helemaal niet wil drinken</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
                 </Link>
                 <Link href="/kennisbank/voedingstechnieken/juiste-houding-bij-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Juiste houding bij flesvoeding </div>
-                  <div className="text-gray-600">Optimale positionering voor betere intake</div>
+                  <div className="font-medium text-primary">Juiste houding bij flesvoeding</div>
+                  <div className="flex items-center justify-between"><span className="text-gray-600">Optimale positionering voor betere intake</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
                 </Link>
                 <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Eerste keer flesvoeding </div>
-                  <div className="text-gray-600">Basis technieken perfectioneren</div>
+                  <div className="font-medium text-primary">Eerste keer flesvoeding</div>
+                  <div className="flex items-center justify-between"><span className="text-gray-600">Basis technieken perfectioneren</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
                 </Link>
                 <Link href="/kennisbank/problemen-oplossen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Meer probleemoplossing </div>
-                  <div className="text-gray-600">Overzicht alle voedingsproblemen</div>
+                  <div className="font-medium text-primary">Meer probleemoplossing</div>
+                  <div className="flex items-center justify-between"><span className="text-gray-600">Overzicht alle voedingsproblemen</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
                 </Link>
               </div>
             </div>

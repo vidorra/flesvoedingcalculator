@@ -32,7 +32,7 @@ export default function UitgebreideFlesvoedingGids() {
             <div className="text-sm text-gray-500 mb-2">Kennisbank • Praktische Gidsen</div>
             <h1 className="text-2xl font-medium text-primary mb-4 flex items-center">
               <BookOpen className="w-6 h-6 mr-3 text-primary" />
-              Uitgebreide Flesvoeding Gids 2025
+              Uitgebreide Flesvoeding Gids 2026
             </h1>
             <p className="text-gray-600 mb-6">
               Alles wat je moet weten over flesvoeding: van geld besparen tot werk combineren. 
@@ -53,7 +53,7 @@ export default function UitgebreideFlesvoedingGids() {
                 1. Geld Besparen op Flesvoeding - Bespaar tot €500 per jaar
               </a>
               <a href="#kosten-analyse" className="block text-gray-600 hover:text-gray-700 font-medium">
-                2. Kosten van Flesvoeding - Volledige kostenanalyse 2025
+                2. Kosten van Flesvoeding - Volledige kostenanalyse 2026
               </a>
               <a href="#borst-naar-fles" className="block text-gray-600 hover:text-gray-700 font-medium">
                 3. Overstappen van Borst naar Fles - Stap-voor-stap overgang
@@ -71,7 +71,7 @@ export default function UitgebreideFlesvoedingGids() {
           <section id="geld-besparen" className="mb-16">
             <div className="mb-8">
               <h2 className="text-lg font-medium text-primary mb-2">
-                1. Geld Besparen op Flesvoeding - Volledige Gids 2025
+                1. Geld Besparen op Flesvoeding - Volledige Gids 2026
               </h2>
               <p className="text-gray-600">
                 <em>Leestijd: 8 minuten | Gemiddelde besparing: €400 per jaar</em>
@@ -236,7 +236,7 @@ export default function UitgebreideFlesvoedingGids() {
                 Met aanbiedingen/bulk: €28/maand gemiddeld<br />
                 Jaarkosten: €336</p>
 
-                <div className="text-center  mt-4">
+                <div className="text-center mt-4">
                   <h4 className="text-primary font-medium text-xl">Netto Besparing: €432 per jaar</h4>
                   <p className="text-gray-600">Rendement op geïnvesteerde tijd: 2000%+ (€432 besparing voor ~4 uur onderzoek)</p>
                 </div>
@@ -258,7 +258,7 @@ export default function UitgebreideFlesvoedingGids() {
           <section id="kosten-analyse" className="mb-16">
             <div className="mb-8">
               <h2 className="text-lg font-medium text-primary mb-2">
-                2. Kosten van Flesvoeding - Volledige Kostenanalyse 2025
+                2. Kosten van Flesvoeding - Volledige Kostenanalyse 2026
               </h2>
               <p className="text-gray-600">
                 <em>Leestijd: 6 minuten | Actuele prijzen | Budgetplanner inbegrepen</em>
@@ -309,7 +309,7 @@ export default function UitgebreideFlesvoedingGids() {
                   <li><strong>Premium:</strong> €72-113 gemiddeld = <strong>€900-1200 per jaar</strong></li>
                 </ul>
                 
-                <div className="text-center bg-white rounded-lg p-4 mt-4">
+ <div className="text-center mt-4">
                   <p className="font-medium">Verschil budget vs premium: €500-700 per jaar</p>
                   <p className="text-sm"><em>Dat is een leuke vakantie of complete babykamer inrichting!</em></p>
                 </div>
@@ -744,6 +744,44 @@ export default function UitgebreideFlesvoedingGids() {
             title="Flesvoeding Gids Producten"
           />
 
+          {/* Gerelateerde artikelen */}
+          <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde artikelen</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <a
+                href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven"
+                className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors bg-default"
+              >
+                <div className="font-medium text-primary">Eerste keer flesvoeding geven →</div>
+                <div className="text-sm text-gray-600">Complete beginners gids voor de eerste fles</div>
+              </a>
+
+              <a
+                href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap"
+                className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors bg-default"
+              >
+                <div className="font-medium text-primary">Fles bereiden stap-voor-stap →</div>
+                <div className="text-sm text-gray-600">Veilig en correct flesvoeding bereiden</div>
+              </a>
+
+              <a
+                href="/kennisbank/praktische-tips/voedingsritme-opbouwen"
+                className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors bg-default"
+              >
+                <div className="font-medium text-primary">Voedingsritme opbouwen →</div>
+                <div className="text-sm text-gray-600">Creëer een gezond voedingspatroon voor je baby</div>
+              </a>
+
+              <a
+                href="/"
+                className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors bg-default"
+              >
+                <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+                <div className="text-sm text-gray-600">Bereken de juiste hoeveelheid voor jouw baby</div>
+              </a>
+            </div>
+          </section>
+
           {/* Final Call-to-Action */}
           <div className="bg-gradient-to-r from-gray-50 to-gray-100 border border-gray-200 rounded-xl p-8 text-center">
             <h2 className="text-2xl font-medium text-primary mb-4">
@@ -754,7 +792,7 @@ export default function UitgebreideFlesvoedingGids() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a 
-                href="/calculator" 
+                href="/" 
                 className="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-dark transition-colors"
               >
                 Bereken Kosten

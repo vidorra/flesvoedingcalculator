@@ -2,10 +2,10 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
-import { Refrigerator, Clock, AlertTriangle, CheckCircle, Thermometer, Shield } from 'lucide-react'
+import { Refrigerator, Clock, AlertTriangle, CheckCircle, Thermometer, Shield, ArrowRight, } from 'lucide-react'
 
 export const metadata = {
-  title: 'Flesvoeding Bewaren: Complete Veiligheidsgids voor Nederlandse Ouders 2025',
+  title: 'Flesvoeding Bewaren: Complete Veiligheidsgids voor Nederlandse Ouders 2026',
   description: 'Veilig bewaren van flesvoeding voorkomt voedselinfecties en voorkomt verspilling. Leer alle regels voor koelkast, vriezer en kamertemperatuur bewaring, plus praktische tips voor onderweg en nachtvoeding.',
 }
 
@@ -217,7 +217,7 @@ export default function FlesvoedingBewarenPage() {
     {
       season: 'Winter',
       tips: [
-        'Langere houdbaarheid: 2 uur bij kamertemperatuur mogelijk',
+        'Houdbaarheid: Maximaal 1 uur bij kamertemperatuur (ook in de winter)',
         'Opwarmen duurt langer: Plan extra tijd',
         'Verwarming: Niet naast radiator bewaren',
         'Vorstbeveiliging: Voorkom bevriezen in auto'
@@ -298,7 +298,7 @@ export default function FlesvoedingBewarenPage() {
           <div className="space-y-6">
             {/* Header */}
             <div className="mb-6">
-              <div className="text-sm text-gray-500 mb-2">Hygiëne & Bereiding  Flesvoeding Bewaren</div>
+              <div className="text-sm text-gray-500 mb-2">Hygiëne & Bereiding • Flesvoeding Bewaren</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Refrigerator className="w-6 h-6 mr-3 text-primary" />
                 Flesvoeding Bewaren: Complete Veiligheidsgids voor Nederlandse Ouders
@@ -313,11 +313,11 @@ export default function FlesvoedingBewarenPage() {
             {/* Why Important */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Waarom Correct Bewaren Levensbelangrijk Is</h2>
-              
+
               <p className="text-gray-700 mb-4">
-                Verkeerd bewaarde flesvoeding kan binnen uren gevaarlijke bacteriën ontwikkelen die 
-                ernstige voedselinfecties veroorzaken bij baby's. Hun immuunsysteem is nog niet volgroeid, 
-                waardoor ze extra kwetsbaar zijn.
+                Verkeerd bewaarde flesvoeding kan binnen uren gevaarlijke bacteriën ontwikkelen die
+                ernstige voedselinfecties veroorzaken bij baby's. Hun immuunsysteem is nog niet volgroeid,
+                waardoor ze extra kwetsbaar zijn. Dit geldt zowel voor <Link href="/kennisbank/hygiene-bereiding/houdbaarheid-flesvoeding" className="text-primary hover:underline font-medium">verse bereide flesvoeding</Link> als voor bewaarde voeding.
               </p>
               
               <div className="mb-4">
@@ -334,7 +334,7 @@ export default function FlesvoedingBewarenPage() {
               
               <div className="border-t border-gray-200 pt-6 mt-6">
                 <p className="text-gray-700">
-                  <strong>Het RIVM rapporteert</strong> jaarlijks 50+ ziekenhuisopnames door verkeerd bewaarde babyvoeding in Nederland.
+                  <strong>Belangrijk:</strong> verkeerd bewaarde babyvoeding kan ernstige infecties veroorzaken bij zuigelingen. Volg altijd de bewaarrichtlijnen.
                 </p>
               </div>
             </div>
@@ -479,6 +479,9 @@ export default function FlesvoedingBewarenPage() {
               
               <div className="mb-6">
                 <h3 className="font-medium text-primary mb-3">Veilige Opwarmmethoden</h3>
+                <p className="text-gray-600 mb-4">
+                  Voor meer details over alle veilige opwarmmethoden, zie onze uitgebreide <Link href="/kennisbank/hygiene-bereiding/veilig-verwarmen-flesvoeding" className="text-primary hover:underline font-medium">gids voor veilig verwarmen</Link>.
+                </p>
                 <div className="space-y-4">
                   {heatingMethods.map((method, index) => (
                     <div key={index}>
@@ -543,7 +546,11 @@ export default function FlesvoedingBewarenPage() {
             {/* Travel Tips */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Onderweg: Veilig Bewaren Buiten Huis</h2>
-              
+
+              <p className="text-gray-600 mb-4">
+                Voor uitgebreide tips over flesvoeding op reis, zie onze artikelen over <Link href="/kennisbank/praktische-tips/flesvoeding-op-vakantie" className="text-primary hover:underline font-medium">flesvoeding op vakantie</Link> en <Link href="/kennisbank/praktische-tips/flesvoeding-werk-combineren" className="text-primary hover:underline font-medium">werk combineren met flesvoeding</Link>.
+              </p>
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {travelTips.map((section, index) => (
                   <div key={index}>
@@ -622,7 +629,7 @@ export default function FlesvoedingBewarenPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium text-primary mb-3">Daily Safety Check</h3>
+                  <h3 className="font-medium text-primary mb-3">Dagelijkse Veiligheidscheck</h3>
                   <ul className="space-y-2">
                     {safetyChecklist.map((item, index) => (
                       <li key={index} className="flex items-start space-x-2">
@@ -634,7 +641,7 @@ export default function FlesvoedingBewarenPage() {
                 </div>
                 
                 <div>
-                  <h3 className="font-medium text-primary mb-3">Red Flags - Gooi Weg Bij:</h3>
+                  <h3 className="font-medium text-primary mb-3">Waarschuwingssignalen - Gooi Weg Bij:</h3>
                   <ul className="space-y-2">
                     {redFlags.map((flag, index) => (
                       <li key={index} className="flex items-start space-x-2">
@@ -721,19 +728,33 @@ export default function FlesvoedingBewarenPage() {
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <Link 
-                  href="/kennisbank/hygiene-bereiding"
-                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
+                <Link
+                  href="/kennisbank/hygiene-bereiding/houdbaarheid-flesvoeding"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
-                  <div className="font-medium text-gray-700">Hygiëne & Bereiding </div>
-                  <div className="text-gray-600">Alle hygiëne richtlijnen</div>
+                  <div className="font-medium text-primary">Houdbaarheid flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Wanneer moet je flesvoeding weggooien</div>
                 </Link>
-                <Link 
-                  href="/kennisbank/voedingstechnieken"
-                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
+                <Link
+                  href="/kennisbank/hygiene-bereiding/veilig-verwarmen-flesvoeding"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
-                  <div className="font-medium text-gray-700">Voedingstechnieken </div>
-                  <div className="text-gray-600">Technieken voor veilig voeden</div>
+                  <div className="font-medium text-primary">Veilig verwarmen →</div>
+                  <div className="text-sm text-gray-600">Alle methoden voor veilig opwarmen</div>
+                </Link>
+                <Link
+                  href="/kennisbank/praktische-tips/flesvoeding-op-vakantie"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                >
+                  <div className="font-medium text-primary">Flesvoeding op vakantie →</div>
+                  <div className="text-sm text-gray-600">Tips voor bewaren onderweg</div>
+                </Link>
+                <Link
+                  href="/"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                >
+                  <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+                  <div className="text-sm text-gray-600">Bereken juiste hoeveelheden</div>
                 </Link>
               </div>
             </div>

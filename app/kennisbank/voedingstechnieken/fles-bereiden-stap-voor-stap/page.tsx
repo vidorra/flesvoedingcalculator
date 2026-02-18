@@ -55,9 +55,10 @@ export default function FlesBerenStapVoorStap() {
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed">
-                Een perfect bereide fles is meer dan alleen voeding - het is veiligheid, liefde en zorg in elke druppel. 
-                Deze complete gids neemt je stap voor stap mee door het bereidingsproces, zodat je met vertrouwen 
-                een veilige en voedzame fles kunt maken voor je baby.
+                Een perfect bereide fles is meer dan alleen voeding - het is veiligheid, liefde en zorg in elke druppel.
+                Deze complete gids neemt je stap voor stap mee door het bereidingsproces, van <Link href="/kennisbank/hygiene-bereiding/water-koken-flesvoeding" className="text-primary hover:underline font-medium">het koken van water</Link> tot
+                <Link href="/kennisbank/hygiene-bereiding/flessen-steriliseren" className="text-primary hover:underline font-medium"> het steriliseren van flessen</Link>,
+                zodat je met vertrouwen een veilige en voedzame fles kunt maken voor je baby.
               </p>
             </section>
 
@@ -71,8 +72,9 @@ export default function FlesBerenStapVoorStap() {
 
               <h3 className="font-medium text-primary mb-4">Hygiëne: Het fundament</h3>
               <p className="text-gray-700 mb-4">
-                Proper hygiëne is cruciaal omdat baby's een nog ontwikkelend immuunsysteem hebben. 
+                Proper hygiëne is cruciaal omdat baby's een nog ontwikkelend immuunsysteem hebben.
                 Elke stap in de bereiding moet met schone handen en schoon materiaal gebeuren.
+                Lees meer over <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="text-primary hover:underline font-medium">de eerste keer flesvoeding geven</Link> voor complete voorbereiding.
               </p>
             </div>
 
@@ -162,6 +164,29 @@ export default function FlesBerenStapVoorStap() {
               pageId="voedingstechnieken_fles-bereiden-stap-voor-stap"
               title="Fles Bereiding Producten"
             />
+
+            {/* Gerelateerde artikelen */}
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+              <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde Artikelen</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Link href="/kennisbank/hygiene-bereiding/water-koken-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Water koken flesvoeding →</div>
+                  <div className="text-sm text-gray-600">De juiste temperatuur en techniek</div>
+                </Link>
+                <Link href="/kennisbank/hygiene-bereiding/flessen-steriliseren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Flessen steriliseren →</div>
+                  <div className="text-sm text-gray-600">Veilige methoden voor hygiëne</div>
+                </Link>
+                <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Eerste keer flesvoeding geven →</div>
+                  <div className="text-sm text-gray-600">Complete gids voor beginners</div>
+                </Link>
+                <Link href="/" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+                  <div className="text-sm text-gray-600">Bereken de juiste hoeveelheden</div>
+                </Link>
+              </div>
+            </div>
 
           </div>
         </div>

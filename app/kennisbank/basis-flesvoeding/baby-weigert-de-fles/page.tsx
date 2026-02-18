@@ -2,7 +2,7 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
-import { AlertTriangle, Heart, Clock, Users } from 'lucide-react'
+import { AlertTriangle, Heart, Clock, Users, ArrowRight, } from 'lucide-react'
 
 export default function BabyWeigertFlespagePage() {
   const sidebarImages = [
@@ -32,7 +32,7 @@ export default function BabyWeigertFlespagePage() {
           <div className="space-y-6">
             {/* Header */}
             <div>
-              <div className="text-sm text-gray-500 mb-2">Basis Flesvoeding  Problemen Oplossen</div>
+              <div className="text-sm text-gray-500 mb-2">Basis Flesvoeding • Problemen Oplossen</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <AlertTriangle className="w-6 h-6 mr-3 text-primary" />
                 Baby weigert de fles: Oorzaken en praktische oplossingen
@@ -103,11 +103,19 @@ export default function BabyWeigertFlespagePage() {
                       <ul className="space-y-1 ml-4">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm">Sommige baby's hebben voorkeur voor siliconen vs. latex</span>
+                          <span className="text-gray-600 text-sm">Sommige baby's hebben voorkeur voor siliconen vs. latex - lees meer in onze{' '}
+                            <Link href="/kennisbank/voedingstechnieken/verschillende-spenen-uitproberen" className="text-primary hover:underline font-medium">
+                              gids over verschillende spenen
+                            </Link>
+                          </span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm">Textuur voelt anders dan borst (bij overstap van borstvoeding)</span>
+                          <span className="text-gray-600 text-sm">Textuur voelt anders dan borst (bij{' '}
+                            <Link href="/kennisbank/basis-flesvoeding/overstappen-van-borst-naar-fles" className="text-primary hover:underline font-medium">
+                              overstap van borstvoeding
+                            </Link>)
+                          </span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -123,6 +131,12 @@ export default function BabyWeigertFlespagePage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <h4 className="font-medium text-gray-700 mb-2">Temperatuurproblemen</h4>
+                      <p className="text-gray-600 text-sm mb-2">
+                        De juiste temperatuur is cruciaal - lees onze{' '}
+                        <Link href="/kennisbank/voedingstechnieken/juiste-temperatuur-controleren" className="text-primary hover:underline font-medium">
+                          complete gids over temperatuur controleren
+                        </Link>.
+                      </p>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -245,6 +259,12 @@ export default function BabyWeigertFlespagePage() {
 
                     <div>
                       <h4 className="font-medium text-gray-700 mb-2">Houding en positie</h4>
+                      <p className="text-gray-600 text-sm mb-2">
+                        De juiste houding kan het verschil maken - bekijk onze{' '}
+                        <Link href="/kennisbank/voedingstechnieken/juiste-houding-bij-flesvoeding" className="text-primary hover:underline font-medium">
+                          uitgebreide gids over de juiste houding
+                        </Link>.
+                      </p>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -379,12 +399,12 @@ export default function BabyWeigertFlespagePage() {
                   Flesweigering is frustrerend maar bijna altijd tijdelijk. Met geduld, de juiste aanpak en eventueel professionele ondersteuning gaat vrijwel elke baby uiteindelijk de fles accepteren.
                 </p>
                 <Link 
-                  href="/calculator"
+                  href="/"
                   className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
                   <div className="text-center">
-                    <div className="font-medium text-gray-700">Hulp nodig bij het berekenen van de juiste hoeveelheden? </div>
-                    <div className="text-gray-600">Gebruik onze flesvoeding calculator voor gepersonaliseerd advies</div>
+                    <div className="font-medium text-primary">Hulp nodig bij het berekenen van de juiste hoeveelheden?</div>
+                    <div className="flex items-center justify-between"><span className="text-gray-600">Gebruik onze flesvoeding calculator voor gepersonaliseerd advies</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
                   </div>
                 </Link>
               </div>
@@ -398,20 +418,20 @@ export default function BabyWeigertFlespagePage() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Eerste keer flesvoeding geven </div>
-                  <div className="text-gray-600">Complete beginnersgids</div>
+                  <div className="font-medium text-primary">Eerste keer flesvoeding geven</div>
+                  <div className="flex items-center justify-between"><span className="text-gray-600">Complete beginnersgids</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
                 </Link>
                 <Link href="/kennisbank/voedingstechnieken/juiste-houding-bij-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Juiste houding bij flesvoeding </div>
-                  <div className="text-gray-600">Optimale positionering</div>
+                  <div className="font-medium text-primary">Juiste houding bij flesvoeding</div>
+                  <div className="flex items-center justify-between"><span className="text-gray-600">Optimale positionering</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
                 </Link>
                 <Link href="/kennisbank/basis-flesvoeding/flesvoeding-vs-borstvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Flesvoeding vs borstvoeding </div>
-                  <div className="text-gray-600">Eerlijke vergelijking</div>
+                  <div className="font-medium text-primary">Flesvoeding vs borstvoeding</div>
+                  <div className="flex items-center justify-between"><span className="text-gray-600">Eerlijke vergelijking</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
                 </Link>
                 <Link href="/kennisbank/problemen-oplossen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Meer probleemoplossing </div>
-                  <div className="text-gray-600">Overzicht alle problemen</div>
+                  <div className="font-medium text-primary">Meer probleemoplossing</div>
+                  <div className="flex items-center justify-between"><span className="text-gray-600">Overzicht alle problemen</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
                 </Link>
               </div>
             </div>

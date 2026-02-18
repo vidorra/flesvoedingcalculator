@@ -2,10 +2,10 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
-import { AlertTriangle, Clock, Heart, Thermometer, Search, Shield } from 'lucide-react'
+import { AlertTriangle, Clock, Heart, Thermometer, Search, Shield, ArrowRight, } from 'lucide-react'
 
 export const metadata = {
-  title: 'Krampjes na Flesvoeding: Complete Gids voor Nederlandse Ouders 2025',
+  title: 'Krampjes na Flesvoeding: Complete Gids voor Nederlandse Ouders 2026',
   description: 'Krampjes na flesvoeding zijn de #2 zorg van Nederlandse ouders na spugen. Leer de oorzaken herkennen, effectieve oplossingen toepassen, en wanneer je medische hulp moet zoeken. Praktische tips die echt werken.',
 }
 
@@ -110,7 +110,7 @@ export default function KrampjesNaFlesvoedingPage() {
           cause: 'Moeilijke Vertering',
           percentage: '25%',
           description: 'Koemelkeiwitten, caseine is zwaarder verteerbaar',
-          solution: 'Overweeg speciale voeding na 2 weken'
+          solution: 'Overweeg hypoallergene flesvoeding na 2 weken - zie artikel hypoallergene flesvoeding'
         },
         {
           cause: 'Verkeerde Temperatuur',
@@ -147,7 +147,7 @@ export default function KrampjesNaFlesvoedingPage() {
         {
           name: 'Dr. Brown\'s Options',
           features: 'Volledig vacuum eliminatie systeem',
-          effectiviteit: '85% minder lucht inslikken',
+          effectiviteit: 'Aanzienlijk minder lucht inslikken',
           price: '€6-8 per speen'
         },
         {
@@ -178,8 +178,8 @@ export default function KrampjesNaFlesvoedingPage() {
     {
       phase: 'TIJDENS VOEDING',
       steps: [
-        '45° hoek aanhouden (niet plat)',
-        'Elke 30-40ml pauzeren voor boertje',
+        '45° hoek aanhouden - zie juiste houding bij flesvoeding',
+        'Elke 30-40ml pauzeren voor boertje - lees meer bij boertje laten',
         'Langzaam voeden (15-20 min totaal)',
         'Fles draaien om lucht te voorkomen'
       ]
@@ -246,7 +246,7 @@ export default function KrampjesNaFlesvoedingPage() {
         'Draagzak voor hands-free troost',
         'Witte ruis app',
         'Ondersteuningsnetwerk (familie/vrienden)',
-        'Professionele backup (consultatiebureau nummer)'
+        'Professionele hulplijn (consultatiebureau nummer)'
       ]
     },
     {
@@ -357,7 +357,7 @@ export default function KrampjesNaFlesvoedingPage() {
     },
     {
       question: 'Kunnen krampjes worden voorkomen?',
-      answer: 'Volledig voorkomen niet, maar met anti-koliek spenen, goede voedingstechniek en comfort maatregelen kunnen ze tot 70% worden verminderd.'
+      answer: 'Volledig voorkomen niet, maar met anti-koliek spenen, goede voedingstechniek en comfort maatregelen kunnen ze aanzienlijk worden verminderd.'
     },
     {
       question: 'Is speciale voeding altijd nodig?',
@@ -365,7 +365,7 @@ export default function KrampjesNaFlesvoedingPage() {
     },
     {
       question: 'Kunnen probiotics helpen?',
-      answer: 'Ja, specifieke baby probiotica (Lactobacillus reuteri) tonen 50% verbetering in studies. Altijd eerst arts raadplegen.'
+      answer: 'Ja, specifieke baby probiotica (Lactobacillus reuteri) tonen verbetering in studies. Altijd eerst arts raadplegen.'
     },
     {
       question: 'Wanneer worden krampjes zorgelijk?',
@@ -376,11 +376,11 @@ export default function KrampjesNaFlesvoedingPage() {
   const myths = [
     {
       myth: 'Krampjes zijn altijd door de voeding',
-      fact: '60% van krampjes komt door onvolgroeide spijsvertering, niet specifieke voeding problemen.'
+      fact: 'De meeste krampjes komen door onvolgroeide spijsvertering, niet specifieke voeding problemen.'
     },
     {
       myth: 'Anti-koliek flessen zijn marketing',
-      fact: 'Wetenschappelijk bewezen dat ze luchtinname met 80% kunnen verminderen.'
+      fact: 'Onderzoek toont aan dat ze luchtinname aanzienlijk kunnen verminderen.'
     },
     {
       myth: 'Krampjes duuren tot 1 jaar',
@@ -388,7 +388,7 @@ export default function KrampjesNaFlesvoedingPage() {
     },
     {
       myth: 'Borstvoeding baby\'s krijgen geen krampjes',
-      fact: 'Ook borstvoeding baby\'s kunnen krampjes hebben, wel 50% minder frequent.'
+      fact: 'Ook borstvoeding baby\'s kunnen krampjes hebben, wel minder frequent.'
     }
   ]
 
@@ -400,7 +400,7 @@ export default function KrampjesNaFlesvoedingPage() {
           <div className="space-y-6">
             {/* Header */}
             <div className="mb-6">
-              <div className="text-sm text-gray-500 mb-2">Problemen Oplossen  Krampjes</div>
+              <div className="text-sm text-gray-500 mb-2">Problemen Oplossen • Krampjes</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <AlertTriangle className="w-6 h-6 mr-3 text-primary" />
                 Krampjes na Flesvoeding: Complete Gids voor Nederlandse Ouders
@@ -417,8 +417,8 @@ export default function KrampjesNaFlesvoedingPage() {
               <h2 className="text-lg font-medium text-primary mb-4">Waarom Krampjes zo Veelvoorkomend Zijn</h2>
               
               <p className="text-gray-700 mb-4">
-                <strong>65% van flesvoeding baby's</strong> ervaart regelmatig krampjes in de eerste 4 maanden. 
-                Bij borstvoeding baby's is dit slechts 35%. Het verschil ligt in de vertering van flesvoeding 
+                <strong>Veel flesvoeding baby's</strong> ervaren regelmatig krampjes in de eerste 4 maanden.
+                Bij borstvoeding baby's komt dit minder vaak voor. Het verschil ligt in de vertering van flesvoeding
                 en de hoeveelheid lucht die wordt ingeslikt.
               </p>
               
@@ -442,7 +442,7 @@ export default function KrampjesNaFlesvoedingPage() {
                 </div>
                 <div className="p-4 border border-gray-200 bg-white rounded-xl">
                   <p className="text-sm text-gray-700">
-                    <strong>Erasmus MC Onderzoek:</strong> Anti-koliek maatregelen kunnen krampjes met 70% verminderen 
+                    <strong>Uit de praktijk:</strong> Anti-koliek maatregelen kunnen krampjes aanzienlijk verminderen
                     wanneer systematisch toegepast.
                   </p>
                 </div>
@@ -536,7 +536,9 @@ export default function KrampjesNaFlesvoedingPage() {
                           </div>
                           <p className="text-sm text-gray-700 mb-2">{cause.description}</p>
                           <p className="text-sm font-medium text-gray-900">
-                            <strong>Oplossing:</strong> {cause.solution}
+                            <strong>Oplossing:</strong> {cause.cause === 'Moeilijke Vertering' ? (
+                              <>Overweeg <Link href="/kennisbank/soorten-flesvoeding/hypoallergene-flesvoeding" className="text-primary hover:underline font-medium">hypoallergene flesvoeding</Link> na 2 weken</>
+                            ) : cause.solution}
                           </p>
                         </div>
                       ))}
@@ -612,7 +614,7 @@ export default function KrampjesNaFlesvoedingPage() {
                     
                     {comfort.steps && (
                       <div className="mb-4">
-                        <h4 className="font-medium text-primary mb-2">Techniek "CLOCKWISE COMFORT":</h4>
+                        <h4 className="font-medium text-primary mb-2">Techniek "MET DE KLOK MEE COMFORT":</h4>
                         <ol className="space-y-1">
                           {comfort.steps.map((step, stepIndex) => (
                             <li key={stepIndex} className="flex items-start space-x-2">
@@ -886,19 +888,33 @@ export default function KrampjesNaFlesvoedingPage() {
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <Link 
-                  href="/kennisbank/problemen-oplossen"
-                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
+                <Link
+                  href="/kennisbank/soorten-flesvoeding/hypoallergene-flesvoeding"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
-                  <div className="font-medium text-primary">Problemen Oplossen →</div>
-                  <div className="text-sm text-gray-600">Alle oplossingen voor flesvoeding problemen</div>
+                  <div className="font-medium text-primary">Hypoallergene flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Voor gevoelige buikjes en moeilijke vertering</div>
                 </Link>
-                <Link 
-                  href="/kennisbank/voedingstechnieken/verschillende-spenen-uitproberen"
-                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
+                <Link
+                  href="/kennisbank/voedingstechnieken/juiste-houding-bij-flesvoeding"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
-                  <div className="font-medium text-primary">Spenen Uitproberen →</div>
-                  <div className="text-sm text-gray-600">Anti-koliek spenen voor minder krampjes</div>
+                  <div className="font-medium text-primary">Juiste houding bij flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Optimale positie vermindert krampjes</div>
+                </Link>
+                <Link
+                  href="/kennisbank/voedingstechnieken/boertje-laten-tijdens-voeding"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                >
+                  <div className="font-medium text-primary">Boertje laten tijdens voeding →</div>
+                  <div className="text-sm text-gray-600">Essentiële techniek tegen krampjes</div>
+                </Link>
+                <Link
+                  href="/"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                >
+                  <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+                  <div className="text-sm text-gray-600">Bereken juiste hoeveelheden</div>
                 </Link>
               </div>
             </div>

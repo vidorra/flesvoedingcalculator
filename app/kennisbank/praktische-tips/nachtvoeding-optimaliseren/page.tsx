@@ -5,7 +5,7 @@ import AffiliateProductWidget from '../../../../components/AffiliateProductWidge
 import { BookOpen, ArrowRight, Home, Moon, Clock, Lightbulb, Calculator, Coffee, Zap } from 'lucide-react'
 
 export const metadata = {
-  title: 'Nachtvoeding Optimaliseren: Efficiënt Voeden in het Donker 2025',
+  title: 'Nachtvoeding Optimaliseren: Efficiënt Voeden in het Donker 2026',
   description: 'Praktische tips voor nachtvoeding bij flesvoeding. Van 30 naar 10 minuten per nachtvoeding. Complete gids voor uitgeruste Nederlandse ouders.',
 }
 
@@ -100,7 +100,7 @@ export default function NachtvoedingOptimaliserenPage() {
         'Focus op efficiëntie, niet perfectie',
         'Dream feeding proberen na 6 weken'
       ],
-      sleepExpectation: '4-6u onderbrokken slaap'
+      sleepExpectation: '4-6u ononderbroken slaap'
     },
     {
       age: '3-6 maanden', 
@@ -108,11 +108,11 @@ export default function NachtvoedingOptimaliserenPage() {
       strategy: 'Optimalisatie Fase',
       tips: [
         'Langere nachten mogelijk',
-        'Schema consistency belangrijk',
+        'Schema consistentie belangrijk',
         'Laatste voeding later (23:00)',
         'Eerste voeding vroeger uitstellen'
       ],
-      sleepExpectation: '5-7u onderbrokken slaap'
+      sleepExpectation: '5-7u ononderbroken slaap'
     },
     {
       age: '6+ maanden',
@@ -209,7 +209,7 @@ export default function NachtvoedingOptimaliserenPage() {
           </p>
         </div>
 
-        {/* Reality Check */}
+        {/* Realiteitscheck */}
         <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">De Nachtvoeding Realiteit</h2>
           
@@ -240,9 +240,9 @@ export default function NachtvoedingOptimaliserenPage() {
               <div className="border border-gray-200 bg-white rounded-xl p-4">
                 <h3 className="font-medium text-gray-600 mb-3">Nederlandse slaapstatistieken ouders:</h3>
                 <ul className="space-y-1 text-gray-600">
-                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>73% ouders slaapt minder dan 6u per nacht eerste 3 maanden</span></li>
-                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>41% voelt zich chronisch uitgeput</span></li>
-                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>28% heeft nachtvoeding-gerelateerde stress</span></li>
+                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Veel ouders slapen minder dan 6 uur per nacht in de eerste 3 maanden</span></li>
+                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Een aanzienlijk deel voelt zich chronisch uitgeput</span></li>
+                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Nachtvoeding-gerelateerde stress komt regelmatig voor</span></li>
                 </ul>
               </div>
             </div>
@@ -269,7 +269,7 @@ export default function NachtvoedingOptimaliserenPage() {
                   </li>
                 </ul>
                 
-                <div className="mt-4 p-3 bg-white rounded-lg">
+ <div className="mt-4">
                   <div className="text-primary font-medium text-lg">Besparing: 1.5-2 uur slaap per nacht!</div>
                   <div className="text-gray-600">= 10-14 uur meer slaap per week</div>
                 </div>
@@ -375,7 +375,7 @@ export default function NachtvoedingOptimaliserenPage() {
             </div>
           ))}
           
-          <div className="border border-gray-200 bg-white rounded-lg p-4">
+          <div className="border border-gray-200 p-4">
             <h4 className="font-medium text-gray-600 mb-2">DIY Nachtvoeding Station Checklist:</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-600">
               <div>
@@ -468,9 +468,9 @@ export default function NachtvoedingOptimaliserenPage() {
           title="Nachtvoeding Producten"
         />
 
-        {/* Quick Reference Guide */}
+        {/* Snelgids */}
         <div className="bg-white rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-medium text-primary mb-4">Quick Reference: Perfect Nachtvoeding</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Snelgids: Perfecte Nachtvoeding</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -527,12 +527,12 @@ export default function NachtvoedingOptimaliserenPage() {
           </div>
         </div>
 
-        {/* Success Stories */}
+        {/* Succesverhalen */}
         <div className="border border-gray-200 bg-white rounded-2xl p-6">
-          <h2 className="text-lg font-medium text-primary mb-4">Success Stories</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Succesverhalen</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-white rounded-lg p-4">
+ <div className="p-4">
               <h3 className="font-medium text-gray-600 mb-2">"Van 45 naar 12 minuten!" - Michelle, Den Haag</h3>
               <p className="text-gray-600">
                 "Thermosfles naast bed + pre-made flessen was game-changer. Dream feeding werkt perfect bij Lotte. 
@@ -540,7 +540,7 @@ export default function NachtvoedingOptimaliserenPage() {
               </p>
             </div>
             
-            <div className="bg-white rounded-lg p-4">
+ <div className="p-4">
               <h3 className="font-medium text-gray-600 mb-2">"Tag-team redde ons huwelijk" - Jeroen & Sara, Eindhoven</h3>
               <p className="text-gray-600">
                 "Ik doe maandag/woensdag/vrijdag nachten, Sara di/do/zat. Zondag samen. 
@@ -549,12 +549,12 @@ export default function NachtvoedingOptimaliserenPage() {
             </div>
           </div>
           
-          <div className="mt-4 p-4 bg-white rounded-lg">
+ <div className="mt-4">
             <h4 className="font-medium text-gray-600 mb-2">Tips van ervaren ouders:</h4>
             <ul className="text-sm text-gray-600 space-y-1">
               <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>"Perfect Prep machine kopen was beste investering"</span></li>
               <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>"Rode nachtlamp werkt echt - geen wit licht meer"</span></li>  
-              <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>"Dream feeding vanaf week 6 proberen, patience is key"</span></li>
+              <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>"Dream feeding vanaf week 6 proberen, geduld is de sleutel"</span></li>
               <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>"Luier alleen verschonen bij poop, niet bij plassen"</span></li>
             </ul>
           </div>
@@ -570,32 +570,46 @@ export default function NachtvoedingOptimaliserenPage() {
             Gebruik onze calculator om een gepersonaliseerd nachtvoeding schema te maken 
             dat past bij de leeftijd en slaappatroon van uw baby.
           </p>
-          <Link 
+          <Link
             href="/"
             className="inline-flex items-center space-x-2 bg-white text-primary px-4 py-2 rounded-lg hover:bg-white transition-colors font-medium"
           >
             <Calculator className="w-4 h-4" />
-            <span>Naar Nacht Calculator</span>
+            <span>Naar Flesvoeding Calculator</span>
           </Link>
         </div>
 
         {/* Navigation */}
         <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
+          <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde artikelen</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <Link 
-              href="/kennisbank/praktische-tips"
-              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
+            <Link
+              href="/kennisbank/praktische-tips/flesvoeding-en-slapen"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-gray-600">Praktische Tips </div>
-              <div className="text-gray-600">Alle handige tips voor flesvoeding</div>
+              <div className="font-medium text-primary">Flesvoeding en slapen →</div>
+              <div className="text-sm text-gray-600">Hoe voeding en slaap elkaar beïnvloeden</div>
             </Link>
-            <Link 
-              href="/kennisbank/voedingstechnieken"
-              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
+            <Link
+              href="/kennisbank/praktische-tips/voedingsritme-opbouwen"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-gray-600">Voedingstechnieken </div>
-              <div className="text-gray-600">Juiste technieken voor flesvoeding</div>
+              <div className="font-medium text-primary">Voedingsritme opbouwen →</div>
+              <div className="text-sm text-gray-600">Creëer voorspelbare dag- en nacht routines</div>
+            </Link>
+            <Link
+              href="/kennisbank/hygiene-bereiding/flesvoeding-bewaren"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+            >
+              <div className="font-medium text-primary">Flesvoeding bewaren →</div>
+              <div className="text-sm text-gray-600">Fles voorbereiden voor nachtvoeding</div>
+            </Link>
+            <Link
+              href="/"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+            >
+              <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+              <div className="text-sm text-gray-600">Bereken de juiste hoeveelheid voor jouw baby</div>
             </Link>
           </div>
         </div>

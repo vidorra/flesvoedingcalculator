@@ -6,7 +6,7 @@ import BolProductSection from '../../../../components/BolProductLink'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 
 export const metadata = {
-  title: 'Bio en Organische Flesvoeding: Complete Nederlandse Gids 2025',
+  title: 'Bio en Organische Flesvoeding: Complete Nederlandse Gids 2026',
   description: 'Uitgebreide gids over biologische flesvoeding in Nederland. Vergelijk merken, kosten, voordelen en maak de beste keuze voor jouw baby.',
 }
 
@@ -48,7 +48,7 @@ export default function BioOrganischeFlesvoedingPage() {
       merk: "HiPP Biologisch",
       prijs: "€22-28 per 800g",
       niveau: "Demeter (strengste bio)",
-      voordelen: "60+ jaar bio ervaring, excellent oplossingsmheid",
+      voordelen: "60+ jaar bio ervaring, excellent oplosbaarheid",
       nadelen: "Duurste optie, niet overal verkrijgbaar"
     },
     {
@@ -132,10 +132,10 @@ export default function BioOrganischeFlesvoedingPage() {
             
             {/* Header - ALWAYS outside of card containers */}
             <div>
-              <div className="text-sm text-gray-500 mb-2">Kennisbank  Soorten Flesvoeding</div>
+              <div className="text-sm text-gray-500 mb-2">Kennisbank • Soorten Flesvoeding</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Leaf className="w-6 h-6 mr-3 text-primary" />
-                Bio en Organische Flesvoeding: Complete Nederlandse Gids 2025
+                Bio en Organische Flesvoeding: Complete Nederlandse Gids 2026
               </h1>
               <p className="text-gray-500 leading-relaxed">
                 Bio flesvoeding groeit explosief in Nederland. Deze uitgebreide gids vergelijkt alle biologische merken, legt voordelen uit, en helpt je de beste keuze maken voor jouw baby.
@@ -146,13 +146,13 @@ export default function BioOrganischeFlesvoedingPage() {
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Biologische flesvoeding heeft nu 28% marktaandeel in Nederland (stijging van 18% in 2020). 
-                Met 280.000 Nederlandse baby's die bio voeding krijgen, is het belangrijk om de juiste keuze te maken.
+                Biologische flesvoeding heeft nu 28% marktaandeel in Nederland (stijging van 18% in 2020).
+                Met 280.000 Nederlandse baby's die bio voeding krijgen, is het belangrijk om de juiste keuze te maken. Lees ook ons artikel over het <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="text-primary hover:underline font-medium">verschil tussen startvoeding en opvolgmelk</Link>, beide verkrijgbaar in biologische varianten.
               </p>
               
-              <div className="mt-4 p-4 bg-white rounded-lg">
+ <div className="mt-4">
                 <p className="text-gray-700">
-                  <strong>Nederlandse markt 2025:</strong> €95 miljoen jaarlijkse omzet, 95% supermarkt beschikbaarheid, 
+                  <strong>Nederlandse markt 2026:</strong> €95 miljoen jaarlijkse omzet, 95% supermarkt beschikbaarheid, 
                   gemiddelde kosten €18-35 per week vs €12-22 regulier.
                 </p>
               </div>
@@ -234,7 +234,7 @@ export default function BioOrganischeFlesvoedingPage() {
               
               <div className="space-y-4">
                 {nederlandseBioMerken.map((merk, index) => (
-                  <div key={index} className="bg-white rounded-lg p-4">
+ <div key={index} className="p-4">
                     <div className="flex justify-between items-start mb-2">
                       <h3 className="font-medium text-gray-700">{merk.merk}</h3>
                       <span className="text-sm text-gray-600 font-medium">{merk.prijs}</span>
@@ -246,7 +246,7 @@ export default function BioOrganischeFlesvoedingPage() {
                 ))}
               </div>
               
-              <div className="mt-6 p-4 bg-white rounded-lg">
+ <div className="mt-6">
                 <h4 className="font-medium text-gray-700 mb-2">Nederlandse Top 3 Aanbevelingen</h4>
                 <p className="text-gray-700 text-sm">
                   <strong>Hoogwaardig:</strong> HiPP (beste overall kwaliteit)  
@@ -284,7 +284,7 @@ export default function BioOrganischeFlesvoedingPage() {
                   ))}
                 </ul>
                 
-                <div className="bg-white rounded-lg p-4">
+ <div className="p-4">
                   <h4 className="font-medium text-gray-700 mb-2">Lange Termijn Impact</h4>
                   <p className="text-gray-700 text-sm">
                     Wageningen University 5-jaar vervolgafspraken studie: Bio groep had 19% minder antibiotica gebruik, 
@@ -329,9 +329,9 @@ export default function BioOrganischeFlesvoedingPage() {
 
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Potentiële Besparingen & Rendement</h3>
-                <div className="bg-white rounded-lg p-4">
+ <div className="p-4">
                   <p className="text-gray-700 text-sm mb-3">
-                    <strong>Gezondheidszorg besparingen:</strong> Families met bio kinderen bezoeken gemiddeld 30% minder vaak de dokter.
+                    <strong>Gezondheidszorg besparingen:</strong> Families met bio kinderen bezoeken gemiddeld 30% minder vaak de dokter. Wil je meer weten over de totale <Link href="/kennisbank/financiele-aspecten/kosten-van-flesvoeding" className="text-primary hover:underline font-medium">kosten van flesvoeding</Link>? Lees onze complete gids met <Link href="/kennisbank/praktische-tips/geld-besparen-flesvoeding" className="text-primary hover:underline font-medium">tips om geld te besparen</Link>.
                   </p>
                   <ul className="space-y-1 text-gray-700">
                     <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Minder doktersbezoeken: €150-300/jaar</span></li>
@@ -354,15 +354,15 @@ export default function BioOrganischeFlesvoedingPage() {
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Geleidelijke Overstap (Aanbevolen)</h3>
                 <div className="space-y-4">
-                  <div className="bg-white rounded-lg p-4">
+ <div className="p-4">
                     <h4 className="font-medium text-gray-700 mb-2">Week 1-2: Kennismaking</h4>
                     <p className="text-gray-700 text-sm">25% bio + 75% regulier per fles, test acceptatie en allergische reacties</p>
                   </div>
-                  <div className="bg-white rounded-lg p-4">
+ <div className="p-4">
                     <h4 className="font-medium text-gray-700 mb-2">Week 3-4: Verhogen</h4>
                     <p className="text-gray-700 text-sm">50% bio + 50% regulier per fles, monitor welzijn en acceptatie</p>
                   </div>
-                  <div className="bg-white rounded-lg p-4">
+ <div className="p-4">
                     <h4 className="font-medium text-gray-700 mb-2">Week 5-6: Voltooien</h4>
                     <p className="text-gray-700 text-sm">75% bio  100% bio, volledige overgang afgerond</p>
                   </div>
@@ -411,12 +411,12 @@ export default function BioOrganischeFlesvoedingPage() {
             <section className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
                 <Link 
-                  href="/calculator"
+                  href="/"
                   className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-white transition-colors"
                 >
                   <div className="text-center">
-                    <div className="font-medium text-gray-700">Bereken bio voeding kosten </div>
-                    <div className="text-gray-600">Gebruik onze calculator voor kostenvergelijking</div>
+                    <div className="font-medium text-primary">Bereken bio voeding kosten</div>
+                    <div className="flex items-center justify-between"><span className="text-gray-600">Gebruik onze calculator voor kostenvergelijking</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
                   </div>
                 </Link>
               </div>
@@ -442,21 +442,21 @@ export default function BioOrganischeFlesvoedingPage() {
                 Gerelateerde Artikelen
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Verschil startvoeding opvolgmelk </div>
-                  <div className="text-gray-600">Ook beschikbaar in biologische varianten</div>
+                <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Verschil startvoeding opvolgmelk →</div>
+                  <div className="text-sm text-gray-600">Ook beschikbaar in biologische varianten</div>
                 </Link>
-                <Link href="/kennisbank/financiele-aspecten/kosten-van-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Kosten van flesvoeding </div>
-                  <div className="text-gray-600">Complete kostenanalyse inclusief bio opties</div>
+                <Link href="/kennisbank/praktische-tips/geld-besparen-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Geld besparen op flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Tips om kosten te verlagen zonder kwaliteit in te leveren</div>
                 </Link>
-                <Link href="/kennisbank/soorten-flesvoeding/hypoallergene-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Hypoallergene flesvoeding </div>
-                  <div className="text-gray-600">Ook in biologische uitvoeringen verkrijgbaar</div>
+                <Link href="/kennisbank/financiele-aspecten/kosten-van-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Kosten van flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Complete kostenanalyse inclusief bio opties</div>
                 </Link>
-                <Link href="/kennisbank/soorten-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Alle soorten flesvoeding </div>
-                  <div className="text-gray-600">Complete overzicht van alle flesvoeding types</div>
+                <Link href="/" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+                  <div className="text-sm text-gray-600">Bereken de juiste hoeveelheden voor je baby</div>
                 </Link>
               </div>
             </section>

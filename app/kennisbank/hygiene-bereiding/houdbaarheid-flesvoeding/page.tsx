@@ -2,10 +2,10 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
-import { Clock, AlertTriangle, Thermometer, Shield, CheckCircle, XCircle } from 'lucide-react'
+import { Clock, AlertTriangle, Thermometer, Shield, CheckCircle, XCircle, ArrowRight, } from 'lucide-react'
 
 export const metadata = {
-  title: 'Houdbaarheid van Flesvoeding: Wanneer Weggooien? Complete Nederlandse Veiligheidsgids 2025',
+  title: 'Houdbaarheid van Flesvoeding: Wanneer Weggooien? Complete Nederlandse Veiligheidsgids 2026',
   description: 'Weten wanneer flesvoeding nog veilig is voorkomt voedselvergiftiging en spaart geld. Deze uitgebreide gids geeft exacte tijdslimieten en praktische tips voor Nederlandse ouders.',
 }
 
@@ -136,7 +136,7 @@ export default function HoudbaarheidFlesvoedingPage() {
     },
     {
       mistake: "Fles laten staan bij kamertemperatuur",
-      why: "Bacteriën verdubbelen elke 20 minuten bij 20°C+",
+      why: "Bacteriën vermeerderen zich snel bij kamertemperatuur",
       solution: "Direct koelkast in of weggooien na 1 uur"
     },
     {
@@ -183,7 +183,7 @@ export default function HoudbaarheidFlesvoedingPage() {
             
             {/* Header */}
             <div>
-              <div className="text-sm text-gray-500 mb-2">Kennisbank  Hygiëne & Bereiding</div>
+              <div className="text-sm text-gray-500 mb-2">Kennisbank • Hygiëne & Bereiding</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Clock className="w-6 h-6 mr-3 text-primary" />
                 Houdbaarheid van Flesvoeding: Wanneer Weggooien?
@@ -202,8 +202,8 @@ export default function HoudbaarheidFlesvoedingPage() {
               </h2>
               
               <p className="text-gray-600 leading-relaxed mb-4">
-                Baby's zijn extra kwetsbaar voor voedselvergiftiging door hun onderontwikkelde immuunsysteem. 
-                Nederlandse ziekenhuis data toont jaarlijks 2.400 zuigelingen opgenomen door verkeerd bewaarde flesvoeding.
+                Baby's zijn extra kwetsbaar voor voedselvergiftiging door hun onderontwikkelde immuunsysteem.
+                Verkeerd bewaarde flesvoeding kan ernstige infecties veroorzaken bij zuigelingen. Daarom is <Link href="/kennisbank/hygiene-bereiding/flesvoeding-bewaren" className="text-primary hover:underline font-medium">correct bewaren van flesvoeding</Link> essentieel.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -337,7 +337,11 @@ export default function HoudbaarheidFlesvoedingPage() {
                 <AlertTriangle className="w-5 h-5 mr-2" />
                 Herkennen van Bedorven Flesvoeding
               </h2>
-              
+
+              <p className="text-gray-600 mb-4">
+                Bij twijfel is het altijd veiliger om nieuwe flesvoeding te maken volgens de <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="text-primary hover:underline font-medium">juiste bereidingsmethode</Link>.
+              </p>
+
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {spoilageSigns.map((category, index) => (
                   <div key={index}>
@@ -384,7 +388,7 @@ export default function HoudbaarheidFlesvoedingPage() {
                 <div>
                   <h3 className="font-medium text-primary mb-3">Temperatuur Richtlijnen:</h3>
                   <div className="space-y-3">
-                    <div className="p-3 bg-white rounded-lg">
+ <div className="p-3">
                       <h4 className="font-medium text-gray-700 mb-1">Koelkast:</h4>
                       <p className="text-gray-600">2-4°C - Controleer met thermometer</p>
                     </div>
@@ -462,20 +466,6 @@ export default function HoudbaarheidFlesvoedingPage() {
               </div>
             </section>
 
-            {/* Call to action */}
-            <section className="bg-white rounded-2xl border border-gray-200 p-6">
-              <div className="text-center">
-                <Link 
-                  href="/"
-                  className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
-                >
-                  <div className="text-center">
-                    <div className="font-medium text-gray-700">Bereken de juiste hoeveelheden </div>
-                    <div className="text-gray-600">Gebruik onze calculator voor veilige voedingsschemas</div>
-                  </div>
-                </Link>
-              </div>
-            </section>
 
             {/* Houdbaarheid Voeding Producten */}
             <AffiliateProductWidget
@@ -490,21 +480,21 @@ export default function HoudbaarheidFlesvoedingPage() {
                 Gerelateerde Artikelen
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link href="/kennisbank/hygiene-bereiding/flessen-steriliseren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Flessen steriliseren </div>
-                  <div className="text-gray-600">Complete gids voor veilige fles reiniging</div>
+                <Link href="/kennisbank/hygiene-bereiding/flesvoeding-bewaren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Flesvoeding bewaren →</div>
+                  <div className="text-sm text-gray-600">Veilige bewaarmethoden en richtlijnen</div>
                 </Link>
-                <Link href="/kennisbank/hygiene-bereiding/flesvoeding-bewaren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Flesvoeding bewaren </div>
-                  <div className="text-gray-600">Alle bewaar en opwarming tips</div>
+                <Link href="/kennisbank/hygiene-bereiding/veilig-verwarmen-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Veilig verwarmen →</div>
+                  <div className="text-sm text-gray-600">Opwarmen zonder risico's</div>
                 </Link>
-                <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Fles bereiden stap voor stap </div>
-                  <div className="text-gray-600">Veilige bereiding van A tot Z</div>
+                <Link href="/kennisbank/problemen-oplossen/diarree-en-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Diarree en flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Symptomen en oplossingen</div>
                 </Link>
-                <Link href="/kennisbank/problemen-oplossen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Problemen oplossen </div>
-                  <div className="text-gray-600">Hulp bij veelvoorkomende problemen</div>
+                <Link href="/" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+                  <div className="text-sm text-gray-600">Bereken veilige voedingsschemas</div>
                 </Link>
               </div>
             </section>

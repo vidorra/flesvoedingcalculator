@@ -2,17 +2,17 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
-import { Clock, Calendar, TrendingUp, Moon, Sun, Users, Target } from 'lucide-react'
+import { Clock, Calendar, TrendingUp, Moon, Sun, Users, Target, ArrowRight, } from 'lucide-react'
 
 export const metadata = {
-  title: 'Voedingsritme Opbouwen: Complete Gids voor Nederlandse Ouders 2025',
+  title: 'Voedingsritme Opbouwen: Complete Gids voor Nederlandse Ouders 2026',
   description: 'Een goed voedingsritme is de basis voor beter slapen, voor zowel baby als ouders. Leer hoe je stap-voor-stap een voorspelbaar schema opbouwt dat past bij jouw gezin, met praktische tips voor elke leeftijd.',
 }
 
 export default function VoedingsritmeOpbouwenPage() {
   const benefits = [
-    { stat: '40% betere nachtrust', description: 'voor baby\'s met consistent schema' },
-    { stat: '60% minder huilbuien', description: 'door voorspelbare honger/slaap cyclus' },
+    { stat: 'Betere nachtrust', description: 'voor baby\'s met consistent schema' },
+    { stat: 'Minder huilbuien', description: 'door voorspelbare honger/slaap cyclus' },
     { stat: 'Meer vrijheid', description: 'voor ouders door planbare dagen' },
     { stat: 'Beter groeipatroon', description: 'door regelmatige voedselinname' },
     { stat: 'Makkelijkere kinderopvang', description: 'door duidelijke routine' }
@@ -67,7 +67,7 @@ export default function VoedingsritmeOpbouwenPage() {
         { time: '11:00', activity: 'Late ochtend (160ml)' },
         { time: '15:00', activity: 'Middagvoeding (170ml)' },
         { time: '19:00', activity: 'Avondvoeding (180ml)' },
-        { time: '22:30', activity: 'Dreamfeed (150ml) - optioneel' }
+        { time: '22:30', activity: 'Droomvoeding (150ml) - optioneel' }
       ],
       tip: 'Baby kan 6-8 uur doorslapen tussen laatste en eerste voeding.'
     },
@@ -175,7 +175,7 @@ export default function VoedingsritmeOpbouwenPage() {
       approach: []
     },
     {
-      name: 'Dreamfeeding Techniek',
+      name: 'Droomvoeding Techniek',
       description: 'Voeding zonder baby wakker maken',
       rules: [],
       windows: [],
@@ -188,7 +188,7 @@ export default function VoedingsritmeOpbouwenPage() {
       approach: []
     },
     {
-      name: 'Cluster Feeding Management',
+      name: 'Clustervoeding Aanpak',
       description: 'Meerdere voedingen kort na elkaar',
       rules: [],
       windows: [],
@@ -215,7 +215,7 @@ export default function VoedingsritmeOpbouwenPage() {
         'Tijdelijk verhogen voeding hoeveelheden',
         'Extra tussenvoeding tijdens groeiperiodes',
         'Controleren of baby volledig leegdrinkt',
-        'Water aanbieden bij warm weer (6+ maanden)'
+        'Extra vochtinname overwegen bij warm weer (overleg met consultatiebureau)'
       ],
       workdaySchedule: [],
       communicationTips: [],
@@ -289,7 +289,7 @@ export default function VoedingsritmeOpbouwenPage() {
       babyIll: [
         'Meer responsive feeding tijdens ziekte',
         'Kleinere, frequentere voedingen',
-        'Hydratatie prioriteit (extra water 6+ maanden)',
+        'Hydratatie prioriteit (overleg met arts over extra vocht)',
         'Terug naar schema na herstel'
       ],
       parentIll: [
@@ -441,7 +441,7 @@ export default function VoedingsritmeOpbouwenPage() {
           <div className="space-y-6">
             {/* Header */}
             <div className="mb-6">
-              <div className="text-sm text-gray-500 mb-2">Praktische Tips  Voedingsritme</div>
+              <div className="text-sm text-gray-500 mb-2">Praktische Tips • Voedingsritme</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Clock className="w-6 h-6 mr-3 text-primary" />
                 Voedingsritme Opbouwen: Complete Gids voor Nederlandse Ouders
@@ -467,7 +467,7 @@ export default function VoedingsritmeOpbouwenPage() {
                 <h3 className="font-medium text-primary mb-3">Bewezen Voordelen van een Vast Ritme:</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {benefits.map((benefit, index) => (
-                    <div key={index} className="flex justify-between items-center p-3 border border-gray-200 bg-white rounded-lg">
+                    <div key={index} className="flex justify-between items-center p-3 border border-gray-200">
                       <span className="font-medium text-gray-700">{benefit.stat}</span>
                       <span className="text-sm text-gray-700">{benefit.description}</span>
                     </div>
@@ -477,8 +477,8 @@ export default function VoedingsritmeOpbouwenPage() {
               
               <div className="p-4 border border-gray-200 bg-white rounded-xl">
                 <p className="text-sm text-gray-700">
-                  <strong>Onderzoek van de Vrije Universiteit Amsterdam</strong> toont aan dat baby's 
-                  met een vast voedingsritme vanaf 8 weken 2 uur langer doorslapen dan baby's zonder routine.
+                  <strong>Uit onderzoek</strong> blijkt dat baby's
+                  met een vast voedingsritme beter en langer doorslapen dan baby's zonder routine.
                 </p>
               </div>
             </div>
@@ -536,7 +536,7 @@ export default function VoedingsritmeOpbouwenPage() {
                     </div>
                     
                     {ageGroup.tip && (
-                      <div className="p-3 border border-gray-200 bg-white rounded-lg">
+                      <div className="p-3 border border-gray-200">
                         <p className="text-sm text-gray-700">
                           <strong>Tip:</strong> {ageGroup.tip}
                         </p>
@@ -581,7 +581,7 @@ export default function VoedingsritmeOpbouwenPage() {
                     </div>
                     
                     {step.example && (
-                      <div className="p-3 border border-gray-200 bg-white rounded-lg mb-4">
+                      <div className="p-3 border border-gray-200 mb-4">
                         <h4 className="font-medium text-primary mb-1">Dagboek Voorbeeld:</h4>
                         <p className="text-sm text-gray-700 font-mono">{step.example}</p>
                       </div>
@@ -873,7 +873,7 @@ export default function VoedingsritmeOpbouwenPage() {
                     )}
                     
                     {adjustment.modifications && Array.isArray(adjustment.modifications) && adjustment.modifications.length > 0 && (
-                      <div className="p-3 border border-gray-200 bg-white rounded-lg mb-4">
+                      <div className="p-3 border border-gray-200 mb-4">
                         <h4 className="font-medium text-primary mb-2">Schema Modificaties:</h4>
                         <ul className="space-y-1">
                           {adjustment.modifications.map((mod, modIndex) => (
@@ -1026,7 +1026,7 @@ export default function VoedingsritmeOpbouwenPage() {
                 </div>
                 
                 <div>
-                  <h3 className="font-medium text-primary mb-3">Success Metrics</h3>
+                  <h3 className="font-medium text-primary mb-3">Succesindicatoren</h3>
                   <ul className="space-y-2">
                     {longTermPerspective.successMetrics.map((metric, index) => (
                       <li key={index} className="flex items-start space-x-2">
@@ -1091,21 +1091,35 @@ export default function VoedingsritmeOpbouwenPage() {
 
             {/* Navigation */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <Link 
-                  href="/kennisbank/praktische-tips"
-                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
+                <Link
+                  href="/kennisbank/basis-flesvoeding/overstappen-van-borst-naar-fles"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
-                  <div className="font-medium text-gray-700">Praktische Tips </div>
-                  <div className="text-sm text-gray-600">Alle praktische voedingstips</div>
+                  <div className="font-medium text-primary">Overstappen van borst naar fles →</div>
+                  <div className="text-sm text-gray-600">Ritme opbouwen bij de overstap</div>
                 </Link>
-                <Link 
-                  href="/kennisbank/voedingstechnieken"
-                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
+                <Link
+                  href="/kennisbank/soorten-flesvoeding/wanneer-overstappen-opvolgmelk"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
-                  <div className="font-medium text-gray-700">Voedingstechnieken </div>
-                  <div className="text-sm text-gray-600">Technieken voor succesvol voeden</div>
+                  <div className="font-medium text-primary">Wanneer overstappen naar opvolgmelk →</div>
+                  <div className="text-sm text-gray-600">Ritme aanpassen bij leeftijdsmijlpalen</div>
+                </Link>
+                <Link
+                  href="/kennisbank/praktische-tips/nachtvoeding-optimaliseren"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                >
+                  <div className="font-medium text-primary">Nachtvoeding optimaliseren →</div>
+                  <div className="text-sm text-gray-600">Efficiënte nacht routine voor meer rust</div>
+                </Link>
+                <Link
+                  href="/"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                >
+                  <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+                  <div className="text-sm text-gray-600">Bereken de juiste hoeveelheid per leeftijd</div>
                 </Link>
               </div>
             </div>

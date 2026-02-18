@@ -199,7 +199,7 @@ export default function PrematureInputSection({
 
       {/* Display Corrected Age */}
       {correctedAge !== null && (
-        <div className="bg-white rounded-lg p-3">
+        <div>
           {/* Top section with Lees meer link */}
           <div className="flex items-start justify-between mb-2">
             <div className="text-sm text-gray-600">Leeftijd berekening:</div>

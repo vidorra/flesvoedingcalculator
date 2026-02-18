@@ -6,7 +6,7 @@ import { Heart, ArrowRight, Home, Shield, AlertTriangle, CheckCircle, Package, C
 import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
-  title: 'Hypoallergene Flesvoeding: Complete Gids voor Nederlandse Ouders 2025',
+  title: 'Hypoallergene Flesvoeding: Complete Gids voor Nederlandse Ouders 2026',
   description: 'Alles over hypoallergene (HA) flesvoeding. Van koemelkallergie herkenning tot beste Nederlandse merken, medische begeleiding en praktische tips. Expert advies voor allergie-veilige voeding.',
 }
 
@@ -36,7 +36,7 @@ export default function HypoallergeneVoedingPage() {
   const allergySigns = [
     { sign: 'Eczeem en huiduitslag', severity: 'mild', description: 'Rode, jeukende plekken huid' },
     { sign: 'Maag-darm problemen', severity: 'moderate', description: 'Diarree, braken, bloederige ontlasting' },
-    { sign: 'Ademhalingsproblemen', severity: 'severe', description: 'Wheezing, chronische hoest' },
+    { sign: 'Ademhalingsproblemen', severity: 'severe', description: 'Piepende ademhaling, chronische hoest' },
     { sign: 'Groeistagnatie', severity: 'severe', description: 'Slechte voedselopname' },
     { sign: 'Extreme onrust', severity: 'moderate', description: '>3 uur huilen per dag' },
     { sign: 'Zwelling gezicht/lippen', severity: 'emergency', description: 'Directe medische hulp!' }
@@ -56,7 +56,7 @@ export default function HypoallergeneVoedingPage() {
       type: 'Preventieve HA',
       price: '€14-16/800g',
       effectiviteit: 'Bewezen allergie preventie',
-      pros: ['Beste prijs-kwaliteit', 'Milde smaak', 'Swiss kwaliteit'],
+      pros: ['Beste prijs-kwaliteit', 'Milde smaak', 'Zwitserse kwaliteit'],
       cons: ['Minder breed verkrijgbaar', 'Beperkte varianten']
     },
     {
@@ -104,7 +104,7 @@ export default function HypoallergeneVoedingPage() {
 
             {/* Header */}
             <div className="mb-6">
-              <div className="text-sm text-gray-500 mb-2">Soorten Flesvoeding  Hypoallergeen</div>
+              <div className="text-sm text-gray-500 mb-2">Soorten Flesvoeding • Hypoallergeen</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Shield className="w-6 h-6 mr-3 text-primary" />
                 Hypoallergene Flesvoeding: Complete Medische Gids
@@ -123,10 +123,10 @@ export default function HypoallergeneVoedingPage() {
               </h2>
               
               <div className="mb-6">
-                <h3 className="font-medium text-primary mb-3">8% van Nederlandse baby's ontwikkelt koemelkallergie</h3>
+                <h3 className="font-medium text-primary mb-3">2-3% van Nederlandse baby's ontwikkelt koemelkallergie</h3>
                 <p className="text-gray-700 mb-4">
-                  Voor deze groep is hypoallergene (HA) flesvoeding niet alleen een voorkeur - het is een medische noodzaak 
-                  die ernstige allergische reacties kan voorkomen.
+                  Voor deze groep is hypoallergene (HA) flesvoeding niet alleen een voorkeur - het is een medische noodzaak
+                  die ernstige <Link href="/kennisbank/problemen-oplossen/allergische-reacties-flesvoeding" className="text-primary hover:underline font-medium">allergische reacties</Link> kan voorkomen. Let ook op <Link href="/kennisbank/problemen-oplossen/krampjes-na-flesvoeding" className="text-primary hover:underline font-medium">krampjes na flesvoeding</Link>, dit kan een teken zijn van een allergie.
                 </p>
               </div>
 
@@ -176,6 +176,10 @@ export default function HypoallergeneVoedingPage() {
             {/* Types of HA formulas */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Nederlandse HA-Voeding Merken & Vergelijking</h2>
+
+              <p className="text-gray-700 mb-4">
+                Naast hypoallergene voeding bestaat er ook <Link href="/kennisbank/soorten-flesvoeding/lactosevrije-flesvoeding" className="text-primary hover:underline font-medium">lactosevrije flesvoeding</Link> voor baby's met lactose-intolerantie.
+              </p>
               
               <div className="space-y-4 mb-6">
                 {haFormulas.map((formula, index) => (
@@ -344,7 +348,7 @@ export default function HypoallergeneVoedingPage() {
                     </div>
                     <div className="flex items-start space-x-2">
                       <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>Moeilijke ademhaling/wheezing</span>
+                      <span>Moeilijke ademhaling/piepende ademhaling</span>
                     </div>
                     <div className="flex items-start space-x-2">
                       <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
@@ -388,21 +392,21 @@ export default function HypoallergeneVoedingPage() {
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Link href="/kennisbank/problemen-oplossen/allergische-reacties-flesvoeding" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors bg-default">
+                  <div className="font-medium text-primary">Allergische reacties flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Herken en behandel allergische reacties bij je baby</div>
+                </Link>
                 <Link href="/kennisbank/problemen-oplossen/krampjes-na-flesvoeding" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors bg-default">
-                  <div className="font-medium text-gray-700">Krampjes na flesvoeding </div>
-                  <div className="text-gray-600">HA-voeding als oplossing voor krampen</div>
+                  <div className="font-medium text-primary">Krampjes na flesvoeding →</div>
+                  <div className="text-sm text-gray-600">HA-voeding als oplossing voor krampen</div>
                 </Link>
-                <Link href="/kennisbank/soorten-flesvoeding/anti-reflux-flesvoeding" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors bg-default">
-                  <div className="font-medium text-gray-700">Anti-reflux flesvoeding </div>
-                  <div className="text-gray-600">Specialistische voeding voor reflux</div>
+                <Link href="/kennisbank/soorten-flesvoeding/lactosevrije-flesvoeding" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors bg-default">
+                  <div className="font-medium text-primary">Lactosevrije flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Voor baby's met lactose-intolerantie</div>
                 </Link>
-                <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors bg-default">
-                  <div className="font-medium text-gray-700">Verschil startvoeding/opvolgmelk </div>
-                  <div className="text-gray-600">HA-voeding door verschillende leeftijden</div>
-                </Link>
-                <Link href="/kennisbank/soorten-flesvoeding" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors bg-default">
-                  <div className="font-medium text-gray-700">Alle soorten flesvoeding </div>
-                  <div className="text-gray-600">Overzicht alle flesvoeding types</div>
+                <Link href="/" className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors bg-default">
+                  <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+                  <div className="text-sm text-gray-600">Bereken de juiste HA-voeding hoeveelheden</div>
                 </Link>
               </div>
             </div>
@@ -417,7 +421,7 @@ export default function HypoallergeneVoedingPage() {
                 Ook bij hypoallergene voeding zijn de juiste hoeveelheden belangrijk. 
                 Bereken exact hoeveel ml HA-voeding jouw baby nodig heeft.
               </p>
-              <Link 
+              <Link
                 href="/"
                 className="bg-white/20 hover:bg-white/30 backdrop-blur text-white font-medium py-3 px-6 rounded-xl transition-all inline-flex items-center"
               >

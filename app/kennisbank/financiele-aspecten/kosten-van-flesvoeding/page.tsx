@@ -1,10 +1,11 @@
 import Layout from '../../../../components/Layout'
+import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
-import { Euro } from 'lucide-react'
+import { Euro, ArrowRight } from 'lucide-react'
 
 export const metadata = {
-  title: 'Kosten van Flesvoeding: Complete Budgetgids Nederland 2025',
+  title: 'Kosten van Flesvoeding: Complete Budgetgids Nederland 2026',
   description: 'Alle kosten op een rij + tips om geld te besparen zonder kwaliteit in te leveren. Van €575 tot €1580 per jaar - ontdek wat past bij jouw budget.',
   keywords: 'kosten flesvoeding, prijzen babyvoeding, budget baby, flesvoeding besparen, goedkope flesvoeding Nederland',
 }
@@ -42,10 +43,10 @@ export default function KostenVanFlesvoeding() {
         <div className="col-span-12 lg:col-span-7">
           <div className="space-y-6">
             
-            <div className="text-sm text-gray-500 mb-2">Financiële Aspecten  Kosten</div>
+            <div className="text-sm text-gray-500 mb-2">Financiële Aspecten • Kosten</div>
             <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
               <Euro className="w-6 h-6 mr-3 text-primary" />
-              Kosten van Flesvoeding: Complete Budgetgids Nederland 2025
+              Kosten van Flesvoeding: Complete Budgetgids Nederland 2026
             </h1>
             
             <p className="text-gray-500 mb-6 italic">
@@ -55,7 +56,7 @@ export default function KostenVanFlesvoeding() {
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed">
-                Hoeveel kost flesvoeding nou eigenlijk? Deze vraag houdt veel aanstaande ouders bezig. Deze complete budgetgids geeft je alle Nederlandse prijzen van 2025, van goedkoopste tot duurste opties. Plus: praktische bespaartips die kunnen opleveren tot €300 per jaar, zonder in te leveren op kwaliteit of veiligheid.
+                Hoeveel kost flesvoeding nou eigenlijk? Deze vraag houdt veel aanstaande ouders bezig. Deze complete budgetgids geeft je alle Nederlandse prijzen van 2026, van goedkoopste tot duurste opties. Plus: praktische bespaartips die kunnen opleveren tot €300 per jaar, zonder in te leveren op kwaliteit of veiligheid.
               </p>
             </section>
 
@@ -442,7 +443,7 @@ export default function KostenVanFlesvoeding() {
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                      <span className="text-gray-700"><strong>Restjes bewaren</strong>: Maximaal 2 uur bij kamertemperatuur</span>
+                      <span className="text-gray-700"><strong>Restjes bewaren</strong>: Maximaal 1 uur bij kamertemperatuur, restjes na drinken direct weggooien</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -641,7 +642,7 @@ export default function KostenVanFlesvoeding() {
                 <ul className="space-y-2">
                   <li className="flex items-start space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                    <span className="text-gray-700"><strong>Bereken</strong> je specifieke behoeften met onze <a href="/" className="text-primary hover:underline">flesvoeding calculator</a></span>
+                    <span className="text-gray-700"><strong>Bereken</strong> je specifieke behoeften met onze <a href="/" className="text-primary hover:underline font-medium">flesvoeding calculator</a></span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -663,10 +664,45 @@ export default function KostenVanFlesvoeding() {
               </div>
             </section>
 
-            <div className="text-center">
-              <p className="text-gray-700">
-                Met de juiste planning en bewuste keuzes zorg je ervoor dat flesvoeding past binnen je budget, zodat je kunt focussen op het belangrijkste: genieten van je baby!
-              </p>
+            {/* Call to action */}
+            <div className="bg-white rounded-2xl border border-gray-200 p-6">
+              <div className="text-center">
+                <p className="text-gray-700 mb-4">
+                  Met de juiste planning en bewuste keuzes zorg je ervoor dat flesvoeding past binnen je budget, zodat je kunt focussen op het belangrijkste: genieten van je baby!
+                </p>
+                <Link
+                  href="/"
+                  className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                >
+                  <div className="text-center">
+                    <div className="font-medium text-primary">Bereken hoeveel flesvoeding je baby nodig heeft</div>
+                    <div className="flex items-center justify-between"><span className="text-gray-600">Gebruik onze flesvoeding calculator voor gepersonaliseerd advies</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
+                  </div>
+                </Link>
+              </div>
+            </div>
+
+            {/* Gerelateerde artikelen */}
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+              <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde artikelen</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Link href="/kennisbank/praktische-tips/geld-besparen-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
+                  <div className="font-medium text-primary">Geld besparen op flesvoeding</div>
+                  <div className="flex items-center justify-between"><span className="text-gray-600">Praktische bespaartips</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
+                </Link>
+                <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
+                  <div className="font-medium text-primary">Verschil startvoeding en opvolgmelk</div>
+                  <div className="flex items-center justify-between"><span className="text-gray-600">Wanneer overstappen?</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
+                </Link>
+                <Link href="/kennisbank/basis-flesvoeding/flesvoeding-vs-borstvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
+                  <div className="font-medium text-primary">Flesvoeding vs borstvoeding</div>
+                  <div className="flex items-center justify-between"><span className="text-gray-600">Eerlijke vergelijking</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
+                </Link>
+                <Link href="/kennisbank/soorten-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
+                  <div className="font-medium text-primary">Soorten flesvoeding</div>
+                  <div className="flex items-center justify-between"><span className="text-gray-600">Overzicht alle types</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

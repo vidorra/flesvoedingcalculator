@@ -83,7 +83,7 @@ export default function DiarreeEnFlesvoedingPage() {
     },
     {
       urgentie: "Huisartsenpost (24u)",
-      symptomen: "Matige dehydratie, koorts >38.5°C baby <3 mnd, bloed in ontlasting"
+      symptomen: "Matige dehydratie, koorts >38,5°C baby <3 mnd, bloed in ontlasting"
     },
     {
       urgentie: "Huisarts (2-3 dagen)",
@@ -108,7 +108,7 @@ export default function DiarreeEnFlesvoedingPage() {
             
             {/* Header - ALWAYS outside of card containers */}
             <div>
-              <div className="text-sm text-gray-500 mb-2">Kennisbank  Problemen Oplossen</div>
+              <div className="text-sm text-gray-500 mb-2">Kennisbank • Problemen Oplossen</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Droplets className="w-6 h-6 mr-3 text-primary" />
                 Diarree en Flesvoeding: Nederlandse Gids voor Ouders
@@ -126,7 +126,7 @@ export default function DiarreeEnFlesvoedingPage() {
                 Vroege herkenning en juiste behandeling zijn essentieel voor het welzijn van je baby en het voorkomen van dehydratie.
               </p>
               
-              <div className="mt-4 p-4 bg-white rounded-lg">
+ <div className="mt-4">
                 <p className="text-gray-700">
                   <strong>Nederlandse statistiek:</strong> 60% infectieus, 25% voeding-gerelateerd, 
                   8% antibiotica gerelateerd. Meeste gevallen zijn zelf-limiterend binnen 3-7 dagen.
@@ -144,7 +144,7 @@ export default function DiarreeEnFlesvoedingPage() {
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Normale vs Abnormale Ontlasting</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-white rounded-lg p-4">
+ <div className="p-4">
                     <h4 className="font-medium text-primary mb-3">Normale Flesvoeding Ontlasting:</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
@@ -236,6 +236,10 @@ export default function DiarreeEnFlesvoedingPage() {
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                         <span className="text-gray-700 text-sm">C. difficile: Na antibiotica gebruik</span>
                       </li>
+                      <li className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                        <span className="text-gray-700 text-sm">Bij aanhoudende diarree kan <Link href="/kennisbank/soorten-flesvoeding/hypoallergene-flesvoeding" className="text-primary hover:underline font-medium">hypoallergene flesvoeding</Link> helpen</span>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -291,14 +295,14 @@ export default function DiarreeEnFlesvoedingPage() {
               
               <div className="space-y-4">
                 {dehydratieSignalen.map((stadium, index) => (
-                  <div key={index} className="bg-white rounded-lg p-4">
+ <div key={index} className="p-4">
                     <h3 className="font-medium text-primary mb-2">{stadium.ernst}</h3>
                     <p className="text-gray-700 text-sm">{stadium.symptomen}</p>
                   </div>
                 ))}
               </div>
               
-              <div className="mt-6 p-4 bg-white rounded-lg">
+ <div className="mt-6">
                 <h4 className="font-medium text-gray-700 mb-2">Nederlandse ORS Opties</h4>
                 <p className="text-gray-700 text-sm mb-2">
                   <strong>Verkrijgbaar bij:</strong> apotheek (op recept vergoed), drogist, online
@@ -318,14 +322,14 @@ export default function DiarreeEnFlesvoedingPage() {
               
               <div className="space-y-4">
                 {medischeHulpCriteria.map((criterium, index) => (
-                  <div key={index} className="bg-white rounded-lg p-4">
+ <div key={index} className="p-4">
                     <h3 className="font-medium text-primary mb-2">{criterium.urgentie}</h3>
                     <p className="text-gray-700 text-sm">{criterium.symptomen}</p>
                   </div>
                 ))}
               </div>
               
-              <div className="mt-6 p-4 bg-white rounded-lg">
+ <div className="mt-6">
                 <h4 className="font-medium text-gray-700 mb-2">Nederlandse Hulpnummers</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
                   <div>
@@ -363,7 +367,7 @@ export default function DiarreeEnFlesvoedingPage() {
 
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Geleidelijke Herstart Flesvoeding</h3>
-                <div className="bg-white rounded-lg p-4">
+ <div className="p-4">
                   <p className="text-gray-700 text-sm mb-3"><strong>Stapsgewijze hervatting:</strong></p>
                   <ul className="space-y-1 text-gray-700">
                     <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Dag 1-2: Alleen ORS + water</span></li>
@@ -380,7 +384,8 @@ export default function DiarreeEnFlesvoedingPage() {
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Preventie Strategieën</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Strikte hygiëne en juiste bereiding kunnen 80% van voeding-gerelateerde diarree voorkomen:
+                Strikte hygiëne en juiste bereiding kunnen 80% van voeding-gerelateerde diarree voorkomen.
+                Lees meer over <Link href="/kennisbank/hygiene-bereiding/water-koken-flesvoeding" className="text-primary hover:underline font-medium">water koken voor flesvoeding</Link> en <Link href="/kennisbank/hygiene-bereiding/houdbaarheid-flesvoeding" className="text-primary hover:underline font-medium">houdbaarheid van flesvoeding</Link>:
               </p>
               
               <ul className="space-y-3 mb-6">
@@ -394,7 +399,7 @@ export default function DiarreeEnFlesvoedingPage() {
               
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Nederlandse Water Veiligheid</h3>
-                <div className="bg-white rounded-lg p-4">
+ <div className="p-4">
                   <p className="text-gray-700 text-sm">
                     <strong>Kraanwater is veilig</strong> in heel Nederland, maar kook het tot baby 6 maanden oud is. 
                     Geen additieven nodig - Nederlands water heeft uitstekende kwaliteit.
@@ -407,12 +412,12 @@ export default function DiarreeEnFlesvoedingPage() {
             <section className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
                 <Link 
-                  href="/calculator"
+                  href="/"
                   className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-white transition-colors"
                 >
                   <div className="text-center">
-                    <div className="font-medium text-gray-700">Bereken veilige voeding hoeveelheden </div>
-                    <div className="text-gray-600">Voorkom overvoeding die diarree kan veroorzaken</div>
+                    <div className="font-medium text-primary">Bereken veilige voeding hoeveelheden</div>
+                    <div className="flex items-center justify-between"><span className="text-gray-600">Voorkom overvoeding die diarree kan veroorzaken</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
                   </div>
                 </Link>
               </div>
@@ -431,21 +436,21 @@ export default function DiarreeEnFlesvoedingPage() {
                 Gerelateerde Artikelen
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link href="/kennisbank/problemen-oplossen/allergische-reacties-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Allergische reacties flesvoeding </div>
-                  <div className="text-gray-600">Onderscheid tussen allergie en diarree</div>
+                <Link href="/kennisbank/hygiene-bereiding/houdbaarheid-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Houdbaarheid flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Voorkom besmetting door correcte bewaring</div>
                 </Link>
-                <Link href="/kennisbank/hygiene-bereiding/flesvoeding-bewaren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Flesvoeding bewaren </div>
-                  <div className="text-gray-600">Voorkom besmetting door juiste bewaring</div>
+                <Link href="/kennisbank/hygiene-bereiding/water-koken-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Water koken flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Veilig water voorkomt infecties</div>
                 </Link>
-                <Link href="/kennisbank/hygiene-bereiding/veilig-verwarmen-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Veilig verwarmen flesvoeding </div>
-                  <div className="text-gray-600">Juiste temperatuur voorkomt maagproblemen</div>
+                <Link href="/kennisbank/soorten-flesvoeding/hypoallergene-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Hypoallergene flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Bij aanhoudende darmproblemen</div>
                 </Link>
-                <Link href="/kennisbank/problemen-oplossen/krampjes-na-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Krampjes na flesvoeding </div>
-                  <div className="text-gray-600">Andere maag-darm problemen herkennen</div>
+                <Link href="/" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+                  <div className="text-sm text-gray-600">Bereken veilige hoeveelheden</div>
                 </Link>
               </div>
             </section>

@@ -5,7 +5,7 @@ import AffiliateProductWidget from '../../../../components/AffiliateProductWidge
 import { DollarSign, ArrowRight, Home, TrendingDown, CheckCircle, AlertTriangle, Calculator, ShoppingCart } from 'lucide-react'
 
 export const metadata = {
-  title: 'Geld Besparen op Flesvoeding: Complete Budget Gids Nederlandse Ouders 2025',
+  title: 'Geld Besparen op Flesvoeding: Complete Budget Gids Nederlandse Ouders 2026',
   description: 'Tot 50% besparen op flesvoeding kosten zonder kwaliteit in te leveren. Alle budget tricks, merkenvergelijkingen, online deals en praktische besparingstips die echt werken.',
 }
 
@@ -53,22 +53,22 @@ export default function GeldBesparenPage() {
 
   const savingStrategies = [
     {
-      strategy: 'Online Shopping',
+      strategy: 'Online Winkelen',
       savings: '20-35%',
-      methods: ['Bol.com Subscribe & Save (15%)', 'Amazon Prime baby discount', 'Baby-dump.nl specialist deals', 'Bulk bestellingen €50+'],
+      methods: ['Bol.com abonneer & bespaar (15%)', 'Amazon Prime babykorting', 'Baby-dump.nl specialistische aanbiedingen', 'Bulk bestellingen €50+'],
       tips: 'Abonnement services voor automatische korting'
     },
     {
       strategy: 'Timing Optimalisatie',
       savings: '15-30%',
-      methods: ['Black Friday deals (50% mogelijk)', 'Januari clearance sales', 'Seizoens inkoop planning', 'Price tracking alerts'],
+      methods: ['Black Friday aanbiedingen (50% mogelijk)', 'Januari opruimingsacties', 'Seizoensgebonden inkoopplanning', 'Prijswaarschuwingen instellen'],
       tips: 'Voorraad 2-3 maanden, niet meer vanwege houdbaarheid'
     },
     {
       strategy: 'Merkenvergelijking',
       savings: '25-50%',
-      methods: ['Budget versus premium analyse', 'EU-standaarden zijn identiek', 'Huismerken kwaliteit', 'Blind taste tests'],
-      tips: '85% baby\'s accepteert budget merken even goed'
+      methods: ['Budget versus premium analyse', 'EU-standaarden zijn identiek', 'Huismerken kwaliteit', 'Blinde smaaktests'],
+      tips: 'De meeste baby\'s accepteren budget merken even goed'
     }
   ]
 
@@ -76,49 +76,49 @@ export default function GeldBesparenPage() {
     {
       scenario: 'Strak Budget',
       monthly: '€30-40',
-      strategies: ['Huismerken exclusively', 'Grootverpakingen kopen maximization', 'Cashback optimalisatie', 'DIY preparation'],
+      strategies: ['Uitsluitend huismerken', 'Grootverpakingen optimaal inkopen', 'Cashback optimalisatie', 'Zelf bereiden'],
       realistic: true
     },
     {
       scenario: 'Comfortabel Budget',
       monthly: '€50-70',
-      strategies: ['Mid-range merken (Hero Baby)', 'Quality-price balancing', 'Convenience factor', 'Flexibel winkelen'],
+      strategies: ['Mid-range merken (Hero Baby)', 'Kwaliteit-prijs balanceren', 'Gemaksfactor', 'Flexibel winkelen'],
       realistic: true
     },
     {
       scenario: 'Ruim Budget',
       monthly: '€70-90',
-      strategies: ['Premium brands toegestaan', 'Convenience prioritized', 'Organic options', 'Time over money'],
+      strategies: ['Premium merken toegestaan', 'Gemak geprioriteerd', 'Biologische opties', 'Tijd boven geld'],
       realistic: false
     }
   ]
 
   const dangerousSavings = [
-    'Formula verdunnen (meer water) - Malnutrition risico',
-    'Zelf formula maken van koemelk - Gevaarlijk voor baby',
-    'Expired products gebruiken - Health risks',
-    'Non-EU formula importeren - Geen kwaliteitsgarantie',
-    'Watering down formula - Groei problemen'
+    'Flesvoeding verdunnen (meer water) - Ondervoeding risico',
+    'Zelf flesvoeding maken van koemelk - Gevaarlijk voor baby',
+    'Verlopen producten gebruiken - Gezondheidsrisico\'s',
+    'Niet-EU flesvoeding importeren - Geen kwaliteitsgarantie',
+    'Flesvoeding aanlengen met extra water - Groeiproblemen'
   ]
 
   const smartHacks = [
     {
-      hack: 'Subscription Service Stack',
+      hack: 'Abonnement diensten combineren',
       description: 'Bol.com Select + Amazon Prime combo',
       savings: '15-20%',
       method: 'Abonnement op flesvoeding + bulk voordelen'
     },
     {
-      hack: 'Cashback Stacking',
-      description: 'Multiple cashback sources combineren',
+      hack: 'Cashback stapelen',
+      description: 'Meerdere cashback bronnen combineren',
       savings: '10-25%',
       method: 'Creditcard + loyalty + app + codes = maximum return'
     },
     {
-      hack: 'Bulk Preparation',
-      description: 'Weekend batch prep systeem',
+      hack: 'Bulk bereiding',
+      description: 'Weekend batch bereiding systeem',
       savings: '15% + tijd',
-      method: 'Pre-measured containers + efficiëntie gains'
+      method: 'Voorgemeten containers + efficiëntiewinst'
     }
   ]
 
@@ -130,7 +130,7 @@ export default function GeldBesparenPage() {
 
             {/* Header */}
             <div className="mb-6">
-              <div className="text-sm text-gray-500 mb-2">Praktische Tips  Geld Besparen</div>
+              <div className="text-sm text-gray-500 mb-2">Praktische Tips • Geld Besparen</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <DollarSign className="w-6 h-6 mr-3 text-primary" />
                 Geld Besparen op Flesvoeding: Complete Budget Gids
@@ -150,14 +150,14 @@ export default function GeldBesparenPage() {
               
               <div className="mb-4">
                 <p className="text-gray-700 mb-4">
-                  Flesvoeding is de 3e grootste kostenpost voor Nederlandse baby's na luiers en kinderopvang. 
+                  <Link href="/kennisbank/financiele-aspecten/kosten-van-flesvoeding" className="text-primary hover:underline font-medium">Flesvoeding is de 3e grootste kostenpost</Link> voor Nederlandse baby's na luiers en kinderopvang.
                   Voor families met krap budget kan dit het verschil maken tussen stress en rust.
                 </p>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium text-primary mb-3"> Nederlandse Familie Budget Reality</h3>
+                  <h3 className="font-medium text-primary mb-3"><Link href="/kennisbank/financiele-aspecten/kosten-van-flesvoeding" className="text-primary hover:underline font-medium">Nederlandse Familie Budget Reality</Link></h3>
                   <div className="text-sm text-gray-600 space-y-2">
                     <div><strong>Besteedbaar inkomen:</strong> €3.200/maand (gemiddeld)</div>
                     <div><strong>Baby kosten totaal:</strong> €500-800/maand</div>
@@ -178,17 +178,17 @@ export default function GeldBesparenPage() {
                 </div>
               </div>
 
-              <div className="mt-4 p-3 bg-white rounded-lg border border-gray-200">
+              <div className="mt-4 p-3 border border-gray-200">
                 <p className="text-gray-700 text-sm">
-                  <strong>Nibud Onderzoek:</strong> 40% Nederlandse gezinnen heeft moeite met 
-                  baby-gerelateerde uitgaven in het eerste jaar.
+                  <strong>Uit de praktijk:</strong> Veel Nederlandse gezinnen ervaren dat
+                  baby-gerelateerde uitgaven in het eerste jaar flink kunnen oplopen.
                 </p>
               </div>
             </div>
 
             {/* Cost breakdown comparison */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Complete Kosten Vergelijking (2025)</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Complete Kosten Vergelijking (2026)</h2>
               
               <div className="space-y-6">
                 {costComparison.map((category, index) => (
@@ -234,7 +234,7 @@ export default function GeldBesparenPage() {
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <ShoppingCart className="w-5 h-5 mr-2" />
-                Smart Shopping Strategieën
+                Slimme Winkelstrategieën
               </h2>
               
               <div className="space-y-6">
@@ -271,10 +271,10 @@ export default function GeldBesparenPage() {
 
             {/* Quality vs price analysis */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Kwaliteit vs Prijs: EU Regulatie Reality Check</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Kwaliteit vs Prijs: EU Regulatie Realiteitscheck</h2>
               
               <div className="mb-6">
-                <div className="bg-white rounded-lg p-4 border border-gray-200">
+                <div className="p-4 border border-gray-200">
                   <h3 className="font-medium text-primary mb-3">Alle Flesvoeding in Nederland</h3>
                   <div className="grid md:grid-cols-2 gap-4 text-sm">
                     <div>
@@ -292,23 +292,23 @@ export default function GeldBesparenPage() {
                         <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Marketing en verpakking</span></li>
                         <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Extra ingrediënten (prebiotica)</span></li>
                         <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Smaak nuances</span></li>
-                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Brand prestige</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Merkprestige</span></li>
                       </ul>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-lg p-4">
-                <h4 className="font-medium text-gray-600 mb-3"> Consumentenbond Test Resultaten 2024</h4>
+ <div className="p-4">
+                <h4 className="font-medium text-gray-600 mb-3"> Kwaliteitsvergelijking budget vs. premium</h4>
                 <div className="text-sm text-gray-600 space-y-2">
-                  <div><strong>Acceptatie test (200 baby's):</strong></div>
-                  <div> 78% baby's accepteerde budget merk even goed</div>
-                  <div> 15% had voorkeur premium (smaak)</div>
-                  <div> 7% weigerde budget opties</div>
-                  <div> Geen verschil groei/ontwikkeling</div>
+                  <div><strong>Ervaring leert dat:</strong></div>
+                  <div> De meeste baby's accepteren budget merken even goed</div>
+                  <div> Sommige baby's hebben een smaakvoorkeur voor premium</div>
+                  <div> Een klein deel weigert budget opties</div>
+                  <div> Er is geen aangetoond verschil in groei/ontwikkeling</div>
                   <div className="pt-2 font-medium text-gray-600">
-                    <strong>Conclusie:</strong> Voor 85% gezinnen is budget merk volledig adequate substitutie
+                    <strong>Conclusie:</strong> Voor de meeste gezinnen is een budget merk een volledig adequate keuze
                   </div>
                 </div>
               </div>
@@ -316,7 +316,7 @@ export default function GeldBesparenPage() {
 
             {/* Advanced hacks */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Advanced Budget Hacks</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Geavanceerde Budget Tips</h2>
               
               <div className="space-y-4">
                 {smartHacks.map((hack, index) => (
@@ -333,23 +333,23 @@ export default function GeldBesparenPage() {
                 ))}
               </div>
 
-              <div className="mt-6 p-4 bg-white rounded-lg border border-gray-200">
-                <h4 className="font-medium text-gray-600 mb-2"> Essential Money-Saving Apps</h4>
+              <div className="mt-6 p-4 border border-gray-200">
+                <h4 className="font-medium text-gray-600 mb-2"> Onmisbare Bespaar-Apps</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <h5 className="font-medium text-gray-600 mb-1">Price Comparison:</h5>
+                    <h5 className="font-medium text-gray-600 mb-1">Prijsvergelijking:</h5>
                     <ul className="text-gray-600 space-y-1">
-                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Kieskeurig.nl - Real-time vergelijking</span></li>
-                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Scoupy - Cashback baby products</span></li>
-                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Honey - Auto coupon codes</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Kieskeurig.nl - Realtime vergelijking</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Scoupy - Cashback babyproducten</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Honey - Automatische kortingscodes</span></li>
                     </ul>
                   </div>
                   <div>
-                    <h5 className="font-medium text-gray-600 mb-1">Budget Tracking:</h5>
+                    <h5 className="font-medium text-gray-600 mb-1">Budget bijhouden:</h5>
                     <ul className="text-gray-600 space-y-1">
-                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>YNAB - Envelope budgeting</span></li>
-                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Baby costs tracking spreadsheets</span></li>
-                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Inventory management apps</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>YNAB - Envelop budgetmethode</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Babykosten bijhouden in spreadsheets</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Voorraadbeheerapps</span></li>
                     </ul>
                   </div>
                 </div>
@@ -402,10 +402,10 @@ export default function GeldBesparenPage() {
                 </div>
               </div>
 
-              <div className="p-4 bg-white rounded-lg">
-                <h4 className="font-medium text-amber-800 mb-2"> Health Impact van Foute Besparingen</h4>
+ <div className="p-4">
+                <h4 className="font-medium text-amber-800 mb-2"> Gezondheidsimpact van Foute Besparingen</h4>
                 <p className="text-gray-600">
-                  Malnutrition, infection susceptibility, groei retardation, verteringsproblemen. 
+                  Ondervoeding, infectiegevoeligheid, groeivertraging, verteringsproblemen.
                   Medische kosten zijn veel hoger dan besparingen!
                 </p>
               </div>
@@ -421,21 +421,21 @@ export default function GeldBesparenPage() {
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link href="/kennisbank/praktische-tips/flesvoeding-werk-combineren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-600">Werk combineren </div>
-                  <div className="text-gray-600">Kinderopvang kosten optimaliseren</div>
+                <Link href="/kennisbank/financiele-aspecten/kosten-van-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Kosten van flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Complete kostenanalyse en budgetplanner</div>
                 </Link>
-                <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-600">Startvoeding vs opvolgmelk </div>
-                  <div className="text-gray-600">Prijs vergelijking verschillende types</div>
+                <Link href="/kennisbank/soorten-flesvoeding/bio-organische-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Bio organische flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Prijs-kwaliteit vergelijking biologische merken</div>
                 </Link>
-                <Link href="/kennisbank/hygiene-bereiding/flesvoeding-bewaren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-600">Flesvoeding bewaren </div>
-                  <div className="text-gray-600">Verspilling voorkomen tips</div>
+                <Link href="/kennisbank/voedingstechnieken/voeden-van-tweeling" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Voeden van tweeling →</div>
+                  <div className="text-sm text-gray-600">Dubbele budgettering en bespaartips</div>
                 </Link>
-                <Link href="/kennisbank/praktische-tips" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-600">Alle praktische tips </div>
-                  <div className="text-gray-600">Meer handige ouder tips</div>
+                <Link href="/kennisbank/praktische-tips/flesvoeding-werk-combineren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Werk combineren →</div>
+                  <div className="text-sm text-gray-600">Kinderopvang kosten optimaliseren</div>
                 </Link>
               </div>
             </div>
@@ -450,7 +450,7 @@ export default function GeldBesparenPage() {
                 Optimaliseer je budget door de juiste hoeveelheden te berekenen. 
                 Weet precies hoeveel je nodig hebt - geen verspilling meer!
               </p>
-              <Link 
+              <Link
                 href="/"
                 className="bg-white/20 hover:bg-white/30 backdrop-blur text-white font-medium py-3 px-6 rounded-xl transition-all inline-flex items-center"
               >

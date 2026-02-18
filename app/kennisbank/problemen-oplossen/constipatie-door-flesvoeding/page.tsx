@@ -2,7 +2,7 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
-import { AlertCircle, Heart, Clock, Users, CheckCircle } from 'lucide-react'
+import { AlertCircle, Heart, Clock, Users, CheckCircle, ArrowRight, } from 'lucide-react'
 
 export default function ConstipatieFlespagePage() {
   const sidebarImages = [
@@ -32,7 +32,7 @@ export default function ConstipatieFlespagePage() {
           <div className="space-y-6">
             {/* Header */}
             <div>
-              <div className="text-sm text-gray-500 mb-2">Problemen Oplossen  Spijsvertering</div>
+              <div className="text-sm text-gray-500 mb-2">Problemen Oplossen • Spijsvertering</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <AlertCircle className="w-6 h-6 mr-3 text-primary" />
                 Constipatie door flesvoeding: Herkenning, oorzaken en effectieve oplossingen
@@ -235,7 +235,7 @@ export default function ConstipatieFlespagePage() {
                       <li className="flex space-x-3">
                         <span className="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm">2</span>
                         <div>
-                          <strong className="text-gray-700">Bicycle legs:</strong>
+                          <strong className="text-gray-700">Fietsbeweging:</strong>
                           <span className="text-gray-600 text-sm ml-2">Beentjes voorzichtig bewegen alsof fietsen</span>
                         </div>
                       </li>
@@ -318,7 +318,7 @@ export default function ConstipatieFlespagePage() {
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm">Frequent pooping nog normaal</span>
+                          <span className="text-gray-600 text-sm">Frequent poepen is nog normaal</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -349,22 +349,26 @@ export default function ConstipatieFlespagePage() {
 
                 <div className="mb-4">
                   <h3 className="font-medium text-primary mb-3">6+ maanden: Transitie periode</h3>
-                  
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <h4 className="font-medium text-gray-700 mb-2">Grote veranderingen:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm">Solid food introduction</span>
+                          <span className="text-gray-600 text-sm">Introductie van vast voedsel</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm">Water needs increase</span>
+                          <span className="text-gray-600 text-sm">Waterbehoefte neemt toe</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm">Sitting development helpt</span>
+                          <span className="text-gray-600 text-sm">Zit-ontwikkeling helpt</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-600 text-sm">Overweeg <Link href="/kennisbank/soorten-flesvoeding/wanneer-overstappen-opvolgmelk" className="text-primary hover:underline font-medium">overstappen naar opvolgmelk</Link> bij aanhoudende problemen</span>
                         </li>
                       </ul>
                     </div>
@@ -374,15 +378,15 @@ export default function ConstipatieFlespagePage() {
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm">High fiber foods: pruimen, peren</span>
+                          <span className="text-gray-600 text-sm">Vezelrijke voeding: pruimen, peren</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm">Increased water: 100-200ml per dag</span>
+                          <span className="text-gray-600 text-sm">Meer water: 100-200ml per dag</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm">Activity promotion: crawling stimuleert</span>
+                          <span className="text-gray-600 text-sm">Beweging stimuleren: kruipen helpt</span>
                         </li>
                       </ul>
                     </div>
@@ -397,7 +401,7 @@ export default function ConstipatieFlespagePage() {
               
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-medium text-gray-700 mb-2">Urgent situations (zelfde dag contact):</h3>
+                  <h3 className="font-medium text-gray-700 mb-2">Urgente situaties (zelfde dag contact):</h3>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -435,7 +439,7 @@ export default function ConstipatieFlespagePage() {
                     </li>
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-700 text-sm">Parent stress wordt te groot</span>
+                      <span className="text-gray-700 text-sm">Ouderstress wordt te groot</span>
                     </li>
                   </ul>
                 </div>
@@ -448,7 +452,7 @@ export default function ConstipatieFlespagePage() {
               
               <div className="space-y-4">
                 <div className="mb-4">
-                  <h3 className="font-medium text-primary mb-3">Dag 1-3: Immediate relief</h3>
+                  <h3 className="font-medium text-primary mb-3">Dag 1-3: Directe verlichting</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <ul className="space-y-1">
                       <li className="flex items-center space-x-2">
@@ -457,13 +461,13 @@ export default function ConstipatieFlespagePage() {
                       </li>
                       <li className="flex items-center space-x-2">
                         <input type="checkbox" className="w-4 h-4 text-primary rounded" />
-                        <span className="text-gray-700 text-sm">Bicycle leg exercises</span>
+                        <span className="text-gray-700 text-sm">Fietsbewegingen met beentjes</span>
                       </li>
                     </ul>
                     <ul className="space-y-1">
                       <li className="flex items-center space-x-2">
                         <input type="checkbox" className="w-4 h-4 text-primary rounded" />
-                        <span className="text-gray-700 text-sm">Warm bath voor ontspanning</span>
+                        <span className="text-gray-700 text-sm">Warm bad voor ontspanning</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <input type="checkbox" className="w-4 h-4 text-primary rounded" />
@@ -474,26 +478,26 @@ export default function ConstipatieFlespagePage() {
                 </div>
 
                 <div className="mb-4">
-                  <h3 className="font-medium text-primary mb-3">Week 2: Advanced interventions</h3>
+                  <h3 className="font-medium text-primary mb-3">Week 2: Verdere interventies</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <ul className="space-y-1">
                       <li className="flex items-center space-x-2">
                         <input type="checkbox" className="w-4 h-4 text-primary rounded" />
-                        <span className="text-gray-700 text-sm">Consider comfort formula switch</span>
+                        <span className="text-gray-700 text-sm">Overweeg overstap naar comfortvoeding - lees <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="text-primary hover:underline font-medium">verschil startvoeding opvolgmelk</Link></span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <input type="checkbox" className="w-4 h-4 text-primary rounded" />
-                        <span className="text-gray-700 text-sm">Increase hydration (age appropriate)</span>
+                        <span className="text-gray-700 text-sm">Verhoog vochtinname (leeftijdsgeschikt)</span>
                       </li>
                     </ul>
                     <ul className="space-y-1">
                       <li className="flex items-center space-x-2">
                         <input type="checkbox" className="w-4 h-4 text-primary rounded" />
-                        <span className="text-gray-700 text-sm">Medical consultation if no improvement</span>
+                        <span className="text-gray-700 text-sm">Medisch consult bij geen verbetering</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <input type="checkbox" className="w-4 h-4 text-primary rounded" />
-                        <span className="text-gray-700 text-sm">Family support/stress reduction</span>
+                        <span className="text-gray-700 text-sm">Gezinsondersteuning/stressvermindering</span>
                       </li>
                     </ul>
                   </div>
@@ -501,7 +505,7 @@ export default function ConstipatieFlespagePage() {
               </div>
 
               <div className="bg-white border border-gray-200 rounded-lg p-4 mt-4">
-                <h3 className="font-medium text-gray-700 mb-2">Key reminders:</h3>
+                <h3 className="font-medium text-gray-700 mb-2">Belangrijke punten:</h3>
                 <ul className="space-y-1">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -519,12 +523,12 @@ export default function ConstipatieFlespagePage() {
             <div className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
                 <Link 
-                  href="/calculator"
+                  href="/"
                   className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
                   <div className="text-center">
-                    <div className="font-medium text-gray-700">Hulp nodig bij het aanpassen van voedingshoeveelheden? </div>
-                    <div className="text-gray-600">Gebruik onze flesvoeding calculator voor aangepaste aanbevelingen</div>
+                    <div className="font-medium text-primary">Hulp nodig bij het aanpassen van voedingshoeveelheden?</div>
+                    <div className="flex items-center justify-between"><span className="text-gray-600">Gebruik onze flesvoeding calculator voor aangepaste aanbevelingen</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
                   </div>
                 </Link>
               </div>
@@ -543,21 +547,21 @@ export default function ConstipatieFlespagePage() {
                 Gerelateerde artikelen
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link href="/kennisbank/soorten-flesvoeding/anti-reflux-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Anti-reflux flesvoeding </div>
-                  <div className="text-gray-600">Voor baby's met spijsverteringsproblemen</div>
+                <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Verschil startvoeding opvolgmelk →</div>
+                  <div className="text-sm text-gray-600">Juiste voeding kan constipatie verminderen</div>
                 </Link>
-                <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Fles bereiden stap voor stap </div>
-                  <div className="text-gray-600">Correcte bereiding voorkomt problemen</div>
+                <Link href="/kennisbank/soorten-flesvoeding/wanneer-overstappen-opvolgmelk" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Wanneer overstappen opvolgmelk →</div>
+                  <div className="text-sm text-gray-600">Timing bij spijsverteringsproblemen</div>
                 </Link>
-                <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Eerste keer flesvoeding </div>
-                  <div className="text-gray-600">Complete beginnersgids</div>
+                <Link href="/kennisbank/hygiene-bereiding/flesvoeding-bewaren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Flesvoeding bewaren →</div>
+                  <div className="text-sm text-gray-600">Correcte bewaring voorkomt problemen</div>
                 </Link>
-                <Link href="/kennisbank/problemen-oplossen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Meer probleemoplossing </div>
-                  <div className="text-gray-600">Overzicht alle problemen</div>
+                <Link href="/" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+                  <div className="text-sm text-gray-600">Bereken juiste hoeveelheden</div>
                 </Link>
               </div>
             </div>

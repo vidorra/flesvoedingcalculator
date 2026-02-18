@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import Layout from '../../components/Layout'
 import ContactModal from '../../components/ContactModal'
-import { Users, Heart, Star, Calculator, BookOpen } from 'lucide-react'
+import { Users } from 'lucide-react'
 
 export default function OverOnsPage() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
@@ -44,10 +44,7 @@ export default function OverOnsPage() {
 
         {/* Why Trust Us */}
         <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-medium text-gray-800 mb-4 flex items-center">
-            <Star className="w-5 h-5 mr-2 text-primary" />
-            Waarom FlesvoedingCalculator.nl vertrouwen?
-          </h2>
+          <h2 className="font-medium text-gray-800 mb-4">Waarom FlesvoedingCalculator.nl vertrouwen?</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-4">
@@ -109,10 +106,7 @@ export default function OverOnsPage() {
 
         {/* Our Method */}
         <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-medium text-gray-800 mb-4 flex items-center">
-            <Calculator className="w-5 h-5 mr-2 text-primary" />
-            Onze Methode
-          </h2>
+          <h2 className="font-medium text-gray-800 mb-4">Onze Methode</h2>
           
           <div className="space-y-4">
             <div className="bg-accent-rose-lighter rounded-xl p-4">
@@ -147,10 +141,7 @@ export default function OverOnsPage() {
 
         {/* Sources */}
         <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-medium text-gray-800 mb-4 flex items-center">
-            <BookOpen className="w-5 h-5 mr-2 text-primary" />
-            Bronnen & Expertise
-          </h2>
+          <h2 className="font-medium text-gray-800 mb-4">Bronnen & Expertise</h2>
           
           <div className="space-y-3 text-sm text-gray-600">
             <div className="flex items-start space-x-2">

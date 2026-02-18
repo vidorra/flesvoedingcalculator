@@ -32,7 +32,7 @@ export default function OverstappenBorstNaarFlesPage() {
           <div className="space-y-6">
             {/* Header */}
             <div>
-              <div className="text-sm text-gray-500 mb-2">Basis Flesvoeding  Overstap</div>
+              <div className="text-sm text-gray-500 mb-2">Basis Flesvoeding • Overstap</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <ArrowRight className="w-6 h-6 mr-3 text-primary" />
                 Overstappen van borstvoeding naar fles: Stapsgewijze gids
@@ -46,7 +46,7 @@ export default function OverstappenBorstNaarFlesPage() {
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Wanneer en waarom overstappen?</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                De beslissing om over te stappen van borst naar fles is persoonlijk en kan verschillende redenen hebben. Belangrijk is dat je dit op je eigen tempo doet en je geen schuld voelt over deze keuze.
+                De beslissing om over te stappen van borst naar fles is persoonlijk en kan verschillende redenen hebben. Belangrijk is dat je dit op je eigen tempo doet en je geen schuld voelt over deze keuze. Overweeg je nog? Lees onze <Link href="/kennisbank/basis-flesvoeding/flesvoeding-vs-borstvoeding" className="text-primary hover:underline font-medium">objectieve vergelijking tussen flesvoeding en borstvoeding</Link> voor meer inzicht.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -243,7 +243,7 @@ export default function OverstappenBorstNaarFlesPage() {
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm">Introduceer fles met afgekolfde melk</span>
+                          <span className="text-gray-600 text-sm">Introduceer fles met afgekolfde melk (zie onze <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="text-primary hover:underline font-medium">eerste keer flesvoeding gids</Link>)</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -394,7 +394,7 @@ export default function OverstappenBorstNaarFlesPage() {
                       </li>
                       <li className="flex items-center space-x-2">
                         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                        <span className="text-gray-700 text-sm"><strong>Andere speen proberen</strong> - vorm en materiaal maken verschil</span>
+                        <span className="text-gray-700 text-sm"><strong>Andere speen proberen</strong> - vorm en materiaal maken verschil (lees <Link href="/kennisbank/voedingstechnieken/verschillende-spenen-uitproberen" className="text-primary hover:underline font-medium">welke speen past bij jouw baby</Link>)</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
@@ -465,7 +465,7 @@ export default function OverstappenBorstNaarFlesPage() {
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
-                          <span className="text-gray-700 text-sm">Koorts boven 38.5°C</span>
+                          <span className="text-gray-700 text-sm">Koorts boven 38,5°C</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
@@ -665,9 +665,9 @@ export default function OverstappenBorstNaarFlesPage() {
               </div>
             </div>
 
-            <div className="">
+            <div>
               <p className="text-gray-700 text-sm text-center">
-                Overstappen van borst naar fles is een grote verandering voor beide. Met de juiste aanpak, geduld en ondersteuning verloopt deze overgang voor de meeste gezinnen succesvol.
+                Overstappen van borst naar fles is een grote verandering voor beide. Met de juiste aanpak, geduld en ondersteuning verloopt deze overgang voor de meeste gezinnen succesvol. Heb je de overstap gemaakt? Lees hoe je een <Link href="/kennisbank/praktische-tips/voedingsritme-opbouwen" className="text-primary hover:underline font-medium">vast voedingsritme opbouwt</Link> voor voorspelbare dagen.
               </p>
             </div>
 
@@ -675,12 +675,12 @@ export default function OverstappenBorstNaarFlesPage() {
             <div className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
                 <Link 
-                  href="/calculator"
+                  href="/"
                   className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
                   <div className="text-center">
-                    <div className="font-medium text-gray-700">Hulp nodig bij bepalen van juiste hoeveelheden na overstap? </div>
-                    <div className="text-gray-600">Gebruik onze flesvoeding calculator voor gepersonaliseerd advies</div>
+                    <div className="font-medium text-primary">Hulp nodig bij bepalen van juiste hoeveelheden na overstap?</div>
+                    <div className="flex items-center justify-between"><span className="text-gray-600">Gebruik onze flesvoeding calculator voor gepersonaliseerd advies</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
                   </div>
                 </Link>
               </div>
@@ -693,21 +693,25 @@ export default function OverstappenBorstNaarFlesPage() {
                 Gerelateerde artikelen
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link href="/kennisbank/basis-flesvoeding/baby-weigert-de-fles" className="p-3 ">
-                  <div className="font-medium text-gray-700">Baby weigert de fles </div>
-                  <div className="text-gray-600">Als baby geen fles wil accepteren</div>
+                <Link href="/kennisbank/basis-flesvoeding/baby-weigert-de-fles" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Baby weigert de fles →</div>
+                  <div className="text-sm text-gray-600">Als baby geen fles wil accepteren</div>
                 </Link>
-                <Link href="/kennisbank/basis-flesvoeding/flesvoeding-vs-borstvoeding" className="p-3 ">
-                  <div className="font-medium text-gray-700">Flesvoeding vs borstvoeding </div>
-                  <div className="text-gray-600">Eerlijke vergelijking beide methoden</div>
+                <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Eerste keer flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Complete beginnersgids</div>
                 </Link>
-                <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 ">
-                  <div className="font-medium text-gray-700">Eerste keer flesvoeding </div>
-                  <div className="text-gray-600">Complete beginnersgids</div>
+                <Link href="/kennisbank/voedingstechnieken/verschillende-spenen-uitproberen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Verschillende spenen uitproberen →</div>
+                  <div className="text-sm text-gray-600">Vind de perfecte speen voor je baby</div>
                 </Link>
-                <Link href="/kennisbank/praktische-tips/nachtvoeding-optimaliseren" className="p-3 ">
-                  <div className="font-medium text-gray-700">Nachtvoeding optimaliseren </div>
-                  <div className="text-gray-600">Efficiënte nachtvoedingen</div>
+                <Link href="/kennisbank/praktische-tips/voedingsritme-opbouwen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Voedingsritme opbouwen →</div>
+                  <div className="text-sm text-gray-600">Voorspelbare voedingsroutine creëren</div>
+                </Link>
+                <Link href="/" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+                  <div className="text-sm text-gray-600">Bereken juiste hoeveelheden na overstap</div>
                 </Link>
               </div>
             </div>

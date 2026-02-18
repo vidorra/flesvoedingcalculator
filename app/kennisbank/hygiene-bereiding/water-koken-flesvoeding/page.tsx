@@ -2,11 +2,11 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
-import { Droplets, Thermometer, Clock, Shield, AlertTriangle, CheckCircle, Home, Coffee } from 'lucide-react'
+import { Droplets, Thermometer, Clock, Shield, AlertTriangle, CheckCircle, Home, Coffee, ArrowRight, } from 'lucide-react'
 import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
-  title: 'Water Koken voor Flesvoeding: Complete Veiligheidsgids 2025',
+  title: 'Water Koken voor Flesvoeding: Complete Veiligheidsgids 2026',
   description: 'Het juist voorbereiden van water voor flesvoeding is cruciaal voor de veiligheid van je baby. Deze uitgebreide gids legt uit wanneer, hoe en waarom je water moet koken voor flesvoeding.',
 }
 
@@ -148,7 +148,7 @@ export default function WaterKokenFlesvoedingPage() {
             
             {/* Header */}
             <div>
-              <div className="text-sm text-gray-500 mb-2">Kennisbank  Hygiëne & Bereiding</div>
+              <div className="text-sm text-gray-500 mb-2">Kennisbank • Hygiëne & Bereiding</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Droplets className="w-6 h-6 mr-3 text-primary" />
                 Water Koken voor Flesvoeding: Complete Veiligheidsgids
@@ -164,8 +164,8 @@ export default function WaterKokenFlesvoedingPage() {
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Waarom Water Koken Essentieel Is</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Water koken voor flesvoeding heeft twee belangrijke veiligheidsdoelen: het elimineren van gevaarlijke bacteriën 
-                en het steriliseren van flesvoeding. Baby's onder 3 maanden hebben nog geen volledig ontwikkeld immuunsysteem 
+                Water koken voor flesvoeding heeft twee belangrijke veiligheidsdoelen: het elimineren van gevaarlijke bacteriën
+                en het steriliseren van flesvoeding. Dit is een cruciale stap bij <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="text-primary hover:underline font-medium">het bereiden van flesvoeding</Link>. Baby's onder 3 maanden hebben nog geen volledig ontwikkeld immuunsysteem
                 en zijn daarom extra kwetsbaar voor bacteriële infecties.
               </p>
               
@@ -219,10 +219,10 @@ export default function WaterKokenFlesvoedingPage() {
                 <Thermometer className="w-5 h-5 mr-2" />
                 Stap-voor-Stap: Water Koken voor Flesvoeding
               </h2>
-              
+
               <h3 className="font-medium text-primary mb-4">Traditionele Methode (Meest Veilig)</h3>
               <p className="text-gray-600 mb-4">
-                Deze methode duurt ongeveer 20-25 minuten van begin tot eind, maar garandeert optimale veiligheid.
+                Deze methode duurt ongeveer 20-25 minuten van begin tot eind, maar garandeert optimale veiligheid. Voor de complete bereiding, zie onze <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="text-primary hover:underline font-medium">stap-voor-stap gids</Link>.
               </p>
               
               <div className="space-y-3">
@@ -279,7 +279,7 @@ export default function WaterKokenFlesvoedingPage() {
 
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Nederlandse Kraanwaterkwaliteit</h3>
-                <div className="bg-white rounded-lg p-4">
+ <div className="p-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                     <div>
                       <div className="font-medium text-gray-700">Nitraat: &lt;50mg/L (EU-norm)</div>
@@ -303,7 +303,7 @@ export default function WaterKokenFlesvoedingPage() {
                 Veelgemaakte Fouten Vermijden
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Deze fouten kunnen de veiligheid van je baby in gevaar brengen. 
+                Deze fouten kunnen de veiligheid van je baby in gevaar brengen en kunnen leiden tot <Link href="/kennisbank/problemen-oplossen/diarree-en-flesvoeding" className="text-primary hover:underline font-medium">diarree en andere problemen</Link>.
                 Zorg dat je deze veelvoorkomende vergissingen vermijdt.
               </p>
               
@@ -395,12 +395,12 @@ export default function WaterKokenFlesvoedingPage() {
             <section className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
                 <Link 
-                  href="/calculator"
+                  href="/"
                   className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
                   <div className="text-center">
-                    <div className="font-medium text-gray-700">Hulp nodig met flesvoeding berekeningen? </div>
-                    <div className="text-gray-600">Gebruik onze calculator voor gepersonaliseerd advies</div>
+                    <div className="font-medium text-primary">Hulp nodig met flesvoeding berekeningen?</div>
+                    <div className="flex items-center justify-between"><span className="text-gray-600">Gebruik onze calculator voor gepersonaliseerd advies</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
                   </div>
                 </Link>
               </div>
@@ -432,21 +432,21 @@ export default function WaterKokenFlesvoedingPage() {
                 Gerelateerde Artikelen
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link href="/kennisbank/hygiene-bereiding/veilig-verwarmen-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Veilig verwarmen van flesvoeding </div>
-                  <div className="text-gray-600">Leer hoe je flesvoeding veilig verwarmt</div>
+                <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Fles bereiden stap-voor-stap →</div>
+                  <div className="text-sm text-gray-600">Volledige bereiding met gekookt water</div>
                 </Link>
-                <Link href="/kennisbank/hygiene-bereiding/houdbaarheid-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Houdbaarheid flesvoeding </div>
-                  <div className="text-gray-600">Hoelang kun je flesvoeding bewaren?</div>
+                <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Eerste keer flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Beginnersgids met watervoorbereiding</div>
                 </Link>
-                <Link href="/kennisbank/hygiene-bereiding/flessen-steriliseren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Flessen steriliseren </div>
-                  <div className="text-gray-600">Complete gids voor het steriliseren van babyflessen</div>
+                <Link href="/kennisbank/problemen-oplossen/diarree-en-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Diarree en flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Oorzaken en preventie</div>
                 </Link>
-                <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Fles bereiden stap-voor-stap </div>
-                  <div className="text-gray-600">Volledige handleiding voor fles bereiding</div>
+                <Link href="/" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+                  <div className="text-sm text-gray-600">Bereken juiste hoeveelheden water</div>
                 </Link>
               </div>
             </section>

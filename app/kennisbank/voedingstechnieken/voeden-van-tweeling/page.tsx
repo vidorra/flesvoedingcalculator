@@ -5,7 +5,7 @@ import AffiliateProductWidget from '../../../../components/AffiliateProductWidge
 import { BookOpen, ArrowRight, Home, Users, Clock, Package, Heart, Euro } from 'lucide-react'
 
 export const metadata = {
-  title: 'Flesvoeding voor Tweeling: Complete Survival Gids 2025 | Nederlandse Ouders',
+  title: 'Flesvoeding voor Tweeling: Complete Survival Gids 2026 | Nederlandse Ouders',
   description: 'Praktische hacks, tijdsbesparing en equipment voor Nederlandse ouders van een tweeling. Van gelijktijdige voeding tot kosten overzicht - alles voor succesvol tweeling voeden.',
 }
 
@@ -107,10 +107,10 @@ export default function TweelingVoedenPage() {
 
         {/* Header */}
         <div className="mb-6">
-          <div className="text-sm text-gray-500 mb-2">Voedingstechnieken  Tweeling</div>
+          <div className="text-sm text-gray-500 mb-2">Voedingstechnieken • Tweeling</div>
           <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
             <Users className="w-6 h-6 mr-3 text-primary" />
-            Flesvoeding voor Tweeling: Complete Survival Gids 2025
+            Flesvoeding voor Tweeling: Complete Survival Gids 2026
           </h1>
           <p className="text-gray-700">
             Praktische hacks, tijdsbesparing en equipment voor Nederlandse ouders van een tweeling. 
@@ -118,15 +118,16 @@ export default function TweelingVoedenPage() {
           </p>
         </div>
 
-        {/* Reality Check */}
+        {/* Realiteitscheck */}
         <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">De Realiteit: Dubbele Uitdaging</h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <p className="text-gray-700 mb-4">
-                Flesvoeding geven aan een tweeling betekent <strong>16-20 voedingen per dag</strong> in plaats van 8-10. 
-                Dit vraagt om slimme strategieën en de juiste aanpak.
+                Flesvoeding geven aan een tweeling betekent <strong>16-20 voedingen per dag</strong> in plaats van 8-10.
+                Dit vraagt om slimme strategieën zoals <Link href="/kennisbank/praktische-tips/geld-besparen-flesvoeding" className="text-primary hover:underline font-medium">kostenbesparende technieken</Link> en
+                <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="text-primary hover:underline font-medium"> efficiënte bereiding</Link>.
               </p>
               
               <div className="border border-gray-200 bg-white rounded-xl p-4">
@@ -151,17 +152,17 @@ export default function TweelingVoedenPage() {
             <div>
               <h3 className="font-medium text-primary mb-3">Voordelen specifiek voor tweeling:</h3>
               <div className="space-y-3">
-                <div className="p-3 border border-gray-200 bg-white rounded-lg">
+                <div className="p-3 border border-gray-200">
                   <h4 className="font-medium text-gray-700">Synchroon voeden mogelijk</h4>
                   <p className="text-gray-600">Beide baby's tegelijk voeden bespaart enorm veel tijd</p>
                 </div>
-                <div className="p-3 border border-gray-200 bg-white rounded-lg">
+                <div className="p-3 border border-gray-200">
                   <h4 className="font-medium text-gray-700">Meetbare inname per baby</h4>
-                  <p className="text-gray-600">Precies bijhouden hoeveel elke baby drinkt</p>
+                  <p className="text-gray-600">Precies bijhouden hoeveel elke baby drinkt met onze <Link href="/" className="text-primary hover:underline font-medium">flesvoeding calculator</Link></p>
                 </div>
-                <div className="p-3 border border-gray-200 bg-white rounded-lg">
+                <div className="p-3 border border-gray-200">
                   <h4 className="font-medium text-gray-700">Verdeling van nachtvoedingen</h4>
-                  <p className="text-gray-600">Partner kan helpen met voedingen</p>
+                  <p className="text-gray-600"><Link href="/kennisbank/praktische-tips/partner-betrekken-flesvoeding" className="text-primary hover:underline font-medium">Partner kan helpen</Link> met voedingen</p>
                 </div>
               </div>
             </div>
@@ -247,7 +248,7 @@ export default function TweelingVoedenPage() {
           ))}
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-            <div className="border border-gray-200 bg-white rounded-lg p-4">
+            <div className="border border-gray-200 p-4">
               <h4 className="font-medium text-primary mb-2">Starter pakket (€200-300):</h4>
               <ul className="text-sm text-gray-600 space-y-1">
                 <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>16 flessen: €60-80</span></li>
@@ -257,7 +258,7 @@ export default function TweelingVoedenPage() {
                 <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Accessoires: €30-50</span></li>
               </ul>
             </div>
-            <div className="border border-gray-200 bg-white rounded-lg p-4">
+            <div className="border border-gray-200 p-4">
               <h4 className="font-medium text-primary mb-2">Hoogwaardig pakket (€400-600):</h4>
               <ul className="text-sm text-gray-600 space-y-1">
                 <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Hoogwaardige flessen: €120</span></li>
@@ -298,7 +299,7 @@ export default function TweelingVoedenPage() {
             </table>
           </div>
           
-          <div className="mt-4 p-3 bg-white rounded-lg">
+ <div className="mt-4">
             <p className="text-gray-600">
               <strong>Totaal per dag:</strong> 1720ml (860ml per baby)  
               <strong>Tip:</strong> Flexibiliteit binnen 30 minuten is prima
@@ -349,7 +350,7 @@ export default function TweelingVoedenPage() {
                 <h3 className="font-medium text-primary mb-3">{budget.category}</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
                   {budget.periods.map((period, periodIndex) => (
-                    <div key={index} className="bg-white rounded-lg p-3">
+ <div key={index} className="p-3">
                       <div className="font-medium text-gray-700">{period.age}</div>
                       <div className="text-gray-700 font-medium">{period.cost}</div>
                       <div className="text-xs text-gray-600">{period.details}</div>
@@ -371,7 +372,7 @@ export default function TweelingVoedenPage() {
                 <ul className="space-y-1 mt-1">
                   <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Action/Kruidvat: 2e gratis acties</span></li>
                   <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Albert Heijn: Bonusbox kortingen</span></li>
-                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Online: Subscription 10% korting</span></li>
+                  <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Online: Abonnement 10% korting</span></li>
                 </ul>
               </div>
               <div>
@@ -394,7 +395,7 @@ export default function TweelingVoedenPage() {
           </h2>
           
           <div className="space-y-4">
-            <div className="bg-white rounded-lg p-4">
+ <div className="p-4">
               <h3 className="font-medium text-primary mb-2">"De productielijn redde ons leven" - Marieke, Almere</h3>
               <p className="text-gray-600">
                 "Iedere avond 8 flessen maken voor de volgende dag. Partner kan direct helpen zonder instructies. 
@@ -402,7 +403,7 @@ export default function TweelingVoedenPage() {
               </p>
             </div>
             
-            <div className="bg-white rounded-lg p-4">
+ <div className="p-4">
               <h3 className="font-medium text-primary mb-2">"Tweelingkussen = grote verbetering" - Patrick, Utrecht</h3>
               <p className="text-gray-600">
                 "€85 beste investering ooit. Beide baby's tegelijk voeden terwijl ik koffie drink. 
@@ -410,7 +411,7 @@ export default function TweelingVoedenPage() {
               </p>
             </div>
             
-            <div className="bg-white rounded-lg p-4">
+ <div className="p-4">
               <h3 className="font-medium text-primary mb-2">"Schema discipline werkt echt" - Lisa, Rotterdam</h3>
               <p className="text-gray-600">
                 "Eerste maand chaos, tweede maand strict schema. Beide baby's slapen nu door. 
@@ -419,7 +420,7 @@ export default function TweelingVoedenPage() {
             </div>
           </div>
           
-          <div className="mt-6 p-4 bg-white rounded-lg">
+ <div className="mt-6">
             <h4 className="font-medium text-primary mb-2">Meest waardevolle tip:</h4>
             <p className="text-gray-600 italic">
               "Perfectie bestaat niet bij tweeling. 80% goed is uitstekend." - Ervaren tweelingmoeder
@@ -433,25 +434,25 @@ export default function TweelingVoedenPage() {
           <h2 className="text-lg font-medium text-primary mb-4">Jouw Tweeling Succes Plan</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="border border-gray-200 bg-white rounded-lg p-4">
+            <div className="border border-gray-200 p-4">
               <h3 className="font-medium text-gray-700">Week 1</h3>
               <p className="text-gray-600">Basis equipment aanschaffen</p>
             </div>
-            <div className="border border-gray-200 bg-white rounded-lg p-4">
+            <div className="border border-gray-200 p-4">
               <h3 className="font-medium text-gray-700">Week 2</h3>
               <p className="text-gray-600">Gelijktijdig voeden oefenen</p>
             </div>
-            <div className="border border-gray-200 bg-white rounded-lg p-4">
+            <div className="border border-gray-200 p-4">
               <h3 className="font-medium text-gray-700">Week 3</h3>
               <p className="text-gray-600">Schema implementeren</p>
             </div>
-            <div className="border border-gray-200 bg-white rounded-lg p-4">
+            <div className="border border-gray-200 p-4">
               <h3 className="font-medium text-gray-700">Week 4</h3>
               <p className="text-gray-600">Verfijnen en automatiseren</p>
             </div>
           </div>
           
-          <div className="mt-6 p-4 bg-white rounded-lg">
+ <div className="mt-6">
             <h4 className="font-medium text-primary mb-2">Belangrijkste Takeaways:</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-600">
               <div className="flex items-center space-x-2">
@@ -484,19 +485,33 @@ export default function TweelingVoedenPage() {
         <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <Link 
-              href="/kennisbank/voedingstechnieken"
-              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
+            <Link
+              href="/kennisbank/praktische-tips/geld-besparen-flesvoeding"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-gray-700">Voedingstechnieken </div>
-              <div className="text-gray-600">Alle technieken voor flesvoeding</div>
+              <div className="font-medium text-primary">Geld besparen op flesvoeding →</div>
+              <div className="text-sm text-gray-600">Kostenbesparende tips voor tweeling</div>
             </Link>
-            <Link 
-              href="/kennisbank/praktische-tips"
-              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
+            <Link
+              href="/kennisbank/praktische-tips/partner-betrekken-flesvoeding"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
             >
-              <div className="font-medium text-gray-700">Praktische Tips </div>
-              <div className="text-gray-600">Time-saving tips en organisatie</div>
+              <div className="font-medium text-primary">Partner betrekken bij flesvoeding →</div>
+              <div className="text-sm text-gray-600">Verdeling van taken en verantwoordelijkheden</div>
+            </Link>
+            <Link
+              href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+            >
+              <div className="font-medium text-primary">Fles bereiden stap voor stap →</div>
+              <div className="text-sm text-gray-600">Efficiënte bereiding voor meerdere flessen</div>
+            </Link>
+            <Link
+              href="/"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+            >
+              <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+              <div className="text-sm text-gray-600">Bereken hoeveelheden per baby</div>
             </Link>
           </div>
         </div>

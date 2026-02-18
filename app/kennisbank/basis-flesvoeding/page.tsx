@@ -4,7 +4,7 @@ import KennisbankSidebar from '../../../components/KennisbankSidebar'
 import { BookOpen, CheckCircle, ArrowRight, Home } from 'lucide-react'
 
 export const metadata = {
-  title: 'Flesvoeding Basis: Alles wat Nederlandse Ouders Moeten Weten | 2025 Guide',
+  title: 'Flesvoeding Basis: Alles wat Nederlandse Ouders Moeten Weten | 2026 Guide',
   description: 'Complete gids over flesvoeding in Nederland. Wanneer kiezen voor flesvoeding? Voordelen, nadelen en officiële richtlijnen van het Voedingscentrum.',
 }
 
@@ -403,7 +403,7 @@ export default function BasisFlesvoedingPage() {
           <div className="bg-white rounded-xl p-4 border border-gray-200 mb-6">
             <h3 className="text-primary font-medium mb-3">7-Dagen Actieplan bij Flesweigering:</h3>
             <div className="grid md:grid-cols-3 gap-4">
-              <div className="bg-white rounded-lg p-3">
+ <div className="p-3">
                 <h4 className="font-medium text-primary mb-2">Dag 1-2: Diagnostiek</h4>
                 <ul className="text-gray-600 text-xs space-y-1">
                   <li className="flex items-center space-x-2">
@@ -424,7 +424,7 @@ export default function BasisFlesvoedingPage() {
                 </li>
                 </ul>
               </div>
-              <div className="bg-white rounded-lg p-3">
+ <div className="p-3">
                 <h4 className="font-medium text-primary mb-2">Dag 3-4: Optimaliseren</h4>
                 <ul className="text-gray-600 text-xs space-y-1">
                   <li className="flex items-center space-x-2">
@@ -445,7 +445,7 @@ export default function BasisFlesvoedingPage() {
                 </li>
                 </ul>
               </div>
-              <div className="bg-white rounded-lg p-3">
+ <div className="p-3">
                 <h4 className="font-medium text-primary mb-2">Dag 5-7: Geduld</h4>
                 <ul className="text-gray-600 text-xs space-y-1">
                   <li className="flex items-center space-x-2">
@@ -559,22 +559,22 @@ export default function BasisFlesvoedingPage() {
               href="/kennisbank/soorten-flesvoeding"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-gray-700">Soorten Flesvoeding </div>
-              <div className="text-gray-600">Nummer 1, 2, 3 uitgelegd</div>
+              <div className="font-medium text-primary">Soorten Flesvoeding</div>
+              <div className="flex items-center justify-between"><span className="text-gray-600">Nummer 1, 2, 3 uitgelegd</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
             </Link>
             <Link 
               href="/kennisbank/voedingstechnieken"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-gray-700">Voedingstechnieken </div>
-              <div className="text-gray-600">Bereiden en geven van fles</div>
+              <div className="font-medium text-primary">Voedingstechnieken</div>
+              <div className="flex items-center justify-between"><span className="text-gray-600">Bereiden en geven van fles</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
             </Link>
             <Link 
               href="/"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-gray-700">Flesvoeding Calculator </div>
-              <div className="text-gray-600">Bereken hoeveelheden</div>
+              <div className="font-medium text-primary">Flesvoeding Calculator</div>
+              <div className="flex items-center justify-between"><span className="text-gray-600">Bereken hoeveelheden</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
             </Link>
           </div>
         </div>

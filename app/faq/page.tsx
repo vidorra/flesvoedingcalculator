@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Layout from '../../components/Layout'
 import ContactModal from '../../components/ContactModal'
 import { generateFAQSchema } from '../../lib/structured-data'
-import { Info, Calculator, Baby, AlertCircle, ChevronDown, ChevronUp } from 'lucide-react'
+import { Info, AlertCircle, ChevronDown, ChevronUp } from 'lucide-react'
 
 
 export default function FAQPage() {
@@ -12,10 +12,10 @@ export default function FAQPage() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
 
   const categories = [
-    { id: 'calculator', name: 'Calculator gebruik', icon: Calculator },
-    { id: 'feeding', name: 'Algemene voedingsvragen', icon: Baby },
-    { id: 'medical', name: 'Medische vragen', icon: AlertCircle },
-    { id: 'practical', name: 'Praktische tips', icon: Info }
+    { id: 'calculator', name: 'Calculator gebruik' },
+    { id: 'feeding', name: 'Algemene voedingsvragen' },
+    { id: 'medical', name: 'Medische vragen' },
+    { id: 'practical', name: 'Praktische tips' }
   ]
 
   const faqs = {
@@ -91,58 +91,71 @@ export default function FAQPage() {
         </div>
 
 
-        {/* Categories */}
-        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-medium text-gray-800 mb-4">Categorieën</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
-            {categories.map((category) => {
-              const Icon = category.icon
-              return (
-                <button
-                  key={category.id}
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={`p-4 rounded-xl border transition-all text-left ${
-                    selectedCategory === category.id
-                      ? 'bg-gradient-active border-primary text-primary'
-                      : 'bg-white border-gray-200 hover:border-primary text-gray-700'
-                  }`}
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center">
-                      <Icon className="w-5 h-5 mr-2" />
-                      <div className="font-medium">{category.name}</div>
-                    </div>
-                    {selectedCategory === category.id && <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>}
-                  </div>
-                </button>
-              )
-            })}
-          </div>
-        </div>
-
-        {/* FAQ Items */}
-        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-          <h2 className="font-medium text-gray-800 mb-4">
-            {categories.find(c => c.id === selectedCategory)?.name}
-          </h2>
-          
-          <div className="space-y-4">
-            {currentFAQs.map((faq) => (
-              <div key={faq.id} className="border border-gray-100 rounded-xl overflow-hidden">
-                <button
-                  onClick={() => setOpenFAQ(openFAQ === faq.id ? null : faq.id)}
-                  className="w-full p-4 text-left hover:bg-default transition-colors flex items-center justify-between"
-                >
-                  <span className="font-medium text-gray-800">{faq.question}</span>
-                  {openFAQ === faq.id ? <ChevronUp className="w-5 h-5 text-primary" /> : <ChevronDown className="w-5 h-5 text-primary" />}
-                </button>
-                {openFAQ === faq.id && (
-                  <div className="px-4 pb-4 text-gray-600 border-t border-gray-100 bg-default/50">
-                    <p className="pt-3">{faq.answer}</p>
-                  </div>
-                )}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          {/* Categories - Left sidebar */}
+          <div className="lg:col-span-3">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4 lg:sticky lg:top-4">
+              <h2 className="font-medium text-gray-800 mb-3 px-2">Categorieën</h2>
+              <div className="space-y-2">
+                {categories.map((category) => (
+                    <button
+                      key={category.id}
+                      onClick={() => setSelectedCategory(category.id)}
+                      className={`w-full p-3 rounded-xl border transition-all text-left ${
+                        selectedCategory === category.id
+                          ? 'bg-gradient-active border-primary text-primary'
+                          : 'bg-white border-gray-200 hover:border-primary text-gray-700'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between">
+                        <div className="font-medium text-sm">{category.name}</div>
+                        {selectedCategory === category.id && <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>}
+                      </div>
+                    </button>
+                ))}
               </div>
-            ))}
+            </div>
+          </div>
+
+          {/* FAQ Items - Right content */}
+          <div className="lg:col-span-9 space-y-6">
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+              <h2 className="font-medium text-gray-800 mb-4">
+                {categories.find(c => c.id === selectedCategory)?.name}
+              </h2>
+
+              <div className="space-y-4">
+                {currentFAQs.map((faq) => (
+                  <div key={faq.id} className="border-b border-gray-100">
+                    <button
+                      onClick={() => setOpenFAQ(openFAQ === faq.id ? null : faq.id)}
+                      className="w-full py-3 text-left hover:bg-default transition-colors flex items-center justify-between"
+                    >
+                      <span className="font-medium text-gray-800">{faq.question}</span>
+                      {openFAQ === faq.id ? <ChevronUp className="w-5 h-5 text-primary" /> : <ChevronDown className="w-5 h-5 text-primary" />}
+                    </button>
+                    {openFAQ === faq.id && (
+                      <div className="pb-3 text-gray-600">
+                        <p>{faq.answer}</p>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-amber-50 rounded-2xl border border-amber-200 p-6 mt-6">
+                <div className="flex items-start space-x-3">
+                  <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <h3 className="font-medium text-amber-800 mb-1">Medische Disclaimer</h3>
+                    <p className="text-sm text-amber-700">
+                      De informatie op deze pagina is alleen voor informatieve doeleinden en vervangt geen professioneel medisch advies.
+                      Raadpleeg altijd uw kinderarts of een gekwalificeerde zorgverlener voor specifieke medische vragen.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -160,19 +173,6 @@ export default function FAQPage() {
           </button>
         </div>
 
-        {/* Medical Disclaimer */}
-        <div className="bg-amber-50 rounded-2xl border border-amber-200 p-6">
-          <div className="flex items-start space-x-3">
-            <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
-            <div>
-              <h3 className="font-medium text-amber-800 mb-1">Medische Disclaimer</h3>
-              <p className="text-sm text-amber-700">
-                De informatie op deze pagina is alleen voor informatieve doeleinden en vervangt geen professioneel medisch advies. 
-                Raadpleeg altijd uw kinderarts of een gekwalificeerde zorgverlener voor specifieke medische vragen.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
 
       {/* Contact Modal */}

@@ -2,11 +2,11 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
-import { Milk, Heart, AlertCircle, CheckCircle, Star, Euro, Users } from 'lucide-react'
+import { Milk, Heart, AlertCircle, CheckCircle, Star, Euro, Users, ArrowRight, } from 'lucide-react'
 import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
-  title: 'Lactosevrije Flesvoeding: Complete Nederlandse Gids 2025 - Wanneer Nodig & Beste Merken',
+  title: 'Lactosevrije Flesvoeding: Complete Nederlandse Gids 2026 - Wanneer Nodig & Beste Merken',
   description: 'Alles over lactosevrije flesvoeding in Nederland: wanneer nodig, beste merken, kosten, overstappen en waar te kopen. Complete gids voor ouders met lactose-intolerante baby\'s.',
 }
 
@@ -268,7 +268,7 @@ export default function LactosevrijeFlesvoedingPage() {
             
             {/* Header */}
             <div>
-              <div className="text-sm text-gray-500 mb-2">Kennisbank  Soorten Flesvoeding</div>
+              <div className="text-sm text-gray-500 mb-2">Kennisbank • Soorten Flesvoeding</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Milk className="w-6 h-6 mr-3 text-primary" />
                 Lactosevrije Flesvoeding: Complete Nederlandse Gids
@@ -287,8 +287,8 @@ export default function LactosevrijeFlesvoedingPage() {
               </h2>
               
               <p className="text-gray-600 leading-relaxed mb-4">
-                Lactose-intolerantie bij baby's is zeldzamer dan vaak gedacht. Echte primaire lactose-intolerantie 
-                komt bij minder dan 1% van baby's voor. Secundaire intolerantie na ziekte is wel relatief veelvoorkomend.
+                Lactose-intolerantie bij baby's is zeldzamer dan vaak gedacht. Echte primaire lactose-intolerantie
+                komt bij minder dan 1% van baby's voor. Secundaire intolerantie na ziekte is wel relatief veelvoorkomend. Belangrijk: lactose-intolerantie is iets anders dan een koemelkallergie. Voor allergieën is <Link href="/kennisbank/soorten-flesvoeding/hypoallergene-flesvoeding" className="text-primary hover:underline font-medium">hypoallergene flesvoeding</Link> nodig.
               </p>
 
               <div className="space-y-6">
@@ -340,7 +340,7 @@ export default function LactosevrijeFlesvoedingPage() {
                       </div>
                     </div>
 
-                    <div className="bg-white rounded-lg p-3 mb-4">
+ <div className="p-3 mb-4">
                       <h4 className="font-medium text-gray-700 mb-1"> Uniek kenmerk:</h4>
                       <p className="text-gray-600">{option.unique}</p>
                     </div>
@@ -370,7 +370,7 @@ export default function LactosevrijeFlesvoedingPage() {
                       </div>
                     </div>
 
-                    <div className="bg-white rounded-lg p-3">
+ <div className="p-3">
                       <h4 className="font-medium text-gray-700 mb-2">Samenstelling highlights:</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-600">
                         {Object.entries(option.composition).map(([key, value]) => (
@@ -458,7 +458,7 @@ export default function LactosevrijeFlesvoedingPage() {
                 </table>
               </div>
               
-              <div className="mt-4 p-4 bg-white rounded-lg">
+ <div className="mt-4">
                 <p className="text-sm text-primary">
                   <strong>Tip:</strong> Vraag je huisarts om een recept voor lactosevrije flesvoeding. 
                   Dit kan €200-400 per jaar besparen via zorgverzekeraar vergoeding.
@@ -501,10 +501,10 @@ export default function LactosevrijeFlesvoedingPage() {
                     Symptomen die lijken op lactose-intolerantie kunnen andere oorzaken hebben:
                   </p>
                   <ul className="space-y-1 text-sm text-amber-700">
-                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Koemelkallergie (veel ernstiger dan lactose-intolerantie)</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span><Link href="/kennisbank/problemen-oplossen/allergische-reacties-flesvoeding" className="text-amber-700 hover:underline font-medium">Koemelkallergie</Link> (veel ernstiger dan lactose-intolerantie)</span></li>
                     <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Reflux of andere spijsverteringsproblemen</span></li>
                     <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Verkeerde flesvoeding bereiding</span></li>
-                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Andere medische condities</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Andere medische condities zoals <Link href="/kennisbank/problemen-oplossen/constipatie-door-flesvoeding" className="text-amber-700 hover:underline font-medium">constipatie</Link> of <Link href="/kennisbank/problemen-oplossen/diarree-en-flesvoeding" className="text-amber-700 hover:underline font-medium">diarree</Link></span></li>
                   </ul>
                 </div>
               </div>
@@ -530,13 +530,13 @@ export default function LactosevrijeFlesvoedingPage() {
             {/* Call to action */}
             <section className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
-                <Link 
+                <Link
                   href="/"
                   className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
                   <div className="text-center">
-                    <div className="font-medium text-gray-700">Bereken juiste hoeveelheden </div>
-                    <div className="text-gray-600">Ook voor lactosevrije flesvoeding</div>
+                    <div className="font-medium text-primary">Bereken juiste hoeveelheden</div>
+                    <div className="flex items-center justify-between"><span className="text-gray-600">Ook voor lactosevrije flesvoeding</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
                   </div>
                 </Link>
               </div>
@@ -568,21 +568,21 @@ export default function LactosevrijeFlesvoedingPage() {
                 Gerelateerde Artikelen
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link href="/kennisbank/soorten-flesvoeding/hypoallergene-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Hypoallergene flesvoeding </div>
-                  <div className="text-gray-600">Voor baby's met koemelkallergie</div>
+                <Link href="/kennisbank/problemen-oplossen/allergische-reacties-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Allergische reacties flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Verschil tussen allergie en intolerantie</div>
                 </Link>
-                <Link href="/kennisbank/problemen-oplossen/constipatie-door-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Constipatie door flesvoeding </div>
-                  <div className="text-gray-600">Oorzaken en oplossingen</div>
+                <Link href="/kennisbank/soorten-flesvoeding/hypoallergene-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Hypoallergene flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Voor baby's met koemelkallergie</div>
                 </Link>
-                <Link href="/kennisbank/soorten-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Alle soorten flesvoeding </div>
-                  <div className="text-gray-600">Overzicht van alle flesvoeding types</div>
+                <Link href="/kennisbank/problemen-oplossen/constipatie-door-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Constipatie door flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Oorzaken en oplossingen voor verstopping</div>
                 </Link>
-                <Link href="/kennisbank/problemen-oplossen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Problemen oplossen </div>
-                  <div className="text-gray-600">Hulp bij flesvoeding problemen</div>
+                <Link href="/kennisbank/problemen-oplossen/diarree-en-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Diarree en flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Herken en behandel diarree bij je baby</div>
                 </Link>
               </div>
             </section>

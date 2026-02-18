@@ -5,7 +5,7 @@ import AffiliateProductWidget from '../../../../components/AffiliateProductWidge
 import { BookOpen, ArrowRight, Home, Scale, Heart, Calculator, TrendingUp, Users } from 'lucide-react'
 
 export const metadata = {
-  title: 'Flesvoeding vs Borstvoeding: Complete Vergelijking 2025',
+  title: 'Flesvoeding vs Borstvoeding: Complete Vergelijking 2026',
   description: 'Eerlijke, wetenschappelijke vergelijking tussen flesvoeding en borstvoeding. Alle feiten, kosten, en praktische overwegingen voor Nederlandse ouders.',
 }
 
@@ -83,7 +83,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
       ]
     },
     {
-      factor: "Kies voor combivoeeding als:",
+      factor: "Kies voor combivoeding als:",
       criteria: [
         "Je voordelen van beide wilt combineren",
         "Je flexibiliteit wilt maar ook gezondheidsvoordelen",
@@ -100,39 +100,24 @@ export default function FlesvoedingVsBorstvoedingPage() {
           <div className="space-y-6">
 
         {/* Header */}
-        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6 mb-6">
-            <div className="text-sm text-gray-500 mb-2">Basis Flesvoeding  Objectieve Vergelijking</div>
+        <div>
+            <div className="text-sm text-gray-500 mb-2">Basis Flesvoeding • Objectieve Vergelijking</div>
             <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
               <BookOpen className="w-6 h-6 mr-3 text-primary" />
               Flesvoeding vs Borstvoeding: Objectieve Gids
             </h1>
-            <p className="text-gray-600 mb-6">
-              Een eerlijke, wetenschappelijke vergelijking zonder schuldgevoelens. Beide voedingsmethoden 
-              kunnen gezonde, gelukkige baby's opleveren. Deze gids geeft je alle feiten om een geïnformeerde 
+            <p className="text-gray-500 leading-relaxed">
+              Een eerlijke, wetenschappelijke vergelijking zonder schuldgevoelens. Beide voedingsmethoden
+              kunnen gezonde, gelukkige baby's opleveren. Deze gids geeft je alle feiten om een geïnformeerde
               beslissing te maken die past bij jouw unieke situatie.
             </p>
-            <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-              <span>Leestijd: 15 minuten</span>
-              <span>Objectieve vergelijking</span>
-              <span>95% van baby's groeit gezond op met flesvoeding</span>
-            </div>
-            
-            <div className="mt-4 p-4 bg-white rounded-lg">
-              <h3 className="font-medium text-primary mb-2">Belangrijke waarheid vooraf:</h3>
-              <ul className="space-y-1 text-gray-700">
-                <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span><strong>95% van baby's</strong> groeit gezond op met flesvoeding</span></li>
-                <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span><strong>Borstvoeding is ideaal</strong> maar niet altijd mogelijk of gewenst</span></li>
-                <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span><strong>Geen perfecte keuze</strong> - beide hebben voor- en nadelen</span></li>
-                <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span><strong>Jouw welzijn</strong> als ouder is ook belangrijk voor baby's ontwikkeling</span></li>
-              </ul>
-            </div>
         </div>
 
         {/* Nederlandse statistieken */}
         <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h2 className="text-2xl font-medium text-primary mb-6 flex items-center">
-              <TrendingUp className="w-6 h-6 mr-3 text-primary" />
-              Feiten en cijfers Nederland 2025
+            <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
+              <TrendingUp className="w-5 h-5 mr-2" />
+              Feiten en cijfers Nederland 2026
             </h2>
             
             <div>
@@ -151,8 +136,8 @@ export default function FlesvoedingVsBorstvoedingPage() {
                   <strong>Gemiddelde duur exclusieve borstvoeding:</strong> 3.2 maanden
                 </p>
                 <p className="text-sm text-gray-600 mt-2">
-                  Nederland scoort gemiddeld vergeleken met andere Europese landen 
-                  (Noorwegen: 95%, Frankrijk: 60%, EU gemiddeld: 78% borstvoeding op 6 maanden)
+                  Nederland scoort gemiddeld vergeleken met andere Europese landen
+                  (Noorwegen: 95%, Frankrijk: 60%, EU gemiddeld: 78% borstvoeding op 6 maanden). Veel ouders kiezen voor een <Link href="/kennisbank/basis-flesvoeding/overstappen-van-borst-naar-fles" className="text-primary hover:underline font-medium">geleidelijke overstap van borst naar fles</Link>.
                 </p>
               </div>
             </div>
@@ -338,6 +323,9 @@ export default function FlesvoedingVsBorstvoedingPage() {
             <div className="mt-6 p-4 text-center">
               <p className="font-medium text-gray-700">
                 <strong>Verschil: €200-280 duurder voor flesvoeding</strong>
+              </p>
+              <p className="text-sm text-gray-600 mt-2">
+                Lees meer over <Link href="/kennisbank/financiele-aspecten/kosten-van-flesvoeding" className="text-primary hover:underline font-medium">hoe je kunt besparen op flesvoeding</Link>
               </p>
             </div>
         </div>
@@ -551,7 +539,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
                   </li>
                   <li className="flex items-center space-x-2">
                     <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium">2</span>
-                    <span className="text-gray-700">Probeer de methode die bij je voelt</span>
+                    <span className="text-gray-700">Probeer de methode die bij je voelt. Kies je flesvoeding? Leer over <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="text-primary hover:underline font-medium">verschillende soorten voeding</Link></span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <span className="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-medium">3</span>
@@ -575,6 +563,33 @@ export default function FlesvoedingVsBorstvoedingPage() {
           pageId="basis-flesvoeding_flesvoeding-vs-borstvoeding"
           title="Flesvoeding & Borstvoeding Producten"
         />
+
+        {/* Gerelateerde artikelen */}
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde artikelen</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Link href="/kennisbank/basis-flesvoeding/overstappen-van-borst-naar-fles" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <div className="font-medium text-primary">Overstappen van borst naar fles →</div>
+                <div className="text-sm text-gray-600">Stap-voor-stap gids voor geleidelijke overstap</div>
+              </Link>
+              <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <div className="font-medium text-primary">Verschil startvoeding en opvolgmelk →</div>
+                <div className="text-sm text-gray-600">Welke voeding kies je wanneer?</div>
+              </Link>
+              <Link href="/kennisbank/financiele-aspecten/kosten-van-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <div className="font-medium text-primary">Kosten van flesvoeding →</div>
+                <div className="text-sm text-gray-600">Volledige kostenplaatje en bespaartips</div>
+              </Link>
+              <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <div className="font-medium text-primary">Eerste keer flesvoeding geven →</div>
+                <div className="text-sm text-gray-600">Complete beginnersgids</div>
+              </Link>
+              <Link href="/" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+                <div className="text-sm text-gray-600">Bereken de juiste hoeveelheden voor jouw baby</div>
+              </Link>
+            </div>
+        </div>
 
         </div>
         </div>

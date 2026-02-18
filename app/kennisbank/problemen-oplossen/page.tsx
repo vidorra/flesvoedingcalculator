@@ -50,7 +50,7 @@ export default function ProblemenOplossenPage() {
 
   const diarrheaWarnings = [
     'Meer dan 6 waterige luiers per dag',
-    'Koorts boven 38.5°C',
+    'Koorts boven 38,5°C',
     'Tekenen uitdroging',
     'Bloed in ontlasting'
   ]
@@ -262,15 +262,15 @@ export default function ProblemenOplossenPage() {
               href="/kennisbank/veiligheid"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-gray-700">Veiligheidsrichtlijnen </div>
-              <div className="text-sm text-gray-600">Wanneer direct hulp zoeken</div>
+              <div className="font-medium text-primary">Veiligheidsrichtlijnen</div>
+              <div className="flex items-center justify-between"><span className="text-sm text-gray-600">Wanneer direct hulp zoeken</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
             </Link>
             <Link 
               href="/faq"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-gray-700">Veelgestelde Vragen </div>
-              <div className="text-sm text-gray-600">Nog meer antwoorden</div>
+              <div className="font-medium text-primary">Veelgestelde Vragen</div>
+              <div className="flex items-center justify-between"><span className="text-sm text-gray-600">Nog meer antwoorden</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
             </Link>
           </div>
         </div>

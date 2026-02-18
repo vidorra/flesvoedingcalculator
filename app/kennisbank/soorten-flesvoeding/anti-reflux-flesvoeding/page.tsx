@@ -6,7 +6,7 @@ import { BookOpen, ArrowRight, Home, Shield, AlertTriangle, CheckCircle, Package
 import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
-  title: 'Anti-Reflux Flesvoeding: Complete Gids tegen Spugen en Reflux 2025',
+  title: 'Anti-Reflux Flesvoeding: Complete Gids tegen Spugen en Reflux 2026',
   description: 'Alles over anti-reflux flesvoeding in Nederland. Van herkenning reflux tot beste merken, voedingstechnieken en wanneer naar de dokter. Complete praktische gids voor ouders.',
 }
 
@@ -115,7 +115,7 @@ export default function AntiRefluxPage() {
       tips: [
         '30° verhoging in bed/wieg na voeding',
         'Kruiden tegen buikpijn: venkel/kamille thee (na 4 mnd)',
-        'Boertje laten tijdens én na voeding',
+        '<Link href="/kennisbank/voedingstechnieken/boertje-laten-tijdens-voeding" className="text-primary hover:underline font-medium">Boertje laten</Link> tijdens én na voeding',
         'Rustige omgeving tijdens voeden'
       ]
     },
@@ -139,7 +139,7 @@ export default function AntiRefluxPage() {
 
         {/* Header */}
         <div className="mb-6">
-          <div className="text-sm text-gray-500 mb-2">Soorten Flesvoeding  Anti-Reflux</div>
+          <div className="text-sm text-gray-500 mb-2">Soorten Flesvoeding • Anti-Reflux</div>
           <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
             <Shield className="w-6 h-6 mr-3 text-primary" />
             Anti-Reflux Flesvoeding: Complete Gids tegen Spugen en Reflux
@@ -157,8 +157,8 @@ export default function AntiRefluxPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <p className="text-gray-700 mb-4">
-                Reflux (gastro-oesofageale reflux) treedt op wanneer maaginhoud terugvloeit naar de slokdarm. 
-                Bij baby's is dit vaak normaal vanwege hun nog onderontwikkelde spijsverteringssysteem.
+                Reflux (gastro-oesofageale reflux) treedt op wanneer maaginhoud terugvloeit naar de slokdarm.
+                Bij baby's is dit vaak normaal vanwege hun nog onderontwikkelde spijsverteringssysteem. Als je baby veel <Link href="/kennisbank/problemen-oplossen/spugen-na-de-fles" className="text-primary hover:underline font-medium">spugt na de fles</Link>, kan dit een teken zijn van reflux.
               </p>
               
               <div className="border border-gray-200 bg-white rounded-xl p-4">
@@ -195,7 +195,7 @@ export default function AntiRefluxPage() {
                   <span className="font-medium text-gray-700">3-5%</span>
                   <span className="text-gray-600">heeft ernstige reflux (GERD)</span>
                 </div>
-                <div className="p-3 border border-gray-200 bg-white rounded-lg">
+                <div className="p-3 border border-gray-200">
                   <div className="font-medium text-gray-700">80%</div>
                   <div className="text-gray-600">verbetert vanzelf binnen 12 maanden</div>
                 </div>
@@ -237,7 +237,7 @@ export default function AntiRefluxPage() {
           <div className="mt-4 p-4 border border-gray-200 bg-white rounded-xl">
             <h4 className="font-medium text-primary mb-2">Belangrijk om te weten:</h4>
             <p className="text-gray-600">
-              Niet alle baby's die spugen hebben reflux. Sommige baby's zijn gewoon "happy spitters" - 
+              Niet alle baby's die spugen hebben reflux. Sommige baby's zijn gewoon "vrolijke spugers" -
               ze spugen wel maar groeien goed door en zijn tevreden. Reflux wordt pas een probleem 
               als het de groei of het welzijn van de baby beïnvloedt.
             </p>
@@ -253,7 +253,7 @@ export default function AntiRefluxPage() {
           
           <div className="space-y-6">
             {arFormulas.map((formula, index) => (
-              <div key={index} className="">
+              <div key={index}>
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="font-medium text-lg text-primary">{formula.brand}</h3>
                   <div className="text-right">
@@ -334,14 +334,14 @@ export default function AntiRefluxPage() {
           
           <div className="space-y-6">
             {feedingTechniques.map((technique, index) => (
-              <div key={index} className="">
+              <div key={index}>
                 <div className="flex justify-between items-start mb-3">
                   <h3 className="font-medium text-gray-700">{technique.technique}</h3>
                   <span className="text-sm bg-white text-gray-600 px-2 py-1 rounded-full">
                     {technique.effectiviteit}
                   </span>
                 </div>
-                <p className="text-gray-700 mb-4">{technique.description}</p>
+                <p className="text-gray-700 mb-4">{technique.description}. De <Link href="/kennisbank/voedingstechnieken/juiste-houding-bij-flesvoeding" className="text-primary hover:underline font-medium">juiste houding bij flesvoeding</Link> is essentieel voor het verminderen van reflux.</p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                   {technique.tips.map((tip, index) => (
                     <div key={index} className="flex items-start space-x-2">
@@ -504,25 +504,25 @@ export default function AntiRefluxPage() {
           <h2 className="text-lg font-medium text-primary mb-4">Verwachtingen: Wanneer Verbetering?</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="border border-gray-200 bg-white rounded-lg p-4">
+            <div className="border border-gray-200 p-4">
               <h3 className="font-medium text-gray-700">Week 1-2</h3>
               <p className="text-gray-600">AR voeding uitproberen, voedingstechniek aanpassen</p>
             </div>
-            <div className="border border-gray-200 bg-white rounded-lg p-4">
+            <div className="border border-gray-200 p-4">
               <h3 className="font-medium text-gray-700">Week 3-4</h3>
               <p className="text-gray-600">Eerste verbetering zichtbaar, minder spugen</p>
             </div>
-            <div className="border border-gray-200 bg-white rounded-lg p-4">
+            <div className="border border-gray-200 p-4">
               <h3 className="font-medium text-gray-700">Maand 2-3</h3>
               <p className="text-gray-600">Duidelijke verbetering, baby rustiger</p>
             </div>
-            <div className="border border-gray-200 bg-white rounded-lg p-4">
+            <div className="border border-gray-200 p-4">
               <h3 className="font-medium text-gray-700">Maand 6-12</h3>
               <p className="text-gray-600">Reflux verdwijnt meestal vanzelf</p>
             </div>
           </div>
           
-          <div className="mt-4 p-4 bg-white rounded-lg">
+ <div className="mt-4">
             <h4 className="font-medium text-primary mb-2">Realistische verwachtingen:</h4>
             <p className="text-gray-700">
               AR voeding vermindert spugen met 70-85%, maar elimineert het zelden volledig. 
@@ -542,12 +542,12 @@ export default function AntiRefluxPage() {
             Gebruik onze speciale reflux-modus om kleinere, frequentere voedingen te berekenen 
             die geschikt zijn voor baby's met reflux.
           </p>
-          <Link 
+          <Link
             href="/"
             className="inline-flex items-center space-x-2 bg-white text-primary px-4 py-2 rounded-lg hover:bg-white transition-colors font-medium"
           >
             <Calculator className="w-4 h-4" />
-            <span>Naar Reflux Calculator</span>
+            <span>Naar Flesvoeding Calculator</span>
           </Link>
         </div>
 
@@ -619,15 +619,15 @@ export default function AntiRefluxPage() {
               href="/kennisbank/soorten-flesvoeding"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-gray-700">Soorten Flesvoeding </div>
-              <div className="text-sm text-primary">Alle verschillende types flesvoeding</div>
+              <div className="font-medium text-primary">Soorten Flesvoeding</div>
+              <div className="flex items-center justify-between"><span className="text-sm text-gray-600">Alle verschillende types flesvoeding</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
             </Link>
             <Link 
               href="/kennisbank/voedingstechnieken"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-gray-700">Voedingstechnieken </div>
-              <div className="text-sm text-primary">Juiste technieken voor flesvoeding</div>
+              <div className="font-medium text-primary">Voedingstechnieken</div>
+              <div className="flex items-center justify-between"><span className="text-sm text-gray-600">Juiste technieken voor flesvoeding</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
             </Link>
           </div>
         </div>

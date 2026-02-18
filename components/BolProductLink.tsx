@@ -61,7 +61,7 @@ export function BolProductCard({ product, variant = 'card' }) {
         rel="noopener noreferrer sponsored"
         className="group"
       >
-        <div className="flex items-center space-x-3 p-3 bg-white rounded-lg border border-gray-200 hover:border-orange-300 hover:bg-orange-50 transition-colors">
+        <div className="flex items-center space-x-3 p-3 border border-gray-200 hover:border-orange-300 hover:bg-orange-50 transition-colors">
           {product.imageUrl && (
             <div className="flex-shrink-0">
               <Image

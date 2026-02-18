@@ -2,7 +2,7 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
-import { AlertTriangle, AlertCircle, CheckCircle, Shield, Search, Phone, ExternalLink, Clock } from 'lucide-react'
+import { AlertTriangle, AlertCircle, CheckCircle, Shield, Search, Phone, ExternalLink, Clock, ArrowRight, } from 'lucide-react'
 
 export const metadata = {
   title: 'Terugroepacties Babyvoeding 2026: Alles Wat Ouders Moeten Weten',
@@ -473,21 +473,35 @@ export default function TerugroepactiesBabyvoeding2026Page() {
 
             {/* Navigation */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <Link
-                  href="/kennisbank/veiligheid"
-                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
+                  href="/kennisbank/hygiene-bereiding/flesvoeding-bewaren"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
-                  <div className="font-medium text-gray-700">Veiligheid</div>
-                  <div className="text-gray-600">Alle veiligheidsartikelen</div>
+                  <div className="font-medium text-primary">Flesvoeding bewaren →</div>
+                  <div className="text-sm text-gray-600">Veilig bewaren van flesvoeding</div>
                 </Link>
                 <Link
-                  href="/kennisbank/hygiene-bereiding/flesvoeding-bewaren"
-                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
+                  href="/kennisbank/hygiene-bereiding/houdbaarheid-flesvoeding"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
-                  <div className="font-medium text-gray-700">Flesvoeding Bewaren</div>
-                  <div className="text-gray-600">Veilig bewaren van flesvoeding</div>
+                  <div className="font-medium text-primary">Houdbaarheid flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Hoe lang is flesvoeding houdbaar?</div>
+                </Link>
+                <Link
+                  href="/kennisbank/soorten-flesvoeding/hypoallergene-flesvoeding"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                >
+                  <div className="font-medium text-primary">Hypoallergene flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Veilige alternatieven bij allergieën</div>
+                </Link>
+                <Link
+                  href="/"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                >
+                  <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+                  <div className="text-sm text-gray-600">Bereken de juiste hoeveelheid voor jouw baby</div>
                 </Link>
               </div>
             </div>

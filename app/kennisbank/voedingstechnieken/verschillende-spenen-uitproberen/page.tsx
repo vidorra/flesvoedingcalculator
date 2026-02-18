@@ -2,11 +2,11 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
-import { TestTube, Clock, Target, Search, ShoppingCart, AlertCircle } from 'lucide-react'
+import { TestTube, Clock, Target, Search, ShoppingCart, AlertCircle, ArrowRight, } from 'lucide-react'
 import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
-  title: 'Verschillende Spenen Uitproberen: Complete Gids voor Nederlandse Ouders 2025',
+  title: 'Verschillende Spenen Uitproberen: Complete Gids voor Nederlandse Ouders 2026',
   description: 'De juiste speen kan het verschil maken tussen een tevreden baby en urenlang gefrustreerd huilen. Leer welke spenen het beste werken voor verschillende problemen, hoe je de perfecte match vindt, en wanneer je moet overstappen.',
 }
 
@@ -85,7 +85,7 @@ export default function VerschillendeSpenenUitproberenPage() {
           brands: 'Philips Avent Classic, Kruidvat Basic'
         },
         {
-          name: 'Natuurlijke/Breast-like Speen',
+          name: 'Natuurlijke/Borstachtige Speen',
           form: 'Brede basis, zachte textuur',
           benefit: 'Lijkt op moederborst',
           suitable: 'Gecombineerde borstvoeding/flesvoeding',
@@ -179,9 +179,9 @@ export default function VerschillendeSpenenUitproberenPage() {
     {
       brand: 'Tommee Tippee',
       rating: 4,
-      strengths: 'Breast-like design',
+      strengths: 'Borstachtig ontwerp',
       flows: 'Closer to Nature serie',
-      types: 'Advanced Anti-Colic',
+      types: 'Anti-Koliek systeem',
       price: '€4-6 per speen',
       availability: 'Sterk in Nederland'
     },
@@ -323,7 +323,7 @@ export default function VerschillendeSpenenUitproberenPage() {
           <div className="space-y-6">
             {/* Header */}
             <div className="mb-6">
-              <div className="text-sm text-gray-500 mb-2">Voedingstechnieken  Speen Keuze</div>
+              <div className="text-sm text-gray-500 mb-2">Voedingstechnieken • Speen Keuze</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <TestTube className="w-6 h-6 mr-3 text-primary" />
                 Verschillende Spenen Uitproberen: Complete Gids voor Nederlandse Ouders
@@ -338,11 +338,12 @@ export default function VerschillendeSpenenUitproberenPage() {
             {/* Why Critical */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Waarom de Juiste Speen Cruciaal Is</h2>
-              
+
               <p className="text-gray-700 mb-4">
-                De speen is het enige contact tussen je baby en de flesvoeding. Een verkeerde speen kan leiden tot 
-                frustratie, spugen, koliekklachten, en zelfs gewigering van de fles. <strong>85% van flesvoeding 
-                problemen</strong> kan opgelost worden door de juiste speen te vinden.
+                De speen is het enige contact tussen je baby en de flesvoeding. Een verkeerde speen kan leiden tot
+                frustratie, spugen, koliekklachten, en zelfs <Link href="/kennisbank/basis-flesvoeding/baby-weigert-de-fles" className="text-primary hover:underline font-medium">weigering van de fles</Link>.
+                <strong>Veel flesvoeding problemen</strong> zoals <Link href="/kennisbank/problemen-oplossen/baby-drinkt-niet-genoeg" className="text-primary hover:underline font-medium">te weinig drinken</Link> kunnen
+                opgelost worden door de juiste speen te vinden.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -364,8 +365,8 @@ export default function VerschillendeSpenenUitproberenPage() {
                 </div>
                 <div className="p-4 border border-gray-200 bg-white rounded-xl">
                   <p className="text-gray-700">
-                    <strong>TNO Onderzoek:</strong> Baby's met de juiste speen hebben 60% minder last van 
-                    koliekklachten en slapen 40% langer door.
+                    <strong>Uit de praktijk:</strong> Baby's met de juiste speen hebben aanzienlijk minder last van
+                    koliekklachten en slapen beter door.
                   </p>
                 </div>
               </div>
@@ -427,7 +428,7 @@ export default function VerschillendeSpenenUitproberenPage() {
                     {step.problems && (
                       <div className="space-y-3">
                         {step.problems.map((problem, problemIndex) => (
-                          <div key={problemIndex} className="border border-gray-200 bg-white rounded-lg p-3">
+                          <div key={problemIndex} className="border border-gray-200 p-3">
                             <h4 className="font-medium text-primary mb-2">{problem.issue}:</h4>
                             <ul className="space-y-1">
                               {problem.solutions.map((solution, solutionIndex) => (
@@ -748,19 +749,33 @@ export default function VerschillendeSpenenUitproberenPage() {
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <Link 
-                  href="/kennisbank/voedingstechnieken"
-                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
+                <Link
+                  href="/kennisbank/basis-flesvoeding/baby-weigert-de-fles"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
-                  <div className="font-medium text-gray-700">Voedingstechnieken </div>
-                  <div className="text-gray-600">Alle voedingstechnieken op een rij</div>
+                  <div className="font-medium text-primary">Baby weigert de fles →</div>
+                  <div className="text-sm text-gray-600">Oorzaken en oplossingen voor flesweigering</div>
                 </Link>
-                <Link 
-                  href="/kennisbank/problemen-oplossen"
-                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
+                <Link
+                  href="/kennisbank/problemen-oplossen/baby-drinkt-niet-genoeg"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
-                  <div className="font-medium text-gray-700">Problemen Oplossen </div>
-                  <div className="text-gray-600">Oplossingen voor veelvoorkomende problemen</div>
+                  <div className="font-medium text-primary">Baby drinkt niet genoeg →</div>
+                  <div className="text-sm text-gray-600">Herkennen en aanpakken van drinkproblemen</div>
+                </Link>
+                <Link
+                  href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                >
+                  <div className="font-medium text-primary">Eerste keer flesvoeding geven →</div>
+                  <div className="text-sm text-gray-600">Alles wat je moet weten voor de start</div>
+                </Link>
+                <Link
+                  href="/"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                >
+                  <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+                  <div className="text-sm text-gray-600">Bereken de juiste hoeveelheden</div>
                 </Link>
               </div>
             </div>

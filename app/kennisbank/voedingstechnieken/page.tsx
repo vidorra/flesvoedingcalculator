@@ -391,15 +391,15 @@ function VoedingstechniekenPage() {
           <div className="bg-white rounded-xl p-4 border border-gray-200 mb-6">
             <h3 className="text-primary font-medium mb-3">🔄 Snelle stappen overzicht:</h3>
             <div className="grid md:grid-cols-3 gap-4">
-              <div className="bg-white rounded-lg p-3">
+ <div className="p-3">
                 <h4 className="font-medium text-primary mb-1">1. Water voorbereiden</h4>
                 <p className="text-gray-600 text-sm">Kook water, laat afkoelen tot 70°C</p>
               </div>
-              <div className="bg-white rounded-lg p-3">
+ <div className="p-3">
                 <h4 className="font-medium text-primary mb-1">2. Meten & mengen</h4>
                 <p className="text-gray-600 text-sm">Juiste ratio: 1 maatlepel per 30ml</p>
               </div>
-              <div className="bg-white rounded-lg p-3">
+ <div className="p-3">
                 <h4 className="font-medium text-primary mb-1">3. Temperatuur testen</h4>
                 <p className="text-gray-600 text-sm">37°C - lauwwarm op pols</p>
               </div>
@@ -584,22 +584,22 @@ function VoedingstechniekenPage() {
               href="/kennisbank/hygiene-bereiding"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-gray-700">Hygiëne & Bereiding </div>
-              <div className="text-gray-600">Veilig bereiden en bewaren</div>
+              <div className="font-medium text-primary">Hygiëne & Bereiding</div>
+              <div className="flex items-center justify-between"><span className="text-gray-600">Veilig bereiden en bewaren</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
             </Link>
             <Link 
               href="/kennisbank/problemen-oplossen"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-gray-700">Problemen Oplossen </div>
-              <div className="text-gray-600">Hulp bij veelvoorkomende problemen</div>
+              <div className="font-medium text-primary">Problemen Oplossen</div>
+              <div className="flex items-center justify-between"><span className="text-gray-600">Hulp bij veelvoorkomende problemen</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
             </Link>
             <Link 
               href="/kennisbank/soorten-flesvoeding"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-gray-700">Soorten Flesvoeding </div>
-              <div className="text-gray-600">Welk type voor welke leeftijd</div>
+              <div className="font-medium text-primary">Soorten Flesvoeding</div>
+              <div className="flex items-center justify-between"><span className="text-gray-600">Welk type voor welke leeftijd</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
             </Link>
           </div>
           </div>

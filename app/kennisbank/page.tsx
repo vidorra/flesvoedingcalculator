@@ -330,7 +330,7 @@ export default function KennisbankPage() {
     },
     { 
       id: 28, 
-      title: 'Uitgebreide Flesvoeding Gids 2025', 
+      title: 'Uitgebreide Flesvoeding Gids 2026', 
       category: 'praktische-tips', 
       description: 'Complete 5-in-1 gids: besparen, kosten, overstappen, werk en problemen oplossen', 
       duration: '40+ min',
@@ -344,13 +344,21 @@ export default function KennisbankPage() {
       duration: '8 min',
       href: '/kennisbank/praktische-tips/flesvoeding-en-slapen'
     },
-    { 
-      id: 39, 
-      title: 'Partner betrekken flesvoeding', 
-      category: 'praktische-tips', 
-      description: 'Samen verantwoordelijkheid delen', 
+    {
+      id: 39,
+      title: 'Partner betrekken flesvoeding',
+      category: 'praktische-tips',
+      description: 'Samen verantwoordelijkheid delen',
       duration: '6 min',
       href: '/kennisbank/praktische-tips/partner-betrekken-flesvoeding'
+    },
+    {
+      id: 42,
+      title: 'Beste melkmachine voor flesvoeding 2026',
+      category: 'praktische-tips',
+      description: 'Eerlijke vergelijking: Baby Brezza, Babylatte Pro, Easybaby en meer',
+      duration: '14 min',
+      href: '/kennisbank/praktische-tips/beste-melkmachine-flesvoeding'
     },
 
     // VEILIGHEID - 2 articles
@@ -376,7 +384,7 @@ export default function KennisbankPage() {
       id: 29, 
       title: 'Kosten van flesvoeding', 
       category: 'basis-flesvoeding', 
-      description: 'Complete budgetgids Nederland 2025', 
+      description: 'Complete budgetgids Nederland 2026', 
       duration: '15 min',
       href: '/kennisbank/financiele-aspecten/kosten-van-flesvoeding'
     }
@@ -553,7 +561,7 @@ export default function KennisbankPage() {
                       <Icon className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                       <div>
                         <div className="flex items-center justify-start gap-3 mb-1">
-                          <h4 className="font-medium text-gray-700">{article.title}</h4>
+                          <h4 className="font-medium text-primary">{article.title}</h4>
                           {article.duration && (
                             <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">{article.duration}</span>
                           )}

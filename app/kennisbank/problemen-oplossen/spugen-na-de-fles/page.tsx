@@ -2,10 +2,10 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
-import { Heart, AlertTriangle, CheckCircle, TrendingUp, Clock, Phone } from 'lucide-react'
+import { Heart, AlertTriangle, CheckCircle, TrendingUp, Clock, Phone, ArrowRight, } from 'lucide-react'
 
 export const metadata = {
-  title: 'Spugen na de Fles: Wanneer Normaal en Wanneer Zorgen? 2025',
+  title: 'Spugen na de Fles: Wanneer Normaal en Wanneer Zorgen? 2026',
   description: 'Spugen na flesvoeding is de #1 zorg van Nederlandse ouders. Leer het verschil tussen normaal spugen en reflux, praktische oplossingen om spugen te verminderen, en wanneer je de huisarts moet bellen.',
 }
 
@@ -83,7 +83,7 @@ export default function SpugenNaDeFlesPage() {
     {
       technique: 'Optimale Houding',
       methods: [
-        '45° hoek tijdens voeding (niet plat liggen)',
+        '45° hoek tijdens voeding - zie juiste houding bij flesvoeding voor meer details',
         'Rechtop houden 20-30 minuten na voeding',
         'Schommelstoel kan helpen door zachte beweging',
         'Draagzak voor hands-free rechtop houden'
@@ -94,7 +94,7 @@ export default function SpugenNaDeFlesPage() {
       methods: [
         'Halverwege voeding altijd boertje laten',
         'Na voeding minimaal 10 minuten proberen',
-        'Verschillende technieken gebruiken',
+        'Verschillende technieken - lees boertje laten tijdens voeding voor alle methoden',
         'Geduldig blijven - soms duurt het even'
       ]
     }
@@ -358,7 +358,7 @@ export default function SpugenNaDeFlesPage() {
           <div className="space-y-6">
             {/* Header */}
             <div className="mb-6">
-              <div className="text-sm text-gray-500 mb-2">Problemen Oplossen  Spugen</div>
+              <div className="text-sm text-gray-500 mb-2">Problemen Oplossen • Spugen</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Heart className="w-6 h-6 mr-3 text-primary" />
                 Spugen na de Fles: Wanneer Normaal en Wanneer Zorgen?
@@ -394,7 +394,7 @@ export default function SpugenNaDeFlesPage() {
               
               <div className="border-t border-gray-200 pt-6 mt-6">
                 <p className="text-gray-700">
-                  <strong>Onderzoek van het Sophia Kinderziekenhuis</strong> toont aan dat slechts 3% 
+                  <strong>Uit de praktijk blijkt</strong> dat slechts een klein percentage
                   van spugende baby's daadwerkelijk medische interventie nodig heeft.
                 </p>
               </div>
@@ -687,8 +687,8 @@ export default function SpugenNaDeFlesPage() {
               <div className="mb-4">
                 <h3 className="font-medium text-primary mb-3">AR-Voeding (Anti-Reflux)</h3>
                 <p className="text-gray-700 mb-4">
-                  Verdikte flesvoeding met rijststijfsel die beter in de maag blijft liggen. 
-                  Alleen gebruiken op advies van arts/consultatiebureaudokter.
+                  Verdikte flesvoeding met rijststijfsel die beter in de maag blijft liggen.
+                  Alleen gebruiken op advies van arts/consultatiebureaudokter. Lees meer bij <Link href="/kennisbank/soorten-flesvoeding/anti-reflux-flesvoeding" className="text-primary hover:underline font-medium">anti-reflux flesvoeding</Link>.
                 </p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -849,19 +849,33 @@ export default function SpugenNaDeFlesPage() {
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <Link 
-                  href="/kennisbank/problemen-oplossen"
-                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
+                <Link
+                  href="/kennisbank/soorten-flesvoeding/anti-reflux-flesvoeding"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
-                  <div className="font-medium text-gray-700">Problemen Oplossen </div>
-                  <div className="text-gray-600">Alle voedingsproblemen</div>
+                  <div className="font-medium text-primary">Anti-reflux flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Speciale voeding tegen spugen</div>
                 </Link>
-                <Link 
-                  href="/kennisbank/voedingstechnieken"
-                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
+                <Link
+                  href="/kennisbank/voedingstechnieken/boertje-laten-tijdens-voeding"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
-                  <div className="font-medium text-gray-700">Voedingstechnieken </div>
-                  <div className="text-gray-600">Technieken tegen spugen</div>
+                  <div className="font-medium text-primary">Boertje laten tijdens voeding →</div>
+                  <div className="text-sm text-gray-600">Essentiële techniek tegen spugen</div>
+                </Link>
+                <Link
+                  href="/kennisbank/voedingstechnieken/juiste-houding-bij-flesvoeding"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                >
+                  <div className="font-medium text-primary">Juiste houding bij flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Optimale positie vermindert spugen</div>
+                </Link>
+                <Link
+                  href="/"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                >
+                  <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+                  <div className="text-sm text-gray-600">Bereken juiste hoeveelheden</div>
                 </Link>
               </div>
             </div>

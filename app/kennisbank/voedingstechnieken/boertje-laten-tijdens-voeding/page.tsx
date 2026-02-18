@@ -5,7 +5,7 @@ import AffiliateProductWidget from '../../../../components/AffiliateProductWidge
 import { Wind, Clock, Heart, AlertTriangle, CheckCircle, ArrowRight } from 'lucide-react'
 
 export const metadata = {
-  title: 'Boertje Laten Tijdens Voeding: Complete Gids voor Nederlandse Ouders 2025',
+  title: 'Boertje Laten Tijdens Voeding: Complete Gids voor Nederlandse Ouders 2026',
   description: 'Een boertje laten tijdens en na de flesvoeding is essentieel voor je baby\'s comfort. Leer de beste technieken, juiste timing en praktische tips om lucht effectief te verwijderen en oncomfortabele buikpijn te voorkomen.',
 }
 
@@ -200,7 +200,7 @@ export default function BoertjeLatenPage() {
           <div className="space-y-6">
             {/* Header */}
             <div className="mb-6">
-              <div className="text-sm text-gray-500 mb-2">Voedingstechnieken  Boertje Laten</div>
+              <div className="text-sm text-gray-500 mb-2">Voedingstechnieken • Boertje Laten</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Wind className="w-6 h-6 mr-3 text-primary" />
                 Boertje Laten Tijdens Voeding: Complete Gids voor Nederlandse Ouders
@@ -215,9 +215,11 @@ export default function BoertjeLatenPage() {
             {/* Why Important */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Waarom is Boertje Laten Zo Belangrijk?</h2>
-              
+
               <p className="text-gray-500 mb-4">
-                Tijdens het drinken van flesvoeding slikt je baby onvermijdelijk lucht mee. 
+                Tijdens het drinken van flesvoeding slikt je baby onvermijdelijk lucht mee.
+                Net als bij <Link href="/kennisbank/voedingstechnieken/juiste-houding-bij-flesvoeding" className="text-primary hover:underline font-medium">de juiste voedingshouding</Link>,
+                is correct boertje laten essentieel voor comfort.
                 Deze ingesloten lucht kan leiden tot verschillende ongemakken:
               </p>
               
@@ -246,7 +248,8 @@ export default function BoertjeLatenPage() {
               
               <div className="mt-4 p-4 border border-gray-200 bg-white rounded-xl">
                 <p className="text-gray-700">
-                  <strong>Onderzoek toont aan</strong> dat baby's die regelmatig een boertje laten tot 40% minder last hebben van koliekklachten.
+                  <strong>Uit de praktijk blijkt</strong> dat baby's die regelmatig een boertje laten minder last hebben van koliekklachten.
+                  Lees meer over <Link href="/kennisbank/problemen-oplossen/krampjes-na-flesvoeding" className="text-primary hover:underline font-medium">hoe je krampjes kunt voorkomen</Link>.
                 </p>
               </div>
             </div>
@@ -292,7 +295,7 @@ export default function BoertjeLatenPage() {
                     </div>
                     
                     {technique.tip && (
-                      <div className="p-3 border border-gray-200 bg-white rounded-lg">
+                      <div className="p-3 border border-gray-200">
                         <p className="text-gray-700">
                           <strong>Tip:</strong> {technique.tip}
                         </p>
@@ -300,7 +303,7 @@ export default function BoertjeLatenPage() {
                     )}
                     
                     {technique.warning && (
-                      <div className="p-3 border border-gray-200 bg-white rounded-lg">
+                      <div className="p-3 border border-gray-200">
                         <p className="text-gray-700">
                           <strong>Let op:</strong> {technique.warning}
                         </p>
@@ -504,7 +507,7 @@ export default function BoertjeLatenPage() {
                 ))}
               </div>
               
-              <div className="mt-4 p-4 border border-gray-200 bg-white rounded-lg">
+              <div className="mt-4 p-4 border border-gray-200">
                 <p className="text-gray-700">
                   <strong>Vertrouw altijd op je ouderinstinct</strong> - je kent je baby het beste.
                 </p>
@@ -556,19 +559,33 @@ export default function BoertjeLatenPage() {
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde Artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <Link 
-                  href="/kennisbank/voedingstechnieken"
-                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
+                <Link
+                  href="/kennisbank/problemen-oplossen/spugen-na-de-fles"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
-                  <div className="font-medium text-gray-700">Voedingstechnieken </div>
-                  <div className="text-gray-600">Alle technieken voor flesvoeding</div>
+                  <div className="font-medium text-primary">Spugen na de fles →</div>
+                  <div className="text-sm text-gray-600">Wanneer is spugen normaal en wanneer niet</div>
                 </Link>
-                <Link 
-                  href="/kennisbank/problemen-oplossen"
-                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
+                <Link
+                  href="/kennisbank/problemen-oplossen/krampjes-na-flesvoeding"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
-                  <div className="font-medium text-gray-700">Problemen Oplossen </div>
-                  <div className="text-gray-600">Hulp bij voedingsproblemen</div>
+                  <div className="font-medium text-primary">Krampjes na flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Herken en verlicht koliekklachten</div>
+                </Link>
+                <Link
+                  href="/kennisbank/voedingstechnieken/juiste-houding-bij-flesvoeding"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                >
+                  <div className="font-medium text-primary">Juiste houding bij flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Optimale posities voor comfortabel voeden</div>
+                </Link>
+                <Link
+                  href="/"
+                  className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+                >
+                  <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+                  <div className="text-sm text-gray-600">Bereken de juiste hoeveelheden</div>
                 </Link>
               </div>
             </div>

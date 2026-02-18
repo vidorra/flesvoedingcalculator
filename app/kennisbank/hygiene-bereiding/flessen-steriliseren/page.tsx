@@ -2,7 +2,7 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import Script from 'next/script'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
-import { Shield, Clock, DollarSign, Users, CheckCircle, AlertTriangle } from 'lucide-react'
+import { Shield, Clock, DollarSign, Users, CheckCircle, AlertTriangle, ArrowRight, } from 'lucide-react'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 
 export default function FlessenSteriligerenPage() {
@@ -33,7 +33,7 @@ export default function FlessenSteriligerenPage() {
           <div className="space-y-6">
             {/* Header */}
             <div>
-              <div className="text-sm text-gray-500 mb-2">Hygiëne & Bereiding  Sterilisatie</div>
+              <div className="text-sm text-gray-500 mb-2">Hygiëne & Bereiding • Sterilisatie</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Shield className="w-6 h-6 mr-3 text-primary" />
                 Flessen steriliseren: Complete gids voor veilige hygiëne
@@ -47,7 +47,7 @@ export default function FlessenSteriligerenPage() {
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Waarom steriliseren belangrijk is</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Baby's hebben een nog ontwikkelend immuunsysteem dat kwetsbaar is voor bacteriën, virussen en schimmels. Steriliseren van flessen en spenen elimineert gevaarlijke micro-organismen die kunnen leiden tot ernstige infecties zoals gastro-enteritis.
+                Baby's hebben een nog ontwikkelend immuunsysteem dat kwetsbaar is voor bacteriën, virussen en schimmels. Steriliseren van flessen en spenen elimineert gevaarlijke micro-organismen die kunnen leiden tot ernstige infecties zoals gastro-enteritis. Dit is vooral belangrijk bij <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="text-primary hover:underline font-medium">het eerste gebruik van flessen</Link>.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -113,11 +113,11 @@ export default function FlessenSteriligerenPage() {
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
                       <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                      <span className="text-gray-700 text-sm">Nieuwe flessen en spenen (eerste gebruik)</span>
+                      <span className="text-gray-700 text-sm">Nieuwe flessen en spenen (eerste gebruik) - zie <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="text-primary hover:underline font-medium">eerste keer flesvoeding geven</Link></span>
                     </li>
                     <li className="flex items-center space-x-2">
                       <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                      <span className="text-gray-700 text-sm">Na elke gebruik tot 6 maanden</span>
+                      <span className="text-gray-700 text-sm">Na elk gebruik tot 1 jaar</span>
                     </li>
                     <li className="flex items-center space-x-2">
                       <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
@@ -202,7 +202,7 @@ export default function FlessenSteriligerenPage() {
               
               <div className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="">
+                  <div>
                     <h3 className="font-medium text-gray-700 mb-3">Methode 1: Koken in pan (klassiek)</h3>
                     
                     <div className="space-y-3">
@@ -242,7 +242,7 @@ export default function FlessenSteriligerenPage() {
                           </li>
                           <li className="flex space-x-2">
                             <span className="flex-shrink-0 w-5 h-5 bg-primary text-white rounded-full flex items-center justify-center text-xs">4</span>
-                            <span className="text-gray-700 text-sm">Laat 5 minuten doorkoken</span>
+                            <span className="text-gray-700 text-sm">Laat 3 minuten doorkoken</span>
                           </li>
                           <li className="flex space-x-2">
                             <span className="flex-shrink-0 w-5 h-5 bg-primary text-white rounded-full flex items-center justify-center text-xs">5</span>
@@ -257,7 +257,7 @@ export default function FlessenSteriligerenPage() {
                     </div>
                   </div>
 
-                  <div className="">
+                  <div>
                     <h3 className="font-medium text-gray-700 mb-3">Methode 2: Elektrische sterilisator (populairst)</h3>
                     
                     <div className="space-y-3">
@@ -295,7 +295,7 @@ export default function FlessenSteriligerenPage() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="">
+                  <div>
                     <h3 className="font-medium text-gray-700 mb-3">Methode 3: Magnetron sterilisatie</h3>
                     
                     <div className="space-y-2">
@@ -355,7 +355,7 @@ export default function FlessenSteriligerenPage() {
                           </li>
                           <li className="flex items-start space-x-2">
                             <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                            <span className="text-gray-600 text-sm">Langere wachttijd (30 minuten)</span>
+                            <span className="text-gray-600 text-sm">Langere wachttijd (15 minuten)</span>
                           </li>
                           <li className="flex items-start space-x-2">
                             <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -395,11 +395,11 @@ export default function FlessenSteriligerenPage() {
                       <ol className="space-y-1">
                         <li className="flex space-x-2">
                           <span className="flex-shrink-0 w-5 h-5 bg-primary text-white rounded-full flex items-center justify-center text-xs">1</span>
-                          <span className="text-gray-600 text-sm">Spoel direct na gebruik met koud water</span>
+                          <span className="text-gray-600 text-sm">Spoel direct na gebruik met koud water - belangrijk voor <Link href="/kennisbank/hygiene-bereiding/houdbaarheid-flesvoeding" className="text-primary hover:underline font-medium">houdbaarheid</Link></span>
                         </li>
                         <li className="flex space-x-2">
                           <span className="flex-shrink-0 w-5 h-5 bg-primary text-white rounded-full flex items-center justify-center text-xs">2</span>
-                          <span className="text-gray-600 text-sm">Was grondig met warm soapwater</span>
+                          <span className="text-gray-600 text-sm">Was grondig met warm zeepwater en <Link href="/kennisbank/hygiene-bereiding/water-koken-flesvoeding" className="text-primary hover:underline font-medium">gekookt water</Link></span>
                         </li>
                         <li className="flex space-x-2">
                           <span className="flex-shrink-0 w-5 h-5 bg-primary text-white rounded-full flex items-center justify-center text-xs">3</span>
@@ -592,7 +592,7 @@ export default function FlessenSteriligerenPage() {
                   </div>
                 </div>
 
-                <div className="">
+                <div>
                   <h3 className="font-medium text-gray-700 mb-2">Conclusie kosten:</h3>
                   <p className="text-gray-700 text-sm">
                     Elektrische sterilisator is na 3-4 maanden de goedkoopste optie en meest praktisch voor dagelijks gebruik.
@@ -608,7 +608,7 @@ export default function FlessenSteriligerenPage() {
               <div className="space-y-4">
                 <div>
                   <h3 className="font-medium text-gray-700 mb-2">Q: Tot welke leeftijd moet ik steriliseren?</h3>
-                  <p className="text-gray-600 text-sm">A: Minimaal tot 6 maanden, bij premature baby's of ziekte langer.</p>
+                  <p className="text-gray-600 text-sm">A: Minimaal tot 1 jaar, bij premature baby's of ziekte langer. Het Voedingscentrum adviseert steriliseren zolang je baby flesvoeding krijgt.</p>
                 </div>
                 
                 <div>
@@ -623,7 +623,7 @@ export default function FlessenSteriligerenPage() {
                 
                 <div>
                   <h3 className="font-medium text-gray-700 mb-2">Q: Wat als ik sterilisator vergeet aan te zetten?</h3>
-                  <p className="text-gray-600 text-sm">A: Begin opnieuw. Bacteriën groeien snel op ongesteunde items.</p>
+                  <p className="text-gray-600 text-sm">A: Begin opnieuw. Bacteriën groeien snel op ongesteriliseerde items.</p>
                 </div>
 
                 <div>
@@ -633,25 +633,10 @@ export default function FlessenSteriligerenPage() {
               </div>
             </div>
 
-            <div className="">
+            <div>
               <p className="text-gray-700 text-sm text-center">
                 Steriliseren is een essentiële vaardigheid voor veilige flesvoeding. Met de juiste methode en routine bescherm je je baby tegen gevaarlijke infecties.
               </p>
-            </div>
-
-            {/* Call to action */}
-            <div className="bg-white rounded-2xl border border-gray-200 p-6">
-              <div className="text-center">
-                <Link 
-                  href="/calculator"
-                  className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
-                >
-                  <div className="text-center">
-                    <div className="font-medium text-gray-700">Hulp nodig bij het organiseren van je flesvoeding routine? </div>
-                    <div className="text-gray-600">Gebruik onze flesvoeding calculator voor een gepersonaliseerd voedingsschema</div>
-                  </div>
-                </Link>
-              </div>
             </div>
 
             {/* Related articles */}
@@ -661,21 +646,21 @@ export default function FlessenSteriligerenPage() {
                 Gerelateerde artikelen
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
+                <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
                   <div className="font-medium text-primary">Fles bereiden stap voor stap →</div>
-                  <div className="text-gray-600">Veilige bereiding na sterilisatie</div>
+                  <div className="text-sm text-gray-600">Veilige bereiding na sterilisatie</div>
                 </Link>
-                <Link href="/kennisbank/hygiene-bereiding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Hygiëne & Bereiding overzicht →</div>
-                  <div className="text-gray-600">Alle hygiëne aspecten</div>
+                <Link href="/kennisbank/hygiene-bereiding/water-koken-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Water koken voor flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Waterbereiding voor optimale hygiëne</div>
                 </Link>
-                <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
+                <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
                   <div className="font-medium text-primary">Eerste keer flesvoeding →</div>
-                  <div className="text-gray-600">Complete beginnersgids</div>
+                  <div className="text-sm text-gray-600">Complete beginnersgids met checklist</div>
                 </Link>
-                <Link href="/kennisbank/veiligheid" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Veiligheidsrichtlijnen →</div>
-                  <div className="text-gray-600">Alle veiligheidsaspecten</div>
+                <Link href="/" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+                  <div className="text-sm text-gray-600">Bereken gepersonaliseerd voedingsschema</div>
                 </Link>
               </div>
             </div>

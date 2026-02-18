@@ -2,7 +2,7 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
-import { AlertTriangle, Clock, TrendingUp, Users, Calendar, CheckCircle, XCircle, Target, ChevronRight, Star, Banknote, Heart, RefreshCw } from 'lucide-react';
+import { AlertTriangle, Clock, TrendingUp, Users, Calendar, CheckCircle, XCircle, Target, ChevronRight, Star, Banknote, Heart, RefreshCw, ArrowRight, } from 'lucide-react';
 import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
@@ -16,7 +16,7 @@ export const metadata = {
 const timingIndicators = [
   { label: "Gewicht", criterion: ">8kg (meestal 10-12 maanden)", icon: TrendingUp },
   { label: "Motoriek", criterion: "Stabiel zitten zonder ondersteuning", icon: Target },
-  { label: "Coördinatie", criterion: "Pincer grasp volledig ontwikkeld", icon: CheckCircle },
+  { label: "Coördinatie", criterion: "Pincetgreep volledig ontwikkeld", icon: CheckCircle },
   { label: "Cognitief", criterion: "Volgt 2-stap instructies", icon: Target },
   { label: "Orale motoriek", criterion: "Kan slikken zonder zuigen reflex", icon: CheckCircle },
   { label: "Fles competentie", criterion: "Houdt fles zelfstandig vast", icon: CheckCircle }
@@ -28,53 +28,53 @@ const nlGuidelines = [
   { age: "12-15 maanden", activity: "Hoofddrank methode overgang" },
   { age: "15-18 maanden", activity: "Volledige beker competentie" },
   { age: "18-24 maanden", activity: "Verfijning + alle dranken" },
-  { age: "24+ maanden", activity: "Adult-like drinking skills" }
+  { age: "24+ maanden", activity: "Volwassen drinkvaardigheden" }
 ];
 
 // Cup progression data
 const cupPhases = [
   {
-    phase: "Fase 1: Training Cups",
+    phase: "Fase 1: Trainingsbekers",
     age: "10-12 maanden",
     features: [
-      "Looks similar to bottle",
-      "Handvatten voor kleine handen", 
-      "Anti-leak valves",
-      "Gentle op tandjes en tandvlees",
-      "Controlled liquid release"
+      "Lijkt op fles",
+      "Handvatten voor kleine handen",
+      "Anti-lek kleppen",
+      "Zacht voor tandjes en tandvlees",
+      "Gecontroleerde vloeistofafgifte"
     ]
   },
   {
-    phase: "Fase 2: Sippy Cups", 
+    phase: "Fase 2: Tuitbekers", 
     age: "12-15 maanden",
     features: [
       "Zelfstandig gebruik mogelijk",
       "Minder morsen dan open cups",
       "Makkelijk voor onderweg",
-      "Success experiences",
-      "Parents comfortable mess level"
+      "Succeservaringen",
+      "Beheersbare hoeveelheid morsen"
     ]
   },
   {
-    phase: "Fase 3: Straw Cups",
+    phase: "Fase 3: Rietjesbekers",
     age: "15-18 maanden", 
     features: [
       "Betere tong/lip coördinatie",
-      "Facial muscle development",
-      "Problem-solving skills",
-      "More like adult drinking",
-      "Accurate mouth targeting"
+      "Gezichtsspier ontwikkeling",
+      "Probleemoplossend vermogen",
+      "Meer zoals volwassen drinken",
+      "Nauwkeurig richten op mond"
     ]
   },
   {
-    phase: "Fase 4: Open Cups",
+    phase: "Fase 4: Open Bekers",
     age: "18+ maanden",
     features: [
-      "Mature drinking technique",
-      "No prolonged contact teeth",
-      "Self-regulation liquid intake",
-      "Full understanding cause-effect",
-      "Normal adult/child interaction"
+      "Volwassen drinktechniek",
+      "Geen langdurig contact met tanden",
+      "Zelfregulatie vloeistofinname",
+      "Volledig begrip oorzaak-gevolg",
+      "Normale volwassen/kind interactie"
     ]
   }
 ];
@@ -87,14 +87,14 @@ const premiumBrands = [
     rating: "4.6/5",
     availability: "Kruidvat, Etos, baby stores",
     pros: [
-      "Complete ecosystem cups",
-      "Proven transition success rate", 
-      "Wide Nederlandse distribution",
-      "Reasonable pricing"
+      "Compleet ecosysteem bekers",
+      "Bewezen overgang succespercentage",
+      "Brede Nederlandse distributie",
+      "Redelijke prijsstelling"
     ],
     cons: [
-      "Plastic construction only",
-      "Some valve cleaning complexity"
+      "Alleen plastic constructie",
+      "Kleppen soms lastig schoon te maken"
     ]
   },
   {
@@ -103,14 +103,14 @@ const premiumBrands = [
     rating: "4.7/5", 
     availability: "Hoogwaardige baby stores + online",
     pros: [
-      "Highest quality materials",
-      "Extensive research backing",
-      "Compatible bottle ecosystem",
-      "Excellent Nederlandse service"
+      "Hoogste kwaliteit materialen",
+      "Uitgebreid onderzoek als basis",
+      "Compatibel flessensysteem",
+      "Uitstekende Nederlandse service"
     ],
     cons: [
-      "Hoogwaardige prijsstelling",
-      "Limited discount availability"
+      "Hoge prijsstelling",
+      "Beperkte kortingen beschikbaar"
     ]
   },
   {
@@ -119,14 +119,14 @@ const premiumBrands = [
     rating: "4.5/5",
     availability: "Breed Nederlandse netwerk", 
     pros: [
-      "Focus op oral health",
-      "Compact + travel friendly",
-      "Innovative valve technology",
-      "Good value proposition"
+      "Focus op mondgezondheid",
+      "Compact + reisvriendelijk",
+      "Innovatieve kleptechnologie",
+      "Goede prijs-kwaliteitverhouding"
     ],
     cons: [
-      "Smaller capacity than competitors",
-      "Limited color options Netherlands"
+      "Kleinere capaciteit dan concurrenten",
+      "Beperkte kleuropties in Nederland"
     ]
   }
 ];
@@ -143,62 +143,62 @@ const weeklyPlan = [
       "Positieve associatie opbouwen"
     ],
     tips: [
-      "No pressure - pure exploratie",
+      "Geen druk - pure exploratie",
       "Laat baby beker vasthouden tijdens fles",
-      "Model drinking behavior",
-      "Celebrate small interactions",
-      "Keep regular fles feeding intact"
+      "Voordoen hoe je drinkt",
+      "Vier kleine interacties",
+      "Reguliere flesvoeding behouden"
     ]
   },
   {
     week: "Week 2: Vaardigheid ontwikkelen & Volume",
     goals: [
       "Volume verhogen (60-120ml)",
-      "Targeting mouth accuracy",
+      "Mond nauwkeurig richten",
       "Langere sessions (10-15 min)",
-      "Hand-over-hand guidance", 
-      "Begin routine integration"
+      "Hand-over-hand begeleiding",
+      "Begin routine integratie"
     ],
     tips: [
-      "Multiple times per dag beker gebruik",
-      "Different liquids proberen (water/melk)",
-      "Turn into game (drink zoals mama)",
-      "Reward successful sips",
-      "Practice different positions"
+      "Meerdere keren per dag beker gebruiken",
+      "Verschillende vloeistoffen proberen (water/melk)",
+      "Maak er een spelletje van (drinken zoals mama)",
+      "Beloon succesvolle slokjes",
+      "Oefen in verschillende posities"
     ]
   },
   {
-    week: "Week 3: Independence & Integration", 
+    week: "Week 3: Zelfstandigheid & Integratie",
     goals: [
-      "More independent holding",
-      "Meal time integration",
-      "Volume target 120-180ml",
-      "Morsen beheer improving",
-      "Consistent daily routine"
+      "Meer onafhankelijk vasthouden",
+      "Integratie bij maaltijden",
+      "Volume doel 120-180ml",
+      "Morsen beheer verbetert",
+      "Consistente dagelijkse routine"
     ],
     tips: [
-      "Beker bij elke maaltijd present",
-      "Replace 1 daily fles with beker",
-      "Social drinking (family meals)",
-      "Focus on technique refinement",
-      "Track progress more systematically"
+      "Beker bij elke maaltijd aanbieden",
+      "Vervang 1 dagelijkse fles door beker",
+      "Sociaal drinken (familiemaaltijden)",
+      "Focus op techniek verfijning",
+      "Voortgang systematischer bijhouden"
     ]
   },
   {
     week: "Week 4: Beheersing & Zelfvertrouwen",
     goals: [
-      "Confident independent use",
-      "Volume 180-250ml sessions", 
-      "Natural meal integration",
-      "Reasonable spill control",
-      "Enjoys drinking experience"
+      "Zelfverzekerd onafhankelijk gebruik",
+      "Volume 180-250ml per keer",
+      "Natuurlijke maaltijdintegratie",
+      "Redelijke morscontrole",
+      "Geniet van drinkervaring"
     ],
     tips: [
-      "Multiple beker types introduction",
-      "Different room locations",
-      "Social situations practice",
-      "Various times of day",
-      "Problem-solving independence"
+      "Meerdere beker types introduceren",
+      "Verschillende locaties in huis",
+      "Sociale situaties oefenen",
+      "Verschillende tijdstippen op de dag",
+      "Zelfstandig probleemoplossen"
     ]
   }
 ];
@@ -208,46 +208,46 @@ const commonProblems = [
   {
     problem: "Volledige Weigering Beker",
     causes: [
-      "Overwhelming change: Te veel tegelijk nieuw",
-      "Strong bottle preference: Comfort associatie",
-      "Texture difference: Onbekende mond sensatie",
-      "Wrong timing: Te hongerig/moe/stressed"
+      "Overweldigende verandering: Te veel tegelijk nieuw",
+      "Sterke flesvoorkeur: Comfort associatie",
+      "Textuurverschil: Onbekende mondsensatie",
+      "Verkeerde timing: Te hongerig/moe/gestrest"
     ],
     solutions: [
-      "Slower introduction: Nog geleidelijker",
-      "Play-based approach: Beker als toy eerst", 
-      "Hybrid method: Beker + fles combo",
-      "Timing adjustment: Relaxed momenten kiezen"
+      "Langzamere introductie: Nog geleidelijker",
+      "Spelbenadering: Beker eerst als speelgoed",
+      "Hybride methode: Beker + fles combinatie",
+      "Timing aanpassen: Ontspannen momenten kiezen"
     ]
   },
   {
-    problem: "Nutritional Intake Drop",
+    problem: "Voedingsinname Daling",
     causes: [
-      ">20% reduction total liquid intake",
-      "Weight loss or stagnation",
-      "Dehydration symptoms",
-      "Rejecting all liquids multiple days"
+      ">20% reductie totale vloeistofinname",
+      "Gewichtsverlies of stagnatie",
+      "Dehydratie symptomen",
+      "Afwijzing alle vloeistoffen meerdere dagen"
     ],
     solutions: [
-      "Reserve fles: Bewaar 1-2 fles voedingen",
-      "Multiple opportunities: More frequent offers",
-      "Liquid variety: Water, milk, diluted sap",
-      "Close monitoring: Daily intake tracking"
+      "Reserve fles: Bewaar 1-2 flesvoedingen",
+      "Meerdere kansen: Vaker aanbieden",
+      "Vloeistof variëteit: Water, melk, verdund sap",
+      "Nauwlettend bijhouden: Dagelijkse inname tracking"
     ]
   },
   {
     problem: "Regressie Na Vooruitgang",
     causes: [
-      "Illness: Temporary comfort seeking",
-      "Teething: Mouth discomfort",
-      "Environment change: New caregiver/location", 
-      "Developmental leap: Focus andere skills"
+      "Ziekte: Tijdelijk comfort zoeken",
+      "Tandjes: Ongemak in mond",
+      "Omgevingsverandering: Nieuwe verzorger/locatie",
+      "Ontwikkelingssprong: Focus op andere vaardigheden"
     ],
     solutions: [
-      "Patience: Temporary setback expectation",
-      "Return basics: Earlier stage techniques",
-      "Extra support: More hands-on guidance",
-      "Lower expectations: Reduced pressure"
+      "Geduld: Tijdelijke terugval verwachten",
+      "Terug naar basis: Eerdere fase technieken",
+      "Extra ondersteuning: Meer begeleiding",
+      "Lagere verwachtingen: Minder druk"
     ]
   }
 ];
@@ -322,7 +322,9 @@ export default function OvergangNaarBekerPage() {
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed">
-                De overgang naar beker is een belangrijke mijlpaal die meestal tussen 10-18 maanden plaatsvindt. Het Nederlandse consultatiebureau adviseert starten rond 12 maanden. Deze overgang ontwikkelt motorische vaardigheden, stimuleert mondhygiëne en bereidt je baby voor op zelfstandiger eten en drinken.
+                De overgang naar beker is een belangrijke mijlpaal die meestal tussen 10-18 maanden plaatsvindt. Het Nederlandse consultatiebureau adviseert starten rond 12 maanden.
+                Deze overgang ontwikkelt motorische vaardigheden, stimuleert mondhygiëne en bereidt je baby voor op zelfstandiger eten en drinken.
+                Lees ook over <Link href="/kennisbank/voedingstechnieken/baby-leren-zelf-drinken" className="text-primary hover:underline font-medium">hoe je baby leert zelf drinken</Link> voor meer context.
               </p>
             </section>
 
@@ -350,7 +352,7 @@ export default function OvergangNaarBekerPage() {
                         </li>
                         <li className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                          <span className="text-gray-700 text-sm">Pincer grasp volledig ontwikkeld</span>
+                          <span className="text-gray-700 text-sm">Pincetgreep volledig ontwikkeld</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
@@ -436,7 +438,7 @@ export default function OvergangNaarBekerPage() {
                 </div>
 
                 <div>
-                  <h3 className="font-medium text-primary mb-3">Readiness assessment</h3>
+                  <h3 className="font-medium text-primary mb-3">Gereedheidscheck</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <h4 className="font-medium text-primary mb-2">Positieve signalen:</h4>
@@ -496,7 +498,7 @@ export default function OvergangNaarBekerPage() {
                   
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-medium text-gray-700 mb-2">Fase 1: Training Cups (10-12 maanden)</h4>
+                      <h4 className="font-medium text-gray-700 mb-2">Fase 1: Trainingsbekers (10-12 maanden)</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -508,7 +510,7 @@ export default function OvergangNaarBekerPage() {
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm">Anti-leak valves</span>
+                          <span className="text-gray-600 text-sm">Anti-lek kleppen</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -518,7 +520,7 @@ export default function OvergangNaarBekerPage() {
                     </div>
                     
                     <div>
-                      <h4 className="font-medium text-gray-700 mb-2">Fase 2: Sippy Cups (12-15 maanden)</h4>
+                      <h4 className="font-medium text-gray-700 mb-2">Fase 2: Tuitbekers (12-15 maanden)</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -540,7 +542,7 @@ export default function OvergangNaarBekerPage() {
                     </div>
                     
                     <div>
-                      <h4 className="font-medium text-gray-700 mb-2">Fase 3: Straw Cups (15-18 maanden)</h4>
+                      <h4 className="font-medium text-gray-700 mb-2">Fase 3: Rietjesbekers (15-18 maanden)</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -552,7 +554,7 @@ export default function OvergangNaarBekerPage() {
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm">Problem-solving vaardigheden</span>
+                          <span className="text-gray-600 text-sm">Probleemoplossende vaardigheden</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -562,7 +564,7 @@ export default function OvergangNaarBekerPage() {
                     </div>
                     
                     <div>
-                      <h4 className="font-medium text-gray-700 mb-2">Fase 4: Open Cups (18+ maanden)</h4>
+                      <h4 className="font-medium text-gray-700 mb-2">Fase 4: Open Bekers (18+ maanden)</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
@@ -589,7 +591,7 @@ export default function OvergangNaarBekerPage() {
                   <h3 className="font-medium text-primary mb-3">Nederlandse top beker merken</h3>
                   
                   <div className="space-y-4">
-                    <div className="bg-white rounded-lg p-4">
+ <div className="p-4">
                       <h4 className="font-medium text-gray-700 mb-2">Tommee Tippee Closer to Nature (€8-15)</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         <div>
@@ -629,7 +631,7 @@ export default function OvergangNaarBekerPage() {
                       </div>
                     </div>
                     
-                    <div className="bg-white rounded-lg p-4">
+ <div className="p-4">
                       <h4 className="font-medium text-gray-700 mb-2">Philips AVENT Overgang Serie (€10-18)</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         <div>
@@ -669,7 +671,7 @@ export default function OvergangNaarBekerPage() {
                       </div>
                     </div>
                     
-                    <div className="bg-white rounded-lg p-4">
+ <div className="p-4">
                       <h4 className="font-medium text-gray-700 mb-2">IKEA BÖRJA Serie (€2-6) - Budget optie</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         <div>
@@ -760,7 +762,7 @@ export default function OvergangNaarBekerPage() {
                               </li>
                               <li className="flex items-center space-x-2">
                                 <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                                <span className="text-gray-600 text-sm">Model drinking behavior</span>
+                                <span className="text-gray-600 text-sm">Voordoen hoe je drinkt</span>
                               </li>
                               <li className="flex items-center space-x-2">
                                 <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -822,7 +824,7 @@ export default function OvergangNaarBekerPage() {
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-medium">3</div>
                       <div className="flex-1">
-                        <h4 className="font-medium text-gray-700 mb-2">Week 3: Independence & Integration</h4>
+                        <h4 className="font-medium text-gray-700 mb-2">Week 3: Zelfstandigheid & Integratie</h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div>
                             <h5 className="text-sm font-medium text-gray-700 mb-1">Doelen:</h5>
@@ -872,7 +874,7 @@ export default function OvergangNaarBekerPage() {
                         <h4 className="font-medium text-gray-700 mb-2">Week 4: Beheersing & Zelfvertrouwen</h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div>
-                            <h5 className="text-sm font-medium text-gray-700 mb-1">Success metrics:</h5>
+                            <h5 className="text-sm font-medium text-gray-700 mb-1">Succescriteria:</h5>
                             <ul className="space-y-1">
                               <li className="flex items-center space-x-2">
                                 <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
@@ -942,7 +944,7 @@ export default function OvergangNaarBekerPage() {
                           <span className="text-gray-700">Hogere lange termijn succes</span>
                         </li>
                       </ul>
-                      <p className="text-gray-600 mt-3"><strong>Timeline:</strong> 4-8 weken</p>
+                      <p className="text-gray-600 mt-3"><strong>Tijdlijn:</strong> 4-8 weken</p>
                       <p className="text-gray-600"><strong>Best voor:</strong> Gevoelige baby's, eerste-tijd ouders</p>
                     </div>
                     
@@ -955,7 +957,7 @@ export default function OvergangNaarBekerPage() {
                         </li>
                         <li className="flex items-center space-x-2">
                           <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
-                          <span className="text-gray-700">Baby toont sterke readiness</span>
+                          <span className="text-gray-700">Baby toont sterke bereidheid</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
@@ -966,8 +968,8 @@ export default function OvergangNaarBekerPage() {
                           <span className="text-gray-700">Familie vakantie/reis behoeften</span>
                         </li>
                       </ul>
-                      <p className="text-gray-600 mt-3"><strong>Timeline:</strong> 1-2 weken</p>
-                      <p className="text-gray-600"><strong>Risico's:</strong> Hogere stress, mogelijke regressie</p>
+                      <p className="text-gray-600 mt-3"><strong>Tijdlijn:</strong> 1-2 weken</p>
+                      <p className="text-gray-600"><strong>Risico&#39;s:</strong> Hogere stress, mogelijke regressie</p>
                     </div>
                   </div>
                 </div>
@@ -1037,7 +1039,7 @@ export default function OvergangNaarBekerPage() {
                           </li>
                           <li className="flex items-center space-x-2">
                             <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                            <span className="text-gray-600 text-sm">Peer modeling</span>
+                            <span className="text-gray-600 text-sm">Voorbeeld van leeftijdsgenootjes</span>
                           </li>
                           <li className="flex items-center space-x-2">
                             <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -1068,7 +1070,7 @@ export default function OvergangNaarBekerPage() {
                           </li>
                           <li className="flex items-center space-x-2">
                             <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
-                            <span className="text-gray-600 text-sm">Verhoogde prikkelbaarhied</span>
+                            <span className="text-gray-600 text-sm">Verhoogde prikkelbaarheid</span>
                           </li>
                         </ul>
                       </div>
@@ -1177,7 +1179,7 @@ export default function OvergangNaarBekerPage() {
                 
                 <div>
                   <h3 className="font-medium text-gray-700 mb-2">Mijn baby weigert de beker compleet. Wat nu?</h3>
-                  <p className="text-gray-600 text-sm">Neem de druk weg, introduceer langzamer, laat de beker eerst als speelgoed fungeren. Probeer verschillende tijdstippen en laat anderen de beker aanbieden. Geduld is key.</p>
+                  <p className="text-gray-600 text-sm">Neem de druk weg, introduceer langzamer, laat de beker eerst als speelgoed fungeren. Probeer verschillende tijdstippen en laat anderen de beker aanbieden. Geduld is de sleutel.</p>
                 </div>
 
                 <div>
@@ -1192,7 +1194,7 @@ export default function OvergangNaarBekerPage() {
               </div>
             </div>
 
-            <div className="">
+            <div>
               <p className="text-gray-700 text-sm text-center">
                 De overgang naar beker is een natuurlijke ontwikkelingsstap die geduld en consistentie vereist. Met de juiste aanpak en realistische verwachtingen slaagt bijna elke baby binnen enkele weken.
               </p>
@@ -1202,12 +1204,12 @@ export default function OvergangNaarBekerPage() {
             <div className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
                 <Link 
-                  href="/calculator"
+                  href="/"
                   className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
                   <div className="text-center">
-                    <div className="font-medium text-gray-700">Bereken overgang hoeveelheden </div>
-                    <div className="text-gray-600">Aanpassing volumes tijdens beker overgang</div>
+                    <div className="font-medium text-primary">Bereken overgang hoeveelheden</div>
+                    <div className="flex items-center justify-between"><span className="text-gray-600">Aanpassing volumes tijdens beker overgang</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
                   </div>
                 </Link>
               </div>
@@ -1239,21 +1241,21 @@ export default function OvergangNaarBekerPage() {
                 Gerelateerde artikelen
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link href="/kennisbank/voedingstechnieken/juiste-houding-bij-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Juiste houding bij flesvoeding </div>
-                  <div className="text-gray-600">Optimale posities voor baby en ouder</div>
+                <Link href="/kennisbank/voedingstechnieken/baby-leren-zelf-drinken" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Baby leren zelf drinken →</div>
+                  <div className="text-sm text-gray-600">Ontwikkeling naar zelfstandigheid</div>
                 </Link>
-                <Link href="/kennisbank/voedingstechnieken/verschillende-spenen-uitproberen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Verschillende spenen uitproberen </div>
-                  <div className="text-gray-600">Vinden van de perfecte speen</div>
+                <Link href="/kennisbank/voedingstechnieken/verschillende-spenen-uitproberen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Verschillende spenen uitproberen →</div>
+                  <div className="text-sm text-gray-600">Vinden van de perfecte speen</div>
                 </Link>
-                <Link href="/kennisbank/soorten-flesvoeding/wanneer-overstappen-opvolgmelk" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Overstappen naar opvolgmelk </div>
-                  <div className="text-gray-600">Timing en voorbereiding opvolgmelk</div>
+                <Link href="/kennisbank/soorten-flesvoeding/wanneer-overstappen-opvolgmelk" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Overstappen naar opvolgmelk →</div>
+                  <div className="text-sm text-gray-600">Timing en voorbereiding opvolgmelk</div>
                 </Link>
-                <Link href="/kennisbank/praktische-tips/voedingsritme-opbouwen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Voedingsritme opbouwen </div>
-                  <div className="text-gray-600">Structuur in voeding ontwikkelen</div>
+                <Link href="/" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+                  <div className="text-sm text-gray-600">Bereken de juiste hoeveelheden</div>
                 </Link>
               </div>
             </div>

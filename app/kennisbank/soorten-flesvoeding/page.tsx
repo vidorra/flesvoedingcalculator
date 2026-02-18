@@ -4,7 +4,7 @@ import { Package, ArrowRight, Home, Info, AlertCircle } from 'lucide-react'
 
 export const metadata = {
   title: 'Flesvoeding 1, 2, 3: Verschil Startvoeding, Opvolgmelk & Peutermelk',
-  description: 'Ontdek het verschil tussen startvoeding (1), opvolgmelk (2) en peutermelk (3). Wanneer overstappen? Welke merken? Complete vergelijking 2025.',
+  description: 'Ontdek het verschil tussen startvoeding (1), opvolgmelk (2) en peutermelk (3). Wanneer overstappen? Welke merken? Complete vergelijking 2026.',
 }
 
 export default function SoortenFlesvoedingPage() {
@@ -21,7 +21,7 @@ export default function SoortenFlesvoedingPage() {
       <div className="space-y-6">
 
         {/* Header */}
-        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+        <div>
           <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
             <Package className="w-6 h-6 mr-3 text-primary" />
             Flesvoeding Nummer 1, 2, 3: Complete Gids voor Nederlandse Ouders
@@ -473,22 +473,22 @@ export default function SoortenFlesvoedingPage() {
               href="/kennisbank/basis-flesvoeding"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-gray-700">Basis Flesvoeding </div>
-              <div className="text-gray-600">Beginnen met flesvoeding</div>
+              <div className="font-medium text-primary">Basis Flesvoeding</div>
+              <div className="flex items-center justify-between"><span className="text-gray-600">Beginnen met flesvoeding</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
             </Link>
             <Link 
               href="/kennisbank/voedingstechnieken"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-gray-700">Voedingstechnieken </div>
-              <div className="text-gray-600">Hoe bereid je flesvoeding?</div>
+              <div className="font-medium text-primary">Voedingstechnieken</div>
+              <div className="flex items-center justify-between"><span className="text-gray-600">Hoe bereid je flesvoeding?</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
             </Link>
             <Link 
               href="/kennisbank/problemen-oplossen"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-gray-700">Problemen Oplossen </div>
-              <div className="text-gray-600">Hulp bij veelvoorkomende problemen</div>
+              <div className="font-medium text-primary">Problemen Oplossen</div>
+              <div className="flex items-center justify-between"><span className="text-gray-600">Hulp bij veelvoorkomende problemen</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
             </Link>
           </div>
         </div>

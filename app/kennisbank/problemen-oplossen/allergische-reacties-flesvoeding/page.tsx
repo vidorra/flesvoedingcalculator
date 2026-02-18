@@ -77,7 +77,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
             
             {/* Header - ALWAYS outside of card containers */}
             <div>
-              <div className="text-sm text-gray-500 mb-2">Kennisbank  Problemen Oplossen</div>
+              <div className="text-sm text-gray-500 mb-2">Kennisbank • Problemen Oplossen</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <AlertTriangle className="w-6 h-6 mr-3 text-primary" />
                 Allergische Reacties Flesvoeding: Nederlandse Herkenning & Behandeling Gids
@@ -125,10 +125,10 @@ export default function AllergischeReactiesFlesvoedingPage() {
                 <h3 className="font-medium text-primary mb-4">IgE-Gemedieerde Allergieën (Onmiddellijke Reacties)</h3>
                 <p className="text-gray-700 mb-4">
                   Deze reacties treden op binnen 0-2 uur na consumptie en kunnen zeer ernstig zijn, 
-                  inclusief anafylaxie. Ze worden veroorzaakt door IgE antibodies en histamine release.
+                  inclusief anafylaxie. Ze worden veroorzaakt door IgE-antilichamen en histamineafgifte.
                 </p>
                 
-                <div className="bg-white rounded-lg p-4 mb-6">
+ <div className="p-4 mb-6">
                   <h4 className="font-medium text-gray-700 mb-2">Timing en Ernst:</h4>
                   <ul className="space-y-2">
                     <li className="flex items-start space-x-2">
@@ -192,22 +192,22 @@ export default function AllergischeReactiesFlesvoedingPage() {
               
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Nederlandse Diagnose Protocol</h3>
-                <div className="bg-white rounded-lg p-4 mb-4">
-                  <h4 className="font-medium text-gray-700 mb-2">Stap 1: Clinical Assessment</h4>
+ <div className="p-4 mb-4">
+                  <h4 className="font-medium text-gray-700 mb-2">Stap 1: Klinische Beoordeling</h4>
                   <p className="text-gray-700 text-sm mb-2">
                     Uitgebreide anamnese, fysiek onderzoek en symptoom dagboek gedurende 1-2 weken.
                   </p>
                 </div>
                 
-                <div className="bg-white rounded-lg p-4 mb-4">
-                  <h4 className="font-medium text-gray-700 mb-2">Stap 2: Elimination Diet</h4>
+ <div className="p-4 mb-4">
+                  <h4 className="font-medium text-gray-700 mb-2">Stap 2: Eliminatiedieet</h4>
                   <p className="text-gray-700 text-sm mb-2">
                     2-4 weken proefperiode met extensively hydrolyzed formula onder medische supervisie.
                   </p>
                 </div>
                 
-                <div className="bg-white rounded-lg p-4">
-                  <h4 className="font-medium text-gray-700 mb-2">Stap 3: Challenge Test</h4>
+ <div className="p-4">
+                  <h4 className="font-medium text-gray-700 mb-2">Stap 3: Provocatietest</h4>
                   <p className="text-gray-700 text-sm">
                     Gecontroleerde reïntroductie in ziekenhuisomgeving voor definitieve diagnose.
                   </p>
@@ -245,8 +245,9 @@ export default function AllergischeReactiesFlesvoedingPage() {
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Alternatieve Flesvoeding Opties</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Bij bewezen allergie zijn er effectieve alternatieven beschikbaar in Nederland. 
+                Bij bewezen allergie zijn er effectieve alternatieven beschikbaar in Nederland.
                 Alle gespecialiseerde formules zijn volledig vergoed door de zorgverzekering op recept.
+                Lees meer over <Link href="/kennisbank/soorten-flesvoeding/hypoallergene-flesvoeding" className="text-primary hover:underline font-medium">hypoallergene flesvoeding</Link> en <Link href="/kennisbank/soorten-flesvoeding/lactosevrije-flesvoeding" className="text-primary hover:underline font-medium">lactosevrije flesvoeding</Link> voor gedetailleerde informatie.
               </p>
               
               <div className="border-t border-gray-200 pt-6">
@@ -260,7 +261,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
                   ))}
                 </ul>
                 
-                <div className="mt-6 p-4 bg-white rounded-lg">
+ <div className="mt-6">
                   <h4 className="font-medium text-gray-700 mb-2">Kosten en Vergoeding</h4>
                   <p className="text-gray-700 text-sm">
                     Extensively hydrolyzed formula kost €100-120 per maand, amino acid formula €160-200 per maand. 
@@ -317,12 +318,12 @@ export default function AllergischeReactiesFlesvoedingPage() {
             <section className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
                 <Link 
-                  href="/calculator"
+                  href="/"
                   className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-white transition-colors"
                 >
                   <div className="text-center">
-                    <div className="font-medium text-gray-700">Bereken veilige voeding hoeveelheden </div>
-                    <div className="text-gray-600">Gebruik onze calculator voor gepersonaliseerd advies</div>
+                    <div className="font-medium text-primary">Bereken veilige voeding hoeveelheden</div>
+                    <div className="flex items-center justify-between"><span className="text-gray-600">Gebruik onze calculator voor gepersonaliseerd advies</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
                   </div>
                 </Link>
               </div>
@@ -335,21 +336,21 @@ export default function AllergischeReactiesFlesvoedingPage() {
                 Gerelateerde Artikelen
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link href="/kennisbank/soorten-flesvoeding/hypoallergene-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Hypoallergene flesvoeding </div>
-                  <div className="text-gray-600">Speciaal ontwikkeld voor allergische baby's</div>
+                <Link href="/kennisbank/soorten-flesvoeding/hypoallergene-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Hypoallergene flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Speciaal ontwikkeld voor allergische baby's</div>
                 </Link>
-                <Link href="/kennisbank/problemen-oplossen/krampjes-na-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Krampjes na flesvoeding </div>
-                  <div className="text-gray-600">Herkennen en behandelen van voedingsgerelateerde krampjes</div>
+                <Link href="/kennisbank/soorten-flesvoeding/lactosevrije-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Lactosevrije flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Voor lactose-intolerantie en allergieën</div>
                 </Link>
-                <Link href="/kennisbank/problemen-oplossen/spugen-na-de-fles" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Spugen na de fles </div>
-                  <div className="text-gray-600">Wanneer spugen normaal is en wanneer niet</div>
+                <Link href="/kennisbank/problemen-oplossen/krampjes-na-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Krampjes na flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Onderscheid allergie van andere buikklachten</div>
                 </Link>
-                <Link href="/kennisbank/veiligheid" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Veiligheid algemeen </div>
-                  <div className="text-gray-600">Alle aspecten van veilige flesvoeding</div>
+                <Link href="/" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+                  <div className="text-sm text-gray-600">Bereken juiste hoeveelheden bij speciale voeding</div>
                 </Link>
               </div>
             </section>

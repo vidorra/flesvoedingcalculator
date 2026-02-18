@@ -226,7 +226,7 @@ function HygieneBereidingPage() {
           </h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div className="bg-white rounded-lg p-4">
+ <div className="p-4">
               <h3 className="font-medium text-amber-800 mb-3">Flessenwarmer voordelen:</h3>
               <div className="space-y-2">
                 {bottleWarmerAdvantages.map((advantage, index) => (
@@ -238,7 +238,7 @@ function HygieneBereidingPage() {
               </div>
             </div>
             
-            <div className="bg-white rounded-lg p-4">
+ <div className="p-4">
               <h3 className="font-medium text-gray-700 mb-3">Magnetron nadelen:</h3>
               <div className="space-y-2">
                 {microwaveDisadvantages.map((disadvantage, index) => (
@@ -485,22 +485,22 @@ function HygieneBereidingPage() {
               href="/kennisbank/hygiene-bereiding/water-koken-flesvoeding"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-gray-700">Water koken voor flesvoeding </div>
-              <div className="text-gray-600">Complete veiligheidsgids</div>
+              <div className="font-medium text-primary">Water koken voor flesvoeding</div>
+              <div className="flex items-center justify-between"><span className="text-gray-600">Complete veiligheidsgids</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
             </Link>
             <Link 
               href="/kennisbank/veiligheid"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-gray-700">Veiligheidsrichtlijnen </div>
-              <div className="text-gray-600">Belangrijke veiligheidstips</div>
+              <div className="font-medium text-primary">Veiligheidsrichtlijnen</div>
+              <div className="flex items-center justify-between"><span className="text-gray-600">Belangrijke veiligheidstips</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
             </Link>
             <Link 
               href="/kennisbank/praktische-tips"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-gray-700">Praktische Tips </div>
-              <div className="text-gray-600">Handige tips voor ouders</div>
+              <div className="font-medium text-primary">Praktische Tips</div>
+              <div className="flex items-center justify-between"><span className="text-gray-600">Handige tips voor ouders</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
             </Link>
           </div>
           </div>

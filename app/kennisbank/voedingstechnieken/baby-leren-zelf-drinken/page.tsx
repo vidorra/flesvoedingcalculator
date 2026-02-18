@@ -121,7 +121,7 @@ export default function BabyLerenZelfDrinkenPage() {
             
             {/* Header - ALWAYS outside of card containers */}
             <div>
-              <div className="text-sm text-gray-500 mb-2">Kennisbank  Voedingstechnieken</div>
+              <div className="text-sm text-gray-500 mb-2">Kennisbank • Voedingstechnieken</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Baby className="w-6 h-6 mr-3 text-primary" />
                 Baby Leren Zelf Drinken: Nederlandse Gids voor Zelfstandigheid
@@ -135,13 +135,15 @@ export default function BabyLerenZelfDrinkenPage() {
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Het leren zelfstandig drinken is een cruciale vaardigheid die baby's tussen 6-18 maanden ontwikkelen. 
+                Het leren zelfstandig drinken is een cruciale vaardigheid die baby's tussen 6-18 maanden ontwikkelen.
                 Deze milestone bevordert niet alleen zelfstandigheid, maar ook fijne motoriek en cognitieve ontwikkeling.
+                Net zoals bij <Link href="/kennisbank/voedingstechnieken/overgang-naar-beker" className="text-primary hover:underline font-medium">de overgang naar een beker</Link>,
+                is geduld en de juiste aanpak essentieel voor succes.
               </p>
-              
-              <div className="mt-4 p-4 bg-white rounded-lg">
+
+ <div className="mt-4">
                 <p className="text-gray-700">
-                  <strong>Nederlandse statistiek:</strong> 95% van Nederlandse baby's kan zelfstandig drinken op 15 maanden, 
+                  <strong>Nederlandse statistiek:</strong> 95% van Nederlandse baby's kan zelfstandig drinken op 15 maanden,
                   met kinderopvang baby's gemiddeld 2 maanden eerder door peer learning.
                 </p>
               </div>
@@ -157,7 +159,9 @@ export default function BabyLerenZelfDrinkenPage() {
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Fysiologische Readiness Signalen</h3>
                 <p className="text-gray-700 mb-4">
-                  Elk baby ontwikkelt in eigen tempo, maar deze signalen geven aan dat je baby klaar is om zelfstandig drinken te leren:
+                  Elk baby ontwikkelt in eigen tempo, maar deze signalen geven aan dat je baby klaar is om zelfstandig drinken te leren.
+                  Vergelijk dit met <Link href="/kennisbank/voedingstechnieken/verschillende-spenen-uitproberen" className="text-primary hover:underline font-medium">het vinden van de juiste speen</Link> -
+                  observatie en aanpassing zijn key:
                 </p>
                 
                 <ul className="space-y-3 mb-6">
@@ -181,7 +185,7 @@ export default function BabyLerenZelfDrinkenPage() {
                   ))}
                 </ul>
                 
-                <div className="mt-6 p-4 bg-white rounded-lg">
+ <div className="mt-6">
                   <h4 className="font-medium text-gray-700 mb-2">Nederlandse Baby Statistieken (2024)</h4>
                   <div className="text-sm text-gray-700 space-y-1">
                     <p><strong>12 maanden:</strong> 80% zelfstandig, 18% assisted, 2% niet klaar</p>
@@ -201,7 +205,7 @@ export default function BabyLerenZelfDrinkenPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {ontwikkelingsStadia.map((stadium, index) => (
-                  <div key={index} className="bg-white rounded-lg p-4">
+ <div key={index} className="p-4">
                     <h3 className="font-medium text-primary mb-3">{stadium.fase}</h3>
                     <p className="text-gray-700 text-sm mb-3"><strong>Kenmerken:</strong> {stadium.kenmerken}</p>
                     <p className="text-gray-700 text-sm"><strong>Activiteiten:</strong> {stadium.activiteiten}</p>
@@ -222,7 +226,7 @@ export default function BabyLerenZelfDrinkenPage() {
               
               <div className="space-y-4">
                 {topProducten.map((product, index) => (
-                  <div key={index} className="bg-white rounded-lg p-4">
+ <div key={index} className="p-4">
                     <div className="flex justify-between items-start mb-2">
                       <h3 className="font-medium text-gray-700">{product.naam}</h3>
                       <span className="text-sm text-gray-600 font-medium">{product.prijs}</span>
@@ -233,11 +237,11 @@ export default function BabyLerenZelfDrinkenPage() {
                 ))}
               </div>
               
-              <div className="mt-6 p-4 bg-white rounded-lg">
+ <div className="mt-6">
                 <h4 className="font-medium text-gray-700 mb-2">Nederlandse Inkoop Tips</h4>
                 <p className="text-gray-700 text-sm">
                   <strong>Beste retailers:</strong> Baby-Dump (grootste selectie), Prenatal (expert advice), 
-                  Kruidvat/Etos (budget opties), Bol.com (online reviews). 
+                  Kruidvat/Etos (budget opties), Bol.com (online beoordelingen).
                   <strong>Timing:</strong> Koop tijdens Baby & Kind weken voor 25% korting.
                 </p>
               </div>
@@ -249,7 +253,7 @@ export default function BabyLerenZelfDrinkenPage() {
               
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Week 1-2: Introductie Fase</h3>
-                <div className="bg-white rounded-lg p-4 mb-4">
+ <div className="p-4 mb-4">
                   <p className="text-gray-700 text-sm mb-2"><strong>Doelen:</strong> Familiarity, vrije exploratie, 30-60ml success</p>
                   <p className="text-gray-700 text-sm"><strong>Routine:</strong> 2x per dag, 5 minuten sessies, veel praise voor interesse</p>
                 </div>
@@ -257,7 +261,7 @@ export default function BabyLerenZelfDrinkenPage() {
 
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Week 3-4: Vaardigheid Ontwikkelen</h3>
-                <div className="bg-white rounded-lg p-4 mb-4">
+ <div className="p-4 mb-4">
                   <p className="text-gray-700 text-sm mb-2"><strong>Doelen:</strong> Cup naar mond brengen, 60-120ml per sessie, minder hand-over-hand</p>
                   <p className="text-gray-700 text-sm"><strong>Activiteiten:</strong> Verschillende shapes proberen, reward system, 3x per dag</p>
                 </div>
@@ -265,7 +269,7 @@ export default function BabyLerenZelfDrinkenPage() {
 
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Week 5-8: Competentie Ontwikkeling</h3>
-                <div className="bg-white rounded-lg p-4 mb-4">
+ <div className="p-4 mb-4">
                   <p className="text-gray-700 text-sm mb-2"><strong>Doelen:</strong> 150-200ml zelfstandig, minimaal morsen, routine integration</p>
                   <p className="text-gray-700 text-sm"><strong>Challenges:</strong> Multiple cup types, maaltijd integratie, sociale context</p>
                 </div>
@@ -273,7 +277,7 @@ export default function BabyLerenZelfDrinkenPage() {
 
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Week 9-12: Mastery & Refinement</h3>
-                <div className="bg-white rounded-lg p-4">
+ <div className="p-4">
                   <p className="text-gray-700 text-sm mb-2"><strong>Doelen:</strong> Volledige zelfstandigheid, verschillende situaties, sociale drinking</p>
                   <p className="text-gray-700 text-sm"><strong>Real-world:</strong> Restaurant visits, playdates, travel, daycare prep</p>
                 </div>
@@ -289,7 +293,7 @@ export default function BabyLerenZelfDrinkenPage() {
               
               <div className="space-y-4">
                 {veelvoorkomendeProblemen.map((item, index) => (
-                  <div key={index} className="bg-white rounded-lg p-4">
+ <div key={index} className="p-4">
                     <h3 className="font-medium text-primary mb-2">{item.probleem}</h3>
                     <p className="text-gray-700 text-sm mb-2"><strong>Mogelijke oorzaak:</strong> {item.oorzaak}</p>
                     <p className="text-gray-700 text-sm"><strong>Oplossing:</strong> {item.oplossing}</p>
@@ -324,12 +328,12 @@ export default function BabyLerenZelfDrinkenPage() {
             <section className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
                 <Link 
-                  href="/calculator"
+                  href="/"
                   className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-white transition-colors"
                 >
                   <div className="text-center">
-                    <div className="font-medium text-gray-700">Bereken optimale drink volumes </div>
-                    <div className="text-gray-600">Gebruik onze calculator voor leeftijd-specifiek advies</div>
+                    <div className="font-medium text-primary">Bereken optimale drink volumes</div>
+                    <div className="flex items-center justify-between"><span className="text-gray-600">Gebruik onze calculator voor leeftijd-specifiek advies</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
                   </div>
                 </Link>
               </div>
@@ -348,21 +352,21 @@ export default function BabyLerenZelfDrinkenPage() {
                 Gerelateerde Artikelen
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link href="/kennisbank/voedingstechnieken/overgang-naar-beker" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Overgang naar beker </div>
-                  <div className="text-gray-600">Van fles naar open beker: complete gids</div>
+                <Link href="/kennisbank/voedingstechnieken/overgang-naar-beker" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Overgang naar beker →</div>
+                  <div className="text-sm text-gray-600">Van fles naar open beker: complete gids</div>
                 </Link>
-                <Link href="/kennisbank/voedingstechnieken/juiste-houding-bij-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Juiste houding bij flesvoeding </div>
-                  <div className="text-gray-600">Optimale posities voor comfortabel drinken</div>
+                <Link href="/kennisbank/voedingstechnieken/verschillende-spenen-uitproberen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Verschillende spenen uitproberen →</div>
+                  <div className="text-sm text-gray-600">Vind de perfecte speen voor jouw baby</div>
                 </Link>
-                <Link href="/kennisbank/voedingstechnieken/verschillende-spenen-uitproberen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Verschillende spenen uitproberen </div>
-                  <div className="text-gray-600">Vind de perfecte speen voor jouw baby</div>
+                <Link href="/kennisbank/soorten-flesvoeding/wanneer-overstappen-opvolgmelk" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Wanneer overstappen opvolgmelk →</div>
+                  <div className="text-sm text-gray-600">Timing en ontwikkeling van voeding</div>
                 </Link>
-                <Link href="/kennisbank/praktische-tips" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-gray-700">Alle praktische tips </div>
-                  <div className="text-gray-600">Meer handige tips voor de flesvoeding</div>
+                <Link href="/" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+                  <div className="text-sm text-gray-600">Bereken de juiste hoeveelheden voor je baby</div>
                 </Link>
               </div>
             </section>

@@ -7,7 +7,7 @@ export default function VeiligheidPage() {
   const emergencyContacts = [
     'Baby drinkt >12 uur niets',
     'Uitdrogingsverschijnselen (droge luier >6 uur)',
-    'Hoge koorts (>38.5°C bij <3 maanden)',
+    'Hoge koorts (>38,5°C bij <3 maanden)',
     'Bloed in ontlasting/braaksel',
     'Extreme sloomheid',
     'Geen gewichtstoename'
@@ -33,7 +33,7 @@ export default function VeiligheidPage() {
   const allergyActions = [
     'Stop niet zelf met voeding',
     'Maak afspraak huisarts',
-    'Houdt voedingsdagboek bij',
+    'Houd voedingsdagboek bij',
     'Mogelijk verwijzing kinderarts'
   ]
 
@@ -72,7 +72,7 @@ export default function VeiligheidPage() {
             ))}
           </div>
           
-          <div className="mt-4 p-4 bg-white rounded-lg">
+          <div className="mt-4">
             <p className="text-gray-700 font-medium text-center">
               Bij levensbedreigende situaties: bel direct 112
             </p>
@@ -87,7 +87,7 @@ export default function VeiligheidPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {neverDo.map((item, index) => (
-              <div key={index} className="flex items-start space-x-2 p-3 bg-white rounded-lg">
+              <div key={index} className="flex items-start space-x-2">
                 <X className="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
                 <span className="text-gray-700 text-sm font-medium">{item}</span>
               </div>
@@ -132,19 +132,19 @@ export default function VeiligheidPage() {
           <h2 className="text-lg font-medium text-primary mb-4">Belangrijke telefoonnummers</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="p-4 bg-white rounded-lg text-center">
+            <div className="text-center">
               <h3 className="font-medium text-gray-700 mb-2">Spoedeisende hulp</h3>
               <p className="text-2xl font-medium text-gray-600">112</p>
               <p className="text-xs text-gray-700">Bij levensbedreigende situaties</p>
             </div>
-            
-            <div className="p-4 bg-default rounded-lg text-center">
+
+            <div className="text-center">
               <h3 className="font-medium text-primary mb-2">Huisartsenpraktijk</h3>
-              <p className="text-lg font-medium text-gray-700">Uw eigen nummer</p>
+              <p className="text-lg font-medium text-gray-700">Je eigen nummer</p>
               <p className="text-xs text-gray-600">Voor advies en afspraken</p>
             </div>
-            
-            <div className="p-4 bg-white rounded-lg text-center">
+
+            <div className="text-center">
               <h3 className="font-medium text-gray-700 mb-2">Consultatiebureau</h3>
               <p className="text-lg font-medium text-gray-600">Lokaal nummer</p>
               <p className="text-xs text-gray-700">Voor ontwikkelingsvragen</p>
@@ -173,15 +173,15 @@ export default function VeiligheidPage() {
               href="/kennisbank/problemen-oplossen"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-amber-700">Problemen Oplossen </div>
-              <div className="text-gray-600">Hulp bij veelvoorkomende problemen</div>
+              <div className="font-medium text-primary">Problemen Oplossen</div>
+              <div className="flex items-center justify-between"><span className="text-gray-600">Hulp bij veelvoorkomende problemen</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
             </Link>
             <Link 
               href="/faq"
               className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors"
             >
-              <div className="font-medium text-gray-700">Veelgestelde Vragen </div>
-              <div className="text-gray-600">Antwoorden op veel gestelde vragen</div>
+              <div className="font-medium text-primary">Veelgestelde Vragen</div>
+              <div className="flex items-center justify-between"><span className="text-gray-600">Antwoorden op veel gestelde vragen</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
             </Link>
           </div>
         </div>

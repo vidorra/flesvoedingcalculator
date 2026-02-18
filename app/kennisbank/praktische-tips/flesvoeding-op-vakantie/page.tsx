@@ -6,7 +6,7 @@ import { Plane, ArrowRight, Home, MapPin, CheckCircle, AlertTriangle, Calculator
 import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
-  title: 'Flesvoeding op Vakantie: Complete Reis Gids Nederlandse Ouders 2025',
+  title: 'Flesvoeding op Vakantie: Complete Reis Gids Nederlandse Ouders 2026',
   description: 'Stress-vrij reizen met baby en flesvoeding. Alle praktische tips voor vliegtuig, auto, internationale reizen. Van packing lists tot noodplannen voor zorgeloze vakantie.',
 }
 
@@ -38,7 +38,7 @@ export default function VakantiePage() {
     'Partner kan volledig overnemen tijdens reis',
     'Voorspelbare routines makkelijker vol te houden',
     'Geen afhankelijkheid mama\'s dieet of stress',
-    'International availability - wereldwijd verkrijgbaar',
+    'Wereldwijd verkrijgbaar - internationale beschikbaarheid',
     'Meer flexibiliteit in planning'
   ]
 
@@ -46,22 +46,22 @@ export default function VakantiePage() {
     {
       type: 'Vliegtuig Reizen',
       icon: '',
-      pros: ['Formule poeder geen beperking handbagage', 'Pre-mixed >100ml toegestaan met baby', 'Bottle warming service meeste airlines'],
-      cons: ['Security extra tijd (15-30 min)', 'Pressure changes baby oren', 'Limited preparation space'],
-      tips: 'Takeoff/landing feeding voor ear pressure, extra formule voor delays'
+      pros: ['Formule poeder geen beperking handbagage', 'Kant-en-klare melk >100ml toegestaan met baby', 'Flesopwarmservice bij meeste airlines'],
+      cons: ['Veiligheidscontrole extra tijd (15-30 min)', 'Drukverandering baby oren', 'Beperkte bereidingsruimte'],
+      tips: 'Voeding geven bij opstijgen/landen tegen oordruk, extra formule voor vertragingen'
     },
     {
       type: 'Auto Reizen',
       icon: '',
       pros: ['Volledige controle over voorzieningen', 'Flexibele stops schema', 'Onbeperkte bagage ruimte'],
-      cons: ['Koeling management uitdaging', 'Weather dependent', 'Long travel times baby'],
+      cons: ['Koeling management uitdaging', 'Weerafhankelijk', 'Lange reistijden baby'],
       tips: '12V koelbox, stops elke 2-3 uur, reserve routes plannen'
     },
     {
       type: 'Trein Reizen',
       icon: '',
-      pros: ['More space movement', 'Onboard facilities', 'Less security restrictions'],
-      cons: ['Limited hot water NS', 'Crowded during peak', 'Connection timing critical'],
+      pros: ['Meer bewegingsruimte', 'Faciliteiten aan boord', 'Minder veiligheidsrestricties'],
+      cons: ['Beperkt warm water bij NS', 'Druk tijdens spitsuren', 'Overstaptijd cruciaal'],
       tips: 'Family carriages reserveren, thermos meenemen, flexibele tickets'
     }
   ]
@@ -69,21 +69,21 @@ export default function VakantiePage() {
   const accommodationTypes = [
     {
       type: 'Hotels',
-      features: ['24/7 room service', 'Mini fridge in-room', 'Bottle warming service', 'Baby cot provision'],
-      setup: ['Request room near ice machine', 'Mini-bar space formula', 'Bathroom prep counter', 'Emergency contact procedures'],
-      advantages: 'Comfort & service, no preparation needed'
+      features: ['24/7 roomservice', 'Minikoelkast op kamer', 'Flesopwarmservice', 'Babybedje beschikbaar'],
+      setup: ['Vraag kamer dichtbij ijsmachine', 'Minibar ruimte voor formule', 'Badkamer als bereidingsruimte', 'Noodcontact procedures'],
+      advantages: 'Comfort en service, geen voorbereiding nodig'
     },
     {
-      type: 'Vacation Rentals',
-      features: ['Full kitchen facilities', 'Washer/dryer', 'More space', 'Cost effective'],
-      setup: ['Organize kitchen baby zone', 'Sterilizing routine', 'Local shopping list', 'Emergency supplies plan'],
-      advantages: 'Home comfort, familiar routines, bulk preparation'
+      type: 'Vakantiehuizen',
+      features: ['Volledige keukenfaciliteiten', 'Wasmachine/droger', 'Meer ruimte', 'Voordelig'],
+      setup: ['Keuken baby-zone inrichten', 'Sterilisatie routine opzetten', 'Lokale boodschappenlijst', 'Noodvoorraad plan'],
+      advantages: 'Thuiscomfort, vertrouwde routines, bereiden in bulk'
     },
     {
       type: 'Camping',
-      features: ['High-quality cooler essential', 'Portable heating options', 'Weather protection', 'Emergency communication'],
-      setup: ['Water source verification', 'Reserve stroomsystemen', 'Medical facility distance', 'Emergency evacuation plan'],
-      advantages: 'Adventure experience, nature connection, budget friendly'
+      features: ['Goede koelbox essentieel', 'Draagbare verwarmingsopties', 'Weerbescherming', 'Noodcommunicatie'],
+      setup: ['Waterbron verificatie', 'Reserve stroomsystemen', 'Afstand medische faciliteit', 'Nood evacuatieplan'],
+      advantages: 'Avontuurlijke ervaring, natuurbeleving, budgetvriendelijk'
     }
   ]
 
@@ -91,41 +91,41 @@ export default function VakantiePage() {
     {
       region: 'Zuid-Europa (Spanje, Italië)',
       climate: 'Warm/Hot',
-      considerations: ['Heat formula storage challenges', 'Siesta timing impact', 'Late dining culture', 'Pharmacy hours variation'],
-      solutions: ['Extra cooling methods', 'Schedule adjustment', 'Air conditioning accommodation', 'Increased hydration needs']
+      considerations: ['Hitte-uitdagingen bij opslag formule', 'Siësta timing impact', 'Laat eetcultuur', 'Wisselende apotheekopeningstijden'],
+      solutions: ['Extra koelmethoden', 'Schema aanpassen', 'Airconditioning accommodatie', 'Verhoogde vochtbehoefte']
     },
     {
       region: 'Frankrijk',
       climate: 'Temperate',
-      considerations: ['Excellent baby product availability', 'High-quality formulas (Gallia)', 'Baby-friendly culture', 'Pharmacy expertise'],
-      solutions: ['Local product exploration', 'Monoprix/Carrefour shopping', 'Cultural appreciation', 'Medical system excellent']
+      considerations: ['Uitstekende beschikbaarheid babyproducten', 'Hoogwaardige formules (Gallia)', 'Babyvriendelijke cultuur', 'Apotheek expertise'],
+      solutions: ['Lokale producten verkennen', 'Monoprix/Carrefour winkelen', 'Culturele waardering', 'Uitstekend medisch systeem']
     },
     {
       region: 'Exotische Bestemmingen',
       climate: 'Variable',
-      considerations: ['Water quality concerns', 'Limited formula availability', 'Medical facilities variable', 'Language barriers'],
-      solutions: ['100% formula supply bring', 'Bottled water only', 'Emergency evacuation insurance', 'Embassy registration']
+      considerations: ['Waterkwaliteit zorgen', 'Beperkte formule beschikbaarheid', 'Wisselende medische faciliteiten', 'Taalbarrières'],
+      solutions: ['100% formule voorraad meenemen', 'Alleen flessenwater gebruiken', 'Noodevacuatie verzekering', 'Ambassade registratie']
     }
   ]
 
   const emergencyProtocols = [
     {
-      scenario: 'Lost/Damaged Formula',
-      immediate: ['Assess remaining supply', 'Locate nearest pharmacy', 'Contact local pediatrician'],
-      noodplan: ['Research local brands safety', 'Embassy assistance', 'Insurance documentation'],
-      prevention: '25% extra supply always, multiple storage locations'
+      scenario: 'Verloren/beschadigde formule',
+      immediate: ['Resterende voorraad beoordelen', 'Dichtstbijzijnde apotheek zoeken', 'Lokale kinderarts contacteren'],
+      noodplan: ['Veiligheid lokale merken onderzoeken', 'Ambassade hulp', 'Verzekeringsdocumentatie'],
+      prevention: 'Altijd 25% extra voorraad, meerdere opslaglocaties'
     },
     {
-      scenario: 'Baby Illness During Travel',
-      immediate: ['Temperature monitoring', 'Hydration maintenance', 'Medical consultation'],
-      noodplan: ['Hospital preparation', 'Travel insurance activation', 'Family support coordination'],
-      prevention: 'Comprehensive medical kit, local pediatrician contacts, emergency protocols'
+      scenario: 'Baby ziek tijdens reis',
+      immediate: ['Temperatuur monitoren', 'Hydratatie op peil houden', 'Medisch consult'],
+      noodplan: ['Ziekenhuis voorbereiding', 'Reisverzekering activeren', 'Familie ondersteuning coördineren'],
+      prevention: 'Uitgebreide medische kit, lokale kinderarts contacten, noodprotocollen'
     },
     {
-      scenario: 'Formula Rejection New Environment',
-      immediate: ['Different temperature try', 'Other caregiver attempt', 'Familiar routine restore'],
-      noodplan: ['Medical consultation', 'Gradual environment adaptation', 'Comfort items utilization'],
-      prevention: 'Practice changes at home, bring comfort items, gradual transitions'
+      scenario: 'Formule weigering nieuwe omgeving',
+      immediate: ['Andere temperatuur proberen', 'Andere verzorger laten proberen', 'Vertrouwde routine herstellen'],
+      noodplan: ['Medisch consult', 'Geleidelijke omgevingsaanpassing', 'Troostartikelen inzetten'],
+      prevention: 'Veranderingen thuis oefenen, troostartikelen meenemen, geleidelijke overgangen'
     }
   ]
 
@@ -180,14 +180,14 @@ export default function VakantiePage() {
               
               <div className="mb-4">
                 <p className="text-gray-700 mb-4">
-                  68% van Nederlandse families reist binnen het eerste jaar na geboorte. 
-                  Flesvoeding families ervaren 30% minder reis-stress dan families die kolven.
+                  Veel Nederlandse families reizen binnen het eerste jaar na geboorte.
+                  Flesvoeding families ervaren over het algemeen minder reis-stress dankzij <Link href="/kennisbank/hygiene-bereiding/houdbaarheid-flesvoeding" className="text-primary hover:underline font-medium">goede houdbaarheidstips</Link> en <Link href="/kennisbank/hygiene-bereiding/flesvoeding-bewaren" className="text-primary hover:underline font-medium">veilige bewaartechnieken</Link>.
                 </p>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium text-primary mb-3">Flesvoeding Travel Advantages</h3>
+                  <h3 className="font-medium text-primary mb-3">Voordelen Flesvoeding op Reis</h3>
                   <div className="space-y-2">
                     {travelAdvantages.map((advantage, index) => (
                       <div key={index} className="flex items-start space-x-2">
@@ -209,9 +209,9 @@ export default function VakantiePage() {
                 </div>
               </div>
 
-              <div className="mt-4 p-3 bg-white rounded-lg border border-gray-200">
+              <div className="mt-4 p-3 border border-gray-200">
                 <p className="text-gray-600 text-sm">
-                  <strong>ANWB Onderzoek:</strong> Families met flesvoeding ervaren 30% minder 
+                  <strong>Uit ervaring:</strong> Families met flesvoeding ervaren over het algemeen minder
                   reis-stress dan families die kolven tijdens vakantie.
                 </p>
               </div>
@@ -252,7 +252,7 @@ export default function VakantiePage() {
                       </div>
                     </div>
                     <div className="p-2 bg-white rounded text-sm text-gray-600">
-                      <strong>Success Tips:</strong> {transport.tips}
+                      <strong>Succestips:</strong> {transport.tips}
                     </div>
                   </div>
                 ))}
@@ -272,7 +272,7 @@ export default function VakantiePage() {
                     <h3 className="font-medium text-primary mb-3">{accommodation.type}</h3>
                     <div className="grid md:grid-cols-2 gap-4 mb-3">
                       <div>
-                        <h4 className="font-medium text-primary mb-2">Features:</h4>
+                        <h4 className="font-medium text-primary mb-2">Kenmerken:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           {accommodation.features.map((feature, idx) => (
                             <li key={index} className="flex items-center space-x-2">
@@ -317,7 +317,7 @@ export default function VakantiePage() {
                     </div>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <h4 className="font-medium text-primary mb-2">Considerations:</h4>
+                        <h4 className="font-medium text-primary mb-2">Aandachtspunten:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           {region.considerations.map((consideration, idx) => (
                             <li key={index} className="flex items-start space-x-2">
@@ -328,7 +328,7 @@ export default function VakantiePage() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-medium text-primary mb-2">Solutions:</h4>
+                        <h4 className="font-medium text-primary mb-2">Oplossingen:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           {region.solutions.map((solution, idx) => (
                             <li key={index} className="flex items-start space-x-2">
@@ -348,7 +348,7 @@ export default function VakantiePage() {
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <AlertTriangle className="w-5 h-5 mr-2" />
-                Emergency Preparedness & Crisis Beheer
+                Noodvoorbereiding & Crisisbeheer
               </h2>
               
               <div className="space-y-6">
@@ -357,7 +357,7 @@ export default function VakantiePage() {
                     <h3 className="font-medium text-primary mb-3">{protocol.scenario}</h3>
                     <div className="grid md:grid-cols-2 gap-4 mb-3">
                       <div>
-                        <h4 className="font-medium text-primary mb-2">Immediate Response:</h4>
+                        <h4 className="font-medium text-primary mb-2">Directe Actie:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           {protocol.immediate.map((action, idx) => (
                             <li key={index} className="flex items-start space-x-2">
@@ -380,7 +380,7 @@ export default function VakantiePage() {
                       </div>
                     </div>
                     <div className="p-2 bg-white rounded text-sm text-gray-600">
-                      <strong>Prevention:</strong> {protocol.prevention}
+                      <strong>Preventie:</strong> {protocol.prevention}
                     </div>
                   </div>
                 ))}
@@ -389,11 +389,11 @@ export default function VakantiePage() {
 
             {/* Packing strategies */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Packing Strategies: Complete Lists</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Inpakstrategieën: Complete Lijsten</h2>
               
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white rounded-lg p-4 border border-gray-200">
-                  <h3 className="font-medium text-primary mb-3">Hand Luggage Essentials</h3>
+                <div className="p-4 border border-gray-200">
+                  <h3 className="font-medium text-primary mb-3">Handbagage Essentials</h3>
                   <div className="space-y-2">
                     {packingEssentials.handLuggage.map((item, index) => (
                       <div key={index} className="flex items-center space-x-2">
@@ -404,8 +404,8 @@ export default function VakantiePage() {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-lg p-4 border border-gray-200">
-                  <h3 className="font-medium text-primary mb-3">Checked Luggage Essentiële items</h3>
+                <div className="p-4 border border-gray-200">
+                  <h3 className="font-medium text-primary mb-3">Ruimbagage Essentiële Items</h3>
                   <div className="space-y-2">
                     {packingEssentials.checkedLuggage.map((item, index) => (
                       <div key={index} className="flex items-center space-x-2">
@@ -417,48 +417,48 @@ export default function VakantiePage() {
                 </div>
               </div>
 
-              <div className="mt-4 p-4 bg-white rounded-lg border border-gray-200">
-                <h4 className="font-medium text-primary mb-2">Essential Travel Apps</h4>
+              <div className="mt-4 p-4 border border-gray-200">
+                <h4 className="font-medium text-primary mb-2">Onmisbare Reis Apps</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <h5 className="font-medium text-primary mb-1">Navigation & Planning:</h5>
+                    <h5 className="font-medium text-primary mb-1">Navigatie & Planning:</h5>
                     <ul className="text-gray-600 space-y-1">
                       <li className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                        <span>Google Maps offline (pharmacy locations)</span>
+                        <span>Google Maps offline (apotheek locaties)</span>
                       </li>
                       <li className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                        <span>Google Translate (baby/medical terms)</span>
+                        <span>Google Translate (baby/medische termen)</span>
                       </li>
                       <li className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                        <span>Baby Tracker (feeding schedules)</span>
+                        <span>Baby Tracker (voedingsschema)</span>
                       </li>
                       <li className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                        <span>Weather apps (climate planning)</span>
+                        <span>Weer apps (klimaat planning)</span>
                       </li>
                     </ul>
                   </div>
                   <div>
-                    <h5 className="font-medium text-primary mb-1">Baby Care:</h5>
+                    <h5 className="font-medium text-primary mb-1">Babyverzorging:</h5>
                     <ul className="text-gray-600 space-y-1">
                       <li className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                        <span>Witte ruis app (sleep routine)</span>
+                        <span>Witte ruis app (slaaproutine)</span>
                       </li>
                       <li className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                        <span>First aid app (emergency guidance)</span>
+                        <span>EHBO app (noodhulp)</span>
                       </li>
                       <li className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                        <span>Formula calculator (local measurements)</span>
+                        <span>Formule calculator (lokale maten)</span>
                       </li>
                       <li className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                        <span>Time zone converter (schedules)</span>
+                        <span>Tijdzone omrekener (schema's)</span>
                       </li>
                     </ul>
                   </div>
@@ -474,23 +474,23 @@ export default function VakantiePage() {
               </h2>
               
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white rounded-lg p-4 border border-gray-200">
+                <div className="p-4 border border-gray-200">
                   <h3 className="font-medium text-primary mb-3">Zomer Vakanties (Juni-Augustus)</h3>
                   <div className="text-sm text-gray-600 space-y-2">
-                    <div><strong>Uitdagingen:</strong> Formula storage temperature, spoilage risk</div>
-                    <div><strong>Oplossingen:</strong> Insulated bags, ice pack rotation, shaded areas</div>
+                    <div><strong>Uitdagingen:</strong> Formule bewaartemperatuur, bederfrisico</div>
+                    <div><strong>Oplossingen:</strong> Geïsoleerde tassen, koelelementen roteren, schaduwplekken</div>
                     <div><strong>Extra behoeften:</strong> Verhoogde hydratatie, cooling reserve</div>
-                    <div><strong>Planning:</strong> Climate-controlled accommodation essentieel</div>
+                    <div><strong>Planning:</strong> Accommodatie met klimaatbeheersing essentieel</div>
                   </div>
                 </div>
                 
-                <div className="bg-white rounded-lg p-4 border border-gray-200">
+                <div className="p-4 border border-gray-200">
                   <h3 className="font-medium text-primary mb-3">Winter Vakanties (December-Februari)</h3>
                   <div className="text-sm text-gray-600 space-y-2">
-                    <div><strong>Uitdagingen:</strong> Formula freezing, heating reliability</div>
-                    <div><strong>Oplossingen:</strong> Thermos equipment, indoor feeding areas</div>
-                    <div><strong>Voordelen:</strong> No spoilage concerns, cozy indoor routines</div>
-                    <div><strong>Planning:</strong> Reserve verwarmingsbronnen, weather monitoring</div>
+                    <div><strong>Uitdagingen:</strong> Formule bevriezing, betrouwbaarheid verwarming</div>
+                    <div><strong>Oplossingen:</strong> Thermos uitrusting, binnen voedingsplekken</div>
+                    <div><strong>Voordelen:</strong> Geen bederfzorgen, gezellige binnenroutines</div>
+                    <div><strong>Planning:</strong> Reserve verwarmingsbronnen, weerbewaking</div>
                   </div>
                 </div>
               </div>
@@ -506,19 +506,19 @@ export default function VakantiePage() {
                   <div className="space-y-2 text-gray-600">
                     <div className="flex items-center space-x-2">
                       <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
-                      <span>Weather forecast check bestemming</span>
+                      <span>Weersvoorspelling bestemming checken</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
-                      <span>Flight/transport status confirmation</span>
+                      <span>Vlucht/transport status bevestiging</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
-                      <span>Emergency contacts programmed</span>
+                      <span>Noodcontacten geprogrammeerd</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
-                      <span>Formula expiry dates verified</span>
+                      <span>Formule houdbaarheidsdatums gecontroleerd</span>
                     </div>
                   </div>
                 </div>
@@ -527,19 +527,19 @@ export default function VakantiePage() {
                   <div className="space-y-2 text-gray-600">
                     <div className="flex items-center space-x-2">
                       <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
-                      <span>Normal feeding schedule maintain</span>
+                      <span>Normaal voedingsschema aanhouden</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
-                      <span>Travel documents easily accessible</span>
+                      <span>Reisdocumenten makkelijk bereikbaar</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
-                      <span>Emergency supplies double-check</span>
+                      <span>Noodvoorraad dubbel gecheckt</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
-                      <span>Positive mindset - vacation mode!</span>
+                      <span>Positieve instelling - vakantiemodus!</span>
                     </div>
                   </div>
                 </div>
@@ -571,21 +571,21 @@ export default function VakantiePage() {
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Gerelateerde artikelen</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Link href="/kennisbank/hygiene-bereiding/flesvoeding-bewaren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
+                <Link href="/kennisbank/hygiene-bereiding/houdbaarheid-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Houdbaarheid flesvoeding →</div>
+                  <div className="text-sm text-gray-600">Bewaren tijdens reis en vakantie</div>
+                </Link>
+                <Link href="/kennisbank/hygiene-bereiding/flesvoeding-bewaren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
                   <div className="font-medium text-primary">Flesvoeding bewaren →</div>
-                  <div className="text-gray-600">Reis veiligheid en opslag tips</div>
+                  <div className="text-sm text-gray-600">Veilige opslag op vakantie</div>
                 </Link>
-                <Link href="/kennisbank/praktische-tips/voedingsritme-opbouwen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
+                <Link href="/kennisbank/hygiene-bereiding/veilig-verwarmen-flesvoeding" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Veilig verwarmen →</div>
+                  <div className="text-sm text-gray-600">Opwarmen zonder microgolf onderweg</div>
+                </Link>
+                <Link href="/kennisbank/praktische-tips/voedingsritme-opbouwen" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
                   <div className="font-medium text-primary">Voedingsritme opbouwen →</div>
-                  <div className="text-gray-600">Vakantie schema aanpassingen</div>
-                </Link>
-                <Link href="/kennisbank/praktische-tips/nachtvoeding-optimaliseren" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Nachtvoeding optimaliseren →</div>
-                  <div className="text-gray-600">Hotel en reis optimalisatie</div>
-                </Link>
-                <Link href="/kennisbank/praktische-tips" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
-                  <div className="font-medium text-primary">Alle praktische tips →</div>
-                  <div className="text-gray-600">Meer handige ouder tips</div>
+                  <div className="text-sm text-gray-600">Schema behouden op vakantie</div>
                 </Link>
               </div>
             </div>
@@ -600,7 +600,7 @@ export default function VakantiePage() {
                 Plan je vakantie voeding perfect. Bereken exact hoeveel formula je nodig hebt 
                 voor je reis, plus emergency buffer.
               </p>
-              <Link 
+              <Link
                 href="/"
                 className="bg-white/20 hover:bg-white/30 backdrop-blur text-white font-medium py-3 px-6 rounded-xl transition-all inline-flex items-center"
               >

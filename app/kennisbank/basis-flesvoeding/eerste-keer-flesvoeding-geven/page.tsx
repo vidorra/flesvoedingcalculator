@@ -6,7 +6,7 @@ import BolProductSection from '../../../../components/BolProductLink'
 import { BookOpen, ArrowRight, Home, CheckCircle, AlertTriangle, Clock, Baby } from 'lucide-react'
 
 export const metadata = {
-  title: 'Eerste keer flesvoeding geven: Complete Stap-voor-stap Gids 2025',
+  title: 'Eerste keer flesvoeding geven: Complete Stap-voor-stap Gids 2026',
   description: 'Complete handleiding voor Nederlandse ouders die voor het eerst flesvoeding gaan geven. Van voorbereiding tot hygiëne - alles wat je moet weten voor een succesvolle start.',
 }
 
@@ -50,8 +50,7 @@ export default function EersteKeerFlesvoedingPage() {
   ]
 
   const waterPreparation = [
-    { age: "0-3 maanden", instruction: "Water altijd eerst koken, laten afkoelen tot 40-50°C" },
-    { age: "3-6 maanden", instruction: "Koken aanbevolen, kan ook koud water gebruiken bij goed immuunsysteem" },
+    { age: "0-6 maanden", instruction: "Water altijd eerst koken tot 70°C, poeder toevoegen, dan laten afkoelen tot drinktemperatuur (37°C)" },
     { age: "6+ maanden", instruction: "Kraanwater direct uit kraan kan (kamertemperatuur of lauw)" }
   ]
 
@@ -78,45 +77,27 @@ export default function EersteKeerFlesvoedingPage() {
           
 
           {/* Header */}
-          <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <div className="text-sm text-gray-500 mb-2">Basis Flesvoeding  Beginners Gids</div>
+          <div>
+            <div className="text-sm text-gray-500 mb-2">Basis Flesvoeding • Beginners Gids</div>
             <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
               <Baby className="w-6 h-6 mr-3 text-primary" />
               Eerste keer flesvoeding geven
             </h1>
-            <p className="text-gray-600 mb-6">
-              Complete stap-voor-stap handleiding voor Nederlandse ouders die voor het eerst 
-              flesvoeding gaan geven. Of je nu overstapt van borstvoeding of direct begint - 
+            <p className="text-gray-600 leading-relaxed">
+              Complete stap-voor-stap handleiding voor Nederlandse ouders die voor het eerst
+              flesvoeding gaan geven. Of je nu overstapt van borstvoeding of direct begint -
               van voorbereiding tot hygiëne, alles voor een succesvolle start.
             </p>
-            <div className="flex flex-wrap gap-4 text-sm text-gray-600">
-              <span>Leestijd: 10 minuten</span>
-              <span>Geschikt vanaf: Geboorte</span>
-              <span>Stap-voor-stap gids</span>
-            </div>
-            
-            <h3 className="text-lg font-medium text-primary mb-2 mt-6">Timing voor eerste fles:</h3>
-            <ul className="space-y-1">
-              <li className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                <span className="text-gray-700"><strong>Bij volledige flesvoeding:</strong> direct na geboorte mogelijk</span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                <span className="text-gray-700"><strong>Bij combinatie met borst:</strong> ideaal tussen 2-4 weken</span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                <span className="text-gray-700"><strong>Bij overstap van borst:</strong> elk moment mogelijk, meer geduld nodig</span>
-              </li>
-            </ul>
           </div>
 
           {/* Introduction */}
           <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
             <p className="text-gray-600 leading-relaxed">
-              Ben je klaar om je baby voor de eerste keer flesvoeding te geven? Dat kan spannend zijn! 
-              Of je nu overstapt van borstvoeding, begint met combivoeeding, of direct start met flesvoeding - 
+              Ben je klaar om je baby voor de eerste keer flesvoeding te geven? Dat kan spannend zijn!
+              Of je nu{' '}
+              <Link href="/kennisbank/basis-flesvoeding/overstappen-van-borst-naar-fles" className="text-primary hover:underline font-medium">
+                overstapt van borstvoeding
+              </Link>, begint met combivoeding, of direct start met flesvoeding -
               deze stap-voor-stap gids helpt je om het veilig en succesvol te doen.
             </p>
           </section>
@@ -244,15 +225,21 @@ export default function EersteKeerFlesvoedingPage() {
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700"><strong>Steriliseer fles en speen</strong> volgens instructies sterilisator</span>
+                    <span className="text-gray-700"><strong>Steriliseer fles en speen</strong> volgens{' '}
+                    <Link href="/kennisbank/hygiene-bereiding/flessen-steriliseren" className="text-primary hover:underline font-medium">
+                      instructies voor steriliseren
+                    </Link></span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700"><strong>Meet het water af</strong> - gebruik onze <Link href="/" className="text-primary hover:underline">flesvoeding calculator</Link> voor de juiste hoeveelheid</span>
+                    <span className="text-gray-700"><strong>Meet het water af</strong> - gebruik onze <Link href="/" className="text-primary hover:underline font-medium">flesvoeding calculator</Link> voor de juiste hoeveelheid</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700"><strong>Verwarm water</strong> tot juiste temperatuur (40-50°C voor baby's onder 3 maanden)</span>
+                    <span className="text-gray-700"><strong>Verwarm water</strong> - lees meer over{' '}
+                    <Link href="/kennisbank/hygiene-bereiding/water-koken-flesvoeding" className="text-primary hover:underline font-medium">
+                      water koken voor flesvoeding
+                    </Link></span>
                   </li>
                 </ol>
               </div>
@@ -337,7 +324,7 @@ export default function EersteKeerFlesvoedingPage() {
             </div>
             
             <p className="text-sm text-gray-600 mt-4">
-              <strong>Persoonlijke berekening:</strong> Gebruik onze <Link href="/" className="text-primary hover:underline">calculator</Link> voor exacte hoeveelheden op basis van gewicht en leeftijd van je baby.
+              <strong>Persoonlijke berekening:</strong> Gebruik onze <Link href="/" className="text-primary hover:underline font-medium">calculator</Link> voor exacte hoeveelheden op basis van gewicht en leeftijd van je baby.
             </p>
           </section>
 
@@ -368,11 +355,19 @@ export default function EersteKeerFlesvoedingPage() {
                 </li>
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <span className="text-gray-700">Verschillende spenen proberen tot je de juiste vindt</span>
+                  <span className="text-gray-700">
+                    <Link href="/kennisbank/voedingstechnieken/verschillende-spenen-uitproberen" className="text-primary hover:underline font-medium">
+                      Verschillende spenen proberen
+                    </Link> tot je de juiste vindt
+                  </span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <span className="text-gray-700">Geduldig blijven - sommige baby's hebben weken nodig</span>
+                  <span className="text-gray-700">Geduldig blijven - sommige baby's hebben weken nodig. Meer tips in onze{' '}
+                    <Link href="/kennisbank/basis-flesvoeding/baby-weigert-de-fles" className="text-primary hover:underline font-medium">
+                      gids over baby die de fles weigert
+                    </Link>
+                  </span>
                 </li>
               </ul>
             </div>
@@ -450,6 +445,13 @@ export default function EersteKeerFlesvoedingPage() {
             <div className="space-y-6">
               <div>
                 <h3 className="font-medium text-primary mb-4">Juiste houding</h3>
+                <p className="text-gray-600 mb-4">
+                  De manier waarop je je baby vasthoudt is belangrijk voor een prettige voeding.
+                  Lees meer in onze{' '}
+                  <Link href="/kennisbank/voedingstechnieken/juiste-houding-bij-flesvoeding" className="text-primary hover:underline font-medium">
+                    uitgebreide gids over de juiste houding
+                  </Link>.
+                </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <h4 className="font-medium text-gray-700 mb-2">Voor baby:</h4>
@@ -585,9 +587,47 @@ export default function EersteKeerFlesvoedingPage() {
             
             <div className="mt-6 p-4 text-center">
               <p className="font-medium text-gray-700">Onthoud: Je doet het geweldig!</p>
-              <p className="text-gray-600">Flesvoeding geven is een liefdevolle manier om je baby te voeden en te koesteren. 
-              De eerste fles geven is een mijlpaal - met voorbereiding, geduld en de juiste technieken 
+              <p className="text-gray-600">Flesvoeding geven is een liefdevolle manier om je baby te voeden en te koesteren.
+              De eerste fles geven is een mijlpaal - met voorbereiding, geduld en de juiste technieken
               wordt het al snel een natuurlijke routine.</p>
+            </div>
+          </section>
+
+          {/* Gerelateerde artikelen */}
+          <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+            <h2 className="text-lg font-semibold text-primary mb-4">Gerelateerde artikelen</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Link
+                href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap"
+                className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors bg-default"
+              >
+                <div className="font-medium text-primary">Fles bereiden stap-voor-stap →</div>
+                <div className="text-sm text-gray-600">Complete handleiding voor het veilig bereiden van flesvoeding</div>
+              </Link>
+
+              <Link
+                href="/kennisbank/hygiene-bereiding/flessen-steriliseren"
+                className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors bg-default"
+              >
+                <div className="font-medium text-primary">Flessen steriliseren →</div>
+                <div className="text-sm text-gray-600">Alles over het correct steriliseren van babyflessen</div>
+              </Link>
+
+              <Link
+                href="/kennisbank/basis-flesvoeding/baby-weigert-de-fles"
+                className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors bg-default"
+              >
+                <div className="font-medium text-primary">Baby weigert de fles →</div>
+                <div className="text-sm text-gray-600">Praktische tips wanneer je baby de fles niet accepteert</div>
+              </Link>
+
+              <Link
+                href="/"
+                className="p-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors bg-default"
+              >
+                <div className="font-medium text-primary">Flesvoeding Calculator →</div>
+                <div className="text-sm text-gray-600">Bereken de juiste hoeveelheid voor jouw baby</div>
+              </Link>
             </div>
           </section>
 
