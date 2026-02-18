@@ -47,3 +47,7 @@ Thumbs.db
 DATABASE_CREDENTIALS.md
 ADMIN_SECURITY_SETUP.md
 
+# Documentation & planning files
+md/
+.env.example
+
