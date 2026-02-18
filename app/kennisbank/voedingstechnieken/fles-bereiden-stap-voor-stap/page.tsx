@@ -1,4 +1,5 @@
 import Layout from '../../../../components/Layout'
+import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Baby } from 'lucide-react'
