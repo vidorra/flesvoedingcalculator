@@ -40,10 +40,10 @@ export default function PopularProductsWidget({ limit = 5 }: { limit?: number })
 
   return (
     <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
-      <h3 className="text-sm font-semibold text-primary mb-3 flex items-center gap-1">
-        <span>🔥</span>
-        <span>Meest bekeken producten</span>
-      </h3>
+      <div className="mb-3">
+        <h3 className="text-sm font-semibold text-primary">Aanbevolen Producten</h3>
+        <p className="text-xs text-gray-400 mt-0.5">Gesponsorde links</p>
+      </div>
       <div className="flex flex-col gap-3">
         {snippets.map(snippet => (
           <a
