@@ -15,11 +15,15 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { verifyAdminAndGetWebsite } from '../../../../lib/jwt-utils'
-import { getSetting, updateSetting, getAllSettings, clearCache } from '../../../../lib/settings-service'
+import { updateSetting, getAllSettings, clearCache } from '../../../../lib/settings-service'
+import { autoMigrate } from '../../../../lib/db/auto-migrate'
 
 export async function GET(request: NextRequest) {
   try {
     const { website } = verifyAdminAndGetWebsite(request)
+
+    // Ensure tables exist before querying
+    await autoMigrate()
 
     // Fetch all settings for admin's website
     const allSettings = await getAllSettings(website)
@@ -46,6 +50,9 @@ export async function GET(request: NextRequest) {
 export async function PUT(request: NextRequest) {
   try {
     const { website } = verifyAdminAndGetWebsite(request)
+
+    // Ensure tables exist before writing
+    await autoMigrate()
 
     // Parse request body
     const body = await request.json()
@@ -80,7 +87,7 @@ export async function PUT(request: NextRequest) {
       return NextResponse.json(
         {
           success: false,
-          error: 'Failed to update setting'
+          error: 'Failed to update setting. Check server logs for database error details.'
         },
         { status: 500 }
       )
