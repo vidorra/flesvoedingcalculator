@@ -264,7 +264,7 @@ export default function SimpleAdminDashboard() {
       // Load snippets
       console.log('Loading snippets from /api/admin-snippets/')
       try {
-        const snippetsResponse = await fetch(`/api/admin/snippets/?t=${Date.now()}`, {
+        const snippetsResponse = await fetch(`/api/admin-snippets/?t=${Date.now()}`, {
           method: 'GET',
           headers: getAuthHeaders(),
           cache: 'no-cache'
@@ -627,7 +627,7 @@ export default function SimpleAdminDashboard() {
         active: true
       }
 
-      const response = await fetch('/api/admin/snippets/', {
+      const response = await fetch('/api/admin-snippets/', {
         method: 'POST',
         headers: getAuthHeaders(),
         body: JSON.stringify(snippetData)
@@ -718,12 +718,12 @@ export default function SimpleAdminDashboard() {
 
   const toggleSnippetActive = async (snippetId, currentActive) => {
     try {
-      const response = await fetch('/api/admin/snippets/', {
+      const response = await fetch('/api/admin-snippets/', {
         method: 'PUT',
         headers: getAuthHeaders(),
-        body: JSON.stringify({ 
-          id: snippetId, 
-          active: !currentActive 
+        body: JSON.stringify({
+          id: snippetId,
+          active: !currentActive
         })
       })
 
@@ -784,7 +784,7 @@ export default function SimpleAdminDashboard() {
 
   const saveEditSnippet = async (snippetId) => {
     try {
-      const response = await fetch('/api/admin/snippets/', {
+      const response = await fetch('/api/admin-snippets/', {
         method: 'PUT',
         headers: getAuthHeaders(),
         body: JSON.stringify({
@@ -815,9 +815,10 @@ export default function SimpleAdminDashboard() {
     }
 
     try {
-      const response = await fetch(`/api/admin/snippets/?id=${snippetId}`, {
+      const response = await fetch('/api/admin-snippets/', {
         method: 'DELETE',
-        headers: getAuthHeaders()
+        headers: getAuthHeaders(),
+        body: JSON.stringify({ id: snippetId })
       })
 
       if (response.ok) {
@@ -856,7 +857,7 @@ export default function SimpleAdminDashboard() {
     setSyncAlert(null) // Clear any previous alerts
 
     try {
-      const response = await fetch('/api/admin/snippets/sync-prices', {
+      const response = await fetch('/api/admin-snippets/sync-prices', {
         method: 'POST',
         headers: getAuthHeaders()
       })
