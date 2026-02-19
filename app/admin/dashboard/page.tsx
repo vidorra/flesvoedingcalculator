@@ -57,6 +57,7 @@ export default function SimpleAdminDashboard() {
   // Product categories
   const categories = [
     { value: 'all', label: 'All Categories' },
+    { value: 'flesvoedingsmaker', label: 'Automatische flesvoedingsmaker' },
     { value: 'drinkbeker', label: 'Drinkbekers' },
     { value: 'babyfles', label: 'Babyflessen' },
     { value: 'flessenwarmer', label: 'Flessenwarmer' },
