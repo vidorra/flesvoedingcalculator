@@ -1,7 +1,9 @@
+'use client'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import GoogleAdSlot from './GoogleAdSlot'
 
-const KennisbankSidebar = ({ 
+const KennisbankSidebar = ({
   images = [
     {
       src: "/mother_and_baby.webp",
@@ -9,13 +11,25 @@ const KennisbankSidebar = ({
       caption: "Praktische flesvoeding tips"
     },
     {
-      src: "/baby_feeding.png", 
+      src: "/baby_feeding.png",
       alt: "Baby voeding",
       caption: "Professionele voeding begeleiding"
     }
   ],
   adTopics = ["Flesvoeding Producten", "Baby Verzorging"]
 }) => {
+  const [showAds, setShowAds] = useState<boolean | null>(null)
+
+  useEffect(() => {
+    fetch('/api/settings?key=hide_all_ads')
+      .then((r) => r.json())
+      .then((data) => {
+        setShowAds(data.value !== 'true')
+      })
+      .catch(() => {
+        setShowAds(true)
+      })
+  }, [])
   
   // Create dynamic content array: image → ad → image → ad → remaining images
   const createDynamicContent = () => {
@@ -91,30 +105,32 @@ const KennisbankSidebar = ({
               </div>
             )
           } else if (item.type === 'ad') {
-            return (
-              <GoogleAdSlot 
+            return showAds ? (
+              <GoogleAdSlot
                 key={item.key}
-                slot={item.key === 'ad-0' ? '5691109362' : '5863882645'} // Use real ad slot IDs
+                slot={item.key === 'ad-0' ? '5691109362' : '5863882645'}
                 topic={item.data.topic}
               />
-            )
+            ) : null
           }
           return null
         })}
       </div>
 
       {/* Mobile Ads - Visible only on mobile */}
-      <div className="lg:hidden space-y-6">
-        <GoogleAdSlot 
-          slot="5691109362" 
-          topic={adTopics[0] || "Flesvoeding Producten"}
-        />
-        
-        <GoogleAdSlot 
-          slot="5863882645" 
-          topic={adTopics[1] || "Baby Verzorging"}
-        />
-      </div>
+      {showAds && (
+        <div className="lg:hidden space-y-6">
+          <GoogleAdSlot
+            slot="5691109362"
+            topic={adTopics[0] || "Flesvoeding Producten"}
+          />
+
+          <GoogleAdSlot
+            slot="5863882645"
+            topic={adTopics[1] || "Baby Verzorging"}
+          />
+        </div>
+      )}
     </div>
   )
 }
