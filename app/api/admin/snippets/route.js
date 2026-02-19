@@ -33,10 +33,12 @@ export async function GET(request) {
   } catch (error) {
     console.error('❌ Failed to load snippets:', error)
     console.error('Error stack:', error.stack)
+    const cause = error.cause ? String(error.cause.message || error.cause) : undefined
     return NextResponse.json(
       {
         message: 'Unauthorized or failed to load snippets',
         error: error.message,
+        cause,
         details: process.env.NODE_ENV === 'development' ? error.stack : undefined
       },
       { status: error.message.includes('token') ? 401 : 500 }
