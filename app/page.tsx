@@ -14,6 +14,7 @@ import {
   faqData
 } from '../components/calculator'
 import { Calculator, ChevronDown } from 'lucide-react'
+import PopularProductsWidget from '../components/PopularProductsWidget'
 
 export default function HomePage() {
   const {
@@ -269,6 +270,10 @@ export default function HomePage() {
               )}
 
             </div>
+
+            {/* Most popular affiliate products */}
+            <PopularProductsWidget limit={5} />
+
           </div>
         </div>
       </Layout>

@@ -89,6 +89,17 @@ function BolScriptWidget({ product }) {
   )
 }
 
+function trackClick(snippetId: string) {
+  try {
+    const body = JSON.stringify({ snippetId })
+    if (typeof navigator !== 'undefined' && navigator.sendBeacon) {
+      navigator.sendBeacon('/api/track-click', body)
+    } else {
+      fetch('/api/track-click', { method: 'POST', body, keepalive: true }).catch(() => {})
+    }
+  } catch {}
+}
+
 /**
  * Renders real Bol.com widgets and Amazon affiliate links
  * @param {Object} props
@@ -263,7 +274,7 @@ export default function AffiliateProductWidget({
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {displayProducts.map((product, index) => (
-          <div key={product.id} className="relative flex">
+          <div key={product.id} className="relative flex" onClick={() => trackClick(product.id)}>
             {/* Product tag (Budget, Aanbevolen, etc.) */}
             {product.tag && (
               <div className="absolute top-2 left-2 z-10">

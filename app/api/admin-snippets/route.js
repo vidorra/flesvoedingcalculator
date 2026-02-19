@@ -7,6 +7,16 @@ export const dynamic = 'force-dynamic'
 
 const DATA_DIR = path.join(process.cwd(), 'data', 'admin')
 const SNIPPETS_FILE = path.join(DATA_DIR, 'snippets.json')
+const CLICK_STATS_FILE = path.join(DATA_DIR, 'click-stats.json')
+
+function loadClickStats() {
+  try {
+    if (!fs.existsSync(CLICK_STATS_FILE)) return {}
+    return JSON.parse(fs.readFileSync(CLICK_STATS_FILE, 'utf8'))
+  } catch {
+    return {}
+  }
+}
 
 // Ensure data directory exists
 function ensureDataDir() {
@@ -175,7 +185,14 @@ export async function GET(request) {
     if (activeOnly) {
       snippets = snippets.filter(snippet => snippet.active)
     }
-    
+
+    // Merge click counts
+    const clickStats = loadClickStats()
+    snippets = snippets.map(snippet => ({
+      ...snippet,
+      clicks: clickStats[snippet.id]?.count || 0
+    }))
+
     return NextResponse.json({
       success: true,
       snippets,
