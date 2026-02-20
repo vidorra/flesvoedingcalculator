@@ -59,7 +59,7 @@ export default function PopularProductsWidget({ limit = 4 }: { limit?: number })
                 <img
                   src={snippet.imageUrl}
                   alt={snippet.name}
-                  className="w-3/4 h-3/4 object-contain"
+                  className="w-1/2 h-1/2 object-contain"
                   onError={(e: any) => { e.target.style.display = 'none' }}
                 />
               ) : (
