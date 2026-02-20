@@ -1,28 +1,16 @@
 import { NextResponse } from 'next/server'
-
-import * as jwt from 'jsonwebtoken'
+import { verifyAdminAndGetWebsite } from '../../../../lib/jwt-utils.js'
 
 // Force dynamic route
 export const dynamic = 'force-dynamic'
 
-const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key-here'
-
-// Verify admin token
+// Verify admin JWT token
 function verifyAdmin(request) {
   try {
-    const authHeader = request.headers.get('Authorization')
-    if (!authHeader || !authHeader.startsWith('Bearer ')) {
-      // Fallback to session-based auth for backwards compatibility
-      return true
-    }
-
-    const token = authHeader.substring(7)
-    const decoded = jwt.verify(token, JWT_SECRET)
-
-    return decoded.admin === true
-  } catch (error) {
-    // Fallback to session-based auth
+    verifyAdminAndGetWebsite(request)
     return true
+  } catch {
+    return false
   }
 }
 

@@ -3,6 +3,7 @@ import fs from 'fs'
 import path from 'path'
 import { JSDOM } from 'jsdom'
 import bolAPI from '../../../../lib/bol-api.js'
+import { verifyAdminAndGetWebsite } from '../../../../lib/jwt-utils.js'
 
 export const dynamic = 'force-dynamic'
 
@@ -276,8 +277,9 @@ async function checkSnippet(snippet) {
 }
 
 // POST - Run health check on all active snippets
-export async function POST() {
+export async function POST(request) {
   try {
+    verifyAdminAndGetWebsite(request)
     console.log('🏥 Starting snippet health check...')
     const snippets = loadSnippets()
     const activeSnippets = snippets.filter(s => s.active !== false)
@@ -333,16 +335,24 @@ export async function POST() {
     })
 
   } catch (error) {
+    if (error.message.includes('token') || error.message.includes('Token')) {
+      return NextResponse.json({ success: false, error: 'Unauthorized' }, { status: 401 })
+    }
     console.error('❌ Health check failed:', error)
     return NextResponse.json(
-      { success: false, error: error.message },
+      { success: false, error: 'Internal server error' },
       { status: 500 }
     )
   }
 }
 
 // GET - Return last health check results
-export async function GET() {
+export async function GET(request) {
+  try {
+    verifyAdminAndGetWebsite(request)
+  } catch {
+    return NextResponse.json({ success: false, error: 'Unauthorized' }, { status: 401 })
+  }
   const data = loadHealthResults()
   if (!data) {
     return NextResponse.json({ success: true, lastChecked: null, results: {} })

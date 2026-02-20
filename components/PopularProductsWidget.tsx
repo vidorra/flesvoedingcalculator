@@ -54,12 +54,12 @@ export default function PopularProductsWidget({ limit = 4 }: { limit?: number })
             onClick={() => trackClick(snippet.id)}
             className="flex flex-col group border border-gray-100 hover:border-primary/30 rounded-xl overflow-hidden transition-colors"
           >
-            <div className="bg-gray-100 flex items-center justify-center aspect-[2/1]">
+            <div className="flex items-center justify-center aspect-[2/1]">
               {snippet.imageUrl ? (
                 <img
                   src={snippet.imageUrl}
                   alt={snippet.name}
-                  className="w-full h-full object-contain p-3"
+                  className="w-3/4 h-3/4 object-contain"
                   onError={(e: any) => { e.target.style.display = 'none' }}
                 />
               ) : (
