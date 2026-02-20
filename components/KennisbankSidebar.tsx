@@ -1,7 +1,35 @@
 'use client'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import GoogleAdSlot from './GoogleAdSlot'
+
+const AD_SLOTS = ['5691109362', '5863882645']
+
+function InlineAdSlot({ slot }: { slot: string }) {
+  return (
+    <div className="text-center space-y-2">
+      <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4 min-h-[200px]">
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938"
+          crossOrigin="anonymous"
+        />
+        <ins
+          className="adsbygoogle"
+          style={{ display: 'block' }}
+          data-ad-client="ca-pub-5215838917916938"
+          data-ad-slot={slot}
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: '(adsbygoogle = window.adsbygoogle || []).push({});'
+          }}
+        />
+      </div>
+    </div>
+  )
+}
 
 const KennisbankSidebar = ({
   images = [
@@ -30,54 +58,28 @@ const KennisbankSidebar = ({
         setShowAds(true)
       })
   }, [])
-  
+
   // Create dynamic content array: image → ad → image → ad → remaining images
   const createDynamicContent = () => {
-    const content = []
+    const content: { type: string; data: any; key: string }[] = []
     const adTopicsToUse = [...adTopics]
-    
-    // Add first image if available
+
     if (images[0]) {
       content.push({ type: 'image', data: images[0], key: 'image-0' })
     }
-    
-    // Add first ad if available
     if (adTopicsToUse[0]) {
-      content.push({ 
-        type: 'ad', 
-        data: { topic: adTopicsToUse[0], slot: '320x250' }, 
-        key: 'ad-0' 
-      })
+      content.push({ type: 'ad', data: { slot: AD_SLOTS[0] }, key: 'ad-0' })
     }
-    
-    // Add second image if available
     if (images[1]) {
       content.push({ type: 'image', data: images[1], key: 'image-1' })
     }
-    
-    // Add second ad if available
     if (adTopicsToUse[1]) {
-      content.push({ 
-        type: 'ad', 
-        data: { topic: adTopicsToUse[1], slot: '320x250' }, 
-        key: 'ad-1' 
-      })
+      content.push({ type: 'ad', data: { slot: AD_SLOTS[1] }, key: 'ad-1' })
     }
-    
-    // Add remaining images if any (3rd, 4th, etc.)
     for (let i = 2; i < images.length; i++) {
       content.push({ type: 'image', data: images[i], key: `image-${i}` })
     }
-    
-    // Add additional ads if we have more ad topics than the first 2
-    for (let i = 2; i < adTopicsToUse.length; i++) {
-      content.push({ 
-        type: 'ad', 
-        data: { topic: adTopicsToUse[i], slot: '320x250' }, 
-        key: `ad-${i}` 
-      })
-    }
-    
+
     return content
   }
 
@@ -106,11 +108,7 @@ const KennisbankSidebar = ({
             )
           } else if (item.type === 'ad') {
             return showAds ? (
-              <GoogleAdSlot
-                key={item.key}
-                slot={item.key === 'ad-0' ? '5691109362' : '5863882645'}
-                topic={item.data.topic}
-              />
+              <InlineAdSlot key={item.key} slot={item.data.slot} />
             ) : null
           }
           return null
@@ -120,15 +118,8 @@ const KennisbankSidebar = ({
       {/* Mobile Ads - Visible only on mobile */}
       {showAds && (
         <div className="lg:hidden space-y-6">
-          <GoogleAdSlot
-            slot="5691109362"
-            topic={adTopics[0] || "Flesvoeding Producten"}
-          />
-
-          <GoogleAdSlot
-            slot="5863882645"
-            topic={adTopics[1] || "Baby Verzorging"}
-          />
+          <InlineAdSlot slot={AD_SLOTS[0]} />
+          <InlineAdSlot slot={AD_SLOTS[1]} />
         </div>
       )}
     </div>
