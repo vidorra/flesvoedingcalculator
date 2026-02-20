@@ -411,9 +411,9 @@ export default function SimpleAdminDashboard() {
 
   // Helper function to extract product data from Bol.com snippet
   const extractBolDataFromSnippet = (snippet) => {
-    const productIdMatch = snippet.match(/"productId":"([^"]+)"/i)
-    const linkNameMatch = snippet.match(/"linkName":"([^"]+)"/i)
-    const siteIdMatch = snippet.match(/"siteId":"([^"]+)"/i)
+    const productIdMatch = snippet.match(/"productId"\s*:\s*"([^"]+)"/i)
+    const linkNameMatch = snippet.match(/"linkName"\s*:\s*"([^"]+)"/i)
+    const siteIdMatch = snippet.match(/"siteId"\s*:\s*"([^"]+)"/i)
 
     const productId = productIdMatch ? productIdMatch[1] : null
     const productName = linkNameMatch ? decodeURIComponent(linkNameMatch[1]) : null
@@ -615,17 +615,25 @@ export default function SimpleAdminDashboard() {
         combinedTag = combinedTag ? `${combinedTag}, ${newSnippet.category}` : newSnippet.category;
       }
 
+      // Extract productId from bol.com snippet code for health check / URL construction
+      let productId = null
+      if (newSnippet.platform === 'bol' && newSnippet.code) {
+        const bolData = extractBolDataFromSnippet(newSnippet.code)
+        productId = bolData.productId || null
+      }
+
       const snippetData = {
-        id: `${newSnippet.platform}-${Date.now()}`,
+        id: `${newSnippet.platform}-${productId || Date.now()}`,
         name: newSnippet.name,
         type: newSnippet.platform,
         url: newSnippet.url,
         shortUrl: newSnippet.shortUrl || '',
-        imageUrl: imageUrl || null, // Save extracted imageUrl
+        imageUrl: imageUrl || null,
         tag: combinedTag || null,
-        imageHtml: newSnippet.imageHtml || null, // Separate image HTML field
-        codeSnippet: newSnippet.platform === 'bol' ? newSnippet.code : null, // Bol.com code snippet
-        bolScript: newSnippet.platform === 'bol' ? newSnippet.code : null, // Separate Bol.com script field
+        imageHtml: newSnippet.imageHtml || null,
+        codeSnippet: newSnippet.platform === 'bol' ? newSnippet.code : null,
+        bolScript: newSnippet.platform === 'bol' ? newSnippet.code : null,
+        productId: productId,
         price: newSnippet.price,
         originalPrice: newSnippet.originalPrice,
         currency: newSnippet.currency || 'EUR',
