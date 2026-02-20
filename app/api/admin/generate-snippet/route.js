@@ -5,6 +5,22 @@ import { verifyAdminAndGetWebsite } from '../../../../lib/jwt-utils.js'
 // Force dynamic route
 export const dynamic = 'force-dynamic'
 
+// Simple in-memory rate limiter: max 10 requests per minute
+const requestLog = []
+function checkRateLimit() {
+  const now = Date.now()
+  const oneMinuteAgo = now - 60000
+  // Remove old entries
+  while (requestLog.length > 0 && requestLog[0] < oneMinuteAgo) {
+    requestLog.shift()
+  }
+  if (requestLog.length >= 10) {
+    return false
+  }
+  requestLog.push(now)
+  return true
+}
+
 // Verify admin JWT token
 function isAuthenticated(request) {
   try {
@@ -200,6 +216,13 @@ export async function POST(request) {
       return NextResponse.json(
         { message: 'Unauthorized' },
         { status: 401 }
+      )
+    }
+
+    if (!checkRateLimit()) {
+      return NextResponse.json(
+        { message: 'Too many requests. Please wait a moment.' },
+        { status: 429 }
       )
     }
     
