@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import fs from 'fs'
 import path from 'path'
 import { JSDOM } from 'jsdom'
+import bolAPI from '../../../../lib/bol-api.js'
 
 export const dynamic = 'force-dynamic'
 
@@ -11,17 +12,7 @@ const HEALTH_FILE = path.join(DATA_DIR, 'health-check.json')
 
 const USER_AGENTS = [
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-  'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0',
-  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15'
-]
-
-const UNAVAILABLE_PATTERNS = [
-  'niet leverbaar',
-  'niet beschikbaar',
-  'uitverkocht',
-  'currently unavailable',
-  'out of stock'
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
 ]
 
 function loadSnippets() {
@@ -43,42 +34,124 @@ function loadHealthResults() {
   } catch { return null }
 }
 
-// Get direct (non-affiliate) product URL
-function getDirectUrl(snippet) {
-  if (snippet.type === 'bol' && snippet.url) {
-    return snippet.url
+// Extract productId from snippet (from url, productId field, or generatedHtml)
+function extractBolProductId(snippet) {
+  if (snippet.productId) return snippet.productId
+  // Extract from URL like https://www.bol.com/nl/nl/p/product-name/9300000062682298/
+  if (snippet.url) {
+    const match = snippet.url.match(/\/(\d{10,})\/?\s*$/)
+    if (match) return match[1]
   }
-  if (snippet.type === 'bol_snippet' && snippet.productId) {
-    return `https://www.bol.com/nl/nl/p/-/${snippet.productId}/`
-  }
-  if ((snippet.type === 'amazon' || snippet.type === 'amazon_image') && snippet.url) {
-    return snippet.url
+  // Extract from generatedHtml
+  if (snippet.generatedHtml) {
+    const match = snippet.generatedHtml.match(/"productId"\s*:\s*"(\d+)"/)
+    if (match) return match[1]
   }
   return null
 }
 
-// Parse price string to number (handles "€24,99", "€ 24.99", "24,99", etc.)
 function parsePrice(priceStr) {
   if (!priceStr) return null
-  const cleaned = priceStr.replace(/[€\s]/g, '').replace(',', '.')
+  if (typeof priceStr === 'number') return priceStr
+  const cleaned = String(priceStr).replace(/[€\s]/g, '').replace(',', '.')
   const num = parseFloat(cleaned)
   return isNaN(num) ? null : num
 }
 
-// Check a single snippet's product page
-async function checkSnippet(snippet) {
-  const url = getDirectUrl(snippet)
-  if (!url) {
+// Check Bol.com product via Partner API (no scraping, no 403s)
+async function checkBolSnippet(snippet) {
+  const productId = extractBolProductId(snippet)
+  if (!productId) {
     return {
-      id: snippet.id,
-      name: snippet.name,
-      url: null,
-      status: 'skipped',
-      available: null,
-      currentPrice: null,
-      storedPrice: snippet.price || null,
-      priceChange: null,
-      issues: ['No direct URL available for this snippet type']
+      id: snippet.id, name: snippet.name, url: snippet.url || null,
+      status: 'skipped', available: null, currentPrice: null,
+      storedPrice: snippet.price || null, priceChange: null,
+      issues: ['No productId found - cannot check via API']
+    }
+  }
+
+  try {
+    const product = await bolAPI.getProduct(productId)
+
+    const issues = []
+    let available = true
+    let currentPrice = null
+    let status = 'ok'
+
+    // Check availability from API response
+    const offers = product.offerData?.offers || product.offers || []
+    if (offers.length === 0) {
+      available = false
+      issues.push('Niet leverbaar - geen aanbieders gevonden')
+      status = 'error'
+    } else {
+      // Check if any offer is available
+      const hasAvailable = offers.some(o =>
+        o.availabilityCode !== 'OUT_OF_STOCK' &&
+        o.availabilityDescription !== 'Niet leverbaar'
+      )
+      if (!hasAvailable) {
+        available = false
+        issues.push('Niet leverbaar - alle aanbieders uitverkocht')
+        status = 'error'
+      }
+
+      // Get best price from offers
+      const prices = offers
+        .map(o => o.price || o.bestOffer?.price)
+        .filter(Boolean)
+      if (prices.length > 0) {
+        const lowestPrice = Math.min(...prices)
+        currentPrice = `€${lowestPrice.toFixed(2).replace('.', ',')}`
+      }
+    }
+
+    // Compare prices
+    const storedPrice = snippet.price || null
+    let priceChange = null
+    if (currentPrice && storedPrice) {
+      const currentNum = parsePrice(currentPrice)
+      const storedNum = parsePrice(storedPrice)
+      if (currentNum && storedNum && storedNum > 0) {
+        priceChange = Math.round(((currentNum - storedNum) / storedNum) * 100)
+        if (Math.abs(priceChange) > 15) {
+          const direction = priceChange > 0 ? 'gestegen' : 'gedaald'
+          issues.push(`Prijs ${direction} met ${Math.abs(priceChange)}% (${storedPrice} → ${currentPrice})`)
+          if (status !== 'error') status = 'warning'
+        }
+      }
+    }
+
+    if (issues.length === 0) status = 'ok'
+
+    return {
+      id: snippet.id, name: snippet.name,
+      url: snippet.url || `https://www.bol.com/nl/nl/p/-/${productId}/`,
+      status, available, currentPrice,
+      storedPrice, priceChange, issues
+    }
+
+  } catch (error) {
+    // If API fails (e.g. product not found = 404), mark as error
+    const is404 = error.message.includes('404')
+    return {
+      id: snippet.id, name: snippet.name,
+      url: snippet.url || `https://www.bol.com/nl/nl/p/-/${productId}/`,
+      status: 'error', available: is404 ? false : null, currentPrice: null,
+      storedPrice: snippet.price || null, priceChange: null,
+      issues: [is404 ? 'Product niet gevonden (404) - verwijderd van bol.com' : `API error: ${error.message}`]
+    }
+  }
+}
+
+// Check Amazon product via scraping (no API available)
+async function checkAmazonSnippet(snippet) {
+  if (!snippet.url) {
+    return {
+      id: snippet.id, name: snippet.name, url: null,
+      status: 'skipped', available: null, currentPrice: null,
+      storedPrice: snippet.price || null, priceChange: null,
+      issues: ['No URL available']
     }
   }
 
@@ -86,7 +159,7 @@ async function checkSnippet(snippet) {
 
   for (let attempt = 1; attempt <= 2; attempt++) {
     try {
-      const response = await fetch(url, {
+      const response = await fetch(snippet.url, {
         headers: {
           'User-Agent': ua,
           'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -99,39 +172,16 @@ async function checkSnippet(snippet) {
         }
       })
 
-      const issues = []
-      let available = true
-      let currentPrice = null
-      let status = 'ok'
-
-      if (response.status === 404) {
-        return {
-          id: snippet.id, name: snippet.name, url,
-          status: 'error', available: false, currentPrice: null,
-          storedPrice: snippet.price || null, priceChange: null,
-          issues: ['Product page returns 404 - page not found']
-        }
+      if (response.status === 403 && attempt < 2) {
+        await new Promise(r => setTimeout(r, 2000))
+        continue
       }
-
-      if (response.status === 403) {
-        if (attempt < 2) {
-          await new Promise(r => setTimeout(r, 2000))
-          continue
-        }
-        return {
-          id: snippet.id, name: snippet.name, url,
-          status: 'error', available: null, currentPrice: null,
-          storedPrice: snippet.price || null, priceChange: null,
-          issues: ['Blocked by website (403) - could not check']
-        }
-      }
-
       if (!response.ok) {
         return {
-          id: snippet.id, name: snippet.name, url,
+          id: snippet.id, name: snippet.name, url: snippet.url,
           status: 'error', available: null, currentPrice: null,
           storedPrice: snippet.price || null, priceChange: null,
-          issues: [`HTTP ${response.status} error`]
+          issues: [response.status === 403 ? 'Blocked by Amazon (403)' : `HTTP ${response.status} error`]
         }
       }
 
@@ -140,8 +190,14 @@ async function checkSnippet(snippet) {
       const doc = dom.window.document
       const bodyText = doc.body?.textContent?.toLowerCase() || ''
 
+      const issues = []
+      let available = true
+      let currentPrice = null
+      let status = 'ok'
+
       // Check availability
-      for (const pattern of UNAVAILABLE_PATTERNS) {
+      const unavailablePatterns = ['currently unavailable', 'out of stock', 'niet leverbaar', 'niet beschikbaar']
+      for (const pattern of unavailablePatterns) {
         if (bodyText.includes(pattern)) {
           available = false
           issues.push(`Product marked as "${pattern}"`)
@@ -150,61 +206,24 @@ async function checkSnippet(snippet) {
         }
       }
 
-      // Also check for data-test attribute
-      if (doc.querySelector('[data-test="not-available"]')) {
-        available = false
-        issues.push('Product marked as unavailable (data-test)')
-        status = 'error'
-      }
-
-      // Extract price (Bol.com selectors)
-      if (url.includes('bol.com')) {
-        const bolSelectors = [
-          '[data-test="price"]',
-          '.promo-price',
-          '.product-prices__bol-promo-price',
-          '[data-test="buy-block-sticky-cta-price"]'
-        ]
-        for (const sel of bolSelectors) {
-          const el = doc.querySelector(sel)
-          if (el && el.textContent.trim()) {
-            let priceText = el.textContent.trim()
-            const fractionEl = el.querySelector('[data-test="price-fraction"], .promo-price__fraction')
-            if (fractionEl && fractionEl.textContent.trim()) {
-              const whole = priceText.replace(fractionEl.textContent.trim(), '').trim()
-              priceText = `€${whole},${fractionEl.textContent.trim()}`
-            } else if (!priceText.includes('€')) {
-              priceText = `€${priceText}`
-            }
-            if (priceText.length > 1) {
-              currentPrice = priceText.replace(/\s+/g, ' ').trim()
-              break
-            }
-          }
-        }
-      }
-
-      // Extract price (Amazon selectors)
-      if (url.includes('amazon')) {
-        const amzSelectors = [
-          '.a-price.a-text-price.a-size-medium.apexPriceToPay .a-offscreen',
-          '.a-price-whole',
-          '#price_inside_buybox',
-          '.a-price .a-offscreen'
-        ]
-        for (const sel of amzSelectors) {
-          const el = doc.querySelector(sel)
-          if (el && el.textContent.trim()) {
-            currentPrice = el.textContent.trim()
-            break
-          }
+      // Extract price
+      const amzSelectors = [
+        '.a-price.a-text-price.a-size-medium.apexPriceToPay .a-offscreen',
+        '.a-price-whole',
+        '#price_inside_buybox',
+        '.a-price .a-offscreen'
+      ]
+      for (const sel of amzSelectors) {
+        const el = doc.querySelector(sel)
+        if (el && el.textContent.trim()) {
+          currentPrice = el.textContent.trim().replace(/\s+/g, ' ')
+          break
         }
       }
 
       // Compare prices
       const storedPrice = snippet.price || null
       let priceChange = null
-
       if (currentPrice && storedPrice) {
         const currentNum = parsePrice(currentPrice)
         const storedNum = parsePrice(storedPrice)
@@ -221,7 +240,7 @@ async function checkSnippet(snippet) {
       if (issues.length === 0) status = 'ok'
 
       return {
-        id: snippet.id, name: snippet.name, url,
+        id: snippet.id, name: snippet.name, url: snippet.url,
         status, available, currentPrice,
         storedPrice, priceChange, issues
       }
@@ -229,7 +248,7 @@ async function checkSnippet(snippet) {
     } catch (error) {
       if (attempt === 2) {
         return {
-          id: snippet.id, name: snippet.name, url,
+          id: snippet.id, name: snippet.name, url: snippet.url,
           status: 'error', available: null, currentPrice: null,
           storedPrice: snippet.price || null, priceChange: null,
           issues: [`Fetch error: ${error.message}`]
@@ -237,6 +256,22 @@ async function checkSnippet(snippet) {
       }
       await new Promise(r => setTimeout(r, 2000))
     }
+  }
+}
+
+// Route snippet to the right checker
+async function checkSnippet(snippet) {
+  if (snippet.type === 'bol' || snippet.type === 'bol_snippet') {
+    return await checkBolSnippet(snippet)
+  }
+  if (snippet.type === 'amazon' || snippet.type === 'amazon_image') {
+    return await checkAmazonSnippet(snippet)
+  }
+  return {
+    id: snippet.id, name: snippet.name, url: snippet.url || null,
+    status: 'skipped', available: null, currentPrice: null,
+    storedPrice: snippet.price || null, priceChange: null,
+    issues: [`Unknown snippet type: ${snippet.type}`]
   }
 }
 
@@ -260,9 +295,10 @@ export async function POST() {
 
       console.log(`  → ${result.status}: ${result.issues.length > 0 ? result.issues.join(', ') : 'OK'}`)
 
-      // Delay between requests
+      // Delay between requests (shorter for API calls, longer for scraping)
       if (i < activeSnippets.length - 1) {
-        await new Promise(r => setTimeout(r, 2000))
+        const delay = (snippet.type === 'amazon' || snippet.type === 'amazon_image') ? 2000 : 500
+        await new Promise(r => setTimeout(r, delay))
       }
     }
 
