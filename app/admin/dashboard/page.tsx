@@ -44,6 +44,10 @@ export default function SimpleAdminDashboard() {
   const [showOnlyPrice, setShowOnlyPrice] = useState(false) // Control visibility of elements
   const [isExtractingImage, setIsExtractingImage] = useState(false) // For Bol.com image extraction
   const [hideAllAds, setHideAllAds] = useState(false) // Toggle to hide all Google Ads globally
+  const [isChecking, setIsChecking] = useState(false)
+  const [healthResults, setHealthResults] = useState(null) // { summary, results }
+  const [lastHealthCheck, setLastHealthCheck] = useState(null) // ISO string
+  const [healthBySnippet, setHealthBySnippet] = useState({}) // { snippetId: { status, issues, ... } }
 
   // Filter states
   const [searchQuery, setSearchQuery] = useState('')
@@ -912,6 +916,84 @@ export default function SimpleAdminDashboard() {
     }
   }
 
+  // Load saved health check results on mount
+  useEffect(() => {
+    fetch('/api/admin-snippets/health-check')
+      .then(r => r.json())
+      .then(data => {
+        if (data.success && data.lastChecked) {
+          setLastHealthCheck(data.lastChecked)
+          setHealthBySnippet(data.results || {})
+        }
+      })
+      .catch(() => {})
+  }, [])
+
+  const runHealthCheck = async () => {
+    if (!confirm('This will check all active snippet links for availability and price changes. This may take a minute. Continue?')) {
+      return
+    }
+
+    setIsChecking(true)
+    setHealthResults(null)
+    setSyncAlert(null)
+
+    try {
+      const response = await fetch('/api/admin-snippets/health-check', {
+        method: 'POST',
+        headers: getAuthHeaders()
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setHealthResults(data)
+        // Update per-snippet health data
+        const bySnippet = {}
+        for (const r of data.results) {
+          bySnippet[r.id] = { status: r.status, available: r.available, currentPrice: r.currentPrice, priceChange: r.priceChange, issues: r.issues }
+        }
+        setHealthBySnippet(bySnippet)
+        setLastHealthCheck(new Date().toISOString())
+
+        if (data.summary.errors > 0) {
+          setSyncAlert({
+            type: 'error',
+            message: `Health check found ${data.summary.errors} issue(s): ${data.results.filter(r => r.status === 'error').map(r => r.name).join(', ')}`,
+            details: data.results.filter(r => r.issues.length > 0).map(r => `${r.name}: ${r.issues.join('; ')}`)
+          })
+        } else if (data.summary.warnings > 0) {
+          setSyncAlert({
+            type: 'warning',
+            message: `Health check found ${data.summary.warnings} warning(s)`,
+            details: data.results.filter(r => r.issues.length > 0).map(r => `${r.name}: ${r.issues.join('; ')}`)
+          })
+        } else {
+          setSyncAlert({
+            type: 'success',
+            message: `All ${data.summary.ok} snippets are healthy!`,
+            details: []
+          })
+          setTimeout(() => setSyncAlert(prev => prev?.type === 'success' ? null : prev), 10000)
+        }
+      } else {
+        setSyncAlert({
+          type: 'error',
+          message: `Health check failed: ${data.error}`,
+          details: []
+        })
+      }
+    } catch (error) {
+      setSyncAlert({
+        type: 'error',
+        message: `Health check error: ${error.message}`,
+        details: []
+      })
+    } finally {
+      setIsChecking(false)
+    }
+  }
+
   // Sync individual snippet data and price
   const syncSnippetData = async (snippetId) => {
     const snippet = snippets.find(s => s.id === snippetId)
@@ -1339,6 +1421,14 @@ export default function SimpleAdminDashboard() {
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-lg font-semibold text-gray-900">Affiliate Snippets</h2>
                 <div className="flex items-center space-x-3">
+                  <button
+                    onClick={runHealthCheck}
+                    disabled={isChecking || loading}
+                    className="bg-amber-600 text-white px-4 py-2 rounded-lg hover:bg-amber-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center space-x-2"
+                  >
+                    <Eye className={`w-4 h-4 ${isChecking ? 'animate-pulse' : ''}`} />
+                    <span>{isChecking ? 'Checking...' : 'Health Check'}</span>
+                  </button>
                   <button
                     onClick={syncAllPrices}
                     disabled={isSyncing || loading}
@@ -1819,11 +1909,27 @@ export default function SimpleAdminDashboard() {
                                 )}
                                 {!showOnlyPrice && (
                                   <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                                    snippet.active 
-                                      ? 'bg-green-100 text-green-700' 
+                                    snippet.active
+                                      ? 'bg-green-100 text-green-700'
                                       : 'bg-gray-100 text-gray-600'
                                   }`}>
                                     {snippet.active ? 'Active' : 'Inactive'}
+                                  </span>
+                                )}
+                                {healthBySnippet[snippet.id] && (
+                                  <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                                    healthBySnippet[snippet.id].status === 'ok'
+                                      ? 'bg-green-100 text-green-700'
+                                      : healthBySnippet[snippet.id].status === 'warning'
+                                      ? 'bg-amber-100 text-amber-700'
+                                      : healthBySnippet[snippet.id].status === 'error'
+                                      ? 'bg-red-100 text-red-700'
+                                      : 'bg-gray-100 text-gray-600'
+                                  }`} title={healthBySnippet[snippet.id].issues?.join(', ') || 'OK'}>
+                                    {healthBySnippet[snippet.id].status === 'ok' ? 'Healthy'
+                                      : healthBySnippet[snippet.id].status === 'warning' ? 'Price changed'
+                                      : healthBySnippet[snippet.id].status === 'error' ? 'Unavailable'
+                                      : 'Skipped'}
                                   </span>
                                 )}
                               </div>
