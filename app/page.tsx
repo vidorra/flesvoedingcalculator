@@ -235,7 +235,7 @@ export default function HomePage() {
               )}
 
               {/* Most popular affiliate products */}
-              <PopularProductsWidget limit={5} />
+              <PopularProductsWidget limit={4} />
 
               {/* Baby Image */}
               <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">

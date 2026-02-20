@@ -22,15 +22,15 @@ function trackClick(snippetId: string) {
   } catch {}
 }
 
-export default function PopularProductsWidget({ limit = 5 }: { limit?: number }) {
+export default function PopularProductsWidget({ limit = 4 }: { limit?: number }) {
   const [snippets, setSnippets] = useState<Snippet[]>([])
 
   useEffect(() => {
-    fetch(`/api/popular-snippets?limit=${limit}`)
+    fetch(`/api/popular-snippets?limit=${Math.min(limit, 4)}`)
       .then(r => r.json())
       .then(data => {
         if (data.success && data.snippets?.length > 0) {
-          setSnippets(data.snippets)
+          setSnippets(data.snippets.slice(0, 4))
         }
       })
       .catch(() => {})
@@ -54,12 +54,12 @@ export default function PopularProductsWidget({ limit = 5 }: { limit?: number })
             onClick={() => trackClick(snippet.id)}
             className="flex flex-col group border border-gray-100 hover:border-primary/30 rounded-xl overflow-hidden transition-colors"
           >
-            <div className="bg-gray-50 flex items-center justify-center h-28">
+            <div className="bg-gray-100 flex items-center justify-center aspect-[2/1]">
               {snippet.imageUrl ? (
                 <img
                   src={snippet.imageUrl}
                   alt={snippet.name}
-                  className="w-full h-full object-contain p-2"
+                  className="w-full h-full object-contain p-3"
                   onError={(e: any) => { e.target.style.display = 'none' }}
                 />
               ) : (
