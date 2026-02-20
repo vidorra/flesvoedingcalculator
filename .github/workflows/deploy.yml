@@ -60,7 +60,7 @@ jobs:
             public
             scripts
             migrations
-            data
+            data-defaults
             styles
             tailwind.config.js
             postcss.config.js
