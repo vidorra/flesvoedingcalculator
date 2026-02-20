@@ -51,3 +51,6 @@ ADMIN_SECURITY_SETUP.md
 md/
 .env.example
 
+# Runtime data (persisted via Docker volume, defaults in data-defaults/)
+data/admin/
+

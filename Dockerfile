@@ -55,7 +55,10 @@ EXPOSE 3000
 ENV HOSTNAME=0.0.0.0
 ENV PORT=3000
 
-# Copy and use startup script that runs migrations before starting
+# Persistent data volume - survives container restarts and deploys
+VOLUME /app/data
+
+# Copy and use startup script that seeds defaults before starting
 RUN chmod +x /app/start.sh
 
 CMD [ "/app/start.sh" ]
