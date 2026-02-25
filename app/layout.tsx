@@ -57,9 +57,20 @@ export default function RootLayout({ children }) {
   return (
     <html lang="nl" className={lexendDeca.variable}>
       <head>
+        {/* Google Tag Manager */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PPX8RJTF');`,
+          }}
+        />
+
         {/* Google AdSense */}
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938" crossOrigin="anonymous"></script>
-        
+
         {/* Google Analytics - Head version for verification */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-3NZ90KFHQ6"></script>
         <script
@@ -98,6 +109,16 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PPX8RJTF"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
+
         {/* Microsoft Clarity */}
         <Script id="clarity-init" strategy="afterInteractive">
           {`
