@@ -169,6 +169,7 @@ export default function HomePage() {
 
                 {/* Calculate Button */}
                 <button
+                  id="bereken-voeding-btn"
                   onClick={calculateFeeding}
                   className="w-full bg-primary hover:bg-primary-hover text-white font-medium py-3 px-6 rounded-xl transition-all shadow-sm flex items-center justify-center space-x-2"
                 >
