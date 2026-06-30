@@ -10,8 +10,11 @@ import type { AgeCategory } from '../../hooks/useCalculator'
  *
  * Shows a hot-weather hydration notice based on the visitor's current local
  * temperature. Two tiers:
- *   - 27–29°C  → informational notice ("echt warm", zomerse dag)
- *   - ≥ 30°C   → amber "Let op" warning (tropische dag)
+ *   - 27°C     → informational notice ("echt warm", zomerse dag)
+ *   - ≥ 28°C   → amber "Let op" warning
+ *
+ * The amber threshold is deliberately conservative: IP geolocation is only
+ * approximate, so 28°C gives margin to catch genuine heat across the country.
  *
  * The advice adapts to the selected age: babies under 6 months should be fed
  * more often (never diluted with water), babies from 6 months may also be
@@ -20,7 +23,7 @@ import type { AgeCategory } from '../../hooks/useCalculator'
  */
 
 const INFO_THRESHOLD = 27
-const WARNING_THRESHOLD = 30
+const WARNING_THRESHOLD = 28
 
 const ARTICLE_HREF = '/kennisbank/praktische-tips/flesvoeding-bij-warm-weer'
 
