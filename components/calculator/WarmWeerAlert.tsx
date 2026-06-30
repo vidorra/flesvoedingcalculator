@@ -10,7 +10,7 @@ import type { AgeCategory } from '../../hooks/useCalculator'
  *
  * Shows a hot-weather hydration notice based on the visitor's current local
  * temperature. Two tiers:
- *   - 27°C     → informational notice ("echt warm", zomerse dag)
+ *   - 26–27°C  → informational notice ("echt warm", zomerse dag)
  *   - ≥ 28°C   → amber "Let op" warning
  *
  * The amber threshold is deliberately conservative: IP geolocation is only
@@ -22,7 +22,7 @@ import type { AgeCategory } from '../../hooks/useCalculator'
  * temperature reading is available.
  */
 
-const INFO_THRESHOLD = 27
+const INFO_THRESHOLD = 26
 const WARNING_THRESHOLD = 28
 
 const ARTICLE_HREF = '/kennisbank/praktische-tips/flesvoeding-bij-warm-weer'
