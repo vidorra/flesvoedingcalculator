@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import affiliateAutomation from '../../../lib/affiliate-automation.js'
+import { verifyAdminAndGetWebsite } from '../../../lib/jwt-utils.js'
 
 /**
  * GET /api/affiliate-automation - Get automation status and preview
@@ -81,6 +82,15 @@ export async function GET(request) {
  */
 export async function POST(request) {
   try {
+    try {
+      verifyAdminAndGetWebsite(request)
+    } catch {
+      return NextResponse.json(
+        { success: false, error: 'Unauthorized' },
+        { status: 401 }
+      )
+    }
+
     const { action, articles, priority } = await request.json()
     
     switch (action) {

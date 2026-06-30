@@ -1,14 +1,10 @@
 import { NextResponse } from 'next/server'
 import { db } from '../../../../lib/db/connection.js'
 import { snippets } from '../../../../lib/db/schema.js'
+import { verifyAdminAndGetWebsite } from '../../../../lib/jwt-utils.js'
 
 // Force dynamic route
 export const dynamic = 'force-dynamic'
-
-// Simple session check
-function isAuthenticated(request) {
-  return true // For demo purposes, same as other admin endpoints
-}
 
 // Detect if input is a Bol.com script snippet
 function isBolComScript(input) {
@@ -194,13 +190,15 @@ function generateImageHtml(title, imageUrl, productUrl) {
 // POST - Create snippet with enhanced field separation
 export async function POST(request) {
   try {
-    if (!isAuthenticated(request)) {
+    try {
+      verifyAdminAndGetWebsite(request)
+    } catch {
       return NextResponse.json(
         { message: 'Unauthorized' },
         { status: 401 }
       )
     }
-    
+
     const { input, name, tag, type } = await request.json()
     
     if (!input) {

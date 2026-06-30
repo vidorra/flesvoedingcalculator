@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import bolProductFeed from '../../../lib/bol-product-feed.js'
+import { verifyAdminAndGetWebsite } from '../../../lib/jwt-utils.js'
 
 /**
  * GET /api/bol-feed - Get product feed status and statistics
@@ -192,9 +193,20 @@ export async function GET(request) {
 export async function POST(request) {
   try {
     const { action, productNames } = await request.json()
-    
+
     switch (action) {
       case 'update':
+        // Admin-only: refreshing the whole feed is privileged.
+        // 'kennisbank-products' below stays public (used by visitor-facing components).
+        try {
+          verifyAdminAndGetWebsite(request)
+        } catch {
+          return NextResponse.json(
+            { success: false, error: 'Unauthorized' },
+            { status: 401 }
+          )
+        }
+
         console.log('Starting product feed update...')
         const result = await bolProductFeed.updateFeed()
         
