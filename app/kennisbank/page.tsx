@@ -320,13 +320,21 @@ export default function KennisbankPage() {
       duration: '8 min',
       href: '/kennisbank/praktische-tips/flesvoeding-werk-combineren'
     },
-    { 
-      id: 27, 
-      title: 'Flesvoeding op vakantie', 
-      category: 'praktische-tips', 
-      description: 'Reizen met baby', 
+    {
+      id: 27,
+      title: 'Flesvoeding op vakantie',
+      category: 'praktische-tips',
+      description: 'Reizen met baby',
       duration: '10 min',
       href: '/kennisbank/praktische-tips/flesvoeding-op-vakantie'
+    },
+    {
+      id: 43,
+      title: 'Flesvoeding bij warm weer',
+      category: 'praktische-tips',
+      description: 'Moet je baby meer drinken bij hitte? Veilig extra vocht geven per leeftijd',
+      duration: '6 min',
+      href: '/kennisbank/praktische-tips/flesvoeding-bij-warm-weer'
     },
     { 
       id: 28, 

@@ -11,6 +11,7 @@ import {
   FeedingSchedule,
   FAQSection,
   FeedingTypesInfo,
+  WarmWeerAlert,
   faqData
 } from '../components/calculator'
 import { Calculator, ChevronDown } from 'lucide-react'
@@ -88,6 +89,8 @@ export default function HomePage() {
         <div className="grid grid-cols-12 gap-6 min-h-screen">
           {/* Main Calculator Content - 7 columns on desktop, full width on mobile */}
           <div className="col-span-12 lg:col-span-7">
+            {/* Hot-weather hydration notice (only shows at warm temperatures) */}
+            <WarmWeerAlert ageMonths={ageMonths} />
             {/* Calculator Card */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6 mb-6">
               <h2 className="text-lg font-medium text-primary mb-4">Calculator</h2>
