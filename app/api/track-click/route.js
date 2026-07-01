@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import fs from 'fs'
 import path from 'path'
+import { verifyAdminAndGetWebsite } from '../../../lib/jwt-utils.js'
 
 export const dynamic = 'force-dynamic'
 
@@ -65,12 +66,18 @@ export async function POST(request) {
   }
 }
 
-// GET - return all click stats (admin use)
-export async function GET() {
+// GET - return all click stats (admin only)
+export async function GET(request) {
+  try {
+    verifyAdminAndGetWebsite(request)
+  } catch {
+    return NextResponse.json({ success: false, error: 'Unauthorized' }, { status: 401 })
+  }
+
   try {
     const stats = loadStats()
     return NextResponse.json({ success: true, stats })
-  } catch (error) {
-    return NextResponse.json({ success: false, error: error.message }, { status: 500 })
+  } catch {
+    return NextResponse.json({ success: false, error: 'Failed to load stats' }, { status: 500 })
   }
 }

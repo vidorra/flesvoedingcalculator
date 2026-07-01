@@ -40,6 +40,16 @@ const nextConfig = {
   },
   async headers() {
     return [
+      // Security headers for API routes. The middleware matcher excludes /api,
+      // so set them here. nosniff stops JSON being sniffed as HTML.
+      {
+        source: '/api/:path*',
+        headers: [
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          { key: 'X-Frame-Options', value: 'DENY' }
+        ]
+      },
       {
         source: '/robots.txt',
         headers: [

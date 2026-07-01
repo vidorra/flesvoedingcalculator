@@ -84,59 +84,41 @@ class InMemoryRateLimiter {
 class RedisRateLimiter {
   private redisUrl: string | undefined
   private config: RateLimitConfig
+  // A real, enforcing in-memory limiter used until a Redis client is wired in.
+  // IMPORTANT: never return `{ allowed: true }` unconditionally here — that
+  // silently disables rate limiting whenever REDIS_URL is set.
+  private fallback: InMemoryRateLimiter
 
   constructor(config: RateLimitConfig) {
     this.config = config
     this.redisUrl = process.env.REDIS_URL
+    this.fallback = new InMemoryRateLimiter(config)
   }
 
   async check(key: string): Promise<RateLimitResult> {
     if (!this.redisUrl) {
-      console.warn('REDIS_URL not configured, falling back to in-memory rate limiting')
-      return this.checkInMemory(key)
+      return this.fallback.check(key)
     }
 
     try {
-      // Using a simple HTTP-based approach for Upstash Redis (if available)
-      // Or parse the Redis URL for direct connection
       return await this.checkWithRedis(key)
     } catch (error) {
-      console.error('Redis rate limit check failed:', error)
-      // Fallback to in-memory on error
-      return this.checkInMemory(key)
+      console.error('Redis rate limit check failed, using in-memory fallback:', error)
+      return this.fallback.check(key)
     }
   }
 
   private async checkWithRedis(key: string): Promise<RateLimitResult> {
-    const fullKey = `${this.config.keyPrefix || 'rl'}:${key}`
-    const now = Date.now()
-    const windowStart = now - this.config.windowMs
-
-    // Note: This is a simplified implementation
-    // For production Redis, use a proper Redis client library:
-    // npm install redis
-    // Then import and use: const { createClient } = require('redis')
-
-    // For now, return a safe limit
-    return {
-      allowed: true,
-      remaining: this.config.maxAttempts - 1,
-      resetTime: now + this.config.windowMs,
-    }
-  }
-
-  private async checkInMemory(key: string): Promise<RateLimitResult> {
-    const now = Date.now()
-    // Simplified fallback - allow most requests
-    return {
-      allowed: true,
-      remaining: this.config.maxAttempts - 1,
-      resetTime: now + this.config.windowMs,
-    }
+    // TODO: implement a real Redis-backed sliding window using a client such as
+    // `redis` or Upstash. Until then we enforce with the in-memory fallback so
+    // limits are never silently bypassed. Key prefix reserved for that impl:
+    // `${this.config.keyPrefix || 'rl'}:${key}`.
+    return this.fallback.check(key)
   }
 
   async reset(key: string): Promise<void> {
-    // TODO: Implement Redis DEL command
+    // TODO: issue Redis DEL for the real backend; reset the fallback for now.
+    await this.fallback.reset(key)
   }
 }
 
