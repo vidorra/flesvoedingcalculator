@@ -1,5 +1,13 @@
+import { fileURLToPath } from 'url'
+import { dirname } from 'path'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Pin the workspace root so Next 15's file tracing doesn't pick up a stray
+  // lockfile in a parent directory (e.g. ~/package-lock.json).
+  outputFileTracingRoot: __dirname,
   trailingSlash: true,
   images: {
     formats: ['image/avif', 'image/webp'],
