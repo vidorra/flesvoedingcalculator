@@ -11,7 +11,7 @@ export const dynamic = 'force-dynamic'
 export async function GET(request, { params }) {
   try {
     const { website } = verifyAdminAndGetWebsite(request)
-    const pageId = params.pageId
+    const pageId = (await params).pageId
 
     // CRITICAL: First verify that the page belongs to the current website
     const page = await db
@@ -67,7 +67,7 @@ export async function POST(request, { params }) {
   try {
     const { website } = verifyAdminAndGetWebsite(request)
 
-    const pageId = params.pageId
+    const pageId = (await params).pageId
     const body = await request.json()
     const { snippetId, order } = body
 
@@ -164,7 +164,7 @@ export async function DELETE(request, { params }) {
   try {
     const { website } = verifyAdminAndGetWebsite(request)
 
-    const pageId = params.pageId
+    const pageId = (await params).pageId
     const { searchParams } = new URL(request.url)
     const snippetId = searchParams.get('snippetId')
 

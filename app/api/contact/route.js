@@ -217,8 +217,8 @@ async function sendEmail(formData, clientInfo) {
 
 export async function POST(request) {
   try {
-    // Get client IP and headers
-    const headersList = headers()
+    // Get client IP and headers (headers() is async in Next 15)
+    const headersList = await headers()
     const forwarded = headersList.get('x-forwarded-for')
     const realIp = headersList.get('x-real-ip')
     const ip = forwarded?.split(',')[0] || realIp || 'unknown'
