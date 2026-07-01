@@ -3,7 +3,7 @@ import fs from 'fs'
 import path from 'path'
 import { verifyAdminAndGetWebsite } from '../../../lib/jwt-utils.js'
 import { db } from '../../../lib/db/connection.js'
-import { snippets as snippetsTable } from '../../../lib/db/schema.js'
+import { snippets as snippetsTable, pageSnippets } from '../../../lib/db/schema.js'
 import { eq, and } from 'drizzle-orm'
 
 // Force dynamic route
@@ -159,6 +159,9 @@ export async function DELETE(request) {
     const body = await request.json()
 
     if (body?.all === true) {
+      // Remove assignments first — the production FK may lack ON DELETE CASCADE,
+      // so deleting referenced snippets directly would raise a FK violation.
+      await db.delete(pageSnippets).where(eq(pageSnippets.website, website))
       const deleted = await db
         .delete(snippetsTable)
         .where(eq(snippetsTable.website, website))
@@ -171,6 +174,10 @@ export async function DELETE(request) {
       return NextResponse.json({ message: 'Snippet ID is required' }, { status: 400 })
     }
 
+    // Remove this snippet's assignments first (see note above)
+    await db
+      .delete(pageSnippets)
+      .where(and(eq(pageSnippets.snippetId, body.id), eq(pageSnippets.website, website)))
     const [deleted] = await db
       .delete(snippetsTable)
       .where(and(eq(snippetsTable.id, body.id), eq(snippetsTable.website, website)))
