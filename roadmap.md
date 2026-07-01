@@ -12,8 +12,10 @@ Findings from the code review of 2026-06-10. Ordered by priority. Check items of
 
 ### 1. `.env` secrets leak into the Docker image
 - [x] Add `.env` and `.env*` to [.dockerignore](.dockerignore) — DONE (added `.env`, `.env.*`, and `_scratch`)
-- [ ] Stop passing runtime secrets as Docker build `ARG`s in [Dockerfile](Dockerfile) — they persist in image layer metadata (`docker history`). Inject `ADMIN_PASSWORD`, `BOL_API_CLIENT_SECRET`, `JWT_SECRET`, `DATABASE_URL` etc. as CapRover runtime env vars instead. **Left open: requires a CapRover-side config change + redeploy test; don't change the Dockerfile alone or the build may break if any secret is referenced during `next build`.**
-- [ ] Only `NEXT_PUBLIC_*` values genuinely need to exist at build time.
+- [x] Stopped passing runtime secrets as Docker build `ARG`s in [Dockerfile](Dockerfile). Removed the `ARG`/`ENV` for `EMAILJS_PRIVATE_KEY`, `RECAPTCHA_SECRET_KEY`, `BOL_API_CLIENT_ID/SECRET`, `BOL_PRODUCT_FEED_USERNAME/PASSWORD`, `ADMIN_PASSWORD`, `DATABASE_URL`. Only the 5 `NEXT_PUBLIC_*` values remain as build args (public, needed during `next build`). Server secrets are injected by CapRover at runtime (user confirmed they're set as the app's Environmental Variables). Verified `next build` passes with all server secrets unset.
+- [x] Only `NEXT_PUBLIC_*` values remain at build time.
+- Note: `ADMIN_PASSWORD` appears unused (code uses `ADMIN_PASSWORD_HASH`); safe to drop from CapRover too.
+- Post-deploy check: `docker history <image> --no-trunc | grep -iE 'RECAPTCHA_SECRET|BOL_|DATABASE_URL'` should return nothing.
 
 **Why:** Anyone with access to the image (CapRover registry, VPS) can extract production secrets.
 
