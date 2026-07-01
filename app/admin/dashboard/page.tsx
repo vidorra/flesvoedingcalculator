@@ -853,6 +853,47 @@ export default function SimpleAdminDashboard() {
     }
   }
 
+  // Bulk reset: delete every snippet for this site (admin list + live DB).
+  // Pages and inherit settings are kept. Irreversible, so double-confirm.
+  const deleteAllSnippets = async () => {
+    if (!confirm('Delete ALL snippets for this site?\n\nThis clears the admin list AND the live products (page assignments are removed too). Pages are kept. This cannot be undone.')) {
+      return
+    }
+    if (prompt('Type DELETE to confirm removing ALL snippets:') !== 'DELETE') {
+      return
+    }
+    try {
+      const response = await fetch('/api/admin-snippets/', {
+        method: 'DELETE',
+        headers: getAuthHeaders(),
+        body: JSON.stringify({ all: true })
+      })
+      if (response.ok) {
+        const data = await response.json()
+        loadData(true)
+        setSyncAlert({
+          type: 'success',
+          message: `All snippets deleted (${data.dbDeleted} removed from database). You can start over.`,
+          details: []
+        })
+      } else {
+        const errorData = await response.json()
+        setSyncAlert({
+          type: 'error',
+          message: `Failed to delete all snippets: ${errorData.message}`,
+          details: []
+        })
+      }
+    } catch (error) {
+      console.error('Error deleting all snippets:', error)
+      setSyncAlert({
+        type: 'error',
+        message: `Error deleting all snippets: ${error.message}`,
+        details: []
+      })
+    }
+  }
+
   const deleteSnippet = async (snippetId, snippetName) => {
     if (!confirm(`Are you sure you want to delete "${snippetName}"? This action cannot be undone.`)) {
       return
@@ -1356,9 +1397,21 @@ export default function SimpleAdminDashboard() {
                 </div>
               </div>
 
-              {/* Results Count */}
-              <div className="text-sm text-gray-600">
-                Showing <span className="font-semibold text-gray-900">{filteredSnippets.length}</span> of <span className="font-semibold text-gray-900">{snippets.length}</span> products
+              {/* Results Count + bulk reset */}
+              <div className="flex items-center justify-between gap-3">
+                <div className="text-sm text-gray-600">
+                  Showing <span className="font-semibold text-gray-900">{filteredSnippets.length}</span> of <span className="font-semibold text-gray-900">{snippets.length}</span> products
+                </div>
+                {snippets.length > 0 && (
+                  <button
+                    onClick={deleteAllSnippets}
+                    className="inline-flex items-center gap-2 px-3 py-2 text-sm font-medium text-red-700 border border-red-200 rounded-lg hover:bg-red-50 transition-colors"
+                    title="Delete all snippets for this site (pages are kept)"
+                  >
+                    <X className="w-4 h-4" />
+                    Delete all snippets
+                  </button>
+                )}
               </div>
             </div>
 

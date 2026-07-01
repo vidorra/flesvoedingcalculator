@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server'
 import fs from 'fs'
 import path from 'path'
 import { verifyAdminAndGetWebsite } from '../../../lib/jwt-utils.js'
+import { db } from '../../../lib/db/connection.js'
+import { snippets as snippetsTable } from '../../../lib/db/schema.js'
+import { eq } from 'drizzle-orm'
 
 // Force dynamic route - Fresh deployment fix after disk space issue
 export const dynamic = 'force-dynamic'
@@ -338,9 +341,45 @@ export async function DELETE(request) {
         { status: 401 }
       )
     }
-    
-    const { id } = await request.json()
-    
+
+    const body = await request.json()
+
+    // Bulk "delete all" — true reset for the current site. Clears the admin
+    // JSON list AND the DB snippets for this website (page_snippets cascade).
+    // Pages and inherit flags are left untouched.
+    if (body?.all === true) {
+      const { website } = verifyAdminAndGetWebsite(request)
+
+      // 1. Clear the admin JSON list
+      saveSnippets([])
+
+      // 2. Clear the DB snippets for this website (cascades to page_snippets)
+      let dbDeleted = 0
+      try {
+        const deleted = await db
+          .delete(snippetsTable)
+          .where(eq(snippetsTable.website, website))
+          .returning({ id: snippetsTable.id })
+        dbDeleted = deleted.length
+      } catch (dbError) {
+        console.error('Failed to clear DB snippets:', dbError)
+        return NextResponse.json(
+          { message: 'Cleared admin list but failed to clear database snippets', error: dbError.message },
+          { status: 500 }
+        )
+      }
+
+      console.log(`🧹 Deleted all snippets for ${website}: DB rows removed = ${dbDeleted}`)
+      return NextResponse.json({
+        success: true,
+        message: `All snippets deleted for ${website}`,
+        dbDeleted,
+        website
+      })
+    }
+
+    const { id } = body
+
     if (!id) {
       return NextResponse.json(
         { message: 'Snippet ID is required' },
