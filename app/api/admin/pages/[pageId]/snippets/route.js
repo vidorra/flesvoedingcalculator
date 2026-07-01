@@ -13,18 +13,22 @@ export async function GET(request, { params }) {
     const { website } = verifyAdminAndGetWebsite(request)
     const pageId = (await params).pageId
 
-    // CRITICAL: First verify that the page belongs to the current website
-    const page = await db
-      .select()
-      .from(pages)
-      .where(and(eq(pages.id, pageId), eq(pages.website, website)))
-      .limit(1)
+    // 'default' is the virtual per-website page holding the inherited snippets;
+    // it has no row in `pages`, so skip the existence check for it.
+    if (pageId !== 'default') {
+      // CRITICAL: First verify that the page belongs to the current website
+      const page = await db
+        .select()
+        .from(pages)
+        .where(and(eq(pages.id, pageId), eq(pages.website, website)))
+        .limit(1)
 
-    if (page.length === 0) {
-      return NextResponse.json(
-        { message: 'Page not found or access denied' },
-        { status: 404 }
-      )
+      if (page.length === 0) {
+        return NextResponse.json(
+          { message: 'Page not found or access denied' },
+          { status: 404 }
+        )
+      }
     }
 
     // Get page snippets with joined snippet data - filtered by website
@@ -73,18 +77,21 @@ export async function POST(request, { params }) {
 
     console.log(`📌 POST request to add snippet to page:`, { pageId, snippetId, order, website })
 
-    // CRITICAL: Verify page belongs to current website
-    const page = await db
-      .select()
-      .from(pages)
-      .where(and(eq(pages.id, pageId), eq(pages.website, website)))
-      .limit(1)
+    // 'default' is the virtual per-website page; it has no row in `pages`.
+    if (pageId !== 'default') {
+      // CRITICAL: Verify page belongs to current website
+      const page = await db
+        .select()
+        .from(pages)
+        .where(and(eq(pages.id, pageId), eq(pages.website, website)))
+        .limit(1)
 
-    if (page.length === 0) {
-      return NextResponse.json(
-        { message: 'Page not found or access denied' },
-        { status: 404 }
-      )
+      if (page.length === 0) {
+        return NextResponse.json(
+          { message: 'Page not found or access denied' },
+          { status: 404 }
+        )
+      }
     }
 
     // CRITICAL: Verify snippet belongs to current website

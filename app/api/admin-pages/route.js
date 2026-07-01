@@ -2,9 +2,14 @@ import { NextResponse } from 'next/server'
 import fs from 'fs'
 import path from 'path'
 import { verifyAdminAndGetWebsite } from '../../../lib/jwt-utils.js'
+import { db } from '../../../lib/db/connection.js'
+import { pages as pagesTable, pageSnippets } from '../../../lib/db/schema.js'
+import { eq, count } from 'drizzle-orm'
 
 // Force dynamic route
 export const dynamic = 'force-dynamic'
+
+const WEBSITES = ['flesvoedingcalculator', 'togwaarde']
 
 const DATA_DIR = path.join(process.cwd(), 'data', 'admin')
 const PAGE_SNIPPETS_FILE = path.join(DATA_DIR, 'page-snippets.json')
@@ -100,11 +105,47 @@ export async function GET(request) {
       )
     }
     
-    const pages = getKnownPages()
-    
+    const knownPages = getKnownPages()
+
+    // Enrich with per-page inherit flags + Default snippet counts from the DB.
+    // Missing row => inherit true (the feature default).
+    let inheritMap = {}
+    const defaultCounts = { flesvoedingcalculator: 0, togwaarde: 0 }
+    try {
+      const rows = await db
+        .select({ id: pagesTable.id, inheritDefault: pagesTable.inheritDefault })
+        .from(pagesTable)
+      inheritMap = Object.fromEntries(rows.map(r => [r.id, r.inheritDefault]))
+
+      const defRows = await db
+        .select({ website: pageSnippets.website, c: count() })
+        .from(pageSnippets)
+        .where(eq(pageSnippets.pageId, 'default'))
+        .groupBy(pageSnippets.website)
+      for (const dr of defRows) defaultCounts[dr.website] = Number(dr.c)
+    } catch (dbError) {
+      console.error('Failed to enrich pages with inherit flags:', dbError)
+    }
+
+    const enriched = knownPages.map(p => ({
+      ...p,
+      inheritDefault: inheritMap[p.id] !== undefined ? inheritMap[p.id] : true
+    }))
+
+    // One virtual "Default" page per website, shown at the top of its list.
+    const defaults = WEBSITES.map(website => ({
+      id: 'default',
+      title: 'Standaard (alle pagina\'s)',
+      path: 'Geldt voor elke pagina die overerft',
+      category: 'default',
+      website,
+      isDefault: true,
+      snippetCount: defaultCounts[website] || 0
+    }))
+
     return NextResponse.json({
       success: true,
-      pages
+      pages: [...defaults, ...enriched]
     })
 
   } catch (error) {

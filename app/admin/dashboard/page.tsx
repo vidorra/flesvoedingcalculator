@@ -729,6 +729,37 @@ export default function SimpleAdminDashboard() {
     }
   }
 
+  // Toggle whether a page inherits the website's Default linked snippets.
+  const toggleInherit = async (page, inheritDefault) => {
+    try {
+      const response = await fetch(`/api/admin/pages/${page.id}/`, {
+        method: 'PATCH',
+        headers: getAuthHeaders(),
+        body: JSON.stringify({
+          inheritDefault,
+          title: page.title,
+          path: page.path,
+          category: page.category
+        })
+      })
+      if (response.ok) {
+        const pageWebsite = page.website || 'flesvoedingcalculator'
+        setPages(prev => prev.map(p =>
+          (p.id === page.id && (p.website || 'flesvoedingcalculator') === pageWebsite)
+            ? { ...p, inheritDefault }
+            : p
+        ))
+        setSelectedPage(prev => (prev && prev.id === page.id) ? { ...prev, inheritDefault } : prev)
+      } else {
+        const errorData = await response.json()
+        alert(`Failed to update inherit setting: ${errorData.message}`)
+      }
+    } catch (error) {
+      console.error('Error updating inherit setting:', error)
+      alert('Error updating inherit setting: ' + error.message)
+    }
+  }
+
   const toggleSnippetActive = async (snippetId, currentActive) => {
     try {
       const response = await fetch('/api/admin-snippets/', {
@@ -2071,18 +2102,30 @@ export default function SimpleAdminDashboard() {
                   <div className="space-y-2 max-h-96 overflow-y-auto">
                     {pages.filter(p => (p.website || 'flesvoedingcalculator') === pageWebsiteFilter).map((page) => (
                       <button
-                        key={page.id}
+                        key={`${page.website || 'flesvoedingcalculator'}-${page.id}`}
                         onClick={() => handlePageSelect(page)}
                         className={`w-full text-left p-3 rounded-lg border transition-colors ${
                           selectedPage?.id === page.id
                             ? 'border-primary bg-primary/5 text-primary'
-                            : 'border-gray-200 hover:bg-gray-50'
+                            : page.isDefault
+                              ? 'border-primary/40 bg-primary/5'
+                              : 'border-gray-200 hover:bg-gray-50'
                         }`}
                       >
-                        <h3 className="font-medium text-sm">{page.title}</h3>
+                        <h3 className="font-medium text-sm flex items-center gap-2">
+                          {page.isDefault && (
+                            <span className="px-1.5 py-0.5 rounded bg-primary text-white text-[10px] font-semibold">STANDAARD</span>
+                          )}
+                          {page.title}
+                        </h3>
                         <p className="text-xs text-gray-500 mt-1">{page.path}</p>
-                        <div className="text-xs text-gray-400 mt-1">
-                          Snippets: {page.snippetCount}
+                        <div className="text-xs text-gray-400 mt-1 flex items-center gap-2">
+                          <span>Snippets: {page.snippetCount}</span>
+                          {!page.isDefault && (
+                            <span className={page.inheritDefault === false ? 'text-gray-500' : 'text-primary'}>
+                              {page.inheritDefault === false ? '• eigen snippets' : '• overerft standaard'}
+                            </span>
+                          )}
                         </div>
                       </button>
                     ))}
@@ -2112,6 +2155,25 @@ export default function SimpleAdminDashboard() {
                       </div>
                     </div>
 
+                    {/* Inherit control */}
+                    {selectedPage.isDefault ? (
+                      <div className="mb-6 p-3 rounded-lg bg-primary/5 border border-primary/30 text-sm text-gray-700">
+                        Dit zijn de <strong>standaard-snippets</strong>. Ze verschijnen op elke pagina die overerft.
+                      </div>
+                    ) : (
+                      <label className="mb-6 flex items-center gap-2 p-3 rounded-lg bg-gray-50 border border-gray-200 cursor-pointer text-sm text-gray-700">
+                        <input
+                          type="checkbox"
+                          checked={selectedPage.inheritDefault !== false}
+                          onChange={(e) => toggleInherit(selectedPage, e.target.checked)}
+                          className="w-4 h-4"
+                        />
+                        <span>Inherit linked snippets — toon de standaard-snippets op deze pagina</span>
+                      </label>
+                    )}
+
+                    {(selectedPage.isDefault || selectedPage.inheritDefault === false) ? (
+                    <>
                     {/* Current Page Snippets */}
                     <div className="mb-6">
                       <h3 className="font-medium text-gray-900 mb-3">Current Affiliate Snippets</h3>
@@ -2232,6 +2294,13 @@ export default function SimpleAdminDashboard() {
                         </div>
                       )}
                     </div>
+                    </>
+                    ) : (
+                      <div className="text-center py-8 text-gray-500 border-2 border-dashed border-gray-300 rounded-lg">
+                        <p>Deze pagina erft de <strong>standaard-snippets</strong>.</p>
+                        <p className="text-sm">Vink &quot;Inherit linked snippets&quot; uit om eigen snippets toe te wijzen.</p>
+                      </div>
+                    )}
                   </>
                 )}
               </div>

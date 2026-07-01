@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { db } from '../../../../../lib/db/connection.js'
-import { snippets, pageSnippets } from '../../../../../lib/db/schema.js'
+import { snippets, pageSnippets, pages } from '../../../../../lib/db/schema.js'
 import { eq, and } from 'drizzle-orm'
 
 // Force dynamic route - prevent caching issues
@@ -40,6 +40,22 @@ export async function GET(request, { params }) {
     // CRITICAL: Detect website from hostname to filter results
     const website = detectWebsiteFromHostname(request)
 
+    // Inherit resolution: by default a page shows the website's Default snippets
+    // (pageId 'default'). If the page has explicitly opted out (inherit_default =
+    // false) it shows its own. Missing row => inherit (default true).
+    let inheritDefault = true
+    if (pageId !== 'default') {
+      const pageRow = await db
+        .select({ inheritDefault: pages.inheritDefault })
+        .from(pages)
+        .where(and(eq(pages.id, pageId), eq(pages.website, website)))
+        .limit(1)
+      if (pageRow.length > 0) {
+        inheritDefault = pageRow[0].inheritDefault
+      }
+    }
+    const effectivePageId = inheritDefault ? 'default' : pageId
+
     // Load from database - filtered by website
     const pageSnippetsList = await db
       .select({
@@ -53,8 +69,8 @@ export async function GET(request, { params }) {
       })
       .from(pageSnippets)
       .leftJoin(snippets, eq(pageSnippets.snippetId, snippets.id))
-      // CRITICAL: Filter by both pageId and website
-      .where(and(eq(pageSnippets.pageId, pageId), eq(pageSnippets.website, website)))
+      // CRITICAL: Filter by both the effective pageId and website
+      .where(and(eq(pageSnippets.pageId, effectivePageId), eq(pageSnippets.website, website)))
       .orderBy(pageSnippets.order)
 
     // Filter out orphaned references and inactive snippets
