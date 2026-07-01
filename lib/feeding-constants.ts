@@ -63,7 +63,7 @@ export const PREMATURE_FEEDING = {
  * Feeding measurement standards
  */
 export const FEEDING_MEASUREMENTS = {
-  /** EU standard formula scoop size (EU Regulation 2016/127) */
+  /** Standard prep ratio: 1 level scoop per 30 ml water (per each brand's preparation instructions) */
   SCOOP_SIZE_ML: 30,
 
   /** Rounding increment for practical measurement (5ml increments) */

@@ -68,12 +68,11 @@ export default function BioOrganischeFlesvoedingPage() {
   ]
 
   const wetenschappelijkeVoordelen = [
-    "15-25% hoger omega-3 vetzuren gehalte",
-    "20-40% meer antioxidanten (polyfenolen)",
-    "Betere eiwit verteerbaarheid (meer whey)",
-    "94% lagere pesticide resten in baby urine",
-    "17% meer natuurlijk ijzer",
-    "23% minder eczeem bij bio groep (RIVM 2023)"
+    "Geproduceerd zonder synthetische bestrijdingsmiddelen en kunstmest",
+    "Bevat van nature antioxidanten (polyfenolen)",
+    "Geen preventieve antibiotica in de melkveehouderij",
+    "Voldoet aan strenge biologische keurmerkeisen",
+    "Wetenschappelijk bewijs voor gezondheidsvoordelen boven reguliere flesvoeding is beperkt"
   ]
 
   const kostenVergelijking = [
@@ -146,14 +145,14 @@ export default function BioOrganischeFlesvoedingPage() {
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Biologische flesvoeding heeft nu 28% marktaandeel in Nederland (stijging van 18% in 2020).
-                Met 280.000 Nederlandse baby's die bio voeding krijgen, is het belangrijk om de juiste keuze te maken. Lees ook ons artikel over het <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="text-primary hover:underline font-medium">verschil tussen startvoeding en opvolgmelk</Link>, beide verkrijgbaar in biologische varianten.
+                Biologische flesvoeding wint de laatste jaren aan populariteit in Nederland.
+                Steeds meer ouders kiezen voor bio voeding, dus is het belangrijk om de juiste keuze te maken. Lees ook ons artikel over het <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="text-primary hover:underline font-medium">verschil tussen startvoeding en opvolgmelk</Link>, beide verkrijgbaar in biologische varianten.
               </p>
-              
+
  <div className="mt-4">
                 <p className="text-gray-700">
-                  <strong>Nederlandse markt 2026:</strong> €95 miljoen jaarlijkse omzet, 95% supermarkt beschikbaarheid, 
-                  gemiddelde kosten €18-35 per week vs €12-22 regulier.
+                  <strong>Nederlandse markt:</strong> Biologische flesvoeding is breed verkrijgbaar in supermarkten en drogisterijen,
+                  en is doorgaans wel duurder dan reguliere flesvoeding.
                 </p>
               </div>
             </section>
@@ -269,12 +268,12 @@ export default function BioOrganischeFlesvoedingPage() {
                 Wetenschappelijke Voordelen Bio Flesvoeding
               </h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Recent Nederlands en Europees onderzoek toont significante voordelen van biologische flesvoeding 
-                voor baby ontwikkeling en gezondheid:
+                Biologische flesvoeding onderscheidt zich vooral in de manier waarop de ingrediënten worden geproduceerd,
+                niet in bewezen gezondheidseffecten voor de baby:
               </p>
-              
+
               <div className="border-t border-gray-200 pt-6">
-                <h3 className="font-medium text-primary mb-4">RIVM Onderzoek 2023 - 2.400 Nederlandse Baby's</h3>
+                <h3 className="font-medium text-primary mb-4">Kenmerken van biologische flesvoeding</h3>
                 <ul className="space-y-3 mb-6">
                   {wetenschappelijkeVoordelen.map((voordeel, index) => (
                     <li key={index} className="flex items-start space-x-2">
@@ -283,12 +282,12 @@ export default function BioOrganischeFlesvoedingPage() {
                     </li>
                   ))}
                 </ul>
-                
+
  <div className="p-4">
-                  <h4 className="font-medium text-gray-700 mb-2">Lange Termijn Impact</h4>
+                  <h4 className="font-medium text-gray-700 mb-2">Wat zegt de wetenschap?</h4>
                   <p className="text-gray-700 text-sm">
-                    Wageningen University 5-jaar vervolgafspraken studie: Bio groep had 19% minder antibiotica gebruik, 
-                    14% minder ziekenhuisopnames, en sterkere immuunrespons op vaccinaties.
+                    Wetenschappelijk bewijs voor gezondheidsvoordelen van biologische flesvoeding boven reguliere flesvoeding is beperkt.
+                    Reguliere flesvoeding is even veilig en voldoet aan dezelfde strenge voedingsnormen.
                   </p>
                 </div>
               </div>
@@ -328,16 +327,16 @@ export default function BioOrganischeFlesvoedingPage() {
               </div>
 
               <div className="border-t border-gray-200 pt-6">
-                <h3 className="font-medium text-primary mb-4">Potentiële Besparingen & Rendement</h3>
+                <h3 className="font-medium text-primary mb-4">Kosten afwegen</h3>
  <div className="p-4">
                   <p className="text-gray-700 text-sm mb-3">
-                    <strong>Gezondheidszorg besparingen:</strong> Families met bio kinderen bezoeken gemiddeld 30% minder vaak de dokter. Wil je meer weten over de totale <Link href="/kennisbank/financiele-aspecten/kosten-van-flesvoeding" className="text-primary hover:underline font-medium">kosten van flesvoeding</Link>? Lees onze complete gids met <Link href="/kennisbank/praktische-tips/geld-besparen-flesvoeding" className="text-primary hover:underline font-medium">tips om geld te besparen</Link>.
+                    <strong>Prijs versus meerwaarde:</strong> Biologische flesvoeding is doorgaans duurder dan reguliere flesvoeding, terwijl aangetoonde gezondheidsvoordelen voor de baby beperkt zijn. Wil je meer weten over de totale <Link href="/kennisbank/financiele-aspecten/kosten-van-flesvoeding" className="text-primary hover:underline font-medium">kosten van flesvoeding</Link>? Lees onze complete gids met <Link href="/kennisbank/praktische-tips/geld-besparen-flesvoeding" className="text-primary hover:underline font-medium">tips om geld te besparen</Link>.
                   </p>
                   <ul className="space-y-1 text-gray-700">
-                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Minder doktersbezoeken: €150-300/jaar</span></li>
-                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Minder allergie medicatie: €100-400/jaar</span></li>
-                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Mogelijk IQ voordelen: Levenslange waarde</span></li>
-                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Milieu impact: Maatschappelijke waarde</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Geproduceerd zonder synthetische bestrijdingsmiddelen en kunstmest</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Voldoet aan strenge biologische keurmerkeisen</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Keuze op basis van persoonlijke voorkeur en waarden</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Aandacht voor milieu en duurzame productie</span></li>
                   </ul>
                 </div>
               </div>

@@ -47,7 +47,7 @@ export default function AntiRefluxPage() {
       brand: 'Nutrilon AR',
       price: '€16-18/blik (400g)',
       ingredients: 'Johannesbroodpitmeel als verdikkingsmiddel',
-      effectiviteit: '85% vermindering spugen',
+      effectiviteit: 'Kan het spugen bij veel baby\'s verminderen',
       pros: ['Meest verkochte AR in Nederland', 'Beschikbaar in alle supermarkten', 'Goede effectiviteit'],
       cons: ['Duurder dan gewone voeding', 'Kan harder ontlasting geven']
     },
@@ -55,7 +55,7 @@ export default function AntiRefluxPage() {
       brand: 'Hero Baby AR',
       price: '€14-16/blik (400g)', 
       ingredients: 'Rijstzetmeel + johannesbroodpitmeel',
-      effectiviteit: '80% vermindering spugen',
+      effectiviteit: 'Kan het spugen bij veel baby\'s verminderen',
       pros: ['Goede prijs-kwaliteit', 'Zachter voor maag', 'Minder constipatie'],
       cons: ['Minder breed verkrijgbaar', 'Kan klontering geven']
     },
@@ -63,7 +63,7 @@ export default function AntiRefluxPage() {
       brand: 'Aptamil AR',
       price: '€17-19/blik (400g)',
       ingredients: 'Gemodificeerd zetmeel',
-      effectiviteit: '78% vermindering spugen',
+      effectiviteit: 'Kan het spugen bij veel baby\'s verminderen',
       pros: ['Makkelijk oplosbaar', 'Goede smaak', 'DHA/ARA toegevoegd'],
       cons: ['Duurste optie', 'Alleen bij drogist verkrijgbaar']
     }
@@ -73,19 +73,19 @@ export default function AntiRefluxPage() {
     {
       technique: 'Kleinere, frequentere voedingen',
       description: 'In plaats van 6×120ml  8×90ml',
-      effectiviteit: '70% verbetering',
+      effectiviteit: 'Kan klachten verminderen',
       tips: ['Elke 2-2.5 uur voeden', 'Maximaal 100ml per keer bij reflux', 'Baby\'s signalen volgen']
     },
     {
       technique: 'Langzamer voeden',
       description: '15-20 minuten per voeding',
-      effectiviteit: '60% verbetering', 
+      effectiviteit: 'Kan klachten verminderen',
       tips: ['Pauzes maken tijdens voeding', 'Speen met kleine gaatjes gebruiken', 'Baby laten bepalen tempo']
     },
     {
       technique: 'Rechtop houden na voeding',
       description: 'Minimaal 20-30 minuten verticaal',
-      effectiviteit: '80% verbetering',
+      effectiviteit: 'Kan klachten verminderen',
       tips: ['Baby tegen schouder houden', 'In autostoel/wipstoel zetten', 'Niet direct neerleggen']
     }
   ]
@@ -525,7 +525,7 @@ export default function AntiRefluxPage() {
  <div className="mt-4">
             <h4 className="font-medium text-primary mb-2">Realistische verwachtingen:</h4>
             <p className="text-gray-700">
-              AR voeding vermindert spugen met 70-85%, maar elimineert het zelden volledig. 
+              AR voeding kan het spugen bij veel baby's flink verminderen, maar elimineert het zelden volledig.
               De meeste baby's groeien er overheen tussen 6-12 maanden wanneer de spierklep 
               tussen maag en slokdarm sterker wordt.
             </p>
@@ -559,7 +559,7 @@ export default function AntiRefluxPage() {
             <div>
               <h3 className="font-medium text-primary mb-2">"AR voeding was de oplossing" - Sandra, Amsterdam</h3>
               <p className="text-gray-600">
-                "Emma spuugde na elke voeding. Hero Baby AR gaf binnen 2 weken 80% minder spugen. 
+                "Emma spuugde na elke voeding. Hero Baby AR gaf binnen 2 weken duidelijk minder spugen.
                 Ze is nu een gelukkige, groeiende baby."
               </p>
             </div>

@@ -96,8 +96,8 @@ export default function PrematureInputSection({
                                       <div className="primary-sources">
                                         <p className="font-medium">Primaire bronnen:</p>
                                         <ol className="ml-3 space-y-1">
-                                          <li>1. ESPGHAN Committee on Nutrition (2022). &quot;Enteral Nutrition Supply
-                                            for Preterm Infants&quot; - J Pediatr Gastroenterol Nutr.</li>
+                                          <li>1. ESPGHAN Committee on Nutrition (2022). &quot;Enteral Nutrition in
+                                            Preterm Infants&quot; - J Pediatr Gastroenterol Nutr.</li>
                                           <li>2. Nederlandse Vereniging voor Kindergeneeskunde (2023).
                                             &quot;Richtlijn Follow-up van Prematuren&quot;</li>
                                           <li>3. Agostoni et al. (2010). &quot;Enteral Nutrient Supply for Preterm
@@ -110,27 +110,20 @@ export default function PrematureInputSection({
                                         <ul className="ml-3 space-y-1">
                                           <li className="flex items-center space-x-2">
                                             <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                                            <span>NICU protocollen grote centra (AMC, Erasmus MC, UMCU)</span>
-                                          </li>
-                                          <li className="flex items-center space-x-2">
-                                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                                            <span>Landelijke Neonatologie Richtlijnen (LNR)</span>
-                                          </li>
-                                          <li className="flex items-center space-x-2">
-                                            <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                                            <span>Care4Neo oudervereniging aanbevelingen</span>
+                                            <span>Nederlandse neonatologie-richtlijnen (openbaar)</span>
                                           </li>
                                         </ul>
                                       </div>
 
                                       <div className="validation bg-green-50 p-2 rounded">
-                                        <p className="font-medium">Validatie:</p>
-                                        <p>Berekeningen gevalideerd door kinderartsen-neonatologen
-                                          van Nederlandse NICU&apos;s (niveau 3 centra)</p>
+                                        <p className="font-medium">Let op:</p>
+                                        <p>Deze rekenmethode is gebaseerd op bovenstaande openbare
+                                          richtlijnen en vervangt geen medisch advies. Overleg voor een
+                                          premature baby altijd met de kinderarts of diëtist.</p>
                                       </div>
 
                                       <p className="text-gray-600 mt-2">
-                                        Laatste update: Augustus 2025 | Revisie volgens nieuwste ESPGHAN richtlijnen
+                                        Gebaseerd op de ESPGHAN-richtlijnen van 2022.
                                       </p>
                                     </div>
                                   </div>

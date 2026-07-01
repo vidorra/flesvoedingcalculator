@@ -201,10 +201,10 @@ export default function VakantiePage() {
                 <div>
                   <h3 className="font-medium text-primary mb-3">Nederlandse Reis Patronen</h3>
                   <div className="text-sm text-gray-600 space-y-2">
-                    <div><strong>Zomer vakanties:</strong> 80% families juni-augustus</div>
+                    <div><strong>Zomer vakanties:</strong> De meeste gezinnen reizen in de zomermaanden</div>
                     <div><strong>Kort breaks:</strong> Weekend trips populair</div>
                     <div><strong>Familie bezoek:</strong> 3x per jaar gemiddeld</div>
-                    <div><strong>Buitenland:</strong> 45% internationale destinaties</div>
+                    <div><strong>Buitenland:</strong> een deel van de gezinnen reist naar het buitenland</div>
                   </div>
                 </div>
               </div>

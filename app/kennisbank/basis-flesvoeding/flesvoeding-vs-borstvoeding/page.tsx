@@ -31,9 +31,9 @@ export default function FlesvoedingVsBorstvoedingPage() {
   const adTopics = ["Voeding Vergelijking", "Ouderschap Keuzes"]
 
   const nederlandseStats = [
-    "94% van baby's krijgt bij geboorte borstvoeding",
-    "85% krijgt op 6 maanden (deels) flesvoeding",
-    "65% combineert borst- en flesvoeding",
+    "53% van de baby's start bij de geboorte met borstvoeding (NCJ/TNO Peiling Melkvoeding 2023).",
+    "Een groot deel van de baby's krijgt rond 6 maanden (deels) flesvoeding.",
+    "Veel ouders combineren borst- en flesvoeding.",
     "35% geeft uitsluitend flesvoeding na 3 maanden"
   ]
 
@@ -133,7 +133,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
               
               <div className="mt-6 p-4 bg-default rounded-lg">
                 <p className="text-gray-600">
-                  <strong>Gemiddelde duur exclusieve borstvoeding:</strong> 3.2 maanden
+                  <strong>Duur exclusieve borstvoeding:</strong> De duur van exclusieve borstvoeding verschilt sterk per gezin.
                 </p>
                 <p className="text-sm text-gray-600 mt-2">
                   Nederland scoort gemiddeld vergeleken met andere Europese landen

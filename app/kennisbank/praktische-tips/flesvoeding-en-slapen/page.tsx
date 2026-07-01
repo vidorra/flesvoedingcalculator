@@ -39,7 +39,7 @@ export default function FlesvoedingEnSlapenPage() {
     "Beide ouders kunnen nachtvoeding doen",
     "Duidelijkere saturatie signalen van baby",
     "Stabielere bloedsuiker = rustiger slaap",
-    "40% meer uitgerust gevoel bij ouders"
+    "Veel ouders voelen zich meer uitgerust"
   ]
 
   const leeftijdSpecifiekeSchemas = [
@@ -130,14 +130,14 @@ export default function FlesvoedingEnSlapenPage() {
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Flesvoeding kan significante voordelen bieden voor baby's slaappatronen. Nederlandse onderzoek toont dat flesvoeding baby's 
-                gemiddeld vanaf 3-4 maanden 6+ uur aaneengesloten slapen versus 4-5 uur bij borstvoeding.
+                Flesvoeding kan invloed hebben op de slaappatronen van baby's. Sommige ouders merken dat flesvoeding-baby's
+                iets langer achter elkaar slapen, maar dit verschilt sterk per baby.
               </p>
               
  <div className="mt-4">
                 <p className="text-gray-700">
-                  <strong>Uit de praktijk:</strong> Flesvoeding baby's slapen gemiddeld eerder door dan borstvoeding baby's.
-                  Veel ouders rapporteren 6+ uur aaneengesloten slaap met een vaste flesvoeding routine.
+                  <strong>Uit de praktijk:</strong> Flesvoeding baby's slapen soms wat eerder door dan borstvoeding baby's.
+                  Veel ouders merken langere aaneengesloten slaap met een vaste flesvoeding routine, maar dit verschilt per baby.
                 </p>
               </div>
             </section>
@@ -171,7 +171,7 @@ export default function FlesvoedingEnSlapenPage() {
                     <strong>Stabielere bloedsuiker:</strong> Minder nachtelijke hongerpieken, rustiger slaap
                   </p>
                   <p className="text-gray-700 text-sm">
-                    <strong>Lagere cortisol:</strong> 15-25% lagere stress hormoon pieken bij flesvoeding baby's
+                    <strong>Lagere cortisol:</strong> mogelijk minder uitgesproken stress hormoon pieken bij flesvoeding baby's
                   </p>
                 </div>
               </div>

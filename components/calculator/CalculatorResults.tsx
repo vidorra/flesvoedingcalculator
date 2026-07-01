@@ -150,7 +150,7 @@ export default function CalculatorResults({
                           </li>
                           <li className="flex items-center space-x-2">
                             <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                            <span>EU-richtlijn standaardiseert alle verhoudingen</span>
+                            <span>Deze verhouding staat op de bereidingsinstructies van elk merk</span>
                           </li>
                         </ul>
                         <p className="text-xs text-gray-500 mt-2 italic">
@@ -300,8 +300,8 @@ export default function CalculatorResults({
                         </div>
 
                         <p className="text-xs text-gray-600">
-                          Deze calculator volgt de richtlijnen van: NVK (Nederlandse Vereniging voor
-                          Kindergeneeskunde), ESPGHAN, en Nederlandse NICU-protocollen
+                          Deze calculator volgt de openbare richtlijnen van: NVK (Nederlandse Vereniging voor
+                          Kindergeneeskunde) en ESPGHAN (2022)
                         </p>
                       </div>
                     </div>

@@ -136,7 +136,7 @@ export default function GeldBesparenPage() {
                 Geld Besparen op Flesvoeding: Complete Budget Gids
               </h1>
               <p className="text-gray-500 leading-relaxed">
-                Flesvoeding kost Nederlandse families €600-1000 per jaar. Met slimme strategieën kun je 
+                Flesvoeding kost Nederlandse families grofweg €600-1000 per jaar, afhankelijk van merk. Met slimme strategieën kun je
                 tot 50% besparen zonder kwaliteit in te leveren.
               </p>
             </div>
@@ -159,7 +159,6 @@ export default function GeldBesparenPage() {
                 <div>
                   <h3 className="font-medium text-primary mb-3"><Link href="/kennisbank/financiele-aspecten/kosten-van-flesvoeding" className="text-primary hover:underline font-medium">Nederlandse Familie Budget Reality</Link></h3>
                   <div className="text-sm text-gray-600 space-y-2">
-                    <div><strong>Besteedbaar inkomen:</strong> €3.200/maand (gemiddeld)</div>
                     <div><strong>Baby kosten totaal:</strong> €500-800/maand</div>
                     <div><strong>Flesvoeding aandeel:</strong> 15-20% baby budget</div>
                     <div><strong>Besparing potentieel:</strong> €200-500/jaar</div>

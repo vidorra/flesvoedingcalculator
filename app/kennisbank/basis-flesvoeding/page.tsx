@@ -342,7 +342,7 @@ export default function BasisFlesvoedingPage() {
           <h2 className="text-lg font-medium text-primary mb-4">Baby Weigert de Fles: Praktische Oplossingen</h2>
           
           <p className="text-gray-600 leading-relaxed mb-4">
-            Ongeveer 30% van alle baby's weigert op enig moment de fles. Dit is één van de meest frustrerende 
+            Veel baby's weigeren op enig moment de fles. Dit is één van de meest frustrerende
             uitdagingen voor ouders, maar bijna altijd oplosbaar met de juiste aanpak.
           </p>
 

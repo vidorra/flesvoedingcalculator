@@ -6,27 +6,6 @@ import { Users } from 'lucide-react'
 
 export default function OverOnsPage() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false)
-  
-  const team = [
-    {
-      name: 'Medisch Expert',
-      role: 'Kinderarts & Voedingsspecialist',
-      bio: 'Ons medisch team heeft uitgebreide ervaring in de kindergeneeskunde en specialiseert zich in voeding voor zuigelingen.',
-      avatar: '👩‍⚕️'
-    },
-    {
-      name: 'Voedingsspecialist',
-      role: 'Verloskundige & Lactatie Expert',
-      bio: 'Onze voedingsexperts begeleiden ouders bij voedingsvragen en hebben uitgebreide kennis van zowel borst- als flesvoeding.',
-      avatar: '👩‍💼'
-    },
-    {
-      name: 'Ontwikkelingsteam',
-      role: 'Ontwikkelaars & Ouders',
-      bio: 'Ons team ontwikkelde deze tool vanuit eigen ervaring als ouders en passie voor het helpen van andere ouders.',
-      avatar: '👨‍💻'
-    }
-  ]
 
   return (
     <Layout>
@@ -37,7 +16,7 @@ export default function OverOnsPage() {
             Over Ons
           </h1>
           <p className="text-gray-600">
-            Leer meer over ons team, onze missie en waarom je onze flesvoeding calculator kunt vertrouwen.
+            Leer meer over onze missie en waarom je onze flesvoeding calculator kunt vertrouwen.
           </p>
         </div>
 
@@ -64,8 +43,8 @@ export default function OverOnsPage() {
                   <span className="text-primary-dark font-medium">✓</span>
                 </div>
                 <div>
-                  <h3 className="font-medium text-gray-800">Regelmatig Geüpdatet</h3>
-                  <p className="text-sm text-gray-600">Onze informatie wordt regelmatig gecontroleerd en bijgewerkt volgens de laatste inzichten.</p>
+                  <h3 className="font-medium text-gray-800">Gebaseerd op openbare richtlijnen</h3>
+                  <p className="text-sm text-gray-600">We houden de informatie zo actueel mogelijk aan de hand van de openbare richtlijnen van het Voedingscentrum en het NCJ.</p>
                 </div>
               </div>
             </div>
