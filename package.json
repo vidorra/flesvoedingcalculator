@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:kennisbank": "node scripts/lint-kennisbank.mjs",
     "export": "next build && next export",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "node scripts/migrate.js",

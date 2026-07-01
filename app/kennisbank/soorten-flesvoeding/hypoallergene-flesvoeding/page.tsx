@@ -343,19 +343,19 @@ export default function HypoallergeneVoedingPage() {
                   <h3 className="font-medium text-primary mb-3">Ernstige Reactie - BEL 112</h3>
                   <div className="text-sm text-gray-700 space-y-1">
                     <div className="flex items-start space-x-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                       <span>Zwelling gezicht/lippen/tong</span>
                     </div>
                     <div className="flex items-start space-x-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                       <span>Moeilijke ademhaling/piepende ademhaling</span>
                     </div>
                     <div className="flex items-start space-x-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                       <span>Blauw worden huid/lippen</span>
                     </div>
                     <div className="flex items-start space-x-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                       <span>Extreme lethargie/bewusteloosheid</span>
                     </div>
                   </div>

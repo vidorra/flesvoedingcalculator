@@ -199,7 +199,7 @@ export default function ProblemenOplossenPage() {
               <div className="space-y-2">
                 {constipationSigns.map((sign, index) => (
                   <div key={index} className="flex items-start space-x-2">
-                    <AlertCircle className="w-4 h-4 text-red-500 mt-0.5 flex-shrink-0" />
+                    <AlertCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700 text-sm">{sign}</span>
                   </div>
                 ))}

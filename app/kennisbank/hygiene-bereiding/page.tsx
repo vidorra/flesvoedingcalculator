@@ -319,8 +319,8 @@ function HygieneBereidingPage() {
             </div>
 
             <div className="bg-white rounded-xl p-4 border border-gray-200">
-              <h4 className="text-orange-900 font-medium mb-3"> Magnetron (€15-30)</h4>
-              <div className="text-orange-800 text-sm space-y-1 mb-3">
+              <h4 className="text-primary font-medium mb-3">Magnetron (€15-30)</h4>
+              <div className="text-gray-700 text-sm space-y-1 mb-3">
                 <p><strong>Methode:</strong> Speciale zakken/containers</p>
                 <p><strong>Tijd:</strong> 2-6 minuten</p>
                 <p><strong>Zakken:</strong> €0.25 per gebruik</p>

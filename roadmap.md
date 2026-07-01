@@ -2,7 +2,9 @@
 
 Findings from the code review of 2026-06-10. Ordered by priority. Check items off as they are fixed.
 
-**Update 2026-06-10:** P0 security items fixed, jspdf critical bumped, project hygiene cleaned. Remaining: Dockerfile build-args (needs CapRover-side change), the major dependency migrations (next/drizzle), and the CLAUDE.md → lint-rules refactor. Build verified passing after changes.
+**Update 2026-06-10:** P0 security items fixed, jspdf critical bumped, project hygiene cleaned. Build verified passing after changes.
+
+**Update 2026-07-01:** Second pass — API security headers, `GET /api/track-click` auth, the rate-limiter stub, and the CLAUDE.md → validator refactor are all done (details below). Build verified (81/81 pages) and `npm run lint:kennisbank` passes clean. Genuinely remaining: Dockerfile build-args (needs CapRover-side change) and the major dependency migrations (next/drizzle) — both need infra/testing decisions, see notes.
 
 ---
 
@@ -26,9 +28,9 @@ Added `verifyAdminAndGetWebsite(request)` to each (same pattern as the other adm
 
 ### 4. Smaller security items
 - [x] [app/api/track-click/route.js](app/api/track-click/route.js) — now validates `snippetId` against `/^[A-Za-z0-9_-]{1,128}$/` and caps distinct keys at 1000 (returns 429 when full). Also stops leaking raw error messages.
-- [ ] Middleware matcher excludes `/api`, so API responses get no security headers. Consider adding `nosniff` to API JSON responses.
-- [ ] Note: JWT tokens are valid 24h with no server-side revocation. Acceptable for single-admin, but logout is client-side only.
-- [ ] `GET /api/track-click` returns all click stats with no auth (minor info leak of click counts). Add auth if these are considered sensitive.
+- [x] API responses now get security headers via [next.config.js](next.config.js) `headers()` for `/api/:path*` (`nosniff`, `Referrer-Policy`, `X-Frame-Options: DENY`). Set there rather than middleware because the middleware matcher excludes `/api`.
+- [x] `GET /api/track-click` now requires admin JWT (was returning all click stats unauthenticated). No frontend calls the GET — components only POST clicks — so this is safe.
+- [ ] Note: JWT tokens are valid 24h with no server-side revocation. Acceptable for single-admin, but logout is client-side only. (Design choice, not a quick fix — left as-is.)
 
 ---
 
@@ -52,12 +54,12 @@ Remaining `npm audit`: 10 (5 moderate, 5 high) — all require the major migrati
 
 ### Tooling
 - [x] Removed `pnpm-lock.yaml` — kept `package-lock.json` (Docker uses `npm ci`).
-- [ ] The ~1000-line [CLAUDE.md](CLAUDE.md) styling rulebook is manually enforced. Convert the high-value rules (forbidden colors, card-within-card, bullet styling, font sizes) into ESLint rules or a validator script so violations fail at lint time instead of relying on re-reading the doc.
+- [x] Added a validator for the high-value CLAUDE.md rules: [scripts/lint-kennisbank.mjs](scripts/lint-kennisbank.mjs), run via `npm run lint:kennisbank`. Checks forbidden colored classes (amber allowed for warnings), UTF-8 emojis (the `→` link arrow is allowed), gray bullet dots, oversized headings (text-3xl/4xl), and inline `style` attributes. Exits non-zero on violations (CI-ready). The `template/` page is excluded (it documents the rules and quotes forbidden classes as examples). Fixed the 8 real violations it surfaced (orange/red classes in hygiene-bereiding, problemen-oplossen, hypoallergene-flesvoeding; a 🔄 emoji in voedingstechnieken). Not converted to ESLint rules — a standalone script was simpler and covers the highest-signal cases.
 
 ---
 
 ## P3 — Follow-ups discovered during fixes
-- [ ] [lib/rate-limiter.ts](lib/rate-limiter.ts): `RedisRateLimiter.checkWithRedis()` / `checkInMemory()` are stubs that always return `allowed: true`. So `createRateLimiter()` silently disables rate limiting whenever `REDIS_URL` is set. Either implement a real Redis client or have `createRateLimiter` fall back to the working `InMemoryRateLimiter`. The contact form and the new login limiter currently use their own inline in-memory stores to avoid this trap.
+- [x] [lib/rate-limiter.ts](lib/rate-limiter.ts): `RedisRateLimiter` no longer returns `{ allowed: true }` unconditionally. It now composes a real `InMemoryRateLimiter` and delegates to it (both when `REDIS_URL` is unset and as the not-yet-implemented Redis path), so limits are never silently bypassed. A real Redis sliding window is still a TODO, but the fallback enforces in the meantime. (`createRateLimiter` is currently unused — contact form and login use inline limiters — but it's now safe for future use.)
 
 ---
 

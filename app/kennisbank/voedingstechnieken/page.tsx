@@ -389,7 +389,7 @@ function VoedingstechniekenPage() {
           </p>
 
           <div className="bg-white rounded-xl p-4 border border-gray-200 mb-6">
-            <h3 className="text-primary font-medium mb-3">🔄 Snelle stappen overzicht:</h3>
+            <h3 className="text-primary font-medium mb-3">Snelle stappen overzicht:</h3>
             <div className="grid md:grid-cols-3 gap-4">
  <div className="p-3">
                 <h4 className="font-medium text-primary mb-1">1. Water voorbereiden</h4>
