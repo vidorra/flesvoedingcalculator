@@ -3,6 +3,9 @@ import fs from 'fs'
 import path from 'path'
 import { fetchPrice } from '../../../../lib/price-fetcher.js'
 import { verifyAdminAndGetWebsite } from '../../../../lib/jwt-utils.js'
+import { db } from '../../../../lib/db/connection.js'
+import { snippets as snippetsTable } from '../../../../lib/db/schema.js'
+import { eq, and } from 'drizzle-orm'
 
 // Force dynamic route
 export const dynamic = 'force-dynamic'
@@ -51,7 +54,10 @@ function saveSnippets(snippets) {
 // POST - Sync prices for all active snippets
 export async function POST(request) {
   try {
-    if (!isAuthenticated(request)) {
+    let website
+    try {
+      website = verifyAdminAndGetWebsite(request).website
+    } catch {
       return NextResponse.json(
         { message: 'Unauthorized' },
         { status: 401 }
@@ -59,8 +65,12 @@ export async function POST(request) {
     }
 
     console.log('🔄 Starting price sync for all snippets...')
-    
-    const snippets = loadSnippets()
+
+    // Snippets live in the DB now (website-scoped)
+    const snippets = await db
+      .select()
+      .from(snippetsTable)
+      .where(eq(snippetsTable.website, website))
     const activeSnippets = snippets.filter(snippet => snippet.active && snippet.url)
     
     console.log(`📊 Found ${activeSnippets.length} active snippets to sync`)
@@ -90,34 +100,20 @@ export async function POST(request) {
         })
         
         if (priceData && (priceData.price || priceData.originalPrice)) {
-          // Find the snippet in the full array and update it
-          const snippetIndex = snippets.findIndex(s => s.id === snippet.id)
-          if (snippetIndex !== -1) {
-            const updatedSnippet = {
-              ...snippets[snippetIndex],
+          // Update the row directly in the DB (website-scoped)
+          await db
+            .update(snippetsTable)
+            .set({
               price: priceData.price,
               originalPrice: priceData.originalPrice,
               currency: priceData.currency || 'EUR',
-              priceLastUpdated: new Date().toISOString(),
-              updatedAt: new Date().toISOString()
-            }
-            
-            snippets[snippetIndex] = updatedSnippet
-            
-            console.log(`✅ Updated prices for "${snippet.name}": ${priceData.price}${priceData.originalPrice ? ` (was ${priceData.originalPrice})` : ''}`)
-            console.log(`💾 Updated snippet data:`, {
-              id: updatedSnippet.id,
-              name: updatedSnippet.name,
-              price: updatedSnippet.price,
-              originalPrice: updatedSnippet.originalPrice,
-              priceLastUpdated: updatedSnippet.priceLastUpdated
+              priceLastUpdated: new Date(),
+              updatedAt: new Date()
             })
-            successCount++
-          } else {
-            console.log(`❌ Could not find snippet with ID ${snippet.id} in snippets array`)
-            errors.push(`Could not find snippet "${snippet.name}" in database for update`)
-            errorCount++
-          }
+            .where(and(eq(snippetsTable.id, snippet.id), eq(snippetsTable.website, website)))
+
+          console.log(`✅ Updated prices for "${snippet.name}": ${priceData.price}${priceData.originalPrice ? ` (was ${priceData.originalPrice})` : ''}`)
+          successCount++
         } else {
           const errorDetail = priceData ? 
             `Price data returned but no valid price found. Response: ${JSON.stringify(priceData)}` :
@@ -141,12 +137,8 @@ export async function POST(request) {
       }
     }
     
-    // Save updated snippets
-    if (successCount > 0) {
-      saveSnippets(snippets)
-      console.log(`💾 Saved ${successCount} updated snippets`)
-    }
-    
+    // Price updates were written to the DB inline above.
+
     console.log(`🏁 Price sync completed: ${successCount} successful, ${errorCount} errors`)
     
     return NextResponse.json({

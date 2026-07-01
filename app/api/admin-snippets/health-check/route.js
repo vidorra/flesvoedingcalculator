@@ -4,6 +4,9 @@ import path from 'path'
 import { JSDOM } from 'jsdom'
 import bolAPI from '../../../../lib/bol-api.js'
 import { verifyAdminAndGetWebsite } from '../../../../lib/jwt-utils.js'
+import { db } from '../../../../lib/db/connection.js'
+import { snippets as snippetsTable } from '../../../../lib/db/schema.js'
+import { eq } from 'drizzle-orm'
 
 export const dynamic = 'force-dynamic'
 
@@ -279,9 +282,12 @@ async function checkSnippet(snippet) {
 // POST - Run health check on all active snippets
 export async function POST(request) {
   try {
-    verifyAdminAndGetWebsite(request)
+    const { website } = verifyAdminAndGetWebsite(request)
     console.log('🏥 Starting snippet health check...')
-    const snippets = loadSnippets()
+    const snippets = await db
+      .select()
+      .from(snippetsTable)
+      .where(eq(snippetsTable.website, website))
     const activeSnippets = snippets.filter(s => s.active !== false)
 
     console.log(`📊 Checking ${activeSnippets.length} active snippets`)
