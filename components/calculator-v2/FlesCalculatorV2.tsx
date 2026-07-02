@@ -89,9 +89,9 @@ function ResultBody({ results, hint }: { results: ReturnType<typeof computeFeedi
         <div className="text-4xl font-bold text-primary leading-none">{results.recommendedAmount} ml</div>
       </div>
       <div className="space-y-2 border-t border-gray-200 pt-4">
-        <div className="flex items-center justify-between px-3 py-2 rounded-xl bg-gray-50">
-          <span className="text-sm text-gray-600">Schepjes poeder</span>
-          <span className="text-sm font-bold text-gray-900">{schepjes}</span>
+        <div className="flex items-center justify-between gap-2 px-3 py-2 rounded-xl bg-gray-50">
+          <span className="text-sm text-gray-600 flex-shrink-0">Bereiding</span>
+          <span className="text-sm font-bold text-gray-900 text-right">{results.recommendedAmount} ml water + {schepjes} schepjes</span>
         </div>
         <div className="flex items-center justify-between px-3 py-2 rounded-xl bg-gray-50">
           <span className="text-sm text-gray-600">Bij groeispurt</span>
@@ -289,7 +289,11 @@ export default function FlesCalculatorV2() {
                 />
                 <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm">ml</span>
               </div>
-              <p className="text-xs text-gray-500 mt-2">1 afgestreken schepje per 30 ml water.</p>
+              <p className="text-xs text-gray-500 mt-2">
+                {customSchepjes
+                  ? <>Bereiding: <strong className="text-gray-700">{customAmount} ml water + {customSchepjes} schepjes</strong> (het schepje gaat niet van het water af)</>
+                  : '1 afgestreken schepje per 30 ml water.'}
+              </p>
             </Section>
 
             <p className="text-xs text-gray-500 flex items-start gap-1.5">
