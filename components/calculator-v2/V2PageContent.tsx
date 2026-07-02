@@ -44,16 +44,6 @@ export default function V2PageContent() {
         {/* Sidebar */}
         <div className="col-span-12 lg:col-span-5 space-y-6">
           <div className="hidden lg:block space-y-6">
-            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
-              <Image
-                src="/mother_and_baby.webp"
-                alt="Moeder en baby"
-                width={300}
-                height={200}
-                className="w-full h-auto rounded-xl"
-              />
-            </div>
-
             {showAds && (
               <div className="text-center space-y-2">
                 <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
@@ -73,16 +63,6 @@ export default function V2PageContent() {
             )}
 
             <PopularProductsWidget limit={4} />
-
-            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
-              <Image
-                src="/baby.webp"
-                alt="Baby"
-                width={300}
-                height={200}
-                className="w-full h-auto rounded-xl"
-              />
-            </div>
           </div>
 
           <div className="space-y-4">
@@ -104,6 +84,30 @@ export default function V2PageContent() {
               </div>
             )}
           </div>
+        </div>
+      </div>
+
+      {/* Image strip at the bottom (moved out of the sidebar) */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+          <Image
+            src="/mother_and_baby.webp"
+            alt="Moeder en baby"
+            width={600}
+            height={400}
+            sizes="(max-width: 640px) 100vw, 50vw"
+            className="w-full h-64 object-cover rounded-xl"
+          />
+        </div>
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+          <Image
+            src="/baby.webp"
+            alt="Baby"
+            width={600}
+            height={400}
+            sizes="(max-width: 640px) 100vw, 50vw"
+            className="w-full h-64 object-cover rounded-xl"
+          />
         </div>
       </div>
 
