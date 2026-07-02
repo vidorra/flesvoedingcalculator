@@ -139,7 +139,7 @@ function roundToFive(num: number): number {
 /**
  * Calculate ml/kg for premature babies based on gestational age
  */
-function getPrematureMlPerKg(gestationalAge: number, correctedAgeWeeks: number): { mlPerKg: number; note: string } {
+export function getPrematureMlPerKg(gestationalAge: number, correctedAgeWeeks: number): { mlPerKg: number; note: string } {
   if (correctedAgeWeeks < 0) {
     return {
       mlPerKg: PREMATURE_FEEDING.ML_PER_KG_BEFORE_TERM,
