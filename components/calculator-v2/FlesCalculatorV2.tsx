@@ -87,11 +87,18 @@ function ResultBody({ results, hint }: { results: ReturnType<typeof computeFeedi
       <div className="text-center mb-4">
         <div className="text-[11px] uppercase tracking-wide text-gray-500 mb-1">Per voeding</div>
         <div className="text-4xl font-bold text-primary leading-none">{results.recommendedAmount} ml</div>
-        <div className="text-xs text-gray-500 mt-1">
-          {schepjes} schepjes poeder · bij groeispurt tot {results.maxAmount} ml
+      </div>
+      <div className="space-y-2 border-t border-gray-200 pt-4">
+        <div className="flex items-center justify-between px-3 py-2 rounded-xl bg-gray-50">
+          <span className="text-sm text-gray-600">Schepjes poeder</span>
+          <span className="text-sm font-bold text-gray-900">{schepjes}</span>
+        </div>
+        <div className="flex items-center justify-between px-3 py-2 rounded-xl bg-gray-50">
+          <span className="text-sm text-gray-600">Bij groeispurt</span>
+          <span className="text-sm font-bold text-gray-900">tot {results.maxAmount} ml</span>
         </div>
       </div>
-      <div className="flex items-stretch gap-3 border-t border-gray-200 pt-4">
+      <div className="flex items-stretch gap-3 border-t border-gray-200 pt-4 mt-4">
         <div className="flex-1 text-center">
           <div className="text-[11px] uppercase tracking-wide text-gray-500 mb-1">Per dag</div>
           <div className="text-2xl font-bold text-gray-900 leading-none">{results.dailyAmount} ml</div>
@@ -116,6 +123,13 @@ export default function FlesCalculatorV2() {
   const [feedingsPerDay, setFeedingsPerDay] = useState('7')
   const [gestationalAge, setGestationalAge] = useState('')
   const [birthDate, setBirthDate] = useState('')
+  const [customAmount, setCustomAmount] = useState('')
+
+  const customSchepjes = useMemo(() => {
+    const ml = parseFloat(customAmount)
+    if (!customAmount || Number.isNaN(ml) || ml <= 0) return null
+    return (ml / FEEDING_MEASUREMENTS.SCOOP_SIZE_ML).toFixed(1)
+  }, [customAmount])
 
   const results = useMemo(
     () => computeFeeding({ weight, ageMonths, feedingsPerDay, isPremature, gestationalAge, birthDate }),
@@ -136,7 +150,7 @@ export default function FlesCalculatorV2() {
   const schedule = results ? generateFeedingSchedule(results.feedingsPerDay, results.recommendedAmount) : null
 
   return (
-    <div className="relative pb-40 lg:pb-8">
+    <div className="relative pb-8">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-6">
@@ -262,6 +276,21 @@ export default function FlesCalculatorV2() {
                 </div>
               </Section>
             )}
+
+            {/* Schepjes calculator (custom amount) */}
+            <Section icon={<Milk className="w-5 h-5" />} title="Schepjes calculator" subtitle="Voor een afwijkende hoeveelheid" value={customSchepjes ? `${customSchepjes} schepjes` : undefined}>
+              <div className="relative">
+                <input
+                  type="number" min={0} step="5" inputMode="numeric"
+                  value={customAmount}
+                  onChange={e => setCustomAmount(e.target.value)}
+                  placeholder="bijv. 120"
+                  className="w-full px-4 py-3 pr-10 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary outline-none text-gray-800 placeholder:text-gray-400"
+                />
+                <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm">ml</span>
+              </div>
+              <p className="text-xs text-gray-500 mt-2">1 afgestreken schepje per 30 ml water.</p>
+            </Section>
 
             <p className="text-xs text-gray-500 flex items-start gap-1.5">
               <Info className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" />

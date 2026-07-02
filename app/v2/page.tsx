@@ -1,5 +1,5 @@
 import Layout from '../../components/Layout'
-import FlesCalculatorV2 from '../../components/calculator-v2/FlesCalculatorV2'
+import V2PageContent from '../../components/calculator-v2/V2PageContent'
 
 export const metadata = {
   title: 'Flesvoeding Calculator (nieuw ontwerp) | FlesvoedingCalculator.nl',
@@ -11,7 +11,7 @@ export const metadata = {
 export default function V2Page() {
   return (
     <Layout>
-      <FlesCalculatorV2 />
+      <V2PageContent />
     </Layout>
   )
 }
