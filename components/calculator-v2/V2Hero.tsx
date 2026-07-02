@@ -34,7 +34,7 @@ export default function V2Hero() {
         </div>
         <div className="absolute left-[6vw] bottom-0 w-[14vw] max-w-[260px] rotate-2">
           <Image
-            src="/close-up-baby.webp"
+            src="/mother_and_baby.webp"
             alt=""
             width={450}
             height={300}

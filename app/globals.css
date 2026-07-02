@@ -261,3 +261,9 @@ main {
     line-height: 1.15 !important;
   }
 }
+/* Hide the floating reCAPTCHA badge (it overlapped the mobile result bar).
+   Allowed by Google because the required attribution text is shown in the
+   contact form itself (ContactModal). */
+.grecaptcha-badge {
+  visibility: hidden;
+}
