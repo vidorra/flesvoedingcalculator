@@ -11,7 +11,7 @@ import { FAQSection, FeedingTypesInfo } from '../calculator'
  * homepage offers (hero, info sections, FAQ, sidebar images, ads, popular
  * products) so v2 is feature-complete, not a stripped-down variant.
  */
-export default function V2PageContent() {
+export default function V2PageContent({ hero }: { hero?: React.ReactNode }) {
   const [showAds, setShowAds] = useState<boolean | null>(null)
 
   useEffect(() => {
@@ -23,8 +23,8 @@ export default function V2PageContent() {
 
   return (
     <>
-      {/* Hero Section (centered, flanked by floating images + stat badges) */}
-      <V2Hero />
+      {/* Hero Section (default: centered with floating images; v3/v4 pass their own) */}
+      {hero ?? <V2Hero />}
 
       {/* Calculator (alternative UX: live calc + sticky result panel) */}
       <div id="calculator-v2" className="mt-6 scroll-mt-6">
