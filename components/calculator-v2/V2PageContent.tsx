@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import HeroSection from '../HeroSection'
+import V2Hero from './V2Hero'
 import FlesCalculatorV2 from './FlesCalculatorV2'
 import PopularProductsWidget from '../PopularProductsWidget'
 import { FAQSection, FeedingTypesInfo } from '../calculator'
@@ -24,11 +24,11 @@ export default function V2PageContent() {
 
   return (
     <>
-      {/* Hero Section */}
-      <HeroSection />
+      {/* Hero Section (centered, flanked by floating images + stat badges) */}
+      <V2Hero />
 
       {/* Calculator (alternative UX: live calc + sticky result panel) */}
-      <div className="mt-6">
+      <div id="calculator-v2" className="mt-6 scroll-mt-6">
         <FlesCalculatorV2 />
       </div>
 
