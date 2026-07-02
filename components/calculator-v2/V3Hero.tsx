@@ -1,21 +1,36 @@
 'use client'
 
 import Image from 'next/image'
-import { Calculator, Droplet } from 'lucide-react'
+import { Calculator, Droplet, Clock } from 'lucide-react'
 
 /**
  * /v3 hero: bolder take on the v2 hero. Oversized headline up top and a
- * photo collage strip along the bottom edge (mixed shapes: circle, tilted
- * cards, a colour blob with the CTA pill), inspired by big-typography
- * editorial heroes. Flesvoeding colours only (teal, gray borders).
+ * photo collage along the bottom, gusta.studio-inspired spacing: large
+ * staggered images with generous air, especially on mobile. Flesvoeding
+ * style kept (teal, rounded-2xl cards, gray borders, honest stat badges).
  */
+
+function StatBadge({ icon, value, label, className = '' }: { icon: React.ReactNode; value: string; label: string; className?: string }) {
+  return (
+    <div className={`inline-flex items-center gap-2 bg-white rounded-2xl border border-gray-200 shadow-md px-4 py-3 ${className}`}>
+      <div className="w-8 h-8 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+        {icon}
+      </div>
+      <div>
+        <div className="text-lg font-bold text-gray-900 leading-none">{value}</div>
+        <div className="text-[11px] text-gray-500">{label}</div>
+      </div>
+    </div>
+  )
+}
+
 export default function V3Hero() {
   const scrollToCalculator = () => {
     document.getElementById('calculator-v2')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   return (
-    <section className="relative py-8 px-4 lg:py-10 lg:min-h-[calc(100svh-180px)] lg:max-h-[900px] lg:flex lg:flex-col lg:justify-between">
+    <section className="relative pt-8 px-4 lg:py-10 lg:min-h-[calc(100svh-180px)] lg:max-h-[900px] lg:flex lg:flex-col lg:justify-between">
       {/* Headline */}
       <div className="max-w-5xl mx-auto text-center pt-2 lg:pt-8">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-[1.05] tracking-tight mb-5">
@@ -36,69 +51,98 @@ export default function V3Hero() {
         </button>
       </div>
 
-      {/* Collage strip along the bottom edge */}
-      <div className="mt-10 lg:mt-6 flex items-end justify-center gap-4 lg:gap-6" aria-hidden="true">
-        {/* Colour blob with CTA pill */}
-        <div className="hidden md:flex relative w-[16vw] max-w-[240px] aspect-[4/3] bg-primary/15 rounded-[3rem] items-center justify-center -translate-y-4">
-          <button
-            onClick={scrollToCalculator}
-            className="pointer-events-auto bg-primary hover:bg-primary-hover text-white text-sm font-medium px-5 py-2.5 rounded-full transition-colors rotate-[-4deg]"
-          >
-            Bereken →
-          </button>
-        </div>
-
-        {/* Circle photo */}
-        <div className="w-[26vw] md:w-[15vw] max-w-[230px] aspect-square rounded-full overflow-hidden border border-gray-200 shadow-md translate-y-2">
+      {/* Mobile collage: large staggered images with generous air (gusta-like) */}
+      <div className="md:hidden mt-12" aria-hidden="true">
+        <div className="w-[58vw] max-w-[320px] ml-1 rotate-[-2deg] rounded-2xl overflow-hidden border border-gray-200 shadow-md">
           <Image
             src="/flesvoeding-door-mama.webp"
             alt=""
             width={450}
-            height={450}
-            sizes="(max-width: 768px) 26vw, 15vw"
+            height={340}
+            sizes="58vw"
+            className="w-full h-auto object-cover"
+          />
+        </div>
+
+        <div className="flex justify-end -mt-10 mr-1">
+          <div className="w-[46vw] max-w-[260px] rotate-2 rounded-2xl overflow-hidden border border-gray-200 shadow-md aspect-[4/5]">
+            <Image
+              src="/baby.webp"
+              alt=""
+              width={400}
+              height={500}
+              sizes="46vw"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <div className="mt-6 ml-4">
+          <StatBadge icon={<Droplet className="w-4 h-4" />} value="150 ml" label="per kg per dag" className="rotate-[-2deg]" />
+        </div>
+
+        <div className="w-[64vw] max-w-[360px] mx-auto mt-6 rotate-[1deg] rounded-2xl overflow-hidden border border-gray-200 shadow-md">
+          <Image
+            src="/mother_and_baby.webp"
+            alt=""
+            width={450}
+            height={340}
+            sizes="64vw"
+            className="w-full h-auto object-cover"
+          />
+        </div>
+
+        <div className="flex justify-end mt-4 mr-3 pb-2">
+          <StatBadge icon={<Clock className="w-4 h-4" />} value="4-10×" label="voedingen per dag" className="rotate-[2deg]" />
+        </div>
+      </div>
+
+      {/* Desktop collage strip along the bottom edge */}
+      <div className="hidden md:flex mt-10 lg:mt-6 items-end justify-center gap-4 lg:gap-6" aria-hidden="true">
+        {/* Stat badge (was the CTA blob) */}
+        <StatBadge icon={<Clock className="w-4 h-4" />} value="4-10×" label="voedingen per dag" className="-translate-y-10 rotate-[-3deg]" />
+
+        {/* Photo card */}
+        <div className="w-[15vw] max-w-[230px] aspect-[4/5] rounded-2xl overflow-hidden border border-gray-200 shadow-md rotate-[-2deg] translate-y-2">
+          <Image
+            src="/flesvoeding-door-mama.webp"
+            alt=""
+            width={450}
+            height={560}
+            sizes="15vw"
             className="w-full h-full object-cover"
           />
         </div>
 
         {/* Tall tilted card */}
-        <div className="w-[30vw] md:w-[18vw] max-w-[280px] aspect-[4/5] rounded-2xl overflow-hidden border border-gray-200 shadow-md rotate-2 -translate-y-3">
+        <div className="w-[18vw] max-w-[280px] aspect-[4/5] rounded-2xl overflow-hidden border border-gray-200 shadow-md rotate-2 -translate-y-3">
           <Image
             src="/baby.webp"
             alt=""
             width={450}
             height={560}
-            sizes="(max-width: 768px) 30vw, 18vw"
+            sizes="18vw"
             className="w-full h-full object-cover"
           />
         </div>
 
         {/* Stat chip */}
-        <div className="hidden lg:flex flex-col items-start bg-white rounded-2xl border border-gray-200 shadow-md px-4 py-3 -translate-y-16 rotate-[-3deg]">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-              <Droplet className="w-4 h-4" />
-            </div>
-            <div>
-              <div className="text-lg font-bold text-gray-900 leading-none">150 ml</div>
-              <div className="text-[11px] text-gray-500">per kg per dag</div>
-            </div>
-          </div>
-        </div>
+        <StatBadge icon={<Droplet className="w-4 h-4" />} value="150 ml" label="per kg per dag" className="-translate-y-16 rotate-[-3deg]" />
 
         {/* Wide card */}
-        <div className="w-[28vw] md:w-[17vw] max-w-[260px] aspect-[5/4] rounded-2xl overflow-hidden border border-gray-200 shadow-md -rotate-2 translate-y-1">
+        <div className="w-[17vw] max-w-[260px] aspect-[5/4] rounded-2xl overflow-hidden border border-gray-200 shadow-md -rotate-2 translate-y-1">
           <Image
             src="/mother_and_baby.webp"
             alt=""
             width={450}
             height={360}
-            sizes="(max-width: 768px) 28vw, 17vw"
+            sizes="17vw"
             className="w-full h-full object-cover"
           />
         </div>
 
         {/* Small card */}
-        <div className="hidden md:block w-[12vw] max-w-[180px] aspect-square rounded-2xl overflow-hidden border border-gray-200 shadow-md rotate-3 -translate-y-6">
+        <div className="w-[12vw] max-w-[180px] aspect-square rounded-2xl overflow-hidden border border-gray-200 shadow-md rotate-3 -translate-y-6">
           <Image
             src="/flesvoeding-close-up.webp"
             alt=""
