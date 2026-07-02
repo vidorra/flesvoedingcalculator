@@ -16,32 +16,34 @@ export default function V2Hero() {
   }
 
   return (
-    <section className="relative py-8 px-4 lg:py-14 lg:min-h-[560px]">
+    // Header + main padding is ~180px, so this fills the first viewport
+    // (header + hero = 100svh) on desktop for a calm, uncluttered opening.
+    <section className="relative py-8 px-4 lg:py-10 lg:flex lg:flex-col lg:justify-center lg:min-h-[calc(100svh-180px)] lg:max-h-[860px]">
       {/* Floating images + stat badges (desktop only, calm) */}
       <div className="hidden lg:block absolute inset-0 pointer-events-none" aria-hidden="true">
         {/* Left side */}
-        <div className="absolute left-2 xl:left-8 top-2 w-56 xl:w-72 -rotate-3">
+        <div className="absolute left-[1vw] top-2 w-[17vw] max-w-[300px] -rotate-3">
           <Image
             src="/flesvoeding-door-mama.webp"
             alt=""
             width={450}
             height={300}
-            sizes="290px"
+            sizes="17vw"
             className="w-full h-auto rounded-2xl border border-gray-200 shadow-md"
           />
         </div>
-        <div className="absolute left-20 xl:left-32 bottom-0 w-48 xl:w-64 rotate-2">
+        <div className="absolute left-[6vw] bottom-0 w-[14vw] max-w-[260px] rotate-2">
           <Image
             src="/close-up-baby.webp"
             alt=""
             width={450}
             height={300}
-            sizes="260px"
+            sizes="14vw"
             className="w-full h-auto rounded-2xl border border-gray-200 shadow-md"
           />
         </div>
         {/* Stat badge left */}
-        <div className="absolute left-6 xl:left-14 bottom-48 bg-white rounded-2xl border border-gray-200 shadow-md px-4 py-3 rotate-[-2deg]">
+        <div className="absolute left-[2vw] bottom-[38%] bg-white rounded-2xl border border-gray-200 shadow-md px-4 py-3 rotate-[-2deg]">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
               <Droplet className="w-4 h-4" />
@@ -54,28 +56,28 @@ export default function V2Hero() {
         </div>
 
         {/* Right side */}
-        <div className="absolute right-2 xl:right-8 top-4 w-56 xl:w-72 rotate-3">
+        <div className="absolute right-[1vw] top-4 w-[17vw] max-w-[300px] rotate-3">
           <Image
             src="/baby.webp"
             alt=""
             width={450}
             height={300}
-            sizes="290px"
+            sizes="17vw"
             className="w-full h-auto rounded-2xl border border-gray-200 shadow-md"
           />
         </div>
-        <div className="absolute right-16 xl:right-28 bottom-2 w-48 xl:w-64 -rotate-2">
+        <div className="absolute right-[5vw] bottom-2 w-[14vw] max-w-[260px] -rotate-2">
           <Image
             src="/flesvoeding-close-up.webp"
             alt=""
             width={450}
             height={300}
-            sizes="260px"
+            sizes="14vw"
             className="w-full h-auto rounded-2xl border border-gray-200 shadow-md"
           />
         </div>
         {/* Stat badge right */}
-        <div className="absolute right-6 xl:right-12 bottom-52 bg-white rounded-2xl border border-gray-200 shadow-md px-4 py-3 rotate-[2deg]">
+        <div className="absolute right-[2vw] bottom-[42%] bg-white rounded-2xl border border-gray-200 shadow-md px-4 py-3 rotate-[2deg]">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
               <Clock className="w-4 h-4" />
@@ -89,7 +91,7 @@ export default function V2Hero() {
       </div>
 
       {/* Centered content */}
-      <div className="relative z-10 max-w-3xl mx-auto text-center lg:px-60 xl:px-72 lg:max-w-none">
+      <div className="relative z-10 max-w-3xl mx-auto text-center lg:px-[20vw] lg:max-w-none">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-medium text-gray-900 mb-4 lg:mb-6 leading-tight" style={{ letterSpacing: '-0.02em' }}>
             Bereken de <span className="text-primary">juiste hoeveelheid</span> flesvoeding voor uw baby
