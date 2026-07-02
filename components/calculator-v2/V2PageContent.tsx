@@ -31,58 +31,56 @@ export default function V2PageContent() {
         <FlesCalculatorV2 />
       </div>
 
-      {/* Below-calculator content: same inventory as the homepage */}
-      <div className="grid grid-cols-12 gap-6 mt-10">
-        <div className="col-span-12 lg:col-span-7">
+      {/* Below-calculator content, aligned to the same grid as the calculator:
+          left column lines up with the inputs, the 340px right column sits
+          directly under the result panel (ads + products live there). */}
+      <div className="max-w-5xl mx-auto mt-6 lg:grid lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-6 lg:items-start">
+        <div>
           <div className="space-y-6">
             <FeedingTypesInfo />
           </div>
           <FAQSection />
         </div>
 
-        {/* Sidebar */}
-        <div className="col-span-12 lg:col-span-5 space-y-6">
-          <div className="hidden lg:block space-y-6">
-            {showAds && (
-              <div className="text-center space-y-2">
-                <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
-                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938"
-                    crossOrigin="anonymous"></script>
-                  <ins className="adsbygoogle"
-                    style={{ display: 'block' }}
-                    data-ad-client="ca-pub-5215838917916938"
-                    data-ad-slot="5691109362"
-                    data-ad-format="auto"
-                    data-full-width-responsive="true"></ins>
-                  <script dangerouslySetInnerHTML={{
-                    __html: '(adsbygoogle = window.adsbygoogle || []).push({});'
-                  }}></script>
-                </div>
+        {/* Right column: under the calculator's result panel */}
+        <div className="space-y-6 mt-6 lg:mt-0">
+          {showAds && (
+            <div className="text-center space-y-2">
+              <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938"
+                  crossOrigin="anonymous"></script>
+                <ins className="adsbygoogle"
+                  style={{ display: 'block' }}
+                  data-ad-client="ca-pub-5215838917916938"
+                  data-ad-slot="5691109362"
+                  data-ad-format="auto"
+                  data-full-width-responsive="true"></ins>
+                <script dangerouslySetInnerHTML={{
+                  __html: '(adsbygoogle = window.adsbygoogle || []).push({});'
+                }}></script>
               </div>
-            )}
+            </div>
+          )}
 
-            <PopularProductsWidget limit={4} />
-          </div>
+          <PopularProductsWidget limit={4} />
 
-          <div className="space-y-4">
-            {showAds && (
-              <div className="text-center space-y-2">
-                <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
-                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938"
-                    crossOrigin="anonymous"></script>
-                  <ins className="adsbygoogle"
-                    style={{ display: 'block' }}
-                    data-ad-client="ca-pub-5215838917916938"
-                    data-ad-slot="5863882645"
-                    data-ad-format="auto"
-                    data-full-width-responsive="true"></ins>
-                  <script dangerouslySetInnerHTML={{
-                    __html: '(adsbygoogle = window.adsbygoogle || []).push({});'
-                  }}></script>
-                </div>
+          {showAds && (
+            <div className="text-center space-y-2">
+              <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938"
+                  crossOrigin="anonymous"></script>
+                <ins className="adsbygoogle"
+                  style={{ display: 'block' }}
+                  data-ad-client="ca-pub-5215838917916938"
+                  data-ad-slot="5863882645"
+                  data-ad-format="auto"
+                  data-full-width-responsive="true"></ins>
+                <script dangerouslySetInnerHTML={{
+                  __html: '(adsbygoogle = window.adsbygoogle || []).push({});'
+                }}></script>
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
 

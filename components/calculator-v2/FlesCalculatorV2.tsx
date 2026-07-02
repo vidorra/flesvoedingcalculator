@@ -123,13 +123,6 @@ export default function FlesCalculatorV2() {
   const [feedingsPerDay, setFeedingsPerDay] = useState('7')
   const [gestationalAge, setGestationalAge] = useState('')
   const [birthDate, setBirthDate] = useState('')
-  const [customAmount, setCustomAmount] = useState('')
-
-  const customSchepjes = useMemo(() => {
-    const ml = parseFloat(customAmount)
-    if (!customAmount || Number.isNaN(ml) || ml <= 0) return null
-    return (ml / FEEDING_MEASUREMENTS.SCOOP_SIZE_ML).toFixed(1)
-  }, [customAmount])
 
   const results = useMemo(
     () => computeFeeding({ weight, ageMonths, feedingsPerDay, isPremature, gestationalAge, birthDate }),
@@ -277,28 +270,13 @@ export default function FlesCalculatorV2() {
               </Section>
             )}
 
-            {/* Schepjes calculator (custom amount) */}
-            <Section icon={<Milk className="w-5 h-5" />} title="Schepjes calculator" subtitle="Voor een afwijkende hoeveelheid" value={customSchepjes ? `${customSchepjes} schepjes` : undefined}>
-              <div className="relative">
-                <input
-                  type="number" min={0} step="5" inputMode="numeric"
-                  value={customAmount}
-                  onChange={e => setCustomAmount(e.target.value)}
-                  placeholder="bijv. 120"
-                  className="w-full px-4 py-3 pr-10 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary outline-none text-gray-800 placeholder:text-gray-400"
-                />
-                <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm">ml</span>
-              </div>
-              <p className="text-xs text-gray-500 mt-2">
-                {customSchepjes
-                  ? <>Bereiding: <strong className="text-gray-700">{customAmount} ml water + {customSchepjes} schepjes</strong> (het schepje gaat niet van het water af)</>
-                  : '1 afgestreken schepje per 30 ml water.'}
-              </p>
-            </Section>
-
             <p className="text-xs text-gray-500 flex items-start gap-1.5">
               <Info className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" />
-              Een hulpmiddel op basis van de richtlijn van het Voedingscentrum (150 ml/kg). Vervangt geen medisch advies.
+              <span>
+                Een hulpmiddel op basis van de richtlijn van het Voedingscentrum (150 ml/kg). Vervangt geen medisch advies.
+                {' '}Losse hoeveelheid omrekenen? Gebruik de{' '}
+                <Link href="/schepjes-calculator" className="text-primary hover:underline font-medium">schepjes calculator</Link>.
+              </span>
             </p>
           </div>
 
