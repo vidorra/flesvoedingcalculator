@@ -4,7 +4,9 @@ import React, { useState, useMemo } from 'react'
 import Link from 'next/link'
 import { Baby, Scale, Clock, Calendar, Milk, Info, AlertTriangle, ArrowRight } from 'lucide-react'
 import { computeFeeding } from '../../lib/feeding-calc'
-import type { AgeCategory } from '../../hooks/useCalculator'
+import { generateFeedingSchedule, type AgeCategory } from '../../hooks/useCalculator'
+import { FEEDING_MEASUREMENTS } from '../../lib/feeding-constants'
+import WarmWeerAlert from '../calculator/WarmWeerAlert'
 
 /**
  * Alternative-UX calculator (/v2). Same feeding math as the homepage, but with
@@ -70,23 +72,24 @@ function Chip({ active, onClick, children }: { active: boolean; onClick: () => v
   )
 }
 
-function ResultBody({ results }: { results: ReturnType<typeof computeFeeding> }) {
+function ResultBody({ results, hint }: { results: ReturnType<typeof computeFeeding>; hint: string }) {
   if (!results) {
     return (
       <div className="text-center py-6">
         <Milk className="w-10 h-10 mx-auto mb-3 text-primary/40" />
-        <p className="text-sm text-gray-600">
-          Vul het gewicht in en je ziet hier direct hoeveel flesvoeding je baby nodig heeft.
-        </p>
+        <p className="text-sm text-gray-600">{hint}</p>
       </div>
     )
   }
+  const schepjes = (results.recommendedAmount / FEEDING_MEASUREMENTS.SCOOP_SIZE_ML).toFixed(1)
   return (
     <>
       <div className="text-center mb-4">
         <div className="text-[11px] uppercase tracking-wide text-gray-500 mb-1">Per voeding</div>
         <div className="text-4xl font-bold text-primary leading-none">{results.recommendedAmount} ml</div>
-        <div className="text-xs text-gray-500 mt-1">bij groeispurt tot {results.maxAmount} ml</div>
+        <div className="text-xs text-gray-500 mt-1">
+          {schepjes} schepjes poeder · bij groeispurt tot {results.maxAmount} ml
+        </div>
       </div>
       <div className="flex items-stretch gap-3 border-t border-gray-200 pt-4">
         <div className="flex-1 text-center">
@@ -123,6 +126,15 @@ export default function FlesCalculatorV2() {
     ? 'Prematuur'
     : AGE_OPTIONS.find(o => o.value === ageMonths)?.label || ''
 
+  // Context-aware empty-state hint: tell the user what is actually missing.
+  const missingHint = !weight || parseFloat(weight) <= 0
+    ? 'Vul het gewicht in en je ziet hier direct hoeveel flesvoeding je baby nodig heeft.'
+    : isPremature && (!gestationalAge || !birthDate)
+      ? 'Vul de zwangerschapsduur en geboortedatum in voor de premature berekening.'
+      : 'Vul de gegevens in voor je resultaat.'
+
+  const schedule = results ? generateFeedingSchedule(results.feedingsPerDay, results.recommendedAmount) : null
+
   return (
     <div className="relative pb-40 lg:pb-8">
       <div className="max-w-5xl mx-auto">
@@ -130,6 +142,11 @@ export default function FlesCalculatorV2() {
         <div className="text-center mb-6">
           <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-2">Flesvoeding Calculator</h1>
           <p className="text-sm text-gray-500">Vul de gegevens in, je resultaat rekent live mee.</p>
+        </div>
+
+        {/* Hot-weather hydration notice (shows only at warm temperatures) */}
+        <div className="max-w-2xl mx-auto">
+          <WarmWeerAlert ageMonths={isPremature ? 'premature' : ageMonths} />
         </div>
 
         <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-6 lg:items-start">
@@ -232,6 +249,20 @@ export default function FlesCalculatorV2() {
               </div>
             )}
 
+            {/* Voedingsschema */}
+            {results && schedule && (
+              <Section icon={<Clock className="w-5 h-5" />} title="Voorbeeldschema" subtitle="Flexibel aan te passen aan jullie ritme">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                  {schedule.map((item, index) => (
+                    <div key={index} className="flex items-center justify-between px-3 py-2 rounded-xl bg-gray-50 border border-gray-200">
+                      <span className="text-sm text-gray-600">{item.time}</span>
+                      <span className="text-sm font-medium text-gray-800">{item.amount}</span>
+                    </div>
+                  ))}
+                </div>
+              </Section>
+            )}
+
             <p className="text-xs text-gray-500 flex items-start gap-1.5">
               <Info className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" />
               Een hulpmiddel op basis van de richtlijn van het Voedingscentrum (150 ml/kg). Vervangt geen medisch advies.
@@ -241,7 +272,7 @@ export default function FlesCalculatorV2() {
           {/* Right column: sticky result panel (desktop) */}
           <div className="hidden lg:block">
             <div className="lg:sticky lg:top-6 rounded-2xl border-2 border-primary/30 bg-white shadow-md p-6">
-              <ResultBody results={results} />
+              <ResultBody results={results} hint={missingHint} />
               <Link
                 href="/"
                 className="mt-5 inline-flex items-center justify-center w-full gap-2 text-sm font-medium text-primary border border-gray-200 rounded-xl py-2.5 hover:border-primary transition-colors"
@@ -276,7 +307,7 @@ export default function FlesCalculatorV2() {
               </div>
             </div>
           ) : (
-            <p className="text-sm text-gray-600 text-center">Vul het gewicht in voor je resultaat</p>
+            <p className="text-sm text-gray-600 text-center">{missingHint}</p>
           )}
         </div>
       </div>
