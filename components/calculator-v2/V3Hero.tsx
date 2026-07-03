@@ -118,7 +118,7 @@ export default function V3Hero() {
         {/* Photo card (medium, inside, lifted) */}
         <div className="w-[15vw] max-w-[230px] aspect-[4/5] rounded-2xl overflow-hidden border border-gray-200 shadow-md rotate-2 -translate-y-6">
           <Image
-            src="/flesvoeding-door-mama.webp"
+            src="/mother_and_baby.webp"
             alt=""
             width={450}
             height={560}
@@ -145,7 +145,7 @@ export default function V3Hero() {
         {/* Wide card (large, far right, lowest) */}
         <div className="w-[17vw] max-w-[260px] aspect-[5/4] rounded-2xl overflow-hidden border border-gray-200 shadow-md rotate-2 translate-y-4">
           <Image
-            src="/mother_and_baby.webp"
+            src="/flesvoeding-door-mama.webp"
             alt=""
             width={450}
             height={360}
