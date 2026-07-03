@@ -30,7 +30,7 @@ export default function V3Hero() {
   }
 
   return (
-    <section className="relative pt-8 px-4 lg:py-10 lg:min-h-[calc(100svh-180px)] lg:max-h-[900px] lg:flex lg:flex-col lg:justify-between">
+    <section className="relative pt-8 px-4 lg:pt-10 lg:pb-0 lg:min-h-[calc(100svh-180px)] lg:max-h-[900px] lg:flex lg:flex-col lg:justify-between">
       {/* Headline */}
       <div className="max-w-5xl mx-auto text-center pt-2 lg:pt-8">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-[1.05] tracking-tight mb-5">
@@ -92,30 +92,31 @@ export default function V3Hero() {
           />
         </div>
 
-        <div className="flex justify-end mt-4 mr-3 pb-2">
+        <div className="flex justify-end mt-4 mr-3">
           <StatBadge icon={<Clock className="w-4 h-4" />} value="4-10×" label="voedingen per dag" className="rotate-[2deg]" />
         </div>
       </div>
 
-      {/* Desktop collage strip along the bottom edge */}
-      <div className="hidden md:flex mt-10 lg:mt-6 items-end justify-center gap-4 lg:gap-6" aria-hidden="true">
-        {/* Stat badge (was the CTA blob) */}
-        <StatBadge icon={<Clock className="w-4 h-4" />} value="4-10×" label="voedingen per dag" className="-translate-y-10 rotate-[-3deg]" />
-
-        {/* Photo card */}
-        <div className="w-[15vw] max-w-[230px] aspect-[4/5] rounded-2xl overflow-hidden border border-gray-200 shadow-md rotate-[-2deg] translate-y-2">
+      {/* Desktop collage strip: hugs the bottom edge (dips a few px past it),
+          sizes balanced - large pair centered, mediums flanking */}
+      <div className="hidden md:flex mt-10 lg:mt-6 items-end justify-center gap-4 lg:gap-6 lg:translate-y-3" aria-hidden="true">
+        {/* Small card (left) */}
+        <div className="w-[12vw] max-w-[180px] aspect-square rounded-2xl overflow-hidden border border-gray-200 shadow-md rotate-3 translate-y-1">
           <Image
-            src="/flesvoeding-door-mama.webp"
+            src="/flesvoeding-close-up.webp"
             alt=""
-            width={450}
-            height={560}
-            sizes="15vw"
+            width={360}
+            height={360}
+            sizes="12vw"
             className="w-full h-full object-cover"
           />
         </div>
 
-        {/* Tall tilted card */}
-        <div className="w-[18vw] max-w-[280px] aspect-[4/5] rounded-2xl overflow-hidden border border-gray-200 shadow-md rotate-2 -translate-y-3">
+        {/* Stat chip */}
+        <StatBadge icon={<Droplet className="w-4 h-4" />} value="150 ml" label="per kg per dag" className="-translate-y-14 rotate-[-3deg]" />
+
+        {/* Tall card (large, centre-left) */}
+        <div className="w-[18vw] max-w-[280px] aspect-[4/5] rounded-2xl overflow-hidden border border-gray-200 shadow-md rotate-[-2deg] translate-y-2">
           <Image
             src="/baby.webp"
             alt=""
@@ -126,11 +127,8 @@ export default function V3Hero() {
           />
         </div>
 
-        {/* Stat chip */}
-        <StatBadge icon={<Droplet className="w-4 h-4" />} value="150 ml" label="per kg per dag" className="-translate-y-16 rotate-[-3deg]" />
-
-        {/* Wide card */}
-        <div className="w-[17vw] max-w-[260px] aspect-[5/4] rounded-2xl overflow-hidden border border-gray-200 shadow-md -rotate-2 translate-y-1">
+        {/* Wide card (large, centre-right, lowest) */}
+        <div className="w-[17vw] max-w-[260px] aspect-[5/4] rounded-2xl overflow-hidden border border-gray-200 shadow-md rotate-2 translate-y-4">
           <Image
             src="/mother_and_baby.webp"
             alt=""
@@ -141,14 +139,17 @@ export default function V3Hero() {
           />
         </div>
 
-        {/* Small card */}
-        <div className="w-[12vw] max-w-[180px] aspect-square rounded-2xl overflow-hidden border border-gray-200 shadow-md rotate-3 -translate-y-6">
+        {/* Stat badge */}
+        <StatBadge icon={<Clock className="w-4 h-4" />} value="4-10×" label="voedingen per dag" className="-translate-y-10 rotate-[3deg]" />
+
+        {/* Photo card (medium, right) */}
+        <div className="w-[15vw] max-w-[230px] aspect-[4/5] rounded-2xl overflow-hidden border border-gray-200 shadow-md rotate-[-2deg] translate-y-1">
           <Image
-            src="/flesvoeding-close-up.webp"
+            src="/flesvoeding-door-mama.webp"
             alt=""
-            width={360}
-            height={360}
-            sizes="12vw"
+            width={450}
+            height={560}
+            sizes="15vw"
             className="w-full h-full object-cover"
           />
         </div>
