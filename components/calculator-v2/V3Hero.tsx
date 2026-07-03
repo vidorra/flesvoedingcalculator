@@ -97,25 +97,10 @@ export default function V3Hero() {
         </div>
       </div>
 
-      {/* Desktop collage strip: hugs the bottom edge (dips a few px past it),
-          sizes balanced - large pair centered, mediums flanking */}
+      {/* Desktop collage strip: big cards on the outside hugging the bottom
+          edge, smaller cards inside lifted a bit higher */}
       <div className="hidden md:flex mt-10 lg:mt-6 items-end justify-center gap-4 lg:gap-6 lg:translate-y-3" aria-hidden="true">
-        {/* Small card (left) */}
-        <div className="w-[12vw] max-w-[180px] aspect-square rounded-2xl overflow-hidden border border-gray-200 shadow-md rotate-3 translate-y-1">
-          <Image
-            src="/flesvoeding-close-up.webp"
-            alt=""
-            width={360}
-            height={360}
-            sizes="12vw"
-            className="w-full h-full object-cover"
-          />
-        </div>
-
-        {/* Stat chip */}
-        <StatBadge icon={<Droplet className="w-4 h-4" />} value="150 ml" label="per kg per dag" className="-translate-y-14 rotate-[-3deg]" />
-
-        {/* Tall card (large, centre-left) */}
+        {/* Tall card (large, far left, bottom) */}
         <div className="w-[18vw] max-w-[280px] aspect-[4/5] rounded-2xl overflow-hidden border border-gray-200 shadow-md rotate-[-2deg] translate-y-2">
           <Image
             src="/baby.webp"
@@ -127,7 +112,37 @@ export default function V3Hero() {
           />
         </div>
 
-        {/* Wide card (large, centre-right, lowest) */}
+        {/* Stat chip */}
+        <StatBadge icon={<Droplet className="w-4 h-4" />} value="150 ml" label="per kg per dag" className="-translate-y-16 rotate-[-3deg]" />
+
+        {/* Photo card (medium, inside, lifted) */}
+        <div className="w-[15vw] max-w-[230px] aspect-[4/5] rounded-2xl overflow-hidden border border-gray-200 shadow-md rotate-2 -translate-y-6">
+          <Image
+            src="/flesvoeding-door-mama.webp"
+            alt=""
+            width={450}
+            height={560}
+            sizes="15vw"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Small card (inside, lifted a bit more) */}
+        <div className="w-[12vw] max-w-[180px] aspect-square rounded-2xl overflow-hidden border border-gray-200 shadow-md rotate-[-3deg] -translate-y-10">
+          <Image
+            src="/flesvoeding-close-up.webp"
+            alt=""
+            width={360}
+            height={360}
+            sizes="12vw"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Stat badge */}
+        <StatBadge icon={<Clock className="w-4 h-4" />} value="4-10×" label="voedingen per dag" className="-translate-y-14 rotate-[3deg]" />
+
+        {/* Wide card (large, far right, lowest) */}
         <div className="w-[17vw] max-w-[260px] aspect-[5/4] rounded-2xl overflow-hidden border border-gray-200 shadow-md rotate-2 translate-y-4">
           <Image
             src="/mother_and_baby.webp"
@@ -135,21 +150,6 @@ export default function V3Hero() {
             width={450}
             height={360}
             sizes="17vw"
-            className="w-full h-full object-cover"
-          />
-        </div>
-
-        {/* Stat badge */}
-        <StatBadge icon={<Clock className="w-4 h-4" />} value="4-10×" label="voedingen per dag" className="-translate-y-10 rotate-[3deg]" />
-
-        {/* Photo card (medium, right) */}
-        <div className="w-[15vw] max-w-[230px] aspect-[4/5] rounded-2xl overflow-hidden border border-gray-200 shadow-md rotate-[-2deg] translate-y-1">
-          <Image
-            src="/flesvoeding-door-mama.webp"
-            alt=""
-            width={450}
-            height={560}
-            sizes="15vw"
             className="w-full h-full object-cover"
           />
         </div>
