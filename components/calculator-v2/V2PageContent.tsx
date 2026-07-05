@@ -11,7 +11,7 @@ import { FAQSection, FeedingTypesInfo } from '../calculator'
  * homepage offers (hero, info sections, FAQ, sidebar images, ads, popular
  * products) so v2 is feature-complete, not a stripped-down variant.
  */
-export default function V2PageContent({ hero }: { hero?: React.ReactNode }) {
+export default function V2PageContent({ hero, simpleCalculator = false }: { hero?: React.ReactNode; simpleCalculator?: boolean }) {
   const [showAds, setShowAds] = useState<boolean | null>(null)
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function V2PageContent({ hero }: { hero?: React.ReactNode }) {
 
       {/* Calculator (alternative UX: live calc + sticky result panel) */}
       <div id="calculator-v2" className="mt-6 scroll-mt-6">
-        <FlesCalculatorV2 />
+        <FlesCalculatorV2 simple={simpleCalculator} />
       </div>
 
       {/* Below-calculator content, aligned to the same grid as the calculator:

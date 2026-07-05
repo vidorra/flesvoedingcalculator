@@ -12,7 +12,7 @@ export const metadata = {
 export default function V3Page() {
   return (
     <Layout>
-      <V2PageContent hero={<V3Hero />} />
+      <V2PageContent hero={<V3Hero />} simpleCalculator />
     </Layout>
   )
 }
