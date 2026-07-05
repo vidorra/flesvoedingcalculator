@@ -10,6 +10,11 @@ import { FAQSection, FeedingTypesInfo } from '../calculator'
  * Full /v2 page content: the alternative-UX calculator plus everything the
  * homepage offers (hero, info sections, FAQ, sidebar images, ads, popular
  * products) so v2 is feature-complete, not a stripped-down variant.
+ *
+ * With `simpleCalculator` (the /v3 layout) the info sections, FAQ, ads and
+ * products are passed INTO the calculator as slots, so the whole page shares
+ * one max-w-5xl grid: Soorten Flesvoeding + Voorbeeldschema + FAQ line up
+ * under the inputs, ads/products under the result panel.
  */
 export default function V2PageContent({ hero, simpleCalculator = false }: { hero?: React.ReactNode; simpleCalculator?: boolean }) {
   const [showAds, setShowAds] = useState<boolean | null>(null)
@@ -21,6 +26,54 @@ export default function V2PageContent({ hero, simpleCalculator = false }: { hero
       .catch(() => setShowAds(true))
   }, [])
 
+  const adUnit = (slot: string) => (
+    <div className="text-center space-y-2">
+      <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938"
+          crossOrigin="anonymous"></script>
+        <ins className="adsbygoogle"
+          style={{ display: 'block' }}
+          data-ad-client="ca-pub-5215838917916938"
+          data-ad-slot={slot}
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+        <script dangerouslySetInnerHTML={{
+          __html: '(adsbygoogle = window.adsbygoogle || []).push({});'
+        }}></script>
+      </div>
+    </div>
+  )
+
+  const rightExtra = (
+    <>
+      {showAds && adUnit('5691109362')}
+      <PopularProductsWidget limit={4} />
+      {showAds && adUnit('5863882645')}
+    </>
+  )
+
+  if (simpleCalculator) {
+    return (
+      <>
+        {/* Hero Section (v3/v4 pass their own) */}
+        {hero ?? <V2Hero />}
+
+        {/* One container: calculator grid carries all below-content as slots */}
+        <div id="calculator-v2" className="mt-6 scroll-mt-6">
+          <FlesCalculatorV2
+            simple
+            beforeSchedule={<FeedingTypesInfo />}
+            afterSchedule={<FAQSection />}
+            rightExtra={rightExtra}
+          />
+        </div>
+
+        {/* Spacer so the mobile fixed result bar never covers the last content */}
+        <div className="h-28 lg:hidden" />
+      </>
+    )
+  }
+
   return (
     <>
       {/* Hero Section (default: centered with floating images; v3/v4 pass their own) */}
@@ -28,7 +81,7 @@ export default function V2PageContent({ hero, simpleCalculator = false }: { hero
 
       {/* Calculator (alternative UX: live calc + sticky result panel) */}
       <div id="calculator-v2" className="mt-6 scroll-mt-6">
-        <FlesCalculatorV2 simple={simpleCalculator} />
+        <FlesCalculatorV2 />
       </div>
 
       {/* Below-calculator content, aligned to the same grid as the calculator:
@@ -44,43 +97,7 @@ export default function V2PageContent({ hero, simpleCalculator = false }: { hero
 
         {/* Right column: under the calculator's result panel */}
         <div className="space-y-6 mt-6 lg:mt-0">
-          {showAds && (
-            <div className="text-center space-y-2">
-              <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938"
-                  crossOrigin="anonymous"></script>
-                <ins className="adsbygoogle"
-                  style={{ display: 'block' }}
-                  data-ad-client="ca-pub-5215838917916938"
-                  data-ad-slot="5691109362"
-                  data-ad-format="auto"
-                  data-full-width-responsive="true"></ins>
-                <script dangerouslySetInnerHTML={{
-                  __html: '(adsbygoogle = window.adsbygoogle || []).push({});'
-                }}></script>
-              </div>
-            </div>
-          )}
-
-          <PopularProductsWidget limit={4} />
-
-          {showAds && (
-            <div className="text-center space-y-2">
-              <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938"
-                  crossOrigin="anonymous"></script>
-                <ins className="adsbygoogle"
-                  style={{ display: 'block' }}
-                  data-ad-client="ca-pub-5215838917916938"
-                  data-ad-slot="5863882645"
-                  data-ad-format="auto"
-                  data-full-width-responsive="true"></ins>
-                <script dangerouslySetInnerHTML={{
-                  __html: '(adsbygoogle = window.adsbygoogle || []).push({});'
-                }}></script>
-              </div>
-            </div>
-          )}
+          {rightExtra}
         </div>
       </div>
 

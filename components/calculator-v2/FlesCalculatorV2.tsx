@@ -16,6 +16,13 @@ import WarmWeerAlert from '../calculator/WarmWeerAlert'
  * `simple` (used by /v3): all inputs merged into ONE card without icons or
  * subtitles, the result panel uses the homepage's primary-gradient colours,
  * and the voorbeeldschema moves all the way to the bottom.
+ *
+ * Slots (used by /v3 so the whole page shares ONE max-w-5xl grid and the
+ * below-calculator content lines up with the calculator columns):
+ * - `beforeSchedule`: left column, after the disclaimer, before the schema
+ * - `afterSchedule`: left column, after the schema
+ * - `rightExtra`: right column, under the sticky result panel (visible on
+ *   mobile below the left column)
  */
 
 const AGE_OPTIONS: { value: AgeCategory; label: string }[] = [
@@ -156,7 +163,17 @@ function ResultBody({ results, hint, colored = false }: { results: ReturnType<ty
   )
 }
 
-export default function FlesCalculatorV2({ simple = false }: { simple?: boolean }) {
+export default function FlesCalculatorV2({
+  simple = false,
+  beforeSchedule,
+  afterSchedule,
+  rightExtra,
+}: {
+  simple?: boolean
+  beforeSchedule?: React.ReactNode
+  afterSchedule?: React.ReactNode
+  rightExtra?: React.ReactNode
+}) {
   const [ageMonths, setAgeMonths] = useState<AgeCategory>('0-1')
   const [isPremature, setIsPremature] = useState(false)
   const [weight, setWeight] = useState('')
@@ -372,30 +389,37 @@ export default function FlesCalculatorV2({ simple = false }: { simple?: boolean 
 
             {disclaimer}
 
+            {beforeSchedule}
+
             {simple && results && schedule && (
               <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-5 sm:p-6">
                 <h3 className="text-base font-medium text-gray-900 mb-3">Voorbeeldschema</h3>
                 {scheduleGrid}
               </div>
             )}
+
+            {afterSchedule}
           </div>
 
-          {/* Right column: sticky result panel (desktop) */}
-          <div className="hidden lg:block">
-            <div className={panelClass}>
-              <ResultBody results={results} hint={missingHint} colored={simple} />
-              <Link
-                href="/"
-                className={`mt-5 inline-flex items-center justify-center w-full gap-2 text-sm font-medium rounded-xl py-2.5 transition-colors ${
-                  simple
-                    ? 'text-white border border-white/40 hover:bg-white/10'
-                    : 'text-primary border border-gray-200 hover:border-primary'
-                }`}
-              >
-                Volledige calculator met schema
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+          {/* Right column: sticky result panel (desktop) + optional extra content */}
+          <div className={rightExtra ? 'mt-6 lg:mt-0 space-y-6' : 'hidden lg:block'}>
+            <div className={rightExtra ? 'hidden lg:block' : undefined}>
+              <div className={panelClass}>
+                <ResultBody results={results} hint={missingHint} colored={simple} />
+                <Link
+                  href="/"
+                  className={`mt-5 inline-flex items-center justify-center w-full gap-2 text-sm font-medium rounded-xl py-2.5 transition-colors ${
+                    simple
+                      ? 'text-white border border-white/40 hover:bg-white/10'
+                      : 'text-primary border border-gray-200 hover:border-primary'
+                  }`}
+                >
+                  Volledige calculator met schema
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
+            {rightExtra}
           </div>
         </div>
       </div>
