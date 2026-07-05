@@ -611,6 +611,13 @@ export default function NachtvoedingOptimaliserenPage() {
               <div className="font-medium text-primary">Flesvoeding Calculator →</div>
               <div className="text-sm text-gray-600">Bereken de juiste hoeveelheid voor jouw baby</div>
             </Link>
+            <a
+              href="https://togwaarde.nl/kennisbank/veilige-slaaptemperatuur/"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+            >
+              <div className="font-medium text-primary">De veilige slaaptemperatuur voor je baby →</div>
+              <div className="text-sm text-gray-600">Op onze zustersite TOGWaarde.nl</div>
+            </a>
           </div>
         </div>
           </div>

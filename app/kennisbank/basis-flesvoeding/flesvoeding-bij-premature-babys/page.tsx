@@ -565,6 +565,13 @@ export default function FlesvoedingPrematurePage() {
               <div className="font-medium text-primary">Premature Baby Calculator →</div>
               <div className="text-sm text-gray-600">Bereken op basis van gecorrigeerde leeftijd</div>
             </Link>
+            <a
+              href="https://togwaarde.nl/kennisbank/premature-baby-tog-waarde/"
+              className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
+            >
+              <div className="font-medium text-primary">TOG-waarde en aankleden bij premature baby&apos;s →</div>
+              <div className="text-sm text-gray-600">Op onze zustersite TOGWaarde.nl</div>
+            </a>
           </div>
         </div>
           </div>

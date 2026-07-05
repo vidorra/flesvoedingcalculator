@@ -336,6 +336,14 @@ export default function KennisbankPage() {
       duration: '6 min',
       href: '/kennisbank/praktische-tips/flesvoeding-bij-warm-weer'
     },
+    {
+      id: 44,
+      title: 'Baby terugleggen na de nachtvoeding',
+      category: 'praktische-tips',
+      description: 'Aankleden, temperatuur en rustig terugleggen zodat iedereen weer slaapt',
+      duration: '8 min',
+      href: '/kennisbank/praktische-tips/baby-terugleggen-na-nachtvoeding'
+    },
     { 
       id: 28, 
       title: 'Uitgebreide Flesvoeding Gids 2026', 

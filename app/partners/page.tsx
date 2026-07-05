@@ -264,6 +264,26 @@ export default function PartnersPage() {
           </div>
         </div>
 
+        {/* Zustersite */}
+        <div className="bg-white/80 backdrop-blur rounded-2xl border border-gray-200 p-6">
+          <h2 className="text-lg font-medium text-gray-800 mb-4">
+            Ook van de makers van FlesvoedingCalculator.nl
+          </h2>
+          <a
+            href="https://togwaarde.nl"
+            className="block border border-gray-200 rounded-xl p-4 hover:border-primary transition-colors"
+          >
+            <div className="flex items-start justify-between mb-2">
+              <h3 className="font-medium text-gray-800">TOGWaarde.nl</h3>
+              <ExternalLink className="w-4 h-4 text-primary" />
+            </div>
+            <p className="text-sm text-gray-600">
+              De slaapzak- en aankleedwijzer voor je baby: stel de kamertemperatuur in en zie
+              direct welke TOG-slaapzak en kleding veilig zijn, volgens NHS en VeiligheidNL.
+            </p>
+          </a>
+        </div>
+
         {/* Contact */}
         <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
           <h2 className="font-medium text-lg mb-4">

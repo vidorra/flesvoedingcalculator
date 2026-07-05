@@ -109,8 +109,20 @@ export default function Footer() {
             <div className="text-sm text-gray-500 mb-4 md:mb-0">
               <p>© 2025 FlesvoedingCalculator.nl - Alle rechten voorbehouden</p>
             </div>
-            <div className="text-xs text-gray-400">
+            <div className="text-xs text-gray-400 space-y-1 md:text-right">
               <p>Gebaseerd op richtlijnen van het Voedingscentrum en NCJ</p>
+              <p>
+                Van de makers van FlesvoedingCalculator:{' '}
+                <a
+                  href="https://togwaarde.nl"
+                  target="_blank"
+                  rel="noopener"
+                  className="underline hover:text-primary transition-colors"
+                >
+                  TOGWaarde.nl
+                </a>
+                , de slaapzak- en aankleedwijzer voor je baby
+              </p>
             </div>
           </div>
         </div>

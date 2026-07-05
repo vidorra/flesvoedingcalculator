@@ -957,6 +957,10 @@ export default function JuisteTemperatuurControleren() {
                   <div className="font-medium text-primary">Juiste houding bij flesvoeding</div>
                   <div className="flex items-center justify-between"><span className="text-gray-600">Veilig en comfortabel voeden</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
                 </Link>
+                <a href="https://togwaarde.nl/kennisbank/baby-temperatuur-controleren/" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary transition-colors">
+                  <div className="font-medium text-primary">De lichaamstemperatuur van je baby controleren</div>
+                  <div className="flex items-center justify-between"><span className="text-gray-600">Op onze zustersite TOGWaarde.nl</span><ArrowRight className="w-4 h-4 text-primary flex-shrink-0" /></div>
+                </a>
               </div>
             </div>
           </div>

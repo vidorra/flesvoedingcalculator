@@ -270,6 +270,10 @@ export default function WarmWeerPage() {
                   <div className="font-medium text-primary">Water koken voor de fles →</div>
                   <div className="text-sm text-gray-600">Veilig water voor de bereiding</div>
                 </Link>
+                <a href="https://togwaarde.nl/kennisbank/baby-slapen-zomer/" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Baby veilig laten slapen in de zomer →</div>
+                  <div className="text-sm text-gray-600">Op onze zustersite TOGWaarde.nl</div>
+                </a>
               </div>
             </div>
 

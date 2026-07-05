@@ -101,8 +101,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               },
               "publisher": {
                 "@type": "Organization",
-                "name": "FlesvoedingCalculator.nl",
-                "url": "https://flesvoedingcalculator.nl"
+                "name": "Vidorra",
+                "url": "https://flesvoedingcalculator.nl",
+                "sameAs": [
+                  "https://flesvoedingcalculator.nl",
+                  "https://togwaarde.nl"
+                ]
               }
             })
           }}

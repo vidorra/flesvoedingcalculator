@@ -413,6 +413,10 @@ export default function FlesvoedingEnSlapenPage() {
                   <div className="font-medium text-primary">Juiste houding bij flesvoeding →</div>
                   <div className="text-sm text-gray-600">Comfortable posities voor slaap-voeding</div>
                 </Link>
+                <a href="https://togwaarde.nl" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Welke slaapzak en kleding bij welke kamertemperatuur →</div>
+                  <div className="text-sm text-gray-600">Op onze zustersite TOGWaarde.nl</div>
+                </a>
               </div>
             </section>
 
