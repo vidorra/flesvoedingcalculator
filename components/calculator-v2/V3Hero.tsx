@@ -67,49 +67,18 @@ export default function V3Hero() {
         </button>
       </div>
 
-      {/* Mobile collage: large staggered images with generous air (gusta-like) */}
+      {/* Mobile collage: kept deliberately clean - one lead photo, with the
+          stat badges and the two center images hidden on mobile. */}
       <div className="md:hidden mt-12" aria-hidden="true">
-        <div className="w-[58vw] max-w-[320px] ml-1 rotate-[-2deg] rounded-2xl overflow-hidden border border-gray-200 shadow-md">
+        <div className="w-[64vw] max-w-[320px] mx-auto rotate-[-2deg] rounded-2xl overflow-hidden border border-gray-200 shadow-md">
           <Image
             src="/flesvoeding-door-mama.webp"
-            alt=""
-            width={450}
-            height={340}
-            sizes="58vw"
-            className="w-full h-auto object-cover"
-          />
-        </div>
-
-        <div className="flex justify-end -mt-10 mr-1">
-          <div className="w-[46vw] max-w-[260px] rotate-2 rounded-2xl overflow-hidden border border-gray-200 shadow-md aspect-[4/5]">
-            <Image
-              src="/baby.webp"
-              alt=""
-              width={400}
-              height={500}
-              sizes="46vw"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-
-        <div className="mt-6 ml-4">
-          <StatBadge icon={<Droplet className="w-4 h-4" />} value="150 ml" label="per kg per dag" className="rotate-[-2deg]" />
-        </div>
-
-        <div className="w-[64vw] max-w-[360px] mx-auto mt-6 rotate-[1deg] rounded-2xl overflow-hidden border border-gray-200 shadow-md">
-          <Image
-            src="/mother_and_baby.webp"
             alt=""
             width={450}
             height={340}
             sizes="64vw"
             className="w-full h-auto object-cover"
           />
-        </div>
-
-        <div className="flex justify-end mt-4 mr-3">
-          <StatBadge icon={<Clock className="w-4 h-4" />} value="4-10×" label="voedingen per dag" className="rotate-[2deg]" />
         </div>
       </div>
 
@@ -156,7 +125,7 @@ export default function V3Hero() {
         </div>
 
         {/* Stat badge */}
-        <StatBadge icon={<Clock className="w-4 h-4" />} value="4-10×" label="voedingen per dag" className="-translate-y-14 rotate-[3deg]" />
+        <StatBadge icon={<Clock className="w-4 h-4" />} value="4-8×" label="voedingen per dag" className="-translate-y-14 rotate-[3deg]" />
 
         {/* Wide card (large, far right, lowest) */}
         <div className="w-[17vw] max-w-[260px] aspect-[5/4] rounded-2xl overflow-hidden border border-gray-200 shadow-md rotate-2 translate-y-4">
