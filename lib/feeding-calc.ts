@@ -30,6 +30,10 @@ export interface FeedingInput {
   isPremature: boolean
   gestationalAge: string
   birthDate: string
+  /** Combivoeding: number of daily feeds that are breastfeeds (optional).
+   *  A breastfeed counts as a normal feed; only the remaining feeds are
+   *  bottles, each at the regular per-feed amount. */
+  breastFeedings?: string
 }
 
 export interface FeedingResult {
@@ -46,6 +50,12 @@ export interface FeedingResult {
   ageData: CorrectedAgeData | null
   gestationalAge: string
   specialNotes: string[]
+  /** Combivoeding: breast feeds per day (0 = bottle only) */
+  breastFeedings: number
+  /** Combivoeding: bottle feeds per day (= feedingsPerDay - breastFeedings) */
+  bottleFeedings: number
+  /** Combivoeding: total ml of formula to prepare per day */
+  bottleDailyAmount: number
 }
 
 function roundToFive(num: number): number {
@@ -106,6 +116,17 @@ export function computeFeeding(input: FeedingInput): FeedingResult | null {
   const recommendedAmount = roundToFive(baseAmountPerFeeding)
   const maxAmount = roundToFive(baseAmountPerFeeding * PREMATURE_FEEDING.GROWTH_SPURT_MULTIPLIER)
 
+  // Combivoeding: breastfeeds count as regular feeds; only the remaining
+  // feeds are bottles, each at the normal per-feed amount.
+  const breastRaw = parseInt(input.breastFeedings || '0')
+  const breastFeedings = Number.isNaN(breastRaw) ? 0 : Math.min(Math.max(breastRaw, 0), feedings)
+  const bottleFeedings = feedings - breastFeedings
+  const bottleDailyAmount = recommendedAmount * bottleFeedings
+  if (breastFeedings > 0) {
+    specialNotes.push(`Combivoeding: een borstvoeding telt als gewone voeding. Maak alleen de ${bottleFeedings} flesvoeding${bottleFeedings === 1 ? '' : 'en'} klaar.`)
+    specialNotes.push('Hoeveel je baby uit de borst drinkt weet je niet exact. Kijk naar je baby (minimaal 6 natte luiers per dag, goede groei), niet alleen naar de berekening.')
+  }
+
   return {
     dailyAmount: Math.round(dailyAmount),
     feedingsPerDay: feedings,
@@ -119,6 +140,9 @@ export function computeFeeding(input: FeedingInput): FeedingResult | null {
     correctedAge: isPrematureCalculation ? correctedAgeWeeks : null,
     ageData: isPrematureCalculation ? ageData : null,
     gestationalAge: input.gestationalAge,
-    specialNotes
+    specialNotes,
+    breastFeedings,
+    bottleFeedings,
+    bottleDailyAmount
   }
 }

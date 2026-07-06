@@ -70,13 +70,21 @@ export default function KennisbankPage() {
       duration: '7 min',
       href: '/kennisbank/basis-flesvoeding/overstappen-van-borst-naar-fles'
     },
-    { 
-      id: 5, 
-      title: 'Flesvoeding bij premature baby\'s', 
-      category: 'basis-flesvoeding', 
-      description: 'Complete medische gids, NICU ervaring, paced feeding', 
+    {
+      id: 5,
+      title: 'Flesvoeding bij premature baby\'s',
+      category: 'basis-flesvoeding',
+      description: 'Complete medische gids, NICU ervaring, paced feeding',
       duration: '15 min',
       href: '/kennisbank/basis-flesvoeding/flesvoeding-bij-premature-babys'
+    },
+    {
+      id: 45,
+      title: 'Combivoeding: borstvoeding en fles',
+      category: 'basis-flesvoeding',
+      description: 'Hoeveel flesvoeding geef je naast borstvoeding? Met rekenvoorbeelden',
+      duration: '7 min',
+      href: '/kennisbank/basis-flesvoeding/combivoeding-borstvoeding-bijvoeden'
     },
 
     // SOORTEN FLESVOEDING - 6 actual articles  

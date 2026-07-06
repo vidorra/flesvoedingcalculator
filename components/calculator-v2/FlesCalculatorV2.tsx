@@ -92,6 +92,13 @@ function ResultBody({ results, hint, colored = false }: { results: ReturnType<ty
     )
   }
   const schepjes = (results.recommendedAmount / FEEDING_MEASUREMENTS.SCOOP_SIZE_ML).toFixed(1)
+  const isCombi = results.breastFeedings > 0
+  const dayLabel = isCombi ? 'Fles per dag' : 'Per dag'
+  const dayValue = isCombi ? results.bottleDailyAmount : results.dailyAmount
+  const feedsValue = isCombi ? `${results.bottleFeedings}× fles` : `${results.feedingsPerDay}×`
+  const footnote = isCombi
+    ? `Naast ${results.breastFeedings}× borstvoeding · ${results.mlPerKg} ml/kg per dag (${results.weightKg} kg)`
+    : `Gebaseerd op ${results.mlPerKg} ml/kg per dag (${results.weightKg} kg)`
 
   if (colored) {
     // Homepage-result colours: primary gradient with a white main-number card
@@ -113,17 +120,17 @@ function ResultBody({ results, hint, colored = false }: { results: ReturnType<ty
         </div>
         <div className="flex items-stretch gap-3 border-t border-white/30 pt-4 mt-4">
           <div className="flex-1 text-center">
-            <div className="text-[11px] uppercase tracking-wide text-white/80 mb-1">Per dag</div>
-            <div className="text-2xl font-bold text-white leading-none">{results.dailyAmount} ml</div>
+            <div className="text-[11px] uppercase tracking-wide text-white/80 mb-1">{dayLabel}</div>
+            <div className="text-2xl font-bold text-white leading-none">{dayValue} ml</div>
           </div>
           <div className="w-px bg-white/30" />
           <div className="flex-1 text-center">
             <div className="text-[11px] uppercase tracking-wide text-white/80 mb-1">Voedingen</div>
-            <div className="text-2xl font-bold text-white leading-none">{results.feedingsPerDay}×</div>
+            <div className="text-2xl font-bold text-white leading-none">{feedsValue}</div>
           </div>
         </div>
         <p className="text-xs text-white/80 mt-3 text-center">
-          Gebaseerd op {results.mlPerKg} ml/kg per dag ({results.weightKg} kg)
+          {footnote}
         </p>
       </>
     )
@@ -147,17 +154,17 @@ function ResultBody({ results, hint, colored = false }: { results: ReturnType<ty
       </div>
       <div className="flex items-stretch gap-3 border-t border-gray-200 pt-4 mt-4">
         <div className="flex-1 text-center">
-          <div className="text-[11px] uppercase tracking-wide text-gray-500 mb-1">Per dag</div>
-          <div className="text-2xl font-bold text-gray-900 leading-none">{results.dailyAmount} ml</div>
+          <div className="text-[11px] uppercase tracking-wide text-gray-500 mb-1">{dayLabel}</div>
+          <div className="text-2xl font-bold text-gray-900 leading-none">{dayValue} ml</div>
         </div>
         <div className="w-px bg-gray-200" />
         <div className="flex-1 text-center">
           <div className="text-[11px] uppercase tracking-wide text-gray-500 mb-1">Voedingen</div>
-          <div className="text-2xl font-bold text-gray-900 leading-none">{results.feedingsPerDay}×</div>
+          <div className="text-2xl font-bold text-gray-900 leading-none">{feedsValue}</div>
         </div>
       </div>
       <p className="text-xs text-gray-500 mt-3 text-center">
-        Gebaseerd op {results.mlPerKg} ml/kg per dag ({results.weightKg} kg)
+        {footnote}
       </p>
     </>
   )
@@ -180,10 +187,15 @@ export default function FlesCalculatorV2({
   const [feedingsPerDay, setFeedingsPerDay] = useState('7')
   const [gestationalAge, setGestationalAge] = useState('')
   const [birthDate, setBirthDate] = useState('')
+  const [isCombi, setIsCombi] = useState(false)
+  const [breastFeedings, setBreastFeedings] = useState('2')
 
   const results = useMemo(
-    () => computeFeeding({ weight, ageMonths, feedingsPerDay, isPremature, gestationalAge, birthDate }),
-    [weight, ageMonths, feedingsPerDay, isPremature, gestationalAge, birthDate]
+    () => computeFeeding({
+      weight, ageMonths, feedingsPerDay, isPremature, gestationalAge, birthDate,
+      breastFeedings: isCombi ? breastFeedings : '0'
+    }),
+    [weight, ageMonths, feedingsPerDay, isPremature, gestationalAge, birthDate, isCombi, breastFeedings]
   )
 
   const ageLabel = isPremature
@@ -257,13 +269,34 @@ export default function FlesCalculatorV2({
   )
 
   const feedingsInput = (
-    <div className="grid grid-cols-7 gap-2">
-      {FEEDING_OPTIONS.map(n => (
-        <Chip key={n} active={feedingsPerDay === String(n)} onClick={() => setFeedingsPerDay(String(n))}>
-          {n}
-        </Chip>
-      ))}
-    </div>
+    <>
+      <div className="grid grid-cols-7 gap-2">
+        {FEEDING_OPTIONS.map(n => (
+          <Chip key={n} active={feedingsPerDay === String(n)} onClick={() => setFeedingsPerDay(String(n))}>
+            {n}
+          </Chip>
+        ))}
+      </div>
+      <label className="mt-3 flex items-center gap-2 text-sm text-gray-700 cursor-pointer">
+        <input type="checkbox" checked={isCombi} onChange={e => setIsCombi(e.target.checked)} className="w-4 h-4" />
+        <span>Ik geef ook borstvoeding (combivoeding)</span>
+      </label>
+      {isCombi && (
+        <div className="mt-4 border-t border-gray-200 pt-4">
+          <label className="block text-sm font-medium text-gray-700 mb-2">Waarvan borstvoedingen per dag</label>
+          <div className="grid grid-cols-7 gap-2">
+            {Array.from({ length: Math.max(parseInt(feedingsPerDay) - 1, 1) }, (_, i) => i + 1).map(n => (
+              <Chip key={n} active={breastFeedings === String(n)} onClick={() => setBreastFeedings(String(n))}>
+                {n}
+              </Chip>
+            ))}
+          </div>
+          <p className="text-xs text-gray-500 mt-2">
+            Een borstvoeding telt als gewone voeding. De calculator laat zien hoeveel flesvoedingen je daarnaast klaarmaakt.
+          </p>
+        </div>
+      )}
+    </>
   )
 
   const alertsAndNotes = (
@@ -435,13 +468,13 @@ export default function FlesCalculatorV2({
               </div>
               <div className="flex items-center gap-4 flex-shrink-0">
                 <div className="text-center">
-                  <div className={`text-[11px] uppercase tracking-wide ${simple ? 'text-white/80' : 'text-gray-500'}`}>Per dag</div>
-                  <div className={`text-lg font-bold leading-none ${simple ? 'text-white' : 'text-gray-900'}`}>{results.dailyAmount} ml</div>
+                  <div className={`text-[11px] uppercase tracking-wide ${simple ? 'text-white/80' : 'text-gray-500'}`}>{results.breastFeedings > 0 ? 'Fles per dag' : 'Per dag'}</div>
+                  <div className={`text-lg font-bold leading-none ${simple ? 'text-white' : 'text-gray-900'}`}>{results.breastFeedings > 0 ? results.bottleDailyAmount : results.dailyAmount} ml</div>
                 </div>
                 <div className={`w-px h-8 ${simple ? 'bg-white/30' : 'bg-gray-200'}`} />
                 <div className="text-center">
                   <div className={`text-[11px] uppercase tracking-wide ${simple ? 'text-white/80' : 'text-gray-500'}`}>Voedingen</div>
-                  <div className={`text-lg font-bold leading-none ${simple ? 'text-white' : 'text-gray-900'}`}>{results.feedingsPerDay}×</div>
+                  <div className={`text-lg font-bold leading-none ${simple ? 'text-white' : 'text-gray-900'}`}>{results.breastFeedings > 0 ? `${results.bottleFeedings}× fles` : `${results.feedingsPerDay}×`}</div>
                 </div>
               </div>
             </div>
