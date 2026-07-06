@@ -33,7 +33,7 @@ export default function V3Hero() {
     <section className="relative pt-8 px-4 lg:pt-10 lg:pb-0 lg:min-h-[calc(100svh-180px)] lg:max-h-[900px] lg:flex lg:flex-col lg:justify-between">
       {/* Headline */}
       <div className="max-w-5xl mx-auto text-center pt-2 lg:pt-8">
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium text-gray-900 leading-[1.05] tracking-tight mb-5">
+        <h1 className="text-4xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium text-gray-900 leading-[1.05] tracking-tight mb-5">
           De juiste hoeveelheid
           <br />
           <span className="text-primary">flesvoeding</span> in seconden
