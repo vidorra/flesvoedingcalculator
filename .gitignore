@@ -54,3 +54,6 @@ md/
 # Runtime data (persisted via Docker volume, defaults in data-defaults/)
 data/admin/
 
+
+# Lokale docs (niet committen)
+adsense-herintroductie.md
