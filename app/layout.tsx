@@ -98,9 +98,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
 
-        {/* Google AdSense */}
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938" crossOrigin="anonymous"></script>
-
         {/* Google Analytics - Head version for verification */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-3NZ90KFHQ6"></script>
         <script
@@ -202,13 +199,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 console.error('Failed to load web vitals:', error);
               }
             })();
-          `}
-        </Script>
-        
-        {/* Google AdSense Initialization */}
-        <Script id="adsense-init" strategy="afterInteractive">
-          {`
-            (adsbygoogle = window.adsbygoogle || []).push({});
           `}
         </Script>
         

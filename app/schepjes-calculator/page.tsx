@@ -316,17 +316,6 @@ export default function SchepjesCalculatorPage() {
               />
             </div>
             
-            {/* Google Ad 1 */}
-            <div className="text-center space-y-2">
-              <div className="text-gray-500 text-xs font-medium">Google Advertentie</div>
-              <ins className="adsbygoogle"
-                   style={{display: 'block'}}
-                   data-ad-client="ca-pub-5215838917916938"
-                   data-ad-slot="1234567890"
-                   data-ad-format="auto"
-                   data-full-width-responsive="true"></ins>
-            </div>
-            
             {/* Baby Image */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
               <Image
@@ -336,17 +325,6 @@ export default function SchepjesCalculatorPage() {
                 height={200}
                 className="w-full h-auto rounded-xl"
               />
-            </div>
-            
-            {/* Google Ad 2 */}
-            <div className="text-center space-y-2">
-              <div className="text-gray-500 text-xs font-medium">Google Advertentie</div>
-              <ins className="adsbygoogle"
-                   style={{display: 'block'}}
-                   data-ad-client="ca-pub-5215838917916938"
-                   data-ad-slot="0987654321"
-                   data-ad-format="auto"
-                   data-full-width-responsive="true"></ins>
             </div>
             
             {/* Baby Bottle Image */}

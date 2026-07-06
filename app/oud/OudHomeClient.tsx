@@ -1,5 +1,4 @@
 'use client'
-import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Layout from '../../components/Layout'
 import HeroSection from '../../components/HeroSection'
@@ -44,19 +43,6 @@ export default function OudHomeClient() {
     handleGestationalAgeChange,
     calculateFeeding
   } = useCalculator()
-
-  const [showAds, setShowAds] = useState<boolean | null>(null)
-
-  useEffect(() => {
-    fetch('/api/settings?key=hide_all_ads')
-      .then((r) => r.json())
-      .then((data) => {
-        setShowAds(data.value !== 'true')
-      })
-      .catch(() => {
-        setShowAds(true) // default: show ads on error
-      })
-  }, [])
 
   return (
     <>
@@ -196,26 +182,6 @@ export default function OudHomeClient() {
                 />
               </div>
 
-              {/* Google Ad 1 */}
-              {showAds && (
-                <div className="text-center space-y-2">
-                  <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938"
-                      crossOrigin="anonymous"></script>
-                    {/* sidebar-right-ad1 */}
-                    <ins className="adsbygoogle"
-                      style={{ display: 'block' }}
-                      data-ad-client="ca-pub-5215838917916938"
-                      data-ad-slot="5691109362"
-                      data-ad-format="auto"
-                      data-full-width-responsive="true"></ins>
-                    <script dangerouslySetInnerHTML={{
-                      __html: '(adsbygoogle = window.adsbygoogle || []).push({});'
-                    }}></script>
-                  </div>
-                </div>
-              )}
-
               {/* Most popular affiliate products */}
               <PopularProductsWidget limit={4} />
 
@@ -233,26 +199,6 @@ export default function OudHomeClient() {
 
             {/* Google Ads - Always visible on mobile and desktop */}
             <div className="space-y-4">
-
-              {/* Google Ad 2 */}
-              {showAds && (
-                <div className="text-center space-y-2">
-                  <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938"
-                      crossOrigin="anonymous"></script>
-                    {/* sidebar-right-ad2 */}
-                    <ins className="adsbygoogle"
-                      style={{ display: 'block' }}
-                      data-ad-client="ca-pub-5215838917916938"
-                      data-ad-slot="5863882645"
-                      data-ad-format="auto"
-                      data-full-width-responsive="true"></ins>
-                    <script dangerouslySetInnerHTML={{
-                      __html: '(adsbygoogle = window.adsbygoogle || []).push({});'
-                    }}></script>
-                  </div>
-                </div>
-              )}
 
             </div>
 

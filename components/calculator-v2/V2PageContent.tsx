@@ -1,6 +1,5 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import V2Hero from './V2Hero'
 import FlesCalculatorV2 from './FlesCalculatorV2'
 import PopularProductsWidget from '../PopularProductsWidget'
@@ -17,39 +16,10 @@ import { FAQSection, FeedingTypesInfo } from '../calculator'
  * under the inputs, ads/products under the result panel.
  */
 export default function V2PageContent({ hero, simpleCalculator = false, variant = 'v2' }: { hero?: React.ReactNode; simpleCalculator?: boolean; variant?: string }) {
-  const [showAds, setShowAds] = useState<boolean | null>(null)
-
-  useEffect(() => {
-    fetch('/api/settings?key=hide_all_ads')
-      .then((r) => r.json())
-      .then((data) => setShowAds(data.value !== 'true'))
-      .catch(() => setShowAds(true))
-  }, [])
-
-  const adUnit = (slot: string) => (
-    <div className="text-center space-y-2">
-      <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215838917916938"
-          crossOrigin="anonymous"></script>
-        <ins className="adsbygoogle"
-          style={{ display: 'block' }}
-          data-ad-client="ca-pub-5215838917916938"
-          data-ad-slot={slot}
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
-        <script dangerouslySetInnerHTML={{
-          __html: '(adsbygoogle = window.adsbygoogle || []).push({});'
-        }}></script>
-      </div>
-    </div>
-  )
-
+  // AdSense verwijderd (verdienmodel is 100% affiliate): rechterkolom
+  // toont alleen nog affiliate-producten
   const rightExtra = (
-    <>
-      {showAds && adUnit('5691109362')}
-      <PopularProductsWidget limit={4} />
-      {showAds && adUnit('5863882645')}
-    </>
+    <PopularProductsWidget limit={4} />
   )
 
   if (simpleCalculator) {
