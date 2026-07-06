@@ -3,6 +3,7 @@ import Script from 'next/script'
 import { Lexend_Deca } from 'next/font/google'
 import { initWebVitals } from '../lib/analytics'
 import ConsentBanner from '../components/ConsentBanner'
+import UmamiScript from '../components/UmamiScript'
 
 /**
  * Lexend Deca font configuration
@@ -202,6 +203,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           `}
         </Script>
         
+        {/* Umami: cookieless analytics, geen consent nodig */}
+        <UmamiScript />
+
         {children}
 
         {/* Cookie consent (Consent Mode v2) */}

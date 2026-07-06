@@ -123,13 +123,23 @@ export async function initWebVitals(): Promise<void> {
   }
 }
 
-// Track custom events
+// Track custom events (GA4 + gespiegeld naar Umami, cookieless)
 export function trackEvent(eventName: string, eventParams: AnalyticsEventParams = {}): void {
   if (typeof window !== 'undefined' && window.gtag) {
     window.gtag('event', eventName, {
       event_category: 'User Interaction',
       ...eventParams,
     })
+  }
+
+  // Umami meet 100% van de bezoekers (geen consent nodig)
+  if (typeof window !== 'undefined') {
+    const umami = (window as unknown as { umami?: { track?: (n: string, p?: object) => void } }).umami
+    if (typeof umami?.track === 'function') {
+      try {
+        umami.track(eventName, eventParams as object)
+      } catch { /* umami mag nooit de site breken */ }
+    }
   }
 
   if (process.env.NODE_ENV === 'development') {
