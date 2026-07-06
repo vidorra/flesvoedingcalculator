@@ -11,7 +11,7 @@ import Script from 'next/script'
  * Websites > flesvoedingcalculator.nl > Website-ID. Tot die tijd rendert
  * dit niets.
  */
-const WEBSITE_ID = ''
+const WEBSITE_ID = '573446a5-6601-4fc6-8a77-bcb6b1ff352d'
 const UMAMI_SRC = 'https://stats.server.devjens.nl/script.js'
 
 export default function UmamiScript() {
