@@ -59,7 +59,7 @@ export default function V2PageContent({ hero, simpleCalculator = false }: { hero
         {hero ?? <V2Hero />}
 
         {/* One container: calculator grid carries all below-content as slots */}
-        <div id="calculator-v2" className="mt-6 scroll-mt-6">
+        <div id="calculator-v2" className="-mt-3 scroll-mt-6">
           <FlesCalculatorV2
             simple
             beforeSchedule={<FeedingTypesInfo />}
@@ -80,7 +80,7 @@ export default function V2PageContent({ hero, simpleCalculator = false }: { hero
       {hero ?? <V2Hero />}
 
       {/* Calculator (alternative UX: live calc + sticky result panel) */}
-      <div id="calculator-v2" className="mt-6 scroll-mt-6">
+      <div id="calculator-v2" className="-mt-3 scroll-mt-6">
         <FlesCalculatorV2 />
       </div>
 
