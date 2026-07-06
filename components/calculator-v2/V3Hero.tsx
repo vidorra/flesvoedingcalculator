@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { Calculator, Droplet, Clock } from 'lucide-react'
+import { Calculator, Droplet, Clock, ShieldCheck } from 'lucide-react'
 
 /**
  * /v3 hero: bolder take on the v2 hero. Oversized headline up top and a
@@ -33,7 +33,7 @@ export default function V3Hero() {
     <section className="relative pt-8 px-4 lg:pt-10 lg:pb-0 lg:min-h-[calc(100svh-180px)] lg:max-h-[900px] lg:flex lg:flex-col lg:justify-between">
       {/* Headline */}
       <div className="max-w-5xl mx-auto text-center pt-2 lg:pt-8">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-medium text-gray-900 leading-[1.05] tracking-tight mb-5">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium text-gray-900 leading-[1.05] tracking-tight mb-5">
           De juiste hoeveelheid
           <br />
           <span className="text-primary">flesvoeding</span> in seconden
@@ -49,6 +49,22 @@ export default function V3Hero() {
           <Calculator className="w-5 h-5" />
           <span>Start gratis berekening</span>
         </button>
+
+        {/* Trust badges */}
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mt-6">
+          <div className="flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 bg-primary/10 rounded-full text-primary-dark text-xs sm:text-sm font-medium">
+            <Droplet className="w-4 h-4 text-primary" />
+            <span>150ml per kg lichaamsgewicht</span>
+          </div>
+          <div className="flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 bg-primary/10 rounded-full text-primary-dark text-xs sm:text-sm font-medium">
+            <ShieldCheck className="w-4 h-4 text-primary" />
+            <span>Officiële Nederlandse richtlijnen</span>
+          </div>
+          <div className="flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 bg-primary/10 rounded-full text-primary-dark text-xs sm:text-sm font-medium">
+            <Calculator className="w-4 h-4 text-primary" />
+            <span>Gratis te gebruiken</span>
+          </div>
+        </div>
       </div>
 
       {/* Mobile collage: large staggered images with generous air (gusta-like) */}
