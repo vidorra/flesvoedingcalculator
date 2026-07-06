@@ -42,16 +42,8 @@ export default function V3Hero() {
           Gratis calculator op basis van de richtlijn van het Voedingscentrum (150 ml per kg).
           Vul gewicht en leeftijd in en je ziet direct het resultaat.
         </p>
-        <button
-          onClick={scrollToCalculator}
-          className="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-white font-medium px-8 py-4 rounded-xl transition-all"
-        >
-          <Calculator className="w-5 h-5" />
-          <span>Start gratis berekening</span>
-        </button>
-
         {/* Trust badges */}
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mt-6">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6">
           <div className="flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 bg-primary/10 rounded-full text-primary-dark text-xs sm:text-sm font-medium">
             <Droplet className="w-4 h-4 text-primary" />
             <span>150ml per kg lichaamsgewicht</span>
@@ -65,6 +57,14 @@ export default function V3Hero() {
             <span>Gratis te gebruiken</span>
           </div>
         </div>
+
+        <button
+          onClick={scrollToCalculator}
+          className="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-white font-medium px-8 py-4 rounded-xl transition-all"
+        >
+          <Calculator className="w-5 h-5" />
+          <span>Start gratis berekening</span>
+        </button>
       </div>
 
       {/* Mobile collage: large staggered images with generous air (gusta-like) */}
