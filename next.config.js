@@ -40,6 +40,16 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react']
   },
+  async redirects() {
+    return [
+      // v3 design was promoted to the homepage
+      {
+        source: '/v3',
+        destination: '/',
+        permanent: true
+      }
+    ]
+  },
   async rewrites() {
     return [
       {

@@ -141,7 +141,7 @@ export default function CombivoedingPage() {
                 </table>
               </div>
               <p className="text-gray-600 text-sm mt-4">
-                In onze <Link href="/v2" className="text-primary hover:underline font-medium">nieuwe calculator</Link>{' '}
+                In onze <Link href="/" className="text-primary hover:underline font-medium">calculator</Link>{' '}
                 vink je &quot;Ik geef ook borstvoeding&quot; aan en zie je direct hoeveel flesvoedingen je klaarmaakt.
               </p>
             </section>
@@ -277,7 +277,7 @@ export default function CombivoedingPage() {
                 flesvoedingen je klaarmaakt en van hoeveel ml.
               </p>
               <Link
-                href="/v2"
+                href="/"
                 className="bg-white/20 hover:bg-white/30 backdrop-blur text-white font-medium py-3 px-6 rounded-xl transition-all inline-flex items-center"
               >
                 <ArrowRight className="w-5 h-5 mr-2" />

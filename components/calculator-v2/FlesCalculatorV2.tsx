@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from 'react'
 import Link from 'next/link'
-import { Baby, Scale, Clock, Calendar, Milk, Info, AlertTriangle, ArrowRight } from 'lucide-react'
+import { Baby, Scale, Clock, Calendar, Milk, Info, AlertTriangle } from 'lucide-react'
 import { computeFeeding } from '../../lib/feeding-calc'
 import { generateFeedingSchedule, type AgeCategory } from '../../hooks/useCalculator'
 import { FEEDING_MEASUREMENTS } from '../../lib/feeding-constants'
@@ -439,17 +439,6 @@ export default function FlesCalculatorV2({
             <div className={rightExtra ? 'hidden lg:block' : undefined}>
               <div className={panelClass}>
                 <ResultBody results={results} hint={missingHint} colored={simple} />
-                <Link
-                  href="/"
-                  className={`mt-5 inline-flex items-center justify-center w-full gap-2 text-sm font-medium rounded-xl py-2.5 transition-colors ${
-                    simple
-                      ? 'text-white border border-white/40 hover:bg-white/10'
-                      : 'text-primary border border-gray-200 hover:border-primary'
-                  }`}
-                >
-                  Volledige calculator met schema
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
               </div>
             </div>
             {rightExtra}
