@@ -33,7 +33,7 @@ const AGE_OPTIONS: { value: AgeCategory; label: string }[] = [
   { value: '6', label: '6+ mnd' }
 ]
 
-const FEEDING_OPTIONS = [4, 5, 6, 7, 8, 9, 10]
+const FEEDING_OPTIONS = [4, 5, 6, 7, 8]
 
 function Section({
   icon,
@@ -294,7 +294,7 @@ export default function FlesCalculatorV2({
 
   const feedingsInput = (
     <>
-      <div className="grid grid-cols-7 gap-2">
+      <div className="grid grid-cols-5 gap-2">
         {FEEDING_OPTIONS.map(n => (
           <Chip key={n} active={feedingsPerDay === String(n)} onClick={() => setFeedingsPerDay(String(n))}>
             {n}
