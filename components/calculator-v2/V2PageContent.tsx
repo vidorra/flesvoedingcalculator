@@ -16,7 +16,7 @@ import { FAQSection, FeedingTypesInfo } from '../calculator'
  * one max-w-5xl grid: Soorten Flesvoeding + Voorbeeldschema + FAQ line up
  * under the inputs, ads/products under the result panel.
  */
-export default function V2PageContent({ hero, simpleCalculator = false }: { hero?: React.ReactNode; simpleCalculator?: boolean }) {
+export default function V2PageContent({ hero, simpleCalculator = false, variant = 'v2' }: { hero?: React.ReactNode; simpleCalculator?: boolean; variant?: string }) {
   const [showAds, setShowAds] = useState<boolean | null>(null)
 
   useEffect(() => {
@@ -62,6 +62,7 @@ export default function V2PageContent({ hero, simpleCalculator = false }: { hero
         <div id="calculator-v2" className="-mt-3 scroll-mt-6">
           <FlesCalculatorV2
             simple
+            variant={variant}
             beforeSchedule={<FeedingTypesInfo />}
             afterSchedule={<FAQSection />}
             rightExtra={rightExtra}
@@ -81,7 +82,7 @@ export default function V2PageContent({ hero, simpleCalculator = false }: { hero
 
       {/* Calculator (alternative UX: live calc + sticky result panel) */}
       <div id="calculator-v2" className="-mt-3 scroll-mt-6">
-        <FlesCalculatorV2 />
+        <FlesCalculatorV2 variant={variant} />
       </div>
 
       {/* Below-calculator content, aligned to the same grid as the calculator:

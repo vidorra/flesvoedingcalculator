@@ -33,7 +33,7 @@ export default function HomePage() {
       />
 
       <Layout>
-        <V2PageContent hero={<V3Hero />} simpleCalculator />
+        <V2PageContent hero={<V3Hero />} simpleCalculator variant="home" />
       </Layout>
     </>
   )

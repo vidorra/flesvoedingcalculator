@@ -12,7 +12,7 @@ export const metadata = {
 export default function V4Page() {
   return (
     <Layout>
-      <V2PageContent hero={<V4Hero />} />
+      <V2PageContent hero={<V4Hero />} variant="v4" />
     </Layout>
   )
 }

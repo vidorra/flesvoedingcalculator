@@ -11,7 +11,7 @@ export const metadata = {
 export default function V2Page() {
   return (
     <Layout>
-      <V2PageContent />
+      <V2PageContent variant="v2" />
     </Layout>
   )
 }

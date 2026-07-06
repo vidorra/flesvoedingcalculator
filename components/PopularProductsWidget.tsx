@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
+import { trackEvent } from '../lib/analytics'
 
 interface Snippet {
   id: string
@@ -13,6 +14,7 @@ interface Snippet {
 
 function trackClick(snippetId: string) {
   try {
+    trackEvent('affiliate_click', { snippet_id: snippetId, widget: 'popular_products' })
     const body = JSON.stringify({ snippetId })
     if (typeof navigator !== 'undefined' && navigator.sendBeacon) {
       navigator.sendBeacon('/api/track-click', body)

@@ -1,11 +1,12 @@
 'use client'
 
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { Baby, Scale, Clock, Calendar, Milk, Info, AlertTriangle } from 'lucide-react'
 import { computeFeeding } from '../../lib/feeding-calc'
 import { generateFeedingSchedule, type AgeCategory } from '../../hooks/useCalculator'
 import { FEEDING_MEASUREMENTS } from '../../lib/feeding-constants'
+import { trackCalculatorUsage } from '../../lib/analytics'
 import WarmWeerAlert from '../calculator/WarmWeerAlert'
 
 /**
@@ -172,11 +173,14 @@ function ResultBody({ results, hint, colored = false }: { results: ReturnType<ty
 
 export default function FlesCalculatorV2({
   simple = false,
+  variant = 'v2',
   beforeSchedule,
   afterSchedule,
   rightExtra,
 }: {
   simple?: boolean
+  /** Which page this calculator lives on (home/v2/v4) - GA4 event parameter */
+  variant?: string
   beforeSchedule?: React.ReactNode
   afterSchedule?: React.ReactNode
   rightExtra?: React.ReactNode
@@ -197,6 +201,26 @@ export default function FlesCalculatorV2({
     }),
     [weight, ageMonths, feedingsPerDay, isPremature, gestationalAge, birthDate, isCombi, breastFeedings]
   )
+
+  // GA4: fire calculator_usage once per pageview, debounced so intermediate
+  // keystrokes ("4" -> "4.5") don't count. The live calculator has no
+  // "Bereken" button, so this replaces the old button-based event.
+  const hasTrackedRef = useRef(false)
+  useEffect(() => {
+    if (!results || hasTrackedRef.current) return
+    const timer = setTimeout(() => {
+      if (hasTrackedRef.current) return
+      hasTrackedRef.current = true
+      trackCalculatorUsage(results.isPremature ? 'premature_calculator' : 'feeding_calculator', {
+        variant,
+        weight: results.weightKg,
+        feedings_per_day: results.feedingsPerDay,
+        is_combi: results.breastFeedings > 0,
+        ...(results.isPremature ? { gestational_age: results.gestationalAge, corrected_age: results.correctedAge } : { age_months: ageMonths })
+      })
+    }, 1200)
+    return () => clearTimeout(timer)
+  }, [results, variant, ageMonths])
 
   const ageLabel = isPremature
     ? 'Prematuur'

@@ -1,8 +1,10 @@
 'use client'
 
+import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { Sun, AlertTriangle, ArrowRight } from 'lucide-react'
 import { useCurrentWeather } from '../../hooks/useCurrentWeather'
+import { trackEvent } from '../../lib/analytics'
 import type { AgeCategory } from '../../hooks/useCalculator'
 
 /**
@@ -33,6 +35,18 @@ interface WarmWeerAlertProps {
 
 export default function WarmWeerAlert({ ageMonths }: WarmWeerAlertProps) {
   const { temp, locationCity } = useCurrentWeather()
+
+  // GA4: log once per pageview that the alert was shown (and which tier),
+  // so we can measure whether this feature actually drives article reads.
+  const hasTrackedRef = useRef(false)
+  useEffect(() => {
+    if (temp === null || temp < INFO_THRESHOLD || hasTrackedRef.current) return
+    hasTrackedRef.current = true
+    trackEvent('warm_weer_alert_shown', {
+      temperature: temp,
+      tier: temp >= WARNING_THRESHOLD ? 'warning' : 'info'
+    })
+  }, [temp])
 
   // Only show when we have a real reading at or above the info threshold.
   if (temp === null || temp < INFO_THRESHOLD) return null

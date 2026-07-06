@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
+import { trackEvent } from '../lib/analytics'
 import { getProductsByCategory, getProductsByIds } from './affiliate-products.js'
 import '../styles/bol-widget.css'
 
@@ -91,6 +92,7 @@ function BolScriptWidget({ product }) {
 
 function trackClick(snippetId: string) {
   try {
+    trackEvent('affiliate_click', { snippet_id: snippetId, widget: 'affiliate_widget' })
     const body = JSON.stringify({ snippetId })
     if (typeof navigator !== 'undefined' && navigator.sendBeacon) {
       navigator.sendBeacon('/api/track-click', body)
