@@ -6,6 +6,15 @@ import ConsentBanner from '../components/ConsentBanner'
 import UmamiScript from '../components/UmamiScript'
 
 /**
+ * Aan/uit-schakelaar voor de cookie-zettende trackers (GA4, GTM, Clarity)
+ * en de bijbehorende cookiebanner. Staat UIT: we meten cookieless via Umami
+ * (geen consent nodig), dus de banner is niet meer verplicht.
+ *
+ * Terugzetten naar consent-model: zet dit op true. Alle code blijft staan.
+ */
+const COOKIE_TRACKERS_ENABLED = false
+
+/**
  * Lexend Deca font configuration
  * Self-hosted font optimization for better performance
  * Removes external dependency on Google Fonts CDN
@@ -59,6 +68,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="nl" className={lexendDeca.variable}>
       <head>
+        {COOKIE_TRACKERS_ENABLED && (
+          <>
         {/* Consent Mode v2 defaults - MOET voor GTM/gtag staan */}
         <script
           dangerouslySetInnerHTML={{
@@ -111,7 +122,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             `,
           }}
         />
-        
+          </>
+        )}
+
         {/* Structured Data */}
         <script
           type="application/ld+json"
@@ -141,30 +154,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
       </head>
       <body>
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-PPX8RJTF"
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
+        {COOKIE_TRACKERS_ENABLED && (
+          <>
+            {/* Google Tag Manager (noscript) */}
+            <noscript>
+              <iframe
+                src="https://www.googletagmanager.com/ns.html?id=GTM-PPX8RJTF"
+                height="0"
+                width="0"
+                style={{ display: 'none', visibility: 'hidden' }}
+              />
+            </noscript>
 
-        {/* Microsoft Clarity - alleen na cookie-akkoord (banner init bij accept) */}
-        <Script id="clarity-init" strategy="afterInteractive">
-          {`
-            try {
-              if (localStorage.getItem('cookie-consent') === 'accepted') {
-                (function(c,l,a,r,i,t,y){
-                    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-                })(window, document, "clarity", "script", "swtgjl0ozf");
-              }
-            } catch (e) {}
-          `}
-        </Script>
+            {/* Microsoft Clarity - alleen na cookie-akkoord (banner init bij accept) */}
+            <Script id="clarity-init" strategy="afterInteractive">
+              {`
+                try {
+                  if (localStorage.getItem('cookie-consent') === 'accepted') {
+                    (function(c,l,a,r,i,t,y){
+                        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                    })(window, document, "clarity", "script", "swtgjl0ozf");
+                  }
+                } catch (e) {}
+              `}
+            </Script>
+          </>
+        )}
 
         {/* Web Vitals Monitoring */}
         <Script id="web-vitals-init" strategy="afterInteractive">
@@ -208,8 +225,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         {children}
 
-        {/* Cookie consent (Consent Mode v2) */}
-        <ConsentBanner />
+        {/* Cookie consent (Consent Mode v2) - alleen nodig bij cookie-trackers */}
+        {COOKIE_TRACKERS_ENABLED && <ConsentBanner />}
       </body>
     </html>
   )
