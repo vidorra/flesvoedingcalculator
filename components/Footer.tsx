@@ -76,7 +76,13 @@ export default function Footer() {
                 <Link href="/medische-disclaimer" className="block hover:text-primary transition-colors">Medische disclaimer</Link>
                 <Link href="/privacy-beleid" className="block hover:text-primary transition-colors">Privacy beleid</Link>
                 <Link href="/gebruiksvoorwaarden" className="block hover:text-primary transition-colors">Gebruiksvoorwaarden</Link>
-                <button 
+                <button
+                  onClick={() => window.dispatchEvent(new Event('open-cookie-consent'))}
+                  className="block hover:text-primary transition-colors text-left"
+                >
+                  Cookievoorkeuren
+                </button>
+                <button
                   onClick={() => setIsContactModalOpen(true)}
                   className="block hover:text-primary transition-colors text-left"
                 >
