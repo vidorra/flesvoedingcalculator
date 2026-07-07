@@ -18,7 +18,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
       caption: "Vroege symptomen herkennen is cruciaal"
     },
     {
-      src: "/flesvoeding-door-mama.webp", 
+      src: "/drinkende-baby.webp", 
       alt: "Veilige flesvoeding door moeder",
       caption: "Veilige voeding bij allergieën"
     },

@@ -11,7 +11,7 @@ export const metadata = {
 
 const sidebarImages = [
   {
-    src: "/flesvoeding-door-mama.webp",
+    src: "/drinkende-baby.webp",
     alt: "Flesvoeding geven bij warm weer",
     caption: "Bij hitte vaker een fles op verzoek"
   },

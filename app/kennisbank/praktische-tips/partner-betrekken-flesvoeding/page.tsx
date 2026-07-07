@@ -23,7 +23,7 @@ export default function PartnerBetrekkenFlesvoedingPage() {
       caption: "Moderne Nederlandse vaders actief in voeding"
     },
     {
-      src: "/flesvoeding-door-mama.webp",
+      src: "/drinkende-baby.webp",
       alt: "Nachtvoeding planning schema",
       caption: "Strategische verdeling nachtvoedingen"
     }

@@ -23,7 +23,7 @@ export const metadata = {
       caption: "Voorbereid zijn op spugen"
     },
     {
-      src: "/flesvoeding-door-mama.webp",
+      src: "/drinkende-baby.webp",
       alt: "Voorzichtige voeding tegen spugen",
       caption: "Technieken om spugen te verminderen"
     }
@@ -908,7 +908,7 @@ export default function SpugenNaDeFlesPage() {
         <KennisbankSidebar 
           images={[
             {
-              src: "/flesvoeding-door-mama.webp",
+              src: "/drinkende-baby.webp",
               alt: "Baby spugen na voeding herkennen",
               caption: "Begrijpen wanneer spugen normaal is"
             },

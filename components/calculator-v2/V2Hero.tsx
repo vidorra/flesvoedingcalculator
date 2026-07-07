@@ -24,7 +24,7 @@ export default function V2Hero() {
         {/* Left side */}
         <div className="absolute left-[1vw] top-2 w-[17vw] max-w-[300px] -rotate-3">
           <Image
-            src="/flesvoeding-door-mama.webp"
+            src="/drinkende-baby.webp"
             alt=""
             width={450}
             height={300}

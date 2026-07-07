@@ -19,7 +19,7 @@ export default function LactosevrijeFlesvoedingPage() {
       caption: "Lactosevrije voeding voor gevoelige buikjes"
     },
     {
-      src: "/flesvoeding-door-mama.webp", 
+      src: "/drinkende-baby.webp", 
       alt: "Moeder voert baby met lactosevrije fles",
       caption: "Rust en vertrouwen met de juiste voeding"
     },

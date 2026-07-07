@@ -16,7 +16,7 @@ const sidebarImages = [
     caption: "Borst en fles zijn goed te combineren"
   },
   {
-    src: "/flesvoeding-door-mama.webp",
+    src: "/drinkende-baby.webp",
     alt: "Moeder geeft flesvoeding",
     caption: "Een borstvoeding telt als gewone voeding"
   },

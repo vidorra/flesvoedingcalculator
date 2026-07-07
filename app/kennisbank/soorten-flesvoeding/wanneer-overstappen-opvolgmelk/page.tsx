@@ -707,7 +707,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
         <KennisbankSidebar 
           images={[
             {
-              src: "/flesvoeding-door-mama.webp",
+              src: "/drinkende-baby.webp",
               alt: "Timing overstap opvolgmelk moeder en baby",
               caption: "Het juiste moment kiezen voor je baby"
             },

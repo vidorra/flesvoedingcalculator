@@ -625,7 +625,7 @@ export default function NachtvoedingOptimaliserenPage() {
               caption: "Efficiënte nachtvoeding technieken"
             },
             {
-              src: "/flesvoeding-door-mama.webp", 
+              src: "/drinkende-baby.webp", 
               alt: "Nachtvoeding door moeder",
               caption: "Meer slaap voor uitgeruste ouders"
             },

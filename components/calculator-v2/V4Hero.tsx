@@ -57,7 +57,7 @@ export default function V4Hero() {
             <div className="hidden lg:flex items-end gap-4">
               <div className="w-64 rounded-2xl overflow-hidden shadow-lg rotate-[-2deg]">
                 <Image
-                  src="/flesvoeding-door-mama.webp"
+                  src="/drinkende-baby.webp"
                   alt="Moeder geeft flesvoeding"
                   width={450}
                   height={300}

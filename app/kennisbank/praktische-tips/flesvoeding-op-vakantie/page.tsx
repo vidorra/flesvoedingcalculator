@@ -14,7 +14,7 @@ export const metadata = {
   // Sidebar configuration
   const sidebarImages = [
     {
-      src: "/flesvoeding-door-mama.webp",
+      src: "/drinkende-baby.webp",
       alt: "Flesvoeding geven tijdens vakantie",
       caption: "Ontspannen voeden, ook op vakantie"
     },
@@ -640,7 +640,7 @@ export default function VakantiePage() {
                 caption: "Praktisch reizen met flesvoeding"
               },
               {
-                src: "/flesvoeding-door-mama.webp",
+                src: "/drinkende-baby.webp",
                 alt: "Reizen met baby",
                 caption: "Stress-vrij reizen met baby"
               },

@@ -7,7 +7,7 @@ import { AlertTriangle, Heart, Clock, Users, ArrowRight, } from 'lucide-react'
 export default function BabyWeigertFlespagePage() {
   const sidebarImages = [
     {
-      src: "/flesvoeding-door-mama.webp",
+      src: "/drinkende-baby.webp",
       alt: "Moeder geeft fles aan baby",
       caption: "Tips voor baby die fles weigert"
     },

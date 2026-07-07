@@ -17,7 +17,7 @@ export default function OverstappenBorstNaarFlesPage() {
       caption: "Verschillende flessen die overstap vergemakkelijken"
     },
     {
-      src: "/flesvoeding-door-mama.webp",
+      src: "/drinkende-baby.webp",
       alt: "Partner geeft fles aan baby",
       caption: "Partner kan helpen bij overstap"
     }

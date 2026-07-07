@@ -77,7 +77,7 @@ export default function V3Hero() {
       <div className="md:hidden mt-12" aria-hidden="true">
         <div className="w-[64vw] max-w-[320px] mx-auto rotate-[-2deg] rounded-2xl overflow-hidden border border-gray-200 shadow-md">
           <Image
-            src="/flesvoeding-door-mama.webp"
+            src="/drinkende-baby.webp"
             alt=""
             width={450}
             height={340}
@@ -135,7 +135,7 @@ export default function V3Hero() {
         {/* Wide card (large, far right, lowest) */}
         <div className="w-[17vw] max-w-[260px] aspect-[5/4] rounded-2xl overflow-hidden border border-gray-200 shadow-md rotate-2 translate-y-4">
           <Image
-            src="/flesvoeding-door-mama.webp"
+            src="/drinkende-baby.webp"
             alt=""
             width={450}
             height={360}

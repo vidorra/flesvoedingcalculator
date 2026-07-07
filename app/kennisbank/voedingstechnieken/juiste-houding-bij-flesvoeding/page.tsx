@@ -14,7 +14,7 @@ export const metadata = {
 export default function JuisteHoudingBijFlesvoeding() {
   const sidebarImages = [
     {
-      src: "/flesvoeding-door-mama.webp",
+      src: "/drinkende-baby.webp",
       alt: "Ergonomische voedingshouding moeder en baby",
       caption: "Comfortabel voeden"
     },
