@@ -31,11 +31,13 @@ export default function V3Hero() {
 
   return (
     <section className="relative pt-8 px-4 lg:pt-10 lg:pb-0 lg:min-h-[calc(100svh-180px)] lg:max-h-[900px] lg:flex lg:flex-col lg:justify-between">
-      {/* Headline. On very large screens (>=1800px) let this block fill the
-          space above the photo collage and center its content vertically, so
-          it sits mid-way in the region above the images instead of hugging the
-          top. Laptop/tablet keep the top-aligned justify-between layout. */}
-      <div className="max-w-5xl mx-auto text-center pt-2 lg:pt-8 min-[1800px]:flex-1 min-[1800px]:flex min-[1800px]:flex-col min-[1800px]:items-center min-[1800px]:justify-center min-[1800px]:pt-0">
+      {/* Headline. From 1550px up the photo collage stops growing (its largest
+          image, 18vw, hits its 280px max-width at ~1555px) while the section
+          height stays capped at 900px, which opens a gap under the top-aligned
+          headline. So beyond that width we let this block fill the space above
+          the collage and center its content vertically. Below 1550px the
+          top-aligned justify-between layout is unchanged. */}
+      <div className="max-w-5xl mx-auto text-center pt-2 lg:pt-8 min-[1550px]:flex-1 min-[1550px]:flex min-[1550px]:flex-col min-[1550px]:items-center min-[1550px]:justify-center min-[1550px]:pt-0">
         <h1 className="text-4xl sm:text-4xl lg:text-5xl xl:text-6xl font-medium text-gray-900 leading-[1.05] tracking-tight mb-5">
           De juiste hoeveelheid
           <br />
