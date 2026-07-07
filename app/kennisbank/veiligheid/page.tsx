@@ -159,7 +159,7 @@ export default function VeiligheidPage() {
             <div>
               <h3 className="font-medium text-amber-800 mb-1">Medische Disclaimer</h3>
               <p className="text-sm text-amber-700">
-                De informatie op deze pagina is alleen voor informatieve doeleinden en vervangt geen professioneel medisch advies. Raadpleeg altijd uw kinderarts of een gekwalificeerde zorgverlener voor specifieke medische vragen.
+                De informatie op deze pagina is alleen voor informatieve doeleinden en vervangt geen professioneel medisch advies. Raadpleeg altijd je kinderarts of een gekwalificeerde zorgverlener voor specifieke medische vragen.
               </p>
             </div>
           </div>
