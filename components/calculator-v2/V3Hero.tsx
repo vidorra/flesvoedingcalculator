@@ -132,13 +132,13 @@ export default function V3Hero() {
         {/* Stat badge */}
         <StatBadge icon={<Clock className="w-4 h-4" />} value="4-8×" label="voedingen per dag" className="-translate-y-14 rotate-[3deg]" />
 
-        {/* Wide card (large, far right, lowest) */}
-        <div className="w-[17vw] max-w-[260px] aspect-[5/4] rounded-2xl overflow-hidden border border-gray-200 shadow-md rotate-2 translate-y-4">
+        {/* Wide card (large, far right, lowest) - natural ~450x474 ratio */}
+        <div className="w-[17vw] max-w-[260px] aspect-[450/474] rounded-2xl overflow-hidden border border-gray-200 shadow-md rotate-2 translate-y-4">
           <Image
             src="/drinkende-baby.webp"
             alt=""
             width={450}
-            height={360}
+            height={474}
             sizes="17vw"
             className="w-full h-full object-cover"
           />
