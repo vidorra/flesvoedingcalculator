@@ -21,7 +21,7 @@ export async function GET(request) {
   try {
     await ensureCalculatorEventsTable()
 
-    const [totals, byAge, daily, byWeight, combi] = await Promise.all([
+    const [totals, byAge, daily, byWeight, combi, byRoomTemp] = await Promise.all([
       db.execute(sql`
         SELECT website,
                COUNT(*)::int AS total,
@@ -42,7 +42,11 @@ export async function GET(request) {
       db.execute(sql`
         SELECT COALESCE(data->>'isCombi', 'false') AS is_combi, COUNT(*)::int AS count
         FROM calculator_events WHERE website = 'flesvoedingcalculator'
-        GROUP BY is_combi`)
+        GROUP BY is_combi`),
+      db.execute(sql`
+        SELECT COALESCE(data->>'roomTempBucket', 'onbekend') AS room_temp, COUNT(*)::int AS count
+        FROM calculator_events WHERE website = 'togwaarde'
+        GROUP BY room_temp ORDER BY room_temp`)
     ])
 
     return NextResponse.json({
@@ -51,7 +55,8 @@ export async function GET(request) {
       byAge: byAge.rows,
       daily: daily.rows,
       byWeight: byWeight.rows,
-      combi: combi.rows
+      combi: combi.rows,
+      byRoomTemp: byRoomTemp.rows
     })
   } catch (error) {
     console.error('calculator-stats error:', error)

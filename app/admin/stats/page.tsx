@@ -10,6 +10,7 @@ type Stats = {
   daily: Row[]
   byWeight: Row[]
   combi: Row[]
+  byRoomTemp: Row[]
 }
 
 const SITE_LABELS: Record<string, string> = {
@@ -18,11 +19,17 @@ const SITE_LABELS: Record<string, string> = {
 }
 
 const AGE_LABELS: Record<string, string> = {
+  // Flesvoeding-calculator categories
   '0-1': '0-1 maand',
   '1': '1-3 maanden',
   '3': '3-6 maanden',
   '6': '6+ maanden',
   premature: 'Prematuur',
+  // Togwaarde categories
+  '0-3': '0-3 maanden',
+  '3-6': '3-6 maanden',
+  '6-12': '6-12 maanden',
+  '12+': '12+ maanden',
   onbekend: 'Onbekend'
 }
 
@@ -93,9 +100,11 @@ export default function StatsPage() {
   const total7 = stats ? filt(stats.totals).reduce((s, t) => s + Number(t.last7 ?? 0), 0) : 0
 
   const showFlesBreakdown = site === 'all' || site === 'flesvoedingcalculator'
+  const showTogBreakdown = site === 'all' || site === 'togwaarde'
   const weightTotal = stats ? stats.byWeight.reduce((s, r) => s + Number(r.count), 0) : 0
   const combiTotal = stats ? stats.combi.reduce((s, r) => s + Number(r.count), 0) : 0
   const combiYes = stats ? Number(stats.combi.find((r) => r.is_combi === 'true')?.count ?? 0) : 0
+  const roomTempTotal = stats ? (stats.byRoomTemp ?? []).reduce((s, r) => s + Number(r.count), 0) : 0
 
   // Daily trend (max 30 buckets) for the current selection.
   const dailyAgg: Record<string, number> = {}
@@ -181,6 +190,14 @@ export default function StatsPage() {
                 <Card title="Combivoeding (Flesvoeding)">
                   <Bar label="Combivoeding (ook borstvoeding)" count={combiYes} total={combiTotal} />
                   <Bar label="Alleen flesvoeding" count={combiTotal - combiYes} total={combiTotal} />
+                </Card>
+              )}
+
+              {showTogBreakdown && roomTempTotal > 0 && (
+                <Card title="Kamertemperatuur (Togwaarde)">
+                  {stats.byRoomTemp.map((r) => (
+                    <Bar key={String(r.room_temp)} label={String(r.room_temp)} count={Number(r.count)} total={roomTempTotal} />
+                  ))}
                 </Card>
               )}
             </div>
