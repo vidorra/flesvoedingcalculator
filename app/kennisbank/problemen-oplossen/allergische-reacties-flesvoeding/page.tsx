@@ -35,7 +35,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
   // Data arrays
   const symptomenTypes = [
     "Huidreacties - eczeem, uitslag, zwelling",
-    "Maag-darm klachten - braken, diarree, koliek", 
+    "Maag-darmklachten - braken, diarree, koliek",
     "Ademhalingsproblemen - piepen, hoesten, kortademigheid",
     "Gedragsveranderingen - extreme onrust, lethargie",
     "Groei problemen - gewichtsverlies, falende groei",
@@ -44,28 +44,18 @@ export default function AllergischeReactiesFlesvoedingPage() {
 
   const risicofactoren = [
     "Familie geschiedenis van allergieën of atopie",
-    "Vroege formule introductie (binnen 6 maanden)",
     "Premature geboorte en verhoogde darmdoorlaatbaarheid",
     "Antibiotica gebruik in eerste levensmaanden",
     "Urbane omgeving met verhoogde luchtvervuiling",
     "Over-steriele omgeving (hygiëne hypothesis)"
   ]
 
-  const noodprotocol = [
-    "Herken multi-systeem symptomen binnen 0-30 seconden",
-    "Bel 112 onmiddellijk - meld 'baby anafylactische reactie'",
-    "Gebruik EpiPen Jr indien voorhanden (buitenkant dij, 90°)",
-    "Positioneer baby: plat bij bewusteloosheid, rechtop bij ademhaling",
-    "Monitor continue ademhaling en hartslag tot hulp arriveert",
-    "Bereid voor op herhaling EpiPen na 5-15 minuten indien nodig"
-  ]
-
   const alternatieveOpties = [
-    "Extensively Hydrolyzed Formula - 95% allergeenreductie",
-    "Amino Acid Formula - volledig elementaire voeding",
+    "Sterk gehydrolyseerde voeding - 95% allergeenreductie",
+    "Aminozuurvoeding - volledig elementaire voeding",
     "Nutrilon Pepti Allergy - Nederlandse marktleider",
     "Neocate LCP - voor complexe gevallen",
-    "Volledig vergoed op kinderarts recept",
+    "Bij een medische indicatie meestal vergoed op kinderarts recept",
     "Professional monitoring en vervolgafspraken vereist"
   ]
 
@@ -91,7 +81,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Flesvoeding allergieën treffen 2-7% van Nederlandse baby's en kunnen ernstige gevolgen hebben voor gezondheid en ontwikkeling. 
+                Flesvoeding allergieën treffen ongeveer 2 tot 3% van Nederlandse baby's en kunnen ernstige gevolgen hebben voor gezondheid en ontwikkeling.
                 Vroege herkenning en juiste behandeling zijn cruciaal voor het welzijn van je baby.
               </p>
               
@@ -186,10 +176,17 @@ export default function AllergischeReactiesFlesvoedingPage() {
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Koemelk Eiwit Allergie (CMPA)</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                CMPA is de meest voorkomende flesvoeding allergie in Nederland, treffende 2-7% van baby's in het eerste jaar. 
+                CMPA is de meest voorkomende flesvoeding allergie in Nederland, treffende ongeveer 2 tot 3% van baby's in het eerste jaar.
                 Het betreft een reactie op caseïne en/of whey eiwitten in koemelk.
               </p>
-              
+
+              <div className="border-t border-gray-200 pt-6">
+                <h3 className="font-medium text-primary mb-4">Allergie of lactose-intolerantie?</h3>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  Koemelkallergie is een reactie van het afweersysteem op het eiwit in koemelk. Lactose-intolerantie is iets anders: dan is er moeite met de melksuiker, en bij baby's is dat zeldzaam. Lactosevrije voeding lost een koemelkallergie dus niet op.
+                </p>
+              </div>
+
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Nederlandse Diagnose Protocol</h3>
  <div className="p-4 mb-4">
@@ -202,7 +199,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
  <div className="p-4 mb-4">
                   <h4 className="font-medium text-gray-700 mb-2">Stap 2: Eliminatiedieet</h4>
                   <p className="text-gray-700 text-sm mb-2">
-                    2-4 weken proefperiode met extensively hydrolyzed formula onder medische supervisie.
+                    2-4 weken proefperiode met sterk gehydrolyseerde voeding onder medische supervisie.
                   </p>
                 </div>
                 
@@ -222,21 +219,10 @@ export default function AllergischeReactiesFlesvoedingPage() {
                   <Phone className="w-5 h-5 text-amber-600" />
                 </div>
                 <div>
-                  <h3 className="font-medium text-amber-800 mb-2">Nederlands Anafylaxie Noodprotocol</h3>
-                  <p className="text-sm text-amber-700 leading-relaxed mb-4">
-                    Bij verdenking van anafylaxie: onmiddellijke actie kan levensreddend zijn. 
-                    Volg deze stappen precies en aarzel nooit om 112 te bellen.
+                  <h3 className="font-medium text-amber-800 mb-2">Let op: wanneer bel je direct 112</h3>
+                  <p className="text-sm text-amber-700 leading-relaxed">
+                    Bij ademnood, zwelling van gezicht, lippen of tong, plotselinge sufheid of algehele verslapping: bel direct 112 en volg de aanwijzingen van de centralist. Een heftige, snelle allergische reactie (anafylaxie) op standaard flesvoeding is zeldzaam. De meeste koemelkallergie verloopt juist traag en mild, met vooral darm- en huidklachten.
                   </p>
-                  <ul className="space-y-2">
-                    {noodprotocol.map((stap, index) => (
-                      <li key={index} className="flex items-start space-x-2">
-                        <span className="bg-amber-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
-                          {index + 1}
-                        </span>
-                        <span className="text-amber-700">{stap}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </div>
             </section>
@@ -246,7 +232,7 @@ export default function AllergischeReactiesFlesvoedingPage() {
               <h2 className="text-lg font-medium text-primary mb-4">Alternatieve Flesvoeding Opties</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Bij bewezen allergie zijn er effectieve alternatieven beschikbaar in Nederland.
-                Alle gespecialiseerde formules zijn volledig vergoed door de zorgverzekering op recept.
+                Gespecialiseerde voeding wordt bij een medische indicatie meestal vergoed; vraag dit na bij je zorgverzekeraar.
                 Lees meer over <Link href="/kennisbank/soorten-flesvoeding/hypoallergene-flesvoeding" className="text-primary hover:underline font-medium">hypoallergene flesvoeding</Link> en <Link href="/kennisbank/soorten-flesvoeding/lactosevrije-flesvoeding" className="text-primary hover:underline font-medium">lactosevrije flesvoeding</Link> voor gedetailleerde informatie.
               </p>
               
@@ -264,8 +250,8 @@ export default function AllergischeReactiesFlesvoedingPage() {
  <div className="mt-6">
                   <h4 className="font-medium text-gray-700 mb-2">Kosten en Vergoeding</h4>
                   <p className="text-gray-700 text-sm">
-                    Extensively hydrolyzed formula kost €100-120 per maand, amino acid formula €160-200 per maand. 
-                    Met kinderarts recept zijn deze volledig vergoed voor kinderen onder 18 jaar.
+                    Sterk gehydrolyseerde voeding kost €100-120 per maand, aminozuurvoeding €160-200 per maand.
+                    Met een medische indicatie en kinderarts recept wordt dit meestal vergoed; vraag dit na bij je zorgverzekeraar.
                   </p>
                 </div>
               </div>

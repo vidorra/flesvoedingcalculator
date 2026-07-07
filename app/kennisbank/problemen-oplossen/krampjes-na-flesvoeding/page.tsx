@@ -9,28 +9,6 @@ export const metadata = {
   description: 'Krampjes na flesvoeding zijn de #2 zorg van Nederlandse ouders na spugen. Leer de oorzaken herkennen, effectieve oplossingen toepassen, en wanneer je medische hulp moet zoeken. Praktische tips die echt werken.',
 }
 
-
-  // Sidebar configuration
-  const sidebarImages = [
-    {
-      src: "/mother_and_baby.webp",
-      alt: "Moeder troost baby met krampjes",
-      caption: "Liefdevol comfort bij ongemak"
-    },
-    {
-      src: "/baby.webp",
-      alt: "Baby met buikpijn na flesvoeding",
-      caption: "Herkenning van signalen"
-    },
-    {
-      src: "/flesvoeding.webp",
-      alt: "Anti-kramp flesvoeding opties",
-      caption: "Zachte voeding voor gevoelige buikjes"
-    }
-  ]
-
-  const adTopics = ["Baby Krampjes", "Buikpijn Baby", "Anti-Kramp Voeding", "Baby Comfort"]
-
 export default function KrampjesNaFlesvoedingPage() {
   const recognitionSignals = [
     {
@@ -56,7 +34,7 @@ export default function KrampjesNaFlesvoedingPage() {
     {
       category: 'Gedragskenmerken',
       signals: [
-        'Ontroosstbaar huilen ondanks honger/slaap/luier ok',
+        'Ontroostbaar huilen ondanks honger/slaap/luier ok',
         'Cyclisch patroon - zelfde tijd elke dag',
         'Verlichting na winden/poepen laten',
         'Rusteloos bewegen met benen',
@@ -102,19 +80,19 @@ export default function KrampjesNaFlesvoedingPage() {
       causes: [
         {
           cause: 'Lucht in Maag/Darmen',
-          percentage: '40%',
+          percentage: 'Vaak',
           description: 'Verkeerde speen of voedingstechniek',
           solution: 'Anti-koliek spenen en betere boertje techniek'
         },
         {
           cause: 'Moeilijke Vertering',
-          percentage: '25%',
-          description: 'Koemelkeiwitten, caseine is zwaarder verteerbaar',
-          solution: 'Overweeg hypoallergene flesvoeding na 2 weken - zie artikel hypoallergene flesvoeding'
+          percentage: 'Soms',
+          description: 'Koemelkeiwitten, caseïne is zwaarder verteerbaar',
+          solution: 'Bespreek met het consultatiebureau of de huisarts of hypoallergene voeding zinvol is'
         },
         {
           cause: 'Verkeerde Temperatuur',
-          percentage: '15%',
+          percentage: 'Minder vaak',
           description: 'Te koud veroorzaakt maagkrampen',
           solution: 'Consistent lichaamswarmte aanhouden'
         }
@@ -125,13 +103,13 @@ export default function KrampjesNaFlesvoedingPage() {
       causes: [
         {
           cause: 'Onvolgroeide Spijsvertering',
-          percentage: '60%',
+          percentage: 'Belangrijkste',
           description: 'Enzymsysteem ontwikkelt tot 3-4 maanden',
           solution: 'Geduld en comfort maatregelen'
         },
         {
           cause: 'Microbioom Ontwikkeling',
-          percentage: '20%',
+          percentage: 'Vaak',
           description: 'Darmflora stabiliseert rond 2-3 maanden',
           solution: 'Overweeg baby probiotica'
         }
@@ -242,7 +220,7 @@ export default function KrampjesNaFlesvoedingPage() {
       ],
       gereedschapskist: [
         'Anti-koliek spenen (2-3 verschillende)',
-        'Anti-windje druppels (Infacol/Espumisan)',
+        'Anti-windje druppels (Infacol/Espumisan): sommige ouders proberen dit, het bewijs is beperkt, overleg met apotheek of arts',
         'Draagzak voor hands-free troost',
         'Witte ruis app',
         'Ondersteuningsnetwerk (familie/vrienden)',
@@ -286,7 +264,7 @@ export default function KrampjesNaFlesvoedingPage() {
       color: 'text-amber-600',
       symptoms: [
         'Projectielspugen + krampjes',
-        'Koorts (>38°C rectaal)',
+        'Koorts (38°C of hoger); bij een baby jonger dan 3 maanden is elke koorts reden om direct een (spoed)arts te bellen',
         'Geen natte luiers 6+ uur',
         'Gewichtsverlies of geen groei',
         'Bloederig spuugsel of ontlasting',
@@ -383,7 +361,7 @@ export default function KrampjesNaFlesvoedingPage() {
       fact: 'Onderzoek toont aan dat ze luchtinname aanzienlijk kunnen verminderen.'
     },
     {
-      myth: 'Krampjes duuren tot 1 jaar',
+      myth: 'Krampjes duren tot 1 jaar',
       fact: 'Echte koliek/krampjes verdwijnen meestal rond 4-5 maanden. Langer kan andere oorzaken hebben.'
     },
     {
@@ -417,14 +395,13 @@ export default function KrampjesNaFlesvoedingPage() {
               <h2 className="text-lg font-medium text-primary mb-4">Waarom Krampjes zo Veelvoorkomend Zijn</h2>
               
               <p className="text-gray-700 mb-4">
-                <strong>Veel flesvoeding baby's</strong> ervaren regelmatig krampjes in de eerste 4 maanden.
-                Bij borstvoeding baby's komt dit minder vaak voor. Het verschil ligt in de vertering van flesvoeding
-                en de hoeveelheid lucht die wordt ingeslikt.
+                Krampjes en koliek komen bij alle baby's voor, bij borst- en flesvoeding; de oorzaak is vooral de nog
+                onrijpe spijsvertering. Bij flesvoeding kan de hoeveelheid lucht die wordt ingeslikt een rol spelen.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <h3 className="font-medium text-primary mb-2">Waarom Flesvoeding Meer Krampjes Veroorzaakt:</h3>
+                  <h3 className="font-medium text-primary mb-2">Factoren die bij flesvoeding kunnen meespelen:</h3>
                   <ul className="space-y-1">
                     {[
                       'Andere eiwitstructuur - Koemelkeiwitten zijn moeilijker te verteren',
@@ -537,7 +514,7 @@ export default function KrampjesNaFlesvoedingPage() {
                           <p className="text-sm text-gray-700 mb-2">{cause.description}</p>
                           <p className="text-sm font-medium text-gray-900">
                             <strong>Oplossing:</strong> {cause.cause === 'Moeilijke Vertering' ? (
-                              <>Overweeg <Link href="/kennisbank/soorten-flesvoeding/hypoallergene-flesvoeding" className="text-primary hover:underline font-medium">hypoallergene flesvoeding</Link> na 2 weken</>
+                              <>Bespreek met het consultatiebureau of de huisarts of <Link href="/kennisbank/soorten-flesvoeding/hypoallergene-flesvoeding" className="text-primary hover:underline font-medium">hypoallergene voeding</Link> zinvol is. Wissel nooit zelf van voeding.</>
                             ) : cause.solution}
                           </p>
                         </div>
@@ -787,6 +764,22 @@ export default function KrampjesNaFlesvoedingPage() {
                     )}
                   </div>
                 ))}
+              </div>
+            </div>
+
+            {/* Let op */}
+            <div className="bg-amber-50 rounded-2xl shadow-sm border border-amber-200 p-6">
+              <div className="flex items-start space-x-3">
+                <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <AlertTriangle className="w-5 h-5 text-amber-600" />
+                </div>
+                <div>
+                  <h3 className="font-medium text-amber-800 mb-2">Let op</h3>
+                  <p className="text-sm text-amber-700 leading-relaxed">
+                    Dit artikel geeft algemene informatie en vervangt geen medisch advies. Twijfel je, of heeft je baby
+                    alarmsignalen, neem dan contact op met het consultatiebureau of de huisarts.
+                  </p>
+                </div>
               </div>
             </div>
 

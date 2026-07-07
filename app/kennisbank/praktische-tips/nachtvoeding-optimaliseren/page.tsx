@@ -2,34 +2,12 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
-import { BookOpen, ArrowRight, Home, Moon, Clock, Lightbulb, Calculator, Coffee, Zap } from 'lucide-react'
+import { BookOpen, ArrowRight, Home, Moon, Clock, Lightbulb, Calculator, Coffee, Zap, AlertTriangle } from 'lucide-react'
 
 export const metadata = {
   title: 'Nachtvoeding Optimaliseren: Efficiënt Voeden in het Donker 2026',
   description: 'Praktische tips voor nachtvoeding bij flesvoeding. Van 30 naar 10 minuten per nachtvoeding. Complete gids voor uitgeruste Nederlandse ouders.',
 }
-
-
-  // Sidebar configuration
-  const sidebarImages = [
-    {
-      src: "/mother_and_baby.webp",
-      alt: "Rustige nachtvoeding moment",
-      caption: "Serene nachten met goede routine"
-    },
-    {
-      src: "/baby.webp",
-      alt: "Baby slaapt goed na nachtvoeding",
-      caption: "Tevreden en uitgerust"
-    },
-    {
-      src: "/flesvoeding-door-mama.webp",
-      alt: "Efficiënte nachtvoeding routine",
-      caption: "Snelle voeding, snelle rust"
-    }
-  ]
-
-  const adTopics = ["Nachtvoeding", "Baby Slaap", "Nacht Routine", "Slaap Optimalisatie"]
 
 export default function NachtvoedingOptimaliserenPage() {
   const optimizationStrategies = [
@@ -121,7 +99,7 @@ export default function NachtvoedingOptimaliserenPage() {
       tips: [
         'Nachtvoeding afbouwen mogelijk',
         'Baby kan 6-8u zonder eten',
-        'Water in plaats van melk proberen',
+        'Nachtvoeding afbouwen gaat per baby verschillend; overleg zo nodig met het consultatiebureau',
         'Slaaproutine belangrijker dan voeding'
       ],
       sleepExpectation: '6-8u ononderbroken slaap'
@@ -277,6 +255,21 @@ export default function NachtvoedingOptimaliserenPage() {
             </div>
           </div>
         </div>
+
+        {/* Let op: veilig slapen */}
+        <section className="bg-amber-50 rounded-2xl shadow-sm border border-amber-200 p-6">
+          <div className="flex items-start space-x-3">
+            <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <AlertTriangle className="w-5 h-5 text-amber-600" />
+            </div>
+            <div>
+              <h3 className="font-semibold text-amber-800 mb-2">Let op: veilig slapen</h3>
+              <p className="text-sm text-amber-700 leading-relaxed">
+                Leg je baby altijd op de rug te slapen, op een stevig matras zonder losse dekens, kussens of knuffels. Geef je baby nooit een fles mee in bed en laat de baby niet met de fles in slaap vallen: dat geeft kans op verslikken en op tandbederf. Voed je baby en leg hem daarna pas terug in bed.
+              </p>
+            </div>
+          </div>
+        </section>
 
         {/* Time Comparison */}
         <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
@@ -533,18 +526,18 @@ export default function NachtvoedingOptimaliserenPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
  <div className="p-4">
-              <h3 className="font-medium text-gray-600 mb-2">"Van 45 naar 12 minuten!" - Michelle, Den Haag</h3>
+              <h3 className="font-medium text-gray-600 mb-2">Van 45 naar 12 minuten (illustratief voorbeeld)</h3>
               <p className="text-gray-600">
-                "Thermosfles naast bed + pre-made flessen was game-changer. Dream feeding werkt perfect bij Lotte. 
-                Ik word nauwelijks meer wakker."
+                Een thermosfles naast bed in combinatie met vooraf klaargemaakte flessen scheelt veel tijd.
+                Dream feeding kan helpen om zelf nauwelijks wakker te worden.
               </p>
             </div>
-            
+
  <div className="p-4">
-              <h3 className="font-medium text-gray-600 mb-2">"Tag-team redde ons huwelijk" - Jeroen & Sara, Eindhoven</h3>
+              <h3 className="font-medium text-gray-600 mb-2">Tag-team tussen partners (illustratief voorbeeld)</h3>
               <p className="text-gray-600">
-                "Ik doe maandag/woensdag/vrijdag nachten, Sara di/do/zat. Zondag samen. 
-                We slapen nu echt weer en zijn veel gelukkiger."
+                Nachten of voedingen verdelen, bijvoorbeeld om de beurt, zorgt dat allebei de ouders
+                regelmatig een hele nacht doorslapen en zich uitgeruster voelen.
               </p>
             </div>
           </div>
@@ -564,11 +557,11 @@ export default function NachtvoedingOptimaliserenPage() {
         <div className="bg-primary-gradient rounded-2xl shadow-lg p-6 text-white">
           <h2 className="text-lg font-medium text-white mb-3 flex items-center">
             <Calculator className="w-5 h-5 mr-2" />
-            Bereken Uw Nachtvoeding Schema
+            Bereken jouw Nachtvoeding Schema
           </h2>
           <p className="text-white/90 mb-4">
-            Gebruik onze calculator om een gepersonaliseerd nachtvoeding schema te maken 
-            dat past bij de leeftijd en slaappatroon van uw baby.
+            Gebruik onze calculator om een gepersonaliseerd nachtvoeding schema te maken
+            dat past bij de leeftijd en slaappatroon van je baby.
           </p>
           <Link
             href="/"

@@ -34,7 +34,7 @@ export default function FlesvoedingEnSlapenPage() {
 
   // Data arrays
   const flesvoedingVoordelen = [
-    "Langere slaapperiodes mogelijk (2-4 uur vs 1-3 uur borstvoeding)",
+    "Soms langere slaapperiodes, al verschilt dit per baby",
     "Voorspelbaardere timing en volumes", 
     "Beide ouders kunnen nachtvoeding doen",
     "Duidelijkere saturatie signalen van baby",
@@ -142,14 +142,29 @@ export default function FlesvoedingEnSlapenPage() {
               </div>
             </section>
 
+            {/* Let op: veilig slapen */}
+            <section className="bg-amber-50 rounded-2xl shadow-sm border border-amber-200 p-6">
+              <div className="flex items-start space-x-3">
+                <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <AlertTriangle className="w-5 h-5 text-amber-600" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-amber-800 mb-2">Let op: veilig slapen</h3>
+                  <p className="text-sm text-amber-700 leading-relaxed">
+                    Leg je baby altijd op de rug te slapen, op een stevig matras zonder losse dekens, kussens of knuffels. Geef je baby nooit een fles mee in bed en laat de baby niet met de fles in slaap vallen: dat geeft kans op verslikken en op tandbederf. Voed je baby en leg hem daarna pas terug in bed.
+                  </p>
+                </div>
+              </div>
+            </section>
+
             {/* Hoe Flesvoeding Slaap Beïnvloedt */}
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Hoe Flesvoeding Slaap Beïnvloedt</h2>
               
               <div className="border-t border-gray-200 pt-6">
-                <h3 className="font-medium text-primary mb-4">Wetenschappelijke Basis</h3>
+                <h3 className="font-medium text-primary mb-4">Wat weten we hierover</h3>
                 <p className="text-gray-700 mb-4">
-                  Flesvoeding heeft verschillende fysiologische effecten die slaap kunnen verbeteren. Een <Link href="/kennisbank/praktische-tips/voedingsritme-opbouwen" className="text-primary hover:underline font-medium">consistent voedingsritme</Link> versterkt deze effecten:
+                  Sommige ouders ervaren dat flesvoeding het slaappatroon beïnvloedt, maar dit verschilt per baby. Een <Link href="/kennisbank/praktische-tips/voedingsritme-opbouwen" className="text-primary hover:underline font-medium">consistent voedingsritme</Link> kan hierbij helpen:
                 </p>
                 <ul className="space-y-3 mb-6">
                   {flesvoedingVoordelen.map((voordeel, index) => (
@@ -162,16 +177,16 @@ export default function FlesvoedingEnSlapenPage() {
               </div>
 
               <div className="border-t border-gray-200 pt-6">
-                <h3 className="font-medium text-primary mb-4">Hormoon Interactie</h3>
+                <h3 className="font-medium text-primary mb-4">Verzadiging en slaap</h3>
  <div className="p-4">
                   <p className="text-gray-700 text-sm mb-2">
-                    <strong>CCK (Cholecystokinine):</strong> Verhoogd na flesvoeding  verzadiging + slaperigheid 2-4 uur
+                    <strong>Verzadiging:</strong> na een voeding voelt je baby zich vaak verzadigd en slaperig, maar hoe lang dat aanhoudt verschilt per baby
                   </p>
                   <p className="text-gray-700 text-sm mb-2">
-                    <strong>Stabielere bloedsuiker:</strong> Minder nachtelijke hongerpieken, rustiger slaap
+                    <strong>Stabielere bloedsuiker:</strong> een goede voeding kan nachtelijke hongerpieken verminderen, al is dat niet bij elke baby hetzelfde
                   </p>
                   <p className="text-gray-700 text-sm">
-                    <strong>Lagere cortisol:</strong> mogelijk minder uitgesproken stress hormoon pieken bij flesvoeding baby's
+                    <strong>Rust en routine:</strong> een rustige, vaste avondroutine helpt veel baby's om makkelijker in slaap te vallen
                   </p>
                 </div>
               </div>
@@ -209,8 +224,8 @@ export default function FlesvoedingEnSlapenPage() {
  <div className="mt-6">
                 <h4 className="font-medium text-gray-700 mb-2">Perfecte Bedtijd Voeding</h4>
                 <p className="text-gray-700 text-sm">
-                  <strong>Timing:</strong> 30-45 min voor gewenste slaaptijd  
-                  <strong>Volume:</strong> Grootste voeding van de dag  
+                  <strong>Timing:</strong> 30-45 min voor gewenste slaaptijd →{' '}
+                  <strong>Volume:</strong> Grootste voeding van de dag →{' '}
                   <strong>Omgeving:</strong> Dimmed licht, 37°C melk, rustige routine
                 </p>
               </div>
@@ -301,7 +316,7 @@ export default function FlesvoedingEnSlapenPage() {
  <div className="mt-6">
                 <h4 className="font-medium text-primary mb-2">Gas/Boertjes Verstoren Slaap</h4>
                 <p className="text-gray-700 text-sm">
-                  <strong>Preventie:</strong> Anti-colic flessen, juiste temperatuur (37°C), pauzes tijdens voeding, 45° angle  
+                  <strong>Preventie:</strong> Anti-colic flessen, juiste temperatuur (37°C), pauzes tijdens voeding, 45° angle →{' '}
                   <strong>Behandeling:</strong> 3x burp tijdens voeding, tummy massage, bicycles legs
                 </p>
               </div>
@@ -339,7 +354,7 @@ export default function FlesvoedingEnSlapenPage() {
                 <h3 className="font-medium text-primary mb-4">6+ Maanden: Consistentie & Onderhoud</h3>
  <div className="p-4">
                   <p className="text-gray-700 text-sm">
-                    <strong>Capaciteiten:</strong> 10-12 uur doorslapen mogelijk, geen nachtvoeding nodig, 3-4x overdag voldoende  
+                    <strong>Capaciteiten:</strong> 10-12 uur doorslapen mogelijk, geen nachtvoeding nodig, 3-4x overdag voldoende →{' '}
                     <strong>Uitdagingen:</strong> Tandjes komen, reisaanpassingen, kinderopvang coördinatie
                   </p>
                 </div>

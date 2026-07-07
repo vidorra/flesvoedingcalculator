@@ -2,7 +2,7 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
-import { AlertCircle, Heart, Clock, Users, CheckCircle, ArrowRight, } from 'lucide-react'
+import { AlertCircle, AlertTriangle, Heart, Clock, Users, CheckCircle, ArrowRight, } from 'lucide-react'
 
 export default function ConstipatieFlespagePage() {
   const sidebarImages = [
@@ -51,7 +51,7 @@ export default function ConstipatieFlespagePage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium text-primary mb-3">Normale ontlasting patronen per leeftijd</h3>
+                  <h3 className="font-medium text-primary mb-3">Normale ontlastingspatronen per leeftijd</h3>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -128,7 +128,7 @@ export default function ConstipatieFlespagePage() {
               
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-medium text-primary mb-3">Samenstelling verschillen met moedermelk</h3>
+                  <h3 className="font-medium text-primary mb-3">Samenstellingsverschillen met moedermelk</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <h4 className="font-medium text-gray-700 mb-2">Flesvoeding eigenschappen</h4>
@@ -202,19 +202,11 @@ export default function ConstipatieFlespagePage() {
                 <div>
                   <h3 className="font-medium text-primary mb-3">Voeding aanpassingen</h3>
                   <div className="mb-4">
-                    <h4 className="font-medium text-gray-700 mb-2">Verdunning aanpassen:</h4>
+                    <h4 className="font-medium text-gray-700 mb-2">Juiste bereiding:</h4>
                     <ul className="space-y-2">
-                      <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-600 text-sm">Extra water: 10-15ml extra per fles (tijdelijk)</span>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-600 text-sm">Juiste verhouding: dubbel check poeder/water ratio</span>
-                      </li>
-                      <li className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-600 text-sm">Zachter water: gefilterd water proberen</span>
+                      <li className="flex items-start space-x-2">
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                        <span className="text-gray-600 text-sm">Controleer of je de juiste verhouding poeder en water gebruikt: afgestreken maatschepjes volgens de verpakking. Voeg geen extra water toe aan de fles zonder overleg met het consultatiebureau of de huisarts; dat verstoort de voedingswaarde. Extra water als drankje is pas vanaf ongeveer 6 maanden en in kleine hoeveelheden aan de orde.</span>
                       </li>
                     </ul>
                   </div>
@@ -262,7 +254,7 @@ export default function ConstipatieFlespagePage() {
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                          <span className="text-gray-700 text-sm">Pruimen sap: 15-30ml per dag (6+ maanden)</span>
+                          <span className="text-gray-700 text-sm">Pruimensap: 15-30ml per dag, alleen bij baby's die al bijvoeding krijgen (vanaf ongeveer 6 maanden) en in overleg met het consultatiebureau</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
@@ -442,6 +434,21 @@ export default function ConstipatieFlespagePage() {
                       <span className="text-gray-700 text-sm">Ouderstress wordt te groot</span>
                     </li>
                   </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Let op */}
+            <div className="bg-amber-50 rounded-2xl shadow-sm border border-amber-200 p-6">
+              <div className="flex items-start space-x-3">
+                <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <AlertTriangle className="w-5 h-5 text-amber-600" />
+                </div>
+                <div>
+                  <h3 className="font-medium text-amber-800 mb-2">Let op</h3>
+                  <p className="text-sm text-amber-700 leading-relaxed">
+                    Dit artikel geeft algemene informatie en vervangt geen medisch advies. Bij aanhoudende verstopping, bloed bij de ontlasting, braken of een baby die veel pijn heeft: neem contact op met het consultatiebureau of de huisarts.
+                  </p>
                 </div>
               </div>
             </div>

@@ -83,7 +83,7 @@ export default function DiarreeEnFlesvoedingPage() {
     },
     {
       urgentie: "Huisartsenpost (24u)",
-      symptomen: "Matige dehydratie, koorts >38,5°C baby <3 mnd, bloed in ontlasting"
+      symptomen: "Matige dehydratie, een baby jonger dan 3 maanden met koorts (38°C of hoger): altijd direct (spoed)arts bellen, bloed in ontlasting"
     },
     {
       urgentie: "Huisarts (2-3 dagen)",
@@ -96,7 +96,7 @@ export default function DiarreeEnFlesvoedingPage() {
     "Continue flesvoeding - Nederlandse richtlijn blijven voeden", 
     "Monitor dehydratie signalen - fontanel, urine, gedrag",
     "Juiste bil verzorging - frequent verschonen + barrier crème",
-    "Temperatuur monitoring - rectaal meten bij koorts",
+    "Temperatuur monitoring - de temperatuur meten (bijvoorbeeld onder de oksel) bij koorts",
     "Professionele hulp zoeken bij waarschuwingssignalen"
   ]
 
@@ -122,14 +122,13 @@ export default function DiarreeEnFlesvoedingPage() {
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Diarree komt voor bij 15-20% van Nederlandse baby's op flesvoeding in de eerste 6 maanden. 
+                Diarree komt regelmatig voor bij Nederlandse baby's op flesvoeding in de eerste 6 maanden.
                 Vroege herkenning en juiste behandeling zijn essentieel voor het welzijn van je baby en het voorkomen van dehydratie.
               </p>
               
- <div className="mt-4">
+              <div className="mt-4">
                 <p className="text-gray-700">
-                  <strong>Nederlandse statistiek:</strong> 60% infectieus, 25% voeding-gerelateerd, 
-                  8% antibiotica gerelateerd. Meeste gevallen zijn zelf-limiterend binnen 3-7 dagen.
+                  <strong>Goed om te weten:</strong> diarree wordt meestal veroorzaakt door een virus, in een deel van de gevallen speelt de voeding of een antibioticakuur een rol. De meeste gevallen gaan vanzelf over binnen enkele dagen.
                 </p>
               </div>
             </section>
@@ -153,7 +152,7 @@ export default function DiarreeEnFlesvoedingPage() {
                       </li>
                       <li className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700 text-sm">Consistentie: Peurig, zacht-gevormd</span>
+                        <span className="text-gray-700 text-sm">Consistentie: brijig, zacht-gevormd</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -188,7 +187,7 @@ export default function DiarreeEnFlesvoedingPage() {
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Voeding Gerelateerde Oorzaken</h3>
                 <p className="text-gray-700 mb-4">
-                  25% van baby diarree gevallen is direct gerelateerd aan flesvoeding bereiding, samenstelling of timing:
+                  Een deel van de gevallen van babydiarree is direct gerelateerd aan de bereiding, samenstelling of timing van de flesvoeding:
                 </p>
                 <ul className="space-y-3 mb-6">
                   {voedingGerelateerdeOorzaken.map((oorzaak, index) => (
@@ -204,7 +203,7 @@ export default function DiarreeEnFlesvoedingPage() {
                 <h3 className="font-medium text-primary mb-4">Infectieuze Oorzaken</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <h4 className="font-medium text-primary mb-3">Virale Infecties (60% gevallen):</h4>
+                    <h4 className="font-medium text-primary mb-3">Virale Infecties (vaak):</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -265,7 +264,7 @@ export default function DiarreeEnFlesvoedingPage() {
                         <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Bloed in diarree + koorts</span></li>
                         <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Heftig braken elke voeding</span></li>
                         <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Tekenen ernstige dehydratie</span></li>
-                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Koorts &gt;39°C bij baby &lt;3 maanden</span></li>
+                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Een baby jonger dan 3 maanden met koorts (38°C of hoger): altijd direct (spoed)arts bellen</span></li>
                       </ul>
                     </div>
                     
@@ -329,16 +328,16 @@ export default function DiarreeEnFlesvoedingPage() {
                 ))}
               </div>
               
- <div className="mt-6">
+              <div className="mt-6">
                 <h4 className="font-medium text-gray-700 mb-2">Nederlandse Hulpnummers</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
                   <div>
-                    <p><strong>Spoed:</strong> 112</p>
-                    <p><strong>Huisartsenpost:</strong> 088-003-0600</p>
+                    <p><strong>Levensbedreigend:</strong> 112</p>
+                    <p><strong>Avond, nacht of weekend:</strong> de huisartsenpost in jouw regio</p>
                   </div>
                   <div>
-                    <p><strong>Vergiftiging:</strong> 030-274 88 88</p>
-                    <p><strong>Ouder telefoonie:</strong> 0900-1628</p>
+                    <p><strong>Overdag:</strong> je eigen huisarts of het consultatiebureau</p>
+                    <p><strong>Betrouwbare informatie:</strong> thuisarts.nl</p>
                   </div>
                 </div>
               </div>
@@ -366,17 +365,18 @@ export default function DiarreeEnFlesvoedingPage() {
               </div>
 
               <div className="border-t border-gray-200 pt-6">
-                <h3 className="font-medium text-primary mb-4">Geleidelijke Herstart Flesvoeding</h3>
- <div className="p-4">
-                  <p className="text-gray-700 text-sm mb-3"><strong>Stapsgewijze hervatting:</strong></p>
-                  <ul className="space-y-1 text-gray-700">
-                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Dag 1-2: Alleen ORS + water</span></li>
-                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Dag 3: 25% formule + 75% ORS</span></li>
-                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Dag 4: 50% formule + 50% ORS</span></li>
-                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Dag 5: 75% formule + 25% ORS</span></li>
-                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Dag 6: 100% formule (als goed verdragen)</span></li>
-                  </ul>
-                </div>
+                <h3 className="font-medium text-primary mb-4">Flesvoeding hervatten</h3>
+                <p className="text-gray-700 mb-3">
+                  Geef de flesvoeding gewoon onverdund door. Verdun de voeding niet en bouw niet in stappen op: dat vertraagt het herstel en geeft onnodig gewichtsverlies.
+                </p>
+                <ul className="space-y-2 text-gray-700">
+                  <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Blijf normaal voeden op verzoek, met de gewone flesvoeding in de normale sterkte.</span></li>
+                  <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Geef na elke waterige ontlasting een beetje ORS (orale rehydratievloeistof van de apotheek of drogist) los tussendoor.</span></li>
+                  <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Blijft de diarree aanhouden of zie je tekenen van uitdroging, neem dan contact op met de huisarts.</span></li>
+                </ul>
+                <p className="text-gray-700 mt-3">
+                  Houdt de diarree lang aan, denk dan met je arts ook aan een koemelkallergie of een andere oorzaak.
+                </p>
               </div>
             </section>
 
@@ -384,7 +384,7 @@ export default function DiarreeEnFlesvoedingPage() {
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Preventie Strategieën</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Strikte hygiëne en juiste bereiding kunnen 80% van voeding-gerelateerde diarree voorkomen.
+                Strikte hygiëne en juiste bereiding kunnen veel gevallen van voeding-gerelateerde diarree voorkomen.
                 Lees meer over <Link href="/kennisbank/hygiene-bereiding/water-koken-flesvoeding" className="text-primary hover:underline font-medium">water koken voor flesvoeding</Link> en <Link href="/kennisbank/hygiene-bereiding/houdbaarheid-flesvoeding" className="text-primary hover:underline font-medium">houdbaarheid van flesvoeding</Link>:
               </p>
               

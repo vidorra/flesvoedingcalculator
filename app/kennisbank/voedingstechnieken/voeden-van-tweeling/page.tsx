@@ -2,28 +2,28 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
-import { BookOpen, ArrowRight, Home, Users, Clock, Package, Heart, Euro } from 'lucide-react'
+import { BookOpen, ArrowRight, Home, Users, Clock, Package, Heart, Euro, AlertTriangle } from 'lucide-react'
 
 export const metadata = {
-  title: 'Flesvoeding voor Tweeling: Complete Survival Gids 2026 | Nederlandse Ouders',
-  description: 'Praktische hacks, tijdsbesparing en equipment voor Nederlandse ouders van een tweeling. Van gelijktijdige voeding tot kosten overzicht - alles voor succesvol tweeling voeden.',
+  title: 'Flesvoeding voor Tweeling: Complete gids | Nederlandse Ouders',
+  description: 'Praktische tips, tijdsbesparing en equipment voor Nederlandse ouders van een tweeling. Van gelijktijdige voeding tot kostenoverzicht, alles voor het voeden van een tweeling.',
 }
 
 export default function TweelingVoedenPage() {
   const practicalHacks = [
     {
       title: 'De Gelijktijdige Voeding',
-      description: '60% van ouders gebruikt deze methode',
-      tips: ['Beide baby\'s tegelijk voeden', 'Bespaart 4-6 uur per dag', 'Tweelingvoedingskussen gebruiken', 'V-houding of parallelle houding']
+      description: 'Een veelgebruikte methode bij tweelingen',
+      tips: ['Beide baby\'s tegelijk voeden', 'Scheelt tijd per dag', 'Tweelingvoedingskussen gebruiken', 'V-houding of parallelle houding']
     },
     {
-      title: 'De Productielijn Methode', 
-      description: '75% tijdsbesparing op bereiding',
-      tips: ['6-8 flessen tegelijk maken', 'Bewaren in koelkast (24u houdbaar)', 'Label met naam en tijd', 'Voorraad bereiden voeding']
+      title: 'Vers klaarmaken per voeding',
+      description: 'De veiligste basis voor bereiding',
+      tips: ['Maak flesvoeding het liefst vers per voeding klaar', 'Voorbereiden? Gebruik koud kraanwater', 'Bewaar maximaal 8 uur achterin de koelkast bij 4°C', 'Vul poeder en water apart voor onderweg']
     },
     {
       title: 'Het Afwisselingssysteem',
-      description: 'Beide ouders krijgen 4-5 uur slaap',
+      description: 'Beide ouders krijgen aaneengesloten slaap',
       tips: ['Nachtvoeding verdelen', 'Ouder 1: 22:00 en 02:00', 'Ouder 2: 06:00 en 10:00', 'Wisseling per week mogelijk']
     }
   ]
@@ -42,8 +42,8 @@ export default function TweelingVoedenPage() {
       category: 'Handige extras',
       items: [
         { name: 'Twin Z Kussen', price: '€85', description: 'Ergonomisch voeden' },
-        { name: 'Bottle Buddy', price: '€25', description: 'Fleshouder per baby' },
-        { name: 'Baby gym met fleshouders', price: '€60', description: 'Entertainment tijdens voeden' }
+        { name: 'Extra spenen en flessendeksels', price: '€15', description: 'Handig als reserve' },
+        { name: 'Voedingsdagboek of app', price: '€0', description: 'Inname per baby bijhouden' }
       ]
     }
   ]
@@ -68,7 +68,7 @@ export default function TweelingVoedenPage() {
     {
       problem: 'Baby\'s hebben verschillende schema\'s', 
       solution: 'Dominantie methode gebruiken',
-      details: ['Sterkste baby bepaalt schema', 'Compromis methode: schema in het midden', '80% van tweelingen sync automatisch binnen 6 weken']
+      details: ['Sterkste baby bepaalt schema', 'Compromis methode: schema in het midden', 'Veel tweelingen synchroniseren na verloop van tijd vanzelf']
     },
     {
       problem: 'Beide baby\'s wakker houden elkaar wakker',
@@ -110,10 +110,10 @@ export default function TweelingVoedenPage() {
           <div className="text-sm text-gray-500 mb-2">Voedingstechnieken • Tweeling</div>
           <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
             <Users className="w-6 h-6 mr-3 text-primary" />
-            Flesvoeding voor Tweeling: Complete Survival Gids 2026
+            Flesvoeding voor Tweeling: Complete gids
           </h1>
           <p className="text-gray-700">
-            Praktische hacks, tijdsbesparing en equipment voor Nederlandse ouders van een tweeling. 
+            Praktische tips, tijdsbesparing en equipment voor Nederlandse ouders van een tweeling.
             Van gelijktijdige voeding tot kostenoptimalisatie.
           </p>
         </div>
@@ -131,19 +131,19 @@ export default function TweelingVoedenPage() {
               </p>
               
               <div className="border border-gray-200 bg-white rounded-xl p-4">
-                <h3 className="font-medium text-primary mb-3">Nederlandse cijfers tweeling flesvoeding:</h3>
+                <h3 className="font-medium text-primary mb-3">Tweeling flesvoeding in de praktijk:</h3>
                 <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span>78% van tweelingen krijgt (deels) flesvoeding vanaf 3 maanden</span>
+                    <span>Veel tweelingen krijgen (deels) flesvoeding in de eerste maanden</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span>Gemiddeld 2,5 uur per dag besteed aan voedingen</span>
+                    <span>Voedingen kosten samen een flink deel van de dag</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span>85% van ouders gebruikt tijdbesparende technieken</span>
+                    <span>De meeste ouders gebruiken tijdbesparende technieken</span>
                   </li>
                 </ul>
               </div>
@@ -191,6 +191,22 @@ export default function TweelingVoedenPage() {
           </div>
         </div>
 
+        {/* Waarschuwing gelijktijdig voeden */}
+        <div className="bg-amber-50 rounded-2xl shadow-sm border border-amber-200 p-6">
+          <div className="flex items-start space-x-3">
+            <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <AlertTriangle className="w-5 h-5 text-amber-600" />
+            </div>
+            <div>
+              <h3 className="font-semibold text-amber-800 mb-2">Let op</h3>
+              <p className="text-sm text-amber-700 leading-relaxed">
+                Voed twee baby's nooit tegelijk met vastgezette of ondersteunde flessen zonder dat je erbij blijft.
+                Een baby kan zich verslikken of stikken. Houd de fles altijd zelf vast en blijf toezicht houden.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Time Saving */}
         <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Tijdsbesparing: Van 12 naar 5 Uur per Dag</h2>
@@ -209,7 +225,7 @@ export default function TweelingVoedenPage() {
             <div className="border border-gray-200 bg-white rounded-xl p-4">
               <h3 className="font-medium text-primary mb-3">Geoptimaliseerde methode:</h3>
               <div className="space-y-2 text-gray-600">
-                <div>Batch klaarmaken: <strong>45 min</strong> per dag</div>
+                <div>Poeder en water klaarzetten: <strong>45 min</strong> per dag</div>
                 <div>Gelijktijdig voeden: 30 min × 8 = <strong>240 min</strong></div>
                 <div>Opruimen: 3 min × 8 = <strong>24 min</strong></div>
                 <div className="border-t pt-2 font-medium">Totaal: 5 uur per dag</div>
@@ -218,7 +234,7 @@ export default function TweelingVoedenPage() {
           </div>
           
           <div className="mt-4 p-4 bg-primary text-white rounded-xl text-center">
-            <div className="text-2xl font-medium">Tijdsbesparing: 7 uur per dag!</div>
+            <div className="text-2xl font-medium">Slim werken scheelt flink wat tijd</div>
             <p className="text-sm text-white/90 mt-1">Meer tijd voor rust, jezelf en aandachtstijd met de baby's</p>
           </div>
         </div>
@@ -299,10 +315,14 @@ export default function TweelingVoedenPage() {
             </table>
           </div>
           
- <div className="mt-4">
+          <div className="mt-4 space-y-2">
             <p className="text-gray-600">
-              <strong>Totaal per dag:</strong> 1720ml (860ml per baby)  
-              <strong>Tip:</strong> Flexibiliteit binnen 30 minuten is prima
+              <strong>Totaal per dag:</strong> dit voorbeeld komt uit op ongeveer 1720ml (860ml per baby).
+              De hoeveelheid hangt af van het gewicht van elke baby (ongeveer 150 ml per kilo per dag).
+              Tweelingen zijn vaak lichter; reken per baby en <Link href="/" className="text-primary hover:underline font-medium">bereken per baby</Link> met onze calculator.
+            </p>
+            <p className="text-gray-600">
+              <strong>Tip:</strong> Flexibiliteit binnen 30 minuten is prima.
             </p>
           </div>
         </div>
@@ -343,7 +363,9 @@ export default function TweelingVoedenPage() {
             <Euro className="w-5 h-5 mr-2" />
             Kosten Overzicht Tweeling
           </h2>
-          
+
+          <p className="text-gray-600 mb-4">De onderstaande bedragen zijn indicatief en verschillen per merk, winkel en actie.</p>
+
           <div className="space-y-6">
             {budgetBreakdown.map((budget, index) => (
               <div key={index}>
@@ -393,37 +415,39 @@ export default function TweelingVoedenPage() {
             <Heart className="w-5 h-5 mr-2" />
             Ervaringen van Ouders
           </h2>
-          
+
+          <p className="text-gray-600 mb-4">Onderstaande voorbeelden zijn illustratief en bedoeld om herkenbare situaties te schetsen.</p>
+
           <div className="space-y-4">
- <div className="p-4">
-              <h3 className="font-medium text-primary mb-2">"De productielijn redde ons leven" - Marieke, Almere</h3>
+            <div>
+              <h3 className="font-medium text-primary mb-2">Vers klaarmaken houdt het overzichtelijk</h3>
               <p className="text-gray-600">
-                "Iedere avond 8 flessen maken voor de volgende dag. Partner kan direct helpen zonder instructies. 
-                Nachtvoedingen duren nu 10 minuten in plaats van 30."
+                Poeder en koud kraanwater apart klaarzetten en de fles ter plekke afmaken.
+                Zo kan een partner meteen helpen en blijft de voeding veilig en vers.
               </p>
             </div>
-            
- <div className="p-4">
-              <h3 className="font-medium text-primary mb-2">"Tweelingkussen = grote verbetering" - Patrick, Utrecht</h3>
+
+            <div>
+              <h3 className="font-medium text-primary mb-2">Een tweelingkussen geeft rust</h3>
               <p className="text-gray-600">
-                "€85 beste investering ooit. Beide baby's tegelijk voeden terwijl ik koffie drink. 
-                Mijn rug doet niet meer zeer en baby's zijn rustiger."
+                Beide baby's tegelijk voeden gaat comfortabeler met een goed kussen.
+                Houd de flessen wel altijd zelf vast en blijf erbij.
               </p>
             </div>
-            
- <div className="p-4">
-              <h3 className="font-medium text-primary mb-2">"Schema discipline werkt echt" - Lisa, Rotterdam</h3>
+
+            <div>
+              <h3 className="font-medium text-primary mb-2">Een schema helpt na de eerste weken</h3>
               <p className="text-gray-600">
-                "Eerste maand chaos, tweede maand strict schema. Beide baby's slapen nu door. 
-                Vrienden begrijpen niet hoe relaxed wij zijn."
+                De eerste periode is vaak zoeken. Een globaal ritme brengt daarna meer rust,
+                zolang je ruimte houdt voor de behoefte van elke baby.
               </p>
             </div>
           </div>
-          
- <div className="mt-6">
+
+          <div className="mt-6">
             <h4 className="font-medium text-primary mb-2">Meest waardevolle tip:</h4>
             <p className="text-gray-600 italic">
-              "Perfectie bestaat niet bij tweeling. 80% goed is uitstekend." - Ervaren tweelingmoeder
+              Perfectie bestaat niet bij een tweeling. Goed genoeg is echt goed genoeg.
             </p>
           </div>
         </div>
@@ -457,11 +481,11 @@ export default function TweelingVoedenPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-600">
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full"></div>
-                <span>Gelijktijdig voeden bespaart 7 uur per dag</span>
+                <span>Gelijktijdig voeden scheelt flink wat tijd</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full"></div>
-                <span>Voorraad bereiden elimineert stress</span>
+                <span>Vers klaarmaken per voeding is de veiligste basis</span>
               </div>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 border border-gray-200 bg-primary rounded-full"></div>

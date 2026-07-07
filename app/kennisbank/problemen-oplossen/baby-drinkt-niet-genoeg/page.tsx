@@ -39,7 +39,7 @@ export default function BabyDrinktNietGenoegPage() {
                 Baby drinkt niet genoeg: Oorzaken, signalen en praktische oplossingen
               </h1>
               <p className="text-gray-600 leading-relaxed">
-                Volledige probleemoplossings-gids voor ouders met een baby die weinig drinkt
+                Volledige probleemoplossingsgids voor ouders met een baby die weinig drinkt
               </p>
             </div>
 
@@ -55,7 +55,7 @@ export default function BabyDrinktNietGenoegPage() {
                 <ul className="space-y-2">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700"><strong>0-1 maand:</strong> 150-200ml per kg lichaamsgewicht</span>
+                    <span className="text-gray-700"><strong>0-1 maand:</strong> ongeveer 150 ml per kg lichaamsgewicht per dag</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -102,7 +102,7 @@ export default function BabyDrinktNietGenoegPage() {
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700 text-sm">Minder dan 3 natte luiers per dag (na eerste week)</span>
+                          <span className="text-gray-700 text-sm">Duidelijk minder natte luiers dan normaal (bijvoorbeeld minder dan 6 per dag)</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -118,7 +118,7 @@ export default function BabyDrinktNietGenoegPage() {
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700 text-sm">Lethargie of extreme slaperigheid</span>
+                          <span className="text-gray-700 text-sm">Sufheid, lethargie of extreme slaperigheid: neem direct contact op, bel bij spoed 112</span>
                         </li>
                       </ul>
                     </div>
@@ -167,6 +167,23 @@ export default function BabyDrinktNietGenoegPage() {
                       <span className="text-gray-700 text-sm">Onrustig gedrag kort na voeding</span>
                     </li>
                   </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Let op */}
+            <div className="bg-amber-50 rounded-2xl shadow-sm border border-amber-200 p-6">
+              <div className="flex items-start space-x-3">
+                <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <AlertTriangle className="w-5 h-5 text-amber-600" />
+                </div>
+                <div>
+                  <h3 className="font-medium text-amber-800 mb-2">Let op</h3>
+                  <p className="text-sm text-amber-700 leading-relaxed">
+                    Dit artikel geeft algemene informatie en vervangt geen medisch advies. Bij tekenen van uitdroging
+                    (droge mond, ingevallen fontanel, weinig natte luiers, sufheid): neem direct contact op met de
+                    huisarts of bel bij spoed 112.
+                  </p>
                 </div>
               </div>
             </div>
@@ -421,7 +438,7 @@ export default function BabyDrinktNietGenoegPage() {
                   <ul className="space-y-3">
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700 text-sm"><strong>Geduld is een schone zaak</strong> - voedingsproblemen lossen meestal zichzelf op</span>
+                      <span className="text-gray-700 text-sm"><strong>Geduld is een schone deugd</strong> - voedingsproblemen lossen meestal zichzelf op</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />

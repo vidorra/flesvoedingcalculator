@@ -91,6 +91,21 @@ export default function BabyTerugleggenNaNachtvoedingPage() {
               </div>
             </section>
 
+            {/* Let op: veilig slapen */}
+            <section className="bg-amber-50 rounded-2xl shadow-sm border border-amber-200 p-6">
+              <div className="flex items-start space-x-3">
+                <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <AlertTriangle className="w-5 h-5 text-amber-600" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-amber-800 mb-2">Let op: veilig slapen</h3>
+                  <p className="text-sm text-amber-700 leading-relaxed">
+                    Leg je baby altijd op de rug te slapen, op een stevig matras zonder losse dekens, kussens of knuffels. Geef je baby nooit een fles mee in bed en laat de baby niet met de fles in slaap vallen: dat geeft kans op verslikken en op tandbederf. Voed je baby en leg hem daarna pas terug in bed.
+                  </p>
+                </div>
+              </div>
+            </section>
+
             {/* Temperatuur */}
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-semibold text-primary mb-4">De temperatuur bepaalt het doorslapen</h2>
