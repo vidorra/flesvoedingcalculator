@@ -88,7 +88,7 @@ export default function LactosevrijeFlesvoedingPage() {
       price: "€18-25 per 500g",
       availability: "Gespecialiseerde winkels + online", 
       quality: "Biologisch + lactosevrij",
-      unique: "Enige bio lactosevrije optie",
+      unique: "Een van de weinige biologische lactosevrije opties",
       age: "0-12 maanden",
       pros: [
         "Biologische kwaliteit behouden",
@@ -252,7 +252,7 @@ export default function LactosevrijeFlesvoedingPage() {
     },
     {
       question: "Wat kost lactosevrije voeding vergeleken met reguliere?",
-      answer: "Lactosevrije voeding is 40-80% duurder. Echter, op doktersrecept wordt het vaak (deels) vergoed door de zorgverzekeraar."
+      answer: "Lactosevrije voeding is doorgaans duurder dan reguliere flesvoeding. Op doktersrecept wordt het vaak (deels) vergoed door de zorgverzekeraar. Vraag je zorgverzekeraar naar de exacte voorwaarden."
     },
     {
       question: "Waar kan ik lactosevrije flesvoeding kopen?",
@@ -340,14 +340,14 @@ export default function LactosevrijeFlesvoedingPage() {
                       </div>
                     </div>
 
- <div className="p-3 mb-4">
-                      <h4 className="font-medium text-gray-700 mb-1"> Uniek kenmerk:</h4>
+                    <div className="mb-4">
+                      <h4 className="font-medium text-gray-700 mb-1">Uniek kenmerk:</h4>
                       <p className="text-gray-600">{option.unique}</p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                       <div>
-                        <h4 className="font-medium text-primary mb-2"> Voordelen:</h4>
+                        <h4 className="font-medium text-primary mb-2">Voordelen:</h4>
                         <ul className="space-y-1">
                           {option.pros.map((pro, proIndex) => (
                             <li key={index} className="flex items-start space-x-2">
@@ -358,7 +358,7 @@ export default function LactosevrijeFlesvoedingPage() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-medium text-primary mb-2"> Nadelen:</h4>
+                        <h4 className="font-medium text-primary mb-2">Nadelen:</h4>
                         <ul className="space-y-1">
                           {option.cons.map((con, conIndex) => (
                             <li key={index} className="flex items-start space-x-2">
@@ -370,7 +370,7 @@ export default function LactosevrijeFlesvoedingPage() {
                       </div>
                     </div>
 
- <div className="p-3">
+                    <div>
                       <h4 className="font-medium text-gray-700 mb-2">Samenstelling highlights:</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm text-gray-600">
                         {Object.entries(option.composition).map(([key, value]) => (
@@ -458,10 +458,12 @@ export default function LactosevrijeFlesvoedingPage() {
                 </table>
               </div>
               
- <div className="mt-4">
-                <p className="text-sm text-primary">
-                  <strong>Tip:</strong> Vraag je huisarts om een recept voor lactosevrije flesvoeding. 
-                  Dit kan €200-400 per jaar besparen via zorgverzekeraar vergoeding.
+              <div className="mt-4">
+                <p className="text-sm text-gray-600">
+                  <strong>Tip:</strong> Vraag je huisarts om een recept voor lactosevrije flesvoeding.
+                  Op recept wordt het vaak (deels) vergoed door de zorgverzekeraar, wat flink kan schelen.
+                  Vraag je zorgverzekeraar naar de exacte vergoeding. Bedragen in deze gids zijn indicatief
+                  (prijspeil 2026).
                 </p>
               </div>
             </section>
@@ -473,12 +475,12 @@ export default function LactosevrijeFlesvoedingPage() {
               <div className="space-y-4">
                 {commonMistakes.map((mistake, index) => (
                   <div key={index}>
-                    <h3 className="font-medium text-primary mb-2"> {mistake.mistake}</h3>
+                    <h3 className="font-medium text-primary mb-2">{mistake.mistake}</h3>
                     <p className="text-gray-700 text-sm mb-2">
                       <strong>Waarom problematisch:</strong> {mistake.why}
                     </p>
                     <p className="text-gray-700 text-sm">
-                      <strong> Juiste aanpak:</strong> {mistake.solution}
+                      <strong>Juiste aanpak:</strong> {mistake.solution}
                     </p>
                     {index < commonMistakes.length - 1 && (
                       <div className="border-b border-gray-200 mt-4"></div>

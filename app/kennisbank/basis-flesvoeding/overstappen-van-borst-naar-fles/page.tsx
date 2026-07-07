@@ -85,7 +85,7 @@ export default function OverstappenBorstNaarFlesPage() {
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
                       <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                      <span className="text-gray-700 text-sm">Niet te vroeg: minimaal 2-3 weken voor goede borstvoeding opbouw</span>
+                      <span className="text-gray-700 text-sm">Niet te vroeg: minimaal 4-6 weken voor goede borstvoeding opbouw</span>
                     </li>
                     <li className="flex items-center space-x-2">
                       <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
@@ -217,7 +217,7 @@ export default function OverstappenBorstNaarFlesPage() {
                   
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
-                      <h4 className="font-medium text-gray-700 mb-2">Equipment verzamelen:</h4>
+                      <h4 className="font-medium text-gray-700 mb-2">Benodigdheden verzamelen:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -251,7 +251,7 @@ export default function OverstappenBorstNaarFlesPage() {
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm">Kies rustig moment, niet hongrig</span>
+                          <span className="text-gray-600 text-sm">Kies rustig moment, niet hongerig</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -315,7 +315,7 @@ export default function OverstappenBorstNaarFlesPage() {
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700 text-sm">Gebruik afgekolfde moedermelk of mix met formule</span>
+                          <span className="text-gray-700 text-sm">Gebruik afgekolfde moedermelk of flesvoeding als aparte voedingen (moedermelk en poeder niet in één fles mengen)</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -353,15 +353,15 @@ export default function OverstappenBorstNaarFlesPage() {
                     </div>
                     
                     <div>
-                      <h4 className="font-medium text-gray-700 mb-2">Formule introductie:</h4>
+                      <h4 className="font-medium text-gray-700 mb-2">Flesvoeding introductie:</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm">Begin met 25% formule, 75% moedermelk</span>
+                          <span className="text-gray-600 text-sm">Geef moedermelk en flesvoeding als aparte voedingen, niet gemengd in één fles</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm">Verhoog geleidelijk naar 100% formule</span>
+                          <span className="text-gray-600 text-sm">Vervang steeds meer voedingen door flesvoeding tot je volledig bent overgestapt</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -455,7 +455,7 @@ export default function OverstappenBorstNaarFlesPage() {
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700 text-sm">Savooikool bladeren in beha</span>
+                          <span className="text-gray-700 text-sm">Savooiekoolbladeren in beha</span>
                         </li>
                       </ul>
                     </div>
@@ -660,7 +660,7 @@ export default function OverstappenBorstNaarFlesPage() {
 
                 <div>
                   <h3 className="font-medium text-gray-700 mb-2">Q: Kan ik overstappen terwijl ik zwanger ben?</h3>
-                  <p className="text-gray-600 text-sm">A: Ja, dit is veilig. Veel moeders doen dit in tweede trimester.</p>
+                  <p className="text-gray-600 text-sm">A: Voor veel zwangeren kan dit prima, maar het is geen standaardsituatie. Overleg altijd met je verloskundige. Bij een verhoogd risico op vroeggeboorte of andere zwangerschapscomplicaties kan het advies anders zijn.</p>
                 </div>
               </div>
             </div>

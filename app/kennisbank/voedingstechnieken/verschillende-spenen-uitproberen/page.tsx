@@ -2,68 +2,45 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
-import { TestTube, Clock, Target, Search, ShoppingCart, AlertCircle, ArrowRight, } from 'lucide-react'
+import { TestTube, Target, Search, ShoppingCart, AlertCircle } from 'lucide-react'
 import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
   title: 'Verschillende Spenen Uitproberen: Complete Gids voor Nederlandse Ouders 2026',
   description: 'De juiste speen kan het verschil maken tussen een tevreden baby en urenlang gefrustreerd huilen. Leer welke spenen het beste werken voor verschillende problemen, hoe je de perfecte match vindt, en wanneer je moet overstappen.',
 }
-
-
-  // Sidebar configuration
-  const sidebarImages = [
-    {
-      src: "/flesvoeding.webp",
-      alt: "Verschillende baby spenen types",
-      caption: "Vind de perfecte speen voor je baby"
-    },
-    {
-      src: "/baby.webp",
-      alt: "Baby test verschillende spenen",
-      caption: "Comfort en voorkeur ontdekken"
-    },
-    {
-      src: "/mother_and_baby.webp",
-      alt: "Moeder helpt baby met speen keuze",
-      caption: "Geduld bij het vinden van de juiste speen"
-    }
-  ]
-
-  const adTopics = ["Baby Spenen", "Fles Accessoires", "Speen Keuze", "Baby Comfort"]
-
 export default function VerschillendeSpenenUitproberenPage() {
   const speenTypes = [
     {
       category: 'Doorstroomsnelheden',
       types: [
         {
-          name: 'Maat 0/Pasgeborene (0-1 maand)',
+          name: 'Maat 0 / Traagste doorstroom',
           flow: '1-2 druppels per seconde',
-          ideal: 'Premature baby\'s, pasgeborenen',
-          duration: '20-30 minuten normaal',
+          ideal: 'Baby die snel verslikt of erg gulzig drinkt',
+          duration: 'Voeding mag rustig 20-30 minuten duren',
           brands: 'Philips Avent 0, MAM 0, NUK Newborn'
         },
         {
-          name: 'Maat 1/Langzaam (0-3 maanden)',
+          name: 'Maat 1 / Langzaam',
           flow: '2-3 druppels per seconde',
-          ideal: 'Meeste nieuwe baby\'s',
-          duration: '15-25 minuten',
+          ideal: 'Rustige drinkers, veel voorkomende startkeuze',
+          duration: 'Voeding rond 15-25 minuten',
           brands: 'Tommee Tippee Size 1, Hero Baby Slow'
         },
         {
-          name: 'Maat 2/Medium (3-6 maanden)',
+          name: 'Maat 2 / Medium',
           flow: '3-4 druppels per seconde',
-          ideal: 'Groeiende baby\'s, betere zuigkracht',
-          duration: '10-20 minuten',
-          brands: 'Overstap wanneer voeding >30 min duurt'
+          ideal: 'Baby die de vorige maat leeg zuigt zonder te verslikken',
+          duration: 'Voeding rond 10-20 minuten',
+          brands: 'Overweeg deze maat als de voeding structureel >30 min duurt'
         },
         {
-          name: 'Maat 3/Snel (6+ maanden)',
+          name: 'Maat 3 / Snel',
           flow: '4-6 druppels per seconde',
-          ideal: 'Oudere baby\'s, dikke voeding',
-          duration: '8-15 minuten',
-          brands: 'Niet te vroeg overstappen'
+          ideal: 'Vlotte, ongeduldige drinkers die dikkere voeding aankunnen',
+          duration: 'Voeding rond 8-15 minuten',
+          brands: 'Niet sneller kiezen dan je baby aankan'
         }
       ]
     },
@@ -109,10 +86,10 @@ export default function VerschillendeSpenenUitproberenPage() {
       problems: [
         {
           issue: 'Baby weigert fles',
-          solutions: ['Probeer verschillende vormen (ortodontisch vs rond)', 'Check flow speed (misschien te snel/langzaam)', 'Test materiaal (silicone vs latex)']
+          solutions: ['Probeer verschillende vormen (orthodontisch vs rond)', 'Check de doorstroomsnelheid (misschien te snel of te langzaam)', 'Test materiaal (siliconen vs latex)']
         },
         {
-          issue: 'Baby verslijkt/spuugt',
+          issue: 'Baby verslikt zich/spuugt',
           solutions: ['Langzamere flow proberen (size omlaag)', 'Anti-koliek speen overwegen', 'Voeding positie controleren']
         },
         {
@@ -151,60 +128,55 @@ export default function VerschillendeSpenenUitproberenPage() {
   const brandComparison = [
     {
       brand: 'Philips Avent',
-      rating: 5,
       strengths: 'Betrouwbaar, breed assortiment',
-      flows: '0, 1, 2, 3, 4, Verstelbaar',
+      flows: 'Maat 0, 1, 2, 3, 4 en verstelbaar',
       types: 'Natuurlijk, Klassiek, Anti-koliek',
       price: '€3-6 per speen',
-      availability: 'Overal (Etos, Kruidvat, online)'
+      availability: 'Overal verkrijgbaar (Etos, Kruidvat, online)'
     },
     {
       brand: 'MAM',
-      rating: 5,
-      strengths: 'Innovatief anti-koliek systeem',
-      flows: '0-X (extra fast)',
+      strengths: 'Innovatief anti-koliek systeem, extra zachte speen',
+      flows: 'Maat 0 tot X (extra snel)',
       types: 'Easy Start (zelf-steriliserend)',
       price: '€4-7 per speen',
-      availability: 'Silk teat (extra zacht)'
+      availability: 'Ruim verkrijgbaar in NL'
     },
     {
       brand: 'NUK',
-      rating: 4,
-      strengths: 'Orthodontisch design',
-      flows: 'Duitse precisie engineering',
-      types: 'Eerste Choice, Perfecte Match',
+      strengths: 'Orthodontisch design, natuurlijke mondpositie',
+      flows: 'Maat 1, 2 en 3',
+      types: 'First Choice, Perfect Match',
       price: '€3-5 per speen',
-      availability: 'Natuurlijke mondpositie focus'
+      availability: 'Ruim verkrijgbaar in NL'
     },
     {
       brand: 'Tommee Tippee',
-      rating: 4,
       strengths: 'Borstachtig ontwerp',
-      flows: 'Closer to Nature serie',
-      types: 'Anti-Koliek systeem',
+      flows: 'Maat 1, 2, 3 en variabel',
+      types: 'Closer to Nature, Anti-koliek',
       price: '€4-6 per speen',
-      availability: 'Sterk in Nederland'
+      availability: 'Ruim verkrijgbaar in NL'
     },
     {
       brand: 'Dr. Brown\'s',
-      rating: 5,
-      strengths: 'Meest geavanceerde anti-koliek',
-      flows: 'Volledige vacuum preventie',
-      types: 'Veel ziekenhuizen gebruiken dit',
+      strengths: 'Geavanceerd anti-koliek systeem, veel gebruikt in ziekenhuizen',
+      flows: 'Maat 0 tot 4',
+      types: 'Options+, Original (met ventielsysteem)',
       price: '€5-8 per speen',
-      availability: 'Meer onderdelen om schoon te maken'
+      availability: 'Verkrijgbaar in NL, meer onderdelen om schoon te maken'
     }
   ]
 
   const specificProblems = [
     {
-      problem: 'Baby Weigert Fles Compleet',
+      problem: 'Baby weigert de fles volledig',
       causes: ['Overgang van borstvoeding', 'Flow te snel/langzaam', 'Verkeerde vorm', 'Temperatuur issues'],
       solutions: [
-        'STAP 1: Calma speen proberen (Medela) - Meest lijkt op borstvoeding',
-        'STAP 2: Verschillende flows testen - Begin langzamer dan verwacht',
-        'STAP 3: Timing optimaliseren - Niet te hongerig, rustige omgeving',
-        'STAP 4: Partner laten proberen - Minder associatie met borstvoeding'
+        'Stap 1: Calma speen proberen (Medela), lijkt het meest op borstvoeding',
+        'Stap 2: Verschillende doorstroomsnelheden testen, begin langzamer dan verwacht',
+        'Stap 3: Timing optimaliseren, niet te hongerig en in een rustige omgeving',
+        'Stap 4: Partner laten proberen, minder associatie met borstvoeding'
       ]
     },
     {
@@ -218,26 +190,26 @@ export default function VerschillendeSpenenUitproberenPage() {
       ]
     },
     {
-      problem: 'Koliek & Excessive Crying',
+      problem: 'Koliek & overmatig huilen',
       causes: ['Lucht inslikken', 'Te snelle voeding', 'Verkeerde speen'],
       solutions: [
-        'LEVEL 1: MAM Easy Start - Zelf-steriliserend, silk teat',
-        'LEVEL 2: Dr. Brown\'s Original - Meest geavanceerd systeem',
-        'LEVEL 3: Tommee Tippee Advanced Anti-Colic - Goede prijs/kwaliteit'
+        'MAM Easy Start: zelf-steriliserend, extra zachte speen',
+        'Dr. Brown\'s Original: uitgebreid ventielsysteem',
+        'Tommee Tippee Advanced Anti-Colic: goede prijs-kwaliteitverhouding'
       ]
     }
   ]
 
   const ageRecommendations = [
     {
-      age: '0-6 Weken: Getting Started',
+      age: '0-6 Weken: Startfase',
       primary: 'Philips Avent Natuurlijk Maat 1',
       backup: 'MAM Easy Start Size 0',
       duration: '20-30 minuten normaal',
       notes: 'Breed geaccepteerd + anti-koliek optie'
     },
     {
-      age: '6-12 Weken: Optimization',
+      age: '6-12 Weken: Bijstellen',
       primary: 'Evalueer huidige speen',
       backup: 'Anti-koliek alternatieven',
       duration: 'Misschien tijd voor Size 2',
@@ -251,7 +223,7 @@ export default function VerschillendeSpenenUitproberenPage() {
       notes: 'Performance focus'
     },
     {
-      age: '6+ Maanden: Transition Planning',
+      age: '6+ Maanden: Voorbereiding op vast voedsel',
       primary: 'Size 3 voor dikke voeding',
       backup: 'Comfort belangrijker dan snelheid',
       duration: 'Minder flessen per dag',
@@ -261,15 +233,15 @@ export default function VerschillendeSpenenUitproberenPage() {
 
   const shoppingTips = [
     {
-      package: 'BASIS PAKKET (€25-35)',
+      package: 'Basispakket (€25-35)',
       items: ['3x Philips Avent Natuurlijk Maat 1', '2x MAM Easy Start Size 1', '1x NUK First Choice Size 1']
     },
     {
-      package: 'TESTPAKKET (€15-20)',
+      package: 'Testpakket (€15-20)',
       items: ['1x Dr. Brown\'s Opties Size 1', '1x Tommee Tippee Size 1', '1x Verstelbare doorstroom speen']
     },
     {
-      package: 'BACKUP PAKKET (€10-15)',
+      package: 'Backup-pakket (€10-15)',
       items: ['2x Kruidvat basic Size 1', '1x Size 0 (voor problemen)', '1x Size 2 (groei planning)']
     }
   ]
@@ -282,8 +254,8 @@ export default function VerschillendeSpenenUitproberenPage() {
     },
     {
       problem: 'Speen Gaat Te Langzaam',
-      quickFix: ['Is gat verstopt? (naald doorprikken)', 'Is speen oud/hard geworden?', 'Zuigt baby wel effectief?'],
-      permanentSolution: ['Snellere flow proberen', 'Gat voorzichtig vergroten (naald)', 'Anti-koliek overwegen (minder moeite)']
+      quickFix: ['Is het gaatje verstopt door melkresten? Speen goed schoonmaken', 'Is de speen oud of hard geworden? Vervangen', 'Zuigt baby wel effectief?'],
+      permanentSolution: ['Wissel naar een speen met grotere doorstroom', 'Maak nooit zelf het gaatje groter met een naald (onbeheersbare flow, verslikkingsrisico)', 'Anti-koliek speen overwegen (kost minder moeite)']
     },
     {
       problem: 'Baby Bijt op Speen',
@@ -351,7 +323,7 @@ export default function VerschillendeSpenenUitproberenPage() {
                   <h3 className="font-medium text-primary mb-2">Impact van Verkeerde Speen:</h3>
                   <ul className="space-y-1">
                     {[
-                      'Te snelle flow: Baby verslijkt, spuugt, krijgt te veel lucht binnen',
+                      'Te snelle flow: Baby verslikt zich, spuugt, krijgt te veel lucht binnen',
                       'Te langzame flow: Frustratie, moeheid, onvolledige voedingen',
                       'Verkeerde vorm: Slechte mondafsluiting, lucht inslikken',
                       'Onjuist materiaal: Allergische reacties, smaakproblemen'
@@ -363,10 +335,12 @@ export default function VerschillendeSpenenUitproberenPage() {
                     ))}
                   </ul>
                 </div>
-                <div className="p-4 border border-gray-200 bg-white rounded-xl">
+                <div>
+                  <h3 className="font-medium text-primary mb-2">Waarom het uitproberen loont:</h3>
                   <p className="text-gray-700">
-                    <strong>Uit de praktijk:</strong> Baby's met de juiste speen hebben aanzienlijk minder last van
-                    koliekklachten en slapen beter door.
+                    Een speen die past bij het drinkgedrag van je baby kan onrust tijdens het voeden
+                    verminderen. Koliek en huilen hebben vaak meerdere oorzaken, dus een andere speen
+                    is niet altijd de oplossing, maar wel het proberen waard.
                   </p>
                 </div>
               </div>
@@ -375,7 +349,11 @@ export default function VerschillendeSpenenUitproberenPage() {
             {/* Speen Types */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Complete Speen Types & Wanneer Gebruiken</h2>
-              
+
+              <p className="text-gray-700 mb-6">
+                Kies een speen op basis van het <strong>drinkgedrag</strong> van je baby, niet puur op leeftijd. Verslikt je baby zich of drinkt hij erg gulzig, kies dan een kleiner gaatje (tragere doorstroom). Drinkt je baby juist langzaam en raakt hij gefrustreerd, dan kan een groter gaatje helpen. De leeftijdsindeling hieronder is slechts een ruwe indicatie.
+              </p>
+
               <div className="space-y-8">
                 {speenTypes.map((category, categoryIndex) => (
                   <div key={categoryIndex}>
@@ -428,12 +406,12 @@ export default function VerschillendeSpenenUitproberenPage() {
                     {step.problems && (
                       <div className="space-y-3">
                         {step.problems.map((problem, problemIndex) => (
-                          <div key={problemIndex} className="border border-gray-200 p-3">
+                          <div key={problemIndex}>
                             <h4 className="font-medium text-primary mb-2">{problem.issue}:</h4>
                             <ul className="space-y-1">
                               {problem.solutions.map((solution, solutionIndex) => (
                                 <li key={solutionIndex} className="flex items-start space-x-2">
-                                  <span className="text-gray-600"></span>
+                                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                                   <span className="text-gray-700">{solution}</span>
                                 </li>
                               ))}
@@ -444,13 +422,14 @@ export default function VerschillendeSpenenUitproberenPage() {
                     )}
                     
                     {step.protocol && (
-                      <div className="space-y-2">
+                      <ul className="space-y-2">
                         {step.protocol.map((item, itemIndex) => (
-                          <div key={itemIndex} className="p-3 border border-gray-200 bg-white rounded font-mono text-sm">
-                            {item}
-                          </div>
+                          <li key={itemIndex} className="flex items-start space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-700">{item}</span>
+                          </li>
                         ))}
-                      </div>
+                      </ul>
                     )}
                     
                     {step.strategies && (
@@ -484,13 +463,6 @@ export default function VerschillendeSpenenUitproberenPage() {
                   <div key={index}>
                     <div className="flex items-center justify-between mb-3">
                       <h3 className="font-medium text-gray-700">{brand.brand}</h3>
-                      <div className="flex">
-                        {[...Array(5)].map((_, i) => (
-                          <div key={i}>
-                            
-                          </div>
-                        ))}
-                      </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
                       <div>
@@ -545,8 +517,9 @@ export default function VerschillendeSpenenUitproberenPage() {
                         <h4 className="font-medium text-primary mb-2">Bewezen oplossingen:</h4>
                         <ul className="space-y-1">
                           {problem.solutions.map((solution, solutionIndex) => (
-                            <li key={solutionIndex} className="text-sm text-gray-700 p-2 border border-gray-200 bg-white rounded font-mono">
-                              {solution}
+                            <li key={solutionIndex} className="flex items-start space-x-2">
+                              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                              <span className="text-gray-700">{solution}</span>
                             </li>
                           ))}
                         </ul>
@@ -617,18 +590,19 @@ export default function VerschillendeSpenenUitproberenPage() {
               
               <div className="mt-4">
                 <h3 className="font-medium text-primary mb-2">Kostenbesparende tips:</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                   {[
-                    'Multi-packs: Goedkoper per stuk',
-                    'Online: Vaak 20-30% goedkoper',
-                    'Huismerken: Voor backup/testing',
-                    'Sales: Stock up tijdens acties'
+                    'Multipacks: goedkoper per stuk',
+                    'Online: vaak 20-30% goedkoper',
+                    'Huismerken: prima voor backup en testen',
+                    'Acties: sla in tijdens aanbiedingen'
                   ].map((tip, index) => (
-                    <div key={index} className="text-sm text-gray-700 p-2 border border-gray-200 bg-white rounded">
-                      {tip}
-                    </div>
+                    <li key={index} className="flex items-start space-x-2">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                      <span className="text-gray-700">{tip}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             </div>
 
@@ -662,7 +636,7 @@ export default function VerschillendeSpenenUitproberenPage() {
                         <ul className="space-y-1">
                           {guide.permanentSolution.map((solution, solutionIndex) => (
                             <li key={solutionIndex} className="flex items-start space-x-2">
-                              <span className="text-gray-600"></span>
+                              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                               <span className="text-gray-700">{solution}</span>
                             </li>
                           ))}
@@ -715,10 +689,11 @@ export default function VerschillendeSpenenUitproberenPage() {
                     <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Documenteer wat werkt voor toekomstige referentie</span></li>
                   </ul>
                 </div>
-                <div className="p-4 border border-gray-200 bg-white rounded-xl">
+                <div>
+                  <h3 className="font-medium text-primary mb-2">Handige tip:</h3>
                   <p className="text-gray-700">
-                    <strong>Success tip:</strong> Bewaar spenen die werken, zelfs als je baby eruit groeit. 
-                    Bij ziekte, tandjes, of regressies kunnen oude vertrouwde spenen tijdelijk uitkomst bieden.
+                    Bewaar spenen die werken, zelfs als je baby eruit groeit.
+                    Bij ziekte, tandjes of regressies kunnen oude vertrouwde spenen tijdelijk uitkomst bieden.
                   </p>
                 </div>
               </div>

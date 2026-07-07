@@ -5,7 +5,7 @@ import AffiliateProductWidget from '../../../../components/AffiliateProductWidge
 import { Clock, Calendar, TrendingUp, Moon, Sun, Users, Target, ArrowRight, } from 'lucide-react'
 
 export const metadata = {
-  title: 'Voedingsritme Opbouwen: Complete Gids voor Nederlandse Ouders 2026',
+  title: 'Voedingsritme opbouwen: complete gids voor ouders',
   description: 'Een goed voedingsritme is de basis voor beter slapen, voor zowel baby als ouders. Leer hoe je stap-voor-stap een voorspelbaar schema opbouwt dat past bij jouw gezin, met praktische tips voor elke leeftijd.',
 }
 
@@ -20,7 +20,7 @@ export default function VoedingsritmeOpbouwenPage() {
 
   const ageSpecificSchedules = [
     {
-      age: '0-6 Weken',
+      age: '0-6 weken',
       phase: 'Basis leggen',
       frequency: 'Elke 2-3 uur (8-12x per dag)',
       amount: '50-90ml per voeding',
@@ -39,24 +39,24 @@ export default function VoedingsritmeOpbouwenPage() {
       tip: 'Begin met 2-3 vaste momenten (ochtend, middag, avond) en vul de tussentijd in naar behoefte.'
     },
     {
-      age: '6-12 Weken',
-      phase: 'Structuur Aanbrengen',
+      age: '6-12 weken',
+      phase: 'Structuur aanbrengen',
       frequency: 'Elke 3-4 uur (6-8x per dag)',
       amount: '90-150ml per voeding',
       flexibility: 'Langere periodes tussen voedingen',
       nightFeeding: '1-2x normaal',
       schedule: [
-        { time: '06:30', activity: 'Wake-up voeding (150ml)' },
+        { time: '06:30', activity: 'Ochtendvoeding bij het wakker worden (150ml)' },
         { time: '10:00', activity: 'Ochtendvoeding (120ml)' },
         { time: '13:30', activity: 'Lunchvoeding (140ml)' },
         { time: '17:00', activity: 'Avondvoeding (130ml)' },
         { time: '20:30', activity: 'Bedtijd voeding (150ml)' },
         { time: '02:00', activity: 'Nachtvoeding (100ml) - optioneel' }
       ],
-      tip: 'Vaste bedtijd en wake-up tijd worden belangrijker.'
+      tip: 'Een vaste bedtijd en een vast tijdstip van wakker worden worden belangrijker.'
     },
     {
-      age: '3-6 Maanden',
+      age: '3-6 maanden',
       phase: 'Stabilisatie',
       frequency: 'Elke 4 uur (5-6x per dag)',
       amount: '150-200ml per voeding',
@@ -72,12 +72,12 @@ export default function VoedingsritmeOpbouwenPage() {
       tip: 'Baby kan 6-8 uur doorslapen tussen laatste en eerste voeding.'
     },
     {
-      age: '6-12 Maanden',
-      phase: 'Integratie Vaste Voeding',
+      age: '6-12 maanden',
+      phase: 'Vaste voeding erbij',
       frequency: '4-5 flessen + 2-3 maaltijden',
       amount: '180-220ml per fles',
-      flexibility: 'Vaste voeding: Ontbijt, lunch, diner',
-      nightFeeding: 'Melkvoeding: Ochtend, middag, avond, bedtijd',
+      flexibility: 'Vaste voeding: ontbijt, lunch, diner',
+      nightFeeding: 'Melkvoeding: ochtend, middag, avond, bedtijd',
       schedule: [
         { time: '07:00', activity: 'Ochtendvoeding (200ml)' },
         { time: '08:30', activity: 'Ontbijt (vaste voeding)' },
@@ -93,7 +93,7 @@ export default function VoedingsritmeOpbouwenPage() {
   const implementationSteps = [
     {
       period: 'Week 1-2',
-      phase: 'Observatie Fase',
+      phase: 'Observeren',
       tasks: [
         'Bijhouden huidige voedings- en slaaptijden',
         'Herkennen natuurlijke patronen van je baby',
@@ -113,17 +113,17 @@ export default function VoedingsritmeOpbouwenPage() {
     },
     {
       period: 'Week 3-4',
-      phase: 'Zachte Structuur',
+      phase: 'Zachte structuur',
       tasks: [
         'Kies 3 vaste tijden (bijv. 7:00, 13:00, 19:00)',
         'Werk naar deze tijden toe (±30 minuten flexibiliteit)',
-        'Behoud responsive feeding tussen vaste momenten',
-        'Introduceer bedtijdroutine'
+        'Blijf tussendoor voeden op de signalen van je baby',
+        'Introduceer een bedtijdroutine'
       ],
       tips: [
-        'Te vroeg honger? Afleiden met speeltje/wandeling',
-        'Te laat honger? Gently wakker maken voor voeding',
-        'Huilen voor vaste tijd? Kleine snack, grote voeding op tijd'
+        'Te vroeg honger? Afleiden met een speeltje of een wandeling',
+        'Te laat honger? Je baby rustig wakker maken voor de voeding',
+        'Huilen voor de vaste tijd? Een kleine hap, de grote voeding op tijd'
       ],
       progression: [
         'Week 3: Introduceer 3 vaste voedingstijden',
@@ -150,63 +150,63 @@ export default function VoedingsritmeOpbouwenPage() {
 
   const techniques = [
     {
-      name: 'De 15-Minuten Regel',
+      name: 'De 15-minutenregel',
       description: 'Flexibiliteit binnen smalle marges',
       rules: [
-        'Te vroeg honger: Wacht 15 min, probeer afleiden',
-        'Te laat honger: Max 15 min uitstellen',
-        'Flexibiliteit behouden binnen smalle marges',
-        'Geleidelijke aanpassing naar ideale tijden'
+        'Te vroeg honger: wacht 15 minuten, probeer af te leiden',
+        'Te laat honger: maximaal 15 minuten uitstellen',
+        'Houd flexibiliteit binnen smalle marges',
+        'Pas het geleidelijk aan naar de ideale tijden'
       ],
       windows: [],
       details: [],
       approach: []
     },
     {
-      name: 'Wake Windows Gebruiken',
+      name: 'Werken met wakkere periodes',
       description: 'Optimale waaktijden per leeftijd',
       rules: [],
       windows: [
-        { age: '0-6 weken', wakePeriod: '45-60 min', sequence: 'Voeding  Slaap' },
-        { age: '6-12 weken', wakePeriod: '60-90 min', sequence: 'Voeding  Spelen  Slaap' },
+        { age: '0-6 weken', wakePeriod: '45-60 min', sequence: 'Voeding → slaap' },
+        { age: '6-12 weken', wakePeriod: '60-90 min', sequence: 'Voeding → spelen → slaap' },
         { age: '3-6 maanden', wakePeriod: '90-120 min', sequence: 'Meer speeltijd mogelijk' }
       ],
       details: [],
       approach: []
     },
     {
-      name: 'Droomvoeding Techniek',
-      description: 'Voeding zonder baby wakker maken',
+      name: 'Droomvoeding',
+      description: 'Voeden zonder je baby wakker te maken',
       rules: [],
       windows: [],
       details: [
         'Tijdstip: 22:00-23:00 (vlak voor jouw bedtijd)',
-        'Methode: Voeding geven zonder baby wakker maken',
-        'Doel: Langere nachtrust voor iedereen',
-        'Succes: Werkt bij 70% van baby\'s'
+        'Methode: voeding geven zonder je baby wakker te maken',
+        'Doel: langere nachtrust voor iedereen',
+        'Succes: werkt bij veel baby\'s, maar niet bij alle'
       ],
       approach: []
     },
     {
-      name: 'Clustervoeding Aanpak',
+      name: 'Clustervoeding',
       description: 'Meerdere voedingen kort na elkaar',
       rules: [],
       windows: [],
       details: [],
       approach: [
-        'Wat: Meerdere voedingen kort na elkaar (avond)',
-        'Timing: Meestal 17:00-21:00',
-        'Doel: Baby "vult tank" voor nacht',
-        'Schema aanpassing: Plan extra voedingen in'
+        'Wat: meerdere voedingen kort na elkaar (in de avond)',
+        'Timing: meestal tussen 17:00 en 21:00',
+        'Doel: je baby tankt bij voor de nacht',
+        'Aanpassing: plan de extra voedingen in je schema in'
       ]
     }
   ]
 
   const commonChallenges = [
     {
-      challenge: 'Baby Wil Niet Wachten op Schema',
+      challenge: 'Baby wil niet wachten op het schema',
       causes: [
-        'Growth spurt (meer honger)',
+        'Groeispurt (meer honger)',
         'Te kleine porties',
         'Onvolledige voeding vorige keer',
         'Dorst (warm weer)'
@@ -222,7 +222,7 @@ export default function VoedingsritmeOpbouwenPage() {
       balanceStrategy: []
     },
     {
-      challenge: 'Schema Werkt niet met Werk/Kinderopvang',
+      challenge: 'Het schema past niet bij werk of kinderopvang',
       causes: [],
       solutions: [],
       workdaySchedule: [
@@ -243,7 +243,7 @@ export default function VoedingsritmeOpbouwenPage() {
       balanceStrategy: []
     },
     {
-      challenge: 'Weekend Verstoort heel Schema',
+      challenge: 'Het weekend gooit het schema in de war',
       causes: [],
       solutions: [],
       workdaySchedule: [],
@@ -259,7 +259,7 @@ export default function VoedingsritmeOpbouwenPage() {
 
   const specialSituations = [
     {
-      situation: 'Onderweg Schema - Auto Reizen',
+      situation: 'Onderweg met de auto',
       planning: [
         'Voor vertrek: Volledige voeding',
         'Onderweg: Plan stops rond voedingstijden',
@@ -271,7 +271,7 @@ export default function VoedingsritmeOpbouwenPage() {
       parentIll: []
     },
     {
-      situation: 'Vakantie Schema - Tijdzone Aanpassing',
+      situation: 'Op vakantie met tijdsverschil',
       planning: [],
       approach: [
         'Geleidelijk verschuiven 30 min per dag',
@@ -283,27 +283,27 @@ export default function VoedingsritmeOpbouwenPage() {
       parentIll: []
     },
     {
-      situation: 'Ziekte & Schema',
+      situation: 'Bij ziekte',
       planning: [],
       approach: [],
       babyIll: [
-        'Meer responsive feeding tijdens ziekte',
+        'Voed tijdens ziekte meer op verzoek',
         'Kleinere, frequentere voedingen',
-        'Hydratatie prioriteit (overleg met arts over extra vocht)',
-        'Terug naar schema na herstel'
+        'Zorg dat je baby genoeg blijft drinken (overleg met de arts over extra vocht)',
+        'Terug naar het schema na herstel'
       ],
       parentIll: [
-        'Partner involvement cruciaal',
-        'Minimale schema handhaven',
-        'Hulp inschakelen voor voorbereiding',
-        'Rust nemen waar mogelijk'
+        'De hulp van je partner is dan cruciaal',
+        'Houd op zijn minst de grote lijnen van het schema aan',
+        'Schakel hulp in voor de voorbereiding',
+        'Neem rust waar dat kan'
       ]
     }
   ]
 
   const growthAdjustments = [
     {
-      phase: 'Groeispurts (Groeispurts)',
+      phase: 'Groeispurts',
       timing: [
         '2-3 weken: Extra voedingen 2-3 dagen',
         '6 weken: Langere periode (4-5 dagen)',
@@ -312,8 +312,8 @@ export default function VoedingsritmeOpbouwenPage() {
       ],
       modifications: [
         'Normale week: 5 voedingen',
-        'Growth spurt week: 6-7 voedingen',
-        'Herstel week: Geleidelijk terug naar 5'
+        'Week met groeispurt: 6-7 voedingen',
+        'Herstelweek: geleidelijk terug naar 5'
       ],
       impact: [],
       strategy: []
@@ -353,7 +353,7 @@ export default function VoedingsritmeOpbouwenPage() {
 
   const familySocialAspects = [
     {
-      aspect: 'Partner Samenwerking',
+      aspect: 'Samenwerken met je partner',
       roleDivision: [
         'Nachtvoedingen: Beurten maken',
         'Weekend: Een ouder slaapt uit, andere vroege shift',
@@ -370,7 +370,7 @@ export default function VoedingsritmeOpbouwenPage() {
       socialActivities: []
     },
     {
-      aspect: 'Familie & Vrienden',
+      aspect: 'Familie en vrienden',
       roleDivision: [],
       conflictPrevention: [],
       managingExpectations: [
@@ -441,53 +441,51 @@ export default function VoedingsritmeOpbouwenPage() {
           <div className="space-y-6">
             {/* Header */}
             <div className="mb-6">
-              <div className="text-sm text-gray-500 mb-2">Praktische Tips • Voedingsritme</div>
+              <div className="text-sm text-gray-500 mb-2">Praktische tips • Voedingsritme</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Clock className="w-6 h-6 mr-3 text-primary" />
-                Voedingsritme Opbouwen: Complete Gids voor Nederlandse Ouders
+                Voedingsritme opbouwen: complete gids voor ouders
               </h1>
-              <p className="text-gray-600">
-                Een goed voedingsritme is de basis voor beter slapen, voor zowel baby als ouders. 
-                Leer hoe je stap-voor-stap een voorspelbaar schema opbouwt dat past bij jouw gezin, 
+              <p className="text-gray-500 leading-relaxed">
+                Een goed voedingsritme is de basis voor beter slapen, voor zowel baby als ouders.
+                Leer hoe je stap voor stap een voorspelbaar schema opbouwt dat past bij jouw gezin,
                 met praktische tips voor elke leeftijd.
               </p>
             </div>
 
             {/* Why Life Changing */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Waarom een Voedingsritme Levensveranderend Is</h2>
-              
+              <h2 className="text-lg font-medium text-primary mb-4">Waarom een voedingsritme zoveel helpt</h2>
+
               <p className="text-gray-700 mb-4">
-                Een consistent voedingsritme biedt <strong>voorspelbaarheid</strong> voor je baby en 
-                <strong>structuur</strong> voor het hele gezin. Baby's gedijen bij routine - het geeft 
+                Een vast voedingsritme geeft <strong>voorspelbaarheid</strong> voor je baby en
+                <strong>structuur</strong> voor het hele gezin. Baby's gedijen bij routine, het geeft
                 hen veiligheid en helpt hun biologische klok ontwikkelen.
               </p>
-              
+
               <div className="mb-4">
-                <h3 className="font-medium text-primary mb-3">Bewezen Voordelen van een Vast Ritme:</h3>
+                <h3 className="font-medium text-primary mb-3">Voordelen van een vast ritme:</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {benefits.map((benefit, index) => (
-                    <div key={index} className="flex justify-between items-center p-3 border border-gray-200">
+                    <div key={index} className="flex justify-between items-center p-3 bg-gray-50 border border-gray-200 rounded-lg">
                       <span className="font-medium text-gray-700">{benefit.stat}</span>
                       <span className="text-sm text-gray-700">{benefit.description}</span>
                     </div>
                   ))}
                 </div>
               </div>
-              
-              <div className="p-4 border border-gray-200 bg-white rounded-xl">
-                <p className="text-sm text-gray-700">
-                  <strong>Uit onderzoek</strong> blijkt dat baby's
-                  met een vast voedingsritme beter en langer doorslapen dan baby's zonder routine.
-                </p>
-              </div>
+
+              <p className="text-gray-700">
+                Veel ouders merken dat baby's met een vast voedingsritme rustiger zijn en beter
+                doorslapen dan zonder een duidelijke routine.
+              </p>
             </div>
 
             {/* Age Specific Schedules */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <TrendingUp className="w-5 h-5 mr-2" />
-                Leeftijd-Specifieke Voedingsschema's
+                Voedingsschema's per leeftijd
               </h2>
               
               <div className="space-y-8">
@@ -522,7 +520,7 @@ export default function VoedingsritmeOpbouwenPage() {
                       
                       <div>
                         <h4 className="font-medium text-primary mb-3">
-                          {ageGroup.age === '6-12 Maanden' ? 'Gemengd Schema' : 'Basis Schema'}
+                          {ageGroup.age === '6-12 maanden' ? 'Gemengd schema' : 'Basisschema'}
                         </h4>
                         <div className="space-y-2">
                           {ageGroup.schedule.map((item, itemIndex) => (
@@ -536,11 +534,9 @@ export default function VoedingsritmeOpbouwenPage() {
                     </div>
                     
                     {ageGroup.tip && (
-                      <div className="p-3 border border-gray-200">
-                        <p className="text-sm text-gray-700">
-                          <strong>Tip:</strong> {ageGroup.tip}
-                        </p>
-                      </div>
+                      <p className="text-sm text-gray-700">
+                        <strong>Tip:</strong> {ageGroup.tip}
+                      </p>
                     )}
                     
                     {index < ageSpecificSchedules.length - 1 && (
@@ -555,7 +551,7 @@ export default function VoedingsritmeOpbouwenPage() {
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Target className="w-5 h-5 mr-2" />
-                Stap-voor-Stap Ritme Opbouwen
+                Stap voor stap een ritme opbouwen
               </h2>
               
               <div className="space-y-6">
@@ -581,15 +577,15 @@ export default function VoedingsritmeOpbouwenPage() {
                     </div>
                     
                     {step.example && (
-                      <div className="p-3 border border-gray-200 mb-4">
-                        <h4 className="font-medium text-primary mb-1">Dagboek Voorbeeld:</h4>
+                      <div className="border-t border-gray-200 pt-4 mt-4 mb-4">
+                        <h4 className="font-medium text-primary mb-1">Voorbeeld uit een dagboek:</h4>
                         <p className="text-sm text-gray-700 font-mono">{step.example}</p>
                       </div>
                     )}
                     
                     {step.tips && Array.isArray(step.tips) && step.tips.length > 0 && (
                       <div className="mb-4">
-                        <h4 className="font-medium text-primary mb-2">Praktische Aanpak:</h4>
+                        <h4 className="font-medium text-primary mb-2">Praktische aanpak:</h4>
                         <ul className="space-y-1">
                           {step.tips.map((tip, index) => (
                             <li key={index} className="flex items-start space-x-2">
@@ -603,7 +599,7 @@ export default function VoedingsritmeOpbouwenPage() {
                     
                     {step.progression && Array.isArray(step.progression) && (
                       <div className="mb-4">
-                        <h4 className="font-medium text-primary mb-2">Schema Aanscherping:</h4>
+                        <h4 className="font-medium text-primary mb-2">Schema aanscherpen:</h4>
                         <ul className="space-y-1">
                           {step.progression.map((prog, progIndex) => (
                             <li key={progIndex} className="flex items-start space-x-2">
@@ -625,7 +621,7 @@ export default function VoedingsritmeOpbouwenPage() {
 
             {/* Implementation Techniques */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Praktische Implementatie Strategieën</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Praktische technieken</h2>
               
               <div className="space-y-6">
                 {techniques.map((technique, index) => (
@@ -650,8 +646,8 @@ export default function VoedingsritmeOpbouwenPage() {
                           <thead>
                             <tr className="bg-white">
                               <th className="border border-gray-300 px-4 py-2 text-left">Leeftijd</th>
-                              <th className="border border-gray-300 px-4 py-2 text-left">Wakker Periode</th>
-                              <th className="border border-gray-300 px-4 py-2 text-left">Voor Volgende Slaap</th>
+                              <th className="border border-gray-300 px-4 py-2 text-left">Wakkere periode</th>
+                              <th className="border border-gray-300 px-4 py-2 text-left">Voor de volgende slaap</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -699,7 +695,7 @@ export default function VoedingsritmeOpbouwenPage() {
 
             {/* Common Challenges */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Veelvoorkomende Uitdagingen & Oplossingen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelvoorkomende uitdagingen en oplossingen</h2>
               
               <div className="space-y-6">
                 {commonChallenges.map((challenge, index) => (
@@ -734,7 +730,7 @@ export default function VoedingsritmeOpbouwenPage() {
                     
                     {challenge.workdaySchedule && Array.isArray(challenge.workdaySchedule) && challenge.workdaySchedule.length > 0 && (
                       <div className="mb-4">
-                        <h4 className="font-medium text-primary mb-2">Werkdag Schema:</h4>
+                        <h4 className="font-medium text-primary mb-2">Schema op een werkdag:</h4>
                         <div className="space-y-2">
                           {challenge.workdaySchedule.map((item, itemIndex) => (
                             <div key={itemIndex} className="flex justify-between items-center text-sm p-2 border border-gray-200 bg-white rounded">
@@ -748,7 +744,7 @@ export default function VoedingsritmeOpbouwenPage() {
                     
                     {challenge.communicationTips && Array.isArray(challenge.communicationTips) && challenge.communicationTips.length > 0 && (
                       <div className="mb-4">
-                        <h4 className="font-medium text-primary mb-2">Communicatie Tips:</h4>
+                        <h4 className="font-medium text-primary mb-2">Tips om af te stemmen:</h4>
                         <ul className="space-y-1">
                           {challenge.communicationTips.map((tip, index) => (
                             <li key={index} className="flex items-start space-x-2">
@@ -762,7 +758,7 @@ export default function VoedingsritmeOpbouwenPage() {
                     
                     {challenge.balanceStrategy && Array.isArray(challenge.balanceStrategy) && challenge.balanceStrategy.length > 0 && (
                       <div>
-                        <h4 className="font-medium text-primary mb-2">Balans Strategie:</h4>
+                        <h4 className="font-medium text-primary mb-2">Zo houd je de balans:</h4>
                         <ul className="space-y-1">
                           {challenge.balanceStrategy.map((strategy, strategyIndex) => (
                             <li key={strategyIndex} className="flex items-start space-x-2">
@@ -784,7 +780,7 @@ export default function VoedingsritmeOpbouwenPage() {
 
             {/* Special Situations */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Schema's voor Speciale Situaties</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Schema's voor speciale situaties</h2>
               
               <div className="space-y-6">
                 {specialSituations.map((situation, index) => (
@@ -816,7 +812,7 @@ export default function VoedingsritmeOpbouwenPage() {
                     {situation.babyIll && situation.parentIll && (
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                          <h4 className="font-medium text-primary mb-2">Baby Ziek:</h4>
+                          <h4 className="font-medium text-primary mb-2">Als je baby ziek is:</h4>
                           <ul className="space-y-1">
                             {(situation.babyIll || []).map((item, itemIndex) => (
                               <li key={itemIndex} className="flex items-start space-x-2">
@@ -828,7 +824,7 @@ export default function VoedingsritmeOpbouwenPage() {
                         </div>
                         
                         <div>
-                          <h4 className="font-medium text-primary mb-2">Ouder Ziek:</h4>
+                          <h4 className="font-medium text-primary mb-2">Als jij ziek bent:</h4>
                           <ul className="space-y-1">
                             {(situation.parentIll || []).map((item, itemIndex) => (
                               <li key={itemIndex} className="flex items-start space-x-2">
@@ -851,7 +847,7 @@ export default function VoedingsritmeOpbouwenPage() {
 
             {/* Growth Adjustments */}
             <div className="bg-white rounded-2xl border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Schema Aanpassingen per Ontwikkelingsfase</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Het schema aanpassen per ontwikkelingsfase</h2>
               
               <div className="space-y-6">
                 {growthAdjustments.map((adjustment, index) => (
@@ -860,7 +856,7 @@ export default function VoedingsritmeOpbouwenPage() {
                     
                     {adjustment.timing && Array.isArray(adjustment.timing) && adjustment.timing.length > 0 && (
                       <div className="mb-4">
-                        <h4 className="font-medium text-primary mb-2">Timing Verwachtingen:</h4>
+                        <h4 className="font-medium text-primary mb-2">Wanneer je ze kunt verwachten:</h4>
                         <ul className="space-y-1">
                           {adjustment.timing.map((time, timeIndex) => (
                             <li key={timeIndex} className="flex items-start space-x-2">
@@ -873,8 +869,8 @@ export default function VoedingsritmeOpbouwenPage() {
                     )}
                     
                     {adjustment.modifications && Array.isArray(adjustment.modifications) && adjustment.modifications.length > 0 && (
-                      <div className="p-3 border border-gray-200 mb-4">
-                        <h4 className="font-medium text-primary mb-2">Schema Modificaties:</h4>
+                      <div className="mb-4">
+                        <h4 className="font-medium text-primary mb-2">Aanpassingen in het schema:</h4>
                         <ul className="space-y-1">
                           {adjustment.modifications.map((mod, modIndex) => (
                             <li key={modIndex} className="text-sm text-gray-700 font-mono">{mod}</li>
@@ -885,7 +881,7 @@ export default function VoedingsritmeOpbouwenPage() {
                     
                     {adjustment.impact && Array.isArray(adjustment.impact) && adjustment.impact.length > 0 && (
                       <div className="mb-4">
-                        <h4 className="font-medium text-primary mb-2">Schema Impact:</h4>
+                        <h4 className="font-medium text-primary mb-2">Wat dit betekent voor het schema:</h4>
                         <ul className="space-y-1">
                           {adjustment.impact.map((impact, impactIndex) => (
                             <li key={impactIndex} className="flex items-start space-x-2">
@@ -923,7 +919,7 @@ export default function VoedingsritmeOpbouwenPage() {
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Users className="w-5 h-5 mr-2" />
-                Familie & Sociale Aspecten
+                Familie en sociale momenten
               </h2>
               
               <div className="space-y-6">
@@ -933,7 +929,7 @@ export default function VoedingsritmeOpbouwenPage() {
                     
                     {aspect.roleDivision && Array.isArray(aspect.roleDivision) && aspect.roleDivision.length > 0 && (
                       <div className="mb-4">
-                        <h4 className="font-medium text-primary mb-2">Rol Verdeling:</h4>
+                        <h4 className="font-medium text-primary mb-2">Taken verdelen:</h4>
                         <ul className="space-y-1">
                           {aspect.roleDivision.map((role, roleIndex) => (
                             <li key={roleIndex} className="flex items-start space-x-2">
@@ -947,7 +943,7 @@ export default function VoedingsritmeOpbouwenPage() {
                     
                     {aspect.conflictPrevention && Array.isArray(aspect.conflictPrevention) && aspect.conflictPrevention.length > 0 && (
                       <div className="mb-4">
-                        <h4 className="font-medium text-primary mb-2">Conflict Preventie:</h4>
+                        <h4 className="font-medium text-primary mb-2">Wrijving voorkomen:</h4>
                         <ul className="space-y-1">
                           {aspect.conflictPrevention.map((prevention, prevIndex) => (
                             <li key={prevIndex} className="flex items-start space-x-2">
@@ -961,7 +957,7 @@ export default function VoedingsritmeOpbouwenPage() {
                     
                     {aspect.managingExpectations && Array.isArray(aspect.managingExpectations) && aspect.managingExpectations.length > 0 && (
                       <div className="mb-4">
-                        <h4 className="font-medium text-primary mb-2">Verwachtingen Manageren:</h4>
+                        <h4 className="font-medium text-primary mb-2">Verwachtingen bijstellen:</h4>
                         <ul className="space-y-1">
                           {aspect.managingExpectations.map((expectation, expIndex) => (
                             <li key={expIndex} className="flex items-start space-x-2">
@@ -975,7 +971,7 @@ export default function VoedingsritmeOpbouwenPage() {
                     
                     {aspect.socialActivities && Array.isArray(aspect.socialActivities) && aspect.socialActivities.length > 0 && (
                       <div>
-                        <h4 className="font-medium text-primary mb-2">Sociale Activiteiten:</h4>
+                        <h4 className="font-medium text-primary mb-2">Sociale activiteiten:</h4>
                         <div className="space-y-2">
                           {aspect.socialActivities.map((activity, actIndex) => (
                             <div key={actIndex} className="text-sm text-gray-700 p-2 border border-gray-200 bg-white rounded font-mono">
@@ -998,12 +994,12 @@ export default function VoedingsritmeOpbouwenPage() {
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Calendar className="w-5 h-5 mr-2" />
-                Lange Termijn Perspectief
+                Vooruitblik op de lange termijn
               </h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
-                  <h3 className="font-medium text-primary mb-3">6-12 Maanden Vooruitzicht</h3>
+                  <h3 className="font-medium text-primary mb-3">Vooruitzicht op 6-12 maanden</h3>
                   <div className="space-y-2">
                     {longTermPerspective.evolution.map((evolution, index) => (
                       <div key={index} className="text-sm text-gray-700 p-2 border border-gray-200 bg-white rounded">
@@ -1014,7 +1010,7 @@ export default function VoedingsritmeOpbouwenPage() {
                 </div>
                 
                 <div>
-                  <h3 className="font-medium text-primary mb-3">Overgang Planning</h3>
+                  <h3 className="font-medium text-primary mb-3">De overgang plannen</h3>
                   <ul className="space-y-2">
                     {longTermPerspective.transitionPlanning.map((plan, index) => (
                       <li key={index} className="flex items-start space-x-2">
@@ -1042,12 +1038,12 @@ export default function VoedingsritmeOpbouwenPage() {
             {/* Product Widget */}
             <AffiliateProductWidget
               pageId="praktische-tips_voedingsritme-opbouwen"
-              title="Voedingsritme Producten"
+              title="Handig bij een vast voedingsritme"
             />
 
             {/* FAQ */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen (FAQ)</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde vragen</h2>
               
               <div className="space-y-4">
                 {faqData.map((item, index) => (

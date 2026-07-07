@@ -2,7 +2,7 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import Script from 'next/script'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
-import { Shield, Clock, DollarSign, Users, CheckCircle, AlertTriangle, ArrowRight, } from 'lucide-react'
+import { Shield, Clock, Euro, Users, CheckCircle, AlertTriangle, ArrowRight, } from 'lucide-react'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 
 export default function FlessenSteriligerenPage() {
@@ -121,7 +121,7 @@ export default function FlessenSteriligerenPage() {
                     </li>
                     <li className="flex items-center space-x-2">
                       <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                      <span className="text-gray-700 text-sm">Bij ziekte van baby (elk leeftijd)</span>
+                      <span className="text-gray-700 text-sm">Bij ziekte van baby (elke leeftijd)</span>
                     </li>
                     <li className="flex items-center space-x-2">
                       <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
@@ -161,7 +161,7 @@ export default function FlessenSteriligerenPage() {
                       <ul className="space-y-1">
                         <li className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                          <span className="text-gray-600 text-sm">Dagelijks of na elke gebruik</span>
+                          <span className="text-gray-600 text-sm">Dagelijks of na elk gebruik</span>
                         </li>
                         <li className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -242,7 +242,7 @@ export default function FlessenSteriligerenPage() {
                           </li>
                           <li className="flex space-x-2">
                             <span className="flex-shrink-0 w-5 h-5 bg-primary text-white rounded-full flex items-center justify-center text-xs">4</span>
-                            <span className="text-gray-700 text-sm">Laat 3 minuten doorkoken</span>
+                            <span className="text-gray-700 text-sm">Laat minstens 5 minuten doorkoken</span>
                           </li>
                           <li className="flex space-x-2">
                             <span className="flex-shrink-0 w-5 h-5 bg-primary text-white rounded-full flex items-center justify-center text-xs">5</span>
@@ -267,7 +267,7 @@ export default function FlessenSteriligerenPage() {
                           <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Snelste methode (6-15 minuten)</span></li>
                           <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Automatische uitschakeling</span></li>
                           <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Economisch energiegebruik</span></li>
-                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Items blijven 24 uur steriel</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Items blijven steriel zolang het deksel dicht blijft</span></li>
                           <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Makkelijk en betrouwbaar</span></li>
                         </ul>
                       </div>
@@ -283,11 +283,11 @@ export default function FlessenSteriligerenPage() {
                       </div>
                       
                       <div>
-                        <h4 className="font-medium text-gray-700 mb-1">Populaire modellen:</h4>
+                        <h4 className="font-medium text-gray-700 mb-1">Populaire modellen (prijzen indicatief):</h4>
                         <ul className="space-y-1">
-                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Philips Avent: €35-50, snelle stoom</span></li>
-                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">MAM sterilisator: €25-40, compact</span></li>
-                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Chicco: €30-45, grote capaciteit</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Philips Avent: snelle stoom</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">MAM sterilisator: compact</span></li>
+                          <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span className="text-gray-700 text-sm">Chicco: grote capaciteit</span></li>
                         </ul>
                       </div>
                     </div>
@@ -513,7 +513,7 @@ export default function FlessenSteriligerenPage() {
                     </div>
                     
                     <div>
-                      <h4 className="font-medium text-gray-700 mb-2">Tijdsduur per merk:</h4>
+                      <h4 className="font-medium text-gray-700 mb-2">Tijdsduur per merk (indicatief):</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -541,8 +541,8 @@ export default function FlessenSteriligerenPage() {
             {/* Kostenberekening */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
-                <DollarSign className="w-5 h-5 mr-2" />
-                Kostenberekening verschillende methoden
+                <Euro className="w-5 h-5 mr-2" />
+                Kostenberekening verschillende methoden (indicatief)
               </h2>
               
               <div className="space-y-4">
@@ -608,7 +608,7 @@ export default function FlessenSteriligerenPage() {
               <div className="space-y-4">
                 <div>
                   <h3 className="font-medium text-gray-700 mb-2">Q: Tot welke leeftijd moet ik steriliseren?</h3>
-                  <p className="text-gray-600 text-sm">A: Minimaal tot 1 jaar, bij premature baby's of ziekte langer. Het Voedingscentrum adviseert steriliseren zolang je baby flesvoeding krijgt.</p>
+                  <p className="text-gray-600 text-sm">A: Steriliseren is vooral belangrijk in de eerste ~6 maanden. Daarna is goed reinigen met heet water en afwasmiddel meestal voldoende, bij ziekte of bij premature baby's langer steriliseren.</p>
                 </div>
                 
                 <div>

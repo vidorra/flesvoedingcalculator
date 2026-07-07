@@ -311,8 +311,8 @@ export default function WanneerOverstappenOpvolgmelkPage() {
               <h2 className="text-lg font-medium text-primary mb-4">Waarom Timing Zo Belangrijk Is</h2>
               
               <p className="text-gray-700 mb-4">
-                <strong>Het moment van overstappen</strong> bepaalt vaak het succes van de transitie. Te vroeg en je baby weigert de nieuwe smaak.
-                Te laat en je mist potentiële voordelen zoals ijzerverrijking. <strong>De meeste succesvolle overstappen</strong> gebeuren op het ideale moment. Lees eerst ons artikel over het <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="text-primary hover:underline font-medium">verschil tussen startvoeding en opvolgmelk</Link> om te begrijpen of overstappen wel nodig is.
+                <strong>Het moment van overstappen</strong> kan het verloop van de transitie beïnvloeden. Bij een te vroege overstap is je baby soms nog niet toe aan de nieuwe smaak of textuur.
+                Overstappen is bovendien niet verplicht: startvoeding voldoet tot 12 maanden. Lees eerst ons artikel over het <Link href="/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk" className="text-primary hover:underline font-medium">verschil tussen startvoeding en opvolgmelk</Link> om te begrijpen of overstappen wel nodig is.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -334,8 +334,8 @@ export default function WanneerOverstappenOpvolgmelkPage() {
                 </div>
                 <div className="border-t border-gray-200 pt-6 mt-6">
                   <p className="text-gray-700">
-                    <strong>Uit de praktijk:</strong> Baby's die op het juiste moment overstappen
-                    vertonen aanzienlijk minder weigergedrag.
+                    <strong>Goed om te weten:</strong> een rustig moment kiezen, waarop je baby gezond is en
+                    er geen grote veranderingen spelen, maakt de overgang voor de meeste baby's soepeler.
                   </p>
                 </div>
               </div>
@@ -343,7 +343,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
 
             {/* 5 Important Factors */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">De Perfecte Timing: 5 Belangrijke Factoren</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">De Perfecte Timing: 3 Belangrijke Factoren</h2>
               
               <div className="space-y-8">
                 {timingFactors.map((factor, index) => (

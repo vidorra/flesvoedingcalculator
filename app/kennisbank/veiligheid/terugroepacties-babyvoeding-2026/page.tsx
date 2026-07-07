@@ -12,12 +12,12 @@ export const metadata = {
 export default function TerugroepactiesBabyvoeding2026Page() {
 
   const affectedBrands = [
-    { brand: 'Nestlé', products: 'Little Steps, Alfamino, NAN OPTIPRO, SMA, BEBA, Guigoz', countries: '60+ landen', relevance: 'Hoog — direct verkocht in NL' },
-    { brand: 'Danone', products: 'Nutrilon, Aptamil, Cow & Gate', countries: '20+ landen', relevance: 'Hoog — Nutrilon is marktleider in NL' },
-    { brand: 'Lactalis', products: 'Picot', countries: '18 landen', relevance: 'Laag — niet in NL-winkels' },
-    { brand: 'Hochdorf', products: 'Bimbosan', countries: 'Diverse landen incl. NL', relevance: 'Gemiddeld — geitenmelk niche' },
-    { brand: 'Vitagermine', products: 'Babybio', countries: 'Frankrijk, België', relevance: 'Gemiddeld — via biowebshops in NL verkrijgbaar' },
-    { brand: 'Popote', products: 'Popote', countries: 'Frankrijk', relevance: 'Laag — niet in NL verkrijgbaar' },
+    { brand: 'Nestlé', products: 'Little Steps, Alfamino, NAN OPTIPRO, SMA, BEBA, Guigoz', countries: 'ruim 60 landen', relevance: 'Hoog: direct verkocht in NL' },
+    { brand: 'Danone', products: 'Nutrilon, Aptamil, Cow & Gate', countries: '20+ landen', relevance: 'Hoog: Nutrilon is marktleider in NL' },
+    { brand: 'Lactalis', products: 'Picot', countries: '18 landen', relevance: 'Laag: niet in NL-winkels' },
+    { brand: 'Hochdorf', products: 'Bimbosan', countries: 'Diverse landen incl. NL', relevance: 'Gemiddeld: geitenmelk niche' },
+    { brand: 'Vitagermine', products: 'Babybio', countries: 'Frankrijk, België', relevance: 'Gemiddeld: via biowebshops in NL verkrijgbaar' },
+    { brand: 'Popote', products: 'Popote', countries: 'Frankrijk', relevance: 'Laag: niet in NL verkrijgbaar' },
   ]
 
   const safeBrands = [
@@ -42,10 +42,10 @@ export default function TerugroepactiesBabyvoeding2026Page() {
     { date: 'Eind november 2025', event: 'Nestlé detecteert lage concentraties cereulide tijdens routinecontroles in fabriek Nunspeet' },
     { date: '9 december 2025', event: 'Nestlé informeert de NVWA' },
     { date: '12 december 2025', event: 'Italië logt eerste RASFF-melding (referentienummer 2025.9962)' },
-    { date: '5 januari 2026', event: 'Nestlé start publieke terugroepactie in 63 landen, inclusief Nederland' },
+    { date: '5 januari 2026', event: 'Nestlé start publieke terugroepactie in ruim 60 landen, inclusief Nederland' },
     { date: '21 januari 2026', event: 'Lactalis roept Picot-babyvoeding terug in 18 landen' },
     { date: '23 januari 2026', event: 'Danone roept Aptamil terug in Verenigd Koninkrijk en Ierland' },
-    { date: '29 januari 2026', event: 'Foodwatch dient strafrechtelijke klacht in bij het Franse Openbaar Ministerie' },
+    { date: '29 januari 2026', event: 'In Frankrijk loopt een strafrechtelijk onderzoek van het Openbaar Ministerie naar de gang van zaken rond de besmetting' },
     { date: '2 februari 2026', event: 'EFSA publiceert eerste acute referentiedosis voor cereulide: maximaal 0,054 μg/L in zuigelingenvoeding en 0,1 μg/L in opvolgmelk. Popote en Vitagermine (Babybio) trekken producten terug' },
     { date: '6 februari 2026', event: 'Grote Nutrilon-terugroepactie: 14 producttypen, 44+ batches in Nederland' },
   ]
@@ -92,7 +92,7 @@ export default function TerugroepactiesBabyvoeding2026Page() {
               <p className="text-gray-700 mb-4">
                 De leverancier van de besmette olie is het Chinese bedrijf <strong>Cabio Biotech</strong> uit Wuhan. Omdat dit
                 bedrijf aan meerdere grote fabrikanten leverde, breidde het probleem zich snel uit over de hele Europese markt
-                en uiteindelijk naar <strong>meer dan 60 landen wereldwijd</strong>.
+                en uiteindelijk naar <strong>ruim 60 landen wereldwijd</strong>.
               </p>
 
               <div className="bg-primary/5 border border-primary/20 rounded-xl p-4">
@@ -184,9 +184,9 @@ export default function TerugroepactiesBabyvoeding2026Page() {
                 </p>
                 <ul className="space-y-2 mb-3">
                   {[
-                    'Nutrilon volledige zuigelingenvoeding 1 (800g, 600g en 1,2kg) — THT juli 2026 t/m december 2026',
-                    'Nutrilon opvolgmelk 2 (800g, 600g en 1,2kg) — THT juni 2026 t/m februari 2027',
-                    'Nutrilon opvolgmelk 3 (800g) — THT juni 2026 t/m december 2026',
+                    'Nutrilon volledige zuigelingenvoeding 1 (800g, 600g en 1,2kg), THT juli 2026 t/m december 2026',
+                    'Nutrilon opvolgmelk 2 (800g, 600g en 1,2kg), THT juni 2026 t/m februari 2027',
+                    'Nutrilon opvolgmelk 3 (800g), THT juni 2026 t/m december 2026',
                     'Nutrilon AR 2, Content 1, Duobalans 1 en 2',
                     'Nutrilon tabs (zuigelingenvoeding 1 en opvolgmelk 2)',
                   ].map((item, i) => (
@@ -252,6 +252,33 @@ export default function TerugroepactiesBabyvoeding2026Page() {
               </div>
             </div>
 
+            {/* Reported deaths and investigations */}
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+              <h2 className="text-lg font-medium text-primary mb-4">Ziektegevallen en overlijdens: wat is er bekend?</h2>
+
+              <p className="text-gray-700 mb-4">
+                Rond deze terugroepactie zijn meerdere ziektegevallen bij zuigelingen gemeld, en in Frankrijk zijn
+                enkele overlijdens van baby&apos;s onder de aandacht gekomen die mogelijk verband houden met besmette
+                babyvoeding. In Frankrijk loopt hierover een strafrechtelijk onderzoek van het Openbaar Ministerie,
+                en in het Verenigd Koninkrijk onderzoekt de UKHSA een reeks ziektegevallen bij zuigelingen.
+              </p>
+
+              <p className="text-gray-700 mb-4">
+                Het is belangrijk om deze meldingen zorgvuldig te lezen. De onderzoeken lopen nog en moeten uitwijzen
+                wat er precies is gebeurd. Op dit moment is er geen wetenschappelijk vastgesteld causaal verband tussen
+                de besmette babyvoeding en de gemelde overlijdens. De gezondheidsautoriteiten benadrukken dat het
+                merendeel van de gemelde klachten mild verloopt en meestal binnen 24 uur vanzelf overgaat.
+              </p>
+
+              <div className="bg-primary/5 border border-primary/20 rounded-xl p-4">
+                <p className="text-gray-700 text-sm">
+                  <strong>Kort samengevat:</strong> er lopen onderzoeken en er zijn zorgwekkende meldingen, maar een
+                  oorzakelijk verband is nog niet aangetoond. Volg de terugroepacties, controleer je batchnummer en
+                  raadpleeg bij klachten je huisarts of het consultatiebureau.
+                </p>
+              </div>
+            </div>
+
             {/* Safe brands */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
@@ -269,7 +296,7 @@ export default function TerugroepactiesBabyvoeding2026Page() {
                   <div key={index} className="flex items-start space-x-2">
                     <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700">
-                      <strong>{item.brand}</strong> — {item.note}
+                      <strong>{item.brand}</strong>: {item.note}
                     </span>
                   </div>
                 ))}
@@ -279,7 +306,7 @@ export default function TerugroepactiesBabyvoeding2026Page() {
                 <p className="text-gray-700 mb-3">
                   <strong>Belangrijk:</strong> ook bij Nutrilon en Nestlé geldt dat producten die <strong>niet</strong> op
                   de terugroeplijst staan, veilig zijn. Het gaat uitsluitend om de specifieke batchnummers. Het
-                  Voedingscentrum bevestigt dat overstappen op een ander merk veilig is — alle zuigelingenvoeding in de
+                  Voedingscentrum bevestigt dat overstappen op een ander merk veilig is: alle zuigelingenvoeding in de
                   EU moet aan dezelfde strenge voedingseisen voldoen (EU Verordening 2016/127).
                 </p>
                 <p className="text-gray-700">
@@ -322,8 +349,8 @@ export default function TerugroepactiesBabyvoeding2026Page() {
                   <h3 className="font-medium text-gray-800 mb-2">Stap 3: Bij een match, niet meer gebruiken</h3>
                   <p className="text-gray-700">
                     Geef de voeding niet meer aan je baby. Breng het product terug naar de winkel voor volledige
-                    terugbetaling — ook zonder kassabon. Foodwatch adviseert om de verpakking en eventuele restanten
-                    te bewaren als bewijsmateriaal.
+                    terugbetaling, ook zonder kassabon. Bewaar bij twijfel de verpakking en eventuele restanten,
+                    zodat het batchnummer later nog te controleren is.
                   </p>
                 </div>
 
@@ -339,7 +366,7 @@ export default function TerugroepactiesBabyvoeding2026Page() {
                   <div className="bg-primary/5 border border-primary/20 rounded-xl p-3">
                     <p className="text-gray-700 text-sm">
                       <strong>Gebruik nooit</strong> gewone koemelk, geitenmelk, haver- of sojamelk als vervanging
-                      voor zuigelingenvoeding — deze zijn absoluut ongeschikt voor baby&apos;s jonger dan 12 maanden.
+                      voor zuigelingenvoeding: deze zijn absoluut ongeschikt voor baby&apos;s jonger dan 12 maanden.
                     </p>
                   </div>
                 </div>
@@ -373,8 +400,8 @@ export default function TerugroepactiesBabyvoeding2026Page() {
                 <div>
                   <h3 className="font-medium text-gray-800 mb-2">Melden bij de NVWA</h3>
                   <p className="text-gray-700">
-                    Vermoed je dat je baby ziek is geworden van babyvoeding — ook als het niet om een teruggeroepen
-                    batch gaat — meld dit dan bij de NVWA. Zij hebben inmiddels <strong>tientallen meldingen</strong> ontvangen
+                    Vermoed je dat je baby ziek is geworden van babyvoeding, ook als het niet om een teruggeroepen
+                    batch gaat, meld dit dan bij de NVWA. Zij hebben inmiddels <strong>tientallen meldingen</strong> ontvangen
                     en ook nog <strong>13 meldingen</strong> over producten van andere producenten dan Nestlé of Danone
                     die momenteel worden onderzocht.
                   </p>
@@ -384,7 +411,7 @@ export default function TerugroepactiesBabyvoeding2026Page() {
 
             {/* How the safety system works */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Hoe het veiligheidssysteem werkt — en waar het faalde</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Hoe het veiligheidssysteem werkt, en waar het faalde</h2>
 
               <p className="text-gray-700 mb-4">
                 Het Europese voedselveiligheidssysteem rust op meerdere pijlers: fabrikanten met HACCP-systemen,
@@ -407,7 +434,7 @@ export default function TerugroepactiesBabyvoeding2026Page() {
                   <h3 className="font-medium text-gray-800 mb-2">Zwakte 2: Onbetrouwbare testmethode</h3>
                   <p className="text-gray-700">
                     De standaardtestmethode voor cereulide in poedervorm bleek concentraties <strong>tot 75 keer
-                    te onderschatten</strong> vergeleken met tests op aangemengde melk — precies de vorm waarin
+                    te onderschatten</strong> vergeleken met tests op aangemengde melk, precies de vorm waarin
                     baby&apos;s het product consumeren.
                   </p>
                 </div>
@@ -426,7 +453,7 @@ export default function TerugroepactiesBabyvoeding2026Page() {
               </p>
 
               <p className="text-gray-700 mb-4">
-                De situatie is nog in ontwikkeling — de NVWA en EFSA kunnen aanvullende batches of producten
+                De situatie is nog in ontwikkeling: de NVWA en EFSA kunnen aanvullende batches of producten
                 toevoegen naarmate de tracering vordert. Het is daarom verstandig om de fabrikantwebsites en
                 nvwa.nl regelmatig te raadplegen.
               </p>
@@ -439,15 +466,15 @@ export default function TerugroepactiesBabyvoeding2026Page() {
                     <div key={index} className="flex items-start space-x-2">
                       <ExternalLink className="w-3 h-3 text-primary mt-1 flex-shrink-0" />
                       <span className="text-gray-700">
-                        <strong>{link.label}</strong> — {link.url}
+                        <strong>{link.label}</strong>: {link.url}
                       </span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <p className="text-gray-500 text-sm mt-4 italic">
-                Stand van zaken: 12 februari 2026. Dit artikel wordt bijgewerkt zodra nieuwe informatie beschikbaar komt.
+              <p className="text-gray-500 text-sm mt-4">
+                Laatst gecontroleerd: juli 2026. Dit artikel wordt bijgewerkt zodra nieuwe informatie beschikbaar komt.
               </p>
             </div>
 

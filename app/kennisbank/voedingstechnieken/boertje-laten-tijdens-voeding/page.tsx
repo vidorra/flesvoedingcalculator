@@ -184,7 +184,7 @@ export default function BoertjeLatenPage() {
     },
     {
       question: 'Moet ik \'s nachts ook boertje laten?',
-      answer: 'Ja, ook \'s nachts. Probeer wel rustiger technieken en dimmer licht om de baby niet teveel wakker te maken.'
+      answer: 'Meestal wel, maar niet elke baby heeft \'s nachts een boertje nodig. Drinkt je baby rustig en valt hij ontspannen weer in slaap, dan hoeft het niet altijd. Probeer anders een rustige techniek en gedimd licht om de baby niet teveel wakker te maken.'
     },
     {
       question: 'Wanneer stoppen met boertje laten?',
@@ -227,7 +227,7 @@ export default function BoertjeLatenPage() {
                 <ul className="space-y-2">
                   <li className="flex items-start space-x-2">
                     <AlertTriangle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700"><strong>Buikpijn en krampjes</strong> - Luchtbellen in de maag veroorzaken oncomfort</span>
+                    <span className="text-gray-700"><strong>Buikpijn en krampjes</strong> - Luchtbellen in de maag veroorzaken ongemak</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <AlertTriangle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
@@ -248,8 +248,8 @@ export default function BoertjeLatenPage() {
               
               <div className="mt-4 p-4 border border-gray-200 bg-white rounded-xl">
                 <p className="text-gray-700">
-                  <strong>Uit de praktijk blijkt</strong> dat baby's die regelmatig een boertje laten minder last hebben van koliekklachten.
-                  Lees meer over <Link href="/kennisbank/problemen-oplossen/krampjes-na-flesvoeding" className="text-primary hover:underline font-medium">hoe je krampjes kunt voorkomen</Link>.
+                  Een boertje kan het ongemak van ingeslikte lucht verminderen. Of het ook koliek voorkomt is niet bewezen: koliek komt bij veel baby's voor en de precieze oorzaak is vaak onbekend.
+                  Lees meer over <Link href="/kennisbank/problemen-oplossen/krampjes-na-flesvoeding" className="text-primary hover:underline font-medium">krampjes na de fles</Link>.
                 </p>
               </div>
             </div>
@@ -273,7 +273,7 @@ export default function BoertjeLatenPage() {
                         <h4 className="font-medium text-primary mb-2">Stappen:</h4>
                         <ol className="space-y-1 text-gray-700">
                           {technique.steps.map((step, stepIndex) => (
-                            <li key={index} className="flex items-start space-x-2">
+                            <li key={stepIndex} className="flex items-start space-x-2">
                               <span className="text-primary font-medium">{stepIndex + 1}.</span>
                               <span>{step}</span>
                             </li>
@@ -285,7 +285,7 @@ export default function BoertjeLatenPage() {
                         <h4 className="font-medium text-primary mb-2">Voordelen:</h4>
                         <ul className="space-y-1 text-gray-700">
                           {technique.benefits.map((benefit, benefitIndex) => (
-                            <li key={index} className="flex items-start space-x-2">
+                            <li key={benefitIndex} className="flex items-start space-x-2">
                               <CheckCircle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
                               <span>{benefit}</span>
                             </li>
@@ -327,6 +327,9 @@ export default function BoertjeLatenPage() {
               
               <div className="mb-6">
                 <h3 className="font-medium text-primary mb-3">Tijdens de Voeding (Preventief)</h3>
+                <p className="text-gray-700 mb-3">
+                  De onderstaande momenten zijn een vuistregel, geen vaste norm. Elke baby is anders: kijk vooral naar de signalen van je eigen baby en pas de momenten daarop aan.
+                </p>
                 <div className="overflow-x-auto">
                   <table className="w-full border-collapse border border-gray-300">
                     <thead>
@@ -377,8 +380,8 @@ export default function BoertjeLatenPage() {
                   <div key={index}>
                     <h3 className="font-medium text-primary mb-3">{section.category}</h3>
                     <ul className="space-y-2">
-                      {section.tips.map((tip, index) => (
-                        <li key={index} className="text-sm text-gray-700 flex items-start space-x-2">
+                      {section.tips.map((tip, tipIndex) => (
+                        <li key={tipIndex} className="text-sm text-gray-700 flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                           <span>{tip}</span>
                         </li>
@@ -403,7 +406,7 @@ export default function BoertjeLatenPage() {
                         <h4 className="font-medium text-gray-700 mb-2">Normale oorzaken:</h4>
                         <ul className="space-y-1 text-gray-700">
                           {item.causes.map((cause, causeIndex) => (
-                            <li key={index} className="flex items-start space-x-2">
+                            <li key={causeIndex} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                               <span>{cause}</span>
                             </li>
@@ -415,7 +418,7 @@ export default function BoertjeLatenPage() {
                         <h4 className="font-medium text-gray-700 mb-2">Oplossingen:</h4>
                         <ul className="space-y-1 text-gray-700">
                           {item.solutions.map((solution, solutionIndex) => (
-                            <li key={index} className="flex items-start space-x-2">
+                            <li key={solutionIndex} className="flex items-start space-x-2">
                               <CheckCircle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
                               <span>{solution}</span>
                             </li>
@@ -446,7 +449,7 @@ export default function BoertjeLatenPage() {
                         <h4 className="font-medium text-primary mb-2">Populaire merken:</h4>
                         <ul className="space-y-1 text-gray-700">
                           {item.brands.map((brand, brandIndex) => (
-                            <li key={index} className="flex items-start space-x-2">
+                            <li key={brandIndex} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                               <span>{brand}</span>
                             </li>
@@ -460,7 +463,7 @@ export default function BoertjeLatenPage() {
                         <h4 className="font-medium text-primary mb-2">Voordelen:</h4>
                         <ul className="space-y-1 text-gray-700">
                           {item.benefits.map((benefit, benefitIndex) => (
-                            <li key={index} className="flex items-start space-x-2">
+                            <li key={benefitIndex} className="flex items-start space-x-2">
                               <CheckCircle className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
                               <span>{benefit}</span>
                             </li>
@@ -474,7 +477,7 @@ export default function BoertjeLatenPage() {
                         <h4 className="font-medium text-gray-700 mb-2">Extra aandacht voor:</h4>
                         <ul className="space-y-1 text-gray-700">
                           {item.attention.map((point, pointIndex) => (
-                            <li key={index} className="flex items-start space-x-2">
+                            <li key={pointIndex} className="flex items-start space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                               <span>{point}</span>
                             </li>
@@ -547,6 +550,21 @@ export default function BoertjeLatenPage() {
                   ook al laat niet elke keer een perfect boertje.
                 </p>
               </div>
+            </div>
+
+            {/* Bronnen */}
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+              <h2 className="text-lg font-medium text-primary mb-4">Bronnen</h2>
+              <ul className="space-y-2">
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-700">Voedingscentrum: adviezen over flesvoeding en het voeden van je baby</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-700">JGZ en het consultatiebureau: begeleiding bij voeding, huilen en verzorging</span>
+                </li>
+              </ul>
             </div>
 
             {/* Boertje Laten Producten */}

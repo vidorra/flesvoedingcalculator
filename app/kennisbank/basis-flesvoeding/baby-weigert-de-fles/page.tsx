@@ -38,7 +38,7 @@ export default function BabyWeigertFlespagePage() {
                 Baby weigert de fles: Oorzaken en praktische oplossingen
               </h1>
               <p className="text-gray-600 leading-relaxed">
-                Complete gids voor ouders wiens baby plotseling of persistent de fles weigert
+                Complete gids voor ouders wier baby plotseling of persistent de fles weigert
               </p>
             </div>
 
@@ -162,7 +162,7 @@ export default function BabyWeigertFlespagePage() {
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm">Flesvoeding te lang bewaard</span>
+                          <span className="text-gray-600 text-sm">Flesvoeding te lang bewaard (klaargemaakte fles max 8 uur achterin de koelkast bij 4°C, restjes weg)</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -228,7 +228,7 @@ export default function BabyWeigertFlespagePage() {
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm">Consistent voorverwarmen tot 37°C</span>
+                          <span className="text-gray-600 text-sm">Consistent opwarmen tot 30 à 35°C (niet warmer)</span>
                         </li>
                       </ul>
                     </div>

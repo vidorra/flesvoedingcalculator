@@ -47,8 +47,8 @@ export default function BioOrganischeFlesvoedingPage() {
     {
       merk: "HiPP Biologisch",
       prijs: "€22-28 per 800g",
-      niveau: "Demeter (strengste bio)",
-      voordelen: "60+ jaar bio ervaring, excellent oplosbaarheid",
+      niveau: "EU Bio (sommige HiPP-lijnen zijn Demeter)",
+      voordelen: "Ruime bio ervaring, goede oplosbaarheid",
       nadelen: "Duurste optie, niet overal verkrijgbaar"
     },
     {
@@ -75,24 +75,25 @@ export default function BioOrganischeFlesvoedingPage() {
     "Wetenschappelijk bewijs voor gezondheidsvoordelen boven reguliere flesvoeding is beperkt"
   ]
 
+  // Bedragen zijn indicatief (prijspeil 2026) en verschillen per merk en winkel
   const kostenVergelijking = [
     {
       periode: "Maandelijks",
       bio: "€85-125",
-      regulier: "€55-85", 
-      verschil: "+45-55%"
+      regulier: "€55-85",
+      verschil: "Doorgaans duurder"
     },
     {
-      periode: "Per jaar", 
+      periode: "Per jaar",
       bio: "€950-1400",
       regulier: "€600-950",
-      verschil: "+€350-450"
+      verschil: "Doorgaans duurder"
     },
     {
       periode: "Per fles",
-      bio: "€1,20", 
-      regulier: "€0,75",
-      verschil: "+€0,45"
+      bio: "circa €1,20",
+      regulier: "circa €0,75",
+      verschil: "Doorgaans duurder"
     }
   ]
 
@@ -105,10 +106,10 @@ export default function BioOrganischeFlesvoedingPage() {
     "Combineer overstap niet met andere veranderingen"
   ]
 
-  const veelgemaktefouten = [
+  const veelgemaakteFouten = [
     {
       fout: "Duurder = Altijd Beter",
-      impact: "€300-500 onnodige kosten per jaar",
+      impact: "Onnodig hoge kosten zonder aangetoonde meerwaarde",
       tip: "Ingrediënten en certificeringen vergelijken"
     },
     {
@@ -248,9 +249,7 @@ export default function BioOrganischeFlesvoedingPage() {
  <div className="mt-6">
                 <h4 className="font-medium text-gray-700 mb-2">Nederlandse Top 3 Aanbevelingen</h4>
                 <p className="text-gray-700 text-sm">
-                  <strong>Hoogwaardig:</strong> HiPP (beste overall kwaliteit)  
-                  <strong>Regulier:</strong> Nutrilon Bio (Nederlandse traditie)  
-                  <strong>Voordelig:</strong> Babylove Bio (beste prijs-kwaliteit)
+                  <strong>Hoogwaardig:</strong> HiPP (beste overall kwaliteit). <strong>Regulier:</strong> Nutrilon Bio (Nederlandse traditie). <strong>Voordelig:</strong> Babylove Bio (beste prijs-kwaliteit).
                 </p>
               </div>
             </section>
@@ -324,6 +323,9 @@ export default function BioOrganischeFlesvoedingPage() {
                     </tbody>
                   </table>
                 </div>
+                <p className="text-sm text-gray-500 mt-3">
+                  Bedragen zijn indicatief (prijspeil 2026) en verschillen per merk, verpakking en winkel.
+                </p>
               </div>
 
               <div className="border-t border-gray-200 pt-6">
@@ -363,7 +365,7 @@ export default function BioOrganischeFlesvoedingPage() {
                   </div>
  <div className="p-4">
                     <h4 className="font-medium text-gray-700 mb-2">Week 5-6: Voltooien</h4>
-                    <p className="text-gray-700 text-sm">75% bio  100% bio, volledige overgang afgerond</p>
+                    <p className="text-gray-700 text-sm">75% bio naar 100% bio, volledige overgang afgerond</p>
                   </div>
                 </div>
                 
@@ -394,7 +396,7 @@ export default function BioOrganischeFlesvoedingPage() {
                   </p>
                   
                   <div className="space-y-3">
-                    {veelgemaktefouten.map((fout, index) => (
+                    {veelgemaakteFouten.map((fout, index) => (
                       <div key={index} className="bg-amber-100/50 rounded-lg p-3">
                         <h4 className="font-medium text-amber-800 text-sm mb-1">{fout.fout}</h4>
                         <p className="text-xs text-amber-700 mb-1"><strong>Impact:</strong> {fout.impact}</p>

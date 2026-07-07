@@ -9,28 +9,6 @@ export const metadata = {
   description: 'Speciale aandachtspunten, NICU ervaring en evidence-based advies voor Nederlandse ouders. Van gecorrigeerde leeftijd tot lange termijn ontwikkeling.',
 }
 
-
-  // Sidebar configuration
-  const sidebarImages = [
-    {
-      src: "/baby.webp",
-      alt: "Premature baby in speciale zorg",
-      caption: "Zorgvuldige voeding voor premature baby's"
-    },
-    {
-      src: "/mother_and_baby.webp",
-      alt: "Moeder zorgt voor premature baby",
-      caption: "Extra aandacht en liefde"
-    },
-    {
-      src: "/flesvoeding.webp",
-      alt: "Speciale premature baby voeding",
-      caption: "Aangepaste voeding voor vroeggeboren baby's"
-    }
-  ]
-
-  const adTopics = ["Premature Baby Voeding", "Speciale Zorg", "NICU Voeding", "Vroeggeboren Baby's"]
-
 export default function FlesvoedingPrematurePage() {
   const prematureCategories = [
     {
@@ -86,7 +64,7 @@ export default function FlesvoedingPrematurePage() {
     {
       name: 'Nutrilon Post-Discharge',
       indication: 'Thuis transitie 36-40 weken',
-      benefits: '72 kcal/100ml, hogere mineralen dan standaard'
+      benefits: 'Ongeveer 73-75 kcal/100ml, hogere mineralen dan standaard'
     },
     {
       name: 'SMA Gold Prem',
@@ -120,8 +98,8 @@ export default function FlesvoedingPrematurePage() {
           </h1>
           <p className="text-gray-500">
             Speciale aandachtspunten, NICU ervaring en evidence-based advies voor Nederlandse ouders. 
-            Van gecorrigeerde leeftijd tot lange termijn ontwikkeling. In Nederland worden jaarlijks 
-            15.000 baby's (8,7%) te vroeg geboren - deze gids biedt gespecialiseerde kennis voor optimale zorg.
+            Van gecorrigeerde leeftijd tot lange termijn ontwikkeling. In Nederland wordt ongeveer 7,5 tot 8%
+            van de baby's te vroeg geboren (Perined). Deze gids biedt gespecialiseerde kennis voor optimale zorg.
           </p>
         </div>
 
@@ -301,6 +279,7 @@ export default function FlesvoedingPrematurePage() {
           
           <p className="text-gray-700 mb-4">
             Voor premature baby's zijn speciale voedingen beschikbaar die aangepast zijn aan hun verhoogde voedingsbehoeften.
+            De genoemde merken en voedingswaarden zijn indicatief en kunnen door de fabrikant worden aangepast. Controleer altijd de actuele verpakking en het advies van je kinderarts of diëtist.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -406,7 +385,7 @@ export default function FlesvoedingPrematurePage() {
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-700">Temperatuur</h4>
-                  <p className="text-gray-600">37°C - premature baby's zijn gevoeliger voor temperatuurverschillen. Lees meer over <Link href="/kennisbank/voedingstechnieken/juiste-temperatuur-controleren" className="text-primary hover:underline font-medium">temperatuur controleren</Link>.</p>
+                  <p className="text-gray-600">Warm de fles op tot lichaamstemperatuur, ongeveer 30 tot 35°C, en test op je pols. Premature baby's zijn gevoeliger voor temperatuurverschillen. Lees meer over <Link href="/kennisbank/voedingstechnieken/juiste-temperatuur-controleren" className="text-primary hover:underline font-medium">temperatuur controleren</Link>.</p>
                 </div>
               </div>
             </div>
@@ -435,7 +414,7 @@ export default function FlesvoedingPrematurePage() {
         <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
             <AlertCircle className="w-5 h-5 mr-2" />
-            Waarschuwingssignalen - Direct Contact Opnemen
+            Waarschuwingssignalen: direct contact opnemen
           </h2>
           
           <p className="text-gray-700 mb-4">

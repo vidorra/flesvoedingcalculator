@@ -3,6 +3,11 @@ import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { Milk, CheckCircle, AlertTriangle, HelpCircle, ArrowRight, ExternalLink, Users } from 'lucide-react'
 
+export const metadata = {
+  title: 'Beste melkmachine voor flesvoeding in 2026: eerlijke vergelijking | Flesvoedingcalculator',
+  description: 'Vergelijking van de vijf populairste melkmachines voor flesvoeding op prijs, doseernauwkeurigheid, hygiëne en gebruiksgemak. Met eerlijk advies of je er een nodig hebt.',
+}
+
 export default function BesteMelkmachineFlesvoedingPage() {
   const sidebarImages = [
     {
@@ -45,7 +50,7 @@ export default function BesteMelkmachineFlesvoedingPage() {
             <section className="bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Wat is een melkmachine voor flesvoeding?</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Een melkmachine — ook wel flesvoedingsapparaat of automatische flessenbereider genoemd — is een apparaat dat water verwarmt, de juiste hoeveelheid melkpoeder doseert en beide automatisch mengt tot een kant-en-klare fles. Je kunt het vergelijken met een koffiezetapparaat, maar dan voor babyvoeding: één druk op de knop en de fles is klaar.
+                Een melkmachine, ook wel flesvoedingsapparaat of automatische flessenbereider genoemd, is een apparaat dat water verwarmt, de juiste hoeveelheid melkpoeder doseert en beide automatisch mengt tot een kant-en-klare fles. Je kunt het vergelijken met een koffiezetapparaat, maar dan voor babyvoeding: één druk op de knop en de fles is klaar.
               </p>
               <p className="text-gray-700 leading-relaxed">
                 Het grote verschil met een gewone flessenwarmer is dat een melkmachine het complete bereidingsproces overneemt. Een flessenwarmer verwarmt alleen een al klaargemaakte fles. Een melkmachine meet het water af, doseert het poeder en mengt alles automatisch. Dat scheelt meerdere handmatige stappen, wat vooral in het holst van de nacht een merkbaar verschil maakt.
@@ -106,12 +111,12 @@ export default function BesteMelkmachineFlesvoedingPage() {
 
                 <div className="border-t border-gray-200 pt-6">
                   <h3 className="font-medium text-primary mb-2">Hygiëne en schoonmaak</h3>
-                  <p className="text-gray-600">Melkpoeder is een voedingsbodem voor bacteriën als het vochtig wordt. Het onderdeel waar poeder en water samenkomen — meestal de trechter of het doseermechanisme — moet regelmatig en grondig gereinigd worden. Hoe makkelijker de onderdelen losgemaakt en schoongemaakt kunnen worden, hoe beter.</p>
+                  <p className="text-gray-600">Melkpoeder is een voedingsbodem voor bacteriën als het vochtig wordt. Het onderdeel waar poeder en water samenkomen, meestal de trechter of het doseermechanisme, moet regelmatig en grondig gereinigd worden. Hoe makkelijker de onderdelen losgemaakt en schoongemaakt kunnen worden, hoe beter.</p>
                 </div>
 
                 <div className="border-t border-gray-200 pt-6">
                   <h3 className="font-medium text-primary mb-2">Compatibiliteit met melkpoeder</h3>
-                  <p className="text-gray-600">Niet elk apparaat werkt met elk merk. Dieetvoeding zoals Nutrilon Pepti en Nutricia Neocate is dikker dan regulier melkpoeder en kan het doseermechanisme verstoppen. Controleer vooraf of jouw merk compatible is.</p>
+                  <p className="text-gray-600">Niet elk apparaat werkt met elk merk. Dieetvoeding zoals Nutrilon Pepti en Nutricia Neocate is dikker dan regulier melkpoeder en kan het doseermechanisme verstoppen. Controleer vooraf of jouw merk compatibel is.</p>
                 </div>
 
                 <div className="border-t border-gray-200 pt-6">
@@ -210,6 +215,7 @@ export default function BesteMelkmachineFlesvoedingPage() {
                   </tbody>
                 </table>
               </div>
+              <p className="text-sm text-gray-500 mt-3">Prijzen en reviewscores zijn indicatief (prijspeil 2026) en wisselen per winkel en moment. Controleer de actuele prijs en beoordelingen bij de verkoper voordat je bestelt.</p>
             </section>
 
             {/* Product reviews */}
@@ -224,7 +230,7 @@ export default function BesteMelkmachineFlesvoedingPage() {
                     De Baby Brezza is het bekendste en langst bestaande merk op de Nederlandse markt. Het apparaat is getest met vrijwel alle merken melkpoeder die in Nederland verkrijgbaar zijn, inclusief hypoallergene varianten. Met ruim honderden reviews op Bol.com en een gemiddelde van 4,4 sterren weet je wat je kunt verwachten.
                   </p>
                   <p className="text-gray-600 leading-relaxed mb-3">
-                    Het apparaat heeft een groot waterreservoir van 1,5 liter en een poederopslag voor ongeveer twintig flessen, waardoor je het niet na elke voeding hoeft bij te vullen. De keerzijde is de prijs — met een richtprijs rond de driehonderd euro is dit het duurste apparaat in de vergelijking. Daarnaast verplicht het apparaat je om na elke vier flessen de trechter schoon te maken.
+                    Het apparaat heeft een groot waterreservoir van 1,5 liter en een poederopslag voor ongeveer twintig flessen, waardoor je het niet na elke voeding hoeft bij te vullen. De keerzijde is de prijs: met een richtprijs rond de driehonderd euro is dit het duurste apparaat in de vergelijking. Daarnaast verplicht het apparaat je om na elke vier flessen de trechter schoon te maken.
                   </p>
                   <p className="text-gray-700 text-sm italic mb-4">Geschikt voor: ouders die bereid zijn meer te investeren voor een bewezen, betrouwbaar apparaat met de meeste gebruikerservaring.</p>
                   <a
@@ -266,7 +272,7 @@ export default function BesteMelkmachineFlesvoedingPage() {
                     De Easybaby Milk Maker is een Nederlands product dat zich positioneert als betrouwbare middenklasser. Het apparaat bereidt een fles in circa acht seconden en is zowel handmatig als via een smartphone-app te bedienen. De instelbare temperatuur loopt van vijfendertig tot zeventig graden.
                   </p>
                   <p className="text-gray-600 leading-relaxed mb-3">
-                    Het apparaat werkt met vrijwel alle gangbare flessen — van Dr. Brown's en Difrax tot Philips Avent en MAM — en met alle reguliere merken melkpoeder, waaronder Nutrilon, Hero Baby en Kabrita. De klantenservice is Nederlandstalig, wat een voordeel is als je hulp nodig hebt bij het instellen.
+                    Het apparaat werkt met vrijwel alle gangbare flessen, van Dr. Brown's en Difrax tot Philips Avent en MAM, en met alle reguliere merken melkpoeder, waaronder Nutrilon, Hero Baby en Kabrita. De klantenservice is Nederlandstalig, wat een voordeel is als je hulp nodig hebt bij het instellen.
                   </p>
                   <p className="text-gray-700 text-sm italic mb-4">Geschikt voor: ouders die een goede prijs-kwaliteitverhouding zoeken met app-bediening en Nederlandse ondersteuning.</p>
                   <a
@@ -308,7 +314,7 @@ export default function BesteMelkmachineFlesvoedingPage() {
                     De Béaba Milkeo Plus is afkomstig van het gevestigde Franse babymerk Béaba, bekend van hun voedingsbereiders en flessenwarmers. Het apparaat bereidt een fles in circa twintig seconden en biedt drie temperatuurstanden. De poederopslag is met vijfhonderd gram iets groter dan bij de meeste concurrenten.
                   </p>
                   <p className="text-gray-600 leading-relaxed mb-3">
-                    Het voordeel van Béaba is de merkreputatie en het minimalistische design dat goed past in een moderne keuken of slaapkamer. De Milkeo Plus mist app-bediening en een automatisch reinigingsprogramma — functies die goedkopere concurrenten wel bieden. De bereidingstijd van twintig seconden is trager dan de meeste alternatieven.
+                    Het voordeel van Béaba is de merkreputatie en het minimalistische design dat goed past in een moderne keuken of slaapkamer. De Milkeo Plus mist app-bediening en een automatisch reinigingsprogramma, functies die goedkopere concurrenten wel bieden. De bereidingstijd van twintig seconden is trager dan de meeste alternatieven.
                   </p>
                   <p className="text-gray-700 text-sm italic mb-4">Geschikt voor: ouders die de voorkeur geven aan een gevestigd merk met bewezen kwaliteit en minder waarde hechten aan app-bediening.</p>
                   <a
@@ -331,7 +337,7 @@ export default function BesteMelkmachineFlesvoedingPage() {
                 Laten we eerlijk zijn. Een melkmachine is een luxeproduct. Je kunt prima flesvoeding bereiden met een waterkoker, een maatschepje en dertig seconden schudden. Ouders doen dit al decennia met uitstekend resultaat.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                De meerwaarde zit niet in de kwaliteit van de bereide voeding — die is gelijk aan handmatig bereid — maar in het gemak en de consistentie. Reken voor jezelf uit of de investering past. Als je zes maanden flesvoeding geeft met zes flessen per dag, maak je in totaal ongeveer duizend flessen. Bij een apparaat van tweehonderd euro komt dat neer op twintig cent per fles aan extra kosten — vergelijkbaar met de prijs van een kop koffie per week.
+                De meerwaarde zit niet in de kwaliteit van de bereide voeding, die is gelijk aan handmatig bereid, maar in het gemak en de consistentie. Reken voor jezelf uit of de investering past. Als je zes maanden flesvoeding geeft met zes flessen per dag, maak je in totaal ongeveer duizend flessen. Bij een apparaat van tweehonderd euro komt dat neer op twintig cent per fles aan extra kosten, vergelijkbaar met de prijs van een kop koffie per week.
               </p>
 
               <div className="border-t border-gray-200 pt-6">
@@ -367,6 +373,9 @@ export default function BesteMelkmachineFlesvoedingPage() {
                   <h3 className="font-semibold text-amber-800 mb-2">Let op: hygiëne bij gebruik van een melkmachine</h3>
                   <p className="text-sm text-amber-700 leading-relaxed mb-4">
                     Ongeacht welk apparaat je kiest, hygiëne is cruciaal. Melkpoeder is niet steriel en kan bacteriën bevatten, waaronder Cronobacter sakazakii. Het correct schoonhouden van je melkmachine is geen optionele stap.
+                  </p>
+                  <p className="text-sm text-amber-700 leading-relaxed mb-4">
+                    Let daarnaast op de bereidingstemperatuur. De meeste melkmachines mengen het poeder met water dat kouder is dan zeventig graden. Water onder zeventig graden doodt eventuele Cronobacter-bacteriën in het poeder niet. Voor pasgeboren, te vroeg geboren of kwetsbare baby's adviseert de WHO om het poeder aan te maken met water van minstens zeventig graden. Overleg in die situatie met je consultatiebureau of arts of een melkmachine geschikt is, of bereid de fles handmatig met heet water.
                   </p>
                   <ul className="space-y-2">
                     <li className="flex items-start space-x-2">
@@ -405,7 +414,7 @@ export default function BesteMelkmachineFlesvoedingPage() {
 
                 <div className="border-t border-gray-200 pt-4">
                   <h3 className="font-medium text-gray-700 mb-2">Kan ik elk merk melkpoeder gebruiken in een melkmachine?</h3>
-                  <p className="text-gray-600">De meeste apparaten werken met alle gangbare merken zoals Nutrilon, Hero Baby, Aptamil, Kabrita en HIPP. De uitzondering is dieetvoeding: Nutrilon Pepti en Nutricia Neocate zijn dikker en kunnen het doseermechanisme verstoppen. Controleer bij de fabrikant of jouw specifieke voeding compatible is.</p>
+                  <p className="text-gray-600">De meeste apparaten werken met alle gangbare merken zoals Nutrilon, Hero Baby, Aptamil, Kabrita en HIPP. De uitzondering is dieetvoeding: Nutrilon Pepti en Nutricia Neocate zijn dikker en kunnen het doseermechanisme verstoppen. Controleer bij de fabrikant of jouw specifieke voeding compatibel is.</p>
                 </div>
 
                 <div className="border-t border-gray-200 pt-4">
@@ -420,7 +429,7 @@ export default function BesteMelkmachineFlesvoedingPage() {
 
                 <div className="border-t border-gray-200 pt-4">
                   <h3 className="font-medium text-gray-700 mb-2">Hoeveel bespaar ik aan tijd met een melkmachine?</h3>
-                  <p className="text-gray-600">Een handmatig bereide fles kost gemiddeld twee tot vier minuten. Een melkmachine reduceert dit tot zeven tot dertig seconden. Bij zes flessen per dag bespaar je ruwweg tien tot twintig minuten — en dat vooral op stressmomenten in de nacht.</p>
+                  <p className="text-gray-600">Een handmatig bereide fles kost gemiddeld twee tot vier minuten. Een melkmachine reduceert dit tot zeven tot dertig seconden. Bij zes flessen per dag bespaar je ruwweg tien tot twintig minuten, en dat vooral op stressmomenten in de nacht.</p>
                 </div>
 
                 <div className="border-t border-gray-200 pt-4">

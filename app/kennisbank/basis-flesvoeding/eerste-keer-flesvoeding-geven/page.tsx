@@ -50,8 +50,8 @@ export default function EersteKeerFlesvoedingPage() {
   ]
 
   const waterPreparation = [
-    { age: "0-6 maanden", instruction: "Water altijd eerst koken tot 70°C, poeder toevoegen, dan laten afkoelen tot drinktemperatuur (37°C)" },
-    { age: "6+ maanden", instruction: "Kraanwater direct uit kraan kan (kamertemperatuur of lauw)" }
+    { age: "In Nederland", instruction: "Koud kraanwater hoeft niet gekookt te worden. Maak de fles klaar met vers koud kraanwater en warm daarna op tot 30 à 35°C (niet warmer). Test altijd op de binnenkant van je pols." },
+    { age: "Buitenland/kwetsbare baby's", instruction: "Bij een onbetrouwbare waterbron of een te vroeg geboren of kwetsbare baby: water eerst koken en tot minimaal 70°C laten afkoelen voor je het poeder toevoegt (WHO-advies)." }
   ]
 
   const feedingGuide = [
@@ -170,7 +170,7 @@ export default function EersteKeerFlesvoedingPage() {
                 </li>
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <span className="text-gray-700">Lage nitraat- en fluoridegehaltes</span>
+                  <span className="text-gray-700">Lage nitraatgehaltes</span>
                 </li>
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -333,6 +333,9 @@ export default function EersteKeerFlesvoedingPage() {
             <h2 className="text-lg font-medium text-primary mb-4">Van borstvoeding naar flesvoeding</h2>
             
             <h3 className="font-medium text-primary mb-4">Geleidelijke overstap (aanbevolen)</h3>
+            <p className="text-gray-600 mb-4">
+              Dit schema is een richtlijn, geen strak stappenplan. Volg vooral het tempo van je baby en van je eigen lichaam. Sommige baby's wennen sneller, andere hebben meer tijd nodig. Twijfel je of loopt de overstap moeizaam? Overleg dan met je verloskundige, het consultatiebureau of een lactatiekundige.
+            </p>
             <div className="space-y-3 mb-6">
               {transitionSchedule.map((item, index) => (
                 <div key={index} className="flex items-center space-x-3 py-2">

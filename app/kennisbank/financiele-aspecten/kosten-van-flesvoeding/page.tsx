@@ -48,20 +48,20 @@ export default function KostenVanFlesvoeding() {
               <Euro className="w-6 h-6 mr-3 text-primary" />
               Kosten van Flesvoeding: Complete Budgetgids Nederland 2026
             </h1>
-            
-            <p className="text-gray-500 mb-6 italic">
-              Alle kosten op een rij + tips om geld te besparen zonder kwaliteit in te leveren
+
+            <p className="text-gray-500 mb-6">
+              Alle kosten op een rij, plus tips om geld te besparen zonder kwaliteit in te leveren
             </p>
 
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed">
-                Hoeveel kost flesvoeding nou eigenlijk? Deze vraag houdt veel aanstaande ouders bezig. Deze complete budgetgids geeft je alle Nederlandse prijzen van 2026, van goedkoopste tot duurste opties. Plus: praktische bespaartips die kunnen opleveren tot €300 per jaar, zonder in te leveren op kwaliteit of veiligheid.
+                Hoeveel kost flesvoeding nou eigenlijk? Deze vraag houdt veel aanstaande ouders bezig. Deze complete budgetgids geeft je een indicatie van de Nederlandse prijzen (prijspeil 2026), van goedkoopste tot duurste opties. Plus: praktische bespaartips die kunnen opleveren tot €300 per jaar, zonder in te leveren op kwaliteit of veiligheid. Alle genoemde bedragen zijn indicatief en veranderen door de tijd, gebruik ze als richtlijn en check de actuele prijzen in de winkel.
               </p>
             </section>
 
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-6">Totaal overzicht kosten eerste jaar</h2>
+              <h2 className="text-lg font-medium text-primary mb-6">Totaal overzicht kosten eerste jaar (indicatief, prijspeil 2026)</h2>
               
               <h3 className="font-medium text-primary mb-4">Complete kosten flesvoeding (0-12 maanden)</h3>
               
@@ -115,12 +115,12 @@ export default function KostenVanFlesvoeding() {
               </p>
 
               <p className="text-gray-700">
-                <strong>Vergelijking</strong>: Borstvoeding kost €40-80 per maand (extra voeding moeder + hulpmiddelen)
+                <strong>Vergelijking</strong>: borstvoeding is niet gratis, maar de kosten zijn vooral indirect (extra voeding voor moeder, kolf en bewaarspullen). Reken indicatief op €40 tot €80 per maand, sterk afhankelijk van je situatie.
               </p>
             </section>
 
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-6">Flesvoeding poeder: Prijsoverzicht per merk</h2>
+              <h2 className="text-lg font-medium text-primary mb-6">Flesvoeding poeder: prijsoverzicht per merk (indicatief, prijspeil 2026)</h2>
               
               <div className="space-y-8">
                 <div>
@@ -132,11 +132,11 @@ export default function KostenVanFlesvoeding() {
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700">Startvoeding: €12.99/900g</span>
+                          <span className="text-gray-700">Startvoeding: circa €13 per 900g</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700">Opvolgmelk: €12.49/900g</span>
+                          <span className="text-gray-700">Opvolgmelk: circa €12 per 900g</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -154,11 +154,11 @@ export default function KostenVanFlesvoeding() {
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700">Startvoeding: €13.49/900g</span>
+                          <span className="text-gray-700">Startvoeding: circa €13 per 900g</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700">Opvolgmelk: €12.99/900g</span>
+                          <span className="text-gray-700">Opvolgmelk: circa €13 per 900g</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -176,11 +176,11 @@ export default function KostenVanFlesvoeding() {
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700">Startvoeding: €14.99/900g</span>
+                          <span className="text-gray-700">Startvoeding: circa €15 per 900g</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700">Opvolgmelk: €14.49/900g</span>
+                          <span className="text-gray-700">Opvolgmelk: circa €14 per 900g</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -204,11 +204,11 @@ export default function KostenVanFlesvoeding() {
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700">Profutura 1: €21.99/800g</span>
+                          <span className="text-gray-700">Profutura 1: circa €22 per 800g</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700">Profutura 2: €20.99/800g</span>
+                          <span className="text-gray-700">Profutura 2: circa €21 per 800g</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -226,11 +226,11 @@ export default function KostenVanFlesvoeding() {
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700">Startvoeding: €19.99/800g</span>
+                          <span className="text-gray-700">Startvoeding: circa €20 per 800g</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700">Opvolgmelk: €18.99/800g</span>
+                          <span className="text-gray-700">Opvolgmelk: circa €19 per 800g</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -248,11 +248,11 @@ export default function KostenVanFlesvoeding() {
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700">Startvoeding: €22.99/800g</span>
+                          <span className="text-gray-700">Startvoeding: circa €23 per 800g</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700">Opvolgmelk: €21.99/800g</span>
+                          <span className="text-gray-700">Opvolgmelk: circa €22 per 800g</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -276,11 +276,11 @@ export default function KostenVanFlesvoeding() {
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700">Bio Combiotik 1: €28.99/600g</span>
+                          <span className="text-gray-700">Bio Combiotik 1: circa €29 per 600g</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700">Bio Combiotik 2: €27.99/600g</span>
+                          <span className="text-gray-700">Bio Combiotik 2: circa €28 per 600g</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -298,11 +298,11 @@ export default function KostenVanFlesvoeding() {
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700">Startvoeding: €31.99/600g</span>
+                          <span className="text-gray-700">Startvoeding: circa €32 per 600g</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700">Opvolgmelk: €30.99/600g</span>
+                          <span className="text-gray-700">Opvolgmelk: circa €31 per 600g</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -361,7 +361,7 @@ export default function KostenVanFlesvoeding() {
                 </div>
 
                 <div>
-                  <h3 className="font-medium text-primary mb-4">Kosten overzicht flessen</h3>
+                  <h3 className="font-medium text-primary mb-4">Kosten overzicht flessen (indicatief, prijspeil 2026)</h3>
                   <div className="overflow-x-auto">
                     <table className="w-full border-collapse border border-gray-300">
                       <thead>
@@ -377,25 +377,25 @@ export default function KostenVanFlesvoeding() {
                           <td className="border border-gray-300 px-4 py-2">Kruidvat</td>
                           <td className="border border-gray-300 px-4 py-2">€25 (6 flessen)</td>
                           <td className="border border-gray-300 px-4 py-2">€4</td>
-                          <td className="border border-gray-300 px-4 py-2">€1.50</td>
+                          <td className="border border-gray-300 px-4 py-2">€1,50</td>
                         </tr>
                         <tr className="bg-white">
                           <td className="border border-gray-300 px-4 py-2">MAM</td>
                           <td className="border border-gray-300 px-4 py-2">€60 (4 flessen)</td>
                           <td className="border border-gray-300 px-4 py-2">€12</td>
-                          <td className="border border-gray-300 px-4 py-2">€2.50</td>
+                          <td className="border border-gray-300 px-4 py-2">€2,50</td>
                         </tr>
                         <tr>
                           <td className="border border-gray-300 px-4 py-2">Philips Avent</td>
                           <td className="border border-gray-300 px-4 py-2">€70 (4 flessen)</td>
                           <td className="border border-gray-300 px-4 py-2">€15</td>
-                          <td className="border border-gray-300 px-4 py-2">€3.00</td>
+                          <td className="border border-gray-300 px-4 py-2">€3,00</td>
                         </tr>
                         <tr className="bg-white">
                           <td className="border border-gray-300 px-4 py-2">Dr Brown's</td>
                           <td className="border border-gray-300 px-4 py-2">€80 (4 flessen)</td>
                           <td className="border border-gray-300 px-4 py-2">€18</td>
-                          <td className="border border-gray-300 px-4 py-2">€3.50</td>
+                          <td className="border border-gray-300 px-4 py-2">€3,50</td>
                         </tr>
                       </tbody>
                     </table>
@@ -405,7 +405,7 @@ export default function KostenVanFlesvoeding() {
             </section>
 
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-6">25 Bespaartips zonder kwaliteitsverlies</h2>
+              <h2 className="text-lg font-medium text-primary mb-6">16 bespaartips zonder kwaliteitsverlies</h2>
               
               <div className="space-y-6">
                 <div>
@@ -417,7 +417,7 @@ export default function KostenVanFlesvoeding() {
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                      <span className="text-gray-700"><strong>Aanbiedingen volgen</strong>: Apps zoals Prospectus gebruiken</span>
+                      <span className="text-gray-700"><strong>Aanbiedingen volgen</strong>: folder-apps zoals Reclamefolder gebruiken</span>
                     </li>
                     <li className="flex items-start space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -457,6 +457,10 @@ export default function KostenVanFlesvoeding() {
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                       <span className="text-gray-700"><strong>Schema bijhouden</strong>: Voorkomt overvoeding</span>
                     </li>
+                    <li className="flex items-start space-x-2">
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                      <span className="text-gray-700"><strong>Kraanwater gebruiken</strong>: Kraanwater is gratis en geschikt voor flesvoeding, je hoeft geen flessenwater te kopen</span>
+                    </li>
                   </ul>
                 </div>
 
@@ -491,7 +495,7 @@ export default function KostenVanFlesvoeding() {
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-6">Waar het goedkoopst winkelen?</h2>
               
-              <h3 className="font-medium text-primary mb-4">Prijs vergelijking Nederlandse retailers</h3>
+              <h3 className="font-medium text-primary mb-4">Prijsvergelijking Nederlandse retailers (indicatief, prijspeil 2026)</h3>
               <div className="overflow-x-auto mb-6">
                 <table className="w-full border-collapse border border-gray-300">
                   <thead>
@@ -570,7 +574,7 @@ export default function KostenVanFlesvoeding() {
 
                 <div>
                   <h4 className="font-medium text-primary mb-2">Wat kost flesvoeding vergeleken met borstvoeding?</h4>
-                  <p className="text-gray-700">Flesvoeding kost €575-1500 eerste jaar. Borstvoeding €400-800 (extra voeding moeder + hulpmiddelen).</p>
+                  <p className="text-gray-700">Flesvoeding kost indicatief €575-1500 in het eerste jaar. Borstvoeding is niet gratis: reken op indirecte kosten van indicatief €400-800 (extra voeding voor moeder, kolf en bewaarspullen), sterk afhankelijk van je situatie.</p>
                 </div>
               </div>
             </section>

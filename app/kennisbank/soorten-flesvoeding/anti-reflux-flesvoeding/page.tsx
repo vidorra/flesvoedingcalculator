@@ -48,7 +48,7 @@ export default function AntiRefluxPage() {
       price: '€16-18/blik (400g)',
       ingredients: 'Johannesbroodpitmeel als verdikkingsmiddel',
       effectiviteit: 'Kan het spugen bij veel baby\'s verminderen',
-      pros: ['Meest verkochte AR in Nederland', 'Beschikbaar in alle supermarkten', 'Goede effectiviteit'],
+      pros: ['Veel verkochte AR in Nederland', 'Breed verkrijgbaar', 'Goede effectiviteit'],
       cons: ['Duurder dan gewone voeding', 'Kan harder ontlasting geven']
     },
     {
@@ -62,17 +62,17 @@ export default function AntiRefluxPage() {
     {
       brand: 'Aptamil AR',
       price: '€17-19/blik (400g)',
-      ingredients: 'Gemodificeerd zetmeel',
+      ingredients: 'Johannesbroodpitmeel als verdikkingsmiddel',
       effectiviteit: 'Kan het spugen bij veel baby\'s verminderen',
       pros: ['Makkelijk oplosbaar', 'Goede smaak', 'DHA/ARA toegevoegd'],
-      cons: ['Duurste optie', 'Alleen bij drogist verkrijgbaar']
+      cons: ['Duurste optie', 'Vaak bij drogist verkrijgbaar']
     }
   ]
 
   const feedingTechniques = [
     {
       technique: 'Kleinere, frequentere voedingen',
-      description: 'In plaats van 6×120ml  8×90ml',
+      description: 'In plaats van 6×120ml naar 8×90ml',
       effectiviteit: 'Kan klachten verminderen',
       tips: ['Elke 2-2.5 uur voeden', 'Maximaal 100ml per keer bij reflux', 'Baby\'s signalen volgen']
     },
@@ -114,7 +114,7 @@ export default function AntiRefluxPage() {
       category: 'Dagelijkse Routine',
       tips: [
         '30° verhoging in bed/wieg na voeding',
-        'Kruiden tegen buikpijn: venkel/kamille thee (na 4 mnd)',
+        'Baby rechtop houden na de voeding',
         '<Link href="/kennisbank/voedingstechnieken/boertje-laten-tijdens-voeding" className="text-primary hover:underline font-medium">Boertje laten</Link> tijdens én na voeding',
         'Rustige omgeving tijdens voeden'
       ]
@@ -241,6 +241,24 @@ export default function AntiRefluxPage() {
               ze spugen wel maar groeien goed door en zijn tevreden. Reflux wordt pas een probleem 
               als het de groei of het welzijn van de baby beïnvloedt.
             </p>
+          </div>
+        </div>
+
+        {/* Safety note */}
+        <div className="bg-amber-50 rounded-2xl shadow-sm border border-amber-200 p-6">
+          <div className="flex items-start space-x-3">
+            <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <AlertTriangle className="w-5 h-5 text-amber-600" />
+            </div>
+            <div>
+              <h3 className="font-medium text-amber-800 mb-2">Let op</h3>
+              <p className="text-sm text-amber-700 leading-relaxed">
+                Gebruik anti-reflux voeding alleen op advies van je consultatiebureau of arts. AR-voeding is
+                ingedikt met een verdikkingsmiddel (meestal johannesbroodpitmeel, soms rijststijfsel) en kan
+                de ontlasting harder maken, waardoor je baby verstopt kan raken. Ga niet zelf over op AR-voeding
+                zonder overleg.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -551,30 +569,31 @@ export default function AntiRefluxPage() {
           </Link>
         </div>
 
-        {/* Success Stories */}
+        {/* Wat helpt in de praktijk */}
         <div className="bg-white rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-medium text-primary mb-4">Success Stories van Ouders</h2>
-          
+          <h2 className="text-lg font-medium text-primary mb-4">Wat helpt in de praktijk</h2>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <h3 className="font-medium text-primary mb-2">"AR voeding was de oplossing" - Sandra, Amsterdam</h3>
+              <h3 className="font-medium text-primary mb-2">AR-voeding uitproberen</h3>
               <p className="text-gray-600">
-                "Emma spuugde na elke voeding. Hero Baby AR gaf binnen 2 weken duidelijk minder spugen.
-                Ze is nu een gelukkige, groeiende baby."
+                Veel baby's spugen minder na de overstap op een verdikte AR-voeding. Geef een aanpassing
+                enkele weken de tijd voordat je conclusies trekt, en doe dit in overleg met je arts of
+                consultatiebureau.
               </p>
             </div>
-            
+
             <div>
-              <h3 className="font-medium text-primary mb-2">"Kleinere voedingen maakten het verschil" - Mark, Utrecht</h3>
+              <h3 className="font-medium text-primary mb-2">Kleinere, frequentere voedingen</h3>
               <p className="text-gray-600">
-                "In plaats van 6×120ml gaven we 8×90ml. Lucas hield veel meer binnen en groeide beter. 
-                Vraagt meer discipline maar werkt echt."
+                In plaats van 6×120ml kun je bijvoorbeeld 8×90ml geven. Kleinere porties belasten de maag
+                minder en kunnen het spugen verminderen. Volg daarbij altijd de signalen van je baby.
               </p>
             </div>
           </div>
-          
+
           <div className="mt-6">
-            <h4 className="font-medium text-primary mb-3">Belangrijkste tips van ervaren ouders:</h4>
+            <h4 className="font-medium text-primary mb-3">Belangrijkste aandachtspunten:</h4>
             <ul className="text-sm text-gray-600 space-y-2">
               <li className="flex items-start space-x-2">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>

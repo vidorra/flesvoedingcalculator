@@ -6,47 +6,25 @@ import { DollarSign, ArrowRight, Home, TrendingDown, CheckCircle, AlertTriangle,
 
 export const metadata = {
   title: 'Geld Besparen op Flesvoeding: Complete Budget Gids Nederlandse Ouders 2026',
-  description: 'Tot 50% besparen op flesvoeding kosten zonder kwaliteit in te leveren. Alle budget tricks, merkenvergelijkingen, online deals en praktische besparingstips die echt werken.',
+  description: 'Tot 40% besparen op flesvoeding kosten zonder kwaliteit in te leveren. Alle budget tricks, merkenvergelijkingen, online deals en praktische besparingstips die echt werken.',
 }
-
-
-  // Sidebar configuration
-  const sidebarImages = [
-    {
-      src: "/flesvoeding.webp",
-      alt: "Budgetvriendelijke flesvoeding opties",
-      caption: "Kwaliteit hoeft niet duur te zijn"
-    },
-    {
-      src: "/mother_and_baby.webp",
-      alt: "Bewuste keuzes in flesvoeding",
-      caption: "Slim besparen zonder kwaliteitsverlies"
-    },
-    {
-      src: "/baby.webp",
-      alt: "Tevreden baby met budgetvriendelijke voeding",
-      caption: "Gezonde groei binnen budget"
-    }
-  ]
-
-  const adTopics = ["Budget Flesvoeding", "Besparen Baby", "Voordelige Voeding", "Geld Besparen"]
 
 export default function GeldBesparenPage() {
   const costComparison = [
     {
-      category: 'Premium Merken',
+      category: 'A-merken',
       brands: [
-        { name: 'Nutrilon', price: '€13.50-15.00', monthly: '€75-85', yearly: '€900-1020' },
-        { name: 'Hero Baby', price: '€10.50-12.00', monthly: '€60-70', yearly: '€720-840' },
-        { name: 'Aptamil', price: '€12.00-14.00', monthly: '€65-75', yearly: '€780-900' }
+        { name: 'Nutrilon', price: '€13,50-15,00', monthly: '€75-85', yearly: '€900-1020' },
+        { name: 'Aptamil', price: '€12,00-14,00', monthly: '€65-75', yearly: '€780-900' },
+        { name: 'Hero Baby', price: '€10,50-12,00', monthly: '€60-70', yearly: '€720-840' }
       ]
     },
     {
-      category: 'Budget Merken',
+      category: 'Huismerken',
       brands: [
-        { name: 'Kruidvat', price: '€7.50-8.50', monthly: '€45-50', yearly: '€540-600' },
-        { name: 'Etos', price: '€8.00-9.00', monthly: '€50-55', yearly: '€600-660' },
-        { name: 'Jumbo', price: '€7.00-8.00', monthly: '€40-45', yearly: '€480-540' }
+        { name: 'Kruidvat', price: '€7,50-8,50', monthly: '€45-50', yearly: '€540-600' },
+        { name: 'Etos', price: '€8,00-9,00', monthly: '€50-55', yearly: '€600-660' },
+        { name: 'Jumbo', price: '€7,00-8,00', monthly: '€40-45', yearly: '€480-540' }
       ]
     }
   ]
@@ -54,21 +32,21 @@ export default function GeldBesparenPage() {
   const savingStrategies = [
     {
       strategy: 'Online Winkelen',
-      savings: '20-35%',
-      methods: ['Bol.com abonneer & bespaar (15%)', 'Amazon Prime babykorting', 'Baby-dump.nl specialistische aanbiedingen', 'Bulk bestellingen €50+'],
-      tips: 'Abonnement services voor automatische korting'
+      savings: 'variabel',
+      methods: ['Abonneren en besparen (herhaalkorting)', 'Babykortingen bij grote webshops', 'Aanbiedingen bij babyspeciaalzaken', 'Voordeel bij grotere bestellingen'],
+      tips: 'Abonnementsdiensten voor automatische herhaalkorting'
     },
     {
       strategy: 'Timing Optimalisatie',
-      savings: '15-30%',
-      methods: ['Black Friday aanbiedingen (50% mogelijk)', 'Januari opruimingsacties', 'Seizoensgebonden inkoopplanning', 'Prijswaarschuwingen instellen'],
+      savings: 'variabel',
+      methods: ['Actieperiodes zoals Black Friday', 'Opruimingsacties in januari', 'Seizoensgebonden inkoopplanning', 'Prijswaarschuwingen instellen'],
       tips: 'Voorraad 2-3 maanden, niet meer vanwege houdbaarheid'
     },
     {
       strategy: 'Merkenvergelijking',
-      savings: '25-50%',
-      methods: ['Budget versus premium analyse', 'EU-standaarden zijn identiek', 'Huismerken kwaliteit', 'Blinde smaaktests'],
-      tips: 'De meeste baby\'s accepteren budget merken even goed'
+      savings: 'tot ca. 40%',
+      methods: ['Huismerk versus A-merk vergelijken', 'Alle voeding voldoet aan dezelfde EU-eisen', 'Kwaliteit van huismerken', 'Zelf uitproberen wat je baby accepteert'],
+      tips: 'De meeste baby\'s accepteren een huismerk even goed'
     }
   ]
 
@@ -103,22 +81,22 @@ export default function GeldBesparenPage() {
 
   const smartHacks = [
     {
-      hack: 'Abonnement diensten combineren',
-      description: 'Bol.com Select + Amazon Prime combo',
-      savings: '15-20%',
-      method: 'Abonnement op flesvoeding + bulk voordelen'
+      hack: 'Abonnementsdiensten combineren',
+      description: 'Vaste herhaalbestelling bij een grote webshop',
+      savings: 'herhaalkorting',
+      method: 'Abonnement op flesvoeding gecombineerd met voordeel bij grotere hoeveelheden'
     },
     {
       hack: 'Cashback stapelen',
-      description: 'Meerdere cashback bronnen combineren',
-      savings: '10-25%',
-      method: 'Creditcard + loyalty + app + codes = maximum return'
+      description: 'Meerdere cashback-bronnen combineren',
+      savings: 'variabel',
+      method: 'Combineer bijvoorbeeld je betaalkaart, een klantenkaart, een cashback-app en actiecodes'
     },
     {
-      hack: 'Bulk bereiding',
-      description: 'Weekend batch bereiding systeem',
-      savings: '15% + tijd',
-      method: 'Voorgemeten containers + efficiëntiewinst'
+      hack: 'Zelf afmeten en voorbereiden',
+      description: 'In het weekend poeder vooraf afmeten',
+      savings: 'vooral tijd',
+      method: 'Poeder vooraf in doseerbakjes voor efficiëntiewinst overdag'
     }
   ]
 
@@ -137,7 +115,7 @@ export default function GeldBesparenPage() {
               </h1>
               <p className="text-gray-500 leading-relaxed">
                 Flesvoeding kost Nederlandse families grofweg €600-1000 per jaar, afhankelijk van merk. Met slimme strategieën kun je
-                tot 50% besparen zonder kwaliteit in te leveren.
+                tot ongeveer 40% besparen zonder kwaliteit in te leveren.
               </p>
             </div>
 
@@ -166,23 +144,19 @@ export default function GeldBesparenPage() {
                 </div>
 
                 <div>
-                  <h3 className="font-medium text-primary mb-3"> Impact van €300 Besparing</h3>
-                  <div className="text-sm text-gray-600 space-y-2">
-                    <div> 1 week vakantie extra mogelijk</div>
-                    <div> 6 maanden luiers gedekt</div>
-                    <div> 3 maanden kinderopvang</div>
-                    <div> Buffer onverwachte uitgaven</div>
-                    <div> Start spaarrekening kind</div>
-                  </div>
+                  <h3 className="font-medium text-primary mb-3">Impact van €300 Besparing</h3>
+                  <ul className="text-sm text-gray-600 space-y-2">
+                    <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Een week extra vakantie mogelijk</span></li>
+                    <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Ongeveer 6 maanden luiers gedekt</span></li>
+                    <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Buffer voor onverwachte uitgaven</span></li>
+                    <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Start van een spaarrekening voor je kind</span></li>
+                  </ul>
                 </div>
               </div>
 
-              <div className="mt-4 p-3 border border-gray-200">
-                <p className="text-gray-700 text-sm">
-                  <strong>Uit de praktijk:</strong> Veel Nederlandse gezinnen ervaren dat
-                  baby-gerelateerde uitgaven in het eerste jaar flink kunnen oplopen.
-                </p>
-              </div>
+              <p className="text-gray-700 text-sm mt-6">
+                Veel Nederlandse gezinnen merken dat baby-gerelateerde uitgaven in het eerste jaar flink kunnen oplopen.
+              </p>
             </div>
 
             {/* Cost breakdown comparison */}
@@ -220,11 +194,11 @@ export default function GeldBesparenPage() {
               </div>
 
               <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
-                <h4 className="font-medium text-gray-600 mb-2"> Realistische Besparing Voorbeeld</h4>
+                <h4 className="font-medium text-gray-600 mb-2">Realistisch besparingsvoorbeeld</h4>
                 <div className="text-sm text-gray-600 space-y-1">
-                  <div><strong>Van:</strong> Nutrilon (€1020/jaar)  <strong>Naar:</strong> Hero Baby (€780/jaar)</div>
-                  <div><strong>Jaarlijkse besparing:</strong> €240 (23.5%) - Zelfde kwaliteit voeding!</div>
-                  <div><strong>Resultaat:</strong> €20 per maand extra budget voor andere baby behoeften</div>
+                  <div><strong>Van:</strong> Nutrilon (€1020/jaar) <strong>naar</strong> Hero Baby (€780/jaar)</div>
+                  <div><strong>Jaarlijkse besparing:</strong> €240 (ongeveer 24%), voeding die aan dezelfde eisen voldoet</div>
+                  <div><strong>Resultaat:</strong> zo'n €20 per maand extra budget voor andere babybehoeften</div>
                 </div>
               </div>
             </div>
@@ -251,7 +225,7 @@ export default function GeldBesparenPage() {
                         <h4 className="font-medium text-gray-600 mb-2">Methoden:</h4>
                         <ul className="text-sm text-gray-600 space-y-1">
                           {strategy.methods.map((method, idx) => (
-                            <li key={index} className="flex items-center space-x-2">
+                            <li key={idx} className="flex items-center space-x-2">
                               <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
                               <span>{method}</span>
                             </li>
@@ -272,44 +246,45 @@ export default function GeldBesparenPage() {
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Kwaliteit vs Prijs: EU Regulatie Realiteitscheck</h2>
               
-              <div className="mb-6">
-                <div className="p-4 border border-gray-200">
-                  <h3 className="font-medium text-primary mb-3">Alle Flesvoeding in Nederland</h3>
-                  <div className="grid md:grid-cols-2 gap-4 text-sm">
-                    <div>
-                      <h4 className="font-medium text-gray-600 mb-2"> Verplicht Identiek:</h4>
-                      <ul className="text-gray-600 space-y-1">
-                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>EU-verordening 2016/127</span></li>
-                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>NVWA kwaliteitscontrole</span></li>
-                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Minimum voedingsstoffen gelijk</span></li>
-                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Veiligheid gegarandeerd</span></li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-600 mb-2">≈ Verschil Zit In:</h4>
-                      <ul className="text-gray-600 space-y-1">
-                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Marketing en verpakking</span></li>
-                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Extra ingrediënten (prebiotica)</span></li>
-                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Smaak nuances</span></li>
-                        <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Merkprestige</span></li>
-                      </ul>
-                    </div>
-                  </div>
+              <p className="text-gray-700 mb-4">
+                Alle zuigelingenvoeding die in Nederland verkocht wordt, huismerk of A-merk, moet voldoen aan dezelfde
+                EU-eisen (verordening 2016/127) en valt onder dezelfde NVWA-controle. De precieze samenstelling mag binnen
+                de wettelijke marges verschillen, maar elk product voldoet aan dezelfde minimumeisen voor veiligheid en
+                voedingswaarde.
+              </p>
+
+              <div className="grid md:grid-cols-2 gap-4 text-sm mb-4">
+                <div>
+                  <h4 className="font-medium text-gray-600 mb-2">Voldoet aan dezelfde eisen:</h4>
+                  <ul className="text-gray-600 space-y-1">
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>EU-verordening 2016/127</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>NVWA-kwaliteitscontrole</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Minimumgehalten voedingsstoffen</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Wettelijke veiligheidseisen</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-medium text-gray-600 mb-2">Verschil zit vooral in:</h4>
+                  <ul className="text-gray-600 space-y-1">
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Marketing en verpakking</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Extra ingrediënten (zoals prebiotica)</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Smaaknuances</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Merkprestige</span></li>
+                  </ul>
                 </div>
               </div>
 
- <div className="p-4">
-                <h4 className="font-medium text-gray-600 mb-3"> Kwaliteitsvergelijking budget vs. premium</h4>
-                <div className="text-sm text-gray-600 space-y-2">
-                  <div><strong>Ervaring leert dat:</strong></div>
-                  <div> De meeste baby's accepteren budget merken even goed</div>
-                  <div> Sommige baby's hebben een smaakvoorkeur voor premium</div>
-                  <div> Een klein deel weigert budget opties</div>
-                  <div> Er is geen aangetoond verschil in groei/ontwikkeling</div>
-                  <div className="pt-2 font-medium text-gray-600">
-                    <strong>Conclusie:</strong> Voor de meeste gezinnen is een budget merk een volledig adequate keuze
-                  </div>
-                </div>
+              <div className="border-t border-gray-200 pt-6">
+                <h4 className="font-medium text-gray-600 mb-3">Kwaliteitsvergelijking huismerk versus A-merk</h4>
+                <ul className="text-sm text-gray-600 space-y-2">
+                  <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>De meeste baby's accepteren een huismerk even goed</span></li>
+                  <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Sommige baby's hebben een smaakvoorkeur voor een A-merk</span></li>
+                  <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Een klein deel weigert een ander merk in eerste instantie</span></li>
+                  <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span>Er is geen aangetoond verschil in groei of ontwikkeling</span></li>
+                </ul>
+                <p className="text-sm text-gray-600 mt-3">
+                  <strong>Conclusie:</strong> voor de meeste gezinnen is een huismerk een volledig adequate keuze.
+                </p>
               </div>
             </div>
 
@@ -333,20 +308,19 @@ export default function GeldBesparenPage() {
               </div>
 
               <div className="mt-6 p-4 border border-gray-200">
-                <h4 className="font-medium text-gray-600 mb-2"> Onmisbare Bespaar-Apps</h4>
+                <h4 className="font-medium text-gray-600 mb-2">Onmisbare Bespaar-Apps</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm">
                   <div>
                     <h5 className="font-medium text-gray-600 mb-1">Prijsvergelijking:</h5>
                     <ul className="text-gray-600 space-y-1">
-                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Kieskeurig.nl - Realtime vergelijking</span></li>
-                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Scoupy - Cashback babyproducten</span></li>
-                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Honey - Automatische kortingscodes</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Kieskeurig.nl: realtime prijsvergelijking</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Scoupy: cashback op babyproducten</span></li>
                     </ul>
                   </div>
                   <div>
                     <h5 className="font-medium text-gray-600 mb-1">Budget bijhouden:</h5>
                     <ul className="text-gray-600 space-y-1">
-                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>YNAB - Envelop budgetmethode</span></li>
+                      <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>YNAB: envelop-budgetmethode</span></li>
                       <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Babykosten bijhouden in spreadsheets</span></li>
                       <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Voorraadbeheerapps</span></li>
                     </ul>
@@ -371,7 +345,7 @@ export default function GeldBesparenPage() {
                     </div>
                     <div className="grid md:grid-cols-2 gap-3">
                       {budget.strategies.map((strategy, idx) => (
-                        <div key={index} className="flex items-center space-x-2">
+                        <div key={idx} className="flex items-center space-x-2">
                           <CheckCircle className="w-3 h-3 text-primary flex-shrink-0" />
                           <span className="text-gray-600">{strategy}</span>
                         </div>
@@ -401,13 +375,10 @@ export default function GeldBesparenPage() {
                 </div>
               </div>
 
- <div className="p-4">
-                <h4 className="font-medium text-amber-800 mb-2"> Gezondheidsimpact van Foute Besparingen</h4>
-                <p className="text-gray-600">
-                  Ondervoeding, infectiegevoeligheid, groeivertraging, verteringsproblemen.
-                  Medische kosten zijn veel hoger dan besparingen!
-                </p>
-              </div>
+              <p className="text-gray-700">
+                <strong>Gezondheidsimpact van foute besparingen:</strong> ondervoeding, hogere infectiegevoeligheid,
+                groeivertraging en verteringsproblemen. De medische kosten daarvan zijn veel hoger dan wat je bespaart.
+              </p>
             </div>
 
             {/* Budget Voeding Producten */}
@@ -464,9 +435,9 @@ export default function GeldBesparenPage() {
         <div className="col-span-12 lg:col-span-5">
           <KennisbankSidebar
             images={[
-              { src: '/images/budget-1.jpg', alt: 'Budget tips 1', caption: '' },
-              { src: '/images/budget-2.jpg', alt: 'Budget tips 2', caption: '' },
-              { src: '/images/budget-3.jpg', alt: 'Budget tips 3', caption: '' }
+              { src: '/flesvoeding.webp', alt: 'Budgetvriendelijke flesvoeding', caption: 'Kwaliteit hoeft niet duur te zijn' },
+              { src: '/mother_and_baby.webp', alt: 'Bewuste keuzes in flesvoeding', caption: 'Slim besparen zonder kwaliteitsverlies' },
+              { src: '/baby.webp', alt: 'Tevreden baby met budgetvriendelijke voeding', caption: 'Gezonde groei binnen budget' }
             ]}
             adTopics={[
               'Goedkope flesvoeding merken',

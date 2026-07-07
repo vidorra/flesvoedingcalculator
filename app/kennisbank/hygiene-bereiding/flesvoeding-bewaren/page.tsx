@@ -9,33 +9,11 @@ export const metadata = {
   description: 'Veilig bewaren van flesvoeding voorkomt voedselinfecties en voorkomt verspilling. Leer alle regels voor koelkast, vriezer en kamertemperatuur bewaring, plus praktische tips voor onderweg en nachtvoeding.',
 }
 
-
-  // Sidebar configuration
-  const sidebarImages = [
-    {
-      src: "/flesvoeding.webp",
-      alt: "Proper flesvoeding bewaring",
-      caption: "Veilige bewaring van flesvoeding"
-    },
-    {
-      src: "/mother_and_baby.webp",
-      alt: "Moeder bereidt flesvoeding hygiënisch voor",
-      caption: "Hygiëne en veiligheid voorop"
-    },
-    {
-      src: "/baby.webp",
-      alt: "Baby krijgt veilig bewaarde flesvoeding",
-      caption: "Verse en veilige voeding"
-    }
-  ]
-
-  const adTopics = ["Voeding Bewaring", "Baby Veiligheid", "Hygiëne", "Flesvoeding Accessoires"]
-
 export default function FlesvoedingBewarenPage() {
   const storageRisks = [
     'Salmonella infectie - Koorts, braken, diarree',
     'E.coli besmetting - Ernstige darminfectie',
-    'Chronobacter sakazakii - Vooral gevaarlijk voor premature baby\'s',
+    'Cronobacter sakazakii - Vooral gevaarlijk voor premature baby\'s',
     'Voedingsvergiftiging - Kan ziekenhuisopname vereisen'
   ]
 
@@ -44,7 +22,7 @@ export default function FlesvoedingBewarenPage() {
       type: 'Geopende Bus/Doos',
       location: 'Koele, droge plaats (niet koelkast!)',
       temperature: 'Kamertemperatuur (18-22°C)',
-      duration: '3-4 weken na opening',
+      duration: 'Max 4 weken na opening',
       tips: [
         'Altijd goed dichtdoen na gebruik',
         'Nooit natte lepel in poeder',
@@ -67,24 +45,23 @@ export default function FlesvoedingBewarenPage() {
     {
       condition: 'Kamertemperatuur (20°C)',
       items: [
-        { situation: 'Net klaargemaakt', maxTime: '2 uur', warning: 'Daarna weggooien' },
+        { situation: 'Net klaargemaakt', maxTime: '1 uur', warning: 'Daarna weggooien' },
         { situation: 'Baby heeft gedronken', maxTime: '1 uur', warning: 'Speeksel bevordert bacteriegroei' },
-        { situation: 'Warme dag (25°C+)', maxTime: '1 uur', warning: 'Bacteriën groeien sneller' }
+        { situation: 'Warme dag (25°C+)', maxTime: '30 minuten', warning: 'Bacteriën groeien sneller' }
       ]
     },
     {
-      condition: 'Koelkast (2-4°C)',
+      condition: 'Koelkast (4°C)',
       items: [
-        { situation: 'Verse voeding', maxTime: '24 uur', warning: 'Houdbaar' },
-        { situation: 'Angebroken fles', maxTime: '0 uur', warning: 'Direct weggooien na voeding' },
-        { situation: 'Bewaarlocatie', maxTime: 'Midden/onderste schap', warning: 'Stabielste temperatuur' }
+        { situation: 'Verse voeding', maxTime: '8 uur', warning: 'Achterin de koelkast bij 4°C' },
+        { situation: 'Aangebroken fles', maxTime: '0 uur', warning: 'Direct weggooien na voeding' },
+        { situation: 'Bewaarlocatie', maxTime: 'Achterin, onderste schap', warning: 'Stabielste temperatuur' }
       ]
     },
     {
       condition: 'Vriezer (-18°C)',
       items: [
-        { situation: 'Klaar gemaakte voeding', maxTime: 'NIET AANBEVOLEN', warning: 'Textuur en voedingswaarde veranderen' },
-        { situation: 'Uitzondering', maxTime: '24 uur max', warning: 'Alleen bij absolute noodzaak' }
+        { situation: 'Klaargemaakte voeding', maxTime: 'NIET AANBEVOLEN', warning: 'Textuur en voedingswaarde veranderen' }
       ]
     }
   ]
@@ -92,10 +69,10 @@ export default function FlesvoedingBewarenPage() {
   const safePreparationSteps = [
     'Was handen grondig (20 seconden)',
     'Steriliseer fles en speen',
-    'Kook water en laat afkoelen tot 70°C',
+    'Gebruik vers, koud kraanwater (in Nederland niet koken)',
     'Meet exacte hoeveelheid water',
     'Voeg poeder toe volgens instructies',
-    'Schud goed en test temperatuur',
+    'Schud goed en test temperatuur op de pols',
     'Geef direct aan baby'
   ]
 
@@ -104,7 +81,7 @@ export default function FlesvoedingBewarenPage() {
     'Koel snel af onder koud stromend water',
     'Plaats binnen 30 minuten in koelkast',
     'Label met tijd van bereiding',
-    'Gebruik binnen 24 uur',
+    'Gebruik binnen 8 uur (achterin de koelkast bij 4°C)',
     'Verwarm alleen de benodigde hoeveelheid'
   ]
 
@@ -228,7 +205,7 @@ export default function FlesvoedingBewarenPage() {
   const safetyChecklist = [
     'Handen gewassen voor bereiding',
     'Flessen en spenen schoon',
-    'Water gekookt en afgekoeld tot 70°C',
+    'Vers, koud kraanwater gebruikt (in Nederland niet koken)',
     'Juiste poeder-water verhouding',
     'Temperatuur getest voor geven',
     'Restjes weggegooid na voeding',
@@ -246,7 +223,7 @@ export default function FlesvoedingBewarenPage() {
 
   const commonMistakes = [
     {
-      mistake: 'Ik bewaar angebroken fles voor later',
+      mistake: 'Ik bewaar aangebroken fles voor later',
       problem: 'Speeksel introduceert bacteriën',
       solution: 'Gooi altijd weg na voeding, maak verse fles'
     },
@@ -261,7 +238,7 @@ export default function FlesvoedingBewarenPage() {
       solution: 'Droge, koele plaats bij kamertemperatuur'
     },
     {
-      mistake: 'Klaar gemaakte voeding mengen met verse',
+      mistake: 'Klaargemaakte voeding mengen met verse',
       problem: 'Verschillende bewaartijden, verhoogd infectierisico',
       solution: 'Nooit mengen, altijd apart bewaren'
     }
@@ -270,7 +247,7 @@ export default function FlesvoedingBewarenPage() {
   const faqData = [
     {
       question: 'Kan ik flesvoeding van gisteren nog gebruiken?',
-      answer: 'Nee, klaar gemaakte flesvoeding is maximaal 24 uur houdbaar in de koelkast. Na deze tijd weggooien vanwege bacteriegroei risico.'
+      answer: 'Nee, een klaargemaakte fles is maximaal 8 uur houdbaar, achterin de koelkast bij 4°C. Na deze tijd weggooien vanwege bacteriegroei risico.'
     },
     {
       question: 'Hoe weet ik of de flesvoeding nog goed is?',
@@ -278,11 +255,11 @@ export default function FlesvoedingBewarenPage() {
     },
     {
       question: 'Kan ik flesvoeding invriezen voor later?',
-      answer: 'Dit wordt afgeraden omdat textuur en voedingswaarde achteruitgaan. Alleen bij absolute noodzaak, maximaal 24 uur.'
+      answer: 'Dit wordt afgeraden omdat textuur en voedingswaarde achteruitgaan. Maak liever telkens een verse fles.'
     },
     {
       question: 'Hoelang kan poedermelk open blijven staan?',
-      answer: 'Geopende verpakking is 3-4 weken houdbaar op droge, koele plaats. Sluit altijd goed af na gebruik.'
+      answer: 'Een geopende bus melkpoeder is maximaal 4 weken houdbaar op een koele, droge en donkere plaats (niet in de koelkast). Sluit altijd goed af na gebruik.'
     },
     {
       question: 'Is het erg als ik per ongeluk te lang bewaard heb?',
@@ -387,7 +364,7 @@ export default function FlesvoedingBewarenPage() {
 
             {/* Ready Made Storage */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Klaar gemaakte Flesvoeding</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Klaargemaakte Flesvoeding</h2>
               
               <div className="space-y-6">
                 {readyMadeStorage.map((section, index) => (

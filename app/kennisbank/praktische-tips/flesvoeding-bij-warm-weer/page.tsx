@@ -5,7 +5,7 @@ import AffiliateProductWidget from '../../../../components/AffiliateProductWidge
 import { Sun, ArrowRight, CheckCircle, AlertTriangle, Calculator, Thermometer, Droplets } from 'lucide-react'
 
 export const metadata = {
-  title: 'Flesvoeding bij Warm Weer: Moet je Baby Meer Drinken? (2026)',
+  title: 'Flesvoeding bij warm weer: moet je baby meer drinken?',
   description: 'Bij warm weer verliest je baby meer vocht. Lees hoe je veilig extra vocht geeft bij flesvoeding, waarom je de fles nooit met water verdunt, en hoe je uitdroging herkent. Advies per leeftijd.',
 }
 
@@ -47,11 +47,11 @@ export default function WarmWeerPage() {
     'Voed op een koele, schaduwrijke plek en vermijd de felle zon',
     'Kleed je baby licht aan, een rompertje of luier is bij hitte vaak genoeg',
     'Let op de bewaartemperatuur van klaargemaakte voeding, in de hitte bederft die sneller',
-    'Geef nooit een fles die al langer dan een uur op kamertemperatuur of in de warmte heeft gestaan',
+    'Geef nooit een fles die al langer dan een half uur op kamertemperatuur of in de warmte heeft gestaan',
   ]
 
   const uitdrogingsSignalen = [
-    'Minder natte luiers dan normaal (minder dan zes per dag)',
+    'Minder natte luiers dan normaal (rond zes per dag is normaal, minder dan vier is een alarmsignaal)',
     'Donkergele, sterk ruikende urine',
     'Suf, slap of ongewoon prikkelbaar gedrag',
     'Een ingevallen fontanel (de zachte plek op het hoofdje)',
@@ -70,7 +70,7 @@ export default function WarmWeerPage() {
               <div className="text-sm text-gray-500 mb-2">Praktische Tips • Warm Weer</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Sun className="w-6 h-6 mr-3 text-primary" />
-                Flesvoeding bij Warm Weer: Moet je Baby Meer Drinken?
+                Flesvoeding bij warm weer: moet je baby meer drinken?
               </h1>
               <p className="text-gray-500 leading-relaxed">
                 Op warme dagen verliest je baby meer vocht door zweten. Dat roept de vraag op of een
@@ -211,7 +211,7 @@ export default function WarmWeerPage() {
               <p className="text-gray-700 leading-relaxed">
                 Geef je (ook) borstvoeding? Dan geldt hetzelfde principe: leg vaker aan op verzoek.
                 Moedermelk wordt bij warm weer vanzelf wat waterrijker. Zorg dan ook goed voor jezelf
-                en drink zelf extra, zo'n 700 tot 1000 ml meer op een warme dag.
+                en drink zelf ruim extra, luister daarbij vooral naar je dorst.
               </p>
             </section>
 

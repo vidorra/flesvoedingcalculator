@@ -37,16 +37,16 @@ export default function HoudbaarheidFlesvoedingPage() {
     {
       situation: "Kamertemperatuur (18-22°C)",
       freshMade: "1 uur maximum",
-      babyDrunk: "30 minuten",
-      untouched: "45 minuten",
+      babyDrunk: "Direct weggooien",
+      untouched: "1 uur",
       warning: "Na 1 uur altijd weggooien"
     },
     {
-      situation: "Koelkast (2-4°C)", 
-      freshMade: "24 uur maximum",
+      situation: "Koelkast (4°C)",
+      freshMade: "8 uur maximum",
       babyDrunk: "Direct weggooien",
-      untouched: "24 uur",
-      warning: "Na 24 uur altijd weggooien"
+      untouched: "8 uur",
+      warning: "Na 8 uur altijd weggooien (achterin bij 4°C)"
     },
     {
       situation: "Onderweg (auto/tas)",
@@ -73,9 +73,9 @@ export default function HoudbaarheidFlesvoedingPage() {
     },
     {
       name: "Cronobacter",
-      symptoms: "Hersenvliesontsteking", 
+      symptoms: "Hersenvliesontsteking",
       severity: "Levensbedreigend",
-      duration: "14+ dagen"
+      duration: "Zeldzaam, vooral bij prematuren"
     },
     {
       name: "Clostridium",
@@ -124,7 +124,7 @@ export default function HoudbaarheidFlesvoedingPage() {
     "Schrijf tijd op fles/container",
     "Gebruik koeltas onderweg met koelelementen",
     "Nooit opwarmen in magnetron",
-    "Bij twijfel: wegooien en nieuw maken"
+    "Bij twijfel: weggooien en nieuw maken"
   ]
 
   // Common mistakes
@@ -147,7 +147,7 @@ export default function HoudbaarheidFlesvoedingPage() {
     {
       mistake: "Te lang vooruit bereiden",
       why: "Risico op bacteriegroei, verlies van voedingsstoffen",
-      solution: "Bereid max 24 uur vooruit, bewaar gekoeld"
+      solution: "Bereid max 8 uur vooruit, bewaar achterin de koelkast bij 4°C"
     }
   ]
 
@@ -171,7 +171,7 @@ export default function HoudbaarheidFlesvoedingPage() {
     },
     {
       question: "Mag kant-en-klare flesvoeding langer bewaard worden?",
-      answer: "Nee, dezelfde regels gelden. Geopende kant-en-klare flesvoeding is zelfs gevoeliger voor bacteriën dan zelf gemaakte."
+      answer: "Ongeopend is kant-en-klare flesvoeding steriel en dus juist veiliger. Maar zodra de verpakking open is of de fles is klaargemaakt, gelden dezelfde regels: een aangebroken fles binnen de aangegeven tijd gebruiken en restjes weggooien."
     }
   ]
 
@@ -212,11 +212,11 @@ export default function HoudbaarheidFlesvoedingPage() {
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-700 text-sm">50% lagere weerstand eerste 6 maanden</span>
+                      <span className="text-gray-700 text-sm">Immuunsysteem nog in ontwikkeling</span>
                     </li>
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-700 text-sm">Minder zuur maagzuur (pH 3-4 vs 1-2)</span>
+                      <span className="text-gray-700 text-sm">Minder maagzuur dan volwassenen</span>
                     </li>
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -264,7 +264,7 @@ export default function HoudbaarheidFlesvoedingPage() {
                       <th className="border border-gray-300 px-4 py-2 text-left">Bacterie</th>
                       <th className="border border-gray-300 px-4 py-2 text-left">Symptomen</th>
                       <th className="border border-gray-300 px-4 py-2 text-left">Ernstgraad</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Opnameduur</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Ziekteduur / bijzonderheid</th>
                     </tr>
                   </thead>
                   <tbody>

@@ -7,7 +7,7 @@ import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
   title: 'Juiste Houding bij Flesvoeding: Veilig en Comfortabel Voeden',
-  description: 'Complete gids voor ergonomische en veilige voedingshoudingen - voor jou en je baby. Voorkom verslikking, rug- en nekklachten met de juiste techniek.',
+  description: 'Complete gids voor ergonomische en veilige voedingshoudingen, voor jou en je baby. Voorkom verslikking, rug- en nekklachten met de juiste techniek.',
   keywords: 'flesvoeding houding, ergonomisch voeden, veilig fles geven, voedingshouding baby, rug pijn voorkomen',
 }
 
@@ -52,7 +52,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                 Juiste Houding bij Flesvoeding: Veilig en Comfortabel Voeden
               </h1>
               <p className="text-gray-600 leading-relaxed">
-                Complete gids voor ergonomische en veilige voedingshoudingen - voor jou en je baby
+                Complete gids voor ergonomische en veilige voedingshoudingen, voor jou en je baby
               </p>
             </div>
 
@@ -73,9 +73,11 @@ export default function JuisteHoudingBijFlesvoeding() {
 
               <div className="space-y-6">
                 <div>
-                  <h3 className="font-medium text-primary mb-3">De perfecte baby positie: 45 graden regel</h3>
+                  <h3 className="font-medium text-primary mb-3">Baby schuin of rechtop: de 45 graden richtlijn</h3>
 
-                  <h4 className="font-medium text-gray-700 mb-2">Waarom 45 graden?</h4>
+                  <p className="text-gray-600 mb-3">Houd je baby tijdens het voeden schuin tot rechtop, met het hoofd hoger dan het lichaam. Ongeveer 45 graden is een handige richtlijn, geen strikte norm: steiler mag ook. Het gaat erom dat je baby niet plat ligt.</p>
+
+                  <h4 className="font-medium text-gray-700 mb-2">Waarom schuin of rechtop?</h4>
                   <ul className="space-y-2 mb-4">
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -174,7 +176,7 @@ export default function JuisteHoudingBijFlesvoeding() {
 
                 <div className="bg-amber-50 rounded-xl border border-amber-200 p-4">
                   <p className="text-amber-800 text-sm">
-                    <strong>Veiligheidswaarschuwing</strong>: Voer je baby NOOIT liggend. Dit verhoogt het risico op verslikking, oorontsteking en wiegendood aanzienlijk.
+                    <strong>Veiligheidswaarschuwing</strong>: Voer je baby NOOIT plat liggend. Houd het hoofd altijd hoger dan het lichaam. Plat voeden verhoogt het risico op verslikking en oorontsteking.
                   </p>
                 </div>
 
@@ -302,7 +304,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                     </li>
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-600 text-sm">Vermijdt chronische houding problemen</span>
+                      <span className="text-gray-600 text-sm">Vermijdt chronische houdingsproblemen</span>
                     </li>
                   </ul>
                 </div>
@@ -384,7 +386,7 @@ export default function JuisteHoudingBijFlesvoeding() {
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <h4 className="font-medium text-gray-700 mb-2">Populaire Nederlandse merken:</h4>
+                      <h4 className="font-medium text-gray-700 mb-2">Bekende merken (in NL verkrijgbaar):</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -392,15 +394,15 @@ export default function JuisteHoudingBijFlesvoeding() {
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm"><strong>Chicco Boppy</strong>: klassieke vorm, veelzijdig</span>
+                          <span className="text-gray-600 text-sm"><strong>Boppy</strong>: klassieke vorm, veelzijdig</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm"><strong>Babymoov Mum</strong>: opblaasbaar, reisvriendelijk</span>
+                          <span className="text-gray-600 text-sm"><strong>Babymoov</strong>: opblaasbaar, reisvriendelijk</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm"><strong>Pregnancy Pillow</strong>: budgetoptie</span>
+                          <span className="text-gray-600 text-sm"><strong>Zwangerschapskussen</strong>: budgetoptie, ook bruikbaar als voedingssteun</span>
                         </li>
                       </ul>
                     </div>
@@ -570,12 +572,12 @@ export default function JuisteHoudingBijFlesvoeding() {
               <div className="space-y-4">
                 <div className="pb-4 border-b border-gray-100">
                   <h3 className="font-medium text-primary mb-2">Hoe lang kan ik in dezelfde houding voeden?</h3>
-                  <p className="text-gray-600 text-sm">Wissel elke 10-15 minuten van houding als voeding langer duurt. Luister naar je lichaam - pijn is signaal om te bewegen.</p>
+                  <p className="text-gray-600 text-sm">Wissel elke 10-15 minuten van houding als voeding langer duurt. Luister naar je lichaam: pijn is een signaal om te bewegen.</p>
                 </div>
 
                 <div className="pb-4 border-b border-gray-100">
                   <h3 className="font-medium text-primary mb-2">Mijn baby valt altijd in slaap tijdens voeding, wat nu?</h3>
-                  <p className="text-gray-600 text-sm">Zacht tegen wangen strelen, voetjes kriebelen, of korte pauze. Sommige baby&apos;s hebben dit nodig - forceer niet.</p>
+                  <p className="text-gray-600 text-sm">Zacht tegen wangen strelen, voetjes kriebelen, of korte pauze. Sommige baby&apos;s hebben dit nodig, forceer niet.</p>
                 </div>
 
                 <div className="pb-4 border-b border-gray-100">
@@ -595,7 +597,7 @@ export default function JuisteHoudingBijFlesvoeding() {
 
                 <div>
                   <h3 className="font-medium text-primary mb-2">Hoe voorkom ik oorontstekingen?</h3>
-                  <p className="text-gray-600 text-sm">Voer nooit liggend, houd hoofd altijd hoger dan lichaam, laat baby boeren na voeding om druk op oren te verminderen.</p>
+                  <p className="text-gray-600 text-sm">Voer nooit plat liggend, houd het hoofd altijd hoger dan het lichaam, laat baby boeren na de voeding om druk op de oren te verminderen.</p>
                 </div>
               </div>
 
@@ -624,7 +626,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                   <ul className="space-y-1">
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-600 text-sm"><strong>Veiligheid eerst</strong>: 45 graden minimum, nooit liggend voeden</span>
+                      <span className="text-gray-600 text-sm"><strong>Veiligheid eerst</strong>: schuin tot rechtop, hoofd hoger dan lichaam, nooit plat voeden</span>
                     </li>
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -663,7 +665,7 @@ export default function JuisteHoudingBijFlesvoeding() {
                   </ul>
 
                   <p className="text-gray-600 text-sm mb-2">
-                    <strong>Onthoud</strong>: De perfecte houding bestaat niet - wat werkt voor jou en je baby is de juiste houding. Vertrouw op je instinct en pas aan waar nodig.
+                    <strong>Onthoud</strong>: De perfecte houding bestaat niet: wat werkt voor jou en je baby is de juiste houding. Vertrouw op je instinct en pas aan waar nodig.
                   </p>
 
                   <p className="text-gray-600 text-sm">
