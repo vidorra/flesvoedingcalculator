@@ -5,7 +5,14 @@ Onderzoek juli 2026. Alle links zijn echte productpagina's uit de zoekresultaten
 > **Commissie:** Bol.com ~6-8% op babyproducten, Amazon.nl ~3%. **Kies Bol waar het kan**;
 > Amazon.nl (tag `baby260c-21`) is voor prijsvergelijking of producten die Bol niet heeft.
 > **Amazon-linkformaat:** `https://www.amazon.nl/dp/<ASIN>` — jouw snippet-generator zet de
-> ASIN om naar de affiliate-link. Verifieer vóór toevoegen prijs/voorraad/reviews.
+> ASIN om naar de affiliate-link.
+>
+> **Over de prijzen:** de bedragen hieronder zijn INDICATIEF (uit research), NIET live
+> geverifieerd. Prijs en voorraad wisselen. Bij het toevoegen van een Bol-snippet haalt
+> het eigen systeem de actuele prijs op (`price` / `sync-prices`); check daar of het klopt
+> en of het product op voorraad is. Producten zijn gekozen op merk/reviews/funnel-fit,
+> niet op "goedkoopst" — voor affiliate converteert een eerlijk geprijsd A-merk beter en
+> geeft het minder retouren (die commissie terugdraaien) dan een goedkoop no-name product.
 
 ---
 
@@ -44,8 +51,8 @@ Onderzoek juli 2026. Alle links zijn echte productpagina's uit de zoekresultaten
 - Amazon.nl (Difrax anti-koliek 2x S-fles 0-6 mnd): https://www.amazon.nl/dp/B09SJ2P67K
 
 ### 2. Flessenwarmer (~3 min) — €25-50
-- Bol (Philips Avent SCF358/00): https://www.bol.com/nl/nl/p/philips-avent-scf358-00-flesverwarmer/9200000128179985/
-- Bol (Difrax S-flesverwarmer): https://www.bol.com/nl/nl/p/difrax-s-flesverwarmer/9200000022663736/
+- Bol (Philips Avent SCF358/00) — eerste keus: https://www.bol.com/nl/nl/p/philips-avent-scf358-00-flesverwarmer/9200000128179985/
+- Bol (Difrax S-flesverwarmer) — LET OP: was bij controle (juli 2026) niet leverbaar, check voorraad: https://www.bol.com/nl/nl/p/difrax-s-flesverwarmer/9200000022663736/
 - Amazon.nl (Philips Avent SCF358/00): https://www.amazon.nl/dp/B084PMMS2H
 
 ### 3. Flessen-sterilisator — €40-70  *(koppel aan steriliseren-artikel)*
