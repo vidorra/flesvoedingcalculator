@@ -72,7 +72,7 @@ export default function WarmWeerAlert({ ageMonths }: WarmWeerAlertProps) {
             <h3 className="font-medium text-amber-800 mb-2">
               Let op: het is heet ({temp}°C{locationSuffix})
             </h3>
-            <p className="text-sm text-amber-700 leading-relaxed mb-3">
+            <p className="text-sm text-gray-700 leading-relaxed mb-3">
               Bij deze hitte verliest je baby meer vocht. {advice}
             </p>
             <Link

@@ -3,6 +3,7 @@
 import V2Hero from './V2Hero'
 import FlesCalculatorV2 from './FlesCalculatorV2'
 import PopularProductsWidget from '../PopularProductsWidget'
+import WarmWeerAlert from '../calculator/WarmWeerAlert'
 import { FAQSection, FeedingTypesInfo } from '../calculator'
 
 /**
@@ -25,6 +26,10 @@ export default function V2PageContent({ hero, simpleCalculator = false, variant 
   if (simpleCalculator) {
     return (
       <>
+        {/* Hot-weather hydration notice: full width above the hero banner
+            (only renders at warm temperatures) */}
+        <WarmWeerAlert ageMonths="0-1" />
+
         {/* Hero Section (v3/v4 pass their own) */}
         {hero ?? <V2Hero />}
 
@@ -47,6 +52,10 @@ export default function V2PageContent({ hero, simpleCalculator = false, variant 
 
   return (
     <>
+      {/* Hot-weather hydration notice: full width above the hero banner
+          (only renders at warm temperatures) */}
+      <WarmWeerAlert ageMonths="0-1" />
+
       {/* Hero Section (default: centered with floating images; v3/v4 pass their own) */}
       {hero ?? <V2Hero />}
 

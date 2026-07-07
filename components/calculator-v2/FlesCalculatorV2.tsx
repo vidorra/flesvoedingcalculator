@@ -7,7 +7,6 @@ import { computeFeeding } from '../../lib/feeding-calc'
 import { generateFeedingSchedule, type AgeCategory } from '../../hooks/useCalculator'
 import { FEEDING_MEASUREMENTS } from '../../lib/feeding-constants'
 import { trackCalculatorUsage } from '../../lib/analytics'
-import WarmWeerAlert from '../calculator/WarmWeerAlert'
 
 /**
  * Alternative-UX calculator (/v2, /v3, /v4). Same feeding math as the
@@ -396,11 +395,6 @@ export default function FlesCalculatorV2({
             <p className="text-sm text-gray-500">Vul de gegevens in, je resultaat rekent live mee.</p>
           </div>
         )}
-
-        {/* Hot-weather hydration notice (shows only at warm temperatures) */}
-        <div className="max-w-2xl mx-auto">
-          <WarmWeerAlert ageMonths={isPremature ? 'premature' : ageMonths} />
-        </div>
 
         <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-6 lg:items-start">
           {/* Left column: inputs */}
