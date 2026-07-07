@@ -217,6 +217,29 @@ export default function FlesCalculatorV2({
         is_combi: results.breastFeedings > 0,
         ...(results.isPremature ? { gestational_age: results.gestationalAge, corrected_age: results.correctedAge } : { age_months: ageMonths })
       })
+
+      // Anonymous server-side event (own DB) so we can learn the age mix of our
+      // users for relevant affiliate offers. Coarse weight band, no personal data.
+      const kg = results.weightKg
+      const weightBucket = !kg || kg <= 0 ? null
+        : kg < 3 ? '<3kg' : kg < 4 ? '3-4kg' : kg < 5 ? '4-5kg' : kg < 6 ? '5-6kg'
+        : kg < 7 ? '6-7kg' : kg < 8 ? '7-8kg' : kg < 10 ? '8-10kg' : '10kg+'
+      const payload = JSON.stringify({
+        ageCategory: results.isPremature ? 'premature' : ageMonths,
+        data: {
+          weightBucket,
+          feedings: results.feedingsPerDay,
+          isCombi: results.breastFeedings > 0,
+          isPremature: results.isPremature,
+          variant
+        }
+      })
+      try {
+        const blob = new Blob([payload], { type: 'application/json' })
+        if (!(typeof navigator !== 'undefined' && navigator.sendBeacon && navigator.sendBeacon('/api/track-calculation', blob))) {
+          fetch('/api/track-calculation', { method: 'POST', body: payload, headers: { 'Content-Type': 'application/json' }, keepalive: true }).catch(() => {})
+        }
+      } catch {}
     }, 1200)
     return () => clearTimeout(timer)
   }, [results, variant, ageMonths])
