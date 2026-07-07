@@ -3,10 +3,12 @@ import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Refrigerator, Clock, AlertTriangle, CheckCircle, Thermometer, Shield, ArrowRight, } from 'lucide-react'
+import { generateFAQSchema } from '../../../../lib/structured-data'
 
 export const metadata = {
   title: 'Flesvoeding Bewaren: Complete Veiligheidsgids voor Nederlandse Ouders 2026',
   description: 'Veilig bewaren van flesvoeding voorkomt voedselinfecties en voorkomt verspilling. Leer alle regels voor koelkast, vriezer en kamertemperatuur bewaring, plus praktische tips voor onderweg en nachtvoeding.',
+  alternates: { canonical: '/kennisbank/hygiene-bereiding/flesvoeding-bewaren/' },
 }
 
 export default function FlesvoedingBewarenPage() {
@@ -270,6 +272,7 @@ export default function FlesvoedingBewarenPage() {
   return (
     <Layout>
       <div className="grid grid-cols-12 gap-6">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqData)) }} />
         {/* Main Content */}
         <div className="col-span-12 lg:col-span-7">
           <div className="space-y-6">

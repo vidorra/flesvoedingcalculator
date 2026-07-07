@@ -3,11 +3,13 @@ import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Users, Heart, Clock, MessageCircle, CheckCircle, AlertTriangle, RefreshCw, ArrowRight, } from 'lucide-react'
+import { generateFAQSchema } from '../../../../lib/structured-data'
 
 export const metadata = {
   title: 'Partner betrekken bij flesvoeding: Nederlandse gids voor gedeelde zorg 2026',
   description: 'Flesvoeding biedt unieke kansen voor beide ouders om te binden met baby. Gedeelde voedingsverantwoordelijkheid versterkt partnerrelaties en baby ontwikkeling.',
-  keywords: 'partner betrekken flesvoeding, vader flesvoeding, gedeelde baby zorg, vaders en moeders flesvoeding, nachtvoeding verdelen'
+  keywords: 'partner betrekken flesvoeding, vader flesvoeding, gedeelde baby zorg, vaders en moeders flesvoeding, nachtvoeding verdelen',
+  alternates: { canonical: '/kennisbank/praktische-tips/partner-betrekken-flesvoeding/' }
 }
 
 export default function PartnerBetrekkenFlesvoedingPage() {
@@ -31,8 +33,36 @@ export default function PartnerBetrekkenFlesvoedingPage() {
 
   const adTopics = ["Partner flesvoeding", "Gedeelde baby zorg", "Vader betrekken voeding"]
 
+  const faqSchema = [
+    {
+      question: 'Hoe kan mijn partner helpen als ik borstvoeding geef?',
+      answer: 'Er zijn veel ondersteunende rollen mogelijk: helpen bij het afkolven, nachtvoedingen met afgekolfde melk, aanvullende flesvoeding geven, laten boeren en verschonen, en de baby sussen na de voeding. Combivoeding kan helpen om de zorg gelijkwaardiger te verdelen.'
+    },
+    {
+      question: 'Wie doet de nachtvoedingen als beide ouders werken?',
+      answer: 'Verdeel op basis van jullie werkschema\'s: wie vroeger begint doet het eerste deel van de nacht (20:00-02:00), wie later begint het tweede deel (02:00-06:00). Of doe om en om hele nachten. Bespreek het en stel bij naar wat werkt.'
+    },
+    {
+      question: 'Baby accepteert fles niet van partner, alleen van mij. Wat nu?',
+      answer: 'Geduld en strategie: partner probeert wanneer baby niet heel hongerig is, verschillende speen types, andere houding, wanneer primaire verzorger niet in de buurt. Soms duurt het 1-2 weken voordat baby went.'
+    },
+    {
+      question: 'Mijn partner vindt flesvoeding te duur. Hoe bespreek je dat?',
+      answer: 'Kijk naar het totale plaatje, niet alleen naar de prijs van het poeder: reken ook tijd, energie, flexibiliteit en het welzijn van beide ouders mee. Flesvoeding kost in Nederland grofweg enkele honderden euro\'s per jaar. Het gemak en de mogelijkheid om de zorg te delen wegen daar voor veel gezinnen tegenop.'
+    },
+    {
+      question: 'We hebben constant ruzie over flesvoeding. Is dat normaal?',
+      answer: 'Slaaptekort maakt alles zwaarder: de eerste 3 maanden voelen vaak als overlevingsmodus en wat wrijving is normaal, maar op de lange duur niet houdbaar. Zoek hulp bij het consultatiebureau, de kraamzorg of een relatietherapeut als het escaleert.'
+    },
+    {
+      question: 'Hoe combineren we flesvoeding met twee banen?',
+      answer: 'Benut de Nederlandse mogelijkheden: zet geboorteverlof en partnerverlof slim in, vraag flexibele werkuren aan, investeer in handige hulpmiddelen en kies opvang die vertrouwd is met flesvoeding.'
+    }
+  ]
+
   return (
     <Layout>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqSchema)) }} />
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-12 lg:col-span-7">
           <div className="space-y-6">

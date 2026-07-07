@@ -4,11 +4,13 @@ import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { AlertTriangle, Clock, TrendingUp, Users, Calendar, CheckCircle, XCircle, Target, ChevronRight, Star, Banknote, Heart, RefreshCw, ArrowRight } from 'lucide-react';
 import BolProductSection from '../../../../components/BolProductLink'
+import { generateFAQSchema } from '../../../../lib/structured-data'
 
 export const metadata = {
   title: 'Overgang naar beker: Nederlandse gids voor de volgende stap | Flesvoeding Calculator',
   description: 'Complete Nederlandse gids voor de overgang van fles naar beker. Wanneer beginnen, welke bekers kiezen, en hoe de overgang succesvol maken voor je baby.',
-  keywords: 'overgang naar beker, tuitbeker, oefenbeker, fles naar beker, baby bekers Nederland, beker training, flesvoeding afbouwen'
+  keywords: 'overgang naar beker, tuitbeker, oefenbeker, fles naar beker, baby bekers Nederland, beker training, flesvoeding afbouwen',
+  alternates: { canonical: '/kennisbank/voedingstechnieken/overgang-naar-beker/' }
 };
 
 
@@ -222,8 +224,36 @@ export default function OvergangNaarBekerPage() {
   // Ad targeting keywords
   const adTopics = ["Beker training", "Tuitbeker", "Fles afbouwen"]
 
+  const faqSchema = [
+    {
+      question: 'Wanneer moet ik beginnen met de overgang naar beker?',
+      answer: 'Het consultatiebureau en het Voedingscentrum adviseren om al rond 6 maanden te beginnen met oefenen uit een (tuit)beker en de fles af te bouwen richting het eerste jaar. Begin wanneer je baby stabiel zit en interesse toont in drinken uit een beker.'
+    },
+    {
+      question: 'Hoelang duurt de overgang gemiddeld?',
+      answer: 'Bij geleidelijke overgang: 4-8 weken voor volledige competentie. Bij versnelde aanpak: 1-2 weken, maar met hoger risico op regressie. Elke baby heeft zijn eigen tempo.'
+    },
+    {
+      question: 'Welke beker is het beste om mee te beginnen?',
+      answer: 'Start met een trainingsbeker met een zachte tuit en handvatten. Verschillende bekende merken bieden zulke bekers aan, dus let vooral op de kenmerken en niet op het merk.'
+    },
+    {
+      question: 'Mijn baby weigert de beker compleet. Wat nu?',
+      answer: 'Neem de druk weg, introduceer langzamer, laat de beker eerst als speelgoed fungeren. Probeer verschillende tijdstippen en laat anderen de beker aanbieden. Geduld is de sleutel.'
+    },
+    {
+      question: 'Wanneer moet ik me zorgen maken over vloeistofinname?',
+      answer: 'Bij >20% reductie totale vloeistof, gewichtsverlies, dehydratie symptomen (droge mond, minder natte luiers), of complete weigering >48 uur: contact consultatiebureau.'
+    },
+    {
+      question: 'Kan ik de overgang versnellen voor kinderdagverblijf?',
+      answer: 'Ja, maar idealiter start je 4-6 weken van tevoren. Overleg met leidsters over hun aanpak en zorg voor consistentie tussen thuis en opvang. Reserveplan altijd handig.'
+    }
+  ]
+
   return (
     <Layout>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqSchema)) }} />
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-12 lg:col-span-7">
           <div className="space-y-6">

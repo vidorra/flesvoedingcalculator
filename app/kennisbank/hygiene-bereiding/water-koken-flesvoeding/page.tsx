@@ -4,10 +4,12 @@ import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Droplets, Thermometer, Clock, Shield, AlertTriangle, CheckCircle, Home, Coffee, ArrowRight, } from 'lucide-react'
 import BolProductSection from '../../../../components/BolProductLink'
+import { generateFAQSchema } from '../../../../lib/structured-data'
 
 export const metadata = {
   title: 'Water Koken voor Flesvoeding: Moet Dat in Nederland? (2026)',
   description: 'Moet je water koken voor flesvoeding? In Nederland is dat volgens het Voedingscentrum niet nodig: koud kraanwater is veilig. Lees wanneer koken wel verstandig is en hoe je de fles veilig klaarmaakt.',
+  alternates: { canonical: '/kennisbank/hygiene-bereiding/water-koken-flesvoeding/' }
 }
 
 export default function WaterKokenFlesvoedingPage() {
@@ -133,8 +135,32 @@ export default function WaterKokenFlesvoedingPage() {
     }
   ]
 
+  const faqSchema = [
+    {
+      question: 'Moet ik water koken voor flesvoeding in Nederland?',
+      answer: 'Nee. Het Voedingscentrum geeft aan dat koud kraanwater in Nederland veilig is; je hoeft het niet te koken. De tekst op het pak is bedoeld voor landen waar de waterkwaliteit niet overal gegarandeerd is.'
+    },
+    {
+      question: 'Mag ik warm water uit de kraan gebruiken?',
+      answer: 'Nee. Gebruik koud kraanwater en warm de fles daarna op. Warm kraanwater kan meer metalen uit de leidingen bevatten.'
+    },
+    {
+      question: 'Hoelang kan ik een klaargemaakte fles bewaren?',
+      answer: 'Zet de fles meteen achterin de koelkast bij 4°C en gebruik hem binnen 8 uur. Restjes na een voeding gooi je altijd weg.'
+    },
+    {
+      question: 'Op welke temperatuur geef ik de fles?',
+      answer: 'Warm de fles op tot 30 à 35°C, niet warmer. Test met een druppeltje op de binnenkant van je pols: ongeveer even warm als je huid is precies goed.'
+    },
+    {
+      question: 'Wanneer is koken of 70°C-water dan wél nodig?',
+      answer: 'Bij premature, te lichte of zieke baby\'s op advies van de arts, op reis met onbekende waterkwaliteit, bij een kookadvies van je waterbedrijf, of bij loden leidingen (gebruik dan flessenwater voor babyvoeding).'
+    }
+  ]
+
   return (
     <Layout>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqSchema)) }} />
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-12 lg:col-span-7">
           <div className="space-y-6">

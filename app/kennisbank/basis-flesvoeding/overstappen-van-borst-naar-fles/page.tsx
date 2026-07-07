@@ -3,8 +3,35 @@ import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { ArrowRight, Clock, Heart, Users, CheckCircle, AlertTriangle } from 'lucide-react'
+import { generateFAQSchema } from '../../../../lib/structured-data'
+
+export const metadata = {
+  alternates: { canonical: '/kennisbank/basis-flesvoeding/overstappen-van-borst-naar-fles/' },
+}
 
 export default function OverstappenBorstNaarFlesPage() {
+  const faqSchema = [
+    {
+      question: 'Kan ik weer beginnen met borstvoeding na overstap?',
+      answer: 'Binnen enkele weken is dit vaak nog mogelijk, maar wordt moeilijker naarmate tijd verstrijkt.'
+    },
+    {
+      question: 'Moet ik medicijnen nemen om melkproductie te stoppen?',
+      answer: 'Meestal niet nodig. Geleidelijke afbouw en comfort maatregelen zijn voldoende.'
+    },
+    {
+      question: 'Hoe lang duurt het voordat melkproductie stopt?',
+      answer: 'Hoofdproductie stopt binnen 1-2 weken, kleine hoeveelheden kunnen maanden blijven.'
+    },
+    {
+      question: 'Is het normaal dat baby anders poept met flesvoeding?',
+      answer: 'Ja, consistentie en kleur veranderen. Dit is normaal en meestal binnen paar dagen gestabiliseerd.'
+    },
+    {
+      question: 'Kan ik overstappen terwijl ik zwanger ben?',
+      answer: 'Voor veel zwangeren kan dit prima, maar het is geen standaardsituatie. Overleg altijd met je verloskundige. Bij een verhoogd risico op vroeggeboorte of andere zwangerschapscomplicaties kan het advies anders zijn.'
+    }
+  ]
   const sidebarImages = [
     {
       src: "/borstvoeding-2.webp",
@@ -28,6 +55,7 @@ export default function OverstappenBorstNaarFlesPage() {
   return (
     <Layout>
       <div className="grid grid-cols-12 gap-6">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqSchema)) }} />
         <div className="col-span-12 lg:col-span-7">
           <div className="space-y-6">
             {/* Header */}

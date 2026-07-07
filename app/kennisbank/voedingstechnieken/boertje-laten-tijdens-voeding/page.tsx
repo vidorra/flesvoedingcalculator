@@ -3,10 +3,12 @@ import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Wind, Clock, Heart, AlertTriangle, CheckCircle, ArrowRight } from 'lucide-react'
+import { generateFAQSchema } from '../../../../lib/structured-data'
 
 export const metadata = {
   title: 'Boertje Laten Tijdens Voeding: Complete Gids voor Nederlandse Ouders 2026',
   description: 'Een boertje laten tijdens en na de flesvoeding is essentieel voor je baby\'s comfort. Leer de beste technieken, juiste timing en praktische tips om lucht effectief te verwijderen en oncomfortabele buikpijn te voorkomen.',
+  alternates: { canonical: '/kennisbank/voedingstechnieken/boertje-laten-tijdens-voeding/' },
 }
 
 export default function BoertjeLatenPage() {
@@ -194,6 +196,7 @@ export default function BoertjeLatenPage() {
 
   return (
     <Layout>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqData)) }} />
       <div className="grid grid-cols-12 gap-6">
         {/* Main Content */}
         <div className="col-span-12 lg:col-span-7">

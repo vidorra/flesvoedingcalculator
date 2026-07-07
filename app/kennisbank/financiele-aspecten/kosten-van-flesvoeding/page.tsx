@@ -3,14 +3,24 @@ import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Euro, ArrowRight } from 'lucide-react'
+import { generateFAQSchema } from '../../../../lib/structured-data'
 
 export const metadata = {
   title: 'Kosten van Flesvoeding: Complete Budgetgids Nederland 2026',
   description: 'Alle kosten op een rij + tips om geld te besparen zonder kwaliteit in te leveren. Van €575 tot €1580 per jaar - ontdek wat past bij jouw budget.',
   keywords: 'kosten flesvoeding, prijzen babyvoeding, budget baby, flesvoeding besparen, goedkope flesvoeding Nederland',
+  alternates: { canonical: '/kennisbank/financiele-aspecten/kosten-van-flesvoeding/' },
 }
 
 export default function KostenVanFlesvoeding() {
+  const faqSchema = [
+    { question: 'Wat als ik per ongeluk te dure flesvoeding heb gekocht?', answer: 'Alle Nederlandse flesvoeding voldoet aan dezelfde voedingsnormen. Je betaalt vooral voor merk, marketing en extra toegevoegde ingrediënten zoals prebiotica.' },
+    { question: 'Kan ik geld terugkrijgen van de zorgverzekering?', answer: 'Bij medische noodzaak (bijv. hypoallergene voeding) kan dit vergoed worden. Check met je verzekeraar en zorgverlener.' },
+    { question: 'Hoeveel bespaar ik als ik huismerk koop?', answer: 'Gemiddeld 40-50% besparing ten opzichte van bekende merken. Voor een jaar kan dit €200-300 schelen.' },
+    { question: 'Zijn goedkope flessen even veilig?', answer: 'Ja, alle flessen in Nederland moeten voldoen aan EU veiligheidsnormen. Het verschil zit in design, gebruiksgemak en duurzaamheid.' },
+    { question: 'Wat kost flesvoeding vergeleken met borstvoeding?', answer: 'Flesvoeding kost indicatief €575-1500 in het eerste jaar. Borstvoeding is niet gratis: reken op indirecte kosten van indicatief €400-800 (extra voeding voor moeder, kolf en bewaarspullen), sterk afhankelijk van je situatie.' }
+  ]
+
   const sidebarImages = [
     {
       src: "/difrax-fles-kunstvoeding.webp",
@@ -39,10 +49,11 @@ export default function KostenVanFlesvoeding() {
 
   return (
     <Layout>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqSchema)) }} />
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-12 lg:col-span-7">
           <div className="space-y-6">
-            
+
             <div className="text-sm text-gray-500 mb-2">Financiële Aspecten • Kosten</div>
             <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
               <Euro className="w-6 h-6 mr-3 text-primary" />

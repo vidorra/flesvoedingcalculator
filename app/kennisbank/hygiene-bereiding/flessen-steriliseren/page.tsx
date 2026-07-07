@@ -4,8 +4,36 @@ import Script from 'next/script'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { Shield, Clock, Euro, Users, CheckCircle, AlertTriangle, ArrowRight, } from 'lucide-react'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
+import { generateFAQSchema } from '../../../../lib/structured-data'
+
+export const metadata = {
+  alternates: { canonical: '/kennisbank/hygiene-bereiding/flessen-steriliseren/' },
+}
 
 export default function FlessenSteriligerenPage() {
+  const faqSchema = [
+    {
+      question: 'Tot welke leeftijd moet ik steriliseren?',
+      answer: 'Steriliseren is vooral belangrijk in de eerste ~6 maanden. Daarna is goed reinigen met heet water en afwasmiddel meestal voldoende, bij ziekte of bij premature baby\'s langer steriliseren.'
+    },
+    {
+      question: 'Kan ik sterilisator overslaan als ik alles goed was?',
+      answer: 'Niet voor baby\'s onder 6 maanden. Wassen alleen is niet voldoende.'
+    },
+    {
+      question: 'Zijn dure sterilisatoren beter dan goedkope?',
+      answer: 'Functionaliteit is vergelijkbaar. Duurdere modellen zijn vaak sneller en duurzamer.'
+    },
+    {
+      question: 'Wat als ik sterilisator vergeet aan te zetten?',
+      answer: 'Begin opnieuw. Bacteriën groeien snel op ongesteriliseerde items.'
+    },
+    {
+      question: 'Kan ik verschillende merken flessen samen steriliseren?',
+      answer: 'Ja, zolang alle onderdelen hittebestendig zijn.'
+    }
+  ]
+
   const sidebarImages = [
     {
       src: "/sterilisator-babyflessen.webp",
@@ -29,6 +57,7 @@ export default function FlessenSteriligerenPage() {
   return (
     <Layout>
       <div className="grid grid-cols-12 gap-6">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqSchema)) }} />
         <div className="col-span-12 lg:col-span-7">
           <div className="space-y-6">
             {/* Header */}

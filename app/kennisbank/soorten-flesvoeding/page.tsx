@@ -1,14 +1,24 @@
 import Layout from '../../../components/Layout'
 import Link from 'next/link'
 import { Package, ArrowRight, Home, Info, AlertCircle } from 'lucide-react'
+import { generateFAQSchema } from '../../../lib/structured-data'
 
 export const metadata = {
   title: 'Flesvoeding 1, 2, 3: Verschil Startvoeding, Opvolgmelk & Peutermelk',
   description: 'Ontdek het verschil tussen startvoeding (1), opvolgmelk (2) en peutermelk (3). Wanneer overstappen? Welke merken? Complete vergelijking 2026.',
+  alternates: { canonical: '/kennisbank/soorten-flesvoeding/' },
 }
 
 export default function SoortenFlesvoedingPage() {
   const formula1Brands = ['Nutrilon 1', 'Hero Baby 1', 'Kruidvat Zuigelingenmelk 1', 'HIPP Bio 1']
+
+  const faqSchema = [
+    { question: 'Wanneer overstappen van nummer 1 naar 2?', answer: 'Pas vanaf 6 maanden en alleen wanneer je baby ook vaste voeding krijgt. Nummer 1 mag je tot 12 maanden blijven gebruiken.' },
+    { question: 'Is peutermelk (nummer 3) nodig?', answer: 'Nee, vanaf 12 maanden kan je baby gewone volle melk drinken. Peutermelk is alleen nuttig bij zeer selectieve eters.' },
+    { question: 'Kan ik tussen merken wisselen?', answer: 'Ja, alle merken voldoen aan dezelfde EU-richtlijnen. Wissel geleidelijk over 3-5 dagen om maagklachten te voorkomen.' },
+    { question: 'Wat betekenen de cijfers precies?', answer: 'Nummer 1: 0-6 maanden (startvoeding), Nummer 2: 6-12 maanden (opvolgmelk), Nummer 3: 12+ maanden (peutermelk, optioneel).' },
+    { question: 'Hoeveel ml van elk type per voeding?', answer: 'De hoeveelheid hangt af van gewicht en leeftijd van je baby. Gebruik onze gratis calculator om de exacte hoeveelheid voor jouw baby te berekenen.' }
+  ]
   
   const formulaComparison = [
     { type: 'Nummer 1 (0-6m)', protein: '1.2-1.8g/100ml', iron: '0.5-1.0mg/100ml', usage: 'Hoofdvoeding', required: 'Ja, als geen borstvoeding' },
@@ -18,6 +28,7 @@ export default function SoortenFlesvoedingPage() {
 
   return (
     <Layout>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqSchema)) }} />
       <div className="space-y-6">
 
         {/* Header */}

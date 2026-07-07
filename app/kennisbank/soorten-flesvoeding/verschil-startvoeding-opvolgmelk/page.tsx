@@ -3,10 +3,12 @@ import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Scale, Euro, Calendar, AlertCircle, CheckCircle, XCircle, ArrowRight, } from 'lucide-react'
+import { generateFAQSchema } from '../../../../lib/structured-data'
 
 export const metadata = {
   title: 'Verschil tussen Startvoeding en Opvolgmelk: Complete Nederlandse Gids 2026',
   description: 'Wat is het verschil tussen flesvoeding nummer 1 en 2? Wanneer moet je overstappen? Deze complete vergelijking legt uit welke melk wanneer te gebruiken, inclusief kosten, voedingswaarden en Nederlandse merkenvergelijking.',
+  alternates: { canonical: '/kennisbank/soorten-flesvoeding/verschil-startvoeding-opvolgmelk/' },
 }
 
 
@@ -342,6 +344,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
 
   return (
     <Layout>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqData)) }} />
       <div className="grid grid-cols-12 gap-6">
         {/* Main Content */}
         <div className="col-span-12 lg:col-span-7">

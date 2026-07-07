@@ -3,14 +3,42 @@ import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Zap, AlertTriangle, Thermometer, CheckCircle, Clock, RefreshCw, ArrowRight, } from 'lucide-react'
+import { generateFAQSchema } from '../../../../lib/structured-data'
 
 export const metadata = {
   title: 'Veilig verwarmen van flesvoeding: Complete Nederlandse gids 2026',
   description: 'Flesvoeding veilig verwarmen voorkomt brandwonden en behoudt voedingsstoffen. Vergelijking alle verwarmingsmethodes en praktische tips voor Nederlandse ouders.',
-  keywords: 'flesvoeding verwarmen, veilig verwarmen melk, flessenwarmer, waterbad, magnetron gevaar, baby brandwonden voorkomen'
+  keywords: 'flesvoeding verwarmen, veilig verwarmen melk, flessenwarmer, waterbad, magnetron gevaar, baby brandwonden voorkomen',
+  alternates: { canonical: '/kennisbank/hygiene-bereiding/veilig-verwarmen-flesvoeding/' },
 }
 
 export default function VeiligVerwarmenFlesvoedingPage() {
+  const faqSchema = [
+    {
+      question: 'Kan ik flesvoeding in de magnetron opwarmen?',
+      answer: 'Het Voedingscentrum staat de magnetron toe, mits je op maximaal 600 Watt opwarmt. In de magnetron ontstaan makkelijk hete plekken in de melk. Schud de fles daarom goed en test de temperatuur op je pols voordat je je baby laat drinken.'
+    },
+    {
+      question: 'Hoelang mag flesvoeding warm blijven staan?',
+      answer: 'Maximum 1 uur bij kamertemperatuur. Na 1 uur ontstaat bacteriegroei. Gebruik binnen dit tijdsbestek of gooi weg. Bewaren in koelkast na verwarming wordt afgeraden.'
+    },
+    {
+      question: 'Welke flessenwarmer is het beste voor de prijs?',
+      answer: 'Philips AVENT (€35-45) biedt beste prijs-kwaliteitverhouding met Nederlandse garantie. Voor budget: waterbad methode (gratis) is even veilig.'
+    },
+    {
+      question: 'Kan ik onderweg een fles in de zon laten warmen?',
+      answer: 'Gevaarlijk! Auto\'s in zon bereiken 60-80°C. Dit is te heet en ongelijkmatig. Gebruik altijd thermosfles of 12V flessenwarmer.'
+    },
+    {
+      question: 'Hoe lang duurt een flessenwarmer?',
+      answer: '3-8 minuten afhankelijk van starttemperatuur melk, hoeveelheid (150ml vs 250ml), type apparaat en gewenste eindtemperatuur.'
+    },
+    {
+      question: 'Welke verwarmingsmethode is het milieuvriendelijkst?',
+      answer: 'Waterbad met warm kraanwater. Geen elektriciteitsverbruik, geen extra apparaten. Thermosfles is tweede keuze (eenmalige energie-investering).'
+    }
+  ]
   const sidebarImages = [
     {
       src: "/flesvoeding.webp",
@@ -34,6 +62,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
   return (
     <Layout>
       <div className="grid grid-cols-12 gap-6">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqSchema)) }} />
         <div className="col-span-12 lg:col-span-7">
           <div className="space-y-6">
             {/* Header */}

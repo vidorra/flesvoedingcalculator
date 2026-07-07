@@ -3,10 +3,12 @@ import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { AlertTriangle, Clock, Heart, Thermometer, Search, Shield, ArrowRight, } from 'lucide-react'
+import { generateFAQSchema } from '../../../../lib/structured-data'
 
 export const metadata = {
   title: 'Krampjes na Flesvoeding: Complete Gids voor Nederlandse Ouders 2026',
   description: 'Krampjes na flesvoeding zijn de #2 zorg van Nederlandse ouders na spugen. Leer de oorzaken herkennen, effectieve oplossingen toepassen, en wanneer je medische hulp moet zoeken. Praktische tips die echt werken.',
+  alternates: { canonical: '/kennisbank/problemen-oplossen/krampjes-na-flesvoeding/' }
 }
 
 export default function KrampjesNaFlesvoedingPage() {
@@ -372,6 +374,7 @@ export default function KrampjesNaFlesvoedingPage() {
 
   return (
     <Layout>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqData)) }} />
       <div className="grid grid-cols-12 gap-6">
         {/* Main Content */}
         <div className="col-span-12 lg:col-span-7">

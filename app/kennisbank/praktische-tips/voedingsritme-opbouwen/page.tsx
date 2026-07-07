@@ -3,10 +3,12 @@ import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Clock, Calendar, TrendingUp, Moon, Sun, Users, Target, ArrowRight, } from 'lucide-react'
+import { generateFAQSchema } from '../../../../lib/structured-data'
 
 export const metadata = {
   title: 'Voedingsritme opbouwen: complete gids voor ouders',
   description: 'Een goed voedingsritme is de basis voor beter slapen, voor zowel baby als ouders. Leer hoe je stap-voor-stap een voorspelbaar schema opbouwt dat past bij jouw gezin, met praktische tips voor elke leeftijd.',
+  alternates: { canonical: '/kennisbank/praktische-tips/voedingsritme-opbouwen/' },
 }
 
 export default function VoedingsritmeOpbouwenPage() {
@@ -435,6 +437,7 @@ export default function VoedingsritmeOpbouwenPage() {
 
   return (
     <Layout>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqData)) }} />
       <div className="grid grid-cols-12 gap-6">
         {/* Main Content */}
         <div className="col-span-12 lg:col-span-7">

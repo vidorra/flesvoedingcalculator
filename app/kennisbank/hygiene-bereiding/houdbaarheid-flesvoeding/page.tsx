@@ -3,10 +3,12 @@ import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Clock, AlertTriangle, Thermometer, Shield, CheckCircle, XCircle, ArrowRight, } from 'lucide-react'
+import { generateFAQSchema } from '../../../../lib/structured-data'
 
 export const metadata = {
   title: 'Houdbaarheid van Flesvoeding: Wanneer Weggooien? Complete Nederlandse Veiligheidsgids 2026',
   description: 'Weten wanneer flesvoeding nog veilig is voorkomt voedselvergiftiging en spaart geld. Deze uitgebreide gids geeft exacte tijdslimieten en praktische tips voor Nederlandse ouders.',
+  alternates: { canonical: '/kennisbank/hygiene-bereiding/houdbaarheid-flesvoeding/' },
 }
 
 export default function HoudbaarheidFlesvoedingPage() {
@@ -178,9 +180,10 @@ export default function HoudbaarheidFlesvoedingPage() {
   return (
     <Layout>
       <div className="grid grid-cols-12 gap-6">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqData)) }} />
         <div className="col-span-12 lg:col-span-7">
           <div className="space-y-6">
-            
+
             {/* Header */}
             <div>
               <div className="text-sm text-gray-500 mb-2">Kennisbank • Hygiëne & Bereiding</div>

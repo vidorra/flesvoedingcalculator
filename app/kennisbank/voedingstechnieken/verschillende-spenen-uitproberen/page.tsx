@@ -4,10 +4,12 @@ import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { TestTube, Target, Search, ShoppingCart, AlertCircle } from 'lucide-react'
 import BolProductSection from '../../../../components/BolProductLink'
+import { generateFAQSchema } from '../../../../lib/structured-data'
 
 export const metadata = {
   title: 'Verschillende Spenen Uitproberen: Complete Gids voor Nederlandse Ouders 2026',
   description: 'De juiste speen kan het verschil maken tussen een tevreden baby en urenlang gefrustreerd huilen. Leer welke spenen het beste werken voor verschillende problemen, hoe je de perfecte match vindt, en wanneer je moet overstappen.',
+  alternates: { canonical: '/kennisbank/voedingstechnieken/verschillende-spenen-uitproberen/' },
 }
 export default function VerschillendeSpenenUitproberenPage() {
   const speenTypes = [
@@ -289,6 +291,7 @@ export default function VerschillendeSpenenUitproberenPage() {
 
   return (
     <Layout>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqData)) }} />
       <div className="grid grid-cols-12 gap-6">
         {/* Main Content */}
         <div className="col-span-12 lg:col-span-7">

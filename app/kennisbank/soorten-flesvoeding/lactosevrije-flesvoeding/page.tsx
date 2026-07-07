@@ -4,10 +4,12 @@ import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Milk, Heart, AlertCircle, CheckCircle, Star, Euro, Users, ArrowRight, } from 'lucide-react'
 import BolProductSection from '../../../../components/BolProductLink'
+import { generateFAQSchema } from '../../../../lib/structured-data'
 
 export const metadata = {
   title: 'Lactosevrije Flesvoeding: Complete Nederlandse Gids 2026 - Wanneer Nodig & Beste Merken',
   description: 'Alles over lactosevrije flesvoeding in Nederland: wanneer nodig, beste merken, kosten, overstappen en waar te kopen. Complete gids voor ouders met lactose-intolerante baby\'s.',
+  alternates: { canonical: '/kennisbank/soorten-flesvoeding/lactosevrije-flesvoeding/' },
 }
 
 export default function LactosevrijeFlesvoedingPage() {
@@ -262,10 +264,11 @@ export default function LactosevrijeFlesvoedingPage() {
 
   return (
     <Layout>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqData)) }} />
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-12 lg:col-span-7">
           <div className="space-y-6">
-            
+
             {/* Header */}
             <div>
               <div className="text-sm text-gray-500 mb-2">Kennisbank • Soorten Flesvoeding</div>

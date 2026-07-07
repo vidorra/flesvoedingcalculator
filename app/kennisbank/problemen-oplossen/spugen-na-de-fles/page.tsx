@@ -3,10 +3,12 @@ import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Heart, AlertTriangle, CheckCircle, TrendingUp, Clock, Phone, ArrowRight, } from 'lucide-react'
+import { generateFAQSchema } from '../../../../lib/structured-data'
 
 export const metadata = {
   title: 'Spugen na de Fles: Wanneer Normaal en Wanneer Zorgen? 2026',
   description: 'Spugen na flesvoeding is de #1 zorg van Nederlandse ouders. Leer het verschil tussen normaal spugen en reflux, praktische oplossingen om spugen te verminderen, en wanneer je de huisarts moet bellen.',
+  alternates: { canonical: '/kennisbank/problemen-oplossen/spugen-na-de-fles/' }
 }
 
 
@@ -366,6 +368,7 @@ export default function SpugenNaDeFlesPage() {
 
   return (
     <Layout>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqData)) }} />
       <div className="grid grid-cols-12 gap-6">
         {/* Main Content */}
         <div className="col-span-12 lg:col-span-7">

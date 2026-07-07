@@ -3,10 +3,12 @@ import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Calendar, Clock, CheckCircle, XCircle, Users, ArrowRight, } from 'lucide-react'
+import { generateFAQSchema } from '../../../../lib/structured-data'
 
 export const metadata = {
   title: 'Wanneer Overstappen naar Opvolgmelk: Complete Timing Gids 2026',
   description: 'Het juiste moment voor overstappen naar opvolgmelk is cruciaal voor je baby\'s acceptatie en welzijn. Leer de perfecte timing, herken de signalen van je baby, en voer een soepele overgang uit met deze stap-voor-stap gids.',
+  alternates: { canonical: '/kennisbank/soorten-flesvoeding/wanneer-overstappen-opvolgmelk/' },
 }
 
 
@@ -289,6 +291,7 @@ export default function WanneerOverstappenOpvolgmelkPage() {
 
   return (
     <Layout>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqData)) }} />
       <div className="grid grid-cols-12 gap-6">
         {/* Main Content */}
         <div className="col-span-12 lg:col-span-7">

@@ -2,10 +2,12 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { Milk, CheckCircle, AlertTriangle, HelpCircle, ArrowRight, ExternalLink, Users } from 'lucide-react'
+import { generateFAQSchema } from '../../../../lib/structured-data'
 
 export const metadata = {
   title: 'Beste melkmachine voor flesvoeding in 2026: eerlijke vergelijking | Flesvoedingcalculator',
   description: 'Vergelijking van de vijf populairste melkmachines voor flesvoeding op prijs, doseernauwkeurigheid, hygiëne en gebruiksgemak. Met eerlijk advies of je er een nodig hebt.',
+  alternates: { canonical: '/kennisbank/praktische-tips/beste-melkmachine-flesvoeding/' }
 }
 
 export default function BesteMelkmachineFlesvoedingPage() {
@@ -29,8 +31,36 @@ export default function BesteMelkmachineFlesvoedingPage() {
 
   const adTopics = ["Melkmachine flesvoeding", "Baby flesbereidingsapparaat", "Automatische flessenbereider"]
 
+  const faqSchema = [
+    {
+      question: 'Maakt een melkmachine de fles even goed als handmatig bereiden?',
+      answer: 'Ja, mits het apparaat correct is ingesteld en schoongehouden. De samenstelling van de bereide voeding is identiek. Het verschil zit in het gemak, niet in de voedingswaarde. Een goed gecalibreerd apparaat doseert zelfs nauwkeuriger dan de meeste ouders met een maatschepje.'
+    },
+    {
+      question: 'Kan ik elk merk melkpoeder gebruiken in een melkmachine?',
+      answer: 'De meeste apparaten werken met alle gangbare merken zoals Nutrilon, Hero Baby, Aptamil, Kabrita en HIPP. De uitzondering is dieetvoeding: Nutrilon Pepti en Nutricia Neocate zijn dikker en kunnen het doseermechanisme verstoppen. Controleer bij de fabrikant of jouw specifieke voeding compatibel is.'
+    },
+    {
+      question: 'Is een melkmachine veilig voor mijn baby?',
+      answer: 'Alle apparaten in deze vergelijking zijn BPA-vrij en CE-gecertificeerd. De veiligheid hangt verder af van correct gebruik: stel het apparaat in volgens de instructies, houd het schoon en controleer regelmatig of de dosering nog klopt.'
+    },
+    {
+      question: 'Welke melkmachine is de beste keuze?',
+      answer: 'Kies de Baby Brezza als je de meeste zekerheid wilt. Kies de Babylatte Pro voor app-bediening en fijne dosering. Kies de Easybaby voor de beste prijs-kwaliteitverhouding met Nederlandse ondersteuning. Kies de Born Lucky als je budget beperkt is. En kies de Béaba als je de voorkeur geeft aan een gevestigd merk.'
+    },
+    {
+      question: 'Hoeveel bespaar ik aan tijd met een melkmachine?',
+      answer: 'Een handmatig bereide fles kost gemiddeld twee tot vier minuten. Een melkmachine reduceert dit tot zeven tot dertig seconden. Bij zes flessen per dag bespaar je ruwweg tien tot twintig minuten, en dat vooral op stressmomenten in de nacht.'
+    },
+    {
+      question: 'Kan ik een melkmachine ook gebruiken voor moedermelk?',
+      answer: 'Nee, de apparaten in deze vergelijking zijn ontworpen voor poedervormige flesvoeding. Voor het opwarmen van moedermelk heb je een flessenwarmer nodig.'
+    }
+  ]
+
   return (
     <Layout>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqSchema)) }} />
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-12 lg:col-span-7">
           <div className="space-y-6">

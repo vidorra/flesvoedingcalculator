@@ -4,11 +4,13 @@ import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { User, AlertCircle, ArrowRight } from 'lucide-react'
 import BolProductSection from '../../../../components/BolProductLink'
+import { generateFAQSchema } from '../../../../lib/structured-data'
 
 export const metadata = {
   title: 'Juiste Houding bij Flesvoeding: Veilig en Comfortabel Voeden',
   description: 'Complete gids voor ergonomische en veilige voedingshoudingen, voor jou en je baby. Voorkom verslikking, rug- en nekklachten met de juiste techniek.',
   keywords: 'flesvoeding houding, ergonomisch voeden, veilig fles geven, voedingshouding baby, rug pijn voorkomen',
+  alternates: { canonical: '/kennisbank/voedingstechnieken/juiste-houding-bij-flesvoeding/' },
 }
 
 export default function JuisteHoudingBijFlesvoeding() {
@@ -38,8 +40,36 @@ export default function JuisteHoudingBijFlesvoeding() {
     "Voeding accessoires"
   ]
 
+  const faqSchema = [
+    {
+      question: 'Hoe lang kan ik in dezelfde houding voeden?',
+      answer: 'Wissel elke 10-15 minuten van houding als voeding langer duurt. Luister naar je lichaam: pijn is een signaal om te bewegen.'
+    },
+    {
+      question: 'Mijn baby valt altijd in slaap tijdens voeding, wat nu?',
+      answer: 'Zacht tegen wangen strelen, voetjes kriebelen, of korte pauze. Sommige baby\'s hebben dit nodig, forceer niet.'
+    },
+    {
+      question: 'Kan ik liggen tijdens nachtvoeding?',
+      answer: 'Alleen als je 100% wakker bent en baby veilig 45 graden ondersteund is. Risico op in slaap vallen is te groot.'
+    },
+    {
+      question: 'Mijn rug doet pijn na voedingen, wat doe ik fout?',
+      answer: 'Waarschijnlijk rug gebogen, schouders opgetrokken, of baby te ver weg. Investeer in voedingskussen en check zithouding.'
+    },
+    {
+      question: 'Baby weigert bepaalde houdingen, is dat normaal?',
+      answer: 'Ja, baby\'s hebben voorkeuren. Respecteer dit en zoek alternatieven. Comfort voor baby is belangrijker dan \'juiste\' techniek.'
+    },
+    {
+      question: 'Hoe voorkom ik oorontstekingen?',
+      answer: 'Voer nooit plat liggend, houd het hoofd altijd hoger dan het lichaam, laat baby boeren na de voeding om druk op de oren te verminderen.'
+    }
+  ]
+
   return (
     <Layout>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqSchema)) }} />
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-12 lg:col-span-7">
           <div className="space-y-6">
