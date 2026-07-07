@@ -6,7 +6,7 @@ import { Moon, Clock, Baby, AlertTriangle, Thermometer, ArrowRight } from 'lucid
 
 export const metadata = {
   title: 'Flesvoeding en Slapen: Nederlandse Gids voor Betere Babyslaap',
-  description: 'Complete Nederlandse gids voor optimaal gebruik van flesvoeding voor betere slaappatronen. Van nachtvoedingen tot slaap training - alles wat ouders moeten weten.',
+  description: 'Complete Nederlandse gids voor optimaal gebruik van flesvoeding voor betere slaappatronen. Van nachtvoedingen tot slaaptraining: alles wat ouders moeten weten.',
 }
 
 export default function FlesvoedingEnSlapenPage() {
@@ -64,28 +64,28 @@ export default function FlesvoedingEnSlapenPage() {
   ]
 
   const nachtvoedingAfbouwStappen = [
-    "Monitor huidige patroon - track 1 week voeding/slaap",
-    "Controleer readiness - >5kg, stabiele groei, 4+ uur tussen dag voedingen",
-    "Kies methode - volume reductie, tijd verschuiving, of partner overname",
-    "Start geleidelijk - reduceer 30ml per week of verschuif timing",
-    "Monitor gewicht - wekelijks controleren tijdens proces",
-    "Wees consistent - houd strategie vol minimaal 1 week"
+    "Houd het huidige patroon bij - noteer een week lang voeding en slaap",
+    "Controleer of je baby eraan toe is - >5kg, stabiele groei, 4+ uur tussen dagvoedingen",
+    "Kies een methode - minder volume, timing verschuiven, of je partner neemt over",
+    "Start geleidelijk - verminder 30ml per week of verschuif de timing",
+    "Houd het gewicht in de gaten - controleer wekelijks tijdens het proces",
+    "Wees consistent - houd je aanpak minimaal 1 week vol"
   ]
 
   const slaapinducerendeTechnieken = [
-    "Dimmed/rood licht - behoudt melatonine productie", 
-    "Rustige omgeving - 18-20°C, geen TV/telefoon",
-    "Langzaam voeden - 20-30 minuten duur voor satiety",
-    "Consistente routine - zelfde volgorde elke avond",
-    "Optimale timing - 30-45 min voor gewenste slaaptijd",
-    "Post-feed ritueel - burp, diaper, rustige overgang naar bed"
+    "Gedimd/rood licht - behoudt de melatonineproductie",
+    "Rustige omgeving - 18-20°C, geen tv of telefoon",
+    "Langzaam voeden - 20-30 minuten voor een verzadigd gevoel",
+    "Consistente routine - elke avond dezelfde volgorde",
+    "Optimale timing - 30-45 min voor de gewenste slaaptijd",
+    "Ritueel na de voeding - boertje, schone luier, rustige overgang naar bed"
   ]
 
   const veelvoorkomendeProblemen = [
     {
       probleem: "Baby valt in slaap tijdens voeding",
-      oorzaak: "Te warme omgeving, langzame speen, overtired timing",
-      oplossing: "Coolere kamer (18-19°C), snellere flow speen, earlier timing"
+      oorzaak: "Te warme omgeving, langzame speen, timing als je baby oververmoeid is",
+      oplossing: "Koelere kamer (18-19°C), speen met snellere doorstroom, eerder voeden"
     },
     {
       probleem: "Kan alleen slapen na voeding",
@@ -94,8 +94,8 @@ export default function FlesvoedingEnSlapenPage() {
     },
     {
       probleem: "Frequent nachtwakker voor voeding", 
-      oorzaak: "Te kleine dag volumes, verkeerde laatste voeding timing",
-      oplossing: "Increase dag intake +30-50ml, last feed 30 min later"
+      oorzaak: "Te kleine dagvolumes, verkeerde timing van de laatste voeding",
+      oplossing: "Verhoog de dagvoeding met 30-50ml, geef de laatste voeding 30 min later"
     }
   ]
 
@@ -104,8 +104,8 @@ export default function FlesvoedingEnSlapenPage() {
     "Eigen kamer eerder - 3-6 maanden vs internationale norm",
     "Zachte slaaptraining - voorkeur voor zachte methoden",
     "Partner gelijkheid - beide ouders delen nacht duties",
-    "Consultatiebureau support - excellent professional guidance",
-    "Routine emphasis - sterke nadruk op consistentie"
+    "Consultatiebureau ondersteuning - deskundige professionele begeleiding",
+    "Nadruk op routine - sterke nadruk op consistentie"
   ]
 
   return (
@@ -196,7 +196,7 @@ export default function FlesvoedingEnSlapenPage() {
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2" />
-                Optimale Voedingstiming voor Slaap
+                Optimale voedingstiming voor de slaap
               </h2>
               
               <div className="space-y-4">
@@ -222,11 +222,11 @@ export default function FlesvoedingEnSlapenPage() {
               </div>
               
  <div className="mt-6">
-                <h4 className="font-medium text-gray-700 mb-2">Perfecte Bedtijd Voeding</h4>
+                <h4 className="font-medium text-gray-700 mb-2">De ideale voeding voor het slapengaan</h4>
                 <p className="text-gray-700 text-sm">
-                  <strong>Timing:</strong> 30-45 min voor gewenste slaaptijd →{' '}
-                  <strong>Volume:</strong> Grootste voeding van de dag →{' '}
-                  <strong>Omgeving:</strong> Dimmed licht, 37°C melk, rustige routine
+                  <strong>Timing:</strong> 30-45 min voor de gewenste slaaptijd →{' '}
+                  <strong>Volume:</strong> de grootste voeding van de dag →{' '}
+                  <strong>Omgeving:</strong> gedimd licht, melk van 37°C, rustige routine
                 </p>
               </div>
             </section>
@@ -236,7 +236,7 @@ export default function FlesvoedingEnSlapenPage() {
               <h2 className="text-lg font-medium text-primary mb-4">Nachtvoedingen: Wanneer en Hoe Stoppen?</h2>
               
               <div className="border-t border-gray-200 pt-6">
-                <h3 className="font-medium text-primary mb-4">Fysiologische Readiness Signalen</h3>
+                <h3 className="font-medium text-primary mb-4">Signalen dat je baby eraan toe is</h3>
  <div className="p-4 mb-6">
                   <p className="text-gray-700 text-sm mb-2"><strong>Biologische indicatoren:</strong></p>
                   <ul className="space-y-1 text-gray-700">
@@ -264,7 +264,7 @@ export default function FlesvoedingEnSlapenPage() {
 
             {/* Slaapinducerende Technieken */}
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Slaapinducerende Voeding Technieken</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Slaapbevorderende voedingstechnieken</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 De juiste omgeving en technieken kunnen flesvoeding optimaal inzetten voor betere slaap:
               </p>
@@ -279,7 +279,7 @@ export default function FlesvoedingEnSlapenPage() {
               </ul>
               
               <div className="border-t border-gray-200 pt-6">
-                <h3 className="font-medium text-primary mb-4">Pre-Feed Routine (30 minuten voor bedtijd)</h3>
+                <h3 className="font-medium text-primary mb-4">Routine voor de voeding (30 minuten voor bedtijd)</h3>
  <div className="p-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
                     <div>
@@ -290,9 +290,9 @@ export default function FlesvoedingEnSlapenPage() {
                     </div>
                     <div>
                       <p><strong>Na voeding:</strong></p>
-                      <p className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Zachte boertje procedure</span></p>
+                      <p className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Rustig een boertje laten</span></p>
                       <p className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Rustige overgang naar bed</span></p>
-                      <p className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Knuffel/security object</span></p>
+                      <p className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Knuffel of vertrouwd voorwerp</span></p>
                     </div>
                   </div>
                 </div>
@@ -316,8 +316,8 @@ export default function FlesvoedingEnSlapenPage() {
  <div className="mt-6">
                 <h4 className="font-medium text-primary mb-2">Gas/Boertjes Verstoren Slaap</h4>
                 <p className="text-gray-700 text-sm">
-                  <strong>Preventie:</strong> Anti-colic flessen, juiste temperatuur (37°C), pauzes tijdens voeding, 45° angle →{' '}
-                  <strong>Behandeling:</strong> 3x burp tijdens voeding, tummy massage, bicycles legs
+                  <strong>Preventie:</strong> anti-colic flessen, juiste temperatuur (37°C), pauzes tijdens de voeding, houd je baby in een hoek van 45° →{' '}
+                  <strong>Behandeling:</strong> laat je baby 3x boertjes tijdens de voeding, buikmassage, fietsbeweging met de beentjes
                 </p>
               </div>
             </section>
@@ -326,36 +326,36 @@ export default function FlesvoedingEnSlapenPage() {
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Baby className="w-5 h-5 mr-2" />
-                Leeftijd-Specifieke Slaap Strategieën
+                Leeftijdsspecifieke slaapstrategieën
               </h2>
               
               <div className="border-t border-gray-200 pt-6">
-                <h3 className="font-medium text-primary mb-4">0-8 Weken: Overlevingsmodus</h3>
+                <h3 className="font-medium text-primary mb-4">0-8 weken: overlevingsmodus</h3>
  <div className="p-4 mb-6">
                   <p className="text-gray-700 text-sm mb-2"><strong>Realistische verwachtingen:</strong></p>
-                  <p className="text-gray-700 text-sm mb-2">16-20 uur slaap/dag, max 2-4 uur aaneengesloten, 2-4x nachtvoeding normaal</p>
-                  <p className="text-gray-700 text-sm"><strong>Strategie:</strong> Dag = licht, nacht = donker, minimal interaction 's nachts, partner shifts</p>
+                  <p className="text-gray-700 text-sm mb-2">16-20 uur slaap per dag, max 2-4 uur aaneengesloten, 2-4x nachtvoeding is normaal</p>
+                  <p className="text-gray-700 text-sm"><strong>Strategie:</strong> dag = licht, nacht = donker, zo min mogelijk interactie 's nachts, wissel de nachten met je partner af</p>
                 </div>
               </div>
 
               <div className="border-t border-gray-200 pt-6">
-                <h3 className="font-medium text-primary mb-4">4-6 Maanden: Slaaptraining Periode</h3>
+                <h3 className="font-medium text-primary mb-4">4-6 maanden: periode van slaaptraining</h3>
  <div className="p-4 mb-6">
-                  <p className="text-gray-700 text-sm mb-2"><strong>Nederlandse slaaptraining voorkeur:</strong></p>
+                  <p className="text-gray-700 text-sm mb-2"><strong>Nederlandse voorkeur voor slaaptraining:</strong></p>
                   <ul className="space-y-1 text-gray-700">
-                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Stoelmethode: Stoel naast bed, elke 3 dagen verder (2-3 weken)</span></li>
-                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Pickup/Putdown: Oppakken bij huilen, neerleggen als rustig</span></li>
-                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Gentle approaches: Minder stress voor baby én ouders</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Stoelmethode: stoel naast bed, elke 3 dagen verder (2-3 weken)</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Oppakken en neerleggen: oppakken bij huilen, neerleggen als je baby rustig is</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Zachte aanpak: minder stress voor je baby én voor jullie als ouders</span></li>
                   </ul>
                 </div>
               </div>
 
               <div className="border-t border-gray-200 pt-6">
-                <h3 className="font-medium text-primary mb-4">6+ Maanden: Consistentie & Onderhoud</h3>
+                <h3 className="font-medium text-primary mb-4">6+ maanden: consistentie en onderhoud</h3>
  <div className="p-4">
                   <p className="text-gray-700 text-sm">
                     <strong>Capaciteiten:</strong> 10-12 uur doorslapen mogelijk, geen nachtvoeding nodig, 3-4x overdag voldoende →{' '}
-                    <strong>Uitdagingen:</strong> Tandjes komen, reisaanpassingen, kinderopvang coördinatie
+                    <strong>Uitdagingen:</strong> tandjes komen, wennen aan reizen, afstemmen met de kinderopvang
                   </p>
                 </div>
               </div>
@@ -368,9 +368,9 @@ export default function FlesvoedingEnSlapenPage() {
                   <Thermometer className="w-5 h-5 text-amber-600" />
                 </div>
                 <div>
-                  <h3 className="font-medium text-amber-800 mb-2">Nederlandse Slaap Cultuur</h3>
+                  <h3 className="font-medium text-amber-800 mb-2">Nederlandse slaapcultuur</h3>
                   <p className="text-sm text-amber-700 leading-relaxed mb-4">
-                    Nederland heeft een unieke slaap cultuur die flesvoeding ouders kan helpen:
+                    Nederland heeft een eigen slaapcultuur die je als flesvoedingouder kan helpen:
                   </p>
                   <ul className="space-y-2">
                     {nederlandseSlaapCultuur.map((aspect, index) => (

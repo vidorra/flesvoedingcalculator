@@ -2,13 +2,13 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
-import { AlertTriangle, Clock, TrendingUp, Users, Calendar, CheckCircle, XCircle, Target, ChevronRight, Star, Banknote, Heart, RefreshCw, ArrowRight, } from 'lucide-react';
+import { AlertTriangle, Clock, TrendingUp, Users, Calendar, CheckCircle, XCircle, Target, ChevronRight, Star, Banknote, Heart, RefreshCw, ArrowRight } from 'lucide-react';
 import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
-  title: 'Overgang naar Beker: Nederlandse Gids voor de Volgende Stap | Flesvoeding Calculator',
-  description: 'Complete Nederlandse gids voor de overgang van fles naar beker. Wanneer beginnen, welke bekers kiezen, en hoe de transitie succesvol maken voor je baby.',
-  keywords: 'overgang naar beker, sippy cup, training cup, fles naar beker, baby bekers Nederland, beker training, flesvoeding afbouwen'
+  title: 'Overgang naar beker: Nederlandse gids voor de volgende stap | Flesvoeding Calculator',
+  description: 'Complete Nederlandse gids voor de overgang van fles naar beker. Wanneer beginnen, welke bekers kiezen, en hoe de overgang succesvol maken voor je baby.',
+  keywords: 'overgang naar beker, tuitbeker, oefenbeker, fles naar beker, baby bekers Nederland, beker training, flesvoeding afbouwen'
 };
 
 
@@ -220,7 +220,7 @@ export default function OvergangNaarBekerPage() {
   ]
 
   // Ad targeting keywords
-  const adTopics = ["Beker Training", "Sippy Cup", "Fles Afbouwen"]
+  const adTopics = ["Beker training", "Tuitbeker", "Fles afbouwen"]
 
   return (
     <Layout>
@@ -233,7 +233,7 @@ export default function OvergangNaarBekerPage() {
               <div className="text-sm text-gray-500 mb-2">Voedingstechnieken • Overgang naar Beker</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Target className="w-6 h-6 mr-3 text-primary" />
-                Overgang naar Beker: Nederlandse Gids voor de Volgende Stap
+                Overgang naar beker: Nederlandse gids voor de volgende stap
               </h1>
               <p className="text-gray-500 leading-relaxed">
                 De overgang van fles naar beker is een natuurlijke progressie in je baby's ontwikkeling. Deze uitgebreide gids helpt Nederlandse ouders deze belangrijke transitie succesvol en stressvrij te maken.
@@ -338,7 +338,7 @@ export default function OvergangNaarBekerPage() {
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                          <span className="text-gray-700">Interest in volwassen drinkgedrag</span>
+                          <span className="text-gray-700">Interesse in volwassen drinkgedrag</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
@@ -421,7 +421,7 @@ export default function OvergangNaarBekerPage() {
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm">Minder morsen dan open cups</span>
+                          <span className="text-gray-600 text-sm">Minder morsen dan open bekers</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -481,11 +481,11 @@ export default function OvergangNaarBekerPage() {
                 </div>
 
                 <div>
-                  <h3 className="font-medium text-primary mb-3">Nederlandse top beker merken</h3>
+                  <h3 className="font-medium text-primary mb-3">Waar je op kunt letten bij een beker</h3>
                   
                   <div className="space-y-4">
  <div className="p-4">
-                      <h4 className="font-medium text-gray-700 mb-2">Tommee Tippee Closer to Nature (€8-15)</h4>
+                      <h4 className="font-medium text-gray-700 mb-2">Trainingsbeker met zachte tuit (€8-15)</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         <div>
                           <p className="text-sm text-gray-600 mb-1">Voordelen:</p>
@@ -504,7 +504,7 @@ export default function OvergangNaarBekerPage() {
                             </li>
                             <li className="flex items-center space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                              <span className="text-gray-600">Nederlandse customer service</span>
+                              <span className="text-gray-600">Nederlandse klantenservice</span>
                             </li>
                           </ul>
                         </div>
@@ -525,7 +525,7 @@ export default function OvergangNaarBekerPage() {
                     </div>
                     
  <div className="p-4">
-                      <h4 className="font-medium text-gray-700 mb-2">Philips AVENT Overgang Serie (€10-18)</h4>
+                      <h4 className="font-medium text-gray-700 mb-2">Tuitbeker voor de volgende stap (€10-18)</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         <div>
                           <p className="text-sm text-gray-600 mb-1">Voordelen:</p>
@@ -540,11 +540,11 @@ export default function OvergangNaarBekerPage() {
                             </li>
                             <li className="flex items-center space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                              <span className="text-gray-600">Compatible met AVENT systeem</span>
+                              <span className="text-gray-600">Onderdelen vaak onderling uitwisselbaar</span>
                             </li>
                             <li className="flex items-center space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                              <span className="text-gray-600">Nederlandse merk + support</span>
+                              <span className="text-gray-600">Nederlands merk met ondersteuning</span>
                             </li>
                           </ul>
                         </div>
@@ -594,7 +594,7 @@ export default function OvergangNaarBekerPage() {
                               </li>
                               <li className="flex items-center space-x-2">
                                 <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                                <span className="text-gray-600 text-sm">1-2 sessions per dag (5-10 min)</span>
+                                <span className="text-gray-600 text-sm">1-2 momenten per dag (5-10 min)</span>
                               </li>
                               <li className="flex items-center space-x-2">
                                 <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -641,7 +641,7 @@ export default function OvergangNaarBekerPage() {
                               </li>
                               <li className="flex items-center space-x-2">
                                 <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                                <span className="text-gray-600 text-sm">Langere sessions (10-15 min)</span>
+                                <span className="text-gray-600 text-sm">Langere momenten (10-15 min)</span>
                               </li>
                               <li className="flex items-center space-x-2">
                                 <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -688,7 +688,7 @@ export default function OvergangNaarBekerPage() {
                               </li>
                               <li className="flex items-center space-x-2">
                                 <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                                <span className="text-gray-600 text-sm">Volume target 120-180ml</span>
+                                <span className="text-gray-600 text-sm">Volumedoel 120-180ml</span>
                               </li>
                               <li className="flex items-center space-x-2">
                                 <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -743,7 +743,7 @@ export default function OvergangNaarBekerPage() {
                               </li>
                               <li className="flex items-center space-x-2">
                                 <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                                <span className="text-gray-600 text-sm">Comfortabel in verschillende settings</span>
+                                <span className="text-gray-600 text-sm">Comfortabel in verschillende situaties</span>
                               </li>
                             </ul>
                           </div>
@@ -928,7 +928,7 @@ export default function OvergangNaarBekerPage() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-medium text-gray-700 mb-2">Intake behoud strategieën:</h4>
+                        <h4 className="font-medium text-gray-700 mb-2">Inname behouden:</h4>
                         <ul className="space-y-1">
                           <li className="flex items-center space-x-2">
                             <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
@@ -944,7 +944,7 @@ export default function OvergangNaarBekerPage() {
                           </li>
                           <li className="flex items-center space-x-2">
                             <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                            <span className="text-gray-600 text-sm">Dagelijkse intake tracking</span>
+                            <span className="text-gray-600 text-sm">Dagelijkse inname bijhouden</span>
                           </li>
                         </ul>
                       </div>
@@ -988,7 +988,7 @@ export default function OvergangNaarBekerPage() {
                           </li>
                           <li className="flex items-center space-x-2">
                             <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                            <span className="text-gray-600 text-sm">Terug naar basics</span>
+                            <span className="text-gray-600 text-sm">Terug naar de basis</span>
                           </li>
                           <li className="flex items-center space-x-2">
                             <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -1027,7 +1027,7 @@ export default function OvergangNaarBekerPage() {
                 
                 <div>
                   <h3 className="font-medium text-gray-700 mb-2">Welke beker is het beste om mee te beginnen?</h3>
-                  <p className="text-gray-600 text-sm">Start met een trainingsbeker met zachte tuit en handvatten. Tommee Tippee, AVENT en MAM hebben goede overgangsseries.</p>
+                  <p className="text-gray-600 text-sm">Start met een trainingsbeker met een zachte tuit en handvatten. Verschillende bekende merken bieden zulke bekers aan, dus let vooral op de kenmerken en niet op het merk.</p>
                 </div>
                 
                 <div>
@@ -1072,11 +1072,11 @@ export default function OvergangNaarBekerPage() {
             <BolProductSection
               productNames={[
                 'baby drinkbeker',
-                'sippy cup',
+                'tuitbeker',
                 'anti-lek drinkbeker',
                 '360 graden drinkbeker'
               ]}
-              title="Overgang naar Zelfstandig Drinken"
+              title="Overgang naar zelfstandig drinken"
               variant="card"
               maxProducts={4}
             />
@@ -1084,7 +1084,7 @@ export default function OvergangNaarBekerPage() {
             {/* Overgang naar Beker Producten */}
             <AffiliateProductWidget
               pageId="voedingstechnieken_overgang-naar-beker"
-              title="Overgang naar Beker Producten"
+              title="Producten voor de overgang naar beker"
             />
 
             {/* Related articles */}

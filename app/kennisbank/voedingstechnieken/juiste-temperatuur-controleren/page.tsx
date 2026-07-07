@@ -103,7 +103,7 @@ export default function JuisteTemperatuurControleren() {
               </div>
 
                 <div>
-                <h3 className="font-medium text-primary mb-3">Veilige temperatuur range</h3>
+                <h3 className="font-medium text-primary mb-3">Veilige temperatuurmarge</h3>
 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
@@ -132,20 +132,20 @@ export default function JuisteTemperatuurControleren() {
                     <h4 className="font-medium text-gray-700 mb-2">Gevaarlijke temperaturen vermijden</h4>
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
-                        <span className="text-gray-600"></span>
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                         <span className="text-gray-700"><strong>Te heet</strong>: Warmer dan 35°C vergroot het risico op verbranden</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <span className="text-gray-600"></span>
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                         <span className="text-gray-700"><strong>Te koud</strong>: Koude melk wordt vaak slechter geaccepteerd</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <span className="text-gray-600"></span>
-                        <span className="text-gray-700"><strong>Ongelijkmatig</strong>: Hot spots door magnetron verhitting</span>
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                        <span className="text-gray-700"><strong>Ongelijkmatig</strong>: Hete plekken door verhitting in de magnetron</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <span className="text-gray-600"></span>
-                        <span className="text-gray-700"><strong>Te snelle wisseling</strong>: Van koud naar heet stresst spijsvertering</span>
+                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                        <span className="text-gray-700"><strong>Te snelle wisseling</strong>: Van koud naar heet belast de spijsvertering</span>
                       </li>
                     </ul>
                   </div>
@@ -159,11 +159,11 @@ export default function JuisteTemperatuurControleren() {
               
               <div className="space-y-8">
                 <div>
-                  <h3 className="font-medium text-primary mb-3">1. Pols test - De klassieke methode</h3>
-                  
+                  <h3 className="font-medium text-primary mb-3">1. Polstest: de klassieke methode</h3>
+
                   <div className="grid md:grid-cols-2 gap-6 mb-6">
                     <div>
-                      <h4 className="font-medium text-primary mb-3">Hoe doe je dit? </h4>
+                      <h4 className="font-medium text-primary mb-3">Hoe doe je dit?</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -185,7 +185,7 @@ export default function JuisteTemperatuurControleren() {
                     </div>
 
                     <div>
-                      <h4 className="font-medium text-primary mb-3">Pols test perfectioneren</h4>
+                      <h4 className="font-medium text-primary mb-3">Polstest perfectioneren</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -209,45 +209,45 @@ export default function JuisteTemperatuurControleren() {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <h4 className="font-medium text-gray-700 mb-2">Voordelen pols test:</h4>
+                      <h4 className="font-medium text-gray-700 mb-2">Voordelen polstest:</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600"></span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-700"><strong>Altijd beschikbaar</strong>: Geen apparatuur nodig</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600"></span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-700"><strong>Gratis</strong>: Kost niets extra</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600"></span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-700"><strong>Snel</strong>: In 2 seconden gedaan</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600"></span>
-                          <span className="text-gray-700"><strong>Betrouwbaar</strong>: Eeuwenlang bewezen methode</span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-700"><strong>Betrouwbaar</strong>: Al eeuwenlang een bewezen methode</span>
                         </li>
                       </ul>
                     </div>
 
                     <div>
-                      <h4 className="font-medium text-gray-700 mb-2">Nadelen pols test:</h4>
+                      <h4 className="font-medium text-gray-700 mb-2">Nadelen polstest:</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600"></span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-700"><strong>Subjectief</strong>: Iedereen voelt anders</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600"></span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-700"><strong>Minder nauwkeurig</strong>: Geen exacte graden</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600"></span>
-                          <span className="text-gray-700"><strong>Beïnvloed door omgeving</strong>: Koude handen geven verkeerd gevoel</span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-700"><strong>Beïnvloed door omgeving</strong>: Koude handen geven een verkeerd gevoel</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600"></span>
-                          <span className="text-gray-700"><strong>Leerproces</strong>: Ervaring nodig voor goede inschatting</span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-700"><strong>Leerproces</strong>: Ervaring nodig voor een goede inschatting</span>
                         </li>
                       </ul>
                     </div>
@@ -255,7 +255,7 @@ export default function JuisteTemperatuurControleren() {
                 </div>
 
                 <div>
-                  <h3 className="font-medium text-primary mb-3">2. Digitale thermometer - Meest nauwkeurig</h3>
+                  <h3 className="font-medium text-primary mb-3">2. Digitale thermometer: meest nauwkeurig</h3>
                   
                   <div className="grid md:grid-cols-2 gap-6 mb-6">
                     <div>
@@ -335,7 +335,7 @@ export default function JuisteTemperatuurControleren() {
                 </div>
 
                 <div>
-                  <h3 className="font-medium text-primary mb-3">3. Infrarood thermometer - Contactloos</h3>
+                  <h3 className="font-medium text-primary mb-3">3. Infrarood thermometer: contactloos</h3>
                   
                   <div className="grid md:grid-cols-3 gap-6">
                     <div>
@@ -343,11 +343,11 @@ export default function JuisteTemperatuurControleren() {
                       <ul className="space-y-2">
                         <li className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                          <span className="text-gray-700"><strong>Afstand meten</strong>: 3-5 cm van fles oppervlak</span>
+                          <span className="text-gray-700"><strong>Afstand meten</strong>: 3-5 cm van het flesoppervlak</span>
                         </li>
                         <li className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                          <span className="text-gray-700"><strong>Oppervlakte temperatuur</strong>: Meet alleen buitenkant</span>
+                          <span className="text-gray-700"><strong>Oppervlaktetemperatuur</strong>: Meet alleen de buitenkant</span>
                         </li>
                         <li className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -364,19 +364,19 @@ export default function JuisteTemperatuurControleren() {
                       <h4 className="font-medium text-gray-700 mb-2">Voordelen IR thermometer:</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600"></span>
-                          <span className="text-gray-700"><strong>Snel</strong>: Instant resultaat</span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-700"><strong>Snel</strong>: Direct resultaat</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600"></span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-700"><strong>Hygiënisch</strong>: Geen contact met melk</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600"></span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-700"><strong>Meerdere doelen</strong>: Ook voor bad, kamer, baby</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600"></span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-700"><strong>Modern</strong>: Technologisch geavanceerd</span>
                         </li>
                       </ul>
@@ -386,19 +386,19 @@ export default function JuisteTemperatuurControleren() {
                       <h4 className="font-medium text-gray-700 mb-2">Nadelen IR thermometer:</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600"></span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-700"><strong>Duur</strong>: €20-50 voor goede kwaliteit</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600"></span>
-                          <span className="text-gray-700"><strong>Oppervlakte alleen</strong>: Niet de binnentemperatuur</span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-700"><strong>Alleen oppervlak</strong>: Niet de binnentemperatuur</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600"></span>
-                          <span className="text-gray-700"><strong>Omgevingsgevoelig</strong>: Reflectie kan resultaat beïnvloeden</span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-700"><strong>Omgevingsgevoelig</strong>: Reflectie kan het resultaat beïnvloeden</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600"></span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-700"><strong>Leerproces</strong>: Juiste afstand en hoek vinden</span>
                         </li>
                       </ul>
@@ -407,7 +407,7 @@ export default function JuisteTemperatuurControleren() {
                 </div>
 
                 <div>
-                  <h3 className="font-medium text-primary mb-3">4. Temperatuur strips - Visuele controle</h3>
+                  <h3 className="font-medium text-primary mb-3">4. Temperatuurstrips: visuele controle</h3>
                   
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
@@ -419,7 +419,7 @@ export default function JuisteTemperatuurControleren() {
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700"><strong>Kleur verandering</strong>: Verschillende kleuren voor verschillende temperaturen</span>
+                          <span className="text-gray-700"><strong>Kleurverandering</strong>: Verschillende kleuren voor verschillende temperaturen</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -441,7 +441,7 @@ export default function JuisteTemperatuurControleren() {
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700"><strong>Digitale strips</strong>: €8-15, met exacte temperatuur weergave</span>
+                          <span className="text-gray-700"><strong>Digitale strips</strong>: €8-15, met exacte temperatuurweergave</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -449,7 +449,7 @@ export default function JuisteTemperatuurControleren() {
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700"><strong>Smart strips</strong>: €15-30, koppeling met smartphone app</span>
+                          <span className="text-gray-700"><strong>Slimme strips</strong>: €15-30, koppeling met een app op je telefoon</span>
                         </li>
                       </ul>
                     </div>
@@ -468,7 +468,7 @@ export default function JuisteTemperatuurControleren() {
                   <div className="space-y-6">
                     <div className="grid md:grid-cols-3 gap-6">
                       <div>
-                        <h4 className="font-medium text-gray-700 mb-2">Koud water bad - Beste methode</h4>
+                        <h4 className="font-medium text-gray-700 mb-2">Koudwaterbad: beste methode</h4>
                         <ul className="space-y-2">
                           <li className="flex items-start space-x-2">
                             <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -484,7 +484,7 @@ export default function JuisteTemperatuurControleren() {
                           </li>
                           <li className="flex items-start space-x-2">
                             <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                            <span className="text-gray-700"><strong>Let op</strong>: Water niet over fles top laten komen</span>
+                            <span className="text-gray-700"><strong>Let op</strong>: Laat het water niet over de bovenrand van de fles komen</span>
                           </li>
                         </ul>
                       </div>
@@ -538,20 +538,20 @@ export default function JuisteTemperatuurControleren() {
                       <h4 className="font-medium text-amber-800 mb-2">NIET doen bij afkoelen:</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600"></span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                           <span className="text-gray-700"><strong>IJsblokjes toevoegen</strong>: Verdunt de melk</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600"></span>
-                          <span className="text-gray-700"><strong>In vriezer</strong>: Te snelle afkoeling, kan melk laten scheiden</span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-700"><strong>In de vriezer</strong>: Koelt te snel af en kan de melk laten schiften</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600"></span>
-                          <span className="text-gray-700"><strong>Blazen</strong>: Onhygiënisch, bacteriën uit mond</span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-700"><strong>Blazen</strong>: Onhygiënisch, bacteriën uit je mond</span>
                         </li>
                         <li className="flex items-center space-x-2">
-                          <span className="text-gray-600"></span>
-                          <span className="text-gray-700"><strong>Schudden met koud</strong>: Kan melk laten klonteren</span>
+                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-700"><strong>Schudden met koud water</strong>: Kan de melk laten klonteren</span>
                         </li>
                       </ul>
                     </div>
@@ -564,7 +564,7 @@ export default function JuisteTemperatuurControleren() {
                   <div className="space-y-6">
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <h4 className="font-medium text-gray-700 mb-2">Warm water bad - Meest gecontroleerd</h4>
+                        <h4 className="font-medium text-gray-700 mb-2">Warmwaterbad: best te controleren</h4>
                         <ul className="space-y-2">
                           <li className="flex items-start space-x-2">
                             <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
