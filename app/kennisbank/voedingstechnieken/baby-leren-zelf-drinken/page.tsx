@@ -36,19 +36,19 @@ export default function BabyLerenZelfDrinkenPage() {
   const readinessSignals = [
     "Stabiele gewichtstoename (meestal > 6kg)",
     "Kan zelfstandig rechtop zitten (6+ maanden)",
-    "Pincer grasp ontwikkeld (duim-wijsvinger)",
     "Hand-oog coördinatie: voorwerpen richten naar mond",
     "Begrijpt oorzaak-gevolg relaties",
-    "Volledig ontwikkelde nekcontrole (4+ maanden)"
+    "Volledig ontwikkelde nekcontrole (4+ maanden)",
+    "Grijpen met duim en wijsvinger komt later (rond 9-10 maanden) en verfijnt het zelf drinken"
   ]
 
   const nederlandseTimingRichtlijnen = [
     "4-6 maanden: Interesse in volwassen eten/drinken",
-    "6-8 maanden: Eerste pogingen zelf vasthouden", 
-    "8-10 maanden: Gecontroleerd drinken uit beker",
-    "10-12 maanden: Onafhankelijk kleine hoeveelheden",
-    "12-15 maanden: Volledig zelfstandig tijdens maaltijden",
-    "15-18 maanden: Refinement technieken + minder morsen"
+    "Rond 6 maanden: Beginnen met oefenen uit een (tuit)beker, water leren drinken uit een beker",
+    "6-9 maanden: Eerste pogingen zelf vasthouden en slokjes nemen",
+    "9-12 maanden: De fles geleidelijk afbouwen richting het eerste jaar",
+    "Rond 12 maanden: Melk en water zelfstandig uit een beker drinken",
+    "12-15 maanden: Volledig zelfstandig tijdens maaltijden, minder morsen"
   ]
 
   const ontwikkelingsStadia = [
@@ -64,13 +64,13 @@ export default function BabyLerenZelfDrinkenPage() {
     },
     {
       fase: "Ontwikkeling (8-10 maanden)",
-      kenmerken: "Precision grip, beter evenwicht, problem solving",
-      activiteiten: "Verschillende cup types, dagelijks 2-3 keer oefenen"
+      kenmerken: "Fijnere greep, beter evenwicht, oplossingsgericht",
+      activiteiten: "Verschillende soorten bekers, dagelijks 2-3 keer oefenen"
     },
     {
-      fase: "Mastery (10-15 maanden)",
-      kenmerken: "Accurate targeting, volume control, een-handig gebruik",
-      activiteities: "Sociale context drinken, maaltijd integratie"
+      fase: "Beheersing (10-15 maanden)",
+      kenmerken: "Nauwkeurig richten, hoeveelheid doseren, een-handig gebruik",
+      activiteiten: "Drinken in sociale context, integratie bij maaltijden"
     }
   ]
 
@@ -143,8 +143,9 @@ export default function BabyLerenZelfDrinkenPage() {
 
  <div className="mt-4">
                 <p className="text-gray-700">
-                  <strong>Nederlandse statistiek:</strong> 95% van Nederlandse baby's kan zelfstandig drinken op 15 maanden,
-                  met kinderopvang baby's gemiddeld 2 maanden eerder door peer learning.
+                  Het Voedingscentrum adviseert om rond 6 maanden te beginnen met oefenen uit een (tuit)beker en je baby water uit een beker te leren drinken.
+                  Bouw de fles daarna geleidelijk af richting het eerste jaar. De meeste baby's drinken rond hun eerste verjaardag melk en water uit een beker,
+                  maar elk kind ontwikkelt zich in eigen tempo.
                 </p>
               </div>
             </section>
@@ -159,7 +160,7 @@ export default function BabyLerenZelfDrinkenPage() {
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Fysiologische Readiness Signalen</h3>
                 <p className="text-gray-700 mb-4">
-                  Elk baby ontwikkelt in eigen tempo, maar deze signalen geven aan dat je baby klaar is om zelfstandig drinken te leren.
+                  Elke baby ontwikkelt zich in eigen tempo, maar deze signalen geven aan dat je baby klaar is om zelfstandig drinken te leren.
                   Vergelijk dit met <Link href="/kennisbank/voedingstechnieken/verschillende-spenen-uitproberen" className="text-primary hover:underline font-medium">het vinden van de juiste speen</Link> -
                   observatie en aanpassing zijn key:
                 </p>
@@ -186,12 +187,12 @@ export default function BabyLerenZelfDrinkenPage() {
                 </ul>
                 
  <div className="mt-6">
-                  <h4 className="font-medium text-gray-700 mb-2">Nederlandse Baby Statistieken (2024)</h4>
-                  <div className="text-sm text-gray-700 space-y-1">
-                    <p><strong>12 maanden:</strong> 80% zelfstandig, 18% assisted, 2% niet klaar</p>
-                    <p><strong>15 maanden:</strong> 95% zelfstandig, 5% assisted</p>
-                    <p><strong>Factoren:</strong> Kinderopvang +2 maanden sneller, premature baby's -2-4 maanden</p>
-                  </div>
+                  <h4 className="font-medium text-gray-700 mb-2">Wat mag je verwachten</h4>
+                  <p className="text-gray-700">
+                    De meeste baby's beginnen rond 6 maanden met oefenen en drinken rond hun eerste jaar melk en water uit een beker.
+                    Sommige baby's hebben er wat langer voor nodig, en dat is prima. Te vroeg geboren baby's hebben vaak wat meer tijd nodig.
+                    Kijk naar de ontwikkeling van je eigen kind en niet naar een vaste leeftijd.
+                  </p>
                 </div>
               </div>
             </section>
@@ -242,7 +243,7 @@ export default function BabyLerenZelfDrinkenPage() {
                 <p className="text-gray-700 text-sm">
                   <strong>Beste retailers:</strong> Baby-Dump (grootste selectie), Prenatal (expert advice), 
                   Kruidvat/Etos (budget opties), Bol.com (online beoordelingen).
-                  <strong>Timing:</strong> Koop tijdens Baby & Kind weken voor 25% korting.
+                  <strong>Timing:</strong> Let op acties tijdens de Baby & Kind weken voor scherpere prijzen.
                 </p>
               </div>
             </section>
@@ -254,32 +255,32 @@ export default function BabyLerenZelfDrinkenPage() {
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Week 1-2: Introductie Fase</h3>
  <div className="p-4 mb-4">
-                  <p className="text-gray-700 text-sm mb-2"><strong>Doelen:</strong> Familiarity, vrije exploratie, 30-60ml success</p>
-                  <p className="text-gray-700 text-sm"><strong>Routine:</strong> 2x per dag, 5 minuten sessies, veel praise voor interesse</p>
+                  <p className="text-gray-700 text-sm mb-2"><strong>Doelen:</strong> Wennen aan de beker, vrij verkennen, 30-60ml lukt</p>
+                  <p className="text-gray-700 text-sm"><strong>Routine:</strong> 2x per dag, sessies van 5 minuten, veel complimenten voor interesse</p>
                 </div>
               </div>
 
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Week 3-4: Vaardigheid Ontwikkelen</h3>
  <div className="p-4 mb-4">
-                  <p className="text-gray-700 text-sm mb-2"><strong>Doelen:</strong> Cup naar mond brengen, 60-120ml per sessie, minder hand-over-hand</p>
-                  <p className="text-gray-700 text-sm"><strong>Activiteiten:</strong> Verschillende shapes proberen, reward system, 3x per dag</p>
+                  <p className="text-gray-700 text-sm mb-2"><strong>Doelen:</strong> Beker naar mond brengen, 60-120ml per sessie, minder hand-in-hand begeleiding</p>
+                  <p className="text-gray-700 text-sm"><strong>Activiteiten:</strong> Verschillende vormen proberen, belonen bij succes, 3x per dag</p>
                 </div>
               </div>
 
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Week 5-8: Competentie Ontwikkeling</h3>
  <div className="p-4 mb-4">
-                  <p className="text-gray-700 text-sm mb-2"><strong>Doelen:</strong> 150-200ml zelfstandig, minimaal morsen, routine integration</p>
-                  <p className="text-gray-700 text-sm"><strong>Challenges:</strong> Multiple cup types, maaltijd integratie, sociale context</p>
+                  <p className="text-gray-700 text-sm mb-2"><strong>Doelen:</strong> 150-200ml zelfstandig, minimaal morsen, opnemen in de routine</p>
+                  <p className="text-gray-700 text-sm"><strong>Uitdagingen:</strong> Meerdere soorten bekers, integratie bij maaltijden, sociale context</p>
                 </div>
               </div>
 
               <div className="border-t border-gray-200 pt-6">
                 <h3 className="font-medium text-primary mb-4">Week 9-12: Mastery & Refinement</h3>
  <div className="p-4">
-                  <p className="text-gray-700 text-sm mb-2"><strong>Doelen:</strong> Volledige zelfstandigheid, verschillende situaties, sociale drinking</p>
-                  <p className="text-gray-700 text-sm"><strong>Real-world:</strong> Restaurant visits, playdates, travel, daycare prep</p>
+                  <p className="text-gray-700 text-sm mb-2"><strong>Doelen:</strong> Volledige zelfstandigheid, verschillende situaties, drinken in gezelschap</p>
+                  <p className="text-gray-700 text-sm"><strong>In de praktijk:</strong> Restaurantbezoek, speelafspraakjes, onderweg, voorbereiding op de opvang</p>
                 </div>
               </div>
             </section>

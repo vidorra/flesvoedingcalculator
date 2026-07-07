@@ -14,28 +14,27 @@ export const metadata = {
 
 // Timing indicators data
 const timingIndicators = [
-  { label: "Gewicht", criterion: ">8kg (meestal 10-12 maanden)", icon: TrendingUp },
-  { label: "Motoriek", criterion: "Stabiel zitten zonder ondersteuning", icon: Target },
-  { label: "Coördinatie", criterion: "Pincetgreep volledig ontwikkeld", icon: CheckCircle },
-  { label: "Cognitief", criterion: "Volgt 2-stap instructies", icon: Target },
-  { label: "Orale motoriek", criterion: "Kan slikken zonder zuigen reflex", icon: CheckCircle },
-  { label: "Fles competentie", criterion: "Houdt fles zelfstandig vast", icon: CheckCircle }
+  { label: "Leeftijd", criterion: "Rond 6 maanden starten met oefenen", icon: TrendingUp },
+  { label: "Motoriek", criterion: "Stabiel zitten met of zonder steun", icon: Target },
+  { label: "Coördinatie", criterion: "Kan voorwerpen naar de mond brengen", icon: CheckCircle },
+  { label: "Cognitief", criterion: "Toont interesse in drinken uit een beker", icon: Target },
+  { label: "Orale motoriek", criterion: "Kan slokjes nemen en slikken", icon: CheckCircle },
+  { label: "Fles afbouwen", criterion: "Fles geleidelijk minder richting het eerste jaar", icon: CheckCircle }
 ];
 
 // Dutch timing guidelines
 const nlGuidelines = [
-  { age: "10-12 maanden", activity: "Introductie training cups" },
-  { age: "12-15 maanden", activity: "Hoofddrank methode overgang" },
-  { age: "15-18 maanden", activity: "Volledige beker competentie" },
-  { age: "18-24 maanden", activity: "Verfijning + alle dranken" },
-  { age: "24+ maanden", activity: "Volwassen drinkvaardigheden" }
+  { age: "Rond 6 maanden", activity: "Beginnen met oefenen uit een (tuit)beker" },
+  { age: "6-9 maanden", activity: "Water leren drinken uit een beker" },
+  { age: "9-12 maanden", activity: "Fles geleidelijk afbouwen" },
+  { age: "Rond 12 maanden", activity: "Melk en water zelfstandig uit een beker" }
 ];
 
 // Cup progression data
 const cupPhases = [
   {
     phase: "Fase 1: Trainingsbekers",
-    age: "10-12 maanden",
+    age: "Rond 6 maanden",
     features: [
       "Lijkt op fles",
       "Handvatten voor kleine handen",
@@ -45,11 +44,11 @@ const cupPhases = [
     ]
   },
   {
-    phase: "Fase 2: Tuitbekers", 
-    age: "12-15 maanden",
+    phase: "Fase 2: Tuitbekers",
+    age: "6-9 maanden",
     features: [
       "Zelfstandig gebruik mogelijk",
-      "Minder morsen dan open cups",
+      "Minder morsen dan open bekers",
       "Makkelijk voor onderweg",
       "Succeservaringen",
       "Beheersbare hoeveelheid morsen"
@@ -57,7 +56,7 @@ const cupPhases = [
   },
   {
     phase: "Fase 3: Rietjesbekers",
-    age: "15-18 maanden", 
+    age: "9-12 maanden",
     features: [
       "Betere tong/lip coördinatie",
       "Gezichtsspier ontwikkeling",
@@ -68,65 +67,13 @@ const cupPhases = [
   },
   {
     phase: "Fase 4: Open Bekers",
-    age: "18+ maanden",
+    age: "Rond het eerste jaar",
     features: [
       "Volwassen drinktechniek",
       "Geen langdurig contact met tanden",
       "Zelfregulatie vloeistofinname",
       "Volledig begrip oorzaak-gevolg",
       "Normale volwassen/kind interactie"
-    ]
-  }
-];
-
-// Brand comparison data
-const premiumBrands = [
-  {
-    brand: "Tommee Tippee Closer to Nature",
-    price: "€8-15 per cup",
-    rating: "4.6/5",
-    availability: "Kruidvat, Etos, baby stores",
-    pros: [
-      "Compleet ecosysteem bekers",
-      "Bewezen overgang succespercentage",
-      "Brede Nederlandse distributie",
-      "Redelijke prijsstelling"
-    ],
-    cons: [
-      "Alleen plastic constructie",
-      "Kleppen soms lastig schoon te maken"
-    ]
-  },
-  {
-    brand: "Philips AVENT Overgang Serie",
-    price: "€10-18 per cup",
-    rating: "4.7/5", 
-    availability: "Hoogwaardige baby stores + online",
-    pros: [
-      "Hoogste kwaliteit materialen",
-      "Uitgebreid onderzoek als basis",
-      "Compatibel flessensysteem",
-      "Uitstekende Nederlandse service"
-    ],
-    cons: [
-      "Hoge prijsstelling",
-      "Beperkte kortingen beschikbaar"
-    ]
-  },
-  {
-    brand: "MAM Perfect Start Serie",
-    price: "€7-14 per cup",
-    rating: "4.5/5",
-    availability: "Breed Nederlandse netwerk", 
-    pros: [
-      "Focus op mondgezondheid",
-      "Compact + reisvriendelijk",
-      "Innovatieve kleptechnologie",
-      "Goede prijs-kwaliteitverhouding"
-    ],
-    cons: [
-      "Kleinere capaciteit dan concurrenten",
-      "Beperkte kleuropties in Nederland"
     ]
   }
 ];
@@ -252,31 +199,6 @@ const commonProblems = [
   }
 ];
 
-// Volume requirements by age
-const volumeRequirements = [
-  {
-    age: "10-12 maanden",
-    totalLiquid: "600-800ml/dag",
-    milkMinimum: "400-500ml/dag", 
-    water: "200-300ml/dag",
-    distribution: "60% milk, 40% water"
-  },
-  {
-    age: "12-15 maanden",
-    totalLiquid: "700-900ml/dag",
-    milkMinimum: "300-400ml/dag",
-    water: "400-500ml/dag", 
-    distribution: "45% milk, 55% water"
-  },
-  {
-    age: "15-18 maanden",
-    totalLiquid: "800-1000ml/dag",
-    milkMinimum: "250-350ml/dag",
-    water: "550-650ml/dag",
-    distribution: "35% milk, 65% water"
-  }
-];
-
 export default function OvergangNaarBekerPage() {
   // Sidebar configuration
   const sidebarImages = [
@@ -322,10 +244,17 @@ export default function OvergangNaarBekerPage() {
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed">
-                De overgang naar beker is een belangrijke mijlpaal die meestal tussen 10-18 maanden plaatsvindt. Het Nederlandse consultatiebureau adviseert starten rond 12 maanden.
-                Deze overgang ontwikkelt motorische vaardigheden, stimuleert mondhygiëne en bereidt je baby voor op zelfstandiger eten en drinken.
+                De overgang naar beker begint al vroeg. Het consultatiebureau en het Voedingscentrum adviseren om rond 6 maanden te beginnen met oefenen uit een (tuit)beker en de fles af te bouwen richting het eerste jaar.
+                Deze overgang ontwikkelt motorische vaardigheden, is beter voor het gebit en bereidt je baby voor op zelfstandiger eten en drinken.
                 Lees ook over <Link href="/kennisbank/voedingstechnieken/baby-leren-zelf-drinken" className="text-primary hover:underline font-medium">hoe je baby leert zelf drinken</Link> voor meer context.
               </p>
+              <div className="border-t border-gray-200 pt-6 mt-6">
+                <h3 className="font-medium text-primary mb-3">Waarom de fles op tijd afbouwen</h3>
+                <p className="text-gray-700 leading-relaxed">
+                  Laat de fles niet te lang gebruiken. Langdurig uit de fles drinken is minder goed voor het gebit en kan overgewicht in de hand werken.
+                  Maak daarom water uit een beker de vaste dorstlesser en gebruik de beker steeds vaker naarmate je baby richting het eerste jaar gaat.
+                </p>
+              </div>
             </section>
 
             {/* Wanneer overstappen */}
@@ -344,23 +273,23 @@ export default function OvergangNaarBekerPage() {
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                          <span className="text-gray-700 text-sm">Gewicht &gt;8kg (meestal 10-12 maanden)</span>
+                          <span className="text-gray-700 text-sm">Rond 6 maanden oud, klaar om te oefenen</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                          <span className="text-gray-700 text-sm">Stabiel zitten zonder ondersteuning</span>
+                          <span className="text-gray-700 text-sm">Stabiel zitten met of zonder steun</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                          <span className="text-gray-700 text-sm">Pincetgreep volledig ontwikkeld</span>
+                          <span className="text-gray-700 text-sm">Kan voorwerpen naar de mond brengen</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                          <span className="text-gray-700 text-sm">Kan slikken zonder zuigreflex</span>
+                          <span className="text-gray-700 text-sm">Kan slokjes nemen en slikken</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
-                          <span className="text-gray-700 text-sm">Houdt fles zelfstandig vast</span>
+                          <span className="text-gray-700 text-sm">Toont interesse in drinken uit een beker</span>
                         </li>
                       </ul>
                     </div>
@@ -370,19 +299,19 @@ export default function OvergangNaarBekerPage() {
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm">10-12 maanden: Training cups introductie</span>
+                          <span className="text-gray-600 text-sm">Rond 6 maanden: Oefenen uit een (tuit)beker</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm">12-15 maanden: Hoofddrank methode</span>
+                          <span className="text-gray-600 text-sm">6-9 maanden: Water leren drinken uit een beker</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm">15-18 maanden: Volledige competentie</span>
+                          <span className="text-gray-600 text-sm">9-12 maanden: Fles geleidelijk afbouwen</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-600 text-sm">18-24 maanden: Alle dranken uit beker</span>
+                          <span className="text-gray-600 text-sm">Rond 12 maanden: Melk en water uit een beker</span>
                         </li>
                       </ul>
                     </div>
@@ -390,51 +319,15 @@ export default function OvergangNaarBekerPage() {
                 </div>
 
                 <div>
-                  <h3 className="font-medium text-primary mb-3">Nederlandse overgang statistieken</h3>
-                  <div className="overflow-x-auto">
-                    <table className="w-full border-collapse border border-gray-300">
-                      <thead>
-                        <tr className="bg-white">
-                          <th className="border border-gray-300 px-4 py-2 text-left">Leeftijd</th>
-                          <th className="border border-gray-300 px-4 py-2 text-left">Gestart</th>
-                          <th className="border border-gray-300 px-4 py-2 text-left">Competent</th>
-                          <th className="border border-gray-300 px-4 py-2 text-left">Volledig</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td className="border border-gray-300 px-4 py-2 font-medium">10 maanden</td>
-                          <td className="border border-gray-300 px-4 py-2">15%</td>
-                          <td className="border border-gray-300 px-4 py-2">2%</td>
-                          <td className="border border-gray-300 px-4 py-2">0%</td>
-                        </tr>
-                        <tr className="bg-white">
-                          <td className="border border-gray-300 px-4 py-2 font-medium">12 maanden</td>
-                          <td className="border border-gray-300 px-4 py-2">65%</td>
-                          <td className="border border-gray-300 px-4 py-2">25%</td>
-                          <td className="border border-gray-300 px-4 py-2">5%</td>
-                        </tr>
-                        <tr>
-                          <td className="border border-gray-300 px-4 py-2 font-medium">15 maanden</td>
-                          <td className="border border-gray-300 px-4 py-2">85%</td>
-                          <td className="border border-gray-300 px-4 py-2">70%</td>
-                          <td className="border border-gray-300 px-4 py-2">35%</td>
-                        </tr>
-                        <tr className="bg-white">
-                          <td className="border border-gray-300 px-4 py-2 font-medium">18 maanden</td>
-                          <td className="border border-gray-300 px-4 py-2">95%</td>
-                          <td className="border border-gray-300 px-4 py-2">90%</td>
-                          <td className="border border-gray-300 px-4 py-2">75%</td>
-                        </tr>
-                        <tr>
-                          <td className="border border-gray-300 px-4 py-2 font-medium">24 maanden</td>
-                          <td className="border border-gray-300 px-4 py-2">99%</td>
-                          <td className="border border-gray-300 px-4 py-2">98%</td>
-                          <td className="border border-gray-300 px-4 py-2">95%</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+                  <h3 className="font-medium text-primary mb-3">Wat mag je verwachten</h3>
+                  <p className="text-gray-700 mb-3">
+                    De meeste baby's beginnen rond 6 maanden met oefenen uit een beker en drinken rond hun eerste verjaardag melk en water uit een beker.
+                    Bouw de fles in de tweede helft van het eerste jaar geleidelijk af. Laat de fles niet te lang gebruiken, want dat is minder goed voor het gebit en kan overgewicht in de hand werken.
+                  </p>
+                  <p className="text-gray-700">
+                    Elke baby ontwikkelt zich in eigen tempo. De ene baby heeft de beker snel onder de knie, de andere heeft er wat meer tijd voor nodig.
+                    Kijk naar je eigen kind en houd de richtlijnen aan als globaal kompas, niet als strakke deadline.
+                  </p>
                 </div>
 
                 <div>
@@ -498,7 +391,7 @@ export default function OvergangNaarBekerPage() {
                   
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-medium text-gray-700 mb-2">Fase 1: Trainingsbekers (10-12 maanden)</h4>
+                      <h4 className="font-medium text-gray-700 mb-2">Fase 1: Trainingsbekers (rond 6 maanden)</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -520,7 +413,7 @@ export default function OvergangNaarBekerPage() {
                     </div>
                     
                     <div>
-                      <h4 className="font-medium text-gray-700 mb-2">Fase 2: Tuitbekers (12-15 maanden)</h4>
+                      <h4 className="font-medium text-gray-700 mb-2">Fase 2: Tuitbekers (6-9 maanden)</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -542,7 +435,7 @@ export default function OvergangNaarBekerPage() {
                     </div>
                     
                     <div>
-                      <h4 className="font-medium text-gray-700 mb-2">Fase 3: Rietjesbekers (15-18 maanden)</h4>
+                      <h4 className="font-medium text-gray-700 mb-2">Fase 3: Rietjesbekers (9-12 maanden)</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -564,7 +457,7 @@ export default function OvergangNaarBekerPage() {
                     </div>
                     
                     <div>
-                      <h4 className="font-medium text-gray-700 mb-2">Fase 4: Open Bekers (18+ maanden)</h4>
+                      <h4 className="font-medium text-gray-700 mb-2">Fase 4: Open Bekers (rond het eerste jaar)</h4>
                       <ul className="space-y-1">
                         <li className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
@@ -665,46 +558,6 @@ export default function OvergangNaarBekerPage() {
                             <li className="flex items-center space-x-2">
                               <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                               <span className="text-gray-600">Beperkte kortingen beschikbaar</span>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    
- <div className="p-4">
-                      <h4 className="font-medium text-gray-700 mb-2">IKEA BÖRJA Serie (€2-6) - Budget optie</h4>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        <div>
-                          <p className="text-sm text-gray-600 mb-1">Voordelen:</p>
-                          <ul className="text-sm space-y-1">
-                            <li className="flex items-center space-x-2">
-                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                              <span className="text-gray-600">Uitstekende prijs-kwaliteit verhouding</span>
-                            </li>
-                            <li className="flex items-center space-x-2">
-                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                              <span className="text-gray-600">Duurzame materialen focus</span>
-                            </li>
-                            <li className="flex items-center space-x-2">
-                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                              <span className="text-gray-600">Scandinavisch design</span>
-                            </li>
-                            <li className="flex items-center space-x-2">
-                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                              <span className="text-gray-600">Breed beschikbaar Nederland</span>
-                            </li>
-                          </ul>
-                        </div>
-                        <div>
-                          <p className="text-sm text-gray-600 mb-1">Nadelen:</p>
-                          <ul className="text-sm space-y-1">
-                            <li className="flex items-center space-x-2">
-                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                              <span className="text-gray-600">Basisfuncties alleen</span>
-                            </li>
-                            <li className="flex items-center space-x-2">
-                              <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                              <span className="text-gray-600">Beperkte anti-mors technologie</span>
                             </li>
                           </ul>
                         </div>
@@ -1164,7 +1017,7 @@ export default function OvergangNaarBekerPage() {
               <div className="space-y-4">
                 <div>
                   <h3 className="font-medium text-gray-700 mb-2">Wanneer moet ik beginnen met de overgang naar beker?</h3>
-                  <p className="text-gray-600 text-sm">Het Nederlandse consultatiebureau adviseert te starten tussen 10-12 maanden, wanneer baby stabiel zit, goede hand-oog coördinatie heeft en interesse toont in volwassen drinkgedrag.</p>
+                  <p className="text-gray-600 text-sm">Het consultatiebureau en het Voedingscentrum adviseren om al rond 6 maanden te beginnen met oefenen uit een (tuit)beker en de fles af te bouwen richting het eerste jaar. Begin wanneer je baby stabiel zit en interesse toont in drinken uit een beker.</p>
                 </div>
                 
                 <div>
@@ -1174,7 +1027,7 @@ export default function OvergangNaarBekerPage() {
                 
                 <div>
                   <h3 className="font-medium text-gray-700 mb-2">Welke beker is het beste om mee te beginnen?</h3>
-                  <p className="text-gray-600 text-sm">Start met een training cup met zachte tuit en handvatten. Tommee Tippee, AVENT en MAM hebben goede overgangsseries. IKEA biedt betaalbare alternatieven.</p>
+                  <p className="text-gray-600 text-sm">Start met een trainingsbeker met zachte tuit en handvatten. Tommee Tippee, AVENT en MAM hebben goede overgangsseries.</p>
                 </div>
                 
                 <div>

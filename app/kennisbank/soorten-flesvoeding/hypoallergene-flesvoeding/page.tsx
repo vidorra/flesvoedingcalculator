@@ -47,7 +47,7 @@ export default function HypoallergeneVoedingPage() {
       brand: 'Nutrilon HA',
       type: 'Preventieve HA',
       price: '€16-18/800g',
-      effectiviteit: '50% minder allergie risico',
+      effectiviteit: 'Geen bewezen allergiepreventie',
       pros: ['Nederlandse ontwikkeling', 'PronutriPlus prebiotica', 'Breed verkrijgbaar'],
       cons: ['Duurder dan gewone voeding', 'Bittere smaak']
     },
@@ -55,7 +55,7 @@ export default function HypoallergeneVoedingPage() {
       brand: 'Hero Baby HA',
       type: 'Preventieve HA',
       price: '€14-16/800g',
-      effectiviteit: 'Bewezen allergie preventie',
+      effectiviteit: 'Geen bewezen allergiepreventie',
       pros: ['Beste prijs-kwaliteit', 'Milde smaak', 'Zwitserse kwaliteit'],
       cons: ['Minder breed verkrijgbaar', 'Beperkte varianten']
     },
@@ -70,8 +70,8 @@ export default function HypoallergeneVoedingPage() {
   ]
 
   const riskFactors = [
-    'Beide ouders allergie (60% kans)',
-    'Een ouder + broer/zus allergie (40% kans)',
+    'Beide ouders allergie (sterk verhoogd risico)',
+    'Een ouder + broer/zus allergie (verhoogd risico)',
     'Familie eczeem/astma geschiedenis',
     'Premature geboorte',
     'Antibiotica vroeg levensjaar',
@@ -110,8 +110,10 @@ export default function HypoallergeneVoedingPage() {
                 Hypoallergene Flesvoeding: Complete Medische Gids
               </h1>
               <p className="text-gray-500 leading-relaxed">
-                Hypoallergene flesvoeding kan levensreddend zijn voor baby's met koemelkallergie. Leer wanneer HA-voeding nodig is, 
-                welke Nederlandse merken werken, en hoe je veilig overstapt met medische begeleiding.
+                Standaard partieel gehydrolyseerde (HA) voeding is bedoeld als milde variant en is niet geschikt als behandeling
+                van een vastgestelde koemelkallergie. Bij een echte koemelkallergie schrijft de arts sterk gehydrolyseerde voeding (eHF)
+                of aminozuurvoeding op recept voor. Leer wanneer welke voeding nodig is, welke Nederlandse merken er zijn,
+                en hoe je veilig overstapt met medische begeleiding.
               </p>
             </div>
 
@@ -125,8 +127,13 @@ export default function HypoallergeneVoedingPage() {
               <div className="mb-6">
                 <h3 className="font-medium text-primary mb-3">2-3% van Nederlandse baby's ontwikkelt koemelkallergie</h3>
                 <p className="text-gray-700 mb-4">
-                  Voor deze groep is hypoallergene (HA) flesvoeding niet alleen een voorkeur - het is een medische noodzaak
-                  die ernstige <Link href="/kennisbank/problemen-oplossen/allergische-reacties-flesvoeding" className="text-primary hover:underline font-medium">allergische reacties</Link> kan voorkomen. Let ook op <Link href="/kennisbank/problemen-oplossen/krampjes-na-flesvoeding" className="text-primary hover:underline font-medium">krampjes na flesvoeding</Link>, dit kan een teken zijn van een allergie.
+                  Bij een vastgestelde koemelkallergie is standaard HA-voeding niet voldoende. Daarvoor is sterk gehydrolyseerde
+                  voeding (eHF) of aminozuurvoeding op recept nodig, op advies van een arts, die ernstige <Link href="/kennisbank/problemen-oplossen/allergische-reacties-flesvoeding" className="text-primary hover:underline font-medium">allergische reacties</Link> kan voorkomen. Let ook op <Link href="/kennisbank/problemen-oplossen/krampjes-na-flesvoeding" className="text-primary hover:underline font-medium">krampjes na flesvoeding</Link>, dit kan een teken zijn van een allergie.
+                </p>
+                <p className="text-gray-700 mb-4">
+                  Partieel gehydrolyseerde (HA) voeding heeft volgens de huidige inzichten geen bewezen preventief effect op het
+                  ontstaan van allergie. HA-voeding is bedoeld als milde variant; bij een echte koemelkallergie schrijft de arts
+                  sterk gehydrolyseerde of aminozuurvoeding voor.
                 </p>
               </div>
 
@@ -311,7 +318,7 @@ export default function HypoallergeneVoedingPage() {
                       </div>
                       <div className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
-                        <span>Medicijnbaby: altijd eerst medisch overleg</span>
+                        <span>Baby die medicijnen gebruikt: altijd eerst medisch overleg</span>
                       </div>
                       <div className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-amber-600 rounded-full mt-2 flex-shrink-0"></div>
@@ -367,7 +374,7 @@ export default function HypoallergeneVoedingPage() {
                 <div className="text-sm text-gray-700 space-y-1">
                   <div><strong>Bekende allergieën:</strong> Koemelk</div>
                   <div><strong>Toegestane voeding:</strong> [HA-merk] + borstvoeding</div>
-                  <div><strong>Bij reactie:</strong> Stop voeding  Bel ouders  Bij ernstig: 112</div>
+                  <div><strong>Bij reactie:</strong> Stop voeding → Bel ouders → Bij ernstig: 112</div>
                   <div><strong>Kinderarts:</strong> [naam + telefoon]</div>
                 </div>
               </div>

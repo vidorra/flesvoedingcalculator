@@ -7,7 +7,7 @@ import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
   title: 'Juiste Temperatuur Controleren: Veilig en Comfortabel Voeden',
-  description: 'Complete gids voor perfecte flesvoeding temperatuur - van meten tot aanpassen. Leer hoe je 37°C bereikt met verschillende meetmethoden.',
+  description: 'Complete gids voor perfecte flesvoeding temperatuur, van meten tot aanpassen. Leer hoe je de fles op 30 à 35°C brengt en de temperatuur test op je pols.',
   keywords: 'flesvoeding temperatuur, baby melk temperatuur, thermometer baby, pols test, veilige voeding temperatuur',
 }
 
@@ -67,22 +67,18 @@ export default function JuisteTemperatuurControleren() {
             </section>
 
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">De perfecte temperatuur: 37°C</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">De perfecte temperatuur: 30 à 35°C</h2>
 
               <div className="space-y-6">
                 <div>
-                <h3 className="font-medium text-primary mb-3">Waarom lichaamstemperatuur ideaal is</h3>
+                <h3 className="font-medium text-primary mb-3">Waarom ongeveer lichaamstemperatuur prettig is</h3>
 
                 <div className="mb-4">
-                  <h4 className="font-medium text-gray-700 mb-2">37°C: Het natuurlijke referentiepunt</h4>
+                  <h4 className="font-medium text-gray-700 mb-2">Ongeveer even warm als je huid</h4>
                   <ul className="space-y-2">
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-700"><strong>Moedermelk temperatuur</strong>: Komt direct uit het lichaam op 37°C</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-700"><strong>Optimale opname</strong>: Voedingsstoffen worden best opgenomen</span>
+                      <span className="text-gray-700"><strong>Lijkt op moedermelk</strong>: Voelt ongeveer even warm als je huid</span>
                     </li>
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -90,31 +86,19 @@ export default function JuisteTemperatuurControleren() {
                     </li>
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-700"><strong>Natuurlijk gevoel</strong>: Bootst borstvoeding perfect na</span>
+                      <span className="text-gray-700"><strong>Niet warmer dan nodig</strong>: Boven 35°C stijgt het risico op verbranden</span>
+                    </li>
+                    <li className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                      <span className="text-gray-700"><strong>Natuurlijk gevoel</strong>: Sluit aan bij borstvoeding</span>
                     </li>
                   </ul>
                 </div>
 
                 <div>
-                  <h4 className="font-medium text-gray-700 mb-2">Wetenschappelijke onderbouwing</h4>
-                  <ul className="space-y-2">
-                    <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-700"><strong>Nederlandse onderzoeken</strong>: UMCG toonde aan dat 37°C optimale vertering geeft</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-700"><strong>Europese richtlijnen</strong>: EU voedingsveiligheid adviseert 35-40°C als veilige range</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-700"><strong>TNO studies</strong>: Baby's accepteren 37°C het best, minder stress</span>
-                    </li>
-                    <li className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      <span className="text-gray-700"><strong>Consultatiebureau consensus</strong>: Alle Nederlandse JGZ centra hanteren 37°C als standaard</span>
-                    </li>
-                  </ul>
+                  <p className="text-gray-700 leading-relaxed">
+                    De juiste temperatuur is ongeveer lichaamstemperatuur. Het Voedingscentrum adviseert de fles op te warmen tot 30 à 35°C en de temperatuur te testen met een druppel op de binnenkant van je pols: voelt het ongeveer even warm als je huid, dan is het goed. Warmer dan 35°C is niet nodig en vergroot het risico op verbranden.
+                  </p>
                 </div>
               </div>
 
@@ -127,19 +111,19 @@ export default function JuisteTemperatuurControleren() {
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700"><strong>Ideaal</strong>: 37°C (lichaamstemperatuur)</span>
+                        <span className="text-gray-700"><strong>Advies</strong>: 30 à 35°C, ongeveer even warm als je huid</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700"><strong>Veilig bereik</strong>: 35-40°C</span>
+                        <span className="text-gray-700"><strong>Referentie</strong>: 37°C is lichaamstemperatuur, geen streefgetal</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700"><strong>Minimum</strong>: 32°C (kouder wordt slecht geaccepteerd)</span>
+                        <span className="text-gray-700"><strong>Testen</strong>: Een druppel op de binnenkant van je pols</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700"><strong>Maximum</strong>: 42°C (warmer wordt gevaarlijk)</span>
+                        <span className="text-gray-700"><strong>Niet warmer</strong>: Boven 35°C stijgt het risico op verbranden</span>
                       </li>
                     </ul>
                   </div>
@@ -149,11 +133,11 @@ export default function JuisteTemperatuurControleren() {
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
                         <span className="text-gray-600"></span>
-                        <span className="text-gray-700"><strong>Boven 45°C</strong>: Risico op brandwonden mond en keel</span>
+                        <span className="text-gray-700"><strong>Te heet</strong>: Warmer dan 35°C vergroot het risico op verbranden</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <span className="text-gray-600"></span>
-                        <span className="text-gray-700"><strong>Onder 30°C</strong>: Slechte opname voedingsstoffen, baby weigert</span>
+                        <span className="text-gray-700"><strong>Te koud</strong>: Koude melk wordt vaak slechter geaccepteerd</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <span className="text-gray-600"></span>
@@ -279,11 +263,11 @@ export default function JuisteTemperatuurControleren() {
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700"><strong>Prijs</strong>: €5-15</span>
+                          <span className="text-gray-700"><strong>Prijs</strong>: €5-15 (indicatief)</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700"><strong>Nauwkeurigheid</strong>: ±0,1°C</span>
+                          <span className="text-gray-700"><strong>Nauwkeurigheid</strong>: rond ±0,1°C, afhankelijk van model</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -305,11 +289,11 @@ export default function JuisteTemperatuurControleren() {
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700"><strong>Prijs</strong>: €15-25</span>
+                          <span className="text-gray-700"><strong>Prijs</strong>: €15-25 (indicatief)</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700"><strong>Nauwkeurigheid</strong>: ±0,2°C</span>
+                          <span className="text-gray-700"><strong>Nauwkeurigheid</strong>: rond ±0,2°C, afhankelijk van model</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -625,11 +609,11 @@ export default function JuisteTemperatuurControleren() {
                     </div>
 
                     <div className="bg-amber-50 rounded-xl border border-amber-200 p-4">
-                      <h4 className="font-medium text-amber-800 mb-2">ABSOLUUT NIET doen:</h4>
+                      <h4 className="font-medium text-amber-800 mb-2">Let op bij opwarmen:</h4>
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <span className="text-gray-600"></span>
-                          <span className="text-gray-700"><strong>Magnetron</strong>: Creëert gevaarlijke hot spots</span>
+                          <span className="text-gray-700"><strong>Magnetron</strong>: Mag, mits je op maximaal 600 Watt opwarmt, de fles daarna goed schudt of zwenkt en de temperatuur test op je pols. Doe je dat niet, dan ontstaan hete plekken in de melk die de mond kunnen verbranden.</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <span className="text-gray-600"></span>
@@ -663,7 +647,7 @@ export default function JuisteTemperatuurControleren() {
                       <ul className="space-y-2">
                         <li className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
-                          <span className="text-gray-700"><strong>Te hete melk</strong>: Boven 45°C direct gevaarlijk</span>
+                          <span className="text-gray-700"><strong>Te hete melk</strong>: Warmer dan nodig vergroot het risico op verbranden</span>
                         </li>
                         <li className="flex items-start space-x-2">
                           <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
@@ -761,11 +745,11 @@ export default function JuisteTemperatuurControleren() {
                         </li>
                         <li className="flex items-center space-x-2">
                           <span className="text-gray-600"></span>
-                          <span className="text-gray-700"><strong>Juiste temperatuur</strong>: Direct op 37°C brengen</span>
+                          <span className="text-gray-700"><strong>Juiste temperatuur</strong>: Opwarmen tot 30 à 35°C</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <span className="text-gray-600"></span>
-                          <span className="text-gray-700"><strong>Snel consumeren</strong>: Binnen 1 uur na bereiding</span>
+                          <span className="text-gray-700"><strong>Vers gebruiken</strong>: Een verse fles direct geven; vooraf bereide voeding maximaal 8 uur bewaren in de koelkast bij 4°C</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <span className="text-gray-600"></span>
@@ -846,11 +830,11 @@ export default function JuisteTemperatuurControleren() {
                     <ul className="space-y-2">
                       <li className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700"><strong>37°C is ideaal</strong>: Lichaamstemperatuur voor optimaal comfort</span>
+                        <span className="text-gray-700"><strong>30 à 35°C is het advies</strong>: Ongeveer even warm als je huid</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700"><strong>35-40°C is veilig</strong>: Acceptabel bereik voor baby's</span>
+                        <span className="text-gray-700"><strong>Test op je pols</strong>: Een druppel op de binnenkant van je pols</span>
                       </li>
                       <li className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>

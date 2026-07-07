@@ -59,9 +59,9 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
     },
     {
       component: 'IJzer',
-      startvoeding: '0.5-1.0mg/100ml',
-      opvolgmelk: '4.0-6.0mg/100ml',
-      verschil: '6x meer ijzer'
+      startvoeding: '0.5-0.8mg/100ml',
+      opvolgmelk: 'ongeveer 1,0-1,3 mg/100ml',
+      verschil: 'ongeveer 1,5-2x meer ijzer'
     },
     {
       component: 'Calcium',
@@ -94,7 +94,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
           costPerLiter: '€1.15',
           features: ['PronutriPlus (prebiotica + nucleotiden)', 'Nederlandse R&D (40 jaar ervaring)', 'Immunofortis voor afweersysteem'],
           availability: 'Alle supermarkten, drogisterijen',
-          marketShare: '45% Nederlandse markt'
+          marketShare: 'Groot marktaandeel (schatting)'
         },
         {
           name: 'Hero Baby 1',
@@ -103,7 +103,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
           costPerLiter: '€0.95',
           features: ['Swiss kwaliteit sinds 1886', 'Natuurlijke prebiotica (GOS/FOS)', 'Geen palmitinezuur'],
           availability: 'Supermarkten, online',
-          marketShare: '25% Nederlandse markt'
+          marketShare: 'Aanzienlijk marktaandeel (schatting)'
         },
         {
           name: 'Kruidvat Zuigelingenmelk 1',
@@ -112,7 +112,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
           costPerLiter: '€0.75',
           features: ['Beste prijs/kwaliteit Nederland', 'Zelfde EU-standaarden als duurdere merken', 'Lactosevrije variant beschikbaar'],
           availability: 'Kruidvat winkels',
-          marketShare: '15% Nederlandse markt'
+          marketShare: 'Groeiend marktaandeel (schatting)'
         }
       ]
     },
@@ -124,7 +124,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
           rating: 5,
           price: '€12.50-14.00 per 800g',
           costPerLiter: '€1.05',
-          features: ['+50% meer ijzer (6.2mg vs 4.1mg)', '+30% meer eiwit', 'Vanille smaakje toegevoegd'],
+          features: ['Iets meer ijzer dan startvoeding (rond 1,2 mg/100ml)', 'Iets meer eiwit', 'Vanille smaakje toegevoegd'],
           availability: 'Geleidelijk over 1 week',
           marketShare: 'Marktleider'
         },
@@ -133,7 +133,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
           rating: 4,
           price: '€9.50-11.00 per 800g',
           costPerLiter: '€0.85',
-          features: ['Iron+ formule (5.8mg ijzer)', 'Calcium boost voor botjes', 'Iets zoetere smaak'],
+          features: ['Iets meer ijzer dan startvoeding (rond 1,2 mg/100ml)', 'Calcium boost voor botjes', 'Iets zoetere smaak'],
           availability: '15% goedkoper dan nummer 1',
           marketShare: 'Tweede plaats'
         },
@@ -285,16 +285,16 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
 
   const expertRecommendations = [
     {
-      organization: 'JGZ Nederland Officieel Standpunt',
-      recommendation: 'Startvoeding voorziet in alle behoeften tot 12 maanden. Opvolgmelk kan voordelig zijn bij verhoogd ijzertekort risico, beperkte vaste voeding inname na 8 maanden, of specifieke groeicurve zorgen.'
+      organization: 'Jeugdgezondheidszorg (JGZ)',
+      recommendation: 'Over het algemeen voorziet startvoeding in alle behoeften tot 12 maanden. Opvolgmelk kan voordelig zijn bij een verhoogd risico op ijzertekort, beperkte inname van vaste voeding na 8 maanden, of specifieke zorgen rond de groeicurve.'
     },
     {
-      organization: 'Nederlandse Vereniging voor Kindergeneeskunde (NVK)',
-      recommendation: 'Medische indicaties voor overstap: IJzergebreksanemie, groeistoornissen, prematuriteit. NIET routinematig bij alle baby\'s van 6 maanden.'
+      organization: 'Kindergeneeskunde',
+      recommendation: 'Medische redenen om over te stappen zijn onder meer ijzergebreksanemie, groeistoornissen en prematuriteit. Een overstap is niet routinematig nodig bij alle baby\'s van 6 maanden.'
     },
     {
-      organization: 'Voedingscentrum Nederland',
-      recommendation: 'Zowel startvoeding als opvolgmelk zijn veilig. Keuze mag gebaseerd zijn op praktische overwegingen, baby\'s acceptatie, ouder voorkeur, of medische indicaties.'
+      organization: 'Voedingscentrum',
+      recommendation: 'Zowel startvoeding als opvolgmelk zijn veilig. De keuze mag gebaseerd zijn op praktische overwegingen, de acceptatie door de baby, de voorkeur van de ouders, of medische redenen.'
     }
   ]
 
@@ -682,7 +682,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
                 {expertRecommendations.map((expert, index) => (
                   <div key={index} className="p-4 mb-4">
                     <h3 className="font-medium text-primary mb-2">{expert.organization}</h3>
-                    <p className="text-sm text-gray-700 italic">"{expert.recommendation}"</p>
+                    <p className="text-sm text-gray-700">{expert.recommendation}</p>
                   </div>
                 ))}
               </div>
@@ -725,7 +725,7 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
 
             {/* Conclusion */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Conclusie: Informed Choice, Not Pressure</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Conclusie: een bewuste keuze, geen druk</h2>
               
               <p className="text-gray-700 mb-4">
                 Het verschil tussen startvoeding en opvolgmelk is <strong>minder groot dan marketing doet geloven</strong>.

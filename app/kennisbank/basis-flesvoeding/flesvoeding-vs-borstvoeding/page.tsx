@@ -34,7 +34,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
     "53% van de baby's start bij de geboorte met borstvoeding (NCJ/TNO Peiling Melkvoeding 2023).",
     "Een groot deel van de baby's krijgt rond 6 maanden (deels) flesvoeding.",
     "Veel ouders combineren borst- en flesvoeding.",
-    "35% geeft uitsluitend flesvoeding na 3 maanden"
+    "Een deel van de ouders geeft na de eerste maanden uitsluitend flesvoeding."
   ]
 
   const voedingswaarden = [
@@ -42,7 +42,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
     { component: "Koolhydraten", borst: "6.7-7.8g/100ml", fles: "7.0-7.5g/100ml", opmerking: "Vergelijkbaar" },
     { component: "Vetten", borst: "3.2-3.6g/100ml", fles: "3.4-3.7g/100ml", opmerking: "Vergelijkbaar" },
     { component: "IJzer", borst: "0.04mg/100ml", fles: "0.5-1.0mg/100ml", opmerking: "Flesvoeding veel hoger" },
-    { component: "DHA", borst: "Variabel", fles: "Verplicht 100mg/100ml", opmerking: "Flesvoeding consistenter" },
+    { component: "DHA", borst: "Variabel", fles: "Verplicht 20-50 mg per 100 kcal", opmerking: "Flesvoeding consistenter" },
     { component: "Vitamine D", borst: "0-2.5μg/100ml", fles: "10-25μg/100ml", opmerking: "Flesvoeding hoger" }
   ]
 
@@ -136,8 +136,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
                   <strong>Duur exclusieve borstvoeding:</strong> De duur van exclusieve borstvoeding verschilt sterk per gezin.
                 </p>
                 <p className="text-sm text-gray-600 mt-2">
-                  Nederland scoort gemiddeld vergeleken met andere Europese landen
-                  (Noorwegen: 95%, Frankrijk: 60%, EU gemiddeld: 78% borstvoeding op 6 maanden). Veel ouders kiezen voor een <Link href="/kennisbank/basis-flesvoeding/overstappen-van-borst-naar-fles" className="text-primary hover:underline font-medium">geleidelijke overstap van borst naar fles</Link>.
+                  In sommige landen wordt gemiddeld langer borstvoeding gegeven dan in andere. Veel ouders kiezen voor een <Link href="/kennisbank/basis-flesvoeding/overstappen-van-borst-naar-fles" className="text-primary hover:underline font-medium">geleidelijke overstap van borst naar fles</Link>.
                 </p>
               </div>
             </div>
@@ -443,37 +442,15 @@ export default function FlesvoedingVsBorstvoedingPage() {
             <h2 className="text-lg font-medium text-primary mb-4">Langetermijn ontwikkeling: Onderzoek resultaten</h2>
 
             <div>
-              <h3 className="font-medium text-primary mb-4">Nederlandse longitudinale studies (2020-2024)</h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <h4 className="font-medium text-gray-700 mb-2">Cognitieve ontwikkeling (5 jaar)</h4>
-                  <p className="text-gray-600">Borstvoeding 6+ maanden: IQ 101.2</p>
-                  <p className="text-gray-600">Flesvoeding vanaf geboorte: IQ 100.8</p>
-                  <p className="text-xs font-medium text-gray-700 mt-2">Verschil: 0.4 punt (niet significant)</p>
-                </div>
-                
-                <div className="text-center">
-                  <h4 className="font-medium text-gray-700 mb-2">Sociale-emotionele ontwikkeling</h4>
-                  <p className="text-gray-600">Geen verschil in gehechtheid op 2 jaar</p>
-                  <p className="text-gray-600">Geen verschil in gedragsproblemen</p>
-                  <p className="text-xs font-medium text-gray-700 mt-2">Geen significant verschil</p>
-                </div>
-                
-                <div className="text-center">
-                  <h4 className="font-medium text-gray-700 mb-2">Fysieke gezondheid</h4>
-                  <p className="text-gray-600">Infecties eerste 2 jaar: 15% meer bij flesvoeding</p>
-                  <p className="text-gray-600">Allergieën: 8% hoger bij flesvoeding</p>
-                  <p className="text-xs font-medium text-gray-700 mt-2">Kleine maar meetbare verschillen</p>
-                </div>
-              </div>
-              
-              <div className="mt-6 p-4">
-                <p className="text-gray-600">
-                  <strong>Onderzoek conclusie:</strong> Langetermijn verschillen zijn kleiner dan vaak gedacht. 
-                  Sociaal-economische factoren hebben meer invloed dan voedingsmethode.
-                </p>
-              </div>
+              <p className="text-gray-700 mb-4">
+                Borstvoeding heeft aangetoonde gezondheidsvoordelen (o.a. antistoffen en een lager risico op infecties),
+                maar goede flesvoeding is een veilig en volwaardig alternatief. Verschillen op de lange termijn zijn klein
+                en moeilijk los te zien van andere factoren.
+              </p>
+              <p className="text-gray-600">
+                <strong>Belangrijk:</strong> Sociaal-economische en gezinsfactoren hebben doorgaans meer invloed op de
+                ontwikkeling van een kind dan de voedingsmethode zelf.
+              </p>
             </div>
         </div>
 
@@ -490,7 +467,7 @@ export default function FlesvoedingVsBorstvoedingPage() {
                   <h3 className="font-medium text-primary mb-4">{factor.factor}</h3>
                   <ul className="space-y-2">
                     {factor.criteria.map((criterion, criterionIndex) => (
-                      <li key={index} className="flex items-center space-x-2">
+                      <li key={criterionIndex} className="flex items-center space-x-2">
                         <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                         <span className="text-gray-700">{criterion}</span>
                       </li>

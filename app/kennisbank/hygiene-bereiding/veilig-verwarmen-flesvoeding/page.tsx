@@ -7,15 +7,15 @@ import { Zap, AlertTriangle, Thermometer, CheckCircle, Clock, RefreshCw, ArrowRi
 export const metadata = {
   title: 'Veilig verwarmen van flesvoeding: Complete Nederlandse gids 2026',
   description: 'Flesvoeding veilig verwarmen voorkomt brandwonden en behoudt voedingsstoffen. Vergelijking alle verwarmingsmethodes en praktische tips voor Nederlandse ouders.',
-  keywords: 'flesvoeding verwarmen, veilig verwarmen melk, flessenwarmer, waterpad, magnetron gevaar, baby brandwonden voorkomen'
+  keywords: 'flesvoeding verwarmen, veilig verwarmen melk, flessenwarmer, waterbad, magnetron gevaar, baby brandwonden voorkomen'
 }
 
 export default function VeiligVerwarmenFlesvoedingPage() {
   const sidebarImages = [
     {
       src: "/flesvoeding.webp",
-      alt: "Flesvoeding verwarmen in waterpad",
-      caption: "Veilige waterpad methode voor gelijkmatige verhitting"
+      alt: "Flesvoeding verwarmen in waterbad",
+      caption: "Veilige waterbad methode voor gelijkmatige verhitting"
     },
     {
       src: "/kunstvoeding.webp", 
@@ -70,8 +70,8 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                       <AlertTriangle className="w-5 h-5 text-amber-600" />
                     </div>
                     <div>
-                      <h3 className="font-medium text-amber-800 mb-2">Let op - Kritieke veiligheidsrisico's</h3>
-                      <p className="text-amber-700 leading-relaxed">Baby's mondje is extreem gevoelig. Temperaturen boven 40°C kunnen brandwonden veroorzaken, terwijl boven 60°C tweede-graads brandwonden en permanente schade aan smaakpapillen mogelijk zijn.</p>
+                      <h3 className="font-medium text-amber-800 mb-2">Let op - temperatuur</h3>
+                      <p className="text-amber-700 leading-relaxed">Baby's mondje is gevoelig. Melk die te heet is (ruim boven lichaamstemperatuur) kan de mond verbranden. Warm daarom op tot 30 à 35°C, niet warmer, en test altijd op je pols.</p>
                     </div>
                   </div>
                 </div>
@@ -88,39 +88,22 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                         </li>
                         <li className="flex items-center space-x-2">
                           <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
-                          <span className="text-gray-700 text-sm">Interne brandwonden mogelijk</span>
+                          <span className="text-gray-700 text-sm">Te hete melk verbrandt de mond</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
-                          <span className="text-gray-700 text-sm">Tweede-graads bij &gt;60°C</span>
+                          <span className="text-gray-700 text-sm">Warm op tot 30 à 35°C, niet warmer</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
-                          <span className="text-gray-700 text-sm">Permanente smaakpapil schade</span>
+                          <span className="text-gray-700 text-sm">Test altijd op je pols</span>
                         </li>
                       </ul>
                     </div>
                     
                     <div>
                       <h4 className="font-medium text-primary mb-2">Voedingsstoffen behouden:</h4>
-                      <ul className="space-y-1">
-                        <li className="flex items-center space-x-2">
-                          <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
-                          <span className="text-gray-700 text-sm">Vitamines B en C vernietigd</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                          <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
-                          <span className="text-gray-700 text-sm">Probiotica sterven af &gt;45°C</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                          <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
-                          <span className="text-gray-700 text-sm">Eiwitstructuur verandert</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                          <AlertTriangle className="w-4 h-4 text-primary flex-shrink-0" />
-                          <span className="text-gray-700 text-sm">Enzymen worden inactief</span>
-                        </li>
-                      </ul>
+                      <p className="text-gray-700 text-sm">Te heet opwarmen kan voedingsstoffen aantasten; warm daarom niet warmer op dan nodig (30 à 35°C).</p>
                     </div>
                     
                     <div>
@@ -145,7 +128,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
 
  <div className="p-4">
                   <h3 className="font-medium text-primary mb-2">Ideale drinktemperatuur</h3>
-                  <p className="text-gray-700"><strong>35-37°C (lichaamstemperatuur)</strong> - voelt lauwwarm aan op je pols</p>
+                  <p className="text-gray-700"><strong>30 à 35°C (rond lichaamstemperatuur)</strong>, niet warmer, voelt lauwwarm aan op je pols</p>
                 </div>
               </div>
             </div>
@@ -161,8 +144,8 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                       <AlertTriangle className="w-5 h-5 text-amber-600" />
                     </div>
                     <div>
-                      <h3 className="font-medium text-amber-800 mb-2">Nederlandse veiligheidswaarschuwing</h3>
-                      <p className="text-amber-700 leading-relaxed">De Nederlandse Vereniging voor Kindergeneeskunde en het Voedingscentrum raden het gebruik van magnetrons voor flesvoeding ten strengste af.</p>
+                      <h3 className="font-medium text-amber-800 mb-2">Let op bij magnetrongebruik</h3>
+                      <p className="text-amber-700 leading-relaxed">Het Voedingscentrum staat de magnetron toe, mits je op maximaal 600 Watt opwarmt, goed schudt en de temperatuur test.</p>
                     </div>
                   </div>
                 </div>
@@ -206,13 +189,8 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                       <h4 className="font-medium text-primary mb-2">3. Voedingswaarde verlies</h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         <div>
-                          <p className="text-sm text-gray-600 mb-1">Magnetron vernietigt:</p>
-                          <ul className="space-y-1">
-                            <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Vitamine B1: 40% verlies</span></li>
-                            <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Vitamine B12: 30% verlies</span></li>
-                            <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Lysine: 50% verlies</span></li>
-                            <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">Antioxidanten: 60% verlies</span></li>
-                          </ul>
+                          <p className="text-sm text-gray-600 mb-1">Voedingsstoffen:</p>
+                          <p className="text-gray-600 text-sm">Te heet opwarmen kan voedingsstoffen aantasten; warm daarom niet warmer op dan nodig (30 à 35°C).</p>
                         </div>
                         
                         <div className="bg-amber-50 rounded-lg p-3">
@@ -239,13 +217,13 @@ export default function VeiligVerwarmenFlesvoedingPage() {
               </div>
             </div>
 
-            {/* Waterpad verwarming */}
+            {/* Waterbad verwarming */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Waterpad verwarming: de veiligste methode</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Waterbad verwarming: de veiligste methode</h2>
               
               <div className="space-y-6">
                 <div>
-                  <h3 className="font-medium text-primary mb-3">Waterpad/Waterbad: stap-voor-stap guide</h3>
+                  <h3 className="font-medium text-primary mb-3">Waterbadmethode: stap voor stap</h3>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
@@ -275,7 +253,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                     </div>
                     
                     <div>
-                      <h4 className="font-medium text-primary mb-2">Perfecte waterpad methode:</h4>
+                      <h4 className="font-medium text-primary mb-2">Perfecte waterbad methode:</h4>
                       <div className="space-y-2">
                         <div className="flex items-start space-x-3">
                           <div className="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-medium">1</div>
@@ -291,7 +269,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                         </div>
                         <div className="flex items-start space-x-3">
                           <div className="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-medium">4</div>
-                          <span className="text-gray-600 text-sm">Test temperatuur na 2-3 minuten</span>
+                          <span className="text-gray-600 text-sm">Test na 2-3 minuten; de melk moet op 30 à 35°C zijn</span>
                         </div>
                         <div className="flex items-start space-x-3">
                           <div className="flex-shrink-0 w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-medium">5</div>
@@ -336,7 +314,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
  <div className="p-4">
-                    <h4 className="font-medium text-primary mb-2">Voordelen waterpad:</h4>
+                    <h4 className="font-medium text-primary mb-2">Voordelen waterbad:</h4>
                     <ul className="space-y-1">
                       <li className="flex items-center space-x-2">
                         <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" />
@@ -358,7 +336,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                   </div>
                   
                   <div className="bg-amber-50 rounded-lg p-4">
-                    <h4 className="font-medium text-amber-800 mb-2">Nadelen waterpad:</h4>
+                    <h4 className="font-medium text-amber-800 mb-2">Nadelen waterbad:</h4>
                     <ul className="space-y-1">
                       <li className="flex items-center space-x-2">
                         <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0" />
@@ -423,6 +401,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
 
                 <div>
                   <h3 className="font-medium text-primary mb-3">Beste elektrische flessenwarmer modellen</h3>
+                  <p className="text-sm text-gray-500 mb-3">De genoemde prijzen zijn indicatief en kunnen per winkel en moment verschillen.</p>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
  <div className="p-4">
                       <h4 className="font-medium text-primary mb-2">Philips AVENT (€35-45)</h4>
@@ -457,7 +436,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                   <h3 className="font-medium text-primary mb-3">Complete vergelijkingstabel</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
  <div className="p-4">
-                      <h4 className="font-medium text-primary mb-3">Waterpad</h4>
+                      <h4 className="font-medium text-primary mb-3">Waterbad</h4>
                       <div className="space-y-2 text-sm">
                         <div><span className="text-gray-600">Snelheid:</span> <span className="text-gray-700">Gemiddeld (2-6 min)</span></div>
                         <div><span className="text-gray-600">Veiligheid:</span> <span className="text-gray-700">Excellent (Perfect)</span></div>
@@ -568,20 +547,20 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                       <h4 className="font-medium text-primary mb-2">2. Digitale thermometer (meest nauwkeurig)</h4>
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                         <div className="text-center">
-                          <div className="text-sm text-primary">35-37°C</div>
-                          <div className="font-medium text-gray-700">Perfect</div>
+                          <div className="text-sm text-primary">30-35°C</div>
+                          <div className="font-medium text-gray-700">Prima</div>
                         </div>
                         <div className="text-center">
-                          <div className="text-sm text-primary">30-34°C</div>
+                          <div className="text-sm text-primary">Onder 30°C</div>
                           <div className="font-medium text-gray-700">Iets te koel</div>
                         </div>
                         <div className="text-center">
-                          <div className="text-sm text-amber-600">38-40°C</div>
+                          <div className="text-sm text-amber-600">36-40°C</div>
                           <div className="font-medium text-amber-700">Te warm</div>
                         </div>
                         <div className="text-center">
                           <div className="text-sm text-amber-600">41°C+</div>
-                          <div className="font-medium text-amber-700">Gevaarlijk</div>
+                          <div className="font-medium text-amber-700">Laten afkoelen</div>
                         </div>
                       </div>
                     </div>
@@ -617,13 +596,8 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                   </div>
                 </div>
 
- <div className="p-4">
-                  <h4 className="font-medium text-gray-700 mb-2">Nederlandse ER statistieken:</h4>
-                  <ul className="space-y-1">
-                    <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">67% brandwonden: onvoldoende getest</span></li>
-                    <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">23% brandwonden: verkeerde testmethode</span></li>
-                    <li className="flex items-start space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div><span className="text-gray-600 text-sm">10% brandwonden: technische falen apparatuur</span></li>
-                  </ul>
+ <div>
+                  <p className="text-gray-600">Verbrandingen ontstaan vooral doordat de temperatuur niet wordt getest of doordat de melk ongelijk is opgewarmd. Test daarom altijd op je pols.</p>
                 </div>
               </div>
             </div>
@@ -640,7 +614,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                     <div>
                       <h4 className="font-medium text-gray-700 mb-1">1. Magnetron gebruik</h4>
                       <p className="text-gray-600 mb-1">Fout: "Magnetron is sneller en makkelijker"</p>
-                      <p className="text-gray-700 mb-1">Correct: Waterpad of flessenwarmer gebruiken</p>
+                      <p className="text-gray-700 mb-1">Correct: Waterbad of flessenwarmer gebruiken</p>
                       <p className="text-amber-700">Risico: Ernstige brandwonden door hot spots</p>
                     </div>
                     
@@ -676,6 +650,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
 
                 <div>
                   <h3 className="font-medium text-primary mb-3">Kostenfouten vermijden</h3>
+                  <p className="text-sm text-gray-500 mb-3">De genoemde bedragen zijn indicatief en kunnen per situatie verschillen.</p>
                   <div className="overflow-x-auto">
                     <table className="w-full border-collapse border border-gray-300">
                       <thead>
@@ -694,7 +669,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                         <tr className="bg-white">
                           <td className="border border-gray-300 px-4 py-2 font-medium">Dure flessenwarmer</td>
                           <td className="border border-gray-300 px-4 py-2">€150</td>
-                          <td className="border border-gray-300 px-4 py-2">Waterpad methode</td>
+                          <td className="border border-gray-300 px-4 py-2">Waterbad methode</td>
                         </tr>
                         <tr>
                           <td className="border border-gray-300 px-4 py-2 font-medium">Energieverspilling</td>
@@ -719,8 +694,8 @@ export default function VeiligVerwarmenFlesvoedingPage() {
               
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-medium text-gray-700 mb-2">Kan ik flesvoeding in de magnetron als ik de dop eraf doe?</h3>
-                  <p className="text-gray-600 text-sm">Nee, absoluut niet. Ook zonder dop ontstaan er hot spots in de melk die brandwonden kunnen veroorzaken. De Nederlandse Vereniging voor Kindergeneeskunde adviseert magnetrons nooit te gebruiken voor babyvoeding.</p>
+                  <h3 className="font-medium text-gray-700 mb-2">Kan ik flesvoeding in de magnetron opwarmen?</h3>
+                  <p className="text-gray-600 text-sm">Het Voedingscentrum staat de magnetron toe, mits je op maximaal 600 Watt opwarmt. In de magnetron ontstaan makkelijk hete plekken in de melk. Schud de fles daarom goed en test de temperatuur op je pols voordat je je baby laat drinken.</p>
                 </div>
                 
                 <div>
@@ -730,7 +705,7 @@ export default function VeiligVerwarmenFlesvoedingPage() {
                 
                 <div>
                   <h3 className="font-medium text-gray-700 mb-2">Welke flessenwarmer is het beste voor de prijs?</h3>
-                  <p className="text-gray-600 text-sm">Philips AVENT (€35-45) biedt beste prijs-kwaliteitverhouding met Nederlandse garantie. Voor budget: waterpad methode (gratis) is even veilig.</p>
+                  <p className="text-gray-600 text-sm">Philips AVENT (€35-45) biedt beste prijs-kwaliteitverhouding met Nederlandse garantie. Voor budget: waterbad methode (gratis) is even veilig.</p>
                 </div>
                 
                 <div>
@@ -745,14 +720,14 @@ export default function VeiligVerwarmenFlesvoedingPage() {
 
                 <div>
                   <h3 className="font-medium text-gray-700 mb-2">Welke verwarmingsmethode is het milieuvriendelijkst?</h3>
-                  <p className="text-gray-600 text-sm">Waterpad met warm kraanwater. Geen elektriciteitsverbruik, geen extra apparaten. Thermosfles is tweede keuze (eenmalige energie-investering).</p>
+                  <p className="text-gray-600 text-sm">Waterbad met warm kraanwater. Geen elektriciteitsverbruik, geen extra apparaten. Thermosfles is tweede keuze (eenmalige energie-investering).</p>
                 </div>
               </div>
             </div>
 
             <div>
               <p className="text-gray-700 text-sm text-center">
-                Veilig verwarmen van flesvoeding is essentieel voor de gezondheid van je baby. Volg altijd de gouden regels: nooit magnetron, altijd temperatuur testen, en bij twijfel een veilige methode kiezen.
+                Veilig verwarmen van flesvoeding is essentieel voor de gezondheid van je baby. Volg altijd de gouden regels: warm op tot 30 à 35°C, schud de fles goed en test altijd op je pols.
               </p>
             </div>
 
