@@ -6,8 +6,8 @@ import { Droplets, Thermometer, Clock, Shield, AlertTriangle, CheckCircle, Home,
 import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
-  title: 'Water Koken voor Flesvoeding: Complete Veiligheidsgids 2026',
-  description: 'Het juist voorbereiden van water voor flesvoeding is cruciaal voor de veiligheid van je baby. Deze uitgebreide gids legt uit wanneer, hoe en waarom je water moet koken voor flesvoeding.',
+  title: 'Water Koken voor Flesvoeding: Moet Dat in Nederland? (2026)',
+  description: 'Moet je water koken voor flesvoeding? In Nederland is dat volgens het Voedingscentrum niet nodig: koud kraanwater is veilig. Lees wanneer koken wel verstandig is en hoe je de fles veilig klaarmaakt.',
 }
 
 export default function WaterKokenFlesvoedingPage() {
@@ -15,17 +15,17 @@ export default function WaterKokenFlesvoedingPage() {
   const sidebarImages = [
     {
       src: "/sterilisator-babyflessen.webp",
-      alt: "Veilige water bereiding voor flesvoeding",
-      caption: "Altijd water eerst volledig laten koken voor optimale veiligheid"
+      alt: "Veilige bereiding van flesvoeding met kraanwater",
+      caption: "In Nederland is koud kraanwater veilig; koken is niet nodig"
     },
     {
-      src: "/flesvoeding-close-up.webp", 
-      alt: "Correct bereide flesvoeding",
-      caption: "Water van 70°C is de perfecte temperatuur voor flesvoeding"
+      src: "/flesvoeding-close-up.webp",
+      alt: "Correct bereide flesvoeding op drinktemperatuur",
+      caption: "Warm de fles tot 30 à 35°C, niet warmer"
     },
     {
       src: "/difrax-fles-kunstvoeding.webp",
-      alt: "Nederlandse flesvoeding kwaliteit", 
+      alt: "Nederlandse flesvoeding kwaliteit",
       caption: "Nederlands kraanwater voldoet aan alle EU-veiligheidsnormen"
     }
   ]
@@ -34,109 +34,102 @@ export default function WaterKokenFlesvoedingPage() {
   const adTopics = ["Water Koken", "Flesvoeding Veiligheid", "Baby Hygiëne"]
 
   // Data arrays for content
-  const waaromKokenRedenen = [
-    "Cronobacter sakazakii elimineren - gevaarlijke bacterie die hersenvliesontsteking kan veroorzaken",
-    "Salmonella uitschakelen - voorkomt ernstige darminfecties bij baby's",
-    "E. coli doden - vermindert risico op nierfalen bij zeer jonge baby's",
-    "Flesvoeding steriliseren - poeder is niet steriel en bevat mogelijk bacteriën",
-    "Infectierisico verlagen met 50-70% volgens medische studies"
+  const wanneerWelKoken = [
+    "Bij baby's die te vroeg geboren zijn, een laag geboortegewicht hebben of ziek zijn, en alleen op advies van de arts of het consultatiebureau",
+    "Op reis of in het buitenland, waar de kwaliteit van het kraanwater niet gegarandeerd is",
+    "Als je waterbedrijf een kookadvies geeft, bijvoorbeeld bij een tijdelijke besmetting van het leidingnet",
+    "Bij loden leidingen in huis: gebruik dan flessenwater dat op het etiket geschikt is voor babyvoeding"
   ]
 
-  const veiligheidsLeeftijden = [
+  const situatieAdvies = [
     {
-      leeftijd: "0-3 maanden",
-      risico: "Hoog",
-      advies: "Verplicht koken (70°C+)",
-      details: "Immuunsysteem nog niet ontwikkeld"
+      situatie: "Gezonde, voldragen baby in Nederland",
+      water: "Koud kraanwater",
+      advies: "Koken is niet nodig"
     },
     {
-      leeftijd: "3-6 maanden", 
-      risico: "Gemiddeld",
-      advies: "Koken geadviseerd",
-      details: "Bij twijfel blijf koken tot 6 maanden"
+      situatie: "Prematuur, laag geboortegewicht of ziek",
+      water: "Op advies van arts",
+      advies: "Soms water van 70°C geadviseerd"
     },
     {
-      leeftijd: "6-12 maanden",
-      risico: "Laag", 
-      advies: "Kraanwater toegestaan",
-      details: "Immuunsysteem voldoende ontwikkeld"
+      situatie: "Op reis / onbekende waterkwaliteit",
+      water: "Gekookt water of flessenwater",
+      advies: "Koken of geschikt flessenwater"
     },
     {
-      leeftijd: "12+ maanden",
-      risico: "Zeer laag",
-      advies: "Kraanwater veilig", 
-      details: "Volledig ontwikkeld immuunsysteem"
+      situatie: "Loden leidingen in huis",
+      water: "Flessenwater voor babyvoeding",
+      advies: "Geen kraanwater gebruiken"
     }
   ]
 
-  const kookStappen = [
-    "Vul waterkoker met vers kraanwater",
-    "Laat koken tot volledige kookpunt (100°C)",
-    "Laat afkoelen tot 70°C (5-10 minuten)",
-    "Controleer temperatuur - moet voelbaar warm zijn",
-    "Voeg flesvoeding toe aan het 70°C water",
-    "Roer goed tot volledig opgelost",
-    "Koel verder af tot drinktemperatuur (37°C)"
+  const bereidingsStappen = [
+    "Was je handen en gebruik een schone, goed omgespoelde fles",
+    "Vul de fles met koud kraanwater (geen warm kraanwater uit de kraan)",
+    "Voeg het juiste aantal afgestreken maatschepjes poeder toe volgens de verpakking",
+    "Sluit de fles en schud tot het poeder helemaal is opgelost",
+    "Warm de fles daarna op tot 30 à 35°C, niet warmer",
+    "Test op de binnenkant van je pols; ongeveer even warm als je huid is precies goed"
   ]
 
   const kraanwaterVoordelen = [
-    "EU-kwaliteitsstandaarden - dagelijks gecontroleerd door waterbedrijven",
-    "Lage mineralengehalte - geschikt en veilig voor baby's",
-    "Fluoridegehalte binnen veilige grenzen (0,1-0,3mg/L)",
-    "Geen conserveringsmiddelen nodig - natuurlijk zuiver",
-    "Goedkoop - €0,001 per liter vs €0,50+ voor flessenwater",
-    "Milieuvriendelijk - geen plastic afval van flessen"
+    "Voldoet aan strenge EU-kwaliteitseisen en wordt dagelijks gecontroleerd door de waterbedrijven",
+    "Laag mineralengehalte, geschikt en veilig voor baby's",
+    "Geen conserveringsmiddelen nodig, van nature schoon",
+    "Goedkoop: ongeveer €0,001 per liter, tegen €0,50 of meer voor flessenwater",
+    "Milieuvriendelijk: geen plastic afval van waterflessen"
   ]
 
   const veelgemaakteFouten = [
     {
-      fout: "Water niet volledig laten koken",
-      correct: "Eerst laten koken, dan afkoelen tot 70°C",
-      gevaar: "Bacteriën overleven bij onvoldoende verhitting"
+      fout: "Warm kraanwater gebruiken om sneller op te warmen",
+      correct: "Gebruik altijd koud kraanwater en warm de fles daarna op",
+      gevaar: "Warm kraanwater kan meer metalen uit de leidingen bevatten"
     },
     {
-      fout: "Te koud water gebruiken (40-50°C)",
-      correct: "Minimaal 70°C voor poeder toevoegen", 
-      gevaar: "Bacteriën in poeder blijven leven"
+      fout: "De fles te warm maken (boven 35°C)",
+      correct: "Warm op tot 30 à 35°C en test op je pols",
+      gevaar: "Te hete melk kan de mond verbranden en voedingsstoffen afbreken"
     },
     {
-      fout: "Gekookt water dagen bewaren",
-      correct: "Binnen 24 uur gebruiken, bij voorkeur direct",
-      gevaar: "Herbesmetting door bacteriën uit de lucht"
+      fout: "Klaargemaakte flesvoeding te lang bewaren",
+      correct: "Maximaal 8 uur achterin de koelkast bij 4°C, en direct koelen",
+      gevaar: "Bij warmere of langere bewaring kunnen bacteriën groeien"
     },
     {
-      fout: "Water meerdere keren opnieuw koken",
-      correct: "Altijd vers water per kookbeurt",
-      gevaar: "Mineralenconcentratie wordt te hoog"
+      fout: "Een restje van de vorige voeding bewaren en hergebruiken",
+      correct: "Gooi restjes na een voeding altijd weg",
+      gevaar: "Speeksel uit de mond brengt bacteriën in de melk"
     },
     {
-      fout: "Koud water mengen vóór poeder toevoegen",
-      correct: "Eerst poeder toevoegen, dan pas afkoelen",
-      gevaar: "Poeder wordt niet gesteriliseerd"
+      fout: "In de magnetron opwarmen zonder te schudden en te testen",
+      correct: "Magnetron mag (maximaal 600 Watt): schud goed en test op je pols",
+      gevaar: "De magnetron warmt ongelijk op, met hete plekken in de melk"
     }
   ]
 
   const alternatieven = [
     {
       methode: "Perfect Prep Machine",
-      kosten: "€150-200 + €30/3mnd filters",
+      kosten: "€150-200 + €30 per 3 maanden filters",
       snelheid: "2 minuten",
-      voordelen: "Instant 70°C water, geen wachttijd, consistente temperatuur",
-      nadelen: "Hoge aanschafkosten, filter onderhoud, elektriciteitsverbruik"
+      voordelen: "Water direct op de ingestelde temperatuur, geen wachttijd",
+      nadelen: "Hoge aanschafkosten, filteronderhoud, elektriciteitsverbruik"
     },
     {
-      methode: "Babybrezza/Tommee Tippee",
+      methode: "Babybrezza / Tommee Tippee",
       kosten: "€200-400",
-      snelheid: "1-2 minuten", 
-      voordelen: "All-in-one oplossing, vooraf geprogrammeerd, nachtlamp",
-      nadelen: "Zeer duur, afhankelijk van specifieke merken poeder"
+      snelheid: "1-2 minuten",
+      voordelen: "All-in-one oplossing, vooraf ingesteld, handig 's nachts",
+      nadelen: "Duur, soms afgestemd op specifieke merken poeder"
     },
     {
-      methode: "Thermoskan methode",
+      methode: "Thermoskan voor onderweg",
       kosten: "€20-40",
       snelheid: "Direct",
-      voordelen: "Perfect voor onderweg, 24u warm, geen elektriciteit",
-      nadelen: "Moet thuis voorbereid worden, beperkte hoeveelheid"
+      voordelen: "Handig op reis, houdt water lang warm, geen stopcontact nodig",
+      nadelen: "Moet je thuis voorbereiden, beperkte hoeveelheid"
     }
   ]
 
@@ -145,33 +138,41 @@ export default function WaterKokenFlesvoedingPage() {
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-12 lg:col-span-7">
           <div className="space-y-6">
-            
+
             {/* Header */}
             <div>
               <div className="text-sm text-gray-500 mb-2">Kennisbank • Hygiëne & Bereiding</div>
               <h1 className="text-2xl font-medium text-primary mb-3 flex items-center">
                 <Droplets className="w-6 h-6 mr-3 text-primary" />
-                Water Koken voor Flesvoeding: Complete Veiligheidsgids
+                Water Koken voor Flesvoeding: Moet Dat in Nederland?
               </h1>
               <p className="text-gray-500 leading-relaxed">
-                Het juist voorbereiden van water voor flesvoeding is cruciaal voor de veiligheid van je baby. 
-                Deze uitgebreide gids legt uit wanneer, hoe en waarom je water moet koken voor flesvoeding, 
-                gebaseerd op Nederlandse gezondheidsrichtlijnen.
+                Op veel pakken kunstvoeding staat dat je het water moet koken. Toch is dat in Nederland
+                volgens het Voedingscentrum niet nodig: koud kraanwater is veilig voor je baby.
+                Deze gids legt uit wanneer koken wél verstandig is en hoe je de fles stap voor stap veilig klaarmaakt.
               </p>
             </div>
 
             {/* Introduction */}
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Waarom Water Koken Essentieel Is</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Moet je water koken in Nederland?</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Water koken voor flesvoeding heeft twee belangrijke veiligheidsdoelen: het elimineren van gevaarlijke bacteriën
-                en het steriliseren van flesvoeding. Dit is een cruciale stap bij <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="text-primary hover:underline font-medium">het bereiden van flesvoeding</Link>. Baby's onder 3 maanden hebben nog geen volledig ontwikkeld immuunsysteem
-                en zijn daarom extra kwetsbaar voor bacteriële infecties.
+                Kort antwoord: nee. Nederlands kraanwater voldoet aan strenge EU-eisen en wordt dagelijks
+                gecontroleerd. Het Voedingscentrum adviseert daarom om de fles gewoon met koud kraanwater klaar
+                te maken; koken is niet nodig. De tekst op de verpakking is bedoeld voor landen waar de
+                waterkwaliteit niet overal gegarandeerd is. Meer over de complete bereiding lees je in onze <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="text-primary hover:underline font-medium">stap-voor-stap gids</Link>.
               </p>
-              
-              <h3 className="font-medium text-primary mb-3">Hoofdredenen voor Water Koken:</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Twee dingen worden vaak door elkaar gehaald. Het <strong>water</strong> in Nederland hoeft niet
+                gekookt te worden. Het <strong>poeder</strong> is niet steriel: daarom adviseert de WHO
+                internationaal om water van minstens 70°C te gebruiken, zodat eventuele bacteriën in het poeder
+                (zoals Cronobacter) worden gedood. Voor gezonde, voldragen baby's in Nederland is dat volgens het
+                Voedingscentrum niet nodig, maar bij extra kwetsbare baby's kan het wel worden aangeraden.
+              </p>
+
+              <h3 className="font-medium text-primary mb-3">Wanneer koken of 70°C-water wél verstandig is:</h3>
               <ul className="space-y-2">
-                {waaromKokenRedenen.map((reden, index) => (
+                {wanneerWelKoken.map((reden, index) => (
                   <li key={index} className="flex items-start space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
                     <span className="text-gray-700">{reden}</span>
@@ -180,31 +181,31 @@ export default function WaterKokenFlesvoedingPage() {
               </ul>
             </section>
 
-            {/* Nederlandse Richtlijnen */}
+            {/* Situatie en advies */}
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Shield className="w-5 h-5 mr-2" />
-                Nederlandse Richtlijnen per Leeftijd
+                Kraanwater of koken: wat geldt in jouw situatie?
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                De Nederlandse gezondheidsrichtlijnen maken onderscheid tussen verschillende leeftijdsgroepen 
-                omdat het immuunsysteem van baby's geleidelijk ontwikkelt.
+                Voor de meeste ouders in Nederland is koud kraanwater de eenvoudigste en veilige keuze.
+                In een paar situaties is koken of flessenwater wel verstandig.
               </p>
-              
+
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse border border-gray-300">
                   <thead>
                     <tr className="bg-white">
-                      <th className="border border-gray-300 px-4 py-2 text-left">Leeftijd</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Infectierisico</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Advies Waterbereiding</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Situatie</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Welk water</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Advies</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {veiligheidsLeeftijden.map((item, index) => (
+                    {situatieAdvies.map((item, index) => (
                       <tr key={index} className={index % 2 === 1 ? "bg-white" : ""}>
-                        <td className="border border-gray-300 px-4 py-2 font-medium">{item.leeftijd}</td>
-                        <td className="border border-gray-300 px-4 py-2">{item.risico}</td>
+                        <td className="border border-gray-300 px-4 py-2 font-medium">{item.situatie}</td>
+                        <td className="border border-gray-300 px-4 py-2">{item.water}</td>
                         <td className="border border-gray-300 px-4 py-2">{item.advies}</td>
                       </tr>
                     ))}
@@ -217,16 +218,14 @@ export default function WaterKokenFlesvoedingPage() {
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <Thermometer className="w-5 h-5 mr-2" />
-                Stap-voor-Stap: Water Koken voor Flesvoeding
+                De fles klaarmaken met kraanwater (Nederlandse methode)
               </h2>
-
-              <h3 className="font-medium text-primary mb-4">Traditionele Methode (Meest Veilig)</h3>
               <p className="text-gray-600 mb-4">
-                Deze methode duurt ongeveer 20-25 minuten van begin tot eind, maar garandeert optimale veiligheid. Voor de complete bereiding, zie onze <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="text-primary hover:underline font-medium">stap-voor-stap gids</Link>.
+                Zo maak je de fles snel en veilig klaar met koud kraanwater. Zie ook onze volledige <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="text-primary hover:underline font-medium">stap-voor-stap gids</Link>.
               </p>
-              
+
               <div className="space-y-3">
-                {kookStappen.map((stap, index) => (
+                {bereidingsStappen.map((stap, index) => (
                   <div key={index} className="flex items-start space-x-3">
                     <div className="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-medium flex-shrink-0">
                       {index + 1}
@@ -237,7 +236,12 @@ export default function WaterKokenFlesvoedingPage() {
               </div>
 
               <div className="border-t border-gray-200 pt-6 mt-6">
-                <h3 className="font-medium text-primary mb-4">Timing Overzicht</h3>
+                <h3 className="font-medium text-primary mb-4">Als je toch met gekookt water werkt (buitenland of op medisch advies)</h3>
+                <p className="text-gray-600 leading-relaxed mb-3">
+                  Volg dan de WHO-methode om ook bacteriën in het poeder te doden: kook het water, laat het
+                  afkoelen tot ongeveer 70°C (binnen een half uur, zo'n 5 à 10 minuten na koken), voeg dan pas
+                  het poeder toe en koel de fles daarna snel af tot drinktemperatuur.
+                </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex items-center space-x-2">
                     <Clock className="w-4 h-4 text-primary" />
@@ -245,15 +249,15 @@ export default function WaterKokenFlesvoedingPage() {
                   </div>
                   <div className="flex items-center space-x-2">
                     <Thermometer className="w-4 h-4 text-primary" />
-                    <span className="text-gray-700">Afkoelen tot 70°C: 5-7 minuten</span>
+                    <span className="text-gray-700">Afkoelen tot ~70°C: 5-10 minuten</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Coffee className="w-4 h-4 text-primary" />
-                    <span className="text-gray-700">Mixen: 1 minuut</span>
+                    <span className="text-gray-700">Poeder toevoegen en mengen: 1 minuut</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Clock className="w-4 h-4 text-primary" />
-                    <span className="text-gray-700">Afkoelen drinktemp: 10-15 minuten</span>
+                    <span className="text-gray-700">Afkoelen tot drinktemperatuur: 10-15 minuten</span>
                   </div>
                 </div>
               </div>
@@ -261,13 +265,13 @@ export default function WaterKokenFlesvoedingPage() {
 
             {/* Kraanwater vs Flessenwater */}
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Nederlands Kraanwater: Uitstekende Kwaliteit</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Nederlands kraanwater: uitstekende kwaliteit</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Nederlands kraanwater voldoet aan strenge EU-kwaliteitsstandaarden en wordt dagelijks gecontroleerd. 
-                Voor flesvoeding is het vaak een betere keuze dan duur flessenwater.
+                Nederlands kraanwater voldoet aan strenge EU-kwaliteitseisen en wordt dagelijks gecontroleerd.
+                Voor flesvoeding is het meestal een prima en goedkopere keuze dan flessenwater.
               </p>
-              
-              <h3 className="font-medium text-primary mb-3">Voordelen Nederlands Kraanwater:</h3>
+
+              <h3 className="font-medium text-primary mb-3">Voordelen van Nederlands kraanwater:</h3>
               <ul className="space-y-2 mb-6">
                 {kraanwaterVoordelen.map((voordeel, index) => (
                   <li key={index} className="flex items-start space-x-2">
@@ -278,21 +282,13 @@ export default function WaterKokenFlesvoedingPage() {
               </ul>
 
               <div className="border-t border-gray-200 pt-6">
-                <h3 className="font-medium text-primary mb-4">Nederlandse Kraanwaterkwaliteit</h3>
- <div className="p-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                    <div>
-                      <div className="font-medium text-gray-700">Nitraat: &lt;50mg/L (EU-norm)</div>
-                      <div className="font-medium text-gray-700">Fluoride: 0,1-0,3mg/L (baby-veilig)</div>
-                      <div className="font-medium text-gray-700">Calcium: 30-150mg/L (geschikt)</div>
-                    </div>
-                    <div>
-                      <div className="font-medium text-gray-700">Natrium: &lt;20mg/L (laag)</div>
-                      <div className="font-medium text-gray-700">Bacteriën: 0 (steriel na koken)</div>
-                      <div className="font-medium text-gray-700">Controle: Dagelijks (waterbedrijven)</div>
-                    </div>
-                  </div>
-                </div>
+                <h3 className="font-medium text-primary mb-3">Let op bij flessenwater en leidingen</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Gebruik geen warm water uit de kraan, omdat de leidingen bij warm water meer metalen kunnen
+                  afgeven. Heb je oude, loden leidingen, gebruik dan flessenwater dat op het etiket
+                  geschikt is voor babyvoeding (laag in natrium en nitraat). Laat de kraan bij een nieuwe
+                  aansluiting eerst even doorstromen.
+                </p>
               </div>
             </section>
 
@@ -300,19 +296,19 @@ export default function WaterKokenFlesvoedingPage() {
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
                 <AlertTriangle className="w-5 h-5 mr-2" />
-                Veelgemaakte Fouten Vermijden
+                Veelgemaakte fouten vermijden
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Deze fouten kunnen de veiligheid van je baby in gevaar brengen en kunnen leiden tot <Link href="/kennisbank/problemen-oplossen/diarree-en-flesvoeding" className="text-primary hover:underline font-medium">diarree en andere problemen</Link>.
+                Deze fouten kunnen de veiligheid van je baby in gevaar brengen en soms leiden tot <Link href="/kennisbank/problemen-oplossen/diarree-en-flesvoeding" className="text-primary hover:underline font-medium">diarree en andere problemen</Link>.
                 Zorg dat je deze veelvoorkomende vergissingen vermijdt.
               </p>
-              
+
               <div className="space-y-4">
                 {veelgemaakteFouten.map((item, index) => (
                   <div key={index}>
                     <h3 className="font-medium text-gray-700 mb-1">Fout: {item.fout}</h3>
-                    <p className="text-gray-600 mb-1">Correct: {item.correct}</p>
-                    <p className="text-gray-500 text-sm">Waarom gevaarlijk: {item.gevaar}</p>
+                    <p className="text-gray-600 mb-1">Beter: {item.correct}</p>
+                    <p className="text-gray-500 text-sm">Waarom: {item.gevaar}</p>
                   </div>
                 ))}
               </div>
@@ -320,15 +316,15 @@ export default function WaterKokenFlesvoedingPage() {
 
             {/* Alternatieven */}
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Alternatieven voor Traditioneel Koken</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Handige hulpmiddelen</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Voor ouders die regelmatig flesvoeding geven, zijn er praktische alternatieven 
-                die tijd besparen zonder de veiligheid in gevaar te brengen.
+                Koken is in Nederland niet nodig, maar sommige ouders willen graag warm water op een vaste
+                temperatuur klaar hebben. Deze apparaten kunnen dat handiger maken.
               </p>
-              
+
               <div className="space-y-4">
                 {alternatieven.map((alt, index) => (
-                  <div key={index} className="border border-gray-200 rounded-lg p-4">
+                  <div key={index} className="bg-default rounded-lg p-4">
                     <h3 className="font-medium text-primary mb-2">{alt.methode}</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                       <div>
@@ -352,13 +348,14 @@ export default function WaterKokenFlesvoedingPage() {
                   <AlertTriangle className="w-5 h-5 text-amber-600" />
                 </div>
                 <div>
-                  <h3 className="font-medium text-amber-800 mb-2">Let op: Belangrijke Veiligheidsrichtlijnen</h3>
+                  <h3 className="font-medium text-amber-800 mb-2">Let op: de belangrijkste veiligheidspunten</h3>
                   <div className="text-sm text-amber-700 leading-relaxed space-y-2">
-                    <p>Water moet altijd eerst volledig gekookt hebben voordat je het laat afkoelen tot 70°C. 
-                    Alleen verwarmen tot 70°C is onvoldoende om alle bacteriën te doden.</p>
-                    <p>Voor baby's onder 3 maanden is water koken verplicht. Bij premature baby's kan dit langer nodig zijn 
-                    op advies van de kinderarts.</p>
-                    <p>Raadpleeg altijd je consultatiebureau bij specifieke vragen over de gezondheid van je baby.</p>
+                    <p>In Nederland is koud kraanwater veilig voor gezonde, voldragen baby's; koken is niet nodig.
+                    Gebruik geen warm kraanwater.</p>
+                    <p>Is je baby te vroeg geboren, heeft die een laag geboortegewicht of is die ziek? Overleg dan
+                    met je arts of consultatiebureau; soms wordt water van 70°C aangeraden.</p>
+                    <p>Warm de fles nooit warmer dan 30 à 35°C en test altijd op de binnenkant van je pols.
+                    Bewaar een klaargemaakte fles maximaal 8 uur achterin de koelkast (4°C) en gooi restjes weg.</p>
                   </div>
                 </div>
               </div>
@@ -367,26 +364,31 @@ export default function WaterKokenFlesvoedingPage() {
             {/* FAQ Section */}
             <section className="bg-white rounded-2xl border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Veelgestelde Vragen</h2>
-              
+
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-medium text-gray-700 mb-2">Q: Hoe weet ik of water 70°C is zonder thermometer?</h3>
-                  <p className="text-gray-600 text-sm">A: Vuistregel: 5-7 minuten na koken van kraanwater. Het water moet nog duidelijk warm aanvoelen op je pols, maar niet brandend heet. Bij twijfel: investeer in een thermometer (€5-10).</p>
-                </div>
-                
-                <div>
-                  <h3 className="font-medium text-gray-700 mb-2">Q: Kan ik gekookt water bewaren voor later gebruik?</h3>
-                  <p className="text-gray-600 text-sm">A: Beperkt. Gekookt water kan maximaal 24 uur bewaard worden in een steriele, afgesloten fles in de koelkast. Bij voorkeur gebruik je het direct voor optimale veiligheid.</p>
+                  <h3 className="font-medium text-gray-700 mb-2">Moet ik water koken voor flesvoeding in Nederland?</h3>
+                  <p className="text-gray-600 text-sm">Nee. Het Voedingscentrum geeft aan dat koud kraanwater in Nederland veilig is; je hoeft het niet te koken. De tekst op het pak is bedoeld voor landen waar de waterkwaliteit niet overal gegarandeerd is.</p>
                 </div>
 
                 <div>
-                  <h3 className="font-medium text-gray-700 mb-2">Q: Is water koken duur qua energiekosten?</h3>
-                  <p className="text-gray-600 text-sm">A: Verwaarloosbaar. Per fles ongeveer €0,02 elektriciteit. Per maand circa €3-4 extra op energierekening voor een gemiddelde baby.</p>
+                  <h3 className="font-medium text-gray-700 mb-2">Mag ik warm water uit de kraan gebruiken?</h3>
+                  <p className="text-gray-600 text-sm">Nee. Gebruik koud kraanwater en warm de fles daarna op. Warm kraanwater kan meer metalen uit de leidingen bevatten.</p>
                 </div>
 
                 <div>
-                  <h3 className="font-medium text-gray-700 mb-2">Q: Hoe lang moet ik dit volhouden?</h3>
-                  <p className="text-gray-600 text-sm">A: 0-3 maanden: verplicht koken. 3-6 maanden: koken aanbevolen. 6+ maanden: kraanwater toegestaan. Premature baby's: langer op medisch advies.</p>
+                  <h3 className="font-medium text-gray-700 mb-2">Hoelang kan ik een klaargemaakte fles bewaren?</h3>
+                  <p className="text-gray-600 text-sm">Zet de fles meteen achterin de koelkast bij 4°C en gebruik hem binnen 8 uur. Restjes na een voeding gooi je altijd weg.</p>
+                </div>
+
+                <div>
+                  <h3 className="font-medium text-gray-700 mb-2">Op welke temperatuur geef ik de fles?</h3>
+                  <p className="text-gray-600 text-sm">Warm de fles op tot 30 à 35°C, niet warmer. Test met een druppeltje op de binnenkant van je pols: ongeveer even warm als je huid is precies goed.</p>
+                </div>
+
+                <div>
+                  <h3 className="font-medium text-gray-700 mb-2">Wanneer is koken of 70°C-water dan wél nodig?</h3>
+                  <p className="text-gray-600 text-sm">Bij premature, te lichte of zieke baby's op advies van de arts, op reis met onbekende waterkwaliteit, bij een kookadvies van je waterbedrijf, of bij loden leidingen (gebruik dan flessenwater voor babyvoeding).</p>
                 </div>
               </div>
             </section>
@@ -394,7 +396,7 @@ export default function WaterKokenFlesvoedingPage() {
             {/* Call to Action */}
             <section className="bg-white rounded-2xl border border-gray-200 p-6">
               <div className="text-center">
-                <Link 
+                <Link
                   href="/"
                   className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors"
                 >
@@ -434,7 +436,7 @@ export default function WaterKokenFlesvoedingPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/kennisbank/voedingstechnieken/fles-bereiden-stap-voor-stap" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
                   <div className="font-medium text-primary">Fles bereiden stap-voor-stap →</div>
-                  <div className="text-sm text-gray-600">Volledige bereiding met gekookt water</div>
+                  <div className="text-sm text-gray-600">De complete bereiding van a tot z</div>
                 </Link>
                 <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
                   <div className="font-medium text-primary">Eerste keer flesvoeding →</div>
@@ -446,14 +448,14 @@ export default function WaterKokenFlesvoedingPage() {
                 </Link>
                 <Link href="/" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
                   <div className="font-medium text-primary">Flesvoeding Calculator →</div>
-                  <div className="text-sm text-gray-600">Bereken juiste hoeveelheden water</div>
+                  <div className="text-sm text-gray-600">Bereken de juiste hoeveelheden</div>
                 </Link>
               </div>
             </section>
 
           </div>
         </div>
-        
+
         <KennisbankSidebar images={sidebarImages} adTopics={adTopics} />
       </div>
     </Layout>

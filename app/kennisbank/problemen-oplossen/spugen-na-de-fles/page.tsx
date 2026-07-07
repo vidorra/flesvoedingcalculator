@@ -33,10 +33,10 @@ export const metadata = {
 
 export default function SpugenNaDeFlesPage() {
   const reassuringStats = [
-    { stat: '70% van baby\'s', description: 'spuugt regelmatig de eerste 6 maanden' },
-    { stat: '95% hiervan', description: 'is volkomen normaal en onschuldig' },
-    { stat: '5% kan reflux', description: 'of andere medische oorzaken hebben' },
-    { stat: 'Meeste baby\'s stoppen', description: 'met spugen rond 12-18 maanden' }
+    { stat: 'Heel gewoon', description: 'de meeste baby\'s spugen in de eerste maanden regelmatig' },
+    { stat: 'Meestal onschuldig', description: 'bij de overgrote meerderheid is spugen normaal' },
+    { stat: 'Soms reflux', description: 'een klein deel heeft reflux of een andere oorzaak' },
+    { stat: 'Rond 12-18 mnd', description: 'stoppen de meeste baby\'s met spugen' }
   ]
 
   const normalSpitting = {
@@ -50,7 +50,7 @@ export default function SpugenNaDeFlesPage() {
     ],
     reasons: [
       'Onvolgroeide sluitspier tussen slokdarm en maag',
-      'Baby\'s maag is nog klein (50ml bij geboorte)',
+      'Baby\'s maag is nog klein (ongeveer 5-7 ml bij geboorte, na een week zo\'n 50-60 ml)',
       'Liggende houding bevordert terugstroming',
       'Overvulling van maag door te snel drinken',
       'Ingesloten lucht drukt voeding omhoog'
@@ -180,34 +180,48 @@ export default function SpugenNaDeFlesPage() {
       symptoms: [
         'Projectielspugen na elke voeding',
         'Gewichtsverlies ondanks goede eetlust',
-        'Zichtbare maagbewegingen op buik',
+        'Zichtbare maagbewegingen op de buik',
         'Leeftijd: Meestal 2-8 weken',
-        'SPOED: Direct naar spoedeisende hulp'
+        'Neem dezelfde dag contact op met de huisarts, die met spoed doorverwijst'
+      ]
+    },
+    {
+      condition: 'Koemelkallergie (KMA)',
+      symptoms: [
+        'Hardnekkig spugen samen met veel huilen en onrust',
+        'Huidklachten zoals eczeem of uitslag',
+        'Darmklachten: diarree, soms bloed of slijm in de ontlasting',
+        'Slechte gewichtstoename',
+        'Bespreek dit met je arts of consultatiebureau'
+      ],
+      treatment: [
+        'Diagnose en begeleiding door arts of kinderarts',
+        'Op recept: een sterk gehydrolyseerde voeding',
+        'Nooit zelf overstappen zonder medisch advies'
       ]
     }
   ]
 
   const whenToCallDoctor = {
-    immediate: [
-      'Projectielspugen bij elke voeding',
-      'Gewichtsverlies of geen gewichtstoename',
-      'Groen of bloederig spuugsel',
-      'Baby weigert consequent te drinken',
-      'Tekenen van uitdroging (droge luier >6 uur)',
-      'Koorts + spugen combinatie'
+    acute: [
+      'Groen (gallig) of bloederig braken',
+      'Krachtig projectielbraken waarbij de baby niets binnenhoudt',
+      'Tekenen van uitdroging: droge mond, weinig of geen natte luiers, ingezonken fontanel, weinig tranen',
+      'Suf, slap of niet goed wakker te krijgen',
+      'Moeizame, snelle of kreunende ademhaling, of een grauwe of blauwe kleur'
     ],
-    regular: [
-      'Toename in frequentie spugen',
-      'Baby lijkt pijn te hebben',
-      'Verandering in spuugpatroon',
-      'Onzekerheid over gewichtstoename',
-      'Slecht slapen door spugen'
+    sameDay: [
+      'Herhaald projectielspugen (mogelijk pylorusstenose)',
+      'Gewichtsverlies of geen gewichtstoename',
+      'Baby weigert steeds te drinken',
+      'Koorts in combinatie met spugen',
+      'Pijnlijk huilen en boogrug bij elke voeding'
     ],
     monitor: [
       'Normaal spugen zonder andere symptomen',
       'Baby groeit en gedijt goed',
-      'Blijft vrolijk tussen voedingen',
-      'Eet/drinkt normaal'
+      'Blijft vrolijk tussen de voedingen',
+      'Eet en drinkt normaal'
     ]
   }
 
@@ -240,8 +254,8 @@ export default function SpugenNaDeFlesPage() {
         'Voeding in donkere/rustige omgeving',
         'Langzamer voeden (baby is slaperig)',
         'Extra lang boertje laten proberen',
-        'Langer rechtop houden voor terugleggen',
-        'Hoger hoofdeinde bedje (veilig verhogen)'
+        'Langer rechtop houden voordat je de baby teruglegt',
+        'Leg je baby altijd plat op de rug te slapen; verhoog het hoofdeinde niet (veilig slapen gaat voor)'
       ]
     }
   ]
@@ -250,7 +264,7 @@ export default function SpugenNaDeFlesPage() {
     {
       brand: 'Nutrilon AR',
       description: 'Meest voorgeschreven',
-      indication: 'Op advies van arts/consultatiebureaudokter'
+      indication: 'Op advies van arts of consultatiebureau-arts'
     },
     {
       brand: 'Hero Baby AR',
@@ -293,7 +307,7 @@ export default function SpugenNaDeFlesPage() {
     },
     {
       myth: 'Na 6 maanden moet spugen stoppen',
-      fact: 'Variëert per baby. Sommige spugen tot 12-18 maanden.'
+      fact: 'Varieert per baby. Sommige spugen tot 12-18 maanden.'
     }
   ]
 
@@ -310,8 +324,8 @@ export default function SpugenNaDeFlesPage() {
     {
       category: 'Praktische Steun',
       support: [
-        'Deel zorgen met partner/familie',
-        'Consultatiebureaudokter voor geruststelling',
+        'Deel zorgen met partner of familie',
+        'Consultatiebureau-arts voor geruststelling',
         'Online gemeenschappen van Nederlandse ouders',
         'Praktische hulp bij schoonmaken accepteren'
       ]
@@ -439,7 +453,7 @@ export default function SpugenNaDeFlesPage() {
                 <div>
                   <h3 className="font-medium text-primary mb-3 flex items-center">
                     <AlertTriangle className="w-4 h-4 mr-2" />
-                    ZORGEN BIJ (Mogelijk Reflux/GERD)
+                    Zorgwekkend bij (mogelijk reflux/GORD)
                   </h3>
                   
                   <h4 className="font-medium text-gray-700 mb-2">Rode Vlaggen:</h4>
@@ -616,9 +630,9 @@ export default function SpugenNaDeFlesPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
-                  <h3 className="font-medium text-primary mb-3">DIRECT CONTACT (Binnen 24 uur)</h3>
+                  <h3 className="font-medium text-primary mb-3">Bel meteen (huisarts of 112)</h3>
                   <ul className="space-y-2">
-                    {whenToCallDoctor.immediate.map((item, index) => (
+                    {whenToCallDoctor.acute.map((item, index) => (
                       <li key={index} className="flex items-start space-x-2">
                         <AlertTriangle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                         <span className="text-gray-700">{item}</span>
@@ -626,11 +640,11 @@ export default function SpugenNaDeFlesPage() {
                     ))}
                   </ul>
                 </div>
-                
+
                 <div>
-                  <h3 className="font-medium text-primary mb-3">REGULIER CONSULT (Binnen week)</h3>
+                  <h3 className="font-medium text-primary mb-3">Bel vandaag nog (huisarts of consultatiebureau)</h3>
                   <ul className="space-y-2">
-                    {whenToCallDoctor.regular.map((item, index) => (
+                    {whenToCallDoctor.sameDay.map((item, index) => (
                       <li key={index} className="flex items-start space-x-2">
                         <Clock className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                         <span className="text-gray-700">{item}</span>
@@ -638,9 +652,9 @@ export default function SpugenNaDeFlesPage() {
                     ))}
                   </ul>
                 </div>
-                
+
                 <div>
-                  <h3 className="font-medium text-primary mb-3">THUIS MONITOREN</h3>
+                  <h3 className="font-medium text-primary mb-3">Thuis monitoren</h3>
                   <ul className="space-y-2">
                     {whenToCallDoctor.monitor.map((item, index) => (
                       <li key={index} className="flex items-start space-x-2">
@@ -687,8 +701,9 @@ export default function SpugenNaDeFlesPage() {
               <div className="mb-4">
                 <h3 className="font-medium text-primary mb-3">AR-Voeding (Anti-Reflux)</h3>
                 <p className="text-gray-700 mb-4">
-                  Verdikte flesvoeding met rijststijfsel die beter in de maag blijft liggen.
-                  Alleen gebruiken op advies van arts/consultatiebureaudokter. Lees meer bij <Link href="/kennisbank/soorten-flesvoeding/anti-reflux-flesvoeding" className="text-primary hover:underline font-medium">anti-reflux flesvoeding</Link>.
+                  Verdikte flesvoeding, meestal met johannesbroodpitmeel (soms rijststijfsel), die beter in de maag
+                  blijft liggen. Kan wat hardere ontlasting of obstipatie geven. Alleen gebruiken op advies van je
+                  arts of consultatiebureau-arts. Lees meer bij <Link href="/kennisbank/soorten-flesvoeding/anti-reflux-flesvoeding" className="text-primary hover:underline font-medium">anti-reflux flesvoeding</Link>.
                 </p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -709,7 +724,7 @@ export default function SpugenNaDeFlesPage() {
                 <ul className="space-y-1 text-gray-700">
                   <li className="flex items-start space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Normaal spugen werkt niet af</span>
+                    <span>Normaal spugen neemt niet af</span>
                   </li>
                   <li className="flex items-start space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
@@ -831,11 +846,18 @@ export default function SpugenNaDeFlesPage() {
                   </div>
                   <div>
                     <p className="text-gray-700">
-                      <strong>Onthoud:</strong> Deze fase gaat voorbij. De meeste ouders kijken er later op 
+                      <strong>Onthoud:</strong> Deze fase gaat voorbij. De meeste ouders kijken er later op
                       terug als een kleine hindernis in de mooie reis van het ouderschap.
                     </p>
                   </div>
                 </div>
+              </div>
+
+              <div className="border-t border-gray-200 pt-6 mt-6">
+                <p className="text-sm text-gray-500">
+                  Dit artikel geeft algemene informatie en vervangt geen medisch advies. Twijfel je over de
+                  gezondheid van je baby, neem dan contact op met je consultatiebureau of huisarts.
+                </p>
               </div>
             </div>
 

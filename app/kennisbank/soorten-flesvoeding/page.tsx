@@ -12,8 +12,8 @@ export default function SoortenFlesvoedingPage() {
   
   const formulaComparison = [
     { type: 'Nummer 1 (0-6m)', protein: '1.2-1.8g/100ml', iron: '0.5-1.0mg/100ml', usage: 'Hoofdvoeding', required: 'Ja, als geen borstvoeding' },
-    { type: 'Nummer 2 (6-12m)', protein: '1.6-2.2g/100ml', iron: '4-6mg/100ml', usage: 'Met vaste voeding', required: 'Optioneel' },
-    { type: 'Nummer 3 (12m+)', protein: '2.0-2.5g/100ml', iron: '6-8mg/100ml', usage: 'Aanvulling op dieet', required: 'Optioneel' }
+    { type: 'Nummer 2 (6-12m)', protein: '1.6-2.2g/100ml', iron: '1.0-1.3mg/100ml', usage: 'Met vaste voeding', required: 'Optioneel' },
+    { type: 'Nummer 3 (12m+)', protein: '2.0-2.5g/100ml', iron: '1.0-1.5mg/100ml', usage: 'Aanvulling op dieet', required: 'Optioneel' }
   ]
 
   return (
@@ -103,7 +103,7 @@ export default function SoortenFlesvoedingPage() {
                 </li>
                   <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                  <span>Hoger ijzergehalte: ongeveer 6mg per 100ml</span>
+                  <span>Hoger ijzergehalte: ongeveer 1.2mg per 100ml</span>
                 </li>
                   <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -242,9 +242,13 @@ export default function SoortenFlesvoedingPage() {
                   <div className="font-medium text-gray-700">Kruidvat</div>
                   <div className="text-gray-600">Budget optie, zelfde EU-standaarden</div>
                 </div>
+                <div className="bg-white p-3 rounded-lg">
+                  <div className="font-medium text-gray-700">Aptamil</div>
+                  <div className="text-gray-600">Premium merk, ruim verkrijgbaar</div>
+                </div>
               </div>
             </div>
-            
+
             <div>
               <h3 className="font-medium text-primary mb-3">Biologisch:</h3>
               <div className="space-y-2">
@@ -253,8 +257,8 @@ export default function SoortenFlesvoedingPage() {
                   <div className="text-gray-600">100% biologisch, Europese kwaliteit</div>
                 </div>
                 <div className="bg-white p-3 rounded-lg">
-                  <div className="font-medium text-gray-700">Aptamil</div>
-                  <div className="text-gray-600">Focus op hersensontwikkeling</div>
+                  <div className="font-medium text-gray-700">Holle</div>
+                  <div className="text-gray-600">Biologisch en biodynamisch (Demeter)</div>
                 </div>
               </div>
               <p className="text-xs text-gray-500 mt-3">
@@ -399,21 +403,21 @@ export default function SoortenFlesvoedingPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="bg-white p-4 rounded-lg">
                   <h4 className="font-medium text-gray-600 mb-2">Van 1 naar 2 (6+ maanden):</h4>
-                  <div className="space-y-1 text-gray-700">
-                    <div> Hoger ijzergehalte voor groei</div>
-                    <div> Aangepast aan groeiende behoefte</div>
-                    <div> Meer vitaminen voor ontwikkeling</div>
-                    <div> Maar: type 1 kan ook tot 12 maanden</div>
-                  </div>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Hoger ijzergehalte voor groei</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Aangepast aan groeiende behoefte</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Meer vitaminen voor ontwikkeling</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Maar: type 1 kan ook tot 12 maanden</span></li>
+                  </ul>
                 </div>
                 <div className="bg-white p-4 rounded-lg">
                   <h4 className="font-medium text-gray-600 mb-2">Van 2 naar gewone melk (12+ maanden):</h4>
-                  <div className="space-y-1 text-gray-700">
-                    <div> Volle koemelk is vanaf 12 maanden prima</div>
-                    <div> Peutermelk alleen bij slecht eten</div>
-                    <div> Goedkoper dan peutermelk</div>
-                    <div> Deel van gevarieerd dieet</div>
-                  </div>
+                  <ul className="space-y-2 text-gray-700">
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Volle koemelk is vanaf 12 maanden prima</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Peutermelk alleen bij slecht eten</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Goedkoper dan peutermelk</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Deel van gevarieerd dieet</span></li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -424,21 +428,21 @@ export default function SoortenFlesvoedingPage() {
               <div className="bg-white p-4 rounded-lg">
                 <div className="space-y-3">
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-gray-600 font-medium text-sm">1</div>
+                    <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white font-medium text-sm">1</div>
                     <div>
                       <div className="font-medium text-gray-700">Week 1: Geleidelijk introduceren</div>
                       <div className="text-gray-600">Mix 75% oude voeding + 25% nieuwe voeding</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-gray-600 font-medium text-sm">2</div>
+                    <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white font-medium text-sm">2</div>
                     <div>
                       <div className="font-medium text-gray-700">Week 2: Verhogen naar 50/50</div>
                       <div className="text-gray-600">Baby went aan nieuwe smaak en samenstelling</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-gray-600 font-medium text-sm">3</div>
+                    <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center text-white font-medium text-sm">3</div>
                     <div>
                       <div className="font-medium text-gray-700">Week 3: Volledig overstappen</div>
                       <div className="text-gray-600">100% nieuwe voeding, oude pot bewaren als backup</div>

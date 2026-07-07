@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import Layout from '../../../../components/Layout'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
@@ -41,7 +42,7 @@ export default function UitgebreideFlesvoedingGids() {
             <div className="flex flex-wrap gap-4 text-sm text-gray-600">
               <span>Leestijd: 40+ minuten</span>
               <span> Gemiddelde besparing: €400+ per jaar</span>
-              <span> 95% succes ratio</span>
+              <span> Praktische, betrouwbare informatie</span>
             </div>
           </div>
 
@@ -67,6 +68,91 @@ export default function UitgebreideFlesvoedingGids() {
             </nav>
           </div>
 
+          {/* Basissectie: veilig bereiden en hoeveelheden */}
+          <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6 mb-16">
+            <h2 className="text-lg font-medium text-primary mb-4">
+              De basis: veilig bereiden en juiste hoeveelheden
+            </h2>
+
+            <h3 className="font-medium text-primary mb-2">Hoeveel heeft je baby nodig?</h3>
+            <p className="text-gray-600 leading-relaxed">
+              Een baby drinkt gemiddeld ongeveer 150 ml flesvoeding per kilo lichaamsgewicht per dag. Een baby van 5 kg komt zo op ongeveer 750 ml per dag, verdeeld over de voedingen. Het aantal voedingen neemt af naarmate je baby groeit.
+            </p>
+            <p className="text-gray-600 leading-relaxed mt-2">
+              <Link href="/" className="text-primary hover:underline font-medium">Bereken de exacte hoeveelheid met onze calculator</Link>
+            </p>
+
+            <div className="border-t border-gray-200 pt-6 mt-6">
+              <h3 className="font-medium text-primary mb-2">Veilig bereiden</h3>
+              <ul className="space-y-2 mt-2">
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span className="text-gray-600">Was je handen en gebruik een schone fles</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span className="text-gray-600">Gebruik koud kraanwater; in Nederland hoef je het niet te koken</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span className="text-gray-600">Gebruik het juiste aantal afgestreken maatschepjes volgens de verpakking, geen extra poeder</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span className="text-gray-600">Schud goed tot alles is opgelost</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span className="text-gray-600">Warm de fles op tot 30 à 35°C, niet warmer</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span className="text-gray-600">Test de temperatuur met een druppel op de binnenkant van je pols</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="border-t border-gray-200 pt-6 mt-6">
+              <h3 className="font-medium text-primary mb-2">Bewaren en houdbaarheid</h3>
+              <ul className="space-y-2 mt-2">
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span className="text-gray-600">Bewaar een klaargemaakte fles maximaal 8 uur achterin de koelkast bij 4°C</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span className="text-gray-600">Gooi restjes na een voeding altijd weg</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span className="text-gray-600">Gebruik een opgewarmde fles binnen ongeveer een uur</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span className="text-gray-600">Vervoer onderweg koud en warm ter plekke op</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="border-t border-gray-200 pt-6 mt-6">
+              <h3 className="font-medium text-primary mb-2">Overstappen met de leeftijd</h3>
+              <ul className="space-y-2 mt-2">
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span className="text-gray-600">Eerste hapjes vanaf 6 maanden naast de melk</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span className="text-gray-600">Opvolgmelk (nummer 2) van 6 tot 12 maanden is optioneel</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span className="text-gray-600">Gewone volle koemelk als drinkmelk kan vanaf 12 maanden</span>
+                </li>
+              </ul>
+            </div>
+          </section>
+
           {/* Blog 1: Geld Besparen */}
           <section id="geld-besparen" className="mb-16">
             <div className="mb-8">
@@ -82,10 +168,10 @@ export default function UitgebreideFlesvoedingGids() {
             <div className="prose prose-lg max-w-none">
               <h3>Inleiding: De Werkelijke Kosten van Flesvoeding</h3>
               <p>
-                Flesvoeding kost gemiddeld €600-1200 per jaar - dat is meer dan veel gezinnen budgetteren voor hun complete boodschappenlijst. Maar met de juiste strategie kun je tot 60% besparen zonder in te leveren op kwaliteit. Deze gids toont je precies hoe.
+                Flesvoeding kost gemiddeld €600-1200 per jaar, dat is meer dan veel gezinnen budgetteren voor hun complete boodschappenlijst. Maar met de juiste strategie kun je tot 60% besparen zonder in te leveren op kwaliteit. Deze gids toont je precies hoe.
               </p>
               <p>
-                De realiteit? Alle flesvoeding in Nederland voldoet aan dezelfde strenge EU-verordening 2016/127. Of je nu €8 of €22 betaalt per blik - de voedingswaarde is praktisch identiek. Het verschil zit in marketing, merknaam en verpakking.
+                De realiteit? Alle flesvoeding in Nederland voldoet aan dezelfde strenge EU-verordening 2016/127. Of je nu €8 of €22 betaalt per blik: ze voldoen allemaal aan dezelfde wettelijke EU-eisen voor essentiële voedingsstoffen. Het verschil zit in marketing, merknaam en verpakking.
               </p>
 
               <h3>De Grote Prijsvergelijking: Wat Betaal Je Echt?</h3>
@@ -96,11 +182,11 @@ export default function UitgebreideFlesvoedingGids() {
                 <ul className="space-y-2 mt-2">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span>Gemaakt door Milupa (zelfde fabriek als Nutrilon)</span>
+                    <span>Voldoet aan dezelfde EU-eisen als A-merken</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span>Identieke voedingsstoffen als premium merken</span>
+                    <span>Voldoet aan dezelfde wettelijke EU-eisen voor essentiële voedingsstoffen</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -211,7 +297,7 @@ export default function UitgebreideFlesvoedingGids() {
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span><strong>Maart-April:</strong> Voorraad opbouw periode voor zomervakanties</span>
+                    <span><strong>Maart-April:</strong> voorraadopbouwperiode voor zomervakanties</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -224,7 +310,7 @@ export default function UitgebreideFlesvoedingGids() {
                 </ul>
               </div>
 
-              <h3>Rendement Calculator: Jouw Persoonlijke Besparing</h3>
+              <h3>Rekenvoorbeeld: Jouw Persoonlijke Besparing</h3>
               
               <div className="my-6">
                 <h4>Huidige Situatie (Premium Merk):</h4>
@@ -238,13 +324,13 @@ export default function UitgebreideFlesvoedingGids() {
 
                 <div className="text-center mt-4">
                   <h4 className="text-primary font-medium text-xl">Netto Besparing: €432 per jaar</h4>
-                  <p className="text-gray-600">Rendement op geïnvesteerde tijd: 2000%+ (€432 besparing voor ~4 uur onderzoek)</p>
+                  <p className="text-gray-600">Een paar uur onderzoek levert zo een flinke jaarlijkse besparing op.</p>
                 </div>
               </div>
 
               <h3>Conclusie: Slim Besparen Zonder Compromissen</h3>
               <p>
-                Besparen op flesvoeding draait niet om goedkoop zijn - het draait om slim zijn. Met de juiste strategie geef je je baby dezelfde hoogwaardige voeding voor 40-60% minder geld. Dat is €300-500 per jaar die je kunt besteden aan andere belangrijke dingen.
+                Besparen op flesvoeding draait niet om goedkoop zijn, het draait om slim zijn. Met de juiste strategie geef je je baby dezelfde hoogwaardige voeding voor 40-60% minder geld. Dat is €300-500 per jaar die je kunt besteden aan andere belangrijke dingen.
               </p>
               
               <div className="my-4">
@@ -328,7 +414,7 @@ export default function UitgebreideFlesvoedingGids() {
 
               <h3>Conclusie: Budgetteren voor Succes</h3>
               <p>
-                Flesvoeding kost €400-1200 per jaar - een significante post in het babybudget. De sleutel tot slim uitgeven is de 80/20 regel: 80% van je besparingen komt van 20% van de acties: kies slim merk, winkel online met abonnementen, time je aankopen op aanbiedingen, en bouw voorraad bij kortingen.
+                Flesvoeding kost €400-1200 per jaar, een significante post in het babybudget. De sleutel tot slim uitgeven is de 80/20 regel: 80% van je besparingen komt van 20% van de acties: kies slim merk, winkel online met abonnementen, time je aankopen op aanbiedingen, en bouw voorraad bij kortingen.
               </p>
             </div>
             </div>
@@ -349,7 +435,7 @@ export default function UitgebreideFlesvoedingGids() {
             <div className="prose prose-lg max-w-none">
               <h3>Inleiding: Een Emotionele en Praktische Overgang</h3>
               <p>
-                De overstap van borstvoeding naar flesvoeding is meer dan een technische verandering - het is een emotionele reis. Of je nu terugkeert naar werk, medische redenen hebt, of persoonlijk kiest voor meer flexibiliteit: deze overgang vraagt planning, geduld en vooral zelfcompassie.
+                De overstap van borstvoeding naar flesvoeding is meer dan een technische verandering: het is een emotionele reis. Of je nu terugkeert naar werk, medische redenen hebt, of persoonlijk kiest voor meer flexibiliteit: deze overgang vraagt planning, geduld en vooral zelfcompassie.
               </p>
 
               <h3>Timing: Wanneer is het Beste Moment?</h3>
@@ -456,7 +542,7 @@ export default function UitgebreideFlesvoedingGids() {
 
               <h3>Conclusie: Jouw Reis, Jouw Succes</h3>
               <p>
-                De overgang van borstvoeding naar flesvoeding is een persoonlijke reis die tijd, geduld en zelfacceptatie vraagt. Er bestaat geen "perfecte" timing of methode - alleen wat werkt voor jouw gezin. Succes wordt niet gemeten aan snelheid of hoe soepel de overgang verloopt. Succes is een tevreden baby, een gezonde mama, en een familie die goed samen functioneert.
+                De overgang van borstvoeding naar flesvoeding is een persoonlijke reis die tijd, geduld en zelfacceptatie vraagt. Er bestaat geen "perfecte" timing of methode, alleen wat werkt voor jouw gezin. Succes wordt niet gemeten aan snelheid of hoe soepel de overgang verloopt. Succes is een tevreden baby, een gezonde mama, en een familie die goed samen functioneert.
               </p>
             </div>
             </div>
@@ -480,7 +566,7 @@ export default function UitgebreideFlesvoedingGids() {
                 Terugkeren naar werk terwijl je baby flesvoeding krijgt brengt unieke uitdagingen. Logistiek, organisatie, communicatie met kinderopvang, en vooral: hoe maak je het werkend zonder constante stress. Deze gids geeft concrete oplossingen voor elke werksituatie.
               </p>
               <p>
-                70% van Nederlandse moeders keert terug naar werk binnen 6 maanden. Flesvoeding kan deze overgang makkelijker maken - maar alleen met de juiste planning en systemen.
+                Veel moeders keren binnen 6 maanden terug naar werk. Flesvoeding kan deze overgang makkelijker maken, maar alleen met de juiste planning en systemen.
               </p>
 
               <h3>Pre-Werk Planning: 4 Weken Voor Start</h3>
@@ -513,7 +599,7 @@ export default function UitgebreideFlesvoedingGids() {
                   <ul className="space-y-2 mt-2">
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      <span>Reserve melkpoeder voorraad (1 week voorraad)</span>
+                      <span>Reservevoorraad melkpoeder (1 week voorraad)</span>
                     </li>
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -521,7 +607,7 @@ export default function UitgebreideFlesvoedingGids() {
                     </li>
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                      <span>Reis sterilisatie tabletten</span>
+                      <span>Reissterilisatietabletten</span>
                     </li>
                     <li className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -583,11 +669,11 @@ export default function UitgebreideFlesvoedingGids() {
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span>Sterilisatie tabletten</span>
+                    <span>Sterilisatietabletten</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    <span>Baby-veilige water flessen</span>
+                    <span>Baby-veilige waterflessen</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
@@ -598,7 +684,7 @@ export default function UitgebreideFlesvoedingGids() {
 
               <h3>Conclusie: Maak Het Werkend voor Jouw Gezin</h3>
               <p>
-                Flesvoeding combineren met werk vereist planning, flexibiliteit, en het belangrijkste - jezelf gratie geven tijdens het leerproces. De belangrijkste succesfactoren zijn: over-voorbereiden, communicatie is alles, flexibiliteit verslaat perfectionisme, investeer in tijdbesparende gereedschappen, en bouw ondersteuningsnetwerken.
+                Flesvoeding combineren met werk vereist planning, flexibiliteit, en het belangrijkste: mild zijn voor jezelf tijdens het leerproces. De belangrijkste succesfactoren zijn: over-voorbereiden, communicatie is alles, flexibiliteit verslaat perfectionisme, investeer in tijdbesparende gereedschappen, en bouw ondersteuningsnetwerken.
               </p>
             </div>
             </div>
@@ -611,7 +697,7 @@ export default function UitgebreideFlesvoedingGids() {
                 5. Baby Weigert de Fles - Volledige Probleemoplossende Gids
               </h2>
               <p className="text-gray-600">
-                <em>Leestijd: 8 minuten | Stap-voor-stap oplossingen | 95% succes ratio</em>
+                <em>Leestijd: 8 minuten | Stap-voor-stap oplossingen | Grote kans van slagen</em>
               </p>
             </div>
 
@@ -622,24 +708,24 @@ export default function UitgebreideFlesvoedingGids() {
                 Het scenario: je baby huilt van de honger, je houdt een fles met perfecte temperatuur voor, en... je baby duwt de fles weg, draait het hoofdje weg, en huilt harder. Je voelt je machteloos, gefrustreerd, en maakt je zorgen of je baby wel genoeg binnen krijgt.
               </p>
               <p>
-                Je bent niet alleen. 78% van alle ouders ervaart dit probleem op enig moment. Het goede nieuws? In 95% van de gevallen is het oplosbaar met de juiste aanpak en geduld.
+                Je bent niet alleen. Veel ouders ervaren dit probleem op enig moment. Het goede nieuws? Met de juiste aanpak en geduld is er een grote kans van slagen.
               </p>
 
               <h3>Waarom Baby's de Fles Weigeren: De 8 Hoofdoorzaken</h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
                 <div>
-                  <h4 className="font-medium text-primary">1. Temperatuur Problemen (35%)</h4>
+                  <h4 className="font-medium text-primary">1. Temperatuur Problemen</h4>
                   <p className="text-sm">Baby's zijn gevoeliger voor temperatuurverschillen dan we denken.</p>
                   <ul className="text-sm">
-                    <li>Test op verschillende plekken pols</li>
+                    <li>Test op verschillende plekken van de pols</li>
                     <li>Gebruik flessenthermometer</li>
                     <li>Probeer 1-2 graden variatie</li>
                   </ul>
                 </div>
 
                 <div>
-                  <h4 className="font-medium text-primary">2. Speen Incompatibiliteit (28%)</h4>
+                  <h4 className="font-medium text-primary">2. Speen Incompatibiliteit</h4>
                   <p className="text-sm">Verkeerde doorstroomsnelheid, vorm, of materiaal.</p>
                   <ul className="text-sm">
                     <li>Test verschillende doorstroomsnelheden</li>
@@ -649,7 +735,7 @@ export default function UitgebreideFlesvoedingGids() {
                 </div>
 
                 <div className="bg-white border border-gray-200 rounded-lg p-4">
-                  <h4 className="font-medium text-primary">3. Borstvoeding Voorkeur (22%)</h4>
+                  <h4 className="font-medium text-primary">3. Borstvoeding Voorkeur</h4>
                   <p className="text-sm">Baby ervaart fles als "nep" alternatief.</p>
                   <ul className="text-sm">
                     <li>Laat partner fles geven</li>
@@ -659,12 +745,12 @@ export default function UitgebreideFlesvoedingGids() {
                 </div>
 
                 <div>
-                  <h4 className="font-medium text-primary">4. Overmoeide Baby (10%)</h4>
-                  <p className="text-sm">Timing is cruciaal voor successvolle voeding.</p>
+                  <h4 className="font-medium text-primary">4. Overmoeide Baby</h4>
+                  <p className="text-sm">Timing is cruciaal voor succesvolle voeding.</p>
                   <ul className="text-sm">
                     <li>Alert maar kalme staat</li>
                     <li>Stille, gedimde omgeving</li>
-                    <li>Voor overmoeide huilen</li>
+                    <li>Voed vóór het overmoeide huilen begint</li>
                   </ul>
                 </div>
               </div>
@@ -732,7 +818,7 @@ export default function UitgebreideFlesvoedingGids() {
 
               <h3>Conclusie: Geduld en Volharding Winnen</h3>
               <p>
-                Fles weigering voelt als onoverkomelijk probleem, maar met de juiste aanpak en voldoende geduld lost het bijna altijd op. De belangrijkste takeaways zijn: temperatuur en speen zijn meest voorkomende oorzaken, elke baby is uniek, geduld is cruciaal, zoek hulp wanneer nodig, en dit is tijdelijk - vrijwel alle baby's accepteren uiteindelijk fles.
+                Fles weigering voelt als onoverkomelijk probleem, maar met de juiste aanpak en voldoende geduld lost het bijna altijd op. De belangrijkste takeaways zijn: temperatuur en speen zijn meest voorkomende oorzaken, elke baby is uniek, geduld is cruciaal, zoek hulp wanneer nodig, en dit is tijdelijk: vrijwel alle baby's accepteren uiteindelijk fles.
               </p>
             </div>
             </div>
