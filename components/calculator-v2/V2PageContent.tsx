@@ -3,6 +3,7 @@
 import V2Hero from './V2Hero'
 import FlesCalculatorV2 from './FlesCalculatorV2'
 import PopularProductsWidget from '../PopularProductsWidget'
+import PopularArticles from '../PopularArticles'
 import WarmWeerAlert from '../calculator/WarmWeerAlert'
 import { FAQSection, FeedingTypesInfo } from '../calculator'
 
@@ -43,6 +44,9 @@ export default function V2PageContent({ hero, simpleCalculator = false, variant 
             rightExtra={rightExtra}
           />
         </div>
+
+        {/* Internal links to key kennisbank articles (SEO: pass homepage authority) */}
+        <PopularArticles />
 
         {/* Spacer so the mobile fixed result bar never covers the last content */}
         <div className="h-28 lg:hidden" />
