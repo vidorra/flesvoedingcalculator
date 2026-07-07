@@ -4,6 +4,12 @@ import V3Hero from '../components/calculator-v2/V3Hero'
 import { generateCalculatorSchema, generateOrganizationSchema, generateFAQSchema } from '../lib/structured-data'
 import { faqData } from '../lib/faq-data'
 
+// Explicit self-canonical for the homepage (consolidates query-param variants).
+// Resolves against metadataBase in layout -> https://flesvoedingcalculator.nl/
+export const metadata = {
+  alternates: { canonical: '/' }
+}
+
 /**
  * Homepage: the v3 design promoted to production (bold hero with photo
  * collage, single-card live calculator with gradient result panel).

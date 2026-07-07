@@ -59,9 +59,10 @@ export const metadata = {
     description: 'Bereken hoeveel flesvoeding jouw baby nodig heeft',
     images: ['/twitter-image.png'],
   },
-  alternates: {
-    canonical: 'https://flesvoedingcalculator.nl',
-  },
+  // NOTE: no site-wide `alternates.canonical` here. A hardcoded canonical in the
+  // root layout is inherited by every page, which made all kennisbank articles
+  // canonicalize to the homepage and get dropped from the index. Each page now
+  // self-canonicalizes to its own URL (homepage sets its own explicit canonical).
 }
 
 export default function RootLayout({ children }) {
