@@ -59,7 +59,7 @@ export default function BabyLerenZelfDrinkenPage() {
     },
     {
       fase: "Eerste Pogingen (6-8 maanden)", 
-      kenmerken: "Bilateral control, betere mondcoördinatie",
+      kenmerken: "Tweehandige controle, betere mondcoördinatie",
       activiteiten: "Tuitmondbekers met handvatten, hand-in-hand begeleiding"
     },
     {
@@ -90,7 +90,7 @@ export default function BabyLerenZelfDrinkenPage() {
     {
       naam: "Oxo Tot Rietjesbeker",
       prijs: "€14-18", 
-      voordelen: "Completely leak-proof, promotes proper swallowing",
+      voordelen: "Volledig lekvrij, stimuleert goed slikken",
       geschikt: "10+ maanden"
     }
   ]
@@ -136,7 +136,7 @@ export default function BabyLerenZelfDrinkenPage() {
               <h2 className="text-lg font-medium text-primary mb-4">Inleiding</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Het leren zelfstandig drinken is een cruciale vaardigheid die baby's tussen 6-18 maanden ontwikkelen.
-                Deze milestone bevordert niet alleen zelfstandigheid, maar ook fijne motoriek en cognitieve ontwikkeling.
+                Deze mijlpaal bevordert niet alleen zelfstandigheid, maar ook fijne motoriek en cognitieve ontwikkeling.
                 Net zoals bij <Link href="/kennisbank/voedingstechnieken/overgang-naar-beker" className="text-primary hover:underline font-medium">de overgang naar een beker</Link>,
                 is geduld en de juiste aanpak essentieel voor succes.
               </p>
@@ -158,7 +158,7 @@ export default function BabyLerenZelfDrinkenPage() {
               </h2>
               
               <div className="border-t border-gray-200 pt-6">
-                <h3 className="font-medium text-primary mb-4">Fysiologische Readiness Signalen</h3>
+                <h3 className="font-medium text-primary mb-4">Fysiologische signalen van gereedheid</h3>
                 <p className="text-gray-700 mb-4">
                   Elke baby ontwikkelt zich in eigen tempo, maar deze signalen geven aan dat je baby klaar is om zelfstandig drinken te leren.
                   Vergelijk dit met <Link href="/kennisbank/voedingstechnieken/verschillende-spenen-uitproberen" className="text-primary hover:underline font-medium">het vinden van de juiste speen</Link> -
@@ -176,7 +176,7 @@ export default function BabyLerenZelfDrinkenPage() {
               </div>
 
               <div className="border-t border-gray-200 pt-6">
-                <h3 className="font-medium text-primary mb-4">Nederlandse Consultatiebureau Mijlpalen</h3>
+                <h3 className="font-medium text-primary mb-4">Mijlpalen volgens het consultatiebureau</h3>
                 <ul className="space-y-3">
                   {nederlandseTimingRichtlijnen.map((timing, index) => (
                     <li key={index} className="flex items-start space-x-2">
@@ -239,7 +239,7 @@ export default function BabyLerenZelfDrinkenPage() {
               </div>
               
  <div className="mt-6">
-                <h4 className="font-medium text-gray-700 mb-2">Nederlandse Inkoop Tips</h4>
+                <h4 className="font-medium text-gray-700 mb-2">Handige koop-tips</h4>
                 <p className="text-gray-700 text-sm">
                   <strong>Beste retailers:</strong> Baby-Dump (grootste selectie), Prenatal (expert advice), 
                   Kruidvat/Etos (budget opties), Bol.com (online beoordelingen).
@@ -250,10 +250,10 @@ export default function BabyLerenZelfDrinkenPage() {
 
             {/* Stap-voor-Stap Leerplan */}
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">12-Weken Stap-voor-Stap Leerplan</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Leerplan in 12 weken, stap voor stap</h2>
               
               <div className="border-t border-gray-200 pt-6">
-                <h3 className="font-medium text-primary mb-4">Week 1-2: Introductie Fase</h3>
+                <h3 className="font-medium text-primary mb-4">Week 1-2: Introductiefase</h3>
  <div className="p-4 mb-4">
                   <p className="text-gray-700 text-sm mb-2"><strong>Doelen:</strong> Wennen aan de beker, vrij verkennen, 30-60ml lukt</p>
                   <p className="text-gray-700 text-sm"><strong>Routine:</strong> 2x per dag, sessies van 5 minuten, veel complimenten voor interesse</p>
@@ -261,7 +261,7 @@ export default function BabyLerenZelfDrinkenPage() {
               </div>
 
               <div className="border-t border-gray-200 pt-6">
-                <h3 className="font-medium text-primary mb-4">Week 3-4: Vaardigheid Ontwikkelen</h3>
+                <h3 className="font-medium text-primary mb-4">Week 3-4: Vaardigheid ontwikkelen</h3>
  <div className="p-4 mb-4">
                   <p className="text-gray-700 text-sm mb-2"><strong>Doelen:</strong> Beker naar mond brengen, 60-120ml per sessie, minder hand-in-hand begeleiding</p>
                   <p className="text-gray-700 text-sm"><strong>Activiteiten:</strong> Verschillende vormen proberen, belonen bij succes, 3x per dag</p>
@@ -269,7 +269,7 @@ export default function BabyLerenZelfDrinkenPage() {
               </div>
 
               <div className="border-t border-gray-200 pt-6">
-                <h3 className="font-medium text-primary mb-4">Week 5-8: Competentie Ontwikkeling</h3>
+                <h3 className="font-medium text-primary mb-4">Week 5-8: Competentie ontwikkelen</h3>
  <div className="p-4 mb-4">
                   <p className="text-gray-700 text-sm mb-2"><strong>Doelen:</strong> 150-200ml zelfstandig, minimaal morsen, opnemen in de routine</p>
                   <p className="text-gray-700 text-sm"><strong>Uitdagingen:</strong> Meerdere soorten bekers, integratie bij maaltijden, sociale context</p>
@@ -277,7 +277,7 @@ export default function BabyLerenZelfDrinkenPage() {
               </div>
 
               <div className="border-t border-gray-200 pt-6">
-                <h3 className="font-medium text-primary mb-4">Week 9-12: Mastery & Refinement</h3>
+                <h3 className="font-medium text-primary mb-4">Week 9-12: Verfijnen en beheersen</h3>
  <div className="p-4">
                   <p className="text-gray-700 text-sm mb-2"><strong>Doelen:</strong> Volledige zelfstandigheid, verschillende situaties, drinken in gezelschap</p>
                   <p className="text-gray-700 text-sm"><strong>In de praktijk:</strong> Restaurantbezoek, speelafspraakjes, onderweg, voorbereiding op de opvang</p>
@@ -287,7 +287,7 @@ export default function BabyLerenZelfDrinkenPage() {
 
             {/* Problemen Oplossen */}
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h2 className="text-lg font-medium text-primary mb-4">Veelvoorkomende Problemen Oplossen</h2>
+              <h2 className="text-lg font-medium text-primary mb-4">Veelvoorkomende problemen oplossen</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Deze problemen komen vaak voor tijdens het leerproces. Met de juiste aanpak zijn ze goed op te lossen:
               </p>
@@ -310,14 +310,14 @@ export default function BabyLerenZelfDrinkenPage() {
                   <AlertTriangle className="w-5 h-5 text-amber-600" />
                 </div>
                 <div>
-                  <h3 className="font-medium text-amber-800 mb-2">Nederlandse Kinderopvang Verwachtingen</h3>
+                  <h3 className="font-medium text-amber-800 mb-2">Verwachtingen bij de kinderopvang</h3>
                   <p className="text-sm text-amber-700 leading-relaxed mb-4">
                     De meeste Nederlandse kinderopvang verwacht dat kinderen redelijk zelfstandig kunnen drinken. 
                     Start de training 2-3 maanden voor opvang begint.
                   </p>
                   <ul className="space-y-1 text-sm text-amber-700">
                     <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Zelfstandig drinken gedurende de dag</span></li>
-                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Redelijke morsen controle</span></li>
+                    <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Redelijke controle over morsen</span></li>
                     <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Kan dorst/behoefte aangeven</span></li>
                     <li className="flex items-center space-x-2"><div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div><span>Volgt opvang routine</span></li>
                   </ul>
