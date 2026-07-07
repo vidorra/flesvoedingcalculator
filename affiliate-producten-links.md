@@ -1,91 +1,83 @@
-# Affiliate-producten met links (bol.com) — klaar om toe te voegen
+# Affiliate-producten met links (Bol.com + Amazon.nl) — klaar om toe te voegen
 
-Onderzoek juli 2026. Alle links zijn echte bol.com-productpagina's uit de zoekresultaten.
-Bol.com betaalt ~6-8% op babyproducten (Amazon.nl ~3%), dus deze lijst is Bol-first.
+Onderzoek juli 2026. Alle links zijn echte productpagina's uit de zoekresultaten.
 
-> Verifieer vóór toevoegen: actuele prijs, voorraad en reviews. Bol-product-ID's zijn
-> stabiel maar een SKU kan uitverkocht raken. Kies eventueel een andere kleur/maat-variant
-> van hetzelfde product. Voor je snippet-systeem: plak de URL in de snippet-generator.
+> **Commissie:** Bol.com ~6-8% op babyproducten, Amazon.nl ~3%. **Kies Bol waar het kan**;
+> Amazon.nl (tag `baby260c-21`) is voor prijsvergelijking of producten die Bol niet heeft.
+> **Amazon-linkformaat:** `https://www.amazon.nl/dp/<ASIN>` — jouw snippet-generator zet de
+> ASIN om naar de affiliate-link. Verifieer vóór toevoegen prijs/voorraad/reviews.
 
 ---
 
 ## TOGWAARDE.NL — zomerfocus nu
 
-### Hoog (nu prominent)
+### 1. Zomerslaapzak 0.5 TOG (hero-zomer) — €16-30
+- Bol (Jollein hydrofiel 90cm): https://www.bol.com/nl/nl/p/jollein-baby-slaapzak-hydrofiel-90cm-dino/9300000114456021/
+- Bol (Meyco pre-washed 0.5 TOG 110cm): https://www.bol.com/nl/nl/p/meyco-baby-uni-baby-zomerslaapzak-pre-washed-hydrofiel-soft-olive-110cm-0-5-tog/9300000226255671/
+- Amazon.nl (Mababu 0.5 TOG, met voetjes, GOTS muslin): https://www.amazon.nl/dp/B0C72MC3DK
+- Amazon.nl (Ergobaby 0.5 TOG, 0-6 mnd): https://www.amazon.nl/dp/B07K2DB5WC
 
-1. **Jollein zomerslaapzak hydrofiel 0.5 TOG (90cm)** — €16-23
-   https://www.bol.com/nl/nl/p/jollein-baby-slaapzak-hydrofiel-90cm-dino/9300000114456021/
-   - Kleinere maat (70cm, 3-6 mnd): https://www.bol.com/nl/nl/p/jollein-baby-slaapzak-hydrofiel-70cm-soft-grey/9200000129260405/
+### 2. Kamerthermometer + hygrometer — €10-20  *(de natuurlijke add-on: ze vullen kamertemp in)*
+- Bol: https://www.bol.com/nl/nl/p/thermometer-hygrometer-vochtigheidsmeter-baby-voor-in-babykamer-zwart/9200000104867600/
+- Amazon.nl (DOQAUS thermo-hygrometer): https://www.amazon.nl/dp/B09PH91HX2
 
-2. **Meyco zomerslaapzak pre-washed hydrofiel 0.5 TOG (110cm)** — €20-30
-   https://www.bol.com/nl/nl/p/meyco-baby-uni-baby-zomerslaapzak-pre-washed-hydrofiel-soft-olive-110cm-0-5-tog/9300000226255671/
+### 3. Hydrofiele doeken / swaddles (multipack) — €10-15
+- Bol (Meyco 3-pack): https://www.bol.com/nl/nl/p/meyco-3-pack-hydrofiele-spuugdoekjes-feathers-clouds-dots-stone-green-wit/9200000082971753/
+- Amazon.nl: zoeklink (kies merk/maat): https://www.amazon.nl/s?k=hydrofiele+doeken+baby+multipack
 
-3. **Kamerthermometer + hygrometer (babykamer)** — €10-20
-   https://www.bol.com/nl/nl/p/thermometer-hygrometer-vochtigheidsmeter-baby-voor-in-babykamer-zwart/9200000104867600/
-   - Dé natuurlijke add-on: bezoekers vullen de kamertemperatuur in de calculator in.
+### 4. Babyfoon met temperatuur- en vochtmeting (hero, midden) — €40-100
+- Bol (Rudolphy wifi + camera + temp/vocht): https://www.bol.com/nl/nl/p/rudolphy-babyfoon-met-camera-en-wifi-cloudedge-app-bediening-temperatuur-en-vochtmeter-beweging-en-geluidsmelder/9200000112253606/
+- Amazon.nl (ARENTI 2K, temp/vocht-alarm): https://www.amazon.nl/dp/B0CLCZF5VR
+- Amazon.nl (BÉABA Zen+ met thermometer): https://www.amazon.nl/dp/B07PJZR6CQ
 
-4. **Hydrofiele doeken / swaddles (Meyco 3-pack)** — €10-15
-   https://www.bol.com/nl/nl/p/meyco-3-pack-hydrofiele-spuugdoekjes-feathers-clouds-dots-stone-green-wit/9200000082971753/
-
-### Midden / upsell
-
-5. **Babyfoon met temperatuur- en vochtmeting (Rudolphy, wifi + camera)** — €40-80 (hero)
-   https://www.bol.com/nl/nl/p/rudolphy-babyfoon-met-camera-en-wifi-cloudedge-app-bediening-temperatuur-en-vochtmeter-beweging-en-geluidsmelder/9200000112253606/
-   - Premium alternatief (Philips Avent Connected): https://www.bol.com/nl/nl/p/philips-avent-connected-beeldbabyfoon-babyfoon-met-camera-en-app-scd951-26/9300000220331565/
-
-6. **Winterslaapzak 2.5 TOG (Meyco/Jollein)** — upsell voor set
-   Zoeklink (kies kleur/maat): https://www.bol.com/nl/nl/l/meyco-slaapzakken/11298/4283359600/
-
-7. **1.0 TOG slaapzak (voor-/najaar)** — Jollein assortiment
-   Zoeklink: https://www.bol.com/nl/nl/l/jollein-slaapzakken/11298/4287869694/
+### 5. Winter/najaar-slaapzak (2.5 / 1.0 TOG) — upsell voor set
+- Bol (Meyco assortiment): https://www.bol.com/nl/nl/l/meyco-slaapzakken/11298/4283359600/
+- Amazon.nl (1.0 TOG all-season): https://www.amazon.nl/dp/B0CWD32CMC
 
 ---
 
 ## FLESVOEDINGCALCULATOR.NL
 
-### Hoog (always-on staples)
+### 1. Anti-koliek flessen/starterset (staple) — €20-40  *(koppel aan spugen/krampjes)*
+- Bol (Difrax Newborn Babypakket, S-fles): https://www.bol.com/nl/nl/p/difrax-newborn-babypakket-2x-170-ml-s-fles-creme-2x-250ml-s-fles-creme-1x-newborn-fopspeen-creme-1x-0-6-maanden-fopspeen-glow-in-the-dark/9200000053317575/
+- Amazon.nl (Difrax starterset anti-koliek): https://www.amazon.nl/dp/B010FKE1N6
+- Amazon.nl (Difrax anti-koliek 2x S-fles 0-6 mnd): https://www.amazon.nl/dp/B09SJ2P67K
 
-1. **Anti-koliek starterset (Difrax Newborn Babypakket, S-fles)** — €30-40
-   https://www.bol.com/nl/nl/p/difrax-newborn-babypakket-2x-170-ml-s-fles-creme-2x-250ml-s-fles-creme-1x-newborn-fopspeen-creme-1x-0-6-maanden-fopspeen-glow-in-the-dark/9200000053317575/
-   - Losse Difrax anti-colic S-fles 250ml: https://www.bol.com/nl/nl/p/difrax-anti-colic-s-babyfles-natural-250-ml-i-love-you-rood/9200000123026418/
-   - Koppel aan de spugen- en krampjes-artikelen.
+### 2. Flessenwarmer (~3 min) — €25-50
+- Bol (Philips Avent SCF358/00): https://www.bol.com/nl/nl/p/philips-avent-scf358-00-flesverwarmer/9200000128179985/
+- Bol (Difrax S-flesverwarmer): https://www.bol.com/nl/nl/p/difrax-s-flesverwarmer/9200000022663736/
+- Amazon.nl (Philips Avent SCF358/00): https://www.amazon.nl/dp/B084PMMS2H
 
-2. **Flessenwarmer (Philips Avent SCF358/00, ~3 min)** — €35-50
-   https://www.bol.com/nl/nl/p/philips-avent-scf358-00-flesverwarmer/9200000128179985/
-   - Alternatief (Difrax S-flesverwarmer): https://www.bol.com/nl/nl/p/difrax-s-flesverwarmer/9200000022663736/
+### 3. Flessen-sterilisator — €40-70  *(koppel aan steriliseren-artikel)*
+- Bol (Philips Avent SCF291/00, 6 flessen, 10 min): https://www.bol.com/nl/nl/p/philips-avent-scf291-00-flessen-sterilisator/9300000006206090/
+- Amazon.nl (Philips Avent SCF291/00): https://www.amazon.nl/dp/B08DPMMG4G
+- Amazon.nl (magnetron SCF281/02, goedkoper): https://www.amazon.nl/dp/B003P9WSVC
 
-3. **Flessen-sterilisator (Philips Avent SCF291/00, 6 flessen, 10 min)** — €50-70
-   https://www.bol.com/nl/nl/p/philips-avent-scf291-00-flessen-sterilisator/9300000006206090/
-   - Goedkopere magnetron-variant (SCF281/02): https://www.bol.com/nl/nl/p/philips-avent-scf281-02-magnetron-sterilisator/9200000002008475/
-   - Koppel aan het steriliseren-artikel (vooral eerste 6 maanden).
+### 4. Melkmachine (hero) — €120-200  *(positioneer als gemak)*
+- Bol (Baby Brezza Formula Pro Advanced): https://www.bol.com/nl/nl/p/baby-brezza-formula-pro-advanced-baby-fles-maker/9300000013173476/
+- Bol (Tommee Tippee Perfect Prep, wit): https://www.bol.com/nl/nl/p/tommee-tippee-voedingsvoorbereider-perfect-prep-elektrisch-wit/9200000092160510/
+- Amazon.nl (Baby Brezza Formula Pro Advanced): https://www.amazon.nl/dp/B07MYW28QR
+- Amazon.nl (Tommee Tippee Perfect Prep, wit): https://www.amazon.nl/dp/B00BG6304A
 
-4. **Melkpoeder-doseerdoos voor onderweg (NUK, 4 stapelbaar)** — €6-10
-   https://www.bol.com/nl/nl/p/nuk-80601183-melkpoeder-doseerdoos-4-stapelbare-compartimenten-voor-bewaren-poeder-grijs/9200000028217190/
-   - Alternatief (Reer dispenser-set): https://www.bol.com/nl/nl/p/reer-21012-milk-powder-dispenser-set-melkpoeder-doseerdoosje-doseerflesje/9300000049517455/
+### 5. Melkpoeder-doseerdoos onderweg — €6-12
+- Bol (NUK 4 stapelbaar): https://www.bol.com/nl/nl/p/nuk-80601183-melkpoeder-doseerdoos-4-stapelbare-compartimenten-voor-bewaren-poeder-grijs/9200000028217190/
+- Amazon.nl (NUK melkpoedercontainer): https://www.amazon.nl/dp/B009X83YBM
 
-5. **Spuugdoekjes hydrofiel (Meyco 6-pack badstof)** — €10-15
-   https://www.bol.com/nl/nl/p/meyco-basic-badstof-spuugdoekjes-6-pack-offwhite-forest-green-taupe-30x30cm/9300000048455933/
-   - Koppel aan het spugen-artikel.
+### 6. Spuugdoekjes hydrofiel (multipack) — €10-15  *(koppel aan spugen-artikel)*
+- Bol (Meyco 6-pack badstof): https://www.bol.com/nl/nl/p/meyco-basic-badstof-spuugdoekjes-6-pack-offwhite-forest-green-taupe-30x30cm/9300000048455933/
+- Amazon.nl: zoeklink (kies merk): https://www.amazon.nl/s?k=spuugdoekjes+hydrofiel+baby
 
-### Midden / hero
+### 7. Flessen-droogrek mét flessenborstel — €15-25
+- Bol: https://www.bol.com/nl/nl/p/flessen-droogrek-met-flessenborstel-afdruiprek-babyflessen-afdruiprek-met-lekbak-grey-white/9300000071820509/
+- Amazon.nl: zoeklink: https://www.amazon.nl/s?k=babyflessen+droogrek+flessenborstel
 
-6. **Melkmachine (hero) — Baby Brezza Formula Pro Advanced** — €150-200
-   https://www.bol.com/nl/nl/p/baby-brezza-formula-pro-advanced-baby-fles-maker/9300000013173476/
-   - Alternatief (Tommee Tippee Perfect Prep): https://www.bol.com/nl/nl/p/tommee-tippee-voedingsvoorbereider-perfect-prep-elektrisch-wit/9200000092160510/
-   - Positioneer als gemak (in NL is koud kraanwater prima, zie ons water-koken-artikel).
-
-7. **Flessen-droogrek mét flessenborstel** — €15-25
-   https://www.bol.com/nl/nl/p/flessen-droogrek-met-flessenborstel-afdruiprek-babyflessen-afdruiprek-met-lekbak-grey-white/9300000071820509/
-
-8. **Extra spenen / speensets (flow-standen)** — €6-15
-   Zoeklink (kies merk passend bij de fles): https://www.bol.com/nl/nl/l/difrax-flesjes/11351/4287641923/
-   - Koppel aan het "verschillende spenen uitproberen"-artikel.
+### 8. Extra spenen / speensets (flow-standen) — €6-15  *(koppel aan spenen-artikel)*
+- Bol (Difrax flesjes/spenen): https://www.bol.com/nl/nl/l/difrax-flesjes/11351/4287641923/
+- Amazon.nl: zoeklink: https://www.amazon.nl/s?k=difrax+speen+set
 
 ---
 
-## Aanpak / koppeling aan artikelen
-
-Plaats deze niet overal hetzelfde, maar contextueel via het page-snippet-systeem:
+## Koppeling aan artikelen (contextueel tonen)
 
 | Pagina / artikel | Toon |
 |---|---|
@@ -97,4 +89,4 @@ Plaats deze niet overal hetzelfde, maar contextueel via het page-snippet-systeem
 | Togwaarde-calculator | Kamerthermometer, 0.5 TOG zomerslaapzak |
 | Wiegendood / veilig slapen | Babyfoon met temperatuur, slaapzak |
 
-**Amazon.nl** (tag baby260c-21) alleen inzetten voor producten die niet (goed) op Bol staan; commissie is daar lager.
+**Regel:** Bol-link waar beschikbaar (hogere commissie), Amazon.nl als alternatief/prijsvergelijking of voor wat Bol mist.
