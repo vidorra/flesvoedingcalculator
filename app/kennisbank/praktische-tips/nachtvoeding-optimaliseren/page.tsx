@@ -139,6 +139,29 @@ export default function NachtvoedingOptimaliserenPage() {
     }
   ]
 
+  const afbouwStappen = [
+    {
+      title: 'Check eerst of afbouwen passend is',
+      description: 'Bouw pas af als je baby overdag genoeg binnenkrijgt, goed groeit en zich prettig ontwikkelt. Bij twijfel, of als je baby afvalt of onrustig blijft, overleg eerst met het consultatiebureau of de jeugdarts.'
+    },
+    {
+      title: 'Kies wat je afbouwt: hoeveelheid of aantal',
+      description: 'Je kunt per nachtvoeding de hoeveelheid melk stapsgewijs verminderen met ongeveer 20 tot 30 ml per nacht, of het aantal nachtvoedingen geleidelijk terugbrengen (bijvoorbeeld van twee naar een). Kies de aanpak die het rustigst voelt voor jou en je baby.'
+    },
+    {
+      title: 'Bouw rustig af en houd het consistent',
+      description: 'Verklein de fles elke een tot twee nachten een stapje verder, in plaats van in een keer te stoppen. Consistentie over ongeveer een tot twee weken helpt je baby wennen aan het nieuwe ritme.'
+    },
+    {
+      title: 'Gebruik water als tussenstap',
+      description: 'Als je baby vooral uit gewoonte of zuigbehoefte lijkt te drinken, kun je een nachtvoeding vervangen door wat water in plaats van melk. Vaak neemt de behoefte aan die voeding dan vanzelf af.'
+    },
+    {
+      title: 'Verschuif de aandacht naar overdag en de routine',
+      description: 'Zorg dat je baby overdag en bij de laatste voeding voor het slapen genoeg binnenkrijgt. Een vaste, rustige slaaproutine is bij oudere baby\'s vaak belangrijker dan de nachtvoeding zelf.'
+    }
+  ]
+
   const timeComparison = [
     {
       method: 'Traditioneel',
@@ -423,6 +446,93 @@ export default function NachtvoedingOptimaliserenPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Afbouw Stappenplan */}
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <h2 className="text-lg font-medium text-primary mb-4">Nachtvoeding Afbouwen: Stap voor Stap</h2>
+          <p className="text-gray-700 mb-6">
+            Vanaf ongeveer zes maanden kan het bij veel baby's mogelijk zijn om de nachtvoeding rustig af te bouwen.
+            Onderstaand stappenplan is een richtlijn, geen strak schema: elke baby is anders. Ga geleidelijk te werk
+            en volg het tempo van je kind.
+          </p>
+
+          <ol className="space-y-4">
+            {afbouwStappen.map((step, index) => (
+              <li key={index} className="flex items-start space-x-3">
+                <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center flex-shrink-0 font-medium">
+                  {index + 1}
+                </div>
+                <div>
+                  <h3 className="font-medium text-primary mb-1">{step.title}</h3>
+                  <p className="text-gray-600">{step.description}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+
+          <div className="border-t border-gray-200 pt-6 mt-6">
+            <p className="text-gray-600">
+              Bouw alleen af als je baby overdag genoeg drinkt en goed groeit. Merk je dat je baby echt honger heeft,
+              slechter groeit of onrustig wordt, bouw dan minder snel af of pauzeer even. Bij twijfel is het
+              consultatiebureau het juiste adres om mee te kijken.
+            </p>
+          </div>
+        </div>
+
+        {/* Honger of gewoonte */}
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <h2 className="text-lg font-medium text-primary mb-4">Honger of Gewoonte?</h2>
+          <p className="text-gray-700 mb-6">
+            Wakker worden 's nachts betekent niet altijd honger. Bij oudere baby's is het vaak een aangeleerde
+            gewoonte of zuigbehoefte geworden. Deze signalen helpen je het onderscheid te maken.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-medium text-primary mb-3">Wijst eerder op honger</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span>Drinkt gulzig en werkt een volledige fles weg</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span>Is na de voeding duidelijk tevreden en rustig</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span>Kreeg overdag mogelijk te weinig binnen</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-medium text-primary mb-3">Wijst eerder op gewoonte</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span>Neemt een paar slokjes en valt weer in slaap</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span>Zoekt vooral troost, warmte of de zuigbehoefte</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <span>Wordt op steeds ongeveer dezelfde tijd wakker</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-gray-200 pt-6 mt-6">
+            <p className="text-gray-600">
+              Houd er rekening mee dat een groeispurt tijdelijk voor meer honger kan zorgen, ook 's nachts. Dat trekt
+              meestal na een paar dagen weer bij. Blijft je baby structureel veel honger houden, groeit hij minder goed
+              of twijfel je, bespreek het dan met het consultatiebureau.
+            </p>
           </div>
         </div>
 

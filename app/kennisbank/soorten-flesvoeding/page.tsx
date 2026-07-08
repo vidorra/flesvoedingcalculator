@@ -200,6 +200,9 @@ export default function SoortenFlesvoedingPage() {
                   <span>Overleg met consultatiebureau</span>
                 </li>
                 </ul>
+                <p className="text-sm text-gray-600 mt-3">
+                  Hoeveel melk heeft een dreumes nodig en zit er te veel suiker in peutermelk? Lees ons artikel over <Link href="/kennisbank/soorten-flesvoeding/melk-voor-dreumes-en-peuter" className="text-primary hover:underline font-medium">melk voor een dreumes en peuter</Link>.
+                </p>
               </div>
             </div>
           </div>

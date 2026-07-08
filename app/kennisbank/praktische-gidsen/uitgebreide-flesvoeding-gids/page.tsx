@@ -153,6 +153,41 @@ export default function UitgebreideFlesvoedingGids() {
             </div>
           </section>
 
+          {/* Opnieuw beginnen bij een tweede kindje */}
+          <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6 mb-16">
+            <h2 className="text-lg font-medium text-primary mb-4">
+              Opnieuw beginnen bij een tweede kindje
+            </h2>
+            <p className="text-gray-600 leading-relaxed">
+              Krijg je een tweede kindje en is het even geleden dat je flesvoeding gaf? Geruststellend: de basis is
+              onveranderd. De richtlijn van ongeveer 150 ml per kilo lichaamsgewicht per dag, de hygiëne en de manier
+              van bereiden zijn nog steeds hetzelfde. Je hoeft dus niet opnieuw alles te leren, alleen even op te frissen.
+            </p>
+
+            <div className="border-t border-gray-200 pt-6 mt-6">
+              <h3 className="font-medium text-primary mb-2">Wat ouders vaak even opnieuw checken</h3>
+              <ul className="space-y-2 mt-2">
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span className="text-gray-600">De hoeveelheden per leeftijd, want die verschuiven naarmate je baby groeit</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span className="text-gray-600">De stappen voor veilig bereiden en bewaren</span>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  <span className="text-gray-600">Of je spenen en flessen van je eerste kindje kunt hergebruiken: dat kan als ze goed schoongemaakt en niet beschadigd of versleten zijn</span>
+                </li>
+              </ul>
+            </div>
+
+            <p className="text-gray-600 leading-relaxed mt-6">
+              <Link href="/" className="text-primary hover:underline font-medium">Bereken de juiste hoeveelheid met de calculator</Link> of lees de{' '}
+              <Link href="/kennisbank/basis-flesvoeding/eerste-keer-flesvoeding-geven" className="text-primary hover:underline font-medium">gids voor de eerste keer flesvoeding geven</Link> om je kennis snel bij te werken.
+            </p>
+          </section>
+
           {/* Blog 1: Geld Besparen */}
           <section id="geld-besparen" className="mb-16">
             <div className="mb-8">

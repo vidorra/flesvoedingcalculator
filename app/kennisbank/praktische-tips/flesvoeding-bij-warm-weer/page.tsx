@@ -179,6 +179,55 @@ export default function WarmWeerPage() {
               </p>
             </section>
 
+            {/* Bewaarschema bij warm weer */}
+            <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+              <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
+                <Thermometer className="w-5 h-5 mr-2" />
+                Bewaarschema bij warm weer
+              </h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                In de hitte bederft klaargemaakte voeding sneller en vermeerderen bacteriën zich rapper.
+                Hanteer daarom bij warm weer de kortere kant van de bewaartijden en maak een fles het
+                liefst vers vlak voor de voeding. Dit schema helpt je op weg:
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse border border-gray-300">
+                  <thead>
+                    <tr className="bg-white">
+                      <th className="border border-gray-300 px-4 py-2 text-left">Situatie</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Bewaartijd bij warm weer</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="border border-gray-300 px-4 py-2 font-medium">Vers bereide fles</td>
+                      <td className="border border-gray-300 px-4 py-2">Direct geven. Laat de fles niet opwarmen in de zon of in de auto.</td>
+                    </tr>
+                    <tr className="bg-white">
+                      <td className="border border-gray-300 px-4 py-2 font-medium">Klaargemaakte fles op kamertemperatuur</td>
+                      <td className="border border-gray-300 px-4 py-2">Binnen ongeveer 1 uur gebruiken, anders weggooien. Bij hitte korter aanhouden dan deze richtlijn.</td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 px-4 py-2 font-medium">Klaargemaakte fles in de koelkast (4°C)</td>
+                      <td className="border border-gray-300 px-4 py-2">Maximaal 8 uur (ongebruikt). Bij warm weer is een koude koelkast extra belangrijk, bewaar de fles achterin bij 4°C.</td>
+                    </tr>
+                    <tr className="bg-white">
+                      <td className="border border-gray-300 px-4 py-2 font-medium">Fles waaruit is gedronken</td>
+                      <td className="border border-gray-300 px-4 py-2">Restje altijd weggooien, zeker in de hitte. Het speeksel van je baby laat bacteriën in de melk groeien.</td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 px-4 py-2 font-medium">Onderweg</td>
+                      <td className="border border-gray-300 px-4 py-2">Koeltas met koelelement gebruiken. Neem poeder en water apart mee en meng vers vlak voor de voeding.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-gray-600 text-sm mt-4">
+                Het volledige overzicht met alle bewaartijden en temperaturen vind je in onze gids over{' '}
+                <Link href="/kennisbank/hygiene-bereiding/houdbaarheid-flesvoeding" className="text-primary hover:underline font-medium">houdbaarheid van flesvoeding</Link>.
+              </p>
+            </section>
+
             {/* Uitdroging herkennen */}
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Uitdroging herkennen</h2>

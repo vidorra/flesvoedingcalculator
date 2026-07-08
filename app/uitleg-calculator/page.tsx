@@ -1,6 +1,6 @@
 import Layout from '../../components/Layout'
 import Link from 'next/link'
-import { Calculator, AlertCircle, Baby, Scale, Clock, Zap, BookOpen, ChevronRight, Shield } from 'lucide-react'
+import { Calculator, AlertCircle, Baby, Scale, Clock, Zap, BookOpen, ChevronRight, Shield, TrendingUp } from 'lucide-react'
 
 export const metadata = {
   title: 'Hoe Werkt de Flesvoeding Calculator? | Complete Uitleg 2026',
@@ -294,6 +294,62 @@ export default function UitlegCalculatorPage() {
                 ))}
               </tbody>
             </table>
+          </div>
+        </div>
+
+        {/* Growth Spurts */}
+        <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
+          <h2 className="text-lg font-medium text-primary mb-4 flex items-center">
+            <TrendingUp className="w-5 h-5 mr-2" />
+            Groeispurts en de calculator
+          </h2>
+
+          <p className="text-gray-600 mb-4">
+            De calculator toont naast de gemiddelde hoeveelheid ook een hogere waarde "tot X ml bij groeispurt".
+            Tijdens een groeispurt heeft je baby tijdelijk meer voeding nodig, en die bovengrens geeft aan waar de
+            behoefte in die dagen naartoe kan lopen. Hieronder leggen we uit waar dat vandaan komt.
+          </p>
+
+          <div className="space-y-4">
+            <div className="border-t border-gray-200 pt-4">
+              <h3 className="font-medium text-gray-700 mb-2">Wat is een groeispurt?</h3>
+              <p className="text-gray-600 text-sm mb-2">
+                Een groeispurt is een korte periode waarin je baby extra hard groeit en daardoor tijdelijk meer
+                energie en dus meer voeding vraagt. Groeispurts komen vaak voor rond 2 tot 3 weken, 6 weken,
+                3 maanden en 6 maanden. Dit zijn indicaties: elke baby is anders en niet elke baby volgt exact
+                dit ritme.
+              </p>
+            </div>
+
+            <div className="border-t border-gray-200 pt-4">
+              <h3 className="font-medium text-gray-700 mb-2">Hoe je het herkent</h3>
+              <p className="text-gray-600 text-sm mb-2">
+                Tijdens een groeispurt wil je baby vaak vaker en meer drinken, soms met korte tussenpozen kort na
+                elkaar (cluster feeding). Je baby kan ook onrustiger zijn en vaker wakker worden. Dit duurt meestal
+                een paar dagen en is normaal.
+              </p>
+            </div>
+
+            <div className="border-t border-gray-200 pt-4">
+              <h3 className="font-medium text-gray-700 mb-2">Wat je het beste kunt doen</h3>
+              <ul className="text-gray-600 text-sm space-y-1">
+                <li className="flex items-start space-x-2">
+                  <span className="font-medium">1.</span>
+                  <span>Voed op verzoek: bied wat vaker een fles aan als je baby honger aangeeft.</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <span className="font-medium">2.</span>
+                  <span>Verhoog niet standaard de poederconcentratie: houd de ratio van de verpakking aan.</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <span className="font-medium">3.</span>
+                  <span>Na een paar dagen normaliseert de behoefte meestal weer.</span>
+                </li>
+              </ul>
+              <p className="text-gray-500 text-sm italic mt-3">
+                Twijfel je of houdt het aan? Overleg dan met je consultatiebureau.
+              </p>
+            </div>
           </div>
         </div>
 

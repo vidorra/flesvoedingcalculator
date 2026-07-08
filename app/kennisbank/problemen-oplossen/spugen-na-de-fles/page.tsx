@@ -505,6 +505,26 @@ export default function SpugenNaDeFlesPage() {
               </div>
             </div>
 
+            {/* Veilig slapen bij reflux */}
+            <div className="bg-amber-50 rounded-2xl shadow-sm border border-amber-200 p-6">
+              <div className="flex items-start space-x-3">
+                <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <AlertTriangle className="w-5 h-5 text-amber-600" />
+                </div>
+                <div>
+                  <h3 className="font-medium text-amber-800 mb-2">Let op: leg je baby plat op de rug te slapen</h3>
+                  <p className="text-sm text-amber-700 leading-relaxed">
+                    Verhoog het hoofdeinde van het matras niet en laat je baby niet schuin of onder een
+                    hoek slapen om spugen of reflux te verminderen. Een schuine of verhoogde ligging is
+                    niet bewezen effectief tegen reflux en verhoogt het risico dat je baby onderuitzakt in
+                    een onveilige houding. De veilig-slapenrichtlijn gaat altijd voor: leg je baby plat op
+                    de rug te slapen, in een leeg bedje. Rechtop houden doe je alleen wakker en onder
+                    toezicht, direct na de voeding, niet tijdens het slapen.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* Speen Selection */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <h2 className="text-lg font-medium text-primary mb-4">Speen Selectie</h2>
