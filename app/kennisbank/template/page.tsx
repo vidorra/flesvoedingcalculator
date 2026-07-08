@@ -6,6 +6,8 @@ import { BookOpen, CheckCircle, AlertTriangle, Users, Calculator, ArrowRight } f
 export const metadata = {
   title: 'Kennisbank Article Template: Complete Nederlandse Gids 2026',
   description: 'Perfect template demonstrating all approved styling patterns, layouts, and components for kennisbank articles. Based on overstappen-van-borst-naar-fles structure.',
+  // Internal scaffold/template page - keep out of the index (thin, non-user-facing content).
+  robots: { index: false, follow: false }
 }
 
 export default function KennisbankTemplatePage() {
