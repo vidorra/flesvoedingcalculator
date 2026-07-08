@@ -37,6 +37,11 @@ const ARTICLES = [
     href: '/kennisbank/soorten-flesvoeding',
     title: 'Soorten flesvoeding',
     desc: 'Alle typen flesvoeding op een rij'
+  },
+  {
+    href: '/schepjes-calculator',
+    title: 'Hoeveel schepjes flesvoeding?',
+    desc: 'Bereken schepjes per ml (1 schepje per 30 ml)'
   }
 ]
 

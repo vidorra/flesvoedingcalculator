@@ -209,6 +209,10 @@ export default function FlesBerenStapVoorStap() {
                   <div className="font-medium text-primary">Flesvoeding Calculator →</div>
                   <div className="text-sm text-gray-600">Bereken de juiste hoeveelheden</div>
                 </Link>
+                <Link href="/schepjes-calculator" className="p-3 bg-default border border-gray-200 rounded-lg hover:border-primary hover:bg-default transition-colors">
+                  <div className="font-medium text-primary">Schepjes calculator →</div>
+                  <div className="text-sm text-gray-600">Hoeveel schepjes per ml (1 per 30 ml)</div>
+                </Link>
               </div>
             </div>
 
