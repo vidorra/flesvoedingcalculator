@@ -49,7 +49,7 @@ export default function V2PageContent({ hero, simpleCalculator = false, variant 
         <PopularArticles />
 
         {/* Spacer so the mobile fixed result bar never covers the last content */}
-        <div className="h-28 lg:hidden" />
+        <div className="h-36 lg:hidden" />
       </>
     )
   }

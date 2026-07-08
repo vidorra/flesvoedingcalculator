@@ -408,6 +408,9 @@ export default function FlesCalculatorV2({
     ? 'max-w-xl mx-auto pointer-events-auto rounded-2xl bg-primary-gradient shadow-[0_-6px_28px_rgba(0,0,0,0.16)] p-4'
     : 'max-w-xl mx-auto pointer-events-auto rounded-2xl border-2 border-primary/30 bg-white shadow-[0_-6px_28px_rgba(0,0,0,0.16)] p-4'
 
+  // Scoops for the mobile result bar (the ResultBody one lives in a sub-component)
+  const barScoops = results ? (results.recommendedAmount / FEEDING_MEASUREMENTS.SCOOP_SIZE_ML).toFixed(1) : null
+
   return (
     <div className="relative pb-8">
       <div className="max-w-5xl mx-auto">
@@ -491,21 +494,27 @@ export default function FlesCalculatorV2({
       <div className="lg:hidden fixed inset-x-0 bottom-0 z-40 p-3 pointer-events-none">
         <div className={mobileBarClass}>
           {results ? (
-            <div className="flex items-center justify-between gap-3">
-              <div className="min-w-0">
-                <div className={`text-[11px] uppercase tracking-wide ${simple ? 'text-white/80' : 'text-gray-500'}`}>Per voeding</div>
-                <div className={`text-xl font-bold leading-none ${simple ? 'text-white' : 'text-primary'}`}>{results.recommendedAmount} ml</div>
+            <div>
+              <div className="flex items-center justify-between gap-3">
+                <div className="min-w-0">
+                  <div className={`text-[11px] uppercase tracking-wide ${simple ? 'text-white/80' : 'text-gray-500'}`}>Per voeding</div>
+                  <div className={`text-xl font-bold leading-none ${simple ? 'text-white' : 'text-primary'}`}>{results.recommendedAmount} ml</div>
+                </div>
+                <div className="flex items-center gap-4 flex-shrink-0">
+                  <div className="text-center">
+                    <div className={`text-[11px] uppercase tracking-wide ${simple ? 'text-white/80' : 'text-gray-500'}`}>{results.breastFeedings > 0 ? 'Fles per dag' : 'Per dag'}</div>
+                    <div className={`text-lg font-bold leading-none ${simple ? 'text-white' : 'text-gray-900'}`}>{results.breastFeedings > 0 ? results.bottleDailyAmount : results.dailyAmount} ml</div>
+                  </div>
+                  <div className={`w-px h-8 ${simple ? 'bg-white/30' : 'bg-gray-200'}`} />
+                  <div className="text-center">
+                    <div className={`text-[11px] uppercase tracking-wide ${simple ? 'text-white/80' : 'text-gray-500'}`}>Voedingen</div>
+                    <div className={`text-lg font-bold leading-none ${simple ? 'text-white' : 'text-gray-900'}`}>{results.breastFeedings > 0 ? `${results.bottleFeedings}× fles` : `${results.feedingsPerDay}×`}</div>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center gap-4 flex-shrink-0">
-                <div className="text-center">
-                  <div className={`text-[11px] uppercase tracking-wide ${simple ? 'text-white/80' : 'text-gray-500'}`}>{results.breastFeedings > 0 ? 'Fles per dag' : 'Per dag'}</div>
-                  <div className={`text-lg font-bold leading-none ${simple ? 'text-white' : 'text-gray-900'}`}>{results.breastFeedings > 0 ? results.bottleDailyAmount : results.dailyAmount} ml</div>
-                </div>
-                <div className={`w-px h-8 ${simple ? 'bg-white/30' : 'bg-gray-200'}`} />
-                <div className="text-center">
-                  <div className={`text-[11px] uppercase tracking-wide ${simple ? 'text-white/80' : 'text-gray-500'}`}>Voedingen</div>
-                  <div className={`text-lg font-bold leading-none ${simple ? 'text-white' : 'text-gray-900'}`}>{results.breastFeedings > 0 ? `${results.bottleFeedings}× fles` : `${results.feedingsPerDay}×`}</div>
-                </div>
+              <div className={`mt-2 pt-2 flex items-center justify-between gap-2 text-[11px] border-t ${simple ? 'border-white/25 text-white/90' : 'border-gray-200 text-gray-600'}`}>
+                <span className="truncate">Bereiding: <strong className={simple ? 'text-white' : 'text-gray-900'}>{results.recommendedAmount} ml water + {barScoops} schepjes</strong></span>
+                <span className="flex-shrink-0">Groeispurt: <strong className={simple ? 'text-white' : 'text-gray-900'}>tot {results.maxAmount} ml</strong></span>
               </div>
             </div>
           ) : (
