@@ -71,7 +71,7 @@ function Chip({ active, onClick, children }: { active: boolean; onClick: () => v
     <button
       type="button"
       onClick={onClick}
-      className={`py-2.5 px-3 rounded-xl text-sm font-medium border transition-all ${
+      className={`min-h-[44px] flex items-center justify-center py-2.5 px-3 rounded-xl text-sm font-medium border transition-all ${
         active
           ? 'bg-primary text-white border-primary'
           : 'bg-gray-50 text-gray-700 border-gray-200 hover:border-primary'
@@ -267,8 +267,8 @@ export default function FlesCalculatorV2({
           </Chip>
         ))}
       </div>
-      <label className="mt-3 flex items-center gap-2 text-sm text-gray-700 cursor-pointer">
-        <input type="checkbox" checked={isPremature} onChange={e => setIsPremature(e.target.checked)} className="w-4 h-4" />
+      <label className="mt-2 flex items-center gap-2.5 py-2 text-sm text-gray-700 cursor-pointer">
+        <input type="checkbox" checked={isPremature} onChange={e => setIsPremature(e.target.checked)} className="w-5 h-5 accent-primary flex-shrink-0" />
         <span>Mijn baby is prematuur geboren</span>
       </label>
 
@@ -323,8 +323,8 @@ export default function FlesCalculatorV2({
           </Chip>
         ))}
       </div>
-      <label className="mt-3 flex items-center gap-2 text-sm text-gray-700 cursor-pointer">
-        <input type="checkbox" checked={isCombi} onChange={e => setIsCombi(e.target.checked)} className="w-4 h-4" />
+      <label className="mt-2 flex items-center gap-2.5 py-2 text-sm text-gray-700 cursor-pointer">
+        <input type="checkbox" checked={isCombi} onChange={e => setIsCombi(e.target.checked)} className="w-5 h-5 accent-primary flex-shrink-0" />
         <span>Ik geef ook borstvoeding (combivoeding)</span>
       </label>
       {isCombi && (
