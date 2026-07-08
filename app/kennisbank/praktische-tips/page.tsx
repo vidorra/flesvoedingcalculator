@@ -1,7 +1,13 @@
-'use client'
 import Layout from '../../../components/Layout'
 import Link from 'next/link'
 import { Lightbulb, ArrowRight, Home, DollarSign, Moon, Heart, ShoppingCart } from 'lucide-react'
+
+export const metadata = {
+  title: 'Praktische Tips Flesvoeding: Besparen, Nachtvoeding & Binding',
+  description: 'Handige tips om flesvoeding makkelijker en voordeliger te maken: geld besparen met huismerken, rustige nachtvoeding, binding met je baby en slimme organisatie.',
+  keywords: 'praktische tips flesvoeding, flesvoeding besparen, huismerk flesvoeding, nachtvoeding tips, binding flesvoeding, flesvoeding organiseren',
+  alternates: { canonical: '/kennisbank/praktische-tips/' },
+}
 
 export default function PraktischeTipsPage() {
   const moneySavingTips = [

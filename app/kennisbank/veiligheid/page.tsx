@@ -1,7 +1,13 @@
-'use client'
 import Layout from '../../../components/Layout'
 import Link from 'next/link'
 import { AlertTriangle, ArrowRight, Home, Phone, X, Eye, AlertCircle } from 'lucide-react'
+
+export const metadata = {
+  title: 'Veiligheid Flesvoeding: Richtlijnen, Alarmsignalen & Allergie',
+  description: 'Cruciale veiligheidsrichtlijnen bij flesvoeding: wanneer een arts bellen, wat je nooit mag doen, allergiesignalen herkennen en belangrijke telefoonnummers.',
+  keywords: 'veiligheid flesvoeding, flesvoeding richtlijnen, allergie flesvoeding, alarmsignalen baby, flesvoeding nooit doen, botulisme honing baby',
+  alternates: { canonical: '/kennisbank/veiligheid/' },
+}
 
 export default function VeiligheidPage() {
   const emergencyContacts = [
