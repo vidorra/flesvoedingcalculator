@@ -12,14 +12,8 @@ RUN npm ci
 # Rest van de broncode
 COPY . .
 
-# Accept build arguments from CapRover.
-# ONLY public NEXT_PUBLIC_* values belong here: they are inlined into the
-# client bundle during `next build` and are public by design.
-#
-# Server-only secrets (RECAPTCHA_SECRET_KEY, EMAILJS_PRIVATE_KEY, BOL_*,
-# DATABASE_URL, JWT_SECRET, ADMIN_PASSWORD_HASH) are deliberately NOT declared
-# as ARG/ENV here. They are read at runtime and injected by CapRover as the
-# app's Environmental Variables, so they never get baked into image layers.
+# Accept build arguments from CapRover (public NEXT_PUBLIC_* only; secrets
+# worden runtime door CapRover geïnjecteerd, niet in image-layers).
 ARG NEXT_PUBLIC_SITE_URL
 ARG NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
 ARG NEXT_PUBLIC_EMAILJS_SERVICE_ID
@@ -32,18 +26,17 @@ ENV NEXT_PUBLIC_EMAILJS_SERVICE_ID=$NEXT_PUBLIC_EMAILJS_SERVICE_ID
 ENV NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=$NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
 ENV NEXT_PUBLIC_RECAPTCHA_SITE_KEY=$NEXT_PUBLIC_RECAPTCHA_SITE_KEY
 
-# Limit Node.js memory to prevent OOM kills during build
 ENV NODE_OPTIONS="--max-old-space-size=1024"
 
 RUN npm run build
 
-# DevDependencies + build-cache weggooien. Houdt prod-deps over, inclusief
-# sharp (transitieve dep van next voor image-optimalisatie).
-RUN npm prune --omit=dev && rm -rf .next/cache
+# node_modules weggooien zodat de runner ze vers en prod-only herinstalleert
+# (nodig voor de juiste sharp ARM64-binary; prune sloopt die).
+RUN rm -rf node_modules .next/cache .next/standalone
 
 # ---- Runner: schone image zonder compilers ----
 FROM node:20-alpine AS runner
-# vips = RUNTIME-lib voor sharp (next/image optimalisatie); geen compilers
+# vips = runtime-lib voor sharp (next/image)
 RUN apk add --no-cache tzdata vips
 
 ENV TZ=Europe/Amsterdam
@@ -51,10 +44,10 @@ RUN cp /usr/share/zoneinfo/${TZ} /etc/localtime && echo ${TZ} > /etc/timezone
 
 WORKDIR /app
 
-# Alles uit de builder (geprunede node_modules incl. sharp, .next, broncode,
-# data-defaults, start.sh) — niets ontbreekt, runtime-gedrag identiek
-# (nog steeds `next start`, zelfde image-optimalisatie).
+# App-bestanden (zonder node_modules, incl. data-defaults + start.sh) + verse
+# productie-install. Runtime blijft identiek: `next start` via start.sh.
 COPY --from=builder /app ./
+RUN npm ci --omit=dev
 
 EXPOSE 3000
 ENV HOSTNAME=0.0.0.0
