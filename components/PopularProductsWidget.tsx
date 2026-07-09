@@ -58,17 +58,13 @@ export default function PopularProductsWidget({ limit = 4 }: { limit?: number })
             className="flex flex-col group border border-gray-100 hover:border-primary/30 rounded-xl overflow-hidden transition-colors"
           >
             <div className="relative flex items-center justify-center aspect-[2/1]">
-              {/* Platform-badge (bol.com / Amazon), afgeleid van het type */}
+              {/* Platform-logo (bol.com / Amazon), afgeleid van het type */}
               <div className="absolute top-1.5 right-1.5 z-10">
-                {String(snippet.type || '').includes('amazon') ? (
-                  <span className="bg-[#232F3E] text-white text-[9px] leading-none px-1.5 py-1 rounded font-bold tracking-tight">
-                    amazon
-                  </span>
-                ) : (
-                  <span className="bg-[#0050c8] text-white text-[9px] leading-none px-1.5 py-1 rounded font-bold tracking-tight">
-                    bol<span className="text-[#ffd200]">.com</span>
-                  </span>
-                )}
+                <img
+                  src={String(snippet.type || '').includes('amazon') ? '/amazon.png' : '/bol.jpg'}
+                  alt={String(snippet.type || '').includes('amazon') ? 'Amazon' : 'bol.com'}
+                  className="h-4 w-auto max-w-[48px] object-contain rounded bg-white p-0.5 shadow-sm"
+                />
               </div>
               {snippet.imageUrl ? (
                 <img
