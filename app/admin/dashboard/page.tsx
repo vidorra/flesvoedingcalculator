@@ -17,6 +17,7 @@ export default function SimpleAdminDashboard() {
   const [loadError, setLoadError] = useState(null)
   const [debugInfo, setDebugInfo] = useState('Not started')
   const [pageWebsiteFilter, setPageWebsiteFilter] = useState('flesvoedingcalculator') // Filter pages by website in assignment tab
+  const [currentWebsite, setCurrentWebsite] = useState('flesvoedingcalculator') // Actieve website-context van het JWT-token (create/assign volgen dit)
   const [showAddForm, setShowAddForm] = useState(false)
   const [newSnippet, setNewSnippet] = useState({
     platform: 'bol',
@@ -233,6 +234,15 @@ export default function SimpleAdminDashboard() {
 
         if (data.success && data.admin) {
           setIsAuthenticated(true)
+          // Website-context uit het token lezen zodat de actieve tab en het
+          // token overeenkomen (ook na een refresh na eerder wisselen).
+          try {
+            const payload = JSON.parse(atob(token.split('.')[1]))
+            if (payload.website) {
+              setCurrentWebsite(payload.website)
+              setPageWebsiteFilter(payload.website)
+            }
+          } catch { /* token niet te decoden: laat default staan */ }
           // Add a small delay to ensure the API routes are ready
           setTimeout(() => {
             loadData()
@@ -342,7 +352,9 @@ export default function SimpleAdminDashboard() {
       if (response.ok) {
         const data = await response.json()
         console.log('Admin page snippets data:', data)
-        setPageSnippets(data.assignments || [])
+        // Backend geeft de sleutel `snippets` terug (niet `assignments`),
+        // anders bleef de lijst altijd leeg -> toewijzingen werden nooit getoond.
+        setPageSnippets(data.snippets || data.assignments || [])
       } else {
         console.log('No snippet assignments found for page:', pageId)
         setPageSnippets([])
@@ -356,6 +368,39 @@ export default function SimpleAdminDashboard() {
   const handlePageSelect = (page) => {
     setSelectedPage(page)
     loadPageSnippets(page.id)
+  }
+
+  // Wissel de actieve website-context. Ruilt het JWT-token om via
+  // /api/admin/switch-website zodat de snippet-bibliotheek, snippet-aanmaken
+  // en toewijzingen allemaal bij de gekozen website horen (i.p.v. altijd bij
+  // het login-token). Zonder dit kregen togwaarde-snippets het label
+  // 'flesvoedingcalculator'.
+  const switchWebsite = async (newWebsite) => {
+    setSelectedPage(null)
+    setPageSnippets([])
+    setPageWebsiteFilter(newWebsite)
+    if (newWebsite === currentWebsite) return
+    try {
+      const token = localStorage.getItem('admin_token')
+      const res = await fetch('/api/admin/switch-website', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          ...(token ? { Authorization: `Bearer ${token}` } : {})
+        },
+        body: JSON.stringify({ newWebsite })
+      })
+      const data = await res.json()
+      if (res.ok && data.token) {
+        localStorage.setItem('admin_token', data.token)
+        setCurrentWebsite(newWebsite)
+        await loadData() // herlaad snippet-bibliotheek voor de nieuwe website
+      } else {
+        alert('Kon niet wisselen van website: ' + (data.message || 'onbekende fout'))
+      }
+    } catch (e) {
+      alert('Kon niet wisselen van website')
+    }
   }
 
   const generateSnippet = async () => {
@@ -2131,7 +2176,7 @@ export default function SimpleAdminDashboard() {
                 {/* Website tabs */}
                 <div className="flex space-x-1 mb-4 bg-gray-100 rounded-lg p-1">
                   <button
-                    onClick={() => { setPageWebsiteFilter('flesvoedingcalculator'); setSelectedPage(null) }}
+                    onClick={() => switchWebsite('flesvoedingcalculator')}
                     className={`flex-1 px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
                       pageWebsiteFilter === 'flesvoedingcalculator'
                         ? 'bg-white text-primary shadow-sm'
@@ -2141,7 +2186,7 @@ export default function SimpleAdminDashboard() {
                     Flesvoeding ({pages.filter(p => p.website === 'flesvoedingcalculator' || !p.website).length})
                   </button>
                   <button
-                    onClick={() => { setPageWebsiteFilter('togwaarde'); setSelectedPage(null) }}
+                    onClick={() => switchWebsite('togwaarde')}
                     className={`flex-1 px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
                       pageWebsiteFilter === 'togwaarde'
                         ? 'bg-white text-primary shadow-sm'
