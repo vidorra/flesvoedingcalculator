@@ -1270,6 +1270,38 @@ export default function SimpleAdminDashboard() {
           </div>
         )}
 
+        {/* Globale website-context: bepaalt welke snippets je ziet én het
+            website-label van nieuwe/gekoppelde snippets. Wisselt het JWT-token
+            via /api/admin/switch-website. */}
+        <div className="mb-6 flex flex-wrap items-center gap-3 bg-white border border-gray-200 rounded-lg p-3">
+          <span className="text-sm font-medium text-gray-700">Actieve website:</span>
+          <div className="flex space-x-1 bg-gray-100 rounded-lg p-1">
+            <button
+              onClick={() => switchWebsite('flesvoedingcalculator')}
+              className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
+                currentWebsite === 'flesvoedingcalculator'
+                  ? 'bg-white text-primary shadow-sm'
+                  : 'text-gray-500 hover:text-gray-700'
+              }`}
+            >
+              Flesvoeding
+            </button>
+            <button
+              onClick={() => switchWebsite('togwaarde')}
+              className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
+                currentWebsite === 'togwaarde'
+                  ? 'bg-white text-primary shadow-sm'
+                  : 'text-gray-500 hover:text-gray-700'
+              }`}
+            >
+              TOGWaarde
+            </button>
+          </div>
+          <span className="text-xs text-gray-400">
+            Snippets, aanmaken en koppelen horen bij de gekozen website.
+          </span>
+        </div>
+
         {/* Tab Navigation */}
         <div className="mb-8">
           <nav className="flex space-x-8" aria-label="Tabs">
