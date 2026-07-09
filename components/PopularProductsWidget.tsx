@@ -6,6 +6,7 @@ interface Snippet {
   id: string
   name: string
   url: string
+  type?: string | null
   tag?: string | null
   imageUrl?: string | null
   clicks: number
@@ -56,7 +57,19 @@ export default function PopularProductsWidget({ limit = 4 }: { limit?: number })
             onClick={() => trackClick(snippet.id)}
             className="flex flex-col group border border-gray-100 hover:border-primary/30 rounded-xl overflow-hidden transition-colors"
           >
-            <div className="flex items-center justify-center aspect-[2/1]">
+            <div className="relative flex items-center justify-center aspect-[2/1]">
+              {/* Platform-badge (bol.com / Amazon), afgeleid van het type */}
+              <div className="absolute top-1.5 right-1.5 z-10">
+                {String(snippet.type || '').includes('amazon') ? (
+                  <span className="bg-[#232F3E] text-white text-[9px] leading-none px-1.5 py-1 rounded font-bold tracking-tight">
+                    amazon
+                  </span>
+                ) : (
+                  <span className="bg-[#0050c8] text-white text-[9px] leading-none px-1.5 py-1 rounded font-bold tracking-tight">
+                    bol<span className="text-[#ffd200]">.com</span>
+                  </span>
+                )}
+              </div>
               {snippet.imageUrl ? (
                 <img
                   src={snippet.imageUrl}
@@ -69,9 +82,9 @@ export default function PopularProductsWidget({ limit = 4 }: { limit?: number })
               )}
             </div>
             <div className="p-2 flex flex-col gap-1">
-              {snippet.tag && (
+              {snippet.tag && String(snippet.tag).split(',')[0].trim() && (
                 <span className="text-xs bg-primary/10 text-primary px-1.5 py-0.5 rounded-full self-start">
-                  {snippet.tag}
+                  {String(snippet.tag).split(',')[0].trim()}
                 </span>
               )}
               <p className="text-xs font-medium text-gray-800 line-clamp-2 group-hover:text-primary transition-colors">
