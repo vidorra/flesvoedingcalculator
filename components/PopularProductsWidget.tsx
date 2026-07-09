@@ -63,7 +63,7 @@ export default function PopularProductsWidget({ limit = 4 }: { limit?: number })
                 <img
                   src={String(snippet.type || '').includes('amazon') ? '/amazon.png' : '/bol.jpg'}
                   alt={String(snippet.type || '').includes('amazon') ? 'Amazon' : 'bol.com'}
-                  className="h-4 w-auto max-w-[48px] object-contain rounded bg-white p-0.5 shadow-sm"
+                  className="h-7 w-auto max-w-[80px] object-contain rounded bg-white p-1 shadow-sm"
                 />
               </div>
               {snippet.imageUrl ? (
