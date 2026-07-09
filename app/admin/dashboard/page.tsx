@@ -21,6 +21,7 @@ export default function SimpleAdminDashboard() {
   const [showAddForm, setShowAddForm] = useState(false)
   const [newSnippet, setNewSnippet] = useState({
     platform: 'bol',
+    website: 'flesvoedingcalculator', // Website-label voor nieuwe snippet (kiesbaar in de form)
     name: '',
     url: '',
     shortUrl: '',
@@ -56,6 +57,7 @@ export default function SimpleAdminDashboard() {
   const [filterRating, setFilterRating] = useState('all')
   const [filterPlatform, setFilterPlatform] = useState('all')
   const [filterStatus, setFilterStatus] = useState('all')
+  const [filterWebsite, setFilterWebsite] = useState('all') // Overview: toon alle snippets, filterbaar op website
 
   const router = useRouter()
 
@@ -117,6 +119,11 @@ export default function SimpleAdminDashboard() {
         return false
       }
       if (filterStatus === 'inactive' && snippet.active) {
+        return false
+      }
+
+      // Website filter (Overview toont beide sites)
+      if (filterWebsite !== 'all' && (snippet.website || 'flesvoedingcalculator') !== filterWebsite) {
         return false
       }
 
@@ -682,6 +689,7 @@ export default function SimpleAdminDashboard() {
         price: newSnippet.price,
         originalPrice: newSnippet.originalPrice,
         currency: newSnippet.currency || 'EUR',
+        website: newSnippet.website || 'flesvoedingcalculator',
         active: true
       }
 
@@ -697,6 +705,7 @@ export default function SimpleAdminDashboard() {
         // Reset form
         setNewSnippet({
           platform: 'bol',
+          website: newSnippet.website || 'flesvoedingcalculator',
           name: '',
           url: '',
           shortUrl: '',
@@ -1270,38 +1279,6 @@ export default function SimpleAdminDashboard() {
           </div>
         )}
 
-        {/* Globale website-context: bepaalt welke snippets je ziet én het
-            website-label van nieuwe/gekoppelde snippets. Wisselt het JWT-token
-            via /api/admin/switch-website. */}
-        <div className="mb-6 flex flex-wrap items-center gap-3 bg-white border border-gray-200 rounded-lg p-3">
-          <span className="text-sm font-medium text-gray-700">Actieve website:</span>
-          <div className="flex space-x-1 bg-gray-100 rounded-lg p-1">
-            <button
-              onClick={() => switchWebsite('flesvoedingcalculator')}
-              className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
-                currentWebsite === 'flesvoedingcalculator'
-                  ? 'bg-white text-primary shadow-sm'
-                  : 'text-gray-500 hover:text-gray-700'
-              }`}
-            >
-              Flesvoeding
-            </button>
-            <button
-              onClick={() => switchWebsite('togwaarde')}
-              className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
-                currentWebsite === 'togwaarde'
-                  ? 'bg-white text-primary shadow-sm'
-                  : 'text-gray-500 hover:text-gray-700'
-              }`}
-            >
-              TOGWaarde
-            </button>
-          </div>
-          <span className="text-xs text-gray-400">
-            Snippets, aanmaken en koppelen horen bij de gekozen website.
-          </span>
-        </div>
-
         {/* Tab Navigation */}
         <div className="mb-8">
           <nav className="flex space-x-8" aria-label="Tabs">
@@ -1671,6 +1648,33 @@ export default function SimpleAdminDashboard() {
                           className="mr-2"
                         />
                         <span>Amazon</span>
+                      </label>
+                    </div>
+                  </div>
+
+                  {/* Website keuze - bepaalt het website-label van de snippet */}
+                  <div className="mb-4">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">Website</label>
+                    <div className="flex space-x-4">
+                      <label className="flex items-center">
+                        <input
+                          type="radio"
+                          value="flesvoedingcalculator"
+                          checked={newSnippet.website === 'flesvoedingcalculator'}
+                          onChange={(e) => setNewSnippet(prev => ({ ...prev, website: e.target.value }))}
+                          className="mr-2"
+                        />
+                        <span>Flesvoeding</span>
+                      </label>
+                      <label className="flex items-center">
+                        <input
+                          type="radio"
+                          value="togwaarde"
+                          checked={newSnippet.website === 'togwaarde'}
+                          onChange={(e) => setNewSnippet(prev => ({ ...prev, website: e.target.value }))}
+                          className="mr-2"
+                        />
+                        <span>TOGWaarde</span>
                       </label>
                     </div>
                   </div>
@@ -2376,7 +2380,9 @@ export default function SimpleAdminDashboard() {
                         </div>
                       ) : (
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-64 overflow-y-auto">
-                          {snippets.filter(snippet => 
+                          {snippets.filter(snippet =>
+                            // Alleen snippets van de geselecteerde website tonen
+                            (snippet.website || 'flesvoedingcalculator') === pageWebsiteFilter &&
                             !pageSnippets.some(ps => (ps.snippet?.id || ps.snippetId) === snippet.id)
                           ).map((snippet) => (
                             <button

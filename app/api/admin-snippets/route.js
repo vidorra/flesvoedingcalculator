@@ -44,10 +44,12 @@ function authError(error) {
   )
 }
 
-// GET - list snippets for the current website (with click counts merged)
+// GET - list ALL snippets (both websites). Each row carries its own `website`
+// field so the admin can badge/filter them. Assignment scoping happens per
+// page (page_snippets.website), not by hiding snippets from the library view.
 export async function GET(request) {
   try {
-    const { website } = verifyAdminAndGetWebsite(request)
+    verifyAdminAndGetWebsite(request) // auth only
 
     const url = new URL(request.url)
     const activeOnly = url.searchParams.get('active') === 'true'
@@ -55,7 +57,6 @@ export async function GET(request) {
     const rows = await db
       .select()
       .from(snippetsTable)
-      .where(eq(snippetsTable.website, website))
       .orderBy(snippetsTable.createdAt)
 
     const clickStats = loadClickStats()
@@ -70,14 +71,21 @@ export async function GET(request) {
 }
 
 // POST - create a snippet in the DB (upsert on id so re-adding a product updates it)
+const VALID_WEBSITES = ['flesvoedingcalculator', 'togwaarde']
 export async function POST(request) {
   try {
-    const { website } = verifyAdminAndGetWebsite(request)
+    const { website: tokenWebsite } = verifyAdminAndGetWebsite(request)
     const data = await request.json()
 
     if (!data.name || !data.type) {
       return NextResponse.json({ message: 'Name and type are required' }, { status: 400 })
     }
+
+    // Website komt expliciet uit de create-form (admin kiest fles/tog),
+    // valt terug op het token als het niet is meegegeven.
+    const website = (data.website && VALID_WEBSITES.includes(data.website))
+      ? data.website
+      : tokenWebsite
 
     const now = new Date()
     const cols = toDbColumns(data)
@@ -119,10 +127,10 @@ export async function POST(request) {
   }
 }
 
-// PUT - update a snippet (website-scoped)
+// PUT - update a snippet (by id; admin manages both websites)
 export async function PUT(request) {
   try {
-    const { website } = verifyAdminAndGetWebsite(request)
+    verifyAdminAndGetWebsite(request) // auth only
     const data = await request.json()
 
     if (!data.id) {
@@ -138,7 +146,7 @@ export async function PUT(request) {
     const [snippet] = await db
       .update(snippetsTable)
       .set(set)
-      .where(and(eq(snippetsTable.id, data.id), eq(snippetsTable.website, website)))
+      .where(eq(snippetsTable.id, data.id))
       .returning()
 
     if (!snippet) {
@@ -174,13 +182,14 @@ export async function DELETE(request) {
       return NextResponse.json({ message: 'Snippet ID is required' }, { status: 400 })
     }
 
-    // Remove this snippet's assignments first (see note above)
+    // Remove this snippet's assignments first (see note above). By snippet id
+    // only — a snippet belongs to one website, and the admin manages both.
     await db
       .delete(pageSnippets)
-      .where(and(eq(pageSnippets.snippetId, body.id), eq(pageSnippets.website, website)))
+      .where(eq(pageSnippets.snippetId, body.id))
     const [deleted] = await db
       .delete(snippetsTable)
-      .where(and(eq(snippetsTable.id, body.id), eq(snippetsTable.website, website)))
+      .where(eq(snippetsTable.id, body.id))
       .returning()
 
     if (!deleted) {
