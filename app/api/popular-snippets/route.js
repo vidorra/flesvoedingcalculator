@@ -1,75 +1,60 @@
 import { NextResponse } from 'next/server'
-import fs from 'fs'
-import path from 'path'
+import { db } from '../../../lib/db/connection.js'
+import { snippets, pageSnippets } from '../../../lib/db/schema.js'
+import { eq, and } from 'drizzle-orm'
 
 export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
-const DATA_DIR = path.join(process.cwd(), 'data', 'admin')
-const SNIPPETS_FILE = path.join(DATA_DIR, 'snippets.json')
-const CLICK_STATS_FILE = path.join(DATA_DIR, 'click-stats.json')
-
-function readJson(filePath, fallback) {
-  try {
-    if (!fs.existsSync(filePath)) return fallback
-    return JSON.parse(fs.readFileSync(filePath, 'utf8'))
-  } catch {
-    return fallback
-  }
+/**
+ * Detect website from request hostname (togwaarde.nl -> togwaarde, else
+ * flesvoedingcalculator). Same mapping as /api/affiliates/page/[pageId].
+ */
+function detectWebsiteFromHostname(request) {
+  const host = request.headers.get('host') || 'localhost'
+  const domain = host.split(':')[0].toLowerCase()
+  if (domain.includes('togwaarde')) return 'togwaarde'
+  return 'flesvoedingcalculator'
 }
 
-// Resolve imageUrl from various snippet fields
-function resolveImageUrl(snippet) {
-  // Direct imageUrl field
-  if (snippet.imageUrl) return snippet.imageUrl
-  // bol_snippet type: extractedImageUrl (skip placeholders)
-  if (snippet.extractedImageUrl && !snippet.extractedImageUrl.includes('/placeholder/')) return snippet.extractedImageUrl
-  // Extract from imageHtml
-  if (snippet.imageHtml) {
-    const match = snippet.imageHtml.match(/src=["'](https?:\/\/[^"']+)["']/i)
-    if (match) return match[1]
-  }
-  // Extract from generatedHtml
-  if (snippet.generatedHtml) {
-    const match = snippet.generatedHtml.match(/src=["'](https?:\/\/(?:m\.media-amazon|media\.s-bol)[^"']+)["']/i)
-    if (match) return match[1]
-  }
-  return null
-}
-
-// Resolve a clickable URL (prefer affiliate/fallback URLs)
-function resolveUrl(snippet) {
-  if (snippet.url) return snippet.url
-  if (snippet.fallbackUrl) return snippet.fallbackUrl
-  if (snippet.productId) return `https://www.bol.com/nl/nl/p/-/${snippet.productId}/`
-  return null
-}
-
-// GET /api/popular-snippets?limit=5
+// GET /api/popular-snippets?limit=4
+// Toont de aan de "Standaard (alle pagina's)"-pagina gekoppelde snippets uit
+// de database (voorheen las dit een dood JSON-bestand -> homepage bleef leeg).
 export async function GET(request) {
   try {
     const { searchParams } = new URL(request.url)
-    const limit = Math.min(parseInt(searchParams.get('limit') || '5', 10), 20)
+    const limit = Math.min(parseInt(searchParams.get('limit') || '4', 10), 20)
+    const website = detectWebsiteFromHostname(request)
 
-    const snippets = readJson(SNIPPETS_FILE, [])
-    const stats = readJson(CLICK_STATS_FILE, {})
+    const rows = await db
+      .select({
+        order: pageSnippets.order,
+        active: pageSnippets.active,
+        snippet: snippets
+      })
+      .from(pageSnippets)
+      .leftJoin(snippets, eq(pageSnippets.snippetId, snippets.id))
+      .where(and(eq(pageSnippets.pageId, 'default'), eq(pageSnippets.website, website)))
+      .orderBy(pageSnippets.order)
 
-    const active = snippets
-      .filter(s => s.active !== false)
-      .map(s => ({
-        id: s.id,
-        name: s.name,
-        type: s.type,
-        tag: s.tag,
-        url: resolveUrl(s),
-        imageUrl: resolveImageUrl(s),
-        clicks: stats[s.id]?.count || 0,
-        active: s.active
+    const list = rows
+      .filter(r => r.snippet && r.active !== false && r.snippet.active !== false)
+      .map(r => ({
+        id: r.snippet.id,
+        name: r.snippet.name,
+        type: r.snippet.type,
+        tag: r.snippet.tag,
+        url: r.snippet.url,
+        imageUrl: r.snippet.imageUrl,
+        price: r.snippet.price,
+        originalPrice: r.snippet.originalPrice,
+        currency: r.snippet.currency,
+        active: r.snippet.active
       }))
-      .filter(s => s.url) // only include snippets with a URL
-      .sort((a, b) => b.clicks - a.clicks)
+      .filter(s => s.url)
       .slice(0, limit)
 
-    return NextResponse.json({ success: true, snippets: active })
+    return NextResponse.json({ success: true, snippets: list })
   } catch (error) {
     return NextResponse.json({ success: false, error: error.message }, { status: 500 })
   }
