@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Layout from '../../../components/Layout'
-import { Settings, Link, Plus, Eye, X, Edit, Trash2, ToggleLeft, ToggleRight, RefreshCw, ChevronDown } from 'lucide-react'
+import { Settings, Link, Plus, Eye, X, Edit, Trash2, ToggleLeft, ToggleRight, RefreshCw, ChevronDown, ExternalLink } from 'lucide-react'
 import jwt from 'jsonwebtoken'
 
 // Version: 2.4 - Shared snippets library across websites
@@ -85,6 +85,25 @@ export default function SimpleAdminDashboard() {
   ]
 
   // Filter snippets based on all active filters
+  // Niet-affiliate productlink: snel de actuele prijs checken zonder eigen
+  // affiliate-kliks te genereren. Amazon: kale /dp/ASIN-link (tag eraf).
+  // Bol: kale productpagina op productnummer. Fallback: originele url.
+  const plainProductUrl = (snippet) => {
+    const u = String(snippet.url || '')
+    try {
+      if (String(snippet.type || '').includes('amazon')) {
+        const asin = u.match(/\/(?:dp|gp\/product)\/([A-Z0-9]{10})/i)
+        if (asin) return `https://www.amazon.nl/dp/${asin[1]}`
+        return u
+      }
+      const pid = u.match(/bol\.com\S*?\/(\d{13,17})\//)
+      if (pid) return `https://www.bol.com/nl/nl/p/-/${pid[1]}/`
+      return u
+    } catch {
+      return u
+    }
+  }
+
   const getFilteredSnippets = () => {
     return snippets.filter(snippet => {
       // Search filter
@@ -2066,6 +2085,17 @@ export default function SimpleAdminDashboard() {
                             <div className="flex-1">
                               <div className="flex items-center space-x-3 mb-2">
                                 <h3 className="text-lg font-medium text-gray-900">{snippet.name}</h3>
+                                {snippet.url && (
+                                  <a
+                                    href={plainProductUrl(snippet)}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-gray-400 hover:text-primary transition-colors flex-shrink-0"
+                                    title="Bekijk product (niet-affiliate link, voor prijscheck)"
+                                  >
+                                    <ExternalLink className="w-4 h-4" />
+                                  </a>
+                                )}
                                 {!showOnlyPrice && snippet.tag && (
                                   <span className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium">
                                     {snippet.tag}

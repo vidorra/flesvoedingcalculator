@@ -53,7 +53,7 @@ export default function PopularProductsWidget({ limit = 4 }: { limit?: number })
     <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
       <div className="mb-3">
         <h3 className="text-sm font-semibold text-primary">Aanbevolen Producten</h3>
-        <p className="text-xs text-gray-400 mt-0.5">Gesponsorde links</p>
+        <p className="text-xs text-gray-400 mt-0.5"><a href="/affiliate-disclaimer" className="hover:text-primary underline decoration-dotted underline-offset-2">Gesponsorde links</a></p>
       </div>
       <div className="grid grid-cols-2 gap-3">
         {snippets.map(snippet => (

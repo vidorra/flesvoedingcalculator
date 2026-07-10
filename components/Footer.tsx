@@ -74,6 +74,7 @@ export default function Footer() {
                 <Link href="/uitleg-calculator" className="block hover:text-primary transition-colors">Hoe werkt de calculator?</Link>
                 <Link href="/informatie" className="block hover:text-primary transition-colors">Informatie</Link>
                 <Link href="/medische-disclaimer" className="block hover:text-primary transition-colors">Medische disclaimer</Link>
+                <Link href="/affiliate-disclaimer" className="block hover:text-primary transition-colors">Affiliate-disclaimer</Link>
                 <Link href="/privacy-beleid" className="block hover:text-primary transition-colors">Privacy beleid</Link>
                 <Link href="/gebruiksvoorwaarden" className="block hover:text-primary transition-colors">Gebruiksvoorwaarden</Link>
                 <button
