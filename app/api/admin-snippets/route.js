@@ -1,24 +1,26 @@
 import { NextResponse } from 'next/server'
-import fs from 'fs'
-import path from 'path'
 import { verifyAdminAndGetWebsite } from '../../../lib/jwt-utils.js'
 import { db } from '../../../lib/db/connection.js'
 import { snippets as snippetsTable, pageSnippets } from '../../../lib/db/schema.js'
-import { eq, and } from 'drizzle-orm'
+import { eq, and, sql } from 'drizzle-orm'
+import { ensureClickEventsTable } from '../../../lib/db/ensure-events.js'
 
 // Force dynamic route
 export const dynamic = 'force-dynamic'
 
-// Snippets now live in the DB (persistent Postgres), the same store the live
-// site reads. The JSON file is no longer used. Click stats stay file-based
-// (a separate, non-critical analytics concern).
-const DATA_DIR = path.join(process.cwd(), 'data', 'admin')
-const CLICK_STATS_FILE = path.join(DATA_DIR, 'click-stats.json')
-
-function loadClickStats() {
+// Snippets live in the DB (persistent Postgres), the same store the live
+// site reads. Click stats live in the shared click_events table (was a
+// container-local JSON file that didn't survive deploys).
+async function loadClickStats() {
   try {
-    if (!fs.existsSync(CLICK_STATS_FILE)) return {}
-    return JSON.parse(fs.readFileSync(CLICK_STATS_FILE, 'utf8'))
+    await ensureClickEventsTable()
+    const result = await db.execute(sql`
+      SELECT snippet_id, COUNT(*)::int AS count FROM click_events GROUP BY snippet_id`)
+    const stats = {}
+    for (const row of result.rows) {
+      stats[row.snippet_id] = { count: Number(row.count) }
+    }
+    return stats
   } catch {
     return {}
   }
@@ -59,7 +61,7 @@ export async function GET(request) {
       .from(snippetsTable)
       .orderBy(snippetsTable.createdAt)
 
-    const clickStats = loadClickStats()
+    const clickStats = await loadClickStats()
     let snippets = rows.map(s => ({ ...s, clicks: clickStats[s.id]?.count || 0 }))
     if (activeOnly) snippets = snippets.filter(s => s.active)
 

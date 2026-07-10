@@ -1,72 +1,49 @@
 import { NextResponse } from 'next/server'
-import fs from 'fs'
-import path from 'path'
+import { randomUUID } from 'crypto'
+import { sql } from 'drizzle-orm'
+import { db } from '../../../lib/db/connection.js'
+import { clickEvents } from '../../../lib/db/schema.js'
+import { ensureClickEventsTable } from '../../../lib/db/ensure-events.js'
 import { verifyAdminAndGetWebsite } from '../../../lib/jwt-utils.js'
 
 export const dynamic = 'force-dynamic'
 
-const DATA_DIR = path.join(process.cwd(), 'data', 'admin')
-const CLICK_STATS_FILE = path.join(DATA_DIR, 'click-stats.json')
+const WEBSITE = 'flesvoedingcalculator'
 
-// Bound input and storage so a bot can't pollute stats or grow the file unbounded.
+// Bound input so a bot can't pollute stats.
 const SNIPPET_ID_PATTERN = /^[A-Za-z0-9_-]{1,128}$/
-const MAX_DISTINCT_SNIPPETS = 1000
+const WIDGET_PATTERN = /^[A-Za-z0-9_-]{1,64}$/
 
-function ensureDataDir() {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true })
-  }
-}
-
-function loadStats() {
-  try {
-    ensureDataDir()
-    if (!fs.existsSync(CLICK_STATS_FILE)) {
-      return {}
-    }
-    return JSON.parse(fs.readFileSync(CLICK_STATS_FILE, 'utf8'))
-  } catch {
-    return {}
-  }
-}
-
-function saveStats(stats) {
-  ensureDataDir()
-  fs.writeFileSync(CLICK_STATS_FILE, JSON.stringify(stats, null, 2))
-}
-
-// POST - record a click for a snippet
+// POST - record an affiliate click (anonymous: snippet + widget + timestamp,
+// no IP/session). Stored in the shared click_events table so /admin/stats
+// can report across both websites.
 export async function POST(request) {
   try {
     const body = await request.json()
-    const { snippetId } = body
+    const { snippetId, widget } = body
 
     if (!snippetId || typeof snippetId !== 'string' || !SNIPPET_ID_PATTERN.test(snippetId)) {
       return NextResponse.json({ success: false, error: 'Invalid snippetId' }, { status: 400 })
     }
+    const safeWidget = (typeof widget === 'string' && WIDGET_PATTERN.test(widget)) ? widget : null
 
-    const stats = loadStats()
-    const existing = stats[snippetId]
+    await ensureClickEventsTable()
+    await db.insert(clickEvents).values({
+      id: randomUUID(),
+      website: WEBSITE,
+      snippetId,
+      widget: safeWidget
+    })
 
-    // Don't let unknown IDs grow the file without bound.
-    if (!existing && Object.keys(stats).length >= MAX_DISTINCT_SNIPPETS) {
-      return NextResponse.json({ success: false, error: 'Click tracking capacity reached' }, { status: 429 })
-    }
-
-    stats[snippetId] = {
-      count: (existing?.count || 0) + 1,
-      lastClicked: new Date().toISOString()
-    }
-    saveStats(stats)
-
-    return NextResponse.json({ success: true, count: stats[snippetId].count })
+    return NextResponse.json({ success: true })
   } catch (error) {
     console.error('track-click error:', error)
     return NextResponse.json({ success: false, error: 'Failed to record click' }, { status: 500 })
   }
 }
 
-// GET - return all click stats (admin only)
+// GET - click totals per snippet (admin only), same shape as the old
+// JSON-file version: { stats: { [snippetId]: { count, lastClicked } } }
 export async function GET(request) {
   try {
     verifyAdminAndGetWebsite(request)
@@ -75,7 +52,14 @@ export async function GET(request) {
   }
 
   try {
-    const stats = loadStats()
+    await ensureClickEventsTable()
+    const result = await db.execute(sql`
+      SELECT snippet_id, COUNT(*)::int AS count, MAX(created_at) AS last_clicked
+      FROM click_events GROUP BY snippet_id`)
+    const stats = {}
+    for (const row of result.rows) {
+      stats[row.snippet_id] = { count: Number(row.count), lastClicked: row.last_clicked }
+    }
     return NextResponse.json({ success: true, stats })
   } catch {
     return NextResponse.json({ success: false, error: 'Failed to load stats' }, { status: 500 })

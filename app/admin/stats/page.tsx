@@ -11,6 +11,9 @@ type Stats = {
   byWeight: Row[]
   combi: Row[]
   byRoomTemp: Row[]
+  clickTotals?: Row[]
+  clicksBySnippet?: Row[]
+  clicksDaily?: Row[]
 }
 
 const SITE_LABELS: Record<string, string> = {
@@ -115,6 +118,20 @@ export default function StatsPage() {
   const dailyEntries = Object.entries(dailyAgg).sort((a, b) => a[0].localeCompare(b[0]))
   const dailyMax = dailyEntries.reduce((m, [, c]) => Math.max(m, c), 0)
 
+  // Affiliate clicks (zelfde site-filter als de rest)
+  const clickTotalAll = stats ? filt(stats.clickTotals ?? []).reduce((s, t) => s + Number(t.total), 0) : 0
+  const clickTotal30 = stats ? filt(stats.clickTotals ?? []).reduce((s, t) => s + Number(t.last30), 0) : 0
+  const clickTotal7 = stats ? filt(stats.clickTotals ?? []).reduce((s, t) => s + Number(t.last7 ?? 0), 0) : 0
+  const clickSnippets = stats ? filt(stats.clicksBySnippet ?? []) : []
+  const clickSnippetTotal = clickSnippets.reduce((s, r) => s + Number(r.count), 0)
+  const clickDailyAgg: Record<string, number> = {}
+  if (stats) filt(stats.clicksDaily ?? []).forEach((r) => {
+    const d = String(r.day)
+    clickDailyAgg[d] = (clickDailyAgg[d] || 0) + Number(r.count)
+  })
+  const clickDailyEntries = Object.entries(clickDailyAgg).sort((a, b) => a[0].localeCompare(b[0]))
+  const clickDailyMax = clickDailyEntries.reduce((m, [, c]) => Math.max(m, c), 0)
+
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4">
       <div className="max-w-4xl mx-auto">
@@ -200,6 +217,50 @@ export default function StatsPage() {
                   ))}
                 </Card>
               )}
+
+              {/* Affiliate clicks */}
+              <div className="pt-2">
+                <h2 className="text-xl font-bold text-gray-900 mb-1">Affiliate-kliks</h2>
+                <p className="text-sm text-gray-500 mb-4">Kliks op bol.com/Amazon-productkaarten (anoniem)</p>
+                <div className="grid grid-cols-3 gap-4 mb-6">
+                  <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-5">
+                    <div className="text-2xl font-bold text-gray-900">{clickTotalAll.toLocaleString('nl-NL')}</div>
+                    <div className="text-sm text-gray-500">Totaal kliks</div>
+                  </div>
+                  <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-5">
+                    <div className="text-2xl font-bold text-gray-900">{clickTotal30.toLocaleString('nl-NL')}</div>
+                    <div className="text-sm text-gray-500">Laatste 30 dagen</div>
+                  </div>
+                  <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-5">
+                    <div className="text-2xl font-bold text-gray-900">{clickTotal7.toLocaleString('nl-NL')}</div>
+                    <div className="text-sm text-gray-500">Laatste 7 dagen</div>
+                  </div>
+                </div>
+              </div>
+
+              <Card title="Kliks per product (top 25)">
+                {clickSnippets.length === 0 && <p className="text-sm text-gray-500">Nog geen kliks geregistreerd.</p>}
+                {clickSnippets.map((r) => (
+                  <Bar
+                    key={`${r.website}-${r.snippet_id}`}
+                    label={`${String(r.name)}${site === 'all' ? ` (${label(SITE_LABELS, String(r.website))})` : ''}`}
+                    count={Number(r.count)}
+                    total={clickSnippetTotal}
+                  />
+                ))}
+              </Card>
+
+              <Card title="Kliks per dag (laatste 30 dagen)">
+                {clickDailyEntries.length === 0 ? (
+                  <p className="text-sm text-gray-500">Nog geen data.</p>
+                ) : (
+                  <div className="flex items-end gap-1 h-32">
+                    {clickDailyEntries.map(([d, c]) => (
+                      <div key={d} className="flex-1 bg-amber-500/80 rounded-t" style={{ height: `${clickDailyMax > 0 ? Math.max(4, (c / clickDailyMax) * 100) : 0}%` }} title={`${d}: ${c}`} />
+                    ))}
+                  </div>
+                )}
+              </Card>
             </div>
           </>
         )}
