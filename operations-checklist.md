@@ -130,8 +130,8 @@ Status-peildatum: 10 juli 2026.
 - [x] togwaarde CSP: bewuste keuze genoteerd in middleware.js
   (tracker-entries blijven staan zodat de COOKIE_TRACKERS_ENABLED-vlag
   zonder CSP-breuk terug aan kan).
-- [ ] `info@togwaarde.nl` mailbox of alias (contactformulier mailt nu
-  info@vidorra.nl).
+- [x] `info@togwaarde.nl`: bewust NIET - het contactformulier (mailt
+  naar info@vidorra.nl) volstaat. Besloten 10 juli 2026.
 - [ ] Schema-backlog google-plan §5: WebApplication staat nu op beide
   togwaarde-calculators (fles had al SoftwareApplication); nog open:
   Article + BreadcrumbList op kennisbankartikelen, eigen OG-images.
