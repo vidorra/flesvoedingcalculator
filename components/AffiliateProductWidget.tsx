@@ -4,6 +4,13 @@ import { trackEvent } from '../lib/analytics'
 import { getProductsByCategory, getProductsByIds } from './affiliate-products.js'
 import '../styles/bol-widget.css'
 
+// Prijsweergave: DB-prijzen zijn soms "24.99" en soms "€ 24,99"; toon altijd
+// met euroteken zonder dubbel teken.
+function fmtPrice(price: unknown) {
+  const s = String(price).trim()
+  return s.includes('€') ? s : `€ ${s}`
+}
+
 /**
  * Component that properly executes Bol.com scripts
  * React's dangerouslySetInnerHTML doesn't execute <script> tags by default,
@@ -318,6 +325,20 @@ export default function AffiliateProductWidget({
                     <h4 className="font-medium text-primary text-sm mb-2 line-clamp-2 min-h-[40px] flex items-center justify-center">
                       {product.data.title}
                     </h4>
+                    {/* Prijs uit eigen database (nachtelijke sync / handmatig beheerd) */}
+                    {product.price && (
+                      <div className="mb-2">
+                        <span className="text-lg font-bold text-gray-900">{fmtPrice(product.price)}</span>
+                        {product.originalPrice && product.originalPrice !== product.price && (
+                          <span className="ml-2 text-sm text-gray-500 line-through">{fmtPrice(product.originalPrice)}</span>
+                        )}
+                        {product.priceLastUpdated && (
+                          <div className="text-[10px] text-gray-400 mt-0.5">
+                            Prijs van {new Date(product.priceLastUpdated).toLocaleDateString('nl-NL')}, actuele prijs op bol.com
+                          </div>
+                        )}
+                      </div>
+                    )}
                     <div className="mt-auto">
                       <div className="bg-primary text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors inline-block">
                         Bekijk op bol.com →
@@ -361,12 +382,17 @@ export default function AffiliateProductWidget({
                     <h4 className="font-medium text-primary text-sm mb-2 line-clamp-2 min-h-[40px] flex items-center justify-center">
                       {product.name}
                     </h4>
-                    {/* Price display */}
+                    {/* Prijs: handmatig beheerd via de admin */}
                     {product.price && (
                       <div className="my-2">
-                        <span className="text-lg font-bold text-gray-900">€{product.price}</span>
-                        {product.originalPrice && product.originalPrice > product.price && (
-                          <span className="ml-2 text-sm text-gray-500 line-through">€{product.originalPrice}</span>
+                        <span className="text-lg font-bold text-gray-900">{fmtPrice(product.price)}</span>
+                        {product.originalPrice && product.originalPrice !== product.price && (
+                          <span className="ml-2 text-sm text-gray-500 line-through">{fmtPrice(product.originalPrice)}</span>
+                        )}
+                        {product.priceLastUpdated && (
+                          <div className="text-[10px] text-gray-400 mt-0.5">
+                            Prijs van {new Date(product.priceLastUpdated).toLocaleDateString('nl-NL')}, actuele prijs op Amazon
+                          </div>
                         )}
                       </div>
                     )}

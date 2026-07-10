@@ -9,8 +9,16 @@ interface Snippet {
   type?: string | null
   tag?: string | null
   imageUrl?: string | null
+  price?: string | null
+  originalPrice?: string | null
   clicks: number
   active: boolean
+}
+
+// Prijsweergave: DB-prijzen zijn soms "24.99" en soms "€ 24,99"
+function fmtPrice(price: unknown) {
+  const s = String(price).trim()
+  return s.includes('€') ? s : `€ ${s}`
 }
 
 function trackClick(snippetId: string) {
@@ -86,6 +94,14 @@ export default function PopularProductsWidget({ limit = 4 }: { limit?: number })
               <p className="text-xs font-medium text-gray-800 line-clamp-2 group-hover:text-primary transition-colors">
                 {snippet.name}
               </p>
+              {snippet.price && (
+                <p className="text-sm font-bold text-gray-900">
+                  {fmtPrice(snippet.price)}
+                  {snippet.originalPrice && snippet.originalPrice !== snippet.price && (
+                    <span className="ml-1.5 text-xs font-normal text-gray-500 line-through">{fmtPrice(snippet.originalPrice)}</span>
+                  )}
+                </p>
+              )}
             </div>
           </a>
         ))}
