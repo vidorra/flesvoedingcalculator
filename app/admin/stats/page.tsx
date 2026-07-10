@@ -2,6 +2,11 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Layout from '../../../components/Layout'
+import {
+  BarChart3, Calculator, MousePointerClick, CalendarDays,
+  ArrowUpRight, ArrowDownRight, Minus, Baby, Thermometer, Trophy, Activity
+} from 'lucide-react'
 
 type Row = Record<string, string | number>
 type Stats = {
@@ -22,13 +27,11 @@ const SITE_LABELS: Record<string, string> = {
 }
 
 const AGE_LABELS: Record<string, string> = {
-  // Flesvoeding-calculator categories
   '0-1': '0-1 maand',
   '1': '1-3 maanden',
   '3': '3-6 maanden',
   '6': '6+ maanden',
   premature: 'Prematuur',
-  // Togwaarde categories
   '0-3': '0-3 maanden',
   '3-6': '3-6 maanden',
   '6-12': '6-12 maanden',
@@ -40,25 +43,110 @@ function label(map: Record<string, string>, key: string) {
   return map[key] ?? key
 }
 
+// Trend: som laatste 7 dagen vs de 7 dagen ervoor, uit de daily-rijen
+function weekTrend(dailyAgg: Record<string, number>) {
+  const now = new Date()
+  let cur = 0
+  let prev = 0
+  for (const [day, count] of Object.entries(dailyAgg)) {
+    const diff = (now.getTime() - new Date(day).getTime()) / 86400000
+    if (diff <= 7) cur += count
+    else if (diff <= 14) prev += count
+  }
+  if (prev === 0) return { pct: null as number | null, cur, prev }
+  return { pct: Math.round(((cur - prev) / prev) * 100), cur, prev }
+}
+
+function TrendBadge({ pct }: { pct: number | null }) {
+  if (pct === null) {
+    return (
+      <span className="inline-flex items-center gap-0.5 text-xs font-medium text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded-full">
+        <Minus className="w-3 h-3" /> vs vorige week
+      </span>
+    )
+  }
+  const up = pct >= 0
+  return (
+    <span className={`inline-flex items-center gap-0.5 text-xs font-medium px-1.5 py-0.5 rounded-full ${
+      up ? 'text-green-700 bg-green-50' : 'text-red-700 bg-red-50'
+    }`}>
+      {up ? <ArrowUpRight className="w-3 h-3" /> : <ArrowDownRight className="w-3 h-3" />}
+      {Math.abs(pct)}% vs vorige week
+    </span>
+  )
+}
+
+function KpiCard({ icon, value, title, sub }: { icon: React.ReactNode; value: string; title: string; sub?: React.ReactNode }) {
+  return (
+    <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-5">
+      <div className="flex items-start justify-between">
+        <div>
+          <div className="text-2xl font-bold text-gray-900">{value}</div>
+          <div className="text-sm text-gray-500 mt-0.5">{title}</div>
+        </div>
+        <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+          {icon}
+        </div>
+      </div>
+      {sub && <div className="mt-3">{sub}</div>}
+    </div>
+  )
+}
+
 function Bar({ label: l, count, total }: { label: string; count: number; total: number }) {
   const pct = total > 0 ? Math.round((count / total) * 100) : 0
   return (
-    <div className="mb-2">
-      <div className="flex justify-between text-sm text-gray-700 mb-1">
-        <span>{l}</span>
-        <span className="text-gray-500">{count} ({pct}%)</span>
+    <div className="mb-3">
+      <div className="flex justify-between items-center text-sm mb-1.5">
+        <span className="text-gray-700">{l}</span>
+        <span className="text-gray-500 tabular-nums">
+          {count.toLocaleString('nl-NL')}
+          <span className="ml-1.5 text-xs text-gray-400">({pct}%)</span>
+        </span>
       </div>
-      <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
-        <div className="h-full bg-teal-500 rounded-full" style={{ width: `${pct}%` }} />
+      <div className="h-2.5 bg-gray-100 rounded-full overflow-hidden">
+        <div
+          className="h-full rounded-full bg-gradient-to-r from-primary to-primary/70 transition-all"
+          style={{ width: `${pct}%` }}
+        />
       </div>
     </div>
   )
 }
 
-function Card({ title, children }: { title: string; children: React.ReactNode }) {
+function DailyChart({ entries, max, color = 'bg-primary/80' }: { entries: [string, number][]; max: number; color?: string }) {
+  if (entries.length === 0) return <p className="text-sm text-gray-500">Nog geen data.</p>
+  return (
+    <div>
+      <div className="flex items-end gap-1 h-32 border-b border-gray-100">
+        {entries.map(([d, c]) => (
+          <div key={d} className="flex-1 flex flex-col justify-end group relative">
+            <div
+              className={`${color} rounded-t hover:opacity-100 opacity-90 transition-opacity`}
+              style={{ height: `${max > 0 ? Math.max(3, (c / max) * 100) : 0}%` }}
+            />
+            <div className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 hidden group-hover:block bg-gray-900 text-white text-[10px] px-1.5 py-0.5 rounded whitespace-nowrap z-10">
+              {new Date(d).toLocaleDateString('nl-NL', { day: 'numeric', month: 'short' })}: {c}
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="flex justify-between text-[10px] text-gray-400 mt-1">
+        <span>{new Date(entries[0][0]).toLocaleDateString('nl-NL', { day: 'numeric', month: 'short' })}</span>
+        <span>piek: {max.toLocaleString('nl-NL')}</span>
+        <span>{new Date(entries[entries.length - 1][0]).toLocaleDateString('nl-NL', { day: 'numeric', month: 'short' })}</span>
+      </div>
+    </div>
+  )
+}
+
+function Card({ title, icon, children }: { title: string; icon?: React.ReactNode; children: React.ReactNode }) {
   return (
     <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
-      <h2 className="text-lg font-medium text-gray-900 mb-4">{title}</h2>
+      <h2 className="text-lg font-medium text-gray-900 mb-4 flex items-center gap-2">
+        {icon && <span className="text-primary">{icon}</span>}
+        {title}
+      </h2>
       {children}
     </div>
   )
@@ -86,10 +174,9 @@ export default function StatsPage() {
   }, [router])
 
   const sites = stats ? Array.from(new Set(stats.totals.map((t) => String(t.website)))) : []
-
   const filt = (rows: Row[]) => (site === 'all' ? rows : rows.filter((r) => r.website === site))
 
-  // Aggregate age rows across the current selection into label -> count.
+  // Calculator-aggregaties
   const ageAgg: Record<string, number> = {}
   if (stats) filt(stats.byAge).forEach((r) => {
     const k = String(r.age_category)
@@ -107,9 +194,9 @@ export default function StatsPage() {
   const weightTotal = stats ? stats.byWeight.reduce((s, r) => s + Number(r.count), 0) : 0
   const combiTotal = stats ? stats.combi.reduce((s, r) => s + Number(r.count), 0) : 0
   const combiYes = stats ? Number(stats.combi.find((r) => r.is_combi === 'true')?.count ?? 0) : 0
+  const combiPct = combiTotal > 0 ? Math.round((combiYes / combiTotal) * 100) : 0
   const roomTempTotal = stats ? (stats.byRoomTemp ?? []).reduce((s, r) => s + Number(r.count), 0) : 0
 
-  // Daily trend (max 30 buckets) for the current selection.
   const dailyAgg: Record<string, number> = {}
   if (stats) filt(stats.daily).forEach((r) => {
     const d = String(r.day)
@@ -117,13 +204,14 @@ export default function StatsPage() {
   })
   const dailyEntries = Object.entries(dailyAgg).sort((a, b) => a[0].localeCompare(b[0]))
   const dailyMax = dailyEntries.reduce((m, [, c]) => Math.max(m, c), 0)
+  const calcTrend = weekTrend(dailyAgg)
 
-  // Affiliate clicks (zelfde site-filter als de rest)
+  // Affiliate-klik aggregaties
   const clickTotalAll = stats ? filt(stats.clickTotals ?? []).reduce((s, t) => s + Number(t.total), 0) : 0
   const clickTotal30 = stats ? filt(stats.clickTotals ?? []).reduce((s, t) => s + Number(t.last30), 0) : 0
   const clickTotal7 = stats ? filt(stats.clickTotals ?? []).reduce((s, t) => s + Number(t.last7 ?? 0), 0) : 0
   const clickSnippets = stats ? filt(stats.clicksBySnippet ?? []) : []
-  const clickSnippetTotal = clickSnippets.reduce((s, r) => s + Number(r.count), 0)
+  const clickTopMax = clickSnippets.reduce((m, r) => Math.max(m, Number(r.count)), 0)
   const clickDailyAgg: Record<string, number> = {}
   if (stats) filt(stats.clicksDaily ?? []).forEach((r) => {
     const d = String(r.day)
@@ -131,16 +219,30 @@ export default function StatsPage() {
   })
   const clickDailyEntries = Object.entries(clickDailyAgg).sort((a, b) => a[0].localeCompare(b[0]))
   const clickDailyMax = clickDailyEntries.reduce((m, [, c]) => Math.max(m, c), 0)
+  const clickTrend = weekTrend(clickDailyAgg)
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4">
-      <div className="max-w-4xl mx-auto">
-        <div className="flex items-center justify-between mb-6">
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900">Calculator-statistieken</h1>
-            <p className="text-sm text-gray-500">Anonieme, geaggregeerde berekeningen (geen persoonsgegevens)</p>
+    <Layout>
+      <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        {/* Header - zelfde chrome als het dashboard */}
+        <div className="mb-8">
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900 flex items-center">
+                <BarChart3 className="w-6 h-6 mr-3 text-primary" />
+                Statistieken
+              </h1>
+              <p className="text-gray-600 mt-2">
+                Anonieme, geaggregeerde data over calculator-gebruik en affiliate-kliks
+              </p>
+            </div>
+            <a
+              href="/admin/dashboard"
+              className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors"
+            >
+              Terug naar dashboard
+            </a>
           </div>
-          <a href="/admin/dashboard" className="text-sm text-teal-600 hover:underline">Terug naar dashboard</a>
         </div>
 
         {error && <div className="bg-amber-50 border border-amber-200 text-amber-800 rounded-xl p-4 mb-6">{error}</div>}
@@ -148,55 +250,68 @@ export default function StatsPage() {
 
         {stats && (
           <>
-            {/* Site filter */}
-            <div className="flex gap-2 mb-6">
-              <button onClick={() => setSite('all')} className={`px-3 py-1.5 rounded-full text-sm border ${site === 'all' ? 'bg-teal-600 text-white border-teal-600' : 'bg-white text-gray-700 border-gray-200'}`}>Beide apps</button>
+            {/* Site filter - zelfde pill-stijl als de dashboard-tabs */}
+            <div className="flex space-x-1 mb-8 bg-gray-100 rounded-lg p-1 w-fit">
+              <button
+                onClick={() => setSite('all')}
+                className={`px-4 py-1.5 rounded-md text-sm font-medium transition-colors ${
+                  site === 'all' ? 'bg-white text-primary shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                }`}
+              >
+                Beide apps
+              </button>
               {sites.map((s) => (
-                <button key={s} onClick={() => setSite(s)} className={`px-3 py-1.5 rounded-full text-sm border ${site === s ? 'bg-teal-600 text-white border-teal-600' : 'bg-white text-gray-700 border-gray-200'}`}>{label(SITE_LABELS, s)}</button>
+                <button
+                  key={s}
+                  onClick={() => setSite(s)}
+                  className={`px-4 py-1.5 rounded-md text-sm font-medium transition-colors ${
+                    site === s ? 'bg-white text-primary shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                  }`}
+                >
+                  {label(SITE_LABELS, s)}
+                </button>
               ))}
             </div>
 
-            {/* Totals */}
-            <div className="grid grid-cols-3 gap-4 mb-6">
-              <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-5">
-                <div className="text-2xl font-bold text-gray-900">{totalAll.toLocaleString('nl-NL')}</div>
-                <div className="text-sm text-gray-500">Totaal berekeningen</div>
-              </div>
-              <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-5">
-                <div className="text-2xl font-bold text-gray-900">{total30.toLocaleString('nl-NL')}</div>
-                <div className="text-sm text-gray-500">Laatste 30 dagen</div>
-              </div>
-              <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-5">
-                <div className="text-2xl font-bold text-gray-900">{total7.toLocaleString('nl-NL')}</div>
-                <div className="text-sm text-gray-500">Laatste 7 dagen</div>
-              </div>
+            {/* ===== Calculator ===== */}
+            <div className="flex items-center gap-2 mb-4">
+              <Calculator className="w-5 h-5 text-primary" />
+              <h2 className="text-xl font-bold text-gray-900">Calculator-gebruik</h2>
             </div>
 
-            <div className="space-y-6">
-              {/* Age distribution */}
-              <Card title="Leeftijd van de baby">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+              <KpiCard
+                icon={<Activity className="w-5 h-5" />}
+                value={totalAll.toLocaleString('nl-NL')}
+                title="Totaal berekeningen"
+              />
+              <KpiCard
+                icon={<CalendarDays className="w-5 h-5" />}
+                value={total30.toLocaleString('nl-NL')}
+                title="Laatste 30 dagen"
+              />
+              <KpiCard
+                icon={<Calculator className="w-5 h-5" />}
+                value={total7.toLocaleString('nl-NL')}
+                title="Laatste 7 dagen"
+                sub={<TrendBadge pct={calcTrend.pct} />}
+              />
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+              <Card title="Berekeningen per dag (30 dagen)" icon={<BarChart3 className="w-5 h-5" />}>
+                <DailyChart entries={dailyEntries} max={dailyMax} />
+              </Card>
+
+              <Card title="Leeftijd van de baby" icon={<Baby className="w-5 h-5" />}>
                 {ageEntries.length === 0 && <p className="text-sm text-gray-500">Nog geen data.</p>}
                 {ageEntries.map(([k, c]) => (
                   <Bar key={k} label={label(AGE_LABELS, k)} count={c} total={ageTotal} />
                 ))}
               </Card>
 
-              {/* Daily trend */}
-              <Card title="Berekeningen per dag (laatste 30 dagen)">
-                {dailyEntries.length === 0 ? (
-                  <p className="text-sm text-gray-500">Nog geen data.</p>
-                ) : (
-                  <div className="flex items-end gap-1 h-32">
-                    {dailyEntries.map(([d, c]) => (
-                      <div key={d} className="flex-1 bg-teal-500/80 rounded-t" style={{ height: `${dailyMax > 0 ? Math.max(4, (c / dailyMax) * 100) : 0}%` }} title={`${d}: ${c}`} />
-                    ))}
-                  </div>
-                )}
-              </Card>
-
-              {/* Fles-specific breakdowns */}
               {showFlesBreakdown && weightTotal > 0 && (
-                <Card title="Gewicht van de baby (Flesvoeding)">
+                <Card title="Gewicht van de baby (Flesvoeding)" icon={<Baby className="w-5 h-5" />}>
                   {stats.byWeight.map((r) => (
                     <Bar key={String(r.weight_bucket)} label={String(r.weight_bucket)} count={Number(r.count)} total={weightTotal} />
                   ))}
@@ -204,67 +319,102 @@ export default function StatsPage() {
               )}
 
               {showFlesBreakdown && combiTotal > 0 && (
-                <Card title="Combivoeding (Flesvoeding)">
-                  <Bar label="Combivoeding (ook borstvoeding)" count={combiYes} total={combiTotal} />
-                  <Bar label="Alleen flesvoeding" count={combiTotal - combiYes} total={combiTotal} />
+                <Card title="Combivoeding (Flesvoeding)" icon={<Activity className="w-5 h-5" />}>
+                  {/* Segmented progress: één balk, twee segmenten */}
+                  <div className="h-3 rounded-full overflow-hidden flex bg-gray-100 mb-3">
+                    <div className="bg-primary h-full" style={{ width: `${combiPct}%` }} />
+                    <div className="bg-gray-300 h-full" style={{ width: `${100 - combiPct}%` }} />
+                  </div>
+                  <div className="flex flex-wrap gap-x-6 gap-y-1 text-sm">
+                    <span className="flex items-center gap-1.5 text-gray-700">
+                      <span className="w-2.5 h-2.5 rounded-full bg-primary inline-block" />
+                      Combivoeding: <strong>{combiYes.toLocaleString('nl-NL')}</strong> ({combiPct}%)
+                    </span>
+                    <span className="flex items-center gap-1.5 text-gray-700">
+                      <span className="w-2.5 h-2.5 rounded-full bg-gray-300 inline-block" />
+                      Alleen fles: <strong>{(combiTotal - combiYes).toLocaleString('nl-NL')}</strong> ({100 - combiPct}%)
+                    </span>
+                  </div>
                 </Card>
               )}
 
               {showTogBreakdown && roomTempTotal > 0 && (
-                <Card title="Kamertemperatuur (Togwaarde)">
+                <Card title="Kamertemperatuur (Togwaarde)" icon={<Thermometer className="w-5 h-5" />}>
                   {stats.byRoomTemp.map((r) => (
                     <Bar key={String(r.room_temp)} label={String(r.room_temp)} count={Number(r.count)} total={roomTempTotal} />
                   ))}
                 </Card>
               )}
+            </div>
 
-              {/* Affiliate clicks */}
-              <div className="pt-2">
-                <h2 className="text-xl font-bold text-gray-900 mb-1">Affiliate-kliks</h2>
-                <p className="text-sm text-gray-500 mb-4">Kliks op bol.com/Amazon-productkaarten (anoniem)</p>
-                <div className="grid grid-cols-3 gap-4 mb-6">
-                  <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-5">
-                    <div className="text-2xl font-bold text-gray-900">{clickTotalAll.toLocaleString('nl-NL')}</div>
-                    <div className="text-sm text-gray-500">Totaal kliks</div>
-                  </div>
-                  <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-5">
-                    <div className="text-2xl font-bold text-gray-900">{clickTotal30.toLocaleString('nl-NL')}</div>
-                    <div className="text-sm text-gray-500">Laatste 30 dagen</div>
-                  </div>
-                  <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-5">
-                    <div className="text-2xl font-bold text-gray-900">{clickTotal7.toLocaleString('nl-NL')}</div>
-                    <div className="text-sm text-gray-500">Laatste 7 dagen</div>
-                  </div>
-                </div>
-              </div>
+            {/* ===== Affiliate-kliks ===== */}
+            <div className="flex items-center gap-2 mb-1">
+              <MousePointerClick className="w-5 h-5 text-primary" />
+              <h2 className="text-xl font-bold text-gray-900">Affiliate-kliks</h2>
+            </div>
+            <p className="text-sm text-gray-500 mb-4">Kliks op bol.com/Amazon-productkaarten (anoniem)</p>
 
-              <Card title="Kliks per product (top 25)">
-                {clickSnippets.length === 0 && <p className="text-sm text-gray-500">Nog geen kliks geregistreerd.</p>}
-                {clickSnippets.map((r) => (
-                  <Bar
-                    key={`${r.website}-${r.snippet_id}`}
-                    label={`${String(r.name)}${site === 'all' ? ` (${label(SITE_LABELS, String(r.website))})` : ''}`}
-                    count={Number(r.count)}
-                    total={clickSnippetTotal}
-                  />
-                ))}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+              <KpiCard
+                icon={<MousePointerClick className="w-5 h-5" />}
+                value={clickTotalAll.toLocaleString('nl-NL')}
+                title="Totaal kliks"
+              />
+              <KpiCard
+                icon={<CalendarDays className="w-5 h-5" />}
+                value={clickTotal30.toLocaleString('nl-NL')}
+                title="Laatste 30 dagen"
+              />
+              <KpiCard
+                icon={<Activity className="w-5 h-5" />}
+                value={clickTotal7.toLocaleString('nl-NL')}
+                title="Laatste 7 dagen"
+                sub={<TrendBadge pct={clickTrend.pct} />}
+              />
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <Card title="Kliks per dag (30 dagen)" icon={<BarChart3 className="w-5 h-5" />}>
+                <DailyChart entries={clickDailyEntries} max={clickDailyMax} />
               </Card>
 
-              <Card title="Kliks per dag (laatste 30 dagen)">
-                {clickDailyEntries.length === 0 ? (
-                  <p className="text-sm text-gray-500">Nog geen data.</p>
-                ) : (
-                  <div className="flex items-end gap-1 h-32">
-                    {clickDailyEntries.map(([d, c]) => (
-                      <div key={d} className="flex-1 bg-amber-500/80 rounded-t" style={{ height: `${clickDailyMax > 0 ? Math.max(4, (c / clickDailyMax) * 100) : 0}%` }} title={`${d}: ${c}`} />
-                    ))}
-                  </div>
-                )}
+              <Card title="Top producten" icon={<Trophy className="w-5 h-5" />}>
+                {clickSnippets.length === 0 && <p className="text-sm text-gray-500">Nog geen kliks geregistreerd.</p>}
+                <div className="space-y-3">
+                  {clickSnippets.slice(0, 10).map((r, i) => (
+                    <div key={`${r.website}-${r.snippet_id}`}>
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className={`w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center flex-shrink-0 ${
+                          i === 0 ? 'bg-primary text-white' : 'bg-primary/10 text-primary'
+                        }`}>
+                          {i + 1}
+                        </span>
+                        <span className="text-sm text-gray-700 truncate flex-1" title={String(r.name)}>
+                          {String(r.name)}
+                        </span>
+                        {site === 'all' && (
+                          <span className="text-[10px] bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded-full flex-shrink-0">
+                            {label(SITE_LABELS, String(r.website))}
+                          </span>
+                        )}
+                        <span className="text-sm font-semibold text-gray-900 tabular-nums flex-shrink-0">
+                          {Number(r.count).toLocaleString('nl-NL')}
+                        </span>
+                      </div>
+                      <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden ml-8">
+                        <div
+                          className="h-full rounded-full bg-gradient-to-r from-primary to-primary/70"
+                          style={{ width: `${clickTopMax > 0 ? Math.round((Number(r.count) / clickTopMax) * 100) : 0}%` }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </Card>
             </div>
           </>
         )}
       </div>
-    </div>
+    </Layout>
   )
 }
