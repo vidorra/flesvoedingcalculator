@@ -47,6 +47,12 @@ const nextConfig = {
         source: '/v3',
         destination: '/',
         permanent: true
+      },
+      // /disclaimer was een fork-duplicaat van de medische disclaimer
+      {
+        source: '/disclaimer',
+        destination: '/medische-disclaimer',
+        permanent: true
       }
     ]
   },

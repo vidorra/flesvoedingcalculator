@@ -237,6 +237,11 @@ export default function StatsPanel() {
   const clickDailyMax = clickDailyEntries.reduce((m, [, c]) => Math.max(m, c), 0)
   const clickTrend = weekTrend(clickDailyAgg)
 
+  // Funnel (30 dagen): berekeningen -> affiliate-kliks. Kliks per berekening
+  // is onze eigen conversie-proxy; leg deze na 4-6 weken naast de aannames in
+  // expansion/internationale-uitbreiding.md §3.
+  const funnelRatio = total30 > 0 ? (clickTotal30 / total30) * 100 : null
+
   return (
     <div>
       {error && <div className="bg-amber-50 border border-amber-200 text-amber-800 rounded-xl p-4 mb-6">{error}</div>}
@@ -398,6 +403,80 @@ export default function StatsPanel() {
                   </div>
                 ))}
               </div>
+            </Card>
+          </div>
+
+          {/* ===== Funnel & meetroutine ===== */}
+          <div className="flex items-center gap-2 mb-4 mt-10">
+            <Activity className="w-5 h-5 text-primary" />
+            <h2 className="text-xl font-bold text-gray-900">Funnel & meetroutine</h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <Card title="Funnel: berekening naar affiliate-klik (30 dagen)" icon={<Activity className="w-5 h-5" />}>
+              <div className="space-y-3">
+                <div>
+                  <div className="flex justify-between text-sm mb-1.5">
+                    <span className="text-gray-700">Berekeningen</span>
+                    <span className="font-semibold text-gray-900 tabular-nums">{total30.toLocaleString('nl-NL')}</span>
+                  </div>
+                  <div className="h-6 rounded-lg bg-gradient-to-r from-primary to-primary/70" style={{ width: '100%' }} />
+                </div>
+                <div>
+                  <div className="flex justify-between text-sm mb-1.5">
+                    <span className="text-gray-700">Affiliate-kliks</span>
+                    <span className="font-semibold text-gray-900 tabular-nums">{clickTotal30.toLocaleString('nl-NL')}</span>
+                  </div>
+                  <div
+                    className="h-6 rounded-lg bg-gradient-to-r from-amber-500 to-amber-400 min-w-[4px]"
+                    style={{ width: `${total30 > 0 ? Math.max(2, Math.min(100, (clickTotal30 / total30) * 100)) : 0}%` }}
+                  />
+                </div>
+                <div className="pt-2 border-t border-gray-100 flex items-center justify-between">
+                  <span className="text-sm text-gray-600">Kliks per berekening</span>
+                  <span className="text-lg font-bold text-gray-900">
+                    {funnelRatio === null ? '-' : `${funnelRatio.toFixed(1)}%`}
+                  </span>
+                </div>
+                <p className="text-xs text-gray-400">
+                  Dit is de eigen conversie-proxy. Leg dit percentage na 4-6 weken naast de
+                  aannames in expansion/internationale-uitbreiding.md (§3) en stel de
+                  omzetscenario&apos;s bij. Volledige bezoeker-funnels (pageview -&gt; calculator
+                  -&gt; klik) staan in Umami onder Reports &gt; Funnel.
+                </p>
+              </div>
+            </Card>
+
+            <Card title="Meetbronnen & maandroutine" icon={<CalendarDays className="w-5 h-5" />}>
+              <div className="space-y-2 text-sm mb-4">
+                <a href="https://stats.server.devjens.nl" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary hover:underline">
+                  Umami dashboard (100% cookieless meting) ↗
+                </a>
+                <a href="https://search.google.com/search-console?resource_id=sc-domain%3Aflesvoedingcalculator.nl" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary hover:underline">
+                  Search Console: flesvoedingcalculator.nl ↗
+                </a>
+                <a href="https://search.google.com/search-console?resource_id=sc-domain%3Atogwaarde.nl" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary hover:underline">
+                  Search Console: togwaarde.nl ↗
+                </a>
+              </div>
+              <div className="text-sm text-gray-700 mb-2 font-medium">Maandroutine (30 min, zie togwaarde/google-plan.md §8):</div>
+              <ol className="list-decimal pl-5 space-y-1 text-sm text-gray-600 mb-3">
+                <li>GSC: thema-regexes draaien, impressies/CTR noteren</li>
+                <li>Impressies + lage CTR: titel herschrijven; impressies zonder pagina: artikel schrijven</li>
+                <li>Hier: kliks per product checken, toppers meer producten geven</li>
+                <li>Umami: funnel-uitval bekijken</li>
+              </ol>
+              <details className="text-xs">
+                <summary className="cursor-pointer text-primary hover:underline">GSC-regexes (togwaarde, kopieerbaar)</summary>
+                <div className="mt-2 space-y-2 font-mono text-[10px] text-gray-600">
+                  <div><span className="font-sans font-medium text-gray-700">TOG-basis:</span><br />{'tog.?(waarde|rating|schaal)|wat (is|betekent) tog|tog (optellen|bij elkaar)|maximale? tog'}</div>
+                  <div><span className="font-sans font-medium text-gray-700">Temperatuur & aankleden:</span><br />{'(baby|kindje?) .*(aan(kleden|doen)?|kleden) .*(nacht|bed|slapen)|wat moet .*baby aan|babykamer.*(temperatuur|graden)|slapen bij [0-9]+ graden'}</div>
+                  <div><span className="font-sans font-medium text-gray-700">Slaapzak kopen:</span><br />{'(welke|beste|hoeveel) .*slaapzak|slaapzak .*(kopen|maat|mouwen|materiaal|tweedehands|merk)'}</div>
+                  <div><span className="font-sans font-medium text-gray-700">Veiligheid:</span><br />{'oververhitting|wiegendood|baby .*(te warm|te koud|zweet|klam)|koude hand(en|jes)|nekje voelen'}</div>
+                  <div><span className="font-sans font-medium text-gray-700">Situaties:</span><br />{'slaapzak .*(vakantie|reizen|autostoel|draagzak|kinderwagen)|jas .*autostoel|baby .*(koorts|ziek) .*(slaapzak|aankleden)'}</div>
+                  <div className="font-sans text-gray-400">Volledige set + flesvoeding-varianten: togwaarde/vragen-content.md</div>
+                </div>
+              </details>
             </Card>
           </div>
         </>

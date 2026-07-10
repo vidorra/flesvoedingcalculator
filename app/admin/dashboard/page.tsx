@@ -46,7 +46,6 @@ export default function SimpleAdminDashboard() {
   const [editFormData, setEditFormData] = useState<any>({})
   const [showOnlyPrice, setShowOnlyPrice] = useState(false) // Control visibility of elements
   const [isExtractingImage, setIsExtractingImage] = useState(false) // For Bol.com image extraction
-  const [hideAllAds, setHideAllAds] = useState(false) // Toggle to hide all Google Ads globally
   const [isChecking, setIsChecking] = useState(false)
   const [healthResults, setHealthResults] = useState(null) // { summary, results }
   const [lastHealthCheck, setLastHealthCheck] = useState(null) // ISO string
@@ -163,71 +162,6 @@ export default function SimpleAdminDashboard() {
   }
 
 
-  // Load ad settings on mount
-  useEffect(() => {
-    const token = localStorage.getItem('admin_token')
-
-    // Load hideAllAds setting from server-side API
-    const loadAdSettings = async () => {
-      try {
-        const response = await fetch(`/api/admin/settings`, {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        })
-        if (response.ok) {
-          const data = await response.json()
-          const hideAds = data.settings?.hide_all_ads === 'true'
-          setHideAllAds(hideAds)
-        } else {
-          console.error('Failed to load ad settings')
-          setHideAllAds(false) // Default to showing ads
-        }
-      } catch (error) {
-        console.error('Error loading ad settings:', error)
-        setHideAllAds(false) // Default to showing ads
-      }
-    }
-
-    if (token) {
-      loadAdSettings()
-    }
-  }, [])
-
-  // Toggle hide all ads setting via API
-  const toggleHideAllAds = async (newValue) => {
-    try {
-      const token = localStorage.getItem('admin_token')
-      if (!token) {
-        console.error('No admin token found')
-        return
-      }
-
-      const response = await fetch('/api/admin/settings', {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`
-        },
-        body: JSON.stringify({
-          key: 'hide_all_ads',
-          value: String(newValue)
-        })
-      })
-
-      if (response.ok) {
-        setHideAllAds(newValue)
-        console.log(`All ads ${newValue ? 'hidden' : 'shown'}`)
-      } else {
-        const error = await response.json()
-        console.error('Failed to update ad setting:', error.error)
-        alert(`Error: ${error.error}`)
-      }
-    } catch (error) {
-      console.error('Error toggling ads setting:', error)
-      alert('Failed to update ad setting')
-    }
-  }
 
   // Check authentication via JWT token verification
   useEffect(() => {
@@ -1348,24 +1282,6 @@ export default function SimpleAdminDashboard() {
                       className="rounded border-gray-300 text-primary focus:ring-primary"
                     />
                     <span className="text-sm text-gray-600">Show only price info</span>
-                  </label>
-                  <label className="flex items-center space-x-2">
-                    <div className="flex items-center">
-                      {hideAllAds ? (
-                        <ToggleRight className="w-5 h-5 text-red-500" />
-                      ) : (
-                        <ToggleLeft className="w-5 h-5 text-green-500" />
-                      )}
-                    </div>
-                    <input
-                      type="checkbox"
-                      checked={hideAllAds}
-                      onChange={(e) => toggleHideAllAds(e.target.checked)}
-                      className="rounded border-gray-300 text-primary focus:ring-primary"
-                    />
-                    <span className={`text-sm font-medium ${hideAllAds ? 'text-red-600' : 'text-green-600'}`}>
-                      {hideAllAds ? 'All Ads Hidden' : 'All Ads Visible'}
-                    </span>
                   </label>
                 </div>
               </div>

@@ -107,29 +107,34 @@ Status-peildatum: 10 juli 2026.
 - [ ] **Umami-funnels aanmaken** (Reports -> Funnel, per site):
   home -> /calculator -> event affiliate_click, en
   artikel -> home/calculator -> affiliate_click.
+  NB: de eigen funnel (berekening -> klik) + links naar Umami/GSC en de
+  maandroutine staan nu in de admin onder de Statistieken-tab.
 - [ ] **GSC: sitemaps opnieuw indienen** (beide properties) na alle
   wijzigingen van deze week; indexdekking controleren.
 - [ ] **Maandelijkse GSC-regexroutine starten** (30 min; regexes staan
   in togwaarde/vragen-content.md, werkwijze in togwaarde/google-plan.md
   §1/§8). Eerste run: augustus.
-- [ ] **Na 4-6 weken**: affiliate_click-ratio's uit /admin/stats naast
-  de aannames in expansion/internationale-uitbreiding.md §3 leggen.
+- [ ] **Na 4-6 weken**: de "kliks per berekening"-ratio (staat live in
+  de Statistieken-tab, funnel-kaart) naast de aannames in
+  expansion/internationale-uitbreiding.md §3 leggen.
 
 ## 4. Hygiëne - klein, niet blokkerend
 
-- [ ] fles `/disclaimer` opruimen (duplicaat van medische-disclaimer,
-  fork-restje): 301 naar /medische-disclaimer.
-- [ ] Dode file-based routes verwijderen: `app/api/admin-snippets/
-  sync-prices` (beide repos; vervangen door /api/cron/sync-prices).
-- [ ] Ongebruikte `hide_all_ads`-setting laten vervallen (DB + admin).
-- [ ] togwaarde CSP opschonen: GA/GTM/Clarity-entries kunnen weg zolang
-  COOKIE_TRACKERS_ENABLED=false (of laten staan voor makkelijke
-  herinschakeling - bewuste keuze noteren).
+- [x] fles `/disclaimer` opgeruimd: 301 naar /medische-disclaimer,
+  pagina + sitemap-entry verwijderd.
+- [x] Sync-routes vervangen: admin "Sync prices"-knoppen gebruiken nu
+  dezelfde DB-sync als de cron (fles synct beide sites; togwaarde's
+  knop wees zelfs naar een niet-bestaande route en werkt nu).
+- [x] `hide_all_ads` verwijderd uit de admin (toggle, fetches, state);
+  DB-rij is onschadelijk en mag blijven.
+- [x] togwaarde CSP: bewuste keuze genoteerd in middleware.js
+  (tracker-entries blijven staan zodat de COOKIE_TRACKERS_ENABLED-vlag
+  zonder CSP-breuk terug aan kan).
 - [ ] `info@togwaarde.nl` mailbox of alias (contactformulier mailt nu
   info@vidorra.nl).
-- [ ] Schema-backlog google-plan §5: WebApplication op beide
-  calculators, Article + BreadcrumbList op kennisbankartikelen, eigen
-  OG-image per kernpagina.
+- [ ] Schema-backlog google-plan §5: WebApplication staat nu op beide
+  togwaarde-calculators (fles had al SoftwareApplication); nog open:
+  Article + BreadcrumbList op kennisbankartikelen, eigen OG-images.
 - [ ] adsense-herintroductie.md staat alleen lokaal (gitignored) -
   kopie bewaren buiten deze laptop als je hem wilt houden.
 
