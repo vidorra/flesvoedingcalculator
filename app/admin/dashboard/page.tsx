@@ -1255,7 +1255,7 @@ export default function SimpleAdminDashboard() {
             <div className="flex items-center gap-3">
               <a
                 href="/admin/stats"
-                className="bg-teal-600 text-white px-4 py-2 rounded-lg hover:bg-teal-700 transition-colors"
+                className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors"
               >
                 Statistieken
               </a>
