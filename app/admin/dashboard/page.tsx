@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Layout from '../../../components/Layout'
 import { Settings, Link, Plus, Eye, X, Edit, Trash2, ToggleLeft, ToggleRight, RefreshCw, ChevronDown, ExternalLink } from 'lucide-react'
+import StatsPanel from '../../../components/admin/StatsPanel'
 import jwt from 'jsonwebtoken'
 
 // Version: 2.4 - Shared snippets library across websites
@@ -1253,12 +1254,6 @@ export default function SimpleAdminDashboard() {
               </p>
             </div>
             <div className="flex items-center gap-3">
-              <a
-                href="/admin/stats"
-                className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors"
-              >
-                Statistieken
-              </a>
               <button
                 onClick={handleLogout}
                 className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors"
@@ -1321,8 +1316,21 @@ export default function SimpleAdminDashboard() {
             >
               Page Assignment
             </button>
+            <button
+              onClick={() => setActiveTab('stats')}
+              className={`py-2 px-1 border-b-2 font-medium text-sm ${
+                activeTab === 'stats'
+                  ? 'border-primary text-primary'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              }`}
+            >
+              Statistieken
+            </button>
           </nav>
         </div>
+
+        {/* Statistieken-tab */}
+        {activeTab === 'stats' && <StatsPanel />}
 
         {/* Tab Content */}
         {activeTab === 'overview' && (

@@ -22,7 +22,7 @@ export async function GET(request) {
     await ensureCalculatorEventsTable()
     await ensureClickEventsTable()
 
-    const [totals, byAge, daily, byWeight, combi, byRoomTemp, clickTotals, clicksBySnippet, clicksDaily] = await Promise.all([
+    const [totals, byAge, daily, byWeight, combi, byRoomTemp, bySleepMode, byAdviesTog, clickTotals, clicksBySnippet, clicksDaily] = await Promise.all([
       db.execute(sql`
         SELECT website,
                COUNT(*)::int AS total,
@@ -48,6 +48,16 @@ export async function GET(request) {
         SELECT COALESCE(data->>'roomTempBucket', 'onbekend') AS room_temp, COUNT(*)::int AS count
         FROM calculator_events WHERE website = 'togwaarde'
         GROUP BY room_temp ORDER BY room_temp`),
+      // Togwaarde: slaapmodus-verdeling (/calculator: slaapzak/dekens/geen)
+      db.execute(sql`
+        SELECT COALESCE(data->>'sleepMode', 'onbekend') AS sleep_mode, COUNT(*)::int AS count
+        FROM calculator_events WHERE website = 'togwaarde' AND data ? 'sleepMode'
+        GROUP BY sleep_mode ORDER BY count DESC`),
+      // Togwaarde: geadviseerde slaapzak-TOG op de homepage (reverse)
+      db.execute(sql`
+        SELECT COALESCE(data->>'adviesTog', 'onbekend') AS advies_tog, COUNT(*)::int AS count
+        FROM calculator_events WHERE website = 'togwaarde' AND data ? 'adviesTog'
+        GROUP BY advies_tog ORDER BY advies_tog`),
       // Affiliate clicks: totalen per website
       db.execute(sql`
         SELECT website,
@@ -77,6 +87,8 @@ export async function GET(request) {
       byWeight: byWeight.rows,
       combi: combi.rows,
       byRoomTemp: byRoomTemp.rows,
+      bySleepMode: bySleepMode.rows,
+      byAdviesTog: byAdviesTog.rows,
       clickTotals: clickTotals.rows,
       clicksBySnippet: clicksBySnippet.rows,
       clicksDaily: clicksDaily.rows
