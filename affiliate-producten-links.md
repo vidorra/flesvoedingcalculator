@@ -97,3 +97,73 @@ Onderzoek juli 2026. Alle links zijn echte productpagina's uit de zoekresultaten
 | Wiegendood / veilig slapen | Babyfoon met temperatuur, slaapzak |
 
 **Regel:** Bol-link waar beschikbaar (hogere commissie), Amazon.nl als alternatief/prijsvergelijking of voor wat Bol mist.
+
+---
+
+## UPDATE 11 juli 2026 - selectieprofiel aangescherpt + checklist-gaten
+
+> **Nieuw profiel (expliciete keuze):** goedkoop, katoen, en waar mogelijk
+> multipacks (2 stuks) - zoals de huidige DB-picks (Duomiaomiao 2-pack,
+> Looxii 2-pack, Meyco). Dit vervangt het eerdere "A-merk boven goedkoop".
+>
+> **Werkwijze bij toevoegen (admin):**
+> 1. Tag = de TOG-waarde, bv. `2.5 TOG` (widget matcht op het getal)
+> 2. Koppelen aan **Standaard (alle pagina's)**, website = TOGWaarde
+> 3. Prijs: bol = knop **Sync prices** (haalt automatisch op);
+>    Amazon = handmatig invullen (check via het ↗-icoontje)
+
+### TOGWAARDE - GAT 1: 2.5 TOG (belangrijkste! advies bij 16-19°C)
+
+Budget/katoen-kandidaten op bol (alle drie ~€20-30, biologisch/100% katoen):
+- Bol (2.5 TOG bio-katoen, OEKO-TEX, veel kleuren):
+  https://www.bol.com/nl/nl/p/baby-slaapzak-2-5-tog-trappelzak-voor-de-herfst-en-winter-in-veel-verschillende-kleuren-biologisch-katoen-oeko-tex-gecertificeerd-newborn-slaapzak/9300000227514343/
+- Bol (2.5 TOG organisch katoen, met voeten, 60-70cm):
+  https://www.bol.com/nl/nl/p/baby-slaapzak-met-voeten-van-organisch-katoen-2-5-tog-geschikt-voor-lengte-60-70-cm-all-seizoenen-slaapzak-voor-kinderen/9300000247650994/
+- Bol (2.5 TOG 100% katoen, met voeten, peutermaat):
+  https://www.bol.com/nl/nl/p/babyslaapzak-met-voeten-tog-2-5-voor-2-jaar-ideaal-voor-winter-en-overgangsperiode-100-katoen/9300000190299663/
+- Amazon multipack-zoek (2-packs wisselen snel van ASIN, kies actueel aanbod):
+  https://www.amazon.nl/s?k=baby+slaapzak+2.5+tog+2+stuks+katoen
+
+Bonus profiel-match (2-pack katoen, 1.5 TOG - valt tussen de banden maar
+toont via de fallback en is precies het Duomiaomiao-profiel):
+- Bol (2 stuks, katoen, 1.5 TOG, 0-24 mnd):
+  https://www.bol.com/nl/nl/p/baby-winter-slaapzak-van-katoen-1-5-tog-voor-baby-s-2-stuks-geschikt-voor-0-24-maanden/9300000188616025/
+
+### TOGWAARDE - GAT 2: 3.5 TOG (winter, <16°C)
+
+Budget-multipacks bestaan hier nauwelijks; kies één degelijke katoenen:
+- Bol zoek/categorie (winter 2.2-4.0 TOG, filter op prijs laag-hoog):
+  https://www.bol.com/nl/nl/l/slaapzak-baby-2-2-t-m-4-0/11298/4295245096/
+- emma & noah 3.5 TOG (100% bio-katoen; verkopen ook via bol - zoek
+  "emma noah slaapzak 3.5 tog" op bol voor de actuele listing)
+- Amazon-zoek: https://www.amazon.nl/s?k=winterslaapzak+baby+3.5+tog
+
+### FLESVOEDING - spenen (multipack, budget)
+
+- Bol (Philips Avent Soothie, 2 stuks, 0-6 mnd):
+  https://www.bol.com/nl/nl/p/philips-avent-soothie-scf099-22-fopspeen-0-6-maanden-2-stuks/9300000071048212/
+- Bol MAM-zoek (MAM Original/Start komen vaak als 2-pack ~€8-12):
+  https://www.bol.com/nl/nl/s/?searchtext=mam+fopspeen+2+stuks
+
+### FLESVOEDING - sterilisator (budget-klassieker)
+
+- Bol (Philips Avent SCF281/02 magnetron-sterilisator, ~€30-35, al
+  jaren dé budget-standaard):
+  https://www.bol.com/nl/nl/p/philips-avent-scf281-02-magnetron-sterilisator/9200000002008475/
+- Upsell-optie (2-in-1 warmer + sterilisator SCF359/00, ~€74):
+  https://www.bol.com/nl/nl/p/philips-avent-2-in-1-flessenwarmer-sterilisator-snelle-en-veilige-opwarming-260-ml-scf359-00/9300000232650369/
+
+### FLESVOEDING - flessenwarmer
+
+- NCVI zit al in de DB (Amazon) - prijs handmatig zetten.
+- Budget-alternatief Amazon-zoek: https://www.amazon.nl/s?k=flessenwarmer+baby
+
+### Prijzen-reminder (n.a.v. "widget toont geen prijzen")
+
+De 3 huidige fles-producten hebben price=null in de DB. Fix:
+1. Admin -> **Sync prices** (haalt bol-prijzen automatisch; werkt sinds
+   de DB-sync van 10 juli)
+2. Amazon-producten (Dr. Brown's, NCVI): prijs eenmalig handmatig
+   invullen via bewerken; daarna maandelijks checken via ↗
+3. Structureel: CRON_SECRET zetten (operations-checklist §1) zodat de
+   nachtsync dit dagelijks doet
