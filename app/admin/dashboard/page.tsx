@@ -2271,7 +2271,7 @@ export default function SimpleAdminDashboard() {
                           onChange={(e) => toggleInherit(selectedPage, e.target.checked)}
                           className="w-4 h-4"
                         />
-                        <span>Inherit linked snippets — toon de standaard-snippets op deze pagina</span>
+                        <span>Inherit linked snippets: toon de standaard-snippets op deze pagina</span>
                       </label>
                     )}
 
