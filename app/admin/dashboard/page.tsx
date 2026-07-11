@@ -84,23 +84,30 @@ export default function SimpleAdminDashboard() {
     { value: 'slaapzak', label: 'Slaapzak' }
   ]
 
-  // Filter snippets based on all active filters
   // Niet-affiliate productlink: snel de actuele prijs checken zonder eigen
-  // affiliate-kliks te genereren. Amazon: kale /dp/ASIN-link (tag eraf).
-  // Bol: kale productpagina op productnummer. Fallback: originele url.
+  // affiliate-kliks te genereren. NOOIT terugvallen op de partnerlink:
+  // lukt herleiden niet (amzn.to-shortlink, partner.bol-click-url), dan
+  // geven we een kale zoeklink op de productnaam.
   const plainProductUrl = (snippet) => {
-    const u = String(snippet.url || '')
+    const name = String(snippet.name || '')
+    // Zoek ook in generatedHtml/imageHtml/bolScript: daar staat vaak wel de
+    // volledige productlink terwijl snippet.url een shortlink is.
+    const haystack = [snippet.url, snippet.generatedHtml, snippet.imageHtml, snippet.bolScript]
+      .map(v => String(v || '')).join(' ')
     try {
       if (String(snippet.type || '').includes('amazon')) {
-        const asin = u.match(/\/(?:dp|gp\/product)\/([A-Z0-9]{10})/i)
+        const asin = haystack.match(/\/(?:dp|gp\/product|gp\/aw\/d)\/([A-Z0-9]{10})/i)
         if (asin) return `https://www.amazon.nl/dp/${asin[1]}`
-        return u
+        return `https://www.amazon.nl/s?k=${encodeURIComponent(name)}`
       }
-      const pid = u.match(/bol\.com\S*?\/(\d{13,17})\//)
+      // Bol-productnummers zijn 13-17 cijfers; ook in ge-encodede partner-urls
+      const pid = decodeURIComponent(haystack).match(/(\d{13,17})/)
       if (pid) return `https://www.bol.com/nl/nl/p/-/${pid[1]}/`
-      return u
+      return `https://www.bol.com/nl/nl/s/?searchtext=${encodeURIComponent(name)}`
     } catch {
-      return u
+      return String(snippet.type || '').includes('amazon')
+        ? `https://www.amazon.nl/s?k=${encodeURIComponent(name)}`
+        : `https://www.bol.com/nl/nl/s/?searchtext=${encodeURIComponent(name)}`
     }
   }
 
