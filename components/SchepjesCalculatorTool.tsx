@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import type { ReactNode } from 'react'
 import { Calculator, AlertCircle, Check } from 'lucide-react'
 import PopularProductsWidget from './PopularProductsWidget'
 
@@ -17,12 +18,14 @@ type Result = {
 
 /**
  * Interactive scoop-mixing calculator (client). De pagina eromheen is een
- * server component (metadata + FAQ structured data).
+ * server component (metadata + FAQ structured data) en geeft de uitleg-secties
+ * mee als `children`.
  *
- * Layout net als de home-calculator: invoer + alternatieven in de linkerkolom,
- * het resultaat en de aanbevolen producten sticky in de 340px rechterkolom.
+ * Layout net als de home-calculator: één twee-koloms grid. Links een
+ * doorlopende kolom (invoer -> uitleg-secties), rechts sticky het resultaat +
+ * de alternatieven + de aanbevolen producten.
  */
-export default function SchepjesCalculatorTool() {
+export default function SchepjesCalculatorTool({ children }: { children?: ReactNode }) {
   const [targetVolume, setTargetVolume] = useState('')
   const [results, setResults] = useState<Result | null>(null)
 
@@ -49,7 +52,7 @@ export default function SchepjesCalculatorTool() {
 
   return (
     <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-6 lg:items-start">
-      {/* Linkerkolom: invoer + alternatieven */}
+      {/* Linkerkolom: invoer + alle uitleg-secties, één doorlopende kolom */}
       <div className="space-y-6">
         <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="font-medium text-lg mb-4 flex items-center">
@@ -87,27 +90,12 @@ export default function SchepjesCalculatorTool() {
           </button>
         </div>
 
-        {/* Alternatieven: brede rijen, dus in de linkerkolom */}
-        {results && (
-          <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-            <h4 className="font-medium text-gray-800 mb-4">Alternatieve verhoudingen (hele schepjes):</h4>
-            <div className="space-y-3">
-              {results.alternatives.map((alt, index) => (
-                <div key={index} className={`flex justify-between items-center p-4 rounded-xl border ${alt.difference < 2 ? 'bg-default border-primary/30' : 'bg-gray-50 border-gray-200'}`}>
-                  <span className="font-medium">
-                    <strong>{alt.scoops} schepjes</strong> + <strong>{alt.water} ml water</strong> = {alt.volume} ml
-                  </span>
-                  <span className={`text-xs px-3 py-1 rounded-full ${alt.difference < 2 ? 'bg-primary/10 text-primary' : 'bg-gray-100 text-gray-600'}`}>
-                    {alt.difference === 0 ? 'Precies' : `${alt.difference.toFixed(1)} ml verschil`}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+        {/* Uitleg-secties (Snel overzicht, uitleg, veiligheid, FAQ, links):
+            komen direct onder Bereken mengverhouding in dezelfde kolom */}
+        {children}
       </div>
 
-      {/* Rechterkolom: resultaat + aanbevolen producten (sticky, net als home) */}
+      {/* Rechterkolom: resultaat + alternatieven + aanbevolen producten (sticky) */}
       <div className="space-y-6 mt-6 lg:mt-0 lg:sticky lg:top-6">
         {results ? (
           <>
@@ -139,12 +127,30 @@ export default function SchepjesCalculatorTool() {
                   <div>
                     <p className="font-medium text-amber-800">Let op: niet precies</p>
                     <p className="text-sm text-amber-700">
-                      Het komt {results.difference.toFixed(1)} ml af van je gewenste hoeveelheid. Gebruik hele schepjes en kies de dichtstbijzijnde optie links; een klein verschil is geen probleem.
+                      Het komt {results.difference.toFixed(1)} ml af van je gewenste hoeveelheid. Kies hieronder de dichtstbijzijnde optie met hele schepjes; een klein verschil is geen probleem.
                     </p>
                   </div>
                 </div>
               </div>
             )}
+
+            {/* Alternatieven, compact voor de smalle kolom */}
+            <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+              <h4 className="text-sm font-medium text-gray-800 mb-3">Alternatieve verhoudingen (hele schepjes)</h4>
+              <div className="space-y-2">
+                {results.alternatives.map((alt, index) => (
+                  <div key={index} className={`p-3 rounded-xl border ${alt.difference < 2 ? 'bg-default border-primary/30' : 'bg-gray-50 border-gray-200'}`}>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium text-gray-800">{alt.scoops} schepjes</span>
+                      <span className={`text-xs px-2 py-0.5 rounded-full ${alt.difference < 2 ? 'bg-primary/10 text-primary' : 'bg-gray-100 text-gray-600'}`}>
+                        {alt.difference === 0 ? 'Precies' : `${alt.difference.toFixed(1)} ml`}
+                      </span>
+                    </div>
+                    <div className="text-xs text-gray-500 mt-0.5">+ {alt.water} ml water = {alt.volume} ml</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </>
         ) : (
           <div className="bg-white rounded-2xl border border-dashed border-gray-200 p-6 text-center">

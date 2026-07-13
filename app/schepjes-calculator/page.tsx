@@ -72,12 +72,10 @@ export default function SchepjesCalculatorPage() {
           </p>
         </div>
 
-        {/* Interactive tool: invoer links, resultaat + producten rechts (home-layout) */}
-        <SchepjesCalculatorTool />
-
-        {/* Uitleg-secties, uitgelijnd onder de linkerkolom (invoer) net als home */}
-        <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-6 lg:items-start">
-          <div className="space-y-6">
+        {/* Interactive tool: invoer + uitleg links, resultaat + producten rechts
+            (home-layout). De uitleg-secties gaan als children mee zodat "Snel
+            overzicht" direct onder "Bereken mengverhouding" in dezelfde kolom valt. */}
+        <SchepjesCalculatorTool>
         {/* Snel-referentietabel */}
         <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Snel overzicht: ml naar schepjes</h2>
@@ -175,8 +173,7 @@ export default function SchepjesCalculatorPage() {
             </Link>
           </div>
         </section>
-          </div>
-        </div>
+        </SchepjesCalculatorTool>
       </div>
     </Layout>
   )
