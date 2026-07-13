@@ -51,7 +51,7 @@ export default function SchepjesCalculatorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqSchema)) }}
       />
-      <div className="max-w-3xl mx-auto space-y-6">
+      <div className="max-w-5xl mx-auto space-y-6">
         {/* Breadcrumb */}
         <div className="flex items-center space-x-2 text-sm text-gray-500">
           <Link href="/" className="hover:text-primary flex items-center">
@@ -72,9 +72,12 @@ export default function SchepjesCalculatorPage() {
           </p>
         </div>
 
-        {/* Interactive tool */}
+        {/* Interactive tool: invoer links, resultaat + producten rechts (home-layout) */}
         <SchepjesCalculatorTool />
 
+        {/* Uitleg-secties, uitgelijnd onder de linkerkolom (invoer) net als home */}
+        <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-6 lg:items-start">
+          <div className="space-y-6">
         {/* Snel-referentietabel */}
         <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-medium text-primary mb-4">Snel overzicht: ml naar schepjes</h2>
@@ -172,6 +175,8 @@ export default function SchepjesCalculatorPage() {
             </Link>
           </div>
         </section>
+          </div>
+        </div>
       </div>
     </Layout>
   )
