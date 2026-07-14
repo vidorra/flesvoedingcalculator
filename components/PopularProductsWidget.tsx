@@ -78,7 +78,7 @@ export default function PopularProductsWidget({ limit = 4 }: { limit?: number })
                 <img
                   src={snippet.imageUrl}
                   alt={snippet.name}
-                  className="max-w-[60%] h-full object-contain"
+                  className="h-full w-auto max-w-[85%] object-contain"
                   onError={(e: any) => { e.target.style.display = 'none' }}
                 />
               ) : (
