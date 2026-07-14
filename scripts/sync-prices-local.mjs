@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 /**
- * Lokale prijssync voor bol.com-producten.
+ * Lokale prijssync voor bol.com- en amazon.nl-producten.
  *
- * Waarom lokaal: bol.com serveert server-IP's (Hetzner/CapRover en ook
- * GitHub-runners) HTTP 403, dus de nachtelijke cloud-sync kan de prijs nooit
- * ophalen. Vanaf een gewone thuis-/kantoorverbinding lukt het wél. Dit script
+ * Waarom lokaal: bol.com én amazon.nl serveren server-IP's (Hetzner/CapRover
+ * en ook GitHub-runners) HTTP 403 / captcha, dus de nachtelijke cloud-sync kan
+ * de prijs nooit ophalen. Vanaf een gewone thuis-/kantoorverbinding lukt het
+ * wél. Dit script
  * draait dus op de laptop van de beheerder: het haalt de bol-productpagina op,
  * leest de prijs uit de JSON-LD, en POST de prijzen naar de productie-DB via
  * /api/cron/prices-local. Bezoekers zien nooit een extern script (geen cookies).
@@ -73,7 +74,7 @@ function extractPrice(html) {
   return found.length ? formatEuro(found[0]) : null
 }
 
-async function fetchPrice(url) {
+async function fetchBol(url) {
   const productUrl = resolveBolProductUrl(url)
   const res = await fetch(productUrl, {
     headers: { 'User-Agent': UA, 'Accept': 'text/html,*/*;q=0.8', 'Accept-Language': 'nl-NL,nl;q=0.9' },
@@ -83,6 +84,30 @@ async function fetchPrice(url) {
   const html = await res.text()
   const price = extractPrice(html)
   return { price, reason: price ? 'ok' : `geen prijs (${html.length}b)` }
+}
+
+// Amazon rendert de prijs wél server-side. Stabielste bron is "priceAmount"
+// in de embedded JSON; anders de eerste a-offscreen met een euro-bedrag
+// (dat is de buy-box-prijs; latere zijn doorstreepte/andere aanbiedingen).
+async function fetchAmazon(url) {
+  const res = await fetch(url, {
+    headers: { 'User-Agent': UA, 'Accept': 'text/html,*/*;q=0.8', 'Accept-Language': 'nl-NL,nl;q=0.9' },
+    redirect: 'follow'
+  })
+  if (!res.ok) return { price: null, reason: `HTTP ${res.status}` }
+  const html = await res.text()
+  if (/captcha|automated access|api-services-support/i.test(html.slice(0, 5000))) {
+    return { price: null, reason: 'captcha/bot' }
+  }
+  let m = html.match(/"priceAmount":\s*([0-9]+\.[0-9]{1,2})/)
+  if (m) return { price: formatEuro(m[1]), reason: 'ok' }
+  m = html.match(/a-offscreen">\s*€\s?([0-9][0-9.]*,[0-9]{2})/)
+  if (m) return { price: `€${m[1]}`, reason: 'ok' }
+  return { price: null, reason: `geen prijs (${html.length}b)` }
+}
+
+async function fetchPrice(type, url) {
+  return String(type).includes('amazon') ? fetchAmazon(url) : fetchBol(url)
 }
 
 async function main() {
@@ -96,13 +121,13 @@ async function main() {
     process.exit(1)
   }
   const { snippets = [] } = await listRes.json()
-  console.log(`${snippets.length} bol-producten te prijzen.\n`)
+  console.log(`${snippets.length} producten te prijzen (bol + amazon).\n`)
 
   const updates = []
   for (let i = 0; i < snippets.length; i++) {
     const s = snippets[i]
     try {
-      const { price, reason } = await fetchPrice(s.url)
+      const { price, reason } = await fetchPrice(s.type, s.url)
       if (price) {
         updates.push({ id: s.id, price })
         console.log(`  ✓ ${price.padEnd(9)} ${s.name} [${s.website}]`)

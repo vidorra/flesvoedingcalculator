@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { and, eq } from 'drizzle-orm'
+import { and, eq, inArray } from 'drizzle-orm'
 import { db } from '../../../../lib/db/connection.js'
 import { snippets } from '../../../../lib/db/schema.js'
 
@@ -17,7 +17,8 @@ export const maxDuration = 60
  * in de gedeelde DB. Bezoekers zien geen enkel extern script (geen cookies).
  *
  * Auth: CRON_SECRET, als `Authorization: Bearer <secret>` of `x-cron-secret`.
- * GET  -> lijst met actieve bol-snippets (beide websites) om lokaal te prijzen.
+ * GET  -> lijst met actieve bol- en amazon-snippets (beide websites) om lokaal
+ *         te prijzen (bol via JSON-LD, amazon via de a-offscreen/priceAmount).
  * POST -> { updates: [{ id, price, originalPrice?, currency? }] } wegschrijven.
  */
 function isAuthorized(request) {
@@ -46,7 +47,7 @@ export async function GET(request) {
   const rows = await db
     .select({ id: snippets.id, name: snippets.name, url: snippets.url, type: snippets.type, website: snippets.website })
     .from(snippets)
-    .where(and(eq(snippets.active, true), eq(snippets.type, 'bol')))
+    .where(and(eq(snippets.active, true), inArray(snippets.type, ['bol', 'amazon'])))
 
   return NextResponse.json({ success: true, snippets: rows })
 }
