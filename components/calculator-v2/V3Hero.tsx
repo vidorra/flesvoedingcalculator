@@ -30,7 +30,7 @@ export default function V3Hero() {
   }
 
   return (
-    <section className="relative pt-8 px-4 lg:pt-10 lg:pb-0 lg:min-h-[calc(100svh-180px)] lg:max-h-[900px] lg:flex lg:flex-col lg:justify-between">
+    <section className="relative pt-8 px-4 lg:pt-10 lg:pb-0 lg:flex-1 lg:min-h-0 lg:flex lg:flex-col lg:justify-between">
       {/* Headline. From 1550px up the photo collage stops growing (its largest
           image, 18vw, hits its 280px max-width at ~1555px) while the section
           height stays capped at 900px, which opens a gap under the top-aligned

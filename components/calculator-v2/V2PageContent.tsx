@@ -27,12 +27,13 @@ export default function V2PageContent({ hero, simpleCalculator = false, variant 
   if (simpleCalculator) {
     return (
       <>
-        {/* Hot-weather hydration notice: full width above the hero banner
-            (only renders at warm temperatures) */}
-        <WarmWeerAlert ageMonths="0-1" />
-
-        {/* Hero Section (v3/v4 pass their own) */}
-        {hero ?? <V2Hero />}
+        {/* Alert + hero delen één 100svh-blok: verschijnt de warm-weer-melding,
+            dan krimpt de hero mee zodat het geheel binnen de viewport past
+            (i.p.v. dat de alert de hero voorbij 100vh duwt). */}
+        <div className="lg:min-h-[calc(100svh-180px)] lg:max-h-[900px] lg:flex lg:flex-col">
+          <WarmWeerAlert ageMonths="0-1" />
+          {hero ?? <V2Hero />}
+        </div>
 
         {/* One container: calculator grid carries all below-content as slots */}
         <div id="calculator-v2" className="-mt-3 scroll-mt-6">
