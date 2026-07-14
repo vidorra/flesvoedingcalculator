@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint:kennisbank": "node scripts/lint-kennisbank.mjs",
+    "sync:prices": "node scripts/sync-prices-local.mjs",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "node scripts/migrate.js",
     "db:migrate-data": "node scripts/data-migration.js",
