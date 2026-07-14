@@ -63,13 +63,13 @@ export default function WarmWeerAlert({ ageMonths }: WarmWeerAlertProps) {
 
   if (isWarning) {
     return (
-      <div className="bg-amber-50 rounded-2xl shadow-sm border border-amber-200 p-6 mb-6">
+      <div className="bg-orange-50 rounded-2xl shadow-sm border border-orange-200 p-6 mb-6">
         <div className="flex items-start space-x-3">
-          <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
-            <AlertTriangle className="w-5 h-5 text-amber-600" />
+          <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-orange-500 to-accent-rose">
+            <AlertTriangle className="w-5 h-5 text-white" />
           </div>
           <div>
-            <h3 className="font-medium text-amber-800 mb-2">
+            <h3 className="font-medium text-orange-900 mb-2">
               Let op: het is heet ({temp}°C{locationSuffix})
             </h3>
             <p className="text-sm text-gray-700 leading-relaxed mb-3">
@@ -77,7 +77,7 @@ export default function WarmWeerAlert({ ageMonths }: WarmWeerAlertProps) {
             </p>
             <Link
               href={ARTICLE_HREF}
-              className="inline-flex items-center text-sm font-medium text-amber-800 hover:underline"
+              className="inline-flex items-center text-sm font-medium text-orange-700 hover:underline"
             >
               Lees wat te doen bij warm weer
               <ArrowRight className="w-4 h-4 ml-1" />
@@ -89,21 +89,21 @@ export default function WarmWeerAlert({ ageMonths }: WarmWeerAlertProps) {
   }
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 mb-6">
+    <div className="bg-amber-50 rounded-2xl shadow-sm border border-amber-200 p-6 mb-6">
       <div className="flex items-start space-x-3">
-        <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-          <Sun className="w-5 h-5 text-primary" />
+        <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-amber-400 to-orange-400">
+          <Sun className="w-5 h-5 text-white" />
         </div>
         <div>
-          <h3 className="font-medium text-primary mb-2">
+          <h3 className="font-medium text-amber-900 mb-2">
             Warm weer: {temp}°C{locationSuffix}
           </h3>
-          <p className="text-sm text-gray-600 leading-relaxed mb-3">
+          <p className="text-sm text-gray-700 leading-relaxed mb-3">
             Op warme dagen heeft je baby meer vocht nodig. {advice}
           </p>
           <Link
             href={ARTICLE_HREF}
-            className="inline-flex items-center text-sm font-medium text-primary hover:underline"
+            className="inline-flex items-center text-sm font-medium text-amber-700 hover:underline"
           >
             Lees meer over flesvoeding bij warm weer
             <ArrowRight className="w-4 h-4 ml-1" />
