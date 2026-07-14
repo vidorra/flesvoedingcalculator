@@ -698,10 +698,10 @@ export default function FlesvoedingBewarenPage() {
               </div>
             </div>
 
-            {/* Flesvoeding Bewaar Producten */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="hygiene-bereiding_flesvoeding-bewaren"
-              title="Flesvoeding Bewaar Producten"
+              title="Handige producten"
             />
 
             {/* Navigation */}

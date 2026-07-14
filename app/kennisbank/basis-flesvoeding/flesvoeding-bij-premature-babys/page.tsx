@@ -323,10 +323,10 @@ export default function FlesvoedingPrematurePage() {
           </div>
         </div>
 
-        {/* Speciale Prematurenvoeding Producten */}
+        {/* Handige producten */}
         <AffiliateProductWidget
           pageId="basis-flesvoeding_flesvoeding-bij-premature-babys"
-          title="Speciale Prematurenvoeding Producten"
+          title="Handige producten"
         />
 
         {/* NICU Protocols */}

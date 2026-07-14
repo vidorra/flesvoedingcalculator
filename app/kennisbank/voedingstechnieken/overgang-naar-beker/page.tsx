@@ -3,7 +3,6 @@ import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { AlertTriangle, Clock, TrendingUp, Users, Calendar, CheckCircle, XCircle, Target, ChevronRight, Star, Banknote, Heart, RefreshCw, ArrowRight } from 'lucide-react';
-import BolProductSection from '../../../../components/BolProductLink'
 import { generateFAQSchema } from '../../../../lib/structured-data'
 
 export const metadata = {
@@ -1098,23 +1097,11 @@ export default function OvergangNaarBekerPage() {
               </div>
             </div>
 
-            {/* Affiliate Product Recommendations */}
-            <BolProductSection
-              productNames={[
-                'baby drinkbeker',
-                'tuitbeker',
-                'anti-lek drinkbeker',
-                '360 graden drinkbeker'
-              ]}
-              title="Overgang naar zelfstandig drinken"
-              variant="card"
-              maxProducts={4}
-            />
 
-            {/* Overgang naar Beker Producten */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="voedingstechnieken_overgang-naar-beker"
-              title="Producten voor de overgang naar beker"
+              title="Handige producten"
             />
 
             {/* Related articles */}

@@ -570,10 +570,10 @@ export default function BoertjeLatenPage() {
               </ul>
             </div>
 
-            {/* Boertje Laten Producten */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="voedingstechnieken_boertje-laten-tijdens-voeding"
-              title="Boertje Laten Producten"
+              title="Handige producten"
             />
 
             {/* Navigation */}

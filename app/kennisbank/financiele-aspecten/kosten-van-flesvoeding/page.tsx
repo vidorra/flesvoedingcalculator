@@ -593,7 +593,7 @@ export default function KostenVanFlesvoeding() {
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
               <AffiliateProductWidget
                 pageId="financiele-aspecten_kosten-van-flesvoeding"
-                title="Flesvoeding Budget Producten"
+                title="Handige producten"
               />
             </section>
 

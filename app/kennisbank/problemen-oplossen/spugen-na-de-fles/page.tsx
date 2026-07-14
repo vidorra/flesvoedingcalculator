@@ -884,10 +884,10 @@ export default function SpugenNaDeFlesPage() {
               </div>
             </div>
 
-            {/* Spugen Voeding Producten */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="problemen-oplossen_spugen-na-de-fles"
-              title="Spugen Voeding Producten"
+              title="Handige producten"
             />
 
             {/* Navigation */}

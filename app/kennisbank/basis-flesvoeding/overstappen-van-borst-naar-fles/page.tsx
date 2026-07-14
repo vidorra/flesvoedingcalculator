@@ -226,10 +226,10 @@ export default function OverstappenBorstNaarFlesPage() {
               </div>
             </div>
 
-            {/* Affiliate Products */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="voedingstechnieken_overstappen-van-borst-naar-fles"
-              title="Aanbevolen Producten voor de Overstap"
+              title="Handige producten"
             />
 
             {/* Stap-voor-stap uitvoering */}

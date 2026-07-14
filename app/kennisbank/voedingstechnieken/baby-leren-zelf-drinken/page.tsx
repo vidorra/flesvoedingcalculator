@@ -340,10 +340,10 @@ export default function BabyLerenZelfDrinkenPage() {
               </div>
             </section>
 
-            {/* Zelf Drinken Producten */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="voedingstechnieken_baby-leren-zelf-drinken"
-              title="Zelf Drinken Producten"
+              title="Handige producten"
             />
 
             {/* Related Articles */}

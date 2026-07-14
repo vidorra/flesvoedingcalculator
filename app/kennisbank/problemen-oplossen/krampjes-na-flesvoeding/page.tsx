@@ -874,10 +874,10 @@ export default function KrampjesNaFlesvoedingPage() {
               </div>
             </div>
 
-            {/* Voeding tegen Krampjes */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="problemen-oplossen_krampjes-na-flesvoeding"
-              title="Voeding tegen Krampjes"
+              title="Handige producten"
             />
 
             {/* Navigation */}

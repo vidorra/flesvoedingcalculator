@@ -381,10 +381,10 @@ export default function GeldBesparenPage() {
               </p>
             </div>
 
-            {/* Budget Voeding Producten */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="praktische-tips_geld-besparen-flesvoeding"
-              title="Budget Voeding Producten"
+              title="Handige producten"
             />
 
             {/* Navigation */}

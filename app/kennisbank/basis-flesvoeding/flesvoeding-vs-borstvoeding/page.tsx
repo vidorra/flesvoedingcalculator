@@ -535,10 +535,10 @@ export default function FlesvoedingVsBorstvoedingPage() {
             </div>
         </div>
 
-        {/* Flesvoeding & Borstvoeding Producten */}
+        {/* Handige producten */}
         <AffiliateProductWidget
           pageId="basis-flesvoeding_flesvoeding-vs-borstvoeding"
-          title="Flesvoeding & Borstvoeding Producten"
+          title="Handige producten"
         />
 
         {/* Gerelateerde artikelen */}

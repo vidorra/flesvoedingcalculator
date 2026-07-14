@@ -3,7 +3,6 @@ import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { User, AlertCircle, ArrowRight } from 'lucide-react'
-import BolProductSection from '../../../../components/BolProductLink'
 import { generateFAQSchema } from '../../../../lib/structured-data'
 
 export const metadata = {
@@ -705,23 +704,11 @@ export default function JuisteHoudingBijFlesvoeding() {
               </div>
             </div>
 
-            {/* Affiliate Product Recommendations */}
-            <BolProductSection
-              productNames={[
-                'voeding kussen baby',
-                'baby ondersteuning kussen',
-                'spuugdoekjes',
-                'comfortabele baby stoel'
-              ]}
-              title="Producten voor Juiste Voedingshouding"
-              variant="card"
-              maxProducts={4}
-            />
 
-            {/* Voedingshouding Producten */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="voedingstechnieken_juiste-houding-bij-flesvoeding"
-              title="Voedingshouding Producten"
+              title="Handige producten"
             />
 
             {/* Call to action */}

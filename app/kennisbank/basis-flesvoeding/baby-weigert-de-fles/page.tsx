@@ -289,10 +289,10 @@ export default function BabyWeigertFlespagePage() {
               </div>
             </div>
 
-            {/* Aanbevolen Flessen & Spenen voor Moeilijke Baby's */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="basis-flesvoeding_baby-weigert-de-fles"
-              title="Aanbevolen Flessen & Spenen voor Moeilijke Baby's"
+              title="Handige producten"
             />
 
             {/* Wanneer professionele hulp */}

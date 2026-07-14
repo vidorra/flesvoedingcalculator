@@ -237,10 +237,10 @@ export default function CombivoedingPage() {
               </p>
             </section>
 
-            {/* Affiliate widget */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="basis-flesvoeding_combivoeding-borstvoeding-bijvoeden"
-              title="Handig bij Combivoeding"
+              title="Handige producten"
             />
 
             {/* Gerelateerde artikelen */}

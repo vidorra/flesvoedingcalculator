@@ -3,7 +3,6 @@ import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Droplets, Thermometer, Clock, Shield, AlertTriangle, CheckCircle, Home, Coffee, ArrowRight, } from 'lucide-react'
-import BolProductSection from '../../../../components/BolProductLink'
 import { generateFAQSchema } from '../../../../lib/structured-data'
 
 export const metadata = {
@@ -434,23 +433,11 @@ export default function WaterKokenFlesvoedingPage() {
               </div>
             </section>
 
-            {/* Affiliate Product Recommendations */}
-            <BolProductSection
-              productNames={[
-                'baby water koker',
-                'water filter baby',
-                'gekookt baby water',
-                'water thermometer'
-              ]}
-              title="Water Voorbereiding Producten"
-              variant="card"
-              maxProducts={4}
-            />
 
-            {/* Water & Bereiding Producten */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="hygiene-bereiding_water-koken-flesvoeding"
-              title="Water & Bereiding Producten"
+              title="Handige producten"
             />
 
             {/* Related Articles */}

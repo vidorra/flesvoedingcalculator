@@ -3,7 +3,6 @@ import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Milk, Heart, AlertCircle, CheckCircle, Star, Euro, Users, ArrowRight, } from 'lucide-react'
-import BolProductSection from '../../../../components/BolProductLink'
 import { generateFAQSchema } from '../../../../lib/structured-data'
 
 export const metadata = {
@@ -547,23 +546,11 @@ export default function LactosevrijeFlesvoedingPage() {
               </div>
             </section>
 
-            {/* Affiliate Product Recommendations */}
-            <BolProductSection
-              productNames={[
-                'lactosevrije baby voeding',
-                'Nutrilon lactosevrij',
-                'lactose intolerantie voeding',
-                'speciale baby formule'
-              ]}
-              title="Lactosevrije Voeding Opties"
-              variant="card"
-              maxProducts={4}
-            />
 
-            {/* Lactosevrije Voeding Producten */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="soorten-flesvoeding_lactosevrije-flesvoeding"
-              title="Lactosevrije Voeding Producten"
+              title="Handige producten"
             />
 
             {/* Related articles */}

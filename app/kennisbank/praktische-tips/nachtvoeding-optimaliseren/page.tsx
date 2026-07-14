@@ -565,10 +565,10 @@ export default function NachtvoedingOptimaliserenPage() {
           </div>
         </div>
 
-        {/* Product Widget */}
+        {/* Handige producten */}
         <AffiliateProductWidget
           pageId="praktische-tips_nachtvoeding-optimaliseren"
-          title="Nachtvoeding Producten"
+          title="Handige producten"
         />
 
         {/* Snelgids */}

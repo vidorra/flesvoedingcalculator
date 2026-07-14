@@ -3,7 +3,6 @@ import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Thermometer, AlertCircle, ArrowRight } from 'lucide-react'
-import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
   title: 'Juiste Temperatuur Controleren: Veilig en Comfortabel Voeden',
@@ -884,23 +883,11 @@ export default function JuisteTemperatuurControleren() {
               </div>
             </div>
 
-            {/* Affiliate Product Recommendations */}
-            <BolProductSection
-              productNames={[
-                'baby thermometer',
-                'melk temperatuur tester',
-                'digitale baby thermometer',
-                'infrarood thermometer baby'
-              ]}
-              title="Temperatuur Meet Apparatuur"
-              variant="card"
-              maxProducts={4}
-            />
 
-            {/* Temperatuur Controleer Producten */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="voedingstechnieken_juiste-temperatuur-controleren"
-              title="Temperatuur Controleer Producten"
+              title="Handige producten"
             />
 
             {/* Call to action */}

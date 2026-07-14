@@ -470,10 +470,10 @@ export default function HoudbaarheidFlesvoedingPage() {
             </section>
 
 
-            {/* Houdbaarheid Voeding Producten */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="hygiene-bereiding_houdbaarheid-flesvoeding"
-              title="Houdbaarheid Voeding Producten"
+              title="Handige producten"
             />
 
             {/* Related articles */}

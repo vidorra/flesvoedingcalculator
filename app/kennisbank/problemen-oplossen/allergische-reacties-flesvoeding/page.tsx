@@ -98,10 +98,10 @@ export default function AllergischeReactiesFlesvoedingPage() {
               </div>
             </section>
 
-            {/* Product Widget */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="problemen-oplossen_allergische-reacties-flesvoeding"
-              title="Allergie Voeding Producten"
+              title="Handige producten"
             />
 
             {/* Soorten Allergische Reacties */}

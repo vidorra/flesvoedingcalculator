@@ -775,10 +775,10 @@ export default function VeiligVerwarmenFlesvoedingPage() {
               </div>
             </div>
 
-            {/* Verwarmen Voeding Producten */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="hygiene-bereiding_veilig-verwarmen-flesvoeding"
-              title="Verwarmen Voeding Producten"
+              title="Handige producten"
             />
 
             {/* Related articles */}

@@ -541,10 +541,10 @@ export default function ConstipatieFlespagePage() {
               </div>
             </div>
 
-            {/* Voeding bij Constipatie */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="problemen-oplossen_constipatie-door-flesvoeding"
-              title="Voeding bij Constipatie"
+              title="Handige producten"
             />
 
             {/* Related articles */}

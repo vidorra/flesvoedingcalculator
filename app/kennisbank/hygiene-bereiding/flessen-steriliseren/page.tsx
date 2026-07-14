@@ -402,11 +402,11 @@ export default function FlessenSteriligerenPage() {
               </div>
             </div>
 
-            {/* Popular Sterilizers and Accessories */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="hygiene-bereiding_flessen-steriliseren"
               category="sterilisatoren"
-              title="Populaire Sterilisatoren en Accessoires"
+              title="Handige producten"
               maxProducts={4}
             />
 

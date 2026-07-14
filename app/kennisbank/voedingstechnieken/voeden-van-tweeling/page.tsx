@@ -499,10 +499,10 @@ export default function TweelingVoedenPage() {
           </div>
         </div>
 
-        {/* Tweeling Voeding Producten */}
+        {/* Handige producten */}
         <AffiliateProductWidget
           pageId="voedingstechnieken_voeden-van-tweeling"
-          title="Tweeling Voeding Producten"
+          title="Handige producten"
         />
 
         {/* Navigation */}

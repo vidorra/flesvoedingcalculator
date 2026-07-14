@@ -392,10 +392,10 @@ export default function FlesvoedingWerkPage() {
               </div>
             </div>
 
-            {/* Werk & Voeding Producten */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="praktische-tips_flesvoeding-werk-combineren"
-              title="Werk & Voeding Producten"
+              title="Handige producten"
             />
 
             {/* Navigation */}

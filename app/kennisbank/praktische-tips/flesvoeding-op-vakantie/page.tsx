@@ -3,7 +3,6 @@ import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Plane, ArrowRight, Home, MapPin, CheckCircle, AlertTriangle, Calculator, Thermometer } from 'lucide-react'
-import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
   title: 'Flesvoeding op vakantie: complete reisgids voor ouders',
@@ -565,25 +564,11 @@ export default function VakantiePage() {
               </div>
             </div>
 
-            {/* Affiliate Product Recommendations */}
-            <BolProductSection
-              productNames={[
-                'draagbare flessenwarmer',
-                'reis sterilisator',
-                'geïsoleerde baby tas',
-                'koelbox baby',
-                'reis formule container',
-                'baby reis accessoires'
-              ]}
-              title="Handig op reis met flesvoeding"
-              variant="card"
-              maxProducts={6}
-            />
 
-            {/* Vakantie Voeding Producten */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="praktische-tips_flesvoeding-op-vakantie"
-              title="Vakantie Voeding Producten"
+              title="Handige producten"
             />
 
             {/* Navigation */}

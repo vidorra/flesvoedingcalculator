@@ -293,10 +293,10 @@ export default function WarmWeerPage() {
               </p>
             </section>
 
-            {/* Affiliate widget */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="praktische-tips_flesvoeding-bij-warm-weer"
-              title="Handig bij Warm Weer"
+              title="Handige producten"
             />
 
             {/* Gerelateerde artikelen */}

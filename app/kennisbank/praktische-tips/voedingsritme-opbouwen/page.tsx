@@ -1038,10 +1038,10 @@ export default function VoedingsritmeOpbouwenPage() {
               </div>
             </div>
 
-            {/* Product Widget */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="praktische-tips_voedingsritme-opbouwen"
-              title="Handig bij een vast voedingsritme"
+              title="Handige producten"
             />
 
             {/* FAQ */}

@@ -399,10 +399,10 @@ export default function FlesvoedingEnSlapenPage() {
               </div>
             </section>
 
-            {/* Slapen Voeding Producten */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="praktische-tips_flesvoeding-en-slapen"
-              title="Slapen Voeding Producten"
+              title="Handige producten"
             />
 
             {/* Related Articles */}

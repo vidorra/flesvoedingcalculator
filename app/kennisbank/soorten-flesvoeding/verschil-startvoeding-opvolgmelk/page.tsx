@@ -755,10 +755,10 @@ export default function VerschilStartvoedingOpvolgmelkPage() {
               </div>
             </div>
 
-            {/* Startvoeding en Opvolgmelk Producten */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="soorten-flesvoeding_verschil-startvoeding-opvolgmelk"
-              title="Startvoeding en Opvolgmelk Producten"
+              title="Handige producten"
             />
 
             {/* Navigation */}

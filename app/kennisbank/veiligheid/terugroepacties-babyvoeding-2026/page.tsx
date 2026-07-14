@@ -478,10 +478,10 @@ export default function TerugroepactiesBabyvoeding2026Page() {
               </p>
             </div>
 
-            {/* Affiliate Products */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="veiligheid_terugroepacties-babyvoeding-2026"
-              title="Veilige Babyvoeding Producten"
+              title="Handige producten"
             />
 
             {/* Medical Disclaimer */}

@@ -2,7 +2,6 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import { Leaf, ShoppingCart, BarChart3, AlertTriangle, Euro, ArrowRight } from 'lucide-react'
-import BolProductSection from '../../../../components/BolProductLink'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 
 export const metadata = {
@@ -254,10 +253,10 @@ export default function BioOrganischeFlesvoedingPage() {
               </div>
             </section>
 
-            {/* Aanbevolen Bio Flesvoeding Producten */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="soorten-flesvoeding_bio-organische-flesvoeding"
-              title="Aanbevolen Bio Flesvoeding Producten"
+              title="Handige producten"
             />
 
             {/* Wetenschappelijke Voordelen */}
@@ -423,18 +422,6 @@ export default function BioOrganischeFlesvoedingPage() {
               </div>
             </section>
 
-            {/* Affiliate Product Recommendations */}
-            <BolProductSection
-              productNames={[
-                'biologische baby voeding',
-                'Holle bio voeding',
-                'HiPP biologisch',
-                'eco baby fles'
-              ]}
-              title="Biologische Baby Voeding"
-              variant="card"
-              maxProducts={4}
-            />
 
             {/* Related Articles */}
             <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">

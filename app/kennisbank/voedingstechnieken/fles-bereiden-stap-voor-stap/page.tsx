@@ -183,10 +183,10 @@ export default function FlesBerenStapVoorStap() {
               </ul>
             </div>
 
-            {/* Fles Bereiding Producten */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="voedingstechnieken_fles-bereiden-stap-voor-stap"
-              title="Fles Bereiding Producten"
+              title="Handige producten"
             />
 
             {/* Gerelateerde artikelen */}

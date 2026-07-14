@@ -3,7 +3,6 @@ import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { Heart, ArrowRight, Home, Shield, AlertTriangle, CheckCircle, Package, Calculator, Stethoscope } from 'lucide-react'
-import BolProductSection from '../../../../components/BolProductLink'
 
 export const metadata = {
   title: 'Hypoallergene Flesvoeding: Complete Gids voor Nederlandse Ouders 2026',
@@ -274,10 +273,10 @@ export default function HypoallergeneVoedingPage() {
               </div>
             </div>
 
-            {/* Hypoallergene Voeding Producten */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="soorten-flesvoeding_hypoallergene-flesvoeding"
-              title="Hypoallergene Voeding Producten"
+              title="Handige producten"
             />
 
             {/* Implementation guide */}
@@ -380,20 +379,6 @@ export default function HypoallergeneVoedingPage() {
               </div>
             </div>
 
-            {/* Affiliate Product Recommendations */}
-            <BolProductSection
-              productNames={[
-                'Nutrilon HA',
-                'Hero Baby HA',
-                'Nutricia Pepti',
-                'hypoallergene baby fles',
-                'medische sterilisator',
-                'allergie vrije speen'
-              ]}
-              title="Hypoallergene Voeding en Producten"
-              variant="card"
-              maxProducts={6}
-            />
 
             {/* Navigation */}
             <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">

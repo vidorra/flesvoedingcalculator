@@ -663,10 +663,10 @@ export default function WanneerOverstappenOpvolgmelkPage() {
               </div>
             </div>
 
-            {/* Opvolgmelk Producten */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="soorten-flesvoeding_wanneer-overstappen-opvolgmelk"
-              title="Opvolgmelk Producten"
+              title="Handige producten"
             />
 
             {/* Navigation */}

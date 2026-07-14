@@ -859,10 +859,10 @@ export default function UitgebreideFlesvoedingGids() {
             </div>
           </section>
 
-          {/* Product Widget */}
+          {/* Handige producten */}
           <AffiliateProductWidget
             pageId="praktische-gidsen_uitgebreide-flesvoeding-gids"
-            title="Flesvoeding Gids Producten"
+            title="Handige producten"
           />
 
           {/* Gerelateerde artikelen */}

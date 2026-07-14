@@ -826,10 +826,10 @@ export default function PartnerBetrekkenFlesvoedingPage() {
               </div>
             </div>
 
-            {/* Product Widget */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="praktische-tips_partner-betrekken-flesvoeding"
-              title="Partner Voeding Producten"
+              title="Handige producten"
             />
 
             {/* Veelgestelde vragen */}

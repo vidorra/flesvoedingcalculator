@@ -2,7 +2,6 @@ import Layout from '../../../../components/Layout'
 import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
-import BolProductSection from '../../../../components/BolProductLink'
 import { BookOpen, ArrowRight, Home, CheckCircle, AlertTriangle, Clock, Baby } from 'lucide-react'
 
 export const metadata = {
@@ -139,20 +138,6 @@ export default function EersteKeerFlesvoedingPage() {
             </div>
           </section>
 
-          {/* Product Recommendations */}
-          <BolProductSection
-            productNames={[
-              'MAM anti colic fles',
-              'Nutrilon startvoeding',
-              'Avent sterilisator',
-              'baby thermometer',
-              'flessenwarmer',
-              'babyflessen startset'
-            ]}
-            title="Aanbevolen Producten voor de Eerste Fles"
-            variant="card"
-            maxProducts={6}
-          />
 
           {/* Water preparation */}
           <section className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
@@ -202,10 +187,10 @@ export default function EersteKeerFlesvoedingPage() {
             </div>
           </section>
 
-          {/* Starterset Producten voor Eerste Fles */}
+          {/* Handige producten */}
           <AffiliateProductWidget
             pageId="basis-flesvoeding_eerste-keer-flesvoeding-geven"
-            title="Starterset Producten voor Eerste Fles"
+            title="Handige producten"
           />
 
           {/* Step by step guide */}

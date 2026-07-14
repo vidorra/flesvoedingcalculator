@@ -423,10 +423,10 @@ export default function DiarreeEnFlesvoedingPage() {
               </div>
             </section>
 
-            {/* Voeding tegen Diarree */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="problemen-oplossen_diarree-en-flesvoeding"
-              title="Voeding tegen Diarree"
+              title="Handige producten"
             />
 
             {/* Related Articles */}

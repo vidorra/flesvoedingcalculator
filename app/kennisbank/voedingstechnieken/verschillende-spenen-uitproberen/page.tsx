@@ -3,7 +3,6 @@ import Link from 'next/link'
 import KennisbankSidebar from '../../../../components/KennisbankSidebar'
 import AffiliateProductWidget from '../../../../components/AffiliateProductWidget'
 import { TestTube, Target, Search, ShoppingCart, AlertCircle } from 'lucide-react'
-import BolProductSection from '../../../../components/BolProductLink'
 import { generateFAQSchema } from '../../../../lib/structured-data'
 
 export const metadata = {
@@ -702,25 +701,11 @@ export default function VerschillendeSpenenUitproberenPage() {
               </div>
             </div>
 
-            {/* Affiliate Product Recommendations */}
-            <BolProductSection
-              productNames={[
-                'Philips Avent speen',
-                'MAM anti colic speen',
-                'NUK baby speen',
-                'Tommee Tippee speen',
-                'Dr Browns speen',
-                'baby speen variatie set'
-              ]}
-              title="Verschillende Spenen om te Testen"
-              variant="card"
-              maxProducts={6}
-            />
 
-            {/* Spenen Selectie Producten */}
+            {/* Handige producten */}
             <AffiliateProductWidget
               pageId="voedingstechnieken_verschillende-spenen-uitproberen"
-              title="Spenen Selectie Producten"
+              title="Handige producten"
             />
 
             {/* Navigation */}
