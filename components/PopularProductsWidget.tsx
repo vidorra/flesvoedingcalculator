@@ -65,7 +65,7 @@ export default function PopularProductsWidget({ limit = 4 }: { limit?: number })
             onClick={() => trackClick(snippet.id)}
             className="flex flex-col group border border-gray-100 hover:border-primary/30 rounded-xl overflow-hidden transition-colors"
           >
-            <div className="relative flex items-center justify-center aspect-[2/1]">
+            <div className="relative flex items-center justify-center h-28 overflow-hidden">
               {/* Platform-logo (bol.com / Amazon), afgeleid van het type */}
               <div className="absolute top-1.5 right-1.5 z-10">
                 <img
@@ -78,7 +78,7 @@ export default function PopularProductsWidget({ limit = 4 }: { limit?: number })
                 <img
                   src={snippet.imageUrl}
                   alt={snippet.name}
-                  className="h-full w-auto max-w-[85%] object-contain"
+                  className="h-24 w-auto object-contain"
                   onError={(e: any) => { e.target.style.display = 'none' }}
                 />
               ) : (

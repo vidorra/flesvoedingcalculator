@@ -58,11 +58,11 @@ function BolScriptWidget({ product }) {
     <div className="bg-white rounded-xl border border-gray-200 p-4 flex flex-col w-full" ref={containerRef}>
       <div className="text-center space-y-4 flex flex-col flex-grow" data-product-id={product.id}>
         {/* 1. Product Image (from backend) */}
-        <div className="mb-3 h-40 flex items-center justify-center">
+        <div className="mb-3 h-40 flex items-center justify-center overflow-hidden">
           <img
             src={product.data?.fallbackImage || 'https://media.s-bol.com/NKX9XZWN3RGL/0RNmv15/550x707.jpg'}
             alt={product.name || product.data?.title}
-            className="h-full w-auto max-w-full object-contain rounded-lg"
+            className="h-32 w-auto object-contain rounded-lg"
             style={{ maxHeight: '100%' }}
             onError={(e: any) => {
               e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik04MCA4MEgxMjBWMTIwSDgwVjgwWiIgZmlsbD0iIzlDQTNBRiIvPgo8cGF0aCBkPSJNOTYgMTA0TDEwNCAxMTJMMTIwIDk2IiBzdHJva2U9IiM2QjczODAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo='
@@ -310,11 +310,11 @@ export default function AffiliateProductWidget({
                     rel="nofollow noopener"
                     className="block hover:opacity-90 transition-opacity"
                   >
-                    <div className="mb-3 h-40 flex items-center justify-center">
+                    <div className="mb-3 h-40 flex items-center justify-center overflow-hidden">
                       <img
                         src={product.data.fallbackImage}
                         alt={product.data.title}
-                        className="h-full w-auto max-w-full object-contain rounded-lg"
+                        className="h-32 w-auto object-contain rounded-lg"
                         style={{ maxHeight: '100%' }}
                         onError={(e: any) => {
                           e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik04MCA4MEgxMjBWMTIwSDgwVjgwWiIgZmlsbD0iIzlDQTNBRiIvPgo8cGF0aCBkPSJNOTYgMTA0TDEwNCAxMTJMMTIwIDk2IiBzdHJva2U9IiM2QjczODAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo='
@@ -367,11 +367,11 @@ export default function AffiliateProductWidget({
                     rel="nofollow noopener"
                     className="block hover:opacity-90 transition-opacity flex flex-col flex-grow"
                   >
-                    <div className="mb-3 h-40 flex items-center justify-center">
+                    <div className="mb-3 h-40 flex items-center justify-center overflow-hidden">
                       <img
                         src={product.data.imageUrl}
                         alt={product.data.alt}
-                        className="h-full w-auto max-w-full object-contain rounded-lg"
+                        className="h-32 w-auto object-contain rounded-lg"
                         style={{ maxHeight: '100%' }}
                         onError={(e: any) => {
                           e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik04MCA4MEgxMjBWMTIwSDgwVjgwWiIgZmlsbD0iIzlDQTNBRiIvPgo8cGF0aCBkPSJNOTYgMTA0TDEwNCAxMTJMMTIwIDk2IiBzdHJva2U9IiM2QjczODAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo='
