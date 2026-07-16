@@ -55,17 +55,20 @@ Status-peildatum: 10 juli 2026.
   Wens erna: 1x per week een backup naar buiten de server kopieren
   (SD-kaart/laptop), anders beschermt hij niet tegen schijfuitval.
 
-- [ ] **CRON_SECRET zetten (4 plekken)** - zonder deze draait de
-  nachtelijke prijssync + beschikbaarheidscheck NIET, terwijl de
-  affiliate-disclaimer dagelijkse bol-prijsupdates belooft:
+- [ ] **CRON_SECRET (roteren + zetten)** - de lokale prijssync
+  (`npm run sync:prices` / launchd 07:00) schrijft via
+  `/api/cron/prices-local`, dat deze secret vereist. De oude waarden
+  stonden hier hardcoded en zijn gelekt in de git-history; genereer een
+  NIEUWE waarde en zet die op 3 plekken. Waarden NIET in dit bestand
+  zetten; bewaar ze in een password manager / buiten git.
   | Waar | Naam | Waarde |
   |---|---|---|
-  | CapRover -> flesvoedingcalculator env | CRON_SECRET | `935a6ba1d9067fa656a8cbf9987a14d816e5542f696d7a4d` |
-  | GitHub vidorra/flesvoedingcalculator -> Actions secrets | CRON_SECRET | zelfde |
-  | CapRover -> togwaarde env | CRON_SECRET | `fda7483eac4cdec5a09811284f19644e9428a1fc6b1c153e` |
-  | GitHub vidorra/togwaarde -> Actions secrets | CRON_SECRET | zelfde |
-  Test daarna: GitHub -> Actions -> "Nachtelijke prijssync" -> Run
-  workflow (beide repos) -> groen + prijzen/priceLastUpdated vernieuwd.
+  | CapRover -> flesvoedingcalculator env | CRON_SECRET | <nieuw geheim> |
+  | CapRover -> togwaarde env | CRON_SECRET | <zelfde nieuw geheim> |
+  | Mac: `~/Library/LaunchAgents/nl.flesvoeding.pricesync.plist` | CRON_SECRET | <zelfde> (dan `launchctl unload/load`) |
+  Genereer bijv. met `openssl rand -hex 24`. Test: `npm run sync:prices`
+  -> prijzen/priceLastUpdated vernieuwd.
+  (De GitHub Actions-secret is niet meer nodig; die workflow is verwijderd.)
 
 - [ ] **Uptime-monitoring** (DB ging 2x stuk op één dag zonder dat we
   het merkten). Gratis UptimeRobot/BetterStack, 4 monitors:
