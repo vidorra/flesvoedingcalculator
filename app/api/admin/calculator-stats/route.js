@@ -22,7 +22,7 @@ export async function GET(request) {
     await ensureCalculatorEventsTable()
     await ensureClickEventsTable()
 
-    const [totals, byAge, daily, byWeight, combi, byRoomTemp, bySleepMode, byAdviesTog, clickTotals, clicksBySnippet, clicksDaily] = await Promise.all([
+    const [totals, byAge, daily, byWeight, combi, byRoomTemp, bySleepMode, byAdviesTog, clickTotals, clicksBySnippet, clicksDaily, clicksByPlatform] = await Promise.all([
       db.execute(sql`
         SELECT website,
                COUNT(*)::int AS total,
@@ -76,7 +76,21 @@ export async function GET(request) {
       db.execute(sql`
         SELECT website, to_char(date_trunc('day', created_at), 'YYYY-MM-DD') AS day, COUNT(*)::int AS count
         FROM click_events WHERE created_at > now() - interval '30 days'
-        GROUP BY website, day ORDER BY day`)
+        GROUP BY website, day ORDER BY day`),
+      // Affiliate clicks: per platform (bol vs amazon), laatste 30 dagen.
+      // Platform uit snippets.type; valt terug op de snippet_id-prefix als de
+      // snippet niet (meer) bestaat.
+      db.execute(sql`
+        SELECT ce.website,
+               CASE
+                 WHEN COALESCE(s.type, '') ILIKE 'amazon%' OR ce.snippet_id ILIKE 'amazon%' THEN 'amazon'
+                 WHEN COALESCE(s.type, '') ILIKE 'bol%'    OR ce.snippet_id ILIKE 'bol%'    THEN 'bol'
+                 ELSE 'overig'
+               END AS platform,
+               COUNT(*)::int AS count
+        FROM click_events ce LEFT JOIN snippets s ON s.id = ce.snippet_id
+        WHERE ce.created_at > now() - interval '30 days'
+        GROUP BY ce.website, platform`)
     ])
 
     return NextResponse.json({
@@ -91,7 +105,8 @@ export async function GET(request) {
       byAdviesTog: byAdviesTog.rows,
       clickTotals: clickTotals.rows,
       clicksBySnippet: clicksBySnippet.rows,
-      clicksDaily: clicksDaily.rows
+      clicksDaily: clicksDaily.rows,
+      clicksByPlatform: clicksByPlatform.rows
     })
   } catch (error) {
     console.error('calculator-stats error:', error)

@@ -19,6 +19,7 @@ type Stats = {
   byAdviesTog?: Row[]
   clickTotals?: Row[]
   clicksBySnippet?: Row[]
+  clicksByPlatform?: Row[]
   clicksDaily?: Row[]
 }
 
@@ -242,6 +243,14 @@ export default function StatsPanel() {
   // expansion/internationale-uitbreiding.md §3.
   const funnelRatio = total30 > 0 ? (clickTotal30 / total30) * 100 : null
 
+  // Kliks per platform (bol vs amazon), laatste 30 dagen, voor de gekozen site.
+  const platformRows = stats ? filt(stats.clicksByPlatform ?? []) : []
+  const clicksBol = platformRows.filter((r) => r.platform === 'bol').reduce((s, r) => s + Number(r.count), 0)
+  const clicksAmazon = platformRows.filter((r) => r.platform === 'amazon').reduce((s, r) => s + Number(r.count), 0)
+  const clicksPlatformTotal = clicksBol + clicksAmazon
+  const bolPct = clicksPlatformTotal > 0 ? (clicksBol / clicksPlatformTotal) * 100 : 0
+  const amazonPct = clicksPlatformTotal > 0 ? (clicksAmazon / clicksPlatformTotal) * 100 : 0
+
   return (
     <div>
       {error && <div className="bg-amber-50 border border-amber-200 text-amber-800 rounded-xl p-4 mb-6">{error}</div>}
@@ -438,6 +447,47 @@ export default function StatsPanel() {
                     {funnelRatio === null ? '-' : `${funnelRatio.toFixed(1)}%`}
                   </span>
                 </div>
+
+                {/* Verdeling bol.com vs Amazon (30 dagen) */}
+                <div className="pt-3 border-t border-gray-100">
+                  <div className="flex items-center justify-between text-sm mb-2">
+                    <span className="text-gray-600">Kliks per platform</span>
+                    <span className="text-xs text-gray-400">{clicksPlatformTotal.toLocaleString('nl-NL')} kliks</span>
+                  </div>
+                  {clicksPlatformTotal === 0 ? (
+                    <p className="text-xs text-gray-400">Nog geen affiliate-kliks in deze periode.</p>
+                  ) : (
+                    <>
+                      <div className="flex h-6 rounded-lg overflow-hidden bg-gray-100">
+                        {clicksBol > 0 && (
+                          <div className="bg-gradient-to-r from-blue-600 to-blue-500 flex items-center justify-center" style={{ width: `${bolPct}%` }}>
+                            {bolPct >= 18 && <span className="text-[11px] font-medium text-white px-1">bol.com</span>}
+                          </div>
+                        )}
+                        {clicksAmazon > 0 && (
+                          <div className="bg-gradient-to-r from-amber-500 to-orange-400 flex items-center justify-center" style={{ width: `${amazonPct}%` }}>
+                            {amazonPct >= 18 && <span className="text-[11px] font-medium text-white px-1">Amazon</span>}
+                          </div>
+                        )}
+                      </div>
+                      <div className="flex items-center justify-between mt-2 text-sm">
+                        <span className="flex items-center gap-1.5">
+                          <span className="w-2.5 h-2.5 rounded-full bg-blue-600 inline-block" />
+                          <span className="text-gray-700">bol.com</span>
+                          <span className="font-semibold text-gray-900 tabular-nums">{clicksBol.toLocaleString('nl-NL')}</span>
+                          <span className="text-xs text-gray-400">({bolPct.toFixed(0)}%)</span>
+                        </span>
+                        <span className="flex items-center gap-1.5">
+                          <span className="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block" />
+                          <span className="text-gray-700">Amazon</span>
+                          <span className="font-semibold text-gray-900 tabular-nums">{clicksAmazon.toLocaleString('nl-NL')}</span>
+                          <span className="text-xs text-gray-400">({amazonPct.toFixed(0)}%)</span>
+                        </span>
+                      </div>
+                    </>
+                  )}
+                </div>
+
                 <p className="text-xs text-gray-400">
                   Dit is de eigen conversie-proxy. Leg dit percentage na 4-6 weken naast de
                   aannames in expansion/internationale-uitbreiding.md (§3) en stel de
