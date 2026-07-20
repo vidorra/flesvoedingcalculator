@@ -7,6 +7,12 @@ import { snippets } from '../../../../lib/db/schema.js'
 export const dynamic = 'force-dynamic'
 export const maxDuration = 60
 
+// Validatie voor de POST-updates
+const MAX_UPDATES = 500
+const ID_PATTERN = /^[A-Za-z0-9_-]{1,128}$/          // bv. bol-9200000114317984
+const PRICE_PATTERN = /^€?\s?\d{1,6}([.,]\d{1,2})?$/  // bv. €31,14 / 31.14 / 31
+const CURRENCY_PATTERN = /^[A-Z]{3}$/                 // EUR
+
 /**
  * Prijssync-endpoint voor de LOKALE runner (scripts/sync-prices-local.mjs).
  *
@@ -67,21 +73,37 @@ export async function POST(request) {
   if (!updates.length) {
     return NextResponse.json({ success: false, message: 'Geen updates meegegeven' }, { status: 400 })
   }
+  if (updates.length > MAX_UPDATES) {
+    return NextResponse.json({ success: false, message: `Te veel updates (max ${MAX_UPDATES})` }, { status: 400 })
+  }
 
   let updated = 0
   const errors = []
   for (const u of updates) {
-    if (!u?.id || !u?.price) {
-      errors.push(`Overgeslagen (geen id/price): ${JSON.stringify(u).slice(0, 80)}`)
+    // Strikte validatie: alleen een plausibel prijsstring + geldige snippet-id
+    // mogen de DB in. Zo kan een houder van CRON_SECRET hooguit een echte
+    // prijs zetten, geen willekeurige tekst (die wordt als tekst gerenderd,
+    // maar we houden de kolommen schoon).
+    if (!u?.id || typeof u.id !== 'string' || !ID_PATTERN.test(u.id)) {
+      errors.push(`Overgeslagen (ongeldige id): ${JSON.stringify(u?.id)?.slice(0, 60)}`)
       continue
     }
+    if (typeof u.price !== 'string' || !PRICE_PATTERN.test(u.price)) {
+      errors.push(`Overgeslagen (ongeldige price) voor ${u.id}`)
+      continue
+    }
+    if (u.originalPrice != null && (typeof u.originalPrice !== 'string' || !PRICE_PATTERN.test(u.originalPrice))) {
+      errors.push(`Overgeslagen (ongeldige originalPrice) voor ${u.id}`)
+      continue
+    }
+    const currency = typeof u.currency === 'string' && CURRENCY_PATTERN.test(u.currency) ? u.currency : 'EUR'
     try {
       await db
         .update(snippets)
         .set({
           price: u.price,
           originalPrice: u.originalPrice ?? null,
-          currency: u.currency || 'EUR',
+          currency,
           priceLastUpdated: new Date(),
           updatedAt: new Date()
         })
