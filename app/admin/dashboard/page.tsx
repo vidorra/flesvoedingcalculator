@@ -948,67 +948,15 @@ export default function SimpleAdminDashboard() {
   }
 
   const syncAllPrices = async () => {
-    if (!confirm('This will update prices for all active snippets. This may take several minutes. Continue?')) {
-      return
-    }
-
-    setIsSyncing(true)
-    setSyncProgress('Starting price sync...')
-    setSyncAlert(null) // Clear any previous alerts
-
-    try {
-      const response = await fetch('/api/admin-snippets/sync-prices', {
-        method: 'POST',
-        headers: getAuthHeaders()
-      })
-
-      if (response.ok) {
-        const result = await response.json()
-        setSyncProgress(`Sync completed: ${result.stats.successful} successful, ${result.stats.errors} errors`)
-        
-        // Refresh the snippets list to show updated prices
-        loadData(true)
-        
-        // Show detailed results in custom alert
-        if (result.stats.errors > 0) {
-          setSyncAlert({
-            type: 'warning',
-            message: `Price sync completed with some issues: ${result.stats.successful} successful, ${result.stats.errors} failed`,
-            details: result.stats.errorDetails || []
-          })
-        } else {
-          setSyncAlert({
-            type: 'success',
-            message: `🎉 Price sync completed successfully! ${result.stats.successful} snippets updated with current prices`,
-            details: []
-          })
-        }
-      } else {
-        const errorData = await response.json()
-        setSyncProgress('Sync failed')
-        setSyncAlert({
-          type: 'error',
-          message: `Failed to sync prices: ${errorData.message}`,
-          details: []
-        })
-      }
-    } catch (error) {
-      console.error('Error syncing prices:', error)
-      setSyncProgress('Sync failed')
-      setSyncAlert({
-        type: 'error',
-        message: `Error syncing prices: ${error.message}`,
-        details: []
-      })
-    } finally {
-      setIsSyncing(false)
-      // Clear progress message after a delay
-      setTimeout(() => setSyncProgress(''), 3000)
-      // Auto-dismiss alert after 10 seconds for success, keep error alerts
-      setTimeout(() => {
-        setSyncAlert(prev => prev?.type === 'success' ? null : prev)
-      }, 10000)
-    }
+    // Server-side prijzen ophalen bij bol.com/Amazon wordt geblokkeerd (HTTP 403
+    // op datacenter-IP's, ook GitHub Actions). Deze knop scraapt dus NIET meer.
+    // De echte prijssync draait dagelijks (07:00) vanaf de beheer-Mac
+    // (residentieel IP) via `npm run sync:prices` en schrijft naar de DB.
+    setSyncAlert({
+      type: 'warning',
+      message: 'Handmatig prijzen ophalen werkt niet vanaf de server: bol.com en Amazon blokkeren datacenter-IP\'s (403). De prijzen worden automatisch elke dag om 07:00 bijgewerkt door de lokale sync op de beheer-Mac. Direct verversen? Draai daar in de terminal: npm run sync:prices',
+      details: []
+    })
   }
 
   // Load saved health check results on mount
@@ -1538,8 +1486,8 @@ export default function SimpleAdminDashboard() {
                     disabled={isSyncing || loading}
                     className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center space-x-2"
                   >
-                    <RefreshCw className={`w-4 h-4 ${isSyncing ? 'animate-spin' : ''}`} />
-                    <span>{isSyncing ? 'Syncing...' : 'Sync Prices'}</span>
+                    <RefreshCw className="w-4 h-4" />
+                    <span>Prijssync (info)</span>
                   </button>
                   <button
                     onClick={() => setShowAddForm(true)}
