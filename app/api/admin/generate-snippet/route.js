@@ -59,9 +59,17 @@ async function followRedirects(shortUrl, maxRedirects = 5) {
   
   while (redirectCount < maxRedirects) {
     try {
-      const response = await fetch(currentUrl, { 
-        method: 'HEAD', 
-        redirect: 'manual' 
+      // GET met browser-headers: Amazon weigert HEAD-requests en kale
+      // datacenter-fetches vaak; de redirect-Location komt bij GET meestal
+      // wel door voordat een bot-check kan ingrijpen.
+      const response = await fetch(currentUrl, {
+        method: 'GET',
+        redirect: 'manual',
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+          'Accept': 'text/html,*/*;q=0.8',
+          'Accept-Language': 'nl-NL,nl;q=0.9'
+        }
       })
       
       if (response.status >= 300 && response.status < 400) {
@@ -245,8 +253,16 @@ export async function POST(request) {
         const asin = extractAmazonASIN(finalUrl)
         
         if (!asin) {
+          // Shortlinks (amzn.to / amzn.eu) bevatten de ASIN niet in de URL en
+          // het herleiden van de redirect wordt door Amazon op server-IP's
+          // vaak geblokkeerd. De volledige productlink werkt altijd.
+          const isShortlink = /amzn\.(to|eu)|\/d\//i.test(url)
           return NextResponse.json(
-            { message: 'Could not extract ASIN from Amazon URL' },
+            {
+              message: isShortlink
+                ? 'Amazon-shortlink kon niet worden herleid (Amazon blokkeert dit vanaf de server). Open de shortlink in je browser en plak hier de volledige productlink (met /dp/... erin).'
+                : 'Geen ASIN gevonden in deze URL. Plak de volledige Amazon-productlink (met /dp/... erin).'
+            },
             { status: 400 }
           )
         }
