@@ -5,6 +5,7 @@ import { FileText, ArrowRight, Home, AlertTriangle, Scale, Shield, Info } from '
 export const metadata = {
   title: 'Gebruiksvoorwaarden | FlesvoedingCalculator.nl',
   description: 'Gebruiksvoorwaarden van FlesvoedingCalculator.nl - Voorwaarden voor het gebruik van onze flesvoeding calculator en informatie.',
+  alternates: { canonical: '/gebruiksvoorwaarden/' },
 }
 
 export default function GebruiksvoorwaardenPage() {

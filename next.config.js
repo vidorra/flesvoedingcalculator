@@ -53,6 +53,18 @@ const nextConfig = {
         source: '/disclaimer',
         destination: '/medische-disclaimer',
         permanent: true
+      },
+      // Duplicaat-pagina's (zelfde inhoud, niet in de footer gelinkt) -> de
+      // canonieke variant. Loste "Dubbele pagina zonder canonical" in GSC op.
+      {
+        source: '/privacy',
+        destination: '/privacy-beleid',
+        permanent: true
+      },
+      {
+        source: '/voorwaarden',
+        destination: '/gebruiksvoorwaarden',
+        permanent: true
       }
     ]
   },

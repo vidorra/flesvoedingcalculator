@@ -5,6 +5,7 @@ import { Shield, ArrowRight, Home, Eye, Cookie, Mail, Lock } from 'lucide-react'
 export const metadata = {
   title: 'Privacy Beleid | FlesvoedingCalculator.nl',
   description: 'Privacybeleid van FlesvoedingCalculator.nl - Hoe wij omgaan met uw persoonlijke gegevens volgens de AVG.',
+  alternates: { canonical: '/privacy-beleid/' },
 }
 
 export default function PrivacyBeleidPage() {
