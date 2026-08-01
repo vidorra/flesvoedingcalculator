@@ -9,6 +9,8 @@ import {
 
 type Row = Record<string, string | number>
 type Stats = {
+  period?: number | string
+  bucket?: string
   totals: Row[]
   byAge: Row[]
   daily: Row[]
@@ -55,25 +57,11 @@ function label(map: Record<string, string>, key: string) {
   return map[key] ?? key
 }
 
-// Trend: som laatste 7 dagen vs de 7 dagen ervoor, uit de daily-rijen
-function weekTrend(dailyAgg: Record<string, number>) {
-  const now = new Date()
-  let cur = 0
-  let prev = 0
-  for (const [day, count] of Object.entries(dailyAgg)) {
-    const diff = (now.getTime() - new Date(day).getTime()) / 86400000
-    if (diff <= 7) cur += count
-    else if (diff <= 14) prev += count
-  }
-  if (prev === 0) return { pct: null as number | null, cur, prev }
-  return { pct: Math.round(((cur - prev) / prev) * 100), cur, prev }
-}
-
 function TrendBadge({ pct }: { pct: number | null }) {
   if (pct === null) {
     return (
       <span className="inline-flex items-center gap-0.5 text-xs font-medium text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded-full">
-        <Minus className="w-3 h-3" /> vs vorige week
+        <Minus className="w-3 h-3" /> vs vorige periode
       </span>
     )
   }
@@ -83,7 +71,7 @@ function TrendBadge({ pct }: { pct: number | null }) {
       up ? 'text-green-700 bg-green-50' : 'text-red-700 bg-red-50'
     }`}>
       {up ? <ArrowUpRight className="w-3 h-3" /> : <ArrowDownRight className="w-3 h-3" />}
-      {Math.abs(pct)}% vs vorige week
+      {Math.abs(pct)}% vs vorige periode
     </span>
   )
 }
@@ -166,11 +154,23 @@ function Card({ title, icon, children }: { title: string; icon?: React.ReactNode
   )
 }
 
+const PERIOD_OPTIONS: { value: string; label: string }[] = [
+  { value: '7', label: 'Laatste 7 dagen' },
+  { value: '14', label: 'Laatste 14 dagen' },
+  { value: '30', label: 'Laatste 30 dagen' },
+  { value: '90', label: 'Laatste 3 maanden' },
+  { value: '180', label: 'Laatste 6 maanden' },
+  { value: '365', label: 'Laatste jaar' },
+  { value: 'all', label: 'Alles' }
+]
+
 export default function StatsPanel() {
   const router = useRouter()
   const [stats, setStats] = useState<Stats | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [site, setSite] = useState<'all' | string>('all')
+  const [period, setPeriod] = useState('30')
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const token = typeof window !== 'undefined' ? localStorage.getItem('admin_token') : null
@@ -178,14 +178,20 @@ export default function StatsPanel() {
       router.replace('/admin')
       return
     }
-    fetch('/api/admin/calculator-stats', { headers: { Authorization: `Bearer ${token}` } })
+    setLoading(true)
+    setError(null)
+    fetch(`/api/admin/calculator-stats?days=${period}`, { headers: { Authorization: `Bearer ${token}` } })
       .then((r) => (r.status === 401 ? (router.replace('/admin'), null) : r.json()))
       .then((data) => {
         if (data && data.success) setStats(data)
         else if (data) setError(data.error || 'Kon statistieken niet laden')
       })
       .catch(() => setError('Kon statistieken niet laden'))
-  }, [router])
+      .finally(() => setLoading(false))
+  }, [router, period])
+
+  const periodLabel = PERIOD_OPTIONS.find((o) => o.value === period)?.label ?? 'periode'
+  const bucketWord = stats?.bucket === 'month' ? 'maand' : stats?.bucket === 'week' ? 'week' : 'dag'
 
   const filt = (rows: Row[]) => (site === 'all' ? rows : rows.filter((r) => r.website === site))
 
@@ -199,8 +205,9 @@ export default function StatsPanel() {
   const ageTotal = ageEntries.reduce((s, [, c]) => s + c, 0)
 
   const totalAll = stats ? filt(stats.totals).reduce((s, t) => s + Number(t.total), 0) : 0
-  const total30 = stats ? filt(stats.totals).reduce((s, t) => s + Number(t.last30), 0) : 0
-  const total7 = stats ? filt(stats.totals).reduce((s, t) => s + Number(t.last7 ?? 0), 0) : 0
+  const totalPeriod = stats ? filt(stats.totals).reduce((s, t) => s + Number(t.period ?? 0), 0) : 0
+  const totalPrev = stats ? filt(stats.totals).reduce((s, t) => s + Number(t.prev ?? 0), 0) : 0
+  const calcTrendPct = totalPrev > 0 ? Math.round(((totalPeriod - totalPrev) / totalPrev) * 100) : null
 
   const showFlesBreakdown = site === 'all' || site === 'flesvoedingcalculator'
   const showTogBreakdown = site === 'all' || site === 'togwaarde'
@@ -221,12 +228,12 @@ export default function StatsPanel() {
   })
   const dailyEntries = Object.entries(dailyAgg).sort((a, b) => a[0].localeCompare(b[0]))
   const dailyMax = dailyEntries.reduce((m, [, c]) => Math.max(m, c), 0)
-  const calcTrend = weekTrend(dailyAgg)
 
   // Affiliate-klik aggregaties
   const clickTotalAll = stats ? filt(stats.clickTotals ?? []).reduce((s, t) => s + Number(t.total), 0) : 0
-  const clickTotal30 = stats ? filt(stats.clickTotals ?? []).reduce((s, t) => s + Number(t.last30), 0) : 0
-  const clickTotal7 = stats ? filt(stats.clickTotals ?? []).reduce((s, t) => s + Number(t.last7 ?? 0), 0) : 0
+  const clickTotalPeriod = stats ? filt(stats.clickTotals ?? []).reduce((s, t) => s + Number(t.period ?? 0), 0) : 0
+  const clickPrev = stats ? filt(stats.clickTotals ?? []).reduce((s, t) => s + Number(t.prev ?? 0), 0) : 0
+  const clickTrendPct = clickPrev > 0 ? Math.round(((clickTotalPeriod - clickPrev) / clickPrev) * 100) : null
   const clickSnippets = stats ? filt(stats.clicksBySnippet ?? []) : []
   const clickTopMax = clickSnippets.reduce((m, r) => Math.max(m, Number(r.count)), 0)
   const clickDailyAgg: Record<string, number> = {}
@@ -236,14 +243,13 @@ export default function StatsPanel() {
   })
   const clickDailyEntries = Object.entries(clickDailyAgg).sort((a, b) => a[0].localeCompare(b[0]))
   const clickDailyMax = clickDailyEntries.reduce((m, [, c]) => Math.max(m, c), 0)
-  const clickTrend = weekTrend(clickDailyAgg)
 
-  // Funnel (30 dagen): berekeningen -> affiliate-kliks. Kliks per berekening
-  // is onze eigen conversie-proxy; leg deze na 4-6 weken naast de aannames in
-  // expansion/internationale-uitbreiding.md §3.
-  const funnelRatio = total30 > 0 ? (clickTotal30 / total30) * 100 : null
+  // Funnel: berekeningen -> affiliate-kliks binnen de gekozen periode. Kliks per
+  // berekening is onze eigen conversie-proxy; leg deze na 4-6 weken naast de
+  // aannames in expansion/internationale-uitbreiding.md §3.
+  const funnelRatio = totalPeriod > 0 ? (clickTotalPeriod / totalPeriod) * 100 : null
 
-  // Kliks per platform (bol vs amazon), laatste 30 dagen, voor de gekozen site.
+  // Kliks per platform (bol vs amazon) binnen de gekozen periode, voor de site.
   const platformRows = stats ? filt(stats.clicksByPlatform ?? []) : []
   const clicksBol = platformRows.filter((r) => r.platform === 'bol').reduce((s, r) => s + Number(r.count), 0)
   const clicksAmazon = platformRows.filter((r) => r.platform === 'amazon').reduce((s, r) => s + Number(r.count), 0)
@@ -258,27 +264,46 @@ export default function StatsPanel() {
 
       {stats && (
         <>
-          {/* Site filter - vaste lijst zodat Togwaarde er ook zonder data staat */}
-          <div className="flex space-x-1 mb-8 bg-gray-100 rounded-lg p-1 w-fit">
-            <button
-              onClick={() => setSite('all')}
-              className={`px-4 py-1.5 rounded-md text-sm font-medium transition-colors ${
-                site === 'all' ? 'bg-white text-primary shadow-sm' : 'text-gray-500 hover:text-gray-700'
-              }`}
-            >
-              Beide apps
-            </button>
-            {KNOWN_SITES.map((s) => (
+          {/* Filters: site-keuze links, periode rechts */}
+          <div className="flex flex-wrap items-center justify-between gap-3 mb-8">
+            {/* Site filter - vaste lijst zodat Togwaarde er ook zonder data staat */}
+            <div className="flex space-x-1 bg-gray-100 rounded-lg p-1 w-fit">
               <button
-                key={s}
-                onClick={() => setSite(s)}
+                onClick={() => setSite('all')}
                 className={`px-4 py-1.5 rounded-md text-sm font-medium transition-colors ${
-                  site === s ? 'bg-white text-primary shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                  site === 'all' ? 'bg-white text-primary shadow-sm' : 'text-gray-500 hover:text-gray-700'
                 }`}
               >
-                {label(SITE_LABELS, s)}
+                Beide apps
               </button>
-            ))}
+              {KNOWN_SITES.map((s) => (
+                <button
+                  key={s}
+                  onClick={() => setSite(s)}
+                  className={`px-4 py-1.5 rounded-md text-sm font-medium transition-colors ${
+                    site === s ? 'bg-white text-primary shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                  }`}
+                >
+                  {label(SITE_LABELS, s)}
+                </button>
+              ))}
+            </div>
+
+            {/* Periode-selector: stuurt alle vensters/kaarten aan */}
+            <div className="flex items-center gap-2">
+              <label htmlFor="stats-period" className="text-sm text-gray-500">Periode</label>
+              <select
+                id="stats-period"
+                value={period}
+                onChange={(e) => setPeriod(e.target.value)}
+                className="text-sm border border-gray-200 rounded-lg px-3 py-1.5 bg-white text-gray-700 focus:border-primary focus:ring-1 focus:ring-primary outline-none"
+              >
+                {PERIOD_OPTIONS.map((o) => (
+                  <option key={o.value} value={o.value}>{o.label}</option>
+                ))}
+              </select>
+              {loading && <span className="text-xs text-gray-400">laden...</span>}
+            </div>
           </div>
 
           {/* ===== Calculator ===== */}
@@ -287,14 +312,13 @@ export default function StatsPanel() {
             <h2 className="text-xl font-bold text-gray-900">Calculator-gebruik</h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-            <KpiCard icon={<Activity className="w-5 h-5" />} value={totalAll.toLocaleString('nl-NL')} title="Totaal berekeningen" />
-            <KpiCard icon={<CalendarDays className="w-5 h-5" />} value={total30.toLocaleString('nl-NL')} title="Laatste 30 dagen" />
-            <KpiCard icon={<Calculator className="w-5 h-5" />} value={total7.toLocaleString('nl-NL')} title="Laatste 7 dagen" sub={<TrendBadge pct={calcTrend.pct} />} />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <KpiCard icon={<Activity className="w-5 h-5" />} value={totalAll.toLocaleString('nl-NL')} title="Totaal berekeningen (alles)" />
+            <KpiCard icon={<CalendarDays className="w-5 h-5" />} value={totalPeriod.toLocaleString('nl-NL')} title={periodLabel} sub={<TrendBadge pct={calcTrendPct} />} />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
-            <Card title="Berekeningen per dag (30 dagen)" icon={<BarChart3 className="w-5 h-5" />}>
+            <Card title={`Berekeningen per ${bucketWord}`} icon={<BarChart3 className="w-5 h-5" />}>
               <DailyChart entries={dailyEntries} max={dailyMax} />
             </Card>
 
@@ -369,14 +393,13 @@ export default function StatsPanel() {
           </div>
           <p className="text-sm text-gray-500 mb-4">Kliks op bol.com/Amazon-productkaarten (anoniem)</p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-            <KpiCard icon={<MousePointerClick className="w-5 h-5" />} value={clickTotalAll.toLocaleString('nl-NL')} title="Totaal kliks" />
-            <KpiCard icon={<CalendarDays className="w-5 h-5" />} value={clickTotal30.toLocaleString('nl-NL')} title="Laatste 30 dagen" />
-            <KpiCard icon={<Activity className="w-5 h-5" />} value={clickTotal7.toLocaleString('nl-NL')} title="Laatste 7 dagen" sub={<TrendBadge pct={clickTrend.pct} />} />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <KpiCard icon={<MousePointerClick className="w-5 h-5" />} value={clickTotalAll.toLocaleString('nl-NL')} title="Totaal kliks (alles)" />
+            <KpiCard icon={<CalendarDays className="w-5 h-5" />} value={clickTotalPeriod.toLocaleString('nl-NL')} title={periodLabel} sub={<TrendBadge pct={clickTrendPct} />} />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <Card title="Kliks per dag (30 dagen)" icon={<BarChart3 className="w-5 h-5" />}>
+            <Card title={`Kliks per ${bucketWord}`} icon={<BarChart3 className="w-5 h-5" />}>
               <DailyChart entries={clickDailyEntries} max={clickDailyMax} />
             </Card>
 
@@ -422,23 +445,23 @@ export default function StatsPanel() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <Card title="Funnel: berekening naar affiliate-klik (30 dagen)" icon={<Activity className="w-5 h-5" />}>
+            <Card title={`Funnel: berekening naar affiliate-klik (${periodLabel.toLowerCase()})`} icon={<Activity className="w-5 h-5" />}>
               <div className="space-y-3">
                 <div>
                   <div className="flex justify-between text-sm mb-1.5">
                     <span className="text-gray-700">Berekeningen</span>
-                    <span className="font-semibold text-gray-900 tabular-nums">{total30.toLocaleString('nl-NL')}</span>
+                    <span className="font-semibold text-gray-900 tabular-nums">{totalPeriod.toLocaleString('nl-NL')}</span>
                   </div>
                   <div className="h-6 rounded-lg bg-gradient-to-r from-primary to-primary/70" style={{ width: '100%' }} />
                 </div>
                 <div>
                   <div className="flex justify-between text-sm mb-1.5">
                     <span className="text-gray-700">Affiliate-kliks</span>
-                    <span className="font-semibold text-gray-900 tabular-nums">{clickTotal30.toLocaleString('nl-NL')}</span>
+                    <span className="font-semibold text-gray-900 tabular-nums">{clickTotalPeriod.toLocaleString('nl-NL')}</span>
                   </div>
                   <div
                     className="h-6 rounded-lg bg-gradient-to-r from-amber-500 to-amber-400 min-w-[4px]"
-                    style={{ width: `${total30 > 0 ? Math.max(2, Math.min(100, (clickTotal30 / total30) * 100)) : 0}%` }}
+                    style={{ width: `${totalPeriod > 0 ? Math.max(2, Math.min(100, (clickTotalPeriod / totalPeriod) * 100)) : 0}%` }}
                   />
                 </div>
                 <div className="pt-2 border-t border-gray-100 flex items-center justify-between">
