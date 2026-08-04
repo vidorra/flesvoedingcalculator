@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import {
   BarChart3, Calculator, MousePointerClick, CalendarDays,
-  ArrowUpRight, ArrowDownRight, Minus, Baby, Thermometer, Trophy, Activity, Bed
+  ArrowUpRight, ArrowDownRight, Minus, Baby, Thermometer, Trophy, Activity, Bed, Users
 } from 'lucide-react'
 
 type Row = Record<string, string | number>
@@ -24,6 +24,20 @@ type Stats = {
   clicksByPlatform?: Row[]
   clicksDaily?: Row[]
 }
+
+type VisitorStats = {
+  range?: string
+  bucket?: string
+  series: Row[]
+  totals: Row[]
+}
+
+const VISITOR_RANGES: { value: string; label: string }[] = [
+  { value: 'maand', label: 'Maand' },
+  { value: 'kwartaal', label: 'Kwartaal' },
+  { value: 'jaar', label: 'Jaar' },
+  { value: 'totaal', label: 'Totaal' }
+]
 
 // Vaste lijst: beide apps altijd tonen, ook als een site nog geen events heeft
 const KNOWN_SITES = ['flesvoedingcalculator', 'togwaarde'] as const
@@ -171,6 +185,8 @@ export default function StatsPanel() {
   const [site, setSite] = useState<'all' | string>('all')
   const [period, setPeriod] = useState('30')
   const [loading, setLoading] = useState(false)
+  const [visitorStats, setVisitorStats] = useState<VisitorStats | null>(null)
+  const [visitorRange, setVisitorRange] = useState('maand')
 
   useEffect(() => {
     const token = typeof window !== 'undefined' ? localStorage.getItem('admin_token') : null
@@ -189,6 +205,16 @@ export default function StatsPanel() {
       .catch(() => setError('Kon statistieken niet laden'))
       .finally(() => setLoading(false))
   }, [router, period])
+
+  // Bezoekers: eigen weergave-filter (maand/kwartaal/jaar/totaal), los venster
+  useEffect(() => {
+    const token = typeof window !== 'undefined' ? localStorage.getItem('admin_token') : null
+    if (!token) return
+    fetch(`/api/admin/visitor-stats?range=${visitorRange}`, { headers: { Authorization: `Bearer ${token}` } })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => { if (data && data.success) setVisitorStats(data) })
+      .catch(() => {})
+  }, [visitorRange])
 
   const periodLabel = PERIOD_OPTIONS.find((o) => o.value === period)?.label ?? 'periode'
   const bucketWord = stats?.bucket === 'month' ? 'maand' : stats?.bucket === 'week' ? 'week' : 'dag'
@@ -257,6 +283,20 @@ export default function StatsPanel() {
   const bolPct = clicksPlatformTotal > 0 ? (clicksBol / clicksPlatformTotal) * 100 : 0
   const amazonPct = clicksPlatformTotal > 0 ? (clicksAmazon / clicksPlatformTotal) * 100 : 0
 
+  // Bezoekers-grafiek (eigen weergave-filter), gefilterd op de gekozen site
+  const visitorSeries = visitorStats ? filt(visitorStats.series) : []
+  const visitorAgg: Record<string, number> = {}
+  visitorSeries.forEach((r) => {
+    const d = String(r.day)
+    visitorAgg[d] = (visitorAgg[d] || 0) + Number(r.count)
+  })
+  const visitorEntries = Object.entries(visitorAgg).sort((a, b) => a[0].localeCompare(b[0]))
+  const visitorMax = visitorEntries.reduce((m, [, c]) => Math.max(m, c), 0)
+  const visitorTotalsRows = visitorStats ? filt(visitorStats.totals) : []
+  const visitorPeriodTotal = visitorTotalsRows.reduce((s, t) => s + Number(t.period ?? 0), 0)
+  const visitorAllTotal = visitorTotalsRows.reduce((s, t) => s + Number(t.total ?? 0), 0)
+  const visitorBucketWord = visitorStats?.bucket === 'month' ? 'maand' : visitorStats?.bucket === 'week' ? 'week' : 'dag'
+
   return (
     <div>
       {error && <div className="bg-amber-50 border border-amber-200 text-amber-800 rounded-xl p-4 mb-6">{error}</div>}
@@ -305,6 +345,43 @@ export default function StatsPanel() {
               {loading && <span className="text-xs text-gray-400">laden...</span>}
             </div>
           </div>
+
+          {/* ===== Bezoekers ===== */}
+          <div className="flex items-center gap-2 mb-1">
+            <Users className="w-5 h-5 text-primary" />
+            <h2 className="text-xl font-bold text-gray-900">Bezoekers</h2>
+          </div>
+          <p className="text-sm text-gray-500 mb-4">Anonieme bezoeken per {visitorBucketWord} (1 per sessie, cookieless)</p>
+
+          <Card title="Bezoeken per periode" icon={<BarChart3 className="w-5 h-5" />}>
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+              <div className="flex space-x-1 bg-gray-100 rounded-lg p-1 w-fit">
+                {VISITOR_RANGES.map((r) => (
+                  <button
+                    key={r.value}
+                    onClick={() => setVisitorRange(r.value)}
+                    className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
+                      visitorRange === r.value ? 'bg-white text-primary shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                    }`}
+                  >
+                    {r.label}
+                  </button>
+                ))}
+              </div>
+              <div className="text-sm text-gray-500">
+                <span className="font-semibold text-gray-900 tabular-nums">{visitorPeriodTotal.toLocaleString('nl-NL')}</span> in weergave
+                <span className="text-gray-300 mx-2">·</span>
+                <span className="font-semibold text-gray-900 tabular-nums">{visitorAllTotal.toLocaleString('nl-NL')}</span> totaal
+              </div>
+            </div>
+            {!visitorStats ? (
+              <p className="text-sm text-gray-500">Laden...</p>
+            ) : (
+              <DailyChart entries={visitorEntries} max={visitorMax} />
+            )}
+          </Card>
+
+          <div className="h-10" />
 
           {/* ===== Calculator ===== */}
           <div className="flex items-center gap-2 mb-4">

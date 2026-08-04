@@ -4,6 +4,7 @@ import { Lexend_Deca } from 'next/font/google'
 import { initWebVitals } from '../lib/analytics'
 import ConsentBanner from '../components/ConsentBanner'
 import UmamiScript from '../components/UmamiScript'
+import ViewBeacon from '../components/ViewBeacon'
 
 /**
  * Aan/uit-schakelaar voor de cookie-zettende trackers (GA4, GTM, Clarity)
@@ -223,6 +224,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
         {/* Umami: cookieless analytics, geen consent nodig */}
         <UmamiScript />
+        {/* Eigen anonieme bezoek-teller (voor de admin-statistieken) */}
+        <ViewBeacon />
 
         {children}
 
