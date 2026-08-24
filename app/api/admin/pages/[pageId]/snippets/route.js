@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { db } from '../../../../../../lib/db/connection.js'
 import { snippets, pageSnippets, pages } from '../../../../../../lib/db/schema.js'
-import { eq, and, count } from 'drizzle-orm'
+import { eq, and, count, sql } from 'drizzle-orm'
 import { verifyAdminAndGetWebsite } from '../../../../../../lib/jwt-utils.js'
 
 // Force dynamic route
@@ -164,6 +164,81 @@ export async function POST(request, { params }) {
     console.error('Failed to add snippet to page:', error)
     return NextResponse.json(
       { message: 'Unauthorized or failed to add snippet to page' },
+      { status: error.message.includes('token') ? 401 : 500 }
+    )
+  }
+}
+
+// PATCH - Herorden de snippets van een pagina. Body: { snippetIds: [...] } in
+// de gewenste volgorde. Schrijft page_snippets.order opnieuw; datzelfde veld
+// bepaalt de volgorde op de site (zie /api/affiliates/page/[pageId]).
+export async function PATCH(request, { params }) {
+  try {
+    const { website } = verifyAdminAndGetWebsite(request)
+
+    const pageId = (await params).pageId
+    const { snippetIds } = await request.json()
+
+    if (!Array.isArray(snippetIds) || snippetIds.length === 0) {
+      return NextResponse.json(
+        { message: 'snippetIds array is required' },
+        { status: 400 }
+      )
+    }
+
+    // 'default' is de virtuele per-website pagina; die heeft geen rij in `pages`.
+    if (pageId !== 'default') {
+      const page = await db
+        .select()
+        .from(pages)
+        .where(and(eq(pages.id, pageId), eq(pages.website, website)))
+        .limit(1)
+
+      if (page.length === 0) {
+        return NextResponse.json(
+          { message: 'Page not found or access denied' },
+          { status: 404 }
+        )
+      }
+    }
+
+    // Alleen rijen die echt bij deze pagina + website horen mogen verschuiven,
+    // zodat een vreemd of verouderd id nooit de andere site kan raken. We eisen
+    // de volledige lijst: een deellijst zou gaten in de volgorde achterlaten.
+    const assigned = await db
+      .select({ snippetId: pageSnippets.snippetId })
+      .from(pageSnippets)
+      .where(and(eq(pageSnippets.pageId, pageId), eq(pageSnippets.website, website)))
+
+    const allowed = new Set(assigned.map(row => row.snippetId))
+    const ordered = [...new Set(snippetIds)].filter(id => allowed.has(id))
+
+    if (ordered.length !== allowed.size) {
+      return NextResponse.json(
+        { message: 'snippetIds must list exactly the snippets assigned to this page' },
+        { status: 400 }
+      )
+    }
+
+    // Eén atomaire UPDATE: bij een halverwege afgebroken reeks losse updates
+    // zou de volgorde inconsistent achterblijven. De index is van onszelf en
+    // wordt daarom inline gezet; de ids blijven bind-parameters.
+    const cases = sql.join(
+      ordered.map((id, index) => sql`WHEN ${id} THEN ${sql.raw(String(index))}`),
+      sql` `
+    )
+
+    await db.execute(sql`
+      UPDATE page_snippets
+      SET "order" = CASE snippet_id ${cases} ELSE "order" END
+      WHERE page_id = ${pageId} AND website = ${website}`)
+
+    return NextResponse.json({ success: true, order: ordered })
+
+  } catch (error) {
+    console.error('Failed to reorder page snippets:', error)
+    return NextResponse.json(
+      { message: 'Unauthorized or failed to reorder page snippets' },
       { status: error.message.includes('token') ? 401 : 500 }
     )
   }

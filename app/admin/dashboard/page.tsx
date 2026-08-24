@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Layout from '../../../components/Layout'
-import { Settings, Link, Plus, Eye, X, Edit, Trash2, ToggleLeft, ToggleRight, RefreshCw, ChevronDown, ExternalLink } from 'lucide-react'
+import { Settings, Link, Plus, Eye, X, Edit, Trash2, ToggleLeft, ToggleRight, RefreshCw, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react'
 import StatsPanel from '../../../components/admin/StatsPanel'
 import jwt from 'jsonwebtoken'
 
@@ -12,6 +12,7 @@ export default function SimpleAdminDashboard() {
   const [pages, setPages] = useState([])
   const [selectedPage, setSelectedPage] = useState(null)
   const [pageSnippets, setPageSnippets] = useState([])
+  const [reorderError, setReorderError] = useState('')
   const [loading, setLoading] = useState(true)
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [activeTab, setActiveTab] = useState('overview') // 'overview' or 'assignment'
@@ -335,6 +336,7 @@ export default function SimpleAdminDashboard() {
 
   const handlePageSelect = (page) => {
     setSelectedPage(page)
+    setReorderError('')
     loadPageSnippets(page.id)
   }
 
@@ -741,6 +743,45 @@ export default function SimpleAdminDashboard() {
     } catch (error) {
       console.error('Error unassigning snippet:', error)
       alert('Error unassigning snippet: ' + error.message)
+    }
+  }
+
+  // Verschuif een toegewezen snippet een plek omhoog (-1) of omlaag (+1).
+  // Optimistisch: de lijst springt meteen en we schrijven op de achtergrond weg,
+  // want een alert() per klik maakt een paar stappen achter elkaar onwerkbaar.
+  // Mislukt het wegschrijven, dan zetten we de oude volgorde terug en tonen we
+  // dat boven de lijst, zodat het scherm nooit iets belooft wat niet opgeslagen is.
+  const moveSnippetOnPage = async (index, direction) => {
+    const target = index + direction
+    if (!selectedPage || target < 0 || target >= pageSnippets.length) return
+
+    const previous = pageSnippets
+    const reordered = [...pageSnippets]
+    const moved = reordered[index]
+    reordered[index] = reordered[target]
+    reordered[target] = moved
+
+    setPageSnippets(reordered)
+    setReorderError('')
+
+    const snippetIds = reordered.map(ps => ps.snippet?.id || ps.snippetId)
+
+    try {
+      const response = await fetch(`/api/admin/pages/${selectedPage.id}/snippets/`, {
+        method: 'PATCH',
+        headers: getAuthHeaders(),
+        body: JSON.stringify({ snippetIds })
+      })
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}))
+        setPageSnippets(previous)
+        setReorderError(errorData.message || `Failed to save new order (${response.status})`)
+      }
+    } catch (error) {
+      console.error('Error reordering page snippets:', error)
+      setPageSnippets(previous)
+      setReorderError('Failed to save new order: ' + error.message)
     }
   }
 
@@ -2227,7 +2268,15 @@ export default function SimpleAdminDashboard() {
                     <>
                     {/* Current Page Snippets */}
                     <div className="mb-6">
-                      <h3 className="font-medium text-gray-900 mb-3">Current Affiliate Snippets</h3>
+                      <h3 className="font-medium text-gray-900 mb-1">Current Affiliate Snippets</h3>
+                      <p className="text-sm text-gray-600 mb-3">
+                        Visitors see them in this order. Use the arrows to move a product up or down.
+                      </p>
+                      {reorderError && (
+                        <div className="mb-3 p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-800">
+                          {reorderError}
+                        </div>
+                      )}
                       {pageSnippets.length === 0 ? (
                         <div className="text-center py-8 text-gray-500 border-2 border-dashed border-gray-300 rounded-lg">
                           <Link className="w-8 h-8 mx-auto mb-2 text-gray-400" />
@@ -2239,6 +2288,26 @@ export default function SimpleAdminDashboard() {
                           {pageSnippets.map((snippet, index) => (
                             <div key={snippet.id} className="flex items-center justify-between p-3 border border-gray-200 rounded-lg bg-gray-50">
                               <div className="flex items-center space-x-3">
+                                <div className="flex flex-col">
+                                  <button
+                                    onClick={() => moveSnippetOnPage(index, -1)}
+                                    disabled={index === 0}
+                                    className="p-0.5 text-gray-500 rounded transition-colors hover:text-gray-900 hover:bg-gray-200 disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-gray-500 disabled:cursor-not-allowed"
+                                    title="Move up"
+                                    aria-label={`Move ${snippet.snippet?.name || snippet.name} up`}
+                                  >
+                                    <ChevronUp className="w-4 h-4" />
+                                  </button>
+                                  <button
+                                    onClick={() => moveSnippetOnPage(index, 1)}
+                                    disabled={index === pageSnippets.length - 1}
+                                    className="p-0.5 text-gray-500 rounded transition-colors hover:text-gray-900 hover:bg-gray-200 disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-gray-500 disabled:cursor-not-allowed"
+                                    title="Move down"
+                                    aria-label={`Move ${snippet.snippet?.name || snippet.name} down`}
+                                  >
+                                    <ChevronDown className="w-4 h-4" />
+                                  </button>
+                                </div>
                                 <div className="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs">
                                   {index + 1}
                                 </div>
