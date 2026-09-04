@@ -1,7 +1,10 @@
 import { NextResponse } from 'next/server'
-import { and, eq, inArray } from 'drizzle-orm'
+import { createHash } from 'crypto'
+import { and, eq, inArray, sql } from 'drizzle-orm'
 import { db } from '../../../../lib/db/connection.js'
 import { snippets } from '../../../../lib/db/schema.js'
+import { ensurePriceAlertStateTable } from '../../../../lib/db/ensure-events.js'
+import { sendMail, mailerConfigured, ownerEmail } from '../../../../lib/mailer.js'
 
 // Force dynamic; leest/schrijft de DB
 export const dynamic = 'force-dynamic'
@@ -33,6 +36,102 @@ function isAuthorized(request) {
   const auth = request.headers.get('authorization') || ''
   const headerSecret = request.headers.get('x-cron-secret') || ''
   return auth === `Bearer ${secret}` || headerSecret === secret
+}
+
+// Meldingen over producten die geen prijs opleveren. Een Amazon-product dat op
+// "currently unavailable" staat, of waarvan de ASIN/URL is veranderd, levert
+// stilletjes niets meer op; dan blijft er een verouderde prijs op de site staan
+// zonder dat iemand het merkt. Daarom mailen we het.
+//
+// Niet elke run mailen: de launchd-job draait om 07:00 én bij elke login/boot,
+// dus een product dat een week stuk staat zou tientallen identieke mails geven.
+// We mailen als de verzameling kapotte producten verandert, en verder hooguit
+// eens per ~20 uur zodat je het bij een blijvend probleem toch dagelijks ziet.
+const ALERT_MIN_INTERVAL_MS = 20 * 60 * 60 * 1000
+const MAX_FAILURES_IN_MAIL = 50
+
+function failureHash(failures) {
+  const ids = failures.map(f => f.id).sort().join('|')
+  return createHash('sha256').update(ids).digest('hex').slice(0, 32)
+}
+
+async function shouldSendAlert(hash) {
+  try {
+    await ensurePriceAlertStateTable()
+    const result = await db.execute(sql`
+      SELECT failing_hash, last_sent_at FROM price_alert_state WHERE id = 'global'`)
+    const row = result.rows?.[0]
+    if (!row) return true
+    if (row.failing_hash !== hash) return true
+    return Date.now() - new Date(row.last_sent_at).getTime() > ALERT_MIN_INTERVAL_MS
+  } catch (error) {
+    // Bij twijfel liever mailen dan stil blijven: een gemiste melding is erger
+    // dan een dubbele.
+    console.error('price-alert state lezen mislukt:', error.message)
+    return true
+  }
+}
+
+async function rememberAlert(hash) {
+  try {
+    await db.execute(sql`
+      INSERT INTO price_alert_state (id, failing_hash, last_sent_at)
+      VALUES ('global', ${hash}, now())
+      ON CONFLICT (id) DO UPDATE SET failing_hash = ${hash}, last_sent_at = now()`)
+  } catch (error) {
+    console.error('price-alert state opslaan mislukt:', error.message)
+  }
+}
+
+async function maybeSendFailureAlert(failures) {
+  if (!failures.length) return { sent: false, reason: 'geen mislukkingen' }
+  if (!mailerConfigured()) return { sent: false, reason: 'mailer niet geconfigureerd' }
+
+  const hash = failureHash(failures)
+  if (!(await shouldSendAlert(hash))) {
+    return { sent: false, reason: 'al gemeld (ongewijzigd en < 20u geleden)' }
+  }
+
+  const getoond = failures.slice(0, MAX_FAILURES_IN_MAIL)
+  const rest = failures.length - getoond.length
+  const regels = getoond.map(f => `- ${f.name || f.id} [${f.website || '?'}, ${f.type || '?'}]\n  reden: ${f.reason || 'onbekend'}\n  ${f.url || ''}`)
+  if (rest > 0) regels.push(`- (+${rest} meer)`)
+
+  const onderwerp = failures.length === 1
+    ? `Prijssync: 1 product zonder prijs (${getoond[0].name || getoond[0].id})`
+    : `Prijssync: ${failures.length} producten zonder prijs`
+
+  const text = [
+    'De dagelijkse prijssync kon voor deze affiliate-producten geen prijs ophalen.',
+    'Meestal betekent dat: niet meer leverbaar, of de URL/ASIN is gewijzigd.',
+    'De oude prijs blijft staan op de site tot je het corrigeert.',
+    '',
+    ...regels,
+    '',
+    'Beheer: https://flesvoedingcalculator.nl/admin/dashboard'
+  ].join('\n')
+
+  const html = `<p>De dagelijkse prijssync kon voor deze affiliate-producten geen prijs ophalen.<br>
+Meestal betekent dat: niet meer leverbaar, of de URL/ASIN is gewijzigd.<br>
+De oude prijs blijft staan op de site tot je het corrigeert.</p>
+<ul>${getoond.map(f => `<li><strong>${escapeHtml(f.name || f.id)}</strong> <em>(${escapeHtml(f.website || '?')}, ${escapeHtml(f.type || '?')})</em><br>
+reden: ${escapeHtml(f.reason || 'onbekend')}${f.url ? `<br><a href="${escapeHtml(f.url)}">${escapeHtml(f.url)}</a>` : ''}</li>`).join('')}
+${rest > 0 ? `<li>(+${rest} meer)</li>` : ''}</ul>
+<p><a href="https://flesvoedingcalculator.nl/admin/dashboard">Naar het dashboard</a></p>`
+
+  const res = await sendMail({ to: ownerEmail(), subject: onderwerp, text, html })
+  if (!res.ok) {
+    console.error('Prijssync-melding versturen mislukt:', res.error)
+    return { sent: false, reason: res.error }
+  }
+  await rememberAlert(hash)
+  return { sent: true, to: ownerEmail(), count: failures.length }
+}
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, c => (
+    { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+  ))
 }
 
 function guard(request) {
@@ -70,11 +169,15 @@ export async function POST(request) {
   }
 
   const updates = Array.isArray(body?.updates) ? body.updates : []
-  if (!updates.length) {
-    return NextResponse.json({ success: false, message: 'Geen updates meegegeven' }, { status: 400 })
+  // `failures` is optioneel, maar een run waarin ALLES misging is juist de
+  // interessantste: daarom mag updates nu leeg zijn zolang er wel een rapport
+  // is. Zonder allebei is er niets te doen.
+  const failures = Array.isArray(body?.failures) ? body.failures : []
+  if (!updates.length && !failures.length) {
+    return NextResponse.json({ success: false, message: 'Geen updates of failures meegegeven' }, { status: 400 })
   }
-  if (updates.length > MAX_UPDATES) {
-    return NextResponse.json({ success: false, message: `Te veel updates (max ${MAX_UPDATES})` }, { status: 400 })
+  if (updates.length > MAX_UPDATES || failures.length > MAX_UPDATES) {
+    return NextResponse.json({ success: false, message: `Te veel regels (max ${MAX_UPDATES})` }, { status: 400 })
   }
 
   let updated = 0
@@ -124,5 +227,20 @@ export async function POST(request) {
     }
   }
 
-  return NextResponse.json({ success: true, updated, errors })
+  // Alleen regels met een geldige id mee de melding in; de rest is ruis en zou
+  // de dedupe-hash onnodig laten wisselen.
+  const schoneFailures = failures
+    .filter(f => f?.id && typeof f.id === 'string' && ID_PATTERN.test(f.id))
+    .map(f => ({
+      id: f.id,
+      name: typeof f.name === 'string' ? f.name.slice(0, 200) : '',
+      website: typeof f.website === 'string' ? f.website.slice(0, 40) : '',
+      type: typeof f.type === 'string' ? f.type.slice(0, 20) : '',
+      reason: typeof f.reason === 'string' ? f.reason.slice(0, 200) : '',
+      url: typeof f.url === 'string' ? f.url.slice(0, 500) : ''
+    }))
+
+  const alert = await maybeSendFailureAlert(schoneFailures)
+
+  return NextResponse.json({ success: true, updated, errors, failures: schoneFailures.length, alert })
 }

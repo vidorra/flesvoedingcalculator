@@ -143,9 +143,16 @@ async function fetchAmazon(url) {
   }
   const { price, bron } = extractAmazonPrice(html)
   if (price) return { price, reason: `ok (${bron})` }
-  // Expliciet benoemen, anders lijkt een ontbrekende buy box op een gewone
-  // mislukte fetch en blijft een verouderde prijs ongemerkt staan.
-  return { price: null, reason: `geen buy box in de HTML (${html.length}b)` }
+
+  // Expliciet benoemen waaróm er niets uitkwam. "Niet leverbaar" is een ander
+  // probleem dan een gewijzigde URL, en dat verschil wil je in de melding zien
+  // staan: het eerste vraagt om een vervangend product, het tweede om een
+  // nieuwe link. Zonder dit onderscheid lijkt alles op een mislukte fetch en
+  // blijft er ongemerkt een verouderde prijs op de site staan.
+  if (/currently unavailable|momenteel niet beschikbaar|niet op voorraad|outOfStock/i.test(html)) {
+    return { price: null, reason: 'niet leverbaar op Amazon (currently unavailable)' }
+  }
+  return { price: null, reason: `geen prijs in de buy box (${html.length}b, URL of ASIN gewijzigd?)` }
 }
 
 async function fetchPrice(type, url) {
@@ -166,34 +173,44 @@ async function main() {
   console.log(`${snippets.length} producten te prijzen (bol + amazon).\n`)
 
   const updates = []
+  const failures = []
   for (let i = 0; i < snippets.length; i++) {
     const s = snippets[i]
+    const basis = { id: s.id, name: s.name, website: s.website, type: s.type, url: s.url }
     try {
       const { price, reason } = await fetchPrice(s.type, s.url)
       if (price) {
         updates.push({ id: s.id, price })
         console.log(`  ✓ ${price.padEnd(9)} ${s.name} [${s.website}]`)
       } else {
+        failures.push({ ...basis, reason })
         console.log(`  ✗ ${'—'.padEnd(9)} ${s.name} (${reason})`)
       }
     } catch (err) {
+      failures.push({ ...basis, reason: `fout: ${err.message}` })
       console.log(`  ✗ ${'—'.padEnd(9)} ${s.name} (fout: ${err.message})`)
     }
     if (i < snippets.length - 1) await sleep(2000) // rustig richting bol
   }
 
-  if (!updates.length) {
-    console.log('\nGeen prijzen gevonden; niets weggeschreven.')
+  if (!updates.length && !failures.length) {
+    console.log('\nNiets te doen.')
     return
   }
 
+  // Altijd rapporteren, ook als er 0 prijzen uitkwamen: juist zo'n run wil de
+  // server weten, want die stuurt de melding naar info@vidorra.nl.
   const postRes = await fetch(`${SITE_URL}/api/cron/prices-local`, {
     method: 'POST',
     headers: { 'x-cron-secret': CRON_SECRET, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ updates })
+    body: JSON.stringify({ updates, failures })
   })
   const result = await postRes.json().catch(() => ({}))
   console.log(`\nWeggeschreven: ${result.updated ?? 0}/${updates.length}${result.errors?.length ? ` (fouten: ${result.errors.join('; ')})` : ''}`)
+  if (failures.length) {
+    const a = result.alert || {}
+    console.log(`Zonder prijs: ${failures.length}. Melding: ${a.sent ? `verstuurd naar ${a.to}` : `niet verstuurd (${a.reason || 'onbekend'})`}`)
+  }
 }
 
 main().catch((err) => { console.error('Onverwachte fout:', err); process.exit(1) })
