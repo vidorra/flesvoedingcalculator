@@ -98,15 +98,25 @@ export async function POST(request) {
     }
     const currency = typeof u.currency === 'string' && CURRENCY_PATTERN.test(u.currency) ? u.currency : 'EUR'
     try {
+      const set = {
+        price: u.price,
+        currency,
+        priceLastUpdated: new Date(),
+        updatedAt: new Date()
+      }
+
+      // originalPrice (de doorgestreepte vanprijs) alleen aanraken als de
+      // aanroeper hem echt meestuurt. Stond hier `u.originalPrice ?? null`,
+      // waardoor elke sync-run hem leegde: de runner stuurt alleen { id, price },
+      // dus een handmatig gezette kortingsprijs was de volgende ochtend weg.
+      // Expliciet null blijft wissen; ontbreken laat de kolom met rust.
+      if (Object.prototype.hasOwnProperty.call(u, 'originalPrice')) {
+        set.originalPrice = u.originalPrice ?? null
+      }
+
       await db
         .update(snippets)
-        .set({
-          price: u.price,
-          originalPrice: u.originalPrice ?? null,
-          currency,
-          priceLastUpdated: new Date(),
-          updatedAt: new Date()
-        })
+        .set(set)
         .where(eq(snippets.id, u.id))
       updated++
     } catch (err) {

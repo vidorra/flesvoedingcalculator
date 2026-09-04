@@ -42,8 +42,16 @@ function resolveBolProductUrl(url) {
   return url
 }
 
+// amazon.nl/-/en/ toont "26.99", de NL-locale "26,99", en bij grotere bedragen
+// komen 1.234,56 en 1,234.56 allebei voor. Het laatste scheidingsteken is dus
+// de decimaal, de rest zijn duizendtallen.
 function formatEuro(raw) {
-  const n = Number(String(raw).replace(',', '.'))
+  let s = String(raw).trim()
+  const decimaal = Math.max(s.lastIndexOf(','), s.lastIndexOf('.'))
+  if (decimaal !== -1) {
+    s = s.slice(0, decimaal).replace(/[.,]/g, '') + '.' + s.slice(decimaal + 1)
+  }
+  const n = Number(s)
   if (!isFinite(n) || n <= 0) return null
   return '€' + n.toFixed(2).replace('.', ',')
 }
@@ -86,11 +94,45 @@ async function fetchBol(url) {
   return { price, reason: price ? 'ok' : `geen prijs (${html.length}b)` }
 }
 
-// Amazon rendert de prijs wél server-side. Stabielste bron is "priceAmount"
-// in de embedded JSON; anders de eerste a-offscreen met een euro-bedrag
-// (dat is de buy-box-prijs; latere zijn doorstreepte/andere aanbiedingen).
+// amazon.nl/-/en/dp/<asin>?tag=... -> schone product-URL. Een prijssync mag
+// geen klik registreren in Associates, dus de tracking-parameters gaan eruit.
+// Variant-selectors (th/psc) blijven staan: die bepalen wélke uitvoering je ziet.
+const AMAZON_TRACKING_PARAMS = ['tag', 'linkCode', 'linkId', 'ascsubtag', 'ref_', 'creative', 'creativeASIN', 'camp']
+function resolveAmazonProductUrl(url) {
+  try {
+    const u = new URL(url)
+    for (const param of AMAZON_TRACKING_PARAMS) u.searchParams.delete(param)
+    return u.toString()
+  } catch {
+    return url
+  }
+}
+
+// Amazon rendert de prijs alleen server-side als de buy box meekomt, en dat
+// doet hij wisselend. Ontbreekt die, dan staan er nog steeds tientallen
+// prijzen in de HTML, maar die horen bij de aanbevelings-carousels, dus bij
+// ANDERE producten. Een paginabrede regex pakte daar een willekeurige van:
+// zo kregen losse producten allemaal dezelfde vreemde prijs (€35,46).
+// Daarom nu: alleen uit de prijs-container zelf, en anders liever niets.
+const AMAZON_PRICE_CONTAINERS = ['corePriceDisplay_desktop_feature_div', 'corePrice_feature_div', 'apex_desktop']
+function extractAmazonPrice(html) {
+  // priceAmount hoort bij de buy box zelf en is de betrouwbaarste bron.
+  const direct = html.match(/"priceAmount":\s*([0-9]+[.,][0-9]{1,2})/)
+  if (direct) return { price: formatEuro(direct[1]), bron: 'priceAmount' }
+
+  // Anders de eerste a-offscreen BINNEN de prijs-container, nooit daarbuiten.
+  for (const id of AMAZON_PRICE_CONTAINERS) {
+    const start = html.indexOf(`id="${id}"`)
+    if (start === -1) continue
+    const container = html.slice(start, start + 4000)
+    const m = container.match(/a-offscreen"[^>]*>\s*€\s?([0-9][0-9.,]*[.,][0-9]{2})/)
+    if (m) return { price: formatEuro(m[1]), bron: id }
+  }
+  return { price: null, bron: null }
+}
+
 async function fetchAmazon(url) {
-  const res = await fetch(url, {
+  const res = await fetch(resolveAmazonProductUrl(url), {
     headers: { 'User-Agent': UA, 'Accept': 'text/html,*/*;q=0.8', 'Accept-Language': 'nl-NL,nl;q=0.9' },
     redirect: 'follow'
   })
@@ -99,11 +141,11 @@ async function fetchAmazon(url) {
   if (/captcha|automated access|api-services-support/i.test(html.slice(0, 5000))) {
     return { price: null, reason: 'captcha/bot' }
   }
-  let m = html.match(/"priceAmount":\s*([0-9]+\.[0-9]{1,2})/)
-  if (m) return { price: formatEuro(m[1]), reason: 'ok' }
-  m = html.match(/a-offscreen">\s*€\s?([0-9][0-9.]*,[0-9]{2})/)
-  if (m) return { price: `€${m[1]}`, reason: 'ok' }
-  return { price: null, reason: `geen prijs (${html.length}b)` }
+  const { price, bron } = extractAmazonPrice(html)
+  if (price) return { price, reason: `ok (${bron})` }
+  // Expliciet benoemen, anders lijkt een ontbrekende buy box op een gewone
+  // mislukte fetch en blijft een verouderde prijs ongemerkt staan.
+  return { price: null, reason: `geen buy box in de HTML (${html.length}b)` }
 }
 
 async function fetchPrice(type, url) {
