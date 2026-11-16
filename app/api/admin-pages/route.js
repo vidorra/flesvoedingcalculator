@@ -66,26 +66,34 @@ function getKnownPages() {
     { id: 'praktische-tips_flesvoeding-op-vakantie', title: 'Flesvoeding op Vakantie', path: '/kennisbank/praktische-tips/flesvoeding-op-vakantie', category: 'praktische-tips', website: 'flesvoedingcalculator' },
     { id: 'praktische-tips_flesvoeding-en-slapen', title: 'Flesvoeding en Slapen', path: '/kennisbank/praktische-tips/flesvoeding-en-slapen', category: 'praktische-tips', website: 'flesvoedingcalculator' },
     // === TOGWaarde pages ===
-    { id: 'tog_wat-is-tog', title: 'Wat is TOG?', path: '/kennisbank/wat-is-tog', category: 'basis', website: 'togwaarde' },
-    { id: 'tog_wat-is-tog-waarde', title: 'Wat is TOG Waarde?', path: '/kennisbank/wat-is-tog-waarde', category: 'basis', website: 'togwaarde' },
-    { id: 'tog_tog-waarde-berekenen', title: 'TOG Waarde Berekenen', path: '/kennisbank/tog-waarde-berekenen', category: 'basis', website: 'togwaarde' },
-    { id: 'tog_tog-schaal-overzicht', title: 'TOG Schaal Overzicht', path: '/kennisbank/tog-schaal-overzicht', category: 'basis', website: 'togwaarde' },
-    { id: 'tog_tog-waarde-per-seizoen', title: 'TOG Waarde per Seizoen', path: '/kennisbank/tog-waarde-per-seizoen', category: 'seizoen', website: 'togwaarde' },
-    { id: 'tog_tog-waarde-winter', title: 'TOG Waarde Winter', path: '/kennisbank/tog-waarde-winter', category: 'seizoen', website: 'togwaarde' },
-    { id: 'tog_baby-slapen-zomer', title: 'Baby Slapen in de Zomer', path: '/kennisbank/baby-slapen-zomer', category: 'seizoen', website: 'togwaarde' },
-    { id: 'tog_kleding-onder-slaapzak', title: 'Kleding Onder Slaapzak', path: '/kennisbank/kleding-onder-slaapzak', category: 'kleding', website: 'togwaarde' },
-    { id: 'tog_tog-waarde-babykleding-tabel', title: 'TOG Waarde Babykleding Tabel', path: '/kennisbank/tog-waarde-babykleding-tabel', category: 'kleding', website: 'togwaarde' },
-    { id: 'tog_babykamer-temperatuur', title: 'Babykamer Temperatuur', path: '/kennisbank/babykamer-temperatuur', category: 'temperatuur', website: 'togwaarde' },
-    { id: 'tog_baby-temperatuur-controleren', title: 'Baby Temperatuur Controleren', path: '/kennisbank/baby-temperatuur-controleren', category: 'temperatuur', website: 'togwaarde' },
-    { id: 'tog_veilige-slaaptemperatuur', title: 'Veilige Slaaptemperatuur', path: '/kennisbank/veilige-slaaptemperatuur', category: 'temperatuur', website: 'togwaarde' },
-    { id: 'tog_oververhitting-herkennen', title: 'Oververhitting Herkennen', path: '/kennisbank/oververhitting-herkennen', category: 'veiligheid', website: 'togwaarde' },
-    { id: 'tog_warmtestuwing-baby', title: 'Warmtestuwing Baby', path: '/kennisbank/warmtestuwing-baby', category: 'veiligheid', website: 'togwaarde' },
-    { id: 'tog_wiegendood-voorkomen-tog', title: 'Wiegendood Voorkomen met TOG', path: '/kennisbank/wiegendood-voorkomen-tog', category: 'veiligheid', website: 'togwaarde' },
-    { id: 'tog_wiegendood-preventie', title: 'Wiegendood Preventie', path: '/kennisbank/wiegendood-preventie', category: 'veiligheid', website: 'togwaarde' },
-    { id: 'tog_inbakeren-tog-waarde', title: 'Inbakeren en TOG Waarde', path: '/kennisbank/inbakeren-tog-waarde', category: 'speciaal', website: 'togwaarde' },
-    { id: 'tog_premature-baby-tog-waarde', title: 'Premature Baby TOG Waarde', path: '/kennisbank/premature-baby-tog-waarde', category: 'speciaal', website: 'togwaarde' },
-    { id: 'tog_baby-slaapzak-koopgids', title: 'Baby Slaapzak Koopgids', path: '/kennisbank/baby-slaapzak-koopgids', category: 'producten', website: 'togwaarde' },
-    { id: 'tog_nederlandse-merken-vergelijking', title: 'Nederlandse Merken Vergelijking', path: '/kennisbank/nederlandse-merken-vergelijking', category: 'producten', website: 'togwaarde' }
+    // ids zijn gelijk aan de pageId die de widgets op togwaarde.nl gebruiken
+    // (zonder 'tog_'-prefix), anders landen koppelingen op een id die geen
+    // pagina opvraagt.
+    { id: 'reverse-slaapzakken', title: 'Homepage: onder de uitkomst', path: '/', category: 'homepage', website: 'togwaarde' },
+    { id: 'tog-waarde-gids', title: 'TOG-waarde gids', path: '/tog-waarde-gids/', category: 'basis', website: 'togwaarde' },
+    { id: 'kennisbank', title: 'Kennisbank overzicht', path: '/kennisbank/', category: 'index', website: 'togwaarde' },
+    { id: 'tog-schaal-overzicht', title: 'TOG Schaal Overzicht', path: '/kennisbank/tog-schaal-overzicht', category: 'basis', website: 'togwaarde' },
+    { id: 'tog-waarde-berekenen', title: 'TOG Waarde Berekenen', path: '/kennisbank/tog-waarde-berekenen', category: 'basis', website: 'togwaarde' },
+    { id: 'tog-waarde-per-leeftijd', title: 'TOG Waarde per Leeftijd', path: '/kennisbank/tog-waarde-per-leeftijd', category: 'basis', website: 'togwaarde' },
+    { id: 'tog-waarde-per-seizoen', title: 'TOG Waarde per Seizoen', path: '/kennisbank/tog-waarde-per-seizoen', category: 'seizoen', website: 'togwaarde' },
+    { id: 'tog-waarde-winter', title: 'TOG Waarde Winter', path: '/kennisbank/tog-waarde-winter', category: 'seizoen', website: 'togwaarde' },
+    { id: 'baby-slapen-zomer', title: 'Baby Slapen in de Zomer', path: '/kennisbank/baby-slapen-zomer', category: 'seizoen', website: 'togwaarde' },
+    { id: 'kleding-onder-slaapzak', title: 'Kleding Onder Slaapzak', path: '/kennisbank/kleding-onder-slaapzak', category: 'kleding', website: 'togwaarde' },
+    { id: 'tog-waarde-babykleding-tabel', title: 'TOG Waarde Babykleding Tabel', path: '/kennisbank/tog-waarde-babykleding-tabel', category: 'kleding', website: 'togwaarde' },
+    { id: 'babykamer-temperatuur', title: 'Babykamer Temperatuur', path: '/kennisbank/babykamer-temperatuur', category: 'temperatuur', website: 'togwaarde' },
+    { id: 'baby-temperatuur-controleren', title: 'Baby Temperatuur Controleren', path: '/kennisbank/baby-temperatuur-controleren', category: 'temperatuur', website: 'togwaarde' },
+    { id: 'veilige-slaaptemperatuur', title: 'Veilige Slaaptemperatuur', path: '/kennisbank/veilige-slaaptemperatuur', category: 'temperatuur', website: 'togwaarde' },
+    { id: 'oververhitting-herkennen', title: 'Oververhitting Herkennen', path: '/kennisbank/oververhitting-herkennen', category: 'veiligheid', website: 'togwaarde' },
+    { id: 'warmtestuwing-baby', title: 'Warmtestuwing Baby', path: '/kennisbank/warmtestuwing-baby', category: 'veiligheid', website: 'togwaarde' },
+    { id: 'wiegendood-voorkomen-tog', title: 'Wiegendood Voorkomen met TOG', path: '/kennisbank/wiegendood-voorkomen-tog', category: 'veiligheid', website: 'togwaarde' },
+    { id: 'wiegendood-preventie', title: 'Wiegendood Preventie', path: '/kennisbank/wiegendood-preventie', category: 'veiligheid', website: 'togwaarde' },
+    { id: 'inbakeren-tog-waarde', title: 'Inbakeren en TOG Waarde', path: '/kennisbank/inbakeren-tog-waarde', category: 'speciaal', website: 'togwaarde' },
+    { id: 'premature-baby-tog-waarde', title: 'Premature Baby TOG Waarde', path: '/kennisbank/premature-baby-tog-waarde', category: 'speciaal', website: 'togwaarde' },
+    { id: 'tog-waarde-kinderopvang', title: 'TOG Waarde Kinderopvang', path: '/kennisbank/tog-waarde-kinderopvang', category: 'speciaal', website: 'togwaarde' },
+    { id: 'slaapzak-op-reis', title: 'Slaapzak op Reis', path: '/kennisbank/slaapzak-op-reis', category: 'speciaal', website: 'togwaarde' },
+    { id: 'van-slaapzak-naar-dekbed', title: 'Van Slaapzak naar Dekbed', path: '/kennisbank/van-slaapzak-naar-dekbed', category: 'speciaal', website: 'togwaarde' },
+    { id: 'baby-slaapzak-koopgids', title: 'Baby Slaapzak Koopgids', path: '/kennisbank/baby-slaapzak-koopgids', category: 'producten', website: 'togwaarde' },
+    { id: 'nederlandse-merken-vergelijking', title: 'Nederlandse Merken Vergelijking', path: '/kennisbank/nederlandse-merken-vergelijking', category: 'producten', website: 'togwaarde' }
   ]
   
   // Add dynamic snippet counts based on actual data
@@ -106,6 +114,17 @@ export async function GET(request) {
     }
     
     const knownPages = getKnownPages()
+
+    // Zorg dat elke bekende pagina een rij in `pages` heeft: de snippet-POST
+    // weigert (404) een pageId zonder rij. Bestaande rijen blijven ongemoeid.
+    try {
+      await db
+        .insert(pagesTable)
+        .values(knownPages.map(p => ({ id: p.id, title: p.title, path: p.path, category: p.category, website: p.website })))
+        .onConflictDoNothing({ target: pagesTable.id })
+    } catch (dbError) {
+      console.error('Failed to ensure page rows:', dbError)
+    }
 
     // Enrich with per-page inherit flags + Default snippet counts from the DB.
     // Missing row => inherit true (the feature default).
