@@ -1,5 +1,6 @@
 'use client'
 import Image from 'next/image'
+import type React from 'react'
 
 /**
  * Kennisbank sidebar: afbeeldingen bij het artikel.
@@ -24,13 +25,17 @@ const KennisbankSidebar = ({
     }
   ],
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  adTopics = []
+  adTopics = [],
+  children
 }: {
   images?: { src: string; alt: string; caption: string }[]
   adTopics?: string[]
+  /** Extra blokken boven de afbeeldingen, bijvoorbeeld een productblok */
+  children?: React.ReactNode
 }) => {
   return (
     <div className="col-span-12 lg:col-span-5 space-y-6">
+      {children}
       {/* Afbeeldingen - alleen desktop */}
       <div className="hidden lg:block space-y-6">
         {images.map((image, index) => (

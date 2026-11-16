@@ -46,6 +46,19 @@ function getKnownPages() {
   // Pages for both websites
   const basePages = [
     // === Flesvoedingcalculator pages ===
+    // Productblok bij de uitkomst van de calculator, per leeftijdsband (A/B-test)
+    { id: 'calc-0-1', title: 'Calculator: uitkomst 0 tot 1 maand', path: '/', category: 'Calculator', website: 'flesvoedingcalculator' },
+    { id: 'calc-1-3', title: 'Calculator: uitkomst 1 tot 3 maanden', path: '/', category: 'Calculator', website: 'flesvoedingcalculator' },
+    { id: 'calc-3-6', title: 'Calculator: uitkomst 3 tot 6 maanden', path: '/', category: 'Calculator', website: 'flesvoedingcalculator' },
+    { id: 'calc-6plus', title: 'Calculator: uitkomst vanaf 6 maanden', path: '/', category: 'Calculator', website: 'flesvoedingcalculator' },
+    // Schemapagina en leeftijdspagina's
+    { id: 'voedingsschemas', title: 'Voedingsschema per leeftijd en gewicht', path: '/voedingsschemas/', category: 'voedingsschemas', website: 'flesvoedingcalculator' },
+    { id: 'leeftijd_baby-2-weken', title: 'Baby 2 weken', path: '/voedingsschemas/baby-2-weken/', category: 'voedingsschemas', website: 'flesvoedingcalculator' },
+    { id: 'leeftijd_baby-3-weken', title: 'Baby 3 weken', path: '/voedingsschemas/baby-3-weken/', category: 'voedingsschemas', website: 'flesvoedingcalculator' },
+    { id: 'leeftijd_baby-4-weken', title: 'Baby 4 weken', path: '/voedingsschemas/baby-4-weken/', category: 'voedingsschemas', website: 'flesvoedingcalculator' },
+    { id: 'leeftijd_baby-6-weken', title: 'Baby 6 weken', path: '/voedingsschemas/baby-6-weken/', category: 'voedingsschemas', website: 'flesvoedingcalculator' },
+    { id: 'leeftijd_baby-8-weken', title: 'Baby 8 weken', path: '/voedingsschemas/baby-8-weken/', category: 'voedingsschemas', website: 'flesvoedingcalculator' },
+    { id: 'leeftijd_baby-3-maanden', title: 'Baby 3 maanden', path: '/voedingsschemas/baby-3-maanden/', category: 'voedingsschemas', website: 'flesvoedingcalculator' },
     { id: 'hygiene-bereiding_flessen-steriliseren', title: 'Flessen Steriliseren', path: '/kennisbank/hygiene-bereiding/flessen-steriliseren', category: 'hygiene-bereiding', website: 'flesvoedingcalculator' },
     { id: 'basis-flesvoeding_flesvoeding-vs-borstvoeding', title: 'Flesvoeding vs Borstvoeding', path: '/kennisbank/basis-flesvoeding/flesvoeding-vs-borstvoeding', category: 'basis-flesvoeding', website: 'flesvoedingcalculator' },
     { id: 'voedingstechnieken_overstappen-van-borst-naar-fles', title: 'Overstappen van Borst naar Fles', path: '/kennisbank/voedingstechnieken/overstappen-van-borst-naar-fles', category: 'voedingstechnieken', website: 'flesvoedingcalculator' },

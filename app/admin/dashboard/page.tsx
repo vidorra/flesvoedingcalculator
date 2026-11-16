@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import Layout from '../../../components/Layout'
 import { Settings, Link, Plus, Eye, X, Edit, Trash2, ToggleLeft, ToggleRight, RefreshCw, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react'
 import StatsPanel from '../../../components/admin/StatsPanel'
+import ExperimentsPanel from '../../../components/admin/ExperimentsPanel'
 import jwt from 'jsonwebtoken'
 
 // Version: 2.4 - Shared snippets library across websites
@@ -1256,11 +1257,24 @@ export default function SimpleAdminDashboard() {
             >
               Statistieken
             </button>
+            <button
+              onClick={() => setActiveTab('experiments')}
+              className={`py-2 px-1 border-b-2 font-medium text-sm ${
+                activeTab === 'experiments'
+                  ? 'border-primary text-primary'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              }`}
+            >
+              Experimenten
+            </button>
           </nav>
         </div>
 
         {/* Statistieken-tab */}
         {activeTab === 'stats' && <StatsPanel />}
+
+        {/* Experimenten-tab (A/B-tests) */}
+        {activeTab === 'experiments' && <ExperimentsPanel />}
 
         {/* Tab Content */}
         {activeTab === 'overview' && (

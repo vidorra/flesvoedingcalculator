@@ -4,6 +4,7 @@ import { db } from '../../../lib/db/connection.js'
 import { calculatorEvents } from '../../../lib/db/schema.js'
 import { ensureCalculatorEventsTable } from '../../../lib/db/ensure-events.js'
 import { checkTrackRate, bodyTooLarge } from '../../../lib/track-guard.js'
+import { EXP_TOKEN } from '../../../lib/experiments-config'
 
 export const dynamic = 'force-dynamic'
 
@@ -22,6 +23,10 @@ function sanitizeData(raw) {
   if (typeof raw.isCombi === 'boolean') out.isCombi = raw.isCombi
   if (typeof raw.isPremature === 'boolean') out.isPremature = raw.isPremature
   if (typeof raw.variant === 'string' && raw.variant.length <= 16) out.variant = raw.variant
+  // A/B-context: experiment, variant en willekeurig kenmerk van de paginalading
+  for (const k of ['exp', 'arm', 'pv']) {
+    if (typeof raw[k] === 'string' && EXP_TOKEN.test(raw[k])) out[k] = raw[k]
+  }
   return out
 }
 

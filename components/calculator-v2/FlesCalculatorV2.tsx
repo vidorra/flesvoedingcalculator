@@ -7,6 +7,7 @@ import { computeFeeding } from '../../lib/feeding-calc'
 import { generateFeedingSchedule, type AgeCategory } from '../../hooks/useCalculator'
 import { FEEDING_MEASUREMENTS } from '../../lib/feeding-constants'
 import { trackCalculatorUsage } from '../../lib/analytics'
+import { experimentFields, useExperimentContext } from '../../lib/experiments'
 
 /**
  * Alternative-UX calculator (/v2, /v3, /v4). Same feeding math as the
@@ -23,7 +24,33 @@ import { trackCalculatorUsage } from '../../lib/analytics'
  * - `afterSchedule`: left column, after the schema
  * - `rightExtra`: right column, under the sticky result panel (visible on
  *   mobile below the left column)
+ * - `resultSlot`: rendered once, next to the result. Mobile: under the
+ *   notes, above the disclaimer. Desktop: right column under the result
+ *   panel. Mounted from page load so it can fetch early; it gets
+ *   `hasResult` and decides itself when to show.
+ *
+ * `initialAge` and `initialFeedings` preset the age chip and the number of
+ * feeds (age landing pages).
  */
+
+export interface ResultSlotContext {
+  ageMonths: AgeCategory
+  hasResult: boolean
+  isPremature: boolean
+}
+
+// Desktop vanaf Tailwind lg (1024px). null tot na de eerste render.
+function useIsDesktop(): boolean | null {
+  const [isDesktop, setIsDesktop] = useState<boolean | null>(null)
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 1024px)')
+    const update = () => setIsDesktop(mq.matches)
+    update()
+    mq.addEventListener('change', update)
+    return () => mq.removeEventListener('change', update)
+  }, [])
+  return isDesktop
+}
 
 const AGE_OPTIONS: { value: AgeCategory; label: string }[] = [
   { value: '0-1', label: '0-1 mnd' },
@@ -176,6 +203,9 @@ export default function FlesCalculatorV2({
   beforeSchedule,
   afterSchedule,
   rightExtra,
+  resultSlot,
+  initialAge = '0-1',
+  initialFeedings = '7',
 }: {
   simple?: boolean
   /** Which page this calculator lives on (home/v2/v4) - GA4 event parameter */
@@ -183,11 +213,14 @@ export default function FlesCalculatorV2({
   beforeSchedule?: React.ReactNode
   afterSchedule?: React.ReactNode
   rightExtra?: React.ReactNode
+  resultSlot?: (ctx: ResultSlotContext) => React.ReactNode
+  initialAge?: AgeCategory
+  initialFeedings?: string
 }) {
-  const [ageMonths, setAgeMonths] = useState<AgeCategory>('0-1')
+  const [ageMonths, setAgeMonths] = useState<AgeCategory>(initialAge)
   const [isPremature, setIsPremature] = useState(false)
   const [weight, setWeight] = useState('')
-  const [feedingsPerDay, setFeedingsPerDay] = useState('7')
+  const [feedingsPerDay, setFeedingsPerDay] = useState(initialFeedings)
   const [gestationalAge, setGestationalAge] = useState('')
   const [birthDate, setBirthDate] = useState('')
   const [isCombi, setIsCombi] = useState(false)
@@ -205,8 +238,11 @@ export default function FlesCalculatorV2({
   // keystrokes ("4" -> "4.5") don't count. The live calculator has no
   // "Bereken" button, so this replaces the old button-based event.
   const hasTrackedRef = useRef(false)
+  const experiment = useExperimentContext()
+  // Wacht met meten tot de loting klaar is, anders mist de variant
+  const experimentPending = !!experiment.exp && !experiment.arm
   useEffect(() => {
-    if (!results || hasTrackedRef.current) return
+    if (!results || hasTrackedRef.current || experimentPending) return
     const timer = setTimeout(() => {
       if (hasTrackedRef.current) return
       hasTrackedRef.current = true
@@ -231,7 +267,8 @@ export default function FlesCalculatorV2({
           feedings: results.feedingsPerDay,
           isCombi: results.breastFeedings > 0,
           isPremature: results.isPremature,
-          variant
+          variant,
+          ...experimentFields(experiment)
         }
       })
       try {
@@ -242,7 +279,7 @@ export default function FlesCalculatorV2({
       } catch {}
     }, 1200)
     return () => clearTimeout(timer)
-  }, [results, variant, ageMonths])
+  }, [results, variant, ageMonths, experiment, experimentPending])
 
   const ageLabel = isPremature
     ? 'Prematuur'
@@ -254,6 +291,11 @@ export default function FlesCalculatorV2({
     : isPremature && (!gestationalAge || !birthDate)
       ? 'Vul de zwangerschapsduur en geboortedatum in voor de premature berekening.'
       : 'Vul de gegevens in voor je resultaat.'
+
+  const isDesktop = useIsDesktop()
+  const slot = resultSlot && isDesktop !== null
+    ? resultSlot({ ageMonths, hasResult: !!results, isPremature: isPremature || !!results?.isPremature })
+    : null
 
   const schedule = results ? generateFeedingSchedule(results.feedingsPerDay, results.recommendedAmount) : null
 
@@ -464,6 +506,8 @@ export default function FlesCalculatorV2({
               </Section>
             )}
 
+            {isDesktop === false && slot}
+
             {disclaimer}
 
             {beforeSchedule}
@@ -479,12 +523,13 @@ export default function FlesCalculatorV2({
           </div>
 
           {/* Right column: sticky result panel (desktop) + optional extra content */}
-          <div className={rightExtra ? 'mt-6 lg:mt-0 space-y-6' : 'hidden lg:block'}>
+          <div className={rightExtra ? 'mt-6 lg:mt-0 space-y-6' : 'hidden lg:block space-y-6'}>
             <div className={rightExtra ? 'hidden lg:block' : undefined}>
               <div className={panelClass}>
                 <ResultBody results={results} hint={missingHint} colored={simple} />
               </div>
             </div>
+            {isDesktop && slot}
             {rightExtra}
           </div>
         </div>

@@ -1,6 +1,7 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { trackEvent } from '../lib/analytics'
+import { trackAffiliateClick, useExperimentContext, useImpression, withBolSubId } from '../lib/experiments'
 
 interface Snippet {
   id: string
@@ -15,26 +16,19 @@ interface Snippet {
   active: boolean
 }
 
+const PLACEMENT = 'popular_products'
+
 // Prijsweergave: DB-prijzen zijn soms "24.99" en soms "€ 24,99"
 function fmtPrice(price: unknown) {
   const s = String(price).trim()
   return s.includes('€') ? s : `€ ${s}`
 }
 
-function trackClick(snippetId: string) {
-  try {
-    trackEvent('affiliate_click', { snippet_id: snippetId, widget: 'popular_products' })
-    const body = JSON.stringify({ snippetId })
-    if (typeof navigator !== 'undefined' && navigator.sendBeacon) {
-      navigator.sendBeacon('/api/track-click', body)
-    } else {
-      fetch('/api/track-click', { method: 'POST', body, keepalive: true }).catch(() => {})
-    }
-  } catch {}
-}
-
 export default function PopularProductsWidget({ limit = 4 }: { limit?: number }) {
   const [snippets, setSnippets] = useState<Snippet[]>([])
+  const ctx = useExperimentContext()
+  const rootRef = useRef<HTMLDivElement>(null)
+  useImpression(rootRef, PLACEMENT, ctx, snippets.length > 0)
 
   useEffect(() => {
     fetch(`/api/popular-snippets?limit=${Math.min(limit, 4)}`)
@@ -49,8 +43,13 @@ export default function PopularProductsWidget({ limit = 4 }: { limit?: number })
 
   if (snippets.length === 0) return null
 
+  const onClick = (snippetId: string) => {
+    try { trackEvent('affiliate_click', { snippet_id: snippetId, widget: PLACEMENT }) } catch {}
+    trackAffiliateClick(snippetId, PLACEMENT, ctx)
+  }
+
   return (
-    <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
+    <div ref={rootRef} className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-4">
       <div className="mb-3">
         <h3 className="text-sm font-semibold text-primary">Aanbevolen Producten</h3>
         <p className="text-xs text-gray-400 mt-0.5"><a href="/affiliate-disclaimer" className="hover:text-primary underline decoration-dotted underline-offset-2">Gesponsorde links</a></p>
@@ -59,10 +58,10 @@ export default function PopularProductsWidget({ limit = 4 }: { limit?: number })
         {snippets.map(snippet => (
           <a
             key={snippet.id}
-            href={snippet.url}
+            href={withBolSubId(snippet.url, ctx)}
             target="_blank"
-            rel="nofollow noopener"
-            onClick={() => trackClick(snippet.id)}
+            rel="nofollow sponsored noopener"
+            onClick={() => onClick(snippet.id)}
             className="flex flex-col group border border-gray-100 hover:border-primary/30 rounded-xl overflow-hidden transition-colors"
           >
             <div className="relative flex items-center justify-center h-28 overflow-hidden">

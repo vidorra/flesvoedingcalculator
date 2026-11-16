@@ -6,6 +6,34 @@ import PopularProductsWidget from '../PopularProductsWidget'
 import PopularArticles from '../PopularArticles'
 import WarmWeerAlert from '../calculator/WarmWeerAlert'
 import { FAQSection, FeedingTypesInfo } from '../calculator'
+import ResultProductBlock from './ResultProductBlock'
+import GewichtTabel from './GewichtTabel'
+import { ExperimentProvider, useExperiment } from '../../lib/experiments'
+
+/**
+ * Homepage-calculator met het A/B-experiment `calc_result_block`:
+ * A toont de populaire producten rechts (huidig), B toont drie producten
+ * passend bij de leeftijd direct bij de uitkomst. Zolang de loting loopt
+ * staat er geen productblok, dan verspringt er niets.
+ */
+function HomeCalculator({ variant }: { variant: string }) {
+  const experiment = useExperiment('calc_result_block')
+  const showResultBlock = experiment.arm === 'result_block'
+  const showPopular = experiment.arm !== null && !showResultBlock
+
+  return (
+    <ExperimentProvider value={experiment}>
+      <FlesCalculatorV2
+        simple
+        variant={variant}
+        beforeSchedule={<FeedingTypesInfo />}
+        afterSchedule={<FAQSection />}
+        rightExtra={showPopular ? <PopularProductsWidget limit={4} /> : undefined}
+        resultSlot={showResultBlock ? (c) => <ResultProductBlock {...c} /> : undefined}
+      />
+    </ExperimentProvider>
+  )
+}
 
 /**
  * Full /v2 page content: the alternative-UX calculator plus everything the
@@ -37,14 +65,21 @@ export default function V2PageContent({ hero, simpleCalculator = false, variant 
 
         {/* One container: calculator grid carries all below-content as slots */}
         <div id="calculator-v2" className="-mt-3 scroll-mt-6">
-          <FlesCalculatorV2
-            simple
-            variant={variant}
-            beforeSchedule={<FeedingTypesInfo />}
-            afterSchedule={<FAQSection />}
-            rightExtra={rightExtra}
-          />
+          {variant === 'home' ? (
+            <HomeCalculator variant={variant} />
+          ) : (
+            <FlesCalculatorV2
+              simple
+              variant={variant}
+              beforeSchedule={<FeedingTypesInfo />}
+              afterSchedule={<FAQSection />}
+              rightExtra={rightExtra}
+            />
+          )}
         </div>
+
+        {/* Tabel per gewicht + links naar de leeftijdspagina's (alleen home) */}
+        {variant === 'home' && <GewichtTabel />}
 
         {/* Internal links to key kennisbank articles (SEO: pass homepage authority) */}
         <PopularArticles />

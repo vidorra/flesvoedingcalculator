@@ -121,7 +121,13 @@ export async function GET(request, { params }) {
           data: {
             title: snippet.name,
             fallbackImage: snippet.imageUrl || getFallbackImageForProduct(snippet.id),
-            productUrl: snippet.url || '#'
+            productUrl: snippet.url || '#',
+            // Voor eigen kaarten (uitkomstblok): foto en partnerlink zonder bol-script
+            imageUrl: snippet.imageUrl
+              || extractImgSrc(snippet.imageHtml || '')
+              || extractImgSrc(snippet.generatedHtml || '')
+              || getFallbackImageForProduct(snippet.id),
+            cardUrl: bolPartnerUrl(snippet)
           }
         }
       }
@@ -153,6 +159,39 @@ function extractAffiliateUrl(html) {
 function extractImageUrl(html) {
   const match = html.match(/src=["'](.*?)["']/i)
   return match ? match[1] : null
+}
+
+// src van de eerste <img> (niet van een <script>)
+function extractImgSrc(html) {
+  const match = String(html).match(/<img[^>]+src=["']([^"']+)["']/i)
+  return match ? match[1] : null
+}
+
+// Bol-partnerlink voor een eigen kaart. Staat er al een partner.bol.com-link in
+// de snippet, dan die. Anders bouwen we hem uit siteId + productId in het
+// opgeslagen bol-script, zodat de klik altijd via het partnerprogramma loopt.
+// Zelfde logica als in togwaarde.
+const BOL_SITE_ID = '1472968'
+function bolPartnerUrl(snippet) {
+  const url = snippet.url || ''
+  if (url.includes('partner.bol.com')) return url
+
+  const script = `${snippet.bolScript || ''}\n${snippet.generatedHtml || ''}`
+  const siteId = script.match(/"siteId"\s*:\s*"(\d+)"/)?.[1] || BOL_SITE_ID
+  const productId = script.match(/"productId"\s*:\s*"(\d+)"/)?.[1]
+    || url.match(/\/p\/[^/]*\/(\d{8,})/)?.[1]
+  const linkName = script.match(/"linkName"\s*:\s*"([^"]*)"/)?.[1]
+
+  const target = /bol\.com\/nl\/[a-z]{2}\/p\//.test(url)
+    ? url
+    : productId ? `https://www.bol.com/nl/nl/p/-/${productId}/` : null
+  if (!target) return url || '#'
+
+  const params = new URLSearchParams({ p: '2', t: 'url', s: siteId, f: 'TXL', url: target })
+  let name = snippet.name || ''
+  if (linkName) { try { name = decodeURIComponent(linkName) } catch { /* rauwe naam */ } }
+  if (name) params.set('name', name)
+  return `https://partner.bol.com/click/click?${params.toString()}`
 }
 
 // Helper function to get fallback images for specific products

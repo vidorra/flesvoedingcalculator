@@ -23,6 +23,8 @@ import { fileURLToPath } from 'url'
 
 const ROOT = join(fileURLToPath(new URL('.', import.meta.url)), '..')
 const KENNISBANK_DIR = join(ROOT, 'app', 'kennisbank')
+// Schemapagina en leeftijdspagina's volgen dezelfde stijlregels
+const EXTRA_DIRS = [join(ROOT, 'app', 'voedingsschemas')]
 
 // Forbidden color families (amber is allowed for "Let op" warnings; gray and
 // primary are always fine).
@@ -97,7 +99,7 @@ function lintFile(file) {
 function main() {
   let files
   try {
-    files = walk(KENNISBANK_DIR)
+    files = [KENNISBANK_DIR, ...EXTRA_DIRS].flatMap(walk)
   } catch (err) {
     console.error(`Could not read ${KENNISBANK_DIR}: ${err.message}`)
     process.exit(1)

@@ -3,7 +3,8 @@ import { randomUUID } from 'crypto'
 import { sql } from 'drizzle-orm'
 import { db } from '../../../lib/db/connection.js'
 import { clickEvents } from '../../../lib/db/schema.js'
-import { ensureClickEventsTable } from '../../../lib/db/ensure-events.js'
+import { ensureClickEventsTable, ensureExperimentTables } from '../../../lib/db/ensure-events.js'
+import { EXP_TOKEN } from '../../../lib/experiments-config'
 import { verifyAdminAndGetWebsite } from '../../../lib/jwt-utils.js'
 import { checkTrackRate, bodyTooLarge } from '../../../lib/track-guard.js'
 
@@ -39,13 +40,27 @@ export async function POST(request) {
     }
     const safeWidget = (typeof widget === 'string' && WIDGET_PATTERN.test(widget)) ? widget : null
 
-    await ensureClickEventsTable()
-    await db.insert(clickEvents).values({
-      id: randomUUID(),
-      website: WEBSITE,
-      snippetId,
-      widget: safeWidget
-    })
+    // A/B-context (optioneel): experiment, variant, plek en paginalading
+    const token = (v) => (typeof v === 'string' && EXP_TOKEN.test(v) ? v : null)
+    const exp = token(body.exp)
+    const arm = token(body.arm)
+    const placement = token(body.placement)
+    const pv = token(body.pv)
+
+    if (exp || placement || pv) {
+      await ensureExperimentTables()
+      await db.execute(sql`
+        INSERT INTO click_events (id, website, snippet_id, widget, exp, arm, placement, pv)
+        VALUES (${randomUUID()}, ${WEBSITE}, ${snippetId}, ${safeWidget}, ${exp}, ${arm}, ${placement}, ${pv})`)
+    } else {
+      await ensureClickEventsTable()
+      await db.insert(clickEvents).values({
+        id: randomUUID(),
+        website: WEBSITE,
+        snippetId,
+        widget: safeWidget
+      })
+    }
 
     return NextResponse.json({ success: true })
   } catch (error) {

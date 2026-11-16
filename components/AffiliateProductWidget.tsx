@@ -256,21 +256,8 @@ export default function AffiliateProductWidget({
     )
   }
   
-  if (displayProducts.length === 0) {
-    return (
-      <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6">
-        <h3 className="text-lg font-semibold text-primary mb-4">{title}</h3>
-        <div className="text-center py-8">
-          <p className="text-gray-600">Geen productaanbevelingen beschikbaar</p>
-          {pageId && (
-            <p className="text-gray-500 text-sm mt-2">
-              Voeg producten toe via het admin paneel
-            </p>
-          )}
-        </div>
-      </div>
-    )
-  }
+  // Nog niets gekoppeld: bezoekers zien geen leeg blok (en geen admin-hint).
+  if (displayProducts.length === 0) return null
 
   return (
     <div className="bg-white backdrop-blur rounded-2xl shadow-sm border border-gray-200 p-6" ref={containerRef}>
