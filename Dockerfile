@@ -12,7 +12,7 @@ RUN npm ci
 # Rest van de broncode
 COPY . .
 
-# Accept build arguments from CapRover (public NEXT_PUBLIC_* only; secrets
+# Build-args uit de GitHub-workflow (alleen publieke NEXT_PUBLIC_*; geheimen
 # worden runtime door CapRover geïnjecteerd, niet in image-layers).
 ARG NEXT_PUBLIC_SITE_URL
 ARG NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
@@ -25,8 +25,6 @@ ENV NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=$NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
 ENV NEXT_PUBLIC_EMAILJS_SERVICE_ID=$NEXT_PUBLIC_EMAILJS_SERVICE_ID
 ENV NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=$NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
 ENV NEXT_PUBLIC_RECAPTCHA_SITE_KEY=$NEXT_PUBLIC_RECAPTCHA_SITE_KEY
-
-ENV NODE_OPTIONS="--max-old-space-size=1024"
 
 RUN npm run build
 
@@ -48,6 +46,9 @@ WORKDIR /app
 # productie-install. Runtime blijft identiek: `next start` via start.sh.
 COPY --from=builder /app ./
 RUN npm ci --omit=dev
+
+ARG GIT_SHA
+ENV GIT_SHA=$GIT_SHA
 
 EXPOSE 3000
 ENV HOSTNAME=0.0.0.0

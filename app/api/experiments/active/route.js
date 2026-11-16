@@ -12,7 +12,7 @@ let cache = { at: 0, body: null }
 const TTL_MS = 60_000
 
 // GET - lopende en afgeronde experimenten, voor de loting in de browser.
-// { experiments: { [key]: { status, arms: [{id, weight}], winner } } }
+// { experiments: { [key]: { status, arms: [{id, weight}], winner, started } } }
 export async function GET() {
   const headers = { 'Cache-Control': 'public, max-age=60' }
   if (cache.body && Date.now() - cache.at < TTL_MS) {
@@ -24,13 +24,15 @@ export async function GET() {
     if (process.env.DATABASE_URL) {
       await ensureExperimentTables()
       const result = await db.execute(sql`
-        SELECT key, status, arms, winner FROM experiments
+        SELECT key, status, arms, winner, started_at FROM experiments
         WHERE website = ${WEBSITE} AND status IN ('running', 'finished')`)
       for (const row of result.rows) {
         body.experiments[row.key] = {
           status: row.status,
           arms: Array.isArray(row.arms) ? row.arms : [],
-          winner: row.winner || null
+          winner: row.winner || null,
+          // Bij een herstart een nieuwe waarde: de browser loot dan opnieuw
+          started: row.started_at ? new Date(row.started_at).toISOString() : null
         }
       }
     }

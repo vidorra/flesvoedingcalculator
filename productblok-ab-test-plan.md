@@ -146,9 +146,13 @@ het oude.
 - Bij het laden haalt de calculator de lopende experimenten op via
   `GET /api/experiments/active` (openbaar, 60 seconden gecachet) en loot een
   variant volgens de verdeling.
-- De uitkomst van de loting staat in `sessionStorage`, net als de vlag van
-  `ViewBeacon`: binnen één bezoek blijft de variant gelijk. Geen cookie, geen
-  id, niets dat een nieuw bezoek aan het vorige koppelt.
+- De uitkomst van de loting staat in `localStorage` als
+  `exp:<key>` = `<start experiment>|<variant>`: wie terugkomt in dezelfde
+  browser ziet dezelfde variant, ook dagen later. Start het experiment opnieuw
+  (nieuwe `started_at`), dan wordt opnieuw geloot. Geen cookie, geen
+  bezoekers-id, geen IP: alleen de gelote variant staat in de browser.
+- Andere browser of apparaat, of opslag gewist: opnieuw loten. Dat lekt een
+  beetje tussen de varianten en maakt het verschil hooguit iets kleiner.
 - Lukt het ophalen niet of loopt er niets: variant A.
 - `?exp_arm=result_block` in de URL forceert een variant om te bekijken en zet
   het meten uit. Zo vervuilt eigen testen de cijfers niet.

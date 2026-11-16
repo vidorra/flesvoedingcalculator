@@ -3,9 +3,10 @@
 /**
  * A/B-testen in de browser: loting, context en meten.
  *
- * - Geen cookies of bezoekers-id. De gelote variant staat in sessionStorage
- *   (één bezoek), `pv` is een willekeurig kenmerk van één paginalading dat
- *   alleen in het geheugen staat.
+ * - Geen cookies, bezoekers-id of IP. Alleen de gelote variant staat in
+ *   localStorage, zodat een terugkerende bezoeker dezelfde variant houdt tot
+ *   het experiment opnieuw start. `pv` is een willekeurig kenmerk van één
+ *   paginalading dat alleen in het geheugen staat.
  * - `?exp_arm=<variant>` forceert een variant om te bekijken en zet het meten
  *   uit, zodat eigen testen de cijfers niet vervuilen.
  * - Lukt het ophalen niet of loopt er niets: de eerste variant (A).
@@ -48,7 +49,7 @@ function randomId(): string {
 }
 
 type ActiveResponse = {
-  experiments?: Record<string, { status: string; arms: { id: string; weight: number }[]; winner: string | null }>
+  experiments?: Record<string, { status: string; arms: { id: string; weight: number }[]; winner: string | null; started?: string | null }>
 }
 
 // Eén verzoek per paginalading, gedeeld door alle hooks
@@ -110,16 +111,19 @@ export function useExperiment(key: string): ExperimentState {
       }
       if (cfg.status !== 'running') return done(control, false)
 
+      // Bewaard als "<start experiment>|<variant>": bij een herstart (nieuwe
+      // start) wordt opnieuw geloot, daarna blijft het gelijk bij elk bezoek.
       const storageKey = `exp:${key}`
+      const round = cfg.started || ''
       let arm: string | null = null
       try {
-        const stored = sessionStorage.getItem(storageKey)
-        if (stored && validIds.includes(stored)) arm = stored
-      } catch { /* sessionStorage geblokkeerd */ }
+        const [storedRound, storedArm] = (localStorage.getItem(storageKey) || '').split('|')
+        if (storedRound === round && storedArm && validIds.includes(storedArm)) arm = storedArm
+      } catch { /* opslag geblokkeerd */ }
       if (!arm) {
         const usable = cfg.arms.filter((a) => validIds.includes(a.id))
         arm = draw(usable) || control
-        try { sessionStorage.setItem(storageKey, arm) } catch { /* niet bewaren */ }
+        try { localStorage.setItem(storageKey, `${round}|${arm}`) } catch { /* niet bewaren */ }
       }
       done(arm, true)
     })
