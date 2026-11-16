@@ -66,9 +66,10 @@ blijft dat verdeeld.
 
 ## Vooraf
 
-- [ ] www naar niet-www: in CapRover via "Edit Default Nginx Configurations"
+- [x] www naar niet-www: in CapRover via "Edit Default Nginx Configurations"
       beide `return 302` naar `301` en de doorstuurregel naar
-      `https://flesvoedingcalculator.nl$request_uri`.
+      `https://flesvoedingcalculator.nl$request_uri`. (Gecontroleerd 16-11:
+      één 301 naar https zonder www, pad blijft behouden.)
 - [ ] Zoekvolume van "voedingsschema baby" en "flesvoeding schema" opzoeken in
       Google Keyword Planner (gratis). Dat bepaalt hoeveel moeite fase 3 waard is.
 
