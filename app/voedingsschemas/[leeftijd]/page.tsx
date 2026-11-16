@@ -180,10 +180,10 @@ export default async function LeeftijdPage({ params }: Props) {
                 <table className="w-full border-collapse border border-gray-300">
                   <thead>
                     <tr className="bg-white">
-                      <th className="border border-gray-300 px-4 py-2 text-left">Gewicht</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Per dag</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left whitespace-nowrap">Gewicht</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left whitespace-nowrap">Per dag</th>
                       {pagina.voedingen.map((n) => (
-                        <th key={n} className="border border-gray-300 px-4 py-2 text-left">
+                        <th key={n} className="border border-gray-300 px-4 py-2 text-left whitespace-nowrap">
                           {n} voedingen
                         </th>
                       ))}
@@ -264,9 +264,9 @@ export default async function LeeftijdPage({ params }: Props) {
                 <table className="w-full border-collapse border border-gray-300">
                   <thead>
                     <tr className="bg-white">
-                      <th className="border border-gray-300 px-4 py-2 text-left">Tijd</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Hoeveelheid</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Schepjes</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left whitespace-nowrap">Tijd</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left whitespace-nowrap">Hoeveelheid</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left whitespace-nowrap">Schepjes</th>
                     </tr>
                   </thead>
                   <tbody>

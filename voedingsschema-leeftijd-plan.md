@@ -91,20 +91,20 @@ blijft dat verdeeld.
 
 ## Fase 1: schemapagina herschrijven
 
-- [ ] `page.tsx` wordt een servercomponent met de inhoud in de HTML. De
+- [x] `page.tsx` wordt een servercomponent met de inhoud in de HTML. De
       keuzetool en de PDF-knop blijven als klein client-onderdeel. `jspdf` pas
       laden bij de klik op Download.
-- [ ] H1: "Voedingsschema flesvoeding: per leeftijd en gewicht". Title blijft
+- [x] H1: "Voedingsschema flesvoeding: per leeftijd en gewicht". Title blijft
       in de buurt van de huidige.
-- [ ] Bovenaan één overzichtstabel: per leeftijd (1 week t/m 12 maanden) het
+- [x] Bovenaan één overzichtstabel: per leeftijd (1 week t/m 12 maanden) het
       aantal voedingen per dag, ml per voeding en totaal per dag, met een link
-      naar de leeftijdspagina waar die bestaat.
-- [ ] Daaronder per leeftijdsgroep een eigen sectie met anker, met een
+      naar de leeftijdspagina waar die bestaat. (Gebouwd t/m 9 maanden: daarna loopt het per kind te ver uiteen; 6 tot 12 maanden staat als voorbeelddag.)
+- [x] Daaronder per leeftijdsgroep een eigen sectie met anker, met een
       voorbeelddag in tijden (er wordt gezocht op "voedingsschema baby tijden").
       Alle groepen staan in de HTML, niet alleen de gekozen tab.
-- [ ] Korte sectie "Op verzoek of op schema?", met bron.
-- [ ] Veelgestelde vragen op basis van de echte zoekopdrachten hierboven.
-- [ ] Links naar de calculator, de schepjes-calculator en
+- [x] Korte sectie "Op verzoek of op schema?", met bron.
+- [x] Veelgestelde vragen op basis van de echte zoekopdrachten hierboven.
+- [x] Links naar de calculator, de schepjes-calculator en
       `voedingsritme-opbouwen`. Dat artikel blijft apart: andere vraag. Het
       komt nu niet voor in Search Console, dus een link erheen helpt.
 
@@ -142,15 +142,15 @@ flesvoeding heeft een baby van 3 weken nodig?". Bij 4 weken, 8 weken en
 
 **Bouwstappen**
 
-- [ ] Gewichten en leeftijdsfeiten verzamelen uit de bronnen, met URL en datum.
-- [ ] Databestand, route en de zes pagina's bouwen.
-- [ ] `initialAge` toevoegen aan de calculator. Berekeningen vanaf deze
+- [x] Gewichten en leeftijdsfeiten verzamelen uit de bronnen, met URL en datum.
+- [x] Databestand, route en de zes pagina's bouwen.
+- [x] `initialAge` toevoegen aan de calculator. Berekeningen vanaf deze
       pagina's krijgen `variant: 'leeftijd'` mee, zodat ze in de statistieken
       te onderscheiden zijn.
-- [ ] URL's toevoegen aan `public/sitemap.xml` (die is statisch) en aan de
+- [x] URL's toevoegen aan `public/sitemap.xml` (die is statisch) en aan de
       admin-paginalijst.
-- [ ] Vanaf de homepage linken: een regel "Per leeftijd" onder de calculator.
-- [ ] Controle: de getallen in elke tabel zijn gelijk aan wat de calculator
+- [x] Vanaf de homepage linken: een regel "Per leeftijd" onder de calculator.
+- [x] Controle: de getallen in elke tabel zijn gelijk aan wat de calculator
       geeft bij dezelfde invoer. Schermcontrole op 375 px breed.
 
 ## Fase 3: uitbreiden, alleen als fase 2 werkt

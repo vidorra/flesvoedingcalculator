@@ -257,18 +257,18 @@ De lijst van bestaande experimenten en hun varianten staat in `lib/experiments.t
 
 ## Deel C: bouwvolgorde
 
-- [ ] **1. Database.** `experiments`, `impression_events` en de extra kolommen
+- [x] **1. Database.** `experiments`, `impression_events` en de extra kolommen
       op `click_events`. Controle: togwaarde logt daarna nog gewoon kliks.
-- [ ] **2. Meten.** `exp`, `arm` en `pv` door de drie meetroutes; nieuwe route
+- [x] **2. Meten.** `exp`, `arm` en `pv` door de drie meetroutes; nieuwe route
       voor vertoningen. Controle: een proefklik staat met variant in de database.
-- [ ] **3. Loting.** `lib/experiments.ts` met de hook `useExperiment(key)` en
+- [x] **3. Loting.** `lib/experiments.ts` met de hook `useExperiment(key)` en
       de openbare route. Controle: zonder lopend experiment ziet iedereen A en
       verandert er niets aan de site.
-- [ ] **4. Het blok.** `ResultProductBlock`, de render-prop in de calculator,
+- [x] **4. Het blok.** `ResultProductBlock`, de render-prop in de calculator,
       de vier pagina-id's. Controle: via `?exp_arm=result_block` op 375 px en
       op desktop; niets verspringt als de uitkomst verschijnt; bij prematuur
       geen blok.
-- [ ] **5. Admin.** `ExperimentsPanel` met resultaten, interval, kans en de
+- [x] **5. Admin.** `ExperimentsPanel` met resultaten, interval, kans en de
       waarschuwing bij een scheve loting.
 - [ ] **6. Vullen.** Jens koppelt per leeftijdsband de producten in de admin.
 - [ ] **7. Start.** Experiment op 50/50. Na een week: aantallen per variant

@@ -137,11 +137,11 @@ export default function VoedingsschemasPage() {
                 <table className="w-full border-collapse border border-gray-300">
                   <thead>
                     <tr className="bg-white">
-                      <th className="border border-gray-300 px-4 py-2 text-left">Leeftijd</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Gewicht</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Per dag</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Voedingen</th>
-                      <th className="border border-gray-300 px-4 py-2 text-left">Per voeding</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left whitespace-nowrap">Leeftijd</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left whitespace-nowrap">Gewicht</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left whitespace-nowrap">Per dag</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left whitespace-nowrap">Voedingen</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left whitespace-nowrap">Per voeding</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -223,8 +223,8 @@ export default function VoedingsschemasPage() {
                     <table className="w-full border-collapse border border-gray-300">
                       <thead>
                         <tr className="bg-white">
-                          <th className="border border-gray-300 px-4 py-2 text-left">Tijd</th>
-                          <th className="border border-gray-300 px-4 py-2 text-left">Hoeveelheid</th>
+                          <th className="border border-gray-300 px-4 py-2 text-left whitespace-nowrap">Tijd</th>
+                          <th className="border border-gray-300 px-4 py-2 text-left whitespace-nowrap">Hoeveelheid</th>
                         </tr>
                       </thead>
                       <tbody>

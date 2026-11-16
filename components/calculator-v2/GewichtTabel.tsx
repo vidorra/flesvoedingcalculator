@@ -29,10 +29,10 @@ export default function GewichtTabel() {
         <table className="w-full border-collapse border border-gray-300">
           <thead>
             <tr className="bg-white">
-              <th className="border border-gray-300 px-4 py-2 text-left">Gewicht</th>
-              <th className="border border-gray-300 px-4 py-2 text-left">Per dag</th>
+              <th className="border border-gray-300 px-4 py-2 text-left whitespace-nowrap">Gewicht</th>
+              <th className="border border-gray-300 px-4 py-2 text-left whitespace-nowrap">Per dag</th>
               {VOEDINGEN.map((n) => (
-                <th key={n} className="border border-gray-300 px-4 py-2 text-left">{n} voedingen</th>
+                <th key={n} className="border border-gray-300 px-4 py-2 text-left whitespace-nowrap">{n} voedingen</th>
               ))}
             </tr>
           </thead>
