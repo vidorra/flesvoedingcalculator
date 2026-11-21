@@ -2,8 +2,7 @@ import { NextResponse } from 'next/server'
 import { randomUUID } from 'crypto'
 import { sql } from 'drizzle-orm'
 import { db } from '../../../lib/db/connection.js'
-import { clickEvents } from '../../../lib/db/schema.js'
-import { ensureClickEventsTable, ensureExperimentTables } from '../../../lib/db/ensure-events.js'
+import { ensureClickEventsTable, ensureClickPageColumn, ensureExperimentTables } from '../../../lib/db/ensure-events.js'
 import { EXP_TOKEN } from '../../../lib/experiments-config'
 import { verifyAdminAndGetWebsite } from '../../../lib/jwt-utils.js'
 import { checkTrackRate, bodyTooLarge } from '../../../lib/track-guard.js'
@@ -15,9 +14,16 @@ const WEBSITE = 'flesvoedingcalculator'
 // Bound input so a bot can't pollute stats.
 const SNIPPET_ID_PATTERN = /^[A-Za-z0-9_-]{1,128}$/
 const WIDGET_PATTERN = /^[A-Za-z0-9_-]{1,64}$/
+// Alleen een pad, geen querystring of andere bezoekersdata.
+const PAGE_PATTERN = /^\/[A-Za-z0-9_\-./%]{0,200}$/
 
-// POST - record an affiliate click (anonymous: snippet + widget + timestamp,
-// no IP/session). Stored in the shared click_events table so /admin/stats
+function safePage(v) {
+  if (typeof v !== 'string' || !PAGE_PATTERN.test(v)) return null
+  return v.endsWith('/') ? v : `${v}/`
+}
+
+// POST - record an affiliate click (anonymous: snippet + widget + page path +
+// timestamp, no IP/session). Stored in the shared click_events table so /admin/stats
 // can report across both websites.
 export async function POST(request) {
   try {
@@ -47,20 +53,14 @@ export async function POST(request) {
     const placement = token(body.placement)
     const pv = token(body.pv)
 
-    if (exp || placement || pv) {
-      await ensureExperimentTables()
-      await db.execute(sql`
-        INSERT INTO click_events (id, website, snippet_id, widget, exp, arm, placement, pv)
-        VALUES (${randomUUID()}, ${WEBSITE}, ${snippetId}, ${safeWidget}, ${exp}, ${arm}, ${placement}, ${pv})`)
-    } else {
-      await ensureClickEventsTable()
-      await db.insert(clickEvents).values({
-        id: randomUUID(),
-        website: WEBSITE,
-        snippetId,
-        widget: safeWidget
-      })
-    }
+    const page = safePage(body.page)
+
+    // Beide eenmalig per proces; zorgen dat alle kolommen hieronder bestaan.
+    await ensureExperimentTables()
+    await ensureClickPageColumn()
+    await db.execute(sql`
+      INSERT INTO click_events (id, website, snippet_id, widget, exp, arm, placement, pv, page)
+      VALUES (${randomUUID()}, ${WEBSITE}, ${snippetId}, ${safeWidget}, ${exp}, ${arm}, ${placement}, ${pv}, ${page})`)
 
     return NextResponse.json({ success: true })
   } catch (error) {

@@ -100,7 +100,7 @@ function BolScriptWidget({ product }) {
 function trackClick(snippetId: string) {
   try {
     trackEvent('affiliate_click', { snippet_id: snippetId, widget: 'affiliate_widget' })
-    const body = JSON.stringify({ snippetId })
+    const body = JSON.stringify({ snippetId, page: location.pathname })
     if (typeof navigator !== 'undefined' && navigator.sendBeacon) {
       navigator.sendBeacon('/api/track-click', body)
     } else {

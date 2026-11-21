@@ -175,6 +175,7 @@ export function trackAffiliateClick(
   send('/api/track-click', {
     snippetId,
     widget,
+    page: typeof location !== 'undefined' ? location.pathname : undefined,
     ...(fields.exp ? { ...fields, placement: placement || widget } : {})
   })
 }
