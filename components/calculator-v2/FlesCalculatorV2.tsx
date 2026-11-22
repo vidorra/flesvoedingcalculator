@@ -506,9 +506,14 @@ export default function FlesCalculatorV2({
               </Section>
             )}
 
-            {isDesktop === false && slot}
-
-            {disclaimer}
+            {isDesktop === false ? (
+              <>
+                {disclaimer}
+                {slot}
+              </>
+            ) : (
+              disclaimer
+            )}
 
             {beforeSchedule}
 
