@@ -7,7 +7,6 @@ import PopularArticles from '../PopularArticles'
 import WarmWeerAlert from '../calculator/WarmWeerAlert'
 import { FAQSection, FeedingTypesInfo } from '../calculator'
 import ResultProductBlock from './ResultProductBlock'
-import GewichtTabel from './GewichtTabel'
 import { ExperimentProvider, useExperiment } from '../../lib/experiments'
 
 /**
@@ -77,9 +76,6 @@ export default function V2PageContent({ hero, simpleCalculator = false, variant 
             />
           )}
         </div>
-
-        {/* Tabel per gewicht + links naar de leeftijdspagina's (alleen home) */}
-        {variant === 'home' && <GewichtTabel />}
 
         {/* Internal links to key kennisbank articles (SEO: pass homepage authority) */}
         <PopularArticles />
