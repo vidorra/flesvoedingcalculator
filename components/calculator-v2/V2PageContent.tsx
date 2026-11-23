@@ -10,10 +10,10 @@ import ResultProductBlock from './ResultProductBlock'
 import { ExperimentProvider, useExperiment } from '../../lib/experiments'
 
 /**
- * Homepage-calculator met het A/B-experiment `calc_result_block`:
- * A toont de populaire producten rechts (huidig), B toont drie producten
- * passend bij de leeftijd direct bij de uitkomst. Zolang de loting loopt
- * staat er geen productblok, dan verspringt er niets.
+ * Homepage-calculator met het A/B-experiment `calc_result_block`. Het test de
+ * inhoud, niet de positie: op dezelfde plek (op mobiel direct na de disclaimer,
+ * op desktop rechts) toont A de populaire producten en B drie producten passend
+ * bij de leeftijd. Zolang de loting loopt staat er geen blok, dan verspringt er niets.
  */
 function HomeCalculator({ variant }: { variant: string }) {
   const experiment = useExperiment('calc_result_block')
@@ -27,8 +27,13 @@ function HomeCalculator({ variant }: { variant: string }) {
         variant={variant}
         beforeSchedule={<FeedingTypesInfo />}
         afterSchedule={<FAQSection />}
-        rightExtra={showPopular ? <PopularProductsWidget limit={4} /> : undefined}
-        resultSlot={showResultBlock ? (c) => <ResultProductBlock {...c} /> : undefined}
+        resultSlot={
+          showResultBlock
+            ? (c) => <ResultProductBlock {...c} />
+            : showPopular
+              ? () => <PopularProductsWidget limit={4} />
+              : undefined
+        }
       />
     </ExperimentProvider>
   )
