@@ -1,11 +1,11 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { ShoppingBag, RefreshCw, Euro, Package, Upload, Table2, FileUp } from 'lucide-react'
+import { ShoppingBag, RefreshCw, Euro, Package, Upload, Table2, FileUp, MousePointerClick } from 'lucide-react'
 import { Card, DailyChart, KpiCard, TrendBadge, SegmentSwitch, ShowAllButton, Warning, LIMIT } from './stats-ui'
 import { useAdminJson } from './useAdminJson'
 import {
-  type Row, type Parsed, type SalesData, type AmazonGuess, nl, eur, dateOnly, dateTime, isRunning, bucketWord, bySite,
+  type Row, type Parsed, type SalesData, type AmazonGuess, nl, eur, dateOnly, dateShort, dateTime, isRunning, bucketWord, bySite,
   series, salesSummary, trendPct, guessesForSite, guessText
 } from './stats-summary'
 
@@ -13,6 +13,25 @@ const SITE_LABELS: Record<string, string> = { flesvoedingcalculator: 'Flesvoedin
 
 const conv = (orders: number, clicks: number) =>
   clicks > 0 ? `${((orders / clicks) * 100).toLocaleString('nl-NL', { maximumFractionDigits: 1 })}%` : '-'
+
+// Opbrengst per klik is vaak een paar cent; onder een cent tonen we dat zo
+const perClick = (v: number | null) => (v === null ? '-' : v > 0 && v < 0.01 ? '< € 0,01' : eur(v))
+
+function perClickCompare(bol: number | null, amz: number | null, orders: number) {
+  if (bol === null || amz === null) return null
+  let text: string
+  if (bol === 0 && amz === 0) text = 'Nog geen commissie per klik bij bol of Amazon in deze periode'
+  else if (bol === 0) text = 'Per klik levert alleen Amazon nu iets op'
+  else if (amz === 0) text = 'Per klik levert alleen bol nu iets op'
+  else {
+    const ratio = amz / bol
+    const x = (n: number) => n.toLocaleString('nl-NL', { maximumFractionDigits: 1 })
+    text = ratio >= 1
+      ? `Per klik levert Amazon nu ${x(ratio)} keer zoveel op als bol`
+      : `Per klik levert bol nu ${x(1 / ratio)} keer zoveel op als Amazon`
+  }
+  return orders < 20 ? `${text}; met ${orders === 1 ? '1 verkoop' : `${orders} verkopen`} schommelt dit nog sterk.` : `${text}.`
+}
 
 const th = 'text-left font-medium text-gray-500 py-2 px-2 whitespace-nowrap'
 const thR = 'text-right font-medium text-gray-500 py-2 px-2 whitespace-nowrap'
@@ -249,7 +268,7 @@ export default function AffiliateSalesSection({ site, period, periodLabel }: { s
         </p>
       )}
 
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
         <KpiCard
           icon={<Package className="w-4 h-4" />}
           value={nl(sum.items)}
@@ -273,8 +292,16 @@ export default function AffiliateSalesSection({ site, period, periodLabel }: { s
           title="Bol-omzet"
           sub="incl. btw, zonder geweigerd"
         />
+        <KpiCard
+          icon={<MousePointerClick className="w-4 h-4" />}
+          value={perClick(sum.bolPerClick)}
+          title="Bol per klik"
+          sub={sum.bolClicksOurs > 0
+            ? `commissie / ${nl(sum.bolClicksOurs)} kliks op onze bol-kaarten${sum.bolTo ? ` t/m ${dateOnly(sum.bolTo)}` : ''}`
+            : 'nog geen kliks op bol-kaarten'}
+        />
       </div>
-      <div className={`grid grid-cols-2 lg:grid-cols-3 gap-4 ${amzNote && sum.amzLast ? 'mb-2' : 'mb-6'}`}>
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-2">
         <KpiCard
           icon={<Package className="w-4 h-4" />}
           value={sum.amzLast ? nl(sum.amzOrders) : '-'}
@@ -293,9 +320,28 @@ export default function AffiliateSalesSection({ site, period, periodLabel }: { s
           title="Amazon-omzet"
           sub={!sum.amzLast ? 'nog geen CSV ingelezen' : sum.amzRevenue > 0 ? 'bestelde omzet volgens Amazon' : 'geen omzetkolom in de CSV'}
         />
+        <KpiCard
+          icon={<MousePointerClick className="w-4 h-4" />}
+          value={sum.amzLast ? perClick(sum.amzPerClick) : '-'}
+          title="Amazon per klik"
+          sub={!sum.amzLast
+            ? 'nog geen CSV ingelezen'
+            : sum.amzClicksOurs > 0
+              ? `commissie / ${nl(sum.amzClicksOurs)} kliks op onze Amazon-kaarten${sum.amzFirst ? `, ${dateShort(sum.amzFirst)} t/m ${dateShort(sum.amzLast)}` : ''}`
+              : 'geen kliks op Amazon-kaarten in de geüploade dagen'}
+        />
       </div>
 
-      {amzNote && sum.amzLast && <p className="text-xs text-gray-500 mb-6">Amazon-cijfers: {amzNote}.</p>}
+      <div className="text-xs text-gray-500 mb-6 space-y-0.5">
+        {sum.amzLast && perClickCompare(sum.bolPerClick, sum.amzPerClick, sum.items + sum.amzOrders) && (
+          <p className="text-sm text-gray-700">{perClickCompare(sum.bolPerClick, sum.amzPerClick, sum.items + sum.amzOrders)}</p>
+        )}
+        <p>
+          Per klik = commissie gedeeld door onze eigen kliks op de productkaarten, alleen over dagen waarvan de commissie al
+          binnen is. Zo tellen klikmeting en vertraging voor beide platforms gelijk.
+        </p>
+        {amzNote && sum.amzLast && <p>Amazon-cijfers: {amzNote}.</p>}
+      </div>
 
       <div className="space-y-6">
         <Card title={`Bol-bestellingen per ${bucketWord(data?.bucket)}`} icon={<Package className="w-4 h-4" />}>

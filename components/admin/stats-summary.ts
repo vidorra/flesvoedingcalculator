@@ -73,6 +73,7 @@ export type SalesData = {
   daily: Row[]
   products: Row[]
   snippetClicks: Record<string, number>
+  platformClicks?: Row[]
   subIds: SubRow[]
   recent: RecentRow[]
   amazon: { daily: Row[]; products: Row[]; tracking: Row[]; guesses?: AmazonGuess[] }
@@ -214,6 +215,23 @@ export function salesSummary(data: SalesData | null, site: string) {
   const amzLast = amzDaily.length > 0
     ? String(amzDaily[amzDaily.length - 1].day)
     : amzTracking.length > 0 ? String(amzTracking[0].period_end) : null
+  const amzFirst = amzDaily.length > 0
+    ? String(amzDaily[0].day)
+    : amzTracking.length > 0 ? amzTracking.map((t) => String(t.period_start)).sort()[0] : null
+
+  // Opbrengst per klik: commissie gedeeld door onze eigen kliks op de kaarten
+  // van dat platform, alleen over de dagen waarvan de commissie al binnen is.
+  // Bol: t/m de laatste import, per site. Amazon: de geüploade dagen, alle
+  // sites samen (de Amazon-commissie is ook voor alle sites samen).
+  const clicks = data?.platformClicks ?? []
+  const bolTo = data?.lastRun?.details?.bol?.to ?? null
+  const bolClicksOurs = sum(bySite(clicks, site), 'clicks', (r) =>
+    r.platform === 'bol' && (!bolTo || String(r.day) <= bolTo))
+  const amzClicksOurs = amzLast
+    ? sum(clicks, 'clicks', (r) =>
+      r.platform === 'amazon' && String(r.day) <= amzLast && (!amzFirst || String(r.day) >= amzFirst))
+    : 0
+  const amzCommission = sum(amzSrc, 'commission')
 
   return {
     items,
@@ -227,9 +245,15 @@ export function salesSummary(data: SalesData | null, site: string) {
     prevItems: sum(prev, 'items'),
     prevCommission: sum(prev, 'commission'),
     amzOrders: sum(amzSrc, 'orders'),
-    amzCommission: sum(amzSrc, 'commission'),
+    amzCommission,
     amzRevenue: sum(amzSrc, 'revenue'),
     amzClicks: sum(amzSrc, 'clicks'),
-    amzLast
+    amzLast,
+    amzFirst,
+    bolTo,
+    bolClicksOurs,
+    amzClicksOurs,
+    bolPerClick: bolClicksOurs > 0 ? commission / bolClicksOurs : null,
+    amzPerClick: amzClicksOurs > 0 ? amzCommission / amzClicksOurs : null
   }
 }

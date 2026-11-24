@@ -40,7 +40,8 @@ export async function GET(request) {
     await ensureAffiliateTablesOnce()
 
     const [prevTotals, lastRun, totals, daily, products, snippetClicks, subOrders, subPromo, recent,
-      amazonDaily, amazonProducts, amazonTracking, amazonUnknown, amazonSnippets, amazonClicks] = await Promise.all([
+      amazonDaily, amazonProducts, amazonTracking, amazonUnknown, amazonSnippets, amazonClicks,
+      platformClicks] = await Promise.all([
       // Vorige periode van gelijke lengte, voor de trend in het overzicht
       db.execute(sql`
         SELECT coalesce(website, 'onbekend') AS website, count(*)::int AS items,
@@ -132,7 +133,21 @@ export async function GET(request) {
           count(*)::int AS clicks
         FROM click_events c JOIN snippets s ON s.id::text = c.snippet_id
         WHERE s.type = 'amazon' AND c.created_at > now() - make_interval(days => ${days + 2}::int)
-        GROUP BY 1, 2`)
+        GROUP BY 1, 2`),
+      // Onze kliks per platform per dag, voor de opbrengst per klik (zelfde
+      // indeling als het klikoverzicht in calculator-stats)
+      db.execute(sql`
+        SELECT ce.website,
+          CASE
+            WHEN coalesce(s.type, '') ILIKE 'amazon%' OR ce.snippet_id ILIKE 'amazon%' THEN 'amazon'
+            WHEN coalesce(s.type, '') ILIKE 'bol%' OR ce.snippet_id ILIKE 'bol%' THEN 'bol'
+            ELSE 'overig'
+          END AS platform,
+          (ce.created_at AT TIME ZONE 'Europe/Amsterdam')::date::text AS day,
+          count(*)::int AS clicks
+        FROM click_events ce LEFT JOIN snippets s ON s.id = ce.snippet_id
+        WHERE ce.created_at > now() - make_interval(days => ${days}::int)
+        GROUP BY 1, 2, 3`)
     ])
 
     // Per subId: bestellingen uit het order-report, kliks uit het promotion-report
@@ -161,6 +176,7 @@ export async function GET(request) {
       prevTotals: isAll ? [] : prevTotals.rows,
       daily: daily.rows,
       products: products.rows,
+      platformClicks: platformClicks.rows,
       snippetClicks: Object.fromEntries(snippetClicks.rows.map((r) => [r.snippet_id, Number(r.clicks)])),
       subIds,
       recent: recent.rows.map((r) => ({ ...r, parsed: parseSubId(r.sub_id) })),
