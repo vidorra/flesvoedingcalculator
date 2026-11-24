@@ -9,7 +9,7 @@ import {
   BarChart3, Calculator, MousePointerClick, CalendarDays, Baby, Thermometer, Trophy, Activity, Bed, Users,
   Search, Euro, Package, Filter, Clock
 } from 'lucide-react'
-import { Card, DailyChart, KpiCard, TrendBadge, PlatformSplit, Warning } from './stats-ui'
+import { Card, DailyChart, KpiCard, TrendBadge, PlatformSplit, SegmentSwitch, Warning } from './stats-ui'
 import SearchConsoleSection from './SearchConsoleSection'
 import AffiliateSalesSection from './AffiliateSalesSection'
 import { useAdminJson } from './useAdminJson'
@@ -110,11 +110,54 @@ const pill = (active: boolean) =>
     active ? 'bg-white text-primary shadow-sm' : 'text-gray-500 hover:text-gray-700'
   }`
 
+type TopItem = { key: string; name: string; website: string; value: number; detail?: string; tag?: string }
+
+// Ranglijst met balkjes, voor de top producten op kliks of op verkopen
+function TopList({ items, showSite, empty }: { items: TopItem[]; showSite: boolean; empty: string }) {
+  const max = items.reduce((m, r) => Math.max(m, r.value), 0)
+  if (items.length === 0) return <p className="text-sm text-gray-500">{empty}</p>
+  return (
+    <div className="space-y-3">
+      {items.slice(0, 10).map((r, i) => (
+        <div key={r.key}>
+          <div className="flex items-center gap-2 mb-1">
+            <span className={`w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center flex-shrink-0 ${
+              i === 0 ? 'bg-primary text-white' : 'bg-primary/10 text-primary'
+            }`}>
+              {i + 1}
+            </span>
+            <span className="text-sm text-gray-700 truncate flex-1" title={r.name}>{r.name}</span>
+            {r.tag && (
+              <span className="text-[10px] bg-primary/10 text-primary px-1.5 py-0.5 rounded-full flex-shrink-0">{r.tag}</span>
+            )}
+            {showSite && r.website !== 'onbekend' && (
+              <span className="text-[10px] bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded-full flex-shrink-0">
+                {label(SITE_LABELS, r.website)}
+              </span>
+            )}
+            <span className="text-sm font-semibold text-gray-900 tabular-nums flex-shrink-0">{nl(r.value)}</span>
+          </div>
+          <div className="flex items-center gap-2 ml-8">
+            <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden flex-1">
+              <div
+                className="h-full rounded-full bg-gradient-to-r from-primary to-primary/70"
+                style={{ width: `${max > 0 ? Math.round((r.value / max) * 100) : 0}%` }}
+              />
+            </div>
+            {r.detail && <span className="text-xs text-gray-500 tabular-nums flex-shrink-0">{r.detail}</span>}
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 export default function StatsPanel() {
   const [tab, setTab] = useState<Tab>('overzicht')
   const [site, setSite] = useState<string>('all')
   const [period, setPeriod] = useState('30')
   const [ready, setReady] = useState(false)
+  const [topBy, setTopBy] = useState<'sales' | 'clicks'>('sales')
 
   // Filters uit de URL lezen (pas na het mounten, anders klopt de server-HTML niet)
   useEffect(() => {
@@ -150,7 +193,7 @@ export default function StatsPanel() {
   const gsc = useAdminJson<GscData>(
     on('overzicht') ? `/api/admin/search-console?days=${period}` : null, 'Kon Search Console-cijfers niet laden')
   const sales = useAdminJson<SalesData>(
-    on('overzicht') ? `/api/admin/affiliate-sales?days=${period}` : null, 'Kon verkoopcijfers niet laden')
+    on('overzicht', 'verkopen') ? `/api/admin/affiliate-sales?days=${period}` : null, 'Kon verkoopcijfers niet laden')
 
   const stats = calc.data
   const c = calcSummary(stats, site)
@@ -193,7 +236,23 @@ export default function StatsPanel() {
 
   // Affiliate-kliks
   const clickSnippets = bySite(stats?.clicksBySnippet, site)
-  const clickTopMax = clickSnippets.reduce((m, r) => Math.max(m, Number(r.count)), 0)
+  const topClicks: TopItem[] = clickSnippets.map((r) => ({
+    key: `${r.website}-${r.snippet_id}`, name: String(r.name), website: String(r.website), value: Number(r.count)
+  }))
+  // Verkopen per product: bol uit het orderrapport (zonder geweigerd), Amazon uit het productrapport
+  const topSales: TopItem[] = [
+    ...bySite(sales.data?.products, site).map((p) => ({
+      key: `bol-${p.website}-${p.product_id}`, name: String(p.title || p.product_id), website: String(p.website),
+      value: Number(p.items) - Number(p.rejected ?? 0), commission: Number(p.commission), tag: 'bol'
+    })),
+    ...bySite(sales.data?.amazon.products, site).map((p) => ({
+      key: `amz-${p.key}`, name: String(p.title || p.key), website: String(p.website),
+      value: Number(p.orders), commission: Number(p.commission), tag: 'Amazon'
+    }))
+  ]
+    .filter((r) => r.value > 0)
+    .sort((a, b) => b.value - a.value || b.commission - a.commission)
+    .map(({ commission, ...r }) => ({ ...r, detail: `${eur(commission)} commissie` }))
   const clickChart = series(bySite(stats?.clicksDaily, site))
 
   const funnelMax = Math.max(v.period, c.calcPeriod, c.clickPeriod, orders)
@@ -379,37 +438,29 @@ export default function StatsPanel() {
             </div>
 
             <Card title="Top producten" icon={<Trophy className="w-5 h-5" />}>
-              {clickSnippets.length === 0 && <p className="text-sm text-gray-500">Nog geen kliks geregistreerd.</p>}
-              <div className="space-y-3">
-                {clickSnippets.slice(0, 10).map((r, i) => (
-                  <div key={`${r.website}-${r.snippet_id}`}>
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className={`w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center flex-shrink-0 ${
-                        i === 0 ? 'bg-primary text-white' : 'bg-primary/10 text-primary'
-                      }`}>
-                        {i + 1}
-                      </span>
-                      <span className="text-sm text-gray-700 truncate flex-1" title={String(r.name)}>
-                        {String(r.name)}
-                      </span>
-                      {site === 'all' && (
-                        <span className="text-[10px] bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded-full flex-shrink-0">
-                          {label(SITE_LABELS, String(r.website))}
-                        </span>
-                      )}
-                      <span className="text-sm font-semibold text-gray-900 tabular-nums flex-shrink-0">
-                        {nl(Number(r.count))}
-                      </span>
-                    </div>
-                    <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden ml-8">
-                      <div
-                        className="h-full rounded-full bg-gradient-to-r from-primary to-primary/70"
-                        style={{ width: `${clickTopMax > 0 ? Math.round((Number(r.count) / clickTopMax) * 100) : 0}%` }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <SegmentSwitch<'sales' | 'clicks'>
+                value={topBy}
+                onChange={setTopBy}
+                options={[
+                  { value: 'sales', label: 'Verkopen', count: topSales.length },
+                  { value: 'clicks', label: 'Kliks', count: topClicks.length }
+                ]}
+              />
+              {topBy === 'sales' ? (
+                <>
+                  <TopList
+                    items={topSales}
+                    showSite={site === 'all'}
+                    empty={sales.data ? 'Nog geen verkochte producten in deze periode.' : 'Laden...'}
+                  />
+                  <p className="text-xs text-gray-400 mt-4">
+                    Aantal bestellingen per product. Bol uit het orderrapport (zonder geweigerd), Amazon uit het
+                    productrapport t/m de laatste upload.
+                  </p>
+                </>
+              ) : (
+                <TopList items={topClicks} showSite={site === 'all'} empty="Nog geen kliks geregistreerd." />
+              )}
             </Card>
           </div>
         </>

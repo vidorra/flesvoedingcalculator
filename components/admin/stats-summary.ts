@@ -192,6 +192,7 @@ export function salesSummary(data: SalesData | null, site: string) {
     prevCommission: sum(prev, 'commission'),
     amzOrders: sum(amzSrc, 'orders'),
     amzCommission: sum(amzSrc, 'commission'),
+    amzRevenue: sum(amzSrc, 'revenue'),
     amzClicks: sum(amzSrc, 'clicks'),
     amzLast
   }

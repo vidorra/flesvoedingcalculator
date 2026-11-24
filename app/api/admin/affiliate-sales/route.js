@@ -104,13 +104,14 @@ export async function GET(request) {
       db.execute(sql`
         SELECT key, max(title) AS title, max(category) AS category, coalesce(max(website), 'onbekend') AS website,
           max(snippet_id) AS snippet_id, coalesce(sum(clicks), 0)::int AS clicks,
-          coalesce(sum(orders), 0)::int AS orders, coalesce(sum(commission), 0)::float AS commission
+          coalesce(sum(orders), 0)::int AS orders, coalesce(sum(revenue), 0)::float AS revenue,
+          coalesce(sum(commission), 0)::float AS commission
         FROM affiliate_report_rows
         WHERE report = 'amazon_product' AND period_start > current_date - ${days}::int
         GROUP BY 1 ORDER BY orders DESC, clicks DESC LIMIT 50`),
       db.execute(sql`
         SELECT key, period_start::text AS period_start, period_end::text AS period_end,
-          clicks, orders, commission::float AS commission
+          clicks, orders, revenue::float AS revenue, commission::float AS commission
         FROM affiliate_report_rows
         WHERE report = 'amazon_tracking' AND period_end > current_date - ${days}::int
         ORDER BY period_end DESC, orders DESC LIMIT 50`)
