@@ -5,7 +5,7 @@ import { db } from '../../../lib/db/connection.js'
 import { ensureClickEventsTable, ensureClickPageColumn, ensureExperimentTables } from '../../../lib/db/ensure-events.js'
 import { EXP_TOKEN } from '../../../lib/experiments-config'
 import { verifyAdminAndGetWebsite } from '../../../lib/jwt-utils.js'
-import { checkTrackRate, bodyTooLarge } from '../../../lib/track-guard.js'
+import { checkTrackRate, bodyTooLarge, readTrackBody } from '../../../lib/track-guard.js'
 
 export const dynamic = 'force-dynamic'
 
@@ -38,8 +38,11 @@ export async function POST(request) {
       )
     }
 
-    const body = await request.json()
-    const { snippetId, widget } = body
+    const { tooLarge, data: body } = await readTrackBody(request)
+    if (tooLarge) {
+      return NextResponse.json({ success: false, error: 'Body too large' }, { status: 413 })
+    }
+    const { snippetId, widget } = body || {}
 
     if (!snippetId || typeof snippetId !== 'string' || !SNIPPET_ID_PATTERN.test(snippetId)) {
       return NextResponse.json({ success: false, error: 'Invalid snippetId' }, { status: 400 })

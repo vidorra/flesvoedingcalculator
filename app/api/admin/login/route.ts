@@ -1,6 +1,8 @@
 import { NextResponse, NextRequest } from 'next/server'
 import * as jwt from 'jsonwebtoken'
 import bcrypt from 'bcryptjs'
+import { getClientIp } from '../../../../lib/client-ip.js'
+import { readJsonCapped } from '../../../../lib/read-body.js'
 
 // Force dynamic route
 export const dynamic = 'force-dynamic'
@@ -24,21 +26,24 @@ interface LoginResponse {
  * is reliable here. Not suitable for multi-instance/serverless deployments.
  */
 const LOGIN_RATE_LIMIT = { windowMs: 15 * 60 * 1000, maxFailures: 10 }
+// Globale rem over alle IP's samen, tegen raden vanaf veel adressen tegelijk.
+// Nadeel: een aanvaller kan de login dan een kwartier dichtzetten.
+const GLOBAL_MAX_FAILURES = 50
+const MAX_BODY_BYTES = 4096
 const failedAttempts = new Map<string, { count: number; firstAttempt: number }>()
+let globalFailures = { count: 0, firstAttempt: 0 }
 
-function getClientIp(request: NextRequest): string {
-  return (
-    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
-    request.headers.get('x-real-ip') ||
-    'unknown'
-  )
-}
-
-/** Returns true if the IP is currently blocked from further attempts. */
+/** Returns true if the IP (or the login as a whole) is currently blocked. */
 function isRateLimited(ip: string): boolean {
+  const now = Date.now()
+  if (now - globalFailures.firstAttempt > LOGIN_RATE_LIMIT.windowMs) {
+    globalFailures = { count: 0, firstAttempt: now }
+  } else if (globalFailures.count >= GLOBAL_MAX_FAILURES) {
+    return true
+  }
   const entry = failedAttempts.get(ip)
   if (!entry) return false
-  if (Date.now() - entry.firstAttempt > LOGIN_RATE_LIMIT.windowMs) {
+  if (now - entry.firstAttempt > LOGIN_RATE_LIMIT.windowMs) {
     failedAttempts.delete(ip)
     return false
   }
@@ -47,6 +52,11 @@ function isRateLimited(ip: string): boolean {
 
 function recordFailure(ip: string): void {
   const now = Date.now()
+  if (now - globalFailures.firstAttempt > LOGIN_RATE_LIMIT.windowMs) {
+    globalFailures = { count: 1, firstAttempt: now }
+  } else {
+    globalFailures.count++
+  }
   const entry = failedAttempts.get(ip)
   if (!entry || now - entry.firstAttempt > LOGIN_RATE_LIMIT.windowMs) {
     failedAttempts.set(ip, { count: 1, firstAttempt: now })
@@ -89,8 +99,14 @@ export async function POST(request: NextRequest): Promise<NextResponse<LoginResp
       )
     }
 
-    const body = (await request.json()) as LoginRequest
-    const { password } = body
+    const { tooLarge, data } = await readJsonCapped(request, MAX_BODY_BYTES)
+    if (tooLarge) {
+      return NextResponse.json(
+        { success: false, message: 'Request too large' },
+        { status: 413 }
+      )
+    }
+    const { password } = (data || {}) as Partial<LoginRequest>
 
     const jwtSecret = process.env.JWT_SECRET
     if (!jwtSecret) {
@@ -128,7 +144,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<LoginResp
     } catch (compareError) {
       console.error('Password comparison error:', compareError)
       recordFailure(clientIp)
-      logFailedLoginAttempt(request)
+      logFailedLoginAttempt(clientIp)
       return NextResponse.json(
         { success: false, message: 'Invalid credentials' },
         { status: 401 }
@@ -138,7 +154,7 @@ export async function POST(request: NextRequest): Promise<NextResponse<LoginResp
     if (!isValid) {
       // Log failed attempts (but don't log the password)
       recordFailure(clientIp)
-      logFailedLoginAttempt(request)
+      logFailedLoginAttempt(clientIp)
       return NextResponse.json(
         { success: false, message: 'Invalid credentials' },
         { status: 401 }
@@ -174,10 +190,10 @@ export async function POST(request: NextRequest): Promise<NextResponse<LoginResp
 }
 
 /**
- * Log failed login attempt with rate limiting info
+ * Log failed login attempt. Alleen het afgeleide IP, niet de hele
+ * x-forwarded-for die de bezoeker zelf kan vullen.
  */
-function logFailedLoginAttempt(request: NextRequest): void {
-  const clientIp = request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown'
+function logFailedLoginAttempt(clientIp: string): void {
   console.warn(`Failed admin login attempt from IP: ${clientIp}`)
 }
 

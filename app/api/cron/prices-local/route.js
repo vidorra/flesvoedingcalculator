@@ -5,6 +5,7 @@ import { db } from '../../../../lib/db/connection.js'
 import { snippets } from '../../../../lib/db/schema.js'
 import { ensurePriceAlertStateTable } from '../../../../lib/db/ensure-events.js'
 import { sendMail, mailerConfigured, ownerEmail } from '../../../../lib/mailer.js'
+import { safeEqual } from '../../../../lib/safe-compare.js'
 
 // Force dynamic; leest/schrijft de DB
 export const dynamic = 'force-dynamic'
@@ -35,7 +36,7 @@ function isAuthorized(request) {
   if (!secret) return null
   const auth = request.headers.get('authorization') || ''
   const headerSecret = request.headers.get('x-cron-secret') || ''
-  return auth === `Bearer ${secret}` || headerSecret === secret
+  return safeEqual(auth, `Bearer ${secret}`) || safeEqual(headerSecret, secret)
 }
 
 // Meldingen over producten die geen prijs opleveren. Een Amazon-product dat op
