@@ -175,7 +175,7 @@ export default function AffiliateSalesSection({ site, period, periodLabel }: { s
 
       {data && !data.configured && (
         <Warning>
-          Let op: BOL_API_CLIENT_ID en BOL_API_CLIENT_SECRET staan niet in de omgeving van deze app, dus bol-verkopen worden niet opgehaald.
+          Let op: BOL_REPORTING_CLIENT_ID en BOL_REPORTING_CLIENT_SECRET staan niet in de omgeving van deze app, dus bol-verkopen worden niet opgehaald. Gebruik de sleutel "Reporting API" uit het bol-partnerprogramma, niet die van de Marketing Catalog API.
         </Warning>
       )}
 

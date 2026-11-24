@@ -14,7 +14,7 @@ export function startGscScheduler() {
 // Bol-verkopen. Start 3 minuten na de boot, zodat hij niet tegelijk met de
 // Search Console-import draait.
 export function startAffiliateScheduler() {
-  if (!process.env.BOL_API_CLIENT_ID || !process.env.BOL_API_CLIENT_SECRET || !process.env.DATABASE_URL) return
+  if (!process.env.BOL_REPORTING_CLIENT_ID || !process.env.BOL_REPORTING_CLIENT_SECRET || !process.env.DATABASE_URL) return
   const tick = () => maybeRunDailyAffiliateImport().catch((e) => console.error('Affiliate-planner:', e.message))
   setTimeout(tick, 3 * 60_000)
   setInterval(tick, 60 * 60_000)

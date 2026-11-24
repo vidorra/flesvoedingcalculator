@@ -187,7 +187,7 @@ export async function POST(request) {
   }
 
   if (!bolConfigured()) {
-    return NextResponse.json({ success: false, error: 'BOL_API_CLIENT_ID / BOL_API_CLIENT_SECRET zijn niet ingesteld' }, { status: 503 })
+    return NextResponse.json({ success: false, error: 'BOL_REPORTING_CLIENT_ID / BOL_REPORTING_CLIENT_SECRET zijn niet ingesteld' }, { status: 503 })
   }
   runAffiliateImport({ trigger: 'handmatig' })
     .then((r) => { if (!r.ok) console.error('Affiliate-import (handmatig):', r.error) })

@@ -11,7 +11,7 @@ Doel: per verkoop zien welk product het was, van welke site, en (vanaf de subId'
 Docs: https://api.bol.com/marketing/docs/affiliate-reports-api/index.html
 
 - Inloggen: `POST https://login.bol.com/token?grant_type=client_credentials`, header `Authorization: Basic base64(clientId:clientSecret)`, `Accept: application/json`. Token is ongeveer 5 minuten geldig; hergebruiken tot hij verloopt (te veel tokenverzoeken kan een IP-ban geven).
-- Sleutel: affiliate.bol.com, Account, blok Open API, Toevoegen. De productfeed-gegevens (`BOL_PRODUCT_FEED_*`) zijn iets anders en werken hier niet. Eerst proberen of de bestaande `BOL_API_CLIENT_ID` / `BOL_API_CLIENT_SECRET` (als die in CapRover staan) toegang geven.
+- Sleutel: affiliate.bol.com, Account, blok Open API, Toevoegen. Kies de API "Reporting API" en zet die in `BOL_REPORTING_CLIENT_ID` / `BOL_REPORTING_CLIENT_SECRET` (24-11-2026: de Catalog-sleutel in `BOL_API_CLIENT_*` gaf 403 op de rapporten). De productfeed-gegevens (`BOL_PRODUCT_FEED_*`) zijn iets anders en werken hier niet. Eerst proberen of de bestaande `BOL_API_CLIENT_ID` / `BOL_API_CLIENT_SECRET` (als die in CapRover staan) toegang geven.
 - Basis: `https://api.bol.com/marketing/affiliate/reports/v2/`, alle GET met `startDate` en `endDate` (`yyyy-MM-dd`), antwoord `{"items": [...]}`.
   - `/order-report`: per bestelregel `orderDate`, `orderDateTime`, `orderId`, `orderItemId`, `productId`, `productTitle`, `quantity`, `chunkName` (categorie), `siteCode`, `frameType`, `name`, `subId`, `priceInclVat`, `commission`, `status` (Open / Geaccepteerd / Geweigerd), `statusFinal`, `approvedForPayment`.
   - `/promotion-report`: per dag en subId `clicks`, `impressions`, `orders`, `conversion`, `commission`, `revenueInclVat`.
