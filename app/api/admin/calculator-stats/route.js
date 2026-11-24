@@ -19,12 +19,12 @@ export async function GET(request) {
   }
 
   // Periode: ?days=7|14|30|90|180|365 of ?days=all. Alle vensters volgen dit.
-  const ALLOWED_DAYS = [7, 14, 30, 90, 180, 365]
+  const ALLOWED_DAYS = [7, 14, 30, 60, 90, 180, 365]
   const daysParam = new URL(request.url).searchParams.get('days') || '30'
   const isAll = daysParam === 'all'
   const days = ALLOWED_DAYS.includes(Number(daysParam)) ? Number(daysParam) : 30
   // Bucketgrootte voor de grafiek zodat lange periodes niet honderden staafjes geven
-  const bucket = isAll ? 'month' : days <= 31 ? 'day' : days <= 120 ? 'week' : 'month'
+  const bucket = isAll ? 'month' : days <= 62 ? 'day' : days <= 120 ? 'week' : 'month'
   const bucketLit = sql.raw(`'${bucket}'`)
 
   // Window-fragmenten (days is een gevalideerd geheel getal -> veilig)

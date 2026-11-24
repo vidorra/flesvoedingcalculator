@@ -28,18 +28,26 @@ export async function GET(request) {
     return NextResponse.json({ success: false, error: 'DATABASE_URL not set' }, { status: 503 })
   }
 
-  const ALLOWED_DAYS = [7, 14, 30, 90, 180, 365]
+  const ALLOWED_DAYS = [7, 14, 30, 60, 90, 180, 365]
   const daysParam = new URL(request.url).searchParams.get('days') || '30'
   const isAll = daysParam === 'all'
   const days = isAll ? 100000 : ALLOWED_DAYS.includes(Number(daysParam)) ? Number(daysParam) : 30
-  const bucket = isAll ? 'month' : days <= 31 ? 'day' : days <= 120 ? 'week' : 'month'
+  const bucket = isAll ? 'month' : days <= 62 ? 'day' : days <= 120 ? 'week' : 'month'
   const bucketLit = sql.raw(`'${bucket}'`)
 
   try {
     await ensureAffiliateTablesOnce()
 
-    const [lastRun, totals, daily, products, snippetClicks, subOrders, subPromo, recent,
+    const [prevTotals, lastRun, totals, daily, products, snippetClicks, subOrders, subPromo, recent,
       amazonDaily, amazonProducts, amazonTracking] = await Promise.all([
+      // Vorige periode van gelijke lengte, voor de trend in het overzicht
+      db.execute(sql`
+        SELECT coalesce(website, 'onbekend') AS website, count(*)::int AS items,
+          coalesce(sum(commission), 0)::float AS commission
+        FROM affiliate_orders
+        WHERE order_date > current_date - ${days * 2}::int AND order_date <= current_date - ${days}::int
+          AND coalesce(status, '') <> 'Geweigerd'
+        GROUP BY 1`),
       db.execute(sql`
         SELECT id, started_at, finished_at, ok, trigger, details, error
         FROM affiliate_import_runs ORDER BY id DESC LIMIT 1`),
@@ -131,6 +139,7 @@ export async function GET(request) {
       bucket,
       lastRun: lastRun.rows[0] || null,
       totals: totals.rows,
+      prevTotals: isAll ? [] : prevTotals.rows,
       daily: daily.rows,
       products: products.rows,
       snippetClicks: Object.fromEntries(snippetClicks.rows.map((r) => [r.snippet_id, Number(r.clicks)])),

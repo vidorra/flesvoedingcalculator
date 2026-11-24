@@ -17,6 +17,23 @@ export default function SimpleAdminDashboard() {
   const [loading, setLoading] = useState(true)
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [activeTab, setActiveTab] = useState('overview') // 'overview' or 'assignment'
+  const [tabReady, setTabReady] = useState(false)
+
+  // Tab in de URL (?tab=stats), zodat herladen op dezelfde tab blijft
+  useEffect(() => {
+    const t = new URLSearchParams(window.location.search).get('tab')
+    if (t && ['overview', 'assignment', 'stats', 'experiments'].includes(t)) setActiveTab(t)
+    setTabReady(true)
+  }, [])
+  useEffect(() => {
+    if (!tabReady) return
+    const url = new URL(window.location.href)
+    if (activeTab === 'overview') url.searchParams.delete('tab')
+    else url.searchParams.set('tab', activeTab)
+    // Statistiek-filters horen alleen bij de tab Statistieken
+    if (activeTab !== 'stats') ['stab', 'site', 'periode'].forEach((k) => url.searchParams.delete(k))
+    window.history.replaceState(window.history.state, '', url.toString())
+  }, [activeTab, tabReady])
   const [loadError, setLoadError] = useState(null)
   const [debugInfo, setDebugInfo] = useState('Not started')
   const [pageWebsiteFilter, setPageWebsiteFilter] = useState('flesvoedingcalculator') // Filter pages by website in assignment tab

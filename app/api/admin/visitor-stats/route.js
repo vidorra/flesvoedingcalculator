@@ -25,10 +25,24 @@ export async function GET(request) {
     return NextResponse.json({ success: false, error: 'DATABASE_URL not set' }, { status: 503 })
   }
 
-  const rangeKey = new URL(request.url).searchParams.get('range') || 'maand'
-  const { days, bucket } = RANGES[rangeKey] || RANGES.maand
+  // ?days=7|14|30|60|90|180|365|all volgt de periodekeuze van /admin/stats;
+  // ?range= blijft werken als terugval.
+  const params = new URL(request.url).searchParams
+  const daysParam = params.get('days')
+  const rangeKey = params.get('range') || 'maand'
+  let days, bucket
+  if (daysParam) {
+    const ALLOWED_DAYS = [7, 14, 30, 60, 90, 180, 365]
+    days = daysParam === 'all' ? null : ALLOWED_DAYS.includes(Number(daysParam)) ? Number(daysParam) : 30
+    bucket = days === null ? 'month' : days <= 62 ? 'day' : days <= 120 ? 'week' : 'month'
+  } else {
+    ;({ days, bucket } = RANGES[rangeKey] || RANGES.maand)
+  }
   const bucketLit = sql.raw(`'${bucket}'`)
   const win = days === null ? sql`TRUE` : sql`created_at > now() - (${days} * interval '1 day')`
+  const winPrev = days === null
+    ? sql`FALSE`
+    : sql`created_at > now() - (${days * 2} * interval '1 day') AND created_at <= now() - (${days} * interval '1 day')`
 
   try {
     await ensurePageviewEventsTable()
@@ -40,13 +54,15 @@ export async function GET(request) {
       db.execute(sql`
         SELECT website,
                COUNT(*)::int AS total,
-               COUNT(*) FILTER (WHERE ${win})::int AS period
+               COUNT(*) FILTER (WHERE ${win})::int AS period,
+               COUNT(*) FILTER (WHERE ${winPrev})::int AS prev
         FROM pageview_events GROUP BY website ORDER BY website`)
     ])
 
     return NextResponse.json({
       success: true,
-      range: rangeKey,
+      range: daysParam ? null : rangeKey,
+      days: days,
       bucket,
       series: series.rows,
       totals: totals.rows

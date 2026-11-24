@@ -27,11 +27,11 @@ export async function GET(request) {
     return NextResponse.json({ success: false, error: 'DATABASE_URL not set' }, { status: 503 })
   }
 
-  const ALLOWED_DAYS = [7, 14, 30, 90, 180, 365]
+  const ALLOWED_DAYS = [7, 14, 30, 60, 90, 180, 365]
   const daysParam = new URL(request.url).searchParams.get('days') || '30'
   const isAll = daysParam === 'all'
   const days = isAll ? 100000 : ALLOWED_DAYS.includes(Number(daysParam)) ? Number(daysParam) : 30
-  const bucket = isAll ? 'month' : days <= 31 ? 'day' : days <= 120 ? 'week' : 'month'
+  const bucket = isAll ? 'month' : days <= 62 ? 'day' : days <= 120 ? 'week' : 'month'
   const bucketLit = sql.raw(`'${bucket}'`)
   // Zoekvragen bewaren we per dag tot ~400 dagen; daarbuiten is er niets.
   const qDays = Math.min(days, 400)

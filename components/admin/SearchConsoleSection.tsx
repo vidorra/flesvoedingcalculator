@@ -1,30 +1,12 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
-import { BarChart3, Search, Route, Target, FileSearch, ShieldCheck, RefreshCw, Eye, MousePointerClick, ListOrdered } from 'lucide-react'
-import { Card, DailyChart, KpiCard, TrendBadge } from './stats-ui'
-
-type Row = Record<string, string | number | null>
-type RunRow = {
-  id: number
-  started_at: string
-  finished_at: string | null
-  ok: boolean | null
-  trigger: string | null
-  error: string | null
-}
-type GscData = {
-  configured: boolean
-  serviceAccount: string | null
-  bucket: string
-  lastRun: RunRow | null
-  totals: Row[]
-  daily: Row[]
-  pages: Row[]
-  opportunities: Row[]
-  weak: Row[]
-  index: Row[]
-}
+import { useEffect, useState } from 'react'
+import { BarChart3, Search, Target, RefreshCw, Eye, MousePointerClick, ListOrdered, Table2 } from 'lucide-react'
+import { Card, DailyChart, KpiCard, TrendBadge, SegmentSwitch, ShowAllButton, Warning, LIMIT } from './stats-ui'
+import { useAdminJson } from './useAdminJson'
+import {
+  type Row, type GscData, nl, dateOnly, dateTime, isRunning, bucketWord, bySite, series, gscSummary
+} from './stats-summary'
 
 const HOSTS: Record<string, string> = {
   flesvoedingcalculator: 'flesvoedingcalculator.nl',
@@ -32,20 +14,10 @@ const HOSTS: Record<string, string> = {
 }
 const SITE_LABELS: Record<string, string> = { flesvoedingcalculator: 'Flesvoeding', togwaarde: 'Togwaarde' }
 
-const nl = (n: number) => n.toLocaleString('nl-NL')
 const pct = (clicks: number, impressions: number) =>
   impressions > 0 ? `${((clicks / impressions) * 100).toLocaleString('nl-NL', { maximumFractionDigits: 1 })}%` : '-'
 const pos = (p: number | string | null) =>
   p === null || p === undefined ? '-' : Number(p).toLocaleString('nl-NL', { maximumFractionDigits: 1 })
-const dateTime = (d: string | null) =>
-  d ? new Date(d).toLocaleString('nl-NL', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '-'
-const dateOnly = (d: string | null) =>
-  d ? new Date(d).toLocaleDateString('nl-NL', { day: 'numeric', month: 'short', year: 'numeric' }) : '-'
-
-// Een run die na 30 minuten nog niet klaar is, is gestopt (bv. een deploy).
-const isRunning = (r: RunRow | null) =>
-  Boolean(r && !r.finished_at && Date.now() - new Date(r.started_at).getTime() < 30 * 60_000)
-
 const COVERAGE_NL: Record<string, string> = {
   'Submitted and indexed': 'Ingediend en geïndexeerd',
   'Indexed, not submitted in sitemap': 'Geïndexeerd, niet in sitemap',
@@ -123,75 +95,54 @@ function QueryTable({ rows, showSite, empty }: { rows: Row[]; showSite: boolean;
   )
 }
 
+type Segment = 'pages' | 'kansen' | 'weak' | 'index'
+
 export default function SearchConsoleSection({ site, period, periodLabel }: { site: string; period: string; periodLabel: string }) {
-  const [data, setData] = useState<GscData | null>(null)
-  const [error, setError] = useState<string | null>(null)
+  const { data, error: loadError, reload } = useAdminJson<GscData>(
+    `/api/admin/search-console?days=${period}`, 'Kon Search Console-cijfers niet laden')
+  const [actionError, setActionError] = useState<string | null>(null)
   const [starting, setStarting] = useState(false)
-  const [showAllPages, setShowAllPages] = useState(false)
-
-  const load = useCallback(() => {
-    const token = typeof window !== 'undefined' ? localStorage.getItem('admin_token') : null
-    if (!token) return
-    fetch(`/api/admin/search-console?days=${period}`, { headers: { Authorization: `Bearer ${token}` } })
-      .then((r) => r.json())
-      .then((d) => {
-        if (d && d.success) { setData(d); setError(null) } else setError(d?.error || 'Kon Search Console-cijfers niet laden')
-      })
-      .catch(() => setError('Kon Search Console-cijfers niet laden'))
-  }, [period])
-
-  useEffect(() => { load() }, [load])
+  const [segment, setSegment] = useState<Segment>('pages')
+  const [showAll, setShowAll] = useState(false)
+  const error = actionError || loadError
 
   // Tijdens een import elke 15 seconden verversen tot hij klaar is.
   const running = isRunning(data?.lastRun ?? null)
   useEffect(() => {
     if (!running) return
-    const t = setInterval(load, 15_000)
+    const t = setInterval(reload, 15_000)
     return () => clearInterval(t)
-  }, [running, load])
+  }, [running, reload])
 
   const startImport = () => {
     const token = localStorage.getItem('admin_token')
     if (!token) return
     setStarting(true)
+    setActionError(null)
     fetch('/api/admin/search-console', { method: 'POST', headers: { Authorization: `Bearer ${token}` } })
       .then((r) => r.json())
-      .then((d) => { if (!d.success) setError(d.error || 'Import kon niet starten') })
-      .catch(() => setError('Import kon niet starten'))
-      .finally(() => { setStarting(false); setTimeout(load, 2000) })
+      .then((d) => { if (!d.success) setActionError(d.error || 'Import kon niet starten') })
+      .catch(() => setActionError('Import kon niet starten'))
+      .finally(() => { setStarting(false); setTimeout(reload, 2000) })
   }
 
-  const filt = (rows: Row[]) => (site === 'all' ? rows : rows.filter((r) => r.website === site))
   const showSite = site === 'all'
+  const sum = gscSummary(data, site)
+  const chart = series(bySite(data?.daily, site))
 
-  const totals = data ? filt(data.totals) : []
-  const clicks = totals.reduce((s, t) => s + Number(t.clicks ?? 0), 0)
-  const impressions = totals.reduce((s, t) => s + Number(t.impressions ?? 0), 0)
-  const prevClicks = totals.reduce((s, t) => s + Number(t.prev_clicks ?? 0), 0)
-  const trend = prevClicks > 0 ? Math.round(((clicks - prevClicks) / prevClicks) * 100) : null
-  const posWeighted = impressions > 0
-    ? totals.reduce((s, t) => s + Number(t.position ?? 0) * Number(t.impressions ?? 0), 0) / impressions
-    : null
-  const lastDate = totals.map((t) => String(t.last_date ?? '')).filter(Boolean).sort()[0] ?? null
-  const firstDate = totals.map((t) => String(t.first_date ?? '')).filter(Boolean).sort()[0] ?? null
-
-  const dailyAgg: Record<string, number> = {}
-  if (data) filt(data.daily).forEach((r) => {
-    const d = String(r.day)
-    dailyAgg[d] = (dailyAgg[d] || 0) + Number(r.count)
-  })
-  const dailyEntries = Object.entries(dailyAgg).sort((a, b) => a[0].localeCompare(b[0]))
-  const dailyMax = dailyEntries.reduce((m, [, c]) => Math.max(m, c), 0)
-  const bucketWord = data?.bucket === 'month' ? 'maand' : data?.bucket === 'week' ? 'week' : 'dag'
-
-  const pages = data ? filt(data.pages).sort((a, b) => Number(b.clicks) - Number(a.clicks)) : []
-  const visiblePages = showAllPages ? pages : pages.slice(0, 15)
+  const pages = bySite(data?.pages, site).sort((a, b) => Number(b.clicks) - Number(a.clicks))
   const affTotal = pages.reduce((s, r) => s + Number(r.aff_clicks), 0)
-
-  const index = data ? filt(data.index) : []
+  const opportunities = bySite(data?.opportunities, site)
+  const weak = bySite(data?.weak, site)
+  const index = bySite(data?.index, site)
   const indexed = index.filter((r) => r.verdict === 'PASS')
   const notIndexed = index.filter((r) => r.verdict !== 'PASS')
   const lastChecked = index.reduce<string | null>((m, r) => (!m || String(r.checked_at) > m ? String(r.checked_at) : m), null)
+
+  const pick = (s: Segment) => { setSegment(s); setShowAll(false) }
+  const cut = <T,>(rows: T[]) => (showAll ? rows : rows.slice(0, LIMIT))
+  const segmentRows = segment === 'pages' ? pages.length : segment === 'kansen' ? opportunities.length
+    : segment === 'weak' ? weak.length : notIndexed.length
 
   return (
     <>
@@ -203,8 +154,8 @@ export default function SearchConsoleSection({ site, period, periodLabel }: { si
           </div>
           <p className="text-sm text-gray-500">
             Search Console, elke dag automatisch opgehaald. Google loopt 2 à 3 dagen achter
-            {lastDate ? <>; cijfers t/m {dateOnly(lastDate)}</> : null}
-            {firstDate ? <>, bewaard vanaf {dateOnly(firstDate)}</> : null}.
+            {sum.lastDate ? <>; cijfers t/m {dateOnly(sum.lastDate)}</> : null}
+            {sum.firstDate ? <>, bewaard vanaf {dateOnly(sum.firstDate)}</> : null}.
           </p>
         </div>
         {data?.configured && (
@@ -228,168 +179,183 @@ export default function SearchConsoleSection({ site, period, periodLabel }: { si
         )}
       </div>
 
-      {error && <div className="bg-amber-50 border border-amber-200 text-amber-800 rounded-xl p-4 mb-6 text-sm">{error}</div>}
+      {error && <Warning>{error}</Warning>}
       {data?.lastRun?.ok === false && data.lastRun.error && (
-        <div className="bg-amber-50 border border-amber-200 text-amber-800 rounded-xl p-4 mb-6 text-sm whitespace-pre-line">
-          Laatste import ging niet goed: {data.lastRun.error}
-        </div>
+        <Warning><p className="whitespace-pre-line">Let op: de laatste import ging niet goed: {data.lastRun.error}</p></Warning>
       )}
 
-      {!data && !error && <p className="text-sm text-gray-500 mb-10">Laden...</p>}
+      {!data && !error && <p className="text-sm text-gray-500">Laden...</p>}
 
       {data && !data.configured && (
-        <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6 mb-10 text-sm text-amber-900">
-          <p className="font-semibold mb-2">Nog niet gekoppeld</p>
+        <Warning>
+          <p className="font-semibold mb-2">Let op: nog niet gekoppeld</p>
           <ol className="list-decimal pl-5 space-y-1">
             <li>Google Cloud Console: maak een project, zet de &quot;Google Search Console API&quot; aan.</li>
             <li>Maak een serviceaccount en download een JSON-sleutel.</li>
             <li>Search Console: voeg het e-mailadres van het serviceaccount toe als gebruiker (Beperkt) op flesvoedingcalculator.nl én togwaarde.nl.</li>
             <li>CapRover, app flesvoedingcalculator: zet de JSON in GSC_SERVICE_ACCOUNT_JSON en herstart.</li>
           </ol>
-        </div>
+        </Warning>
       )}
 
       {data?.configured && (
         <>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-            <KpiCard icon={<MousePointerClick className="w-5 h-5" />} value={nl(clicks)} title={`Google-kliks, ${periodLabel.toLowerCase()}`} sub={<TrendBadge pct={trend} />} />
-            <KpiCard icon={<Eye className="w-5 h-5" />} value={nl(impressions)} title="Vertoningen" />
-            <KpiCard icon={<Target className="w-5 h-5" />} value={pct(clicks, impressions)} title="CTR" />
-            <KpiCard icon={<ListOrdered className="w-5 h-5" />} value={pos(posWeighted)} title="Gemiddelde positie" />
+            <KpiCard icon={<MousePointerClick className="w-5 h-5" />} value={nl(sum.clicks)} title={`Google-kliks, ${periodLabel.toLowerCase()}`} sub={<TrendBadge pct={sum.trend} />} />
+            <KpiCard icon={<Eye className="w-5 h-5" />} value={nl(sum.impressions)} title="Vertoningen" />
+            <KpiCard icon={<Target className="w-5 h-5" />} value={pct(sum.clicks, sum.impressions)} title="CTR" />
+            <KpiCard icon={<ListOrdered className="w-5 h-5" />} value={pos(sum.position)} title="Gemiddelde positie" />
           </div>
 
-          <div className="space-y-6 mb-10">
-            <Card title={`Google-kliks per ${bucketWord}`} icon={<BarChart3 className="w-5 h-5" />}>
-              <DailyChart entries={dailyEntries} max={dailyMax} />
+          <div className="space-y-6">
+            <Card title={`Google-kliks per ${bucketWord(data.bucket)}`} icon={<BarChart3 className="w-5 h-5" />}>
+              <DailyChart entries={chart.entries} max={chart.max} />
             </Card>
 
-            <Card title="Route per pagina: Google-klik naar affiliate-klik" icon={<Route className="w-5 h-5" />}>
-              <p className="text-xs text-gray-500 mb-3">
-                Affiliate-kliks per pagina tellen vanaf 21-11-2026; daarvoor werd de pagina niet opgeslagen
-                ({nl(affTotal)} kliks met pagina in deze periode).
-              </p>
-              {pages.length === 0 ? (
-                <p className="text-sm text-gray-500">Nog geen data.</p>
-              ) : (
-                <div className="overflow-x-auto -mx-2">
-                  <table className="w-full text-sm">
-                    <thead>
-                      <tr className="border-b border-gray-100">
-                        <th className={th}>Pagina</th>
-                        <th className={thR}>Vertoningen</th>
-                        <th className={thR}>Google-kliks</th>
-                        <th className={thR}>CTR</th>
-                        <th className={thR}>Positie</th>
-                        <th className={thR}>Affiliate-kliks</th>
-                        <th className={thR} title="Affiliate-kliks per 100 Google-kliks">per 100</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {visiblePages.map((r) => (
-                        <tr key={`${r.website}-${r.page}`} className="border-b border-gray-50">
-                          <td className={`${td} text-xs`}>
-                            <span className="inline-flex items-center gap-1.5 flex-wrap">
-                              <PageLink website={String(r.website)} page={String(r.page)} />
-                              {showSite && <SiteTag website={String(r.website)} />}
-                            </span>
-                          </td>
-                          <td className={tdR}>{nl(Number(r.impressions))}</td>
-                          <td className={tdR}>{nl(Number(r.clicks))}</td>
-                          <td className={tdR}>{pct(Number(r.clicks), Number(r.impressions))}</td>
-                          <td className={tdR}>{pos(r.position)}</td>
-                          <td className={tdR}>{nl(Number(r.aff_clicks))}</td>
-                          <td className={tdR}>
-                            {Number(r.clicks) > 0 ? Math.round((Number(r.aff_clicks) / Number(r.clicks)) * 100) : '-'}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              )}
-              {pages.length > 15 && (
-                <button onClick={() => setShowAllPages((v) => !v)} className="mt-3 text-sm text-primary hover:underline">
-                  {showAllPages ? 'Minder tonen' : `Alle ${pages.length} pagina's tonen`}
-                </button>
-              )}
-            </Card>
+            <Card title="Pagina's en zoekvragen" icon={<Table2 className="w-5 h-5" />}>
+              <SegmentSwitch<Segment>
+                value={segment}
+                onChange={pick}
+                options={[
+                  { value: 'pages', label: "Pagina's", count: pages.length },
+                  { value: 'kansen', label: 'Kansen', count: opportunities.length },
+                  { value: 'weak', label: 'Geen goede pagina', count: weak.length },
+                  { value: 'index', label: 'Indexering', count: notIndexed.length }
+                ]}
+              />
 
-            <Card title="Kansen: zoekvragen op positie 4 tot 15" icon={<Target className="w-5 h-5" />}>
-              <p className="text-xs text-gray-500 mb-3">
-                Net onder of op de eerste pagina. Een betere titel of een alinea die de vraag letterlijk beantwoordt
-                levert hier het meest op. Gesorteerd op vertoningen, minimaal 10.
-              </p>
-              <QueryTable rows={filt(data.opportunities)} showSite={showSite} empty="Geen zoekvragen in deze band met genoeg vertoningen." />
-            </Card>
-
-            <Card title="Veel vertoningen, geen goede pagina (positie > 15)" icon={<FileSearch className="w-5 h-5" />}>
-              <p className="text-xs text-gray-500 mb-3">
-                Google koppelt de zoekvraag aan de site, maar geen pagina beantwoordt hem goed. Kandidaten voor een eigen artikel.
-              </p>
-              <QueryTable rows={filt(data.weak)} showSite={showSite} empty="Geen zoekvragen in deze band met genoeg vertoningen." />
-            </Card>
-
-            <Card title="Indexering (alle URL's uit de sitemap)" icon={<ShieldCheck className="w-5 h-5" />}>
-              {index.length === 0 ? (
-                <p className="text-sm text-gray-500">Nog niet gecontroleerd. Dit gebeurt bij de eerstvolgende import.</p>
-              ) : (
+              {segment === 'pages' && (
                 <>
-                  <div className="flex flex-wrap gap-x-6 gap-y-1 text-sm mb-4">
-                    <span className="text-gray-700">Geïndexeerd: <strong>{nl(indexed.length)}</strong></span>
-                    <span className="text-gray-700">Niet geïndexeerd: <strong>{nl(notIndexed.length)}</strong></span>
-                    <span className="text-gray-400">Gecontroleerd {dateTime(lastChecked)}</span>
-                  </div>
-                  {notIndexed.length === 0 ? (
-                    <p className="text-sm text-gray-500">Alle pagina&apos;s uit de sitemap staan in Google.</p>
+                  <p className="text-xs text-gray-500 mb-3">
+                    Route per pagina: Google-klik naar affiliate-klik. Affiliate-kliks per pagina tellen vanaf 21-11-2026
+                    ({nl(affTotal)} kliks met pagina in deze periode).
+                  </p>
+                  {pages.length === 0 ? (
+                    <p className="text-sm text-gray-500">Nog geen data.</p>
                   ) : (
                     <div className="overflow-x-auto -mx-2">
                       <table className="w-full text-sm">
                         <thead>
                           <tr className="border-b border-gray-100">
-                            <th className={th}>URL</th>
-                            <th className={th}>Status bij Google</th>
-                            <th className={th}>Laatst gecrawld</th>
+                            <th className={th}>Pagina</th>
+                            <th className={thR}>Vertoningen</th>
+                            <th className={thR}>Google-kliks</th>
+                            <th className={thR}>CTR</th>
+                            <th className={thR}>Positie</th>
+                            <th className={thR}>Affiliate-kliks</th>
+                            <th className={thR} title="Affiliate-kliks per 100 Google-kliks">per 100</th>
                           </tr>
                         </thead>
                         <tbody>
-                          {notIndexed.map((r) => {
-                            const url = String(r.url)
-                            const canonical = r.google_canonical ? String(r.google_canonical) : null
-                            const lost = r.prev_verdict === 'PASS' && r.verdict_changed_at
-                            return (
-                              <tr key={`${r.website}-${url}`} className="border-b border-gray-50">
-                                <td className={`${td} text-xs`}>
-                                  <span className="inline-flex items-center gap-1.5 flex-wrap">
-                                    <a href={url} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-primary hover:underline break-all">
-                                      {url.replace(/^https?:\/\/[^/]+/, '')}
-                                    </a>
-                                    {showSite && <SiteTag website={String(r.website)} />}
-                                    {lost && (
-                                      <span className="text-[10px] bg-amber-50 text-amber-800 px-1.5 py-0.5 rounded-full">
-                                        uit index sinds {dateOnly(String(r.verdict_changed_at))}
-                                      </span>
-                                    )}
-                                  </span>
-                                </td>
-                                <td className={`${td} text-xs text-gray-600`}>
-                                  {COVERAGE_NL[String(r.coverage_state)] ?? (r.coverage_state ? String(r.coverage_state) : '-')}
-                                  {canonical && canonical !== url && (
-                                    <div className="text-gray-400 break-all">Google-canonical: {canonical}</div>
-                                  )}
-                                </td>
-                                <td className={`${td} text-xs text-gray-500 whitespace-nowrap`}>{dateOnly(r.last_crawl ? String(r.last_crawl) : null)}</td>
-                              </tr>
-                            )
-                          })}
+                          {cut(pages).map((r) => (
+                            <tr key={`${r.website}-${r.page}`} className="border-b border-gray-50">
+                              <td className={`${td} text-xs`}>
+                                <span className="inline-flex items-center gap-1.5 flex-wrap">
+                                  <PageLink website={String(r.website)} page={String(r.page)} />
+                                  {showSite && <SiteTag website={String(r.website)} />}
+                                </span>
+                              </td>
+                              <td className={tdR}>{nl(Number(r.impressions))}</td>
+                              <td className={tdR}>{nl(Number(r.clicks))}</td>
+                              <td className={tdR}>{pct(Number(r.clicks), Number(r.impressions))}</td>
+                              <td className={tdR}>{pos(r.position)}</td>
+                              <td className={tdR}>{nl(Number(r.aff_clicks))}</td>
+                              <td className={tdR}>
+                                {Number(r.clicks) > 0 ? Math.round((Number(r.aff_clicks) / Number(r.clicks)) * 100) : '-'}
+                              </td>
+                            </tr>
+                          ))}
                         </tbody>
                       </table>
                     </div>
                   )}
-                  <p className="text-xs text-gray-400 mt-3">
-                    Valt een pagina die eerder geïndexeerd was eruit, dan gaat er een mail naar info@vidorra.nl.
-                  </p>
                 </>
               )}
+
+              {segment === 'kansen' && (
+                <>
+                  <p className="text-xs text-gray-500 mb-3">
+                    Zoekvragen op positie 4 tot 15: net onder of op de eerste pagina. Een betere titel of een alinea die de
+                    vraag letterlijk beantwoordt levert hier het meest op. Gesorteerd op vertoningen, minimaal 10.
+                  </p>
+                  <QueryTable rows={cut(opportunities)} showSite={showSite} empty="Geen zoekvragen in deze band met genoeg vertoningen." />
+                </>
+              )}
+
+              {segment === 'weak' && (
+                <>
+                  <p className="text-xs text-gray-500 mb-3">
+                    Veel vertoningen op positie 15 of lager: Google koppelt de zoekvraag aan de site, maar geen pagina
+                    beantwoordt hem goed. Kandidaten voor een eigen artikel.
+                  </p>
+                  <QueryTable rows={cut(weak)} showSite={showSite} empty="Geen zoekvragen in deze band met genoeg vertoningen." />
+                </>
+              )}
+
+              {segment === 'index' && (
+                index.length === 0 ? (
+                  <p className="text-sm text-gray-500">Nog niet gecontroleerd. Dit gebeurt bij de eerstvolgende import.</p>
+                ) : (
+                  <>
+                    <div className="flex flex-wrap gap-x-6 gap-y-1 text-sm mb-4">
+                      <span className="text-gray-700">Geïndexeerd: <strong>{nl(indexed.length)}</strong></span>
+                      <span className="text-gray-700">Niet geïndexeerd: <strong>{nl(notIndexed.length)}</strong></span>
+                      <span className="text-gray-400">Alle URL&apos;s uit de sitemap, gecontroleerd {dateTime(lastChecked)}</span>
+                    </div>
+                    {notIndexed.length === 0 ? (
+                      <p className="text-sm text-gray-500">Alle pagina&apos;s uit de sitemap staan in Google.</p>
+                    ) : (
+                      <div className="overflow-x-auto -mx-2">
+                        <table className="w-full text-sm">
+                          <thead>
+                            <tr className="border-b border-gray-100">
+                              <th className={th}>URL</th>
+                              <th className={th}>Status bij Google</th>
+                              <th className={th}>Laatst gecrawld</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {cut(notIndexed).map((r) => {
+                              const url = String(r.url)
+                              const canonical = r.google_canonical ? String(r.google_canonical) : null
+                              const lost = r.prev_verdict === 'PASS' && r.verdict_changed_at
+                              return (
+                                <tr key={`${r.website}-${url}`} className="border-b border-gray-50">
+                                  <td className={`${td} text-xs`}>
+                                    <span className="inline-flex items-center gap-1.5 flex-wrap">
+                                      <a href={url} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-primary hover:underline break-all">
+                                        {url.replace(/^https?:\/\/[^/]+/, '')}
+                                      </a>
+                                      {showSite && <SiteTag website={String(r.website)} />}
+                                      {lost && (
+                                        <span className="text-[10px] bg-amber-50 text-amber-800 px-1.5 py-0.5 rounded-full">
+                                          uit index sinds {dateOnly(String(r.verdict_changed_at))}
+                                        </span>
+                                      )}
+                                    </span>
+                                  </td>
+                                  <td className={`${td} text-xs text-gray-600`}>
+                                    {COVERAGE_NL[String(r.coverage_state)] ?? (r.coverage_state ? String(r.coverage_state) : '-')}
+                                    {canonical && canonical !== url && (
+                                      <div className="text-gray-400 break-all">Google-canonical: {canonical}</div>
+                                    )}
+                                  </td>
+                                  <td className={`${td} text-xs text-gray-500 whitespace-nowrap`}>{dateOnly(r.last_crawl ? String(r.last_crawl) : null)}</td>
+                                </tr>
+                              )
+                            })}
+                          </tbody>
+                        </table>
+                      </div>
+                    )}
+                    <p className="text-xs text-gray-400 mt-3">
+                      Valt een pagina die eerder geïndexeerd was eruit, dan gaat er een mail naar info@vidorra.nl.
+                    </p>
+                  </>
+                )
+              )}
+
+              <ShowAllButton total={segmentRows} open={showAll} onToggle={() => setShowAll((v) => !v)} />
             </Card>
           </div>
         </>
