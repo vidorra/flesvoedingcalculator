@@ -1,5 +1,9 @@
 import { NextResponse } from 'next/server'
-import { headers } from 'next/headers'
+import { getClientIp } from '../../../lib/client-ip.js'
+import { readJsonCapped } from '../../../lib/read-body.js'
+
+const MAX_BODY_BYTES = 32 * 1024
+const RECAPTCHA_ACTION = 'contact_form'
 
 // Rate limiting store (in production, use Redis)
 const rateLimitStore = new Map()
@@ -29,7 +33,7 @@ async function verifyRecaptcha(token) {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: `secret=${secretKey}&response=${token}`,
+      body: new URLSearchParams({ secret: secretKey, response: token }),
     })
 
     const data = await response.json()
@@ -69,30 +73,36 @@ function checkRateLimit(ip) {
 }
 
 // Validate and sanitize input
+// Alleen strings; regeleinden en stuurtekens eruit voor velden die in
+// mailheaders kunnen belanden (naam, onderwerp).
+const str = (v) => (typeof v === 'string' ? v.trim() : '')
+const oneLine = (v) => str(v).replace(/[\u0000-\u001f\u007f]+/g, ' ')
+
 function validateInput(data) {
   const errors = []
-  
+
   // Sanitize and validate name
-  const name = data.name?.trim()
+  const name = oneLine(data.name)
   if (!name || name.length < 2 || name.length > 100) {
     errors.push('Name must be between 2 and 100 characters')
   }
   
   // Validate email
-  const email = data.email?.trim()
+  const email = str(data.email)
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   if (!email || !emailRegex.test(email) || email.length > 254) {
     errors.push('Valid email address is required')
   }
   
   // Validate message
-  const message = data.message?.trim()
+  const message = str(data.message)
   if (!message || message.length < 10 || message.length > 5000) {
     errors.push('Message must be between 10 and 5000 characters')
   }
   
   // Validate type
-  const type = data.type?.trim()
+  const type = str(data.type)
+  const subject = oneLine(data.subject).slice(0, 200)
   if (!['feedback', 'contact'].includes(type)) {
     errors.push('Invalid message type')
   }
@@ -105,7 +115,7 @@ function validateInput(data) {
     /[A-Z]{20,}/, // Excessive caps
   ]
   
-  const fullText = `${name} ${data.subject || ''} ${message}`.toLowerCase()
+  const fullText = `${name} ${subject} ${message}`.toLowerCase()
   const suspiciousMatches = suspiciousPatterns.filter(pattern => pattern.test(fullText))
   
   if (suspiciousMatches.length > 0) {
@@ -116,10 +126,10 @@ function validateInput(data) {
     isValid: errors.length === 0,
     errors,
     sanitized: {
-      name: name?.replace(/[<>]/g, ''), // Basic XSS prevention
-      email: email?.toLowerCase(),
-      subject: data.subject?.trim()?.replace(/[<>]/g, '') || '',
-      message: message?.replace(/[<>]/g, ''),
+      name: name.replace(/[<>]/g, ''), // Basic XSS prevention
+      email: email.toLowerCase(),
+      subject: subject.replace(/[<>]/g, ''),
+      message: message.replace(/[<>]/g, ''),
       type
     }
   }
@@ -133,16 +143,7 @@ async function sendEmail(formData, clientInfo) {
     SERVICE_ID: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
     TEMPLATE_ID: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
   }
-  
-  // Log config for debugging with last 3 characters
-  console.log('=== SERVER ENVIRONMENT DEBUG ===')
-  console.log('EmailJS Public Key:', emailjsConfig.PUBLIC_KEY ? `...${emailjsConfig.PUBLIC_KEY.slice(-3)}` : 'NOT SET')
-  console.log('EmailJS Private Key:', emailjsConfig.PRIVATE_KEY ? `...${emailjsConfig.PRIVATE_KEY.slice(-3)}` : 'NOT SET')
-  console.log('EmailJS Service ID:', emailjsConfig.SERVICE_ID ? `...${emailjsConfig.SERVICE_ID.slice(-3)}` : 'NOT SET')
-  console.log('EmailJS Template ID:', emailjsConfig.TEMPLATE_ID ? `...${emailjsConfig.TEMPLATE_ID.slice(-3)}` : 'NOT SET')
-  console.log('reCAPTCHA Secret Key:', process.env.RECAPTCHA_SECRET_KEY ? `...${process.env.RECAPTCHA_SECRET_KEY.slice(-3)}` : 'NOT SET')
-  console.log('================================')
-  
+
   // Check if EmailJS is configured
   if (!emailjsConfig.PRIVATE_KEY || !emailjsConfig.SERVICE_ID || !emailjsConfig.TEMPLATE_ID) {
     const missingConfig = []
@@ -177,13 +178,6 @@ async function sendEmail(formData, clientInfo) {
   
   try {
     // EmailJS server-side sending via REST API
-    console.log('Attempting to send email with params:', {
-      serviceId: emailjsConfig.SERVICE_ID,
-      templateId: emailjsConfig.TEMPLATE_ID,
-      fromName: templateParams.from_name,
-      fromEmail: templateParams.from_email
-    })
-    
     const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
       method: 'POST',
       headers: {
@@ -204,26 +198,19 @@ async function sendEmail(formData, clientInfo) {
     }
     
     const result = await response.text()
-    console.log('EmailJS response:', result)
     return { success: true, response: result }
   } catch (error) {
-    console.error('EmailJS send failed:', {
-      error: error.message,
-      stack: error.stack
-    })
+    console.error('EmailJS send failed:', error.message)
     throw error
   }
 }
 
 export async function POST(request) {
   try {
-    // Get client IP and headers (headers() is async in Next 15)
-    const headersList = await headers()
-    const forwarded = headersList.get('x-forwarded-for')
-    const realIp = headersList.get('x-real-ip')
-    const ip = forwarded?.split(',')[0] || realIp || 'unknown'
-    const userAgent = headersList.get('user-agent') || 'unknown'
-    
+    // IP uit het laatste XFF-veld (zie lib/client-ip.js), niet het eerste
+    const ip = getClientIp(request)
+    const userAgent = (request.headers.get('user-agent') || 'unknown').slice(0, 300)
+
     // Check rate limiting
     if (!checkRateLimit(ip)) {
       return NextResponse.json(
@@ -231,32 +218,46 @@ export async function POST(request) {
         { status: 429 }
       )
     }
-    
-    // Parse request body
-    const body = await request.json()
-    
-    // Verify reCAPTCHA if token provided
-    if (body.recaptchaToken) {
-      const recaptchaResult = await verifyRecaptcha(body.recaptchaToken)
-      
-      if (!recaptchaResult.success) {
-        console.log('reCAPTCHA verification failed:', recaptchaResult)
-        return NextResponse.json(
-          { error: 'Beveiligingsvalidatie mislukt' },
-          { status: 400 }
-        )
-      }
-      
-      // Check score (v3 only)
-      if (recaptchaResult.score !== undefined && recaptchaResult.score < 0.5) {
-        console.log('reCAPTCHA score too low:', recaptchaResult.score)
-        return NextResponse.json(
-          { error: 'Beveiligingsvalidatie mislukt' },
-          { status: 400 }
-        )
-      }
+
+    // Body met harde grens, ook zonder Content-Length
+    const { tooLarge, data: body } = await readJsonCapped(request, MAX_BODY_BYTES)
+    if (tooLarge) {
+      return NextResponse.json({ error: 'Bericht te groot' }, { status: 413 })
     }
-    
+    if (!body || typeof body !== 'object') {
+      return NextResponse.json({ error: 'Ongeldig verzoek' }, { status: 400 })
+    }
+
+    // reCAPTCHA is verplicht. Zonder geheime sleutel faalt de route gesloten.
+    if (!process.env.RECAPTCHA_SECRET_KEY) {
+      console.error('Contact form disabled: RECAPTCHA_SECRET_KEY not configured')
+      return NextResponse.json(
+        { error: 'Het formulier is tijdelijk niet beschikbaar' },
+        { status: 503 }
+      )
+    }
+    const recaptchaToken = body.recaptchaToken
+    if (typeof recaptchaToken !== 'string' || !recaptchaToken || recaptchaToken.length > 4096) {
+      return NextResponse.json(
+        { error: 'Beveiligingsvalidatie mislukt' },
+        { status: 400 }
+      )
+    }
+    const recaptchaResult = await verifyRecaptcha(recaptchaToken)
+    const actionOk = !recaptchaResult.action || recaptchaResult.action === RECAPTCHA_ACTION
+    if (!recaptchaResult.success || !actionOk || recaptchaResult.score < 0.5) {
+      console.warn('reCAPTCHA rejected:', {
+        success: recaptchaResult.success,
+        score: recaptchaResult.score,
+        action: recaptchaResult.action,
+        errors: recaptchaResult['error-codes'],
+      })
+      return NextResponse.json(
+        { error: 'Beveiligingsvalidatie mislukt' },
+        { status: 400 }
+      )
+    }
+
     // Validate input
     const validation = validateInput(body)
     if (!validation.isValid) {
@@ -266,50 +267,26 @@ export async function POST(request) {
       )
     }
     
-    // Try to send email, but don't fail if it doesn't work
+    // Versturen. Mislukt dat, dan een eerlijke fout en geen persoonsgegevens
+    // in de log (naam, e-mail en IP bleven daar eerder staan).
     try {
-      const emailResult = await sendEmail(validation.sanitized, { ip, userAgent })
-      
-      if (emailResult.success) {
-        // Log successful submission (without sensitive data)
-        console.log(`Contact form submitted successfully from ${ip} (${validation.sanitized.type})`)
-        
-        return NextResponse.json({
-          success: true,
-          message: 'Bericht succesvol verzonden'
-        })
-      }
-    } catch (emailError) {
-      // Log the email error but still return success to user
-      console.error('Email sending failed, but form submission recorded:', emailError.message)
-      
-      // For now, just log the form data and return success
-      console.log('Form submission (email failed):', {
-        type: validation.sanitized.type,
-        name: validation.sanitized.name,
-        email: validation.sanitized.email,
-        subject: validation.sanitized.subject,
-        messageLength: validation.sanitized.message.length,
-        timestamp: new Date().toISOString(),
-        ip: ip,
-        userAgent: userAgent
-      })
-      
+      await sendEmail(validation.sanitized, { ip, userAgent })
+      console.log(`Contact form submitted (${validation.sanitized.type})`)
       return NextResponse.json({
         success: true,
-        message: 'Bericht succesvol ontvangen'
+        message: 'Bericht succesvol verzonden'
       })
+    } catch (emailError) {
+      console.error('Contact form: email sending failed:', emailError.message)
+      return NextResponse.json(
+        { error: 'Versturen is niet gelukt. Probeer het later opnieuw.' },
+        { status: 502 }
+      )
     }
     
-    // Fallback - should not reach here
-    return NextResponse.json({
-      success: true,
-      message: 'Bericht succesvol ontvangen'
-    })
-    
   } catch (error) {
-    console.error('Contact form error:', error)
-    
+    console.error('Contact form error:', error?.message || error)
+
     return NextResponse.json(
       { error: 'Er ging iets mis. Probeer het later opnieuw.' },
       { status: 500 }

@@ -181,18 +181,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
       const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
       const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
-      
-      console.log('=== CLIENT EMAILJS DEBUG v2 ===')
-      console.log('All env vars:', Object.keys(process.env).filter(key => key.includes('EMAIL')))
-      console.log('Public Key:', publicKey ? `...${publicKey.slice(-3)}` : 'NOT SET')
-      console.log('Service ID:', serviceId ? `...${serviceId.slice(-3)}` : 'NOT SET')
-      console.log('Template ID:', templateId ? `...${templateId.slice(-3)}` : 'NOT SET')
-      console.log('Raw values:')
-      console.log('- NEXT_PUBLIC_EMAILJS_PUBLIC_KEY:', process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ? 'EXISTS' : 'MISSING')
-      console.log('- NEXT_PUBLIC_EMAILJS_SERVICE_ID:', process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ? 'EXISTS' : 'MISSING')
-      console.log('- NEXT_PUBLIC_EMAILJS_TEMPLATE_ID:', process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ? 'EXISTS' : 'MISSING')
-      console.log('===============================')
-      
+
       if (!publicKey || !serviceId || !templateId) {
         throw new Error(`EmailJS not configured. Missing: ${[
           !publicKey && 'PUBLIC_KEY',
@@ -222,15 +211,12 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
         })
       }
       
-      console.log('Sending email via client-side EmailJS with environment variables...')
-      
       await emailjs.send(
         serviceId,
         templateId,
         templateParams
       )
-      
-      console.log('Email sent successfully!')
+
       setSubmitStatus('success')
       
       // Reset form after successful submission
