@@ -96,15 +96,24 @@ jobs:
 
           echo "Asking $host to deploy ${IMAGE}:${GIT_SHA} ..."
           definition=$(jq -cn --arg image "${IMAGE}:${GIT_SHA}" '{schemaVersion: 2, imageName: $image}')
-          resp=$(curl -sS -X POST "$base?detached=1" \
-            -H "x-namespace: captain" -H "x-captain-app-token: $APP_TOKEN" \
-            -H "Content-Type: application/json" \
-            --data "$(jq -n --arg def "$definition" --arg sha "$GIT_SHA" \
-                      '{captainDefinitionContent: $def, gitHash: $sha}')")
-          # 100 = OK, 101 = "Deploy is started" (antwoord op detached).
-          status=$(echo "$resp" | jq -r '.status // empty')
+          payload=$(jq -n --arg def "$definition" --arg sha "$GIT_SHA" \
+                      '{captainDefinitionContent: $def, gitHash: $sha}')
+          # CapRover geeft soms een HTML-foutpagina (bv. 502) i.p.v. JSON;
+          # dan opnieuw proberen en het ruwe antwoord laten zien.
+          status=""
+          for attempt in 1 2 3; do
+            resp=$(curl -sS -X POST "$base?detached=1" \
+              -H "x-namespace: captain" -H "x-captain-app-token: $APP_TOKEN" \
+              -H "Content-Type: application/json" \
+              --data "$payload" || true)
+            # 100 = OK, 101 = "Deploy is started" (antwoord op detached).
+            status=$(echo "$resp" | jq -r 'if type == "object" then (.status // empty) else empty end' 2>/dev/null || true)
+            if [ "$status" = "100" ] || [ "$status" = "101" ]; then break; fi
+            echo "Poging $attempt mislukt, antwoord: $(echo "$resp" | head -c 300)"
+            if [ "$attempt" -lt 3 ]; then sleep 20; fi
+          done
           if [ "$status" != "100" ] && [ "$status" != "101" ]; then
-            echo "::error::Deploy rejected: $(echo "$resp" | jq -r '.description // .')"
+            echo "::error::Deploy rejected: $(echo "$resp" | jq -r '.description // .' 2>/dev/null || echo "$resp" | head -c 300)"
             exit 1
           fi
           echo "Accepted, CapRover is pulling the image."
