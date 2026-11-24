@@ -156,7 +156,12 @@ export default function AffiliateSalesSection({ site, period, periodLabel }: { s
               {running
                 ? 'Import loopt...'
                 : lastRun
-                  ? <>Laatste import {dateTime(lastRun.finished_at || lastRun.started_at)}{lastRun.ok === false ? ' (mislukt)' : ''}</>
+                  ? <>
+                      Laatste import {dateTime(lastRun.finished_at || lastRun.started_at)}{lastRun.ok === false ? ' (mislukt)' : ''}
+                      {lastRun.ok && bolDetails?.to && (
+                        <> · {dateOnly(bolDetails.from ?? null)} t/m {dateOnly(bolDetails.to)}: {nl(bolDetails.orders ?? 0)} bestelregels, {nl(bolDetails.promotionRows ?? 0)} promotieregels</>
+                      )}
+                    </>
                   : 'Nog niet opgehaald'}
             </span>
             <button
