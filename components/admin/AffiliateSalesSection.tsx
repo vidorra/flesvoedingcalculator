@@ -12,7 +12,7 @@ type RunRow = {
   finished_at: string | null
   ok: boolean | null
   trigger: string | null
-  details: { bol?: { from?: string; to?: string; orders?: number; promotionRows?: number } } | null
+  details: { bol?: { from?: string; to?: string; orders?: number; promotionRows?: number; skipped?: string[] } } | null
   error: string | null
 }
 type SubRow = { sub_id: string | null; clicks: number; items: number; commission: number; parsed: Parsed }
@@ -262,6 +262,12 @@ export default function AffiliateSalesSection({ site, period, periodLabel }: { s
             <p className="break-words">{lastRun.error}</p>
           </div>
         </div>
+      )}
+
+      {lastRun?.ok && bolDetails?.skipped && bolDetails.skipped.length > 0 && (
+        <p className="text-xs text-gray-500 mb-4">
+          Bol gaf geen toegang tot {bolDetails.skipped.join(', ')}; die periode is overgeslagen.
+        </p>
       )}
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
