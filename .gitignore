@@ -57,3 +57,6 @@ data/admin/
 
 # Lokale docs (niet committen)
 adsense-herintroductie.md
+
+# Google-serviceaccountsleutel (lokaal, nooit committen)
+sleutel.json
