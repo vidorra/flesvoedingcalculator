@@ -6,6 +6,7 @@ import {
   bolConfigured, ensureAffiliateTablesOnce, importAmazonCsv, runAffiliateImport
 } from '../../../../lib/affiliate-sales.js'
 import { parseSubId } from '../../../../lib/affiliate-subid.js'
+import { matchAmazonSales } from '../../../../lib/amazon-match.js'
 
 export const dynamic = 'force-dynamic'
 
@@ -39,7 +40,7 @@ export async function GET(request) {
     await ensureAffiliateTablesOnce()
 
     const [prevTotals, lastRun, totals, daily, products, snippetClicks, subOrders, subPromo, recent,
-      amazonDaily, amazonProducts, amazonTracking] = await Promise.all([
+      amazonDaily, amazonProducts, amazonTracking, amazonUnknown, amazonSnippets, amazonClicks] = await Promise.all([
       // Vorige periode van gelijke lengte, voor de trend in het overzicht
       db.execute(sql`
         SELECT coalesce(website, 'onbekend') AS website, count(*)::int AS items,
@@ -108,13 +109,30 @@ export async function GET(request) {
           coalesce(sum(commission), 0)::float AS commission
         FROM affiliate_report_rows
         WHERE report = 'amazon_product' AND period_start > current_date - ${days}::int
+          AND NOT (coalesce(title, '-') = '-' AND key !~* '^[A-Z0-9]{10}$')
         GROUP BY 1 ORDER BY orders DESC, clicks DESC LIMIT 50`),
       db.execute(sql`
         SELECT key, period_start::text AS period_start, period_end::text AS period_end,
           clicks, orders, revenue::float AS revenue, commission::float AS commission
         FROM affiliate_report_rows
         WHERE report = 'amazon_tracking' AND period_end > current_date - ${days}::int
-        ORDER BY period_end DESC, orders DESC LIMIT 50`)
+        ORDER BY period_end DESC, orders DESC LIMIT 50`),
+      // Verkopen die Amazon niet bij naam noemt ("Other", titel "-"): die
+      // schatten we hieronder op prijs en op onze eigen kliks
+      db.execute(sql`
+        SELECT period_start::text AS day, key, orders, direct_orders AS direct, indirect_orders AS indirect,
+          revenue::float AS revenue, commission::float AS commission
+        FROM affiliate_report_rows
+        WHERE report = 'amazon_product' AND period_start > current_date - ${days}::int AND orders > 0
+          AND coalesce(title, '-') = '-' AND key !~* '^[A-Z0-9]{10}$'
+        ORDER BY period_start DESC LIMIT 50`),
+      db.execute(sql`SELECT id, name, website, price, original_price FROM snippets WHERE type = 'amazon'`),
+      db.execute(sql`
+        SELECT c.snippet_id, (c.created_at AT TIME ZONE 'Europe/Amsterdam')::date::text AS day,
+          count(*)::int AS clicks
+        FROM click_events c JOIN snippets s ON s.id::text = c.snippet_id
+        WHERE s.type = 'amazon' AND c.created_at > now() - make_interval(days => ${days + 2}::int)
+        GROUP BY 1, 2`)
     ])
 
     // Per subId: bestellingen uit het order-report, kliks uit het promotion-report
@@ -149,7 +167,8 @@ export async function GET(request) {
       amazon: {
         daily: amazonDaily.rows,
         products: amazonProducts.rows,
-        tracking: amazonTracking.rows
+        tracking: amazonTracking.rows,
+        guesses: matchAmazonSales(amazonUnknown.rows, amazonSnippets.rows, amazonClicks.rows)
       }
     })
   } catch (e) {

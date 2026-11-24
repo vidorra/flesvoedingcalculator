@@ -49,6 +49,21 @@ export type GscData = {
 export type Parsed = { website: string | null; widget: string; label: string; page: string | null; arm: string | null } | null
 export type SubRow = { sub_id: string | null; clicks: number; items: number; commission: number; parsed: Parsed }
 export type RecentRow = Row & { parsed: Parsed }
+// Amazon-verkoop zonder productnaam, geschat op prijs en onze kliks (lib/amazon-match.js)
+export type AmazonGuess = {
+  day: string
+  orders: number
+  direct: number | null
+  indirect: number | null
+  revenue: number | null
+  unitPrice: number | null
+  commission: number
+  verdict: 'waarschijnlijk' | 'mogelijk' | 'onze-link' | 'ander-product' | 'onbekend'
+  match: { snippet_id: string; name: string; website: string; price: number; clicks: number; alternatives: string[] } | null
+  website: string
+  clicked: { id: string; name: string; clicks: number }[]
+  unpriced: number
+}
 export type SalesData = {
   configured: boolean
   bucket: string
@@ -60,7 +75,28 @@ export type SalesData = {
   snippetClicks: Record<string, number>
   subIds: SubRow[]
   recent: RecentRow[]
-  amazon: { daily: Row[]; products: Row[]; tracking: Row[] }
+  amazon: { daily: Row[]; products: Row[]; tracking: Row[]; guesses?: AmazonGuess[] }
+}
+
+// Amazon kent de site niet; een geschatte verkoop hoort bij de site van het
+// gevonden product, zonder match tonen we hem overal
+export const guessesForSite = (data: SalesData | null, site: string) =>
+  (data?.amazon.guesses ?? []).filter((g) => site === 'all' || g.website === site || g.website === 'onbekend')
+
+export function guessText(g: AmazonGuess) {
+  const price = g.unitPrice ? eur(g.unitPrice) : 'onbekend bedrag'
+  switch (g.verdict) {
+    case 'waarschijnlijk':
+      return `Waarschijnlijk ${g.match!.name}: prijs klopt (bij ons ${eur(g.match!.price)}) en ${g.match!.clicks === 1 ? '1 klik' : `${g.match!.clicks} kliks`} rond die dag`
+    case 'mogelijk':
+      return `Mogelijk ${g.match!.name}: prijs klopt (bij ons ${eur(g.match!.price)}), maar geen klik van ons rond die dag`
+    case 'onze-link':
+      return `Gekocht via onze link, maar geen van onze Amazon-producten kost rond ${price}`
+    case 'ander-product':
+      return 'Affiliate-klik, ander product gekocht'
+    default:
+      return `Geen van onze Amazon-producten kost rond ${price}`
+  }
 }
 
 export const PERIOD_OPTIONS: { value: string; label: string }[] = [

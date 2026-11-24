@@ -15,7 +15,8 @@ import AffiliateSalesSection from './AffiliateSalesSection'
 import { useAdminJson } from './useAdminJson'
 import {
   type CalcStats, type VisitorStats, type GscData, type SalesData, PERIOD_OPTIONS, nl, eur, dateOnly,
-  bucketWord as bucketName, bySite, series, trendPct, calcSummary, visitorSummary, gscSummary, salesSummary
+  bucketWord as bucketName, bySite, series, trendPct, calcSummary, visitorSummary, gscSummary, salesSummary,
+  guessesForSite
 } from './stats-summary'
 
 type Tab = 'overzicht' | 'google' | 'verkopen' | 'calculator' | 'meetroutine'
@@ -239,20 +240,38 @@ export default function StatsPanel() {
   const topClicks: TopItem[] = clickSnippets.map((r) => ({
     key: `${r.website}-${r.snippet_id}`, name: String(r.name), website: String(r.website), value: Number(r.count)
   }))
+  // Amazon-verkopen zonder naam: geschat product (op prijs en onze kliks) of een verzamelregel
+  const UNNAMED: Record<string, string> = {
+    'ander-product': 'Ander product via Amazon-klik',
+    'onze-link': 'Onbekend product via onze Amazon-link',
+    onbekend: 'Onbekend Amazon-product'
+  }
+  const guessed = new Map<string, { key: string; name: string; website: string; value: number; commission: number; tag: string; note: string }>()
+  for (const g of guessesForSite(sales.data, site)) {
+    const key = g.match ? `amzg-${g.match.snippet_id}` : `amzg-${g.verdict}`
+    const row = guessed.get(key) ?? {
+      key, name: g.match?.name ?? UNNAMED[g.verdict] ?? UNNAMED.onbekend, website: g.website, value: 0, commission: 0,
+      tag: 'Amazon', note: g.match ? 'geschat op prijs' : 'Amazon noemt het product niet'
+    }
+    row.value += g.orders
+    row.commission += g.commission
+    guessed.set(key, row)
+  }
   // Verkopen per product: bol uit het orderrapport (zonder geweigerd), Amazon uit het productrapport
   const topSales: TopItem[] = [
     ...bySite(sales.data?.products, site).map((p) => ({
       key: `bol-${p.website}-${p.product_id}`, name: String(p.title || p.product_id), website: String(p.website),
-      value: Number(p.items) - Number(p.rejected ?? 0), commission: Number(p.commission), tag: 'bol'
+      value: Number(p.items) - Number(p.rejected ?? 0), commission: Number(p.commission), tag: 'bol', note: ''
     })),
     ...bySite(sales.data?.amazon.products, site).map((p) => ({
       key: `amz-${p.key}`, name: String(p.title || p.key), website: String(p.website),
-      value: Number(p.orders), commission: Number(p.commission), tag: 'Amazon'
-    }))
+      value: Number(p.orders), commission: Number(p.commission), tag: 'Amazon', note: ''
+    })),
+    ...guessed.values()
   ]
     .filter((r) => r.value > 0)
     .sort((a, b) => b.value - a.value || b.commission - a.commission)
-    .map(({ commission, ...r }) => ({ ...r, detail: `${eur(commission)} commissie` }))
+    .map(({ commission, note, ...r }) => ({ ...r, detail: `${eur(commission)} commissie${note ? `, ${note}` : ''}` }))
   const clickChart = series(bySite(stats?.clicksDaily, site))
 
   const funnelMax = Math.max(v.period, c.calcPeriod, c.clickPeriod, orders)
@@ -455,7 +474,7 @@ export default function StatsPanel() {
                   />
                   <p className="text-xs text-gray-400 mt-4">
                     Aantal bestellingen per product. Bol uit het orderrapport (zonder geweigerd), Amazon uit het
-                    productrapport t/m de laatste upload.
+                    productrapport t/m de laatste upload. Noemt Amazon het product niet, dan schatten we het op prijs.
                   </p>
                 </>
               ) : (

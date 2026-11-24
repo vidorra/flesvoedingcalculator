@@ -5,8 +5,8 @@ import { ShoppingBag, RefreshCw, Euro, Package, Upload, Table2, FileUp } from 'l
 import { Card, DailyChart, KpiCard, TrendBadge, SegmentSwitch, ShowAllButton, Warning, LIMIT } from './stats-ui'
 import { useAdminJson } from './useAdminJson'
 import {
-  type Row, type Parsed, type SalesData, nl, eur, dateOnly, dateTime, isRunning, bucketWord, bySite, series,
-  salesSummary, trendPct
+  type Row, type Parsed, type SalesData, type AmazonGuess, nl, eur, dateOnly, dateTime, isRunning, bucketWord, bySite,
+  series, salesSummary, trendPct, guessesForSite, guessText
 } from './stats-summary'
 
 const SITE_LABELS: Record<string, string> = { flesvoedingcalculator: 'Flesvoeding', togwaarde: 'Togwaarde', onbekend: 'Onbekend' }
@@ -24,6 +24,51 @@ function SiteTag({ website }: { website: string }) {
     <span className="text-[10px] bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded-full flex-shrink-0">
       {SITE_LABELS[website] ?? website}
     </span>
+  )
+}
+
+function GuessList({ guesses, showSite }: { guesses: AmazonGuess[]; showSite: boolean }) {
+  const clickList = (g: AmazonGuess) => g.clicked.map((c) => `${c.name} (${c.clicks})`).join(', ')
+  return (
+    <div className="mb-5">
+      <h3 className="text-sm font-medium text-gray-900">Niet bij naam genoemd door Amazon</h3>
+      <p className="text-xs text-gray-500 mt-0.5 mb-2">
+        Kleine verkopen staan als &quot;Other&quot; in het rapport. We schatten het product op de prijs per item en onze
+        eigen kliks van die dag en de dag ervoor (de Amazon-cookie geldt 24 uur).
+      </p>
+      <ul className="divide-y divide-gray-100 border-y border-gray-100">
+        {guesses.map((g, i) => (
+          <li key={`${g.day}-${i}`} className="py-2.5 flex items-start justify-between gap-3 text-sm">
+            <div className="min-w-0">
+              <div className="flex items-start gap-1.5 flex-wrap">
+                <span className="text-gray-900">{guessText(g)}</span>
+                {showSite && g.match && <SiteTag website={g.website} />}
+              </div>
+              <div className="text-xs text-gray-500 mt-0.5">
+                {dateOnly(g.day)} · {g.orders === 1 ? '1 item' : `${nl(g.orders)} items`}
+                {g.unitPrice ? `, ${eur(g.unitPrice)} per item volgens Amazon (meestal zonder btw)` : ''}
+              </div>
+              {g.match && g.match.alternatives.length > 0 && (
+                <div className="text-xs text-gray-500">Prijs past ook bij: {g.match.alternatives.join(', ')}</div>
+              )}
+              {g.verdict !== 'waarschijnlijk' && (
+                <div className="text-xs text-gray-500">
+                  {g.clicked.length > 0
+                    ? `Onze Amazon-kliks rond die dag: ${clickList(g)}`
+                    : 'Geen Amazon-kliks van ons rond die dag'}
+                </div>
+              )}
+              {!g.match && g.unpriced > 0 && (
+                <div className="text-xs text-gray-500">
+                  {g.unpriced === 1 ? '1 Amazon-product heeft' : `${g.unpriced} Amazon-producten hebben`} geen prijs en kon{g.unpriced === 1 ? '' : 'den'} niet meedoen
+                </div>
+              )}
+            </div>
+            <div className="text-right tabular-nums whitespace-nowrap text-gray-900">{eur(g.commission)}</div>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
 
@@ -132,6 +177,7 @@ export default function AffiliateSalesSection({ site, period, periodLabel }: { s
   const recent = bySite(data?.recent, site)
   const amazonProducts = bySite(data?.amazon.products, site)
   const amazonTracking = data?.amazon.tracking ?? []
+  const guesses = guessesForSite(data, site)
 
   const lastRun = data?.lastRun ?? null
   const bolDetails = lastRun?.details?.bol
@@ -449,7 +495,7 @@ export default function AffiliateSalesSection({ site, period, periodLabel }: { s
             {uploadMsg && <p className="text-sm font-medium text-gray-900 mt-3">{uploadMsg}</p>}
           </div>
 
-          {amazonProducts.length === 0 && amazonTracking.length === 0 ? (
+          {amazonProducts.length === 0 && amazonTracking.length === 0 && guesses.length === 0 ? (
             <p className="text-sm text-gray-500">Nog geen Amazon-cijfers in deze periode.</p>
           ) : (
             <>
@@ -457,13 +503,14 @@ export default function AffiliateSalesSection({ site, period, periodLabel }: { s
                 value={amzSegment}
                 onChange={(v) => { setAmzSegment(v); setAmzShowAll(false) }}
                 options={[
-                  { value: 'products', label: 'Producten', count: amazonProducts.length },
+                  { value: 'products', label: 'Producten', count: amazonProducts.length + guesses.length },
                   { value: 'tracking', label: 'Per tracking-ID', count: amazonTracking.length }
                 ]}
               />
               <p className="text-xs text-gray-500 mb-3">Amazon weet niet via welke site een bestelling kwam; de site komt uit ons productblok of de categorie.</p>
+              {amzSegment === 'products' && guesses.length > 0 && <GuessList guesses={guesses} showSite={showSite} />}
               {amzSegment === 'products' && (amazonProducts.length === 0 ? (
-                <p className="text-sm text-gray-500">Geen productrapport in deze periode.</p>
+                guesses.length === 0 && <p className="text-sm text-gray-500">Geen productrapport in deze periode.</p>
               ) : (
                 <div className="overflow-x-auto -mx-2">
                   <table className="w-full text-sm">
