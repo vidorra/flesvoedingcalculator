@@ -1,6 +1,49 @@
 import { NextResponse } from 'next/server'
 import { fetchPrice, generatePriceHtml } from '../../../../lib/price-fetcher.js'
 import { verifyAdminAndGetWebsite } from '../../../../lib/jwt-utils.js'
+import { assertPubliekeUrl, veiligFetch, GeweigerdeUrlFout } from '../../../../lib/safe-fetch.js'
+import { readJsonCapped } from '../../../../lib/read-body.js'
+
+const MAX_URL_LENGTE = 2048
+
+// Gescrapete titels en URL's komen in HTML terecht die op de site wordt
+// getoond. Alles escapen; entiteiten uit <title> eerst terugzetten zodat
+// "&amp;" niet als "&amp;amp;" eindigt.
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (c) => (
+    { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+  ))
+}
+
+function codepunt(n) {
+  return Number.isInteger(n) && n > 0 && n <= 0x10ffff ? String.fromCodePoint(n) : ''
+}
+
+function decodeEntities(value) {
+  return String(value)
+    .replace(/&#(\d+);/g, (_, n) => codepunt(Number(n)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, n) => codepunt(parseInt(n, 16)))
+    .replace(/&quot;/g, '"')
+    .replace(/&(#39|apos);/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+}
+
+function schoneTitel(ruw, fallback) {
+  const titel = decodeEntities(ruw).replace(/\s+/g, ' ').trim().slice(0, 200)
+  return titel || fallback
+}
+
+// Alleen https-afbeeldingen; al het andere wordt de standaardafbeelding.
+function veiligeAfbeelding(url, fallback) {
+  try {
+    return new URL(url).protocol === 'https:' ? url : fallback
+  } catch {
+    return fallback
+  }
+}
 
 // Force dynamic route
 export const dynamic = 'force-dynamic'
@@ -52,17 +95,19 @@ function extractAmazonASIN(url) {
   return null
 }
 
-// Follow redirects to get final URL
+// Follow redirects to get final URL. Elke hop gaat eerst langs
+// assertPubliekeUrl; een geweigerde hop gooit GeweigerdeUrlFout door.
 async function followRedirects(shortUrl, maxRedirects = 5) {
   let currentUrl = shortUrl
-  let redirectCount = 0
-  
-  while (redirectCount < maxRedirects) {
+
+  for (let hop = 0; hop < maxRedirects; hop++) {
+    await assertPubliekeUrl(currentUrl)
+    let response
     try {
       // GET met browser-headers: Amazon weigert HEAD-requests en kale
       // datacenter-fetches vaak; de redirect-Location komt bij GET meestal
       // wel door voordat een bot-check kan ingrijpen.
-      const response = await fetch(currentUrl, {
+      response = await fetch(currentUrl, {
         method: 'GET',
         redirect: 'manual',
         headers: {
@@ -71,22 +116,17 @@ async function followRedirects(shortUrl, maxRedirects = 5) {
           'Accept-Language': 'nl-NL,nl;q=0.9'
         }
       })
-      
-      if (response.status >= 300 && response.status < 400) {
-        const locationHeader = response.headers.get('location')
-        if (locationHeader) {
-          currentUrl = locationHeader
-          redirectCount++
-          continue
-        }
-      }
-      
-      break
-    } catch (error) {
+    } catch {
       break
     }
+
+    const location = response.status >= 300 && response.status < 400
+      ? response.headers.get('location')
+      : null
+    if (!location) break
+    currentUrl = new URL(location, currentUrl).href
   }
-  
+
   return currentUrl
 }
 
@@ -96,7 +136,7 @@ async function fetchAmazonProductDetails(asin, finalUrl) {
     console.log('Fetching Amazon product details for ASIN:', asin)
     
     // Try to fetch the Amazon page
-    const response = await fetch(finalUrl, {
+    const response = await veiligFetch(finalUrl, {
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
         'Accept-Language': 'en-US,en;q=0.9,nl;q=0.8'
@@ -110,36 +150,38 @@ async function fetchAmazonProductDetails(asin, finalUrl) {
     const html = await response.text()
     
     // Extract title
-    let title = `Amazon Product ${asin}`
+    const fallbackTitle = `Amazon Product ${asin}`
+    let title = fallbackTitle
     const titlePatterns = [
       /<span[^>]*id="productTitle"[^>]*>([^<]+)<\/span>/i,
       /<title[^>]*>([^:]+)/i
     ]
-    
+
     for (const pattern of titlePatterns) {
       const match = html.match(pattern)
       if (match) {
-        title = match[1].trim().replace(/\s+/g, ' ')
+        title = schoneTitel(match[1], fallbackTitle)
         break
       }
     }
-    
+
     // Extract image URL
-    let imageUrl = `https://m.media-amazon.com/images/I/${asin}._AC_SL1500_.jpg`
+    const fallbackImage = `https://m.media-amazon.com/images/I/${asin}._AC_SL1500_.jpg`
+    let imageUrl = fallbackImage
     const imagePatterns = [
       /"hiRes":"([^"]*images\/I\/[^"]*\.jpg[^"]*)"/i,
       /"large":"([^"]*images\/I\/[^"]*\.jpg[^"]*)"/i,
       /src="([^"]*images\/I\/[^"]*\.jpg[^"]*)"/i
     ]
-    
+
     for (const pattern of imagePatterns) {
       const match = html.match(pattern)
       if (match) {
-        imageUrl = match[1].replace(/\\u002F/g, '/')
+        imageUrl = veiligeAfbeelding(match[1].replace(/\\u002F/g, '/'), fallbackImage)
         break
       }
     }
-    
+
     console.log('Extracted Amazon data:', { title, imageUrl })
     
     return {
@@ -149,7 +191,7 @@ async function fetchAmazonProductDetails(asin, finalUrl) {
     }
     
   } catch (error) {
-    console.error('Failed to fetch Amazon product details:', error)
+    console.error('Failed to fetch Amazon product details:', error.message)
     
     // Return fallback data
     return {
@@ -165,7 +207,7 @@ function generateAmazonSnippet(productData, affiliateUrl, priceData = null, widt
   const { title, imageUrl } = productData
   const priceHtml = priceData ? generatePriceHtml(priceData.price, priceData.originalPrice) : ''
   
-  return `<div style="text-align: center"><a href="${affiliateUrl}" target="_blank" rel="nofollow" align="center"><img src="${imageUrl}" class="cg-img-1" alt="${title}" width="${width}" height="auto"></a>${priceHtml}</div>`
+  return `<div style="text-align: center"><a href="${escapeHtml(affiliateUrl)}" target="_blank" rel="nofollow" align="center"><img src="${escapeHtml(imageUrl)}" class="cg-img-1" alt="${escapeHtml(title)}" width="${Number(width) || 300}" height="auto"></a>${priceHtml}</div>`
 }
 
 // Extract product ID from Bol.com URL
@@ -201,11 +243,11 @@ function generateBolSnippet(title, imageUrl, productUrl, priceData = null, width
   // Generate the new format with full code snippet after title
   return `<div class="bg-white rounded-xl border border-gray-200 p-4">
     <div class="text-center">
-      <a href="${productUrl}" target="_blank" rel="nofollow noopener" class="block hover:opacity-90 transition-opacity">
+      <a href="${escapeHtml(productUrl)}" target="_blank" rel="nofollow noopener" class="block hover:opacity-90 transition-opacity">
         <div class="mb-3">
-          <img src="${imageUrl}" alt="${title}" class="mx-auto rounded-lg max-w-full h-auto" style="max-height: 200px;">
+          <img src="${escapeHtml(imageUrl)}" alt="${escapeHtml(title)}" class="mx-auto rounded-lg max-w-full h-auto" style="max-height: 200px;">
         </div>
-        <h4 class="font-medium text-primary text-sm mb-2 line-clamp-2 min-h-[40px] flex items-center">${title}</h4>
+        <h4 class="font-medium text-primary text-sm mb-2 line-clamp-2 min-h-[40px] flex items-center">${escapeHtml(title)}</h4>
         <div class="mt-2 mb-3 p-3 bg-gray-100 rounded-lg text-left">
           <h5 class="text-xs font-medium text-gray-700 mb-2">Bol.com Code Snippet:</h5>
           <code class="text-xs text-gray-600 break-all block">${codeSnippet}</code>
@@ -234,15 +276,29 @@ export async function POST(request) {
       )
     }
     
-    const { url, type } = await request.json()
-    
-    if (!url) {
+    const { tooLarge, data } = await readJsonCapped(request, 16 * 1024)
+    if (tooLarge) {
+      return NextResponse.json({ message: 'Request too large' }, { status: 413 })
+    }
+    const { url, type } = data || {}
+
+    if (typeof url !== 'string' || !url || url.length > MAX_URL_LENGTE) {
       return NextResponse.json(
         { message: 'URL is required' },
         { status: 400 }
       )
     }
-    
+
+    // Geen requests naar de server zelf, het interne netwerk of metadata.
+    try {
+      await assertPubliekeUrl(url)
+    } catch (error) {
+      return NextResponse.json(
+        { message: error instanceof GeweigerdeUrlFout ? error.message : 'URL kon niet worden gecontroleerd' },
+        { status: 400 }
+      )
+    }
+
     if (type === 'amazon') {
       try {
         // Follow redirects to get the final Amazon URL
@@ -318,9 +374,12 @@ export async function POST(request) {
         })
         
       } catch (error) {
-        console.error('Error processing Amazon URL:', error)
+        if (error instanceof GeweigerdeUrlFout) {
+          return NextResponse.json({ message: error.message }, { status: 400 })
+        }
+        console.error('Error processing Amazon URL:', error.message)
         return NextResponse.json(
-          { message: 'Failed to process Amazon URL: ' + error.message },
+          { message: 'Failed to process Amazon URL' },
           { status: 500 }
         )
       }
@@ -351,26 +410,30 @@ export async function POST(request) {
         
         // Try to fetch the page to extract title and image
         try {
-          const response = await fetch(url, {
+          const response = await veiligFetch(url, {
             headers: {
               'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
             }
           })
-          
+
           if (response.ok) {
             const html = await response.text()
-            
+
             // Extract title
             const titleMatch = html.match(/<title[^>]*>([^<]+)<\/title>/i)
-            let title = titleMatch ? titleMatch[1].replace(' | bol.com', '').trim() : `Product ${productId}`
-            
+            const fallbackTitle = `Product ${productId}`
+            const title = titleMatch
+              ? schoneTitel(titleMatch[1].replace(' | bol.com', ''), fallbackTitle)
+              : fallbackTitle
+
             // Extract image URL
-            let imageUrl = `https://media.s-bol.com/placeholder/${productId}/550x550.jpg`
+            const fallbackImage = `https://media.s-bol.com/placeholder/${productId}/550x550.jpg`
+            let imageUrl = fallbackImage
             const imgMatches = html.match(/<img[^>]+src="([^"]*media\.s-bol\.com[^"]*)"[^>]*>/gi)
             if (imgMatches && imgMatches.length > 0) {
               const imgMatch = imgMatches[0].match(/src="([^"]+)"/i)
               if (imgMatch) {
-                imageUrl = imgMatch[1]
+                imageUrl = veiligeAfbeelding(decodeEntities(imgMatch[1]), fallbackImage)
               }
             }
             
@@ -410,9 +473,9 @@ export async function POST(request) {
         })
         
       } catch (error) {
-        console.error('Error processing Bol.com URL:', error)
+        console.error('Error processing Bol.com URL:', error.message)
         return NextResponse.json(
-          { message: 'Failed to process Bol.com URL: ' + error.message },
+          { message: 'Failed to process Bol.com URL' },
           { status: 500 }
         )
       }
@@ -420,7 +483,7 @@ export async function POST(request) {
     
     // For other types
     return NextResponse.json(
-      { message: `URL generation for ${type} not implemented yet` },
+      { message: 'URL generation for this type is not implemented yet' },
       { status: 501 }
     )
 

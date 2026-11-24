@@ -4,6 +4,7 @@ import path from 'path'
 import { JSDOM } from 'jsdom'
 import bolAPI from '../../../../lib/bol-api.js'
 import { verifyAdminAndGetWebsite } from '../../../../lib/jwt-utils.js'
+import { veiligFetch } from '../../../../lib/safe-fetch.js'
 import { db } from '../../../../lib/db/connection.js'
 import { snippets as snippetsTable } from '../../../../lib/db/schema.js'
 import { eq } from 'drizzle-orm'
@@ -163,7 +164,7 @@ async function checkAmazonSnippet(snippet) {
 
   for (let attempt = 1; attempt <= 2; attempt++) {
     try {
-      const response = await fetch(snippet.url, {
+      const response = await veiligFetch(snippet.url, {
         headers: {
           'User-Agent': ua,
           'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',

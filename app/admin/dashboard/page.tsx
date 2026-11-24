@@ -438,8 +438,13 @@ export default function SimpleAdminDashboard() {
   const generateImageHtmlFromUrl = (imageUrl, productName, productUrl) => {
     if (!imageUrl || !productUrl) return ''
 
+    // Productnaam komt uit gescrapete bol/Amazon-titels en deze HTML gaat
+    // via innerHTML de publieke site op: alles escapen.
+    const esc = (v) => String(v).replace(/[&<>"']/g, (c) => (
+      { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+    ))
     const title = productName || 'Product'
-    return `<div style="text-align: center"><a href="${productUrl}"><img src="${imageUrl}" alt="${title}" width="300" height="auto" style="border-radius: 8px;"></a></div>`
+    return `<div style="text-align: center"><a href="${esc(productUrl)}"><img src="${esc(imageUrl)}" alt="${esc(title)}" width="300" height="auto" style="border-radius: 8px;"></a></div>`
   }
 
   // Helper function to extract product data from Bol.com snippet
