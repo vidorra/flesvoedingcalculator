@@ -1,6 +1,6 @@
 # Plan: affiliate-verkopen inzichtelijk (bol-koppeling + Amazon-import)
 
-Status: plan, nog niet gebouwd (23-11-2026).
+Status: gebouwd 24-11-2026. Code: `lib/affiliate-sales.js` (import, Amazon-CSV), `lib/affiliate-subid.js` (subId lezen), `app/api/admin/affiliate-sales/route.js`, `components/admin/AffiliateSalesSection.tsx` (kaart Verkopen in /admin/stats), planner in `instrumentation-node.js`. SubIds worden bij het klikken gezet (`bolSubId`/`tagBolLink` in `lib/experiments.tsx`, `tg_` in togwaarde). Nog te bevestigen: dat bol de parameter `subid` terugmeldt in het promotion-report.
 
 Doel: per verkoop zien welk product het was, van welke site, en (vanaf de subId's) van welke pagina, welk blok en welke A/B-variant. Daarmee meet de A/B-test `calc_result_block` op verkopen in plaats van alleen klikken.
 

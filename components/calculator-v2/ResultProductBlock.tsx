@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { AgeCategory } from '../../hooks/useCalculator'
 import { trackEvent } from '../../lib/analytics'
-import { trackAffiliateClick, useExperimentContext, useImpression, withBolSubId } from '../../lib/experiments'
+import { bolSubId, tagBolLink, trackAffiliateClick, useExperimentContext, useImpression } from '../../lib/experiments'
 
 /**
  * Drie producten bij de uitkomst van de calculator, passend bij de gekozen
@@ -87,7 +87,9 @@ export default function ResultProductBlock({
 
   if (!visible) return null
 
-  const onClick = (id: string) => {
+  const onClick = (e: React.MouseEvent, id: string) => {
+    tagBolLink(e.currentTarget, bolSubId(PLACEMENT, ctx))
+    if (e.type !== 'click') return
     try { trackEvent('affiliate_click', { snippet_id: id, widget: PLACEMENT }) } catch {}
     trackAffiliateClick(id, PLACEMENT, ctx)
   }
@@ -108,10 +110,12 @@ export default function ResultProductBlock({
           return (
             <li key={p.id}>
               <a
-                href={withBolSubId(hrefFor(p), ctx)}
+                href={hrefFor(p)}
                 target="_blank"
                 rel="nofollow sponsored noopener"
-                onClick={() => onClick(p.id)}
+                onClick={(e) => onClick(e, p.id)}
+                onAuxClick={(e) => onClick(e, p.id)}
+                onContextMenu={(e) => tagBolLink(e.currentTarget, bolSubId(PLACEMENT, ctx))}
                 className="flex items-center gap-3 p-2 rounded-xl border border-gray-100 hover:border-primary/30 transition-colors group"
               >
                 <div className="w-16 h-16 flex-shrink-0 flex items-center justify-center bg-white rounded-lg overflow-hidden">

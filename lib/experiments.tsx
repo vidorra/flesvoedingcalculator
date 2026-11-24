@@ -147,21 +147,53 @@ function send(url: string, payload: Record<string, unknown>) {
 
 /**
  * Naam van de subid-parameter in bol-partnerlinks. Het bol-script kent het
- * veld `linkSubId`; de naam in de klik-URL nog nakijken in het partnerdashboard.
+ * veld `linkSubId`; of bol hem zo terugmeldt blijkt uit het promotion-report.
  */
 export const BOL_SUBID_PARAM = 'subid'
 
-/** Bol-partnerlink voorzien van een subid per variant, zodat bol zelf ook per variant telt. */
-export function withBolSubId(href: string, ctx: ExperimentState): string {
-  const fields = experimentFields(ctx)
-  if (!fields.exp || !href.includes('partner.bol.com')) return href
-  try {
-    const url = new URL(href)
-    url.searchParams.set(BOL_SUBID_PARAM, `${fields.exp}_${fields.arm}`.slice(0, 40))
-    return url.toString()
-  } catch {
-    return href
+/** Korte blokcodes in de subId, de admin vertaalt ze terug (lib/affiliate-subid.js). */
+export const BOL_WIDGET_CODES: Record<string, string> = {
+  popular_products: 'pp',
+  result_block: 'rb',
+  affiliate_widget: 'aw',
+}
+
+/**
+ * SubId voor bol: `<blok>_<pagina>[_<variant>]`, max 40 tekens, alleen a-z,
+ * 0-9 en '-'. De variant (a = controle, b = de andere) alleen tijdens een
+ * echte loting, zodat bol per variant telt.
+ */
+export function bolSubId(widget: string, ctx?: ExperimentState): string {
+  const code = BOL_WIDGET_CODES[widget] || widget.replace(/[^a-z0-9]/gi, '').slice(0, 4).toLowerCase() || 'x'
+  let arm = ''
+  if (ctx) {
+    const fields = experimentFields(ctx)
+    if (fields.exp && fields.arm) {
+      const control = getExperimentDefinition(fields.exp)?.arms[0]?.id
+      arm = fields.arm === control ? 'a' : 'b'
+    }
   }
+  const path = typeof location !== 'undefined' ? location.pathname : ''
+  let page = path.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'home'
+  const room = 40 - code.length - 1 - (arm ? arm.length + 1 : 0)
+  if (page.length > room) page = page.slice(page.length - room).replace(/^-+/, '')
+  return `${code}_${page}${arm ? `_${arm}` : ''}`
+}
+
+/**
+ * Zet de subId op de bol-link die geklikt is, op het moment van klikken
+ * (niet bij het renderen: dan zou de server-HTML afwijken van de browser).
+ * `target` mag de link zelf zijn of iets erin.
+ */
+export function tagBolLink(target: EventTarget | null, subId: string) {
+  try {
+    const el = target as Element | null
+    const a = (el && typeof el.closest === 'function' ? el.closest('a') : null) as HTMLAnchorElement | null
+    if (!a || !a.href || !a.href.includes('partner.bol.com')) return
+    const url = new URL(a.href)
+    url.searchParams.set(BOL_SUBID_PARAM, subId)
+    a.href = url.toString()
+  } catch { /* link blijft zoals hij was */ }
 }
 
 /** Affiliate-klik loggen, met A/B-context als die er is. */

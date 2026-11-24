@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
 import { trackEvent } from '../lib/analytics'
+import { bolSubId, tagBolLink } from '../lib/experiments'
 import { getProductsByCategory, getProductsByIds } from './affiliate-products.js'
 import '../styles/bol-widget.css'
 
@@ -270,7 +271,13 @@ export default function AffiliateProductWidget({
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {displayProducts.map((product, index) => (
-          <div key={product.id} className="relative flex" onClick={() => trackClick(product.id)}>
+          <div
+            key={product.id}
+            className="relative flex"
+            onClick={(e) => { tagBolLink(e.target, bolSubId('affiliate_widget')); trackClick(product.id) }}
+            onAuxClick={(e) => tagBolLink(e.target, bolSubId('affiliate_widget'))}
+            onContextMenu={(e) => tagBolLink(e.target, bolSubId('affiliate_widget'))}
+          >
             {/* Product tag (Budget, Aanbevolen, etc.) */}
             {product.tag && (
               <div className="absolute top-2 left-2 z-10">

@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
 import { trackEvent } from '../lib/analytics'
-import { trackAffiliateClick, useExperimentContext, useImpression, withBolSubId } from '../lib/experiments'
+import { bolSubId, tagBolLink, trackAffiliateClick, useExperimentContext, useImpression } from '../lib/experiments'
 
 interface Snippet {
   id: string
@@ -43,7 +43,9 @@ export default function PopularProductsWidget({ limit = 4 }: { limit?: number })
 
   if (snippets.length === 0) return null
 
-  const onClick = (snippetId: string) => {
+  const onClick = (e: React.MouseEvent, snippetId: string) => {
+    tagBolLink(e.currentTarget, bolSubId(PLACEMENT, ctx))
+    if (e.type !== 'click') return
     try { trackEvent('affiliate_click', { snippet_id: snippetId, widget: PLACEMENT }) } catch {}
     trackAffiliateClick(snippetId, PLACEMENT, ctx)
   }
@@ -58,10 +60,12 @@ export default function PopularProductsWidget({ limit = 4 }: { limit?: number })
         {snippets.map(snippet => (
           <a
             key={snippet.id}
-            href={withBolSubId(snippet.url, ctx)}
+            href={snippet.url}
             target="_blank"
             rel="nofollow sponsored noopener"
-            onClick={() => onClick(snippet.id)}
+            onClick={(e) => onClick(e, snippet.id)}
+            onAuxClick={(e) => onClick(e, snippet.id)}
+            onContextMenu={(e) => tagBolLink(e.currentTarget, bolSubId(PLACEMENT, ctx))}
             className="flex flex-col group border border-gray-100 hover:border-primary/30 rounded-xl overflow-hidden transition-colors"
           >
             <div className="relative flex items-center justify-center h-28 overflow-hidden">

@@ -8,6 +8,7 @@ import {
 } from 'lucide-react'
 import { Card, DailyChart, KpiCard, TrendBadge } from './stats-ui'
 import SearchConsoleSection from './SearchConsoleSection'
+import AffiliateSalesSection from './AffiliateSalesSection'
 
 type Row = Record<string, string | number>
 type Stats = {
@@ -311,6 +312,11 @@ export default function StatsPanel() {
 
           {/* ===== Google zoeken (Search Console) ===== */}
           <SearchConsoleSection site={site} period={period} periodLabel={periodLabel} />
+
+          <div className="h-10" />
+
+          {/* ===== Verkopen (bol en Amazon) ===== */}
+          <AffiliateSalesSection site={site} period={period} periodLabel={periodLabel} />
 
           <div className="h-10" />
 

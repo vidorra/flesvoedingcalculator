@@ -2,7 +2,8 @@
 // runtime-check zodat Next hem uit de edge-bundel laat (pg werkt daar niet).
 export async function register() {
   if (process.env.NEXT_RUNTIME === 'nodejs') {
-    const { startGscScheduler } = await import('./instrumentation-node.js')
+    const { startGscScheduler, startAffiliateScheduler } = await import('./instrumentation-node.js')
     startGscScheduler()
+    startAffiliateScheduler()
   }
 }
