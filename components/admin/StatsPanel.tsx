@@ -201,7 +201,7 @@ export default function StatsPanel() {
   return (
     <div>
       {/* Vaste filterbalk: blijft staan tijdens het scrollen */}
-      <div className="sticky top-0 z-20 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-3 mb-6 bg-white/95 backdrop-blur border-b border-gray-200">
+      <div className="sticky top-2 z-20 px-4 py-3 mb-6 bg-white/95 backdrop-blur rounded-2xl border border-gray-200 shadow-sm">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <nav className="flex gap-1 bg-gray-100 rounded-lg p-1 overflow-x-auto max-w-full" aria-label="Statistieken">
             {TABS.map((t) => (
@@ -244,7 +244,7 @@ export default function StatsPanel() {
             <span className="inline-flex items-center gap-1 text-gray-600 font-medium"><Clock className="w-3.5 h-3.5" /> Cijfers t/m</span>
             <span>Bezoeken en calculator: nu</span>
             <span>
-              Google: {gsc.data && !gsc.data.configured ? 'niet gekoppeld' : g.lastDate ? dateOnly(g.lastDate) : '-'}
+              Google: {g.lastDate ? dateOnly(g.lastDate) : gsc.data && !gsc.data.configured ? 'niet gekoppeld' : '-'}
               <span className="text-gray-400"> (loopt 2 à 3 dagen achter)</span>
             </span>
             <span>
@@ -264,10 +264,10 @@ export default function StatsPanel() {
             />
             <KpiCard
               icon={<Search className="w-5 h-5" />}
-              value={gsc.data?.configured ? nl(g.clicks) : '-'}
+              value={gsc.data && (gsc.data.configured || gsc.data.totals.length > 0) ? nl(g.clicks) : '-'}
               title="Google-kliks"
               sub={gsc.data && !gsc.data.configured
-                ? <span className="text-xs text-gray-500">Search Console niet gekoppeld</span>
+                ? <span className="text-xs text-amber-700">Koppeling met Google werkt niet, zie tab Google</span>
                 : showTrend ? <TrendBadge pct={g.trend} /> : undefined}
             />
             <KpiCard

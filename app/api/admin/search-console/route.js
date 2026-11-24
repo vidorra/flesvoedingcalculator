@@ -4,7 +4,7 @@ import { db } from '../../../../lib/db/connection.js'
 import { ensureClickPageColumn } from '../../../../lib/db/ensure-events.js'
 import { verifyAdminAndGetWebsite } from '../../../../lib/jwt-utils.js'
 import {
-  ensureGscTablesOnce, gscConfigured, gscServiceAccountEmail, runGscImport
+  ensureGscTablesOnce, gscConfigured, gscConfigProblem, gscServiceAccountEmail, runGscImport
 } from '../../../../lib/search-console.js'
 
 export const dynamic = 'force-dynamic'
@@ -130,6 +130,7 @@ export async function GET(request) {
     return NextResponse.json({
       success: true,
       configured: gscConfigured(),
+      configProblem: gscConfigProblem(),
       serviceAccount: gscServiceAccountEmail(),
       bucket,
       lastRun: lastRun.rows[0] || null,

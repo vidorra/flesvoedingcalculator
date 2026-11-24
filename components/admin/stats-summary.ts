@@ -34,6 +34,7 @@ export type VisitorStats = { bucket?: string; series: Row[]; totals: Row[] }
 
 export type GscData = {
   configured: boolean
+  configProblem?: string | null
   serviceAccount: string | null
   bucket: string
   lastRun: RunRow | null

@@ -128,6 +128,8 @@ export default function SearchConsoleSection({ site, period, periodLabel }: { si
 
   const showSite = site === 'all'
   const sum = gscSummary(data, site)
+  // Ook zonder werkende sleutel de opgeslagen cijfers tonen
+  const hasData = Boolean(data && (data.configured || data.totals.length > 0 || data.pages.length > 0))
   const chart = series(bySite(data?.daily, site))
 
   const pages = bySite(data?.pages, site).sort((a, b) => Number(b.clicks) - Number(a.clicks))
@@ -186,9 +188,21 @@ export default function SearchConsoleSection({ site, period, periodLabel }: { si
 
       {!data && !error && <p className="text-sm text-gray-500">Laden...</p>}
 
-      {data && !data.configured && (
+      {data && !data.configured && hasData && (
+        <Warning>
+          <p className="font-semibold mb-1">Let op: de koppeling met Google werkt niet meer</p>
+          <p className="mb-1">{data.configProblem || 'De sleutel in GSC_SERVICE_ACCOUNT_JSON is niet leesbaar.'}</p>
+          <p>
+            De cijfers hieronder komen uit eerdere imports{sum.lastDate ? <> en lopen t/m {dateOnly(sum.lastDate)}</> : null}.
+            Zet de sleutel opnieuw in CapRover (app flesvoedingcalculator, GSC_SERVICE_ACCOUNT_JSON) en herstart.
+          </p>
+        </Warning>
+      )}
+
+      {data && !data.configured && !hasData && (
         <Warning>
           <p className="font-semibold mb-2">Let op: nog niet gekoppeld</p>
+          {data.configProblem && <p className="mb-2">{data.configProblem}</p>}
           <ol className="list-decimal pl-5 space-y-1">
             <li>Google Cloud Console: maak een project, zet de &quot;Google Search Console API&quot; aan.</li>
             <li>Maak een serviceaccount en download een JSON-sleutel.</li>
@@ -198,7 +212,7 @@ export default function SearchConsoleSection({ site, period, periodLabel }: { si
         </Warning>
       )}
 
-      {data?.configured && (
+      {hasData && (
         <>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
             <KpiCard icon={<MousePointerClick className="w-5 h-5" />} value={nl(sum.clicks)} title={`Google-kliks, ${periodLabel.toLowerCase()}`} sub={<TrendBadge pct={sum.trend} />} />
